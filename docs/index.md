@@ -29,7 +29,11 @@ scenarios.
 
 ## Drafts
 
-This specification is currently **work in progress**.  Future work will aim to add validation mechanisms like JSON Schema and 
+This specification is currently **work in progress**.  Future work will aim to
+add validation mechanisms like [JSON Schema](https://json-schema.org/) and [W3C
+Shapes Constraint Language](https://www.w3.org/TR/shacl/).
+
+* [draft-01](draft-01/)
 
 ## Contribute
 
