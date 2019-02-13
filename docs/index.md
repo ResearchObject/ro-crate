@@ -27,7 +27,7 @@ machine-readable formats to communicate Research Objects. These pages describes
 the format **Research Object Lite** (or _ROLite_ for short) that aims to
 simplify generation of ROs for researchers, e.g. to manually or
 semi-automatically describe a single dataset or a loose collection of
-documents. See the [background](background) for details on the other formats
+documents. See the [background](background.md) for details on the other formats
 that may be more appropriate for more complex
 scenarios.
 
