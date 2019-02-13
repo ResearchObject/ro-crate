@@ -29,7 +29,7 @@ scenarios.
 
 ## Drafts
 
-This specification is currently **work in progress**.  Future work will aim to
+This specification is currently **work in progress** using our [GitHub repository](https://github.com/ResearchObject/ro-lite).  Future work will aim to
 add validation mechanisms like [JSON Schema](https://json-schema.org/) and [W3C
 Shapes Constraint Language](https://www.w3.org/TR/shacl/).
 
