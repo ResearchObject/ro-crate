@@ -8,12 +8,7 @@ Feel free to use other folders for non-web content, e.g. examples, JSON-LD conte
 
 ## Contribute
 
-The _ROLite_ work is coordinated by:
-
-* Peter Sefton <https://orcid.org/0000-0002-3545-944X>
-* Eoghan Ó Carragáin <https://orcid.org/0000-0001-8131-2150>
-* Stian Soiland-Reyes <https://orcid.org/0000-0001-9842-9718>
-
+This repository is coordinated by the [ROLite team](https://researchobject.github.io/ro-lite/#contribute).
 
 To suggest changes, improvements or issues, use the GitHub repository
 <https://github.com/ResearchObject/ro-lite> - if you are new to GitHub or Open
