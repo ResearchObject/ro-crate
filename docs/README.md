@@ -1,3 +1,0 @@
-# Reserarch Object Lite
-
-Hello.
