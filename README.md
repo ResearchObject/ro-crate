@@ -2,7 +2,7 @@
 
 This is the GitHub repository for contributing to the [Research Object Lite](https://researchobject.github.io/ro-lite/) specification.
 
-The [docs/](docs/) folder has the [MarkDown](https://guides.github.com/features/mastering-markdown) content that is rendered to <https://researchobject.github.io/ro-lite/> by [GitHub pages](https://pages.github.com/)
+The [docs/](docs/) folder has the [MarkDown](https://guides.github.com/features/mastering-markdown) content that is rendered to <https://researchobject.github.io/ro-lite/> by [GitHub pages](https://pages.github.com/).
 
 Feel free to use other folders for non-web content, e.g. examples, JSON-LD contexts, test scripts.
 

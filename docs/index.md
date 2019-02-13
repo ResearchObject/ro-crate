@@ -1,5 +1,10 @@
 # Research Object Lite
 
+1. Table of Contents
+{:toc}
+
+## What is a Research Object
+
 A [Research Object](http://researchobject.org/) (_RO_) provide a machine-readable mechanism to communicate the diverse set of digital and real-world resources that contribute to an item of research. The aim of an RO is to replace traditional academic publication as a PDF with a couple of supplementary materials; to instead provide a structured archive of all the items that contributed to the research outcome, including their identifiers, provenance, relations and annotations.
 
 This is of particular importance as all domains of research and science are increasingly relying in computational analysis, yet we are facing a [reproducibility crisis](https://doi.org/10.1038/533452a) because key components are not sufficiently tracked, archived or reported. 
