@@ -38,7 +38,7 @@ This specification is currently **work in progress** using our [GitHub repositor
 add validation mechanisms like [JSON Schema](https://json-schema.org/) and [W3C
 Shapes Constraint Language](https://www.w3.org/TR/shacl/).
 
-* [draft-01](draft-01/)
+* [ROLite Draft 0.1.0](0.1.0)
 
 ## Contribute
 

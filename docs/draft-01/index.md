@@ -1,2 +1,0 @@
-# ROLite draft-01
-
