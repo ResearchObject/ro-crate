@@ -1,0 +1,56 @@
+{
+    "@context": ["http://schema.org", "https://w3id.org/bundle/context"],
+    "@type": ["ro:ResearchObject", "Dataset"],
+    
+    "@id": ".",
+    "identifier": "976287d8886dbc477272976658598b1764493a3e",
+
+    "name": "Dataset of repository sizes in CWL Viewer",
+    "description": "This is a simple dataset showing the size in bytes of the repositories examined by https://view.commonwl.org/ sinze September 2018",
+    "keywords": "CWL, repository, example",    
+    "temporalCoverage": "2018-09/2019-01",
+    "contentLocation": {
+            "@id": "http://sws.geonames.org/9884115/",
+            "name": "Kilburn Building, Manchester, UK"
+    },
+    
+    "datePublished": "2019-02-13",
+    "publisher": {  
+        "@id": "http://researchobject.org/",
+        "name": "Research Object community"
+    },
+    "creator": {
+        "@id": "https://orcid.org/0000-0001-9842-9718",
+        "name": "Stian Soiland-Reyes"
+    },
+    "contactPoint": {
+        "email": "soiland-reyes@manchester.ac.uk"
+    },
+
+    "distribution": [
+            { 
+                "@id": "data/repository-sizes.tsv",
+                "name": "Repository Sizes TSV",
+                "description": "Tab-separated file. Executed du -s * on heater.cs.man.ac.uk:/data/git"
+            },
+            { 
+                "@id": "data/repository-sizes.ods",
+                "name": "Repository Sizes spreadsheet",
+                "description": "OpenOffice spreadsheet that generates a chart. Imported from TSV."
+            }
+    ],
+
+    "aggregates": [    
+        {
+            "@id": "data/repository-sizes-chart.png",
+            "@type": ["ImageObject", "roterms:Result"],
+            "description": "Line chart of repository sizes. Exported from spreadsheet."
+        },  
+        {
+            "@id": "data/logs/",
+            "@type": "ro:Folder",
+            "description": "Some log files from the server, not further categorized"
+        }
+    ]      
+
+}
