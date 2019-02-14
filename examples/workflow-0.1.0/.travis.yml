@@ -1,0 +1,24 @@
+sudo: required
+
+language: python
+
+python:
+  - "3.6"
+
+# command to install dependencies
+install:
+  - pip install -U pip
+  - pip install -U setuptools wheel
+  - pip install cwltool
+  - pip install cwlref-runner
+#  - pip install html5lib
+
+services:
+  - docker
+
+script:
+  - test/test.sh
+  - docker build -t ibisba/retropath2 .
+
+notifications:
+  email: false

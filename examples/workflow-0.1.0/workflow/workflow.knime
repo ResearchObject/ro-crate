@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="workflow.knime">
+<entry key="created_by" type="xstring" value="3.6.1.v201809030900"/>
+<entry key="created_by_nightly" type="xboolean" value="false"/>
+<entry key="version" type="xstring" value="3.6.0Pre"/>
+<entry key="name" type="xstring" isnull="true" value=""/>
+<config key="authorInformation">
+<entry key="authored-by" type="xstring" value="thomas"/>
+<entry key="authored-when" type="xstring" value="2016-12-22 17:19:53 +0100"/>
+<entry key="lastEdited-by" type="xstring" value="helfrich"/>
+<entry key="lastEdited-when" type="xstring" value="2018-09-26 13:51:17 +0200"/>
+</config>
+<entry key="customDescription" type="xstring" isnull="true" value=""/>
+<entry key="state" type="xstring" value="IDLE"/>
+<config key="workflow_variables">
+<config key="Var_0">
+<entry key="name" type="xstring" value="input.topx"/>
+<entry key="class" type="xstring" value="INTEGER"/>
+<entry key="value" type="xint" value="100"/>
+</config>
+<config key="Var_1">
+<entry key="name" type="xstring" value="input.max-steps"/>
+<entry key="class" type="xstring" value="INTEGER"/>
+<entry key="value" type="xint" value="1"/>
+</config>
+<config key="Var_2">
+<entry key="name" type="xstring" value="input.rulesfile"/>
+<entry key="class" type="xstring" value="STRING"/>
+<entry key="value" type="xstring" value="rules.csv"/>
+</config>
+<config key="Var_3">
+<entry key="name" type="xstring" value="input.dmin"/>
+<entry key="class" type="xstring" value="INTEGER"/>
+<entry key="value" type="xint" value="0"/>
+</config>
+<config key="Var_4">
+<entry key="name" type="xstring" value="input.dmax"/>
+<entry key="class" type="xstring" value="INTEGER"/>
+<entry key="value" type="xint" value="1000"/>
+</config>
+<config key="Var_5">
+<entry key="name" type="xstring" value="input.sinkfile"/>
+<entry key="class" type="xstring" value="STRING"/>
+<entry key="value" type="xstring" value="//"/>
+</config>
+<config key="Var_6">
+<entry key="name" type="xstring" value="input.sourcefile"/>
+<entry key="class" type="xstring" value="STRING"/>
+<entry key="value" type="xstring" value="source.csv"/>
+</config>
+<config key="Var_7">
+<entry key="name" type="xstring" value="input.mwmax-source"/>
+<entry key="class" type="xstring" value="INTEGER"/>
+<entry key="value" type="xint" value="1000"/>
+</config>
+<config key="Var_8">
+<entry key="name" type="xstring" value="input.stereo_mode"/>
+<entry key="class" type="xstring" value="STRING"/>
+<entry key="value" type="xstring" value="Strip all stereo"/>
+</config>
+<config key="Var_9">
+<entry key="name" type="xstring" value="input.std_mode"/>
+<entry key="class" type="xstring" value="STRING"/>
+<entry key="value" type="xstring" value="H added + Aromatized"/>
+</config>
+<config key="Var_10">
+<entry key="name" type="xstring" value="output.solutionfile"/>
+<entry key="class" type="xstring" value="STRING"/>
+<entry key="value" type="xstring" value="results.csv"/>
+</config>
+<config key="Var_11">
+<entry key="name" type="xstring" value="output.dir"/>
+<entry key="class" type="xstring" value="STRING"/>
+<entry key="value" type="xstring" value="."/>
+</config>
+<config key="Var_12">
+<entry key="name" type="xstring" value="input.mwmax-cof"/>
+<entry key="class" type="xstring" value="INTEGER"/>
+<entry key="value" type="xint" value="1000"/>
+</config>
+<config key="Var_13">
+<entry key="name" type="xstring" value="input.cofsfile"/>
+<entry key="class" type="xstring" value="STRING"/>
+<entry key="value" type="xstring" value="//"/>
+</config>
+<config key="Var_14">
+<entry key="name" type="xstring" value="dev.prefilter-rm-brakets"/>
+<entry key="class" type="xstring" value="INTEGER"/>
+<entry key="value" type="xint" value="1"/>
+</config>
+<config key="Var_15">
+<entry key="name" type="xstring" value="dev.use-py-fire"/>
+<entry key="class" type="xstring" value="INTEGER"/>
+<entry key="value" type="xint" value="0"/>
+</config>
+<config key="Var_16">
+<entry key="name" type="xstring" value="dev.py-fire-timeout"/>
+<entry key="class" type="xstring" value="INTEGER"/>
+<entry key="value" type="xint" value="300"/>
+</config>
+<config key="Var_17">
+<entry key="name" type="xstring" value="dev.source-chunk-size"/>
+<entry key="class" type="xstring" value="INTEGER"/>
+<entry key="value" type="xint" value="1"/>
+</config>
+<config key="Var_18">
+<entry key="name" type="xstring" value="output.sourceinsinkfile"/>
+<entry key="class" type="xstring" value="STRING"/>
+<entry key="value" type="xstring" value="source-in-sink.csv"/>
+</config>
+<config key="Var_19">
+<entry key="name" type="xstring" value="dev.py-fire-procs"/>
+<entry key="class" type="xstring" value="INTEGER"/>
+<entry key="value" type="xint" value="4"/>
+</config>
+<config key="Var_20">
+<entry key="name" type="xstring" value="dev.scope-filter-bootstraps"/>
+<entry key="class" type="xstring" value="INTEGER"/>
+<entry key="value" type="xint" value="1"/>
+</config>
+<config key="Var_21">
+<entry key="name" type="xstring" value="dev.scope-filter-stepback"/>
+<entry key="class" type="xstring" value="INTEGER"/>
+<entry key="value" type="xint" value="1"/>
+</config>
+<config key="Var_22">
+<entry key="name" type="xstring" value="dev.scope-filter-samestep"/>
+<entry key="class" type="xstring" value="INTEGER"/>
+<entry key="value" type="xint" value="1"/>
+</config>
+</config>
+<config key="workflow_credentials"/>
+<config key="annotations">
+<config key="annotation_0">
+<entry key="text" type="xstring" value="RetroPath2.0%%00010%%00010The RetroPath2.0 workflow build a reaction network from a set of source compounds to a set of sink compounds.%%00010%%00010When applied in a retrosynthetic fashion, the source is composed of the target compounds and the sink is composed of the available reactants (for instance in the context of metabolic engineering the sink is the set of native metabolites of a chassis strain). From amongst all the chemical reactions generated using RetroPath2.0 (in the retrosynthetic way), only a subset may effectively link a source to a subset of sink compounds. This sub-network is considered as a scope and is output in dedicated files (see below).%%00010%%00010The workflow handles both monomolecular (1 substrate) and bimolecular (2 substrates) reactions.%%00010%%00010%%00010Getting started%%00010%%000101. Double click on the Input configuration node and set appropriate values. Please refer to the embedded help panel for specification on input files and parameters (&quot;question mark&quot; button at the bottom of the Input configuration panel).%%00010%%000102. Double click on the Output configuration node and set appropriate values. Please refer to the embedded help panel for dedicated information. (&quot;question mark&quot; button at the bottom of the Output configuration panel).%%00010%%000103. Right click on the Core node and select &quot;Execute&quot;. A green dot will appear under the Core node on successful execution.%%00010%%000104. In order to investigate any scope found, please use the &quot;scope.html&quot; file: open it with a web browser and follow the instructions displayed (Firefox or Google Chrome recommended).%%00010%%00010%%00010Usage specifications%%00010- RetroPath2.0 current release is compatible starting from version 3.3.6 of Knime Analytics Platform. Check older RetroPath2.0 release for using it with older version of KNIME.%%00010%%00010%%00010Limitations as of 2018/07/30%%00010- Scope is only relevant for retrosynthetic usage (target/source to chassis/sink).%%00010%%00010%%00010Release: r20180730%%00010%%00010How to cite%%00010Delépine B, Duigou T, Carbonell P, Faulon JL. RetroPath2.0: A retrosynthesis workflow for metabolic engineers. Metabolic Engineering (2017). DOI: https://doi.org/10.1016/j.ymben.2017.12.002%%00010%%00010Please report bugs to thomas.duigou@inra.fr%%00010%%00010Worfklow Licence: CC BY-NC-SA%%00010T Duigou, B Delépine, JL Faulon, 2017-2018.%%00010This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.%%00010"/>
+<entry key="bgcolor" type="xint" value="16777215"/>
+<entry key="x-coordinate" type="xint" value="20"/>
+<entry key="y-coordinate" type="xint" value="-120"/>
+<entry key="width" type="xint" value="661"/>
+<entry key="height" type="xint" value="941"/>
+<entry key="alignment" type="xstring" value="LEFT"/>
+<entry key="borderSize" type="xint" value="0"/>
+<entry key="borderColor" type="xint" value="0"/>
+<entry key="defFontSize" type="xint" value="11"/>
+<entry key="annotation-version" type="xint" value="20151123"/>
+<config key="styles">
+<config key="style_0">
+<entry key="start" type="xint" value="0"/>
+<entry key="length" type="xint" value="12"/>
+<entry key="fontname" type="xstring" value="Nimbus Sans L"/>
+<entry key="fontstyle" type="xint" value="1"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_1">
+<entry key="start" type="xint" value="12"/>
+<entry key="length" type="xint" value="732"/>
+<entry key="fontname" type="xstring" value="Arial"/>
+<entry key="fontstyle" type="xint" value="0"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_2">
+<entry key="start" type="xint" value="744"/>
+<entry key="length" type="xint" value="15"/>
+<entry key="fontname" type="xstring" value="Nimbus Sans L"/>
+<entry key="fontstyle" type="xint" value="1"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_3">
+<entry key="start" type="xint" value="759"/>
+<entry key="length" type="xint" value="25"/>
+<entry key="fontname" type="xstring" value="Arial"/>
+<entry key="fontstyle" type="xint" value="0"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_4">
+<entry key="start" type="xint" value="784"/>
+<entry key="length" type="xint" value="19"/>
+<entry key="fontname" type="xstring" value="Nimbus Sans L"/>
+<entry key="fontstyle" type="xint" value="1"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_5">
+<entry key="start" type="xint" value="803"/>
+<entry key="length" type="xint" value="219"/>
+<entry key="fontname" type="xstring" value="Arial"/>
+<entry key="fontstyle" type="xint" value="0"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_6">
+<entry key="start" type="xint" value="1022"/>
+<entry key="length" type="xint" value="20"/>
+<entry key="fontname" type="xstring" value="Nimbus Sans L"/>
+<entry key="fontstyle" type="xint" value="1"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_7">
+<entry key="start" type="xint" value="1042"/>
+<entry key="length" type="xint" value="198"/>
+<entry key="fontname" type="xstring" value="Arial"/>
+<entry key="fontstyle" type="xint" value="0"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_8">
+<entry key="start" type="xint" value="1240"/>
+<entry key="length" type="xint" value="4"/>
+<entry key="fontname" type="xstring" value="Nimbus Sans L"/>
+<entry key="fontstyle" type="xint" value="1"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_9">
+<entry key="start" type="xint" value="1244"/>
+<entry key="length" type="xint" value="283"/>
+<entry key="fontname" type="xstring" value="Arial"/>
+<entry key="fontstyle" type="xint" value="0"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_10">
+<entry key="start" type="xint" value="1527"/>
+<entry key="length" type="xint" value="20"/>
+<entry key="fontname" type="xstring" value="Nimbus Sans L"/>
+<entry key="fontstyle" type="xint" value="1"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_11">
+<entry key="start" type="xint" value="1547"/>
+<entry key="length" type="xint" value="179"/>
+<entry key="fontname" type="xstring" value="Arial"/>
+<entry key="fontstyle" type="xint" value="0"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_12">
+<entry key="start" type="xint" value="1726"/>
+<entry key="length" type="xint" value="1"/>
+<entry key="fontname" type="xstring" value="Arial"/>
+<entry key="fontstyle" type="xint" value="0"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_13">
+<entry key="start" type="xint" value="1727"/>
+<entry key="length" type="xint" value="28"/>
+<entry key="fontname" type="xstring" value="Nimbus Sans L"/>
+<entry key="fontstyle" type="xint" value="1"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_14">
+<entry key="start" type="xint" value="1755"/>
+<entry key="length" type="xint" value="86"/>
+<entry key="fontname" type="xstring" value="Arial"/>
+<entry key="fontstyle" type="xint" value="0"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_15">
+<entry key="start" type="xint" value="1841"/>
+<entry key="length" type="xint" value="9"/>
+<entry key="fontname" type="xstring" value="Nimbus Sans L"/>
+<entry key="fontstyle" type="xint" value="1"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_16">
+<entry key="start" type="xint" value="1850"/>
+<entry key="length" type="xint" value="11"/>
+<entry key="fontname" type="xstring" value="Arial"/>
+<entry key="fontstyle" type="xint" value="0"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_17">
+<entry key="start" type="xint" value="1861"/>
+<entry key="length" type="xint" value="11"/>
+<entry key="fontname" type="xstring" value="Nimbus Sans L"/>
+<entry key="fontstyle" type="xint" value="1"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_18">
+<entry key="start" type="xint" value="1872"/>
+<entry key="length" type="xint" value="235"/>
+<entry key="fontname" type="xstring" value="Arial"/>
+<entry key="fontstyle" type="xint" value="0"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_19">
+<entry key="start" type="xint" value="2107"/>
+<entry key="length" type="xint" value="32"/>
+<entry key="fontname" type="xstring" value="Arial"/>
+<entry key="fontstyle" type="xint" value="1"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_20">
+<entry key="start" type="xint" value="2139"/>
+<entry key="length" type="xint" value="43"/>
+<entry key="fontname" type="xstring" value="Nimbus Sans L"/>
+<entry key="fontstyle" type="xint" value="0"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_21">
+<entry key="start" type="xint" value="2182"/>
+<entry key="length" type="xint" value="1"/>
+<entry key="fontname" type="xstring" value="Arial"/>
+<entry key="fontstyle" type="xint" value="1"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_22">
+<entry key="start" type="xint" value="2183"/>
+<entry key="length" type="xint" value="201"/>
+<entry key="fontname" type="xstring" value="Nimbus Sans L"/>
+<entry key="fontstyle" type="xint" value="0"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+<config key="style_23">
+<entry key="start" type="xint" value="2384"/>
+<entry key="length" type="xint" value="1"/>
+<entry key="fontname" type="xstring" value="Arial"/>
+<entry key="fontstyle" type="xint" value="1"/>
+<entry key="fontsize" type="xint" value="11"/>
+<entry key="fgcolor" type="xint" value="0"/>
+</config>
+</config>
+</config>
+<config key="annotation_1">
+<entry key="text" type="xstring" value="Dev/Advanced user features:%%00010%%00010The features below are activable through the global workflow variables pane.%%00010%%00010#== Use the &quot;Fire&quot; Python Snippet for firing rules%%00010%%00010A python snippet is embedded into the workflow allowing an enhanced way of firing rules. The &quot;Fire&quot; python snippet allows one to compute bigger metabolic maps thanks to a drastically improved memory management. This feature can be enabled at the cost of some python dependancies (see below) and is available for Linux systems.%%00010%%00010Set the &quot;dev.use-py-fire&quot; global workflow variable to 1 in order to enable the feature. Timeout and multihreading settings are adjustable using the &quot;dev.py-fire-timeout&quot; and &quot;dev.py-fire-procs&quot;, respectively.%%00010%%00010Setting up the python environment assuming you are using conda for managing python environments (https://www.continuum.io):%%00010%%000101) Create the environment and install packages:%%00010%%00010conda create --name pyknime python=2.7%%00010source activate pyknime%%00010conda install --channel rdkit rdkit  # Please use rdkit release 2016.03.1 or later%%00010conda install pandas protobuf psutil%%00010%%000102) Get the python path%%00010%%00010source activate test%%00010which python%%00010%%000103) Set this python path into Knime settings%%00010For more details: https://www.knime.org/blog/how-to-setup-the-python-extension%%00010%%000104) Restart Knime%%00010%%00010%%00010#== Disable Scope filters%%00010%%00010The scope computation involves several heuristic filters in order to remove undesirable reactions. Such highly undesirable reactions are those promoting metabolic loops increasing the  connectivity of metabolic graphs.%%00010%%00010One can disable these filters using the (i) &quot;dev.scope-filter-stepback&quot;, (ii)&quot;dev.scope-filter-samestep&quot; and (iii) &quot;dev.scope-filter-bootstrap&quot; global workflow variables. Variables noted (i) and (ii) control respectively the removing of reactions producing a &quot;not in sink&quot; compound that has been already produced at (i) a previous iteration of the metabolic graph traversal and at (ii) the same iteration than the substrate, while (iii) controls the filtering of reactions that involve compounds simultaneously present in both left and right hand sides.%%00010%%00010%%00010#== Change the chunk size of the source loop (outer loop)%%00010%%00010By design, the source loop (outer loop) of the workflow is set so that source compounds provided by the user are treated one by one. This is the recommended setting for a retrosynthetic usage as it ensures the best metabolic space exploration.%%00010%%00010One can change this value using the &quot;dev.source-chunk-size&quot; global workflow variable.%%00010%%00010%%00010#== Disable parsing of the left hand side of SMARTS rules (prefiltering task)%%00010%%00010The workflow performs an optimization procedure before firing the rules using a prefiltering task. During this task, the workflow detects and removes surrouding brakets on the left hand side of the rules.%%00010%%00010One can disable this behavour using the &quot;dev.prefilter-rm-brakets&quot; global workflow variable.%%00010%%00010However, we strongly recommend to not change the value unless you (really) know what you are doing.%%00010"/>
+<entry key="bgcolor" type="xint" value="16777215"/>
+<entry key="x-coordinate" type="xint" value="20"/>
+<entry key="y-coordinate" type="xint" value="860"/>
+<entry key="width" type="xint" value="681"/>
+<entry key="height" type="xint" value="1245"/>
+<entry key="alignment" type="xstring" value="LEFT"/>
+<entry key="borderSize" type="xint" value="5"/>
+<entry key="borderColor" type="xint" value="15658732"/>
+<entry key="defFontSize" type="xint" value="11"/>
+<entry key="annotation-version" type="xint" value="20151123"/>
+<config key="styles"/>
+</config>
+<config key="annotation_2">
+<entry key="text" type="xstring" value="Double-click top left corner to edit."/>
+<entry key="bgcolor" type="xint" value="16777215"/>
+<entry key="x-coordinate" type="xint" value="769"/>
+<entry key="y-coordinate" type="xint" value="360"/>
+<entry key="width" type="xint" value="250"/>
+<entry key="height" type="xint" value="140"/>
+<entry key="alignment" type="xstring" value="LEFT"/>
+<entry key="borderSize" type="xint" value="10"/>
+<entry key="borderColor" type="xint" value="16766976"/>
+<entry key="defFontSize" type="xint" value="-1"/>
+<entry key="annotation-version" type="xint" value="20151123"/>
+<config key="styles"/>
+</config>
+</config>
+<config key="nodes">
+<config key="node_740">
+<entry key="id" type="xint" value="740"/>
+<entry key="node_settings_file" type="xstring" value="Input config (#740)/settings.xml"/>
+<entry key="node_is_meta" type="xboolean" value="true"/>
+<entry key="node_type" type="xstring" value="SubNode"/>
+<entry key="ui_classname" type="xstring" value="org.knime.core.node.workflow.NodeUIInformation"/>
+<config key="ui_settings">
+<config key="extrainfo.node.bounds">
+<entry key="array-size" type="xint" value="4"/>
+<entry key="0" type="xint" value="824"/>
+<entry key="1" type="xint" value="-63"/>
+<entry key="2" type="xint" value="111"/>
+<entry key="3" type="xint" value="76"/>
+</config>
+</config>
+</config>
+<config key="node_959">
+<entry key="id" type="xint" value="959"/>
+<entry key="node_settings_file" type="xstring" value="Output confi (#959)/settings.xml"/>
+<entry key="node_is_meta" type="xboolean" value="true"/>
+<entry key="node_type" type="xstring" value="SubNode"/>
+<entry key="ui_classname" type="xstring" value="org.knime.core.node.workflow.NodeUIInformation"/>
+<config key="ui_settings">
+<config key="extrainfo.node.bounds">
+<entry key="array-size" type="xint" value="4"/>
+<entry key="0" type="xint" value="824"/>
+<entry key="1" type="xint" value="57"/>
+<entry key="2" type="xint" value="78"/>
+<entry key="3" type="xint" value="89"/>
+</config>
+</config>
+</config>
+<config key="node_1081">
+<entry key="id" type="xint" value="1081"/>
+<entry key="node_settings_file" type="xstring" value="Core (#1081)/settings.xml"/>
+<entry key="node_is_meta" type="xboolean" value="true"/>
+<entry key="node_type" type="xstring" value="SubNode"/>
+<entry key="ui_classname" type="xstring" value="org.knime.core.node.workflow.NodeUIInformation"/>
+<config key="ui_settings">
+<config key="extrainfo.node.bounds">
+<entry key="array-size" type="xint" value="4"/>
+<entry key="0" type="xint" value="944"/>
+<entry key="1" type="xint" value="-3"/>
+<entry key="2" type="xint" value="50"/>
+<entry key="3" type="xint" value="76"/>
+</config>
+</config>
+</config>
+</config>
+<config key="connections">
+<config key="connection_0">
+<entry key="sourceID" type="xint" value="740"/>
+<entry key="destID" type="xint" value="1081"/>
+<entry key="sourcePort" type="xint" value="1"/>
+<entry key="destPort" type="xint" value="1"/>
+</config>
+<config key="connection_1">
+<entry key="sourceID" type="xint" value="959"/>
+<entry key="destID" type="xint" value="1081"/>
+<entry key="sourcePort" type="xint" value="1"/>
+<entry key="destPort" type="xint" value="2"/>
+</config>
+</config>
+<config key="workflow_editor_settings">
+<entry key="workflow.editor.snapToGrid" type="xboolean" value="true"/>
+<entry key="workflow.editor.ShowGrid" type="xboolean" value="true"/>
+<entry key="workflow.editor.gridX" type="xint" value="20"/>
+<entry key="workflow.editor.gridY" type="xint" value="20"/>
+<entry key="workflow.editor.zoomLevel" type="xdouble" value="1.0"/>
+<entry key="workflow.editor.curvedConnections" type="xboolean" value="false"/>
+<entry key="workflow.editor.connectionWidth" type="xint" value="1"/>
+</config>
+</config>

@@ -1,0 +1,1687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="settings.xml">
+<entry key="node_file" type="xstring" value="settings.xml"/>
+<config key="flow_stack"/>
+<config key="internal_node_subsettings">
+<entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
+</config>
+<config key="model">
+<config key="individual_settings">
+<config key="0">
+<config key="column_names">
+<entry key="array-size" type="xint" value="16"/>
+<entry key="0" type="xstring" value="Transformation ID"/>
+<entry key="1" type="xstring" value="Reaction SMILES"/>
+<entry key="2" type="xstring" value="Substrate SMILES"/>
+<entry key="3" type="xstring" value="Substrate InChI"/>
+<entry key="4" type="xstring" value="Product SMILES"/>
+<entry key="5" type="xstring" value="Product InChI"/>
+<entry key="6" type="xstring" value="In Sink"/>
+<entry key="7" type="xstring" value="Sink name"/>
+<entry key="8" type="xstring" value="Diameter"/>
+<entry key="9" type="xstring" value="Rule ID"/>
+<entry key="10" type="xstring" value="EC number"/>
+<entry key="11" type="xstring" value="Score"/>
+<entry key="12" type="xstring" value="Iteration"/>
+<entry key="13" type="xstring" value="Starting Source"/>
+<entry key="14" type="xstring" value="Starting Source SMILES"/>
+<entry key="15" type="xstring" value="Initial source"/>
+</config>
+<entry key="case_insensitive_name_matching" type="xboolean" value="false"/>
+<entry key="reject_on_missing_value" type="xboolean" value="false"/>
+<entry key="datatype_handling" type="xstring" value="FAIL"/>
+<entry key="domain_handling_possible_values" type="xstring" value="NONE"/>
+<entry key="domain_handling_min_max" type="xstring" value="NONE"/>
+<entry key="colum_missing_handling" type="xstring" value="FILL_WITH_MISSINGS"/>
+</config>
+</config>
+<entry key="unkown_columns_handling" type="xstring" value="REMOVE"/>
+<entry key="rejecting_behavior" type="xstring" value="FAIL_NODE"/>
+<config key="data_table_spec">
+<entry key="spec_name" type="xstring" value="default"/>
+<entry key="number_columns" type="xint" value="16"/>
+<config key="column_spec_0">
+<entry key="column_name" type="xstring" value="Initial source"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<config key="collection_element_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+</config>
+<entry key="cell_class" type="xstring" value="org.knime.core.data.collection.SetCell"/>
+</config>
+<config key="column_domain"/>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_1">
+<entry key="column_name" type="xstring" value="Transformation ID"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+</config>
+<config key="column_domain">
+<config key="possible_values">
+<entry key="array-size" type="xint" value="42"/>
+<config key="0">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_0_1"/>
+</config>
+</config>
+<config key="1">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_0_4"/>
+</config>
+</config>
+<config key="2">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_0_2"/>
+</config>
+</config>
+<config key="3">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_10"/>
+</config>
+</config>
+<config key="4">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_11"/>
+</config>
+</config>
+<config key="5">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_12"/>
+</config>
+</config>
+<config key="6">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_15"/>
+</config>
+</config>
+<config key="7">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_16"/>
+</config>
+</config>
+<config key="8">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_17"/>
+</config>
+</config>
+<config key="9">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_18"/>
+</config>
+</config>
+<config key="10">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_19"/>
+</config>
+</config>
+<config key="11">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_2"/>
+</config>
+</config>
+<config key="12">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_20"/>
+</config>
+</config>
+<config key="13">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_21"/>
+</config>
+</config>
+<config key="14">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_22"/>
+</config>
+</config>
+<config key="15">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_27"/>
+</config>
+</config>
+<config key="16">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_3"/>
+</config>
+</config>
+<config key="17">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_4"/>
+</config>
+</config>
+<config key="18">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_5"/>
+</config>
+</config>
+<config key="19">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_7"/>
+</config>
+</config>
+<config key="20">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_8"/>
+</config>
+</config>
+<config key="21">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_9"/>
+</config>
+</config>
+<config key="22">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_1_14"/>
+</config>
+</config>
+<config key="23">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_137"/>
+</config>
+</config>
+<config key="24">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_139"/>
+</config>
+</config>
+<config key="25">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_140"/>
+</config>
+</config>
+<config key="26">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_141"/>
+</config>
+</config>
+<config key="27">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_143"/>
+</config>
+</config>
+<config key="28">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_146"/>
+</config>
+</config>
+<config key="29">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_149"/>
+</config>
+</config>
+<config key="30">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_150"/>
+</config>
+</config>
+<config key="31">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_153"/>
+</config>
+</config>
+<config key="32">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_161"/>
+</config>
+</config>
+<config key="33">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_170"/>
+</config>
+</config>
+<config key="34">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_174"/>
+</config>
+</config>
+<config key="35">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_175"/>
+</config>
+</config>
+<config key="36">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_176"/>
+</config>
+</config>
+<config key="37">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_177"/>
+</config>
+</config>
+<config key="38">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_191"/>
+</config>
+</config>
+<config key="39">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_257"/>
+</config>
+</config>
+<config key="40">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_259"/>
+</config>
+</config>
+<config key="41">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TRS_0_2_260"/>
+</config>
+</config>
+</config>
+</config>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_2">
+<entry key="column_name" type="xstring" value="Reaction SMILES"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+</config>
+<config key="column_domain">
+<config key="possible_values">
+<entry key="array-size" type="xint" value="42"/>
+<config key="0">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])[H])c([H])c1C([H])([H])[H]&gt;&gt;[H+].[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])O[H])c([H])c1C([H])([H])[H]"/>
+</config>
+</config>
+<config key="1">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])[H])c([H])c1C([H])([H])[H]&gt;&gt;[H]O[H].[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])O[H])c([H])c1C([H])([H])[H]"/>
+</config>
+</config>
+<config key="2">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])[H])c([H])c1C([H])([H])[H]&gt;&gt;[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="3">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C(=O)C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])n([H])c2c([H])c([H])c([H])c([H])c12"/>
+</config>
+</config>
+<config key="4">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C(=O)C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H].[H]OC(=O)C([H])([H])C([H])(C(=O)O[H])N([H])[H]"/>
+</config>
+</config>
+<config key="5">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C(=O)C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H].[H]OC(=O)C([H])([H])C([H])([H])C([H])(C(=O)O[H])N([H])[H]"/>
+</config>
+</config>
+<config key="6">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C([H])(N=C(O[H])C([H])(N([H])[H])C([H])(O[H])C([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H].[H]OC1([H])C([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)OC([H])(C([H])([H])OP(=O)(O[H])OP(=O)(O[H])O[H])C1([H])O[H].[H]OP(=O)(O[H])O[H]"/>
+</config>
+</config>
+<config key="7">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C([H])(N=C(O[H])C([H])(N([H])[H])C([H])([H])C([H])([H])SC([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H].[H]OC1([H])C([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)OC([H])(C([H])([H])OP(=O)(O[H])OP(=O)(O[H])O[H])C1([H])O[H].[H]OP(=O)(O[H])O[H]"/>
+</config>
+</config>
+<config key="8">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C([H])(N=C(O[H])C([H])(N([H])[H])C([H])([H])O[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H].[H]OC1([H])C([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)OC([H])(C([H])([H])OP(=O)(O[H])OP(=O)(O[H])O[H])C1([H])O[H].[H]OP(=O)(O[H])O[H]"/>
+</config>
+</config>
+<config key="9">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C([H])(N=C(O[H])C([H])(N([H])[H])C([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H].[H]OC1([H])C([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)OC([H])(C([H])([H])OP(=O)(O[H])OP(=O)(O[H])O[H])C1([H])O[H].[H]OP(=O)(O[H])O[H]"/>
+</config>
+</config>
+<config key="10">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C([H])(N=C(O[H])C([H])([H])N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H].[H]OC1([H])C([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)OC([H])(C([H])([H])OP(=O)(O[H])OP(=O)(O[H])O[H])C1([H])O[H].[H]OP(=O)(O[H])O[H]"/>
+</config>
+</config>
+<config key="11">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]N=C(O[H])C([H])([H])C([H])([H])C([H])(C(=O)O[H])N([H])[H].[H]OC(=O)C(=O)C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="12">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C([H])(N=C(O[H])C([H])([H])N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H].[H]O[H]"/>
+</config>
+</config>
+<config key="13">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C([H])([H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H].[H][N+]([H])([H])[H]"/>
+</config>
+</config>
+<config key="14">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC1=NC([H])(C([H])([H])c2c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c2[H])C(O[H])=NC1([H])C([H])([H])O[H].[H]O[H]"/>
+</config>
+</config>
+<config key="15">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])O[H])c([H])c1C([H])([H])[H]&gt;&gt;[H]O[H].[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])OC(=O)C([H])([H])[H])c([H])c1C([H])([H])[H]"/>
+</config>
+</config>
+<config key="16">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]N=c1nc(O[H])c2c(n1[H])N([H])C([H])([H])C([H])(C([H])([H])N([H])c1c([H])c([H])c(C(=O)N([H])C([H])(C(=O)O[H])C([H])([H])C([H])([H])C(=O)O[H])c([H])c1[H])N2[H].[H]OC(=O)C([H])(N=C([H])O[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="17">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=NC([H])([H])C([H])([H])S[H])C([H])([H])C([H])([H])N=C(O[H])C([H])(O[H])C(C([H])([H])[H])(C([H])([H])[H])C([H])([H])OP(=O)(O[H])OP(=O)(O[H])OC([H])([H])C1([H])OC([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)C([H])(O[H])C1([H])OP(=O)(O[H])O[H].[H]OC(=O)C([H])(N=C(O[H])C([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="18">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=NC([H])([H])C([H])([H])S[H])C([H])([H])C([H])([H])N=C(O[H])C([H])(O[H])C(C([H])([H])[H])(C([H])([H])[H])C([H])([H])OP(=O)(O[H])OP(=O)(O[H])OC([H])([H])C1([H])OC([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)C([H])(O[H])C1([H])OP(=O)(O[H])O[H].[H]OC(=O)C([H])([H])C(=NC([H])(C(=O)O[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H])O[H]"/>
+</config>
+</config>
+<config key="19">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C(=O)C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])C([H])(C([H])([H])[H])C([H])([H])[H]"/>
+</config>
+</config>
+<config key="20">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C(=O)C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])C([H])([H])SC([H])([H])[H]"/>
+</config>
+</config>
+<config key="21">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C(=O)C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])[H]"/>
+</config>
+</config>
+<config key="22">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C([H])(N([H])C([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="23">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C(=O)C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;O=O.[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="24">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C(=O)C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C(=O)C([H])([H])C(=O)O[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="25">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C(=O)C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C(=O)C([H])([H])C([H])(C([H])([H])[H])C([H])([H])[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="26">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C(=O)C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C(=O)C([H])([H])C([H])([H])C(=O)O[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="27">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C(=O)C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C(=O)C([H])([H])[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="28">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C(=O)C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H].[H]O[H]"/>
+</config>
+</config>
+<config key="29">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])C([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C([H])(N([H])[H])C([H])([H])C([H])([H])[S+](C([H])([H])[H])C([H])([H])C1([H])OC([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)C([H])(O[H])C1([H])O[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="30">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])(N([H])[H])C([H])(O[H])C([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C([H])(N([H])[H])C([H])(O[H])C([H])([H])[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="31">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])(N([H])[H])C([H])([H])C([H])([H])SC([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C([H])(N([H])[H])C([H])([H])C([H])([H])SC([H])([H])[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="32">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])(N([H])[H])C([H])([H])O[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C([H])(N([H])[H])C([H])([H])O[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="33">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])(N([H])[H])C([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C([H])(N([H])[H])C([H])([H])[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="34">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])([H])N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H].[H]OC(=O)C([H])([H])N([H])[H]"/>
+</config>
+</config>
+<config key="35">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]OC(=NC([H])([H])C([H])([H])SC(=O)C([H])([H])[H])C([H])([H])C([H])([H])N=C(O[H])C([H])(O[H])C(C([H])([H])[H])(C([H])([H])[H])C([H])([H])OP(=O)(O[H])OP(=O)(O[H])OC([H])([H])C1([H])OC([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)C([H])(O[H])C1([H])OP(=O)(O[H])O[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="36">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C([H])O[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]N=c1nc(O[H])c2c(n1[H])N([H])C([H])([H])C([H])(C([H])([H])N(C([H])=O)c1c([H])c([H])c(C(=O)N([H])C([H])(C(=O)O[H])C([H])([H])C([H])([H])C(=O)O[H])c([H])c1[H])N2[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="37">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])([H])C(=NC([H])(C(=O)O[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H])O[H]&gt;&gt;[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H].[H]OC(=O)C([H])([H])C(=O)SC([H])([H])C([H])([H])N=C(O[H])C([H])([H])C([H])([H])N=C(O[H])C([H])(O[H])C(C([H])([H])[H])(C([H])([H])[H])C([H])([H])OP(=O)(O[H])OP(=O)(O[H])OC([H])([H])C1([H])OC([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)C([H])(O[H])C1([H])OP(=O)(O[H])O[H]"/>
+</config>
+</config>
+<config key="38">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])([H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]&gt;&gt;[H]N=C(O[H])C1=C([H])N(C2([H])OC([H])(C([H])([H])OP(=O)(O[H])OP(=O)(O[H])OC([H])([H])C3([H])OC([H])(n4c([H])nc5c(N([H])[H])nc([H])nc54)C([H])(O[H])C3([H])O[H])C([H])(O[H])C2([H])O[H])C([H])=C([H])C1([H])[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="39">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC1=NC([H])(C([H])([H])c2c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c2[H])C(O[H])=NC1([H])C([H])([H])O[H]&gt;&gt;[H]OC(=O)C([H])(N([H])[H])C([H])([H])O[H].[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="40">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])OC(=O)C([H])([H])[H])c([H])c1C([H])([H])[H]&gt;&gt;[H]OC(=NC([H])([H])C([H])([H])SC(=O)C([H])([H])[H])C([H])([H])C([H])([H])N=C(O[H])C([H])(O[H])C(C([H])([H])[H])(C([H])([H])[H])C([H])([H])OP(=O)(O[H])OP(=O)(O[H])OC([H])([H])C1([H])OC([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)C([H])(O[H])C1([H])OP(=O)(O[H])O[H].[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])O[H])c([H])c1C([H])([H])[H]"/>
+</config>
+</config>
+<config key="41">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])OC(=O)C([H])([H])[H])c([H])c1C([H])([H])[H]&gt;&gt;[H]OC(=O)C([H])([H])[H].[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])O[H])c([H])c1C([H])([H])[H]"/>
+</config>
+</config>
+</config>
+</config>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_3">
+<entry key="column_name" type="xstring" value="Substrate SMILES"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+</config>
+<config key="column_domain">
+<config key="possible_values">
+<entry key="array-size" type="xint" value="22"/>
+<config key="0">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])[H])c([H])c1C([H])([H])[H]"/>
+</config>
+</config>
+<config key="1">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="2">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])([H])C([H])(C(=O)O[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="3">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])O[H])c([H])c1C([H])([H])[H]"/>
+</config>
+</config>
+<config key="4">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=NC1([H])C([H])(C([H])([H])OP(=O)(O[H])O[H])OC([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)C1([H])O[H])C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="5">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C(=O)C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="6">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(C([H])([H])C(=O)OC([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="7">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])C([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="8">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])(N([H])[H])C([H])(O[H])C([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="9">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])(N([H])[H])C([H])([H])C([H])([H])SC([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="10">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])(N([H])[H])C([H])([H])O[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="11">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])(N([H])[H])C([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="12">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])([H])N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="13">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="14">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C([H])O[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="15">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])([H])C(=NC([H])(C(=O)O[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H])O[H]"/>
+</config>
+</config>
+<config key="16">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])([H])C([H])(C(=O)O[H])C([H])([H])C(=O)OC([H])(C([H])([H])C([H])(C([H])([H])[H])C([H])([H])C([H])(O[H])C([H])([H])C([H])([H])C([H])([H])C([H])([H])C([H])(O[H])C([H])([H])C([H])(O[H])C([H])(N([H])[H])C([H])([H])[H])C([H])(OC(=O)C([H])([H])C([H])(C(=O)O[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H])C([H])(C([H])([H])[H])C([H])([H])C([H])([H])C([H])([H])C([H])([H])[H]"/>
+</config>
+</config>
+<config key="17">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])([H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="18">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(c1c([H])c([H])c(O[H])c([H])c1[H])N([H])[H]"/>
+</config>
+</config>
+<config key="19">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC1=NC([H])(C([H])([H])c2c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c2[H])C(O[H])=NC1([H])C([H])([H])O[H]"/>
+</config>
+</config>
+<config key="20">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])OC(=O)C([H])([H])[H])c([H])c1C([H])([H])[H]"/>
+</config>
+</config>
+<config key="21">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])OC(=O)c2c([H])c([H])c([H])c([H])c2[H])c([H])c1C([H])([H])[H]"/>
+</config>
+</config>
+</config>
+</config>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_4">
+<entry key="column_name" type="xstring" value="Substrate InChI"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+</config>
+<config key="column_domain">
+<config key="possible_values">
+<entry key="array-size" type="xint" value="22"/>
+<config key="0">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C9H12O/c1-6-4-7(2)9(10)8(3)5-6/h4-5,10H,1-3H3"/>
+</config>
+</config>
+<config key="1">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C11H15NO3/c1-6-3-8(4-7(2)10(6)13)5-9(12)11(14)15/h3-4,9,13H,5,12H2,1-2H3,(H,14,15)"/>
+</config>
+</config>
+<config key="2">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C13H16O5/c1-7-3-9(4-8(2)12(7)16)5-10(13(17)18)6-11(14)15/h3-4,10,16H,5-6H2,1-2H3,(H,14,15)(H,17,18)"/>
+</config>
+</config>
+<config key="3">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C9H12O2/c1-6-3-8(5-10)4-7(2)9(6)11/h3-4,10-11H,5H2,1-2H3"/>
+</config>
+</config>
+<config key="4">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C21H28N7O8P/c1-9-3-11(4-10(2)16(9)29)5-12(22)20(31)27-14-13(6-35-37(32,33)34)36-21(17(14)30)28-8-26-15-18(23)24-7-25-19(15)28/h3-4,7-8,12-14,17,21,29-30H,5-6,22H2,1-2H3,(H,27,31)(H2,23,24,25)(H2,32,33,34)"/>
+</config>
+</config>
+<config key="5">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C11H12O4/c1-6-3-8(4-7(2)10(6)13)5-9(12)11(14)15/h3-4,13H,5H2,1-2H3,(H,14,15)"/>
+</config>
+</config>
+<config key="6">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C14H18O5/c1-8-4-10(5-9(2)13(8)16)6-11(14(17)18)7-12(15)19-3/h4-5,11,16H,6-7H2,1-3H3,(H,17,18)"/>
+</config>
+</config>
+<config key="7">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C12H17NO3/c1-7-4-9(5-8(2)11(7)14)6-10(13-3)12(15)16/h4-5,10,13-14H,6H2,1-3H3,(H,15,16)"/>
+</config>
+</config>
+<config key="8">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C15H22N2O5/c1-7-4-10(5-8(2)13(7)19)6-11(15(21)22)17-14(20)12(16)9(3)18/h4-5,9,11-12,18-19H,6,16H2,1-3H3,(H,17,20)(H,21,22)"/>
+</config>
+</config>
+<config key="9">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C16H24N2O4S/c1-9-6-11(7-10(2)14(9)19)8-13(16(21)22)18-15(20)12(17)4-5-23-3/h6-7,12-13,19H,4-5,8,17H2,1-3H3,(H,18,20)(H,21,22)"/>
+</config>
+</config>
+<config key="10">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C14H20N2O5/c1-7-3-9(4-8(2)12(7)18)5-11(14(20)21)16-13(19)10(15)6-17/h3-4,10-11,17-18H,5-6,15H2,1-2H3,(H,16,19)(H,20,21)"/>
+</config>
+</config>
+<config key="11">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C14H20N2O4/c1-7-4-10(5-8(2)12(7)17)6-11(14(19)20)16-13(18)9(3)15/h4-5,9,11,17H,6,15H2,1-3H3,(H,16,18)(H,19,20)"/>
+</config>
+</config>
+<config key="12">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C13H18N2O4/c1-7-3-9(4-8(2)12(7)17)5-10(13(18)19)15-11(16)6-14/h3-4,10,17H,5-6,14H2,1-2H3,(H,15,16)(H,18,19)"/>
+</config>
+</config>
+<config key="13">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C13H17NO4/c1-7-4-10(5-8(2)12(7)16)6-11(13(17)18)14-9(3)15/h4-5,11,16H,6H2,1-3H3,(H,14,15)(H,17,18)"/>
+</config>
+</config>
+<config key="14">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C12H15NO4/c1-7-3-9(4-8(2)11(7)15)5-10(12(16)17)13-6-14/h3-4,6,10,15H,5H2,1-2H3,(H,13,14)(H,16,17)"/>
+</config>
+</config>
+<config key="15">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C14H17NO6/c1-7-3-9(4-8(2)13(7)19)5-10(14(20)21)15-11(16)6-12(17)18/h3-4,10,19H,5-6H2,1-2H3,(H,15,16)(H,17,18)(H,20,21)"/>
+</config>
+</config>
+<config key="16">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C41H67NO14/c1-7-8-11-24(3)39(56-37(49)20-29(40(51)52)18-28-16-25(4)38(50)26(5)17-28)34(55-36(48)21-30(41(53)54)19-35(46)47)15-23(2)14-31(43)12-9-10-13-32(44)22-33(45)27(6)42/h16-17,23-24,27,29-34,39,43-45,50H,7-15,18-22,42H2,1-6H3,(H,46,47)(H,51,52)(H,53,54)"/>
+</config>
+</config>
+<config key="17">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C11H14O3/c1-7-5-9(3-4-10(12)13)6-8(2)11(7)14/h5-6,14H,3-4H2,1-2H3,(H,12,13)"/>
+</config>
+</config>
+<config key="18">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C8H9NO3/c9-7(8(11)12)5-1-3-6(10)4-2-5/h1-4,7,10H,9H2,(H,11,12)"/>
+</config>
+</config>
+<config key="19">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C14H18N2O4/c1-7-3-9(4-8(2)12(7)18)5-10-13(19)16-11(6-17)14(20)15-10/h3-4,10-11,17-18H,5-6H2,1-2H3,(H,15,20)(H,16,19)"/>
+</config>
+</config>
+<config key="20">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C11H14O3/c1-7-4-10(6-14-9(3)12)5-8(2)11(7)13/h4-5,13H,6H2,1-3H3"/>
+</config>
+</config>
+<config key="21">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C16H16O3/c1-11-8-13(9-12(2)15(11)17)10-19-16(18)14-6-4-3-5-7-14/h3-9,17H,10H2,1-2H3"/>
+</config>
+</config>
+</config>
+</config>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_5">
+<entry key="column_name" type="xstring" value="Product SMILES"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+</config>
+<config key="column_domain">
+<config key="possible_values">
+<entry key="array-size" type="xint" value="43"/>
+<config key="0">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H+]"/>
+</config>
+</config>
+<config key="1">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]O[H]"/>
+</config>
+</config>
+<config key="2">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])O[H])c([H])c1C([H])([H])[H]"/>
+</config>
+</config>
+<config key="3">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="4">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])c1c([H])n([H])c2c([H])c([H])c([H])c([H])c12"/>
+</config>
+</config>
+<config key="5">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])([H])C([H])(C(=O)O[H])N([H])[H]"/>
+</config>
+</config>
+<config key="6">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])([H])C([H])([H])C([H])(C(=O)O[H])N([H])[H]"/>
+</config>
+</config>
+<config key="7">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC1([H])C([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)OC([H])(C([H])([H])OP(=O)(O[H])OP(=O)(O[H])O[H])C1([H])O[H]"/>
+</config>
+</config>
+<config key="8">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OP(=O)(O[H])O[H]"/>
+</config>
+</config>
+<config key="9">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]N=C(O[H])C([H])([H])C([H])([H])C([H])(C(=O)O[H])N([H])[H]"/>
+</config>
+</config>
+<config key="10">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H][N+]([H])([H])[H]"/>
+</config>
+</config>
+<config key="11">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]N=c1nc(O[H])c2c(n1[H])N([H])C([H])([H])C([H])(C([H])([H])N([H])c1c([H])c([H])c(C(=O)N([H])C([H])(C(=O)O[H])C([H])([H])C([H])([H])C(=O)O[H])c([H])c1[H])N2[H]"/>
+</config>
+</config>
+<config key="12">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=NC([H])([H])C([H])([H])S[H])C([H])([H])C([H])([H])N=C(O[H])C([H])(O[H])C(C([H])([H])[H])(C([H])([H])[H])C([H])([H])OP(=O)(O[H])OP(=O)(O[H])OC([H])([H])C1([H])OC([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)C([H])(O[H])C1([H])OP(=O)(O[H])O[H]"/>
+</config>
+</config>
+<config key="13">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])C([H])(C([H])([H])[H])C([H])([H])[H]"/>
+</config>
+</config>
+<config key="14">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])C([H])([H])SC([H])([H])[H]"/>
+</config>
+</config>
+<config key="15">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])[H]"/>
+</config>
+</config>
+<config key="16">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C(=O)C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="17">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])C([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="18">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])(N([H])[H])C([H])(O[H])C([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="19">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])(N([H])[H])C([H])([H])C([H])([H])SC([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="20">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])(N([H])[H])C([H])([H])O[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="21">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])(N([H])[H])C([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="22">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])([H])N([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="23">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])([H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="24">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC1=NC([H])(C([H])([H])c2c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c2[H])C(O[H])=NC1([H])C([H])([H])O[H]"/>
+</config>
+</config>
+<config key="25">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])OC(=O)C([H])([H])[H])c([H])c1C([H])([H])[H]"/>
+</config>
+</config>
+<config key="26">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C([H])O[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="27">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N=C(O[H])C([H])([H])[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H]"/>
+</config>
+</config>
+<config key="28">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])([H])C(=NC([H])(C(=O)O[H])C([H])([H])c1c([H])c(C([H])([H])[H])c(O[H])c(C([H])([H])[H])c1[H])O[H]"/>
+</config>
+</config>
+<config key="29">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="O=O"/>
+</config>
+</config>
+<config key="30">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C(=O)C([H])([H])C(=O)O[H]"/>
+</config>
+</config>
+<config key="31">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C(=O)C([H])([H])C([H])(C([H])([H])[H])C([H])([H])[H]"/>
+</config>
+</config>
+<config key="32">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C(=O)C([H])([H])C([H])([H])C(=O)O[H]"/>
+</config>
+</config>
+<config key="33">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C(=O)C([H])([H])[H]"/>
+</config>
+</config>
+<config key="34">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])C([H])([H])[S+](C([H])([H])[H])C([H])([H])C1([H])OC([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)C([H])(O[H])C1([H])O[H]"/>
+</config>
+</config>
+<config key="35">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])(O[H])C([H])([H])[H]"/>
+</config>
+</config>
+<config key="36">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])(N([H])[H])C([H])([H])O[H]"/>
+</config>
+</config>
+<config key="37">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])([H])N([H])[H]"/>
+</config>
+</config>
+<config key="38">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=NC([H])([H])C([H])([H])SC(=O)C([H])([H])[H])C([H])([H])C([H])([H])N=C(O[H])C([H])(O[H])C(C([H])([H])[H])(C([H])([H])[H])C([H])([H])OP(=O)(O[H])OP(=O)(O[H])OC([H])([H])C1([H])OC([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)C([H])(O[H])C1([H])OP(=O)(O[H])O[H]"/>
+</config>
+</config>
+<config key="39">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]N=c1nc(O[H])c2c(n1[H])N([H])C([H])([H])C([H])(C([H])([H])N(C([H])=O)c1c([H])c([H])c(C(=O)N([H])C([H])(C(=O)O[H])C([H])([H])C([H])([H])C(=O)O[H])c([H])c1[H])N2[H]"/>
+</config>
+</config>
+<config key="40">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])([H])C(=O)SC([H])([H])C([H])([H])N=C(O[H])C([H])([H])C([H])([H])N=C(O[H])C([H])(O[H])C(C([H])([H])[H])(C([H])([H])[H])C([H])([H])OP(=O)(O[H])OP(=O)(O[H])OC([H])([H])C1([H])OC([H])(n2c([H])nc3c(N([H])[H])nc([H])nc32)C([H])(O[H])C1([H])OP(=O)(O[H])O[H]"/>
+</config>
+</config>
+<config key="41">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]N=C(O[H])C1=C([H])N(C2([H])OC([H])(C([H])([H])OP(=O)(O[H])OP(=O)(O[H])OC([H])([H])C3([H])OC([H])(n4c([H])nc5c(N([H])[H])nc([H])nc54)C([H])(O[H])C3([H])O[H])C([H])(O[H])C2([H])O[H])C([H])=C([H])C1([H])[H]"/>
+</config>
+</config>
+<config key="42">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]OC(=O)C([H])([H])[H]"/>
+</config>
+</config>
+</config>
+</config>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_6">
+<entry key="column_name" type="xstring" value="Product InChI"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+</config>
+<config key="column_domain">
+<config key="possible_values">
+<entry key="array-size" type="xint" value="43"/>
+<config key="0">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S"/>
+</config>
+</config>
+<config key="1">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/H2O/h1H2"/>
+</config>
+</config>
+<config key="2">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C9H12O2/c1-6-3-8(5-10)4-7(2)9(6)11/h3-4,10-11H,5H2,1-2H3"/>
+</config>
+</config>
+<config key="3">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C11H15NO3/c1-6-3-8(4-7(2)10(6)13)5-9(12)11(14)15/h3-4,9,13H,5,12H2,1-2H3,(H,14,15)"/>
+</config>
+</config>
+<config key="4">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C11H12N2O2/c12-9(11(14)15)5-7-6-13-10-4-2-1-3-8(7)10/h1-4,6,9,13H,5,12H2,(H,14,15)"/>
+</config>
+</config>
+<config key="5">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C4H7NO4/c5-2(4(8)9)1-3(6)7/h2H,1,5H2,(H,6,7)(H,8,9)"/>
+</config>
+</config>
+<config key="6">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C5H9NO4/c6-3(5(9)10)1-2-4(7)8/h3H,1-2,6H2,(H,7,8)(H,9,10)"/>
+</config>
+</config>
+<config key="7">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C10H15N5O10P2/c11-8-5-9(13-2-12-8)15(3-14-5)10-7(17)6(16)4(24-10)1-23-27(21,22)25-26(18,19)20/h2-4,6-7,10,16-17H,1H2,(H,21,22)(H2,11,12,13)(H2,18,19,20)"/>
+</config>
+</config>
+<config key="8">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/H3O4P/c1-5(2,3)4/h(H3,1,2,3,4)"/>
+</config>
+</config>
+<config key="9">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C5H10N2O3/c6-3(5(9)10)1-2-4(7)8/h3H,1-2,6H2,(H2,7,8)(H,9,10)"/>
+</config>
+</config>
+<config key="10">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/H3N/h1H3"/>
+</config>
+</config>
+<config key="11">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C19H23N7O6/c20-19-25-15-14(17(30)26-19)23-11(8-22-15)7-21-10-3-1-9(2-4-10)16(29)24-12(18(31)32)5-6-13(27)28/h1-4,11-12,21,23H,5-8H2,(H,24,29)(H,27,28)(H,31,32)(H4,20,22,25,26,30)"/>
+</config>
+</config>
+<config key="12">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C21H36N7O16P3S/c1-21(2,16(31)19(32)24-4-3-12(29)23-5-6-48)8-41-47(38,39)44-46(36,37)40-7-11-15(43-45(33,34)35)14(30)20(42-11)28-10-27-13-17(22)25-9-26-18(13)28/h9-11,14-16,20,30-31,48H,3-8H2,1-2H3,(H,23,29)(H,24,32)(H,36,37)(H,38,39)(H2,22,25,26)(H2,33,34,35)"/>
+</config>
+</config>
+<config key="13">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C6H13NO2/c1-4(2)3-5(7)6(8)9/h4-5H,3,7H2,1-2H3,(H,8,9)"/>
+</config>
+</config>
+<config key="14">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C5H11NO2S/c1-9-3-2-4(6)5(7)8/h4H,2-3,6H2,1H3,(H,7,8)"/>
+</config>
+</config>
+<config key="15">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C3H7NO2/c1-2(4)3(5)6/h2H,4H2,1H3,(H,5,6)"/>
+</config>
+</config>
+<config key="16">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C11H12O4/c1-6-3-8(4-7(2)10(6)13)5-9(12)11(14)15/h3-4,13H,5H2,1-2H3,(H,14,15)"/>
+</config>
+</config>
+<config key="17">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C12H17NO3/c1-7-4-9(5-8(2)11(7)14)6-10(13-3)12(15)16/h4-5,10,13-14H,6H2,1-3H3,(H,15,16)"/>
+</config>
+</config>
+<config key="18">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C15H22N2O5/c1-7-4-10(5-8(2)13(7)19)6-11(15(21)22)17-14(20)12(16)9(3)18/h4-5,9,11-12,18-19H,6,16H2,1-3H3,(H,17,20)(H,21,22)"/>
+</config>
+</config>
+<config key="19">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C16H24N2O4S/c1-9-6-11(7-10(2)14(9)19)8-13(16(21)22)18-15(20)12(17)4-5-23-3/h6-7,12-13,19H,4-5,8,17H2,1-3H3,(H,18,20)(H,21,22)"/>
+</config>
+</config>
+<config key="20">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C14H20N2O5/c1-7-3-9(4-8(2)12(7)18)5-11(14(20)21)16-13(19)10(15)6-17/h3-4,10-11,17-18H,5-6,15H2,1-2H3,(H,16,19)(H,20,21)"/>
+</config>
+</config>
+<config key="21">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C14H20N2O4/c1-7-4-10(5-8(2)12(7)17)6-11(14(19)20)16-13(18)9(3)15/h4-5,9,11,17H,6,15H2,1-3H3,(H,16,18)(H,19,20)"/>
+</config>
+</config>
+<config key="22">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C13H18N2O4/c1-7-3-9(4-8(2)12(7)17)5-10(13(18)19)15-11(16)6-14/h3-4,10,17H,5-6,14H2,1-2H3,(H,15,16)(H,18,19)"/>
+</config>
+</config>
+<config key="23">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C11H14O3/c1-7-5-9(3-4-10(12)13)6-8(2)11(7)14/h5-6,14H,3-4H2,1-2H3,(H,12,13)"/>
+</config>
+</config>
+<config key="24">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C14H18N2O4/c1-7-3-9(4-8(2)12(7)18)5-10-13(19)16-11(6-17)14(20)15-10/h3-4,10-11,17-18H,5-6H2,1-2H3,(H,15,20)(H,16,19)"/>
+</config>
+</config>
+<config key="25">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C11H14O3/c1-7-4-10(6-14-9(3)12)5-8(2)11(7)13/h4-5,13H,6H2,1-3H3"/>
+</config>
+</config>
+<config key="26">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C12H15NO4/c1-7-3-9(4-8(2)11(7)15)5-10(12(16)17)13-6-14/h3-4,6,10,15H,5H2,1-2H3,(H,13,14)(H,16,17)"/>
+</config>
+</config>
+<config key="27">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C13H17NO4/c1-7-4-10(5-8(2)12(7)16)6-11(13(17)18)14-9(3)15/h4-5,11,16H,6H2,1-3H3,(H,14,15)(H,17,18)"/>
+</config>
+</config>
+<config key="28">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C14H17NO6/c1-7-3-9(4-8(2)13(7)19)5-10(14(20)21)15-11(16)6-12(17)18/h3-4,10,19H,5-6H2,1-2H3,(H,15,16)(H,17,18)(H,20,21)"/>
+</config>
+</config>
+<config key="29">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/O2/c1-2"/>
+</config>
+</config>
+<config key="30">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C4H4O5/c5-2(4(8)9)1-3(6)7/h1H2,(H,6,7)(H,8,9)"/>
+</config>
+</config>
+<config key="31">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C6H10O3/c1-4(2)3-5(7)6(8)9/h4H,3H2,1-2H3,(H,8,9)"/>
+</config>
+</config>
+<config key="32">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C5H6O5/c6-3(5(9)10)1-2-4(7)8/h1-2H2,(H,7,8)(H,9,10)"/>
+</config>
+</config>
+<config key="33">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C3H4O3/c1-2(4)3(5)6/h1H3,(H,5,6)"/>
+</config>
+</config>
+<config key="34">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C15H22N6O5S/c1-27(3-2-7(16)15(24)25)4-8-10(22)11(23)14(26-8)21-6-20-9-12(17)18-5-19-13(9)21/h5-8,10-11,14,22-23H,2-4,16H2,1H3,(H2-,17,18,19,24,25)"/>
+</config>
+</config>
+<config key="35">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C4H9NO3/c1-2(6)3(5)4(7)8/h2-3,6H,5H2,1H3,(H,7,8)"/>
+</config>
+</config>
+<config key="36">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C3H7NO3/c4-2(1-5)3(6)7/h2,5H,1,4H2,(H,6,7)"/>
+</config>
+</config>
+<config key="37">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C2H5NO2/c3-1-2(4)5/h1,3H2,(H,4,5)"/>
+</config>
+</config>
+<config key="38">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C23H38N7O17P3S/c1-12(31)51-7-6-25-14(32)4-5-26-21(35)18(34)23(2,3)9-44-50(41,42)47-49(39,40)43-8-13-17(46-48(36,37)38)16(33)22(45-13)30-11-29-15-19(24)27-10-28-20(15)30/h10-11,13,16-18,22,33-34H,4-9H2,1-3H3,(H,25,32)(H,26,35)(H,39,40)(H,41,42)(H2,24,27,28)(H2,36,37,38)"/>
+</config>
+</config>
+<config key="39">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C20H23N7O7/c21-20-25-16-15(18(32)26-20)23-11(7-22-16)8-27(9-28)12-3-1-10(2-4-12)17(31)24-13(19(33)34)5-6-14(29)30/h1-4,9,11,13,23H,5-8H2,(H,24,31)(H,29,30)(H,33,34)(H4,21,22,25,26,32)"/>
+</config>
+</config>
+<config key="40">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C24H38N7O19P3S/c1-24(2,19(37)22(38)27-4-3-13(32)26-5-6-54-15(35)7-14(33)34)9-47-53(44,45)50-52(42,43)46-8-12-18(49-51(39,40)41)17(36)23(48-12)31-11-30-16-20(25)28-10-29-21(16)31/h10-12,17-19,23,36-37H,3-9H2,1-2H3,(H,26,32)(H,27,38)(H,33,34)(H,42,43)(H,44,45)(H2,25,28,29)(H2,39,40,41)"/>
+</config>
+</config>
+<config key="41">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C21H29N7O14P2/c22-17-12-19(25-7-24-17)28(8-26-12)21-16(32)14(30)11(41-21)6-39-44(36,37)42-43(34,35)38-5-10-13(29)15(31)20(40-10)27-3-1-2-9(4-27)18(23)33/h1,3-4,7-8,10-11,13-16,20-21,29-32H,2,5-6H2,(H2,23,33)(H,34,35)(H,36,37)(H2,22,24,25)"/>
+</config>
+</config>
+<config key="42">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="InChI=1S/C2H4O2/c1-2(3)4/h1H3,(H,3,4)"/>
+</config>
+</config>
+</config>
+</config>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_7">
+<entry key="column_name" type="xstring" value="In Sink"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.IntCell"/>
+</config>
+<config key="column_domain">
+<config key="lower_bound">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.IntCell"/>
+<config key="org.knime.core.data.def.IntCell">
+<entry key="IntCell" type="xint" value="0"/>
+</config>
+</config>
+<config key="upper_bound">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.IntCell"/>
+<config key="org.knime.core.data.def.IntCell">
+<entry key="IntCell" type="xint" value="1"/>
+</config>
+</config>
+</config>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_8">
+<entry key="column_name" type="xstring" value="Sink name"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<config key="collection_element_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+</config>
+<entry key="cell_class" type="xstring" isnull="true" value=""/>
+<entry key="has_pref_value_class" type="xboolean" value="true"/>
+<config key="value_classes">
+<entry key="array-size" type="xint" value="2"/>
+<entry key="0" type="xstring" value="org.knime.core.data.collection.CollectionDataValue"/>
+<entry key="1" type="xstring" value="org.knime.core.data.DataValue"/>
+</config>
+</config>
+<config key="column_domain"/>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_9">
+<entry key="column_name" type="xstring" value="Diameter"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.IntCell"/>
+</config>
+<config key="column_domain">
+<config key="lower_bound">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.IntCell"/>
+<config key="org.knime.core.data.def.IntCell">
+<entry key="IntCell" type="xint" value="6"/>
+</config>
+</config>
+<config key="upper_bound">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.IntCell"/>
+<config key="org.knime.core.data.def.IntCell">
+<entry key="IntCell" type="xint" value="8"/>
+</config>
+</config>
+<config key="possible_values">
+<entry key="array-size" type="xint" value="2"/>
+<config key="0">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.IntCell"/>
+<config key="org.knime.core.data.def.IntCell">
+<entry key="IntCell" type="xint" value="8"/>
+</config>
+</config>
+<config key="1">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.IntCell"/>
+<config key="org.knime.core.data.def.IntCell">
+<entry key="IntCell" type="xint" value="6"/>
+</config>
+</config>
+</config>
+</config>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_10">
+<entry key="column_name" type="xstring" value="Rule ID"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<config key="collection_element_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+</config>
+<entry key="cell_class" type="xstring" value="org.knime.core.data.collection.SetCell"/>
+</config>
+<config key="column_domain"/>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_11">
+<entry key="column_name" type="xstring" value="EC number"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<config key="collection_element_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+</config>
+<entry key="cell_class" type="xstring" value="org.knime.core.data.collection.SetCell"/>
+</config>
+<config key="column_domain"/>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_12">
+<entry key="column_name" type="xstring" value="Score"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
+</config>
+<config key="column_domain">
+<config key="lower_bound">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
+<config key="org.knime.core.data.def.DoubleCell">
+<entry key="DoubleCell" type="xdouble" value="1000.0"/>
+</config>
+</config>
+<config key="upper_bound">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
+<config key="org.knime.core.data.def.DoubleCell">
+<entry key="DoubleCell" type="xdouble" value="1000.0"/>
+</config>
+</config>
+<config key="possible_values">
+<entry key="array-size" type="xint" value="1"/>
+<config key="0">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.DoubleCell"/>
+<config key="org.knime.core.data.def.DoubleCell">
+<entry key="DoubleCell" type="xdouble" value="1000.0"/>
+</config>
+</config>
+</config>
+</config>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_13">
+<entry key="column_name" type="xstring" value="Iteration"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.IntCell"/>
+</config>
+<config key="column_domain">
+<config key="lower_bound">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.IntCell"/>
+<config key="org.knime.core.data.def.IntCell">
+<entry key="IntCell" type="xint" value="0"/>
+</config>
+</config>
+<config key="upper_bound">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.IntCell"/>
+<config key="org.knime.core.data.def.IntCell">
+<entry key="IntCell" type="xint" value="2"/>
+</config>
+</config>
+</config>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_14">
+<entry key="column_name" type="xstring" value="Starting Source"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+</config>
+<config key="column_domain">
+<config key="possible_values">
+<entry key="array-size" type="xint" value="1"/>
+<config key="0">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="TriMethylPhenol"/>
+</config>
+</config>
+</config>
+</config>
+<config key="column_properties"/>
+</config>
+<config key="column_spec_15">
+<entry key="column_name" type="xstring" value="Starting Source SMILES"/>
+<config key="element_names">
+<entry key="array-size" type="xint" value="0"/>
+</config>
+<config key="column_type">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+</config>
+<config key="column_domain">
+<config key="possible_values">
+<entry key="array-size" type="xint" value="1"/>
+<config key="0">
+<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<config key="org.knime.core.data.def.StringCell">
+<entry key="StringCell" type="xstring" value="[H]Oc1c(C([H])([H])[H])c([H])c(C([H])([H])[H])c([H])c1C([H])([H])[H]"/>
+</config>
+</config>
+</config>
+</config>
+<config key="column_properties"/>
+</config>
+</config>
+</config>
+<config key="nodeAnnotation">
+<entry key="text" type="xstring" value=""/>
+<entry key="bgcolor" type="xint" value="16777215"/>
+<entry key="x-coordinate" type="xint" value="813"/>
+<entry key="y-coordinate" type="xint" value="379"/>
+<entry key="width" type="xint" value="134"/>
+<entry key="height" type="xint" value="19"/>
+<entry key="alignment" type="xstring" value="CENTER"/>
+<entry key="borderSize" type="xint" value="0"/>
+<entry key="borderColor" type="xint" value="16777215"/>
+<entry key="defFontSize" type="xint" value="11"/>
+<entry key="annotation-version" type="xint" value="20151123"/>
+<config key="styles"/>
+</config>
+<entry key="customDescription" type="xstring" isnull="true" value=""/>
+<entry key="state" type="xstring" value="IDLE"/>
+<entry key="factory" type="xstring" value="org.knime.base.node.preproc.datavalidator.DataValidatorNodeFactory"/>
+<entry key="node-name" type="xstring" value="Table Validator"/>
+<entry key="node-bundle-name" type="xstring" value="KNIME Base Nodes"/>
+<entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.base"/>
+<entry key="node-bundle-vendor" type="xstring" value="KNIME AG, Zurich, Switzerland"/>
+<entry key="node-bundle-version" type="xstring" value="3.6.1.v201808311359"/>
+<entry key="node-feature-name" type="xstring" value="KNIME Core"/>
+<entry key="node-feature-symbolic-name" type="xstring" value="org.knime.features.base.feature.group"/>
+<entry key="node-feature-vendor" type="xstring" value="KNIME AG, Zurich, Switzerland"/>
+<entry key="node-feature-version" type="xstring" value="3.6.1.v201809030900"/>
+<config key="factory_settings"/>
+<entry key="name" type="xstring" value="Table Validator"/>
+<entry key="hasContent" type="xboolean" value="false"/>
+<entry key="isInactive" type="xboolean" value="false"/>
+<config key="ports">
+<config key="port_1">
+<entry key="index" type="xint" value="1"/>
+<entry key="port_dir_location" type="xstring" isnull="true" value=""/>
+</config>
+<config key="port_2">
+<entry key="index" type="xint" value="2"/>
+<entry key="port_dir_location" type="xstring" isnull="true" value=""/>
+</config>
+</config>
+<config key="filestores">
+<entry key="file_store_location" type="xstring" isnull="true" value=""/>
+<entry key="file_store_id" type="xstring" isnull="true" value=""/>
+</config>
+</config>
