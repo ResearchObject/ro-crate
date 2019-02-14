@@ -7,7 +7,7 @@
     
     "name": "RetroPath2.0 IBISBA workflow node",
     "description": "RetroPath2.0 builds a reaction network from a set of source compounds to a set of sink compounds. When applied in a retrosynthetic fashion, the source is composed of the target compounds and the sink is composed of the available reactants (for instance in the context of metabolic engineering the sink is the set of native metabolites of a chassis strain). From amongst all the chemical reactions generated using RetroPath2.0 (in the retrosynthetic way), only a subset may effectively link a source to a subset of sink compounds. This sub-network is considered as a scope and is output in dedicated files.",
-    "keywords": "workflow, knime, CWL, reaction",    
+    "keywords": "workflow, knime, CWL, reaction",
     
     "datePublished": "2019-02-14",
     "citation": "https://doi.org/10.1016/j.ymben.2017.12.002",
@@ -21,7 +21,7 @@
         "@id": "http://researchobject.org/",
         "name": "Research Object community"        
     },
-    "sdLicense": "https:////www.apache.org/licenses/LICENSE-2.0",
+    "sdLicense": "https://www.apache.org/licenses/LICENSE-2.0",
     
     "creator": [
         {
@@ -107,7 +107,7 @@
         {
             "about": "workflow/packed.cwl", 
             "uri": "urn:uuid:363c91ff-b90c-4bdc-94d7-3fcbff764c8d", 
-            "oa:motivatedBy": {
+            "oa:motivatedBy": { 
                 "@id": "oa:highlighting"
             }
         },
