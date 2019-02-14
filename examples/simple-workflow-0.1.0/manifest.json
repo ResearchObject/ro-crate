@@ -1,0 +1,100 @@
+{
+    "@context": ["http://schema.org", "https://w3id.org/bundle/context", "https://doi.org/10.5063/schema/codemeta-2.0"],
+    "@type": ["CreativeWork", "ro:ResearchObject", "wf4ever:WorkflowResearchObject"],    
+    
+    "@id": ".",
+    
+    "name": ["fastqc_workflow", "FastQC Galaxy Workflow"],
+    "description": ["FastQC workflow designed for use with Refinery Platform."],
+    "keywords": "workflow, galaxy",
+    
+    "datePublished": "2017-10-24",
+    "license": { "description": "Unknown license" },
+    
+    "sdPublisher": {
+        "@id": "http://researchobject.org/",
+        "name": "Research Object community"        
+    },
+    "sdLicense": "https://www.apache.org/licenses/LICENSE-2.0",
+    
+    "url": "https://toolshed.g2.bx.psu.edu/view/stemcellcommons/fastqc_workflow/c5784ddcda07",
+
+    "creator": [
+        {
+        "name": "stemcellworkflows",
+        "url": "https://toolshed.g2.bx.psu.edu/repository/browse_repositories_by_user?user_id=e9e57142d30f1062"
+        }
+    ],
+    
+    "aggregates": [    
+        {
+            "@id": "fastqc_workflow/FastQC.ga",
+            "@type": ["SoftwareSourceCode", "wfdesc:Workflow"],
+            "name": "FastQC",
+            "identifier": "urn:uuid:4f81b632-d3cd-460f-9b3c-62593b41dfab",
+            "version": "5-c5784ddcda07",
+            "description": "Check for any data quality issues before running analysis workflows.",
+            "programmingLanguage": {
+                "name": "Galaxy format 0.1",
+                "url": "https://galaxyproject.org/"
+            },
+            "sourceCodeRepository": "https://toolshed.g2.bx.psu.edu/repos/stemcellcommons/fastqc_workflow",
+            "wf4ever:hasConfiguration": {"@id": "fastqc_workflow/repository_dependencies.xml"}
+        },  
+        {
+            "@id": "fastqc_workflow/repository_dependencies.xml",
+            "@type": ["Thing", "wf4ever:Configuration"],
+            "description": "Stem Cell Commons FastQC workflow require FastQC tool"
+        }
+    ],
+
+    "annotations": [
+        {
+            "about": "fastqc_workflow/FastQC.ga",
+            "oa:motivatedBy": {
+                "@id": "oa:highlighting"
+            }            
+        },
+        {
+            "about": "fastqc_workflow/FastQC.ga",
+            "oa:motivatedBy": {
+                "@id": "oa:describing"
+            }, 
+            "content": {
+                "@graph": [                
+                    {
+                        "@id": "urn:uuid:4f81b632-d3cd-460f-9b3c-62593b41dfab",
+                        "@type": "wfdesc:Workflow",
+                        "wfdesc:hasInput": [
+                            { "@id": "urn:uuid:983e8aa7-72ca-446a-95a4-dc5f645421ec",
+                              "@type": "wfdesc:Input",
+                              "name": "Input Dataset" 
+                            }
+                        ],
+                        "wfdesc:hasOutput": [
+                            { "@id": "urn:uuid:77b252a2-567b-4e1c-b5d1-41b8027ecca4",
+                              "@type": "wfdesc:Output",
+                              "name": "output" 
+                            },
+                            { "@id": "urn:uuid:91f9c648-5ddc-495f-b3dd-f043c9af0862",
+                              "@type": "wfdesc:Output",
+                              "name": ["html_file", "fastqc_report"]
+                            },
+                            { "@id": "urn:uuid:dcbdf17b-0c13-4418-b255-1cf411312b74",
+                              "@type": "wfdesc:Output",
+                              "name": ["text_file", "fastqc_results"]
+                            }
+                        ],
+                        "roterms:requiresSoftware": [
+                            {
+                                "name": "FastQC",
+                                "identifier": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.65",
+                                "version": "0.65"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }        
+    ]
+}
