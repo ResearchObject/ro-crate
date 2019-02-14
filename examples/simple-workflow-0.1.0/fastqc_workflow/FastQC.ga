@@ -1,0 +1,103 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "{\n  \"description\": \"Check for any data quality issues before running analysis workflows.\",\n  \"file_relationship\": {\n    \"file_relationship\": {},\n    \"value_type\": \"LIST\",\n    \"name\": \"List of FASTQ Files\",\n    \"input_files\": [\n      {\n        \"allowed_filetypes\": [{\"name\": \"FASTQ\"},{\"name\": \"BAM\"},{\"name\": \"SAM\"}],\n        \"name\": \"Input File\",\n        \"description\": \"File to run QC on\"\n      }\n    ]\n  }\n}", 
+    "format-version": "0.1", 
+    "name": "FastQC", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "content_id": null, 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "Input Dataset"
+                }
+            ], 
+            "label": null, 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 315, 
+                "top": 410
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "uuid": "983e8aa7-72ca-446a-95a4-dc5f645421ec", 
+            "workflow_outputs": [
+                {
+                    "label": null, 
+                    "output_name": "output", 
+                    "uuid": "77b252a2-567b-4e1c-b5d1-41b8027ecca4"
+                }
+            ]
+        }, 
+        "1": {
+            "annotation": "{\"html_file\": {\"name\": \"fastqc_report\", \"description\": \"HTML file containing FASTQC report.\", \"type\": \"html\"}, \"text_file\": {\"name\": \"fastqc_results\", \"description\": \"Data file containing FASTQC results.\", \"type\": \"txt\"}}", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.65", 
+            "id": 1, 
+            "input_connections": {
+                "input_file": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "label": null, 
+            "name": "FastQC", 
+            "outputs": [
+                {
+                    "name": "html_file", 
+                    "type": "html"
+                }, 
+                {
+                    "name": "text_file", 
+                    "type": "txt"
+                }
+            ], 
+            "position": {
+                "left": 599, 
+                "top": 351.5
+            }, 
+            "post_job_actions": {
+                "RenameDatasetActionhtml_file": {
+                    "action_arguments": {
+                        "newname": "fastqc_report"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "html_file"
+                }, 
+                "RenameDatasetActiontext_file": {
+                    "action_arguments": {
+                        "newname": "fastqc_results"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "text_file"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.65", 
+            "tool_state": "{\"__page__\": 0, \"contaminants\": \"null\", \"__rerun_remap_job_id__\": null, \"limits\": \"null\", \"input_file\": \"null\"}", 
+            "tool_version": "0.65", 
+            "type": "tool", 
+            "uuid": "88cc0f74-d5ad-421b-9330-d3ff49c79bb0", 
+            "workflow_outputs": [
+                {
+                    "label": null, 
+                    "output_name": "html_file", 
+                    "uuid": "91f9c648-5ddc-495f-b3dd-f043c9af0862"
+                }, 
+                {
+                    "label": null, 
+                    "output_name": "text_file", 
+                    "uuid": "dcbdf17b-0c13-4418-b255-1cf411312b74"
+                }
+            ]
+        }
+    }, 
+    "uuid": "4f81b632-d3cd-460f-9b3c-62593b41dfab"
+}

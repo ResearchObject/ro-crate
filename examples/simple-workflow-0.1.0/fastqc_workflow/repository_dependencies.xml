@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<repositories description="Stem Cell Commons FastQC workflow require FastQC tool">
+  <repository toolshed="https://toolshed.g2.bx.psu.edu" name="fastqc" owner="devteam" changeset_revision="3fdc1a74d866" />
+</repositories>
