@@ -4,6 +4,9 @@ This first draft of [ROLite](../) is more of a dump to initiate discussion.
 
 This example is based on [DataCrate](https://github.com/UTS-eResearch/datacrate) and [BioSchemas](http://bioschemas.org/specifications/), bringing in Research Object vocabularies where appropriate.
 
+1. Table of Contents
+{toc}
+
 ## Explaining by example: a simple dataset
 
 [simple-dataset-0.1.0](https://github.com/ResearchObject/ro-lite/tree/master/examples/simple-dataset-0.1.0) shows an example of a fairly minimal dataset, which can live in GitHub, be distributed as a ZIP archive, posted to Zenodo etc.
@@ -57,3 +60,12 @@ While the current directory is a good root, it is also a relative identifier, me
             "name": "Kilburn Building, Manchester, UK"
     }
 ```
+
+**TODO**: Complete field descriptions.
+
+
+## Next step: Workflow research object
+
+The example [workflow-0.1.0](https://github.com/ResearchObject/ro-lite/tree/master/examples/workflow-0.1.0) shows a more complex example of a research object containing a workflow.
+
+In this example there is both `workflow/`
