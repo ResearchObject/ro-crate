@@ -42,12 +42,12 @@ Shapes Constraint Language](https://www.w3.org/TR/shacl/).
 
 ## Contribute
 
-The _ROLite_ work is coordinated by:
+The _ROLite_ team is:
 
 * Peter Sefton <https://orcid.org/0000-0002-3545-944X>
 * Eoghan Ó Carragáin <https://orcid.org/0000-0001-8131-2150>
 * Stian Soiland-Reyes <https://orcid.org/0000-0001-9842-9718>
-
+* Oscar Corcho <https://orcid.org/0000-0002-9260-0753>
 
 To suggest changes, improvements or issues, use the GitHub repository
 <https://github.com/ResearchObject/ro-lite> - if you are new to GitHub or Open
