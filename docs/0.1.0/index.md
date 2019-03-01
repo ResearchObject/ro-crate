@@ -5,7 +5,7 @@ This first draft of [ROLite](../) is more of a dump to initiate discussion.
 This example is based on [DataCrate](https://github.com/UTS-eResearch/datacrate) and [BioSchemas](http://bioschemas.org/specifications/), bringing in Research Object vocabularies where appropriate.
 
 1. Table of Contents
-{toc}
+{:toc}
 
 ## Explaining by example: a simple dataset
 
