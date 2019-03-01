@@ -11,11 +11,11 @@ This example is based on [DataCrate](https://github.com/UTS-eResearch/datacrate)
 
 [simple-dataset-0.1.0](https://github.com/ResearchObject/ro-lite/tree/master/examples/simple-dataset-0.1.0) shows an example of a fairly minimal dataset, which can live in GitHub, be distributed as a ZIP archive, posted to Zenodo etc.
 
-![Root folder of RO](img/simple-dataset-0.1.0/root.png)
+![Root folder of RO](../assets/img/simple-dataset-0.1.0/root.png)
 
 The files of the dataset are under [`data/`](https://github.com/ResearchObject/ro-lite/tree/master/examples/simple-dataset-0.1.0/data), which mean this folder structure could later be upgraded to be a BagIt archive ([RFC8493](https://www.rfc-editor.org/rfc/rfc8493.txt)).
 
-![data/ folder](img/simple-dataset-0.1.0/data-folder.png)
+![data/ folder](../assets/img/simple-dataset-0.1.0/data-folder.png)
 
 Here are our files described in this ROLite example:
 
