@@ -66,6 +66,44 @@ While the current directory is a good root, it is also a relative identifier, me
 
 ## Next step: Workflow research object
 
-The example [workflow-0.1.0](https://github.com/ResearchObject/ro-lite/tree/master/examples/workflow-0.1.0) shows a more complex example of a research object containing a workflow.
+The example [workflow-0.1.0](https://github.com/ResearchObject/ro-lite/tree/master/examples/workflow-0.1.0) shows a more complex example of a Research Object containing a workflow.
 
-In this example there is both `workflow/`
+In this example there is both `workflow/` `tools/` and `test/` - but no `data/` payload.
+
+This example shows how RO Lite can be used with a non-trivial pre-existing directory structure. In particular the [workflow/](https://github.com/ResearchObject/ro-lite/tree/master/examples/workflow-0.1.0/workflow) folder is actually a KNIME workspace folder that contain a [KNIME workflow](https://www.knime.com/) and its contained input and output data in the internal format used by KNIME. 
+
+The Research Object [manifest.json](https://github.com/ResearchObject/ro-lite/blob/master/examples/workflow-0.1.0/manifest.json#L39) only highlight a couple of these files:
+
+```json
+aggregates: [
+        {
+            "@id": "workflow/workflow.knime",
+            "@type": ["SoftwareSourceCode", "wfdesc:Workflow"],
+            "name": "RetroPath 2.0 Knime workflow",
+            "description": "KNIME implementation of RetroPath2.0 workflow",
+            "creator": {
+                    "name": "Thomas Duigou",
+                    "email": "thomas.duigou@inra.fr"
+            },
+            "programmingLanguage": {
+                "name": "KNIME Analytics Platform",
+                "url": "https://www.knime.com/knime-software/knime-analytics-platform",
+                "version": "3.6"
+            },
+            "url": "https://www.myexperiment.org/workflows/4987"
+        }
+# ...
+```
+
+Here http://schema.org/programmingLanguage is used informally to indicate the workflow system used. 
+
+In addition the `workflow/` folder, the KNIME workspace that captures the internal workflow state, is listed as an `ExampleRun`. 
+
+```json
+        {
+            "@id": "workflow/",
+            "@type": ["roterms:ExampleRun"],
+            "description": "KNIME workspace after executing RetroPath2.0 workflow"
+        }
+```
+
