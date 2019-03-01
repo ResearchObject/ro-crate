@@ -61,7 +61,6 @@ While the current directory is a good root, it is also a relative identifier, me
     }
 ```
 
-**TODO**: Complete field descriptions.
 
 
 ## Next step: Workflow research object
@@ -75,7 +74,7 @@ This example shows how RO Lite can be used with a non-trivial pre-existing direc
 The Research Object [manifest.jsonld](https://github.com/ResearchObject/ro-lite/blob/master/examples/workflow-0.1.0/manifest.jsonld#L39) only highlight a couple of these files:
 
 ```json
-aggregates: [
+"aggregates": [
         {
             "@id": "workflow/workflow.knime",
             "@type": ["SoftwareSourceCode", "wfdesc:Workflow"],
