@@ -61,11 +61,47 @@ While the current directory is a good root, it is also a relative identifier, me
     }
 ```
 
-## File description
+## File attributions
+
+A key aspect of Research Objects is _attribution_. The manifest makes it possible to attribute different people for different files in the research object, but also for making the collection of the reserarch object:
+
+```jsonld
+{    
+  "@type": ["ro:ResearchObject", "Dataset"],    
+  "@id": ".",
+  "creator": {
+        "@type": "Person",
+        "@id": "https://orcid.org/0000-0001-9842-9718",
+        "name": "Stian Soiland-Reyes",
+        "email": "soiland-reyes@manchester.ac.uk"
+  }
+}
+```
+
+Any attributes from [Person](http://schema.org/Person) may be provided, minimally `name`. Consider that [names across the world](https://www.w3.org/International/questions/qa-personal-names) varies significantly, don't assume anything about the order of parts of their name. Thus properties like [familyName](https://schema.org/familyName) or [givenName](https://schema.org/givenName) should only be listed if provided as such by the person.
+
+As many people have the same name, and a person may have multiple email addresses (even multiple names!), attributions should also provide a [ORCID identifier](http://orcid.org/) using `@id` to disambiguate people when possible.
+
+_Tip: Always providing a  `@id` on a `Person` avoids duplicating their other attributes on later mentions of the same person._
+
+In ROLite, if a file does not list a `creator`, and is within the Research Object's folders, it's creator can reasonably be assumed to be the `creator` of the containing research object. However, where appropriate, the Research Object manifest allows overriding with more precise attribution per resource. For instance, if this chart was created by Alice:
+
+{
+            "@id": "data/repository-sizes-chart.png",
+            "@type": ["ImageObject"],            
+            "description": "Line chart of repository sizes. Exported from spreadsheet."
+            "creator": {
+                "@type": "Person",
+                "name": "Alice W Land",
+            }
+}
+
+
+### Multiple people
 
 In some cases there are multiple people involved in making the creative work, even if they didn't physically save the file (e.g. collaborative editing). 
 
-In this case it can be useful to distinguish their roles using [http://schema.org/author](http://schema.org/author) - for instance if Thomas re-typed the file, which data where collected on paper by Baudoin:
+In this case it can be useful to distinguish their roles using [http://schema.org/author](http://schema.org/author) - for instance if Thomas only re-typed the file, which data where collected on paper by Baudoin:
 
 ```jsonld
 { "@id": "data/repository-sizes.tsv"
@@ -89,7 +125,7 @@ _Tip: The `creator` is expected to be present in the `author` or `contributor` l
 Sometimes it is useful to indicate the software and software version used to create a file. This can be indicated as a [http://schema.org/SoftwareApplication](http://schema.org/SoftwareApplication) with the key `pav:createdWith` in conjunction with the `creator` of the person that used the software.
 
 ```jsonld
-{ "@id": "data/repository-sizes.tsv"
+{ "@id": "data/repository-sizes.ods"
   "creator": {
    "@type": "Person",
    "name": "Thomas"
