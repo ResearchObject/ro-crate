@@ -23,7 +23,7 @@ Here are our files described in this ROLite example:
 * `repository-sizes-chart.png` - a chart from the spreadsheet
 * `logs/` - various log files
 
-To describe these resources and their relations, ROLite has a single file [manifest.json](https://github.com/ResearchObject/ro-lite/blob/master/examples/simple-dataset-0.1.0/manifest.json)
+To describe these resources and their relations, ROLite has a single file [manifest.jsonld](https://github.com/ResearchObject/ro-lite/blob/master/examples/simple-dataset-0.1.0/manifest.jsonld)
 
 The JSON file is split into a couple of logical parts that in total make out the schema.org description in JSON-LD of both the dataset and the Research Object.
 
@@ -44,7 +44,7 @@ The `@context` means we are using JSON keys from both `schema.org` and Research 
 
 The `@type` shows we are dealing with a Research Object, in particular one that is also a <http://schema.org/Dataset>.
 
-The `@id` shows that the Research Object is the current directory. Note: other RO serializations have `manifest.json` in subdirectories like `.ro` or `metadata/`, it is here in the root to avoid relative climbs like `../data/`.
+The `@id` shows that the Research Object is the current directory. Note: other RO serializations have `manifest.json` in subdirectories like `.ro` or `metadata/`; here it is in the root folder to avoid relative climbs like `../data/`.
 
 While the current directory is a good root, it is also a relative identifier, meaning that any copy or publication of this RO will effectively have a different `@id`. This is on purpose, in case they get edited. However it is always good practice to assign a more durable and unique identifier (see [Identifiers for the 21st century](https://doi.org/10.1371/journal.pbio.2001414)), which can be provided using the <http://schema.org/identifier> property. The value should ideally be a URI (e.g. `https://doi.org/10.17632/6wtpgr3kbj.1`), but in this example use a local (but unique) git commit ID.
 
@@ -72,7 +72,7 @@ In this example there is both `workflow/` `tools/` and `test/` - but no `data/` 
 
 This example shows how RO Lite can be used with a non-trivial pre-existing directory structure. In particular the [workflow/](https://github.com/ResearchObject/ro-lite/tree/master/examples/workflow-0.1.0/workflow) folder is actually a KNIME workspace folder that contain a [KNIME workflow](https://www.knime.com/) and its contained input and output data in the internal format used by KNIME. 
 
-The Research Object [manifest.json](https://github.com/ResearchObject/ro-lite/blob/master/examples/workflow-0.1.0/manifest.json#L39) only highlight a couple of these files:
+The Research Object [manifest.jsonld](https://github.com/ResearchObject/ro-lite/blob/master/examples/workflow-0.1.0/manifest.jsonld#L39) only highlight a couple of these files:
 
 ```json
 aggregates: [
