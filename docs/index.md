@@ -48,6 +48,7 @@ The _ROLite_ team is:
 * Eoghan Ó Carragáin <https://orcid.org/0000-0001-8131-2150>
 * Stian Soiland-Reyes <https://orcid.org/0000-0001-9842-9718>
 * Oscar Corcho <https://orcid.org/0000-0002-9260-0753>
+* Daniel Garijo <https://orcid.org/0000-0003-0454-7145>
 
 To suggest changes, improvements or issues, use the GitHub repository
 <https://github.com/ResearchObject/ro-lite> - if you are new to GitHub or Open
