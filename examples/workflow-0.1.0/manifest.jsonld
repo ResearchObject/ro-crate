@@ -1,0 +1,75 @@
+{
+    "@context": ["http://schema.org", "https://w3id.org/bundle/context"],
+    "@type": ["ro:ResearchObject"],
+    "conformsTo": "https://researchobject.github.io/ro-lite/0.1.0/",
+    "@id": ".",
+    "identifier": "72782bbecfeff6f3e43e2278ee3353adf4515207",
+    "name": "RetroPath2.0 IBISBA workflow node",
+    "description": "RetroPath2.0 builds a reaction network from a set of source compounds to a set of sink compounds. When applied in a retrosynthetic fashion, the source is composed of the target compounds and the sink is composed of the available reactants (for instance in the context of metabolic engineering the sink is the set of native metabolites of a chassis strain). From amongst all the chemical reactions generated using RetroPath2.0 (in the retrosynthetic way), only a subset may effectively link a source to a subset of sink compounds. This sub-network is considered as a scope and is output in dedicated files.",
+    "keywords": "workflow, knime, CWL, reaction",    
+    "datePublished": "2019-02-14",
+    "citation": "https://doi.org/10.1016/j.ymben.2017.12.002",
+    "publisher": {  
+        "@id": "https://www.ibisba.eu/",
+        "name": "IBISBA"
+    },
+    "license": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "sdPublisher": {
+        "@id": "http://researchobject.org/",
+        "name": "Research Object community"        
+    },
+    "sdLicense": "https://www.apache.org/licenses/LICENSE-2.0",
+    "creator": [
+        {
+            "name": "Thomas Duigou",
+            "email": "thomas.duigou@inra.fr"
+        },
+        {
+        "name": "Stefan Helfrich",
+        "url": "https://github.com/stelfrich"
+        }
+    ],
+    "aggregates": [    
+        {
+            "@id": "workflow/workflow.knime",
+            "@type": ["wfdesc:Workflow"],
+            "name": "RetroPath 2.0 Knime workflow",
+            "description": "KNIME implementation of RetroPath2.0 workflow",
+            "creator": {
+                    "name": "Thomas Duigou",
+                    "email": "thomas.duigou@inra.fr"
+            }
+        },  
+        {
+            "@id": "workflow/",
+            "@type": ["", "roterms:ExampleRun"],
+            "description": "KNIME workspace after executing RetroPath2.0 workflow"
+        },
+        {
+            "@id": "tools/RetroPath2.cwl",
+            "@type": ["wfdesc:Workflow"],
+            "name": "RetroPath 2.0 CWL workflow",
+            "description": "CWL wrapper that execute KNIME workflow using Docker image",
+            "creator": {
+                "name": "Stefan Helfrich",
+                "url": "https://github.com/stelfrich"
+            }
+        },  
+        {
+            "@id": "workflow/workflow.svg",
+            "@type": ["roterms:Sketch"],
+            "description": "Diagram of RetroPath2.0 workflow",
+            "about": "workflow/workflow.knime"
+        },
+        {
+            "@id": "Dockerfile",
+            "@type": ["ex:ContainerSomething"],
+            "url": "https://hub.docker.com/r/ibisba/retropath2/",
+            "description": "Docker image of KNIME workflow (including KNIME runtime)",
+            "creator": {
+                "name": "Stefan Helfrich",
+                "url": "https://github.com/stelfrich"
+            }
+        }
+    ]
+}
