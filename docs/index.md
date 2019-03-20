@@ -44,11 +44,12 @@ Shapes Constraint Language](https://www.w3.org/TR/shacl/).
 
 The _ROLite_ team is:
 
-* Peter Sefton <https://orcid.org/0000-0002-3545-944X>
-* Eoghan Ó Carragáin <https://orcid.org/0000-0001-8131-2150>
-* Stian Soiland-Reyes <https://orcid.org/0000-0001-9842-9718>
+* Eoghan Ó Carragáin <https://orcid.org/0000-0001-8131-2150> (chair)
+* Peter Sefton <https://orcid.org/0000-0002-3545-944X> (co-chair)
+* Stian Soiland-Reyes <https://orcid.org/0000-0001-9842-9718> (co-chair)
 * Oscar Corcho <https://orcid.org/0000-0002-9260-0753>
 * Daniel Garijo <https://orcid.org/0000-0003-0454-7145>
+* Raul Palma <https://orcid.org/0000-0003-4289-4922>
 
 To suggest changes, improvements or issues, use the GitHub repository
 <https://github.com/ResearchObject/ro-lite> - if you are new to GitHub or Open
@@ -64,3 +65,4 @@ Conduct](https://github.com/ResearchObject/ro-lite/blob/master/CODE_OF_CONDUCT.m
 to ensure an open and inclusive environment.
 
 This specification and documentation is Open Source and licensed as [Apache License, version 2.0](https://github.com/ResearchObject/ro-lite/blob/master/LICENSE), see <https://www.apache.org/licenses/LICENSE-2.0> for details.
+
