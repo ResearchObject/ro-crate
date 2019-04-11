@@ -50,6 +50,11 @@ The _ROLite_ team is:
 * Oscar Corcho <https://orcid.org/0000-0002-9260-0753>
 * Daniel Garijo <https://orcid.org/0000-0003-0454-7145>
 * Raul Palma <https://orcid.org/0000-0003-4289-4922>
+* Frederik Coppens <https://orcid.org/0000-0001-6565-5145>
+* Carole Goble <https://orcid.org/0000-0003-1219-2137>
+* José María Fernández <https://orcid.org/0000-0002-4806-5140>
+* Kyle Chard <https://orcid.org/0000-0002-7370-4805>
+* Jose Manuel Gomez-Perez <https://orcid.org/0000-0002-5491-6431>
 
 To suggest changes, improvements or issues, use the GitHub repository
 <https://github.com/ResearchObject/ro-lite> - if you are new to GitHub or Open
@@ -66,3 +71,4 @@ to ensure an open and inclusive environment.
 
 This specification and documentation is Open Source and licensed as [Apache License, version 2.0](https://github.com/ResearchObject/ro-lite/blob/master/LICENSE), see <https://www.apache.org/licenses/LICENSE-2.0> for details.
 
+ 
