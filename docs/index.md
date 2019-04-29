@@ -56,7 +56,7 @@ The _ROLite_ team is:
 * Kyle Chard <https://orcid.org/0000-0002-7370-4805>
 * Jose Manuel Gomez-Perez <https://orcid.org/0000-0002-5491-6431>
 * Michael R Crusoe <https://orcid.org/0000-0002-2961-9670>
-* Ignacio Eguinoa <https://github.com/ieguinoa>
+* Ignacio Eguinoa <https://orcid.org/0000-0002-6190-122X>
 
 To suggest changes, improvements or issues, use the GitHub repository
 <https://github.com/ResearchObject/ro-lite> - if you are new to GitHub or Open
