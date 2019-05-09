@@ -1,3 +1,20 @@
+<!--
+   Copyright 2019 RO Crate contributors 
+   <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
 # RO-Crate 0.2-DRAFT
 
 This second draft of [RO-Crate](../)  (previously known as RO Lite) will be integrating [DataCrate](https://github.com/UTS-eResearch/datacrate) and [schema.org](http://schema.org/), bringing in Research Object vocabularies where appropriate.
@@ -11,21 +28,21 @@ This second draft of [RO-Crate](../)  (previously known as RO Lite) will be inte
 
 ## Explaining by example: a simple dataset
 
-[simple-dataset-0.1.0](https://github.com/ResearchObject/ro-lite/tree/master/examples/simple-dataset-0.1.0) shows an example of a fairly minimal dataset, which can live in GitHub, be distributed as a ZIP archive, posted to Zenodo etc.
+[simple-dataset-0.1.0](https://github.com/ResearchObject/ro-crate/tree/master/examples/simple-dataset-0.1.0) shows an example of a fairly minimal dataset, which can live in GitHub, be distributed as a ZIP archive, posted to Zenodo etc.
 
 ![Root folder of RO](../assets/img/simple-dataset-0.1.0/root.png)
 
-The files of the dataset are under [`data/`](https://github.com/ResearchObject/ro-lite/tree/master/examples/simple-dataset-0.1.0/data), which mean this folder structure could later be upgraded to be a BagIt archive ([RFC8493](https://www.rfc-editor.org/rfc/rfc8493.txt)).
+The files of the dataset are under [`data/`](https://github.com/ResearchObject/ro-crate/tree/master/examples/simple-dataset-0.1.0/data), which mean this folder structure could later be upgraded to be a BagIt archive ([RFC8493](https://www.rfc-editor.org/rfc/rfc8493.txt)).
 
 ![data/ folder](../assets/img/simple-dataset-0.1.0/data-folder.png)
 
-Here are our files described in this ROLite example:
+Here are our files described in this RO-Crate example:
 
 * `repository-sizes.tsv` and `repository-sizes.ods` - our main dataset in raw tab-separated format and organized as a spreadsheet
 * `repository-sizes-chart.png` - a chart from the spreadsheet
 * `logs/` - various log files
 
-To describe these resources and their relations, ROLite has a single file [manifest.jsonld](https://github.com/ResearchObject/ro-lite/blob/master/examples/simple-dataset-0.1.0/manifest.jsonld)
+To describe these resources and their relations, RO-Crate has a single file [manifest.jsonld](https://github.com/ResearchObject/ro-crate/blob/master/examples/simple-dataset-0.1.0/manifest.jsonld)
 
 The JSON file is split into a couple of logical parts that in total make out the schema.org description in JSON-LD of both the dataset and the Research Object.
 
@@ -86,7 +103,7 @@ As many people have the same name, and a person may have multiple email addresse
 
 _Tip: Always providing a  `@id` on a `Person` avoids duplicating their other attributes on later mentions of the same person._
 
-In ROLite, if a file does not list a `creator`, and is within the Research Object's folders, it's creator can reasonably be assumed to be the `creator` of the containing research object. However, where appropriate, the Research Object manifest allows overriding with more precise attribution per resource. For instance, if this chart was created by Alice:
+In RO-Crate, if a file does not list a `creator`, and is within the Research Object's folders, it's creator can reasonably be assumed to be the `creator` of the containing research object. However, where appropriate, the Research Object manifest allows overriding with more precise attribution per resource. For instance, if this chart was created by Alice:
 
 {
             "@id": "data/repository-sizes-chart.png",
@@ -145,13 +162,13 @@ _Tip: If the file was created automatically without a person controlling it, the
 
 ## Next step: Workflow research object
 
-The example [workflow-0.1.0](https://github.com/ResearchObject/ro-lite/tree/master/examples/workflow-0.1.0) shows a more complex example of a Research Object containing a workflow.
+The example [workflow-0.1.0](https://github.com/ResearchObject/ro-crate/tree/master/examples/workflow-0.1.0) shows a more complex example of a Research Object containing a workflow.
 
 In this example there is both `workflow/` `tools/` and `test/` - but no `data/` payload.
 
-This example shows how RO Lite can be used with a non-trivial pre-existing directory structure. In particular the [workflow/](https://github.com/ResearchObject/ro-lite/tree/master/examples/workflow-0.1.0/workflow) folder is actually a KNIME workspace folder that contain a [KNIME workflow](https://www.knime.com/) and its contained input and output data in the internal format used by KNIME. 
+This example shows how RO-Crate can be used with a non-trivial pre-existing directory structure. In particular the [workflow/](https://github.com/ResearchObject/ro-crate/tree/master/examples/workflow-0.1.0/workflow) folder is actually a KNIME workspace folder that contain a [KNIME workflow](https://www.knime.com/) and its contained input and output data in the internal format used by KNIME. 
 
-The Research Object [manifest.jsonld](https://github.com/ResearchObject/ro-lite/blob/master/examples/workflow-0.1.0/manifest.jsonld#L39) only highlight a couple of these files:
+The Research Object [manifest.jsonld](https://github.com/ResearchObject/ro-crate/blob/master/examples/workflow-0.1.0/manifest.jsonld#L39) only highlight a couple of these files:
 
 ```json
 "aggregates": [
@@ -178,7 +195,7 @@ The Research Object [manifest.jsonld](https://github.com/ResearchObject/ro-lite/
 As before, the [http://schema.org/creator](http://schema.org/creator) indicates who created the KNIME workflow file. 
 
 
-The [workflow/workflow.knime](https://github.com/ResearchObject/ro-lite/blob/master/examples/workflow-0.1.0/workflow/workflow.knime) file is in KNIME's internal XML format, indicated here as both as a Research Object `Workflow` as well as a [http://schema.org/SoftwareSourceCode](http://schema.org/SoftwareSourceCode).
+The [workflow/workflow.knime](https://github.com/ResearchObject/ro-crate/blob/master/examples/workflow-0.1.0/workflow/workflow.knime) file is in KNIME's internal XML format, indicated here as both as a Research Object `Workflow` as well as a [http://schema.org/SoftwareSourceCode](http://schema.org/SoftwareSourceCode).
 
 _Tip: To enable schema.org parsing, e.g. by Google's [Structured Data Testing tool](https://search.google.com/structured-data/testing-tool/u/0/), a corresponding schema.org type must be provided. http://schema.org/CreativeWork or http://schema.org/Thing are useful fallbacks._
 
