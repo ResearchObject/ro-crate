@@ -1,3 +1,20 @@
+<!--
+   Copyright 2019 RO Crate contributors 
+   <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
 # Research Object Background
 
 A [Research Object](http://researchobject.org/) (_RO_) provide a machine-readable mechanism to communicate the diverse set of digital and real-world resources that contribute to an item of research. The aim of an RO is to replace traditional academic publication as a PDF with a couple of supplementary materials; to instead provide a structured archive of all the items that contributed to the research outcome, including their identifiers, provenance, relations and annotations.
