@@ -4,7 +4,7 @@
 {:toc}
 
 
-**Note**: _ROLite_ has been [renamed](https://github.com/ResearchObject/ro-crate/issues/11) to **RO-Crate**.  The new URL is [https://researchobject.github.io/ro-crate/](https://researchobject.github.io/ro-crate/)
+**Note**: _ROLite_ has been [renamed](https://github.com/ResearchObject/ro-crate/issues/11) to **RO-Crate**.  The new homepage is [https://researchobject.github.io/ro-crate/](https://researchobject.github.io/ro-crate/)
 
 
 ## What is a Research Object
@@ -42,11 +42,11 @@ This specification is currently **work in progress** using our [GitHub repositor
 add validation mechanisms like [JSON Schema](https://json-schema.org/) and [W3C
 Shapes Constraint Language](https://www.w3.org/TR/shacl/).
 
-After ROLite Draft 0.1.0, the community decided to base the specification on [DataCrate](https://github.com/UTS-eResearch/datacrate/), and change the name to _RO-Crate_.
+After the initial draft, the community decided to base the specification on [DataCrate](https://github.com/UTS-eResearch/datacrate/), and changed the name from _ROLite_ to **RO-Crate**.
 
 * [ROLite Draft 0.1.0](0.1.0) 
 * [DataCrate 1.0 review](https://docs.google.com/document/d/150SzIG8Zs3wecPTUue7wxKn6V26oi7rYucS5lxnmWZU/edit) (imported from [datacrate](https://github.com/UTS-eResearch/datacrate/blob/master/spec/1.0/data_crate_specification_v1.0.md))
-* [RO-Crate 0.2-DRAFT](0.2-DRAFT)
+* [RO-Crate 0.2-DRAFT](0.2-DRAFT) (TODO)
 
 
 ## Use cases
@@ -71,6 +71,7 @@ The _RO-Crate_ team is:
 * Jose Manuel Gomez-Perez <https://orcid.org/0000-0002-5491-6431>
 * Michael R Crusoe <https://orcid.org/0000-0002-2961-9670>
 * Ignacio Eguinoa <https://orcid.org/0000-0002-6190-122X>
+* Nick Juty <https://orcid.org/0000-0002-2036-8350>
 
 To suggest changes, improvements or issues, use the GitHub repository
 <https://github.com/ResearchObject/ro-crate> - if you are new to GitHub or Open
