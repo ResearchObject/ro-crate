@@ -22,7 +22,7 @@
 {:toc}
 
 
-**Note**: _ROLite_ has been [renamed](https://github.com/ResearchObject/ro-crate/issues/11) to **RO-Crate**.  The new homepage is [https://researchobject.github.io/ro-crate/](https://researchobject.github.io/ro-crate/)
+**Note**: _ROLite_ has been [renamed](https://github.com/ResearchObject/ro-crate/issues/11) to **RO-Crate**.  This is the new homepage [https://researchobject.github.io/ro-crate/](https://researchobject.github.io/ro-crate/)
 
 
 ## What is a Research Object
