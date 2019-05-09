@@ -1,6 +1,6 @@
 ---
 name: Use case
-about: Describe a potential use of creating, consuming or integrating RO Lite
+about: Describe a potential use of creating, consuming or integrating RO-Crate
 title: 'Use Case: ...'
 labels: use-case
 assignees: ''
