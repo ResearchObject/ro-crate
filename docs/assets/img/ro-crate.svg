@@ -15,9 +15,9 @@
    version="1.1"
    id="svg4953"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="researchobject-rolite.svg">
+   sodipodi:docname="ro-crite.svg">
   <title
-     id="title4965">Research Object ROLite logo</title>
+     id="title4965">Research Object RO-Crite logo</title>
   <defs
      id="defs4947" />
   <sodipodi:namedview
@@ -51,7 +51,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>Research Object logo</dc:title>
+        <dc:title>Research Object RO Litelogo</dc:title>
         <cc:license
            rdf:resource="http://creativecommons.org/licenses/by/4.0/" />
         <dc:date>2017-06-01</dc:date>
