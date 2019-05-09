@@ -19,7 +19,7 @@
 
 This second draft of [RO-Crate](../)  (previously known as RO Lite) will be integrating [DataCrate](https://github.com/UTS-eResearch/datacrate) and [schema.org](http://schema.org/), bringing in Research Object vocabularies where appropriate.
 
-**Note**: This is a a stub while editing happens [in GitHub](https://github.com/ResearchObject/ro-lite/tree/master/docs/0.2-DRAFT). You may want to check out [RO Lite 0.1.0](../0.1.0/) meanwhile.
+**Note**: This is a a stub while editing happens [in GitHub](https://github.com/ResearchObject/ro-crate/tree/master/docs/0.2-DRAFT). You may want to check out [RO Lite 0.1.0](../0.1.0/) meanwhile.
 
 <!-- Below is from 0.1.0 - bring out of comment as it's updated for 0.2
 
