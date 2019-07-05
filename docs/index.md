@@ -31,6 +31,8 @@ A [Research Object](http://researchobject.org/) (_RO_) provide a machine-readabl
 
 This is of particular importance as all domains of research and science are increasingly relying in computational analysis, yet we are facing a [reproducibility crisis](https://doi.org/10.1038/533452a) because key components are not sufficiently tracked, archived or reported. 
 
+### RO-Crate
+
 This project define **Research Object Crate** (or _RO-Crate_ for short), an emerging lightweight approach to package research data with their structured metadata, based on [schema.org](https://schema.org/) annotations in a formalized [JSON-LD](http://json-ld.org/) format that can be used independent of infrastructure to encourage FAIR sharing of reproducible datasets and analytical methods.
 
 Examples of items that should be included in a Research Object:
@@ -44,7 +46,16 @@ Examples of items that should be included in a Research Object:
 * Metadata
 * Computational logs
 
-See [background](background.md) for how this works build on [Research Object specifications](http://www.researchobject.org/specifications/).
+See [background](background.md) for how this work build on existing [Research Object specifications](http://www.researchobject.org/specifications/).
+
+
+### Motivation
+
+Many [data packaging](https://rd-alliance.org/approaches-research-data-packaging-rda-11th-plenary-bof-meeting) initiatives arrive at similar principles: simple folder structure; JSON-LD manifest; schema.org for core metadata; BagIt for fixity; OAI-ORE for aggregation. This points to: a) appetite for general package/folder-oriented approach in different contexts; b) a generic solution won’t work for all and needs to be domain-extensible; c) a tendency to re-invent the wheel, leading to sub-optimal interoperability and duplication of effort.
+We have identified a gap for a solid base format for data packaging that also allow communities to build domain-specific solutions. 
+
+Our proposal is to build on [DataCrate](https://github.com/UTS-eResearch/datacrate) to evolve _RO-Crate_, based around these principles: a) metadata as Linked Data, using [schema.org](https://schema.org/) as much as possible; b) extensible for different domains; c) retain the core [Research Object principles](http://www.researchobject.org/overview/) _Identity, Aggregation, Annotation_; d) inferred metadata rather than repetition; e) “just-enough” provenance; f) layered validation; g) archivable with BagIt; h) hooks to reuse existing domain formats; i) lightweight programmatic generation and consumption. Similar to the approach of [BioSchemas](https://bioschemas.org/), rather than building new specifications from scratch, we aim to build best-practice guides and validatable profiles for building rich research data packages with existing standards, without requiring expert knowledge for developing producers and consumers.
+
 
 
 ## Drafts
