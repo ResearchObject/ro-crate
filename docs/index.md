@@ -81,6 +81,7 @@ The _RO-Crate_ team is:
 * Michael R Crusoe <https://orcid.org/0000-0002-2961-9670>
 * Ignacio Eguinoa <https://orcid.org/0000-0002-6190-122X>
 * Nick Juty <https://orcid.org/0000-0002-2036-8350>
+* Kristi Holmes <https://orcid.org/0000-0001-8420-5254>
 
 To suggest changes, improvements or issues, use the GitHub repository
 <https://github.com/ResearchObject/ro-crate> - if you are new to GitHub or Open
