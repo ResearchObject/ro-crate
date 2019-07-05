@@ -60,8 +60,7 @@ Our proposal is to build on [DataCrate](https://github.com/UTS-eResearch/datacra
 
 ## Drafts
 
-This specification is currently **work in progress** using our [GitHub repository](https://github.com/ResearchObject/ro-crate).  Future work will aim to add validation mechanisms like [JSON Schema](https://json-schema.org/) and [W3C
-Shapes Constraint Language](https://www.w3.org/TR/shacl/).
+The RO-Crate specification is currently **work in progress** using Google Docs before being added to our [GitHub repository](https://github.com/ResearchObject/ro-crate). 
 
 * [RO-Crate 0.2-DRAFT](https://docs.google.com/document/d/1sH9CscItg7PbkEOcHPX_tVXfWNP4R57ys2y3W-FfNuA/edit?usp=sharing) (in progress)
 * [DataCrate 1.0 review](https://docs.google.com/document/d/150SzIG8Zs3wecPTUue7wxKn6V26oi7rYucS5lxnmWZU/edit) (imported from [datacrate](https://github.com/UTS-eResearch/datacrate/blob/master/spec/1.0/data_crate_specification_v1.0.md))
