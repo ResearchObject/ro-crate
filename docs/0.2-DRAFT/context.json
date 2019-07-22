@@ -2239,10 +2239,12 @@
           "journal": "http://schema.org/Periodical",
          
           
+          "cite-as": "https://www.w3.org/ns/iana/link-relations/relation#cite-as",
           "hasFile": "http://pcdm.org/models#hasFile",
           "hasMember": "http://pcdm.org/models#hasMember",
           "RepositoryCollection": "http://pcdm.org/models#Collection",
           "RepositoryObject": "http://pcdm.org/models#object",
+
           "@label": "http://www.w3.org/2000/01/rdf-schema#label",
 
           "pcdm": "http://pcdm.org/models#",
@@ -2254,6 +2256,10 @@
           "rdfa": "http://www.w3.org/ns/rdfa#",
           "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
           "schema": "http://schema.org/",
-          "frapo": "http://purl.org/cerif/frapo/"
+          "frapo": "http://purl.org/cerif/frapo/",
+          "rel": "https://www.w3.org/ns/iana/link-relations/relation#",
+          "pav": "http://purl.org/pav/",
+          "prov": "http://www.w3.org/ns/prov#"
+
 }
 }
