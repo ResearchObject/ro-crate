@@ -1,0 +1,141 @@
+{
+    "@context": "https://w3id.org/ro/crate/0.2-DRAFT/context",
+    "@graph": [
+        {
+    "@type": ["Dataset"],
+    "@id": ".",
+    "name": "RetroPath2.0 IBISBA workflow node",
+    "datePublished": "2019-02-14",
+    "contactPoint": {"@id": "#contact"},
+    "creator": [
+        {"@id": "#thomas"}, 
+        {"@id": "#stefan"}
+    ],
+    "license": {"@id": "http://creativecommons.org/licenses/by-nc-sa/4.0/"},
+    "cite-as": {"@id": "https://doi.org/10.1016/j.ymben.2017.12.002"},
+    "distribution": {"@id": "#distro"},
+    "publisher": { "@id": "https://www.ibisba.eu/" },
+    "hasPart": [    
+        { "@id": "workflow/workflow.knime" },
+        { "@id": "workflow/" },
+        {"@id": "tools/RetroPath2.cwl"},
+        {"@id": "workflow/workflow.svg"},
+        {"@id": "Dockerfile"},
+        {"@id": "test/test.sh"},
+        { "@id": "README.md" }
+    ],
+    
+    "description": "RetroPath2.0 builds a reaction network from a set of source compounds to a set of sink compounds. When applied in a retrosynthetic fashion, the source is composed of the target compounds and the sink is composed of the available reactants (for instance in the context of metabolic engineering the sink is the set of native metabolites of a chassis strain). From amongst all the chemical reactions generated using RetroPath2.0 (in the retrosynthetic way), only a subset may effectively link a source to a subset of sink compounds. This sub-network is considered as a scope and is output in dedicated files.",
+    "keywords": "workflow, knime, CWL, reaction",        
+    "sdPublisher": {
+        "@id": "http://researchobject.org/",
+        "name": "Research Object community"        
+    },
+    "sdLicense": "https://www.apache.org/licenses/LICENSE-2.0",    
+    "subjectOf": {"@id": "README.md"}
+
+    },
+    
+        { "@id": "#contact",
+          "@type": "ContactPoint",
+          "email": "support@esciencelab.org.uk"
+        },
+
+        {
+            "@id": "#thomas",
+            "@type": "Person",
+            "name": "Thomas Duigou",
+            "email": "thomas.duigou@inra.fr"
+        },
+
+        {
+        "@id": "#stefan",
+        "@type": "Person",
+        "name": "Stefan Helfrich",
+        "url": "https://github.com/stelfrich"
+        },
+        { "@id": "#distro",
+          "@type": "DataDownload",
+          "contentUrl": "https://github.com/ibisba/RetroPath2-cwl/archive/master.zip",
+          "encodingFormat": "application/zip"
+        },
+        {"@id": "https://www.ibisba.eu/",
+         "@type": "Organization",
+         "name": "IBISBA",
+         "url": "https://www.ibisba.eu/"
+        },
+
+        {
+            "@id": "workflow/workflow.knime",
+            "@type": ["SoftwareSourceCode", "wfdesc:Workflow"],
+            "name": "RetroPath 2.0 Knime workflow",
+            "description": "KNIME implementation of RetroPath2.0 workflow",
+            "creator": { "id": "#thomas"},
+            "programmingLanguage": {
+                "name": "KNIME Analytics Platform",
+                "url": "https://www.knime.com/knime-software/knime-analytics-platform",
+                "version": "3.6"
+            },
+            "url": "https://www.myexperiment.org/workflows/4987",
+            "pav:retrievedFrom": "https://myexperiment.org/workflows/4987/download/RetroPath2.0_-_a_retrosynthesis_workflow_with_tutorial_and_example_data-v8.zip?version=6",
+            "pav:retrievedOn": "2018-10-23T15:28:24"  
+        },  
+        {
+            "@id": "workflow/",
+            "@type": ["", "roterms:ExampleRun"],
+            "description": "KNIME workspace after executing RetroPath2.0 workflow"
+        },
+        {
+            "@id": "tools/RetroPath2.cwl",
+            "@type": ["SoftwareSourceCode", "wfdesc:Workflow"],
+            "name": "RetroPath 2.0 CWL workflow",
+            "programmingLanguage": {
+                "@id": "https://w3id.org/cwl/v1.0/",
+                "name": "Common Workflow Language",
+                "url": "http://commonwl.org/",
+                "version": "1.0"
+            },
+            "description": "CWL wrapper that execute KNIME workflow using Docker image",
+            "creator": {
+                "name": "Stefan Helfrich",
+                "url": "https://github.com/stelfrich"
+            },
+            "codeRepository": "https://github.com/ibisba/RetroPath2-cwl/",
+            "prov:wasDerivedFrom": "workflow/workflow.knime"
+        },  
+        {
+            "@id": "workflow/workflow.svg",
+            "@type": ["roterms:Sketch"],
+            "description": "Diagram of RetroPath2.0 workflow",
+            "about": "workflow/workflow.knime",
+            "prov:wasDerivedFrom": "workflow/workflow.knime"
+        },
+        {
+            "@id": "Dockerfile",
+            "@type": ["ex:ContainerSomething"],
+            "url": "https://hub.docker.com/r/ibisba/retropath2/",
+            "description": "Docker image of KNIME workflow (including KNIME runtime)",
+            "creator": { 
+                "@id": "#stefan"
+            },
+            "prov:importedFrom": [
+                "workflow/workflow.knime", 
+                "#knime-docker"
+            ]
+        },
+        {
+            "@id": "test/test.sh",
+            "@type": ["wf4ever:Script"],
+            "description": "Test script that validate the CWL description (should ideally execute workflow with test inputs)"
+        },
+        {   "@id": "#knime-docker",
+            "@type": ["CreativeWork", "ex:ContainerSomething"],
+            "name": "ibisba/knime-workflow-base:3.6.2-1",
+            "url": "https://hub.docker.com/r/ibisba/knime-workflow-base/",
+            "description": "KNIME workflow base Docker image",
+            "version": "3.6.2-1"
+        }        
+
+    ]
+
+}

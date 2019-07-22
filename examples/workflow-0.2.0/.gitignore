@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# KNIME files
+.knimeLock
+.project
+.savedWithData
+
+# KNIME directories containing node data
+internal/
+port_*/
+.metadata/
+internalTables/
+.artifacts/
