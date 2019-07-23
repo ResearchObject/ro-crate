@@ -2245,6 +2245,22 @@
           "RepositoryCollection": "http://pcdm.org/models#Collection",
           "RepositoryObject": "http://pcdm.org/models#object",
 
+          "Workflow": "http://purl.org/ro/wfdesc#Workflow",
+          "Script": "http://purl.org/ro/wf4ever#Script",
+          "ExampleRun": "http://purl.org/ro/roterms#ExampleRun",
+          "Sketch": "http://purl.org/ro/roterms#Sketch",
+
+          "wasDerivedFrom": "http://www.w3.org/ns/prov#wasDerivedFrom",
+          
+          "importedFrom": "http://purl.org/pav/importedFrom",
+          "importedOn": "http://purl.org/pav/importedOn",
+          "importedBy": "http://purl.org/pav/importedBy",
+
+          "retrievedFrom": "http://purl.org/pav/retrievedFrom",
+          "retrievedOn": "http://purl.org/pav/retrievedOn",
+          "retrievedBy": "http://purl.org/pav/retrievedBy",
+
+
           "@label": "http://www.w3.org/2000/01/rdf-schema#label",
 
           "pcdm": "http://pcdm.org/models#",
@@ -2259,7 +2275,12 @@
           "frapo": "http://purl.org/cerif/frapo/",
           "rel": "https://www.w3.org/ns/iana/link-relations/relation#",
           "pav": "http://purl.org/pav/",
-          "prov": "http://www.w3.org/ns/prov#"
+          "prov": "http://www.w3.org/ns/prov#",
+          "wfdesc": "http://purl.org/ro/wfdesc#",
+          "wfprov": "http://purl.org/ro/wfprov#",
+          "roterms": "http://purl.org/ro/roterms#",
+          "wf4ever": "http://purl.org/ro/wf4ever#"
+
 
 }
 }
