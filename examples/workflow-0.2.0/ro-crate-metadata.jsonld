@@ -18,6 +18,7 @@
                 "Dataset"
             ],
             "@id": ".",
+            "path": "./",
             "name": "RetroPath2.0 IBISBA workflow node",
             "datePublished": "2019-02-14",
             "contactPoint": {
@@ -94,13 +95,17 @@
             "@id": "#stefan",
             "@type": "Person",
             "name": "Stefan Helfrich",
-            "url": "https://github.com/stelfrich"
+            "url": {
+                "@id": "https://github.com/stelfrich"
+            }
         },
         {
             "@id": "https://orcid.org/0000-0001-9842-9718",
             "@type": "Person",
             "name": "Stian Soiland-Reyes",
-            "url": "https://orcid.org/0000-0001-9842-9718"
+            "url": {
+                "@id": "https://orcid.org/0000-0001-9842-9718"
+            }
         },
         {
             "@id": "https://github.com/ibisba/RetroPath2-cwl/archive/master.zip",
@@ -112,7 +117,9 @@
             "@id": "https://www.ibisba.eu/",
             "@type": "Organization",
             "name": "IBISBA",
-            "url": "https://www.ibisba.eu/"
+            "url": {
+                "@id": "https://www.ibisba.eu/"
+            }
         },
         {
             "@id": "workflow/workflow.knime",
@@ -130,24 +137,26 @@
             },
             "potentialAction": {
                 "@type": "ActivateAction",
-                "instrument": {"@id": "#knime"}
-            },
-            "url": "https://www.myexperiment.org/workflows/4987",
-            "retrievedFrom": "https://myexperiment.org/workflows/4987/download/RetroPath2.0_-_a_retrosynthesis_workflow_with_tutorial_and_example_data-v8.zip?version=6",
-            "retrievedOn": "2018-10-23T15:28:24"
+                "instrument": {
+                    "@id": "#knime"
+                }
+            }
         },
         {
             "@id": "workflow/",
-            "@type": [
-                "roterms:ExampleRun"
-            ],
+            "@type": "Dataset",
+            "additionalType": {
+                "@id": "roterms:ExampleRun"
+            },
             "description": "Example of KNIME workspace after executing RetroPath2.0 workflow",
             "exampleOfWork": {
                 "@id": "workflow/workflow.knime"
             },
             "potentialAction": {
                 "@type": "ViewAction",
-                "instrument": {"@id": "#knime"}
+                "instrument": {
+                    "@id": "#knime"
+                }
             }
         },
         {
@@ -166,7 +175,9 @@
             },
             "potentialAction": {
                 "@type": "ActivateAction",
-                "instrument": {"@id": "#cwltool"}
+                "instrument": {
+                    "@id": "#cwltool"
+                }
             },
             "codeRepository": {
                 "@id": "https://github.com/ibisba/RetroPath2-cwl/"
@@ -178,9 +189,7 @@
         {
             "@id": "workflow/workflow.svg",
             "@type": "ImageObject",
-            "additionalType": {
-                "@id": "roterms:Sketch"
-            },
+            "additionalType": {"@id": "roterms:Sketch"},
             "encodingFormat": "image/svg+xml",
             "description": "Diagram of RetroPath2.0 workflow",
             "about": {
@@ -193,7 +202,9 @@
         {
             "@id": "Dockerfile",
             "@type": "SoftwareSourceCode",
-            "url": "https://hub.docker.com/r/ibisba/retropath2/",
+            "url": {
+                "@id": "https://hub.docker.com/r/ibisba/retropath2/"
+            },
             "description": "Docker image of KNIME workflow (including KNIME runtime)",
             "creator": {
                 "@id": "#stefan"
@@ -219,7 +230,9 @@
             "@id": "#knime-docker",
             "@type": "SoftwareApplication",
             "name": "ibisba/knime-workflow-base:3.6.2-1",
-            "url": "https://hub.docker.com/r/ibisba/knime-workflow-base/",
+            "url": {
+                "@id": "https://hub.docker.com/r/ibisba/knime-workflow-base/"
+            },
             "description": "KNIME workflow base Docker image",
             "version": "3.6.2-1"
         },
@@ -231,7 +244,9 @@
             ],
             "name": "KNIME Analytics Platform",
             "alternateName": "KNIME",
-            "url": "https://www.knime.com/knime-software/knime-analytics-platform",
+            "url": {
+                "@id": "https://www.knime.com/knime-software/knime-analytics-platform"
+            },
             "version": "3.6"
         },
         {
@@ -239,7 +254,9 @@
             "@type": "SoftwareApplication",
             "name": "cwltool",
             "description": "Common Workflow Language reference implementation",
-            "url": "https://github.com/common-workflow-language/cwltool/",
+            "url": {
+                "@id": "https://github.com/common-workflow-language/cwltool/"
+            },
             "version": "1.0.20190618201008",
             "cite-as": {
                 "@id": "https://doi.org/10.5281/zenodo.3250191"
@@ -253,7 +270,9 @@
             "identifier": {
                 "@id": "https://w3id.org/cwl/v1.0/"
             },
-            "url": "https://www.commonwl.org/",
+            "url": {
+                "@id": "https://www.commonwl.org/"
+            },
             "version": "1.0",
             "cite-as": {
                 "@id": "https://doi.org/10.6084/m9.figshare.3115156.v2"
