@@ -60,7 +60,9 @@
                 "@id": "http://researchobject.org/",
                 "name": "Research Object community"
             },
-            "sdLicense": "https://www.apache.org/licenses/LICENSE-2.0",
+            "sdLicense": {
+                "@id": "https://www.apache.org/licenses/LICENSE-2.0"
+            },
             "subjectOf": {
                 "@id": "README.md"
             }
@@ -96,10 +98,10 @@
         },
         {
             "@id": "workflow/workflow.knime",
-            "@type": [
-                "SoftwareSourceCode",
-                "wfdesc:Workflow"
-            ],
+            "@type": "SoftwareSourceCode",
+            "additionalType": {
+                "@id": "wfdesc:Workflow"
+            },
             "name": "RetroPath 2.0 Knime workflow",
             "description": "KNIME implementation of RetroPath2.0 workflow",
             "creator": {
@@ -117,17 +119,22 @@
             "@type": [
                 "roterms:ExampleRun"
             ],
-            "description": "KNIME workspace after executing RetroPath2.0 workflow"
+            "description": "Example of KNIME workspace after executing RetroPath2.0 workflow",
+            "exampleOfWork": {
+                "@id": "workflow/workflow.knime"
+            }
         },
         {
             "@id": "tools/RetroPath2.cwl",
             "@type": "SoftwareSourceCode",
-            "additionalType": "wfdesc:Workflow",
+            "additionalType": {
+                "@id": "wfdesc:Workflow"
+            },
             "name": "RetroPath 2.0 CWL workflow",
             "programmingLanguage": {
                 "@id": "https://w3id.org/cwl/v1.0/"
             },
-            "description": "CWL wrapper that execute KNIME workflow using Docker image",
+            "description": "CWL tool wrapper that execute KNIME workflow using its Docker image",
             "creator": {
                 "@id": "#stefan"
             },
