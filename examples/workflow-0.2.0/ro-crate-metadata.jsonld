@@ -1,5 +1,5 @@
 {
-    "@context": ["https://w3id.org/ro/crate/0.2-DRAFT/context", "http://schema.org/"],
+    "@context": "https://w3id.org/ro/crate/0.2-DRAFT/context",
     "@graph": [
         {
             "@id": "ro-crate-metadata.jsonld",
