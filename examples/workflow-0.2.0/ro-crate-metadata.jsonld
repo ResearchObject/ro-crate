@@ -1,5 +1,5 @@
 {
-    "@context": "https://w3id.org/ro/crate/0.2-DRAFT/context",
+    "@context": ["https://w3id.org/ro/crate/0.2-DRAFT/context", "http://schema.org/"],
     "@graph": [
         {
             "@id": "ro-crate-metadata.jsonld",
@@ -9,10 +9,9 @@
             "additionalType": {
                 "@id": "https://w3id.org/ro/crate/0.2-DRAFT/"
             },
-            "creator": 
-                {
-                    "@id": "https://orcid.org/0000-0001-9842-9718"
-                }
+            "creator": {
+                "@id": "https://orcid.org/0000-0001-9842-9718"
+            }
         },
         {
             "@type": [
@@ -98,7 +97,7 @@
             "url": "https://github.com/stelfrich"
         },
         {
-            "@id": "https://orcid.org/0000-0001-9842-9718"
+            "@id": "https://orcid.org/0000-0001-9842-9718",
             "@type": "Person",
             "name": "Stian Soiland-Reyes",
             "url": "https://orcid.org/0000-0001-9842-9718"
@@ -129,9 +128,13 @@
             "programmingLanguage": {
                 "@id": "#knime"
             },
+            "potentialAction": {
+                "@type": "ActivateAction",
+                "instrument": {"@id": "#knime"}
+            },
             "url": "https://www.myexperiment.org/workflows/4987",
-            "pav:retrievedFrom": "https://myexperiment.org/workflows/4987/download/RetroPath2.0_-_a_retrosynthesis_workflow_with_tutorial_and_example_data-v8.zip?version=6",
-            "pav:retrievedOn": "2018-10-23T15:28:24"
+            "retrievedFrom": "https://myexperiment.org/workflows/4987/download/RetroPath2.0_-_a_retrosynthesis_workflow_with_tutorial_and_example_data-v8.zip?version=6",
+            "retrievedOn": "2018-10-23T15:28:24"
         },
         {
             "@id": "workflow/",
@@ -141,6 +144,10 @@
             "description": "Example of KNIME workspace after executing RetroPath2.0 workflow",
             "exampleOfWork": {
                 "@id": "workflow/workflow.knime"
+            },
+            "potentialAction": {
+                "@type": "ViewAction",
+                "instrument": {"@id": "#knime"}
             }
         },
         {
@@ -157,8 +164,16 @@
             "creator": {
                 "@id": "#stefan"
             },
-            "codeRepository": "https://github.com/ibisba/RetroPath2-cwl/",
-            "prov:wasDerivedFrom": { "@id": "workflow/workflow.knime"}
+            "potentialAction": {
+                "@type": "ActivateAction",
+                "instrument": {"@id": "#cwltool"}
+            },
+            "codeRepository": {
+                "@id": "https://github.com/ibisba/RetroPath2-cwl/"
+            },
+            "wasDerivedFrom": {
+                "@id": "workflow/workflow.knime"
+            }
         },
         {
             "@id": "workflow/workflow.svg",
@@ -171,7 +186,7 @@
             "about": {
                 "@id": "workflow/workflow.knime"
             },
-            "prov:wasDerivedFrom": {
+            "wasDerivedFrom": {
                 "@id": "workflow/workflow.knime"
             }
         },
@@ -183,16 +198,21 @@
             "creator": {
                 "@id": "#stefan"
             },
-            "prov:importedFrom": [
-                "workflow/workflow.knime",
-                "#knime-docker"
+            "importedFrom": [
+                {
+                    "@id": "workflow/workflow.knime"
+                },
+                {
+                    "@id": "#knime-docker"
+                }
             ]
         },
         {
             "@id": "test/test.sh",
-            "@type": [
-                "wf4ever:Script"
-            ],
+            "@type": "SoftwareSourceCode",
+            "additionalType": {
+                "@id": "wf4ever:Script"
+            },
             "description": "Test script that validate the CWL description (should ideally execute workflow with test inputs)"
         },
         {
@@ -215,6 +235,17 @@
             "version": "3.6"
         },
         {
+            "@id": "#cwltool",
+            "@type": "SoftwareApplication",
+            "name": "cwltool",
+            "description": "Common Workflow Language reference implementation",
+            "url": "https://github.com/common-workflow-language/cwltool/",
+            "version": "1.0.20190618201008",
+            "cite-as": {
+                "@id": "https://doi.org/10.5281/zenodo.3250191"
+            }
+        },
+        {
             "@id": "https://w3id.org/cwl/v1.0/",
             "@type": "ComputerLanguage",
             "name": "Common Workflow Language",
@@ -223,7 +254,10 @@
                 "@id": "https://w3id.org/cwl/v1.0/"
             },
             "url": "https://www.commonwl.org/",
-            "version": "1.0"
+            "version": "1.0",
+            "cite-as": {
+                "@id": "https://doi.org/10.6084/m9.figshare.3115156.v2"
+            }
         }
     ]
 }

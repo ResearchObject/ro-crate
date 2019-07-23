@@ -171,7 +171,6 @@
           "CommentPermission": "http://schema.org/CommentPermission",
           "CommunicateAction": "http://schema.org/CommunicateAction",
           "CommunityHealth": "http://schema.org/CommunityHealth",
-          "CommunityHealth": "http://schema.org/CommunityHealth",
           "CompilationAlbum": "http://schema.org/CompilationAlbum",
           "CompleteDataFeed": "http://schema.org/CompleteDataFeed",
           "Completed": "http://schema.org/Completed",
@@ -2245,10 +2244,10 @@
           "RepositoryCollection": "http://pcdm.org/models#Collection",
           "RepositoryObject": "http://pcdm.org/models#object",
 
-          "Workflow": "http://purl.org/ro/wfdesc#Workflow",
-          "Script": "http://purl.org/ro/wf4ever#Script",
-          "ExampleRun": "http://purl.org/ro/roterms#ExampleRun",
-          "Sketch": "http://purl.org/ro/roterms#Sketch",
+          "wfdesc:Workflow": "http://purl.org/ro/wfdesc#Workflow",
+          "wf4ever:Script": "http://purl.org/ro/wf4ever#Script",
+          "roterms:ExampleRun": "http://purl.org/ro/roterms#ExampleRun",
+          "roterms:Sketch": "http://purl.org/ro/roterms#Sketch",
 
           "wasDerivedFrom": "http://www.w3.org/ns/prov#wasDerivedFrom",
           
