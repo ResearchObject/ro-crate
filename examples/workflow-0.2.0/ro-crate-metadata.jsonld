@@ -2,6 +2,19 @@
     "@context": "https://w3id.org/ro/crate/0.2-DRAFT/context",
     "@graph": [
         {
+            "@id": "ro-crate-metadata.jsonld",
+            "about": {
+                "@id": "."
+            },
+            "additionalType": {
+                "@id": "https://w3id.org/ro/crate/0.2-DRAFT/"
+            },
+            "creator": 
+                {
+                    "@id": "https://orcid.org/0000-0001-9842-9718"
+                }
+        },
+        {
             "@type": [
                 "Dataset"
             ],
@@ -26,10 +39,22 @@
                 "@id": "https://doi.org/10.1016/j.ymben.2017.12.002"
             },
             "distribution": {
-                "@id": "#distro"
+                "@id": "https://github.com/ibisba/RetroPath2-cwl/archive/master.zip"
             },
             "publisher": {
                 "@id": "https://www.ibisba.eu/"
+            },
+            "description": "RetroPath2.0 builds a reaction network from a set of source compounds to a set of sink compounds. When applied in a retrosynthetic fashion, the source is composed of the target compounds and the sink is composed of the available reactants (for instance in the context of metabolic engineering the sink is the set of native metabolites of a chassis strain). From amongst all the chemical reactions generated using RetroPath2.0 (in the retrosynthetic way), only a subset may effectively link a source to a subset of sink compounds. This sub-network is considered as a scope and is output in dedicated files.",
+            "keywords": "workflow, knime, CWL, reaction",
+            "sdPublisher": {
+                "@id": "http://researchobject.org/",
+                "name": "Research Object community"
+            },
+            "sdLicense": {
+                "@id": "https://www.apache.org/licenses/LICENSE-2.0"
+            },
+            "subjectOf": {
+                "@id": "README.md"
             },
             "hasPart": [
                 {
@@ -53,19 +78,7 @@
                 {
                     "@id": "README.md"
                 }
-            ],
-            "description": "RetroPath2.0 builds a reaction network from a set of source compounds to a set of sink compounds. When applied in a retrosynthetic fashion, the source is composed of the target compounds and the sink is composed of the available reactants (for instance in the context of metabolic engineering the sink is the set of native metabolites of a chassis strain). From amongst all the chemical reactions generated using RetroPath2.0 (in the retrosynthetic way), only a subset may effectively link a source to a subset of sink compounds. This sub-network is considered as a scope and is output in dedicated files.",
-            "keywords": "workflow, knime, CWL, reaction",
-            "sdPublisher": {
-                "@id": "http://researchobject.org/",
-                "name": "Research Object community"
-            },
-            "sdLicense": {
-                "@id": "https://www.apache.org/licenses/LICENSE-2.0"
-            },
-            "subjectOf": {
-                "@id": "README.md"
-            }
+            ]
         },
         {
             "@id": "#contact",
@@ -85,7 +98,13 @@
             "url": "https://github.com/stelfrich"
         },
         {
-            "@id": "#distro",
+            "@id": "https://orcid.org/0000-0001-9842-9718"
+            "@type": "Person",
+            "name": "Stian Soiland-Reyes",
+            "url": "https://orcid.org/0000-0001-9842-9718"
+        },
+        {
+            "@id": "https://github.com/ibisba/RetroPath2-cwl/archive/master.zip",
             "@type": "DataDownload",
             "contentUrl": "https://github.com/ibisba/RetroPath2-cwl/archive/master.zip",
             "encodingFormat": "application/zip"
@@ -105,10 +124,10 @@
             "name": "RetroPath 2.0 Knime workflow",
             "description": "KNIME implementation of RetroPath2.0 workflow",
             "creator": {
-                "id": "#thomas"
+                "@id": "#thomas"
             },
             "programmingLanguage": {
-                "id": "#knime"
+                "@id": "#knime"
             },
             "url": "https://www.myexperiment.org/workflows/4987",
             "pav:retrievedFrom": "https://myexperiment.org/workflows/4987/download/RetroPath2.0_-_a_retrosynthesis_workflow_with_tutorial_and_example_data-v8.zip?version=6",
@@ -139,7 +158,7 @@
                 "@id": "#stefan"
             },
             "codeRepository": "https://github.com/ibisba/RetroPath2-cwl/",
-            "prov:wasDerivedFrom": "workflow/workflow.knime"
+            "prov:wasDerivedFrom": { "@id": "workflow/workflow.knime"}
         },
         {
             "@id": "workflow/workflow.svg",
