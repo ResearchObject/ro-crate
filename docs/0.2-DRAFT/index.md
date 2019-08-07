@@ -432,15 +432,18 @@ A core principle of Linked data is to use URIs  to identify things such as peopl
 }
 ```
 
-This uses an ORCID, to unambiguously identify an author and could be used as is. However, it does not provide very much information about the author and it is not possible to use this information to reliably construct a [DataCite](https://www.datacite.org/) citation. The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Metadata Entities_ for the use of both humans (once it has been rendered as `ro-crate-preview.html`) and machines.
+This uses an [ORCID](https://orcid.org/) to unambiguously identify an author. Although this _Linked Data_ identifier can be followed to find information about the person, it is not possible to use the above _RO-Crate metadata_ alone to reliably construct a [DataCite](https://www.datacite.org/) citation. 
 
- \
-`{` \
-`    "@id": "https://orcid.org/0000-0002-8367-6908",` \
-`    "@type": "Person",` \
-`    "affiliation": "University of Technology Sydney",` \
-`    "name": "J. Xuan"` \
-`  }`
+The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Metadata Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.jsonld`):
+
+```json
+{
+    "@id": "https://orcid.org/0000-0002-8367-6908",
+    "@type": "Person",
+    "affiliation": "University of Technology Sydney",
+    "name": "J. Xuan"
+}
+```
 
 Note the string-value of the organizational affiliation. This SHOULD be improved by also providing a _Context Entity_ for the organization.
 
@@ -450,55 +453,51 @@ Note the string-value of the organizational affiliation. This SHOULD be improved
 An [Organization](http://schema.org/Organization) SHOULD be the value for the [publisher](http://schema.org/publisher) property of a [Dataset](http://schema.org/Dataset) or [ScholarlyArticle](http://schema.org/ScholarlyArticle) or [affiliation](http://schema.org/affiliation) property of a [Person](http://schema.org/Person).
 
 
-```
+```json
 {
-      "@type": "Dataset",
-      "@id": "some_id",
-      "publisher": {"@id": "https://ror.org/03f0f6041"}
+  "@type": "Dataset",
+  "@id": "some_id",
+  "publisher": {"@id": "https://ror.org/03f0f6041"}
 }
 
 {
   "@id": "https://ror.org/03f0f6041",
   "@type": "Organization",
-  "name": "University of Technology Sydney", 
+  "name": "University of Technology Sydney",
+  "url": "https://ror.org/03f0f6041"
+}
 ```
-
-
-   `  "URL": "https://ror.org/03f0f6041"` \
-`}`
 
 An [Organization](http://schema.org/Organization) SHOULD also be used for a [Person](http://schema.org/Person)'s affiliation.
 
 
-```
+```json
 {
-      "@type": "Dataset",
-      "@id": "some_id",
-      "publisher": {"@id": "https://ror.org/03f0f6041"},
+  "@type": "Dataset",
+  "@id": "some_id",
+  "publisher": {"@id": "https://ror.org/03f0f6041"},
+  "creator": {"@id": "https://orcid.org/0000-0002-3545-944X"}
+},
+{
+  "@id": "https://ror.org/03f0f6041",
+  "@type": "Organization",
+  "name": "University of Technology Sydney"
+},
+{
+  "@id": "https://orcid.org/0000-0002-3545-944X",
+  "@type": "Person",
+  "affiliation": {"@id": "https://ror.org/03f0f6041"},
+  "email": "peter.sefton@uts.edu.au",
+  "name": "Peter Sefton"
+}
 ```
-
-
-              “creator”: {“@id”: `"https://orcid.org/0000-0002-3545-944X"`} \
-`},` \
-`{` \
-`  "@id": "https://ror.org/03f0f6041",` \
-`  "@type": "Organization",` \
-`  "name": "University of Technology Sydney"` \
-`},` \
-`{` \
-`       "@id": "https://orcid.org/0000-0002-3545-944X",` \
-`       "@type": "Person",` \
-`       "affiliation": {"@id": "https://ror.org/03f0f6041"},` \
-`       "email": "peter.sefton@uts.edu.au",` \
-`       "name": "Peter Sefton"` \
-`     }`
 
 Sometimes researchers want to affiliate with a sub-part of an institution, such as institute, faculty department, or research group.
 
-Here's a (real) example of a researcher who has four institutional affiliations for a published article and data set:
+Here's a (real, but abriged) example of a researcher who has four institutional affiliations for a published article and data set:
 
 
-```
+```json
 {
   "@id": "https://doi.org/10.4225/59/59672c09f4a4b",
   "@type": "Dataset",
@@ -506,11 +505,8 @@ Here's a (real) example of a researcher who has four institutional affiliations 
   "creator": [
     {
       "@id": "https://orcid.org/0000-0002-6756-6119"
-    },
-    ...
-
-}
-
+    }
+},
 {
   "@id": "https://orcid.org/0000-0002-6756-6119",
   "@type": "Person",
@@ -536,7 +532,7 @@ Here's a (real) example of a researcher who has four institutional affiliations 
 The first affiliation is a Faculty of a university. The Faculty is associated with the university via [memberOf](http://schema.org/memberOf).
 
 
-```
+```json
 {
   "@id": "1",
   "@type": "Organization",
@@ -554,7 +550,7 @@ The first affiliation is a Faculty of a university. The Faculty is associated wi
 ```
 
 
-Thus _RO-Crate JSON-LD_ MAY express chained affiliations with more precision than by using string-literals as values for [affiliation](http://schema.org/affiliation).
+Thus _RO-Crate JSON-LD_ MAY express chained affiliations with more precision than by using string-literals as values for [affiliation](http://schema.org/affiliation). 
 
 [See an example of a Person with four affiliations.](https://data.research.uts.edu.au/examples/v1.0/luckett/CATALOG_files/pairtree_root/ht/tp/+=/=o/rc/id/,o/rg/=0/00/0-/00/02/-6/75/6-/61/19/index.html)
 
@@ -565,10 +561,9 @@ A RO-Crate SHOULD have contact information, using a [contactPoint](http://schema
 
 NOTE: This usage follows that of Google Dataset search.
 
-IMPLEMENTATION NOTE: The Google structured Data tool gives an error if mailto: URLs are used in the "url" property.
+IMPLEMENTATION NOTE: The Google structured Data tool gives an error if `mailto:` URLs are used in the "url" property.
 
-
-```
+```json
 {
       "@id": "https://orcid.org/0000-0001-6121-5409",
       "@type": "Person",
@@ -599,7 +594,7 @@ IMPLEMENTATION NOTE: The Google structured Data tool gives an error if mailto: U
 This is not ideal, as there is no direct semantic relationship between the contactPoint property and the Dataset, so the same [contactPoint](http://schema.org/contactPoint) should be added to theRoot Data Entity, in anticipation of this being added to Schema.org, even though this is not strictly supported at the moment.
 
 
-```
+```json
 {
   "@id": "https://doi.org/10.4225/59/59672c09f4a4b",
   "@type": "Dataset",
@@ -621,7 +616,7 @@ To associate a publication with a dataset the _RO-Crate JSON-LD_ MUST include a 
 For example:
 
 
-```
+```json
 "citation": {"@id": "https://doi.org/10.1109/TCYB.2014.2386282"}
 ```
 
@@ -629,7 +624,7 @@ For example:
 The publication SHOULD be described in the _RO-Crate JSON-LD_.
 
 
-```
+```json
 {
   "@id": "https://doi.org/10.1109/TCYB.2014.2386282",
   "@type": "ScholarlyArticle",
@@ -664,11 +659,10 @@ The publication SHOULD be described in the _RO-Crate JSON-LD_.
 The Root Data Entity in _Bagged RO-Crate_ SHOULD have a [publisher](http://schema.org/publisher) property. This should be a an [Organization](http://schema.org/Organization) though it MAY be a string-literal or a URI.
 
 
-```
+```json
 {
   "@id": "https://doi.org/10.5281/zenodo.1009240",
   "@type": "Dataset",
-   <...>
   "name": "Sample dataset for RO-Crate v0.2",
   "publisher": {
     "@id": "https://ror.org/03f0f6041"
@@ -695,14 +689,13 @@ To associate a research project with a [Dataset](http://schema.org/Dataset), the
 NOTE: To make it very clear where funding is coming from, theRoot Data Entity SHOULD also reference funders directly, as well as via a chain of references.
 
 
-```
+```json
 {
   "@id": "https://doi.org/10.5281/zenodo.1009240",
   "@type": "Dataset",
   "funder": {
     "@id": "https://ror.org/038sjwq14"
   },
-  ...
 },
 
 {
@@ -748,7 +741,7 @@ If a _Data Entity_ has a license the entity SHOULD have a [license](http://schem
 This Data Item has a copyright holder which is different from its creator. There is a reference to an [Organization](http://schema.org/Organization) describing the copyright holder and a [sameAs](http://schema.org/sameAs) relation to a web page.
 
 
-```
+```json
 {
   "@id": "SciDataCon Presentations/AAA_Pilot_Project_Abstract.html",
   "@type": "File",
@@ -786,7 +779,7 @@ This Data Item has a copyright holder which is different from its creator. There
 ```
 
 
-[See this example of a an audio recording with a copyrightHolder property (which is different from the creator property) and which is linked to a license.](https://data.research.uts.edu.au/examples/v1.0/Data_Package-IDRC_Opportunities_and_Challenges_Open_Research_Strategies/CATALOG_files/pairtree_root/Po/li/cy/%5E2/0a/nd/%5E2/0I/mp/le/me/nt/at/io/n%5E/20/Re/vi/ew/%5E2/0I/nt/er/vi/ew/s=/In/te/rv/ie/w_/Au/di/o=/In/te/rv/ie/w-/25/_0/9_/20/15/-1/3_/43/-J/ua/n_/Bi/ca/rr/eg/ui/,f/la/c/index.html)
+See the example of a an [audio recording with a `copyrightHolder` property](https://data.research.uts.edu.au/examples/v1.0/Data_Package-IDRC_Opportunities_and_Challenges_Open_Research_Strategies/CATALOG_files/pairtree_root/Po/li/cy/%5E2/0a/nd/%5E2/0I/mp/le/me/nt/at/io/n%5E/20/Re/vi/ew/%5E2/0I/nt/er/vi/ew/s=/In/te/rv/ie/w_/Au/di/o=/In/te/rv/ie/w-/25/_0/9_/20/15/-1/3_/43/-J/ua/n_/Bi/ca/rr/eg/ui/,f/la/c/index.html) (which is different from the `creator` property) and which is linked to a `license`.
 
 
 ### Equipment
@@ -794,7 +787,7 @@ This Data Item has a copyright holder which is different from its creator. There
 To specify which equipment was used to create or update a _Data Entity_, the _RO-Crate_ JSON-LD should have a _Context Entity_ for each item of equipment which SHOULD be of `@type` [IndividualProduct](http://schema.org/IndividualProduct). The entity SHOULD have a serial number, manufacturer that identifies it as completely as possible. In this case the equipment is a bespoke machine. The equipment SHOULD be described on a web page, and the address of the description SHOULD be used as its `@id`.
 
 
-```
+```json
 {
   "@id": "https://confluence.csiro.au/display/ASL/Hovermap",
   "@type": "IndividualProduct",
@@ -810,7 +803,7 @@ Uses [CreateAction](http://schema.org/CreateAction) and [UpdateAction](http://sc
 In this example the CreateAction has a human [agent](http://schema.org/agent), the object is a Place (a cave) and the Hovermap drone is the [instrument](http://schema.org/instrument) used in the file creation event.
 
 
-```
+```json
 {
       "@id": "DataCapture_wcc02",
       "@type": "CreateAction",
@@ -853,28 +846,27 @@ In this example the CreateAction has a human [agent](http://schema.org/agent), t
 
 ### Software and workflows
 
-TODO: Stian to add advice on how to link to workflow.
-
 To specify which software was used to create or update a file the software application SHOULD be represented with an entity of type [SoftwareApplication](http://schema.org/SoftwareApplication), with a [version] property. For example:
 
-`{` \
-`      "@id": "https://www.imagemagick.org/",` \
-`      "@type": [` \
-`        "SoftwareApplication"` \
-`      ],` \
-`      "url": "https://www.imagemagick.org/",` \
-`      "identifier": "https://www.imagemagick.org/",` \
-`      "name": "ImageMagick",` \
-`      "version": " ImageMagick 7.0.8-2 Q16 x86_64 2018-06-19"` \
-`    },` \
+```json
+{
+      "@id": "https://www.imagemagick.org/",
+      "@type": [
+        "SoftwareApplication"
+      ],
+      "url": "https://www.imagemagick.org/",
+      "identifier": "https://www.imagemagick.org/",
+      "name": "ImageMagick",
+      "version": " ImageMagick 7.0.8-2 Q16 x86_64 2018-06-19"
+}
+```
 
 
 The software SHOULD be associated with the [File](http://schema.org/MediaObject) it created using a CreateAction with the [File](http://schema.org/MediaObject) referenced by a [result](http://schema.org/result) property. Any input files SHOULD be referenced by the [object](http://schema.org/object) property.
 
-In this example, an image with the `@id` of `pics/2017-06-11 12.56.14.jpg` was transformed into an new image `pics/sepia_fence.jpg` using the `ImageMagick` software application. Actions MAY have human-readable names, which MAY be machine generated for use at scale.
+In the below example, an image with the `@id` of `pics/2017-06-11 12.56.14.jpg` was transformed into an new image `pics/sepia_fence.jpg` using the `ImageMagick` software application. Actions MAY have human-readable names, which MAY be machine generated for use at scale.
 
-
-```
+```json
 {
       "@id": "Photo_Capture_1",
       "@type": "CreateAction",
@@ -923,95 +915,75 @@ In this example, an image with the `@id` of `pics/2017-06-11 12.56.14.jpg` was t
 
 The RO-Crate might embed scientific workflows and scripts that can be or was used to analyse or generate files contained by the RO-Crate. Workflows and scripts are described using the type SoftwareSourceCode instead of SoftwareApplication above.  The distinction is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation; while a Python script that is customized for a particular data analysis might be important to understand further and should be included as source code in the RO-Crate dataset:
 
+```json
        {
-
             "@id": "workflow/retropath.knime",
-
             "@type": "SoftwareSourceCode",
-
             "additionalType": {"@id": "wfdesc:Workflow"},
-
             "name": "RetroPath Knime workflow",
-
             "description": "KNIME implementation of RetroPath2.0 workflow",
-
             "creator": {"@id": "#thomas"},
-
             "programmingLanguage": {"@id": "#knime"},
-
-            “license”: “http://xxxx”,
-
+            "license": "https://spdx.org/licenses/BSD-2-Clause.html",
             "potentialAction": {
-
                 "@type": "ActivateAction",
-
                 "instrument": {"@id": "#knime"}
-
             }
-
         }
+```
 
 Workflows and scripts are saved on disk using a language and generally needs a runtime, in RO-Crate indicated using a liberal interpretation of programmingLanguage and potentialAction. Note that the language and its runtime might differ, e.g. there are multiple potential runtimes of a JavaScript, although in the base-case they are the same, and as a shortcut can be described in one go as both a ComputerLanguage and SoftwareApplication:
 
+```json
        {
-
             "@id": "#knime",
-
             "@type": [
-
                 "ComputerLanguage",
-
                 "SoftwareApplication"
-
             ],
-
             "name": "KNIME Analytics Platform",
-
             "alternateName": "KNIME",
-
             "url": {"@id": "https://www.knime.com/knime-software/knime-analytics-platform"},
-
             "version": "3.6"
-
         }
+```
 
 Required properties are name, url and version, which should indicate a known version the workflow/script was developed or tested with. alternateName may be provided if there is a shorter colloquial name, for instance “R” instead of “The R Project for Statistical Computing”.
 
 To indicate that a SoftwareSourceCode is in the form of a script (e.g. sequential batch/shell script), use:
 
+```json
             "additionalType": {"@id": "roterms:Script"}
+```
 
 If the `SoftwareSourceCode` is in the form of a workflow (e.g. a pipeline of steps with data flow), use:
 
+```json
             "additionalType": {"@id": "wfdesc:Workflow"}
-
+```
 
 #### Workflow diagram/sketch
 
 It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from the workflow management system or drawn manually as a diagram. It should be included as an _ImageObject_ which is _about_ the _SoftwareSourceCode_:
 
+```json
 {
-
             "@id": "workflow/workflow.svg",
-
             "@type": "ImageObject",
-
             "additionalType": {"@id": "roterms:Sketch"},
-
             "encodingFormat": "image/svg+xml",
-
             "description": "Diagram of RetroPath2.0 workflow",
-
             "about": {"@id": "workflow/workflow.knime"}
-
 }
+```
 
 The image file format should be indicated with encodingFormat - which should be one of the values image/svg+xml (e.g. vector diagram), image/png (e.g. screenshot) or image/jpeg (e.g. photo of whiteboard).  The additionalType should be given as roterms:Sketch to indicate it is wh.
 
 A Sketch may still be provided even if there is no programmatic SoftwareSourceCode that can be executed (e.g. because the workflow was done by hand). In this case the sketch should have an about referring to the whole RO-Crate dataset:
 
+```json
 "about": {"@id": "./"}
-
+```
 
 ### Representing Provenance: changes to an object
 
@@ -1035,12 +1007,11 @@ An Action which has failed MAY record any error information in an [error](http:/
 
 To record curation actions which modify a [File](http://schema.org/MediaObject) within a DataSet - for example, by correcting or enhancing metadata - the old version of the [File](http://schema.org/MediaObject) SHOULD be retained, and a [CreateAction](http://schema.org/CreateAction) added which has the original version as its [object](http://schema.org/object) and the new version as its [result](http://schema.org/result).
 
-
-```
+```json
 {
     "@id": "history-01",
     "@type": "CreateAction",
-    "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" }
+    "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" },
     "name": "RO-Crate created",
     "endTime": "2018-08-31",
     "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
@@ -1051,7 +1022,7 @@ To record curation actions which modify a [File](http://schema.org/MediaObject) 
 {
     "@id": "history-02",
     "@type": "UpdateAction",
-    "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" }
+    "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" },
     "name": "RO-Crate published",
     "endTime": "2018-09-10",
     "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
@@ -1063,7 +1034,7 @@ To record curation actions which modify a [File](http://schema.org/MediaObject) 
     "@id": "history-03",
     "@type": "CreateAction",
     "object": { "@id": "./metadata.xml.v0.1" },
-    "result": { "@id": "./metadata.xml" }
+    "result": { "@id": "./metadata.xml" },
     "name": "metadata update",
     "endTime": "2018-09-12",
     "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
@@ -1074,7 +1045,7 @@ To record curation actions which modify a [File](http://schema.org/MediaObject) 
 {
     "@id": "history-04",
     "@type": "UpdateAction",
-    "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" }
+    "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" },
     "name": "RO-Crate published",
     "endTime": "2018-09-13",
     "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
@@ -1101,8 +1072,7 @@ Schema.org has a generic extension mechanism for encoding adding arbitrary prope
 
 To include EXIF, or other data which can be encoded as property/value pairs, add an array of references to _Anonymous Entities_ which encode each property. This example shows one property of several hundred.
 
-
-```
+```json
 {
       "@id": "pics/2017-06-11 12.56.14.jpg",
       "@type": "ImageObject",
@@ -1117,7 +1087,6 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
         {
           "@id": "_:b0"
         },
-        ...
         {
           "@id": "_:b312"
         },
@@ -1142,7 +1111,7 @@ To associate a _Data Entity_ with a _Context Entity_ representing a _geographica
 This example shows how to define a place, using a [geonames](https://www.geonames.org) ID:
 
 
-```
+```json
 {
   "@id": "https://www.geonames.org/8152662/catalina-park.html",
   "@type": "Place",
@@ -1159,7 +1128,7 @@ This example shows how to define a place, using a [geonames](https://www.geoname
 The place has a [geo](http://schema.org/geo) property, referencing an _Context Entity_ of `@type` [GeoCoordinates](http://schema.org/GeoCoordinates):
 
 
-```
+```json
 {
   "@id": "b4168a98-8534-4c6d-a568-64a55157b656",
   "@type": "GeoCoordinates",
@@ -1175,7 +1144,7 @@ The [GeoCoordinates](http://schema.org/GeoCoordinates) item SHOULD have a human 
 And the place is referenced from the [contentLocation](http://schema.org/contentLocation) property of the dataset.
 
 
-```
+```json
 {
   "@id": "https://doi.org/10.5281/zenodo.1009240",
   "@type": "Dataset",
@@ -1192,7 +1161,7 @@ And the place is referenced from the [contentLocation](http://schema.org/content
 [Place](http://schema.org/Place) MAY use any of the [resources available in Schema.org](http://schema.org/geo) to describe places. Future profiles of RO-Crate may mandate the use of a subset of these. Any directory or file or _Context Entity_ may be geo-located. For example this file:
 
 
-```
+```json
 {
   "@id": "pics/19093074_10155469333581584_5707039334816454031_o.jpg",
   "@type": "File",
@@ -1231,7 +1200,7 @@ NOTE: [PCDM](https://github.com/duraspace/pcdm/wiki) specifies that Files should
 For example, this data is exported from an [Omeka](https://omeka.org) repository:
 
 
-```
+```json
 {
    "@id": "https://omeka.uws.edu.au/farmstofreeways/api/collections/6",
    "@type": [
@@ -1321,7 +1290,7 @@ For example, the below [RepositoryObject](https://pcdm.org/2016/04/18/models#Obj
 If [thumbnail](http://schema.org/thumbnail)s are incidental to the data set, they need not be referenced by [hasPart](http://schema.org/hasPart) or [hasFile](https://pcdm.org/2016/04/18/models#hasFile) relationships. but must be in the BagIt manifest if in a _Bagged RO-Crate_.
 
 
-```
+```json
 {
   "@id": "https://omeka.uws.edu.au/farmstofreeways/api/items/383",
   "@type": [
@@ -1471,7 +1440,7 @@ The terms (properties and classes) used SHOULD be added as keys to the `@context
 For example. This URI from the [BIBO](http://purl.org/ontology/bibo/interviewee) ontology resolves to an ontology file, which is not useful for humans, but [this page](http://neologism.ecs.soton.ac.uk/bibo.html#interviewee) is human-readable:
 
 
-```
+```json
 {
   @context: {
     "interviewee": "http://purl.org/ontology/bibo/interviewee"
@@ -1494,5 +1463,4 @@ When generating the _RO-Crate Website_ from _RO-Crate JSON-LD_, the code MUST us
 Where there is no RDF ontology available, then implementors SHOULD attempt to provide context by creating stable web-accessible URIs to document properties and classes, for example, by linking to page describing an XML element or attribute from an XML schema, pending the publication of a formal ontology.
 
 
-<!-- Docs to Markdown version 1.0β17 -->
 
