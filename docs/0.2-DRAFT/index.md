@@ -17,6 +17,8 @@
 -->
 
 # RO-Crate Metadata Specification 0.2-DRAFT
+{:.no_toc}
+
 
 1. Table of Contents
 {:toc}
