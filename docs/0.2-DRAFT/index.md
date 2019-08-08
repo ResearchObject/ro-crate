@@ -148,11 +148,11 @@ The base RO-Crate specification makes no assumptions about the presence of any s
 
 At the basic level, an RO-Crate is a collection of files represented as a Schema.org _[Dataset](https://schema.org/Dataset)_, that together form a meaningful unit for the purposes of communication, citation, distribution, preservation, etc.  The _RO-Crate Metadata File_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. Self-containment is a core principle of RO-Crate, i.e. that all Dataset files and relevant metadata SHOULD, as far as possible, be contained by the RO-Crate, rather than referring to external resources. However the RO-Crate MAY also reference external resources which are stored or accessed separately, via URIs, e.g. because these cannot be included for practical or legal reasons. 
 
-It is important to note that the _RO-Crate Metadata file_ is not an exhaustive manifest or inventory, that is, it does not necessarily list or describe all files in the package.  Rather it is focused on providing sufficient amount of metadata to understand and use the content and is designed to be compatible with existing and future approaches that _do_ have full inventories / manifest and integrity checks, e.g. by using checksums, such as BagIt and OCFL Objects.
+It is important to note that the _RO-Crate Metadata file_ is not an exhaustive manifest or inventory, that is, it does not necessarily list or describe all files in the package.  Rather it is focused on providing sufficient amount of metadata to understand and use the content and is designed to be compatible with existing and future approaches that _do_ have full inventories / manifest and integrity checks, e.g. by using checksums, such as [BagIt] and Oxford Common File Layout [OCFL] [Objects][OCFL Object].
 
 The intention is that RO-Crates can work well with a variety of archive file formats, e.g. tar, zip, etc., and approaches to capturing file manifests and file fixity, such as BagIt and OCFL, git.
 
-In addition to the _RO-Crate metadata file_, the RO-Crate SHOULD include an _RO-Crate preview file_ a human-readable HTML rendering of the RO-Crate metadata file located in the RO-Crate root.
+In addition to the _RO-Crate metadata file_, the RO-Crate MAY include an _RO-Crate preview file_ a human-readable HTML rendering of the RO-Crate metadata file located in the RO-Crate root.
 
 
 ## RO-Crate Metadata
@@ -172,9 +172,9 @@ RO-Crate relies heavily on [schema.org](http://schema.org) using a constrained s
 Generally, the standard keys for [schema.org](http://schema.org) should be used. However, RO-Crate uses variant names for some elements, specifically:
 
 
-*   `File` is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of schema.org or a research data extension may re-define `File`.
-*   `Journal` is mapped to <http://schema.org/Periodical>.
-*   `path` is mapped to <http://schema.org/contentUrl>. This property is used on some classes which do not strictly (yet) allow it in the official Schema.org.
+*   [File] is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of schema.org or a research data extension may re-define `File`.
+*   [Journal] is mapped to <http://schema.org/Periodical>.
+*   [path] is mapped to <http://schema.org/contentUrl>. This property is used on some classes which do not strictly (yet) allow it in the official Schema.org.
 
 
 ## Additional metadata standards
@@ -746,7 +746,7 @@ NOTE: To make it very clear where funding is coming from, theRoot Data Entity SH
 
 ### Licensing, Access control and copyright
 
-If a _Data Entity_ has a license the entity SHOULD have a [license](http://schema.org/license) property with a value of [CreativeWork](http://schema.org/CreativeWork) that describes the license. The ID of the license should be its URL (eg a Creative Commons License URL) and a summary of the license included in the RO-Crate. If this is not possible a URL MAY be used as the value.
+If a _Data Entity_ has a [license] that is different from the license on the _Root Dataset_, the entity SHOULD have a [license](http://schema.org/license) property referencing a _ContextEntity_ with a value of [CreativeWork](http://schema.org/CreativeWork) that describes the license. The ID of the license should be its URL (eg a Creative Commons License URL) and a summary of the license included using the [description] property. If this is not possible a URL MAY be used as the value.
 
 This Data Item has a copyright holder which is different from its creator. There is a reference to an [Organization](http://schema.org/Organization) describing the copyright holder and a [sameAs](http://schema.org/sameAs) relation to a web page.
 
@@ -1534,9 +1534,13 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 [DataDownload]: http://schema.org/DataDownload
 [Exif]: https://en.wikipedia.org/wiki/Exif
 [WorkflowSketch]: http://wf4ever.github.io/ro/2016-01-28/roterms/#Sketch
-
-
-
+[Journal]: http://schema.org/Periodical
+[url]: http://schema.org/url
+[version]: http://schema.org/version
+[endTime]: http://schema.org/endTime
+[startTime]: http://schema.org/startTime
+[actionStatus]: http://schema.org/actionStatus
+[ActionStatusType]: http://schema.org/ActionStatusType
 
 [DataCrate BagIt Profile]: https://raw.githubusercontent.com/UTS-eResearch/datacrate/master/spec/1.0/profile-datacrate-v1.0.json
 [DataCrate JSON-LD Context]: ./context.json
@@ -1550,10 +1554,11 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 [SPAR]: https://www.sparontologies.net/
 [FRAPO]: https://www.sparontologies.net/ontologies/frapo
 [PCDM]: https://github.com/duraspace/pcdm/wiki
-[pcdm:Collection]: https://pcdm.org/2016/04/18/models#Collection
 [hasFile]: https://pcdm.org/2016/04/18/models#hasFile
+[hasMember]: https://pcdm.org/2016/04/18/models#hasMember
 [RepositoryCollection]: https://pcdm.org/2016/04/18/models#Collection
 [RepositoryObject]: https://pcdm.org/2016/04/18/models#Object
+
 [isOutputOf]: https://sparontologies.github.io/frapo/current/frapo.html#d4e526
 [ResearchObject]: https://www.researchobject.org/
 [Flattened Document Form]: https://json-ld.org/spec/latest/json-ld/#flattened-document-form
@@ -1563,3 +1568,5 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 [ORCID]: https://orcid.org
 [JSON Object]: https://w3c.github.io/json-ld-syntax/#terminology
 [BIBO]: http://purl.org/ontology/bibo/interviewee
+[OCFL]: https://ocfl.io/
+[OCFL Object]: https://ocfl.io/0.3/spec/#object-spec
