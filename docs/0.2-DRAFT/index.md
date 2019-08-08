@@ -116,14 +116,10 @@ The name of the _RO-Crate root_ directory is not defined. For instance, if an _R
 
 ### RO-Crate website (`ro-crate-preview.html` and `ro-crate-preview_files/`)
 
-
-
 If present `ro-crate-preview.html` MUST:
 
   *   Be a valid [HTML 5](https://www.w3.org/TR/html52/) document 
   *   contain at least a human readable summary of metadata relating to the _Root Data Entity_
-  *   If there is sufficient metadata, contain a prominent _“Cite-as”_ text with a natural language datacite citation.
-  *   If there are additional resources necessary to render the preview (e.g. CSS, JSON, HTML), link to them in a subdirectory `ro-crate-preview-files/`
   *   Contain a copy of the _RO-Crate JSON-LD_ in a `script` element of the `head` element of the HTML, for example:
   ```html
     <script type="application/ld+json">
@@ -134,6 +130,9 @@ If present `ro-crate-preview.html` MUST:
     </script>
   ```
 
+`ro-crate-preview.html` SHOULD:
+  *   If there is sufficient metadata, contain a prominent _“Cite-as”_ text with a natural language datacite citation.
+  *   If there are additional resources necessary to render the preview (e.g. CSS, JSON, HTML), link to them in a subdirectory `ro-crate-preview-files/`
 
 ### Payload files and directories
 
@@ -178,6 +177,22 @@ Generally, the standard keys for [schema.org](http://schema.org) should be used.
 *   `path` is mapped to <http://schema.org/contentUrl>. This property is used on some classes which do not strictly (yet) allow it in the official Schema.org.
 
 
+## Additional metadata standards
+
+`WorkflowSketch` - for an image depicting a workflow is from the ro-terms ontology <http://purl.org/ro/wf4ever#Sketch>, see the [documentation](http://wf4ever.github.io/ro/2016-01-28/roterms/#Sketch.)
+
+ RO-Crate also uses the _Portland Common Data Model_ ([PCDM](https://github.com/duraspace/pcdm/wiki)) and imports these terms:
+ 
+ [RepositoryObject](https://pcdm.org/2016/04/18/models#Object), 
+ [RepositoryCollection](https://pcdm.org/2016/04/18/models#Collection)
+ [RepositoryFile](https://pcdm.org/2016/04/18/models#Collection)
+ [hasMember](https://pcdm.org/2016/04/18/models#hasMember)
+ [hasFile](https://pcdm.org/2016/04/18/models#hasFile)
+
+  The keys RepositoryObject and RepositoryCollection were chosen to avoid collision between the terms Collection and Object with other vocabularies.
+
+
+
 ### Summary of Coverage
 
 At its core, RO-Crate is simply a way to make metadata assertions about a set of files and folders that make up a _Dataset_. These assertions can be made at three levels:
@@ -205,8 +220,6 @@ RO-Crate uses _Linked Data_ principles; adopters of RO-Crate are free to supplem
 ### Recommended Identifiers
 
 _RO-Crate JSON-LD_ SHOULD use the following IDs where possible: 
-
-
 
 *   For a Root Data Entity, an `@id` which SHOULD be a DOI URL. 
 *   For People participating in the research process: [ORCID](https://orcid.org) identifiers.
@@ -323,13 +336,15 @@ The following _RO-Crate Metadata file _represents a minimal description of an_ R
 
 ### Examples of referencing Data Entities (files and folders) from the Root Data Entity
 
-Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to from the Root Data Entity using the hasPart property. 
+Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to from the Root Data Entity using the [hasPart] property. 
 
-Where files are contained in sub-folders of the RO-Crate root, these MUST NOT be referenced from the Root Data Entity; rather, they should be linked from their parent Data Entity. 
+[hasPart](http://schema.org/hasPart)
 
-Data Entities representing files MUST be of `@type: File`, which is an RO-Crate alias for <http://schema.org/MediaObject>
+_Data Entities_ representing files MUST be of `@type: File`, which is an RO-Crate alias for <http://schema.org/MediaObject>
 
-Data Entities representing directories MUST be of `@type: Dataset`.
+_Data Entities_ representing directories MUST be of `@type: Dataset`.
+
+Directory hierarchies MAY be represented with nested Dataset _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
 
 _Note: as indicated above, there is no requirement to represent every file and folder in an RO-Crate as Data Entities in the RO-Crate JSON-LD._
 
@@ -428,13 +443,6 @@ A core principle of Linked data is to use URIs  to identify things such as peopl
       "creator": {"@id": "https://orcid.org/0000-0002-8367-6908"}
 
 }
-```
-
-This uses an [ORCID](https://orcid.org/) to unambiguously identify an author. Although this _Linked Data_ identifier can be followed to find information about the person, it is not possible to use the above _RO-Crate metadata_ alone to reliably construct a [DataCite](https://www.datacite.org/) citation. 
-
-The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Metadata Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.jsonld`):
-
-```json
 {
     "@id": "https://orcid.org/0000-0002-8367-6908",
     "@type": "Person",
@@ -442,6 +450,10 @@ The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Metad
     "name": "J. Xuan"
 }
 ```
+
+This uses an [ORCID](https://orcid.org/) to unambiguously identify an author, with a _Contextual Entity_ for the Author, of type [Person]((http://schema.org/Person)).
+
+The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Metadata Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.jsonld`):
 
 Note the string-value of the organizational affiliation. This SHOULD be improved by also providing a _Context Entity_ for the organization.
 
@@ -911,7 +923,7 @@ In the below example, an image with the `@id` of `pics/2017-06-11 12.56.14.jpg` 
 
 ### Workflows and scripts
 
-The RO-Crate might embed scientific workflows and scripts that can be or was used to analyse or generate files contained by the RO-Crate. Workflows and scripts are described using the type SoftwareSourceCode instead of `SoftwareApplication` above.  
+Scientific workflows and scripts that can be or was used to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts are described using the type SoftwareSourceCode instead of `SoftwareApplication` above.  
 
 The distinction is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation; while a Python script that is customized for a particular data analysis might be important to understand further and should be included as source code in the RO-Crate dataset:
 
@@ -932,7 +944,7 @@ The distinction is fluid, and comes down to availability and understandability. 
         }
 ```
 
-Workflows and scripts are saved on disk using a language and generally needs a runtime, in RO-Crate indicated using a liberal interpretation of `programmingLanguage` and `potentialAction`. Note that the language and its runtime might differ, e.g. there are multiple potential runtimes of a JavaScript, although in the base-case they are the same, and as a shortcut can be described in one go as both a `ComputerLanguage` and `SoftwareApplication`:
+Workflows and scripts are saved on disk using a language and generally need a runtime, in RO-Crate this SHOULD be indicated using a liberal interpretation of `programmingLanguage` and `potentialAction`. Note that the language and its runtime might differ, e.g. there are multiple potential runtimes of a JavaScript, although in the base-case they are the same, and as a shortcut can be described in one go as both a `ComputerLanguage` and `SoftwareApplication`:
 
 ```json
        {
@@ -948,7 +960,7 @@ Workflows and scripts are saved on disk using a language and generally needs a r
         }
 ```
 
-Required properties are `name`, `url` and `version`, which should indicate a known version the workflow/script was developed or tested with. `alternateName` may be provided if there is a shorter colloquial name, for instance “R” instead of “The R Project for Statistical Computing”.
+A data entity representing a runtime application or language MUST have a [name], [url] and [version], which should indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance “R” instead of “The R Project for Statistical Computing”.
 
 To indicate that a `SoftwareSourceCode` is in the form of a script (e.g. sequential batch/shell script), use:
 
@@ -970,14 +982,16 @@ It can be beneficial to show a diagram or sketch to explain the script/workflow.
 {
             "@id": "workflow/workflow.svg",
             "@type": "ImageObject",
-            "additionalType": {"@id": "roterms:Sketch"},
-            "encodingFormat": "image/svg+xml",
+            "additionalType": "WorkflowSketch",
+            "encodingFormat": {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92"},
             "description": "Diagram of RetroPath2.0 workflow",
             "about": {"@id": "workflow/workflow.knime"}
 }
 ```
 
-The image file format should be indicated with `encodingFormat` - which should be one of the values `image/svg+xml` (e.g. vector diagram), `image/png` (e.g. screenshot) or `image/jpeg` (e.g. photo of whiteboard).  The `additionalType` should be given as `roterms:Sketch`.
+TODO: Add "WorkflowSketch to the standard context"  {"@id": "roterms:Sketch"}
+
+The image file format should be indicated with [encodingFormat] - which should have an ID of of the values `"https://www.nationalarchives.gov.uk/PRONOM/fmt/92` (e.g. vector diagram), `https://www.nationalarchives.gov.uk/PRONOM/fmt/666` (e.g. screenshot) or `https://www.nationalarchives.gov.uk/PRONOM/fmt/669` (e.g. photo of whiteboard).  The `additionalType` should be given as `roterms:Sketch`.
 
 A _Sketch_ may still be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the workflow was done by hand). In this case the sketch should have an `about` referring to the _RO-Crate dataset_ as a whole:
 
@@ -985,7 +999,7 @@ A _Sketch_ may still be provided even if there is no programmatic `SoftwareSourc
 "about": {"@id": "./"}
 ```
 
-### Representing Provenance: changes to an object
+### Representing Provenance: changes to an object 
 
 To record an action which changes the DataSet's metadata, or changes its state in a publication or other workflow, a [CreateAction](http://schema.org/CreateAction) or [UpdateAction](http://schema.org/UpdateAction) SHOULD be associated with a _Data Entity_.
 
@@ -1394,7 +1408,7 @@ If [thumbnail](http://schema.org/thumbnail)s are incidental to the data set, the
 
 (These are notes for now)
 
-DataCite can accept metadata in Schema.org format if it is framed correctly via the Bolognese crosswalk to. 
+DataCite can accept metadata in Schema.org format if it is framed correctly, via the Bolognese crosswalk.
 
 
 ## The RO-Crate Website
@@ -1408,7 +1422,7 @@ _RO-Crate ro-crate-preview.html_ MUST be a static HTML file that will display hu
 The `ro-crate-preview.html` and `index.html` files file SHOULD:
 
 *   Show the contents of each data entity in a human readable form, showing each _Data Entity_ and each _Context Entity_ in HTML.
-*   When a _Data Entities_ and _Metadata Entities_ is referenced by its ID:
+*   When a _Data Entity_ or _Metadata Entity_ is referenced by its ID:
     *   If it has a [name](http://schema.org/name) property, provide a link to its HTML version.
     *   If it does not have a name (eg a [GeoCoordinates](http://schema.org/GeoCoordinates) location), show it embedded in the HTML for the entity.
 *   For keys that resolve in the `RO-Crate JSON-LD Context` to a URI, indicate this (the simplest way is to link the key to its definition.
@@ -1417,25 +1431,6 @@ The `ro-crate-preview.html` and `index.html` files file SHOULD:
 <!--
 An example implementation can be found in the [CalcyteJS]() tool.
 -->
-
-This is a suggested procedure to create the web-content in a RO-Crate:
-
-* Traverse the JSON-LD `@graph` by iterating over every entity in the _RO-Crate JSON-LD_: 
-* Compile an index of items by ID (the `ID-index` for the purposes of this explanation).
-*   Make a second pass of the JSON-LD to add reciprocal properties linking back from a referenced entity to the entity that references it.
-*   For the following structural properties, use the inverse property: `hasFile -> fileOf  hasPart -> isPartOf hasMember -> memberOf`.
-*   For other properties use JSON-LD's `@reverse` feature. For example: `{"@reverse": { creator: [ { '@id': '1' } ] }}`
-*   Starting with theRoot Data Entity, call a function Entity-to-HTML to generate `ro-crate-preview.html` which should contain:
-*   A prominent citation in DataCite text format if there is sufficient metadata to generate one.
-*   For _Hosted RO-Crates_ a prominent link to a downloadable version of the dataset (in addition to the fact that there will be a [distribution](http://schema.org/distribution) property).
-*   Function: Entity-to-HTML: A function to generate a web page summarizing
-*   The properties of the entity. For example by using a two-column table showing the property in the left column and its values in the right column.
-    *   Large lists of properties should be made usable for example by generating nested HTML `summary` elements to paginate them.
-    *   For properties that link to another entity, call Entity-to-HTML
-*   For properties that reference an external URI, show the URI as a link.
-*   For each referenced entity which is found in the `ID-index` call Entity-to-HTML (which will save the page) and link to it by calculating its path from its ID (see below).
-*   Save the web page on a path calculated as follows: If it is the Root Data Entity page, use `ro-crate-preview.html`, or for all other pages calculate a pairtree path using the item `@id` and add that to `ro-crate-preview.html`. For example: the path. `https://orcid.org/0000-0002-3545-944X` becomes: `ro-crate-preview_files/pairtree_root/ht/tp/+=/=o/rc/id/,o/rg/=0/00/0-/00/02/-3/54/5-/94/4X/index.html`
-
 
 ## Extending RO-Crate
 
@@ -1471,3 +1466,100 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 
 
 
+
+[JSON-LD]:(https://json-ld.org/spec/latest/json-ld/)
+[JSON-LD 1.1]:(https://json-ld.org/spec/latest/json-ld/)
+[BagIt]: https://en.wikipedia.org/wiki/BagIt
+[samples]: ./samples
+[DataCite Schema v4.0]: https://schema.datacite.org/meta/kernel-4.0/metadata.xsd
+[BagIt profile]: https://github.com/ruebot/bagit-profiles
+[CURIE]: https://www.w3.org/TR/curie/
+[keyword]: http://schema.org/keywords
+[about]: http://schema.org/about
+[name]: http://schema.org/name
+[creator]: http://schema.org/creator
+[Person]: http://schema.org/Person
+[schema:Collection]: http://schema.org/Collection
+[identifier]: http://schema.org/identifier
+[funder]: http://schema.org/funder
+[relatedItem]: http://schema.org/relatedItem
+[Organization]: http://schema.org/Organization
+[Dataset]: http://schema.org/Dataset
+[File]: http://schema.org/MediaObject
+[path]: http://schema.org/contentUrl
+[schema:contentUrl]: http://schema.org/contentUrl
+[schema:MediaObject]: http://schema.org/MediaObject
+[ScholarlyArticle]: http://schema.org/ScholarlyArticle
+[CreativeWork]: http://schema.org/CreativeWork
+[SoftwareApplication]: http://schema.org/SoftwareApplication
+[hasPart]: http://schema.org/hasPart
+[memberOf]: http://schema.org/memberOf
+[funder]: http://schema.org/funder
+[encodingFormat]: http://schema.org/encodingFormat
+[accountablePerson]: http://schema.org/accountablePerson
+[datePublished]: http://schema.org/datePublished
+[license]: http://schema.org/license
+[contact]: http://schema.org/accountablePerson
+[contributor]: http://schema.org/contributor
+[contentLocation]: http://schema.org/contentLocation
+[copyrightHolder]: http://schema.org/copyrightHolder
+[Place]: http://schema.org/Place
+[description]: http://schema.org/description
+[geo]: http://schema.org/geo
+[agent]: http://schema.org/agent
+[instrument]: http://schema.org/instrument
+[sameAs]: http://schema.org/sameAs
+[GeoCoordinates]: http://schema.org/GeoCoordinates
+[email]: http://schema.org/email
+[phone]: http://schema.org/phone
+[affiliation]: http://schema.org/affiliation
+[givenName]: http://schema.org/givenName
+[familyName]: http://schema.org/familyName
+[publisher]: http://schema.org/publisher
+[translator]: http://schema.org/translator
+[thumbnail]: http://schema.org/thumbnail
+[translationOf]: http://schema.org/translationOf
+[Product]: http://schema.org/Product
+[contactPoint]: http://schema.org/contactPoint
+[contactType]: http://schema.org/contactType
+[CreateAction]: http://schema.org/CreateAction
+[result]: http://schema.org/result
+[event]: http://schema.org/event
+[object]: http://schema.org/object
+[error]: http://schema.org/error
+[UpdateAction]: http://schema.org/UpdateAction
+[Action]: http://schema.org/Action
+[IndividualProduct]: http://schema.org/IndividualProduct
+[distribution]: http://schema.org/distribution
+[DataDownload]: http://schema.org/DataDownload
+[Exif]: https://en.wikipedia.org/wiki/Exif
+[WorkflowSketch]: http://wf4ever.github.io/ro/2016-01-28/roterms/#Sketch
+
+
+
+
+[DataCrate BagIt Profile]: https://raw.githubusercontent.com/UTS-eResearch/datacrate/master/spec/1.0/profile-datacrate-v1.0.json
+[DataCrate JSON-LD Context]: ./context.json
+[JSON-LD Framing 1.1]: https://json-ld.org/spec/latest/json-ld-framing/
+[DataCrate JSON-LD frame]: ./frame.json
+[geonames]: https://www.geonames.org
+[RDFa]: https://en.wikipedia.org/wiki/RDFa
+[schema.org]: http://schema.org
+[DCAT]: https://www.w3.org/TR/vocab-dcat/
+[DataCite]: https://www.datacite.org/
+[SPAR]: https://www.sparontologies.net/
+[FRAPO]: https://www.sparontologies.net/ontologies/frapo
+[PCDM]: https://github.com/duraspace/pcdm/wiki
+[pcdm:Collection]: https://pcdm.org/2016/04/18/models#Collection
+[hasFile]: https://pcdm.org/2016/04/18/models#hasFile
+[RepositoryCollection]: https://pcdm.org/2016/04/18/models#Collection
+[RepositoryObject]: https://pcdm.org/2016/04/18/models#Object
+[isOutputOf]: https://sparontologies.github.io/frapo/current/frapo.html#d4e526
+[ResearchObject]: https://www.researchobject.org/
+[Flattened Document Form]: https://json-ld.org/spec/latest/json-ld/#flattened-document-form
+[Pairtree]: https://confluence.ucop.edu/display/Curation/PairTree
+[Pairtree specification]: https://confluence.ucop.edu/display/Curation/PairTree?preview=/14254128/16973838/PairtreeSpec.pdf
+[linked data]: https://en.wikipedia.org/wiki/Linked_data
+[ORCID]: https://orcid.org
+[JSON Object]: https://w3c.github.io/json-ld-syntax/#terminology
+[BIBO]: http://purl.org/ontology/bibo/interviewee
