@@ -2,7 +2,7 @@
 
 This is the GitHub repository for contributing to the [Research Object Crate](https://researchobject.github.io/ro-crate/) specification.
 
-The [docs/](docs/) folder has the [MarkDown](https://guides.github.com/features/mastering-markdown) content that is rendered to <https://researchobject.github.io/ro-lite/> by [GitHub pages](https://pages.github.com/).
+The [docs/](docs/) folder has the [MarkDown](https://guides.github.com/features/mastering-markdown) content that is rendered to <https://researchobject.github.io/ro-crate/> by [GitHub pages](https://pages.github.com/). Alias <http://researchobject.org/ro-crate/> (note, no https) redirects.
 
 Feel free to use other folders for non-web content, e.g. examples, JSON-LD contexts, test scripts.
 

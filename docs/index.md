@@ -33,24 +33,21 @@ The RO-Crate effort brings together practitioners from very different background
 We are  [gathering usecases](https://github.com/ResearchObject/ro-crate/issues?q=is%3Aissue+is%3Aopen+label%3Ause-case), please help us by [adding more](https://github.com/ResearchObject/ro-crate/issues/new/choose).
   
 ## When can I use it?
-The RO-Crate specification is currently **work in progress** using Google Docs before being added to our [GitHub repository](https://github.com/ResearchObject/ro-crate).
+The RO-Crate specification is currently **work in progress** :
 
-*  [RO-Crate 0.2-DRAFT](https://docs.google.com/document/d/1sH9CscItg7PbkEOcHPX_tVXfWNP4R57ys2y3W-FfNuA/edit?usp=sharing) (in progress)
-
-*  [DataCrate 1.0 review](https://docs.google.com/document/d/150SzIG8Zs3wecPTUue7wxKn6V26oi7rYucS5lxnmWZU/edit) (imported from [datacrate](https://github.com/UTS-eResearch/datacrate/blob/master/spec/1.0/data_crate_specification_v1.0.md))
-
-*  [ROLite Draft 0.1.0](0.1.0)
+* [RO-Crate 0.2-DRAFT](0.2-DRAFT/) (newest, in progress)
+  * Annotated in [RO-Crate 0.2-DRAFTS Google Docs](https://docs.google.com/document/d/1sH9CscItg7PbkEOcHPX_tVXfWNP4R57ys2y3W-FfNuA/edit?usp=sharing)
+* [DataCrate 1.0 review](https://docs.google.com/document/d/150SzIG8Zs3wecPTUue7wxKn6V26oi7rYucS5lxnmWZU/edit) 
+  * (imported from [datacrate](https://github.com/UTS-eResearch/datacrate/blob/master/spec/1.0/data_crate_specification_v1.0.md))
+* [ROLite Draft 0.1.0](0.1.0) 
 
 _Historical note_: After the initial draft, the community decided to base the specification on [DataCrate](https://github.com/UTS-eResearch/datacrate/), and changed the name from _ROLite_ to **RO-Crate**.
-
 
 ## How can I use it?
 While we're mostly focusing on the specification, some tools already exist for working with RO-Crates:
 
  - [Calcyte](https://code.research.uts.edu.au/eresearch/CalcyteJS/tree/ro-crate) is a command-line tool to help create RO-Crates
  - ...
-
-  
 
 ## Contribute
 
@@ -73,8 +70,6 @@ The _RO-Crate_ team is:
 * Kristi Holmes <https://orcid.org/0000-0001-8420-5254>
 
 To suggest changes, improvements or issues, use the GitHub repository <https://github.com/ResearchObject/ro-crate> - if you are new to GitHub or Open Source you may appreciate the [GitHub guides](https://guides.github.com/) like [Hello World](https://guides.github.com/activities/hello-world/), [MarkDown](https://guides.github.com/features/mastering-markdown/) and [How to contribute to open source](https://opensource.guide/how-to-contribute/)
-
-  
 
 You are welcome to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! Contributors are expected to comply with our [Code of Conduct](https://github.com/ResearchObject/ro-crate/blob/master/CODE_OF_CONDUCT.md) to ensure an open and inclusive environment.
 
