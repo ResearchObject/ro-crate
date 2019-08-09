@@ -172,22 +172,29 @@ RO-Crate relies heavily on [schema.org](http://schema.org) using a constrained s
 Generally, the standard keys for [schema.org](http://schema.org) should be used. However, RO-Crate uses variant names for some elements, specifically:
 
 
-*   [File] is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of schema.org or a research data extension may re-define `File`.
-*   [Journal] is mapped to <http://schema.org/Periodical>.
-*   [path] is mapped to <http://schema.org/contentUrl>. This property is used on some classes which do not strictly (yet) allow it in the official Schema.org.
+*   `File` is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of schema.org or a research data extension may re-define `File`.
+*   `Journal` is mapped to <http://schema.org/Periodical>.
+*   `path` is mapped to <http://schema.org/contentUrl>. This property is used on some classes which do not strictly (yet) allow it in the official Schema.org.
 
 
 ## Additional metadata standards
 
-`WorkflowSketch` - for an image depicting a workflow is from the ro-terms ontology <http://purl.org/ro/wf4ever#Sketch>, see the [documentation](http://wf4ever.github.io/ro/2016-01-28/roterms/#Sketch.)
+The following terms from the from the ro-terms ontology <http://purl.org/ro/wf4ever#> are used:
+
+- `WorkflowSketch` for an image depicting a workflow is , see the [documentation](http://wf4ever.github.io/ro/2016-01-28/roterms/#Sketch.)
+
+- `WorkfloScript` for a script in a  [documentation](http://wf4ever.github.io/ro/2016-01-28/roterms/#Script)
+
+-  `Workflow` from wfdesc see the [documentation](http://wf4ever.github.io/ro/#d3e202)
+
 
  RO-Crate also uses the _Portland Common Data Model_ ([PCDM](https://github.com/duraspace/pcdm/wiki)) and imports these terms:
  
- [RepositoryObject](https://pcdm.org/2016/04/18/models#Object), 
- [RepositoryCollection](https://pcdm.org/2016/04/18/models#Collection)
- [RepositoryFile](https://pcdm.org/2016/04/18/models#Collection)
- [hasMember](https://pcdm.org/2016/04/18/models#hasMember)
- [hasFile](https://pcdm.org/2016/04/18/models#hasFile)
+ `RepositoryObject` https://pcdm.org/2016/04/18/models#Object, 
+ `RepositoryCollection` https://pcdm.org/2016/04/18/models#Collection
+ `RepositoryFile` https://pcdm.org/2016/04/18/models#Collection
+ `hasMember` https://pcdm.org/2016/04/18/models#hasMember
+ `hasFile` https://pcdm.org/2016/04/18/models#hasFile
 
   The keys RepositoryObject and RepositoryCollection were chosen to avoid collision between the terms Collection and Object with other vocabularies.
 
@@ -854,7 +861,7 @@ In this example the CreateAction has a human [agent](http://schema.org/agent), t
 [See an example of a data-capture CreateAction with an Object and two files as results.](https://data.research.uts.edu.au/examples/v1.0/Victoria_Arch_pub/CATALOG_files/pairtree_root/Da/ta/Ca/pt/ur/e_/wc/c0/2/index.html)
 
 
-### Software and workflows
+### Software 
 
 To specify which software was used to create or update a file the software application SHOULD be represented with an entity of type [SoftwareApplication](http://schema.org/SoftwareApplication), with a [version] property. For example:
 
@@ -923,7 +930,7 @@ In the below example, an image with the `@id` of `pics/2017-06-11 12.56.14.jpg` 
 
 ### Workflows and scripts
 
-Scientific workflows and scripts that can be or was used to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts are described using the type SoftwareSourceCode instead of `SoftwareApplication` above.  
+Scientific workflows and scripts that can be or were used to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts are described using the type SoftwareSourceCode instead of `SoftwareApplication` above.  
 
 The distinction is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation; while a Python script that is customized for a particular data analysis might be important to understand further and should be included as source code in the RO-Crate dataset:
 
@@ -931,7 +938,7 @@ The distinction is fluid, and comes down to availability and understandability. 
        {
             "@id": "workflow/retropath.knime",
             "@type": "SoftwareSourceCode",
-            "additionalType": {"@id": "wfdesc:Workflow"},
+            "additionalType": {"@id": "Workflow"},
             "name": "RetroPath Knime workflow",
             "description": "KNIME implementation of RetroPath2.0 workflow",
             "creator": {"@id": "#thomas"},
@@ -965,13 +972,13 @@ A data entity representing a runtime application or language MUST have a [name],
 To indicate that a `SoftwareSourceCode` is in the form of a script (e.g. sequential batch/shell script), use:
 
 ```json
-            "additionalType": {"@id": "roterms:Script"}
+            "additionalType": {"@id": "WorkflowScript"}
 ```
 
 If the `SoftwareSourceCode` is in the form of a workflow (e.g. a pipeline of steps with data flow), use:
 
 ```json
-            "additionalType": {"@id": "wfdesc:Workflow"}
+            "additionalType": {"@id": "Workflow"}
 ```
 
 #### Workflow diagram/sketch
@@ -981,17 +988,36 @@ It can be beneficial to show a diagram or sketch to explain the script/workflow.
 ```json
 {
             "@id": "workflow/workflow.svg",
+            "path": "workflow/workflow.svg",
             "@type": "ImageObject",
             "additionalType": "WorkflowSketch",
-            "encodingFormat": {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92"},
+            "encodingFormat":  "image/svg+xml",
             "description": "Diagram of RetroPath2.0 workflow",
             "about": {"@id": "workflow/workflow.knime"}
 }
 ```
 
-TODO: Add "WorkflowSketch to the standard context"  {"@id": "roterms:Sketch"}
 
-The image file format should be indicated with [encodingFormat] - which should have an ID of of the values `"https://www.nationalarchives.gov.uk/PRONOM/fmt/92` (e.g. vector diagram), `https://www.nationalarchives.gov.uk/PRONOM/fmt/666` (e.g. screenshot) or `https://www.nationalarchives.gov.uk/PRONOM/fmt/669` (e.g. photo of whiteboard).  The `additionalType` should be given as `roterms:Sketch`.
+The image file format SHOULD be indicated with [encodingFormat] via Mime - eg  "image/svg+xml".
+
+Additionally a PRONOM identifier MAY be used, via a reference to a _ContextualEntity_ {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92"}
+
+```json
+{
+            "@id": "workflow/workflow.svg",
+            "path": "workflow/workflow.svg",
+            "@type": "ImageObject",
+            "additionalType": "WorkflowSketch",
+            "encodingFormat":  ["image/svg+xml", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92"}],
+            "description": "Diagram of RetroPath2.0 workflow",
+            "about": {"@id": "workflow/workflow.knime"}
+}
+ { 
+   "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92", "@type": "URL",
+   "name": "Portable Network Graphics", 
+   "Description": "Portable Network Graphics (PNG) ... " 
+  }
+```
 
 A _Sketch_ may still be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the workflow was done by hand). In this case the sketch should have an `about` referring to the _RO-Crate dataset_ as a whole:
 
@@ -1403,12 +1429,6 @@ If [thumbnail](http://schema.org/thumbnail)s are incidental to the data set, the
 
 [See an example of a thumbnail.](https://data.research.uts.edu.au/examples/v1.0/sample/CATALOG_files/pairtree_root/pi/cs/=2/01/7-/06/-1/1%5E/20/12/,5/6,/14/,j/pg/index.html)
 
-
-## IMPLEMENTATION NOTE: Datacite citations
-
-(These are notes for now)
-
-DataCite can accept metadata in Schema.org format if it is framed correctly, via the Bolognese crosswalk.
 
 
 ## The RO-Crate Website
