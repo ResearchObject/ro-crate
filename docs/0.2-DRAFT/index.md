@@ -42,7 +42,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 This document specifies a method, known as _RO-Crate_ (Research Object Crate), of organizing file-based data with associated metadata, using linked data principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata.
 
-The core of RO-Crate is a JSON-LD file, the _RO-Crate Metadata File_, named `ro-crate-metadata.jsonld`. This file contains structured metadata about the dataset as a whole (the _Root Data Entity_) and, optionally, about some or all of its files. This provides a simple way to, for example, assert the creators (e.g. people, organizations) of the RO-Crate or one its files, or to capture more complex provenance for files, such as how they were created using software and equipment. 
+The core of RO-Crate is a JSON-LD file, the _RO-Crate Metadata File_, named `ro-crate-metadata.jsonld`. This file contains structured metadata about the dataset as a whole (the _Root Data Entity_) and, optionally, about some or all of its files. This provides a simple way to, for example, assert the authors (e.g. people, organizations) of the RO-Crate or one its files, or to capture more complex provenance for files, such as how they were created using software and equipment. 
 
 While providing the formal specification for RO-Crate, this document also aims to be a practical guide for software authors to create tools for generating and consuming research data packages, with explanation by examples. 
 
@@ -81,7 +81,7 @@ _RO-Crate JSON-LD_: JSON-LD using the _RO-Crate JSON-LD Context_ containing RO-C
 
 Throughout this specification, RDF terms are referred to using the keys defined in RO-Crate JSON-LD Context.
 
-Following [schema.org](http://schema.org) practice, property names start with lowercase letters and class names start with uppercase letters.
+Following [schema.org](http://schema.org) practice, `property` names start with lowercase letters and `Class` names start with uppercase letters.
 
 In `ro-crate-metadata.jsonld` RDF terms use their RO-Crate JSON-LD names as defined in the RO-Crate JSON-LD Context, which is available at [https://w3id.org/ro/crate/0.2-DRAFT/context](https://w3id.org/ro/crate/0.2-DRAFT/context)
 
@@ -178,24 +178,21 @@ Generally, the standard keys for [schema.org](http://schema.org) should be used.
 
 ### Additional metadata standards
 
-The following terms from the from the ro-terms ontology <http://purl.org/ro/wf4ever#> are used:
+The following terms from the from the [Research Object ontologies](https://w3id.org/ro/2016-01-28/) are used:
 
-- `WorkflowSketch` for an image depicting a workflow, see the [documentation](http://wf4ever.github.io/ro/2016-01-28/roterms/#Sketch.)
+- `Workflow` for a workflow definition, mapped to [http://purl.org/wf4ever/wfdesc#Workflow](https://w3id.org/ro/2016-01-28/wfdesc#Workflow)
+- `WorkflowScript` for a script, mapped to [http://purl.org/wf4ever/wf4ever#Script](https://w3id.org/ro/2016-01-28/wf4ever#Script)
+- `WorkflowSketch` for an image depicting a workflow, mapped to [http://purl.org/wf4ever/roterms#Sketch](https://w3id.org/ro/2016-01-28/roterms#Sketch).
 
-- `WorkfloScript` for a script in a [documentation](http://wf4ever.github.io/ro/2016-01-28/roterms/#Script)
-
-- `Workflow` from wfdesc see the [documentation](http://wf4ever.github.io/ro/#d3e202)
-
-
- RO-Crate also uses the _Portland Common Data Model_ ([PCDM](https://github.com/duraspace/pcdm/wiki)) and imports these terms:
+RO-Crate also uses the _Portland Common Data Model_ ([PCDM](https://github.com/duraspace/pcdm/wiki)) and imports these terms:
  
- `RepositoryObject` https://pcdm.org/2016/04/18/models#Object, 
- `RepositoryCollection` https://pcdm.org/2016/04/18/models#Collection
- `RepositoryFile` https://pcdm.org/2016/04/18/models#Collection
- `hasMember` https://pcdm.org/2016/04/18/models#hasMember
- `hasFile` https://pcdm.org/2016/04/18/models#hasFile
+- `RepositoryObject` mapped to https://pcdm.org/2016/04/18/models#Object
+- `RepositoryCollection` mapped to  https://pcdm.org/2016/04/18/models#Collection
+- `RepositoryFile` mapped to https://pcdm.org/2016/04/18/models#Collection
+- `hasMember` mapped to https://pcdm.org/2016/04/18/models#hasMember
+- `hasFile` mapped to https://pcdm.org/2016/04/18/models#hasFile
 
-  The keys RepositoryObject and RepositoryCollection were chosen to avoid collision between the terms Collection and Object with other vocabularies.
+The keys `RepositoryObject` and `RepositoryCollection` were chosen to avoid collision between the terms Collection and Object with other vocabularies.
 
 
 ### Summary of Coverage
