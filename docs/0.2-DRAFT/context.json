@@ -2244,7 +2244,9 @@
           "RepositoryCollection": "http://pcdm.org/models#Collection",
           "RepositoryObject": "http://pcdm.org/models#object",
 
+          "Workflow": "http://purl.org/ro/wfdesc#Workflow",
           "wfdesc:Workflow": "http://purl.org/ro/wfdesc#Workflow",
+          "Script": "http://purl.org/ro/wf4ever#Script",
           "wf4ever:Script": "http://purl.org/ro/wf4ever#Script",
           "roterms:ExampleRun": "http://purl.org/ro/roterms#ExampleRun",
           "roterms:Sketch": "http://purl.org/ro/roterms#Sketch",
