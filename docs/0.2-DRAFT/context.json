@@ -2258,6 +2258,7 @@
           "retrievedFrom": "http://purl.org/pav/retrievedFrom",
           "retrievedOn": "http://purl.org/pav/retrievedOn",
           "retrievedBy": "http://purl.org/pav/retrievedBy",
+          "WorkflowSketch": "http://purl.org/ro/wf4ever#Sketch",
 
 
           "@label": "http://www.w3.org/2000/01/rdf-schema#label",
