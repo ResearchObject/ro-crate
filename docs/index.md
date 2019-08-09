@@ -78,6 +78,9 @@ This specification and documentation is Open Source and licensed as [Apache Lice
 ### Meetings
 The RO-Crate team try to meet in a monthly telcon, see the [rolling agenda](https://s.apache.org/ro-crate-minutes) for schedule, call-in details and minutes.
 
+See also [recent and upcoming events](outreach#upcoming-and-recent-events).
 
 ## Cite RO-Crate
-Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): **A lightweight approach to research object data packaging** _Bioinformatics Open Source Conference (BOSC2019)_ https://doi.org/10.5281/zenodo.3250687
+Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): **A lightweight approach to research object data packaging** _Bioinformatics Open Source Conference (BOSC2019)_ <https://doi.org/10.5281/zenodo.3250687>
+
+See also [recent publications, presentations and citations](outreach).
