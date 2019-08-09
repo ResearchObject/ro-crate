@@ -186,11 +186,11 @@ The following terms from the from the [Research Object ontologies](https://w3id.
 
 RO-Crate also uses the _Portland Common Data Model_ ([PCDM](https://github.com/duraspace/pcdm/wiki)) and imports these terms:
  
-- `RepositoryObject` mapped to https://pcdm.org/2016/04/18/models#Object
-- `RepositoryCollection` mapped to  https://pcdm.org/2016/04/18/models#Collection
-- `RepositoryFile` mapped to https://pcdm.org/2016/04/18/models#Collection
-- `hasMember` mapped to https://pcdm.org/2016/04/18/models#hasMember
-- `hasFile` mapped to https://pcdm.org/2016/04/18/models#hasFile
+- `RepositoryObject` mapped to <https://pcdm.org/2016/04/18/models#Object>
+- `RepositoryCollection` mapped to <https://pcdm.org/2016/04/18/models#Collection>
+- `RepositoryFile` mapped to <https://pcdm.org/2016/04/18/models#Collection>
+- `hasMember` mapped to <https://pcdm.org/2016/04/18/models#hasMember>
+- `hasFile` mapped to <https://pcdm.org/2016/04/18/models#hasFile>
 
 The keys `RepositoryObject` and `RepositoryCollection` were chosen to avoid collision between the terms Collection and Object with other vocabularies.
 
@@ -223,7 +223,7 @@ _RO-Crate JSON-LD_ SHOULD use the following IDs where possible:
 *   For People participating in the research process: [ORCID](https://orcid.org) identifiers.
 *   For [Organization](http://schema.org/Organization)s including [funder](http://schema.org/funder)s,  Research Organization Registry URIs. [https://ror.org/](https://ror.org/)
 *   For items of type schema:Place, a geonames URL.
-*   For file formats, a [Pronom] URL, for example https://www.nationalarchives.gov.uk/PRONOM/fmt/831.
+*   For file formats, a [Pronom] URL, for example <https://www.nationalarchives.gov.uk/PRONOM/fmt/831>.
 
 In the absence of the above, RO-Crates SHOULD contain stable persistent URIs to identify all entities wherever possible.
 
