@@ -318,7 +318,7 @@ The following _RO-Crate Metadata file _represents a minimal description of an_ R
         },
 "contactPoint": {
         "@id": "tim.luckett@uts.edu.au"
-      }
+      
  },
   
  {
@@ -345,13 +345,16 @@ The following _RO-Crate Metadata file _represents a minimal description of an_ R
 
 Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to from the Root Data Entity using the [hasPart] property. 
 
-[hasPart](http://schema.org/hasPart)
 
 _Data Entities_ representing files MUST be of `@type: File`, which is an RO-Crate alias for <http://schema.org/MediaObject>
 
 _Data Entities_ representing directories MUST be of `@type: Dataset`.
 
 Directory hierarchies MAY be represented with nested Dataset _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
+
+If one or more directories are represented as data entities, the context entity for the [RO-Crate metadata file](#ro-crate-metadata-file) MUST also be present and indicate the `@id` of the _Root Data Entity_ `Dataset` in its [about].
+
+The [Dataset] data entities for directories MAY themselves be RO-Crates, in which case they SHOULD indicate their nested `FOLDER/ro-crate-metadata.jsonld` by using [subjectOf]. 
 
 _Note: as indicated above, there is no requirement to represent every file and folder in an RO-Crate as Data Entities in the RO-Crate JSON-LD._
 
@@ -441,7 +444,7 @@ schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | 
 
 ### People
 
-A core principle of Linked data is to use URIs  to identify things such as people. The following is the minimum recommended way of representing a [creator](http://schema.org/creator) in a RO-Crate. This property MAY be applied in the context of a directory ([Dataset](http://schema.org/Dataset)) or to a [File](http://schema.org/MediaObject).
+A core principle of Linked data is to use URIs  to identify things such as people. The following is the minimum recommended way of representing a [creator] in a RO-Crate. This property MAY be applied in the context of a directory ([Dataset]) or to a [File].
 
 ```json
 {
@@ -879,7 +882,7 @@ To specify which software was used to create or update a file the software appli
 ```
 
 
-The software SHOULD be associated with the [File](http://schema.org/MediaObject) it created using a CreateAction with the [File](http://schema.org/MediaObject) referenced by a [result](http://schema.org/result) property. Any input files SHOULD be referenced by the [object](http://schema.org/object) property.
+The software SHOULD be associated with the [File] it created using a CreateAction with the [File] referenced by a [result] property. Any input files SHOULD be referenced by the [object](http://schema.org/object) property.
 
 In the below example, an image with the `@id` of `pics/2017-06-11 12.56.14.jpg` was transformed into an new image `pics/sepia_fence.jpg` using the `ImageMagick` software application. Actions MAY have human-readable names, which MAY be machine generated for use at scale.
 
@@ -1031,7 +1034,7 @@ To record an action which changes the DataSet's metadata, or changes its state i
 
 A curation Action MUST have at least one [object](http://schema.org/object) which associates it with either the DataSet or one of its components.
 
-An Action which creates new _Data entities_ - for example, the creation of a new metadata file - SHOULD have these as [result](http://schema.org/result)s.
+An Action which creates new _Data entities_ - for example, the creation of a new metadata file - SHOULD have these as [result]s.
 
 An Action SHOULD have a [name](http://schema.org/name) and MAY have a [description](http://schema.org/description).
 
@@ -1045,7 +1048,7 @@ An Action which has failed MAY record any error information in an [error](http:/
 
 [UpdateAction](http://schema.org/UpdateAction) SHOULD only be used for actions which affect the DataSet as a whole, such as movement through a workflow.
 
-To record curation actions which modify a [File](http://schema.org/MediaObject) within a DataSet - for example, by correcting or enhancing metadata - the old version of the [File](http://schema.org/MediaObject) SHOULD be retained, and a [CreateAction](http://schema.org/CreateAction) added which has the original version as its [object](http://schema.org/object) and the new version as its [result](http://schema.org/result).
+To record curation actions which modify a [File](http://schema.org/MediaObject) within a DataSet - for example, by correcting or enhancing metadata - the old version of the [File](http://schema.org/MediaObject) SHOULD be retained, and a [CreateAction](http://schema.org/CreateAction) added which has the original version as its [object](http://schema.org/object) and the new version as its [result].
 
 ```json
 {
@@ -1329,7 +1332,7 @@ For example, this data is exported from an [Omeka](https://omeka.org) repository
 
 ### Thumbnails
 
-A [File](http://schema.org/MediaObject) or any other item MAY have a [thumbnail](http://schema.org/thumbnail) property which references another file.
+A [File] or any other item MAY have a [thumbnail](http://schema.org/thumbnail) property which references another file.
 
 For example, the below [RepositoryObject](https://pcdm.org/2016/04/18/models#Object) is related to four files which are all versions of the same image (via [hasFile](https://pcdm.org/2016/04/18/models#hasFile)) one of which is a thumbnail. The thumbnail MUST be included in the RO-Crate.
 
@@ -1430,6 +1433,37 @@ If [thumbnail](http://schema.org/thumbnail)s are incidental to the data set, the
 [See an example of a thumbnail.](https://data.research.uts.edu.au/examples/v1.0/sample/CATALOG_files/pairtree_root/pi/cs/=2/01/7-/06/-1/1%5E/20/12/,5/6,/14/,j/pg/index.html)
 
 
+### RO-Crate metadata file
+
+Occasionally it might be desirable to describe the RO-Crate metadata file `ro-crate-metadata.json`, which is not normally considered a part of the RO-Crate, rather it describes it.
+
+Examples include if the metadata file was written by someone else than who made the RO-Crate dataset, or it was converted from another format. Indicating the `ro-crate-metadata.json` also allows declaring the version of the RO-Crate specifications that was targeted.
+
+```json
+        {
+            "@id": "ro-crate-metadata.jsonld",
+            "@type": [
+                "CreativeWork"
+            ],
+            "about": {
+                "@id": "."
+            },
+            "additionalType": {
+                "@id": "https://w3id.org/ro/crate/0.2-DRAFT/"
+            },
+            "creator": {
+                "@id": "https://orcid.org/0000-0001-9842-9718"
+            }
+        }
+```
+
+The description of the RO-Crate metadata file, if present, MUST have:
+- [about] referencing the `@id` of the RO-Crate _Root Data Entity_ it describes.
+- [additionalType] referencing the `@id` of this specification <https://w3id.org/ro/crate/0.2-DRAFT/> (or newer)
+
+The description of the RO-Crate metadata file MAY have:
+- [creator] referencing the `@id` of a [Person] or [SoftwareApplication] that manually made the JSON-LD
+- [isBasedOn] referencing the `@id` of another path or URL if the _RO-Crate JSON_ was based on another file (e.g. `CATALOG.xlsx`)
 
 ## The RO-Crate Website
 
@@ -1531,6 +1565,7 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 [sameAs]: http://schema.org/sameAs
 [GeoCoordinates]: http://schema.org/GeoCoordinates
 [email]: http://schema.org/email
+[isBasedOn]: http://schema.org/isBasedOn
 [phone]: http://schema.org/phone
 [affiliation]: http://schema.org/affiliation
 [givenName]: http://schema.org/givenName
