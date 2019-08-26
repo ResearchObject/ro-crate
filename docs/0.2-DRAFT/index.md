@@ -129,15 +129,15 @@ If present, `ro-crate-preview.html` MUST:
   ```
 
 `ro-crate-preview.html` SHOULD:
-  *   Contain at least the same information as the _RO-Crate JSON-LD_, with the exception that files which have no description, creator or similar metadata MAY not be listed in the website.
-  *   Display at least the metadata relating to the _Root Data Enity_ as static HTML without the need for scripting. It MAY contain extra features enabled by JavaScript.
-  *   When a _Data Entity_ or _Context Entity_ is referenced by its ID:
-    *   If it has a [name](http://schema.org/name) property, provide a link to its HTML version.
-    *   If it does not have a name (e.g. a [GeoCoordinates](http://schema.org/GeoCoordinates) location), show it embedded in the HTML for the entity.
-  *   For keys that resolve in the `RO-Crate JSON-LD Context` to a URI, indicate this (the simplest way is to link the key to its definition.
-  *   For external URI values, provide a link.
-  *   If there is sufficient metadata, contain a prominent _“Cite-as”_ text with a natural language data citation (see for example the [FORCE11 Data Citation Principles](https://www.force11.org/group/joint-declaration-data-citation-principles-final)).
-  *   If there are additional resources necessary to render the preview (e.g. CSS, JSON, HTML), link to them in a subdirectory `ro-crate-preview-files/`
+*   Contain at least the same information as the _RO-Crate JSON-LD_, with the exception that files which have no description, author or similar metadata MAY not be listed in the website.
+*   Display at least the metadata relating to the _Root Data Enity_ as static HTML without the need for scripting. It MAY contain extra features enabled by JavaScript.
+*   When a _Data Entity_ or _Context Entity_ is referenced by its ID:
+  *   If it has a [name](http://schema.org/name) property, provide a link to its HTML version.
+  *   If it does not have a name (e.g. a [GeoCoordinates](http://schema.org/GeoCoordinates) location), show it embedded in the HTML for the entity.
+*   For keys that resolve in the `RO-Crate JSON-LD Context` to a URI, indicate this (the simplest way is to link the key to its definition.
+*   For external URI values, provide a link.
+*   If there is sufficient metadata, contain a prominent _“Cite-as”_ text with a natural language data citation (see for example the [FORCE11 Data Citation Principles](https://www.force11.org/group/joint-declaration-data-citation-principles-final)).
+*   If there are additional resources necessary to render the preview (e.g. CSS, JSON, HTML), link to them in a subdirectory `ro-crate-preview-files/`
 
 ### Payload files and directories
 
@@ -279,7 +279,7 @@ schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | 
 `@id` | Must be a a string of ‘./’ | M | M | M | M
 `name` |  | M | M | M | M
 `datePublished` |  | M | M | M |
-`creator` | Must appear at least once |  referencing a Contextual Entity of `@type: Person` or `Organization` | ? | M | M |
+`author` | Must appear at least once |  referencing a Contextual Entity of `@type: Person` or `Organization` | ? | M | M |
 `license` |  | M | M | M |
 `identifier` |  | ? | M | M |
 `distribution` |  |  |  |  | ?
@@ -291,7 +291,7 @@ schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | 
 
 ### Contextual Entity: Person
 
-_(required since `creator `is required)_
+_(required since `author `is required)_
 
 schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
 --------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
@@ -305,7 +305,7 @@ schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | 
 
 #### Contextual Entity: Organization
 
-_(required since `creator` is required)_
+_(required since `author` is required)_
 
 schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
 --------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
@@ -413,11 +413,7 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
     "@type": "File",
     "contentSize": "383766",
     "description": "Illustrator file for Glop Pot",
-    "encodingFormat": ["application/pdf", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19"}]
-  },
-  {
-  "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19",
-  "name": "Acrobat PDF 1.5 - Portable Document Format"
+    "encodingFormat": "application/pdf"
   },
   {
       "@id": "./lots_of_little_files",
@@ -428,6 +424,68 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
   }
 ]
 ```
+
+#### Adding detailed descriptions of encodings
+
+The above example provides a mime-type for the file `./cp7glop.ai` - which is
+useful as it may not be apparent that the file readable as a PDF file from the
+extension. To add more detail, encodings SHOULD be linked using a [PRONOM]
+identifier to a _Contextual Entity_ of `@type` Website.
+
+``` json
+ {
+    "@id": "cp7glop.ai",
+    "@type": "File",
+    "contentSize": "383766",
+    "description": "Illustrator file for Glop Pot",
+    "encodingFormat": ["application/pdf", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19"}]
+  },
+  {
+  "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19",
+  "name": "Acrobat PDF 1.5 - Portable Document Format",
+  "@type": "Website"
+  }
+
+```
+
+If there is not PRONOM identifier, then a contextual entity with a URL as an `@id` MAY be used:
+
+For example:
+
+```json
+ {
+    "@id": "1st-tool.cwl",
+    "@type": "File",
+    "contentSize": "120",
+    "description": "An example Common Workflow Language File",
+    "encodingFormat": ["text/plain", {"@id": "https://www.commonwl.org/v1.0/Workflow.html"}]
+  },
+  {
+  "@id": "https://www.commonwl.org/v1.0/Workflow.html",
+  "name": "Common Workflow Language (CWL) Workflow Description, v1.0.2",
+  "@type": "Website"
+  }
+```
+
+If there is no web-accessible decription for a file format it SHOULD be described locally in the dataset, for example in a file:
+
+```json
+ {
+    "@id": "some-file.some_extension",
+    "@type": "File",
+    "contentSize": "120",
+    "description": "A file in a non-standard format",
+    "encodingFormat": ["text/plain", {"@id": "https://www.commonwl.org/v1.0/Workflow.html"}]
+  },
+  {
+  "@id": "some_extension.md",
+  "encodingFormat": "text/plain",
+  "name": "Description of some_extension file format",
+  "@type": ["File", "CreativeWork"]
+  }
+```
+
+
 
 ### Core Metadata for _Data Entities_
 
@@ -459,13 +517,13 @@ The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Conte
 
 ### People
 
-A core principle of Linked data is to use URIs to identify things such as people. The following is the minimum recommended way of representing a [creator](http://schema.org/creator) in a RO-Crate. This property MAY be applied in the context of a directory ([Dataset](http://schema.org/Dataset)) or to a [File](http://schema.org/MediaObject).
+A core principle of Linked data is to use URIs to identify things such as people. The following is the minimum recommended way of representing a [author](http://schema.org/author) in a RO-Crate. This property MAY be applied in the context of a directory ([Dataset](http://schema.org/Dataset)) or to a [File](http://schema.org/MediaObject).
 
 ```json
 {
       "@type": "Dataset",
       "@id": "some_id",
-      "creator": {"@id": "https://orcid.org/0000-0002-8367-6908"}
+      "author": {"@id": "https://orcid.org/0000-0002-8367-6908"}
 
 }
 {
@@ -508,7 +566,7 @@ An [Organization](http://schema.org/Organization) SHOULD also be used for a [Per
   "@type": "Dataset",
   "@id": "some_id",
   "publisher": {"@id": "https://ror.org/03f0f6041"},
-  "creator": {"@id": "https://orcid.org/0000-0002-3545-944X"}
+  "author": {"@id": "https://orcid.org/0000-0002-3545-944X"}
 },
 {
   "@id": "https://ror.org/03f0f6041",
@@ -534,7 +592,7 @@ Here's a (real, but abridged) example of a researcher who has four institutional
   "@id": "./",
   "identifier": "https://doi.org/10.4225/59/59672c09f4a4b",
   "@type": "Dataset",
-  "creator": {"@id": "https://orcid.org/0000-0002-6756-6119"}
+  "author": {"@id": "https://orcid.org/0000-0002-6756-6119"}
 },
 {
   "@id": "https://orcid.org/0000-0002-6756-6119",
@@ -585,7 +643,7 @@ Thus _RO-Crate JSON-LD_ MAY express chained affiliations with more precision tha
 
 ### More detail on ContactPoint
 
-A RO-Crate SHOULD have contact information, using a [contactPoint](http://schema.org/contactPoint) property with a value of [ContactPoint](http://schema.org/contactPoint). Note that [Dataset](http://schema.org/Dataset) does not (yet) have a contactPoint property, so strictly this would have to be on a Person or Organization which is related to the Dataset via a [creator](http://schema.org/creator) or [contributor](http://schema.org/contributor) property.
+A RO-Crate SHOULD have contact information, using a [contactPoint](http://schema.org/contactPoint) property with a value of [ContactPoint](http://schema.org/contactPoint). Note that [Dataset](http://schema.org/Dataset) does not (yet) have a contactPoint property, so strictly this would have to be on a Person or Organization which is related to the Dataset via a [author](http://schema.org/author) or [contributor](http://schema.org/contributor) property.
 
 NOTE: This usage follows that of Google Dataset search.
 
@@ -656,7 +714,7 @@ The publication SHOULD be described in the _RO-Crate JSON-LD_.
 {
   "@id": "https://doi.org/10.1109/TCYB.2014.2386282",
   "@type": "ScholarlyArticle",
-  "creator": [
+  "author": [
     {
       "@id": "https://orcid.org/0000-0002-8367-6908"
     },
@@ -763,7 +821,7 @@ NOTE: To make it very clear where funding is coming from, the _Root Data Entity_
 
 If a _Data Entity_ has a [license] that is different from the license on the _Root Data Entity_, the entity SHOULD have a [license](http://schema.org/license) property referencing a _Context Entity_ with a value of [CreativeWork](http://schema.org/CreativeWork) that describes the license. The ID of the license SHOULD be its URL (e.g. a Creative Commons License URL) and a summary of the license included using the [description] property. If this is not possible a URL MAY be used as the value.
 
-This _Data Entity_ has a copyright holder which is different from its creator. There is a reference to an [Organization](http://schema.org/Organization) describing the copyright holder and a [sameAs](http://schema.org/sameAs) relation to a web page.
+This _Data Entity_ has a copyright holder which is different from its author. There is a reference to an [Organization](http://schema.org/Organization) describing the copyright holder and a [sameAs](http://schema.org/sameAs) relation to a web page.
 
 
 ```json
@@ -774,7 +832,7 @@ This _Data Entity_ has a copyright holder which is different from its creator. T
   "copyrightHolder": {
     "@id": "IDRC"
   },
-  "creator": {
+  "author": {
     "@id": "https://orcid.org/0000-0002-0068-716X"
   },
   "description": "Abstract for the Pilot Project initial findings",
@@ -802,7 +860,7 @@ This _Data Entity_ has a copyright holder which is different from its creator. T
 ```
 
 
-See the example of a an [audio recording with a `copyrightHolder` property](https://data.research.uts.edu.au/examples/v1.0/Data_Package-IDRC_Opportunities_and_Challenges_Open_Research_Strategies/CATALOG_files/pairtree_root/Po/li/cy/%5E2/0a/nd/%5E2/0I/mp/le/me/nt/at/io/n%5E/20/Re/vi/ew/%5E2/0I/nt/er/vi/ew/s=/In/te/rv/ie/w_/Au/di/o=/In/te/rv/ie/w-/25/_0/9_/20/15/-1/3_/43/-J/ua/n_/Bi/ca/rr/eg/ui/,f/la/c/index.html) (which is different from the `creator` property) and which is linked to a `license`.
+See the example of a an [audio recording with a `copyrightHolder` property](https://data.research.uts.edu.au/examples/v1.0/Data_Package-IDRC_Opportunities_and_Challenges_Open_Research_Strategies/CATALOG_files/pairtree_root/Po/li/cy/%5E2/0a/nd/%5E2/0I/mp/le/me/nt/at/io/n%5E/20/Re/vi/ew/%5E2/0I/nt/er/vi/ew/s=/In/te/rv/ie/w_/Au/di/o=/In/te/rv/ie/w-/25/_0/9_/20/15/-1/3_/43/-J/ua/n_/Bi/ca/rr/eg/ui/,f/la/c/index.html) (which is different from the `author` property) and which is linked to a `license`.
 
 
 ### Equipment
@@ -947,7 +1005,7 @@ The distinction is fluid, and comes down to availability and understandability. 
             "additionalType": {"@id": "Workflow"},
             "name": "RetroPath Knime workflow",
             "description": "KNIME implementation of RetroPath2.0 workflow",
-            "creator": {"@id": "#thomas"},
+            "author": {"@id": "#thomas"},
             "programmingLanguage": {"@id": "#knime"},
             "license": "https://spdx.org/licenses/BSD-2-Clause.html",
             "potentialAction": {
@@ -1121,7 +1179,7 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
       "@id": "pics/2017-06-11 12.56.14.jpg",
       "@type": "ImageObject",
       "contentSize": "5114778",
-      "creator": {
+      "author": {
         "@id": "https://orcid.org/0000-0002-3545-944X"
       },
       "description": "Depicts a fence at a disused motor racing venue with the front part of a slightly out of focus black dog in the foreground.",
@@ -1212,7 +1270,7 @@ And the place is referenced from the [contentLocation](http://schema.org/content
     "@id": "https://www.geonames.org/8152662/catalina-park.html"
   },
   "contentSize": "132765",
-  "creator": {
+  "author": {
     "@id": "https://orcid.org/0000-0002-3545-944X"
   },
 ```
@@ -1463,7 +1521,7 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 [keyword]: http://schema.org/keywords
 [about]: http://schema.org/about
 [name]: http://schema.org/name
-[creator]: http://schema.org/creator
+[author]: http://schema.org/author
 [Person]: http://schema.org/Person
 [schema:Collection]: http://schema.org/Collection
 [identifier]: http://schema.org/identifier
