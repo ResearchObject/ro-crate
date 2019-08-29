@@ -234,7 +234,6 @@ In the absence of the above, RO-Crates SHOULD contain stable persistent URIs to 
 The _RO-Crate JSON-LD_ MUST contain a _Root Data Entity_, identified by a
 _RO-Crate Metadata File Descriptor_ of type [CreativeWork] which describes it, with an [about]
 property referencing the _Root Data Entity_ the _Root Data Entity_ MUST have an `@id` of `./`.
-of `./`.
 
 ```json
 {
