@@ -16,7 +16,7 @@
    limitations under the License.
 -->
 
-# RO-Crate Metadata Specification 0.2-DRAFT
+# RO-Crate Metadata Specification 0.2
 {:.no_toc}
 
 
@@ -85,7 +85,7 @@ Throughout this specification, RDF terms are referred to using the keys defined 
 
 Following [schema.org](http://schema.org) practice, `property` names start with lowercase letters and `Class` names start with uppercase letters.
 
-In `ro-crate-metadata.jsonld` RDF terms use their RO-Crate JSON-LD names as defined in the RO-Crate JSON-LD Context, which is available at [https://w3id.org/ro/crate/0.2-DRAFT/context](https://w3id.org/ro/crate/0.2-DRAFT/context)
+In `ro-crate-metadata.jsonld` RDF terms use their RO-Crate JSON-LD names as defined in the RO-Crate JSON-LD Context, which is available at [https://w3id.org/ro/crate/0.2/context](https://w3id.org/ro/crate/0.2-DRAFT/context)
 
 
 ## RO-Crate Structure
@@ -122,7 +122,7 @@ If present, `ro-crate-preview.html` MUST:
   ```html
     <script type="application/ld+json">
     {
-        "@context": "https://w3id.org/ro/crate/0.2-DRAFT/context",
+        "@context": "https://w3id.org/ro/crate/0.2/context",
         "@graph": [ ...]
     }
     </script>
@@ -200,7 +200,7 @@ The keys `RepositoryObject` and `RepositoryCollection` were chosen to avoid coll
 
 RO-Crate is simply a way to make metadata assertions about a set of files and folders that make up a _Dataset_. These assertions can be made at three levels:
 
-*   Assertions at the RO-Crate level: for an RO-Crate to be useful, some metadata should be provided about the dataset as a whole (see minimum requirements for different use-cases below). In the _RO-Crate Metadata File_, we distinguish the _Root Data Entity_ which represents the RO-Crate as a whole, from other _Data Entities_ (files and folders contained in the RO-Crate) and _Context Entities_, e.g. a person, organisation, place related to an RO-Crate _Data Entity_
+*   Assertions at the RO-Crate/_Dataset _level: for an RO-Crate to be useful, some metadata should be provided about the dataset as a whole (see minimum requirements for different use-cases below). In the _RO-Crate Metadata File_, we distinguish the _Root Data Entity_ which represents the RO-Crate as a whole, from other _Data Entities_ (files and folders contained in the RO-Crate) and _Context Entities_, e.g. a person, organisation, place related to an RO-Crate _Data Entity_
 *   Assertions about files and folders contained in the RO-Crate: in addition to providing metadata about the RO-Crate as a whole, RO-Crate allows metadata assertions to be made about any other _Data Entity_
 *   Variable-level assertions: In some cases, e.g. for tabular data, additional metadata may be provided about the structure and variables within a given file. 
 
@@ -227,30 +227,6 @@ _RO-Crate JSON-LD_ SHOULD use the following IDs where possible:
 *   For file formats, a [Pronom] URL, for example <https://www.nationalarchives.gov.uk/PRONOM/fmt/831>.
 
 In the absence of the above, RO-Crates SHOULD contain stable persistent URIs to identify all entities wherever possible.
-
-_Root Data Entities_ MAY also have additional repository specific identifiers, described using `Contextual Entities` using a [PropertyValue], with a `name` that identifies the repository and the `identifier` as a value. The _same_ identifier MAY be used in multiple different repositories and effectively namespaced using the `name` of the ProperyValue.
-
-```json
-{
-  "@id": "./",
-  "@type": "Dataset",
-  "identifier": ["https://doi.org/10.4225/59/59672c09f4a4b", {"@id": "_:localid:my-repo:my-id"}, {"@id": "_:localid:other-repo:https://doi.org/10.4225/59/59672c09f4a4b"}]
-}
-
- {
-   "@id": "_:localid:my-repo:my-id",
-   "@type": "PropertyValue",
-   "name": "my-repo",
-   "value": "my-id"
- }
-
-  {
-   "@id": "_:localid:other-repo:https://doi.org/10.4225/59/59672c09f4a4b",
-   "@type": "PropertyValue",
-   "name": "other-repo",
-   "value": "https://doi.org/10.4225/59/59672c09f4a4b"
- }
- ```
 
 
 ### Core Metadata for the _Root Data Entity_ 
@@ -350,10 +326,10 @@ schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | 
 
 
 
-The following _RO-Crate Metadata File_ represents a minimal description of an _RO-Crate_. Note that for brevity the _[RO-Crate JSON-LD Context](https://w3id.org/ro/crate/0.2-DRAFT/context)_ is here shown by reference rather than inline.
+The following _RO-Crate Metadata File_ represents a minimal description of an _RO-Crate_. Note that for brevity the _[RO-Crate JSON-LD Context](https://w3id.org/ro/crate/0.2/context)_ is here shown by reference rather than inline.
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/0.2-DRAFT/context", 
+{ "@context": "https://w3id.org/ro/crate/0.2/context", 
   "@graph": [
 
  {
@@ -389,8 +365,6 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
 }
 ```
 
-
-
 ### Examples of referencing _Data Entities_ (files and folders) from the _Root Data Entity_
 
 Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indriectly, from the Root Data Entity using the [hasPart] property. Directory hierarchies MAY be represented with nested Dataset _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
@@ -417,7 +391,7 @@ _Note: as indicated above, there is no requirement to represent every file and f
 An example _RO-Crate JSON-LD_ for the above would be as follows:
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/0.2-DRAFT/context",
+{ "@context": "https://w3id.org/ro/crate/0.2/context",
   "@graph": [
   {
     "@id": "./",
@@ -1512,7 +1486,7 @@ For example. This URI from the [BIBO](http://purl.org/ontology/bibo/interviewee)
 
 ```json
 {
-  "@context": [ "https://w3id.org/ro/crate/0.2-DRAFT/context"
+  "@context": [ "https://w3id.org/ro/crate/0.2/context"
     {"interviewee": "http://purl.org/ontology/bibo/interviewee"},
   ],
   "@graph": [

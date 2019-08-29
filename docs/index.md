@@ -35,8 +35,8 @@ We are  [gathering usecases](https://github.com/ResearchObject/ro-crate/issues?q
 ## When can I use it?
 The RO-Crate specification is currently **work in progress** :
 
-* [RO-Crate 0.2-DRAFT](0.2-DRAFT/) (newest, in progress)
-  * Annotated in [RO-Crate 0.2-DRAFTS Google Docs](https://docs.google.com/document/d/1sH9CscItg7PbkEOcHPX_tVXfWNP4R57ys2y3W-FfNuA/edit?usp=sharing)
+* **[RO-Crate 0.2](0.2) (newest release)**
+  * ..or suggest changes for [RO-Crate 0.3-DRAFT](https://github.com/ResearchObject/ro-crate/tree/master/docs/0.2-DRAFT)
 * [DataCrate 1.0 review](https://docs.google.com/document/d/150SzIG8Zs3wecPTUue7wxKn6V26oi7rYucS5lxnmWZU/edit) 
   * (imported from [datacrate](https://github.com/UTS-eResearch/datacrate/blob/master/spec/1.0/data_crate_specification_v1.0.md))
 * [ROLite Draft 0.1.0](0.1.0) 
