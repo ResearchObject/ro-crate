@@ -200,7 +200,7 @@ The keys `RepositoryObject` and `RepositoryCollection` were chosen to avoid coll
 
 RO-Crate is simply a way to make metadata assertions about a set of files and folders that make up a _Dataset_. These assertions can be made at three levels:
 
-*   Assertions at the RO-Crate/_Dataset _level: for an RO-Crate to be useful, some metadata should be provided about the dataset as a whole (see minimum requirements for different use-cases below). In the _RO-Crate Metadata File_, we distinguish the _Root Data Entity_ which represents the RO-Crate as a whole, from other _Data Entities_ (files and folders contained in the RO-Crate) and _Context Entities_, e.g. a person, organisation, place related to an RO-Crate _Data Entity_
+*   Assertions at the RO-Crate level: for an RO-Crate to be useful, some metadata should be provided about the dataset as a whole (see minimum requirements for different use-cases below). In the _RO-Crate Metadata File_, we distinguish the _Root Data Entity_ which represents the RO-Crate as a whole, from other _Data Entities_ (files and folders contained in the RO-Crate) and _Context Entities_, e.g. a person, organisation, place related to an RO-Crate _Data Entity_
 *   Assertions about files and folders contained in the RO-Crate: in addition to providing metadata about the RO-Crate as a whole, RO-Crate allows metadata assertions to be made about any other _Data Entity_
 *   Variable-level assertions: In some cases, e.g. for tabular data, additional metadata may be provided about the structure and variables within a given file. 
 
@@ -228,13 +228,36 @@ _RO-Crate JSON-LD_ SHOULD use the following IDs where possible:
 
 In the absence of the above, RO-Crates SHOULD contain stable persistent URIs to identify all entities wherever possible.
 
+_Root Data Entities_ MAY also have additional repository specific identifiers, described using `Contextual Entities` using a [PropertyValue], with a `name` that identifies the repository and the `identifier` as a value. The _same_ identifier MAY be used in multiple different repositories and effectively namespaced using the `name` of the ProperyValue.
+
+```json
+{
+  "@id": "./",
+  "@type": "Dataset",
+  "identifier": ["https://doi.org/10.4225/59/59672c09f4a4b", {"@id": "_:localid:my-repo:my-id"}, {"@id": "_:localid:other-repo:https://doi.org/10.4225/59/59672c09f4a4b"}]
+}
+
+ {
+   "@id": "_:localid:my-repo:my-id",
+   "@type": "PropertyValue",
+   "name": "my-repo",
+   "value": "my-id"
+ }
+
+  {
+   "@id": "_:localid:other-repo:https://doi.org/10.4225/59/59672c09f4a4b",
+   "@type": "PropertyValue",
+   "name": "other-repo",
+   "value": "https://doi.org/10.4225/59/59672c09f4a4b"
+ }
+ ```
+
 
 ### Core Metadata for the _Root Data Entity_ 
 
 The _RO-Crate JSON-LD_ MUST contain a _Root Data Entity_, identified by a
 _RO-Crate Metadata File Descriptor_ of type [CreativeWork] which describes it, with an [about]
 property referencing the _Root Data Entity_ the _Root Data Entity_ MUST have an `@id` of `./`.
-of `./`.
 
 ```json
 {
@@ -365,6 +388,8 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
  ]
 }
 ```
+
+
 
 ### Examples of referencing _Data Entities_ (files and folders) from the _Root Data Entity_
 
