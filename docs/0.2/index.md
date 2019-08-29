@@ -16,7 +16,7 @@
    limitations under the License.
 -->
 
-# RO-Crate Metadata Specification 0.2-DRAFT
+# RO-Crate Metadata Specification 0.2
 {:.no_toc}
 
 
@@ -85,7 +85,7 @@ Throughout this specification, RDF terms are referred to using the keys defined 
 
 Following [schema.org](http://schema.org) practice, `property` names start with lowercase letters and `Class` names start with uppercase letters.
 
-In `ro-crate-metadata.jsonld` RDF terms use their RO-Crate JSON-LD names as defined in the RO-Crate JSON-LD Context, which is available at [https://w3id.org/ro/crate/0.2-DRAFT/context](https://w3id.org/ro/crate/0.2-DRAFT/context)
+In `ro-crate-metadata.jsonld` RDF terms use their RO-Crate JSON-LD names as defined in the RO-Crate JSON-LD Context, which is available at [https://w3id.org/ro/crate/0.2/context](https://w3id.org/ro/crate/0.2-DRAFT/context)
 
 
 ## RO-Crate Structure
@@ -122,7 +122,7 @@ If present, `ro-crate-preview.html` MUST:
   ```html
     <script type="application/ld+json">
     {
-        "@context": "https://w3id.org/ro/crate/0.2-DRAFT/context",
+        "@context": "https://w3id.org/ro/crate/0.2/context",
         "@graph": [ ...]
     }
     </script>
@@ -326,10 +326,10 @@ schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | 
 
 
 
-The following _RO-Crate Metadata File_ represents a minimal description of an _RO-Crate_. Note that for brevity the _[RO-Crate JSON-LD Context](https://w3id.org/ro/crate/0.2-DRAFT/context)_ is here shown by reference rather than inline.
+The following _RO-Crate Metadata File_ represents a minimal description of an _RO-Crate_. Note that for brevity the _[RO-Crate JSON-LD Context](https://w3id.org/ro/crate/0.2/context)_ is here shown by reference rather than inline.
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/0.2-DRAFT/context", 
+{ "@context": "https://w3id.org/ro/crate/0.2/context", 
   "@graph": [
 
  {
@@ -391,7 +391,7 @@ _Note: as indicated above, there is no requirement to represent every file and f
 An example _RO-Crate JSON-LD_ for the above would be as follows:
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/0.2-DRAFT/context",
+{ "@context": "https://w3id.org/ro/crate/0.2/context",
   "@graph": [
   {
     "@id": "./",
@@ -1486,7 +1486,7 @@ For example. This URI from the [BIBO](http://purl.org/ontology/bibo/interviewee)
 
 ```json
 {
-  "@context": [ "https://w3id.org/ro/crate/0.2-DRAFT/context"
+  "@context": [ "https://w3id.org/ro/crate/0.2/context"
     {"interviewee": "http://purl.org/ontology/bibo/interviewee"},
   ],
   "@graph": [
