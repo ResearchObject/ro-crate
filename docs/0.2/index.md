@@ -38,13 +38,20 @@ See [http://researchobject.org/ro-crate/](http://researchobject.org/ro-crate/) f
 
 <small>
 This specification is Copyright 2017-2019 University of Technology Sydney and The University of Manchester UK.
+</small>
 
+<small>
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+</small>
 
-[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+<small>
+<http://www.apache.org/licenses/LICENSE-2.0>
+</small>
 
+<small>
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 </small>
+
 
 ## Introduction & definition of an RO-Crate
 
