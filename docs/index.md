@@ -18,7 +18,7 @@
 # Research Object Crate (RO-Crate)
 {:.no_toc}
 
-[http://researchobject.org/ro-crate/](http://researchobject.org/ro-crate/)
+Permalink: <https://w3id.org/ro/crate>
 
 1. Table of Contents
 {:toc}
