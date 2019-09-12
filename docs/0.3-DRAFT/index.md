@@ -20,12 +20,16 @@
 {:.no_toc}
 
 
-<!-- NOTE: Uncomment and update DOI and 
-version numbers below before release
+<!-- NOTE: Before release, update and uncomment below 
+(permalink, DOI, published, authors)
 -->
 <!--* Permalink: <https://w3id.org/ro/crate/0.2>  -->
+* Status: Editor's Draft
+* Previous version: <https://w3id.org/ro/crate/0.2>
 * JSON-LD context: <https://w3id.org/ro/crate/0.3-DRAFT/context>
-<!--* Published: 2019-xx-xx-->
+<!--* Published: 2019-xx-xx
+* Publisher: [researchobject.org](http://researchobject.org/) community
+-->
 * Cite as: <!--<https://doi.org/10.5281/zenodo.3406498> (this version)--> \
   <https://doi.org/10.5281/zenodo.3406497> (any version)
 * Editors: [Peter Sefton](https://orcid.org/0000-0002-3545-944X), [Eoghan Ó Carragáin](https://orcid.org/0000-0001-8131-2150),  [Stian Soiland-Reyes](https://orcid.org/0000-0001-9842-9718)

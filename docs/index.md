@@ -16,10 +16,14 @@
 -->
 
 # Research Object Crate (RO-Crate)
+{:.no_toc}
+
+[http://researchobject.org/ro-crate/](http://researchobject.org/ro-crate/)
+
 1. Table of Contents
 {:toc}
 
-**Note**: _ROLite_ and _[DataCrate](https://github.com/UTS-eResearch/datacrate)_ have been merged to **RO-Crate**. This is the new homepage [http://researchobject.org/ro-crate/](http://researchobject.org/ro-crate/)
+**News**: [RO-Crate Metadata specification 0.2](https://researchobject.github.io/ro-crate/0.2/) released
 
 ## What is RO-Crate? 
 RO-Crate is a community effort to establish a lightweight approach to packaging research data with their metadata. It is based on schema.org annotations in JSON-LD, and aims to make best-practice in formal metadata description accessible and practical for use in a wider variety of situations, from an individual researcher working with a folder of data, to large data-intensive computational research environments. 
