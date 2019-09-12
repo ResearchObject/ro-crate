@@ -23,7 +23,7 @@ _Feel free to add to this page, either [edit and raise pull request](https://git
 
 
 ## Cite RO-Crate
-Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): **A lightweight approach to research object data packaging** _Bioinformatics Open Source Conference (BOSC2019)_ <https://doi.org/10.5281/zenodo.3250687>
+Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): **A lightweight approach to research object data packaging** _Bioinformatics Open Source Conference (BOSC2019)_, 2019-07-24/2019-07-25, Basel, Switzerland. <https://doi.org/10.5281/zenodo.3250687>
 
 ### Recent publications, presentations, citations
 
