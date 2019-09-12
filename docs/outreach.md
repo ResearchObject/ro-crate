@@ -27,10 +27,11 @@ Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): **
 
 ### Recent publications, presentations, citations
 
+Peter Sefton, Eoghan Ó Carragáin, Carole Goble, Stian Soiland-Reyes (2019): [Introducing RO-Crate: research object data packaging](https://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019-eResearch_103_-Introducing-RO-Crate-research-object-data-packaging.pdf). _eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia.
+
 Eoghan Ó Carragáin, Carole Goble, Peter Sefton, Stian Soiland-Reyes (2019): **RO-Crate, a lightweight approach to Research Object data packaging.**
 RO-15 at _Workshop on Research Objects ([RO 2019](http://www.researchobject.org/ro2019/))_, IEEE eScience 2019, 2019-09-24, San Diego, CA, USA.
 <https://doi.org/10.5281/zenodo.3337883>
-
 
 Kyle Chard, Niall Gaffney, Matthew B. Jones, Kacper Kowalik, Bertram Ludäscher, Jarek Nabrzyski, Victoria Stodden, Ian Taylor, Thomas Thelen, Matthew J. Turk, Craig Willis (2019):
 **Application of BagIt-Serialized Research Object Bundles for Packaging and Re-execution of Computational Analyses.**
@@ -63,6 +64,10 @@ Talk at _Workshop on Research Objects ([RO 2018](http://www.researchobject.org/r
 ### Upcoming and recent events
 
 _To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
+
+**[ELIXIR Biohackathon Europe 2019](https://www.biohackathon-europe.org/)**,  2019-11-18/2019-11-22, Paris, France. Project on [Research Object shape profiles](https://github.com/elixir-europe/BioHackathon-projects-2019/tree/master/projects/22).
+
+**[eResearch Australasia 2019](https://conference.eresearch.edu.au/)** 2019-10-21/2019-10-25. [Data Packaging](https://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019_eResearch_104_Digital-Preservation-and-Data-Packaging.pdf) birds of a feather session.
 
 **[Workshop on Research Objects 2019](http://www.researchobject.org/ro2019)** (RO2019). Workshop at _[IEEE eScience 2019](https://escience2019.sdsc.edu/)_, 2019-09-24, San Diego, CA, USA. <http://www.researchobject.org/ro2019/>
 
