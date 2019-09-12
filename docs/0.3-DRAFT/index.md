@@ -683,7 +683,7 @@ The first affiliation is a Faculty of a university. The Faculty is associated wi
 
 Thus _RO-Crate JSON-LD_ MAY express chained affiliations with more precision than by using string-literals as values for [affiliation](http://schema.org/affiliation). 
 
-[See an example of a Person with four affiliations.](https://data.research.uts.edu.au/examples/v1.0/luckett/CATALOG_files/pairtree_root/ht/tp/+=/=o/rc/id/,o/rg/=0/00/0-/00/02/-6/75/6-/61/19/index.html)
+
 
 
 ### More detail on ContactPoint
@@ -737,7 +737,7 @@ This is not ideal, as there is no direct semantic relationship between the conta
 ```
 
 
-[See an example of an item of @type ContactPoint, which is linked to a Dataset and to an Organization via a contactPoint property.](https://data.research.uts.edu.au/examples/v1.0/luckett/CATALOG_files/pairtree_root/ht/tp/+=/=o/rc/id/,o/rg/=0/00/0-/00/01/-6/12/1-/54/09/index.html)
+
 
 
 ### Publications
@@ -782,7 +782,7 @@ The publication SHOULD be described in the _RO-Crate JSON-LD_.
 ```
 
 
-[See an example of a journal article.](https://data.research.uts.edu.au/examples/v1.0/GTM/CATALOG_files/pairtree_root/ht/tp/+=/=d/x,/do/i,/or/g=/10/,1/10/9=/TC/YB/,2/01/4,/23/86/28/2/index.html)
+
 
 
 ### Publisher
@@ -810,7 +810,7 @@ The _Root Data Entity_ SHOULD have a [publisher](http://schema.org/publisher) pr
 ```
 
 
-[See an example of an Organization which is linked to the publisher property of a Dataset.](https://data.research.uts.edu.au/examples/v1.0/sample/CATALOG_files/pairtree_root/ht/tp/+=/=u/ts/,e/du/,a/u/index.html)
+
 
 
 ### Funding and grants
@@ -858,8 +858,6 @@ NOTE: To make it very clear where funding is coming from, the _Root Data Entity_
 },
 ```
 
-
-[See an example of a Dataset which has three listed funders](https://data.research.uts.edu.au/examples/v1.0/sample/CATALOG.html) in a chained relationship, [for example this Organization is linked as a funder and in turn links to another funder.](https://data.research.uts.edu.au/examples/v1.0/sample/CATALOG_files/pairtree_root/ht/tp/s+/==/gi/th/ub/,c/om/=U/TS/-e/Re/se/ar/ch/=p/ro/je/ct/s=/da/ta/cr/at/e/index.html)
 
 
 ### Licensing, Access control and copyright
@@ -967,7 +965,6 @@ In this example the CreateAction has a human [agent](http://schema.org/agent), t
 ```
 
 
-[See an example of a data-capture CreateAction with an Object and two files as results.](https://data.research.uts.edu.au/examples/v1.0/Victoria_Arch_pub/CATALOG_files/pairtree_root/Da/ta/Ca/pt/ur/e_/wc/c0/2/index.html)
 
 
 ### Software 
@@ -1033,8 +1030,6 @@ In the below example, an image with the `@id` of `pics/2017-06-11 12.56.14.jpg` 
     },
 ```
 
-
-[See an example](https://data.research.uts.edu.au/examples/v1.0/sample/CATALOG_files/pairtree_root/Ph/ot/o1/index.html) of a [CreateAction](http://schema.org/CreateAction), with a result which is a [File](http://schema.org/MediaObject) and an [object](http://schema.org/object), which is a place.
 
 
 ### Workflows and scripts
@@ -1247,7 +1242,6 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
 ```
 
 
-[See an example of Exif data displayed in HTML.](https://data.research.uts.edu.au/examples/v1.0/sample/CATALOG_files/pairtree_root/pi/cs/=2/01/7-/06/-1/1%5E/20/12/,5/6,/14/,j/pg/index.html)
 
 
 ### Places
@@ -1320,8 +1314,6 @@ And the place is referenced from the [contentLocation](http://schema.org/content
   },
 ```
 
-
-[See an example of a place in HTML.](https://data.research.uts.edu.au/examples/v1.0/sample/CATALOG_files/pairtree_root/ht/tp/+=/=w/ww/,g/eo/na/me/s,/or/g=/81/52/66/2=/ca/ta/li/na/-p/ar/k,/ht/ml/index.html)
 
 
 ### Time
@@ -1428,7 +1420,6 @@ For example, this data is exported from an [Omeka](https://omeka.org) repository
 ```
 
 
-[See an example of a repository exported to a RO-Crate.](https://data.research.uts.edu.au/examples/v1.0/farms_to_freeways/)
 
 
 ### Thumbnails
@@ -1518,8 +1509,6 @@ If [thumbnail](http://schema.org/thumbnail)s are incidental to the data set, the
  
 ```
 
-[See an example of a thumbnail.](https://data.research.uts.edu.au/examples/v1.0/sample/CATALOG_files/pairtree_root/pi/cs/=2/01/7-/06/-1/1%5E/20/12/,5/6,/14/,j/pg/index.html)
-
 
 ## Extending RO-Crate
 
@@ -1549,7 +1538,6 @@ For example. This URI from the [BIBO](http://purl.org/ontology/bibo/interviewee)
 
 When generating the _RO-Crate Website_ from _RO-Crate JSON-LD_, the code MUST use a `sameAs` URI (if present) as a target for an explanatory link for the term instead of the Linked Data URI supplied in the `@context`.
 
-[See an example of the key "interviewee" resolving to a human-readable page.](https://data.research.uts.edu.au/examples/v1.0/Data_Package-IDRC_Opportunities_and_Challenges_Open_Research_Strategies/CATALOG_files/pairtree_root/Po/li/cy/%5E2/0a/nd/%5E2/0I/mp/le/me/nt/at/io/n%5E/20/Re/vi/ew/%5E2/0I/nt/er/vi/ew/s=/In/te/rv/ie/w_/Au/di/o=/In/te/rv/ie/w-/25/_0/9_/20/15/-1/4_/02/-S/im/on/_H/od/so/n,/fl/ac/index.html) and download the [RO-Crate JSON-LD](https://data.research.uts.edu.au/examples/v1.0/Data_Package-IDRC_Opportunities_and_Challenges_Open_Research_Strategies/CATALOG.json)
 
 Where there is no RDF ontology available, then implementors SHOULD attempt to provide context by creating stable web-accessible URIs to document properties and classes, for example, by linking to page describing an XML element or attribute from an XML schema, pending the publication of a formal ontology.
 
