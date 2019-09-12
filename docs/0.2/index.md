@@ -85,7 +85,7 @@ Throughout this specification, RDF terms are referred to using the keys defined 
 
 Following [schema.org](http://schema.org) practice, `property` names start with lowercase letters and `Class` names start with uppercase letters.
 
-In `ro-crate-metadata.jsonld` RDF terms use their RO-Crate JSON-LD names as defined in the RO-Crate JSON-LD Context, which is available at [https://w3id.org/ro/crate/0.2/context](https://w3id.org/ro/crate/0.2-DRAFT/context)
+In `ro-crate-metadata.jsonld` RDF terms use their RO-Crate JSON-LD names as defined in the RO-Crate JSON-LD Context, which is available at [https://w3id.org/ro/crate/0.2/context](https://w3id.org/ro/crate/0.2/context)
 
 
 ## RO-Crate Structure
