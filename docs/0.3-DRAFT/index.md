@@ -38,8 +38,7 @@
 1. Table of Contents
 {:toc}
 
-
-See [http://researchobject.org/ro-crate/](http://researchobject.org/ro-crate/) for details.
+See <https://w3id.org/ro/crate> for further details about RO-Crate.
 
 <small>
 This specification is Copyright 2017-2019 University of Technology Sydney and The University of Manchester UK.
