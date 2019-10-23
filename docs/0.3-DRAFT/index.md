@@ -1109,43 +1109,6 @@ If the `SoftwareSourceCode` is primarily in the form of a **workflow** (e.g. a p
             "additionalType": {"@id": "http://purl.org/ro/wfdesc#Workflow"}
 ```
 
-Idealized example:
-
-```json
-       {
-            "@id": "workflow/retropath.knime",  
-            "@type": "SoftwareSourceCode",
-            "additionalType": {"@id": "Workflow"},
-            "audience": "synthetic biology",
-            "author": {"@id": "#thomas"},
-            "contactPoint": {"@id": "#ibisba"},
-            "contributor": {"@id": "#melchior"},
-            "copyrightHolder": {"@id": "#inra"},
-            "copyrightYear": 2017,
-            "creativeWorkStatus": "Published",
-            "creator": {"@id": "#thomas"},
-            "dateCreated": "2017-06-22",
-            "datePublished": "2019-06-05",
-            "description": "RetroPath2.0 workflow",
-            "disambiguatingDescription": "KNIME implementation of RetroPath2.0 workflow",
-            "encodingFormat": "text/xml",
-            "image": {"@id": "#workflow/workflow.svg"},
-            "inLanguage": "en",
-            "keywords": "chemical, cheminformatics, chemoinformatics, knime, metabolome, metabolomics, openms, rdkit, retropath",
-            "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html",
-            "name": "RetroPath Knime workflow",
-            "programmingLanguage": {"@id": "#knime"},
-            "publisher": {"@id": "#inra"},
-            "potentialAction": {
-                "@type": "ActivateAction",
-                "instrument": {"@id": "#knime"}
-            },
-            "sdLicense": "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html",
-            "sdPublisher": {"@id" : "#ibisba"},
-            "version": "1.0.0"
-        }
-```
-
 
 Workflows and scripts saved on disk using a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of `programmingLanguage` and `potentialAction`. The `encodingFormat` is frequently a more generic media type like `text/xml`, `text/json`, `application/zip`. If the format is unknown but the script is readable in a text editor, use `text/plain`. If a workflow file is in an proprietary binary or umknown format, `application/octet-stream` can be used to indicate the "source code" is not ordinarily readable.
 
