@@ -144,7 +144,15 @@ A valid _RO-Crate JSON-LD_ graph MUST describe:
 
 It is RECOMMENDED that any referenced _contextual entities_ are also described in the _RO-Crate Metadata File_ with the same identifier. Similarly it is RECOMMENDED that any _contextual entity_ in the _RO-Crate Metadata file_ is linked to from at least one of the other entities using the same identifier. 
 
-The appendix [RO-Crate JSON-LD](#ro-crate-json-ld) details the structure of the JSON-LD expected in the _RO-Crate Metadata File_.
+The appendix [RO-Crate JSON-LD](#ro-crate-json-ld) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata File_. In short, the rest of this specification describe the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` below:
+
+```json
+{ "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context",
+  "@graph": [
+
+  ]
+}
+```
 
 
 ### RO-Crate Website (`ro-crate-preview.html` and `ro-crate-preview_files/`)
