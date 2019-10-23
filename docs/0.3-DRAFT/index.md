@@ -202,7 +202,7 @@ Generally, the standard keys for [schema.org](http://schema.org) should be used.
 The following terms from the from the [Research Object ontologies](https://w3id.org/ro/2016-01-28/) are used:
 
 - `Workflow` for a workflow definition, mapped to [http://purl.org/wf4ever/wfdesc#Workflow](https://w3id.org/ro/2016-01-28/wfdesc#Workflow)
-- `WorkflowScript` for a script, mapped to [http://purl.org/wf4ever/wf4ever#Script](https://w3id.org/ro/2016-01-28/wf4ever#Script)
+- `Script` for a script, mapped to [http://purl.org/wf4ever/wf4ever#Script](https://w3id.org/ro/2016-01-28/wf4ever#Script)
 - `WorkflowSketch` for an image depicting a workflow, mapped to [http://purl.org/wf4ever/roterms#Sketch](https://w3id.org/ro/2016-01-28/roterms#Sketch).
 
 RO-Crate also uses the _Portland Common Data Model_ ([PCDM](https://github.com/duraspace/pcdm/wiki)) and imports these terms:
@@ -1082,21 +1082,34 @@ Minimal example describing a workflow:
        {
             "@id": "workflow/retropath.knime",  
             "@type": "SoftwareSourceCode",
-            "additionalType": {"@id": "Workflow"},
+            "additionalType": {"@id": "wfdesc:Workflow"},
             "author": {"@id": "#thomas"},
             "contactPoint": {"@id": "#ibisba"},
             "creator": {"@id": "#thomas"},
             "encodingFormat": "text/xml",
-            "funder": "...",
-            "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html",
+            "license": { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"},
             "name": "RetroPath Knime workflow",
-            "programmingLanguage": {"@id": "#knimeFormat"},
-            "softwareApplication": {"@id": "#knimeWorkbench"},
+            "programmingLanguage": {"@id": "#knime"},
             "version": "1.0.0"
         }
 ```
 
-Ideal example:
+The `additionalType` property SHOULD be used to indicate the particular nature of the source code as a _script_ or a _workflow_. The distinction is fluid, depending on if the code is primarily indicating **what** should be done (`wfdesc:Workflow`), or **how** tasks should be executed (`wf4ever:Script`).
+
+To indicate that a `SoftwareSourceCode` is primarily in the form of a **script** (e.g. sequential batch/shell script that call other commands and manage files), use:
+
+```json
+            "additionalType": {"@id": "http://purl.org/ro/wf4ever#Script"}
+```
+
+
+If the `SoftwareSourceCode` is primarily in the form of a **workflow** (e.g. a pipeline of steps with data flow), use:
+
+```json
+            "additionalType": {"@id": "http://purl.org/ro/wfdesc#Workflow"}
+```
+
+Idealized example:
 
 ```json
        {
@@ -1116,14 +1129,12 @@ Ideal example:
             "description": "RetroPath2.0 workflow",
             "disambiguatingDescription": "KNIME implementation of RetroPath2.0 workflow",
             "encodingFormat": "text/xml",
-            "funder": "...",
-            "hasPart": "...",
             "image": {"@id": "#workflow/workflow.svg"},
             "inLanguage": "en",
             "keywords": "chemical, cheminformatics, chemoinformatics, knime, metabolome, metabolomics, openms, rdkit, retropath",
             "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html",
             "name": "RetroPath Knime workflow",
-            "programmingLanguage": {"@id": "#knimeFormat"},
+            "programmingLanguage": {"@id": "#knime"},
             "publisher": {"@id": "#inra"},
             "potentialAction": {
                 "@type": "ActivateAction",
@@ -1131,12 +1142,14 @@ Ideal example:
             },
             "sdLicense": "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html",
             "sdPublisher": {"@id" : "#ibisba"},
-            "softwareApplication": {"@id": "#knimeWorkbench"},
             "version": "1.0.0"
         }
 ```
 
-Workflows and scripts are saved on disk using a language and generally need a runtime, in RO-Crate this SHOULD be indicated using a liberal interpretation of `programmingLanguage` and `potentialAction`. Note that the language and its runtime might differ, e.g. there are multiple potential runtimes of a JavaScript, although in the base-case they are the same, and as a shortcut can be described in one go as both a `ComputerLanguage` and `SoftwareApplication`:
+
+Workflows and scripts saved on disk using a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of `programmingLanguage` and `potentialAction`. The `encodingFormat` is frequently a more generic media type like `text/xml`, `text/json`, `application/zip`. If the format is unknown but the script is readable in a text editor, use `text/plain`. If a workflow file is in an proprietary binary or umknown format, `application/octet-stream` can be used to indicate the "source code" is not ordinarily readable.
+
+Note that the language and its runtime MAY differ, e.g. there are multiple runtimes of JavaScript and different C++-compilers, but for scripts and workflows frequently the language and runtime are essentially the same, and can be described in one go as a hybrid of a `ComputerLanguage` and `SoftwareApplication`:
 
 ```json
        {
@@ -1152,19 +1165,9 @@ Workflows and scripts are saved on disk using a language and generally need a ru
         }
 ```
 
-A data entity representing a runtime application or language MUST have a [name], [url] and [version], which should indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance “R” instead of “The R Project for Statistical Computing”.
+A data entity representing a `SoftwareApplication` or `ComputerLanguage` MUST have a [name], [url] and [version], which should indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance _“R”_ instead of _“The R Project for Statistical Computing”_.
 
-To indicate that a `SoftwareSourceCode` is in the form of a script (e.g. sequential batch/shell script), use:
 
-```json
-            "additionalType": {"@id": "WorkflowScript"}
-```
-
-If the `SoftwareSourceCode` is in the form of a workflow (e.g. a pipeline of steps with data flow), use:
-
-```json
-            "additionalType": {"@id": "Workflow"}
-```
 
 #### Workflow diagram/sketch
 
