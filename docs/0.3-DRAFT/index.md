@@ -1878,6 +1878,7 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 [startTime]: http://schema.org/startTime
 [actionStatus]: http://schema.org/actionStatus
 [ActionStatusType]: http://schema.org/ActionStatusType
+[PropertyValue]: http://schema.org/PropertyValue
 
 [geonames]: https://www.geonames.org
 [RDFa]: https://en.wikipedia.org/wiki/RDFa
