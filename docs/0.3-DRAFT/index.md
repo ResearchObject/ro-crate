@@ -1038,10 +1038,10 @@ In the below example, an image with the `@id` of `pics/2017-06-11 12.56.14.jpg` 
 Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts SHOULD be described using the type `SoftwareSourceCode`:
 
 
-schema property | Domain | Cardinality | Valid Workflow RO-Crate
---------------- | ------ | ----------- | ----------------------- 
+schema property | Domain | Cardinality | Valid RO-Crate
+--------------- | ------ | ----------- | --------------
 `accessibilityAPI` | Text | Many | Optional |
-`additionalType`| URL | One | Optional |
+`additionalType`| URL | One | Recommended |
 `alternateName` | Text | Many | Optional |
 `audience`| `Audience` | Many | Optional |
 `author`| `Organization` / `Person` | Many | Mandatory |
@@ -1057,8 +1057,8 @@ schema property | Domain | Cardinality | Valid Workflow RO-Crate
 `datePublished`|Date / DateTime | One | Recommended |
 `description`| Text | One | Recommended |
 `disambiguatingDescription`| Text | One | Optional |
-`encodingFormat`| Text / URL | One | Mandatory |
-`funder`| `Organization` / `Person` | Many | Mandatory |
+`encodingFormat`| Text / URL | One | Recommended |
+`funder`| `Organization` / `Person` | Many | Optional |
 `hasPart`| `CreativeWork` | Many | Optional |
 `image`| `ImageObject` / URL | Many | Recommended |
 `inLanguage`| `Language` / Text | One | Recommended |
@@ -1071,12 +1071,10 @@ schema property | Domain | Cardinality | Valid Workflow RO-Crate
 `sameAs` | URL | Many | Optional |
 `sdLicense`| `CreativeWork` / URL | One | Recommended |
 `sdPublisher`| `Organization` / `Person` | One | Recommended |
-`softwareApplication`| `SoftwareApplication` | Many | Mandatory |
 `url`| URL | One | Mandatory |
 `version`| Number / Text | One | Mandatory |
 
-
-The distinction between `SoftwareSourceCode` and `SoftwareApplication` for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should be included as source code in the RO-Crate dataset (`SoftwareSourceCode`).
+The distinction between `SoftwareSourceCode` and `SoftwareApplication` for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.  
 
 Minimal example describing a workflow:
 
