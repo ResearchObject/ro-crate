@@ -1131,47 +1131,51 @@ Note that the language and its runtime MAY differ, e.g. there are multiple runti
 A data entity representing a `SoftwareApplication` or `ComputerLanguage` MUST have a [name], [url] and [version], which should indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance _“R”_ instead of _“The R Project for Statistical Computing”_.
 
 
-
 #### Workflow diagram/sketch
 
-It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from the workflow management system or drawn manually as a diagram. It should be included as an `ImageObject` which is `about` the `SoftwareSourceCode`:
+It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. It should be included as an `ImageObject` which is `about` the `SoftwareSourceCode` and has an `additionalType` of `roterms:Sketch`
 
 ```json
 {
             "@id": "workflow/workflow.svg",
             "@type": "ImageObject",
-            "additionalType": "WorkflowSketch",
+            "additionalType": "http://purl.org/wf4ever/roterms#Sketch",
             "encodingFormat":  "image/svg+xml",
             "description": "Diagram of RetroPath2.0 workflow",
             "about": {"@id": "workflow/workflow.knime"}
 }
 ```
 
-
-The image file format SHOULD be indicated with [encodingFormat] via Mime - eg  "image/svg+xml".
-
-Additionally a PRONOM identifier MAY be used, via a reference to a _ContextualEntity_ {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92"}
+The image file format SHOULD be indicated with [encodingFormat] using an IANA registered [media type](https://www.iana.org/assignments/media-types) like `image/svg+xml` or `image/png`. Additionally a reference to [Pronom] identifier SHOULD be provided, which MAY be described as an additional contextual entity to give human-readable name to the format:
 
 ```json
 {
-            "@id": "workflow/workflow.svg",
-            "@type": "ImageObject",
-            "additionalType": "WorkflowSketch",
-            "encodingFormat":  ["image/svg+xml", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92"}],
-            "description": "Diagram of RetroPath2.0 workflow",
-            "about": {"@id": "workflow/workflow.knime"}
+  "@id": "workflow/workflow.svg",
+  "@type": "ImageObject",
+  "additionalType": {"@id": "http://purl.org/wf4ever/roterms#Sketch"},
+  "encodingFormat":  ["image/svg+xml", 
+                      {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92"}],
+  "description": "Diagram of RetroPath2.0 workflow",
+  "about": {"@id": "workflow/workflow.knime"}
+},
+{ 
+  "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92", 
+  "@type": "Thing",
+  "name": "Portable Network Graphics"
 }
- { 
-   "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92", "@type": "URL",
-   "name": "Portable Network Graphics", 
-   "Description": "Portable Network Graphics (PNG) ... " 
-  }
 ```
 
-A _Sketch_ may still be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the workflow was done by hand). In this case the sketch should have an `about` referring to the _RO-Crate dataset_ as a whole:
+A _sketch_ or overview diagram MAY be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the overall workflow was done by hand). In this case the sketch should have an `about` referring to the _RO-Crate dataset_ as a whole:
 
 ```json
-"about": {"@id": "./"}
+{
+  "@id": "overview.jpeg",
+  "@type": "ImageObject",
+  "additionalType": {"@id": "http://purl.org/wf4ever/roterms#Sketch"},
+  "about": {"@id": "./"},
+  "description": "Whiteboard sketch of how the content of this RO-Crate was made",
+  "encodingFormat":  "image/jpeg",
+}
 ```
 
 ### Representing Provenance: changes to an object 
@@ -1188,7 +1192,7 @@ An Action SHOULD have an [endTime], which MUST be in ISO 8601 date format and SH
 
 An Action SHOULD have a human [agent](http://schema.org/agent) who was responsible for authorizing the action, and MAY have an [instrument](http://schema.org/instrument) which associates the action with a particular piece of software (for example, the content management system or data catalogue through which an update was approved) which SHOULD be of `@type` SoftwareApplication.
 
-An Action's status MAY be recorded in an [actionStatus] property. The status must be one of the values enumerated by [ActionStatusType]: ActiveActionStatus, CompletedActionStatus, FailedActionStatus or PotentialActionStatus.
+An Action's status MAY be recorded in an [actionStatus] property. The status must be one of the values enumerated by [ActionStatusType]: `ActiveActionStatus`, `CompletedActionStatus`, `FailedActionStatus` or `PotentialActionStatus`.
 
 An Action which has failed MAY record any error information in an [error](http://schema.org/error) property.
 
