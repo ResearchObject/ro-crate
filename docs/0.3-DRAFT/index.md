@@ -196,6 +196,15 @@ The intention is that RO-Crates can work well with a variety of archive file for
 
 ## RO-Crate Metadata
 
+RO-Crate aim to capture and describe the [Research Object](http://www.researchobject.org/overview/) using structured _metadata_.
+
+The _RO-Crate Metadata File Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:
+
+* Root Data Entity - the `Dataset` itself, a gathering of data
+* Data Entities - the _data_ payload, in the form of files and folders
+* Contextual Entities - related things in the world (e.g. people, organizations, places), providing provenance for the data entities and the RO-Crate.
+
+This machine-readable metadata can also be represented for human consumption in the _RO-Crate Website_, linking to data and Web resources.
 
 ### RO-Crate uses Linked Data principles
 
