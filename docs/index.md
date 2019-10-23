@@ -40,7 +40,7 @@ We are  [gathering usecases](https://github.com/ResearchObject/ro-crate/issues?q
 The RO-Crate specification is currently **work in progress** stabilizing towards a 1.0 release around Q4 2019:
 
 * **[RO-Crate 0.2](0.2) (newest release)**
-  * ..or suggest changes for [RO-Crate 0.3-DRAFT](https://github.com/ResearchObject/ro-crate/tree/master/docs/0.2-DRAFT)
+  * ..or suggest changes for [RO-Crate 0.3-DRAFT](0.3-DRAFT) in [GitHub](https://github.com/ResearchObject/ro-crate/tree/master/docs/0.3-DRAFT)
 * [DataCrate 1.0 review](https://docs.google.com/document/d/150SzIG8Zs3wecPTUue7wxKn6V26oi7rYucS5lxnmWZU/edit) 
   * (imported from [datacrate](https://github.com/UTS-eResearch/datacrate/blob/master/spec/1.0/data_crate_specification_v1.0.md))
 * [ROLite Draft 0.1.0](0.1.0) 
