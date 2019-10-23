@@ -1,7 +1,7 @@
 <!--
    Copyright 2019 University of Technology Sydney
    Copyright 2019 The University of Manchester UK 
-   Copyright 2019 RO Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -41,7 +41,8 @@
 See <https://w3id.org/ro/crate> for further details about RO-Crate.
 
 <small>
-This specification is Copyright 2017-2019 University of Technology Sydney and The University of Manchester UK.
+This specification is Copyright 2017-2019 University of Technology Sydney, 
+The University of Manchester UK and the RO-Crate contributors.
 </small>
 
 <small>
