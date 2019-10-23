@@ -141,7 +141,6 @@ A valid _RO-Crate JSON-LD_ graph MUST describe:
 2. The _Root Data Entity_
 3. Zero or more _Data Entities_
 4. Zero or more _Contextual Entities_
-5. Any extensions
 
 It is RECOMMENDED that any referenced _contextual entities_ are also described in the _RO-Crate Metadata File_ with the same identifier. Similarly it is RECOMMENDED that any _contextual entity_ in the _RO-Crate Metadata file_ is linked to from at least one of the other entities using the same identifier. 
 
