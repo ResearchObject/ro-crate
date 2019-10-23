@@ -1034,47 +1034,71 @@ In the below example, an image with the `@id` of `pics/2017-06-11 12.56.14.jpg` 
 
 ### Workflows and scripts
 
+
+Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts SHOULD be described using the type `SoftwareSourceCode`:
+
+
 schema property | Domain | Cardinality | Valid Workflow RO-Crate
 --------------- | ------ | ----------- | ----------------------- 
-"accessibilityAPI" | Text | Many | Optional |
-"additionalType"| URL | One | Optional |
-"alternateName" | Text | Many | Optional |
-"audience"| Audience | Many | Optional |
-"author"| Organization / Person | Many | Mandatory |
-"citation"| CreativeWork / Text | Many | Optional |
-"contactPoint"| ContactPoint | One | Mandatory | 
-"contributor"| Organization / Person | Many | Recommended |
-"copyrightHolder"| Organization / Person | One | Recommended |
-"copyrightYear"| Number | One | Recommended |
-"creativeWorkStatus"| Defined Term / Text | One | Recommended |
-"creator"| Organization / Person | One | Mandatory |
-"dateCreated"| Date / DateTime | One | Optional |
-"dateModified"| Date / DateTime | One | Optional |
-"datePublished"|Date / DateTime | One | Recommended |
-"description"| Text | One | Recommended |
-"disambiguatingDescription"| Text | One | Optional |
-"encodingFormat"| Text / URL | One | Mandatory |
-"funder"| Organization / Person | Many | Mandatory |
-"hasPart"| CreativeWork | Many | Optional |
-"image"| ImageObject / URL | Many | Recommended |
-"inLanguage"| Language / Text | One | Recommended |
-"keywords"| Text | One | Optional |
-"license"| CreativeWork / URL | One | Mandatory |
-"name"| Text | One | Mandatory |
-"potentialAction"| Action | Many | Recommended |
-"programmingLanguage"| ComputerLanguage | Many | Mandatory |
-"publisher"| Organization / Person | Many | Optional |
-"sameAs" | URL | Many | Optional |
-"sdLicense"| CreativeWork / URL | One | Recommended |
-"sdPublisher"| Organization / Person | One | Recommended |
-"softwareApplication"| SoftwareApplication | Many | Mandatory |
-"url"| URL | One | Mandatory |
-"version"| Number / Text | One | Mandatory |
+`accessibilityAPI` | Text | Many | Optional |
+`additionalType`| URL | One | Optional |
+`alternateName` | Text | Many | Optional |
+`audience`| `Audience` | Many | Optional |
+`author`| `Organization` / `Person` | Many | Mandatory |
+`citation`| `CreativeWork` / Text | Many | Optional |
+`contactPoint`| `ContactPoint` | One | Mandatory | 
+`contributor`| `Organization` / `Person` | Many | Recommended |
+`copyrightHolder`| `Organization` / `Person` | One | Recommended |
+`copyrightYear`| Number | One | Recommended |
+`creativeWorkStatus`| Defined Term / Text | One | Recommended |
+`creator`| `Organization` / `Person` | One | Mandatory |
+`dateCreated`| Date / DateTime | One | Optional |
+`dateModified`| Date / DateTime | One | Optional |
+`datePublished`|Date / DateTime | One | Recommended |
+`description`| Text | One | Recommended |
+`disambiguatingDescription`| Text | One | Optional |
+`encodingFormat`| Text / URL | One | Mandatory |
+`funder`| `Organization` / `Person` | Many | Mandatory |
+`hasPart`| `CreativeWork` | Many | Optional |
+`image`| `ImageObject` / URL | Many | Recommended |
+`inLanguage`| `Language` / Text | One | Recommended |
+`keywords`| Text | One | Optional |
+`license`| `CreativeWork` / URL | One | Mandatory |
+`name`| Text | One | Mandatory |
+`potentialAction`| `Action` | Many | Recommended |
+`programmingLanguage`| `ComputerLanguage` | Many | Mandatory |
+`publisher`| `Organization` / `Person` | Many | Optional |
+`sameAs` | URL | Many | Optional |
+`sdLicense`| `CreativeWork` / URL | One | Recommended |
+`sdPublisher`| `Organization` / `Person` | One | Recommended |
+`softwareApplication`| `SoftwareApplication` | Many | Mandatory |
+`url`| URL | One | Mandatory |
+`version`| Number / Text | One | Mandatory |
 
 
-Scientific workflows and scripts that can be or were used to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts are described using the type SoftwareSourceCode instead of `SoftwareApplication` above.  
+The distinction between `SoftwareSourceCode` and `SoftwareApplication` for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should be included as source code in the RO-Crate dataset (`SoftwareSourceCode`).
 
-The distinction is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation; while a Python script that is customized for a particular data analysis might be important to understand further and should be included as source code in the RO-Crate dataset:
+Minimal example describing a workflow:
+
+```json
+       {
+            "@id": "workflow/retropath.knime",  
+            "@type": "SoftwareSourceCode",
+            "additionalType": {"@id": "Workflow"},
+            "author": {"@id": "#thomas"},
+            "contactPoint": {"@id": "#ibisba"},
+            "creator": {"@id": "#thomas"},
+            "encodingFormat": "text/xml",
+            "funder": "...",
+            "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html",
+            "name": "RetroPath Knime workflow",
+            "programmingLanguage": {"@id": "#knimeFormat"},
+            "softwareApplication": {"@id": "#knimeWorkbench"},
+            "version": "1.0.0"
+        }
+```
+
+Ideal example:
 
 ```json
        {
@@ -1083,34 +1107,34 @@ The distinction is fluid, and comes down to availability and understandability. 
             "additionalType": {"@id": "Workflow"},
             "audience": "synthetic biology",
             "author": {"@id": "#thomas"},
-	    "contactPoint": {"@id": "#ibisba"},
+            "contactPoint": {"@id": "#ibisba"},
             "contributor": {"@id": "#melchior"},
-	    "copyrightHolder": {"@id": "#inra"},
-	    "copyrightYear": 2017,
-	    "creativeWorkStatus": "Published",
-	    "creator": {"@id": "#thomas"},
-	    "dateCreated": "2017-06-22",
-	    "datePublished": "2019-06-05",
+            "copyrightHolder": {"@id": "#inra"},
+            "copyrightYear": 2017,
+            "creativeWorkStatus": "Published",
+            "creator": {"@id": "#thomas"},
+            "dateCreated": "2017-06-22",
+            "datePublished": "2019-06-05",
             "description": "RetroPath2.0 workflow",
-	    "disambiguatingDescription": "KNIME implementation of RetroPath2.0 workflow",
-	    "encodingFormat": "text/xml",
-	    "funder": "...",
-	    "hasPart": "...",
+            "disambiguatingDescription": "KNIME implementation of RetroPath2.0 workflow",
+            "encodingFormat": "text/xml",
+            "funder": "...",
+            "hasPart": "...",
             "image": {"@id": "#workflow/workflow.svg"},
-	    "inLanguage": "en",
-	    "keywords": "chemical, cheminformatics, chemoinformatics, knime, metabolome, metabolomics, openms, rdkit, retropath",
+            "inLanguage": "en",
+            "keywords": "chemical, cheminformatics, chemoinformatics, knime, metabolome, metabolomics, openms, rdkit, retropath",
             "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html",
             "name": "RetroPath Knime workflow",
             "programmingLanguage": {"@id": "#knimeFormat"},
-	    "publisher": {"@id": "#inra"},
+            "publisher": {"@id": "#inra"},
             "potentialAction": {
                 "@type": "ActivateAction",
                 "instrument": {"@id": "#knime"}
             },
             "sdLicense": "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html",
-	    "sdPublisher": {"@id" : "#ibisba"},
+            "sdPublisher": {"@id" : "#ibisba"},
             "softwareApplication": {"@id": "#knimeWorkbench"},
-	    "version": "1.0.0"
+            "version": "1.0.0"
         }
 ```
 
