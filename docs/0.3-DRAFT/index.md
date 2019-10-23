@@ -181,10 +181,28 @@ The intention is that RO-Crates can work well with a variety of archive file for
 ## RO-Crate Metadata
 
 
-### RO-Crate uses linked data principles
+### RO-Crate uses Linked Data principles
 
-**TODO** RO-Crate uses Linked Data principles [TODO - ref] - using URIs as names for things.
+RO-Crate makes use of [Linked Data principles](https://www.ontotext.com/knowledgehub/fundamentals/five-star-linked-open-data/).
 
+In particular:
+
+1. (Meta)data should be made available as _Open Data_ on the web.
+2. (Meta)data should be machine-readable in a structured format
+3. (Meta)data should not require proprietary software packages
+4. (Meta)data should use [open standards from W3C](https://www.w3.org/standards/), such as RDF and SPARQL
+5. (Meta)data should link their to other people’s data to provide context
+
+
+> The core concept of the triplestore and the underlying _Linked Data principle_ is the **Uniform Resource Identifier** (URI), a unique ID for all things linked. By representing data in a graph database, the user can link to it from any other place or reuse parts of the data.
+
+In RO-Crate we realize these principles using a particular set of technologies and best practices:
+
+1. The _RO-Crate Metadata File_ and _RO-Crate Website_ can be directly published on the web. In addition, a package/archive (e.g. BagIt *.zip) that contain the RO-Crate can also be published on the web.
+2. The _RO-Crate Metadata File_ is based on the structured text format _JSON_. 
+3. Multiple open source tools and libraries are available [for JSON](http://json.org/) and [for JSON-LD](https://json-ld.org/)
+4. The _RO-Crate Website_ is [HTML 5](https://www.w3.org/TR/html52/), and the _RO-Crate Metadata File_ is [JSON-LD](https://www.w3.org/TR/json-ld/), one of the [W3C RDF 1.1 formats](https://www.w3.org/TR/rdf11-primer/)
+5. The _RO-Crate Metadata File_ reuse common vocabularies like [schema.org](http://schema.org), and this specification [recommend identifiers](#recommended-identifiers) it should link to.
 
 ### Base metadata standard for RO-Crate: Schema.org
 
