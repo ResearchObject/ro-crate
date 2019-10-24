@@ -205,7 +205,7 @@ RO-Crate also uses the _Portland Common Data Model_ ([PCDM](https://github.com/d
  
 - `RepositoryObject` mapped to <https://pcdm.org/2016/04/18/models#Object>
 - `RepositoryCollection` mapped to <https://pcdm.org/2016/04/18/models#Collection>
-- `RepositoryFile` mapped to <https://pcdm.org/2016/04/18/models#Collection>
+- `RepositoryFile` mapped to <https://pcdm.org/2016/04/18/models#File>
 - `hasMember` mapped to <https://pcdm.org/2016/04/18/models#hasMember>
 - `hasFile` mapped to <https://pcdm.org/2016/04/18/models#hasFile>
 
