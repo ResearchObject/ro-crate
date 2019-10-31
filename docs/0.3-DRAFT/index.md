@@ -280,7 +280,7 @@ a _Research Object_ that includes the _Data Entities_ and the related
 _Contextual Entities_.
 
 The _RO-Crate JSON-LD_ MUST contain a _RO-Crate Metadata File Descriptor_ 
-with the `@id` `ro-crate-metadata.jsonld` and `@type` [CreativeWork]. This descriptor 
+with the `@id` value `ro-crate-metadata.jsonld` and `@type` [CreativeWork]. This descriptor 
 MUST have an [about] property referencing the _Root Data Entity_, which SHOULD
 have an `@id` of `./`.
 
@@ -304,18 +304,19 @@ have an `@id` of `./`.
 }
 ```
 
-The `schemaVersion` MUST be a string, and SHOULD be a versioned permalink of
-this RO-Crate specification that the _RO-Crate JSON-LD_ conforms to. The
-permalink SHOULD start with `https://w3id.org/ro/crate/`. 
+The `schemaVersion` of the _RO-Crate Metadata File Descriptor_
+MUST be a string, and SHOULD start with `https://w3id.org/ro/crate/`. 
+This string SHOULD be a versioned permalink of this RO-Crate specification
+that the _RO-Crate JSON-LD_ conforms to.
 
 Consumers processing the RO-Crate as an JSON-LD graph can thus reliably find
 the the _Root Data Entity_ by following this algorithm:
 
 1. For each entity in `@graph` array
 2. ..if the `schemaVersion` property is a string that starts with `https://w3id.org/ro/crate/`
-3. ....then keep the `@id` URI of this entity `about` as variable _root_
-4. For each entity in `graph` array
-5. ..return the entity which `@id` URI matches _root_ 
+3. ....from  this entity's `about` object keep the `@id` URI as variable _root_
+4. For each entity in `@graph` array
+5. ..return the entity which `@id` URI matches _root_
 
 To ensure a base-line interoperability between RO-Crates, and for an RO-Crate to
 be considered a _Valid RO-Crate_, a minimum set of metadata is required for the
