@@ -240,7 +240,7 @@ However, as RO-Crate uses _Linked Data_ principles, adopters of RO-Crate are fre
 
 _RO-Crate JSON-LD_ SHOULD use the following IDs where possible: 
 
-*   For a _Root Data Entity_, an `identfier` which SHOULD be a DOI URL. 
+*   For a _Root Data Entity_, an `identifier` which SHOULD be a DOI URL. 
 *   For People participating in the research process: [ORCID](https://orcid.org) identifiers.
 *   For [Organization](http://schema.org/Organization)s including [funder](http://schema.org/funder)s,  Research Organization Registry URIs. [https://ror.org/](https://ror.org/)
 *   For items of type [Place], a geonames URL.
