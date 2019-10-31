@@ -879,7 +879,7 @@ This _Data Entity_ has a copyright holder which is different from its author. Th
     "@id": "https://orcid.org/0000-0002-0068-716X"
   },
   "description": "Abstract for the Pilot Project initial findings",
-  "encodingFormat": "text/HTML",
+  "encodingFormat": "text/html",
   "license": {
     "@id": "https://creativecommons.org/licenses/by/4.0/"
   },
