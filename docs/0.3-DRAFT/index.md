@@ -275,25 +275,47 @@ _Root Data Entities_ MAY also have additional repository specific identifiers, d
 
 ### Core Metadata for the _Root Data Entity_ 
 
-The _RO-Crate JSON-LD_ MUST contain a _Root Data Entity_, identified by a
-_RO-Crate Metadata File Descriptor_ of type [CreativeWork] which describes it, with an [about]
-property referencing the _Root Data Entity_ the _Root Data Entity_ MUST have an `@id` of `./`.
+The _Root Data Entity_ is a [Dataset] that represent the RO-Crate as a whole;
+a _Research Object_ that includes the _Data Entities_ and the related
+_Contextual Entities_.
+
+The _RO-Crate JSON-LD_ MUST contain a _RO-Crate Metadata File Descriptor_ 
+with the `@id` `ro-crate-metadata.jsonld` and `@type` [CreativeWork]. This descriptor 
+MUST have an [about] property referencing the _Root Data Entity_, which SHOULD
+have an `@id` of `./`.
 
 ```json
-{
-    "@type": "CreativeWork",
-    "@id": "ro-crate-metadata.jsonld",
-    "identifier": "ro-crate-metadata.jsonld",
-    "about": {"@id": "./"}
-},
 
-{
-  "@id": "./",
-  "@type": "Dataset",
-  ...
+{ "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context", 
+  "@graph": [
+    {
+        "@type": "CreativeWork",
+        "@id": "ro-crate-metadata.jsonld",
+        "schemaVersion": "https://w3id.org/ro/crate/0.3-DRAFT",
+        "about": {"@id": "./"}
+    },
+    
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      ...
+    }
+  ]
 }
-
 ```
+
+The `schemaVersion` MUST be a string, and SHOULD be a versioned permalink of
+this RO-Crate specification that the _RO-Crate JSON-LD_ conforms to. The
+permalink SHOULD start with `https://w3id.org/ro/crate/`. 
+
+Consumers processing the RO-Crate as an JSON-LD graph can thus reliably find
+the the _Root Data Entity_ by following this algorithm:
+
+1. For each entity in `@graph` array
+2. ..if the `schemaVersion` property is a string that starts with `https://w3id.org/ro/crate/`
+3. ....then keep the `@id` URI of this entity `about` as variable _root_
+4. For each entity in `graph` array
+5. ..return the entity which `@id` URI matches _root_ 
 
 To ensure a base-line interoperability between RO-Crates, and for an RO-Crate to
 be considered a _Valid RO-Crate_, a minimum set of metadata is required for the
