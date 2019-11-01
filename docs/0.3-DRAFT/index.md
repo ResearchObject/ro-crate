@@ -384,8 +384,8 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
     "name": "Data files associated with the manuscript:Effects of facilitated family case conferencing for advanced dementia: A cluster randomised clinical trial",
     "distribution": { "@id": "https://data.research.uts.edu.au/examples/v1.0/timluckett.zip"
         },
-"contactPoint": {
-        "@id": "tim.luckett@uts.edu.au"
+    "contactPoint": {
+        "@id": "#tim"
       }
  },
   
@@ -397,7 +397,7 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
  },
 
  {
-      "@id": "tim.luckett@uts.edu.au",
+      "@id": "#tim",
       "@type": "ContactPoint",
       "contactType": "customer service",
       "email": "tim.luckett@uts.edu.au",
@@ -446,22 +446,22 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
     ],
     "hasPart": [
       {
-        "@id": "./cp7glop.ai"
+        "@id": "cp7glop.ai"
       },
       {
-        "@id": "./lots_of_little_files"
+        "@id": "lots_of_little_files/"
       },
       ],
    },
   {
-    "@id": "./cp7glop.ai",
+    "@id": "cp7glop.ai",
     "@type": "File",
     "contentSize": "383766",
     "description": "Illustrator file for Glop Pot",
     "encodingFormat": "application/pdf"
   },
   {
-      "@id": "./lots_of_little_files",
+      "@id": "lots_of_little_files/",
       "@type": "Dataset",
       "description": "This directory contains many small files, that we're not going to describe in detail.",
       "name": "Too many files",
@@ -486,9 +486,9 @@ identifier to a _Contextual Entity_ of `@type` Website.
     "encodingFormat": ["application/pdf", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19"}]
   },
   {
-  "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19",
-  "name": "Acrobat PDF 1.5 - Portable Document Format",
-  "@type": "Website"
+    "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19",
+    "name": "Acrobat PDF 1.5 - Portable Document Format",
+    "@type": "Website"
   }
 
 ```
@@ -505,14 +505,14 @@ For example:
     "description": "An example Common Workflow Language File",
     "encodingFormat": ["text/plain", {"@id": "https://www.commonwl.org/v1.0/Workflow.html"}]
   },
-  {
-  "@id": "https://www.commonwl.org/v1.0/Workflow.html",
-  "name": "Common Workflow Language (CWL) Workflow Description, v1.0.2",
-  "@type": "Website"
+    {
+    "@id": "https://www.commonwl.org/v1.0/Workflow.html",
+    "name": "Common Workflow Language (CWL) Workflow Description, v1.0.2",
+    "@type": "Website"
   }
 ```
 
-If there is no web-accessible decription for a file format it SHOULD be described locally in the dataset, for example in a file:
+If there is no web-accessible description for a file format it SHOULD be described locally in the dataset, for example in a file:
 
 ```json
  {
@@ -523,10 +523,10 @@ If there is no web-accessible decription for a file format it SHOULD be describe
     "encodingFormat": ["text/plain", {"@id": "https://www.commonwl.org/v1.0/Workflow.html"}]
   },
   {
-  "@id": "some_extension.md",
-  "encodingFormat": "text/plain",
-  "name": "Description of some_extension file format",
-  "@type": ["File", "CreativeWork"]
+    "@id": "some_extension.md",
+    "encodingFormat": "text/markdown",
+    "name": "Description of some_extension file format",
+    "@type": ["File", "CreativeWork"]
   }
 ```
 
@@ -545,7 +545,6 @@ schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | 
 `name` || Y || Y |
 `contentSize` || ? || Y |
 `dateModified` || ? || Y |
-`fileFormat` || ? |||
 `encodingFormat` || ? |||
 
 
@@ -555,6 +554,7 @@ schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | 
 schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
 --------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
 `@type` | MUST be `Dataset` |  | |  |
+`@id` | MUST be a _URI Path_ relative to the _RO Crate root; SHOULD end with `/`_ | Y || Y |
 
 
 ## Representing _Context Entities_
@@ -566,10 +566,9 @@ A core principle of Linked data is to use URIs to identify things such as people
 
 ```json
 {
-      "@type": "Dataset",
-      "@id": "some_id",
-      "author": {"@id": "https://orcid.org/0000-0002-8367-6908"}
-
+    "@type": "Dataset",
+    "@id": "./",
+    "author": {"@id": "https://orcid.org/0000-0002-8367-6908"}
 }
 {
     "@id": "https://orcid.org/0000-0002-8367-6908",
@@ -592,7 +591,7 @@ An [Organization](http://schema.org/Organization) SHOULD be the value for the [p
 ```json
 {
   "@type": "Dataset",
-  "@id": "some_id",
+  "@id": "./",
   "publisher": {"@id": "https://ror.org/03f0f6041"}
 }
 
@@ -609,7 +608,7 @@ An [Organization](http://schema.org/Organization) SHOULD also be used for a [Per
 ```json
 {
   "@type": "Dataset",
-  "@id": "some_id",
+  "@id": "./",
   "publisher": {"@id": "https://ror.org/03f0f6041"},
   "author": {"@id": "https://orcid.org/0000-0002-3545-944X"}
 },
@@ -873,7 +872,7 @@ This _Data Entity_ has a copyright holder which is different from its author. Th
   "@type": "File",
   "contentSize": "17085",
   "copyrightHolder": {
-    "@id": "IDRC"
+    "@id": "https://www.idrc.ca/"
   },
   "author": {
     "@id": "https://orcid.org/0000-0002-0068-716X"
@@ -894,11 +893,11 @@ This _Data Entity_ has a copyright holder which is different from its author. Th
 },
 
 {
-  "@id": "IDRC",
+  "@id": "https://www.idrc.ca/",
   "@type": "Organization",
   "description": "Canadian Frown Corporation and funder of development research",
-  "identifier": "IDRC",
-  "name": "International Development Research Center"
+  "name": "International Development Research Center",
+  "url": "https://www.idrc.ca/"
 },
 ```
 
@@ -929,17 +928,16 @@ In this example the CreateAction has a human [agent](http://schema.org/agent), t
 
 ```json
 {
-      "@id": "DataCapture_wcc02",
+      "@id": "#DataCapture_wcc02",
       "@type": "CreateAction",
       "agent": {
-        "@id": "http://orcid.org/0000-0002-1672-552X"
+        "@id": "https://orcid.org/0000-0002-1672-552X"
       },
-      "identifier": "DataCapture_wcc02",
       "instrument": {
         "@id": "https://confluence.csiro.au/display/ASL/Hovermap"
       },
       "object": {
-        "@id": "victoria_arch"
+        "@id": "#victoria_arch"
       },
       "result": [
         {
@@ -950,18 +948,12 @@ In this example the CreateAction has a human [agent](http://schema.org/agent), t
         }
       ]
     },
-
-{
-      "@id": "victoria_arch",
+  {
+      "@id": "#victoria_arch",
       "@type": "Place",
       "address": "Wombeyan Caves, NSW 2580",
-      "description": "This is the GDA94 datum, which is for most situations is close to WGS84",
-      "geo": {
-        "@id": "08563107-deb2-4d3b-a25f-83a09b5b61d4"
-      },
-      "identifier": "victoria_arch",
       "name": "Victoria Arch"
-    },
+  }
 ```
 
 
@@ -969,68 +961,62 @@ In this example the CreateAction has a human [agent](http://schema.org/agent), t
 
 ### Software 
 
-To specify which software was used to create or update a file the software application SHOULD be represented with an entity of type [SoftwareApplication](http://schema.org/SoftwareApplication), with a [version] property. For example:
+To specify which software was used to create or update a file the software application SHOULD be represented with an entity of type [SoftwareApplication](http://schema.org/SoftwareApplication), with a [version] property, e.g. from `tool --version`.
+
+For example:
 
 ```json
 {
       "@id": "https://www.imagemagick.org/",
-      "@type": [
-        "SoftwareApplication"
-      ],
+      "@type": "SoftwareApplication",
       "url": "https://www.imagemagick.org/",
-      "identifier": "https://www.imagemagick.org/",
       "name": "ImageMagick",
-      "version": " ImageMagick 7.0.8-2 Q16 x86_64 2018-06-19"
+      "version": "ImageMagick 6.9.7-4 Q16 x86_64 20170114 http://www.imagemagick.org"
 }
 ```
 
-
 The software SHOULD be associated with the [File](http://schema.org/MediaObject) it created using a CreateAction with the [File](http://schema.org/MediaObject) referenced by a [result](http://schema.org/result) property. Any input files SHOULD be referenced by the [object](http://schema.org/object) property.
 
-In the below example, an image with the `@id` of `pics/2017-06-11 12.56.14.jpg` was transformed into an new image `pics/sepia_fence.jpg` using the `ImageMagick` software application. Actions MAY have human-readable names, which MAY be machine generated for use at scale.
+In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg` was transformed into an new image `pics/sepia_fence.jpg` using the `ImageMagick` software application. Actions MAY have human-readable names, which MAY be machine generated for use at scale.
 
 ```json
 {
-      "@id": "Photo_Capture_1",
+      "@id": "#Photo_Capture_1",
       "@type": "CreateAction",
       "agent": {
         "@id": "https://orcid.org/0000-0002-3545-944X"
       },
       "description": "Photo snapped on a photo walk on a misty day",
-      "identifier": "Photo1",
-      "endTime": "2017:06:11T12:56:14+10:00",
+      "endTime": "2017-06-11T12:56:14+10:00",
       "instrument": [
         {
-          "@id": "EPL1"
+          "@id": "#EPL1"
         },
         {
-          "@id": "Panny20mm"
+          "@id": "#Panny20mm"
         }
       ],
       "result": {
-        "@id": "pics/2017-06-11 12.56.14.jpg"
+        "@id": "pics/2017-06-11%2012.56.14.jpg"
       }
     },
     {
-      "@id": "SepiaConversion_1",
+      "@id": "#SepiaConversion_1",
       "@type": "CreateAction",
       "name": "Convert dog image to sepia",
       "description": "convert -sepia-tone 80% test_data/sample/pics/2017-06-11\\ 12.56.14.jpg test_data/sample/pics/sepia_fence.jpg",
-      "identifier": "SepiaConversion",
-      "endTime": "2018:09:19T17:01:07+10:00",
+      "endTime": "2018-09-19T17:01:07+10:00",
       "instrument": {
         "@id": "https://www.imagemagick.org/"
       },
       "object": {
-        "@id": "pics/2017-06-11 12.56.14.jpg"
+        "@id": "pics/2017-06-11%2012.56.14.jpg"
       },
       "result": {
         "@id": "pics/sepia_fence.jpg"
       }
     },
 ```
-
-
 
 ### Workflows and scripts
 
@@ -1210,48 +1196,48 @@ To record curation actions which modify a [File](http://schema.org/MediaObject) 
 
 ```json
 {
-    "@id": "history-01",
+    "@id": "#history-01",
     "@type": "CreateAction",
     "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" },
     "name": "RO-Crate created",
     "endTime": "2018-08-31",
     "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
     "instrument": { "@id": "https://stash.research.uts.edu.au" },
-    "actionStatus": "CompletedActionStatus"
+    "actionStatus":  { "@id": "http://schema.org/CompletedActionStatus" }
 },
 
 {
-    "@id": "history-02",
+    "@id": "#history-02",
     "@type": "UpdateAction",
     "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" },
     "name": "RO-Crate published",
     "endTime": "2018-09-10",
     "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
     "instrument": { "@id": "https://stash.research.uts.edu.au" },
-    "actionStatus": "CompletedActionStatus"
+    "actionStatus":  {"@id":" http://schema.org/CompletedActionStatus" }
 },
 
 { 
-    "@id": "history-03",
+    "@id": "#history-03",
     "@type": "CreateAction",
-    "object": { "@id": "./metadata.xml.v0.1" },
-    "result": { "@id": "./metadata.xml" },
+    "object": { "@id": "metadata.xml.v0.1" },
+    "result": { "@id": "metadata.xml" },
     "name": "metadata update",
     "endTime": "2018-09-12",
     "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
     "instrument": { "@id": "https://stash.research.uts.edu.au" },
-    "actionStatus": "CompletedActionStatus"
+    "actionStatus": { "@id": "http://schema.org/CompletedActionStatus" }
 },
 
 {
-    "@id": "history-04",
+    "@id": "#history-04",
     "@type": "UpdateAction",
     "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" },
     "name": "RO-Crate published",
     "endTime": "2018-09-13",
     "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
     "instrument": { "@id": "https://stash.research.uts.edu.au" },
-    "actionStatus": "FailedActionStatus",
+    "actionStatus": { "@id": "http://schema.org/FailedActionStatus" },
     "error": "Record is already published"
 },
 
@@ -1275,32 +1261,30 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
 
 ```json
 {
-      "@id": "pics/2017-06-11 12.56.14.jpg",
+      "@id": "pics/2017-06-11%2012.56.14.jpg",
       "@type": "ImageObject",
       "contentSize": "5114778",
       "author": {
         "@id": "https://orcid.org/0000-0002-3545-944X"
       },
       "description": "Depicts a fence at a disused motor racing venue with the front part of a slightly out of focus black dog in the foreground.",
-      "encodingFormat": "Exchangeable Image File Format (Compressed)",
+      "encodingFormat": "image/jpeg",
       "exifData": [
         {
-          "@id": "_:b0"
+          "@id": "#2eb90b09-a8b8-4946-805b-8cba077a7137"
         },
         {
-          "@id": "_:b312"
+          "@id": "#c2521494-9b94-4b23-a713-6b281f540823"
         },
       ]
 
 {
-      "@id": "_:b312",
+      "@id": "#c2521494-9b94-4b23-a713-6b281f540823",
       "@type": "PropertyValue",
       "name": "InternalSerialNumber",
       "value": "4102011002108002               "
     },
 ```
-
-
 
 
 ### Places
@@ -1374,11 +1358,11 @@ And the place is referenced from the [contentLocation](http://schema.org/content
 ```
 
 
-
 ### Time
 
 To describe the time period which a RO-Crate Data Entity is _about_, use [temporalCoverage].
 
+<!-- TODO: Need example-->
 
 ### Subjects & keywords
 
@@ -1405,21 +1389,13 @@ For example, this data is exported from an [Omeka](https://omeka.org) repository
 ```json
 {
    "@id": "https://omeka.uws.edu.au/farmstofreeways/api/collections/6",
-   "@type": [
-      "RepositoryCollection"
-   ],
-   "title": [
-      "Project Materials"
-   ],
+   "@type": "RepositoryCollection",
+   "title":  "Project Materials",   
    "description": [
       "Materials associated with the project, including fliers seeking participants, lists of sources and question outline.   "
    ],
-   "publisher": [
-      "University of Western Sydney"
-   ],
-   "rights": [
-      "Copyright University of Western Sydney 2015"
-   ],
+   "publisher": {"@id": "University of Western Sydney"},
+   "rights": "Copyright University of Western Sydney 2015",
    "hasMember": [
       {
          "@id": "https://omeka.uws.edu.au/farmstofreeways/api/items/166"
@@ -1437,45 +1413,35 @@ For example, this data is exported from an [Omeka](https://omeka.org) repository
 },
 {
    "@id": "https://omeka.uws.edu.au/farmstofreeways/api/items/166",
-   "@type": [
-      "RepositoryObject",
-      "Text"
-   ],
+   "@type": "RepositoryObject",
    "title": [
       "Western Sydney Women's Oral History Project: Flier (illustrated)"
    ],
    "description": [
       "Flier (illustrated) seeking participants for the project."
    ],
-   "publisher": [
-      "University of Western Sydney"
-   ],
-   "rights": [
-      "Copyright University of Western Sydney 2015"
-   ],
-   "originalFormat": [
-      "Paper"
-   ],
-   "identifier": [
-      "FTF_flier_illust"
+   "publisher": { "@id": "https://westernsydney.edu.au"},
+   "rights": "Copyright University of Western Sydney 2015",
+   "originalFormat": "Paper",
+   "identifier": "FTF_flier_illust"
    ],
    "rightsHolder": [
       "Western Sydney University"
    ],
-   "license": [
-      "Content in the Western Sydney Women's Oral History Project: From farms to freeways collection is licensed under a Creative Commons CC BY 3.0 AU licence (https://creativecommons.org/licenses/by/3.0/au/)."
-   ],
+   "license": { 
+     "@id": "https://creativecommons.org/licenses/by/3.0/au/"
+   },
    "hasFile": [
       {
-         "@id": "./content/166/original_eece70f73bf8979c0bcfb97065948531.pdf"
+         "@id": "content/166/original_eece70f73bf8979c0bcfb97065948531.pdf"
       },
      ...
    ]
 },
 {
    "@type": "File",
-   "@id": "./content/166/original_eece70f73bf8979c0bcfb97065948531.pdf"
-},
+   "@id": "content/166/original_eece70f73bf8979c0bcfb97065948531.pdf"
+}
 ```
 
 
@@ -1540,9 +1506,7 @@ If [thumbnail](http://schema.org/thumbnail)s are incidental to the data set, the
     "<a href=\"https://omeka.uws.edu.au/farmstofreeways/items/show/512\">Audio recording of interview with Eugenie Stapleton</a><br /><a href=\"https://omeka.uws.edu.au/farmstofreeways/items/show/454\">Transcript of interview with Eugenie Stapleton</a> <br /><a href=\"https://omeka.uws.edu.au/farmstofreeways/items/show/384\">Photo of Eugenie Stapleton 2</a><br /><a href=\"https://omeka.uws.edu.au/farmstofreeways/items/show/464\">Letter from Eugenie Stapleton</a>"
   ],
   "copyrightHolder": [
-    {
-      "@id": "https://westernsydney.edu.au",
-    }
+    { "@id": "https://westernsydney.edu.au"}
   ],
   "copyright": [
     "Copyright University of Western Sydney 2015"
