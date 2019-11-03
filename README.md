@@ -32,3 +32,4 @@ The specification and documentation maintained in this repository is Open Source
 
 Any contributions received are assumed to be [covered by the Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0#contributions).
 
+The RO-Crate JSON-LD contexts `context.json` and JSON-LD examples within this specification are distributed under [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). 
