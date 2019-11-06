@@ -1091,8 +1091,7 @@ In the below example, an image with the `@id` of `pics/2017-06-11 12.56.14.jpg` 
 ### Workflows and scripts
 
 
-Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts SHOULD be described using the type `SoftwareSourceCode`:
-
+Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts SHOULD be described using the data entities of type `SoftwareSourceCode`:
 
 schema property | Domain | Cardinality | Valid RO-Crate
 --------------- | ------ | ----------- | --------------
@@ -1102,16 +1101,14 @@ schema property | Domain | Cardinality | Valid RO-Crate
 `dateCreated`| Date / DateTime | One | Optional |
 `dateModified`| Date / DateTime | One | Optional |
 `description`| Text | One | Recommended |
-`encodingFormat`| Text / URL | One | Recommended |
 `hasPart`| `SoftwareSourceCode` / `SoftwareApplication` /`CreativeWork` | Many | Optional |
 `keywords`| Text | One | Optional |
 `license`| `CreativeWork` / URL | One | Recommended |
 `name`| Text | One | Mandatory |
-`programmingLanguage`| `ComputerLanguage` | Many | Recommended |
+`programmingLanguage`| `ComputerLanguage` | One | Recommended |
 `url`| URL | One | Optional |
 `version`| Number / Text | One | Optional |
 
-<!--`image`| `ImageObject` / URL | Many | Recommended |-->
 
 
 The distinction between `SoftwareSourceCode` and `SoftwareApplication` for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.  
@@ -1125,7 +1122,6 @@ Minimal example describing a workflow:
     "author": {"@id": "#thomas"},
     "contactPoint": {"@id": "#ibisba"},
     "creator": {"@id": "#thomas"},
-    "encodingFormat": "text/xml",
     "license": { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"},
     "name": "RetroPath Knime workflow",
     "programmingLanguage": {"@id": "#knime"},
@@ -1149,7 +1145,7 @@ If the `SoftwareSourceCode` is primarily in the form of a **workflow** (e.g. a p
 ```
 
 
-Workflows and scripts saved on disk using a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of `programmingLanguage`. The `encodingFormat` is frequently a more generic media type like `text/xml`, `text/json`, `application/zip`. If the format is unknown but the script is readable in a text editor, use `text/plain`. If a workflow file is in an proprietary binary or umknown format, `application/octet-stream` can be used to indicate the "source code" is not ordinarily readable.  If known, a [Pronom] identifier for the format SHOULD be included; note however that these generally do _not_ sufficiently indicate the version of programming language used.
+Workflows and scripts saved on disk using a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of `programmingLanguage`. 
 
 Note that the language and its runtime MAY differ (e.g. multiple different C++-compilers), but for scripts and workflows, frequently the language and runtime are essentially the same, and thus the `programmingLanguage` can be described in one go as a hybrid of a `ComputerLanguage` and `SoftwareApplication`:
 
@@ -1157,9 +1153,6 @@ Note that the language and its runtime MAY differ (e.g. multiple different C++-c
 {
   "@id": "scripts/analyse_csv.py",
   "@type": ["SoftwareSourceCode", "Script"],
-  "encodingFormat": ["text/x-python",
-    {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/938"}
-  ],  
   "name": "Analyze CSV files",
   "programmingLanguage": {"@id": "#python"},
 },
