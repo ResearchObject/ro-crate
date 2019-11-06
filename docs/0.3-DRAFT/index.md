@@ -1097,7 +1097,6 @@ Scientific workflows and scripts that were used (or can be used) to analyze or g
 schema property | Domain | Cardinality | Valid RO-Crate
 --------------- | ------ | ----------- | --------------
 `accessibilityAPI` | Text | Many | Optional |
-`additionalType`| URL | One | Recommended |
 `alternateName` | Text | Many | Optional |
 `audience`| `Audience` | Many | Optional |
 `author`| `Organization` / `Person` | Many | Mandatory |
@@ -1121,7 +1120,6 @@ schema property | Domain | Cardinality | Valid RO-Crate
 `keywords`| Text | One | Optional |
 `license`| `CreativeWork` / URL | One | Mandatory |
 `name`| Text | One | Mandatory |
-`potentialAction`| `Action` | Many | Recommended |
 `programmingLanguage`| `ComputerLanguage` | Many | Mandatory |
 `publisher`| `Organization` / `Person` | Many | Optional |
 `sameAs` | URL | Many | Optional |
@@ -1135,53 +1133,57 @@ The distinction between `SoftwareSourceCode` and `SoftwareApplication` for [soft
 Minimal example describing a workflow:
 
 ```json
-       {
-            "@id": "workflow/retropath.knime",  
-            "@type": "SoftwareSourceCode",
-            "additionalType": {"@id": "wfdesc:Workflow"},
-            "author": {"@id": "#thomas"},
-            "contactPoint": {"@id": "#ibisba"},
-            "creator": {"@id": "#thomas"},
-            "encodingFormat": "text/xml",
-            "license": { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"},
-            "name": "RetroPath Knime workflow",
-            "programmingLanguage": {"@id": "#knime"},
-            "version": "1.0.0"
-        }
+{
+    "@id": "workflow/retropath.knime",  
+    "@type": ["SoftwareSourceCode", "Workflow"],
+    "author": {"@id": "#thomas"},
+    "contactPoint": {"@id": "#ibisba"},
+    "creator": {"@id": "#thomas"},
+    "encodingFormat": "text/xml",
+    "license": { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"},
+    "name": "RetroPath Knime workflow",
+    "programmingLanguage": {"@id": "#knime"},
+    "version": "1.0.0"
+}
 ```
 
-The `additionalType` property SHOULD be used to indicate the particular nature of the source code as a _script_ or a _workflow_. The distinction is fluid, depending on if the code is primarily indicating **what** should be done (`wfdesc:Workflow`), or **how** tasks should be executed (`wf4ever:Script`).
+The `@type` property SHOULD be an array, to also indicate the particular nature of the source code as a _script_ or a _workflow_. The distinction is fluid, depending on if the code is primarily indicating **what** should be done (`Workflow`), or **how** tasks should be executed (`Script`).
 
-To indicate that a `SoftwareSourceCode` is primarily in the form of a **script** (e.g. sequential batch/shell script that call other commands and manage files), use:
+To indicate that a `SoftwareSourceCode` is primarily in the form of an executable **script** (e.g. sequential batch/shell script that call other commands and manage files), use:
 
 ```json
-            "additionalType": {"@id": "http://purl.org/ro/wf4ever#Script"}
+  "@type": ["SoftwareSourceCode", "Script"],
 ```
 
 
 If the `SoftwareSourceCode` is primarily in the form of a **workflow** (e.g. a pipeline of steps with data flow), use:
 
 ```json
-            "additionalType": {"@id": "http://purl.org/ro/wfdesc#Workflow"}
+  "@type": ["SoftwareSourceCode", "Workflow"],
 ```
 
 
-Workflows and scripts saved on disk using a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of `programmingLanguage` and `potentialAction`. The `encodingFormat` is frequently a more generic media type like `text/xml`, `text/json`, `application/zip`. If the format is unknown but the script is readable in a text editor, use `text/plain`. If a workflow file is in an proprietary binary or umknown format, `application/octet-stream` can be used to indicate the "source code" is not ordinarily readable.
+Workflows and scripts saved on disk using a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of `programmingLanguage`. The `encodingFormat` is frequently a more generic media type like `text/xml`, `text/json`, `application/zip`. If the format is unknown but the script is readable in a text editor, use `text/plain`. If a workflow file is in an proprietary binary or umknown format, `application/octet-stream` can be used to indicate the "source code" is not ordinarily readable.  If known, a [Pronom] identifier for the format SHOULD be included; note however that these generally do _not_ sufficiently indicate the version of programming language used.
 
-Note that the language and its runtime MAY differ, e.g. there are multiple runtimes of JavaScript and different C++-compilers, but for scripts and workflows frequently the language and runtime are essentially the same, and can be described in one go as a hybrid of a `ComputerLanguage` and `SoftwareApplication`:
+Note that the language and its runtime MAY differ (e.g. multiple different C++-compilers), but for scripts and workflows, frequently the language and runtime are essentially the same, and thus the `programmingLanguage` can be described in one go as a hybrid of a `ComputerLanguage` and `SoftwareApplication`:
 
 ```json
-       {
-            "@id": "#knime",
-            "@type": [
-                "ComputerLanguage",
-                "SoftwareApplication"
-            ],
-            "name": "KNIME Analytics Platform",
-            "alternateName": "KNIME",
-            "url": {"@id": "https://www.knime.com/knime-software/knime-analytics-platform"},
-            "version": "3.6"
-        }
+{
+  "@id": "scripts/analyse_csv.py",
+  "@type": ["SoftwareSourceCode", "Script"],
+  "encodingFormat": ["text/x-python",
+    {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/938"}
+  ],  
+  "name": "Analyze CSV files",
+  "programmingLanguage": {"@id": "#python"},
+},
+{
+  "@id": "#python",
+  "@type": ["ComputerLanguage", "SoftwareApplication"],
+  "name": "Python",
+  "version": "3.8.0",
+  "url": {"@id": "https://www.python.org/downloads/release/python-380/"}
+}
 ```
 
 A data entity representing a `SoftwareApplication` or `ComputerLanguage` MUST have a [name], [url] and [version], which should indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance _“R”_ instead of _“The R Project for Statistical Computing”_.
@@ -1189,16 +1191,15 @@ A data entity representing a `SoftwareApplication` or `ComputerLanguage` MUST ha
 
 #### Workflow diagram/sketch
 
-It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. It should be included as an `ImageObject` which is `about` the `SoftwareSourceCode` and has an `additionalType` of `roterms:Sketch`
+It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. This diagram MAY be included as an `ImageObject` which is `about` the `SoftwareSourceCode`. The `@type` parameter SHOULD be an array to also include `WorkflowSketch` to indicate that this is an image that represent a sketch or diagram of the workflow.
 
 ```json
 {
-            "@id": "workflow/workflow.svg",
-            "@type": "ImageObject",
-            "additionalType": "http://purl.org/wf4ever/roterms#Sketch",
-            "encodingFormat":  "image/svg+xml",
-            "description": "Diagram of RetroPath2.0 workflow",
-            "about": {"@id": "workflow/workflow.knime"}
+  "@id": "workflow/workflow.svg",
+  "@type": ["ImageObject", "WorkflowSketch"],
+  "encodingFormat":  "image/svg+xml",
+  "description": "Diagram of RetroPath2.0 workflow",
+  "about": {"@id": "workflow/workflow.knime"}
 }
 ```
 
@@ -1207,8 +1208,7 @@ The image file format SHOULD be indicated with [encodingFormat] using an IANA re
 ```json
 {
   "@id": "workflow/workflow.svg",
-  "@type": "ImageObject",
-  "additionalType": {"@id": "http://purl.org/wf4ever/roterms#Sketch"},
+  "@type": ["ImageObject", "WorkflowSketch"],
   "encodingFormat":  ["image/svg+xml", 
                       {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92"}],
   "description": "Diagram of RetroPath2.0 workflow",
@@ -1226,8 +1226,7 @@ A _sketch_ or overview diagram MAY be provided even if there is no programmatic 
 ```json
 {
   "@id": "overview.jpeg",
-  "@type": "ImageObject",
-  "additionalType": {"@id": "http://purl.org/wf4ever/roterms#Sketch"},
+  "@type": ["ImageObject", "WorkflowSketch"],
   "about": {"@id": "./"},
   "description": "Whiteboard sketch of how the content of this RO-Crate was made",
   "encodingFormat":  "image/jpeg",
