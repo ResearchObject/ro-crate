@@ -85,7 +85,8 @@ The _RO-Crate_ team is:
 * Alasdair J. G. Gray <https://orcid.org/0000-0002-5711-4872>
 * Stuart Owen <https://orcid.org/0000-0003-2130-0865>
 * Alan R Williams <https://orcid.org/0000-0003-3156-2105>
-* Giacomo Tartari <!--<https://orcid.org/0000-0003-1130-2154>-->
+* Giacomo Tartari <https://orcid.org/0000-0003-1130-2154>
+* Finn Bacall <https://orcid.org/0000-0002-0048-3300>
 
 To suggest changes, improvements or issues, use the GitHub repository <https://github.com/ResearchObject/ro-crate> - if you are new to GitHub or Open Source you may appreciate the [GitHub guides](https://guides.github.com/) like [Hello World](https://guides.github.com/activities/hello-world/), [MarkDown](https://guides.github.com/features/mastering-markdown/) and [How to contribute to open source](https://opensource.guide/how-to-contribute/)
 
