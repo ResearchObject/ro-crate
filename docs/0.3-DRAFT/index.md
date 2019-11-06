@@ -1357,18 +1357,11 @@ And the place is referenced from the [contentLocation](http://schema.org/content
   },
 ```
 
-
-### Time
-
-To describe the time period which a RO-Crate Data Entity is _about_, use [temporalCoverage].
-
-<!-- TODO: Need example-->
-
 ### Subjects & keywords
 
-Subject properties (equivalent to a Dublin Core Subject) on RO-Crate MUST use the [about](http://schema.org/about) property.
+Subject properties (equivalent to a Dublin Core Subject) on RO-Crate or a data entity MUST use the [about](http://schema.org/about) property.
 
-Keyword properties MUST use [keyword](http://schema.org/keywords). Note that by schema.org convention keywords are given as a single JSON string, with individual keywords separated by commas. 
+Keyword properties MUST use [keyword](http://schema.org/keywords). Note that by schema.org convention, keywords are given as a single JSON string, with individual keywords separated by commas.
 
 ```json
 {
@@ -1377,9 +1370,24 @@ Keyword properties MUST use [keyword](http://schema.org/keywords). Note that by 
 }
 ```
 
+### Time
+
+To describe the time period which a RO-Crate Data Entity (or the RO-Crate itself) is _about_, use [temporalCoverage]:
+
+```json
+{
+  "@id": "photos/",
+  "@type": "Dataset",
+  "name": "Photos of Gibraltar from 1950 till 1975",
+  "about": {"@id": "http://dbpedia.org/resource/Gibraltar"},
+  "temporalCoverage": "1950/1975"
+}
+```
+
+
 ### Digital Library and Repository content
 
-To describe an export from a Digital Library or repository system, RO-Crate uses the _Portland Common Data Model_ ([PCDM](https://github.com/duraspace/pcdm/wiki)). A _Context Entity_ from a repository, representing an abstract entity such as a person, or a work, or a place SHOULD have a`@type` of [RepositoryObject](https://pcdm.org/2016/04/18/models#Object), in addition to any other types. Objects MAY be grouped together in [RepositoryCollection](https://pcdm.org/2016/04/18/models#Collection)s with [hasMember] pointing to the the [RepositoryObject](https://pcdm.org/2016/04/18/models#Object). The keys RepositoryObject and RepositoryCollection were chosen to avoid collision between the terms Collection and Object with other vocabularies.
+To describe an export from a Digital Library or repository system, RO-Crate uses the _Portland Common Data Model_ ([PCDM](https://github.com/duraspace/pcdm/wiki)). A _Contextual Entity_ from a repository, representing an abstract entity such as a person, or a work, or a place SHOULD have a`@type` of [RepositoryObject](https://pcdm.org/2016/04/18/models#Object), in addition to any other types. Objects MAY be grouped together in [RepositoryCollection](https://pcdm.org/2016/04/18/models#Collection)s with [hasMember] pointing to the the [RepositoryObject](https://pcdm.org/2016/04/18/models#Object). The keys RepositoryObject and RepositoryCollection were chosen to avoid collision between the terms Collection and Object with other vocabularies.
 
 NOTE: [PCDM](https://github.com/duraspace/pcdm/wiki) specifies that Files should have only technical metadata, not descriptive metadata, which is _not_ a restriction in RO-Crate. If the RO-Crate is to be imported into a strict [PCDM](https://github.com/duraspace/pcdm/wiki) repository, modeling of object/file relationships will be necessary.
 
