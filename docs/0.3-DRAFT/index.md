@@ -1101,8 +1101,7 @@ schema property | Domain | Cardinality | Valid RO-Crate
 `dateCreated`| Date / DateTime | One | Optional |
 `dateModified`| Date / DateTime | One | Optional |
 `description`| Text | One | Recommended |
-`hasPart`| `SoftwareSourceCode` / `SoftwareApplication` /`CreativeWork` | Many | Optional |
-`keywords`| Text | One | Optional |
+`hasPart`| `SoftwareSourceCode` / `SoftwareApplication` / `CreativeWork` | Many | Optional |
 `license`| `CreativeWork` / URL | One | Recommended |
 `name`| Text | One | Mandatory |
 `programmingLanguage`| `ComputerLanguage` | One | Recommended |
@@ -1120,12 +1119,10 @@ Minimal example describing a workflow:
     "@id": "workflow/retropath.knime",  
     "@type": ["SoftwareSourceCode", "Workflow"],
     "author": {"@id": "#thomas"},
-    "contactPoint": {"@id": "#ibisba"},
-    "creator": {"@id": "#thomas"},
-    "license": { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"},
     "name": "RetroPath Knime workflow",
-    "programmingLanguage": {"@id": "#knime"},
-    "version": "1.0.0"
+    "description": "Retrosynthesis workflow calculating chemical reactions",
+    "license": { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"},
+    "programmingLanguage": {"@id": "#knime"}
 }
 ```
 
