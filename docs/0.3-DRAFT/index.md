@@ -1096,35 +1096,19 @@ Scientific workflows and scripts that were used (or can be used) to analyze or g
 
 schema property | Domain | Cardinality | Valid RO-Crate
 --------------- | ------ | ----------- | --------------
-`accessibilityAPI` | Text | Many | Optional |
-`alternateName` | Text | Many | Optional |
-`audience`| `Audience` | Many | Optional |
-`author`| `Organization` / `Person` | Many | Mandatory |
+`author`| `Organization` / `Person` | Many | Recommended |
 `citation`| `CreativeWork` / Text | Many | Optional |
-`contactPoint`| `ContactPoint` | One | Mandatory | 
-`contributor`| `Organization` / `Person` | Many | Recommended |
-`copyrightHolder`| `Organization` / `Person` | One | Recommended |
-`copyrightYear`| Number | One | Recommended |
-`creativeWorkStatus`| Defined Term / Text | One | Recommended |
-`creator`| `Organization` / `Person` | One | Mandatory |
+`contributor`| `Organization` / `Person` | Many | Optional |
 `dateCreated`| Date / DateTime | One | Optional |
 `dateModified`| Date / DateTime | One | Optional |
-`datePublished`|Date / DateTime | One | Recommended |
 `description`| Text | One | Recommended |
-`disambiguatingDescription`| Text | One | Optional |
 `encodingFormat`| Text / URL | One | Recommended |
-`funder`| `Organization` / `Person` | Many | Optional |
-`hasPart`| `CreativeWork` | Many | Optional |
+`hasPart`| `SoftwareSourceCode` / `SoftwareApplication` /`CreativeWork` | Many | Optional |
 `image`| `ImageObject` / URL | Many | Recommended |
-`inLanguage`| `Language` / Text | One | Recommended |
 `keywords`| Text | One | Optional |
-`license`| `CreativeWork` / URL | One | Mandatory |
+`license`| `CreativeWork` / URL | One | Recommended |
 `name`| Text | One | Mandatory |
-`programmingLanguage`| `ComputerLanguage` | Many | Mandatory |
-`publisher`| `Organization` / `Person` | Many | Optional |
-`sameAs` | URL | Many | Optional |
-`sdLicense`| `CreativeWork` / URL | One | Recommended |
-`sdPublisher`| `Organization` / `Person` | One | Recommended |
+`programmingLanguage`| `ComputerLanguage` | Many | Recommended |
 `url`| URL | One | Mandatory |
 `version`| Number / Text | One | Mandatory |
 
@@ -1186,7 +1170,22 @@ Note that the language and its runtime MAY differ (e.g. multiple different C++-c
 }
 ```
 
-A data entity representing a `SoftwareApplication` or `ComputerLanguage` MUST have a [name], [url] and [version], which should indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance _“R”_ instead of _“The R Project for Statistical Computing”_.
+A _contextual entity_ representing a `SoftwareApplication` or `ComputerLanguage` MUST have a [name], [url] and [version], which should indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance _“R”_ instead of _“The R Project for Statistical Computing”_.
+
+It is possible to indicate _steps_ that are executed as part of an `Workflow` or `Script`, by using `hasPart` to relate additional `SoftwareApplication` or nested `SoftwareSourceCode` contextual entities:
+
+```json
+{
+    "@id": "workflow/analyze.cwl",  
+    "@type": ["SoftwareSourceCode", "Workflow"],
+    "name": "CWL workflow to analyze CSV and make PNG",
+    "programmingLanguage": {"@id": "https://w3id.org/cwl/v1.1/"},
+    "hasPart": [
+      {"@id": "scripts/analyse_csv.py"},
+      {"@id": "https://www.imagemagick.org/"},
+    ]
+}
+```
 
 
 #### Workflow diagram/sketch
