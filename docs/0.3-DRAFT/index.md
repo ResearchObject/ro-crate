@@ -1104,13 +1104,15 @@ schema property | Domain | Cardinality | Valid RO-Crate
 `description`| Text | One | Recommended |
 `encodingFormat`| Text / URL | One | Recommended |
 `hasPart`| `SoftwareSourceCode` / `SoftwareApplication` /`CreativeWork` | Many | Optional |
-`image`| `ImageObject` / URL | Many | Recommended |
 `keywords`| Text | One | Optional |
 `license`| `CreativeWork` / URL | One | Recommended |
 `name`| Text | One | Mandatory |
 `programmingLanguage`| `ComputerLanguage` | Many | Recommended |
-`url`| URL | One | Mandatory |
-`version`| Number / Text | One | Mandatory |
+`url`| URL | One | Optional |
+`version`| Number / Text | One | Optional |
+
+<!--`image`| `ImageObject` / URL | Many | Recommended |-->
+
 
 The distinction between `SoftwareSourceCode` and `SoftwareApplication` for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.  
 
