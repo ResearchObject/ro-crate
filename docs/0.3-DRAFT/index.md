@@ -457,6 +457,12 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
   "@graph": [
 
  {
+    "@type": "CreativeWork",
+    "@id": "ro-crate-metadata.jsonld",
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/0.3-DRAFT"},
+    "about": {"@id": "./"}
+ },  
+ {
     "@id": "./",
     "identifier": "https://doi.org/10.4225/59/59672c09f4a4b",
     "@type": "Dataset",
@@ -519,6 +525,12 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
 ```json
 { "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context",
   "@graph": [
+    {
+        "@type": "CreativeWork",
+        "@id": "ro-crate-metadata.jsonld",
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/0.3-DRAFT"},
+        "about": {"@id": "./"}
+  },  
   {
     "@id": "./",
     "@type": [
@@ -1699,11 +1711,11 @@ The below example shows the overall structure of a flattened, compacted `ro-crat
   "@graph": [
 
     {
-      "@id": "ro-crate-metadata.jsonld",
       "@type": "CreativeWork",
-      "description": "RO-Crate Metadata File Descriptor (this file)",
-      "identifier": "ro-crate-metadata.jsonld",
-      "about": {"@id": "./"}
+      "@id": "ro-crate-metadata.jsonld",
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/0.3-DRAFT"},
+      "about": {"@id": "./"},
+      "description": "RO-Crate Metadata File Descriptor (this file)"
     },
     { 
       "@id": "./",
@@ -1771,10 +1783,10 @@ In other uses of JSON-LD the context may perform more automatic or detailed mapp
 To find the full description of a particular property or type, follow its URI from the context. For instance, we can find within the context <https://w3id.org/ro/crate/0.3-DRAFT/context> that `author` above is mapped to <http://schema.org/author>:
 
 ```json
-          "author": "http://schema.org/author",
+   "author": "http://schema.org/author",
 ```
 
-The RO-Crate JSON-LD Context` may either be set by reference to <https://w3id.org/ro/crate/0.3-DRAFT/context>, or by value (merging the two documents).
+The _RO-Crate JSON-LD Context_ may either be set by reference to <https://w3id.org/ro/crate/0.3-DRAFT/context>, or by value (merging the two documents).
 
 Consider the below (simplified) example of _by reference_ using a versioned permalink:
 
@@ -1785,21 +1797,21 @@ Consider the below (simplified) example of _by reference_ using a versioned perm
       "@id": "ro-crate-metadata.jsonld",
       "@type": "CreativeWork",
       "description": "RO-Crate Metadata File Descriptor (this file)",
-      "identifier": "ro-crate-metadata.jsonld",
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/0.3-DRAFT"},
       "about": {"@id": "./"}
     }
   ]
 }
 ```
 
-The above is equivalent to this JSON-LD using an embedded context:
+The above is equivalent to this JSON-LD using an embedded context, by adding the corresponding keys from the external `@context`:
 
 ```json
 { "@context": {
       "CreativeWork": "http://schema.org/CreativeWork",
       "about": "http://schema.org/about",
       "description": "http://schema.org/description",
-      "identifier": "http://schema.org/identifier",
+      "conformsTo": "http://purl.org/dc/terms/conformsTo",
       "about": "http://schema.org/about"
   },
   "@graph": [
@@ -1807,7 +1819,7 @@ The above is equivalent to this JSON-LD using an embedded context:
       "@id": "ro-crate-metadata.jsonld",
       "@type": "CreativeWork",
       "description": "RO-Crate Metadata File Descriptor (this file)",
-      "identifier": "ro-crate-metadata.jsonld",
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/0.3-DRAFT"},
       "about": {"@id": "./"}
     }
   ]
@@ -1815,6 +1827,8 @@ The above is equivalent to this JSON-LD using an embedded context:
 ```
 
 While the second form is more verbose, one advantage is that it is "archivable" as it does not require Internet access for retrieving the `@context` permalink. Tools consuming or archiving RO-Crate MAY replace by-reference `@context` URIs with an embedded context by using version-specific hard-coded contexts, see <https://github.com/ResearchObject/ro-crate/releases>
+
+To check which RO-Crate version is used (in terms of properties and types expected), clients SHOULD check the property `conformsTo` on the _RO-Crate Metadata File Descriptor_ rather than the value of `@context`.
 
 RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded context, but MAY use the [JSON-LD flattening](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) algorithm with _compaction_ to a referenced _RO-Crate JSON-LD context_.
 
