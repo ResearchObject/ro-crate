@@ -21,7 +21,7 @@ the corresponding simplified @context for RO-Crate
 adding our additional properties.
 
 Run as:
-./schema-context.py > ../docs/0.3-DRAFT/context.json
+./schema-context.py > ../docs/0.3-DRAFT/context.jsonld
 """ 
 
 import sys
