@@ -271,6 +271,8 @@ RO-Crate also uses the _Portland Common Data Model_ ([PCDM](https://github.com/d
 
 The keys `RepositoryObject` and `RepositoryCollection` were chosen to avoid collision between the terms Collection and Object with other vocabularies.
 
+From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
+- `conformsTo` mapped to <http://purl.org/dc/terms/conformsTo>
 
 ### Summary of Coverage
 
@@ -331,25 +333,48 @@ _Root Data Entities_ MAY also have additional repository specific identifiers, d
 
 ### Core Metadata for the _Root Data Entity_ 
 
-The _RO-Crate JSON-LD_ MUST contain a _Root Data Entity_, identified by a
-_RO-Crate Metadata File Descriptor_ of type [CreativeWork] which describes it, with an [about]
-property referencing the _Root Data Entity_ the _Root Data Entity_ MUST have an `@id` of `./`.
+The _Root Data Entity_ is a [Dataset] that represent the RO-Crate as a whole;
+a _Research Object_ that includes the _Data Entities_ and the related
+_Contextual Entities_.
+
+The _RO-Crate JSON-LD_ MUST contain a _RO-Crate Metadata File Descriptor_ 
+with the `@id` value `ro-crate-metadata.jsonld` and `@type` [CreativeWork]. This descriptor 
+MUST have an [about] property referencing the _Root Data Entity_, which SHOULD
+have an `@id` of `./`.
 
 ```json
-{
-    "@type": "CreativeWork",
-    "@id": "ro-crate-metadata.jsonld",
-    "identifier": "ro-crate-metadata.jsonld",
-    "about": {"@id": "./"}
-},
 
-{
-  "@id": "./",
-  "@type": "Dataset",
-  ...
+{ "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context", 
+  "@graph": [
+    {
+        "@type": "CreativeWork",
+        "@id": "ro-crate-metadata.jsonld",
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/0.3-DRAFT"},
+        "about": {"@id": "./"}
+    },
+    
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      ...
+    }
+  ]
 }
-
 ```
+
+The [conformsTo] of the _RO-Crate Metadata File Descriptor_ 
+SHOULD be a versioned permalink URI of the RO-Crate specification
+that the _RO-Crate JSON-LD_ conforms to. The URI SHOULD 
+start with `https://w3id.org/ro/crate/`. 
+
+Consumers processing the RO-Crate as an JSON-LD graph can thus reliably find
+the the _Root Data Entity_ by following this algorithm:
+
+1. For each entity in `@graph` array
+2. ..if the `conformsTo` property is a URI that starts with `https://w3id.org/ro/crate/`
+3. ....from  this entity's `about` object keep the `@id` URI as variable _root_
+4. For each entity in `@graph` array
+5. ..return the entity which `@id` URI matches _root_
 
 To ensure a base-line interoperability between RO-Crates, and for an RO-Crate to
 be considered a _Valid RO-Crate_, a minimum set of metadata is required for the
@@ -360,7 +385,6 @@ metadata requirements in terms of describing _Data Entities_ (files and folders)
 other than the _Root Data Entity_. Extensions of RO-Crate dealing with specific
 types of dataset may put further constraints or requirements of metadata beyond
 the Root Data Entity (see Extending RO-Crate below).
-
 
 
 The _RO-Crate Metadata File Descriptor_ MAY contain information such as
@@ -440,8 +464,8 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
     "name": "Data files associated with the manuscript:Effects of facilitated family case conferencing for advanced dementia: A cluster randomised clinical trial",
     "distribution": { "@id": "https://data.research.uts.edu.au/examples/v1.0/timluckett.zip"
         },
-"contactPoint": {
-        "@id": "tim.luckett@uts.edu.au"
+    "contactPoint": {
+        "@id": "#tim"
       }
  },
   
@@ -453,7 +477,7 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
  },
 
  {
-      "@id": "tim.luckett@uts.edu.au",
+      "@id": "#tim",
       "@type": "ContactPoint",
       "contactType": "customer service",
       "email": "tim.luckett@uts.edu.au",
@@ -502,22 +526,22 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
     ],
     "hasPart": [
       {
-        "@id": "./cp7glop.ai"
+        "@id": "cp7glop.ai"
       },
       {
-        "@id": "./lots_of_little_files"
+        "@id": "lots_of_little_files/"
       },
       ],
    },
   {
-    "@id": "./cp7glop.ai",
+    "@id": "cp7glop.ai",
     "@type": "File",
     "contentSize": "383766",
     "description": "Illustrator file for Glop Pot",
     "encodingFormat": "application/pdf"
   },
   {
-      "@id": "./lots_of_little_files",
+      "@id": "lots_of_little_files/",
       "@type": "Dataset",
       "description": "This directory contains many small files, that we're not going to describe in detail.",
       "name": "Too many files",
@@ -542,9 +566,9 @@ identifier to a _Contextual Entity_ of `@type` Website.
     "encodingFormat": ["application/pdf", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19"}]
   },
   {
-  "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19",
-  "name": "Acrobat PDF 1.5 - Portable Document Format",
-  "@type": "Website"
+    "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19",
+    "name": "Acrobat PDF 1.5 - Portable Document Format",
+    "@type": "Website"
   }
 
 ```
@@ -561,14 +585,14 @@ For example:
     "description": "An example Common Workflow Language File",
     "encodingFormat": ["text/plain", {"@id": "https://www.commonwl.org/v1.0/Workflow.html"}]
   },
-  {
-  "@id": "https://www.commonwl.org/v1.0/Workflow.html",
-  "name": "Common Workflow Language (CWL) Workflow Description, v1.0.2",
-  "@type": "Website"
+    {
+    "@id": "https://www.commonwl.org/v1.0/Workflow.html",
+    "name": "Common Workflow Language (CWL) Workflow Description, v1.0.2",
+    "@type": "Website"
   }
 ```
 
-If there is no web-accessible decription for a file format it SHOULD be described locally in the dataset, for example in a file:
+If there is no web-accessible description for a file format it SHOULD be described locally in the dataset, for example in a file:
 
 ```json
  {
@@ -579,14 +603,12 @@ If there is no web-accessible decription for a file format it SHOULD be describe
     "encodingFormat": ["text/plain", {"@id": "https://www.commonwl.org/v1.0/Workflow.html"}]
   },
   {
-  "@id": "some_extension.md",
-  "encodingFormat": "text/plain",
-  "name": "Description of some_extension file format",
-  "@type": ["File", "CreativeWork"]
+    "@id": "some_extension.md",
+    "encodingFormat": "text/markdown",
+    "name": "Description of some_extension file format",
+    "@type": ["File", "CreativeWork"]
   }
 ```
-
-
 
 ### Core Metadata for _Data Entities_
 
@@ -601,7 +623,6 @@ schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | 
 `name` || Y || Y |
 `contentSize` || ? || Y |
 `dateModified` || ? || Y |
-`fileFormat` || ? |||
 `encodingFormat` || ? |||
 
 
@@ -611,6 +632,7 @@ schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | 
 schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
 --------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
 `@type` | MUST be `Dataset` |  | |  |
+`@id` | MUST be a _URI Path_ relative to the _RO Crate root; SHOULD end with `/`_ | Y || Y |
 
 
 ## Representing _Contextual Entities_
@@ -622,10 +644,9 @@ A core principle of Linked data is to use URIs to identify things such as people
 
 ```json
 {
-      "@type": "Dataset",
-      "@id": "some_id",
-      "author": {"@id": "https://orcid.org/0000-0002-8367-6908"}
-
+    "@type": "Dataset",
+    "@id": "./",
+    "author": {"@id": "https://orcid.org/0000-0002-8367-6908"}
 }
 {
     "@id": "https://orcid.org/0000-0002-8367-6908",
@@ -648,7 +669,7 @@ An [Organization](http://schema.org/Organization) SHOULD be the value for the [p
 ```json
 {
   "@type": "Dataset",
-  "@id": "some_id",
+  "@id": "./",
   "publisher": {"@id": "https://ror.org/03f0f6041"}
 }
 
@@ -665,7 +686,7 @@ An [Organization](http://schema.org/Organization) SHOULD also be used for a [Per
 ```json
 {
   "@type": "Dataset",
-  "@id": "some_id",
+  "@id": "./",
   "publisher": {"@id": "https://ror.org/03f0f6041"},
   "author": {"@id": "https://orcid.org/0000-0002-3545-944X"}
 },
@@ -700,16 +721,16 @@ Here's a (real, but abridged) example of a researcher who has four institutional
   "@type": "Person",
   "affiliation": [
     {
-      "@id": "1"
+      "@id": "#1"
     },
     {
-      "@id": "2"
+      "@id": "#2"
     },
     {
-      "@id": "3"
+      "@id": "#3"
     },
     {
-      "@id": "4"
+      "@id": "#4"
     }
   ],
   "name": "Meera Agar"
@@ -721,7 +742,7 @@ The first affiliation is a Faculty of a university. The Faculty is associated wi
 
 ```json
 {
-  "@id": "1",
+  "@id": "#1",
   "@type": "Organization",
   "memberOf": {
     "@id": "https://ror.org/03f0f6041"
@@ -755,10 +776,10 @@ IMPLEMENTATION NOTE: The Google structured Data tool gives an error if `mailto:`
       "@id": "https://orcid.org/0000-0001-6121-5409",
       "@type": "Person",
       "affiliation": {
-        "@id": "1"
+        "@id": "#1"
       },
       "contactPoint": {
-        "@id": "tim.luckett@uts.edu.au"
+        "@id": "#tim.luckett@uts.edu.au"
       },
       "familyName": "Luckett",
       "givenName": "Tim",
@@ -768,7 +789,7 @@ IMPLEMENTATION NOTE: The Google structured Data tool gives an error if `mailto:`
 
 
   {
-      "@id": "tim.luckett@uts.edu.au",
+      "@id": "#tim.luckett@uts.edu.au",
       "@type": "ContactPoint",
       "contactType": "customer service",
       "email": "tim.luckett@uts.edu.au",
@@ -918,9 +939,9 @@ NOTE: To make it very clear where funding is coming from, the _Root Data Entity_
 
 ### Licensing, Access control and copyright
 
-If a _Data Entity_ has a [license] that is different from the license on the _Root Data Entity_, the entity SHOULD have a [license](http://schema.org/license) property referencing a _Contextual Entity_ with a value of [CreativeWork](http://schema.org/CreativeWork) that describes the license. The ID of the license SHOULD be its URL (e.g. a Creative Commons License URL) and a summary of the license included using the [description] property. If this is not possible a URL MAY be used as the value.
+If a _Data Entity_ has a [license] that is different from the license on the _Root Data Entity_, the entity SHOULD have a [license](http://schema.org/license) property referencing a _Contextual Entity_ with a type  [CreativeWork](http://schema.org/CreativeWork) to describe the license. The `@id` of the license SHOULD be its URL (e.g. a Creative Commons License URL) and, when possible, a summary of the license included using the [description] property.
 
-This _Data Entity_ has a copyright holder which is different from its author. There is a reference to an [Organization](http://schema.org/Organization) describing the copyright holder and a [sameAs](http://schema.org/sameAs) relation to a web page.
+The below _Data Entity_ has a [copyrightHolder] which is different from its [author]. There is a reference to an [Organization](http://schema.org/Organization) describing the copyright holder and, to give credit, a [sameAs](http://schema.org/sameAs) relation to a web page. The [license] property here refers to <https://creativecommons.org/licenses/by/4.0/> which is expanded in a separate contextual entity.
 
 
 ```json
@@ -929,7 +950,7 @@ This _Data Entity_ has a copyright holder which is different from its author. Th
   "@type": "File",
   "contentSize": "17085",
   "copyrightHolder": {
-    "@id": "IDRC"
+    "@id": "https://www.idrc.ca/"
   },
   "author": {
     "@id": "https://orcid.org/0000-0002-0068-716X"
@@ -943,6 +964,13 @@ This _Data Entity_ has a copyright holder which is different from its author. Th
 },
 
 {
+  "@id": "https://creativecommons.org/licenses/by/4.0/",
+  "@type": "CreativeWorks",
+  "name": "CC BY 4.0",
+  "description": "Creative Commons Attribution 4.0 International License"
+},
+
+{
   "@id": "https://orcid.org/0000-0002-0068-716X",
   "@type": "Person",
   "identifier": "https://orcid.org/0000-0002-0068-716X",
@@ -950,17 +978,89 @@ This _Data Entity_ has a copyright holder which is different from its author. Th
 },
 
 {
-  "@id": "IDRC",
+  "@id": "https://www.idrc.ca/",
   "@type": "Organization",
   "description": "Canadian Frown Corporation and funder of development research",
   "identifier": "IDRC",
   "name": "International Development Research Center"
-},
+}
 ```
 
 
-See the example of a an [audio recording with a `copyrightHolder` property](https://data.research.uts.edu.au/examples/v1.0/Data_Package-IDRC_Opportunities_and_Challenges_Open_Research_Strategies/CATALOG_files/pairtree_root/Po/li/cy/%5E2/0a/nd/%5E2/0I/mp/le/me/nt/at/io/n%5E/20/Re/vi/ew/%5E2/0I/nt/er/vi/ew/s=/In/te/rv/ie/w_/Au/di/o=/In/te/rv/ie/w-/25/_0/9_/20/15/-1/3_/43/-J/ua/n_/Bi/ca/rr/eg/ui/,f/la/c/index.html) (which is different from the `author` property) and which is linked to a `license`.
+#### Metadata license
 
+In some cases the license of the RO-Crate metadata the (JSON-LD statements in the _RO-Crate Metadata File Descriptor_) is different from the license on the _Root Date Entity_ and its content (_data entities_ indicated by `hasPart`). 
+
+For instance, a common pattern for repositories is to license metadata as [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/), while data is licensed as [CC-BY](https://creativecommons.org/licenses/by/4.0/) or similar.  This pattern allow metadata to be combined freely (e.g. the DataCite knowledge graph), while redistribution of data files would require explicit attribution and statement of their license.
+
+To express the metadata license is different from the _Root Data Entity_, expand the _RO-Crate Metadata File Descriptor_  to include `license`:
+
+```json
+{
+  "@type": "CreativeWork",
+  "@id": "ro-crate-metadata.jsonld",
+  "identifier": "ro-crate-metadata.jsonld",
+  "about": {"@id": "./"},
+  "license": {
+    "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+  }
+},
+
+{
+  "@id": "./",
+  "@type": "Dataset",
+  "license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+  }
+}
+
+```
+
+If no explicit `license` is expressed on the _RO-Crate Metadata File Descriptor_, the `license` expressed on the _Root Data Entity_ apply also on the RO-Crate metadata.
+
+<!-- TODO: This got a bit to complicated, commented out for 1.0
+
+### License of contextual entity metadata
+
+In some cases, the JSON-LD metadata for some entities have been imported under a different (possibly more restrictive) license than the license of the _RO-Crate Metadata File Descriptor_ overall. For this the property [sdLicense] ("structured data license") MAY be used on the affected data entities or contextual entities. In this case it is RECOMMENDED to use [sdPublisher] ("structured data publisher") for attribution of the imported metadata:
+
+```json
+{
+  "@id": "./",
+  "@type": "Dataset",
+  "license": {
+    "@id": "https://www.gnu.org/licenses/gpl-3.0"
+  },
+  "contentLocation": {
+    "@id": "http://sws.geonames.org/8152662/"
+  }  
+},
+{
+  "@id": "http://sws.geonames.org/8152662/",
+  "@type": "Place",
+  "sdLicense": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "sdPublisher": {
+    "@id": "http://www.geonames.org"
+  },
+  "http://www.geonames.org/ontology#countryCode": "AU",
+  "http://www.geonames.org/ontology#wikipediaArticle": {
+    "@id": "https://en.wikipedia.org/wiki/Catalina_Park"
+  },
+  ...
+}
+```
+
+In the above (abridged) example, there is no explicit license on the _RO-Crate Metadata File Description_, so the _Root Date Entity_ license [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0) would apply to RO-Crate JSON-LD statements, except for the statements on the imported <http://sws.geonames.org/8152662/>,  which metadata is re-distributed under license <https://creativecommons.org/licenses/by/4.0/>. 
+
+In this example the CC-BY license requires retaining "a notice that refers to this Public License" and "identification of the creator(s) of the Licensed Material", here respected using `sdLicense` and `sdPublisher`.  
+
+As the RO-Crate uses _flattened_ JSON-LD, `sdLicense` should be expressed directly on each data/contextual entities where required. 
+
+**Tip**: If metadata is imported from a source licensed as [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/), no `sdLicense` statement is required.
+
+-->
 
 ### Equipment
 
@@ -985,17 +1085,16 @@ In this example the CreateAction has a human [agent](http://schema.org/agent), t
 
 ```json
 {
-      "@id": "DataCapture_wcc02",
+      "@id": "#DataCapture_wcc02",
       "@type": "CreateAction",
       "agent": {
-        "@id": "http://orcid.org/0000-0002-1672-552X"
+        "@id": "https://orcid.org/0000-0002-1672-552X"
       },
-      "identifier": "DataCapture_wcc02",
       "instrument": {
         "@id": "https://confluence.csiro.au/display/ASL/Hovermap"
       },
       "object": {
-        "@id": "victoria_arch"
+        "@id": "#victoria_arch"
       },
       "result": [
         {
@@ -1006,18 +1105,12 @@ In this example the CreateAction has a human [agent](http://schema.org/agent), t
         }
       ]
     },
-
-{
-      "@id": "victoria_arch",
+  {
+      "@id": "#victoria_arch",
       "@type": "Place",
       "address": "Wombeyan Caves, NSW 2580",
-      "description": "This is the GDA94 datum, which is for most situations is close to WGS84",
-      "geo": {
-        "@id": "08563107-deb2-4d3b-a25f-83a09b5b61d4"
-      },
-      "identifier": "victoria_arch",
       "name": "Victoria Arch"
-    },
+  }
 ```
 
 
@@ -1025,68 +1118,62 @@ In this example the CreateAction has a human [agent](http://schema.org/agent), t
 
 ### Software 
 
-To specify which software was used to create or update a file the software application SHOULD be represented with an entity of type [SoftwareApplication](http://schema.org/SoftwareApplication), with a [version] property. For example:
+To specify which software was used to create or update a file the software application SHOULD be represented with an entity of type [SoftwareApplication](http://schema.org/SoftwareApplication), with a [version] property, e.g. from `tool --version`.
+
+For example:
 
 ```json
 {
       "@id": "https://www.imagemagick.org/",
-      "@type": [
-        "SoftwareApplication"
-      ],
+      "@type": "SoftwareApplication",
       "url": "https://www.imagemagick.org/",
-      "identifier": "https://www.imagemagick.org/",
       "name": "ImageMagick",
-      "version": " ImageMagick 7.0.8-2 Q16 x86_64 2018-06-19"
+      "version": "ImageMagick 6.9.7-4 Q16 x86_64 20170114 http://www.imagemagick.org"
 }
 ```
 
-
 The software SHOULD be associated with the [File](http://schema.org/MediaObject) it created using a CreateAction with the [File](http://schema.org/MediaObject) referenced by a [result](http://schema.org/result) property. Any input files SHOULD be referenced by the [object](http://schema.org/object) property.
 
-In the below example, an image with the `@id` of `pics/2017-06-11 12.56.14.jpg` was transformed into an new image `pics/sepia_fence.jpg` using the `ImageMagick` software application. Actions MAY have human-readable names, which MAY be machine generated for use at scale.
+In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg` was transformed into an new image `pics/sepia_fence.jpg` using the `ImageMagick` software application. Actions MAY have human-readable names, which MAY be machine generated for use at scale.
 
 ```json
 {
-      "@id": "Photo_Capture_1",
+      "@id": "#Photo_Capture_1",
       "@type": "CreateAction",
       "agent": {
         "@id": "https://orcid.org/0000-0002-3545-944X"
       },
       "description": "Photo snapped on a photo walk on a misty day",
-      "identifier": "Photo1",
-      "endTime": "2017:06:11T12:56:14+10:00",
+      "endTime": "2017-06-11T12:56:14+10:00",
       "instrument": [
         {
-          "@id": "EPL1"
+          "@id": "#EPL1"
         },
         {
-          "@id": "Panny20mm"
+          "@id": "#Panny20mm"
         }
       ],
       "result": {
-        "@id": "pics/2017-06-11 12.56.14.jpg"
+        "@id": "pics/2017-06-11%2012.56.14.jpg"
       }
     },
     {
-      "@id": "SepiaConversion_1",
+      "@id": "#SepiaConversion_1",
       "@type": "CreateAction",
       "name": "Convert dog image to sepia",
       "description": "convert -sepia-tone 80% test_data/sample/pics/2017-06-11\\ 12.56.14.jpg test_data/sample/pics/sepia_fence.jpg",
-      "identifier": "SepiaConversion",
-      "endTime": "2018:09:19T17:01:07+10:00",
+      "endTime": "2018-09-19T17:01:07+10:00",
       "instrument": {
         "@id": "https://www.imagemagick.org/"
       },
       "object": {
-        "@id": "pics/2017-06-11 12.56.14.jpg"
+        "@id": "pics/2017-06-11%2012.56.14.jpg"
       },
       "result": {
         "@id": "pics/sepia_fence.jpg"
       }
     },
 ```
-
-
 
 ### Workflows and scripts
 
@@ -1248,48 +1335,48 @@ To record curation actions which modify a [File](http://schema.org/MediaObject) 
 
 ```json
 {
-    "@id": "history-01",
+    "@id": "#history-01",
     "@type": "CreateAction",
     "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" },
     "name": "RO-Crate created",
     "endTime": "2018-08-31",
     "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
     "instrument": { "@id": "https://stash.research.uts.edu.au" },
-    "actionStatus": "CompletedActionStatus"
+    "actionStatus":  { "@id": "http://schema.org/CompletedActionStatus" }
 },
 
 {
-    "@id": "history-02",
+    "@id": "#history-02",
     "@type": "UpdateAction",
     "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" },
     "name": "RO-Crate published",
     "endTime": "2018-09-10",
     "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
     "instrument": { "@id": "https://stash.research.uts.edu.au" },
-    "actionStatus": "CompletedActionStatus"
+    "actionStatus":  {"@id":" http://schema.org/CompletedActionStatus" }
 },
 
 { 
-    "@id": "history-03",
+    "@id": "#history-03",
     "@type": "CreateAction",
-    "object": { "@id": "./metadata.xml.v0.1" },
-    "result": { "@id": "./metadata.xml" },
+    "object": { "@id": "metadata.xml.v0.1" },
+    "result": { "@id": "metadata.xml" },
     "name": "metadata update",
     "endTime": "2018-09-12",
     "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
     "instrument": { "@id": "https://stash.research.uts.edu.au" },
-    "actionStatus": "CompletedActionStatus"
+    "actionStatus": { "@id": "http://schema.org/CompletedActionStatus" }
 },
 
 {
-    "@id": "history-04",
+    "@id": "#history-04",
     "@type": "UpdateAction",
     "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" },
     "name": "RO-Crate published",
     "endTime": "2018-09-13",
     "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
     "instrument": { "@id": "https://stash.research.uts.edu.au" },
-    "actionStatus": "FailedActionStatus",
+    "actionStatus": { "@id": "http://schema.org/FailedActionStatus" },
     "error": "Record is already published"
 },
 
@@ -1313,32 +1400,30 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
 
 ```json
 {
-      "@id": "pics/2017-06-11 12.56.14.jpg",
+      "@id": "pics/2017-06-11%2012.56.14.jpg",
       "@type": "ImageObject",
       "contentSize": "5114778",
       "author": {
         "@id": "https://orcid.org/0000-0002-3545-944X"
       },
       "description": "Depicts a fence at a disused motor racing venue with the front part of a slightly out of focus black dog in the foreground.",
-      "encodingFormat": "Exchangeable Image File Format (Compressed)",
+      "encodingFormat": "image/jpeg",
       "exifData": [
         {
-          "@id": "_:b0"
+          "@id": "#2eb90b09-a8b8-4946-805b-8cba077a7137"
         },
         {
-          "@id": "_:b312"
+          "@id": "#c2521494-9b94-4b23-a713-6b281f540823"
         },
       ]
 
 {
-      "@id": "_:b312",
+      "@id": "#c2521494-9b94-4b23-a713-6b281f540823",
       "@type": "PropertyValue",
       "name": "InternalSerialNumber",
       "value": "4102011002108002               "
     },
 ```
-
-
 
 
 ### Places
@@ -1418,18 +1503,11 @@ And the place is referenced from the [contentLocation](http://schema.org/content
   },
 ```
 
-
-
-### Time
-
-To describe the time period which a RO-Crate Data Entity is _about_, use [temporalCoverage].
-
-
 ### Subjects & keywords
 
-Subject properties (equivalent to a Dublin Core Subject) on RO-Crate MUST use the [about](http://schema.org/about) property.
+Subject properties (equivalent to a Dublin Core Subject) on RO-Crate or a data entity MUST use the [about](http://schema.org/about) property.
 
-Keyword properties MUST use [keyword](http://schema.org/keywords). Note that by schema.org convention keywords are given as a single JSON string, with individual keywords separated by commas. 
+Keyword properties MUST use [keyword](http://schema.org/keywords). Note that by schema.org convention, keywords are given as a single JSON string, with individual keywords separated by commas.
 
 ```json
 {
@@ -1437,6 +1515,21 @@ Keyword properties MUST use [keyword](http://schema.org/keywords). Note that by 
   "about": { "@id": "http://dbpedia.org/resource/Gibraltar" },
 }
 ```
+
+### Time
+
+To describe the time period which a RO-Crate Data Entity (or the RO-Crate itself) is _about_, use [temporalCoverage]:
+
+```json
+{
+  "@id": "photos/",
+  "@type": "Dataset",
+  "name": "Photos of Gibraltar from 1950 till 1975",
+  "about": {"@id": "http://dbpedia.org/resource/Gibraltar"},
+  "temporalCoverage": "1950/1975"
+}
+```
+
 
 ### Digital Library and Repository content
 
@@ -1450,21 +1543,13 @@ For example, this data is exported from an [Omeka](https://omeka.org) repository
 ```json
 {
    "@id": "https://omeka.uws.edu.au/farmstofreeways/api/collections/6",
-   "@type": [
-      "RepositoryCollection"
-   ],
-   "title": [
-      "Project Materials"
-   ],
+   "@type": "RepositoryCollection",
+   "title":  "Project Materials",   
    "description": [
       "Materials associated with the project, including fliers seeking participants, lists of sources and question outline.   "
    ],
-   "publisher": [
-      "University of Western Sydney"
-   ],
-   "rights": [
-      "Copyright University of Western Sydney 2015"
-   ],
+   "publisher": {"@id": "University of Western Sydney"},
+   "rights": "Copyright University of Western Sydney 2015",
    "hasMember": [
       {
          "@id": "https://omeka.uws.edu.au/farmstofreeways/api/items/166"
@@ -1482,45 +1567,35 @@ For example, this data is exported from an [Omeka](https://omeka.org) repository
 },
 {
    "@id": "https://omeka.uws.edu.au/farmstofreeways/api/items/166",
-   "@type": [
-      "RepositoryObject",
-      "Text"
-   ],
+   "@type": "RepositoryObject",
    "title": [
       "Western Sydney Women's Oral History Project: Flier (illustrated)"
    ],
    "description": [
       "Flier (illustrated) seeking participants for the project."
    ],
-   "publisher": [
-      "University of Western Sydney"
-   ],
-   "rights": [
-      "Copyright University of Western Sydney 2015"
-   ],
-   "originalFormat": [
-      "Paper"
-   ],
-   "identifier": [
-      "FTF_flier_illust"
+   "publisher": { "@id": "https://westernsydney.edu.au"},
+   "rights": "Copyright University of Western Sydney 2015",
+   "originalFormat": "Paper",
+   "identifier": "FTF_flier_illust"
    ],
    "rightsHolder": [
       "Western Sydney University"
    ],
-   "license": [
-      "Content in the Western Sydney Women's Oral History Project: From farms to freeways collection is licensed under a Creative Commons CC BY 3.0 AU licence (https://creativecommons.org/licenses/by/3.0/au/)."
-   ],
+   "license": { 
+     "@id": "https://creativecommons.org/licenses/by/3.0/au/"
+   },
    "hasFile": [
       {
-         "@id": "./content/166/original_eece70f73bf8979c0bcfb97065948531.pdf"
+         "@id": "content/166/original_eece70f73bf8979c0bcfb97065948531.pdf"
       },
      ...
    ]
 },
 {
    "@type": "File",
-   "@id": "./content/166/original_eece70f73bf8979c0bcfb97065948531.pdf"
-},
+   "@id": "content/166/original_eece70f73bf8979c0bcfb97065948531.pdf"
+}
 ```
 
 
@@ -1585,9 +1660,7 @@ If [thumbnail](http://schema.org/thumbnail)s are incidental to the data set, the
     "<a href=\"https://omeka.uws.edu.au/farmstofreeways/items/show/512\">Audio recording of interview with Eugenie Stapleton</a><br /><a href=\"https://omeka.uws.edu.au/farmstofreeways/items/show/454\">Transcript of interview with Eugenie Stapleton</a> <br /><a href=\"https://omeka.uws.edu.au/farmstofreeways/items/show/384\">Photo of Eugenie Stapleton 2</a><br /><a href=\"https://omeka.uws.edu.au/farmstofreeways/items/show/464\">Letter from Eugenie Stapleton</a>"
   ],
   "copyrightHolder": [
-    {
-      "@id": "https://westernsydney.edu.au",
-    }
+    { "@id": "https://westernsydney.edu.au"}
   ],
   "copyright": [
     "Copyright University of Western Sydney 2015"
@@ -1680,11 +1753,11 @@ The order of the `@graph` list is not significant. Above we see that the RO-Crat
 
 Properties of an entity can refer to another URL or entity by using the form `{"@id": "uri-reference"}` as in the example above, where the `author` property in the `File` entity refer to the `Person` entity, identified as `#alice`. 
 
-Identifiers in `@id` MUST be valid _absolute URIs_ like <http://example.com/> or _URI references_, _URI paths_ relative to the RO-Crate root directory. Care must be taken to express any relative paths using `/` separator and escape special characters like space (`%20`). As JSON-LD supports _IRIs_, international characters in identifiers SHOULD be encoded in UTF-8 rather than `%`-escaped.
+Identifiers in `@id` SHOULD be either a valid _absolute URIs_ like <http://example.com/>, or an _URI references_ _URI paths_ relative to the RO-Crate root directory. Care must be taken to express any relative paths using `/` separator and escape special characters like space (`%20`). As JSON-LD supports _IRIs_, international characters in identifiers SHOULD be encoded in UTF-8 rather than `%`-escaped. 
 
 Because the _RO-Crate JSON-LD_ is _flattened_, all described entities must be direct children of the `@graph` element rather than being nested under another property or list. 
 
-If no obvious identifier is available for a contextual entity, an identifier local to the _RO-Crate Metadata File_ can be generated, for instance `{"@id": "#alice"}` or `{"@id": "#ac0bd781-7d91-4cdf-b2ad-7305921c7650"}`. 
+If no obvious identifier is available for a contextual entity, an identifier local to the _RO-Crate Metadata File_ can be generated, for instance `{"@id": "#alice"}` or `{"@id": "#ac0bd781-7d91-4cdf-b2ad-7305921c7650"}`. Although it is RECOMMENDED to use `#`-based local identifiers, identifiers in `@id` MAY alternatively be a _blank node_ identifier (e.g. `_:alice`).
 
 Multiple values and references can be represented using JSON arrays, as exemplified in `hasPart` above, however as the `RO-Crate JSON-LD` is in _compacted form_ any single-element arrays like `"author": [{"@id": "#alice"}]` SHOULD be unpacked to a single value like `"author": {"@id": "#alice"}`.
 
@@ -1869,6 +1942,8 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 [endTime]: http://schema.org/endTime
 [startTime]: http://schema.org/startTime
 [actionStatus]: http://schema.org/actionStatus
+[sdLicense]: http://schema.org/sdLicense
+[sdPublisher]: http://schema.org/sdPublisher
 [ActionStatusType]: http://schema.org/ActionStatusType
 [PropertyValue]: http://schema.org/PropertyValue
 
@@ -1897,4 +1972,5 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 [OCFL]: https://ocfl.io/
 [OCFL Object]: https://ocfl.io/0.3/spec/#object-spec
 [Pronom]: https://www.nationalarchives.gov.uk/PRONOM/Default.aspx
+[conformsTo]: http://purl.org/dc/terms/conformsTo
 [git]: https://git-scm.com/
