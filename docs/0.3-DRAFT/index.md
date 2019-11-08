@@ -643,16 +643,16 @@ Here's a (real, but abridged) example of a researcher who has four institutional
   "@type": "Person",
   "affiliation": [
     {
-      "@id": "1"
+      "@id": "#1"
     },
     {
-      "@id": "2"
+      "@id": "#2"
     },
     {
-      "@id": "3"
+      "@id": "#3"
     },
     {
-      "@id": "4"
+      "@id": "#4"
     }
   ],
   "name": "Meera Agar"
@@ -664,7 +664,7 @@ The first affiliation is a Faculty of a university. The Faculty is associated wi
 
 ```json
 {
-  "@id": "1",
+  "@id": "#1",
   "@type": "Organization",
   "memberOf": {
     "@id": "https://ror.org/03f0f6041"
@@ -698,10 +698,10 @@ IMPLEMENTATION NOTE: The Google structured Data tool gives an error if `mailto:`
       "@id": "https://orcid.org/0000-0001-6121-5409",
       "@type": "Person",
       "affiliation": {
-        "@id": "1"
+        "@id": "#1"
       },
       "contactPoint": {
-        "@id": "tim.luckett@uts.edu.au"
+        "@id": "#tim.luckett@uts.edu.au"
       },
       "familyName": "Luckett",
       "givenName": "Tim",
@@ -711,7 +711,7 @@ IMPLEMENTATION NOTE: The Google structured Data tool gives an error if `mailto:`
 
 
   {
-      "@id": "tim.luckett@uts.edu.au",
+      "@id": "#tim.luckett@uts.edu.au",
       "@type": "ContactPoint",
       "contactType": "customer service",
       "email": "tim.luckett@uts.edu.au",
