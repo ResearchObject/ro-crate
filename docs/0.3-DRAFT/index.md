@@ -1,7 +1,7 @@
 <!--
    Copyright 2019 University of Technology Sydney
    Copyright 2019 The University of Manchester UK 
-   Copyright 2019 RO Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -23,17 +23,16 @@
 <!-- NOTE: Before release, update and uncomment below 
 (permalink, DOI, published, authors)
 -->
-<!-- * Permalink: <https://w3id.org/ro/crate/0.2>  -->
+<!-- * Permalink: <https://w3id.org/ro/crate/1.0>  -->
 * Status: Editor's Draft
 * Previous version: <https://w3id.org/ro/crate/0.2>
 * JSON-LD context: <https://w3id.org/ro/crate/0.3-DRAFT/context>
-<!-- * Published: 2019-xx-xx
--->
+  <!-- * Published: 2019-11-xx-->
 * Publisher: [researchobject.org](http://researchobject.org/) community
 * Cite as: <!-- <https://doi.org/10.5281/zenodo.3406498> (this version) -->
   <https://doi.org/10.5281/zenodo.3406497> (any version)
 * Editors: [Peter Sefton](https://orcid.org/0000-0002-3545-944X), [Eoghan Ó Carragáin](https://orcid.org/0000-0001-8131-2150),  [Stian Soiland-Reyes](https://orcid.org/0000-0001-9842-9718)
-* Authors: [Peter Sefton](https://orcid.org/0000-0002-3545-944X), [Eoghan Ó Carragáin](https://orcid.org/0000-0001-8131-2150),  [Stian Soiland-Reyes](https://orcid.org/0000-0001-9842-9718), [Oscar Corcho](https://orcid.org/0000-0002-9260-0753), [Daniel Garijo](https://orcid.org/0000-0003-0454-7145), [Raul Palma](https://orcid.org/0000-0003-4289-4922), [Frederik Coppens](https://orcid.org/0000-0001-6565-5145), [Carole Goble](https://orcid.org/0000-0003-1219-2137), [José María Fernández](https://orcid.org/0000-0002-4806-5140), [Kyle Chard](https://orcid.org/0000-0002-7370-4805), [Jose Manuel Gomez-Perez](https://orcid.org/0000-0002-5491-6431), [Michael R Crusoe](https://orcid.org/0000-0002-2961-9670), [Ignacio Eguinoa](https://orcid.org/0000-0002-6190-122X), [Nick Juty](https://orcid.org/0000-0002-2036-8350), [Kristi Holmes](https://orcid.org/0000-0001-8420-5254), [Jason A. Clark](https://orcid.org/0000-0002-3588-6257), [Salvador Capella-Gutierrez](https://orcid.org/0000-0002-0309-604X), [Alasdair J. G. Gray](https://orcid.org/0000-0002-5711-4872), [Stuart Owen](https://orcid.org/0000-0003-2130-0865), [Alan R Williams](https://orcid.org/0000-0003-3156-2105) <!-- Add new RO-Crate team members at end -->
+* Authors: [Peter Sefton](https://orcid.org/0000-0002-3545-944X), [Eoghan Ó Carragáin](https://orcid.org/0000-0001-8131-2150),  [Stian Soiland-Reyes](https://orcid.org/0000-0001-9842-9718), [Oscar Corcho](https://orcid.org/0000-0002-9260-0753), [Daniel Garijo](https://orcid.org/0000-0003-0454-7145), [Raul Palma](https://orcid.org/0000-0003-4289-4922), [Frederik Coppens](https://orcid.org/0000-0001-6565-5145), [Carole Goble](https://orcid.org/0000-0003-1219-2137), [José María Fernández](https://orcid.org/0000-0002-4806-5140), [Kyle Chard](https://orcid.org/0000-0002-7370-4805), [Jose Manuel Gomez-Perez](https://orcid.org/0000-0002-5491-6431), [Michael R Crusoe](https://orcid.org/0000-0002-2961-9670), [Ignacio Eguinoa](https://orcid.org/0000-0002-6190-122X), [Nick Juty](https://orcid.org/0000-0002-2036-8350), [Kristi Holmes](https://orcid.org/0000-0001-8420-5254), [Jason A. Clark](https://orcid.org/0000-0002-3588-6257), [Salvador Capella-Gutierrez](https://orcid.org/0000-0002-0309-604X), [Alasdair J. G. Gray](https://orcid.org/0000-0002-5711-4872), [Stuart Owen](https://orcid.org/0000-0003-2130-0865), [Alan R Williams](https://orcid.org/0000-0003-3156-2105), [Giacomo Tartari](https://orcid.org/0000-0003-1130-2154), [Finn Bacall](https://orcid.org/0000-0002-0048-3300) <!-- Add new RO-Crate team members at end -->
 
 1. Table of Contents
 {:toc}
@@ -41,7 +40,8 @@
 See <https://w3id.org/ro/crate> for further details about RO-Crate.
 
 <small>
-This specification is Copyright 2017-2019 University of Technology Sydney and The University of Manchester UK.
+This specification is Copyright 2017-2019 University of Technology Sydney, 
+The University of Manchester UK and the RO-Crate contributors.
 </small>
 
 <small>
@@ -55,6 +55,8 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 <small>
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 </small>
+
+**Note**: The RO-Crate [JSON-LD context](https://w3id.org/ro/crate/0.3-DRAFT/context) and JSON-LD examples within this specification are distributed under [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). 
 
 ## Introduction & definition of an RO-Crate
 
@@ -77,7 +79,7 @@ _RO-Crate Metadata File_: A JSON-LD file stored as `ro-crate-metadata.jsonld` in
 
 _RO-Crate Website_: Human-readable HTML pages which describe the RO-Crate (i.e. the _Root Data Entity_, its _Data Entities_ and _Context Entities_), with a home-page at `ro-crate-preview.html` (any additional files reside in `ro-crate-preview_files/`)
 
-_Data Entity_: A JSON-LD representation, in the _RO-Crate Metadata File_,_ of a directory, file or other resource contained or described by the RO-Crate.
+_Data Entity_: A JSON-LD representation, in the _RO-Crate Metadata File_, of a directory, file or other resource contained or described by the RO-Crate.
 
 _Root Data Entity_: A _Data Entity_ of type [Dataset], representing the RO-Crate as a whole.  
 
@@ -87,7 +89,7 @@ _JSON-LD_: A JSON-based file format for storing _Linked Data_. This document ass
 
 _JSON_: The _JavaScript Object Notation (JSON) Data Interchange Format_ as defined by [RFC7159](https://tools.ietf.org/html/rfc7159); a structured text file format that can be programmatically consumed and generated in a wide range of programming languages.
 
-_Context Entity_: A JSON-LD representation of an entity associated with a _Data Entity_, needed to adequately describe that _Data Entity_._ _For example, a  [Person](http://schema.org/Person), [Organization](http://schema.org/Organization) (including research projects), item of equipment ([IndividualProduct](http://schema.org/IndividualProduct)), [license](http://schema.org/license) or any other _thing_ or _event_ that forms part of the metadata for a _Data Entity_ or supporting information.
+_Contextual Entity_: A JSON-LD representation of an entity associated with a _Data Entity_, needed to adequately describe that _Data Entity_. For example, a [Person](http://schema.org/Person), [Organization](http://schema.org/Organization) (including research projects), item of equipment ([IndividualProduct](http://schema.org/IndividualProduct)), [license](http://schema.org/license) or any other _thing_ or _event_ that forms part of the metadata for a _Data Entity_ or supporting information.
 
 _Linked Data_: A data structure where properties, types and resources are identified with _URIs_, which if retrieved over the Web, further describe or provide the identified property/type/resource.
 
@@ -97,7 +99,7 @@ _URI Path_: The relative _path_ element of an _URI_ as defined in [RFC3986 secti
 
 _RO-Crate JSON-LD Context_: A JSON-LD [context](https://www.w3.org/TR/json-ld/#the-context) that provides Linked Data mapping for RO-Crate metadata to vocabularies like [schema.org](http://schema.org/). 
 
-_RO-Crate JSON-LD_: JSON-LD using the _RO-Crate JSON-LD Context_ containing RO-Crate metadata, which has been [flattened](http://www.w3.org/TR/2014/REC-json-ld-20140116/#flattened-document-form) and then [compacted](http://www.w3.org/TR/2014/REC-json-ld-20140116/#compacted-document-form) according to the rules in JSON-LD 1.0. The _RO-Crate JSON-LD_  for an _RO-Crate_ is stored in the _RO-Crate Metadata File_.
+_RO-Crate JSON-LD_: JSON-LD structure using the _RO-Crate JSON-LD Context_ and containing RO-Crate metadata, written as if [flattened](http://www.w3.org/TR/2014/REC-json-ld-20140116/#flattened-document-form) and then [compacted](http://www.w3.org/TR/2014/REC-json-ld-20140116/#compacted-document-form) according to the rules in JSON-LD 1.0. The _RO-Crate JSON-LD_ for an _RO-Crate_ is stored in the _RO-Crate Metadata File_.
 
 ### Linked data conventions
 
@@ -105,7 +107,7 @@ Throughout this specification, RDF terms are referred to using the keys defined 
 
 Following [schema.org](http://schema.org) practice, `property` names start with lowercase letters and `Class` names start with uppercase letters.
 
-In `ro-crate-metadata.jsonld` RDF terms use their RO-Crate JSON-LD names as defined in the RO-Crate JSON-LD Context, which is available at [https://w3id.org/ro/crate/0.3-DRAFT/context](https://w3id.org/ro/crate/0.3-DRAFT/context)
+In `ro-crate-metadata.jsonld` the RDF terms use their RO-Crate JSON-LD names as defined in the _RO-Crate JSON-LD Context_, which is available at [https://w3id.org/ro/crate/0.3-DRAFT/context](https://w3id.org/ro/crate/0.3-DRAFT/context)
 
 
 ## RO-Crate Structure
@@ -114,27 +116,52 @@ The structure an _RO-Crate_ MUST follow is:
 
 ```
 <RO-Crate root directory>/
-|   ro-crate-metadata.jsonld  # _RO-Crate Metadata File_ MUST be present
-|   ro-crate-preview.html     # _RO-Crate Website_ homepage MAY be present
+|   ro-crate-metadata.jsonld  # RO-Crate Metadata File MUST be present
+|   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
 |   ro-crate-preview_files/   # MAY be present
-|    | [_RO-Crate Website_ files]
+|    | [other RO-Crate Website files]
 |   [payload files and directories]  # 1 or more SHOULD be present
 ```
 
-The name of the _RO-Crate root_ directory is not defined. For instance, if an _RO-Crate_  is archived in a ZIP-file, the _RO-Crate root_ directory will correspond to the ZIP root directory.
+The name of the _RO-Crate root_ directory is not defined, but a root directory is identifiable by the presence of `ro-crate-metadata.jsonld`. For instance, if an _RO-Crate_ is archived in a ZIP-file, the ZIP root directory correspond to _RO-Crate root_ directory if it contains `ro-crate-metadata.jsonld`.
 
+<!--
+It follows that RO-Crates can be _nested_ by including payload directories that themselves contain `ro-crate-metadata.jsonld`.
+-->
 
-### _RO-Crate Metadata File_ (`ro-crate-metadata.jsonld`)
+### RO-Crate Metadata File (`ro-crate-metadata.jsonld`)
 
 *  The _RO-Crate Metadata File_ MUST be named `ro-crate-metadata.jsonld` and appear in the _RO-Crate Root_
-* `ro-crate-metadata.jsonld` MUST be a JSON-LD document which has been flattened and then compacted according to the rules in JSON-LD 1.1
+* The _RO-Crate Metadata File_ MUST contain _RO-Crate JSON-LD_; a valid [JSON-LD 1.0](https://www.w3.org/TR/2014/REC-json-ld-20140116/) document in [flattened](https://www.w3.org/TR/json-ld/#flattened-document-form) and [compacted](https://www.w3.org/TR/json-ld/#compacted-document-form) form
+* The _RO-Crate JSON-LD_ SHOULD use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/0.3-DRAFT/context> by reference.
+
+[JSON-LD](https://json-ld.org/) is a structured form of [JSON](https://tools.ietf.org/html/rfc7159) that can represent a _Linked Data_ graph. 
+
+A valid _RO-Crate JSON-LD_ graph MUST describe:
+
+1. The _RO-Crate Metadata File Descriptor_
+2. The _Root Data Entity_
+3. Zero or more _Data Entities_
+4. Zero or more _Contextual Entities_
+
+It is RECOMMENDED that any referenced _contextual entities_ are also described in the _RO-Crate Metadata File_ with the same identifier. Similarly it is RECOMMENDED that any _contextual entity_ in the _RO-Crate Metadata file_ is linked to from at least one of the other entities using the same identifier. 
+
+The appendix [RO-Crate JSON-LD](#ro-crate-json-ld) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata File_. In short, the rest of this specification describe the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` below:
+
+```json
+{ "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context",
+  "@graph": [
+
+  ]
+}
+```
 
 
-### _RO-Crate Website_ (`ro-crate-preview.html` and `ro-crate-preview_files/`)
+### RO-Crate Website (`ro-crate-preview.html` and `ro-crate-preview_files/`)
 
 In addition to the machine-oriented _RO-Crate Metadata File_, the RO-Crate MAY include a human-readable HTML rendering of the same information, known as the _RO-Crate Website_.
 
-If present, `ro-crate-preview.html` MUST:
+If present in the root directory, `ro-crate-preview.html` MUST:
 
   *   Be a valid [HTML 5](https://www.w3.org/TR/html52/) document 
   *   Contain at least a human readable summary of metadata relating to the _Root Data Entity_
@@ -151,7 +178,7 @@ If present, `ro-crate-preview.html` MUST:
 `ro-crate-preview.html` SHOULD:
 *   Contain at least the same information as the _RO-Crate JSON-LD_, with the exception that files which have no description, author or similar metadata MAY not be listed in the website.
 *   Display at least the metadata relating to the _Root Data Enity_ as static HTML without the need for scripting. It MAY contain extra features enabled by JavaScript.
-*   When a _Data Entity_ or _Context Entity_ is referenced by its ID:
+*   When a _Data Entity_ or _Contextual Entity_ is referenced by its ID:
   *   If it has a [name](http://schema.org/name) property, provide a link to its HTML version.
   *   If it does not have a name (e.g. a [GeoCoordinates](http://schema.org/GeoCoordinates) location), show it embedded in the HTML for the entity.
 *   For keys that resolve in the `RO-Crate JSON-LD Context` to a URI, indicate this (the simplest way is to link the key to its definition.
@@ -163,39 +190,68 @@ If present, `ro-crate-preview.html` MUST:
 
 These are the actual files and directories that make up the dataset being described. 
 
-The base RO-Crate specification makes no assumptions about the presence of any specific files or folders beyond the reserved RO-Crate files described above. Payload files may appear directly in the _RO-Crate Root_ alongside the _RO-Crate Metadata File_, and/or appear in sub-directories of the RO-Crate Root._ Each file and directory MAY be represented as Data Entities in the _RO-Crate Metadata File_.
+The base RO-Crate specification makes no assumptions about the presence of any specific files or folders beyond the reserved RO-Crate files described above. Payload files may appear directly in the _RO-Crate Root_ alongside the _RO-Crate Metadata File_, and/or appear in sub-directories of the _RO-Crate Root_. Each file and directory MAY be represented as Data Entities in the _RO-Crate Metadata File_.
 
 
 ### RO-Crates SHOULD be self-describing and self-contained
 
 A minimal RO-Crate is a directory containing a single _RO-Crate Metadata File_. 
 
-At the basic level, an RO-Crate is a collection of files represented as a schema.org _[Dataset](https://schema.org/Dataset)_, that together form a meaningful unit for the purposes of communication, citation, distribution, preservation, etc.  The _RO-Crate Metadata File_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. Self-containment is a core principle of RO-Crate, i.e. that all Dataset files and relevant metadata SHOULD, as far as possible, be contained by the RO-Crate, rather than referring to external resources. However the RO-Crate MAY also reference external resources which are stored or accessed separately, via URIs, e.g. because these cannot be included for practical or legal reasons. 
+At the basic level, an RO-Crate is a collection of files represented as a schema.org _[Dataset](https://schema.org/Dataset)_, that together form a meaningful unit for the purposes of communication, citation, distribution, preservation, etc.  The _RO-Crate Metadata File_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. Self-containment is a core principle of RO-Crate, i.e. that all Dataset files and relevant metadata SHOULD, as far as possible, be contained by the RO-Crate, rather than referring to external resources. However the RO-Crate MAY also reference external resources which are stored or accessed separately, via URIs, e.g. because these cannot be included for practical or legal reasons.
 
-It is important to note that the _RO-Crate Metadata File_ is not an exhaustive manifest or inventory, that is, it does not necessarily list or describe all files in the package.  Rather it is focused on providing sufficient amount of metadata to understand and use the content and is designed to be compatible with existing and future approaches that _do_ have full inventories / manifest and integrity checks, e.g. by using checksums, such as [BagIt] and Oxford Common File Layout [OCFL] [Objects][OCFL Object].
+It is important to note that the _RO-Crate Metadata File_ is not an exhaustive manifest or inventory, that is, it does not necessarily list or describe all files in the package.  Rather it is focused on providing sufficient amount of metadata to understand and use the content, and is designed to be compatible with existing and future approaches that _do_ have full inventories / manifest and integrity checks, e.g. by using checksums, such as [BagIt] and Oxford Common File Layout [OCFL] [Objects][OCFL Object].
 
-The intention is that RO-Crates can work well with a variety of archive file formats, e.g. tar, zip, etc., and approaches to capturing file manifests and file fixity, such as [BagIt] and [OCFL], [git].
+The intention is that RO-Crates can work well with a variety of archive file formats, e.g. tar, zip, etc., and approaches to capturing file manifests and file fixity, such as [BagIt], [OCFL] and [git].
 
 
 ## RO-Crate Metadata
 
+RO-Crate aim to capture and describe the [Research Object](http://www.researchobject.org/overview/) using structured _metadata_.
 
-### RO-Crate uses linked data principles
+The _RO-Crate Metadata File Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:
 
-**TODO** RO-Crate uses Linked Data principles [TODO - ref] - using URIs as names for things.
+* Root Data Entity - the `Dataset` itself, a gathering of data
+* Data Entities - the _data_ payload, in the form of files and folders
+* Contextual Entities - related things in the world (e.g. people, organizations, places), providing provenance for the data entities and the RO-Crate.
 
+This machine-readable metadata can also be represented for human consumption in the _RO-Crate Website_, linking to data and Web resources.
+
+### RO-Crate uses Linked Data principles
+
+RO-Crate makes use of [Linked Data principles](https://5stardata.info/en/) for its description. In particular:
+
+1. (Meta)data should be made available as **Open Data** on the web.
+2. (Meta)data should be **machine-readable** in a structured format.
+3. (Meta)data should _not_ require proprietary software packages.
+4. (Meta)data should use [open standards from W3C](https://www.w3.org/standards/), such as RDF and SPARQL.
+5. (Meta)data should **link** to other people’s data to provide context, using _URIs_ as global identifiers
+
+RO-Crate realize these principles using a particular set of technologies and best practices:
+
+1. The _RO-Crate Metadata File_ and _RO-Crate Website_ can be directly published on the web together with the RO-Crate payload. In addition, a data package (e.g. BagIt Zip archive) that contain the RO-Crate can also be published on the web.
+2. The _RO-Crate Metadata File_ is based on the structured data format [JSON](https://tools.ietf.org/html/rfc8259). 
+3. Multiple open source tools/libraries are available [for JSON](http://json.org/) and [for JSON-LD](https://json-ld.org/).
+4. The _RO-Crate Website_ is [HTML 5](https://www.w3.org/TR/html52/), and the _RO-Crate Metadata File_ is [JSON-LD](https://www.w3.org/TR/json-ld/), one of the [W3C RDF 1.1 formats](https://www.w3.org/TR/rdf11-primer/).
+5. The _RO-Crate Metadata File_ reuse common vocabularies like [schema.org](http://schema.org), and this specification [recommend identifiers](#recommended-identifiers) it should link to.
 
 ### Base metadata standard for RO-Crate: Schema.org
 
 [Schema.org](http://schema.org) is the base metadata standard for RO-Crate. Schema.org was chosen because it is widely used on the World Wide Web and supported by search engines, on the assumption that discovery is likely to be maximized if search engines index the content. NOTE: As far as we know there is no alternative, well-maintained linked-data schema for research data with the coverage needed for this project - i.e. a single standard for expressing all the examples presented in this specification.
 
-RO-Crate relies heavily on [schema.org](http://schema.org) using a constrained subset of  [JSON-LD](https://json-ld.org/), and this document gives opinionated recommendations on how to represent the metadata using existing linked data best practices
+RO-Crate relies heavily on [schema.org](http://schema.org) using a constrained subset of  [JSON-LD](https://json-ld.org/), and this document gives opinionated recommendations on how to represent the metadata using existing linked data best practices.
+
+#### Differences from schema.org
 
 Generally, the standard keys for [schema.org](http://schema.org) should be used. However, RO-Crate uses variant names for some elements, specifically:
 
-*   `File` is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of schema.org or a research data extension may re-define `File`.
-*   `Journal` is mapped to <http://schema.org/Periodical>.
+* `File` is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of schema.org or a research data extension may re-define `File`.
+* `Journal` is mapped to <http://schema.org/Periodical>.
 
+Note that JSON-LD examples given on <http://schema.org/> website may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
+
+To avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, while <http://schema.org/> for some properties permit shorter forms like `"author": "http://example.com/alice"`. 
+
+See the appendix [RO-Crate JSON-LD](#ro-crate-json-ld) for details.
 
 ### Additional metadata standards
 
@@ -215,12 +271,14 @@ RO-Crate also uses the _Portland Common Data Model_ ([PCDM](https://github.com/d
 
 The keys `RepositoryObject` and `RepositoryCollection` were chosen to avoid collision between the terms Collection and Object with other vocabularies.
 
+From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
+- `conformsTo` mapped to <http://purl.org/dc/terms/conformsTo>
 
 ### Summary of Coverage
 
 RO-Crate is simply a way to make metadata assertions about a set of files and folders that make up a _Dataset_. These assertions can be made at three levels:
 
-*   Assertions at the RO-Crate level: for an RO-Crate to be useful, some metadata should be provided about the dataset as a whole (see minimum requirements for different use-cases below). In the _RO-Crate Metadata File_, we distinguish the _Root Data Entity_ which represents the RO-Crate as a whole, from other _Data Entities_ (files and folders contained in the RO-Crate) and _Context Entities_, e.g. a person, organisation, place related to an RO-Crate _Data Entity_
+*   Assertions at the RO-Crate level: for an RO-Crate to be useful, some metadata should be provided about the dataset as a whole (see minimum requirements for different use-cases below). In the _RO-Crate Metadata File_, we distinguish the _Root Data Entity_ which represents the RO-Crate as a whole, from other _Data Entities_ (files and folders contained in the RO-Crate) and _Contextual Entities_, e.g. a person, organisation, place related to an RO-Crate _Data Entity_
 *   Assertions about files and folders contained in the RO-Crate: in addition to providing metadata about the RO-Crate as a whole, RO-Crate allows metadata assertions to be made about any other _Data Entity_
 *   Variable-level assertions: In some cases, e.g. for tabular data, additional metadata may be provided about the structure and variables within a given file. 
 
@@ -240,10 +298,10 @@ However, as RO-Crate uses _Linked Data_ principles, adopters of RO-Crate are fre
 
 _RO-Crate JSON-LD_ SHOULD use the following IDs where possible: 
 
-*   For a _Root Data Entity_, an `identfier` which SHOULD be a DOI URL. 
-*   For People participating in the research process: [ORCID](https://orcid.org) identifiers.
-*   For [Organization](http://schema.org/Organization)s including [funder](http://schema.org/funder)s,  Research Organization Registry URIs. [https://ror.org/](https://ror.org/)
-*   For items of type [Place], a geonames URL.
+*   For a _Root Data Entity_, an `identifier` which is RECOMMENDED to be a  <https://doi.org/> URI. 
+*   For `Person`s participating in the research process: [ORCID](https://orcid.org) identifiers, e.g. <https://orcid.org/0000-0002-1825-0097>
+*   For [Organization](http://schema.org/Organization)s including [funder](http://schema.org/funder)s,  [Research Organization Registry URIs](https://ror.org/), e.g. <https://ror.org/0384j8v12>
+*   For items of type [Place], a [geonames](https://www.geonames.org) URL, e.g. <http://sws.geonames.org/8152662/>
 *   For file formats, a [Pronom] URL, for example <https://www.nationalarchives.gov.uk/PRONOM/fmt/831>.
 
 In the absence of the above, RO-Crates SHOULD contain stable persistent URIs to identify all entities wherever possible.
@@ -275,25 +333,48 @@ _Root Data Entities_ MAY also have additional repository specific identifiers, d
 
 ### Core Metadata for the _Root Data Entity_ 
 
-The _RO-Crate JSON-LD_ MUST contain a _Root Data Entity_, identified by a
-_RO-Crate Metadata File Descriptor_ of type [CreativeWork] which describes it, with an [about]
-property referencing the _Root Data Entity_ the _Root Data Entity_ MUST have an `@id` of `./`.
+The _Root Data Entity_ is a [Dataset] that represent the RO-Crate as a whole;
+a _Research Object_ that includes the _Data Entities_ and the related
+_Contextual Entities_.
+
+The _RO-Crate JSON-LD_ MUST contain a _RO-Crate Metadata File Descriptor_ 
+with the `@id` value `ro-crate-metadata.jsonld` and `@type` [CreativeWork]. This descriptor 
+MUST have an [about] property referencing the _Root Data Entity_, which SHOULD
+have an `@id` of `./`.
 
 ```json
-{
-    "@type": "CreativeWork",
-    "@id": "ro-crate-metadata.jsonld",
-    "identifier": "ro-crate-metadata.jsonld",
-    "about": {"@id": "./"}
-},
 
-{
-  "@id": "./",
-  "@type": "Dataset",
-  ...
+{ "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context", 
+  "@graph": [
+    {
+        "@type": "CreativeWork",
+        "@id": "ro-crate-metadata.jsonld",
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/0.3-DRAFT"},
+        "about": {"@id": "./"}
+    },
+    
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      ...
+    }
+  ]
 }
-
 ```
+
+The [conformsTo] of the _RO-Crate Metadata File Descriptor_ 
+SHOULD be a versioned permalink URI of the RO-Crate specification
+that the _RO-Crate JSON-LD_ conforms to. The URI SHOULD 
+start with `https://w3id.org/ro/crate/`. 
+
+Consumers processing the RO-Crate as an JSON-LD graph can thus reliably find
+the the _Root Data Entity_ by following this algorithm:
+
+1. For each entity in `@graph` array
+2. ..if the `conformsTo` property is a URI that starts with `https://w3id.org/ro/crate/`
+3. ....from  this entity's `about` object keep the `@id` URI as variable _root_
+4. For each entity in `@graph` array
+5. ..return the entity which `@id` URI matches _root_
 
 To ensure a base-line interoperability between RO-Crates, and for an RO-Crate to
 be considered a _Valid RO-Crate_, a minimum set of metadata is required for the
@@ -304,7 +385,6 @@ metadata requirements in terms of describing _Data Entities_ (files and folders)
 other than the _Root Data Entity_. Extensions of RO-Crate dealing with specific
 types of dataset may put further constraints or requirements of metadata beyond
 the Root Data Entity (see Extending RO-Crate below).
-
 
 
 The _RO-Crate Metadata File Descriptor_ MAY contain information such as
@@ -512,7 +592,7 @@ For example:
   }
 ```
 
-If there is no web-accessible decription for a file format it SHOULD be described locally in the dataset, for example in a file:
+If there is no web-accessible description for a file format it SHOULD be described locally in the dataset, for example in a file:
 
 ```json
  {
@@ -529,8 +609,6 @@ If there is no web-accessible decription for a file format it SHOULD be describe
   "@type": ["File", "CreativeWork"]
   }
 ```
-
-
 
 ### Core Metadata for _Data Entities_
 
@@ -557,8 +635,8 @@ schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | 
 `@type` | MUST be `Dataset` |  | |  |
 
 
-## Representing _Context Entities_
-The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Context Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.jsonld`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
+## Representing _Contextual Entities_
+The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.jsonld`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
 
 ### People
 
@@ -581,7 +659,7 @@ A core principle of Linked data is to use URIs to identify things such as people
 
 This uses an [ORCID](https://orcid.org/) to unambiguously identify an author, with a _Contextual Entity_ of type [Person]((http://schema.org/Person)).
 
-Note the string-value of the organizational affiliation. This SHOULD be improved by also providing a _Context Entity_ for the organization (see example below).
+Note the string-value of the organizational affiliation. This SHOULD be improved by also providing a _Contextual Entity_ for the organization (see example below).
 
 
 ### Organizations as values
@@ -815,7 +893,7 @@ The _Root Data Entity_ SHOULD have a [publisher](http://schema.org/publisher) pr
 
 ### Funding and grants
 
-To associate a research project with a [Dataset](http://schema.org/Dataset), the _RO-Crate JSON-LD_ SHOULD contain an entity for the project using type "Organization", referenced by a [funder](http://schema.org/funder) property. The project organization SHOULD in turn reference any external [funder](http://schema.org/funder), either by using its URL as an `@id` or via a _Context Entity_ describing the funder.
+To associate a research project with a [Dataset](http://schema.org/Dataset), the _RO-Crate JSON-LD_ SHOULD contain an entity for the project using type "Organization", referenced by a [funder](http://schema.org/funder) property. The project organization SHOULD in turn reference any external [funder](http://schema.org/funder), either by using its URL as an `@id` or via a _Contextual Entity_ describing the funder.
 
 NOTE: To make it very clear where funding is coming from, the _Root Data Entity_ SHOULD also reference funders directly, as well as via a chain of references.
 
@@ -862,7 +940,7 @@ NOTE: To make it very clear where funding is coming from, the _Root Data Entity_
 
 ### Licensing, Access control and copyright
 
-If a _Data Entity_ has a [license] that is different from the license on the _Root Data Entity_, the entity SHOULD have a [license](http://schema.org/license) property referencing a _Context Entity_ with a type  [CreativeWork](http://schema.org/CreativeWork) to describes the license. The `@id` of the license SHOULD be its URL (e.g. a Creative Commons License URL) and, when possible, a summary of the license included using the [description] property. 
+If a _Data Entity_ has a [license] that is different from the license on the _Root Data Entity_, the entity SHOULD have a [license](http://schema.org/license) property referencing a _Contextual Entity_ with a type  [CreativeWork](http://schema.org/CreativeWork) to describes the license. The `@id` of the license SHOULD be its URL (e.g. a Creative Commons License URL) and, when possible, a summary of the license included using the [description] property. 
 
 The below _Data Entity_ has a [copyrightHolder] which is different from its [author]. There is a reference to an [Organization](http://schema.org/Organization) describing the copyright holder and, to give credit, a [sameAs](http://schema.org/sameAs) relation to a web page. The [license] property here refers to <https://creativecommons.org/licenses/by/4.0/> which is expanded in a separate contextual entity.
 
@@ -879,7 +957,7 @@ The below _Data Entity_ has a [copyrightHolder] which is different from its [aut
     "@id": "https://orcid.org/0000-0002-0068-716X"
   },
   "description": "Abstract for the Pilot Project initial findings",
-  "encodingFormat": "text/HTML",
+  "encodingFormat": "text/html",
   "license": {
     "@id": "https://creativecommons.org/licenses/by/4.0/"
   },
@@ -1379,26 +1457,33 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
 
 ### Places
 
-To associate a _Data Entity_ with a _Context Entity_ representing a _geographical location or region_ the entity SHOULD have a property of [contentLocation](http://schema.org/contentLocation) with a value of type [Place](http://schema.org/Place).
+To associate a _Data Entity_ with a _Contextual Entity_ representing a _geographical location or region_ the entity SHOULD have a property of [contentLocation](http://schema.org/contentLocation) with a value of type [Place](http://schema.org/Place).
 
 This example shows how to define a place, using a [geonames](https://www.geonames.org) ID:
 
 
 ```json
 {
-  "@id": "https://www.geonames.org/8152662/catalina-park.html",
+  "@id": "http://sws.geonames.org/8152662/",
   "@type": "Place",
   "description": "Catalina Park is a disused motor racing venue, located at Katoomba ...",
   "geo": {
     "@id": "b4168a98-8534-4c6d-a568-64a55157b656"
   },
-  "identifier": "https://www.geonames.org/8152662/catalina-park.html",
+  "identifier": "http://sws.geonames.org/8152662/",
+  "uri": "https://www.geonames.org/8152662/catalina-park.html",
   "name": "Catalina Park"
 },
 ```
 
+**Tip**: To find the `@id` and `identifier` corresponding to a GeoNames HTML page like <https://www.geonames.org/8152662/catalina-park.html> click it's `.rdf` button to find the identifier <http://sws.geonames.org/8152662/> referred from <https://sws.geonames.org/8152662/about.rdf>:
 
-The place has a [geo](http://schema.org/geo) property, referencing an _Context Entity_ of `@type` [GeoCoordinates](http://schema.org/GeoCoordinates):
+```xml
+<gn:Feature rdf:about="http://sws.geonames.org/8152662/">
+<!--... -->
+```
+
+The place has a [geo](http://schema.org/geo) property, referencing an _Contextual Entity_ of `@type` [GeoCoordinates](http://schema.org/GeoCoordinates):
 
 
 ```json
@@ -1426,12 +1511,12 @@ And the place is referenced from the [contentLocation](http://schema.org/content
     "@id": "https://orcid.org/0000-0002-3545-944X"
   },
   "contentLocation": {
-    "@id": "https://www.geonames.org/8152662/catalina-park.html"
+    "@id": "http://sws.geonames.org/8152662/"
   },
 ```
 
 
-[Place](http://schema.org/Place) MAY use any of the [resources available in Schema.org](http://schema.org/geo) to describe places. Future profiles of RO-Crate may mandate the use of a subset of these. Any directory or file or _Context Entity_ may be geo-located. For example this file:
+[Place](http://schema.org/Place) MAY use any of the [resources available in Schema.org](http://schema.org/geo) to describe places. Future profiles of RO-Crate may mandate the use of a subset of these. Any directory or file or _Contextual Entity_ may be geo-located. For example this file:
 
 
 ```json
@@ -1439,7 +1524,7 @@ And the place is referenced from the [contentLocation](http://schema.org/content
   "@id": "pics/19093074_10155469333581584_5707039334816454031_o.jpg",
   "@type": "File",
   "contentLocation": {
-    "@id": "https://www.geonames.org/8152662/catalina-park.html"
+    "@id": "http://sws.geonames.org/8152662/"
   },
   "contentSize": "132765",
   "author": {
@@ -1469,7 +1554,7 @@ Keyword properties MUST use [keyword](http://schema.org/keywords). Note that by 
 
 ### Digital Library and Repository content
 
-To describe an export from a Digital Library or repository system, RO-Crate uses the _Portland Common Data Model_ ([PCDM](https://github.com/duraspace/pcdm/wiki)). A _Context Entity_ from a repository, representing an abstract entity such as a person, or a work, or a place SHOULD have a`@type` of [RepositoryObject](https://pcdm.org/2016/04/18/models#Object), in addition to any other types. Objects MAY be grouped together in [RepositoryCollection](https://pcdm.org/2016/04/18/models#Collection)s with [hasMember] pointing to the the [RepositoryObject](https://pcdm.org/2016/04/18/models#Object). The keys RepositoryObject and RepositoryCollection were chosen to avoid collision between the terms Collection and Object with other vocabularies.
+To describe an export from a Digital Library or repository system, RO-Crate uses the _Portland Common Data Model_ ([PCDM](https://github.com/duraspace/pcdm/wiki)). A _Contextual Entity_ from a repository, representing an abstract entity such as a person, or a work, or a place SHOULD have a`@type` of [RepositoryObject](https://pcdm.org/2016/04/18/models#Object), in addition to any other types. Objects MAY be grouped together in [RepositoryCollection](https://pcdm.org/2016/04/18/models#Collection)s with [hasMember] pointing to the the [RepositoryObject](https://pcdm.org/2016/04/18/models#Object). The keys RepositoryObject and RepositoryCollection were chosen to avoid collision between the terms Collection and Object with other vocabularies.
 
 NOTE: [PCDM](https://github.com/duraspace/pcdm/wiki) specifies that Files should have only technical metadata, not descriptive metadata, which is _not_ a restriction in RO-Crate. If the RO-Crate is to be imported into a strict [PCDM](https://github.com/duraspace/pcdm/wiki) repository, modeling of object/file relationships will be necessary.
 
@@ -1642,27 +1727,175 @@ If [thumbnail](http://schema.org/thumbnail)s are incidental to the data set, the
  
 ```
 
+## RO-Crate JSON-LD
 
-## Extending RO-Crate
+It is not necessary to use [JSON-LD tooling](https://json-ld.org/#developers) to generate or parse the _RO-Crate Metadata File_, although they may make it easier to conform to this specification, e.g. handling relative URIs. It is RECOMMENDED to use [JSON tooling](http://json.org/) to handle [JSON](https://tools.ietf.org/html/rfc7159) syntax and escaping rules.
 
-To extend RO-Crate implementers SHOULD try to use valid schema.org properties and classes and MAY use terms from other vocabularies and ontologies when this is not possible.
+This appendix shows a brief JSON-LD introduction for complying with the RO-Crate Metadata File requirements.
 
-The terms (properties and classes) used SHOULD be added as keys to the `@context` in the _RO-Crate JSON-LD_. URIs in the `@context` SHOULD resolve to a useful human readable page. Where this is not possible - for example if the URI resolves to an RDF ontology file a human-readable URI SHOULD be provided using SameAs.
+The below example shows the overall structure of a flattened, compacted `ro-crate-metadata.jsonld` where `@context` refers to the _RO-Crate JSON-LD Context_, while `@graph` is a flat list of the entities that constitute this RO-Crate. 
 
-For example. This URI from the [BIBO](http://purl.org/ontology/bibo/interviewee) ontology resolves to an ontology file, which is not useful for humans, but [this page](http://neologism.ecs.soton.ac.uk/bibo.html#interviewee) is human-readable:
+```json
+{ "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context",
+  "@graph": [
+
+    {
+      "@id": "ro-crate-metadata.jsonld",
+      "@type": "CreativeWork",
+      "description": "RO-Crate Metadata File Descriptor (this file)",
+      "identifier": "ro-crate-metadata.jsonld",
+      "about": {"@id": "./"}
+    },
+    { 
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Example RO-Crate",
+      "description": "The RO-Crate Root Data Entity",
+      "hasPart": [
+        {"@id": "data1.txt"},
+        {"@id": "data2.txt"}
+      ]
+    },
+
+
+    { 
+      "@id": "data1.txt",
+      "@type": "File",
+      "description": "One of hopefully many Data Entities",
+      "author": {"@id": "#alice"},
+      "contentLocation":  {"@id": "http://sws.geonames.org/8152662/"}
+    },
+    { 
+      "@id": "data2.txt",
+      "@type": "File"
+    },
+
+    {
+      "@id": "#alice",
+      "@type": "Person",
+      "name": "Alice",
+      "description": "One of hopefully many Contextual Entities"
+    },
+    {
+      "@id": "http://sws.geonames.org/8152662/",
+      "@type": "Place",
+      "name": "Catalina Park"
+    }
+ ]
+}
+```
+
+**Note**: entities above have been shortened for brevity, see their individual sections elsewhere in this specification.
+
+The order of the `@graph` list is not significant. Above we see that the RO-Crate JSON-LD graph contain the _RO-Crate Metadata File Descriptor_, the _Root Data Entity_, any _Data Entities_ and any _Contextual Entities_.
+
+
+### Describing entities in JSON-LD
+
+Properties of an entity can refer to another URL or entity by using the form `{"@id": "uri-reference"}` as in the example above, where the `author` property in the `File` entity refer to the `Person` entity, identified as `#alice`. 
+
+Identifiers in `@id` MUST be valid _absolute URIs_ like <http://example.com/> or _URI references_, _URI paths_ relative to the RO-Crate root directory. Care must be taken to express any relative paths using `/` separator and escape special characters like space (`%20`). As JSON-LD supports _IRIs_, international characters in identifiers SHOULD be encoded in UTF-8 rather than `%`-escaped.
+
+Because the _RO-Crate JSON-LD_ is _flattened_, all described entities must be direct children of the `@graph` element rather than being nested under another property or list. 
+
+If no obvious identifier is available for a contextual entity, an identifier local to the _RO-Crate Metadata File_ can be generated, for instance `{"@id": "#alice"}` or `{"@id": "#ac0bd781-7d91-4cdf-b2ad-7305921c7650"}`. 
+
+Multiple values and references can be represented using JSON arrays, as exemplified in `hasPart` above, however as the `RO-Crate JSON-LD` is in _compacted form_ any single-element arrays like `"author": [{"@id": "#alice"}]` SHOULD be unpacked to a single value like `"author": {"@id": "#alice"}`.
+
+
+### RO-Crate JSON-LD Context
+
+The main purpose of the `@context` is to relate JSON property keys and `@type` references to their Linked Data identifiers, which in RO-Crate is based primarily on <http://schema.org/> URIs.
+
+In other uses of JSON-LD the context may perform more automatic or detailed mapping, but the `RO-Crate JSON-LD context` is deliberately flat, listing every property and type.
+
+To find the full description of a particular property or type, follow its URI from the context. For instance, we can find within the context <https://w3id.org/ro/crate/0.3-DRAFT/context> that `author` above is mapped to <http://schema.org/author>:
+
+```json
+          "author": "http://schema.org/author",
+```
+
+The RO-Crate JSON-LD Context` may either be set by reference to <https://w3id.org/ro/crate/0.3-DRAFT/context>, or by value (merging the two documents).
+
+Consider the below (simplified) example of _by reference_ using a versioned permalink:
+
+```json
+{ "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.jsonld",
+      "@type": "CreativeWork",
+      "description": "RO-Crate Metadata File Descriptor (this file)",
+      "identifier": "ro-crate-metadata.jsonld",
+      "about": {"@id": "./"}
+    }
+  ]
+}
+```
+
+The above is equivalent to this JSON-LD using an embedded context:
+
+```json
+{ "@context": {
+      "CreativeWork": "http://schema.org/CreativeWork",
+      "about": "http://schema.org/about",
+      "description": "http://schema.org/description",
+      "identifier": "http://schema.org/identifier",
+      "about": "http://schema.org/about"
+  },
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.jsonld",
+      "@type": "CreativeWork",
+      "description": "RO-Crate Metadata File Descriptor (this file)",
+      "identifier": "ro-crate-metadata.jsonld",
+      "about": {"@id": "./"}
+    }
+  ]
+}
+```
+
+While the second form is more verbose, one advantage is that it is "archivable" as it does not require Internet access for retrieving the `@context` permalink. Tools consuming or archiving RO-Crate MAY replace by-reference `@context` URIs with an embedded context by using version-specific hard-coded contexts, see <https://github.com/ResearchObject/ro-crate/releases>
+
+RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded context, but MAY use the [JSON-LD flattening](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) algorithm with _compaction_ to a referenced _RO-Crate JSON-LD context_.
+
+**Tip**: The [JSON-LD flattening & compaction](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) algorithms can be used to rewrite to a different `@context`, e.g. to <http://schema.org> or a different version of the _RO-Crate JSON-LD Context_.
+
+### RO-Crate JSON-LD Media type
+
+The [media type](https://tools.ietf.org/html/rfc6838) for `ro-crate-metadata.jsonld` will, when following this specification, comply
+with the [flattened/compacted JSON-LD profiles](https://www.w3.org/TR/json-ld/#application-ld-json) as well as `https://w3id.org/ro/crate`, which may be indicated in a [HTTP response](https://tools.ietf.org/html/rfc7231#section-3.1.1.5) as:
+
+```http
+    HEAD http://example.com/ro-123/ro-crate-metadata.jsonld HTTP/1.1
+
+    HTTP/1.1 200 OK
+    Content-Type: application/ld+json; profile="http://www.w3.org/ns/json-ld#flattened http://www.w3.org/ns/json-ld#compacted https://w3id.org/ro/crate"
+```
+
+
+### Extending RO-Crate
+
+To extend RO-Crate, implementers SHOULD try to use existing <http://schema.org> properties and classes and MAY use terms from other vocabularies and ontologies when this is not possible.
+
+The terms (properties and classes) used SHOULD be added as keys to the `@context` in the _RO-Crate JSON-LD_ (if not present). To avoid duplicating the _RO-Crate JSON-LD Context_ the `@context: []` array form SHOULD be used as shown below.
+
+URIs in the `@context` SHOULD resolve to a useful human readable page. Where this is not possible - for example if the URI resolves to an RDF ontology file, a human-readable URI SHOULD be provided using a `sameAs` description.
+
+For example. This URI from the [BIBO](http://purl.org/ontology/bibo/interviewee) ontology resolves to an ontology file, which is not useful for humans, but [this page](http://neologism.ecs.soton.ac.uk/bibo.html#interviewee) is human-readable.
 
 
 ```json
 {
-  "@context": [ "https://w3id.org/ro/crate/0.3-DRAFT/context"
+  "@context": [ 
+    "https://w3id.org/ro/crate/0.3-DRAFT/context",
     {"interviewee": "http://purl.org/ontology/bibo/interviewee"},
   ],
   "@graph": [
-
   {
       "@id": "http://purl.org/ontology/bibo/interviewee",
       "sameAs": "http://neologism.ecs.soton.ac.uk/bibo.html#interviewee",
-      "@type": "URL"
+      "@type": "Thing"
   }
  ]
 }
@@ -1671,14 +1904,12 @@ For example. This URI from the [BIBO](http://purl.org/ontology/bibo/interviewee)
 
 When generating the _RO-Crate Website_ from _RO-Crate JSON-LD_, the code MUST use a `sameAs` URI (if present) as a target for an explanatory link for the term instead of the Linked Data URI supplied in the `@context`.
 
-
 Where there is no RDF ontology available, then implementors SHOULD attempt to provide context by creating stable web-accessible URIs to document properties and classes, for example, by linking to page describing an XML element or attribute from an XML schema, pending the publication of a formal ontology.
 
 
 
 
 [JSON-LD]:(https://json-ld.org/spec/latest/json-ld/)
-[JSON-LD 1.1]:(https://json-ld.org/spec/latest/json-ld/)
 [BagIt]: https://en.wikipedia.org/wiki/BagIt
 [samples]: ./samples
 [DataCite Schema v4.0]: https://schema.datacite.org/meta/kernel-4.0/metadata.xsd
@@ -1755,11 +1986,8 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 [sdLicense]: http://schema.org/sdLicense
 [sdPublisher]: http://schema.org/sdPublisher
 [ActionStatusType]: http://schema.org/ActionStatusType
+[PropertyValue]: http://schema.org/PropertyValue
 
-[DataCrate BagIt Profile]: https://raw.githubusercontent.com/UTS-eResearch/datacrate/master/spec/1.0/profile-datacrate-v1.0.json
-[DataCrate JSON-LD Context]: ./context.json
-[JSON-LD Framing 1.1]: https://json-ld.org/spec/latest/json-ld-framing/
-[DataCrate JSON-LD frame]: ./frame.json
 [geonames]: https://www.geonames.org
 [RDFa]: https://en.wikipedia.org/wiki/RDFa
 [schema.org]: http://schema.org
@@ -1785,3 +2013,5 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 [OCFL]: https://ocfl.io/
 [OCFL Object]: https://ocfl.io/0.3/spec/#object-spec
 [Pronom]: https://www.nationalarchives.gov.uk/PRONOM/Default.aspx
+[conformsTo]: http://purl.org/dc/terms/conformsTo
+[git]: https://git-scm.com/
