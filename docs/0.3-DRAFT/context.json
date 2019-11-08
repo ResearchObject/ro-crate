@@ -2241,6 +2241,7 @@
           "retrievedBy": "http://purl.org/pav/retrievedBy",
           "WorkflowSketch": "http://purl.org/ro/wf4ever#Sketch",
 
+          "conformsTo": "http://purl.org/dc/terms/conformsTo",
 
           "@label": "http://www.w3.org/2000/01/rdf-schema#label",
 
