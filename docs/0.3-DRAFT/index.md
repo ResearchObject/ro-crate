@@ -1019,6 +1019,10 @@ To express the metadata license is different from the _Root Data Entity_, expand
 
 If no explicit `license` is expressed on the _RO-Crate Metadata File Descriptor_, the `license` expressed on the _Root Data Entity_ apply also on the RO-Crate metadata.
 
+<!-- TODO: This got a bit to complicated, commented out for 1.0
+
+### License of contextual entity metadata
+
 In some cases, the JSON-LD metadata for some entities have been imported under a different (possibly more restrictive) license than the license of the _RO-Crate Metadata File Descriptor_ overall. For this the property [sdLicense] ("structured data license") MAY be used on the affected data entities or contextual entities. In this case it is RECOMMENDED to use [sdPublisher] ("structured data publisher") for attribution of the imported metadata:
 
 ```json
@@ -1057,6 +1061,7 @@ As the RO-Crate uses _flattened_ JSON-LD, `sdLicense` should be expressed direct
 
 **Tip**: If metadata is imported from a source licensed as [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/), no `sdLicense` statement is required.
 
+-->
 
 ### Equipment
 
