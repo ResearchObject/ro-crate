@@ -306,6 +306,8 @@ _RO-Crate JSON-LD_ SHOULD use the following IDs where possible:
 
 In the absence of the above, RO-Crates SHOULD contain stable persistent URIs to identify all entities wherever possible.
 
+#### Repository-specific identifiers
+
 _Root Data Entities_ MAY also have additional repository specific identifiers, described using `Contextual Entities` using a [PropertyValue], with a `name` that identifies the repository and the `identifier` as a value. The _same_ identifier MAY be used in multiple different repositories and effectively namespaced using the `name` of the ProperyValue.
 
 ```json
