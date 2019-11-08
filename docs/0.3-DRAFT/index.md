@@ -306,32 +306,6 @@ _RO-Crate JSON-LD_ SHOULD use the following IDs where possible:
 
 In the absence of the above, RO-Crates SHOULD contain stable persistent URIs to identify all entities wherever possible.
 
-#### Repository-specific identifiers
-
-_Root Data Entities_ MAY also have additional repository specific identifiers, described using `Contextual Entities` using a [PropertyValue], with a `name` that identifies the repository and the `identifier` as a value. The _same_ identifier MAY be used in multiple different repositories and effectively namespaced using the `name` of the ProperyValue.
-
-```json
-{
-  "@id": "./",
-  "@type": "Dataset",
-  "identifier": ["https://doi.org/10.4225/59/59672c09f4a4b", {"@id": "_:localid:my-repo:my-id"}, {"@id": "_:localid:other-repo:https://doi.org/10.4225/59/59672c09f4a4b"}]
-}
-
- {
-   "@id": "_:localid:my-repo:my-id",
-   "@type": "PropertyValue",
-   "name": "my-repo",
-   "value": "my-id"
- }
-
-  {
-   "@id": "_:localid:other-repo:https://doi.org/10.4225/59/59672c09f4a4b",
-   "@type": "PropertyValue",
-   "name": "other-repo",
-   "value": "https://doi.org/10.4225/59/59672c09f4a4b"
- }
- ```
-
 
 ### Core Metadata for the _Root Data Entity_ 
 
@@ -1880,6 +1854,34 @@ For example. This URI from the [BIBO](http://purl.org/ontology/bibo/interviewee)
 When generating the _RO-Crate Website_ from _RO-Crate JSON-LD_, the code MUST use a `sameAs` URI (if present) as a target for an explanatory link for the term instead of the Linked Data URI supplied in the `@context`.
 
 Where there is no RDF ontology available, then implementors SHOULD attempt to provide context by creating stable web-accessible URIs to document properties and classes, for example, by linking to page describing an XML element or attribute from an XML schema, pending the publication of a formal ontology.
+
+
+
+#### Repository-specific identifiers
+
+_Root Data Entities_ MAY also have additional repository specific identifiers, described using `Contextual Entities` using a [PropertyValue], with a `name` that identifies the repository and the `identifier` as a value. The _same_ identifier MAY be used in multiple different repositories and effectively namespaced using the `name` of the ProperyValue.
+
+```json
+{
+  "@id": "./",
+  "@type": "Dataset",
+  "identifier": ["https://doi.org/10.4225/59/59672c09f4a4b", {"@id": "_:localid:my-repo:my-id"}, {"@id": "_:localid:other-repo:https://doi.org/10.4225/59/59672c09f4a4b"}]
+}
+
+ {
+   "@id": "_:localid:my-repo:my-id",
+   "@type": "PropertyValue",
+   "name": "my-repo",
+   "value": "my-id"
+ }
+
+  {
+   "@id": "_:localid:other-repo:https://doi.org/10.4225/59/59672c09f4a4b",
+   "@type": "PropertyValue",
+   "name": "other-repo",
+   "value": "https://doi.org/10.4225/59/59672c09f4a4b"
+ }
+```
 
 
 
