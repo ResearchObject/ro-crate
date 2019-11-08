@@ -258,7 +258,7 @@ See the appendix [RO-Crate JSON-LD](#ro-crate-json-ld) for details.
 The following terms from the from the [Research Object ontologies](https://w3id.org/ro/2016-01-28/) are used:
 
 - `Workflow` for a workflow definition, mapped to [http://purl.org/wf4ever/wfdesc#Workflow](https://w3id.org/ro/2016-01-28/wfdesc#Workflow)
-- `WorkflowScript` for a script, mapped to [http://purl.org/wf4ever/wf4ever#Script](https://w3id.org/ro/2016-01-28/wf4ever#Script)
+- `Script` for a script, mapped to [http://purl.org/wf4ever/wf4ever#Script](https://w3id.org/ro/2016-01-28/wf4ever#Script)
 - `WorkflowSketch` for an image depicting a workflow, mapped to [http://purl.org/wf4ever/roterms#Sketch](https://w3id.org/ro/2016-01-28/roterms#Sketch).
 
 RO-Crate also uses the _Portland Common Data Model_ ([PCDM](https://github.com/duraspace/pcdm/wiki)) and imports these terms:
@@ -1177,156 +1177,138 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
 
 ### Workflows and scripts
 
-schema property | Domain | Cardinality | Valid Workflow RO-Crate
---------------- | ------ | ----------- | ----------------------- 
-"accessibilityAPI" | Text | Many | Optional |
-"additionalType"| URL | One | Optional |
-"alternateName" | Text | Many | Optional |
-"audience"| Audience | Many | Optional |
-"author"| Organization / Person | Many | Mandatory |
-"citation"| CreativeWork / Text | Many | Optional |
-"contactPoint"| ContactPoint | One | Mandatory | 
-"contributor"| Organization / Person | Many | Recommended |
-"copyrightHolder"| Organization / Person | One | Recommended |
-"copyrightYear"| Number | One | Recommended |
-"creativeWorkStatus"| Defined Term / Text | One | Recommended |
-"creator"| Organization / Person | One | Mandatory |
-"dateCreated"| Date / DateTime | One | Optional |
-"dateModified"| Date / DateTime | One | Optional |
-"datePublished"|Date / DateTime | One | Recommended |
-"description"| Text | One | Recommended |
-"disambiguatingDescription"| Text | One | Optional |
-"encodingFormat"| Text / URL | One | Mandatory |
-"funder"| Organization / Person | Many | Mandatory |
-"hasPart"| CreativeWork | Many | Optional |
-"image"| ImageObject / URL | Many | Recommended |
-"inLanguage"| Language / Text | One | Recommended |
-"keywords"| Text | One | Optional |
-"license"| CreativeWork / URL | One | Mandatory |
-"name"| Text | One | Mandatory |
-"potentialAction"| Action | Many | Recommended |
-"programmingLanguage"| ComputerLanguage | Many | Mandatory |
-"publisher"| Organization / Person | Many | Optional |
-"sameAs" | URL | Many | Optional |
-"sdLicense"| CreativeWork / URL | One | Recommended |
-"sdPublisher"| Organization / Person | One | Recommended |
-"softwareApplication"| SoftwareApplication | Many | Mandatory |
-"url"| URL | One | Mandatory |
-"version"| Number / Text | One | Mandatory |
+
+Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts SHOULD be described using the data entities of type `SoftwareSourceCode`:
+
+schema property | Domain | Cardinality | Valid RO-Crate
+--------------- | ------ | ----------- | --------------
+`author`| `Organization` / `Person` | Many | Recommended |
+`citation`| `CreativeWork` / Text | Many | Optional |
+`contributor`| `Organization` / `Person` | Many | Optional |
+`dateCreated`| Date / DateTime | One | Optional |
+`dateModified`| Date / DateTime | One | Optional |
+`description`| Text | One | Recommended |
+`hasPart`| `SoftwareSourceCode` / `SoftwareApplication` / `CreativeWork` | Many | Optional |
+`license`| `CreativeWork` / URL | One | Recommended |
+`name`| Text | One | Mandatory |
+`programmingLanguage`| `ComputerLanguage` | One | Recommended |
+`url`| URL | One | Optional |
+`version`| Number / Text | One | Optional |
 
 
-Scientific workflows and scripts that can be or were used to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts are described using the type SoftwareSourceCode instead of `SoftwareApplication` above.  
 
-The distinction is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation; while a Python script that is customized for a particular data analysis might be important to understand further and should be included as source code in the RO-Crate dataset:
+The distinction between `SoftwareSourceCode` and `SoftwareApplication` for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.  
+
+Minimal example describing a workflow:
 
 ```json
-       {
-            "@id": "workflow/retropath.knime",  
-            "@type": "SoftwareSourceCode",
-            "additionalType": {"@id": "Workflow"},
-            "audience": "synthetic biology",
-            "author": {"@id": "#thomas"},
-	    "contactPoint": {"@id": "#ibisba"},
-            "contributor": {"@id": "#melchior"},
-	    "copyrightHolder": {"@id": "#inra"},
-	    "copyrightYear": 2017,
-	    "creativeWorkStatus": "Published",
-	    "creator": {"@id": "#thomas"},
-	    "dateCreated": "2017-06-22",
-	    "datePublished": "2019-06-05",
-            "description": "RetroPath2.0 workflow",
-	    "disambiguatingDescription": "KNIME implementation of RetroPath2.0 workflow",
-	    "encodingFormat": "text/xml",
-	    "funder": "...",
-	    "hasPart": "...",
-            "image": {"@id": "#workflow/workflow.svg"},
-	    "inLanguage": "en",
-	    "keywords": "chemical, cheminformatics, chemoinformatics, knime, metabolome, metabolomics, openms, rdkit, retropath",
-            "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html",
-            "name": "RetroPath Knime workflow",
-            "programmingLanguage": {"@id": "#knimeFormat"},
-	    "publisher": {"@id": "#inra"},
-            "potentialAction": {
-                "@type": "ActivateAction",
-                "instrument": {"@id": "#knime"}
-            },
-            "sdLicense": "https://spdx.org/licenses/CC-BY-NC-SA-4.0.html",
-	    "sdPublisher": {"@id" : "#ibisba"},
-            "softwareApplication": {"@id": "#knimeWorkbench"},
-	    "version": "1.0.0"
-        }
+{
+    "@id": "workflow/retropath.knime",  
+    "@type": ["SoftwareSourceCode", "Workflow"],
+    "author": {"@id": "#thomas"},
+    "name": "RetroPath Knime workflow",
+    "description": "Retrosynthesis workflow calculating chemical reactions",
+    "license": { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"},
+    "programmingLanguage": {"@id": "#knime"}
+}
 ```
 
-Workflows and scripts are saved on disk using a language and generally need a runtime, in RO-Crate this SHOULD be indicated using a liberal interpretation of `programmingLanguage` and `potentialAction`. Note that the language and its runtime might differ, e.g. there are multiple potential runtimes of a JavaScript, although in the base-case they are the same, and as a shortcut can be described in one go as both a `ComputerLanguage` and `SoftwareApplication`:
+The `@type` property SHOULD be an array, to also indicate the particular nature of the source code as a _script_ or a _workflow_. The distinction is fluid, depending on if the code is primarily indicating **what** should be done (`Workflow`), or **how** tasks should be executed (`Script`).
+
+To indicate that a `SoftwareSourceCode` is primarily in the form of an executable **script** (e.g. sequential batch/shell script that call other commands and manage files), use:
 
 ```json
-       {
-            "@id": "#knime",
-            "@type": [
-                "ComputerLanguage",
-                "SoftwareApplication"
-            ],
-            "name": "KNIME Analytics Platform",
-            "alternateName": "KNIME",
-            "url": {"@id": "https://www.knime.com/knime-software/knime-analytics-platform"},
-            "version": "3.6"
-        }
+  "@type": ["SoftwareSourceCode", "Script"],
 ```
 
-A data entity representing a runtime application or language MUST have a [name], [url] and [version], which should indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance “R” instead of “The R Project for Statistical Computing”.
 
-To indicate that a `SoftwareSourceCode` is in the form of a script (e.g. sequential batch/shell script), use:
+If the `SoftwareSourceCode` is primarily in the form of a **workflow** (e.g. a pipeline of steps with data flow), use:
 
 ```json
-            "additionalType": {"@id": "WorkflowScript"}
+  "@type": ["SoftwareSourceCode", "Workflow"],
 ```
 
-If the `SoftwareSourceCode` is in the form of a workflow (e.g. a pipeline of steps with data flow), use:
+
+Workflows and scripts saved on disk using a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of `programmingLanguage`. 
+
+Note that the language and its runtime MAY differ (e.g. multiple different C++-compilers), but for scripts and workflows, frequently the language and runtime are essentially the same, and thus the `programmingLanguage` can be described in one go as a hybrid of a `ComputerLanguage` and `SoftwareApplication`:
 
 ```json
-            "additionalType": {"@id": "Workflow"}
+{
+  "@id": "scripts/analyse_csv.py",
+  "@type": ["SoftwareSourceCode", "Script"],
+  "name": "Analyze CSV files",
+  "programmingLanguage": {"@id": "#python"},
+},
+{
+  "@id": "#python",
+  "@type": ["ComputerLanguage", "SoftwareApplication"],
+  "name": "Python",
+  "version": "3.8.0",
+  "url": {"@id": "https://www.python.org/downloads/release/python-380/"}
+}
 ```
+
+A _contextual entity_ representing a `SoftwareApplication` or `ComputerLanguage` MUST have a [name], [url] and [version], which should indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance _“R”_ instead of _“The R Project for Statistical Computing”_.
+
+It is possible to indicate _steps_ that are executed as part of an `Workflow` or `Script`, by using `hasPart` to relate additional `SoftwareApplication` or nested `SoftwareSourceCode` contextual entities:
+
+```json
+{
+    "@id": "workflow/analyze.cwl",  
+    "@type": ["SoftwareSourceCode", "Workflow"],
+    "name": "CWL workflow to analyze CSV and make PNG",
+    "programmingLanguage": {"@id": "https://w3id.org/cwl/v1.1/"},
+    "hasPart": [
+      {"@id": "scripts/analyse_csv.py"},
+      {"@id": "https://www.imagemagick.org/"},
+    ]
+}
+```
+
 
 #### Workflow diagram/sketch
 
-It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from the workflow management system or drawn manually as a diagram. It should be included as an `ImageObject` which is `about` the `SoftwareSourceCode`:
+It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. This diagram MAY be included as an `ImageObject` which is `about` the `SoftwareSourceCode`. The `@type` parameter SHOULD be an array to also include `WorkflowSketch` to indicate that this is an image that represent a sketch or diagram of the workflow.
 
 ```json
 {
-            "@id": "workflow/workflow.svg",
-            "@type": "ImageObject",
-            "additionalType": "WorkflowSketch",
-            "encodingFormat":  "image/svg+xml",
-            "description": "Diagram of RetroPath2.0 workflow",
-            "about": {"@id": "workflow/workflow.knime"}
+  "@id": "workflow/workflow.svg",
+  "@type": ["ImageObject", "WorkflowSketch"],
+  "encodingFormat":  "image/svg+xml",
+  "description": "Diagram of RetroPath2.0 workflow",
+  "about": {"@id": "workflow/workflow.knime"}
 }
 ```
 
-
-The image file format SHOULD be indicated with [encodingFormat] via Mime - eg  "image/svg+xml".
-
-Additionally a PRONOM identifier MAY be used, via a reference to a _ContextualEntity_ {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92"}
+The image file format SHOULD be indicated with [encodingFormat] using an IANA registered [media type](https://www.iana.org/assignments/media-types) like `image/svg+xml` or `image/png`. Additionally a reference to [Pronom] identifier SHOULD be provided, which MAY be described as an additional contextual entity to give human-readable name to the format:
 
 ```json
 {
-            "@id": "workflow/workflow.svg",
-            "@type": "ImageObject",
-            "additionalType": "WorkflowSketch",
-            "encodingFormat":  ["image/svg+xml", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92"}],
-            "description": "Diagram of RetroPath2.0 workflow",
-            "about": {"@id": "workflow/workflow.knime"}
+  "@id": "workflow/workflow.svg",
+  "@type": ["ImageObject", "WorkflowSketch"],
+  "encodingFormat":  ["image/svg+xml", 
+                      {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92"}],
+  "description": "Diagram of RetroPath2.0 workflow",
+  "about": {"@id": "workflow/workflow.knime"}
+},
+{ 
+  "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92", 
+  "@type": "Thing",
+  "name": "Portable Network Graphics"
 }
- { 
-   "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92", "@type": "URL",
-   "name": "Portable Network Graphics", 
-   "Description": "Portable Network Graphics (PNG) ... " 
-  }
 ```
 
-A _Sketch_ may still be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the workflow was done by hand). In this case the sketch should have an `about` referring to the _RO-Crate dataset_ as a whole:
+A _sketch_ or overview diagram MAY be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the overall workflow was done by hand). In this case the sketch should have an `about` referring to the _RO-Crate dataset_ as a whole:
 
 ```json
-"about": {"@id": "./"}
+{
+  "@id": "overview.jpeg",
+  "@type": ["ImageObject", "WorkflowSketch"],
+  "about": {"@id": "./"},
+  "description": "Whiteboard sketch of how the content of this RO-Crate was made",
+  "encodingFormat":  "image/jpeg",
+}
 ```
 
 ### Representing Provenance: changes to an object 
@@ -1343,7 +1325,7 @@ An Action SHOULD have an [endTime], which MUST be in ISO 8601 date format and SH
 
 An Action SHOULD have a human [agent](http://schema.org/agent) who was responsible for authorizing the action, and MAY have an [instrument](http://schema.org/instrument) which associates the action with a particular piece of software (for example, the content management system or data catalogue through which an update was approved) which SHOULD be of `@type` SoftwareApplication.
 
-An Action's status MAY be recorded in an [actionStatus] property. The status must be one of the values enumerated by [ActionStatusType]: ActiveActionStatus, CompletedActionStatus, FailedActionStatus or PotentialActionStatus.
+An Action's status MAY be recorded in an [actionStatus] property. The status must be one of the values enumerated by [ActionStatusType]: `ActiveActionStatus`, `CompletedActionStatus`, `FailedActionStatus` or `PotentialActionStatus`.
 
 An Action which has failed MAY record any error information in an [error](http://schema.org/error) property.
 
