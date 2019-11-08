@@ -940,9 +940,9 @@ NOTE: To make it very clear where funding is coming from, the _Root Data Entity_
 
 ### Licensing, Access control and copyright
 
-If a _Data Entity_ has a [license] that is different from the license on the _Root Data Entity_, the entity SHOULD have a [license](http://schema.org/license) property referencing a _Contextual Entity_ with a value of [CreativeWork](http://schema.org/CreativeWork) that describes the license. The ID of the license SHOULD be its URL (e.g. a Creative Commons License URL) and a summary of the license included using the [description] property. If this is not possible a URL MAY be used as the value.
+If a _Data Entity_ has a [license] that is different from the license on the _Root Data Entity_, the entity SHOULD have a [license](http://schema.org/license) property referencing a _Contextual Entity_ with a type  [CreativeWork](http://schema.org/CreativeWork) to describe the license. The `@id` of the license SHOULD be its URL (e.g. a Creative Commons License URL) and, when possible, a summary of the license included using the [description] property.
 
-This _Data Entity_ has a copyright holder which is different from its author. There is a reference to an [Organization](http://schema.org/Organization) describing the copyright holder and a [sameAs](http://schema.org/sameAs) relation to a web page.
+The below _Data Entity_ has a [copyrightHolder] which is different from its [author]. There is a reference to an [Organization](http://schema.org/Organization) describing the copyright holder and, to give credit, a [sameAs](http://schema.org/sameAs) relation to a web page. The [license] property here refers to <https://creativecommons.org/licenses/by/4.0/> which is expanded in a separate contextual entity.
 
 
 ```json
@@ -965,6 +965,13 @@ This _Data Entity_ has a copyright holder which is different from its author. Th
 },
 
 {
+  "@id": "https://creativecommons.org/licenses/by/4.0/",
+  "@type": "CreativeWorks",
+  "name": "CC BY 4.0",
+  "description": "Creative Commons Attribution 4.0 International License"
+},
+
+{
   "@id": "https://orcid.org/0000-0002-0068-716X",
   "@type": "Person",
   "identifier": "https://orcid.org/0000-0002-0068-716X",
@@ -977,12 +984,84 @@ This _Data Entity_ has a copyright holder which is different from its author. Th
   "description": "Canadian Frown Corporation and funder of development research",
   "identifier": "IDRC",
   "name": "International Development Research Center"
-},
+}
 ```
 
 
-See the example of a an [audio recording with a `copyrightHolder` property](https://data.research.uts.edu.au/examples/v1.0/Data_Package-IDRC_Opportunities_and_Challenges_Open_Research_Strategies/CATALOG_files/pairtree_root/Po/li/cy/%5E2/0a/nd/%5E2/0I/mp/le/me/nt/at/io/n%5E/20/Re/vi/ew/%5E2/0I/nt/er/vi/ew/s=/In/te/rv/ie/w_/Au/di/o=/In/te/rv/ie/w-/25/_0/9_/20/15/-1/3_/43/-J/ua/n_/Bi/ca/rr/eg/ui/,f/la/c/index.html) (which is different from the `author` property) and which is linked to a `license`.
+#### Metadata license
 
+In some cases the license of the RO-Crate metadata the (JSON-LD statements in the _RO-Crate Metadata File Descriptor_) is different from the license on the _Root Date Entity_ and its content (_data entities_ indicated by `hasPart`). 
+
+For instance, a common pattern for repositories is to license metadata as [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/), while data is licensed as [CC-BY](https://creativecommons.org/licenses/by/4.0/) or similar.  This pattern allow metadata to be combined freely (e.g. the DataCite knowledge graph), while redistribution of data files would require explicit attribution and statement of their license.
+
+To express the metadata license is different from the _Root Data Entity_, expand the _RO-Crate Metadata File Descriptor_  to include `license`:
+
+```json
+{
+  "@type": "CreativeWork",
+  "@id": "ro-crate-metadata.jsonld",
+  "identifier": "ro-crate-metadata.jsonld",
+  "about": {"@id": "./"},
+  "license": {
+    "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+  }
+},
+
+{
+  "@id": "./",
+  "@type": "Dataset",
+  "license": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+  }
+}
+
+```
+
+If no explicit `license` is expressed on the _RO-Crate Metadata File Descriptor_, the `license` expressed on the _Root Data Entity_ apply also on the RO-Crate metadata.
+
+<!-- TODO: This got a bit to complicated, commented out for 1.0
+
+### License of contextual entity metadata
+
+In some cases, the JSON-LD metadata for some entities have been imported under a different (possibly more restrictive) license than the license of the _RO-Crate Metadata File Descriptor_ overall. For this the property [sdLicense] ("structured data license") MAY be used on the affected data entities or contextual entities. In this case it is RECOMMENDED to use [sdPublisher] ("structured data publisher") for attribution of the imported metadata:
+
+```json
+{
+  "@id": "./",
+  "@type": "Dataset",
+  "license": {
+    "@id": "https://www.gnu.org/licenses/gpl-3.0"
+  },
+  "contentLocation": {
+    "@id": "http://sws.geonames.org/8152662/"
+  }  
+},
+{
+  "@id": "http://sws.geonames.org/8152662/",
+  "@type": "Place",
+  "sdLicense": {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "sdPublisher": {
+    "@id": "http://www.geonames.org"
+  },
+  "http://www.geonames.org/ontology#countryCode": "AU",
+  "http://www.geonames.org/ontology#wikipediaArticle": {
+    "@id": "https://en.wikipedia.org/wiki/Catalina_Park"
+  },
+  ...
+}
+```
+
+In the above (abridged) example, there is no explicit license on the _RO-Crate Metadata File Description_, so the _Root Date Entity_ license [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0) would apply to RO-Crate JSON-LD statements, except for the statements on the imported <http://sws.geonames.org/8152662/>,  which metadata is re-distributed under license <https://creativecommons.org/licenses/by/4.0/>. 
+
+In this example the CC-BY license requires retaining "a notice that refers to this Public License" and "identification of the creator(s) of the Licensed Material", here respected using `sdLicense` and `sdPublisher`.  
+
+As the RO-Crate uses _flattened_ JSON-LD, `sdLicense` should be expressed directly on each data/contextual entities where required. 
+
+**Tip**: If metadata is imported from a source licensed as [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/), no `sdLicense` statement is required.
+
+-->
 
 ### Equipment
 
@@ -1909,6 +1988,8 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 [endTime]: http://schema.org/endTime
 [startTime]: http://schema.org/startTime
 [actionStatus]: http://schema.org/actionStatus
+[sdLicense]: http://schema.org/sdLicense
+[sdPublisher]: http://schema.org/sdPublisher
 [ActionStatusType]: http://schema.org/ActionStatusType
 [PropertyValue]: http://schema.org/PropertyValue
 
