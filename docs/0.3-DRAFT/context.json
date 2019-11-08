@@ -1,5 +1,7 @@
-{ "license": {"@id": "https://creativecommons.org/publicdomain/zero/1.0/"},
-  "identifier": {"@id": "https://w3id.org/ro/crate/0.3-DRAFT/context"},
+{ 
+  "@id": "https://w3id.org/ro/crate/0.3-DRAFT/context",
+  "schemaVersion": {"@id": "http://schema.org/version/5.0/"},
+  "license": {"@id": "https://creativecommons.org/publicdomain/zero/1.0/"},
   "@context": {
           "AMRadioChannel": "http://schema.org/AMRadioChannel",
           "APIReference": "http://schema.org/APIReference",
