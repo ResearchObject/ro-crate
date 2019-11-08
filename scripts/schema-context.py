@@ -70,6 +70,11 @@ ADDITIONAL = OrderedDict([
     # This list should correspond to listing in
     # https://researchobject.github.io/ro-crate/0.3-DRAFT/#additional-metadata-standards
 
+
+          ("File", "http://schema.org/MediaObject"),
+          ("path", "http://schema.org/contentUrl"),
+          ("Journal", "http://schema.org/Periodical"),
+
           ("cite-as", "https://www.w3.org/ns/iana/link-relations/relation#cite-as"),
           ("hasFile", "http://pcdm.org/models#hasFile"),
           ("hasMember", "http://pcdm.org/models#hasMember"),
