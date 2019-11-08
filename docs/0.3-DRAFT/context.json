@@ -2401,7 +2401,6 @@
           "Script": "http://purl.org/ro/wf4ever#Script",
           "ExampleRun": "http://purl.org/ro/roterms#ExampleRun",
           "WorkflowSketch": "http://purl.org/ro/roterms#Sketch",
-
           "wasDerivedFrom": "http://www.w3.org/ns/prov#wasDerivedFrom",
           "importedFrom": "http://purl.org/pav/importedFrom",
           "importedOn": "http://purl.org/pav/importedOn",
@@ -2409,7 +2408,6 @@
           "retrievedFrom": "http://purl.org/pav/retrievedFrom",
           "retrievedOn": "http://purl.org/pav/retrievedOn",
           "retrievedBy": "http://purl.org/pav/retrievedBy",
-
           "conformsTo": "http://purl.org/dc/terms/conformsTo",
           "@label": "http://www.w3.org/2000/01/rdf-schema#label",
           "pcdm": "http://pcdm.org/models#",
