@@ -1,5 +1,6 @@
-{"@context":
-{
+{ "license": {"@id": "https://creativecommons.org/publicdomain/zero/1.0/"},
+  "identifier": {"@id": "https://w3id.org/ro/crate/0.3-DRAFT/context"},
+  "@context": {
           "AMRadioChannel": "http://schema.org/AMRadioChannel",
           "APIReference": "http://schema.org/APIReference",
           "Abdomen": "http://schema.org/Abdomen",
@@ -2265,6 +2266,5 @@
           
           "@base": null
 
-
-}
+  }
 }
