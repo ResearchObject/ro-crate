@@ -253,7 +253,7 @@ If present in the root directory, `ro-crate-preview.html` MUST:
   ```
 
 `ro-crate-preview.html` SHOULD:
-*   Contain a human-readable summary of information as the _RO-Crate JSON-LD_, with the exception that files which have no description, author or similar metadata MAY not be listed in the website.
+*   Contain a human-readable summary of information from the _RO-Crate JSON-LD_, with the exception that files which have no description, author or similar metadata MAY not be listed in the website.
 *   Display at least the metadata relating to the _Root Data Enity_ as static HTML without the need for JavaScript being enabled. It MAY contain extra features enabled by JavaScript.
 *   When a _Data Entity_ or _Context Entity_ is referenced by its ID:
   *   If it has a [name](http://schema.org/name) property, provide a link to its HTML version.
@@ -292,9 +292,10 @@ If the RO-Crate is considered an integral part of the BagIt payload then the `RO
   |   bagit.txt                 # As per BagIt specification
   |   bag-info.txt              # As per BagIt specification
   |   manifest-<algorithm>.txt  # As per BagIt specification
+  |   fetch.txt                 # Optional, per BagIt Specification
   |   data/
-      |   ro-crate-metadata.jsonld  # _RO-Crate Metadata File_ MUST be present
-      |   ro-crate-preview.html     # _RO-Crate Website_ homepage MAY be present
+      |   ro-crate-metadata.jsonld  # RO-Crate Metadata File MUST be present
+      |   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
       |   ro-crate-preview_files/   # MAY be present
       |     [payload files and directories]  # 1 or more SHOULD be present
 ``` 
@@ -306,6 +307,7 @@ Alternatively if the RO-Crate metadata needs to be updated independently of the 
   |   bagit.txt                 # As per BagIt specification
   |   bag-info.txt              # As per BagIt specification
   |   manifest-<algorithm>.txt  # As per BagIt specification
+  |   fetch.txt                 # Optional, per BagIt Specification
   |   ro-crate-metadata.jsonld  # _RO-Crate Metadata File_ MUST be present
   |   ro-crate-preview.html     # _RO-Crate Website_ homepage MAY be present
   |   ro-crate-preview_files/   # MAY be present
