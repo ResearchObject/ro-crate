@@ -101,6 +101,82 @@ _RO-Crate JSON-LD Context_: A JSON-LD [context](https://www.w3.org/TR/json-ld/#t
 
 _RO-Crate JSON-LD_: JSON-LD structure using the _RO-Crate JSON-LD Context_ and containing RO-Crate metadata, written as if [flattened](http://www.w3.org/TR/2014/REC-json-ld-20140116/#flattened-document-form) and then [compacted](http://www.w3.org/TR/2014/REC-json-ld-20140116/#compacted-document-form) according to the rules in JSON-LD 1.0. The _RO-Crate JSON-LD_ for an _RO-Crate_ is stored in the _RO-Crate Metadata File_.
 
+### RO-Crate uses Linked Data principles
+
+RO-Crate makes use of [Linked Data principles](https://5stardata.info/en/) for its description. In particular:
+
+1. (Meta)data should be made available as **Open Data** on the web.
+2. (Meta)data should be **machine-readable** in a structured format.
+3. (Meta)data should _not_ require proprietary software packages.
+4. (Meta)data should use [open standards from W3C](https://www.w3.org/standards/), such as RDF and SPARQL.
+5. (Meta)data should **link** to other people’s data to provide context, using _URIs_ as global identifiers
+
+RO-Crate realize these principles using a particular set of technologies and best practices:
+
+1. The _RO-Crate Metadata File_ and _RO-Crate Website_ can be directly published on the web together with the RO-Crate payload. In addition, a data package (e.g. BagIt Zip archive) that contain the RO-Crate can also be published on the web.
+2. The _RO-Crate Metadata File_ is based on the structured data format [JSON](https://tools.ietf.org/html/rfc8259). 
+3. Multiple open source tools/libraries are available [for JSON](http://json.org/) and [for JSON-LD](https://json-ld.org/).
+4. The _RO-Crate Website_ is [HTML 5](https://www.w3.org/TR/html52/), and the _RO-Crate Metadata File_ is [JSON-LD](https://www.w3.org/TR/json-ld/), one of the [W3C RDF 1.1 formats](https://www.w3.org/TR/rdf11-primer/).
+5. The _RO-Crate Metadata File_ reuse common vocabularies like [schema.org](http://schema.org), and this specification [recommend identifiers](#recommended-identifiers) it should link to.
+
+### Base metadata standard for RO-Crate: Schema.org
+
+[Schema.org](http://schema.org) is the base metadata standard for RO-Crate. Schema.org was chosen because it is widely used on the World Wide Web and supported by search engines, on the assumption that discovery is likely to be maximized if search engines index the content. NOTE: As far as we know there is no alternative, well-maintained linked-data schema for research data with the coverage needed for this project - i.e. a single standard for expressing all the examples presented in this specification.
+
+RO-Crate relies heavily on [schema.org](http://schema.org) using a constrained subset of  [JSON-LD](https://json-ld.org/, and this document gives opinionated recommendations on how to represent the metadata using existing linked data best practices
+
+Generally, the standard keys for [schema.org](http://schema.org) SHOULD be used. However, RO-Crate uses variant names for some elements, specifically:
+
+* `File` is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of schema.org or a research data extension may re-define `File`.
+* `Journal` is mapped to <http://schema.org/Periodical>.
+
+Note that JSON-LD examples given on <http://schema.org/> website may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
+
+To avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, while <http://schema.org/> for some properties permit shorter forms like `"author": "http://example.com/alice"`. 
+
+See the appendix [RO-Crate JSON-LD](#ro-crate-json-ld) for details.
+
+### Additional metadata standards
+
+The following terms from the from the [Research Object ontologies](https://w3id.org/ro/2016-01-28/) are used:
+
+- `Workflow` for a workflow definition, mapped to [http://purl.org/wf4ever/wfdesc#Workflow](https://w3id.org/ro/2016-01-28/wfdesc#Workflow)
+- `Script` for a script, mapped to [http://purl.org/wf4ever/wf4ever#Script](https://w3id.org/ro/2016-01-28/wf4ever#Script)
+- `WorkflowSketch` for an image depicting a workflow, mapped to [http://purl.org/wf4ever/roterms#Sketch](https://w3id.org/ro/2016-01-28/roterms#Sketch).
+
+RO-Crate also uses the _Portland Common Data Model_ ([PCDM](https://github.com/duraspace/pcdm/wiki)) and imports these terms:
+ 
+- `RepositoryObject` mapped to <https://pcdm.org/2016/04/18/models#Object>
+- `RepositoryCollection` mapped to <https://pcdm.org/2016/04/18/models#Collection>
+- `RepositoryFile` mapped to <https://pcdm.org/2016/04/18/models#Collection>
+- `hasMember` mapped to <https://pcdm.org/2016/04/18/models#hasMember>
+- `hasFile` mapped to <https://pcdm.org/2016/04/18/models#hasFile>
+
+The keys `RepositoryObject` and `RepositoryCollection` were chosen to avoid collision between the terms Collection and Object with other vocabularies.
+
+From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
+- `conformsTo` mapped to <http://purl.org/dc/terms/conformsTo>
+
+### Summary of Coverage
+
+RO-Crate is simply a way to make metadata assertions about a set of files and folders that make up a _Dataset_. These assertions can be made at three levels:
+
+*   Assertions at the RO-Crate level: for an RO-Crate to be useful, some metadata SHOULD be provided about the dataset as a whole (see minimum requirements for different use-cases below). In the _RO-Crate Metadata File_, we distinguish the _Root Data Entity_ which represents the RO-Crate as a whole, from other _Data Entities_ (files and folders contained in the RO-Crate) and _Context Entities_, e.g. a person, organisation, place related to an RO-Crate _Data Entity_
+*   Assertions about files and folders contained in the RO-Crate: in addition to providing metadata about the RO-Crate as a whole, RO-Crate allows metadata assertions to be made about any other _Data Entity_
+<!-- PENDING
+*   Variable-level assertions: In some cases, e.g. for tabular data, additional metadata may be provided about the structure and variables within a given file. 
+-->
+This document has guidelines for ways to represent common requirements for describing data in a research context, e.g.:
+
+*   Contact information for a data set.
+*   Descriptive information for a dataset and the files within it and their contexts such as an abstract, spatial and temporal coverage.
+*   Associated Publications.
+*   Funding relationships.
+*   Provenance information of various kinds; who (people and organizations) and what (instruments and computer programs) created or contributed to the data set and individual files within it.
+* Workflows that operate on the data using standard workflow descriptions including ‘single step workflows’; executable files or environments such as singularity containers or Jupyter notebooks.
+
+However, as RO-Crate uses _Linked Data_ principles, adopters of RO-Crate are free to supplement RO-Crate using [schema.org](https://schema.org/) metadata and/or assertions using other _Linked Data_ vocabularies.
+
 ### Linked data conventions
 
 Throughout this specification, RDF terms are referred to using the keys defined in RO-Crate JSON-LD Context.
@@ -247,81 +323,7 @@ The _RO-Crate Metadata File Descriptor_ contains the metadata that describes the
 
 This machine-readable metadata can also be represented for human consumption in the _RO-Crate Website_, linking to data and Web resources.
 
-### RO-Crate uses Linked Data principles
 
-RO-Crate makes use of [Linked Data principles](https://5stardata.info/en/) for its description. In particular:
-
-1. (Meta)data should be made available as **Open Data** on the web.
-2. (Meta)data should be **machine-readable** in a structured format.
-3. (Meta)data should _not_ require proprietary software packages.
-4. (Meta)data should use [open standards from W3C](https://www.w3.org/standards/), such as RDF and SPARQL.
-5. (Meta)data should **link** to other people’s data to provide context, using _URIs_ as global identifiers
-
-RO-Crate realize these principles using a particular set of technologies and best practices:
-
-1. The _RO-Crate Metadata File_ and _RO-Crate Website_ can be directly published on the web together with the RO-Crate payload. In addition, a data package (e.g. BagIt Zip archive) that contain the RO-Crate can also be published on the web.
-2. The _RO-Crate Metadata File_ is based on the structured data format [JSON](https://tools.ietf.org/html/rfc8259). 
-3. Multiple open source tools/libraries are available [for JSON](http://json.org/) and [for JSON-LD](https://json-ld.org/).
-4. The _RO-Crate Website_ is [HTML 5](https://www.w3.org/TR/html52/), and the _RO-Crate Metadata File_ is [JSON-LD](https://www.w3.org/TR/json-ld/), one of the [W3C RDF 1.1 formats](https://www.w3.org/TR/rdf11-primer/).
-5. The _RO-Crate Metadata File_ reuse common vocabularies like [schema.org](http://schema.org), and this specification [recommend identifiers](#recommended-identifiers) it should link to.
-
-### Base metadata standard for RO-Crate: Schema.org
-
-[Schema.org](http://schema.org) is the base metadata standard for RO-Crate. Schema.org was chosen because it is widely used on the World Wide Web and supported by search engines, on the assumption that discovery is likely to be maximized if search engines index the content. NOTE: As far as we know there is no alternative, well-maintained linked-data schema for research data with the coverage needed for this project - i.e. a single standard for expressing all the examples presented in this specification.
-
-RO-Crate relies heavily on [schema.org](http://schema.org) using a constrained subset of  [JSON-LD](https://json-ld.org/, and this document gives opinionated recommendations on how to represent the metadata using existing linked data best practices
-
-Generally, the standard keys for [schema.org](http://schema.org) SHOULD be used. However, RO-Crate uses variant names for some elements, specifically:
-
-* `File` is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of schema.org or a research data extension may re-define `File`.
-* `Journal` is mapped to <http://schema.org/Periodical>.
-
-Note that JSON-LD examples given on <http://schema.org/> website may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
-
-To avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, while <http://schema.org/> for some properties permit shorter forms like `"author": "http://example.com/alice"`. 
-
-See the appendix [RO-Crate JSON-LD](#ro-crate-json-ld) for details.
-
-### Additional metadata standards
-
-The following terms from the from the [Research Object ontologies](https://w3id.org/ro/2016-01-28/) are used:
-
-- `Workflow` for a workflow definition, mapped to [http://purl.org/wf4ever/wfdesc#Workflow](https://w3id.org/ro/2016-01-28/wfdesc#Workflow)
-- `Script` for a script, mapped to [http://purl.org/wf4ever/wf4ever#Script](https://w3id.org/ro/2016-01-28/wf4ever#Script)
-- `WorkflowSketch` for an image depicting a workflow, mapped to [http://purl.org/wf4ever/roterms#Sketch](https://w3id.org/ro/2016-01-28/roterms#Sketch).
-
-RO-Crate also uses the _Portland Common Data Model_ ([PCDM](https://github.com/duraspace/pcdm/wiki)) and imports these terms:
- 
-- `RepositoryObject` mapped to <https://pcdm.org/2016/04/18/models#Object>
-- `RepositoryCollection` mapped to <https://pcdm.org/2016/04/18/models#Collection>
-- `RepositoryFile` mapped to <https://pcdm.org/2016/04/18/models#Collection>
-- `hasMember` mapped to <https://pcdm.org/2016/04/18/models#hasMember>
-- `hasFile` mapped to <https://pcdm.org/2016/04/18/models#hasFile>
-
-The keys `RepositoryObject` and `RepositoryCollection` were chosen to avoid collision between the terms Collection and Object with other vocabularies.
-
-From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
-- `conformsTo` mapped to <http://purl.org/dc/terms/conformsTo>
-
-### Summary of Coverage
-
-RO-Crate is simply a way to make metadata assertions about a set of files and folders that make up a _Dataset_. These assertions can be made at three levels:
-
-*   Assertions at the RO-Crate level: for an RO-Crate to be useful, some metadata SHOULD be provided about the dataset as a whole (see minimum requirements for different use-cases below). In the _RO-Crate Metadata File_, we distinguish the _Root Data Entity_ which represents the RO-Crate as a whole, from other _Data Entities_ (files and folders contained in the RO-Crate) and _Context Entities_, e.g. a person, organisation, place related to an RO-Crate _Data Entity_
-*   Assertions about files and folders contained in the RO-Crate: in addition to providing metadata about the RO-Crate as a whole, RO-Crate allows metadata assertions to be made about any other _Data Entity_
-<!-- PENDING
-*   Variable-level assertions: In some cases, e.g. for tabular data, additional metadata may be provided about the structure and variables within a given file. 
--->
-This document has guidelines for ways to represent common requirements for describing data in a research context, e.g.:
-
-*   Contact information for a data set.
-*   Descriptive information for a dataset and the files within it and their contexts such as an abstract, spatial and temporal coverage.
-*   Associated Publications.
-*   Funding relationships.
-*   Provenance information of various kinds; who (people and organizations) and what (instruments and computer programs) created or contributed to the data set and individual files within it.
-* Workflows that operate on the data using standard workflow descriptions including ‘single step workflows’; executable files or environments such as singularity containers or Jupyter notebooks.
-
-However, as RO-Crate uses _Linked Data_ principles, adopters of RO-Crate are free to supplement RO-Crate using [schema.org](https://schema.org/) metadata and/or assertions using other _Linked Data_ vocabularies.
 
 
 ### Identifiers
