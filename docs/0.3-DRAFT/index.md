@@ -324,8 +324,6 @@ The _RO-Crate Metadata File Descriptor_ contains the metadata that describes the
 This machine-readable metadata can also be represented for human consumption in the _RO-Crate Website_, linking to data and Web resources.
 
 
-
-
 ### Identifiers
 
 #### RO-Crate Root Data Entity Identifier
@@ -388,30 +386,6 @@ the the _Root Data Entity_ by following this algorithm:
       ....from  this entity's `about` object keep the `@id` URI as variable _root_
 *  For each entity in `@graph` array
    .. if the entiy's `@id` URI matches _root_, return it
-
-_Root Data Entities_ MAY also have additional repository-specific identifiers, described using `Contextual Entities` using a [PropertyValue], with a `name` that identifies the repository and the `identifier` as a value. The _same_ identifier MAY be used in multiple different repositories and effectively namespaced using the `name` of the ProperyValue.
-
-```json
-{
-  "@id": "./",
-  "@type": "Dataset",
-  "identifier": ["https://doi.org/10.4225/59/59672c09f4a4b", {"@id": "_:localid:my-repo:my-id"}, {"@id": "_:localid:other-repo:https://doi.org/10.4225/59/59672c09f4a4b"}]
-}
-
- {
-   "@id": "_:localid:my-repo:my-id",
-   "@type": "PropertyValue",
-   "name": "my-repo",
-   "value": "my-id"
- }
-
-  {
-   "@id": "_:localid:other-repo:https://doi.org/10.4225/59/59672c09f4a4b",
-   "@type": "PropertyValue",
-   "name": "other-repo",
-   "value": "https://doi.org/10.4225/59/59672c09f4a4b"
- }
- ```
 
 The _RO-Crate JSON-LD_ MUST contain an
 _RO-Crate Metadata File Descriptor_ of type [CreativeWork] which describes the `Root Data Entity`, with an [about]
@@ -497,65 +471,20 @@ types of dataset may put further constraints or requirements of metadata beyond
 the Root Data Entity (see Extending RO-Crate below).
 
 
-The table below outlines the properties that the _Root Data Entity_ MUST have to be minimally valid and additionally highlights properties required to meet other common use-cases, including the minimum metadata necessary to mint a DataCite DOI:
+#### Direct properties of the _Root Data Entity_
 
-#### Direct properties of the Root Data Entity
+The _Root Data Entity_ MUST have the following properties:
+*  `@type`: MUST be a schema:Dataset 
+*  `@id`:  MUST be a a string of ‘./’
+*  `name`: SHOULD identify the dataset to humans well enough to disambiguate it from other RO-Crates
+*  `description`: SHOULD further elaborate on the name to provide a summary of the context in which the dataset is important.
+*  `datePublished`: MUST be a string in ISO 8601 date format and SHOULD be specified to at least the precision of a day. 
+*  `license`: SHOULD link to a _Contextual Entity_ in the _RO-Crate Metadata File_ with a name and description. MAY have a URI (eg for Creative Commons or Open Source licenses). MAY, if necessary be a textual description of how the RO-Crate may be used.
 
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | Institutional data repository (JISC RDSS) | Data discovery (Google Dataset Search) 
---------------- | ----------- | -------------- | ---------------------------- | ----------------------------------------- | --------------------------------------
-`@type` | Must be a schema:Dataset | M | M | M | M
-`@id` | Must be a a string of ‘./’ | M | M | M | M
-`name` |  | M | M | M | M
-`datePublished` |  | M | M | M |
-`author` | Must appear at least once |  referencing a Contextual Entity of `@type: Person` or `Organization` | ? | M | M |
-`license` |  | M | M | M |
-`identifier` |  | ? | M | M |
-`distribution` |  |  |  |  | ?
-`contactPoint` | Must appear at least once |  referencing a Contextual Entity of `@type ContactPoint` |  |  |  |
-`publisher` |  | ? | M |  |
-`description` |  | ? |  |  | M
-`url` | Must be a valid _URI_ or _URI Path_ |  | M |  |
-`hasPart` | Must appear for each additional Data Entity described in the RO-Crate JSON-LD which is a direct child of the Root Data Entity |  |  |  |
-
-### Contextual Entity: Person
-
-_(required since `author `is required)_
-
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
---------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
-`@type` |  | Y | M |  |
-`@id` |  | Y | M | M |
-`name` |  | Y | M |  |
-`familyName` |  |  | O | M |
-`givenName` |  |  | O | M |
-`identifier` |  | ? | O | O |
-`sameAs` |  |  |  |  | R
-
-#### Contextual Entity: Organization
-
-_(required since `author` is required)_
-
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
---------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
-`@type` |  | Y |  | Y |
-`@id` |  | Y |  | Y |
-`name` |  | Y |  | Y |
-
-#### Contextual Entity: Contact Point
-
-_(required if `contactPoint` is required)_
-
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
---------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
-`@type` |  | ? |  |  | ?
-`@id` |  | ? |  |  | ?
-`name` |  | ? |  |  | ?
-`email` |  | ? |  |  | ?
+NOTE: These requirements are stricter than those published for [Google Dataset Search](https://developers.google.com/search/docs/data-types/dataset) which requires a `Dataset` to have a `name` and `description`.
 
 
-
-
-The following _RO-Crate Metadata File_ represents a minimal description of an _RO-Crate_. Note that for brevity the _[RO-Crate JSON-LD Context](https://w3id.org/ro/crate/0.3-DRAFT/context)_ is here shown by reference rather than inline.
+The following _RO-Crate Metadata File_ represents a minimal description of an _RO-Crate_. 
 
 ```json
 { "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context", 
@@ -573,34 +502,22 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
     "@type": "Dataset",
     "datePublished": "2017",
     "name": "Data files associated with the manuscript:Effects of facilitated family case conferencing for advanced dementia: A cluster randomised clinical trial",
-    "distribution": { "@id": "https://data.research.uts.edu.au/examples/v1.0/timluckett.zip"
-        },
-"contactPoint": {
-        "@id": "mailto:tim.luckett@uts.edu.au"
-      }
- },
-  
- {
-    "@id": "https://data.research.uts.edu.au/examples/v1.0/timluckett.zip",
-    "contentUrl": "https://data.research.uts.edu.au/examples/v1.0/timluckett.zip",
-    "@type": "DataDownload",
-    "encodingFormat": "application/zip"
+    "license": {
+        "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/"
+      },
+    
  },
 
  {
-      "@id": "mailto:tim.luckett@uts.edu.au",
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "tim.luckett@uts.edu.au",
-      "identifier": "tim.luckett@uts.edu.au",
-      "url": "https://orcid.org/0000-0001-6121-5409"
-  }
-
+    "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
+    "@type": "CreativeWork",
+    "description": "This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/au/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.",
+    "identifier": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
+    "name": "Attribution-NonCommercial-ShareAlike 3.0 Australia (CC BY-NC-SA 3.0 AU)"
+ },
  ]
 }
 ```
-
-
 
 ### Examples of referencing _Data Entities_ (files and folders) from the _Root Data Entity_
 
@@ -733,27 +650,23 @@ The table below outlines the properties that Data Entities, when present, MUST h
 
 #### File Data Entity
 
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
---------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
-`@type` | MUST  be  a  File  (alias  of  MediaObject) | Y | | Y |
-`@id` | MUST  be a _URI Path_ relative to the _RO Crate root_ | Y || Y |
-`name` || Y || Y |
-`contentSize` || ? || Y |
-`dateModified` || ? || Y |
-`encodingFormat` || ? |||
+A `File` _Data Entity_ MUST have the following properties:
+*  `@type`: MUST be `File`, or an array where `File` is one of the values.
+*  `@id` MUST  be a _URI Path_ relative to the _RO Crate root_ 
+
 
 
 
 #### Directory File Entity
 
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
---------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
-`@type` | MUST be `Dataset` |  | |  |
-`@id` | MUST be a _URI Path_ relative to the _RO Crate root; SHOULD end with `/`_ | Y || Y |
+A `Dataset` (directory) _Data Entity_ MUST have the following properties:
+
+*  `@type` MUST be `Dataset` 
+*  `@id`  MUST be a _URI Path_ relative to the _RO Crate root; SHOULD end with `/`
 
 
 ## Representing _Contextual Entities_
-The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.jsonld`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
+The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.jsonld`). This also helps to maximize the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
 
 ### People
 
@@ -826,8 +739,6 @@ An [Organization](http://schema.org/Organization) SHOULD also be used for a [Per
 
 A RO-Crate SHOULD have contact information, using a [contactPoint](http://schema.org/contactPoint) property with a value of [ContactPoint](http://schema.org/contactPoint). Note that [Dataset](http://schema.org/Dataset) does not (yet) have a contactPoint property, so strictly this would have to be on a Person or Organization which is related to the Dataset via a [author](http://schema.org/author) or [contributor](http://schema.org/contributor) property.
 
-NOTE: This usage follows that of Google Dataset search.
-
 
 ```json
 {
@@ -857,25 +768,8 @@ NOTE: This usage follows that of Google Dataset search.
 ```
 
 
-This is not ideal, as there is no direct semantic relationship between the contactPoint property and the Dataset, so the same [contactPoint](http://schema.org/contactPoint) SHOULD be added to theRoot Data Entity, in anticipation of this being added to Schema.org, even though this is not strictly supported at the moment.
 
-
-```json
-{
-  "@id": "./",
-  "identifier": "https://doi.org/10.4225/59/59672c09f4a4b",
-  "@type": "Dataset",
-  "contactPoint": {
-        "@id": "mailto:tim.luckett@uts.edu.au"
-      },
-}
-```
-
-
-
-
-
-### Publications
+### Publications: `citation`
 
 To associate a publication with a dataset the _RO-Crate JSON-LD_ MUST include a URL (for example a DOI URL) as the @id of a publication using the [citation] property.
 
@@ -940,8 +834,6 @@ The _Root Data Entity_ SHOULD have a [publisher](http://schema.org/publisher) pr
   "name": "University of Technology Sydney"
 },
 ```
-
-
 
 
 
@@ -1117,7 +1009,7 @@ As the RO-Crate uses _flattened_ JSON-LD, `sdLicense` should be expressed direct
 
 -->
 
-### Equipment
+### Provenance: Equipment used to create `File`s
 
 To specify which equipment was used to create or update a _Data Entity_, the _RO-Crate_ JSON-LD SHOULD have a _Context Entity_ for each item of equipment which SHOULD be of `@type` [IndividualProduct](http://schema.org/IndividualProduct). The entity SHOULD have a serial number, manufacturer that identifies it as completely as possible. In this case the equipment is a bespoke machine. The equipment SHOULD be described on a web page, and the address of the description SHOULD be used as its `@id`.
 
@@ -1172,7 +1064,7 @@ In this example the CreateAction has a human [agent](http://schema.org/agent), t
 
 
 
-### Software 
+### Provenance: Software used to create `File`s
 
 To specify which software was used to create or update a file the software application SHOULD be represented with an entity of type [SoftwareApplication](http://schema.org/SoftwareApplication), with a [version] property, e.g. from `tool --version`.
 
@@ -1194,64 +1086,23 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
 
 ```json
 {
-      "@id": "#Photo_Capture_1",
-      "@type": "CreateAction",
-      "agent": {
-        "@id": "https://orcid.org/0000-0002-3545-944X"
-      },
-      "description": "Photo snapped on a photo walk on a misty day",
-      "endTime": "2017-06-11T12:56:14+10:00",
-      "instrument": [
-        {
-          "@id": "#EPL1"
-        },
-        {
-          "@id": "#Panny20mm"
-        }
-      ],
-      "result": {
-        "@id": "pics/2017-06-11%2012.56.14.jpg"
-      }
-    },
-    {
-      "@id": "#SepiaConversion_1",
-      "@type": "CreateAction",
-      "name": "Convert dog image to sepia",
-      "description": "convert -sepia-tone 80% test_data/sample/pics/2017-06-11\\ 12.56.14.jpg test_data/sample/pics/sepia_fence.jpg",
-      "endTime": "2018-09-19T17:01:07+10:00",
-      "instrument": {
-        "@id": "https://www.imagemagick.org/"
-      },
-      "object": {
-        "@id": "pics/2017-06-11%2012.56.14.jpg"
-      },
-      "result": {
-        "@id": "pics/sepia_fence.jpg"
-      }
-    },
+  "@id": "#SepiaConversion_1",
+  "@type": "CreateAction",
+  "name": "Convert dog image to sepia",
+  "description": "convert -sepia-tone 80% test_data/sample/pics/2017-06-11\\ 12.56.14.jpg test_data/sample/pics/sepia_fence.jpg",
+  "endTime": "2018-09-19T17:01:07+10:00",
+  "instrument": {
+    "@id": "https://www.imagemagick.org/"
+  },
+  "object": {
+    "@id": "pics/2017-06-11%2012.56.14.jpg"
+  },
+  "result": {
+    "@id": "pics/sepia_fence.jpg"
+  }
+}
 ```
-
-### Workflows and scripts
-
-
-Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts SHOULD be described using the data entities of type `SoftwareSourceCode`:
-
-schema property | Domain | Cardinality | Valid RO-Crate
---------------- | ------ | ----------- | --------------
-`author`| `Organization` / `Person` | Many | Recommended |
-`citation`| `CreativeWork` / Text | Many | Optional |
-`contributor`| `Organization` / `Person` | Many | Optional |
-`dateCreated`| Date / DateTime | One | Optional |
-`dateModified`| Date / DateTime | One | Optional |
-`description`| Text | One | Recommended |
-`hasPart`| `SoftwareSourceCode` / `SoftwareApplication` / `CreativeWork` | Many | Optional |
-`license`| `CreativeWork` / URL | One | Recommended |
-`name`| Text | One | Mandatory |
-`programmingLanguage`| `ComputerLanguage` | One | Recommended |
-`url`| URL | One | Optional |
-`version`| Number / Text | One | Optional |
-
-### More on software used to change RO-Crates 
+### Provenance of RO-Crates 
 
 To record an action which changes the RO-Crate metadata, or changes its state in a publication or other workflow, a [CreateAction](http://schema.org/CreateAction) or [UpdateAction](http://schema.org/UpdateAction) SHOULD be associated with a _Data Entity_.
 
@@ -1328,42 +1179,44 @@ To record curation actions which modify a [File](http://schema.org/MediaObject) 
 }
 ```
 
+
 ### Workflows and scripts
+
 
 Scientific workflows and scripts that can be or were used to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts are described using the type SoftwareSourceCode instead of `SoftwareApplication` above.  
 
 The distinction is fluid, and comes down to the availability and understandability of code to re-run a workflow. For instance, office spreadsheet applications are generally available and do not need further explanation; while a Python script that is customized for a particular data analysis might be important to understand further and SHOULD be included as source code in the RO-Crate dataset:
 
 ```json
-       {
-            "@id": "workflow/retropath.knime",  
-            "@type": ["File", "SoftwareSourceCode", "Workflow"],
-            "name": "RetroPath Knime workflow",
-            "description": "KNIME implementation of RetroPath2.0 workflow",
-            "author": {"@id": "https://orcid.org/0000-0001-2345-6789"},
-            "programmingLanguage": {"@id": "https://www.knime.com/knime-software/knime-analytics-platform"},
-            "license": "https://spdx.org/licenses/BSD-2-Clause.html",
-            "potentialAction": {
-                "@type": "ActivateAction",
-                "instrument": {"@id": "https://www.knime.com/knime-software/knime-analytics-platform"}
-            }
-        }
+{
+    "@id": "workflow/retropath.knime",  
+    "@type": ["File", "SoftwareSourceCode", "Workflow"],
+    "name": "RetroPath Knime workflow",
+    "description": "KNIME implementation of RetroPath2.0 workflow",
+    "author": {"@id": "https://orcid.org/0000-0001-2345-6789"},
+    "programmingLanguage": {"@id": "https://www.knime.com/knime-software/knime-analytics-platform"},
+    "license": "https://spdx.org/licenses/BSD-2-Clause.html",
+    "potentialAction": {
+        "@type": "ActivateAction",
+        "instrument": {"@id": "https://www.knime.com/knime-software/knime-analytics-platform"}
+    }
+}
 ```
 
 Workflows and scripts are saved on disk using a language and generally need a runtime, in RO-Crate this SHOULD be indicated using a liberal interpretation of `programmingLanguage` and `potentialAction`. Note that the language and its runtime might differ, e.g. there are multiple potential runtimes of a JavaScript, although in the base-case they are the same, and as a shortcut can be described in one go as both a `ComputerLanguage` and `SoftwareApplication`:
 
 ```json
-       {
-            "@id": "https://www.knime.com/knime-software/knime-analytics-platform",
-            "@type": [
-                "ComputerLanguage",
-                "SoftwareApplication"
-            ],
-            "name": "KNIME Analytics Platform",
-            "alternateName": "KNIME",
-            "url": {"@id": "https://www.knime.com/knime-software/knime-analytics-platform"},
-            "version": "3.6"
-        }
+{
+    "@id": "https://www.knime.com/knime-software/knime-analytics-platform",
+    "@type": [
+        "ComputerLanguage",
+        "SoftwareApplication"
+    ],
+    "name": "KNIME Analytics Platform",
+    "alternateName": "KNIME",
+    "url": {"@id": "https://www.knime.com/knime-software/knime-analytics-platform"},
+    "version": "3.6"
+}
 ```
 
 A data entity representing a runtime application or language MUST have a [name], [url] and [version], which SHOULD indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance “R” instead of “The R Project for Statistical Computing”.
@@ -1444,8 +1297,6 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
   "value": "4102011002108002               "
 },
 ```
-
-
 
 
 ### Places
@@ -1774,7 +1625,7 @@ The order of the `@graph` list is not significant. Above we see that the RO-Crat
 
 ### Describing entities in JSON-LD
 
-Properties of an entity can refer to another URL or entity by using the form `{"@id": "uri-reference"}` as in the example above, where the `author` property in the `File` entity refer to the `Person` entity, identified as `#alice`. 
+Properties of an entity MAY refer to another URL or entity by using the form `{"@id": "uri-reference"}` as in the example above, where the `author` property in the `File` entity refer to the `Person` entity, identified as `#alice`. 
 
 Identifiers in `@id` SHOULD be either a valid _absolute URIs_ like <http://example.com/>, or an _URI references_ _URI paths_ relative to the RO-Crate root directory. Care must be taken to express any relative paths using `/` separator and escape special characters like space (`%20`). As JSON-LD supports _IRIs_, international characters in identifiers SHOULD be encoded in UTF-8 rather than `%`-escaped. 
 
