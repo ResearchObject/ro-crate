@@ -828,7 +828,6 @@ A RO-Crate SHOULD have contact information, using a [contactPoint](http://schema
 
 NOTE: This usage follows that of Google Dataset search.
 
-IMPLEMENTATION NOTE: The Google structured Data tool gives an error if `mailto:` URLs are used in the "url" property.
 
 ```json
 {
