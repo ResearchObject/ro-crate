@@ -168,6 +168,7 @@ RO-Crate is simply a way to make metadata assertions about a set of files and fo
 -->
 This document has guidelines for ways to represent common requirements for describing data in a research context, e.g.:
 
+*   Licensing information - this is required as it is key to re-use, archiving and preservation of data.
 *   Contact information for a data set.
 *   Descriptive information for a dataset and the files within it and their contexts such as an abstract, spatial and temporal coverage.
 *   Associated Publications.
@@ -280,48 +281,6 @@ It is important to note that the _RO-Crate Metadata File_ is not an exhaustive m
 
 The intention is that RO-Crates can work well with a variety of archive file formats, e.g. tar, zip, etc., and approaches to capturing file manifests and file fixity, such as [BagIt], [OCFL] and [git].
 
-### Combining with other packaging schemes
-
-RO-Crates may co-exist with other packaging schemes, such as [BagIt] using two general approaches. Examples using BagIt follow.
-
-
-If the RO-Crate is considered an integral part of the BagIt payload then the `RO-Crate Metadata File` as part of the object payload then RO-Crate specific files SHOULD be placed in the BagIt `data/` directory meaning that they will be listed, with checksums, in the manifest.
-
-```
-<RO-Crate root directory>/
-  |   bagit.txt                 # As per BagIt specification
-  |   bag-info.txt              # As per BagIt specification
-  |   manifest-<algorithm>.txt  # As per BagIt specification
-  |   data/
-      |   ro-crate-metadata.jsonld  # _RO-Crate Metadata File_ MUST be present
-      |   ro-crate-preview.html     # _RO-Crate Website_ homepage MAY be present
-      |   ro-crate-preview_files/   # MAY be present
-      |     [payload files and directories]  # 1 or more SHOULD be present
-``` 
-
-Alternatively if the RO-Crate metadata needs to be updated independently of the data payload (the `data/` directory) the RO-Crate metadata SHOULD be placed in the BagIt root, so the RO-Crate files are not in the BagIt Manifest.
-
-```
-<RO-Crate root directory>/
-  |   bagit.txt                 # As per BagIt specification
-  |   bag-info.txt              # As per BagIt specification
-  |   manifest-<algorithm>.txt  # As per BagIt specification
-  |   ro-crate-metadata.jsonld  # _RO-Crate Metadata File_ MUST be present
-  |   ro-crate-preview.html     # _RO-Crate Website_ homepage MAY be present
-  |   ro-crate-preview_files/   # MAY be present
-  |   data/
-  |     [payload files and directories]  # 1 or more SHOULD be present
-```
-
-RO-Crate aim to capture and describe the [Research Object](http://www.researchobject.org/overview/) using structured _metadata_.
-
-The _RO-Crate Metadata File Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:
-
-* Root Data Entity - the `Dataset` itself, a gathering of data
-* Data Entities - the _data_ payload, in the form of files and folders
-* Contextual Entities - related things in the world (e.g. people, organizations, places), providing provenance for the data entities and the RO-Crate.
-
-This machine-readable metadata can also be represented for human consumption in the _RO-Crate Website_, linking to data and Web resources.
 
 
 ### Identifiers
@@ -471,7 +430,7 @@ types of dataset may put further constraints or requirements of metadata beyond
 the Root Data Entity (see Extending RO-Crate below).
 
 
-#### Direct properties of the _Root Data Entity_
+### Direct properties of the _Root Data Entity_
 
 The _Root Data Entity_ MUST have the following properties:
 *  `@type`: MUST be a schema:Dataset 
@@ -815,7 +774,7 @@ The publication SHOULD be described in the _RO-Crate JSON-LD_.
 ```
 
 
-### Publisher
+### Publishers
 
 The _Root Data Entity_ SHOULD have a [publisher](http://schema.org/publisher) property. This SHOULD be an [Organization](http://schema.org/Organization) though it MAY be a [Person](http://schema.org/Person), a string-literal, or a URI.
 
@@ -965,7 +924,7 @@ To express the metadata license is different from the _Root Data Entity_, expand
 
 ```
 
-If no explicit `license` is expressed on the _RO-Crate Metadata File Descriptor_, the `license` expressed on the _Root Data Entity_ apply also on the RO-Crate metadata.
+If no explicit `license` is expressed on the _RO-Crate Metadata File Descriptor_, the `license` expressed on the _Root Data Entity_ applies also to the RO-Crate metadata.
 
 <!-- TODO: This got a bit to complicated, commented out for 1.0
 
@@ -1743,9 +1702,9 @@ When generating the _RO-Crate Website_ from _RO-Crate JSON-LD_, the code MUST us
 
 Where there is no RDF ontology available, then implementors SHOULD attempt to provide context by creating stable web-accessible URIs to document properties and classes, for example, by linking to page describing an XML element or attribute from an XML schema, pending the publication of a formal ontology.
 
+## Implementation notes
 
-
-#### Repository-specific identifiers
+### Repository-specific identifiers
 
 _Root Data Entities_ MAY also have additional repository specific identifiers, described using `Contextual Entities` using a [PropertyValue], with a `name` that identifies the repository and the `identifier` as a value. The _same_ identifier MAY be used in multiple different repositories and effectively namespaced using the `name` of the ProperyValue.
 
@@ -1771,6 +1730,49 @@ _Root Data Entities_ MAY also have additional repository specific identifiers, d
  }
 ```
 
+
+### Combining with other packaging schemes
+
+RO-Crates may co-exist with other packaging schemes, such as [BagIt] using two general approaches. Examples using BagIt follow.
+
+
+If the RO-Crate is considered an integral part of the BagIt payload then the `RO-Crate Metadata File` as part of the object payload then RO-Crate specific files SHOULD be placed in the BagIt `data/` directory meaning that they will be listed, with checksums, in the manifest.
+
+```
+<RO-Crate root directory>/
+  |   bagit.txt                 # As per BagIt specification
+  |   bag-info.txt              # As per BagIt specification
+  |   manifest-<algorithm>.txt  # As per BagIt specification
+  |   data/
+      |   ro-crate-metadata.jsonld  # _RO-Crate Metadata File_ MUST be present
+      |   ro-crate-preview.html     # _RO-Crate Website_ homepage MAY be present
+      |   ro-crate-preview_files/   # MAY be present
+      |     [payload files and directories]  # 1 or more SHOULD be present
+``` 
+
+Alternatively if the RO-Crate metadata needs to be updated independently of the data payload (the `data/` directory) the RO-Crate metadata SHOULD be placed in the BagIt root, so the RO-Crate files are not in the BagIt Manifest.
+
+```
+<RO-Crate root directory>/
+  |   bagit.txt                 # As per BagIt specification
+  |   bag-info.txt              # As per BagIt specification
+  |   manifest-<algorithm>.txt  # As per BagIt specification
+  |   ro-crate-metadata.jsonld  # _RO-Crate Metadata File_ MUST be present
+  |   ro-crate-preview.html     # _RO-Crate Website_ homepage MAY be present
+  |   ro-crate-preview_files/   # MAY be present
+  |   data/
+  |     [payload files and directories]  # 1 or more SHOULD be present
+```
+
+RO-Crate aim to capture and describe the [Research Object](http://www.researchobject.org/overview/) using structured _metadata_.
+
+The _RO-Crate Metadata File Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:
+
+* Root Data Entity - the `Dataset` itself, a gathering of data
+* Data Entities - the _data_ payload, in the form of files and folders
+* Contextual Entities - related things in the world (e.g. people, organizations, places), providing provenance for the data entities and the RO-Crate.
+
+This machine-readable metadata can also be represented for human consumption in the _RO-Crate Website_, linking to data and Web resources.
 
 
 
