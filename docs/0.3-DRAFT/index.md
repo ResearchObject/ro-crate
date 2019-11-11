@@ -672,6 +672,8 @@ The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Conte
 
 A core principle of Linked data is to use URIs to identify things such as people. The following is the minimum recommended way of representing a [author](http://schema.org/author) in a RO-Crate. This property MAY be applied in the context of a directory ([Dataset](http://schema.org/Dataset)) or to a [File](http://schema.org/MediaObject).
 
+A `Person` MUST have a `name` property.
+
 ```json
 {
     "@type": "Dataset",
@@ -694,6 +696,8 @@ Note the string-value of the organizational affiliation. This SHOULD be improved
 ### Organizations as values
 
 An [Organization](http://schema.org/Organization) SHOULD be the value for the [publisher](http://schema.org/publisher) property of a [Dataset](http://schema.org/Dataset) or [ScholarlyArticle](http://schema.org/ScholarlyArticle) or [affiliation](http://schema.org/affiliation) property of a [Person](http://schema.org/Person).
+
+An `Organization` MUST have a `name` property.
 
 
 ```json
@@ -881,8 +885,6 @@ NOTE: To make it very clear where funding is coming from, the _Root Data Entity_
   "name": "Australian National Data Service"
 },
 ```
-
-
 
 ### Licensing, Access control and copyright
 
