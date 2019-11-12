@@ -1371,7 +1371,7 @@ This example shows how to define a place, using a [geonames](https://www.geoname
   "@type": "Place",
   "description": "Catalina Park is a disused motor racing venue, located at Katoomba ...",
   "geo": {
-    "@id": "b4168a98-8534-4c6d-a568-64a55157b656"
+    "@id": "#b4168a98-8534-4c6d-a568-64a55157b656"
   },
   "identifier": "http://sws.geonames.org/8152662/",
   "uri": "https://www.geonames.org/8152662/catalina-park.html",
@@ -1391,7 +1391,7 @@ The place has a [geo](http://schema.org/geo) property, referencing an _Contextua
 
 ```json
 {
-  "@id": "b4168a98-8534-4c6d-a568-64a55157b656",
+  "@id": "#b4168a98-8534-4c6d-a568-64a55157b656",
   "@type": "GeoCoordinates",
   "latitude": "-33.7152",
   "longitude": "150.30119",
@@ -1407,15 +1407,20 @@ And the place is referenced from the [contentLocation](http://schema.org/content
 
 ```json
 {
-  "@id": "https://doi.org/10.5281/zenodo.1009240",
+  "@id": "./",
   "@type": "Dataset",
   "outputOf": "RO-Crate",
   "contact": {
     "@id": "https://orcid.org/0000-0002-3545-944X"
   },
   "contentLocation": {
-    "@id": "http://sws.geonames.org/8152662/"
-  },
+    "@id": "http://sws.geonames.org/8152662/",
+  }
+}
+{
+  "@id": "http://sws.geonames.org/8152662/",
+  "name": "Catalina Park",
+}
 ```
 
 
