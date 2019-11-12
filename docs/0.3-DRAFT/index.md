@@ -131,7 +131,7 @@ It follows that RO-Crates can be _nested_ by including payload directories that 
 
 ### RO-Crate Metadata File (`ro-crate-metadata.jsonld`)
 
-*  The _RO-Crate Metadata File_ MUST be named `ro-crate-metadata.jsonld` and appear in the _RO-Crate Root_
+* The _RO-Crate Metadata File_ MUST be named `ro-crate-metadata.jsonld` and appear in the _RO-Crate Root_
 * The _RO-Crate Metadata File_ MUST contain _RO-Crate JSON-LD_; a valid [JSON-LD 1.0](https://www.w3.org/TR/2014/REC-json-ld-20140116/) document in [flattened](https://www.w3.org/TR/json-ld/#flattened-document-form) and [compacted](https://www.w3.org/TR/json-ld/#compacted-document-form) form
 * The _RO-Crate JSON-LD_ SHOULD use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/0.3-DRAFT/context> by reference.
 
@@ -1050,7 +1050,7 @@ As the RO-Crate uses _flattened_ JSON-LD, `sdLicense` should be expressed direct
 
 -->
 
-### Equipment
+### Provenance: Equipment used to create files
 
 To specify which equipment was used to create or update a _Data Entity_, the _RO-Crate_ JSON-LD SHOULD have a _Context Entity_ for each item of equipment which SHOULD be of `@type` [IndividualProduct](http://schema.org/IndividualProduct). The entity SHOULD have a serial number, manufacturer that identifies it as completely as possible. In this case the equipment is a bespoke machine. The equipment SHOULD be described on a web page, and the address of the description SHOULD be used as its `@id`.
 
@@ -1104,7 +1104,7 @@ In this example the CreateAction has a human [agent](http://schema.org/agent), t
 
 
 
-### Software 
+### Provenance: Software used to create files
 
 To specify which software was used to create or update a file the software application SHOULD be represented with an entity of type [SoftwareApplication](http://schema.org/SoftwareApplication), with a [version] property, e.g. from `tool --version`.
 
@@ -1162,6 +1162,10 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
       }
     },
 ```
+
+### Provenance: Changes to RO-Crates
+
+TODO: Move the section on RO-Crate provenance here.
 
 ### Workflows and scripts
 
@@ -1855,6 +1859,61 @@ When generating the _RO-Crate Website_ from _RO-Crate JSON-LD_, the code MUST us
 
 Where there is no RDF ontology available, then implementors SHOULD attempt to provide context by creating stable web-accessible URIs to document properties and classes, for example, by linking to page describing an XML element or attribute from an XML schema, pending the publication of a formal ontology.
 
+## Implementation notes
+
+#### Combining with other packaging schemes
+
+RO-Crates may co-exist with other packaging schemes, such as [BagIt] using two
+general approaches; either (a) _adding_ RO-Crate into a package as part of the payload
+or (b) _wrapping_ another kind of package. Examples using BagIt follow.
+
+BagIt  is described in [RFC 8493](https://tools.ietf.org/html/rfc8493):
+
+> [BagIt is] ... a set of hierarchical file layout conventions
+> for storage and transfer of arbitrary digital content. A "bag" has just enough
+> structure to enclose descriptive metadata "tags" and a file "payload" but does
+> not require knowledge of the payload's internal semantics. This BagIt format
+> is suitable for reliable storage and transfer.
+
+BagIt and RO-Crate have largely separate concerns - RO-Crate is focussed on rich
+metadata, the semantics of data, while BagIt is about reliable transfer.
+
+##### Example of adding RO-Crate to Bagit
+
+RO-Crate can be combined with BagIt simply by placing the RO-Crate files in the BagIt
+payload (`data/`) directory.
+
+```
+<RO-Crate root directory>/
+  |   bagit.txt                 # As per BagIt specification
+  |   bag-info.txt              # As per BagIt specification
+  |   manifest-<algorithm>.txt  # As per BagIt specification
+  |   fetch.txt                 # Optional, per BagIt Specification
+  |   data/
+      |   ro-crate-metadata.jsonld  # RO-Crate Metadata File MUST be present
+      |   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
+      |   ro-crate-preview_files/   # MAY be present
+      |     [payload files and directories]  # 1 or more SHOULD be present
+```
+
+##### Example of wrapping a BagIt bag in an RO-Crate
+
+Alternatively, an RO-Crate can wrap a BagIt bag, so that the RO-Crate metadata
+is outside of the bag directory and can be changed without changing the payload's checksums.
+
+```
+<RO-Crate root directory>/
+  |   ro-crate-metadata.jsonld  # RO-Crate Metadata File MUST be present
+  |   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
+  |   ro-crate-preview_files/   # MAY be present
+  |   bag/                      # "Wrapped" bag - could have any name
+  |      bagit.txt                 # As per BagIt specification
+  |      bag-info.txt              # As per BagIt specification
+  |      manifest-<algorithm>.txt  # As per BagIt specification
+  |      fetch.txt                 # Optional, per BagIt Specification
+  |      data/
+  |         [payload files and directories]  # 1 or more SHOULD be present
+```
 
 
 #### Repository-specific identifiers
