@@ -426,7 +426,9 @@ schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | 
 
 
 
-The following _RO-Crate Metadata File_ represents a minimal description of an _RO-Crate_. Note that for brevity the _[RO-Crate JSON-LD Context](https://w3id.org/ro/crate/0.3-DRAFT/context)_ is here shown by reference rather than inline.
+
+
+The following _RO-Crate Metadata File_ represents a minimal description of an _RO-Crate_. 
 
 ```json
 { "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context", 
@@ -443,33 +445,21 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
     "identifier": "https://doi.org/10.4225/59/59672c09f4a4b",
     "@type": "Dataset",
     "datePublished": "2017",
-    "name": "Data files associated with the manuscript:Effects of facilitated family case conferencing for advanced dementia: A cluster randomised clinical trial",
-    "distribution": { "@id": "https://data.research.uts.edu.au/examples/v1.0/timluckett.zip"
-        },
-    "contactPoint": {
-        "@id": "#tim"
-      }
+    "name": "Data files associated with the manuscript:Effects of facilitated family case conferencing for ...",
+    "description": "Palliative care planning for nursing home residents with advanced dementia ...",
+    "license": {"@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/"}
  },
-  
- {
-    "@id": "https://data.research.uts.edu.au/examples/v1.0/timluckett.zip",
-    "contentUrl": "https://data.research.uts.edu.au/examples/v1.0/timluckett.zip",
-    "@type": "DataDownload",
-    "encodingFormat": "application/zip"
- },
-
- {
-      "@id": "#tim",
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "tim.luckett@uts.edu.au",
-      "identifier": "tim.luckett@uts.edu.au",
-      "url": "https://orcid.org/0000-0001-6121-5409"
+{
+  "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
+  "@type": "CreativeWork",
+  "description": "This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/au/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.",
+  "identifier": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
+  "name": "Attribution-NonCommercial-ShareAlike 3.0 Australia (CC BY-NC-SA 3.0 AU)"
   }
-
  ]
 }
 ```
+
 
 
 
