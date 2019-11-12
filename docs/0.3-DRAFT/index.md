@@ -372,60 +372,21 @@ The table below outlines the properties that the _Root Data Entity_ MUST have to
 
 #### Direct properties of the Root Data Entity
 
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | Institutional data repository (JISC RDSS) | Data discovery (Google Dataset Search) 
---------------- | ----------- | -------------- | ---------------------------- | ----------------------------------------- | --------------------------------------
-`@type` | Must be a schema:Dataset | M | M | M | M
-`@id` | Must be a a string of ‘./’ | M | M | M | M
-`name` |  | M | M | M | M
-`datePublished` |  | M | M | M |
-`author` | Must appear at least once |  referencing a Contextual Entity of `@type: Person` or `Organization` | ? | M | M |
-`license` |  | M | M | M |
-`identifier` |  | ? | M | M |
-`distribution` |  |  |  |  | ?
-`contactPoint` | Must appear at least once |  referencing a Contextual Entity of `@type ContactPoint` |  |  |  |
-`publisher` |  | ? | M |  |
-`description` |  | ? |  |  | M
-`url` | Must be a valid _URI_ or _URI Path_ |  | M |  |
-`hasPart` | Must appear for each additional Data Entity described in the RO-Crate JSON-LD which is a direct child of the Root Data Entity |  |  |  |
+The _Root Data Entity_ MUST have the following properties:
+*  `@type`: MUST be a schema:Dataset 
+*  `@id`:  MUST be a a string of ‘./’
+*  `name`: SHOULD identify the dataset to humans well enough to disambiguate it from other RO-Crates
+*  `description`: SHOULD further elaborate on the name to provide a summary of the context in which the dataset is important.
+*  `datePublished`: MUST be a string in ISO 8601 date format and SHOULD be specified to at least the precision of a day, MAY be a timestamp down to the millisecond. 
+*  `license`: SHOULD link to a _Contextual Entity_ in the _RO-Crate Metadata File_ with a name and description. MAY have a URI (eg for Creative Commons or Open Source licenses). MAY, if necessary be a textual description of how the RO-Crate may be used.
 
-### Contextual Entity: Person
+NOTE: These requirements are stricter than those published for
+[Google Dataset Search](https://developers.google.com/search/docs/data-types/dataset)
+which requires a `Dataset` to have a `name` and `description`,
 
-_(required since `author `is required)_
-
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
---------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
-`@type` |  | Y | M |  |
-`@id` |  | Y | M | M |
-`name` |  | Y | M |  |
-`familyName` |  |  | O | M |
-`givenName` |  |  | O | M |
-`identifier` |  | ? | O | O |
-`sameAs` |  |  |  |  | R
-
-#### Contextual Entity: Organization
-
-_(required since `author` is required)_
-
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
---------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
-`@type` |  | Y |  | Y |
-`@id` |  | Y |  | Y |
-`name` |  | Y |  | Y |
-
-#### Contextual Entity: Contact Point
-
-_(required if `contactPoint` is required)_
-
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
---------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
-`@type` |  | ? |  |  | ?
-`@id` |  | ? |  |  | ?
-`name` |  | ? |  |  | ?
-`email` |  | ? |  |  | ?
-
-
-
-
+NOTE: The properties above are not sufficient to generate a DataCite citation.
+Advice on integrating with DataCite will be provided in a future version of this
+specification, or as an implementation guide.
 
 
 The following _RO-Crate Metadata File_ represents a minimal description of an _RO-Crate_. 
@@ -460,12 +421,9 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
 }
 ```
 
-
-
-
 ### Examples of referencing _Data Entities_ (files and folders) from the _Root Data Entity_
 
-Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indriectly, from the Root Data Entity using the [hasPart] property. Directory hierarchies MAY be represented with nested Dataset _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
+Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the Root Data Entity using the [hasPart] property. Directory hierarchies MAY be represented with nested Dataset _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
 
 _Data Entities_ representing files MUST be of `@type: File`, which is an RO-Crate alias for <http://schema.org/MediaObject>
 
