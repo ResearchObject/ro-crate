@@ -206,7 +206,7 @@ The intention is that RO-Crates can work well with a variety of archive file for
 
 ## RO-Crate Metadata
 
-RO-Crate aim to capture and describe the [Research Object](http://www.researchobject.org/overview/) using structured _metadata_.
+RO-Crate aims to capture and describe the [Research Object](http://www.researchobject.org/overview/) using structured _metadata_.
 
 The _RO-Crate Metadata File Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:
 
@@ -249,7 +249,7 @@ Generally, the standard keys for [schema.org](http://schema.org) should be used.
 
 Note that JSON-LD examples given on <http://schema.org/> website may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
 
-To avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, while <http://schema.org/> for some properties permit shorter forms like `"author": "http://example.com/alice"`. 
+To avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even though <http://schema.org/> for some properties permits shorter forms like `"author": "http://example.com/alice"`. 
 
 See the appendix [RO-Crate JSON-LD](#ro-crate-json-ld) for details.
 
@@ -280,7 +280,7 @@ RO-Crate is simply a way to make metadata assertions about a set of files and fo
 
 *   Assertions at the RO-Crate level: for an RO-Crate to be useful, some metadata should be provided about the dataset as a whole (see minimum requirements for different use-cases below). In the _RO-Crate Metadata File_, we distinguish the _Root Data Entity_ which represents the RO-Crate as a whole, from other _Data Entities_ (files and folders contained in the RO-Crate) and _Contextual Entities_, e.g. a person, organisation, place related to an RO-Crate _Data Entity_
 *   Assertions about files and folders contained in the RO-Crate: in addition to providing metadata about the RO-Crate as a whole, RO-Crate allows metadata assertions to be made about any other _Data Entity_
-*   Variable-level assertions: In some cases, e.g. for tabular data, additional metadata may be provided about the structure and variables within a given file. 
+
 
 This document has guidelines for ways to represent common requirements for describing data in a research context, e.g.:
 
@@ -292,6 +292,10 @@ This document has guidelines for ways to represent common requirements for descr
 * Workflows that operate on the data using standard workflow descriptions including ‘single step workflows’; executable files or environments such as singularity containers or Jupyter notebooks.
 
 However, as RO-Crate uses _Linked Data_ principles, adopters of RO-Crate are free to supplement RO-Crate using [schema.org](https://schema.org/) metadata and/or assertions using other _Linked Data_ vocabularies.
+
+### Future coverage
+
+A future version of this specification will allow for variable-level assertions: In some cases, e.g. for tabular data, additional metadata may be provided about the structure and variables within a given file see the Use Case [Describe a tabular data file directly in RO-Crate metadata](https://github.com/ResearchObject/ro-crate/issues/27) for work-in-progress.
 
 
 ### Recommended Identifiers
@@ -350,7 +354,7 @@ the the _Root Data Entity_ by following this algorithm:
 2. ..if the `conformsTo` property is a URI that starts with `https://w3id.org/ro/crate/`
 3. ....from  this entity's `about` object keep the `@id` URI as variable _root_
 4. For each entity in `@graph` array
-5. ..return the entity which `@id` URI matches _root_
+5. .. if the entity has an `@id` URI that matches _root_ return it
 
 To ensure a base-line interoperability between RO-Crates, and for an RO-Crate to
 be considered a _Valid RO-Crate_, a minimum set of metadata is required for the
