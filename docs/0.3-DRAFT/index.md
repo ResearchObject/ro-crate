@@ -488,7 +488,7 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
 
 #### Adding detailed descriptions of encodings
 
-The above example provides a mime-type for the file `./cp7glop.ai` - which is
+The above example provides a media type for the file `./cp7glop.ai` - which is
 useful as it may not be apparent that the file readable as a PDF file from the
 extension. To add more detail, encodings SHOULD be linked using a [PRONOM]
 identifier to a _Contextual Entity_ of `@type` Website.
@@ -610,7 +610,7 @@ An [Organization](http://schema.org/Organization) SHOULD be the value for the [p
 }
 ```
 
-An [Organization](http://schema.org/Organization) SHOULD also be used for a [Person](http://schema.org/Person)'s affiliation.
+An [Organization](http://schema.org/Organization) SHOULD also be used for a [Person](http://schema.org/Person)'s `affiliation` property.
 
 ```json
 {
@@ -676,7 +676,7 @@ A RO-Crate SHOULD have contact information, using a [contactPoint](http://schema
 
 
 
-### Publications
+### Publications via citation property
 
 To associate a publication with a dataset the _RO-Crate JSON-LD_ MUST include a URL (for example a DOI URL) as the @id of a publication using the [citation] property.
 
@@ -723,7 +723,7 @@ The publication SHOULD be described in the _RO-Crate JSON-LD_.
 
 ### Publisher
 
-The _Root Data Entity_ SHOULD have a [publisher](http://schema.org/publisher) property. This SHOULD be an [Organization](http://schema.org/Organization) though it MAY be a [Person](http://schema.org/Person), a string-literal, or a URI.
+The _Root Data Entity_ SHOULD have a [publisher](http://schema.org/publisher) property. This SHOULD be an [Organization](http://schema.org/Organization) though it MAY be a [Person](http://schema.org/Person).
 
 
 ```json
@@ -824,7 +824,7 @@ The below _Data Entity_ has a [copyrightHolder] which is different from its [aut
 
 {
   "@id": "https://creativecommons.org/licenses/by/4.0/",
-  "@type": "CreativeWorks",
+  "@type": "CreativeWork",
   "name": "CC BY 4.0",
   "description": "Creative Commons Attribution 4.0 International License"
 },
@@ -930,9 +930,9 @@ To specify which equipment was used to create or update a _Data Entity_, the _RO
 {
   "@id": "https://confluence.csiro.au/display/ASL/Hovermap",
   "@type": "IndividualProduct",
-  "description": "The CSIRO bentwing is an unmanned aerial vehicle (UAV, commonly known as a drone) with a LIDAR mounted underneath to capture 3D information on the surroundings.",
+  "description": "The CSIRO bentwing is an unmanned aerial vehicle (UAV, commonly known as a drone) with a LIDAR ... ",
   "identifier": "https://confluence.csiro.au/display/ASL/Hovermap",
-  "name": "bentwing"
+  "name": "Bentwing"
 }
 ```
 
@@ -1041,22 +1041,7 @@ TODO: Move the section on RO-Crate provenance here.
 ### Workflows and scripts
 
 
-Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts SHOULD be described using the data entities of type `SoftwareSourceCode`:
-
-schema property | Domain | Cardinality | Valid RO-Crate
---------------- | ------ | ----------- | --------------
-`author`| `Organization` / `Person` | Many | Recommended |
-`citation`| `CreativeWork` / Text | Many | Optional |
-`contributor`| `Organization` / `Person` | Many | Optional |
-`dateCreated`| Date / DateTime | One | Optional |
-`dateModified`| Date / DateTime | One | Optional |
-`description`| Text | One | Recommended |
-`hasPart`| `SoftwareSourceCode` / `SoftwareApplication` / `CreativeWork` | Many | Optional |
-`license`| `CreativeWork` / URL | One | Recommended |
-`name`| Text | One | Mandatory |
-`programmingLanguage`| `ComputerLanguage` | One | Recommended |
-`url`| URL | One | Optional |
-`version`| Number / Text | One | Optional |
+Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts SHOULD be described using the data entities of type `SoftwareSourceCode`.
 
 The distinction between `SoftwareSourceCode` and `SoftwareApplication` for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.  
 
@@ -1084,14 +1069,14 @@ The `@type` property SHOULD be an array, to also indicate the particular nature 
 To indicate that a `SoftwareSourceCode` is primarily in the form of an executable **script** (e.g. sequential batch/shell script that call other commands and manage files), use:
 
 ```json
-  "@type": ["SoftwareSourceCode", "Script"],
+  "@type": ["File", "SoftwareSourceCode", "Script"],
 ```
 
 
 If the `SoftwareSourceCode` is primarily in the form of a **workflow** (e.g. a pipeline of steps with data flow), use:
 
 ```json
-  "@type": ["SoftwareSourceCode", "Workflow"],
+  "@type": ["File", "SoftwareSourceCode", "Workflow"],
 ```
 
 Workflows and scripts saved on disk using a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of `programmingLanguage`. 
@@ -1553,7 +1538,7 @@ If [thumbnail](http://schema.org/thumbnail)s are incidental to the data set, the
  
 ```
 
-## RO-Crate JSON-LD
+## APPENDIX: RO-Crate JSON-LD
 
 It is not necessary to use [JSON-LD tooling](https://json-ld.org/#developers) to generate or parse the _RO-Crate Metadata File_, although they may make it easier to conform to this specification, e.g. handling relative URIs. It is RECOMMENDED to use [JSON tooling](http://json.org/) to handle [JSON](https://tools.ietf.org/html/rfc7159) syntax and escaping rules.
 
@@ -1734,7 +1719,7 @@ When generating the _RO-Crate Website_ from _RO-Crate JSON-LD_, the code MUST us
 
 Where there is no RDF ontology available, then implementors SHOULD attempt to provide context by creating stable web-accessible URIs to document properties and classes, for example, by linking to page describing an XML element or attribute from an XML schema, pending the publication of a formal ontology.
 
-## Implementation notes
+## APPENDIX: Implementation notes
 
 #### Combining with other packaging schemes
 
