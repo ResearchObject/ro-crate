@@ -638,21 +638,21 @@ An [Organization](http://schema.org/Organization) SHOULD also be used for a [Per
 
 ### More detail on ContactPoint
 
-A RO-Crate SHOULD have contact information, using a [contactPoint](http://schema.org/contactPoint) property with a value of [ContactPoint](http://schema.org/contactPoint). Note that [Dataset](http://schema.org/Dataset) does not (yet) have a contactPoint property, so strictly this would have to be on a Person or Organization which is related to the Dataset via a [author](http://schema.org/author) or [contributor](http://schema.org/contributor) property.
+A RO-Crate SHOULD have contact information, using a [contactPoint](http://schema.org/contactPoint) property with a value of [ContactPoint](http://schema.org/contactPoint). Note that [Dataset](http://schema.org/Dataset) does not (yet) have a contactPoint property, so strictly this would have to be on a Person or Organization which is related to the Dataset via a [creator], [author] or [publisher] property.
 
-NOTE: This usage follows that of Google Dataset search.
 
-IMPLEMENTATION NOTE: The Google structured Data tool gives an error if `mailto:` URLs are used in the "url" property.
 
 ```json
 {
+  "@type": "Dataset",
+  "@id": "./",
+  "author": {"@id": "https://orcid.org/0000-0001-6121-5409"}
+}
+{
       "@id": "https://orcid.org/0000-0001-6121-5409",
       "@type": "Person",
-      "affiliation": {
-        "@id": "#1"
-      },
       "contactPoint": {
-        "@id": "#tim.luckett@uts.edu.au"
+        "@id": "mailto:tim.luckett@uts.edu.au"
       },
       "familyName": "Luckett",
       "givenName": "Tim",
@@ -662,7 +662,7 @@ IMPLEMENTATION NOTE: The Google structured Data tool gives an error if `mailto:`
 
 
   {
-      "@id": "#tim.luckett@uts.edu.au",
+      "@id": "mailto:tim.luckett@uts.edu.au",
       "@type": "ContactPoint",
       "contactType": "customer service",
       "email": "tim.luckett@uts.edu.au",
@@ -671,20 +671,6 @@ IMPLEMENTATION NOTE: The Google structured Data tool gives an error if `mailto:`
     },
 ```
 
-
-This is not ideal, as there is no direct semantic relationship between the contactPoint property and the Dataset, so the same [contactPoint](http://schema.org/contactPoint) should be added to theRoot Data Entity, in anticipation of this being added to Schema.org, even though this is not strictly supported at the moment.
-
-
-```json
-{
-  "@id": "./",
-  "identifier": "https://doi.org/10.4225/59/59672c09f4a4b",
-  "@type": "Dataset",
-  "contactPoint": {
-        "@id": "tim.luckett@uts.edu.au"
-      },
-}
-```
 
 
 
