@@ -1899,7 +1899,7 @@ payload (`data/`) directory.
 ##### Example of wrapping a BagIt bag in an RO-Crate
 
 Alternatively, an RO-Crate can wrap a BagIt bag, so that the RO-Crate metadata
-is outside of the bag directory and can be changed without changing the payload's checksums.
+is outside of the bag directory and can be changed without changing the payload's checksums. 
 
 ```
 <RO-Crate root directory>/
@@ -1913,8 +1913,19 @@ is outside of the bag directory and can be changed without changing the payload'
   |      fetch.txt                 # Optional, per BagIt Specification
   |      data/
   |         [payload files and directories]  # 1 or more SHOULD be present
+  |          example.txt 
 ```
 
+A _Data Entity_ describing example.txt would have an `@id` of `bag/data/example.txt`:
+
+```json
+{
+  "@id": "bag/data/example.txt",
+  "name": "Example file"
+}
+
+
+```
 
 #### Repository-specific identifiers
 
