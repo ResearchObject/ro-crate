@@ -509,7 +509,7 @@ identifier to a _Contextual Entity_ of `@type` Website.
 
 ```
 
-If there is not PRONOM identifier, then a contextual entity with a URL as an `@id` MAY be used:
+If there is no PRONOM identifier, then a contextual entity with a URL as an `@id` MAY be used:
 
 For example:
 
@@ -552,23 +552,16 @@ The table below outlines the properties that Data Entities, when present, MUST h
 
 #### File Data Entity
 
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
---------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
-`@type` | MUST  be  a  File  (alias  of  MediaObject) | Y | | Y |
-`@id` | MUST  be a _URI Path_ relative to the _RO Crate root_ | Y || Y |
-`name` || Y || Y |
-`contentSize` || ? || Y |
-`dateModified` || ? || Y |
-`encodingFormat` || ? |||
-
+A `File` _Data Entity_ MUST have the following properties:
+*  `@type`: MUST be `File`, or an array where `File` is one of the values.
+*  `@id` MUST  be a _URI Path_ relative to the _RO Crate root_ 
 
 
 #### Directory File Entity
 
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
---------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
-`@type` | MUST be `Dataset` |  | |  |
-`@id` | MUST be a _URI Path_ relative to the _RO Crate root; SHOULD end with `/`_ | Y || Y |
+A `Dataset` (directory) _Data Entity_ MUST have the following properties:
+*  `@type` MUST be `Dataset` or an array wher `Dataset` is one of the values.
+*  `@id`  MUST be a _URI Path_ relative to the _RO Crate root; SHOULD end with `/`
 
 
 ## Representing _Contextual Entities_
