@@ -1128,16 +1128,19 @@ schema property | Domain | Cardinality | Valid RO-Crate
 `url`| URL | One | Optional |
 `version`| Number / Text | One | Optional |
 
-
-
 The distinction between `SoftwareSourceCode` and `SoftwareApplication` for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.  
+
+A workflow is a `Data Entity` which MUST have the following properties:
+* `@type` is an array with at least `File` and `Workflow` as values.
+* `@id` is a File URI linking to the workflow entry-point.
+* `name`: a name for the workflow.
 
 Minimal example describing a workflow:
 
 ```json
 {
     "@id": "workflow/retropath.knime",  
-    "@type": ["SoftwareSourceCode", "Workflow"],
+    "@type": ["File", "SoftwareSourceCode", "Workflow"],
     "author": {"@id": "#thomas"},
     "name": "RetroPath Knime workflow",
     "description": "Retrosynthesis workflow calculating chemical reactions",
@@ -1161,7 +1164,6 @@ If the `SoftwareSourceCode` is primarily in the form of a **workflow** (e.g. a p
   "@type": ["SoftwareSourceCode", "Workflow"],
 ```
 
-
 Workflows and scripts saved on disk using a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of `programmingLanguage`. 
 
 Note that the language and its runtime MAY differ (e.g. multiple different C++-compilers), but for scripts and workflows, frequently the language and runtime are essentially the same, and thus the `programmingLanguage` can be described in one go as a hybrid of a `ComputerLanguage` and `SoftwareApplication`:
@@ -1169,16 +1171,15 @@ Note that the language and its runtime MAY differ (e.g. multiple different C++-c
 ```json
 {
   "@id": "scripts/analyse_csv.py",
-  "@type": ["SoftwareSourceCode", "Script"],
+  "@type": ["File", "SoftwareSourceCode", "Script"],
   "name": "Analyze CSV files",
-  "programmingLanguage": {"@id": "#python"},
+  "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"},
 },
 {
-  "@id": "#python",
+  "@id": "https://www.python.org/downloads/release/python-380/",
   "@type": ["ComputerLanguage", "SoftwareApplication"],
-  "name": "Python",
-  "version": "3.8.0",
-  "url": {"@id": "https://www.python.org/downloads/release/python-380/"}
+  "name": "Python 3.8.0",
+  "version": "3.8.0"
 }
 ```
 
@@ -1189,7 +1190,7 @@ It is possible to indicate _steps_ that are executed as part of an `Workflow` or
 ```json
 {
     "@id": "workflow/analyze.cwl",  
-    "@type": ["SoftwareSourceCode", "Workflow"],
+    "@type": ["File", "SoftwareSourceCode", "Workflow"],
     "name": "CWL workflow to analyze CSV and make PNG",
     "programmingLanguage": {"@id": "https://w3id.org/cwl/v1.1/"},
     "hasPart": [
@@ -1207,9 +1208,9 @@ It can be beneficial to show a diagram or sketch to explain the script/workflow.
 ```json
 {
   "@id": "workflow/workflow.svg",
-  "@type": ["ImageObject", "WorkflowSketch"],
+  "@type": ["File", "ImageObject", "WorkflowSketch"],
   "encodingFormat":  "image/svg+xml",
-  "description": "Diagram of RetroPath2.0 workflow",
+  "name": "Diagram of RetroPath2.0 workflow",
   "about": {"@id": "workflow/workflow.knime"}
 }
 ```
@@ -1219,32 +1220,30 @@ The image file format SHOULD be indicated with [encodingFormat] using an IANA re
 ```json
 {
   "@id": "workflow/workflow.svg",
-  "@type": ["ImageObject", "WorkflowSketch"],
-  "encodingFormat":  ["image/svg+xml", 
-                      {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92"}],
+  "@type": ["File", "ImageObject", "WorkflowSketch"],
+  "encodingFormat":  ["image/svg+xml"],
   "description": "Diagram of RetroPath2.0 workflow",
   "about": {"@id": "workflow/workflow.knime"}
 },
-{ 
-  "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92", 
-  "@type": "Thing",
-  "name": "Portable Network Graphics"
-}
+
 ```
 
-A _sketch_ or overview diagram MAY be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the overall workflow was done by hand). In this case the sketch should have an `about` referring to the _RO-Crate dataset_ as a whole:
+A _Sketch_ may still be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the workflow was done by hand). In this case the sketch itself is a proxy for the workflow and SHOULD have `@type` of `Workflow` and an `about` property referring to the _RO-Crate dataset_ as a whole (assuming the RO-Crate represents the outcome of a single workflow), or to other `Data Entities` otherwise:
 
 ```json
 {
-  "@id": "overview.jpeg",
-  "@type": ["ImageObject", "WorkflowSketch"],
-  "about": {"@id": "./"},
-  "description": "Whiteboard sketch of how the content of this RO-Crate was made",
-  "encodingFormat":  "image/jpeg",
+  "@id": "workflow/workflow.svg",
+  "@type": ["File", "ImageObject", "WorkflowSketch", "Workflow"],
+  "encodingFormat":  ["image/svg+xml"],
+  "name": "Diagram of an ad hoc workflow",
+  "about": {"@id": "./"}
 }
+ 
 ```
 
 ### Representing Provenance: changes to an object 
+
+TODO: Move this up below the Provenance: Software section
 
 To record an action which changes the DataSet's metadata, or changes its state in a publication or other workflow, a [CreateAction](http://schema.org/CreateAction) or [UpdateAction](http://schema.org/UpdateAction) SHOULD be associated with a _Data Entity_.
 
