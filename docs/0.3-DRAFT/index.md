@@ -633,62 +633,6 @@ An [Organization](http://schema.org/Organization) SHOULD also be used for a [Per
 }
 ```
 
-Sometimes researchers want to affiliate with a sub-part of an institution, such as institute, faculty department, or research group.
-
-Here's a (real, but abridged) example of a researcher who has four institutional affiliations for a published article and data set:
-
-
-```json
-{
-  "@id": "./",
-  "identifier": "https://doi.org/10.4225/59/59672c09f4a4b",
-  "@type": "Dataset",
-  "author": {"@id": "https://orcid.org/0000-0002-6756-6119"}
-},
-{
-  "@id": "https://orcid.org/0000-0002-6756-6119",
-  "@type": "Person",
-  "affiliation": [
-    {
-      "@id": "#1"
-    },
-    {
-      "@id": "#2"
-    },
-    {
-      "@id": "#3"
-    },
-    {
-      "@id": "#4"
-    }
-  ],
-  "name": "Meera Agar"
-},
-```
-
-The first affiliation is a Faculty of a university. The Faculty is associated with the university via [memberOf](http://schema.org/memberOf).
-
-
-```json
-{
-  "@id": "#1",
-  "@type": "Organization",
-  "memberOf": {
-    "@id": "https://ror.org/03f0f6041"
-  },
-  "name": "Faculty of Health, University of Technology Sydney"
-},
-
-{
-  "@id": "https://ror.org/03f0f6041",
-  "@type": "Organization",
-  "name": "University of Technology Sydney"
-},
-```
-
-
-Thus _RO-Crate JSON-LD_ MAY express chained affiliations with more precision than by using string-literals as values for [affiliation](http://schema.org/affiliation). 
-
 
 
 
