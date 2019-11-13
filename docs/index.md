@@ -34,13 +34,13 @@ RO-Crate is the marriage of [Research Objects](https://www.researchobject.org/) 
 ## Who is it for?
 The RO-Crate effort brings together practitioners from very different backgrounds, and with different motivations and use-cases. Among our core target users are: a) research engaged with computation and data-intensive, wokflow-driven analysis; b) digital repository managers and infrastructure providers; c) individual researchers looking for a straight-forward tool or how-to guide to "FAIRify" their data; d) data stewards supporting research projects in creating and curating datasets.
 
-We are  [gathering usecases](https://github.com/ResearchObject/ro-crate/issues?q=is%3Aissue+is%3Aopen+label%3Ause-case), please help us by [adding more](https://github.com/ResearchObject/ro-crate/issues/new/choose).
+We are still [gathering usecases](https://github.com/ResearchObject/ro-crate/issues?q=is%3Aissue+is%3Aopen+label%3Ause-case), please help us by [adding more](https://github.com/ResearchObject/ro-crate/issues/new/choose).
   
 ## When can I use it?
 The RO-Crate specification is currently **work in progress** stabilizing towards a 1.0 release around Q4 2019:
 
 * **[RO-Crate 0.2](0.2) (newest release)**
-  * ..or suggest changes for [RO-Crate 0.3-DRAFT](0.3-DRAFT) in [GitHub](https://github.com/ResearchObject/ro-crate/tree/master/docs/0.3-DRAFT)
+  * ..or suggest changes for [upcoming RO-Crate 1.0](0.3-DRAFT) in [GitHub](https://github.com/ResearchObject/ro-crate/tree/master/docs/0.3-DRAFT)
 * [DataCrate 1.0 review](https://docs.google.com/document/d/150SzIG8Zs3wecPTUue7wxKn6V26oi7rYucS5lxnmWZU/edit) 
   * (imported from [datacrate](https://github.com/UTS-eResearch/datacrate/blob/master/spec/1.0/data_crate_specification_v1.0.md))
 * [ROLite Draft 0.1.0](0.1.0) 
@@ -50,8 +50,10 @@ _Historical note_: After the initial draft, the community decided to base the sp
 ## How can I use it?
 While we're mostly focusing on the specification, some tools already exist for working with RO-Crates:
 
- - [Calcyte](https://code.research.uts.edu.au/eresearch/CalcyteJS/tree/ro-crate) is a command-line tool to help create RO-Crates
- - [Research Object Composer](https://github.com/researchobject/research-object-composer) is a REST API for gradually building and depositing Research Objects according to a pre-defined profile.
+ - [CalcyteJS](https://code.research.uts.edu.au/eresearch/CalcyteJS/tree/ro-crate) is a command-line tool to help create RO-Crates and HTML-readable rendering
+ - [Research Object Composer](https://github.com/researchobject/research-object-composer) is a REST API for gradually building and depositing Research Objects according to a pre-defined profile.  
+ - [ro-crate-ruby](https://github.com/fbacall/ro-crate-ruby) Ruby library to consume/produce RO-Crates (~ _alpha_)
+ - [ro-crate-py](https://github.com/researchobject/ro-crate-py) Python library to consume/produce RO-Crates (~ _planning_)
  - ...
 
 You can also look at some [example RO-Crates](https://data.research.uts.edu.au/examples/ro-crate/0.2/):
