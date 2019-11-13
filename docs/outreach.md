@@ -29,6 +29,10 @@ Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): **
 
 Peter Sefton, Eoghan Ó Carragáin, Carole Goble, Stian Soiland-Reyes (2019): [Introducing RO-Crate: research object data packaging](http://ptsefton.com/2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm). _eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. [[slides](https://docs.google.com/presentation/d/10faXX13opY0DAVVVeX5lG83F4MA_woLHkeIcUOko2IU/)] [[abstract](https://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019-eResearch_103_-Introducing-RO-Crate-research-object-data-packaging.pdf)]
  
+Mike Lynch: [Publishing versioned datasets using OCFL and nginx](https://eresearch.uts.edu.au/2019/11/05/eResearch2019_lighting_ocfl_nginx.htm).  _eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. 
+
+Peter Sefton, Mike Lynch: [ FAIR Simple Scalable Static Research Data Repository ](https://eresearch.uts.edu.au/2019/11/05/FAIR%20Repo%20-%20eResearch%20Presentation.htm). _eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. 
+
 Eoghan Ó Carragáin, Carole Goble, Peter Sefton, Stian Soiland-Reyes (2019): **RO-Crate, a lightweight approach to Research Object data packaging.**
 RO-15 at _Workshop on Research Objects ([RO 2019](http://www.researchobject.org/ro2019/))_, IEEE eScience 2019, 2019-09-24, San Diego, CA, USA.
 <https://doi.org/10.5281/zenodo.3337883>
