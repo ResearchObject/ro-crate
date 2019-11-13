@@ -131,7 +131,7 @@ It follows that RO-Crates can be _nested_ by including payload directories that 
 
 ### RO-Crate Metadata File (`ro-crate-metadata.jsonld`)
 
-*  The _RO-Crate Metadata File_ MUST be named `ro-crate-metadata.jsonld` and appear in the _RO-Crate Root_
+* The _RO-Crate Metadata File_ MUST be named `ro-crate-metadata.jsonld` and appear in the _RO-Crate Root_
 * The _RO-Crate Metadata File_ MUST contain _RO-Crate JSON-LD_; a valid [JSON-LD 1.0](https://www.w3.org/TR/2014/REC-json-ld-20140116/) document in [flattened](https://www.w3.org/TR/json-ld/#flattened-document-form) and [compacted](https://www.w3.org/TR/json-ld/#compacted-document-form) form
 * The _RO-Crate JSON-LD_ SHOULD use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/0.3-DRAFT/context> by reference.
 
@@ -206,7 +206,7 @@ The intention is that RO-Crates can work well with a variety of archive file for
 
 ## RO-Crate Metadata
 
-RO-Crate aim to capture and describe the [Research Object](http://www.researchobject.org/overview/) using structured _metadata_.
+RO-Crate aims to capture and describe the [Research Object](http://www.researchobject.org/overview/) using structured _metadata_.
 
 The _RO-Crate Metadata File Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:
 
@@ -249,7 +249,7 @@ Generally, the standard keys for [schema.org](http://schema.org) should be used.
 
 Note that JSON-LD examples given on <http://schema.org/> website may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
 
-To avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, while <http://schema.org/> for some properties permit shorter forms like `"author": "http://example.com/alice"`. 
+To avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even though <http://schema.org/> for some properties permits shorter forms like `"author": "http://example.com/alice"`. 
 
 See the appendix [RO-Crate JSON-LD](#ro-crate-json-ld) for details.
 
@@ -280,7 +280,7 @@ RO-Crate is simply a way to make metadata assertions about a set of files and fo
 
 *   Assertions at the RO-Crate level: for an RO-Crate to be useful, some metadata should be provided about the dataset as a whole (see minimum requirements for different use-cases below). In the _RO-Crate Metadata File_, we distinguish the _Root Data Entity_ which represents the RO-Crate as a whole, from other _Data Entities_ (files and folders contained in the RO-Crate) and _Contextual Entities_, e.g. a person, organisation, place related to an RO-Crate _Data Entity_
 *   Assertions about files and folders contained in the RO-Crate: in addition to providing metadata about the RO-Crate as a whole, RO-Crate allows metadata assertions to be made about any other _Data Entity_
-*   Variable-level assertions: In some cases, e.g. for tabular data, additional metadata may be provided about the structure and variables within a given file. 
+
 
 This document has guidelines for ways to represent common requirements for describing data in a research context, e.g.:
 
@@ -292,6 +292,10 @@ This document has guidelines for ways to represent common requirements for descr
 * Workflows that operate on the data using standard workflow descriptions including ‘single step workflows’; executable files or environments such as singularity containers or Jupyter notebooks.
 
 However, as RO-Crate uses _Linked Data_ principles, adopters of RO-Crate are free to supplement RO-Crate using [schema.org](https://schema.org/) metadata and/or assertions using other _Linked Data_ vocabularies.
+
+### Future coverage
+
+A future version of this specification will allow for variable-level assertions: In some cases, e.g. for tabular data, additional metadata may be provided about the structure and variables within a given file see the Use Case [Describe a tabular data file directly in RO-Crate metadata](https://github.com/ResearchObject/ro-crate/issues/27) for work-in-progress.
 
 
 ### Recommended Identifiers
@@ -350,7 +354,7 @@ the the _Root Data Entity_ by following this algorithm:
 2. ..if the `conformsTo` property is a URI that starts with `https://w3id.org/ro/crate/`
 3. ....from  this entity's `about` object keep the `@id` URI as variable _root_
 4. For each entity in `@graph` array
-5. ..return the entity which `@id` URI matches _root_
+5. .. if the entity has an `@id` URI that matches _root_ return it
 
 To ensure a base-line interoperability between RO-Crates, and for an RO-Crate to
 be considered a _Valid RO-Crate_, a minimum set of metadata is required for the
@@ -372,61 +376,24 @@ The table below outlines the properties that the _Root Data Entity_ MUST have to
 
 #### Direct properties of the Root Data Entity
 
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | Institutional data repository (JISC RDSS) | Data discovery (Google Dataset Search) 
---------------- | ----------- | -------------- | ---------------------------- | ----------------------------------------- | --------------------------------------
-`@type` | Must be a schema:Dataset | M | M | M | M
-`@id` | Must be a a string of ‘./’ | M | M | M | M
-`name` |  | M | M | M | M
-`datePublished` |  | M | M | M |
-`author` | Must appear at least once |  referencing a Contextual Entity of `@type: Person` or `Organization` | ? | M | M |
-`license` |  | M | M | M |
-`identifier` |  | ? | M | M |
-`distribution` |  |  |  |  | ?
-`contactPoint` | Must appear at least once |  referencing a Contextual Entity of `@type ContactPoint` |  |  |  |
-`publisher` |  | ? | M |  |
-`description` |  | ? |  |  | M
-`url` | Must be a valid _URI_ or _URI Path_ |  | M |  |
-`hasPart` | Must appear for each additional Data Entity described in the RO-Crate JSON-LD which is a direct child of the Root Data Entity |  |  |  |
+The _Root Data Entity_ MUST have the following properties:
+*  `@type`: MUST be a schema:Dataset 
+*  `@id`:  MUST be a a string of ‘./’
+*  `name`: SHOULD identify the dataset to humans well enough to disambiguate it from other RO-Crates
+*  `description`: SHOULD further elaborate on the name to provide a summary of the context in which the dataset is important.
+*  `datePublished`: MUST be a string in ISO 8601 date format and SHOULD be specified to at least the precision of a day, MAY be a timestamp down to the millisecond. 
+*  `license`: SHOULD link to a _Contextual Entity_ in the _RO-Crate Metadata File_ with a name and description. MAY have a URI (eg for Creative Commons or Open Source licenses). MAY, if necessary be a textual description of how the RO-Crate may be used.
 
-### Contextual Entity: Person
+NOTE: These requirements are stricter than those published for
+[Google Dataset Search](https://developers.google.com/search/docs/data-types/dataset)
+which requires a `Dataset` to have a `name` and `description`,
 
-_(required since `author `is required)_
-
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
---------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
-`@type` |  | Y | M |  |
-`@id` |  | Y | M | M |
-`name` |  | Y | M |  |
-`familyName` |  |  | O | M |
-`givenName` |  |  | O | M |
-`identifier` |  | ? | O | O |
-`sameAs` |  |  |  |  | R
-
-#### Contextual Entity: Organization
-
-_(required since `author` is required)_
-
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
---------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
-`@type` |  | Y |  | Y |
-`@id` |  | Y |  | Y |
-`name` |  | Y |  | Y |
-
-#### Contextual Entity: Contact Point
-
-_(required if `contactPoint` is required)_
-
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
---------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
-`@type` |  | ? |  |  | ?
-`@id` |  | ? |  |  | ?
-`name` |  | ? |  |  | ?
-`email` |  | ? |  |  | ?
+NOTE: The properties above are not sufficient to generate a DataCite citation.
+Advice on integrating with DataCite will be provided in a future version of this
+specification, or as an implementation guide.
 
 
-
-
-The following _RO-Crate Metadata File_ represents a minimal description of an _RO-Crate_. Note that for brevity the _[RO-Crate JSON-LD Context](https://w3id.org/ro/crate/0.3-DRAFT/context)_ is here shown by reference rather than inline.
+The following _RO-Crate Metadata File_ represents a minimal description of an _RO-Crate_. 
 
 ```json
 { "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context", 
@@ -443,39 +410,24 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
     "identifier": "https://doi.org/10.4225/59/59672c09f4a4b",
     "@type": "Dataset",
     "datePublished": "2017",
-    "name": "Data files associated with the manuscript:Effects of facilitated family case conferencing for advanced dementia: A cluster randomised clinical trial",
-    "distribution": { "@id": "https://data.research.uts.edu.au/examples/v1.0/timluckett.zip"
-        },
-    "contactPoint": {
-        "@id": "#tim"
-      }
+    "name": "Data files associated with the manuscript:Effects of facilitated family case conferencing for ...",
+    "description": "Palliative care planning for nursing home residents with advanced dementia ...",
+    "license": {"@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/"}
  },
-  
- {
-    "@id": "https://data.research.uts.edu.au/examples/v1.0/timluckett.zip",
-    "contentUrl": "https://data.research.uts.edu.au/examples/v1.0/timluckett.zip",
-    "@type": "DataDownload",
-    "encodingFormat": "application/zip"
- },
-
- {
-      "@id": "#tim",
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "tim.luckett@uts.edu.au",
-      "identifier": "tim.luckett@uts.edu.au",
-      "url": "https://orcid.org/0000-0001-6121-5409"
+{
+  "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
+  "@type": "CreativeWork",
+  "description": "This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/au/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.",
+  "identifier": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
+  "name": "Attribution-NonCommercial-ShareAlike 3.0 Australia (CC BY-NC-SA 3.0 AU)"
   }
-
  ]
 }
 ```
 
-
-
 ### Examples of referencing _Data Entities_ (files and folders) from the _Root Data Entity_
 
-Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indriectly, from the Root Data Entity using the [hasPart] property. Directory hierarchies MAY be represented with nested Dataset _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
+Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the Root Data Entity using the [hasPart] property. Directory hierarchies MAY be represented with nested Dataset _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
 
 _Data Entities_ representing files MUST be of `@type: File`, which is an RO-Crate alias for <http://schema.org/MediaObject>
 
@@ -540,7 +492,7 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
 
 #### Adding detailed descriptions of encodings
 
-The above example provides a mime-type for the file `./cp7glop.ai` - which is
+The above example provides a media type for the file `./cp7glop.ai` - which is
 useful as it may not be apparent that the file readable as a PDF file from the
 extension. To add more detail, encodings SHOULD be linked using a [PRONOM]
 identifier to a _Contextual Entity_ of `@type` Website.
@@ -561,7 +513,7 @@ identifier to a _Contextual Entity_ of `@type` Website.
 
 ```
 
-If there is not PRONOM identifier, then a contextual entity with a URL as an `@id` MAY be used:
+If there is no PRONOM identifier, then a contextual entity with a URL as an `@id` MAY be used:
 
 For example:
 
@@ -604,23 +556,16 @@ The table below outlines the properties that Data Entities, when present, MUST h
 
 #### File Data Entity
 
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
---------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
-`@type` | MUST  be  a  File  (alias  of  MediaObject) | Y | | Y |
-`@id` | MUST  be a _URI Path_ relative to the _RO Crate root_ | Y || Y |
-`name` || Y || Y |
-`contentSize` || ? || Y |
-`dateModified` || ? || Y |
-`encodingFormat` || ? |||
-
+A `File` _Data Entity_ MUST have the following properties:
+*  `@type`: MUST be `File`, or an array where `File` is one of the values.
+*  `@id` MUST  be a _URI Path_ relative to the _RO Crate root_ 
 
 
 #### Directory File Entity
 
-schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | JISC RDSS | Data discovery (Google Dataset Search)
---------------- | ----------- | -------------- | ---------------------------- | --------- | --------------------------------------
-`@type` | MUST be `Dataset` |  | |  |
-`@id` | MUST be a _URI Path_ relative to the _RO Crate root; SHOULD end with `/`_ | Y || Y |
+A `Dataset` (directory) _Data Entity_ MUST have the following properties:
+*  `@type` MUST be `Dataset` or an array wher `Dataset` is one of the values.
+*  `@id`  MUST be a _URI Path_ relative to the _RO Crate root; SHOULD end with `/`
 
 
 ## Representing _Contextual Entities_
@@ -669,7 +614,7 @@ An [Organization](http://schema.org/Organization) SHOULD be the value for the [p
 }
 ```
 
-An [Organization](http://schema.org/Organization) SHOULD also be used for a [Person](http://schema.org/Person)'s affiliation.
+An [Organization](http://schema.org/Organization) SHOULD also be used for a [Person](http://schema.org/Person)'s `affiliation` property.
 
 ```json
 {
@@ -692,82 +637,26 @@ An [Organization](http://schema.org/Organization) SHOULD also be used for a [Per
 }
 ```
 
-Sometimes researchers want to affiliate with a sub-part of an institution, such as institute, faculty department, or research group.
-
-Here's a (real, but abridged) example of a researcher who has four institutional affiliations for a published article and data set:
-
-
-```json
-{
-  "@id": "./",
-  "identifier": "https://doi.org/10.4225/59/59672c09f4a4b",
-  "@type": "Dataset",
-  "author": {"@id": "https://orcid.org/0000-0002-6756-6119"}
-},
-{
-  "@id": "https://orcid.org/0000-0002-6756-6119",
-  "@type": "Person",
-  "affiliation": [
-    {
-      "@id": "#1"
-    },
-    {
-      "@id": "#2"
-    },
-    {
-      "@id": "#3"
-    },
-    {
-      "@id": "#4"
-    }
-  ],
-  "name": "Meera Agar"
-},
-```
-
-The first affiliation is a Faculty of a university. The Faculty is associated with the university via [memberOf](http://schema.org/memberOf).
-
-
-```json
-{
-  "@id": "#1",
-  "@type": "Organization",
-  "memberOf": {
-    "@id": "https://ror.org/03f0f6041"
-  },
-  "name": "Faculty of Health, University of Technology Sydney"
-},
-
-{
-  "@id": "https://ror.org/03f0f6041",
-  "@type": "Organization",
-  "name": "University of Technology Sydney"
-},
-```
-
-
-Thus _RO-Crate JSON-LD_ MAY express chained affiliations with more precision than by using string-literals as values for [affiliation](http://schema.org/affiliation). 
-
 
 
 
 ### More detail on ContactPoint
 
-A RO-Crate SHOULD have contact information, using a [contactPoint](http://schema.org/contactPoint) property with a value of [ContactPoint](http://schema.org/contactPoint). Note that [Dataset](http://schema.org/Dataset) does not (yet) have a contactPoint property, so strictly this would have to be on a Person or Organization which is related to the Dataset via a [author](http://schema.org/author) or [contributor](http://schema.org/contributor) property.
+A RO-Crate SHOULD have contact information, using a [contactPoint](http://schema.org/contactPoint) property with a value of [ContactPoint](http://schema.org/contactPoint). Note that [Dataset](http://schema.org/Dataset) does not (yet) have a contactPoint property, so strictly this would have to be on a Person or Organization which is related to the Dataset via a [creator], [author] or [publisher] property.
 
-NOTE: This usage follows that of Google Dataset search.
 
-IMPLEMENTATION NOTE: The Google structured Data tool gives an error if `mailto:` URLs are used in the "url" property.
 
 ```json
 {
+  "@type": "Dataset",
+  "@id": "./",
+  "author": {"@id": "https://orcid.org/0000-0001-6121-5409"}
+}
+{
       "@id": "https://orcid.org/0000-0001-6121-5409",
       "@type": "Person",
-      "affiliation": {
-        "@id": "#1"
-      },
       "contactPoint": {
-        "@id": "#tim.luckett@uts.edu.au"
+        "@id": "mailto:tim.luckett@uts.edu.au"
       },
       "familyName": "Luckett",
       "givenName": "Tim",
@@ -777,7 +666,7 @@ IMPLEMENTATION NOTE: The Google structured Data tool gives an error if `mailto:`
 
 
   {
-      "@id": "#tim.luckett@uts.edu.au",
+      "@id": "mailto:tim.luckett@uts.edu.au",
       "@type": "ContactPoint",
       "contactType": "customer service",
       "email": "tim.luckett@uts.edu.au",
@@ -787,25 +676,11 @@ IMPLEMENTATION NOTE: The Google structured Data tool gives an error if `mailto:`
 ```
 
 
-This is not ideal, as there is no direct semantic relationship between the contactPoint property and the Dataset, so the same [contactPoint](http://schema.org/contactPoint) should be added to theRoot Data Entity, in anticipation of this being added to Schema.org, even though this is not strictly supported at the moment.
-
-
-```json
-{
-  "@id": "./",
-  "identifier": "https://doi.org/10.4225/59/59672c09f4a4b",
-  "@type": "Dataset",
-  "contactPoint": {
-        "@id": "tim.luckett@uts.edu.au"
-      },
-}
-```
 
 
 
 
-
-### Publications
+### Publications via citation property
 
 To associate a publication with a dataset the _RO-Crate JSON-LD_ MUST include a URL (for example a DOI URL) as the @id of a publication using the [citation] property.
 
@@ -852,7 +727,7 @@ The publication SHOULD be described in the _RO-Crate JSON-LD_.
 
 ### Publisher
 
-The _Root Data Entity_ SHOULD have a [publisher](http://schema.org/publisher) property. This SHOULD be an [Organization](http://schema.org/Organization) though it MAY be a [Person](http://schema.org/Person), a string-literal, or a URI.
+The _Root Data Entity_ SHOULD have a [publisher](http://schema.org/publisher) property. This SHOULD be an [Organization](http://schema.org/Organization) though it MAY be a [Person](http://schema.org/Person).
 
 
 ```json
@@ -953,7 +828,7 @@ The below _Data Entity_ has a [copyrightHolder] which is different from its [aut
 
 {
   "@id": "https://creativecommons.org/licenses/by/4.0/",
-  "@type": "CreativeWorks",
+  "@type": "CreativeWork",
   "name": "CC BY 4.0",
   "description": "Creative Commons Attribution 4.0 International License"
 },
@@ -1050,7 +925,7 @@ As the RO-Crate uses _flattened_ JSON-LD, `sdLicense` should be expressed direct
 
 -->
 
-### Equipment
+### Provenance: Equipment used to create files
 
 To specify which equipment was used to create or update a _Data Entity_, the _RO-Crate_ JSON-LD SHOULD have a _Context Entity_ for each item of equipment which SHOULD be of `@type` [IndividualProduct](http://schema.org/IndividualProduct). The entity SHOULD have a serial number, manufacturer that identifies it as completely as possible. In this case the equipment is a bespoke machine. The equipment SHOULD be described on a web page, and the address of the description SHOULD be used as its `@id`.
 
@@ -1059,9 +934,9 @@ To specify which equipment was used to create or update a _Data Entity_, the _RO
 {
   "@id": "https://confluence.csiro.au/display/ASL/Hovermap",
   "@type": "IndividualProduct",
-  "description": "The CSIRO bentwing is an unmanned aerial vehicle (UAV, commonly known as a drone) with a LIDAR mounted underneath to capture 3D information on the surroundings.",
+  "description": "The CSIRO bentwing is an unmanned aerial vehicle (UAV, commonly known as a drone) with a LIDAR ... ",
   "identifier": "https://confluence.csiro.au/display/ASL/Hovermap",
-  "name": "bentwing"
+  "name": "Bentwing"
 }
 ```
 
@@ -1104,7 +979,7 @@ In this example the CreateAction has a human [agent](http://schema.org/agent), t
 
 
 
-### Software 
+### Provenance: Software used to create files
 
 To specify which software was used to create or update a file the software application SHOULD be represented with an entity of type [SoftwareApplication](http://schema.org/SoftwareApplication), with a [version] property, e.g. from `tool --version`.
 
@@ -1163,36 +1038,28 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
     },
 ```
 
+### Provenance: Changes to RO-Crates
+
+TODO: Move the section on RO-Crate provenance here.
+
 ### Workflows and scripts
 
 
-Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts SHOULD be described using the data entities of type `SoftwareSourceCode`:
-
-schema property | Domain | Cardinality | Valid RO-Crate
---------------- | ------ | ----------- | --------------
-`author`| `Organization` / `Person` | Many | Recommended |
-`citation`| `CreativeWork` / Text | Many | Optional |
-`contributor`| `Organization` / `Person` | Many | Optional |
-`dateCreated`| Date / DateTime | One | Optional |
-`dateModified`| Date / DateTime | One | Optional |
-`description`| Text | One | Recommended |
-`hasPart`| `SoftwareSourceCode` / `SoftwareApplication` / `CreativeWork` | Many | Optional |
-`license`| `CreativeWork` / URL | One | Recommended |
-`name`| Text | One | Mandatory |
-`programmingLanguage`| `ComputerLanguage` | One | Recommended |
-`url`| URL | One | Optional |
-`version`| Number / Text | One | Optional |
-
-
+Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts SHOULD be described using the data entities of type `SoftwareSourceCode`.
 
 The distinction between `SoftwareSourceCode` and `SoftwareApplication` for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.  
+
+A workflow is a `Data Entity` which MUST have the following properties:
+* `@type` is an array with at least `File` and `Workflow` as values.
+* `@id` is a File URI linking to the workflow entry-point.
+* `name`: a name for the workflow.
 
 Minimal example describing a workflow:
 
 ```json
 {
     "@id": "workflow/retropath.knime",  
-    "@type": ["SoftwareSourceCode", "Workflow"],
+    "@type": ["File", "SoftwareSourceCode", "Workflow"],
     "author": {"@id": "#thomas"},
     "name": "RetroPath Knime workflow",
     "description": "Retrosynthesis workflow calculating chemical reactions",
@@ -1206,16 +1073,15 @@ The `@type` property SHOULD be an array, to also indicate the particular nature 
 To indicate that a `SoftwareSourceCode` is primarily in the form of an executable **script** (e.g. sequential batch/shell script that call other commands and manage files), use:
 
 ```json
-  "@type": ["SoftwareSourceCode", "Script"],
+  "@type": ["File", "SoftwareSourceCode", "Script"],
 ```
 
 
 If the `SoftwareSourceCode` is primarily in the form of a **workflow** (e.g. a pipeline of steps with data flow), use:
 
 ```json
-  "@type": ["SoftwareSourceCode", "Workflow"],
+  "@type": ["File", "SoftwareSourceCode", "Workflow"],
 ```
-
 
 Workflows and scripts saved on disk using a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of `programmingLanguage`. 
 
@@ -1224,16 +1090,15 @@ Note that the language and its runtime MAY differ (e.g. multiple different C++-c
 ```json
 {
   "@id": "scripts/analyse_csv.py",
-  "@type": ["SoftwareSourceCode", "Script"],
+  "@type": ["File", "SoftwareSourceCode", "Script"],
   "name": "Analyze CSV files",
-  "programmingLanguage": {"@id": "#python"},
+  "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"},
 },
 {
-  "@id": "#python",
+  "@id": "https://www.python.org/downloads/release/python-380/",
   "@type": ["ComputerLanguage", "SoftwareApplication"],
-  "name": "Python",
-  "version": "3.8.0",
-  "url": {"@id": "https://www.python.org/downloads/release/python-380/"}
+  "name": "Python 3.8.0",
+  "version": "3.8.0"
 }
 ```
 
@@ -1244,7 +1109,7 @@ It is possible to indicate _steps_ that are executed as part of an `Workflow` or
 ```json
 {
     "@id": "workflow/analyze.cwl",  
-    "@type": ["SoftwareSourceCode", "Workflow"],
+    "@type": ["File", "SoftwareSourceCode", "Workflow"],
     "name": "CWL workflow to analyze CSV and make PNG",
     "programmingLanguage": {"@id": "https://w3id.org/cwl/v1.1/"},
     "hasPart": [
@@ -1262,9 +1127,9 @@ It can be beneficial to show a diagram or sketch to explain the script/workflow.
 ```json
 {
   "@id": "workflow/workflow.svg",
-  "@type": ["ImageObject", "WorkflowSketch"],
+  "@type": ["File", "ImageObject", "WorkflowSketch"],
   "encodingFormat":  "image/svg+xml",
-  "description": "Diagram of RetroPath2.0 workflow",
+  "name": "Diagram of RetroPath2.0 workflow",
   "about": {"@id": "workflow/workflow.knime"}
 }
 ```
@@ -1274,32 +1139,30 @@ The image file format SHOULD be indicated with [encodingFormat] using an IANA re
 ```json
 {
   "@id": "workflow/workflow.svg",
-  "@type": ["ImageObject", "WorkflowSketch"],
-  "encodingFormat":  ["image/svg+xml", 
-                      {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92"}],
+  "@type": ["File", "ImageObject", "WorkflowSketch"],
+  "encodingFormat":  ["image/svg+xml"],
   "description": "Diagram of RetroPath2.0 workflow",
   "about": {"@id": "workflow/workflow.knime"}
 },
-{ 
-  "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92", 
-  "@type": "Thing",
-  "name": "Portable Network Graphics"
-}
+
 ```
 
-A _sketch_ or overview diagram MAY be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the overall workflow was done by hand). In this case the sketch should have an `about` referring to the _RO-Crate dataset_ as a whole:
+A _Sketch_ may still be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the workflow was done by hand). In this case the sketch itself is a proxy for the workflow and SHOULD have `@type` of `Workflow` and an `about` property referring to the _RO-Crate dataset_ as a whole (assuming the RO-Crate represents the outcome of a single workflow), or to other `Data Entities` otherwise:
 
 ```json
 {
-  "@id": "overview.jpeg",
-  "@type": ["ImageObject", "WorkflowSketch"],
-  "about": {"@id": "./"},
-  "description": "Whiteboard sketch of how the content of this RO-Crate was made",
-  "encodingFormat":  "image/jpeg",
+  "@id": "workflow/workflow.svg",
+  "@type": ["File", "ImageObject", "WorkflowSketch", "Workflow"],
+  "encodingFormat":  ["image/svg+xml"],
+  "name": "Diagram of an ad hoc workflow",
+  "about": {"@id": "./"}
 }
+ 
 ```
 
 ### Representing Provenance: changes to an object 
+
+TODO: Move this up below the Provenance: Software section
 
 To record an action which changes the DataSet's metadata, or changes its state in a publication or other workflow, a [CreateAction](http://schema.org/CreateAction) or [UpdateAction](http://schema.org/UpdateAction) SHOULD be associated with a _Data Entity_.
 
@@ -1427,7 +1290,7 @@ This example shows how to define a place, using a [geonames](https://www.geoname
   "@type": "Place",
   "description": "Catalina Park is a disused motor racing venue, located at Katoomba ...",
   "geo": {
-    "@id": "b4168a98-8534-4c6d-a568-64a55157b656"
+    "@id": "#b4168a98-8534-4c6d-a568-64a55157b656"
   },
   "identifier": "http://sws.geonames.org/8152662/",
   "uri": "https://www.geonames.org/8152662/catalina-park.html",
@@ -1447,7 +1310,7 @@ The place has a [geo](http://schema.org/geo) property, referencing an _Contextua
 
 ```json
 {
-  "@id": "b4168a98-8534-4c6d-a568-64a55157b656",
+  "@id": "#b4168a98-8534-4c6d-a568-64a55157b656",
   "@type": "GeoCoordinates",
   "latitude": "-33.7152",
   "longitude": "150.30119",
@@ -1463,15 +1326,20 @@ And the place is referenced from the [contentLocation](http://schema.org/content
 
 ```json
 {
-  "@id": "https://doi.org/10.5281/zenodo.1009240",
+  "@id": "./",
   "@type": "Dataset",
   "outputOf": "RO-Crate",
   "contact": {
     "@id": "https://orcid.org/0000-0002-3545-944X"
   },
   "contentLocation": {
-    "@id": "http://sws.geonames.org/8152662/"
-  },
+    "@id": "http://sws.geonames.org/8152662/",
+  }
+}
+{
+  "@id": "http://sws.geonames.org/8152662/",
+  "name": "Catalina Park",
+}
 ```
 
 
@@ -1674,7 +1542,7 @@ If [thumbnail](http://schema.org/thumbnail)s are incidental to the data set, the
  
 ```
 
-## RO-Crate JSON-LD
+## APPENDIX: RO-Crate JSON-LD
 
 It is not necessary to use [JSON-LD tooling](https://json-ld.org/#developers) to generate or parse the _RO-Crate Metadata File_, although they may make it easier to conform to this specification, e.g. handling relative URIs. It is RECOMMENDED to use [JSON tooling](http://json.org/) to handle [JSON](https://tools.ietf.org/html/rfc7159) syntax and escaping rules.
 
@@ -1855,7 +1723,73 @@ When generating the _RO-Crate Website_ from _RO-Crate JSON-LD_, the code MUST us
 
 Where there is no RDF ontology available, then implementors SHOULD attempt to provide context by creating stable web-accessible URIs to document properties and classes, for example, by linking to page describing an XML element or attribute from an XML schema, pending the publication of a formal ontology.
 
+## APPENDIX: Implementation notes
 
+#### Combining with other packaging schemes
+
+RO-Crates may co-exist with other packaging schemes, such as [BagIt] using two
+general approaches; either (a) _adding_ RO-Crate into a package as part of the payload
+or (b) _wrapping_ another kind of package. Examples using BagIt follow.
+
+BagIt  is described in [RFC 8493](https://tools.ietf.org/html/rfc8493):
+
+> [BagIt is] ... a set of hierarchical file layout conventions
+> for storage and transfer of arbitrary digital content. A "bag" has just enough
+> structure to enclose descriptive metadata "tags" and a file "payload" but does
+> not require knowledge of the payload's internal semantics. This BagIt format
+> is suitable for reliable storage and transfer.
+
+BagIt and RO-Crate have largely separate concerns - RO-Crate is focussed on rich
+metadata, the semantics of data, while BagIt is about reliable transfer.
+
+##### Example of adding RO-Crate to Bagit
+
+RO-Crate can be combined with BagIt simply by placing the RO-Crate files in the BagIt
+payload (`data/`) directory.
+
+```
+<RO-Crate root directory>/
+  |   bagit.txt                 # As per BagIt specification
+  |   bag-info.txt              # As per BagIt specification
+  |   manifest-<algorithm>.txt  # As per BagIt specification
+  |   fetch.txt                 # Optional, per BagIt Specification
+  |   data/
+      |   ro-crate-metadata.jsonld  # RO-Crate Metadata File MUST be present
+      |   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
+      |   ro-crate-preview_files/   # MAY be present
+      |     [payload files and directories]  # 1 or more SHOULD be present
+```
+
+##### Example of wrapping a BagIt bag in an RO-Crate
+
+Alternatively, an RO-Crate can wrap a BagIt bag, so that the RO-Crate metadata
+is outside of the bag directory and can be changed without changing the payload's checksums. 
+
+```
+<RO-Crate root directory>/
+  |   ro-crate-metadata.jsonld  # RO-Crate Metadata File MUST be present
+  |   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
+  |   ro-crate-preview_files/   # MAY be present
+  |   bag/                      # "Wrapped" bag - could have any name
+  |      bagit.txt                 # As per BagIt specification
+  |      bag-info.txt              # As per BagIt specification
+  |      manifest-<algorithm>.txt  # As per BagIt specification
+  |      fetch.txt                 # Optional, per BagIt Specification
+  |      data/
+  |         [payload files and directories]  # 1 or more SHOULD be present
+  |          example.txt 
+```
+
+A _Data Entity_ describing example.txt would have an `@id` of `bag/data/example.txt`:
+
+```json
+{
+  "@id": "bag/data/example.txt",
+  "name": "Example file"
+}
+
+
+```
 
 #### Repository-specific identifiers
 
