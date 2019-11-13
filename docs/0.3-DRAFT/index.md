@@ -1040,7 +1040,83 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
 
 ### Provenance: Changes to RO-Crates
 
-TODO: Move the section on RO-Crate provenance here.
+To record an action which changes the DataSet's metadata, or changes its state in a publication or other workflow, a [CreateAction](http://schema.org/CreateAction) or [UpdateAction](http://schema.org/UpdateAction) SHOULD be associated with a _Data Entity_.
+
+A curation Action MUST have at least one [object](http://schema.org/object) which associates it with either the DataSet or one of its components.
+
+An Action which creates new _Data entities_ - for example, the creation of a new metadata file - SHOULD have these as [result](http://schema.org/result)s.
+
+An Action SHOULD have a [name](http://schema.org/name) and MAY have a [description](http://schema.org/description).
+
+An Action SHOULD have an [endTime], which MUST be in ISO 8601 date format and SHOULD be specified to at least the precision of a day. An Action MAY have a [startTime] meeting the same specifications.
+
+An Action SHOULD have a human [agent](http://schema.org/agent) who was responsible for authorizing the action, and MAY have an [instrument](http://schema.org/instrument) which associates the action with a particular piece of software (for example, the content management system or data catalogue through which an update was approved) which SHOULD be of `@type` SoftwareApplication.
+
+An Action's status MAY be recorded in an [actionStatus] property. The status must be one of the values enumerated by [ActionStatusType]: `ActiveActionStatus`, `CompletedActionStatus`, `FailedActionStatus` or `PotentialActionStatus`.
+
+An Action which has failed MAY record any error information in an [error](http://schema.org/error) property.
+
+[UpdateAction](http://schema.org/UpdateAction) SHOULD only be used for actions which affect the DataSet as a whole, such as movement through a workflow.
+
+To record curation actions which modify a [File](http://schema.org/MediaObject) within a DataSet - for example, by correcting or enhancing metadata - the old version of the [File](http://schema.org/MediaObject) SHOULD be retained, and a [CreateAction](http://schema.org/CreateAction) added which has the original version as its [object](http://schema.org/object) and the new version as its [result](http://schema.org/result).
+
+```json
+{
+    "@id": "#history-01",
+    "@type": "CreateAction",
+    "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" },
+    "name": "RO-Crate created",
+    "endTime": "2018-08-31",
+    "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
+    "instrument": { "@id": "https://stash.research.uts.edu.au" },
+    "actionStatus":  { "@id": "http://schema.org/CompletedActionStatus" }
+},
+
+{
+    "@id": "#history-02",
+    "@type": "UpdateAction",
+    "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" },
+    "name": "RO-Crate published",
+    "endTime": "2018-09-10",
+    "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
+    "instrument": { "@id": "https://stash.research.uts.edu.au" },
+    "actionStatus":  {"@id":" http://schema.org/CompletedActionStatus" }
+},
+
+{ 
+    "@id": "#history-03",
+    "@type": "CreateAction",
+    "object": { "@id": "metadata.xml.v0.1" },
+    "result": { "@id": "metadata.xml" },
+    "name": "metadata update",
+    "endTime": "2018-09-12",
+    "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
+    "instrument": { "@id": "https://stash.research.uts.edu.au" },
+    "actionStatus": { "@id": "http://schema.org/CompletedActionStatus" }
+},
+
+{
+    "@id": "#history-04",
+    "@type": "UpdateAction",
+    "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" },
+    "name": "RO-Crate published",
+    "endTime": "2018-09-13",
+    "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
+    "instrument": { "@id": "https://stash.research.uts.edu.au" },
+    "actionStatus": { "@id": "http://schema.org/FailedActionStatus" },
+    "error": "Record is already published"
+},
+
+
+{
+    "@id": "https://stash.research.uts.edu.au",
+    "@type": "IndividualProduct",
+    "name": "Stash",
+    "description": "UTS Research Data Catalogue",
+    "identifier": "https://stash.research.uts.edu.au"
+}
+```
+
 
 ### Workflows and scripts
 
@@ -1158,87 +1234,6 @@ A _Sketch_ may still be provided even if there is no programmatic `SoftwareSourc
   "about": {"@id": "./"}
 }
  
-```
-
-### Representing Provenance: changes to an object 
-
-TODO: Move this up below the Provenance: Software section
-
-To record an action which changes the DataSet's metadata, or changes its state in a publication or other workflow, a [CreateAction](http://schema.org/CreateAction) or [UpdateAction](http://schema.org/UpdateAction) SHOULD be associated with a _Data Entity_.
-
-A curation Action MUST have at least one [object](http://schema.org/object) which associates it with either the DataSet or one of its components.
-
-An Action which creates new _Data entities_ - for example, the creation of a new metadata file - SHOULD have these as [result](http://schema.org/result)s.
-
-An Action SHOULD have a [name](http://schema.org/name) and MAY have a [description](http://schema.org/description).
-
-An Action SHOULD have an [endTime], which MUST be in ISO 8601 date format and SHOULD be specified to at least the precision of a day. An Action MAY have a [startTime] meeting the same specifications.
-
-An Action SHOULD have a human [agent](http://schema.org/agent) who was responsible for authorizing the action, and MAY have an [instrument](http://schema.org/instrument) which associates the action with a particular piece of software (for example, the content management system or data catalogue through which an update was approved) which SHOULD be of `@type` SoftwareApplication.
-
-An Action's status MAY be recorded in an [actionStatus] property. The status must be one of the values enumerated by [ActionStatusType]: `ActiveActionStatus`, `CompletedActionStatus`, `FailedActionStatus` or `PotentialActionStatus`.
-
-An Action which has failed MAY record any error information in an [error](http://schema.org/error) property.
-
-[UpdateAction](http://schema.org/UpdateAction) SHOULD only be used for actions which affect the DataSet as a whole, such as movement through a workflow.
-
-To record curation actions which modify a [File](http://schema.org/MediaObject) within a DataSet - for example, by correcting or enhancing metadata - the old version of the [File](http://schema.org/MediaObject) SHOULD be retained, and a [CreateAction](http://schema.org/CreateAction) added which has the original version as its [object](http://schema.org/object) and the new version as its [result](http://schema.org/result).
-
-```json
-{
-    "@id": "#history-01",
-    "@type": "CreateAction",
-    "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" },
-    "name": "RO-Crate created",
-    "endTime": "2018-08-31",
-    "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
-    "instrument": { "@id": "https://stash.research.uts.edu.au" },
-    "actionStatus":  { "@id": "http://schema.org/CompletedActionStatus" }
-},
-
-{
-    "@id": "#history-02",
-    "@type": "UpdateAction",
-    "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" },
-    "name": "RO-Crate published",
-    "endTime": "2018-09-10",
-    "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
-    "instrument": { "@id": "https://stash.research.uts.edu.au" },
-    "actionStatus":  {"@id":" http://schema.org/CompletedActionStatus" }
-},
-
-{ 
-    "@id": "#history-03",
-    "@type": "CreateAction",
-    "object": { "@id": "metadata.xml.v0.1" },
-    "result": { "@id": "metadata.xml" },
-    "name": "metadata update",
-    "endTime": "2018-09-12",
-    "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
-    "instrument": { "@id": "https://stash.research.uts.edu.au" },
-    "actionStatus": { "@id": "http://schema.org/CompletedActionStatus" }
-},
-
-{
-    "@id": "#history-04",
-    "@type": "UpdateAction",
-    "object": { "@id": "https://doi.org/10.5281/zenodo.1009240" },
-    "name": "RO-Crate published",
-    "endTime": "2018-09-13",
-    "agent": { "@id": "https://orcid.org/0000-0001-5152-5307" },
-    "instrument": { "@id": "https://stash.research.uts.edu.au" },
-    "actionStatus": { "@id": "http://schema.org/FailedActionStatus" },
-    "error": "Record is already published"
-},
-
-
-{
-    "@id": "https://stash.research.uts.edu.au",
-    "@type": "IndividualProduct",
-    "name": "Stash",
-    "description": "UTS Research Data Catalogue",
-    "identifier": "https://stash.research.uts.edu.au"
-}
 ```
 
 
