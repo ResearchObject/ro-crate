@@ -35,13 +35,13 @@ Peter Sefton, Mike Lynch: [ FAIR Simple Scalable Static Research Data Repository
 
 Eoghan Ó Carragáin, Carole Goble, Peter Sefton, Stian Soiland-Reyes (2019): **RO-Crate, a lightweight approach to Research Object data packaging.**
 RO-15 at _Workshop on Research Objects ([RO 2019](http://www.researchobject.org/ro2019/))_, IEEE eScience 2019, 2019-09-24, San Diego, CA, USA.
-<https://doi.org/10.5281/zenodo.3337883>
+<https://doi.org/10.5281/zenodo.3337883> [[slides](http://slides.com/soilandreyes/2019-09-24-ro-crate)]
 
 Kyle Chard, Niall Gaffney, Matthew B. Jones, Kacper Kowalik, Bertram Ludäscher, Jarek Nabrzyski, Victoria Stodden, Ian Taylor, Thomas Thelen, Matthew J. Turk, Craig Willis (2019):
 **Application of BagIt-Serialized Research Object Bundles for Packaging and Re-execution of Computational Analyses.**
 at _Workshop on Research Objects ([RO 2019](http://www.researchobject.org/ro2019/))_, IEEE eScience 2019, 2019-09-24, San Diego, CA, USA.
 To appear in _2019 IEEE 15th International Conference on e-Science (e-Science)_.
-[preprint <https://doi.org/10.5281/zenodo.3271763>]
+[preprint <https://doi.org/10.5281/zenodo.3271763>] 
 
 Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): ***RO-Crate, a lightweight approach to Research Object data packaging*** [version 1; not peer reviewed]. Poster at _Bioinformatics Open Source Conference (BOSC2019)_.  _F1000Research_ 2019, **8**(ISCB Comm J):1197 (poster) <https://doi.org/10.7490/f1000research.1117130.1> 
 
