@@ -1,5 +1,5 @@
 {
-     "@id": "https://w3id.org/ro/crate/0.3-DRAFT/context",
+     "@id": "https://w3id.org/ro/crate/1.0/context",
      "schemaVersion": {
           "@id": "http://schema.org/version/5.0/"
      },
