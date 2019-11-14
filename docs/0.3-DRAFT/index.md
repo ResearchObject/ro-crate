@@ -16,20 +16,21 @@
    limitations under the License.
 -->
 
-# RO-Crate Metadata Specification 0.3-DRAFT
+# RO-Crate Metadata Specification 1.0
 {:.no_toc}
 
 
 <!-- NOTE: Before release, update and uncomment below 
 (permalink, DOI, published, authors)
 -->
-<!-- * Permalink: <https://w3id.org/ro/crate/1.0>  -->
-* Status: Editor's Draft
+* Permalink: <https://w3id.org/ro/crate/1.0>
+* Status: Recommendation
+* JSON-LD context: <https://w3id.org/ro/crate/1.0/context>
+* This version: <https://w3id.org/ro/crate/1.0>
 * Previous version: <https://w3id.org/ro/crate/0.2>
-* JSON-LD context: <https://w3id.org/ro/crate/0.3-DRAFT/context>
-  <!-- * Published: 2019-11-xx-->
+* Published: 2019-11-15
 * Publisher: [researchobject.org](http://researchobject.org/) community
-* Cite as: <!-- <https://doi.org/10.5281/zenodo.3406498> (this version) -->
+* Cite as: <https://doi.org/10.5281/zenodo.3541888> (this version)
   <https://doi.org/10.5281/zenodo.3406497> (any version)
 * Editors: [Peter Sefton](https://orcid.org/0000-0002-3545-944X), [Eoghan Ó Carragáin](https://orcid.org/0000-0001-8131-2150),  [Stian Soiland-Reyes](https://orcid.org/0000-0001-9842-9718)
 * Authors: [Peter Sefton](https://orcid.org/0000-0002-3545-944X), [Eoghan Ó Carragáin](https://orcid.org/0000-0001-8131-2150),  [Stian Soiland-Reyes](https://orcid.org/0000-0001-9842-9718), [Oscar Corcho](https://orcid.org/0000-0002-9260-0753), [Daniel Garijo](https://orcid.org/0000-0003-0454-7145), [Raul Palma](https://orcid.org/0000-0003-4289-4922), [Frederik Coppens](https://orcid.org/0000-0001-6565-5145), [Carole Goble](https://orcid.org/0000-0003-1219-2137), [José María Fernández](https://orcid.org/0000-0002-4806-5140), [Kyle Chard](https://orcid.org/0000-0002-7370-4805), [Jose Manuel Gomez-Perez](https://orcid.org/0000-0002-5491-6431), [Michael R Crusoe](https://orcid.org/0000-0002-2961-9670), [Ignacio Eguinoa](https://orcid.org/0000-0002-6190-122X), [Nick Juty](https://orcid.org/0000-0002-2036-8350), [Kristi Holmes](https://orcid.org/0000-0001-8420-5254), [Jason A. Clark](https://orcid.org/0000-0002-3588-6257), [Salvador Capella-Gutierrez](https://orcid.org/0000-0002-0309-604X), [Alasdair J. G. Gray](https://orcid.org/0000-0002-5711-4872), [Stuart Owen](https://orcid.org/0000-0003-2130-0865), [Alan R Williams](https://orcid.org/0000-0003-3156-2105), [Giacomo Tartari](https://orcid.org/0000-0003-1130-2154), [Finn Bacall](https://orcid.org/0000-0002-0048-3300), [Thomas Thelen](https://orcid.org/0000-0002-1756-2128)  <!-- Add new RO-Crate team members at end -->
@@ -56,7 +57,7 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 </small>
 
-**Note**: The RO-Crate [JSON-LD context](https://w3id.org/ro/crate/0.3-DRAFT/context) and JSON-LD examples within this specification are distributed under [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). 
+**Note**: The RO-Crate [JSON-LD context](https://w3id.org/ro/crate/1.0/context) and JSON-LD examples within this specification are distributed under [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). 
 
 ## Introduction & definition of an RO-Crate
 
@@ -107,7 +108,7 @@ Throughout this specification, RDF terms are referred to using the keys defined 
 
 Following [schema.org] practice, `property` names start with lowercase letters and `Class` names start with uppercase letters.
 
-In `ro-crate-metadata.jsonld` the RDF terms use their RO-Crate JSON-LD names as defined in the _RO-Crate JSON-LD Context_, which is available at <https://w3id.org/ro/crate/0.3-DRAFT/context>
+In `ro-crate-metadata.jsonld` the RDF terms use their RO-Crate JSON-LD names as defined in the _RO-Crate JSON-LD Context_, which is available at <https://w3id.org/ro/crate/1.0/context>
 
 
 ## RO-Crate Structure
@@ -133,7 +134,7 @@ It follows that RO-Crates can be _nested_ by including payload directories that 
 
 * The _RO-Crate Metadata File_ MUST be named `ro-crate-metadata.jsonld` and appear in the _RO-Crate Root_
 * The _RO-Crate Metadata File_ MUST contain _RO-Crate JSON-LD_; a valid [JSON-LD 1.0](https://www.w3.org/TR/2014/REC-json-ld-20140116/) document in [flattened](https://www.w3.org/TR/json-ld/#flattened-document-form) and [compacted](https://www.w3.org/TR/json-ld/#compacted-document-form) form
-* The _RO-Crate JSON-LD_ SHOULD use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/0.3-DRAFT/context> by reference.
+* The _RO-Crate JSON-LD_ SHOULD use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.0/context> by reference.
 
 [JSON-LD](https://json-ld.org/) is a structured form of [JSON] that can represent a _Linked Data_ graph. 
 
@@ -149,7 +150,7 @@ It is RECOMMENDED that any referenced _contextual entities_ are also described i
 The appendix [RO-Crate JSON-LD](#ro-crate-json-ld) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata File_. In short, the rest of this specification describe the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` below:
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context",
+{ "@context": "https://w3id.org/ro/crate/1.0/context",
   "@graph": [
 
   ]
@@ -169,7 +170,7 @@ If present in the root directory, `ro-crate-preview.html` MUST:
   ```html
     <script type="application/ld+json">
     {
-        "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context",
+        "@context": "https://w3id.org/ro/crate/1.0/context",
         "@graph": [ ...]
     }
     </script>
@@ -183,7 +184,7 @@ If present in the root directory, `ro-crate-preview.html` MUST:
   *   If it does not have a name (e.g. a [GeoCoordinates] location), show it embedded in the HTML for the entity.
 *   For keys that resolve in the `RO-Crate JSON-LD Context` to a URI, indicate this (the simplest way is to link the key to its definition.
 *   For external URI values, provide a link.
-*   If there is sufficient metadata, contain a prominent _“Cite-as”_ text with a natural language data citation (see for example the [FORCE11 Data Citation Principles](https://www.force11.org/group/joint-declaration-data-citation-principles-final)).
+*   If there is sufficient metadata, contain a prominent _“Cite-as”_ text with a natural language data citation (see for example the [FORCE11 Data Citation Principles](https://doi.org/10.25490/a97f-egyk)).
 *   If there are additional resources necessary to render the preview (e.g. CSS, JSON, HTML), link to them in a subdirectory `ro-crate-preview-files/`
 
 ### Payload files and directories
@@ -324,12 +325,12 @@ have an `@id` of `./`.
 
 ```json
 
-{ "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context", 
+{ "@context": "https://w3id.org/ro/crate/1.0/context", 
   "@graph": [
     {
         "@type": "CreativeWork",
         "@id": "ro-crate-metadata.jsonld",
-        "conformsTo": {"@id": "https://w3id.org/ro/crate/0.3-DRAFT"},
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.0"},
         "about": {"@id": "./"}
     },
     
@@ -396,13 +397,13 @@ specification, or as an implementation guide.
 The following _RO-Crate Metadata File_ represents a minimal description of an _RO-Crate_. 
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context", 
+{ "@context": "https://w3id.org/ro/crate/1.0/context", 
   "@graph": [
 
  {
     "@type": "CreativeWork",
     "@id": "ro-crate-metadata.jsonld",
-    "conformsTo": {"@id": "https://w3id.org/ro/crate/0.3-DRAFT"},
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.0"},
     "about": {"@id": "./"}
  },  
  {
@@ -451,12 +452,12 @@ _Note: as indicated above, there is no requirement to represent every file and f
 An example _RO-Crate JSON-LD_ for the above would be as follows:
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context",
+{ "@context": "https://w3id.org/ro/crate/1.0/context",
   "@graph": [
     {
         "@type": "CreativeWork",
         "@id": "ro-crate-metadata.jsonld",
-        "conformsTo": {"@id": "https://w3id.org/ro/crate/0.3-DRAFT"},
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.0"},
         "about": {"@id": "./"}
   },  
   {
@@ -1540,13 +1541,13 @@ This appendix shows a brief JSON-LD introduction for complying with the RO-Crate
 The below example shows the overall structure of a flattened, compacted `ro-crate-metadata.jsonld` where `@context` refers to the _RO-Crate JSON-LD Context_, while `@graph` is a flat list of the entities that constitute this RO-Crate. 
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context",
+{ "@context": "https://w3id.org/ro/crate/1.0/context",
   "@graph": [
 
     {
       "@type": "CreativeWork",
       "@id": "ro-crate-metadata.jsonld",
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/0.3-DRAFT"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.0"},
       "about": {"@id": "./"},
       "description": "RO-Crate Metadata File Descriptor (this file)"
     },
@@ -1613,24 +1614,24 @@ The main purpose of the `@context` is to relate JSON property keys and `@type` r
 
 In other uses of JSON-LD the context may perform more automatic or detailed mapping, but the `RO-Crate JSON-LD context` is deliberately flat, listing every property and type.
 
-To find the full description of a particular property or type, follow its URI from the context. For instance, we can find within the context <https://w3id.org/ro/crate/0.3-DRAFT/context> that `author` above is mapped to <http://schema.org/author>:
+To find the full description of a particular property or type, follow its URI from the context. For instance, we can find within the context <https://w3id.org/ro/crate/1.0/context> that `author` above is mapped to <http://schema.org/author>:
 
 ```json
    "author": "http://schema.org/author",
 ```
 
-The _RO-Crate JSON-LD Context_ may either be set by reference to <https://w3id.org/ro/crate/0.3-DRAFT/context>, or by value (merging the two documents).
+The _RO-Crate JSON-LD Context_ may either be set by reference to <https://w3id.org/ro/crate/1.0/context>, or by value (merging the two documents).
 
 Consider the below (simplified) example of _by reference_ using a versioned permalink:
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/0.3-DRAFT/context",
+{ "@context": "https://w3id.org/ro/crate/1.0/context",
   "@graph": [
     {
       "@id": "ro-crate-metadata.jsonld",
       "@type": "CreativeWork",
       "description": "RO-Crate Metadata File Descriptor (this file)",
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/0.3-DRAFT"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.0"},
       "about": {"@id": "./"}
     }
   ]
@@ -1652,7 +1653,7 @@ The above is equivalent to this JSON-LD using an embedded context, by adding the
       "@id": "ro-crate-metadata.jsonld",
       "@type": "CreativeWork",
       "description": "RO-Crate Metadata File Descriptor (this file)",
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/0.3-DRAFT"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.0"},
       "about": {"@id": "./"}
     }
   ]
@@ -1694,7 +1695,7 @@ For example. The `@id` URI <http://purl.org/ontology/bibo/interviewee> from the 
 ```json
 {
   "@context": [ 
-    "https://w3id.org/ro/crate/0.3-DRAFT/context",
+    "https://w3id.org/ro/crate/1.0/context",
     {"interviewee": "http://purl.org/ontology/bibo/interviewee"},
   ],
   "@graph": [
