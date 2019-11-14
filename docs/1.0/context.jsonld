@@ -1,5 +1,5 @@
 {
-     "@id": "https://w3id.org/ro/crate/1.1-DRAFT/context",
+     "@id": "https://w3id.org/ro/crate/1.0/context",
      "name": [
           "RO-Crate JSON-LD Context"
      ],
