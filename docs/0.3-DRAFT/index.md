@@ -199,7 +199,7 @@ A minimal RO-Crate is a directory containing a single _RO-Crate Metadata File_.
 
 At the basic level, an RO-Crate is a collection of files represented as a schema.org [Dataset], that together form a meaningful unit for the purposes of communication, citation, distribution, preservation, etc.  The _RO-Crate Metadata File_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. Self-containment is a core principle of RO-Crate, i.e. that all _Dataset_ files and relevant metadata SHOULD, as far as possible, be contained by the RO-Crate, rather than referring to external resources. However the RO-Crate MAY also reference external resources which are stored or accessed separately, via URIs, e.g. because these cannot be included for practical or legal reasons.
 
-It is important to note that the _RO-Crate Metadata File_ is not an exhaustive manifest or inventory, that is, it does not necessarily list or describe all files in the package.  Rather it is focused on providing sufficient amount of metadata to understand and use the content, and is designed to be compatible with existing and future approaches that _do_ have full inventories / manifest and integrity checks, e.g. by using checksums, such as [BagIt] and Oxford Common File Layout [OCFL] [Objects][OCFL Object].
+It is important to note that the _RO-Crate Metadata File_ is not an exhaustive manifest or inventory, that is, it does not necessarily list or describe all files in the package.  Rather it is focused on providing sufficient amount of metadata to understand and use the content, and is designed to be compatible with existing and future approaches that _do_ have full inventories / manifest and integrity checks, e.g. by using checksums, such as [BagIt] and Oxford Common File Layout [OCFL Object]s.
 
 The intention is that RO-Crates can work well with a variety of archive file formats, e.g. tar, zip, etc., and approaches to capturing file manifests and file fixity, such as [BagIt], [OCFL] and [git].
 
@@ -642,7 +642,7 @@ An [Organization] SHOULD also be used for a [Person]'s [affiliation] property.
 
 ### More detail on ContactPoint
 
-A RO-Crate SHOULD have contact information, using a contextual entity of type [ContactPoint]. Note that in schema.org [Dataset] does not currently have the corresponding [contactPoint] property, so the contact point would need to be given through a [Person] or [Organization] contextual entity which are related to the Dataset via a [creator], [author] or [publisher] property.
+A RO-Crate SHOULD have contact information, using a contextual entity of type [ContactPoint]. Note that in schema.org [Dataset] does not currently have the corresponding [contactPoint] property, so the contact point would need to be given through a [Person] or [Organization] contextual entity which are related to the Dataset via a [author] or [publisher] property.
 
 
 ```json
@@ -1904,6 +1904,7 @@ https://kramdown.gettalong.org/syntax.html#reference-links
 [name]: http://schema.org/name
 [object]: http://schema.org/object
 [phone]: http://schema.org/phone
+[programmingLanguage]: http://schema.org/programmingLanguage
 [publisher]: http://schema.org/publisher
 [relatedItem]: http://schema.org/relatedItem
 [result]: http://schema.org/result
