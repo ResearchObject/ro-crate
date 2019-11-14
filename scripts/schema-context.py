@@ -32,7 +32,7 @@ import urllib.request
 
 
 # Our own version
-ROCRATE_VERSION="0.3-DRAFT"
+ROCRATE_VERSION="1.1-DRAFT"
 
 # Update version from http://schema.org/docs/releases.html
 SCHEMA_VERSION="5.0"
@@ -46,6 +46,10 @@ def main():
     schemakeys.sort() # they are usually sorted anyway
     j = OrderedDict()
     j["@id"] = "https://w3id.org/ro/crate/%s/context" % ROCRATE_VERSION
+    j["name"] = "RO-Crate JSON-LD Context",
+    j["version"] = ROCRATE_VERSION
+    j["url"] = {"@id": "https://w3id.org/ro/crate/%s" % ROCRATE_VERSION}
+    
     j["schemaVersion"] = {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION}
     j["license"] = {"@id": "https://creativecommons.org/publicdomain/zero/1.0/"}
     context = OrderedDict()

@@ -1,8 +1,12 @@
 {
-     "@id": "https://w3id.org/ro/crate/1.0/context",
-     "name": "RO-Crate JSON-LD Context",
+     "@id": "https://w3id.org/ro/crate/1.1-DRAFT/context",
+     "name": [
+          "RO-Crate JSON-LD Context"
+     ],
      "version": "1.0.0",
-     "url": "https://w3id.org/ro/crate/1.0/",
+     "url": {
+          "@id": "https://w3id.org/ro/crate/1.0"
+     },
      "schemaVersion": {
           "@id": "http://schema.org/version/5.0/"
      },
