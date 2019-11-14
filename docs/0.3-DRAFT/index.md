@@ -278,17 +278,17 @@ From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
 
 RO-Crate is simply a way to make metadata assertions about a set of files and folders that make up a _Dataset_. These assertions can be made at three levels:
 
-*   Assertions at the RO-Crate level: for an RO-Crate to be useful, some metadata should be provided about the dataset as a whole (see minimum requirements for different use-cases below). In the _RO-Crate Metadata File_, we distinguish the _Root Data Entity_ which represents the RO-Crate as a whole, from other _Data Entities_ (files and folders contained in the RO-Crate) and _Contextual Entities_, e.g. a person, organisation, place related to an RO-Crate _Data Entity_
-*   Assertions about files and folders contained in the RO-Crate: in addition to providing metadata about the RO-Crate as a whole, RO-Crate allows metadata assertions to be made about any other _Data Entity_
+* Assertions at the RO-Crate level: for an RO-Crate to be useful, some metadata should be provided about the dataset as a whole (see minimum requirements for different use-cases below). In the _RO-Crate Metadata File_, we distinguish the _Root Data Entity_ which represents the RO-Crate as a whole, from other _Data Entities_ (files and folders contained in the RO-Crate) and _Contextual Entities_, e.g. a person, organisation, place related to an RO-Crate _Data Entity_
+* Assertions about files and folders contained in the RO-Crate: in addition to providing metadata about the RO-Crate as a whole, RO-Crate allows metadata assertions to be made about any other _Data Entity_
 
 
 This document has guidelines for ways to represent common requirements for describing data in a research context, e.g.:
 
-*   Contact information for a data set.
-*   Descriptive information for a dataset and the files within it and their contexts such as an abstract, spatial and temporal coverage.
-*   Associated Publications.
-*   Funding relationships.
-*   Provenance information of various kinds; who (people and organizations) and what (instruments and computer programs) created or contributed to the data set and individual files within it.
+* Contact information for a data set.
+* Descriptive information for a dataset and the files within it and their contexts such as an abstract, spatial and temporal coverage.
+* Associated Publications.
+* Funding relationships.
+* Provenance information of various kinds; who (people and organizations) and what (instruments and computer programs) created or contributed to the data set and individual files within it.
 * Workflows that operate on the data using standard workflow descriptions including ‘single step workflows’; executable files or environments such as singularity containers or Jupyter notebooks.
 
 However, as RO-Crate uses _Linked Data_ principles, adopters of RO-Crate are free to supplement RO-Crate using [schema.org] metadata and/or assertions using other _Linked Data_ vocabularies.
@@ -302,11 +302,11 @@ A future version of this specification will allow for variable-level assertions:
 
 _RO-Crate JSON-LD_ SHOULD use the following IDs where possible: 
 
-*   For a _Root Data Entity_, an `identifier` which is RECOMMENDED to be a  <https://doi.org/> URI. 
-*   For a [Person] participating in the research process: [ORCID] identifiers, e.g. <https://orcid.org/0000-0002-1825-0097>
-*   For [Organization]s including [funder]s,  [Research Organization Registry URIs](https://ror.org/), e.g. <https://ror.org/0384j8v12>
-*   For items of type [Place], a [geonames] URL, e.g. <http://sws.geonames.org/8152662/>
-*   For file formats, a [Pronom] URL, for example <https://www.nationalarchives.gov.uk/PRONOM/fmt/831>.
+* For a _Root Data Entity_, an `identifier` which is RECOMMENDED to be a  <https://doi.org/> URI. 
+* For a [Person] participating in the research process: [ORCID] identifiers, e.g. <https://orcid.org/0000-0002-1825-0097>
+* For [Organization]s including [funder]s,  [Research Organization Registry URIs](https://ror.org/), e.g. <https://ror.org/0384j8v12>
+* For items of type [Place], a [geonames] URL, e.g. <http://sws.geonames.org/8152662/>
+* For file formats, a [Pronom] URL, for example <https://www.nationalarchives.gov.uk/PRONOM/fmt/831>.
 
 In the absence of the above, RO-Crates SHOULD contain stable persistent URIs to identify all entities wherever possible.
 
@@ -1806,7 +1806,9 @@ _Root Data Entities_ MAY also have additional repository specific identifiers, d
  }
 ```
 
-
+<!--  Below are reference links not rendered in HTML, see
+https://kramdown.gettalong.org/syntax.html#reference-links
+-->
 
 [BagIt]: https://en.wikipedia.org/wiki/BagIt
 [BagIt profile]: https://github.com/ruebot/bagit-profiles
