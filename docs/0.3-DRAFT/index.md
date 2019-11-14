@@ -197,7 +197,7 @@ The base RO-Crate specification makes no assumptions about the presence of any s
 
 A minimal RO-Crate is a directory containing a single _RO-Crate Metadata File_. 
 
-At the basic level, an RO-Crate is a collection of files represented as a schema.org _[Dataset](https://schema.org/Dataset)_, that together form a meaningful unit for the purposes of communication, citation, distribution, preservation, etc.  The _RO-Crate Metadata File_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. Self-containment is a core principle of RO-Crate, i.e. that all Dataset files and relevant metadata SHOULD, as far as possible, be contained by the RO-Crate, rather than referring to external resources. However the RO-Crate MAY also reference external resources which are stored or accessed separately, via URIs, e.g. because these cannot be included for practical or legal reasons.
+At the basic level, an RO-Crate is a collection of files represented as a schema.org [Dataset], that together form a meaningful unit for the purposes of communication, citation, distribution, preservation, etc.  The _RO-Crate Metadata File_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. Self-containment is a core principle of RO-Crate, i.e. that all _Dataset_ files and relevant metadata SHOULD, as far as possible, be contained by the RO-Crate, rather than referring to external resources. However the RO-Crate MAY also reference external resources which are stored or accessed separately, via URIs, e.g. because these cannot be included for practical or legal reasons.
 
 It is important to note that the _RO-Crate Metadata File_ is not an exhaustive manifest or inventory, that is, it does not necessarily list or describe all files in the package.  Rather it is focused on providing sufficient amount of metadata to understand and use the content, and is designed to be compatible with existing and future approaches that _do_ have full inventories / manifest and integrity checks, e.g. by using checksums, such as [BagIt] and Oxford Common File Layout [OCFL] [Objects][OCFL Object].
 
@@ -232,24 +232,24 @@ RO-Crate realize these principles using a particular set of technologies and bes
 2. The _RO-Crate Metadata File_ is based on the structured data format [JSON](https://tools.ietf.org/html/rfc8259). 
 3. Multiple open source tools/libraries are available [for JSON](http://json.org/) and [for JSON-LD](https://json-ld.org/).
 4. The _RO-Crate Website_ is [HTML 5](https://www.w3.org/TR/html52/), and the _RO-Crate Metadata File_ is [JSON-LD](https://www.w3.org/TR/json-ld/), one of the [W3C RDF 1.1 formats](https://www.w3.org/TR/rdf11-primer/).
-5. The _RO-Crate Metadata File_ reuse common vocabularies like [schema.org](http://schema.org), and this specification [recommend identifiers](#recommended-identifiers) it should link to.
+5. The _RO-Crate Metadata File_ reuse common vocabularies like [schema.org], and this specification [recommend identifiers](#recommended-identifiers) it should link to.
 
 ### Base metadata standard for RO-Crate: Schema.org
 
-[Schema.org](http://schema.org) is the base metadata standard for RO-Crate. Schema.org was chosen because it is widely used on the World Wide Web and supported by search engines, on the assumption that discovery is likely to be maximized if search engines index the content. NOTE: As far as we know there is no alternative, well-maintained linked-data schema for research data with the coverage needed for this project - i.e. a single standard for expressing all the examples presented in this specification.
+[schema.org] is the base metadata standard for RO-Crate. Schema.org was chosen because it is widely used on the World Wide Web and supported by search engines, on the assumption that discovery is likely to be maximized if search engines index the content. NOTE: As far as we know there is no alternative, well-maintained linked-data schema for research data with the coverage needed for this project - i.e. a single standard for expressing all the examples presented in this specification.
 
-RO-Crate relies heavily on [schema.org](http://schema.org) using a constrained subset of  [JSON-LD](https://json-ld.org/), and this document gives opinionated recommendations on how to represent the metadata using existing [linked data] best practices.
+RO-Crate relies heavily on [schema.org] using a constrained subset of [JSON-LD], and this document gives opinionated recommendations on how to represent the metadata using existing [linked data] best practices.
 
 #### Differences from schema.org
 
-Generally, the standard keys for [schema.org](http://schema.org) should be used. However, RO-Crate uses variant names for some elements, specifically:
+Generally, the standard keys from [schema.org] should be used. However, RO-Crate uses variant names for some elements, specifically:
 
 * `File` is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of schema.org or a research data extension may re-define `File`.
 * `Journal` is mapped to <http://schema.org/Periodical>.
 
 Note that JSON-LD examples given on <http://schema.org/> website may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
 
-To avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even though <http://schema.org/> for some properties permits shorter forms like `"author": "http://example.com/alice"`. 
+To simplify processing and avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even where [schema.org] for some properties otherwise permit shorter forms like `"author": "http://example.com/alice"`.
 
 See the appendix [RO-Crate JSON-LD](#ro-crate-json-ld) for details.
 
@@ -304,7 +304,7 @@ _RO-Crate JSON-LD_ SHOULD use the following IDs where possible:
 
 *   For a _Root Data Entity_, an `identifier` which is RECOMMENDED to be a  <https://doi.org/> URI. 
 *   For a [Person] participating in the research process: [ORCID] identifiers, e.g. <https://orcid.org/0000-0002-1825-0097>
-*   For [Organization]s including [funder](http://schema.org/funder)s,  [Research Organization Registry URIs](https://ror.org/), e.g. <https://ror.org/0384j8v12>
+*   For [Organization]s including [funder]s,  [Research Organization Registry URIs](https://ror.org/), e.g. <https://ror.org/0384j8v12>
 *   For items of type [Place], a [geonames] URL, e.g. <http://sws.geonames.org/8152662/>
 *   For file formats, a [Pronom] URL, for example <https://www.nationalarchives.gov.uk/PRONOM/fmt/831>.
 
@@ -573,7 +573,7 @@ The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Conte
 
 ### People
 
-A core principle of Linked data is to use URIs to identify things such as people. The following is the minimum recommended way of representing a [author](http://schema.org/author) in a RO-Crate. This property MAY be applied in the context of a directory ([Dataset]) or to a [File].
+A core principle of Linked data is to use URIs to identify things such as people. The following is the minimum recommended way of representing a [author] in a RO-Crate. This property MAY be applied in the context of a directory ([Dataset]) or to a [File].
 
 ```json
 {
@@ -614,7 +614,7 @@ An [Organization] SHOULD be the value for the [publisher] property of a [Dataset
 }
 ```
 
-An [Organization](http://schema.org/Organization) SHOULD also be used for a [Person](http://schema.org/Person)'s `affiliation` property.
+An [Organization] SHOULD also be used for a [Person]'s [affiliation] property.
 
 ```json
 {
@@ -642,16 +642,15 @@ An [Organization](http://schema.org/Organization) SHOULD also be used for a [Per
 
 ### More detail on ContactPoint
 
-A RO-Crate SHOULD have contact information, using a [contactPoint](http://schema.org/contactPoint) property with a value of [ContactPoint](http://schema.org/contactPoint). Note that [Dataset](http://schema.org/Dataset) does not (yet) have a contactPoint property, so strictly this would have to be on a Person or Organization which is related to the Dataset via a [creator], [author] or [publisher] property.
-
+A RO-Crate SHOULD have contact information, using a contextual entity of type [ContactPoint]. Note that in schema.org [Dataset] does not currently have the corresponding [contactPoint] property, so the contact point would need to be given through a [Person] or [Organization] contextual entity which are related to the Dataset via a [creator], [author] or [publisher] property.
 
 
 ```json
 {
-  "@type": "Dataset",
-  "@id": "./",
-  "author": {"@id": "https://orcid.org/0000-0001-6121-5409"}
-}
+      "@id": "./",
+      "@type": "Dataset",
+      "author": {"@id": "https://orcid.org/0000-0001-6121-5409"}
+},
 {
       "@id": "https://orcid.org/0000-0001-6121-5409",
       "@type": "Person",
@@ -662,27 +661,22 @@ A RO-Crate SHOULD have contact information, using a [contactPoint](http://schema
       "givenName": "Tim",
       "identifier": "https://orcid.org/0000-0001-6121-5409",
       "name": "Tim Luckett"
-    },
-
-
-  {
+},
+{
       "@id": "mailto:tim.luckett@uts.edu.au",
       "@type": "ContactPoint",
       "contactType": "customer service",
       "email": "tim.luckett@uts.edu.au",
       "identifier": "tim.luckett@uts.edu.au",
       "url": "https://orcid.org/0000-0001-6121-5409"
-    },
+}
 ```
-
-
-
 
 
 
 ### Publications via citation property
 
-To associate a publication with a dataset the _RO-Crate JSON-LD_ MUST include a URL (for example a DOI URL) as the @id of a publication using the [citation] property.
+To associate a publication with a dataset the _RO-Crate JSON-LD_ MUST include a URL (for example a DOI URL) as the `@id of a publication using the [citation] property.
 
 For example:
 
@@ -755,7 +749,7 @@ The _Root Data Entity_ SHOULD have a [publisher](http://schema.org/publisher) pr
 
 ### Funding and grants
 
-To associate a research project with a [Dataset](http://schema.org/Dataset), the _RO-Crate JSON-LD_ SHOULD contain an entity for the project using type "Organization", referenced by a [funder](http://schema.org/funder) property. The project organization SHOULD in turn reference any external [funder](http://schema.org/funder), either by using its URL as an `@id` or via a _Contextual Entity_ describing the funder.
+To associate a research project with a [Dataset], the _RO-Crate JSON-LD_ SHOULD contain an entity for the project using type [Organization], referenced by a [funder] property. The project `Organization` SHOULD in turn reference any external [funder], either by using its URL as an `@id` or via a _Contextual Entity_ describing the funder.
 
 NOTE: To make it very clear where funding is coming from, the _Root Data Entity_ SHOULD also reference funders directly, as well as via a chain of references.
 
@@ -802,9 +796,9 @@ NOTE: To make it very clear where funding is coming from, the _Root Data Entity_
 
 ### Licensing, Access control and copyright
 
-If a _Data Entity_ has a [license] that is different from the license on the _Root Data Entity_, the entity SHOULD have a [license](http://schema.org/license) property referencing a _Contextual Entity_ with a type  [CreativeWork](http://schema.org/CreativeWork) to describe the license. The `@id` of the license SHOULD be its URL (e.g. a Creative Commons License URL) and, when possible, a summary of the license included using the [description] property.
+If a _Data Entity_ has a [license] that is different from the license on the _Root Data Entity_, the entity SHOULD have a [license] property referencing a _Contextual Entity_ with a type [CreativeWork] to describe the license. The `@id` of the license SHOULD be its URL (e.g. a Creative Commons License URL) and, when possible, a summary of the license included using the [description] property.
 
-The below _Data Entity_ has a [copyrightHolder] which is different from its [author]. There is a reference to an [Organization](http://schema.org/Organization) describing the copyright holder and, to give credit, a [sameAs] relation to a web page. The [license] property here refers to <https://creativecommons.org/licenses/by/4.0/> which is expanded in a separate contextual entity.
+The below _Data Entity_ has a [copyrightHolder] which is different from its [author]. There is a reference to an [Organization] describing the copyright holder and, to give credit, a [sameAs] relation to a web page. The [license] property here refers to <https://creativecommons.org/licenses/by/4.0/> which is expanded in a separate contextual entity.
 
 
 ```json
@@ -927,7 +921,7 @@ As the RO-Crate uses _flattened_ JSON-LD, `sdLicense` should be expressed direct
 
 ### Provenance: Equipment used to create files
 
-To specify which equipment was used to create or update a _Data Entity_, the _RO-Crate_ JSON-LD SHOULD have a _Context Entity_ for each item of equipment which SHOULD be of `@type` [IndividualProduct](http://schema.org/IndividualProduct). The entity SHOULD have a serial number, manufacturer that identifies it as completely as possible. In this case the equipment is a bespoke machine. The equipment SHOULD be described on a web page, and the address of the description SHOULD be used as its `@id`.
+To specify which equipment was used to create or update a _Data Entity_, the _RO-Crate_ JSON-LD SHOULD have a _Context Entity_ for each item of equipment which SHOULD be of `@type` [IndividualProduct]. The entity SHOULD have a serial number, manufacturer that identifies it as completely as possible. In this case the equipment is a bespoke machine. The equipment SHOULD be described on a web page, and the address of the description SHOULD be used as its `@id`.
 
 
 ```json
@@ -941,7 +935,7 @@ To specify which equipment was used to create or update a _Data Entity_, the _RO
 ```
 
 
-Uses [CreateAction](http://schema.org/CreateAction) and [UpdateAction](http://schema.org/UpdateAction) class to model the contributions of _Context Entities_ of type [Person](http://schema.org/Person) or [Organization](http://schema.org/Organization) in the creation of files.
+Uses [CreateAction] and [UpdateAction] class to model the contributions of _Context Entities_ of type [Person] or [Organization] in the creation of files.
 
 In this example the CreateAction has a human [agent], the object is a Place (a cave) and the Hovermap drone is the [instrument] used in the file creation event.
 
@@ -995,9 +989,9 @@ For example:
 }
 ```
 
-The software SHOULD be associated with the [File] it created using a CreateAction with the [File] referenced by a [result] property. Any input files SHOULD be referenced by the [object] property.
+The software SHOULD be associated with the [File] it created using a [CreateAction] with the [File] referenced by a [result] property. Any input files SHOULD be referenced by the [object] property.
 
-In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg` was transformed into an new image `pics/sepia_fence.jpg` using the `ImageMagick` software application. Actions MAY have human-readable names, which MAY be machine generated for use at scale.
+In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg` was transformed into an new image `pics/sepia_fence.jpg` using the _ImageMagick_ software application. Actions MAY have human-readable names, which MAY be machine generated for use at scale.
 
 ```json
 {
@@ -1040,7 +1034,7 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
 
 ### Provenance: Changes to RO-Crates
 
-To record an action which changes the DataSet's metadata, or changes its state in a publication or other workflow, a [CreateAction](http://schema.org/CreateAction) or [UpdateAction](http://schema.org/UpdateAction) SHOULD be associated with a _Data Entity_.
+To record an action which changes the DataSet's metadata, or changes its state in a publication or other workflow, a [CreateAction] or [UpdateAction] SHOULD be associated with a _Data Entity_.
 
 A curation Action MUST have at least one [object] which associates it with either the DataSet or one of its components.
 
@@ -1050,15 +1044,15 @@ An Action SHOULD have a [name] and MAY have a [description].
 
 An Action SHOULD have an [endTime], which MUST be in ISO 8601 date format and SHOULD be specified to at least the precision of a day. An Action MAY have a [startTime] meeting the same specifications.
 
-An Action SHOULD have a human [agent] who was responsible for authorizing the action, and MAY have an [instrument](http://schema.org/instrument) which associates the action with a particular piece of software (for example, the content management system or data catalogue through which an update was approved) which SHOULD be of `@type` SoftwareApplication.
+An Action SHOULD have a human [agent] who was responsible for authorizing the action, and MAY have an [instrument] which associates the action with a particular piece of software (for example, the content management system or data catalogue through which an update was approved) which SHOULD be of `@type` SoftwareApplication.
 
-An Action's status MAY be recorded in an [actionStatus] property. The status must be one of the values enumerated by [ActionStatusType]: `ActiveActionStatus`, `CompletedActionStatus`, `FailedActionStatus` or `PotentialActionStatus`.
+An Action's status MAY be recorded in an [actionStatus] property. The status must be one of the values enumerated by [ActionStatusType]: [ActiveActionStatus], [CompletedActionStatus], [FailedActionStatus] or [PotentialActionStatus].
 
 An Action which has failed MAY record any error information in an [error](http://schema.org/error) property.
 
-[UpdateAction](http://schema.org/UpdateAction) SHOULD only be used for actions which affect the DataSet as a whole, such as movement through a workflow.
+[UpdateAction] SHOULD only be used for actions which affect the DataSet as a whole, such as movement through a workflow.
 
-To record curation actions which modify a [File](http://schema.org/MediaObject) within a DataSet - for example, by correcting or enhancing metadata - the old version of the [File](http://schema.org/MediaObject) SHOULD be retained, and a [CreateAction](http://schema.org/CreateAction) added which has the original version as its [object](http://schema.org/object) and the new version as its [result](http://schema.org/result).
+To record curation actions which modify a [File] within a DataSet - for example, by correcting or enhancing metadata - the old version of the [File] SHOULD be retained, and a [CreateAction] added which has the original version as its [object] and the new version as its [result].
 
 ```json
 {
@@ -1121,14 +1115,14 @@ To record curation actions which modify a [File](http://schema.org/MediaObject) 
 ### Workflows and scripts
 
 
-Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts SHOULD be described using the data entities of type `SoftwareSourceCode`.
+Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts SHOULD be described using the data entities of type [SoftwareSourceCode].
 
 The distinction between [SoftwareSourceCode] and [SoftwareApplication] for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.  
 
-A workflow is a `Data Entity` which MUST have the following properties:
+A workflow is a _Data Entity_ which MUST have the following properties:
 * `@type` is an array with at least `File` and `Workflow` as values.
 * `@id` is a File URI linking to the workflow entry-point.
-* `name`: a name for the workflow.
+* [name]: a name for the workflow.
 
 Minimal example describing a workflow:
 
@@ -1159,9 +1153,9 @@ If the `SoftwareSourceCode` is primarily in the form of a **workflow** (e.g. a p
   "@type": ["File", "SoftwareSourceCode", "Workflow"],
 ```
 
-Workflows and scripts saved on disk using a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of `programmingLanguage`. 
+Workflows and scripts saved on disk using a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of [programmingLanguage]. 
 
-Note that the language and its runtime MAY differ (e.g. multiple different C++-compilers), but for scripts and workflows, frequently the language and runtime are essentially the same, and thus the `programmingLanguage` can be described in one go as a hybrid of a `ComputerLanguage` and `SoftwareApplication`:
+Note that the language and its runtime MAY differ (e.g. multiple different C++-compilers), but for scripts and workflows, frequently the language and runtime are essentially the same, and thus the `programmingLanguage` can be described in one go as a hybrid of a [ComputerLanguage] and [SoftwareApplication]:
 
 ```json
 {
@@ -1178,7 +1172,7 @@ Note that the language and its runtime MAY differ (e.g. multiple different C++-c
 }
 ```
 
-A _contextual entity_ representing a `SoftwareApplication` or `ComputerLanguage` MUST have a [name], [url] and [version], which should indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance _“R”_ instead of _“The R Project for Statistical Computing”_.
+A _contextual entity_ representing a [SoftwareApplication] or [ComputerLanguage] MUST have a [name], [url] and [version], which should indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance _“R”_ instead of _“The R Project for Statistical Computing”_.
 
 It is possible to indicate _steps_ that are executed as part of an `Workflow` or `Script`, by using [hasPart] to relate additional `SoftwareApplication` or nested `SoftwareSourceCode` contextual entities:
 
@@ -1198,7 +1192,7 @@ It is possible to indicate _steps_ that are executed as part of an `Workflow` or
 
 #### Workflow diagram/sketch
 
-It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. This diagram MAY be included as an `ImageObject` which is `about` the `SoftwareSourceCode`. The `@type` parameter SHOULD be an array to also include `WorkflowSketch` to indicate that this is an image that represent a sketch or diagram of the workflow.
+It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. This diagram MAY be included as an [ImageObject] which is [about] the `SoftwareSourceCode`. The `@type` parameter SHOULD be an array to also include `WorkflowSketch` to indicate that this is an image that represent a sketch or diagram of the workflow.
 
 ```json
 {
@@ -1247,7 +1241,7 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
 ```json
 {
       "@id": "pics/2017-06-11%2012.56.14.jpg",
-      "@type": "ImageObject",
+      "@type": ["File", "ImageObject"],
       "contentSize": "5114778",
       "author": {
         "@id": "https://orcid.org/0000-0002-3545-944X"
@@ -1356,13 +1350,13 @@ And the place is referenced from the [contentLocation] property of the dataset.
 
 ### Subjects & keywords
 
-Subject properties (equivalent to a Dublin Core Subject) on RO-Crate or a data entity MUST use the [about](http://schema.org/about) property.
+Subject properties (equivalent to a Dublin Core Subject) on RO-Crate or a data entity MUST use the [about] property.
 
-Keyword properties MUST use [keyword](http://schema.org/keywords). Note that by schema.org convention, keywords are given as a single JSON string, with individual keywords separated by commas.
+Keyword properties MUST use [keywords]. Note that by schema.org convention, keywords are given as a single JSON string, with individual keywords separated by commas.
 
 ```json
 {
-  "keyword": "Gibraltar, Spain, British Overseas Territory, city, map",
+  "keywords": "Gibraltar, Spain, British Overseas Territory, city, map",
   "about": { "@id": "http://dbpedia.org/resource/Gibraltar" },
 }
 ```
@@ -1454,11 +1448,11 @@ For example, this data is exported from an [Omeka](https://omeka.org) repository
 
 ### Thumbnails
 
-A [File](http://schema.org/MediaObject) or any other item MAY have a [thumbnail](http://schema.org/thumbnail) property which references another file.
+A [File] or any other item MAY have a [thumbnail] property which references another file.
 
 For example, the below [RepositoryObject](https://pcdm.org/2016/04/18/models#Object) is related to four files which are all versions of the same image (via [hasFile](https://pcdm.org/2016/04/18/models#hasFile)) one of which is a thumbnail. The thumbnail MUST be included in the RO-Crate.
 
-If [thumbnail](http://schema.org/thumbnail)s are incidental to the data set, they need not be referenced by [hasPart](http://schema.org/hasPart) or [hasFile](https://pcdm.org/2016/04/18/models#hasFile) relationships. but must be in the BagIt manifest if in a _Bagged RO-Crate_.
+If [thumbnail]s are incidental to the data set, they need not be referenced by [hasPart](http://schema.org/hasPart) or [hasFile](https://pcdm.org/2016/04/18/models#hasFile) relationships. but must be in the BagIt manifest if in a _Bagged RO-Crate_.
 
 
 ```json
@@ -1602,7 +1596,7 @@ The order of the `@graph` list is not significant. Above we see that the RO-Crat
 
 ### Describing entities in JSON-LD
 
-Properties of an entity can refer to another URL or entity by using the form `{"@id": "uri-reference"}` as in the example above, where the `author` property in the `File` entity refer to the `Person` entity, identified as `#alice`. 
+Properties of an entity can refer to another URL or entity by using the form `{"@id": "uri-reference"}` as in the example above, where the [author] property in the [File] entity refer to the [Person] entity, identified as `#alice`. 
 
 Identifiers in `@id` SHOULD be either a valid _absolute URIs_ like <http://example.com/>, or an _URI references_ _URI paths_ relative to the RO-Crate root directory. Care must be taken to express any relative paths using `/` separator and escape special characters like space (`%20`). As JSON-LD supports _IRIs_, international characters in identifiers SHOULD be encoded in UTF-8 rather than `%`-escaped. 
 
@@ -1643,7 +1637,7 @@ Consider the below (simplified) example of _by reference_ using a versioned perm
 }
 ```
 
-The above is equivalent to this JSON-LD using an embedded context, by adding the corresponding keys from the external `@context`:
+The above is equivalent to this JSON-LD using an embedded context, by adding the subset of corresponding keys from the external `@context`:
 
 ```json
 { "@context": {
@@ -1846,12 +1840,35 @@ _Root Data Entities_ MAY also have additional repository specific identifiers, d
 [schema.org]: http://schema.org
 [WorkflowSketch]: http://wf4ever.github.io/ro/2016-01-28/roterms/#Sketch
 
+[Action]: http://schema.org/Action
+[ActionStatusType]: http://schema.org/ActionStatusType
+[ActiveActionStatus]: http://schema.org/ActiveActionStatus
+[CompletedActionStatus]: http://schema.org/CompletedActionStatus
+[ComputerLanguage]: http://schema.org/ComputerLanguage
+[CreateAction]: http://schema.org/CreateAction
+[CreativeWork]: http://schema.org/CreativeWork
+[DataDownload]: http://schema.org/DataDownload
+[Dataset]: http://schema.org/Dataset
+[FailedActionStatus]: http://schema.org/FailedActionStatus
+[File]: http://schema.org/MediaObject
+[Journal]: http://schema.org/Periodical
+[GeoCoordinates]: http://schema.org/GeoCoordinates
+[ImageObject]: http://schema.org/ImageObject
+[MediaObject]: http://schema.org/MediaObject
+[Organization]: http://schema.org/Organization
+[Person]: http://schema.org/Person
+[PotentialActionStatus]: http://schema.org/PotentialActionStatus
+[Place]: http://schema.org/Place
+[Product]: http://schema.org/Product
+[PropertyValue]: http://schema.org/PropertyValue
+[ScholarlyArticle]: http://schema.org/ScholarlyArticle
+[SoftwareApplication]: http://schema.org/SoftwareApplication
+[SoftwareSourceCode]: http://schema.org/SoftwareSourceCode
+[UpdateAction]: http://schema.org/UpdateAction
 
 [about]: http://schema.org/about
 [accountablePerson]: http://schema.org/accountablePerson
-[Action]: http://schema.org/Action
 [actionStatus]: http://schema.org/actionStatus
-[ActionStatusType]: http://schema.org/ActionStatusType
 [affiliation]: http://schema.org/affiliation
 [agent]: http://schema.org/agent
 [alternateName]: http://schema.org/alternateName
@@ -1863,10 +1880,6 @@ _Root Data Entities_ MAY also have additional repository specific identifiers, d
 [contentLocation]: http://schema.org/contentLocation
 [contributor]: http://schema.org/contributor
 [copyrightHolder]: http://schema.org/copyrightHolder
-[CreateAction]: http://schema.org/CreateAction
-[CreativeWork]: http://schema.org/CreativeWork
-[DataDownload]: http://schema.org/DataDownload
-[Dataset]: http://schema.org/Dataset
 [datePublished]: http://schema.org/datePublished
 [description]: http://schema.org/description
 [distribution]: http://schema.org/distribution
@@ -1876,44 +1889,30 @@ _Root Data Entities_ MAY also have additional repository specific identifiers, d
 [error]: http://schema.org/error
 [event]: http://schema.org/event
 [familyName]: http://schema.org/familyName
-[File]: http://schema.org/MediaObject
 [funder]: http://schema.org/funder
-[funder]: http://schema.org/funder
-[GeoCoordinates]: http://schema.org/GeoCoordinates
 [geo]: http://schema.org/geo
 [givenName]: http://schema.org/givenName
 [hasPart]: http://schema.org/hasPart
 [identifier]: http://schema.org/identifier
 [IndividualProduct]: http://schema.org/IndividualProduct
 [instrument]: http://schema.org/instrument
-[Journal]: http://schema.org/Periodical
-[keyword]: http://schema.org/keywords
+[keywords]: http://schema.org/keywords
 [license]: http://schema.org/license
-[MediaObject]: http://schema.org/MediaObject
 [memberOf]: http://schema.org/memberOf
 [name]: http://schema.org/name
 [object]: http://schema.org/object
-[Organization]: http://schema.org/Organization
-[Person]: http://schema.org/Person
 [phone]: http://schema.org/phone
-[Place]: http://schema.org/Place
-[Product]: http://schema.org/Product
-[PropertyValue]: http://schema.org/PropertyValue
 [publisher]: http://schema.org/publisher
 [relatedItem]: http://schema.org/relatedItem
 [result]: http://schema.org/result
 [sameAs]: http://schema.org/sameAs
-[ScholarlyArticle]: http://schema.org/ScholarlyArticle
 [sdLicense]: http://schema.org/sdLicense
 [sdPublisher]: http://schema.org/sdPublisher
-[SoftwareApplication]: http://schema.org/SoftwareApplication
-[SoftwareSourceCode]: http://schema.org/SoftwareSourceCode
 [startTime]: http://schema.org/startTime
 [temporalCoverage]: http://schema.org/temporalCoverage
 [thumbnail]: http://schema.org/thumbnail
 [translationOf]: http://schema.org/translationOf
 [translator]: http://schema.org/translator
-[UpdateAction]: http://schema.org/UpdateAction
 [url]: http://schema.org/url
 [version]: http://schema.org/version
 
