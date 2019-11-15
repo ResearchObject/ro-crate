@@ -23,7 +23,7 @@ Permalink: <https://w3id.org/ro/crate>
 1. Table of Contents
 {:toc}
 
-**News**: [RO-Crate Metadata specification 0.2](https://w3id.org/ro/crate/0.2) released
+**News**: [RO-Crate Metadata specification 1.0](https://w3id.org/ro/crate/1.0) released
 
 ## What is RO-Crate? 
 RO-Crate is a community effort to establish a lightweight approach to packaging research data with their metadata. It is based on schema.org annotations in JSON-LD, and aims to make best-practice in formal metadata description accessible and practical for use in a wider variety of situations, from an individual researcher working with a folder of data, to large data-intensive computational research environments. 
@@ -37,39 +37,46 @@ The RO-Crate effort brings together practitioners from very different background
 We are still [gathering usecases](https://github.com/ResearchObject/ro-crate/issues?q=is%3Aissue+is%3Aopen+label%3Ause-case), please help us by [adding more](https://github.com/ResearchObject/ro-crate/issues/new/choose).
   
 ## When can I use it?
-The RO-Crate specification is currently **work in progress** stabilizing towards a 1.0 release around Q4 2019:
+The RO-Crate 1.0 specification has been **released**.
 
-* **[RO-Crate 0.2](0.2) (newest release)**
-  * ..or suggest changes for [upcoming RO-Crate 1.1](1.1-DRAFT) in [GitHub](https://github.com/ResearchObject/ro-crate/tree/master/docs/1.1-DRAFT)
+* **[RO-Crate 1.0](1.0)** **(newest release)**
+* [RO-Crate 0.2](0.2)
 * [DataCrate 1.0 review](https://docs.google.com/document/d/150SzIG8Zs3wecPTUue7wxKn6V26oi7rYucS5lxnmWZU/edit) 
   * (imported from [datacrate](https://github.com/UTS-eResearch/datacrate/blob/master/spec/1.0/data_crate_specification_v1.0.md))
 * [ROLite Draft 0.1.0](0.1.0) 
 
 _Historical note_: After the initial draft, the community decided to base the specification on [DataCrate](https://github.com/UTS-eResearch/datacrate/), and changed the name from _ROLite_ to **RO-Crate**.
 
+[Feedback](https://github.com/researchobject/ro-crate/issues) and improvements are welcome [towards RO-Crate 1.1](https://github.com/ResearchObject/ro-crate/tree/master/docs/1.1-DRAFT), taking into account backwards compatibility according to [semantic versioning](https://semver.org/spec/v2.0.0.html).
+
 ## How can I use it?
+
 While we're mostly focusing on the specification, some tools already exist for working with RO-Crates:
 
- - [CalcyteJS](https://code.research.uts.edu.au/eresearch/CalcyteJS/tree/ro-crate) is a command-line tool to help create RO-Crates and HTML-readable rendering
- - [Research Object Composer](https://github.com/researchobject/research-object-composer) is a REST API for gradually building and depositing Research Objects according to a pre-defined profile.  
+ - [CalcyteJS](https://code.research.uts.edu.au/eresearch/CalcyteJS/tree/ro-crate) is a command-line tool to help create RO-Crates and HTML-readable rendering (~ _beta_)
+ - [OCFL-indexer](https://github.com/CoEDL/modpdsc/tree/master/ocfl-indexer) NodeJS application that walks the [Oxford Common File Layout](https://ocfl.io/) on the file system, validate RO-Crate Metadata Files and parse into objects registered in Elasticsearch. (~ _alpha_)
+ - [Research Object Composer](https://github.com/researchobject/research-object-composer) is a REST API for gradually building and depositing Research Objects according to a pre-defined profile.  (RO-Crate support _alpha_)
+ - [ro-crate](https://www.npmjs.com/package/ro-crate) - JavaScript/NodeJS library for RO-Crate rendering as HTML. (~ _beta_)
  - [ro-crate-ruby](https://github.com/fbacall/ro-crate-ruby) Ruby library to consume/produce RO-Crates (~ _alpha_)
  - [ro-crate-py](https://github.com/researchobject/ro-crate-py) Python library to consume/produce RO-Crates (~ _planning_)
- - ...
+ - ... (yours?)
 
-You can also look at some [example RO-Crates](https://data.research.uts.edu.au/examples/ro-crate/0.2/):
+You can also look at some [example RO-Crates](https://data.research.uts.edu.au/examples/ro-crate/0.2/): _Note: These examples are currently using RO-Crate 0.2, which may miss some subtle changes in RO-Crate 1.0._
+* [Recordings in South Efate](http://vm-45-113-232-73.rc.cloud.unimelb.edu.au/paradisec.org.au/NT1/98007) ([ro-crate-metadata.jsonld](http://vm-45-113-232-73.rc.cloud.unimelb.edu.au/repository/3d/dc/34/6d/15/d2/66/c4/8e/ff/37/d3/2a/d1/29/7c/6e/56/7b/74/46/0d/85/23/d0/a7/ca/82/be/4e/c1/9d/v1/content/ro-crate-metadata.jsonld)) – one of [more than 10k RO-Crates](http://vm-45-113-232-73.rc.cloud.unimelb.edu.au/explore) from the [Pacific and Regional Archive for Digital Sources in Endangered Cultures](http://www.paradisec.org.au/) _(alpha)_
 * [Dataset for IDRC Project: Exploring the opportunities and challenges of implementing open research strategies within development institutions](https://data.research.uts.edu.au/examples/ro-crate/0.2/Data_Package-IDRC_Opportunities_and_Challenges_Open_Research_Strategies/ro-crate-preview.html) ([ro-crate-metadata.jsonld](https://data.research.uts.edu.au/examples/ro-crate/0.2/Data_Package-IDRC_Opportunities_and_Challenges_Open_Research_Strategies/ro-crate-metadata.jsonld))
 * [Dataset, Book: Pioneer Work in the Alps of New Zealand](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/IE4783007/) ([ro-crate-metadata.jsonld](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/IE4783007/ro-crate-metadata.jsonld))
-* [Glop Pot data](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/Glop_Pot/ro-crate-preview.html) ([ro-crate-metadata.jsonld](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/Glop_Pot/ro-crate-metadata.jsonld)) shows how Calcyte's preview HTML can [nest folders](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/Glop_Pot/ro-crate-preview.html#sketchsheets)
-* [Dharmae Example Dataset](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/dharmae/ro-crate-preview.html) ([ro-crate-metadata.jsonld](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/dharmae/ro-crate-metadata.jsonld)) shows how RO-Crate can carry [rich metadata](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/dharmae/ro-crate-preview.html#https://dharmae.research.uts.edu.au/api/collections/24) for individual resources which can have [multiple representations](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/dharmae/ro-crate-preview.html#385)
-* [RetroPath2.0 IBISBA Node](https://github.com/ResearchObject/ro-crate/tree/master/examples/workflow-0.2.0) [ro-crate-metadata.jsonld](https://raw.githubusercontent.com/ResearchObject/ro-crate/master/examples/workflow-0.2.0/ro-crate-metadata.jsonld) - a dataset containing a scientific workflow represented in two different languages.
+* [Glop Pot data](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/Glop_Pot/ro-crate-preview.html) ([ro-crate-metadata.jsonld](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/Glop_Pot/ro-crate-metadata.jsonld)) – shows how Calcyte's preview HTML can [nest folders](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/Glop_Pot/ro-crate-preview.html#sketchsheets)
+* [Dharmae Example Dataset](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/dharmae/ro-crate-preview.html) ([ro-crate-metadata.jsonld](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/dharmae/ro-crate-metadata.jsonld)) – shows how RO-Crate can carry [rich metadata](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/dharmae/ro-crate-preview.html#https://dharmae.research.uts.edu.au/api/collections/24) for individual resources which can have [multiple representations](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/dharmae/ro-crate-preview.html#385)
+* [RetroPath2.0 IBISBA Node](https://github.com/ResearchObject/ro-crate/tree/master/examples/workflow-0.2.0) [ro-crate-metadata.jsonld](https://raw.githubusercontent.com/ResearchObject/ro-crate/master/examples/workflow-0.2.0/ro-crate-metadata.jsonld) – a dataset containing a scientific workflow represented in two different languages.
+* [RO-Crate specification](https://researchobject.github.io/ro-crate/1.0/ro-crate-preview.html) ([ro-crate-metadata.jsonld](https://researchobject.github.io/ro-crate/1.0/ro-crate-metadata.jsonld)) – the specification itself and its publication
 
 ## Contribute
 
 The _RO-Crate_ team is:
 
-* Eoghan Ó Carragáin <https://orcid.org/0000-0001-8131-2150> (chair)
 * Peter Sefton <https://orcid.org/0000-0002-3545-944X> (co-chair)
 * Stian Soiland-Reyes <https://orcid.org/0000-0001-9842-9718> (co-chair)
+* Eoghan Ó Carragáin <https://orcid.org/0000-0001-8131-2150> (emeritus chair)
 * Oscar Corcho <https://orcid.org/0000-0002-9260-0753>
 * Daniel Garijo <https://orcid.org/0000-0003-0454-7145>
 * Raul Palma <https://orcid.org/0000-0003-4289-4922>
