@@ -373,7 +373,6 @@ licensing for the _RO-Crate Metadata File_ so metadata can be licensed
 separately from Data.
 
 
-The table below outlines the properties that the _Root Data Entity_ MUST have to be minimally valid and additionally highlights properties required to meet other common use-cases, including the minimum metadata necessary to mint a DataCite DOI:
 
 #### Direct properties of the Root Data Entity
 
@@ -553,7 +552,6 @@ If there is no web-accessible description for a file format it SHOULD be describ
 
 ### Core Metadata for _Data Entities_
 
-The table below outlines the properties that Data Entities, when present, MUST have to be minimally valid .
 
 #### File Data Entity
 
