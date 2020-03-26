@@ -35,7 +35,7 @@ import urllib.request
 ROCRATE_VERSION="1.1-DRAFT"
 
 # Update version from http://schema.org/docs/releases.html
-SCHEMA_VERSION="5.0"
+SCHEMA_VERSION="7.01"
 
 def main():
     url="http://schema.org/version/%s/schemaorgcontext.jsonld" % SCHEMA_VERSION
