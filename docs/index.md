@@ -101,7 +101,7 @@ The _RO-Crate_ team is:
 * Hervé Ménager <https://orcid.org/0000-0002-7552-1009>
 * Laura Rodríguez Navas <https://orcid.org/0000-0003-4929-1219>
 * Paul Walk <https://orcid.org/0000-0003-1541-5631>
-* Brandon Whitehead <https://orcid.org/0000-0002-0337-8610>
+* brandon whitehead <https://orcid.org/0000-0002-0337-8610>
 * Mark Wilkinson <https://orcid.org/0000-0001-6960-357X>
 * Paul Groth <https://orcid.org/0000-0003-0183-6910>
 
