@@ -101,6 +101,9 @@ The _RO-Crate_ team is:
 * Hervé Ménager <https://orcid.org/0000-0002-7552-1009>
 * Laura Rodríguez Navas <https://orcid.org/0000-0003-4929-1219>
 * Paul Walk <https://orcid.org/0000-0003-1541-5631>
+* Brandon Whitehead <https://orcid.org/0000-0002-0337-8610>
+* Mark Wilkinson <https://orcid.org/0000-0001-6960-357X>
+* Paul Groth <https://orcid.org/0000-0003-0183-6910>
 
 To suggest changes, improvements or issues, use the GitHub repository <https://github.com/ResearchObject/ro-crate> - if you are new to GitHub or Open Source you may appreciate the [GitHub guides](https://guides.github.com/) like [Hello World](https://guides.github.com/activities/hello-world/), [MarkDown](https://guides.github.com/features/mastering-markdown/) and [How to contribute to open source](https://opensource.guide/how-to-contribute/)
 
