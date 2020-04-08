@@ -46,7 +46,7 @@
 See <https://w3id.org/ro/crate> for further details about RO-Crate.
 
 <small>
-This specification is Copyright 2017-2019 University of Technology Sydney, 
+This specification is Copyright 2017-2020 University of Technology Sydney, 
 The University of Manchester UK and the RO-Crate contributors.
 </small>
 
@@ -194,7 +194,7 @@ If present in the root directory, `ro-crate-preview.html` MUST:
 
 ### Payload files and directories
 
-These are the actual files and directories that make up the dataset being described. 
+These are the actual files and directories that make up the dataset being described.
 
 The base RO-Crate specification makes no assumptions about the presence of any specific files or folders beyond the reserved RO-Crate files described above. Payload files may appear directly in the _RO-Crate Root_ alongside the _RO-Crate Metadata File_, and/or appear in sub-directories of the _RO-Crate Root_. Each file and directory MAY be represented as Data Entities in the _RO-Crate Metadata File_.
 
@@ -377,7 +377,6 @@ The _RO-Crate Metadata File Descriptor_ MAY contain information such as
 licensing for the _RO-Crate Metadata File_ so metadata can be licensed
 separately from Data.
 
-
 The table below outlines the properties that the _Root Data Entity_ MUST have to be minimally valid and additionally highlights properties required to meet other common use-cases, including the minimum metadata necessary to mint a DataCite DOI:
 
 #### Direct properties of the Root Data Entity
@@ -435,9 +434,13 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
 
 Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the Root Data Entity using the [hasPart] property. Directory hierarchies MAY be represented with nested Dataset _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
 
-_Data Entities_ representing files MUST be of `@type: File`, which is an RO-Crate alias for <http://schema.org/MediaObject>
+_Data Entities_ representing files MUST be of `@type: File`, which is an RO-Crate alias for <http://schema.org/MediaObject>. The term _file_ here is liberal, and includes "downloadable" resources where `@id` is an absolute URI.
 
-_Data Entities_ representing directories MUST be of `@type: Dataset`.
+_Data Entities_ representing directories MUST be of `@type: Dataset`. The term _directory_ here includes HTTP file listings where `@id` is an absolute URI, however "external" directories SHOULD have a programmatic listing of their content (e.g. another RO-Crate).
+
+_Data Entities_ can also be other types, for instance an online database. These SHOULD be of `@type: CreativeWork` and typically have a `@id` which is an absolute URI.
+
+In all cases, `@type` MAY be an array in order to also specify a more specific type, e.g. `@type: [File, Workflow]`
 
 _Note: as indicated above, there is no requirement to represent every file and folder in an RO-Crate as Data Entities in the RO-Crate JSON-LD._
 
@@ -564,8 +567,7 @@ The table below outlines the properties that Data Entities, when present, MUST h
 
 A `File` _Data Entity_ MUST have the following properties:
 *  `@type`: MUST be `File`, or an array where `File` is one of the values.
-*  `@id` MUST  be a _URI Path_ relative to the _RO Crate root_ 
-
+*  `@id` MUST be either a _URI Path_ relative to the _RO Crate root_, or an absolute URI.
 
 #### Directory File Entity
 
