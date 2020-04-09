@@ -581,7 +581,7 @@ A `Dataset` (directory) _Data Entity_ MUST have the following properties:
 
 While one use-case of RO-Crates is to describe _files_ contained within the _RO-Crate root_ directory, RO-Crates can also gather resources on the web, identified using _absolute URIs_ instead of relative _URI paths_.
 
-This can be important particularly where a file can't be included in the _RO-Crate root_ because of licensing concerns, large data sizes, or where it is desirable to link to the latest online version.
+Using Web-based data entities can be important particularly where a file can't be included in the _RO-Crate root_ because of licensing concerns, large data sizes, privacy, or where it is desirable to link to the latest online version.
 
 Example of an RO-Crate where some of the _File Data Entities_ are external to the _RO-Crate root_:
 
@@ -630,7 +630,47 @@ Additional care SHOULD be taken to improve persistence and longevity of web reso
 in an RO-Crate, as they can be more difficult to archive or move along with the _RO-Crate root_, and
 may change intentionally or unintentionally leaving the RO-Crate with partial or outdated information.
 
+File Data Entries with an `@id` URI outside the _RO-Crate Root_ SHOULD at the time of RO-Crate creation be directly downloadable by a simple retrieval (e.g. HTTP GET), permitting redirections and HTTP authentication. For instance in the example above, <https://zenodo.org/record/3541888> and <https://doi.org/10.5281/zenodo.3541888> cannot be used as `@id` above as retrieving these URLS give a HTML landing page rather than the desired PDF as indicated by `encodingFormat`.
 
+A files on the web may change, the timestamp property `sdDatePublished` SHOULD be included to indicate when the absolute URL was accessed, and derived metadata like `encodingFormat` and `contentSize` was considered to be representative:
+
+```json
+  {
+    "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf",
+    "@type": "File",
+    "contentSize": "310691",
+    "encodingFormat": "application/pdf",
+    "sdDatePublished": "2020-04-09T13:09:21+01:00Z"
+  }
+```
+
+#### Embedded data entities that are also on the web
+
+File Data Entities may already have a corresponding web presence, for instance a landing page that describes the file, including persistent identifiers (e.g. DOI) that goes to an intermediate HTML page instead of the downloadable file directly. 
+
+These can be included for File Data Entities as additional metadata, regardless of if the File is included in the _RO-Crate Root_ directory or exists on the Web, by using properties:
+
+* `identifier` for formal identifier string such as DOIs
+* `url` with a string URL for a *download* link (if not available, a download landing page) for this file
+* `subjectOf` to a `CreativeWork` (or `WebPage`) that mentions this file or its content (but also other resources).
+* `mainEntityOfPage` to a `CreativeWork`  (or `WebPage`) that primarily describes this file (or its content) 
+
+```json
+  {
+    "@id": "survey-responses-2019.csv",
+    "@type": "File",
+    "encodingFormat": "text/csv",
+    "url": "http://example.com/downloads/2019/survey-responses-2019.csv",
+    "subjectOf": {"@id": "http://example.com/reports/2019/annual-survey.html"}
+  },
+  {
+    "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf",
+    "@type": "File",
+    "encodingFormat": "application/pdf",
+    "identifier": "https://doi.org/10.5281/zenodo.3541888",
+    "url": "https://zenodo.org/record/3541888"
+  }
+```
 
 
 ## Representing _Contextual Entities_
