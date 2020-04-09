@@ -606,8 +606,8 @@ Example of an RO-Crate where some of the _File Data Entities_ are external to th
       {
         "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf"
       },
-      ],
-   },
+      ]
+  },
   {
     "@id": "survey-responses-2019.csv",
     "@type": "File",
