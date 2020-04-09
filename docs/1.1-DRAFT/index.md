@@ -672,6 +672,29 @@ These can be included for File Data Entities as additional metadata, regardless 
   }
 ```
 
+#### Directories on the web; dataset distributions
+
+A _Directory File Entry_ or `Dataset` identifier by an absolute URL on the web can be harder to download than a `File` because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in `hasPart`, enabling download traversal.
+
+Alternatively a common mechanism to provide downloads of a reasonably sized directory is as an archive file in formats like `.zip` or `.tar.gz`, described as a [DataDownload]. 
+
+  {
+      "@id": "lots_of_little_files/",
+      "@type": "Dataset",
+      "description": "This directory contains many small files, that we're not going to describe in detail.",
+      "name": "Too many files",
+      "distribution": {"@id": "http://example.com/downloads/2020/lots_of_little_files.zip"}
+  },
+  {
+    "@id": "http://example.com/downloads/2020/lots_of_little_files.zip",
+    "@type": "DataDownload",
+    "encodingFormat": "application/zip",
+    "contentSize": "82818928"
+  }
+
+Similarly, the _RO-Crate root_ entity may also provide a `distribution` URL, in which case the download SHOULD be an archive that contain the _RO-Crate Metadata file_.
+
+In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not be reflecting the current state of the `Dataset` or RO-Crate.
 
 ## Representing _Contextual Entities_
 The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.jsonld`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
