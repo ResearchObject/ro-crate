@@ -105,7 +105,7 @@ The _RO-Crate_ team is:
 * Mark Wilkinson <https://orcid.org/0000-0001-6960-357X>
 * Paul Groth <https://orcid.org/0000-0003-0183-6910>
 * Erich Bremer <https://orcid.org/0000-0003-0223-1059>
-* Leyla Garcia <https://orcid.org/0000-0003-3986-0510>
+* LJ Garcia Castro <https://orcid.org/0000-0003-3986-0510>
 
 To suggest changes, improvements or issues, use the GitHub repository <https://github.com/ResearchObject/ro-crate> - if you are new to GitHub or Open Source you may appreciate the [GitHub guides](https://guides.github.com/) like [Hello World](https://guides.github.com/activities/hello-world/), [MarkDown](https://guides.github.com/features/mastering-markdown/) and [How to contribute to open source](https://opensource.guide/how-to-contribute/)
 
