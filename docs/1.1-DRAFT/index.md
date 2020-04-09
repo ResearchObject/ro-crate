@@ -99,7 +99,7 @@ _Contextual Entity_: A JSON-LD representation of an entity associated with a _Da
 
 _Linked Data_: A data structure where properties, types and resources are identified with _URIs_, which if retrieved over the Web, further describe or provide the identified property/type/resource.
 
-URI: A _Uniform Resource Identifier_ as defined in [RFC 3986], for example `http://example.com/path/file.html` - commonly known as _URL_. In this document the term _URI_ includes _IRI_, which also permit international Unicode characters.
+_URI_: A _Uniform Resource Identifier_ as defined in [RFC 3986], for example `http://example.com/path/file.html` - commonly known as _URL_. In this document the term _URI_ includes _IRI_, which also permit international Unicode characters.
 
 _URI Path_: The relative _path_ element of an _URI_ as defined in [RFC3986 section 3.3](https://tools.ietf.org/html/rfc3986#section-3.3), e.g. `path/file.html`
 
@@ -152,7 +152,7 @@ A valid _RO-Crate JSON-LD_ graph MUST describe:
 
 It is RECOMMENDED that any referenced _contextual entities_ are also described in the _RO-Crate Metadata File_ with the same identifier. Similarly it is RECOMMENDED that any _contextual entity_ in the _RO-Crate Metadata file_ is linked to from at least one of the other entities using the same identifier. 
 
-The appendix [RO-Crate JSON-LD](#ro-crate-json-ld) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata File_. In short, the rest of this specification describe the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` below:
+The appendix [RO-Crate JSON-LD](#ro-crate-json-ld) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata File_. In short, the rest of this specification describe the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` array below:
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context",
@@ -203,12 +203,13 @@ The base RO-Crate specification makes no assumptions about the presence of any s
 
 A minimal RO-Crate is a directory containing a single _RO-Crate Metadata File_. 
 
-At the basic level, an RO-Crate is a collection of files represented as a schema.org [Dataset], that together form a meaningful unit for the purposes of communication, citation, distribution, preservation, etc.  The _RO-Crate Metadata File_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. Self-containment is a core principle of RO-Crate, i.e. that all _Dataset_ files and relevant metadata SHOULD, as far as possible, be contained by the RO-Crate, rather than referring to external resources. However the RO-Crate MAY also reference external resources which are stored or accessed separately, via URIs, e.g. because these cannot be included for practical or legal reasons.
+At the basic level, an RO-Crate is a collection of files and resources represented as a schema.org [Dataset], that together form a meaningful unit for the purposes of communication, citation, distribution, preservation, etc.  The _RO-Crate Metadata File_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. 
+
+While RO-Crate is well catered for describing a _Dataset_ as files and relevant metadata that are _contained_ by the RO-Crate in the sense of living within the same root directory, RO-Crates can also reference external resources which are stored or accessed separately, via absolute URIs. This is particularly recommended where some resources cannot be co-hosted for practical or legal reasons, or if the RO-Crate itself is primarily web-based.
 
 It is important to note that the _RO-Crate Metadata File_ is not an exhaustive manifest or inventory, that is, it does not necessarily list or describe all files in the package.  Rather it is focused on providing sufficient amount of metadata to understand and use the content, and is designed to be compatible with existing and future approaches that _do_ have full inventories / manifest and integrity checks, e.g. by using checksums, such as [BagIt] and Oxford Common File Layout [OCFL Object]s.
 
-The intention is that RO-Crates can work well with a variety of archive file formats, e.g. tar, zip, etc., and approaches to capturing file manifests and file fixity, such as [BagIt], [OCFL] and [git].
-
+The intention is that RO-Crates can work well with a variety of archive file formats, e.g. tar, zip, etc., and approaches to capturing file manifests and file fixity, such as [BagIt], [OCFL] and [git]. An RO-Crate can also be hosted on the web or mainly refer to web resources, although extra care to ensure persistence and consistency should be taken for archiving such RO-Crates.
 
 ## RO-Crate Metadata
 
@@ -253,7 +254,7 @@ Generally, the standard keys from [schema.org] should be used. However, RO-Crate
 * `File` is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of schema.org or a research data extension may re-define `File`.
 * `Journal` is mapped to <http://schema.org/Periodical>.
 
-Note that JSON-LD examples given on <http://schema.org/> website may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
+Note that JSON-LD examples given on the <http://schema.org/> website may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
 
 To simplify processing and avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even where [schema.org] for some properties otherwise permit shorter forms like `"author": "http://example.com/alice"`.
 
@@ -279,6 +280,7 @@ The keys `RepositoryObject` and `RepositoryCollection` were chosen to avoid coll
 
 From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
 - `conformsTo` mapped to <http://purl.org/dc/terms/conformsTo>
+
 
 ### Summary of Coverage
 
@@ -358,7 +360,7 @@ the the _Root Data Entity_ by following this algorithm:
 
 1. For each entity in `@graph` array
 2. ..if the `conformsTo` property is a URI that starts with `https://w3id.org/ro/crate/`
-3. ....from  this entity's `about` object keep the `@id` URI as variable _root_
+3. ....from this entity's `about` object keep the `@id` URI as variable _root_
 4. For each entity in `@graph` array
 5. .. if the entity has an `@id` URI that matches _root_ return it
 
@@ -383,7 +385,7 @@ The table below outlines the properties that the _Root Data Entity_ MUST have to
 
 The _Root Data Entity_ MUST have the following properties:
 *  `@type`: MUST be [Dataset]
-*  `@id`:  MUST be a a string of ‘./’
+*  `@id`:  MUST end with `/` and SHOULD be the string `./`
 *  `name`: SHOULD identify the dataset to humans well enough to disambiguate it from other RO-Crates
 *  `description`: SHOULD further elaborate on the name to provide a summary of the context in which the dataset is important.
 *  `datePublished`: MUST be a string in ISO 8601 date format and SHOULD be specified to at least the precision of a day, MAY be a timestamp down to the millisecond. 
@@ -419,18 +421,18 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
     "description": "Palliative care planning for nursing home residents with advanced dementia ...",
     "license": {"@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/"}
  },
-{
+ {
   "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
   "@type": "CreativeWork",
   "description": "This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/au/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.",
   "identifier": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
   "name": "Attribution-NonCommercial-ShareAlike 3.0 Australia (CC BY-NC-SA 3.0 AU)"
-  }
+ }
  ]
 }
 ```
 
-### Examples of referencing _Data Entities_ (files and folders) from the _Root Data Entity_
+### Referencing _Data Entities_ (files and folders) from the _Root Data Entity_
 
 Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the Root Data Entity using the [hasPart] property. Directory hierarchies MAY be represented with nested Dataset _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
 
@@ -561,7 +563,7 @@ If there is no web-accessible description for a file format it SHOULD be describ
 
 ### Core Metadata for _Data Entities_
 
-The table below outlines the properties that Data Entities, when present, MUST have to be minimally valid .
+The table below outlines the properties that Data Entities, when present, MUST have to be minimally valid.
 
 #### File Data Entity
 
@@ -573,7 +575,62 @@ A `File` _Data Entity_ MUST have the following properties:
 
 A `Dataset` (directory) _Data Entity_ MUST have the following properties:
 *  `@type` MUST be `Dataset` or an array wher `Dataset` is one of the values.
-*  `@id`  MUST be a _URI Path_ relative to the _RO Crate root; SHOULD end with `/`
+*  `@id`  MUST be either an a _URI Path_ relative to the _RO Crate root, or an absolute URI. The id SHOULD end with `/`
+
+### Web-based Data Entities
+
+While one use-case of RO-Crates is to describe _files_ contained within the _RO-Crate root_ directory, RO-Crates can also gather resources on the web, identified using _absolute URIs_ instead of relative _URI paths_.
+
+This can be important particularly where a file can't be included in the _RO-Crate root_ because of licensing concerns, large data sizes, or where it is desirable to link to the latest online version.
+
+Example of an RO-Crate where some of the _File Data Entities_ are external to the _RO-Crate root_:
+
+```json
+{ "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context",
+  "@graph": [
+    {
+        "@type": "CreativeWork",
+        "@id": "ro-crate-metadata.jsonld",
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
+        "about": {"@id": "./"}
+  },  
+  {
+    "@id": "./",
+    "@type": [
+      "Dataset"
+    ],
+    "hasPart": [
+      {
+        "@id": "survey-responses-2019.csv"
+      },
+      {
+        "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf"
+      },
+      ],
+   },
+  {
+    "@id": "survey-responses-2019.csv",
+    "@type": "File",
+    "contentSize": "26452",
+    "description": "Survey responses",
+    "encodingFormat": "text/csv"
+  },
+  {
+    "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf",
+    "@type": "File",
+    "contentSize": "310691",
+    "description": "RO-Crate specification",
+    "encodingFormat": "application/pdf"
+  }
+]
+}
+```
+
+Additional care SHOULD be taken to improve persistence and longevity of web resources included 
+in an RO-Crate, as they can be more difficult to archive or move along with the _RO-Crate root_, and
+may change intentionally or unintentionally leaving the RO-Crate with partial or outdated information.
+
+
 
 
 ## Representing _Contextual Entities_
