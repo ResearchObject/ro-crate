@@ -106,6 +106,8 @@ The _RO-Crate_ team is:
 * Paul Groth <https://orcid.org/0000-0003-0183-6910>
 * Erich Bremer <https://orcid.org/0000-0003-0223-1059>
 * LJ Garcia Castro <https://orcid.org/0000-0003-3986-0510>
+* Karl Sebby <https://orcid.org/0000-0001-6022-9825>
+* Alexander Kanitz <https://orcid.org/0000-0002-3468-0652>
 
 To suggest changes, improvements or issues, use the GitHub repository <https://github.com/ResearchObject/ro-crate> - if you are new to GitHub or Open Source you may appreciate the [GitHub guides](https://guides.github.com/) like [Hello World](https://guides.github.com/activities/hello-world/), [MarkDown](https://guides.github.com/features/mastering-markdown/) and [How to contribute to open source](https://opensource.guide/how-to-contribute/)
 
