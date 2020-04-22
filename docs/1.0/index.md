@@ -455,40 +455,40 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
 { "@context": "https://w3id.org/ro/crate/1.0/context",
   "@graph": [
     {
-        "@type": "CreativeWork",
-        "@id": "ro-crate-metadata.jsonld",
-        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.0"},
-        "about": {"@id": "./"}
-  },  
-  {
-    "@id": "./",
-    "@type": [
-      "Dataset"
-    ],
-    "hasPart": [
-      {
-        "@id": "cp7glop.ai"
-      },
-      {
-        "@id": "lots_of_little_files/"
-      },
+      "@type": "CreativeWork",
+      "@id": "ro-crate-metadata.jsonld",
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.0"},
+      "about": {"@id": "./"}
+    },  
+    {
+      "@id": "./",
+      "@type": [
+        "Dataset"
       ],
-   },
-  {
-    "@id": "cp7glop.ai",
-    "@type": "File",
-    "contentSize": "383766",
-    "description": "Illustrator file for Glop Pot",
-    "encodingFormat": "application/pdf"
-  },
-  {
+      "hasPart": [
+        {
+          "@id": "cp7glop.ai"
+        },
+        {
+          "@id": "lots_of_little_files/"
+        }
+      ]
+    },
+    {
+      "@id": "cp7glop.ai",
+      "@type": "File",
+      "contentSize": "383766",
+      "description": "Illustrator file for Glop Pot",
+      "encodingFormat": "application/pdf"
+    },
+    {
       "@id": "lots_of_little_files/",
       "@type": "Dataset",
       "description": "This directory contains many small files, that we're not going to describe in detail.",
-      "name": "Too many files",
-
-  }
-]
+      "name": "Too many files"
+    }
+  ]
+}
 ```
 
 #### Adding detailed descriptions of encodings
