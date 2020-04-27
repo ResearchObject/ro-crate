@@ -126,13 +126,15 @@ The structure an _RO-Crate_ MUST follow is:
 |   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
 |   ro-crate-preview_files/   # MAY be present
 |    | [other RO-Crate Website files]
-|   [payload files and directories]  # 1 or more SHOULD be present
+|   [payload files and directories]  # 0 or more
 ```
 
 The name of the _RO-Crate root_ directory is not defined, but a root directory is identifiable by the presence of `ro-crate-metadata.jsonld`. For instance, if an _RO-Crate_ is archived in a ZIP-file, the ZIP root directory correspond to _RO-Crate root_ directory if it contains `ro-crate-metadata.jsonld`.
 
+[Data Entities](#core-metadata-for-data-entities) in the RO-Crate MUST either be _payload files/directories_ present within the RO-Crate root directory or its subdirectories, or be [Web-based Data Entities](#web-based-data-entities).
+
 <!--
-It follows that RO-Crates can be _nested_ by including payload directories that themselves contain `ro-crate-metadata.jsonld`.
+RO-Crates can be _nested_ by including payload directories that themselves contain `ro-crate-metadata.jsonld`.
 -->
 
 ### RO-Crate Metadata File (`ro-crate-metadata.jsonld`)
