@@ -2272,6 +2272,7 @@ Parsing this as RDF will generate triples including:
 
 Here consumers can assume `/` is the _RO-Crate Root_ and generating relative URIs can safely be achieved by  search-replace as the arcp URI is unique. Saving _RO-Crate JSON-LD_ from the triples can be done by using the arcp URI to [relativize absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root).
 
+The arcp specification suggests how [BagIt identifiers](https://tools.ietf.org/html/draft-soilandreyes-arcp-03#appendix-A.4) can be used to calculate the base URI. See also section [Combining with other packaging schemes](#combining-with-other-packaging-schemes)
 
 #### Relativizing absolute URIs within RO-Crate Root
 
@@ -2428,9 +2429,9 @@ A _Data Entity_ describing example.txt would have an `@id` of `bag/data/example.
   "@id": "bag/data/example.txt",
   "name": "Example file"
 }
-
-
 ```
+
+The arcp specification suggests how [BagIt UUID identifiers](https://tools.ietf.org/html/draft-soilandreyes-arcp-03#appendix-A.4) can be used to calculate the base URI of a bag. See also section [Establishing a base URI inside a ZIP file](#establishing-a-base-uri-inside-a-zip-file).
 
 ### Repository-specific identifiers
 
