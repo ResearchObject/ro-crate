@@ -2272,7 +2272,7 @@ Parsing this as RDF will generate triples including:
 
 Here consumers can assume `/` is the _RO-Crate Root_ and generating relative URIs can safely be achieved by  search-replace as the arcp URI is unique. Saving _RO-Crate JSON-LD_ from the triples can be done by using the arcp URI to [relativize absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root).
 
-The arcp specification suggests how [BagIt identifiers](https://tools.ietf.org/html/draft-soilandreyes-arcp-03#appendix-A.4) can be used to calculate the base URI. See also section [Combining with other packaging schemes](#combining-with-other-packaging-schemes)
+**Bagit**: The arcp specification suggests how [BagIt identifiers](https://tools.ietf.org/html/draft-soilandreyes-arcp-03#appendix-A.4) can be used to calculate the base URI. See also section [Combining with other packaging schemes](#combining-with-other-packaging-schemes) - note that in this approach the _RO-Crate Root_ will be the payload folder `/data/` under the calculated arcp base URI.
 
 #### Relativizing absolute URIs within RO-Crate Root
 
@@ -2402,6 +2402,11 @@ payload (`data/`) directory.
       |     [payload files and directories]  # 1 or more SHOULD be present
 ```
 
+**Base URI**: The arcp specification suggests how [BagIt UUID identifiers](https://tools.ietf.org/html/draft-soilandreyes-arcp-03#appendix-A.4) can be used to calculate the base URI of a bag, see section [Establishing a base URI inside a ZIP file](#establishing-a-base-uri-inside-a-zip-file).  For this purpose it is RECOMMENDED that `bag-info.txt` includes a fresh UUID like:
+
+    External-Identifier: urn:uuid:24e51ca2-5067-4598-935a-dac4e327d05a
+
+
 #### Example of wrapping a BagIt bag in an RO-Crate
 
 Alternatively, an RO-Crate can wrap a BagIt bag, so that the RO-Crate metadata
@@ -2431,7 +2436,6 @@ A _Data Entity_ describing example.txt would have an `@id` of `bag/data/example.
 }
 ```
 
-The arcp specification suggests how [BagIt UUID identifiers](https://tools.ietf.org/html/draft-soilandreyes-arcp-03#appendix-A.4) can be used to calculate the base URI of a bag. See also section [Establishing a base URI inside a ZIP file](#establishing-a-base-uri-inside-a-zip-file).
 
 ### Repository-specific identifiers
 
