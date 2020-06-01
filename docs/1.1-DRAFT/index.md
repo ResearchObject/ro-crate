@@ -1845,7 +1845,7 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 
 ## APPENDIX: Implementation notes
 
-#### Combining with other packaging schemes
+### Combining with other packaging schemes
 
 RO-Crates may co-exist with other packaging schemes, such as [BagIt] using two
 general approaches; either (a) _adding_ RO-Crate into a package as part of the payload
@@ -1862,7 +1862,7 @@ BagIt is described in [RFC 8493]:
 BagIt and RO-Crate have largely separate concerns - RO-Crate is focussed on rich
 metadata, the semantics of data, while BagIt is about reliable transfer.
 
-##### Example of adding RO-Crate to Bagit
+#### Example of adding RO-Crate to Bagit
 
 RO-Crate can be combined with BagIt simply by placing the RO-Crate files in the BagIt
 payload (`data/`) directory.
@@ -1880,7 +1880,7 @@ payload (`data/`) directory.
       |     [payload files and directories]  # 1 or more SHOULD be present
 ```
 
-##### Example of wrapping a BagIt bag in an RO-Crate
+#### Example of wrapping a BagIt bag in an RO-Crate
 
 Alternatively, an RO-Crate can wrap a BagIt bag, so that the RO-Crate metadata
 is outside of the bag directory and can be changed without changing the payload's checksums. 
@@ -1911,7 +1911,7 @@ A _Data Entity_ describing example.txt would have an `@id` of `bag/data/example.
 
 ```
 
-#### Repository-specific identifiers
+### Repository-specific identifiers
 
 _Root Data Entities_ MAY also have additional repository specific identifiers, described using `Contextual Entities` using a [PropertyValue], with a `name` that identifies the repository and the `identifier` as a value. The _same_ identifier MAY be used in multiple different repositories and effectively namespaced using the `name` of the ProperyValue.
 
@@ -1936,6 +1936,8 @@ _Root Data Entities_ MAY also have additional repository specific identifiers, d
    "value": "https://doi.org/10.4225/59/59672c09f4a4b"
  }
 ```
+
+
 
 <!--  Below are reference links not rendered in HTML, see
 https://kramdown.gettalong.org/syntax.html#reference-links
