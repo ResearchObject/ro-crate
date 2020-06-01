@@ -1863,7 +1863,7 @@ If performing
 
 Example, this JSON-LD is in [compacted form](https://www.w3.org/TR/json-ld11/#compacted-document-form) which may be beneficial for processing, but is not yet valid _RO-Crate Metadata File_ as it has not been flattened into a `@graph` array.
 
-```jsonld
+```json
 { 
   "@context": [
     {"@base": null},
@@ -1893,7 +1893,7 @@ Example, this JSON-LD is in [compacted form](https://www.w3.org/TR/json-ld11/#co
 
 Performing [JSON-LD flattening](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) with:
 
-```jsonld
+```json
 { "@context": 
      "https://w3id.org/ro/crate/1.1-DRAFT/context"
 }
@@ -1901,7 +1901,7 @@ Performing [JSON-LD flattening](https://www.w3.org/TR/json-ld-api/#flattening-al
 
 Results in a valid _RO-Crate JSON-LD_ (actual order in `@graph` may differ):
 
-```jsonld
+```json
 {
   "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context",
   "@graph": [
@@ -1957,7 +1957,7 @@ To avoid absoluting local identifiers, before expanding, augment the JSON-LD `@c
 
 For example, expanding
 
-```jsonld
+```json
 {
   "@context": [
     "https://w3id.org/ro/crate/1.1-DRAFT/context",
@@ -1995,7 +1995,7 @@ For example, expanding
 
 Results in a [expanded form](https://www.w3.org/TR/json-ld11/#expanded-document-form) without `@context`, using absolute URIs for properties and types, but retains relative URI references for entities within the _RO-Crate Root_:
 
-```jsonld
+```json
 [
   {
     "@id": "ro-crate-metadata.jsonld",
@@ -2152,7 +2152,7 @@ When parsing a _RO-Crate Metadata File_ into [RDF triples](https://www.w3.org/TR
 
 If a web-based URI for the _RO-Crate root_ is known, then this can be supplied as a _base URI_. Most RDF tools support a `--base` option or similar. If this is not possible, then the `@context` of the `RO-Crate JSON-LD` can be modified by ensuring the `@context` is an array that sets the desired `@base`:
 
-```jsonld
+```json
 {
   "@context": [
     "https://w3id.org/ro/crate/1.1-DRAFT/context",
@@ -2167,16 +2167,11 @@ If a web-based URI for the _RO-Crate root_ is known, then this can be supplied a
       },
       "about": {
         "@id": "./"
-      },
-      "description": "RO-Crate Metadata File Descriptor (this file)"
+      }
     },
     {
       "@id": "./",
       "@type": "Dataset",
-      "description": "The RO-Crate Root DatEstablishing absolute URI for RO-Crate Root
-          "@id": "subfolder/"
-        }
-      ],
       "name": "Example RO-Crate"
     },
     {
@@ -2223,7 +2218,7 @@ to establish a temporary/location-based UUID or hash-based (SHA256) _base URI_.
 For instance, given a randomly generated UUID `029bcde1-dfa3-43cf-b7d9-a4fb75ccd4eb` we can use `arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/` as the `@base`:
 
 
-```jsonld
+```json
 {
   "@context": [
     "https://w3id.org/ro/crate/1.1-DRAFT/context",
@@ -2238,8 +2233,7 @@ For instance, given a randomly generated UUID `029bcde1-dfa3-43cf-b7d9-a4fb75ccd
       },
       "about": {
         "@id": "./"
-      },
-      "description": "RO-Crate Metadata File Descriptor (this file)"
+      }
     },
     {
       "@id": "./",
@@ -2270,8 +2264,7 @@ For instance, given a randomly generated UUID `029bcde1-dfa3-43cf-b7d9-a4fb75ccd
 
 Parsing this as RDF will generate triples including:
 
-```
-
+```turtle
 <arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/ro-crate-metadata.jsonld> <http://schema.org/about> <arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/> .
 
 <arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/> <http://schema.org/hasPart> <arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/data1.txt> .
@@ -2286,7 +2279,7 @@ Some applications may prefer working with absolute URIs, e.g. in a joint graph s
 
 Assuming a repository at `example.com` has JSON-LD with absolute URIs:
 
-```jsonld
+```json
 {
   "@context": "https://w3id.org/ro/crate/1.1-DRAFT",
   "@graph": [
@@ -2299,7 +2292,6 @@ Assuming a repository at `example.com` has JSON-LD with absolute URIs:
       "about": {
         "@id": "http://example.com/crate415/"
       },
-      "description": "RO-Crate Metadata File Descriptor (this file)"
     },
     {
       "@id": "http://example.com/crate415/",
@@ -2322,7 +2314,7 @@ Assuming a repository at `example.com` has JSON-LD with absolute URIs:
 Then performing [JSON-LD flattening](https://www.w3.org/TR/json-ld-api/#flattening-algorithm)
 with this `@context`:
 
-```jsonld
+```json
 { "@context": [
     {"@base": "http://example.com/crate415/"},
      "https://w3id.org/ro/crate/1.1-DRAFT"
@@ -2332,7 +2324,7 @@ with this `@context`:
 
 Will output _RO-Crate JSON-LD_ with relative URIs:
 
-```jsonld
+```json
 {
   "@context": [
     {
@@ -2363,8 +2355,7 @@ Will output _RO-Crate JSON-LD_ with relative URIs:
       },
       "about": {
         "@id": "./"
-      },
-      "description": "RO-Crate Metadata File Descriptor (this file)"
+      }
     }
   ]
 }
