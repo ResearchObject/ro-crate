@@ -1343,7 +1343,111 @@ A workflow diagram may still be provided even if there is no programmatic `Softw
  
 ```
 
+#### Complying with BioSchemas Workflow profile
 
+To comply with the [BioSchemas Workflow profile](https://bioschemas.org/profiles/Workflow/0.4-DRAFT-2020_05_11/),
+where possible, data entities representing _workflows_ SHOULD describe these properties and their related contextual entities:
+
+<!-- TODO:Update link to Workflow 0,5 once released -->
+
+* [name] giving a short descriptive name of the workflow
+* [programmingLanguage] identifying the workflow system, typed as `ProgrammingLanguage`
+* [creator] identifying the [Person](s) and/or [Organization](s) that made the workflow. (This may differ from the [author] of the conceptual workflow, e.g. if the workflow was converted from one language to another).
+* [dateCreated] the date the workflow was first made, e.g. `2020-05-23`
+* [license] identifying a [CreativeWork] that details license for distributing or editing the workflow
+* `input` and `output` identifying contextual entities for the `FormalParameter` describing input and output parameters/variables that may be varied on different workflow executions
+* [sdPublisher] to identify the [Person] or [Organization] who has made the JSON-LD description of the workflow
+* [url] to identify a public page or source code repository for the workflow
+* [version] to indicate the released version of this workflow file
+
+Contextual entities for `FormalParameter`, referenced by `input` or `output`, SHOULD describe:
+
+* [name] given the programmatic name for the parameter binding
+
+<!--
+TODO: Update requirements from BioSchemas profile Workflow 0,5
+-->
+
+_Note: `input`, `output` and `FormalParameter`_
+
+
+The below is an example of an RO-Crate complying with the [BioSchemas Workflow profile 0,4](https://bioschemas.org/profiles/Workflow/0.4-DRAFT-2020_05_11/):
+
+<!-- TODO: Update for Workflow 0,5 once released -->
+
+```json
+{ "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context", 
+  "@graph": [
+    {
+        "@type": "CreativeWork",
+        "@id": "ro-crate-metadata.jsonld",
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
+        "about": {"@id": "./"}
+    },
+    
+    {
+       "@id": "./",
+       "@type": "Dataset",
+       "hasPart": [
+           { "@id": "workflow/retropath.knime" }
+       ]
+    },
+    {
+       "@id": "workflow/alignment.knime",  
+       "@type": "SoftwareSourceCode",
+       "name": "Sequence alignment workflow",
+       "programmingLanguage": {"@id": "#knime"},
+       "creator": {"@id": "#alice"},
+       "dateCreated": "2020-05-23",
+       "license": { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"},
+       "input": [
+           { "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b"}
+       ],
+       "output": [
+           { "@id": "#6c703fee-6af7-4fdb-a57d-9e8bc4486044"},
+           { "@id": "#2f32b861-e43c-401f-8c42-04fd84273bdf"}
+       
+       ],
+       "sdPublisher": {"@id": "#workflow-hub"},
+       "url": "http://example.com/workflows/alignment",
+       "version": "0.5.0",
+    },
+    { "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
+      "@type": "FormalParameter",
+      "name": "genome_sequence" 
+    },    
+    { "@id": "#6c703fee-6af7-4fdb-a57d-9e8bc4486044",
+      "@type": "FormalParameter",
+      "name": "cleaned_sequence" 
+    },    
+    { "@id": "#2f32b861-e43c-401f-8c42-04fd84273bdf",
+      "@type": "FormalParameter",
+      "name": "sequence_alignment" 
+    },    
+    { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0",
+      "@type": "CreativeWork",
+      "name": "Creative Commons Attribution Non Commercial Share Alike 4.0 International",
+      "alternateName": "CC-BY-NC-SA=4.0"
+    },
+    { "@id": "#knime",
+      "@type": "ProgrammingLanguage",
+      "name": "KNIME Analytics Platform",
+      "alternateName": "KNIME"
+      "url": "https://www.knime.com/whats-new-in-knime-41",
+      "version": "4.1.3"
+    },
+    { "@id": "#alice",
+      "@type": "Person",
+      "name": "Alice Brown"
+    },
+    { "@id": "#workflow-hub",
+      "@type": "Organization",
+      "name"; "Example Workflow Hub",
+      "url":"http://example.com/workflows/"
+    }
+}
+
+```
 
 ### Extra metadata such as Exif
 
