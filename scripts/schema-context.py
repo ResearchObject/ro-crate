@@ -35,7 +35,10 @@ import urllib.request
 ROCRATE_VERSION="1.1-DRAFT"
 
 # Update version from http://schema.org/docs/releases.html
-SCHEMA_VERSION="7.01"
+SCHEMA_VERSION="8.0"
+
+# Update from https://bioschemas.org/profiles/Workflow/
+BIOSCHEMA_WORKFLOW_PROFILE = "https://bioschemas.org/profiles/Workflow/0.5-DRAFT-2020_xx_xx/"
 
 def main():
     url="http://schema.org/version/%s/schemaorgcontext.jsonld" % SCHEMA_VERSION
@@ -51,6 +54,11 @@ def main():
     j["url"] = {"@id": "https://w3id.org/ro/crate/%s" % ROCRATE_VERSION}
     
     j["schemaVersion"] = {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION}
+    j["isBasedOn"] = [
+        {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION},
+        {"@id": "https://pcdm.org/2016/04/18/models"},
+        {"@id": BIOSCHEMA_WORKFLOW_PROFILE }
+    ]
     j["license"] = {"@id": "https://creativecommons.org/publicdomain/zero/1.0/"}
     context = OrderedDict()
     j["@context"] = context
@@ -85,11 +93,14 @@ ADDITIONAL = OrderedDict([
           ("RepositoryCollection", "http://pcdm.org/models#Collection"),
           ("RepositoryObject", "http://pcdm.org/models#object"),
 
-          ("Workflow", "http://purl.org/ro/wfdesc#Workflow"),
-          ("Script", "http://purl.org/ro/wf4ever#Script"),
-          ("ExampleRun", "http://purl.org/ro/roterms#ExampleRun"),
-          ("WorkflowSketch", "http://purl.org/ro/roterms#Sketch"),
-
+          # Temporary namespace for draft properties/types
+          # from https://bioschemas.org/profiles/Workflow/ draft 0.5
+          # Remove if/when added to schema.org!
+          ("input", BIOSCHEMA_WORKFLOW_PROFILE + "#input"),
+          ("output", BIOSCHEMA_WORKFLOW_PROFILE + "#output"),
+          ("format", BIOSCHEMA_WORKFLOW_PROFILE + "#format"),
+          ("FormalParameter", BIOSCHEMA_WORKFLOW_PROFILE + "#FormalParameter"),
+          
           ("wasDerivedFrom", "http://www.w3.org/ns/prov#wasDerivedFrom"),
           
           ("importedFrom", "http://purl.org/pav/importedFrom"),
