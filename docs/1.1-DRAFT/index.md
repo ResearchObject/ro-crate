@@ -1245,21 +1245,21 @@ To record curation actions which modify a [File] within a DataSet - for example,
 ### Workflows and scripts
 
 
-Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts SHOULD be described using the data entities of type [SoftwareSourceCode].
+Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. _Workflows_ and _scripts_ SHOULD be described using the data entities of type [SoftwareSourceCode].
 
-The distinction between [SoftwareSourceCode] and [SoftwareApplication] for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.  
+The distinction between [SoftwareSourceCode] and [SoftwareApplication] for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset. 
 
 A workflow is a _Data Entity_ which MUST have the following properties:
-* `@type` is an array with at least `File` and `Workflow` as values.
+* `@type` is `SoftwareSourceCode` 
 * `@id` is a File URI linking to the workflow entry-point.
-* [name]: a name for the workflow.
+* `name`: a [name] for the workflow.
 
-Minimal example describing a workflow:
+Short example describing a workflow:
 
 ```json
 {
     "@id": "workflow/retropath.knime",  
-    "@type": ["File", "SoftwareSourceCode", "Workflow"],
+    "@type": "SoftwareSourceCode",
     "author": {"@id": "#thomas"},
     "name": "RetroPath Knime workflow",
     "description": "Retrosynthesis workflow calculating chemical reactions",
@@ -1268,20 +1268,9 @@ Minimal example describing a workflow:
 }
 ```
 
-The `@type` property SHOULD be an array, to also indicate the particular nature of the source code as a _script_ or a _workflow_. The distinction is fluid, depending on if the code is primarily indicating **what** should be done (`Workflow`), or **how** tasks should be executed (`Script`).
+The `@type` property SHOULD be `SoftwareSourceCode`. 
 
-To indicate that a `SoftwareSourceCode` is primarily in the form of an executable **script** (e.g. sequential batch/shell script that call other commands and manage files), use:
-
-```json
-  "@type": ["File", "SoftwareSourceCode", "Script"],
-```
-
-
-If the `SoftwareSourceCode` is primarily in the form of a **workflow** (e.g. a pipeline of steps with data flow), use:
-
-```json
-  "@type": ["File", "SoftwareSourceCode", "Workflow"],
-```
+_Note: Earlier versions of RO-Crate made a distinction between `Workflow` and `Script`._
 
 Workflows and scripts saved on disk using a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of [programmingLanguage]. 
 
@@ -1309,7 +1298,7 @@ It is possible to indicate _steps_ that are executed as part of an `Workflow` or
 ```json
 {
     "@id": "workflow/analyze.cwl",  
-    "@type": ["File", "SoftwareSourceCode", "Workflow"],
+    "@type": ["SoftwareSourceCode"],
     "name": "CWL workflow to analyze CSV and make PNG",
     "programmingLanguage": {"@id": "https://w3id.org/cwl/v1.1/"},
     "hasPart": [
