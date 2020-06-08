@@ -1410,7 +1410,7 @@ The below is an example of an RO-Crate complying with the [BioSchemas Workflow p
        ],
        "sdPublisher": {"@id": "#workflow-hub"},
        "url": "http://example.com/workflows/alignment",
-       "version": "0.5.0",
+       "version": "0.5.0"
     },
     { "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
       "@type": "FormalParameter",
@@ -1427,12 +1427,12 @@ The below is an example of an RO-Crate complying with the [BioSchemas Workflow p
     { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0",
       "@type": "CreativeWork",
       "name": "Creative Commons Attribution Non Commercial Share Alike 4.0 International",
-      "alternateName": "CC-BY-NC-SA=4.0"
+      "alternateName": "CC-BY-NC-SA-4.0"
     },
     { "@id": "#knime",
       "@type": "ProgrammingLanguage",
       "name": "KNIME Analytics Platform",
-      "alternateName": "KNIME"
+      "alternateName": "KNIME",
       "url": "https://www.knime.com/whats-new-in-knime-41",
       "version": "4.1.3"
     },
@@ -1442,9 +1442,10 @@ The below is an example of an RO-Crate complying with the [BioSchemas Workflow p
     },
     { "@id": "#workflow-hub",
       "@type": "Organization",
-      "name"; "Example Workflow Hub",
+      "name": "Example Workflow Hub",
       "url":"http://example.com/workflows/"
     }
+  ]
 }
 
 ```
