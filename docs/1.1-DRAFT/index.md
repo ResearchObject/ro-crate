@@ -277,6 +277,12 @@ The keys `RepositoryObject` and `RepositoryCollection` were chosen to avoid coll
 From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
 - `conformsTo` mapped to <http://purl.org/dc/terms/conformsTo>
 
+These keys are being proposed by [BioSchemas profile Workflow 0.5-DRAFT](https://bioschemas.org/profiles/Workflow/) to be integrated into schema.org. Reflecting their subject to change, in this specification they have a temporary namespace, but later releases of RO-Crate may reflect mapping to the `http://schema.org/` namespace:
+
+* `FormalParameter` mapped to <https://bioschemas.org/profiles/Workflow/0.5-DRAFT-2020_xx_xx/#FormalParameter>
+* `format` mapped to <https://bioschemas.org/profiles/Workflow/0.5-DRAFT-2020_xx_xx/#format>
+* `input` mapped to <https://bioschemas.org/profiles/Workflow/0.5-DRAFT-2020_xx_xx/#input>
+* `output` mapped to <https://bioschemas.org/profiles/Workflow/0.5-DRAFT-2020_xx_xx/#output>
 
 ### Summary of Coverage
 
