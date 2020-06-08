@@ -264,12 +264,6 @@ See the appendix [RO-Crate JSON-LD](#ro-crate-json-ld) for details.
 
 ### Additional metadata standards
 
-The following terms from the from the [Research Object ontologies](https://w3id.org/ro/2016-01-28/) are used:
-
-- `Workflow` for a workflow definition, mapped to [http://purl.org/wf4ever/wfdesc#Workflow](https://w3id.org/ro/2016-01-28/wfdesc#Workflow)
-- `Script` for a script, mapped to [http://purl.org/wf4ever/wf4ever#Script](https://w3id.org/ro/2016-01-28/wf4ever#Script)
-- `WorkflowSketch` for an image depicting a workflow, mapped to [http://purl.org/wf4ever/roterms#Sketch](https://w3id.org/ro/2016-01-28/roterms#Sketch).
-
 RO-Crate also uses the _Portland Common Data Model_ ([PCDM])) and imports these terms:
  
 - `RepositoryObject` mapped to <https://pcdm.org/2016/04/18/models#Object>
@@ -1245,7 +1239,7 @@ To record curation actions which modify a [File] within a DataSet - for example,
 ### Workflows and scripts
 
 
-Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. _Workflows_ and _scripts_ SHOULD be described using the data entities of type [SoftwareSourceCode].
+Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. _Workflows_ and _scripts_ SHOULD be described using data entities of type [SoftwareSourceCode].
 
 The distinction between [SoftwareSourceCode] and [SoftwareApplication] for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset. 
 
@@ -1272,20 +1266,20 @@ The `@type` property SHOULD be `SoftwareSourceCode`.
 
 _Note: Earlier versions of RO-Crate made a distinction between `Workflow` and `Script`._
 
-Workflows and scripts saved on disk using a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of [programmingLanguage]. 
+Workflows and scripts in a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of [programmingLanguage]. 
 
-Note that the language and its runtime MAY differ (e.g. multiple different C++-compilers), but for scripts and workflows, frequently the language and runtime are essentially the same, and thus the `programmingLanguage` can be described in one go as a hybrid of a [ComputerLanguage] and [SoftwareApplication]:
+Note that the language and its runtime MAY differ (e.g. multiple different C++-compilers), but for scripts and workflows, frequently the language and runtime are essentially the same, and thus the `programmingLanguage`, although implied to be a [ComputerLanguage], can be described in as an executable [SoftwareApplication];
 
 ```json
 {
   "@id": "scripts/analyse_csv.py",
-  "@type": ["File", "SoftwareSourceCode", "Script"],
+  "@type": "SoftwareSourceCode",
   "name": "Analyze CSV files",
   "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"},
 },
 {
   "@id": "https://www.python.org/downloads/release/python-380/",
-  "@type": ["ComputerLanguage", "SoftwareApplication"],
+  "@type": "SoftwareApplication",
   "name": "Python 3.8.0",
   "version": "3.8.0"
 }
@@ -1298,7 +1292,7 @@ It is possible to indicate _steps_ that are executed as part of an `Workflow` or
 ```json
 {
     "@id": "workflow/analyze.cwl",  
-    "@type": ["SoftwareSourceCode"],
+    "@type": "SoftwareSourceCode",
     "name": "CWL workflow to analyze CSV and make PNG",
     "programmingLanguage": {"@id": "https://w3id.org/cwl/v1.1/"},
     "hasPart": [
@@ -1311,12 +1305,12 @@ It is possible to indicate _steps_ that are executed as part of an `Workflow` or
 
 #### Workflow diagram/sketch
 
-It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. This diagram MAY be included as an [ImageObject] which is [about] the `SoftwareSourceCode`. The `@type` parameter SHOULD be an array to also include `WorkflowSketch` to indicate that this is an image that represent a sketch or diagram of the workflow.
+It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. This diagram MAY be included as an [ImageObject] which is [about] the `SoftwareSourceCode`. 
 
 ```json
 {
   "@id": "workflow/workflow.svg",
-  "@type": ["File", "ImageObject", "WorkflowSketch"],
+  "@type": "ImageObject",
   "encodingFormat":  "image/svg+xml",
   "name": "Diagram of RetroPath2.0 workflow",
   "about": {"@id": "workflow/workflow.knime"}
@@ -1328,7 +1322,7 @@ The image file format SHOULD be indicated with [encodingFormat] using an IANA re
 ```json
 {
   "@id": "workflow/workflow.svg",
-  "@type": ["File", "ImageObject", "WorkflowSketch"],
+  "@type": "ImageObject",
   "encodingFormat":  ["image/svg+xml"],
   "description": "Diagram of RetroPath2.0 workflow",
   "about": {"@id": "workflow/workflow.knime"}
@@ -1336,12 +1330,12 @@ The image file format SHOULD be indicated with [encodingFormat] using an IANA re
 
 ```
 
-A _Sketch_ may still be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the workflow was done by hand). In this case the sketch itself is a proxy for the workflow and SHOULD have `@type` of `Workflow` and an `about` property referring to the _RO-Crate dataset_ as a whole (assuming the RO-Crate represents the outcome of a single workflow), or to other `Data Entities` otherwise:
+A workflow diagram may still be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the workflow was done by hand). In this case the sketch itself is a proxy for the workflow and SHOULD have an `about` property referring to the _RO-Crate dataset_ as a whole (assuming the RO-Crate represents the outcome of a single workflow), or to other `Data Entities` otherwise:
 
 ```json
 {
   "@id": "workflow/workflow.svg",
-  "@type": ["File", "ImageObject", "WorkflowSketch", "Workflow"],
+  "@type": "ImageObject",
   "encodingFormat":  ["image/svg+xml"],
   "name": "Diagram of an ad hoc workflow",
   "about": {"@id": "./"}
