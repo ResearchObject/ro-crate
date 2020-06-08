@@ -1412,17 +1412,23 @@ The below is an example of an RO-Crate complying with the [BioSchemas Workflow p
        "url": "http://example.com/workflows/alignment",
        "version": "0.5.0"
     },
-    { "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
-      "@type": "FormalParameter",
-      "name": "genome_sequence" 
+    {  "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
+       "@type": "FormalParameter",
+       "name": "genome_sequence",
+       "additionalType": {"@id": "http://edamontology.org/data_2977"},
+       "format": {"@id": "http://edamontology.org/format_1929"}
     },    
-    { "@id": "#6c703fee-6af7-4fdb-a57d-9e8bc4486044",
-      "@type": "FormalParameter",
-      "name": "cleaned_sequence" 
+    {  "@id": "#6c703fee-6af7-4fdb-a57d-9e8bc4486044",
+       "@type": "FormalParameter",
+       "name": "cleaned_sequence",
+      "additionalType": {"@id": "http://edamontology.org/data_2977"},
+      "format": {"@id": "http://edamontology.org/format_2572"}      
     },    
     { "@id": "#2f32b861-e43c-401f-8c42-04fd84273bdf",
       "@type": "FormalParameter",
-      "name": "sequence_alignment" 
+      "name": "sequence_alignment",
+      "additionalType": {"@id": "http://edamontology.org/data_1383"},
+      "format": {"@id": "http://edamontology.org/format_1982"}      
     },    
     { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0",
       "@type": "CreativeWork",
@@ -1444,7 +1450,32 @@ The below is an example of an RO-Crate complying with the [BioSchemas Workflow p
       "@type": "Organization",
       "name": "Example Workflow Hub",
       "url":"http://example.com/workflows/"
-    }
+    },
+    { "@id": "http://edamontology.org/format_1929",
+      "@type": "Thing",
+      "name": "FASTA sequence format"
+    },
+    { "@id": "http://edamontology.org/format_1982",
+      "@type": "Thing",
+      "name": "ClustalW alignment format"
+    },
+    { "@id": "http://edamontology.org/format_2572",
+      "@type": "Thing",
+      "name": "BAM format"
+    },
+    { "@id": "http://edamontology.org/data_2977",
+      "@type": "Thing",
+      "name": "Nucleic acid sequence"
+    },
+    { "@id": "http://edamontology.org/data_1383",
+      "@type": "Thing",
+      "name": "Nucleic acid sequence alignment"
+    },
+    { "@id": "http://edamontology.org/xxx",
+      "@type": "Thing",
+      "name": ""
+    },
+
   ]
 }
 
