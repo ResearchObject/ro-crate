@@ -1363,12 +1363,14 @@ where possible, data entities representing _workflows_ SHOULD describe these pro
 Contextual entities for `FormalParameter`, referenced by `input` or `output`, SHOULD describe:
 
 * [name] given the programmatic name for the parameter binding
+* `additionalType` identifying the most specific subtype of [EDAM Data](http://edamontology.org/data_0006) (fallbacks [Data](http://edamontology.org/data_0006) or [Text data](http://edamontology.org/data_2526))
+* `format` identifying the most specific subtype of [EDAM Format](http://edamontology.org/format_1915) (fallbacks [Binary format](http://edamontology.org/format_2333) or [Textual format](http://edamontology.org/format_2330))
 
 <!--
-TODO: Update requirements from BioSchemas profile Workflow 0,5
+TODO: Update requirements from BioSchemas profile Workflow 0.5
 -->
 
-_Note: `input`, `output` and `FormalParameter`_
+_Note: `input`, `output`, `FormalParameter`, and `format` are at time of writing proposed by BioSchemas and not yet integrated in schema.org_
 
 
 The below is an example of an RO-Crate complying with the [BioSchemas Workflow profile 0,4](https://bioschemas.org/profiles/Workflow/0.4-DRAFT-2020_05_11/):
@@ -1379,103 +1381,108 @@ The below is an example of an RO-Crate complying with the [BioSchemas Workflow p
 { "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context", 
   "@graph": [
     {
-        "@type": "CreativeWork",
-        "@id": "ro-crate-metadata.jsonld",
-        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
-        "about": {"@id": "./"}
-    },
-    
-    {
-       "@id": "./",
-       "@type": "Dataset",
-       "hasPart": [
-           { "@id": "workflow/retropath.knime" }
-       ]
+      "@type": "CreativeWork",
+      "@id": "ro-crate-metadata.jsonld",
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
+      "about": {"@id": "./"}
     },
     {
-       "@id": "workflow/alignment.knime",  
-       "@type": "SoftwareSourceCode",
-       "name": "Sequence alignment workflow",
-       "programmingLanguage": {"@id": "#knime"},
-       "creator": {"@id": "#alice"},
-       "dateCreated": "2020-05-23",
-       "license": { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"},
-       "input": [
-           { "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b"}
-       ],
-       "output": [
-           { "@id": "#6c703fee-6af7-4fdb-a57d-9e8bc4486044"},
-           { "@id": "#2f32b861-e43c-401f-8c42-04fd84273bdf"}
-       
-       ],
-       "sdPublisher": {"@id": "#workflow-hub"},
-       "url": "http://example.com/workflows/alignment",
-       "version": "0.5.0"
+      "@id": "./",
+      "@type": "Dataset",
+      "hasPart": [
+          { "@id": "workflow/retropath.knime" }
+      ]
     },
-    {  "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
-       "@type": "FormalParameter",
-       "name": "genome_sequence",
-       "additionalType": {"@id": "http://edamontology.org/data_2977"},
-       "format": {"@id": "http://edamontology.org/format_1929"}
-    },    
-    {  "@id": "#6c703fee-6af7-4fdb-a57d-9e8bc4486044",
-       "@type": "FormalParameter",
-       "name": "cleaned_sequence",
+    {
+      "@id": "workflow/alignment.knime",  
+      "@type": "SoftwareSourceCode",
+      "name": "Sequence alignment workflow",
+      "programmingLanguage": {"@id": "#knime"},
+      "creator": {"@id": "#alice"},
+      "dateCreated": "2020-05-23",
+      "license": { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"},
+      "input": [
+        { "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b"}
+      ],
+      "output": [
+        { "@id": "#6c703fee-6af7-4fdb-a57d-9e8bc4486044"},
+        { "@id": "#2f32b861-e43c-401f-8c42-04fd84273bdf"}
+      ],
+      "sdPublisher": {"@id": "#workflow-hub"},
+      "url": "http://example.com/workflows/alignment",
+      "version": "0.5.0"
+    },
+    { 
+      "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
+      "@type": "FormalParameter",
+      "name": "genome_sequence",
+      "additionalType": {"@id": "http://edamontology.org/data_2977"},
+      "format": {"@id": "http://edamontology.org/format_1929"}
+    },
+    {
+      "@id": "#6c703fee-6af7-4fdb-a57d-9e8bc4486044",
+      "@type": "FormalParameter",
+      "name": "cleaned_sequence",
       "additionalType": {"@id": "http://edamontology.org/data_2977"},
       "format": {"@id": "http://edamontology.org/format_2572"}      
-    },    
-    { "@id": "#2f32b861-e43c-401f-8c42-04fd84273bdf",
+    },
+    {
+      "@id": "#2f32b861-e43c-401f-8c42-04fd84273bdf",
       "@type": "FormalParameter",
       "name": "sequence_alignment",
       "additionalType": {"@id": "http://edamontology.org/data_1383"},
       "format": {"@id": "http://edamontology.org/format_1982"}      
-    },    
-    { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0",
+    },
+    {
+      "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0",
       "@type": "CreativeWork",
       "name": "Creative Commons Attribution Non Commercial Share Alike 4.0 International",
       "alternateName": "CC-BY-NC-SA-4.0"
     },
-    { "@id": "#knime",
+    {
+      "@id": "#knime",
       "@type": "ProgrammingLanguage",
       "name": "KNIME Analytics Platform",
       "alternateName": "KNIME",
       "url": "https://www.knime.com/whats-new-in-knime-41",
       "version": "4.1.3"
     },
-    { "@id": "#alice",
+    {
+      "@id": "#alice",
       "@type": "Person",
       "name": "Alice Brown"
     },
-    { "@id": "#workflow-hub",
+    {
+      "@id": "#workflow-hub",
       "@type": "Organization",
       "name": "Example Workflow Hub",
       "url":"http://example.com/workflows/"
     },
-    { "@id": "http://edamontology.org/format_1929",
+    {
+      "@id": "http://edamontology.org/format_1929",
       "@type": "Thing",
       "name": "FASTA sequence format"
     },
-    { "@id": "http://edamontology.org/format_1982",
+    {
+      "@id": "http://edamontology.org/format_1982",
       "@type": "Thing",
       "name": "ClustalW alignment format"
     },
-    { "@id": "http://edamontology.org/format_2572",
+    {
+      "@id": "http://edamontology.org/format_2572",
       "@type": "Thing",
       "name": "BAM format"
     },
-    { "@id": "http://edamontology.org/data_2977",
+    {
+      "@id": "http://edamontology.org/data_2977",
       "@type": "Thing",
       "name": "Nucleic acid sequence"
     },
-    { "@id": "http://edamontology.org/data_1383",
+    {
+      "@id": "http://edamontology.org/data_1383",
       "@type": "Thing",
       "name": "Nucleic acid sequence alignment"
-    },
-    { "@id": "http://edamontology.org/xxx",
-      "@type": "Thing",
-      "name": ""
-    },
-
+    }
   ]
 }
 
