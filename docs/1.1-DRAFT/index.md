@@ -2141,6 +2141,8 @@ https://kramdown.gettalong.org/syntax.html#reference-links
 [contentLocation]: http://schema.org/contentLocation
 [contributor]: http://schema.org/contributor
 [copyrightHolder]: http://schema.org/copyrightHolder
+[creator]: http://schema.org/creator
+[dateCreated]: http://schema.org/dateCreated
 [datePublished]: http://schema.org/datePublished
 [description]: http://schema.org/description
 [distribution]: http://schema.org/distribution
