@@ -56,12 +56,18 @@ While we're mostly focusing on the specification, some tools already exist for w
 
  - [Describo](https://uts-eresearch.github.io/describo/) interactive desktop application to create, update and export RO-Crates for different profiles. (~ _beta_)
  - [CalcyteJS](https://github.com/UTS-eResearch/CalcyteJS) is a command-line tool to help create RO-Crates and HTML-readable rendering (~ _beta_)
- - [ONI indexer](https://github.com/UTS-eResearch/oni-indexer)
- - [OCFL-indexer](https://github.com/CoEDL/modpdsc/tree/master/ocfl-indexer) NodeJS application that walks the [Oxford Common File Layout](https://ocfl.io/) on the file system, validate RO-Crate Metadata Files and parse into objects registered in Elasticsearch. (~ _alpha_)
  - [ro-crate](https://www.npmjs.com/package/ro-crate) - JavaScript/NodeJS library for RO-Crate rendering as HTML. (~ _beta_)
  - [ro-crate-js](https://github.com/UTS-eResearch/ro-crate-js) - utility to render HTML from RO-Crate (~ _alpha_)
  - [ro-crate-ruby](https://github.com/fbacall/ro-crate-ruby) Ruby library to consume/produce RO-Crates (~ _alpha_)
  - [ro-crate-py](https://github.com/researchobject/ro-crate-py) Python library to consume/produce RO-Crates (~ _planning_)
+
+These applications use or expose RO-Crates:
+
+ - [Workflow Hub](https://about.workflowhub.eu/) imports and exports [Workflow RO-Crates](https://about.workflowhub.eu/Workflow-RO-Crate/)
+ - [OCFL-indexer](https://github.com/CoEDL/modpdsc/) NodeJS application that walks the [Oxford Common File Layout](https://ocfl.io/) on the file system, validate RO-Crate Metadata Files and parse into objects registered in Elasticsearch. (~ _alpha_)
+ - [ONI indexer](https://github.com/UTS-eResearch/oni-indexer)
+ - [ocfl-tools](https://github.com/CoEDL/ocfl-tools)
+ - [ocfl-viewer](https://hub.docker.com/r/coedl/ocfl-viewer)
  - [Research Object Composer](https://github.com/researchobject/research-object-composer) is a REST API for gradually building and depositing Research Objects according to a pre-defined profile.  (RO-Crate support _alpha_)
 - ... (yours?)
 
