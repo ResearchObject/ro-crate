@@ -70,7 +70,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 This document specifies a method, known as _RO-Crate_ (Research Object Crate), of organizing file-based data with associated metadata, using [linked data] principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata.
 
-The core of RO-Crate is a JSON-LD file, the _RO-Crate Metadata File_, named `ro-crate-metadata.jsonld`. This file contains structured metadata about the dataset as a whole (the _Root Data Entity_) and, optionally, about some or all of its files. This provides a simple way to, for example, assert the authors (e.g. people, organizations) of the RO-Crate or one its files, or to capture more complex provenance for files, such as how they were created using software and equipment. 
+The core of RO-Crate is a JSON-LD file, the _RO-Crate Metadata File_, named `ro-crate-metadata.json`. This file contains structured metadata about the dataset as a whole (the _Root Data Entity_) and, optionally, about some or all of its files. This provides a simple way to, for example, assert the authors (e.g. people, organizations) of the RO-Crate or one its files, or to capture more complex provenance for files, such as how they were created using software and equipment. 
 
 While providing the formal specification for RO-Crate, this document also aims to be a practical guide for software authors to create tools for generating and consuming research data packages, with explanation by examples. 
 
@@ -79,9 +79,9 @@ While providing the formal specification for RO-Crate, this document also aims t
 
 _RO-Crate_: A directory structure that contains a dataset, which is described in an _RO-Crate Metadata File_.
 
-_RO-Crate Root_: The top-level directory of the _RO-Crate_, indicated by the presence of the _RO-Crate Metadata File_ `ro-crate-metadata.jsonld`
+_RO-Crate Root_: The top-level directory of the _RO-Crate_, indicated by the presence of the _RO-Crate Metadata File_ `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` for crates that comply with versions before v1.1 of this specification)
 
-_RO-Crate Metadata File_: A JSON-LD file stored as `ro-crate-metadata.jsonld` in the _RO-Crate Root_. The metadata file describes the _RO-Crate_ with structured data in form of _RO-Crate JSON-LD_.
+_RO-Crate Metadata File_: A JSON-LD file stored as `ro-crate-metadata.json` in the _RO-Crate Root_. The metadata file describes the _RO-Crate_ with structured data in form of _RO-Crate JSON-LD_. (In version 1.0 this file was named `ro-crate-metadata.json` but has been renamed to improve the usability of crates.)
 
 _RO-Crate Website_: Human-readable HTML pages which describe the RO-Crate (i.e. the _Root Data Entity_, its _Data Entities_ and _Context Entities_), with a home-page at `ro-crate-preview.html` (any additional files reside in `ro-crate-preview_files/`)
 
@@ -113,7 +113,7 @@ Throughout this specification, RDF terms are referred to using the keys defined 
 
 Following [schema.org] practice, `property` names start with lowercase letters and `Class` names start with uppercase letters.
 
-In `ro-crate-metadata.jsonld` the RDF terms use their RO-Crate JSON-LD names as defined in the _RO-Crate JSON-LD Context_, which is available at <https://w3id.org/ro/crate/1.1-DRAFT/context>
+In the _RO-Crate Metadata File_ the RDF terms use their RO-Crate JSON-LD names as defined in the _RO-Crate JSON-LD Context_, which is available at <https://w3id.org/ro/crate/1.1-DRAFT/context>
 
 
 ## RO-Crate Structure
@@ -122,26 +122,29 @@ The structure an _RO-Crate_ MUST follow is:
 
 ```
 <RO-Crate root directory>/
-|   ro-crate-metadata.jsonld  # RO-Crate Metadata File MUST be present
+|   ro-crate-metadata.json  # RO-Crate Metadata File MUST be present 
 |   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
 |   ro-crate-preview_files/   # MAY be present
 |    | [other RO-Crate Website files]
 |   [payload files and directories]  # 0 or more
 ```
 
-The name of the _RO-Crate root_ directory is not defined, but a root directory is identifiable by the presence of `ro-crate-metadata.jsonld`. For instance, if an _RO-Crate_ is archived in a ZIP-file, the ZIP root directory correspond to _RO-Crate root_ directory if it contains `ro-crate-metadata.jsonld`.
+The name of the _RO-Crate root_ directory is not defined, but a root directory is identifiable by the presence of the _RO-Crate Metadata File_, `ro-crate-metadata.json`. For instance, if an _RO-Crate_ is archived in a ZIP-file, the ZIP root directory correspond to _RO-Crate root_ directory if it contains `ro-crate-metadata.json`.
+
 
 [Data Entities](#core-metadata-for-data-entities) in the RO-Crate MUST either be _payload files/directories_ present within the RO-Crate root directory or its subdirectories, or be [Web-based Data Entities](#web-based-data-entities).
 
 <!--
-RO-Crates can be _nested_ by including payload directories that themselves contain `ro-crate-metadata.jsonld`.
+RO-Crates can be _nested_ by including payload directories that themselves contain an _RO-Crate Metadata File_.
 -->
 
-### RO-Crate Metadata File (`ro-crate-metadata.jsonld`)
+### RO-Crate Metadata File (`ro-crate-metadata.json`)
 
-* The _RO-Crate Metadata File_ MUST be named `ro-crate-metadata.jsonld` and appear in the _RO-Crate Root_
+* In new RO-Crates the _RO-Crate Metadata File_ MUST be named `ro-crate-metadata.json` and appear in the _RO-Crate Root_
 * The _RO-Crate Metadata File_ MUST contain _RO-Crate JSON-LD_; a valid [JSON-LD 1.0](https://www.w3.org/TR/2014/REC-json-ld-20140116/) document in [flattened](https://www.w3.org/TR/json-ld/#flattened-document-form) and [compacted](https://www.w3.org/TR/json-ld/#compacted-document-form) form
 * The _RO-Crate JSON-LD_ SHOULD use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.1-DRAFT/context> by reference.
+* If an RO-Crate conforming to version 1.0 or earlier contains a file named `ro-crate-metadata.jsonld` instead of `ro-crate-metadata.json` processing software should treat this as the _RO-Crate Metadata File_. If the crate is updated then the file should SHOULD be renamed to `ro-crate-metadata.json` and the _RO-Crate Metadata File Descriptor_ SHOULD be updated to to reference it, with an up to date `conformsTo` property naming an appropriate version of this specification. 
+
 
 [JSON-LD](https://json-ld.org/) is a structured form of [JSON] that can represent a _Linked Data_ graph. 
 
@@ -327,10 +330,10 @@ The _Root Data Entity_ is a [Dataset] that represent the RO-Crate as a whole;
 a _Research Object_ that includes the _Data Entities_ and the related
 _Contextual Entities_.
 
-The _RO-Crate JSON-LD_ MUST contain a _RO-Crate Metadata File Descriptor_ 
-with the `@id` value `ro-crate-metadata.jsonld` and `@type` [CreativeWork]. This descriptor 
-MUST have an [about] property referencing the _Root Data Entity_, which SHOULD
-have an `@id` of `./`.
+The _RO-Crate JSON-LD_ MUST contain a _RO-Crate Metadata File Descriptor_ with
+the `@id` value `ro-crate-metadata.json` (or `ro-crate-metadata.json` in legacy
+crates) and `@type` [CreativeWork]. This descriptor MUST have an [about]
+property referencing the _Root Data Entity_, which SHOULD have an `@id` of `./`.
 
 ```json
 
@@ -338,7 +341,7 @@ have an `@id` of `./`.
   "@graph": [
     {
         "@type": "CreativeWork",
-        "@id": "ro-crate-metadata.jsonld",
+        "@id": "ro-crate-metadata.json",
         "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
         "about": {"@id": "./"}
     },
@@ -410,7 +413,7 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
 
  {
     "@type": "CreativeWork",
-    "@id": "ro-crate-metadata.jsonld",
+    "@id": "ro-crate-metadata.json",
     "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
     "about": {"@id": "./"}
  },  
@@ -452,7 +455,7 @@ _Note: as indicated above, there is no requirement to represent every file and f
 
 ```
 <base directory>/
-  |   ro-crate-metadata.jsonld
+  |   ro-crate-metadata.json
   |   cp7glop.ai
   |   lots_of_little_files/
   |    | file1
@@ -468,7 +471,7 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
   "@graph": [
     {
       "@type": "CreativeWork",
-      "@id": "ro-crate-metadata.jsonld",
+      "@id": "ro-crate-metadata.json",
       "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
       "about": {"@id": "./"}
     },  
@@ -592,7 +595,7 @@ Example of an RO-Crate where some of the _File Data Entities_ are external to th
   "@graph": [
     {
         "@type": "CreativeWork",
-        "@id": "ro-crate-metadata.jsonld",
+        "@id": "ro-crate-metadata.json",
         "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
         "about": {"@id": "./"}
   },  
@@ -699,7 +702,7 @@ Similarly, the _RO-Crate root_ entity may also provide a `distribution` URL, in 
 In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not be reflecting the current state of the `Dataset` or RO-Crate.
 
 ## Representing _Contextual Entities_
-The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.jsonld`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
+The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
 
 ### People
 
@@ -985,8 +988,8 @@ To express the metadata license is different from the _Root Data Entity_, expand
 ```json
 {
   "@type": "CreativeWork",
-  "@id": "ro-crate-metadata.jsonld",
-  "identifier": "ro-crate-metadata.jsonld",
+  "@id": "ro-crate-metadata.json",
+  "identifier": "ro-crate-metadata.json",
   "about": {"@id": "./"},
   "license": {
     "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
@@ -1665,9 +1668,9 @@ If [thumbnail]s are incidental to the data set, they need not be referenced by [
 
 It is not necessary to use [JSON-LD tooling](https://json-ld.org/#developers) to generate or parse the _RO-Crate Metadata File_, although they may make it easier to conform to this specification, e.g. handling relative URIs. It is RECOMMENDED to use [JSON tooling](http://json.org/) to handle [JSON](https://tools.ietf.org/html/rfc7159) syntax and escaping rules.
 
-This appendix shows a brief JSON-LD introduction for complying with the RO-Crate Metadata File requirements.
+This appendix shows a brief JSON-LD introduction for complying with the _RO-Crate Metadata File_ requirements.
 
-The below example shows the overall structure of a flattened, compacted `ro-crate-metadata.jsonld` where `@context` refers to the _RO-Crate JSON-LD Context_, while `@graph` is a flat list of the entities that constitute this RO-Crate. 
+The below example shows the overall structure of a flattened, compacted _RO-Crate Metadata File_ where `@context` refers to the _RO-Crate JSON-LD Context_, while `@graph` is a flat list of the entities that constitute this RO-Crate. 
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context",
@@ -1675,7 +1678,7 @@ The below example shows the overall structure of a flattened, compacted `ro-crat
 
     {
       "@type": "CreativeWork",
-      "@id": "ro-crate-metadata.jsonld",
+      "@id": "ro-crate-metadata.json",
       "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
       "about": {"@id": "./"},
       "description": "RO-Crate Metadata File Descriptor (this file)"
@@ -1757,7 +1760,7 @@ Consider the below (simplified) example of _by reference_ using a versioned perm
 { "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context",
   "@graph": [
     {
-      "@id": "ro-crate-metadata.jsonld",
+      "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "description": "RO-Crate Metadata File Descriptor (this file)",
       "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
@@ -1779,7 +1782,7 @@ The above is equivalent to this JSON-LD using an embedded context, by adding the
   },
   "@graph": [
     {
-      "@id": "ro-crate-metadata.jsonld",
+      "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "description": "RO-Crate Metadata File Descriptor (this file)",
       "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
@@ -1799,7 +1802,7 @@ RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded cont
 
 ### RO-Crate JSON-LD Media type
 
-The [media type][RFC 6838] for `ro-crate-metadata.jsonld` will, when following this specification, comply
+The [media type][RFC 6838] for `ro-crate-metadata.json` will, when following this specification, comply
 with the [flattened/compacted JSON-LD profiles](https://www.w3.org/TR/json-ld/#application-ld-json) as well as `https://w3id.org/ro/crate`, which may be indicated in a [HTTP response](https://tools.ietf.org/html/rfc7231#section-3.1.1.5) as:
 
 ```http
@@ -1874,7 +1877,7 @@ payload (`data/`) directory.
   |   manifest-<algorithm>.txt  # As per BagIt specification
   |   fetch.txt                 # Optional, per BagIt Specification
   |   data/
-      |   ro-crate-metadata.jsonld  # RO-Crate Metadata File MUST be present
+      |   ro-crate-metadata.json  # RO-Crate Metadata File MUST be present
       |   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
       |   ro-crate-preview_files/   # MAY be present
       |     [payload files and directories]  # 1 or more SHOULD be present
@@ -1887,7 +1890,7 @@ is outside of the bag directory and can be changed without changing the payload'
 
 ```
 <RO-Crate root directory>/
-  |   ro-crate-metadata.jsonld  # RO-Crate Metadata File MUST be present
+  |   ro-crate-metadata.json  # RO-Crate Metadata File MUST be present
   |   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
   |   ro-crate-preview_files/   # MAY be present
   |   bag/                      # "Wrapped" bag - could have any name
