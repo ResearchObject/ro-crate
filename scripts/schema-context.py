@@ -39,6 +39,9 @@ SCHEMA_VERSION="8.0"
 
 # Update from https://bioschemas.org/profiles/Workflow/
 BIOSCHEMA_WORKFLOW_PROFILE = "https://bioschemas.org/profiles/Workflow/0.5-DRAFT-2020_xx_xx/"
+BIOSCHEMA_WORKFLOW_NS = "https://bioschemas.org/Workflow"
+BIOSCHEMA_FORMAL_PARAMETER_NS = "https://bioschemas.org/FormalParameter"
+
 
 def main():
     url="http://schema.org/version/%s/schemaorgcontext.jsonld" % SCHEMA_VERSION
@@ -93,14 +96,19 @@ ADDITIONAL = OrderedDict([
           ("RepositoryCollection", "http://pcdm.org/models#Collection"),
           ("RepositoryObject", "http://pcdm.org/models#object"),
 
-          # Temporary namespace for draft properties/types
-          # from https://bioschemas.org/profiles/Workflow/ draft 0.5
-          # Remove if/when added to schema.org!
-          ("input", BIOSCHEMA_WORKFLOW_PROFILE + "#input"),
-          ("output", BIOSCHEMA_WORKFLOW_PROFILE + "#output"),
-          ("format", BIOSCHEMA_WORKFLOW_PROFILE + "#format"),
-          ("FormalParameter", BIOSCHEMA_WORKFLOW_PROFILE + "#FormalParameter"),
-          
+          # Temporary namespace for properties/types
+          # proposed https://bioschemas.org/profiles/Workflow/ draft 0.5
+          # Remove if/when added to schema.org release!
+          ## BEGIN
+          ("Workflow", BIOSCHEMA_WORKFLOW_NS),
+          ("input", BIOSCHEMA_WORKFLOW_NS + "#input"),
+          ("output", BIOSCHEMA_WORKFLOW_NS + "#output"),
+          ("FormalParameter", BIOSCHEMA_FORMAL_PARAMETER_NS),
+          ("mandatory", BIOSCHEMA_FORMAL_PARAMETER_NS + "#mandatory"),
+          # https://github.com/schemaorg/schemaorg/issues/383#issuecomment-651040576
+          ("funding", "http://schema.org/funding"),
+          ## END 
+
           ("wasDerivedFrom", "http://www.w3.org/ns/prov#wasDerivedFrom"),
           
           ("importedFrom", "http://purl.org/pav/importedFrom"),
@@ -133,7 +141,6 @@ ADDITIONAL = OrderedDict([
           ("roterms", "http://purl.org/ro/roterms#"),
           ("wf4ever", "http://purl.org/ro/wf4ever#"),
           
-          ("@base", None)
 ])
 
 if __name__=="__main__":
