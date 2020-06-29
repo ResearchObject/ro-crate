@@ -1247,37 +1247,21 @@ To record curation actions which modify a [File] within a DataSet - for example,
 
 ### Workflows and scripts
 
-
 Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. _Workflows_ and _scripts_ SHOULD be described using data entities of type [SoftwareSourceCode].
 
 The distinction between [SoftwareSourceCode] and [SoftwareApplication] for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset. 
 
+A script is a _Data Entity_ which MUST have the following properties:
+* `@type` is an array with at least `File` and `SoftwareSourceCode` as values
+* `@id` is a File URI linking to the executable script
+* `name`: a human-readable [name] for the script.
+
 A workflow is a _Data Entity_ which MUST have the following properties:
-* `@type` is `SoftwareSourceCode` 
+* `@type` is an array with at least `File`, `SoftwareSourceCode` and `Workflow` as values
 * `@id` is a File URI linking to the workflow entry-point.
-* `name`: a [name] for the workflow.
+* `name`: a human-readable [name] for the workflow.
 
-Short example describing a workflow:
-
-```json
-{
-    "@id": "workflow/retropath.knime",  
-    "@type": "SoftwareSourceCode",
-    "author": {"@id": "#thomas"},
-    "name": "RetroPath Knime workflow",
-    "description": "Retrosynthesis workflow calculating chemical reactions",
-    "license": { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"},
-    "programmingLanguage": {"@id": "#knime"}
-}
-```
-
-The `@type` property SHOULD be `SoftwareSourceCode`. 
-
-_Note: Earlier versions of RO-Crate made a distinction between `Workflow` and `Script`._
-
-Workflows and scripts in a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of [programmingLanguage]. 
-
-Note that the language and its runtime MAY differ (e.g. multiple different C++-compilers), but for scripts and workflows, frequently the language and runtime are essentially the same, and thus the `programmingLanguage`, although implied to be a [ComputerLanguage], can be described in as an executable [SoftwareApplication];
+Short example describing a _script_:
 
 ```json
 {
@@ -1286,22 +1270,66 @@ Note that the language and its runtime MAY differ (e.g. multiple different C++-c
   "name": "Analyze CSV files",
   "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"},
 },
+```
+
+Short example describing a _workflow_:
+
+```json
+{
+    "@id": "workflow/retropath.knime",  
+    "@type": ["File", "SoftwareSourceCode", "Workflow"],
+    "author": {"@id": "#thomas"},
+    "name": "RetroPath Knime workflow",
+    "description": "Retrosynthesis workflow calculating chemical reactions",
+    "license": { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"},
+    "programmingLanguage": {"@id": "#knime"}
+}
+```
+
+There is no strong distinction between a _script_ and a _workflow_; many computational workflows are written in script-like languages, and many scripts perform a _pipeline_ of steps. 
+
+Here are some indicators for when a script should be considered a _workflow_:
+
+* It performs a series of steps (_pipeline_)
+* The executed steps are mainly external tools or services
+* The main work is performed by the steps (script is not algorithmic)
+* The steps exchange data in a _dataflow_, typically file inputs/outputs
+* The script has well-defined _inputs_ and _outputs_, e.g. file arguments
+
+Here are some counter-indicator for when a script migt **not** be a workflow:
+* The script contains mainly algorithms or logic
+* Data is exchanged out of bands, e.g. a SQL database
+* The script relies on a particular state of the system (e.g. appends existing files)
+* An interactive user interface that controls the actions
+
+
+Scripts written in a _programming language_, as well as workflows, generally need a _runtime_; in RO-Crate the runtime SHOULD be indicated using a liberal interpretation of [programmingLanguage].
+
+Note that the language and its runtime MAY differ (e.g. different C++-compilers), but for scripts and workflows, frequently the language and runtime are essentially the same, and thus the `programmingLanguage`, implied to be a [ComputerLanguage], can also be described as an executable [SoftwareApplication];
+
+```json
+{
+  "@id": "scripts/analyse_csv.py",
+  "@type": ["File", "SoftwareSourceCode"],
+  "name": "Analyze CSV files",
+  "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"},
+},
 {
   "@id": "https://www.python.org/downloads/release/python-380/",
-  "@type": "SoftwareApplication",
+  "@type": ["ComputerLanguage", "SoftwareApplication"],
   "name": "Python 3.8.0",
   "version": "3.8.0"
 }
 ```
 
-A _contextual entity_ representing a [SoftwareApplication] or [ComputerLanguage] MUST have a [name], [url] and [version], which should indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance _“R”_ instead of _“The R Project for Statistical Computing”_.
+A _contextual entity_ representing a [ComputerLanguage] and/or [SoftwareApplication] MUST have a [name], [url] and [version], which should indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance _“R”_ instead of _“The R Project for Statistical Computing”_.
 
 It is possible to indicate _steps_ that are executed as part of an `Workflow` or `Script`, by using [hasPart] to relate additional `SoftwareApplication` or nested `SoftwareSourceCode` contextual entities:
 
 ```json
 {
     "@id": "workflow/analyze.cwl",  
-    "@type": "SoftwareSourceCode",
+    "@type": ["File", "SoftwareSourceCode"],
     "name": "CWL workflow to analyze CSV and make PNG",
     "programmingLanguage": {"@id": "https://w3id.org/cwl/v1.1/"},
     "hasPart": [
@@ -1319,7 +1347,7 @@ It can be beneficial to show a diagram or sketch to explain the script/workflow.
 ```json
 {
   "@id": "workflow/workflow.svg",
-  "@type": "ImageObject",
+  "@type": ["File", "ImageObject"],
   "encodingFormat":  "image/svg+xml",
   "name": "Diagram of RetroPath2.0 workflow",
   "about": {"@id": "workflow/workflow.knime"}
@@ -1331,7 +1359,7 @@ The image file format SHOULD be indicated with [encodingFormat] using an IANA re
 ```json
 {
   "@id": "workflow/workflow.svg",
-  "@type": "ImageObject",
+  "@type": ["File", "ImageObject"],
   "encodingFormat":  ["image/svg+xml"],
   "description": "Diagram of RetroPath2.0 workflow",
   "about": {"@id": "workflow/workflow.knime"}
@@ -1344,12 +1372,11 @@ A workflow diagram may still be provided even if there is no programmatic `Softw
 ```json
 {
   "@id": "workflow/workflow.svg",
-  "@type": "ImageObject",
+  "@type": ["File", "ImageObject"],
   "encodingFormat":  ["image/svg+xml"],
   "name": "Diagram of an ad hoc workflow",
   "about": {"@id": "./"}
 }
- 
 ```
 
 #### Complying with BioSchemas Workflow profile
@@ -1357,7 +1384,7 @@ A workflow diagram may still be provided even if there is no programmatic `Softw
 To comply with the [BioSchemas Workflow profile](https://bioschemas.org/profiles/Workflow/0.4-DRAFT-2020_05_11/),
 where possible, data entities representing _workflows_ SHOULD describe these properties and their related contextual entities:
 
-<!-- TODO:Update link to Workflow 0,5 once released -->
+<!-- TODO:Update link to Workflow 0.5 once released -->
 
 * [name] giving a short descriptive name of the workflow
 * [programmingLanguage] identifying the workflow system, typed as `ProgrammingLanguage`
@@ -1373,13 +1400,15 @@ Contextual entities for `FormalParameter`, referenced by `input` or `output`, SH
 
 * [name] given the programmatic name for the parameter binding
 * `additionalType` identifying the most specific subtype of [EDAM Data](http://edamontology.org/data_0006) (fallbacks [Data](http://edamontology.org/data_0006) or [Text data](http://edamontology.org/data_2526))
-* `format` identifying the most specific subtype of [EDAM Format](http://edamontology.org/format_1915) (fallbacks [Binary format](http://edamontology.org/format_2333) or [Textual format](http://edamontology.org/format_2330))
+* [encodingFormat] identifying the most specific subtype of [EDAM Format](http://edamontology.org/format_1915) (fallbacks [Binary format](http://edamontology.org/format_2333) or [Textual format](http://edamontology.org/format_2330))
+* `mandatory` value `true` if this (input) parameter must be specified to run the workflow, or `false` for optional parameters. This field is optional.
+* `defaultValue` value if this (input) parameter has a default value. In RO-Crate this SHOULD be in the form of a `"string"` or a `{"@id": "data/entity.txt"}`
 
 <!--
 TODO: Update requirements from BioSchemas profile Workflow 0.5
 -->
 
-_Note: `input`, `output`, `FormalParameter`, and `format` are at time of writing proposed by BioSchemas and not yet integrated in schema.org_
+_Note: `input`, `output`, `FormalParameter`, and `mandatory` are at time of writing proposed by BioSchemas and not yet integrated in schema.org_
 
 
 The below is an example of an RO-Crate complying with the [BioSchemas Workflow profile 0,4](https://bioschemas.org/profiles/Workflow/0.4-DRAFT-2020_05_11/):
@@ -1425,6 +1454,7 @@ The below is an example of an RO-Crate complying with the [BioSchemas Workflow p
       "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
       "@type": "FormalParameter",
       "name": "genome_sequence",
+      "mandatory": true,
       "additionalType": {"@id": "http://edamontology.org/data_2977"},
       "format": {"@id": "http://edamontology.org/format_1929"}
     },
@@ -1433,14 +1463,14 @@ The below is an example of an RO-Crate complying with the [BioSchemas Workflow p
       "@type": "FormalParameter",
       "name": "cleaned_sequence",
       "additionalType": {"@id": "http://edamontology.org/data_2977"},
-      "format": {"@id": "http://edamontology.org/format_2572"}      
+      "encodingFormat": {"@id": "http://edamontology.org/format_2572"}
     },
     {
       "@id": "#2f32b861-e43c-401f-8c42-04fd84273bdf",
       "@type": "FormalParameter",
       "name": "sequence_alignment",
       "additionalType": {"@id": "http://edamontology.org/data_1383"},
-      "format": {"@id": "http://edamontology.org/format_1982"}      
+      "encodingFormat": {"@id": "http://edamontology.org/format_1982"}
     },
     {
       "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0",
