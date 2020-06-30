@@ -284,7 +284,6 @@ These keys are being proposed by [BioSchemas profile Workflow 0.5-DRAFT](https:/
 * `FormalParameter` mapped to <https://bioschemas.org/FormalParameter>
 * `input` mapped to <https://bioschemas.org/Workflow#input>
 * `output` mapped to <https://bioschemas.org/Workflow#output>
-* `mandatory` mapped to <https://bioschemas.org/FormalParameter#mandatory>
 * `funding` mapped to <http://schema.org/funding> ([schemaorg #383](https://github.com/schemaorg/schemaorg/issues/383))
 
 ### Summary of Coverage
@@ -1401,8 +1400,8 @@ Contextual entities for `FormalParameter`, referenced by `input` or `output`, SH
 * [name] given the programmatic name for the parameter binding
 * `additionalType` identifying the most specific subtype of [EDAM Data](http://edamontology.org/data_0006) (fallbacks [Data](http://edamontology.org/data_0006) or [Text data](http://edamontology.org/data_2526))
 * [encodingFormat] identifying the most specific subtype of [EDAM Format](http://edamontology.org/format_1915) (fallbacks [Binary format](http://edamontology.org/format_2333) or [Textual format](http://edamontology.org/format_2330))
-* `mandatory` value `true` if this (input) parameter must be specified to run the workflow, or `false` for optional parameters. This field is optional.
-* `defaultValue` value if this (input) parameter has a default value. In RO-Crate this SHOULD be in the form of a `"string"` or a `{"@id": "data/entity.txt"}`
+* [valueRequired] `true` if this (input) parameter must be specified to run the workflow, or `false` (default) if parameter is optional.
+* [defaultValue] present if this (input) parameter has a default value. In RO-Crate this SHOULD be in the form of a `"string"` or a `{"@id": "data/entity.txt"}`
 
 <!--
 TODO: Update requirements from BioSchemas profile Workflow 0.5
@@ -1454,7 +1453,7 @@ The below is an example of an RO-Crate complying with the [BioSchemas Workflow p
       "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
       "@type": "FormalParameter",
       "name": "genome_sequence",
-      "mandatory": true,
+      "valueRequired": true,
       "additionalType": {"@id": "http://edamontology.org/data_2977"},
       "format": {"@id": "http://edamontology.org/format_1929"}
     },
@@ -2183,6 +2182,7 @@ https://kramdown.gettalong.org/syntax.html#reference-links
 [creator]: http://schema.org/creator
 [dateCreated]: http://schema.org/dateCreated
 [datePublished]: http://schema.org/datePublished
+[defaultValue]: http://schema.org/defaultValue
 [description]: http://schema.org/description
 [distribution]: http://schema.org/distribution
 [email]: http://schema.org/email
@@ -2217,6 +2217,7 @@ https://kramdown.gettalong.org/syntax.html#reference-links
 [translationOf]: http://schema.org/translationOf
 [translator]: http://schema.org/translator
 [url]: http://schema.org/url
+[valueRequired]: http://schema.org/valueRequired
 [version]: http://schema.org/version
 
 [RFC 2119]: https://tools.ietf.org/html/rfc2119

@@ -2584,7 +2584,6 @@
           "input": "https://bioschemas.org/Workflow#input",
           "output": "https://bioschemas.org/Workflow#output",
           "FormalParameter": "https://bioschemas.org/FormalParameter",
-          "mandatory": "https://bioschemas.org/FormalParameter#mandatory",
           "funding": "http://schema.org/funding",
           "wasDerivedFrom": "http://www.w3.org/ns/prov#wasDerivedFrom",
           "importedFrom": "http://purl.org/pav/importedFrom",

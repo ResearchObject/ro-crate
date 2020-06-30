@@ -104,7 +104,6 @@ ADDITIONAL = OrderedDict([
           ("input", BIOSCHEMA_WORKFLOW_NS + "#input"),
           ("output", BIOSCHEMA_WORKFLOW_NS + "#output"),
           ("FormalParameter", BIOSCHEMA_FORMAL_PARAMETER_NS),
-          ("mandatory", BIOSCHEMA_FORMAL_PARAMETER_NS + "#mandatory"),
           # https://github.com/schemaorg/schemaorg/issues/383#issuecomment-651040576
           ("funding", "http://schema.org/funding"),
           ## END 
