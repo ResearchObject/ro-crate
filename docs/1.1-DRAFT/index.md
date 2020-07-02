@@ -438,7 +438,7 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
 
 Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the Root Data Entity using the [hasPart] property. Directory hierarchies MAY be represented with nested Dataset _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
 
-_Data Entities_ representing files MUST be of `@type: File`, which is an RO-Crate alias for <http://schema.org/MediaObject>. The term _file_ here is liberal, and includes "downloadable" resources where `@id` is an absolute URI.
+_Data Entities_ representing files MUST have `File` as a value for `@type`.   `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ here is liberal, and includes "downloadable" resources where `@id` is an absolute URI.
 
 _Data Entities_ representing directories MUST be of `@type: Dataset`. The term _directory_ here includes HTTP file listings where `@id` is an absolute URI, however "external" directories SHOULD have a programmatic listing of their content (e.g. another RO-Crate).
 
@@ -576,7 +576,7 @@ A `File` _Data Entity_ MUST have the following properties:
 #### Directory File Entity
 
 A `Dataset` (directory) _Data Entity_ MUST have the following properties:
-*  `@type` MUST be `Dataset` or an array wher `Dataset` is one of the values.
+*  `@type` MUST be `Dataset` or an array where `Dataset` is one of the values.
 *  `@id`  MUST be either an a _URI Path_ relative to the _RO Crate root, or an absolute URI. The id SHOULD end with `/`
 
 ### Web-based Data Entities
@@ -699,6 +699,7 @@ Similarly, the _RO-Crate root_ entity may also provide a `distribution` URL, in 
 In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not be reflecting the current state of the `Dataset` or RO-Crate.
 
 ## Representing _Contextual Entities_
+
 The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.jsonld`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
 
 ### People
@@ -2366,6 +2367,21 @@ Will output _RO-Crate JSON-LD_ with relative URIs:
 
 
 ## APPENDIX: Implementation notes
+
+### Programming with JSON-LD
+
+When implementing tools to work with RO-Crate it is not necessary to use JSON-LD
+software libraries, however, programmers should keep in mind the following:
+
+-  _RO-Crate JSON-lD_ has a flat structure; every item is in a list in the `@graph` in the _RO-Crate Metadata File_. A useful strategy when processing a crate is to build a look-up table and/or function so that items can be found via their ID, for example provide a method such as `getItem(id)` which returns an item by its id or a null value if it's not there.
+
+- Code defensively. Code should not assume that values will always be a String; values for properties may be single scalar values such as strings or integers (`"2"` or 2), or references to other items such as `{"@id", "_:1"}` (where the referenced item may or may not be in the crate, see the point above about having a `getItem()` method).
+
+- Read the *whole* specification. In order to make the RO-Crate specification
+  readable it deals with common use cases on a case by case basis, introducing
+  aspects of the specification as well. Some key points, such as "items may have
+  more than one value for @type" may not be apparent from a quick reading.
+
 
 ### Combining with other packaging schemes
 
