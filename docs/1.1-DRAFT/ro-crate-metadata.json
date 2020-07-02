@@ -1,0 +1,388 @@
+{
+    "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context",
+    "@graph": [
+      {
+        "@id": "ro-crate-metadata.jsonld",
+        "identifier": "ro-crate-metadata.jsonld",
+        "@type": "CreativeWork",
+        "conformsTo": {
+          "@id": "https://w3id.org/ro/crate/1.1-DRAFT"
+        },
+        "about": {
+          "@id": "./"
+        },
+        "license": {
+          "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+        }
+      },
+      {
+        "@id": "./",
+        "@type": "Dataset",
+        "author": [
+          {
+            "@id": "https://orcid.org/0000-0001-8131-2150"
+          },
+          {
+            "@id": "https://orcid.org/0000-0002-3545-944X"
+          },
+          {
+            "@id": "https://orcid.org/0000-0001-9842-9718"
+          },
+          {
+            "@id": "https://orcid.org/0000-0002-9260-0753"
+          },
+          {
+            "@id": "https://orcid.org/0000-0003-0454-7145"
+          },
+          {
+            "@id": "https://orcid.org/0000-0003-4289-4922"
+          },
+          {
+            "@id": "https://orcid.org/0000-0001-6565-5145"
+          },
+          {
+            "@id": "https://orcid.org/0000-0003-1219-2137"
+          },
+          {
+            "@id": "https://orcid.org/0000-0002-4806-5140"
+          },
+          {
+            "@id": "https://orcid.org/0000-0002-7370-4805"
+          },
+          {
+            "@id": "https://orcid.org/0000-0002-5491-6431"
+          },
+          {
+            "@id": "https://orcid.org/0000-0002-2961-9670"
+          },
+          {
+            "@id": "https://orcid.org/0000-0002-6190-122X"
+          },
+          {
+            "@id": "https://orcid.org/0000-0002-2036-8350"
+          },
+          {
+            "@id": "https://orcid.org/0000-0001-8420-5254"
+          },
+          {
+            "@id": "https://orcid.org/0000-0002-3588-6257"
+          },
+          {
+            "@id": "https://orcid.org/0000-0002-0309-604X"
+          },
+          {
+            "@id": "https://orcid.org/0000-0002-5711-4872"
+          },
+          {
+            "@id": "https://orcid.org/0000-0003-2130-0865"
+          },
+          {
+            "@id": "https://orcid.org/0000-0003-3156-2105"
+          },
+          {
+            "@id": "https://orcid.org/0000-0003-1130-2154"
+          },
+          {
+            "@id": "https://orcid.org/0000-0002-0048-3300"
+          },
+          {
+            "@id": "https://orcid.org/0000-0002-1756-2128"
+          }
+        ],
+        "citation": {
+          "@id": "https://doi.org/10.5281/zenodo.3250687"
+        },
+        "datePublished": "2020-06-24",
+        "description": "This specification defines a method, known as RO-Crate (Research Object Crate), of organizing file-based data with associated metadata, using linked data principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata. \n\nThe core of RO-Crate is a JSON-LD file, the RO-Crate Metadata File, named ro-crate-metadata.jsonld. This file contains structured metadata about the dataset as a whole (the Root Data Entity) and, optionally, about some or all of its files. This provides a simple way to, for example, assert the authors (e.g. people, organizations) of the RO-Crate or one its files, or to capture more complex provenance for files, such as how they were created using software and equipment. \n\nWhile providing the formal specification for RO-Crate, this document also aims to be a practical guide for software authors to create tools for generating and consuming research data packages, with explanation by examples.",
+        "hasPart": [
+          {
+            "@id": "index.html"
+          },
+          {
+            "@id": "context.jsonld"
+          },
+          {
+            "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.0/ro-crate-1.1.0.pdf"
+          }
+        ],
+        "identifier": {
+          "@id": "https://doi.org/10.5281/zenodo.3541888"
+        },
+        "license": {
+          "@id": "https://www.apache.org/licenses/LICENSE-2.0"
+        },
+        "name": "RO-Crate specification dataset",
+        "version": "1.1-DRAFT"
+      },
+      {
+        "@id": "index.html",
+        "@type": [
+          "CreativeWork",
+          "File"
+        ],
+        "encoding": {
+          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.0/ro-crate-1.1.0.pdf"
+        },
+        "encodingFormat": [
+          "text/html",
+          {
+            "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/471"
+          }
+        ],
+        "identifier": {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        "name": "RO-Crate Metadata Specification 1.1-DRAFT",
+        "sameAs": {
+          "@id": "https://zenodo.org/record/TODO/files/ro-crate-1.1.0.html"
+        },
+        "version": "1.0.0"
+      },
+      {
+        "@id": "context.jsonld",
+        "@type": "File",
+        "encodingFormat": "application/ld+json",
+        "identifier": {
+          "@id": "https://w3id.org/ro/crate/1.1-DRAFT/context"
+        },
+        "license": {
+          "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+        },
+        "name": "RO-Crate JSON-LD Context",
+        "sameAs": {
+          "@id": "https://zenodo.org/record/3541888/files/ro-crate-context-1.1.0.jsonld"
+        },
+        "version": "1.1.0"
+      },
+      {
+        "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.0/ro-crate-1.1.0.pdf",
+        "@type": "CreativeWork",
+        "encodingFormat": [
+          "application/pdf",
+          {
+            "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/18"
+          }
+        ],
+        "name": "RO-Crate Metadata Specification 1.0",
+        "sameAs": {
+          "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf"
+        },
+        "version": "1.1.0"
+      },
+      {
+        "@id": "https://orcid.org/0000-0001-8131-2150",
+        "@type": "Person",
+        "name": "Eoghan Ó Carragáin"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-3545-944X",
+        "@type": "Person",
+        "name": "Peter Sefton"
+      },
+      {
+        "@id": "https://orcid.org/0000-0001-9842-9718",
+        "@type": "Person",
+        "name": "Stian Soiland-Reyes"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-9260-0753",
+        "@type": "Person",
+        "name": "Oscar Corcho"
+      },
+      {
+        "@id": "https://orcid.org/0000-0003-0454-7145",
+        "@type": "Person",
+        "name": "Daniel Garijo"
+      },
+      {
+        "@id": "https://orcid.org/0000-0003-4289-4922",
+        "@type": "Person",
+        "name": "Raul Palma"
+      },
+      {
+        "@id": "https://orcid.org/0000-0001-6565-5145",
+        "@type": "Person",
+        "name": "Frederik Coppens"
+      },
+      {
+        "@id": "https://orcid.org/0000-0003-1219-2137",
+        "@type": "Person",
+        "name": "Carole Goble"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-4806-5140",
+        "@type": "Person",
+        "name": "José María Fernández"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-7370-4805",
+        "@type": "Person",
+        "name": "Kyle Chard"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-5491-6431",
+        "@type": "Person",
+        "name": "Jose Manuel Gomez-Perez"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-2961-9670",
+        "@type": "Person",
+        "name": "Michael R Crusoe"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-6190-122X",
+        "@type": "Person",
+        "name": "Ignacio Eguinoa"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-2036-8350",
+        "@type": "Person",
+        "name": "Nick Juty"
+      },
+      {
+        "@id": "https://orcid.org/0000-0001-8420-5254",
+        "@type": "Person",
+        "name": "Kristi Holmes"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-3588-6257",
+        "@type": "Person",
+        "name": "Jason A. Clark"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-0309-604X",
+        "@type": "Person",
+        "name": "Salvador Capella-Gutierrez"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-5711-4872",
+        "@type": "Person",
+        "name": "Alasdair J. G. Gray"
+      },
+      {
+        "@id": "https://orcid.org/0000-0003-2130-0865",
+        "@type": "Person",
+        "name": "Stuart Owen"
+      },
+      {
+        "@id": "https://orcid.org/0000-0003-3156-2105",
+        "@type": "Person",
+        "name": "Alan R Williams"
+      },
+      {
+        "@id": "https://orcid.org/0000-0003-1130-2154",
+        "@type": "Person",
+        "name": "Giacomo Tartari"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-0048-3300",
+        "@type": "Person",
+        "name": "Finn Bacall"
+      },
+      {
+        "@id": "https://orcid.org/0000-0002-1756-2128",
+        "@type": "Person",
+        "name": "Thomas Thelen"
+      },
+      {
+        "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "@type": "CreativeWork",
+        "identifier": "CC0-1.0",
+        "name": "Creative Commons Zero v1.0 Universal",
+        "version": "1.0"
+      },
+      {
+        "@id": "https://www.apache.org/licenses/LICENSE-2.0",
+        "@type": "CreativeWork",
+        "identifier": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "version": "2.0"
+      },
+      {
+        "@id": "https://doi.org/10.5281/zenodo.3250687",
+        "@type": "ScholarlyArticle",
+        "author": [
+          {
+            "@id": "https://orcid.org/0000-0001-8131-2150"
+          },
+          {
+            "@id": "https://orcid.org/0000-0003-1219-2137"
+          },
+          {
+            "@id": "https://orcid.org/0000-0002-3545-944X"
+          },
+          {
+            "@id": "https://orcid.org/0000-0001-9842-9718"
+          }
+        ],
+        "datePublished": "2019",
+        "isPartOf": {
+          "@id": "https://drive.google.com/uc?id=16jt37tmTXG4z6JqBKJ0TYGDPrdzcyyND&export=download"
+        },
+        "name": "A lightweight approach to research object data packaging",
+        "releasedEvent": {
+          "@id": "https://www.open-bio.org/events/bosc-2019/bosc-2019-schedule/"
+        },
+        "subjectOf": {
+          "@id": "https://www.youtube.com/watch?v=AociW94muLM"
+        }
+      },
+      {
+        "@id": "https://www.youtube.com/watch?v=AociW94muLM",
+        "@type": "VideoObject",
+        "datePublished": "2019-08-29",
+        "isBasedOn": {
+          "@id": "https://doi.org/10.5281/zenodo.3250687"
+        },
+        "name": "A lightweight approach to research object... - Stian Soiland-Reyes - OBF: BOSC - ISMB ECCB 2019",
+        "releasedEvent": {
+          "@id": "https://www.iscb.org/ismbeccb2019"
+        }
+      },
+      {
+        "@id": "https://www.open-bio.org/events/bosc-2019/bosc-2019-schedule/",
+        "@type": "PublicationEvent",
+        "alternateName": "BOSC2019",
+        "endDate": "2019-06-25",
+        "location": {
+          "@id": "http://sws.geonames.org/2661604/"
+        },
+        "name": "Bioinformatics Open Source Conference 2019",
+        "startDate": "2019-06-24",
+        "superEvent": {
+          "@id": "https://www.iscb.org/ismbeccb2019"
+        }
+      },
+      {
+        "@id": "https://www.iscb.org/ismbeccb2019",
+        "@type": "PublicationEvent",
+        "endDate": "2019-06-25",
+        "location": {
+          "@id": "http://sws.geonames.org/2661604/"
+        },
+        "name": "ISMB ECCB 2019",
+        "startDate": "2019-06-21"
+      },
+      {
+        "@id": "http://sws.geonames.org/2661604/",
+        "@type": "Place",
+        "name": "Basel",
+        "sameAs": {
+          "@id": "https://www.geonames.org/2661604/basel.html"
+        }
+      },
+      {
+        "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/471",
+        "@type": "Thing",
+        "name": "Hypertext Markup Language 5",
+        "alternateName": "HTML5"
+      },
+      {
+        "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/18",
+        "@type": "Thing",
+        "name": "Acrobat PDF 1.4 - Portable Document Format",
+        "alternateName": "PDF 1.4"
+      }
+
+    ]
+  }
