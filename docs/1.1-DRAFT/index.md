@@ -1,7 +1,7 @@
 <!--
-   Copyright 2019 University of Technology Sydney
-   Copyright 2019 The University of Manchester UK 
-   Copyright 2019 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019-2020 University of Technology Sydney
+   Copyright 2019-2020 The University of Manchester UK 
+   Copyright 2019-2020 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -569,6 +569,12 @@ If there is no web-accessible description for a file format it SHOULD be describ
 ### Core Metadata for _Data Entities_
 
 The table below outlines the properties that Data Entities, when present, MUST have to be minimally valid.
+
+#### Encoding file paths
+
+Note that all `@id` [identifiers must be valid URI references](#describing-entities-in-json-ld), care must be taken to express any relative paths using `/` separator, correct casing, and escape special characters like space (`%20`) and percent (`%25`), for instance a _File Data Entity_ from the Windows path `Results and Diagrams\almost-50%.png` becomes `"@id": "Results%20and%20Diagrams/almost-50%25.png"` in the _RO-Crate JSON-LD_.
+ 
+In this document the term _URI_ includes international _IRI_s; the _RO-Crate Metadata File_ is always UTF-8 and international characters in identifiers SHOULD be written using native UTF-8 characters (_IRI_s), however traditional URL encoding of Unicode characters with `%` MAY appear in `@id` strings. Example: `"@id": "面试.mp4"` is preferred over the equivalent `"@id": "%E9%9D%A2%E8%AF%95.mp4"`
 
 #### File Data Entity
 
