@@ -281,12 +281,12 @@ From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
 
 - `conformsTo` mapped to <http://purl.org/dc/terms/conformsTo>
 
-These keys are being proposed by [BioSchemas profile Workflow 0.5-DRAFT](https://bioschemas.org/profiles/Workflow/) to be integrated into schema.org. Reflecting their subject to change, in this specification they use a temporary namespace; future releases of RO-Crate may reflect mapping to the `http://schema.org/` namespace:
+These keys are being proposed by [BioSchemas profile ComputationalWorkflow 0.5-DRAFT](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21) and [FormalParameter 0.1-DRAFT](https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21) to be integrated into schema.org. Reflecting their subject to change, in this specification they a temporary namespace; future releases of RO-Crate may reflect mapping to the `http://schema.org/` namespace:
 
-* `Workflow` mapped to <https://bioschemas.org/Workflow>
+* `ComputationalWorkflow` mapped to <https://bioschemas.org/ComputationalWorkflow>
 * `FormalParameter` mapped to <https://bioschemas.org/FormalParameter>
-* `input` mapped to <https://bioschemas.org/Workflow#input>
-* `output` mapped to <https://bioschemas.org/Workflow#output>
+* `input` mapped to <https://bioschemas.org/ComputationalWorkflow#input>
+* `output` mapped to <https://bioschemas.org/ComputationalWorkflow#output>
 * `funding` mapped to <http://schema.org/funding> ([schemaorg #383](https://github.com/schemaorg/schemaorg/issues/383))
 
 ### Summary of Coverage
@@ -315,7 +315,7 @@ A future version of this specification will allow for variable-level assertions:
 
 ### Recommended Identifiers
 
-_RO-Crate JSON-LD_ SHOULD use the following IDs where possible: 
+_RO-Crate JSON-LD_ SHOULD use the following IDs where possible:
 
 * For a _Root Data Entity_, an `identifier` which is RECOMMENDED to be a  <https://doi.org/> URI. 
 * For a [Person] participating in the research process: [ORCID] identifiers, e.g. <https://orcid.org/0000-0002-1825-0097>
@@ -1259,7 +1259,7 @@ To record curation actions which modify a [File] within a DataSet - for example,
 
 Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. _Workflows_ and _scripts_ SHOULD be described using data entities of type [SoftwareSourceCode].
 
-The distinction between [SoftwareSourceCode] and [SoftwareApplication] for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset. 
+The distinction between [SoftwareSourceCode] and [SoftwareApplication] for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.
 
 A script is a _Data Entity_ which MUST have the following properties:
 * `@type` is an array with at least `File` and `SoftwareSourceCode` as values
@@ -1267,7 +1267,7 @@ A script is a _Data Entity_ which MUST have the following properties:
 * `name`: a human-readable [name] for the script.
 
 A workflow is a _Data Entity_ which MUST have the following properties:
-* `@type` is an array with at least `File`, `SoftwareSourceCode` and `Workflow` as values
+* `@type` is an array with at least `File`, `SoftwareSourceCode` and `ComputationalWorkflow` as values
 * `@id` is a File URI linking to the workflow entry-point.
 * `name`: a human-readable [name] for the workflow.
 
@@ -1276,7 +1276,7 @@ Short example describing a _script_:
 ```json
 {
   "@id": "scripts/analyse_csv.py",
-  "@type": "SoftwareSourceCode",
+  "@type": ["File", "SoftwareSourceCode"],
   "name": "Analyze CSV files",
   "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"},
 },
@@ -1287,7 +1287,7 @@ Short example describing a _workflow_:
 ```json
 {
     "@id": "workflow/retropath.knime",  
-    "@type": ["File", "SoftwareSourceCode", "Workflow"],
+    "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
     "author": {"@id": "#thomas"},
     "name": "RetroPath Knime workflow",
     "description": "Retrosynthesis workflow calculating chemical reactions",
@@ -1296,7 +1296,7 @@ Short example describing a _workflow_:
 }
 ```
 
-There is no strong distinction between a _script_ and a _workflow_; many computational workflows are written in script-like languages, and many scripts perform a _pipeline_ of steps. 
+There is no strong distinction between a _script_ and a _workflow_; many computational workflows are written in script-like languages, and many scripts perform a _pipeline_ of steps.
 
 Here are some indicators for when a script should be considered a _workflow_:
 
@@ -1306,16 +1306,16 @@ Here are some indicators for when a script should be considered a _workflow_:
 * The steps exchange data in a _dataflow_, typically file inputs/outputs
 * The script has well-defined _inputs_ and _outputs_, e.g. file arguments
 
-Here are some counter-indicator for when a script migt **not** be a workflow:
+Here are some counter-indicator for when a script might **not** be a workflow:
+
 * The script contains mainly algorithms or logic
 * Data is exchanged out of bands, e.g. a SQL database
 * The script relies on a particular state of the system (e.g. appends existing files)
 * An interactive user interface that controls the actions
 
-
 Scripts written in a _programming language_, as well as workflows, generally need a _runtime_; in RO-Crate the runtime SHOULD be indicated using a liberal interpretation of [programmingLanguage].
 
-Note that the language and its runtime MAY differ (e.g. different C++-compilers), but for scripts and workflows, frequently the language and runtime are essentially the same, and thus the `programmingLanguage`, implied to be a [ComputerLanguage], can also be described as an executable [SoftwareApplication];
+Note that the language and its runtime MAY differ (e.g. different C++-compilers), but for scripts and workflows, frequently the language and runtime are essentially the same, and thus the `programmingLanguage`, implied to be a [ComputerLanguage], can also be described as an executable [SoftwareApplication]:
 
 ```json
 {
@@ -1334,12 +1334,12 @@ Note that the language and its runtime MAY differ (e.g. different C++-compilers)
 
 A _contextual entity_ representing a [ComputerLanguage] and/or [SoftwareApplication] MUST have a [name], [url] and [version], which should indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance _“R”_ instead of _“The R Project for Statistical Computing”_.
 
-It is possible to indicate _steps_ that are executed as part of an `Workflow` or `Script`, by using [hasPart] to relate additional `SoftwareApplication` or nested `SoftwareSourceCode` contextual entities:
+It is possible to indicate _steps_ that are executed as part of an `ComputationalWorkflow` or `Script`, by using [hasPart] to relate additional `SoftwareApplication` or nested `SoftwareSourceCode` contextual entities:
 
 ```json
 {
     "@id": "workflow/analyze.cwl",  
-    "@type": ["File", "SoftwareSourceCode"],
+    "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
     "name": "CWL workflow to analyze CSV and make PNG",
     "programmingLanguage": {"@id": "https://w3id.org/cwl/v1.1/"},
     "hasPart": [
@@ -1352,7 +1352,7 @@ It is possible to indicate _steps_ that are executed as part of an `Workflow` or
 
 #### Workflow diagram/sketch
 
-It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. This diagram MAY be included as an [ImageObject] which is [about] the `SoftwareSourceCode`. 
+It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. This diagram MAY be included as an [ImageObject] which is [about] the `SoftwareSourceCode`:
 
 ```json
 {
@@ -1389,12 +1389,10 @@ A workflow diagram may still be provided even if there is no programmatic `Softw
 }
 ```
 
-#### Complying with BioSchemas Workflow profile
+#### Complying with BioSchemas Computational Workflow profile
 
-To comply with the [BioSchemas Workflow profile](https://bioschemas.org/profiles/Workflow/0.4-DRAFT-2020_05_11/),
+To comply with the [BioSchemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/),
 where possible, data entities representing _workflows_ SHOULD describe these properties and their related contextual entities:
-
-<!-- TODO:Update link to Workflow 0.5 once released -->
 
 * [name] giving a short descriptive name of the workflow
 * [programmingLanguage] identifying the workflow system, typed as `ProgrammingLanguage`
@@ -1421,9 +1419,7 @@ TODO: Update requirements from BioSchemas profile Workflow 0.5
 _Note: `input`, `output`, `FormalParameter`, and `mandatory` are at time of writing proposed by BioSchemas and not yet integrated in schema.org_
 
 
-The below is an example of an RO-Crate complying with the [BioSchemas Workflow profile 0,4](https://bioschemas.org/profiles/Workflow/0.4-DRAFT-2020_05_11/):
-
-<!-- TODO: Update for Workflow 0,5 once released -->
+The below is an example of an RO-Crate complying with the [BioSchemas ComputationalWorkflow profile 0.5](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/):
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context", 
@@ -1443,7 +1439,7 @@ The below is an example of an RO-Crate complying with the [BioSchemas Workflow p
     },
     {
       "@id": "workflow/alignment.knime",  
-      "@type": "SoftwareSourceCode",
+      "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
       "name": "Sequence alignment workflow",
       "programmingLanguage": {"@id": "#knime"},
       "creator": {"@id": "#alice"},
@@ -1460,7 +1456,7 @@ The below is an example of an RO-Crate complying with the [BioSchemas Workflow p
       "url": "http://example.com/workflows/alignment",
       "version": "0.5.0"
     },
-    { 
+    {
       "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
       "@type": "FormalParameter",
       "name": "genome_sequence",
