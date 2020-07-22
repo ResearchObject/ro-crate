@@ -77,6 +77,7 @@ def main():
 
     context.update(ADDITIONAL)
     json.dump(j, sys.stdout, ensure_ascii=False, indent=5) # indent4 to match existing!
+    print() ## newline
 
 
 # Ordered so we keep a somewhat ordered presentation in the JSON
