@@ -1407,7 +1407,7 @@ where possible, data entities representing _workflows_ SHOULD describe these pro
 Contextual entities for `FormalParameter`, referenced by `input` or `output`, SHOULD describe:
 
 * [name] given the programmatic name for the parameter binding
-* `additionalType` identifying the most specific subtype of [EDAM Data](http://edamontology.org/data_0006) (fallbacks [Data](http://edamontology.org/data_0006) or [Text data](http://edamontology.org/data_2526))
+* [additionalType] identifying the most specific subtype of [EDAM Data](http://edamontology.org/data_0006) (fallbacks [Data](http://edamontology.org/data_0006) or [Text data](http://edamontology.org/data_2526))
 * [encodingFormat] identifying the most specific subtype of [EDAM Format](http://edamontology.org/format_1915) (fallbacks [Binary format](http://edamontology.org/format_2333) or [Textual format](http://edamontology.org/format_2330))
 * [valueRequired] `true` if this (input) parameter must be specified to run the workflow, or `false` (default) if parameter is optional.
 * [defaultValue] present if this (input) parameter has a default value. In RO-Crate this SHOULD be in the form of a `"string"` or a `{"@id": "data/entity.txt"}`
@@ -2716,6 +2716,7 @@ https://kramdown.gettalong.org/syntax.html#reference-links
 [about]: http://schema.org/about
 [accountablePerson]: http://schema.org/accountablePerson
 [actionStatus]: http://schema.org/actionStatus
+[additionalType]: http://schema.org/additionalType
 [affiliation]: http://schema.org/affiliation
 [agent]: http://schema.org/agent
 [alternateName]: http://schema.org/alternateName
