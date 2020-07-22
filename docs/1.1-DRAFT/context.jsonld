@@ -18,7 +18,10 @@
                "@id": "https://pcdm.org/2016/04/18/models"
           },
           {
-               "@id": "https://bioschemas.org/profiles/Workflow/0.5-DRAFT-2020_xx_xx/"
+               "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21"
+          },
+          {
+               "@id": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21"
           }
      ],
      "license": {
@@ -2580,9 +2583,9 @@
           "hasMember": "http://pcdm.org/models#hasMember",
           "RepositoryCollection": "http://pcdm.org/models#Collection",
           "RepositoryObject": "http://pcdm.org/models#object",
-          "Workflow": "https://bioschemas.org/Workflow",
-          "input": "https://bioschemas.org/Workflow#input",
-          "output": "https://bioschemas.org/Workflow#output",
+          "ComputationalWorkflow": "https://bioschemas.org/ComputationalWorkflow",
+          "input": "https://bioschemas.org/ComputationalWorkflow#input",
+          "output": "https://bioschemas.org/ComputationalWorkflow#output",
           "FormalParameter": "https://bioschemas.org/FormalParameter",
           "funding": "http://schema.org/funding",
           "wasDerivedFrom": "http://www.w3.org/ns/prov#wasDerivedFrom",

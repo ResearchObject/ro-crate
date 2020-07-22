@@ -38,9 +38,10 @@ ROCRATE_VERSION="1.1-DRAFT"
 SCHEMA_VERSION="8.0"
 
 # Update from https://bioschemas.org/profiles/Workflow/
-BIOSCHEMA_WORKFLOW_PROFILE = "https://bioschemas.org/profiles/Workflow/0.5-DRAFT-2020_xx_xx/"
-BIOSCHEMA_WORKFLOW_NS = "https://bioschemas.org/Workflow"
+BIOSCHEMA_WORKFLOW_PROFILE = "https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21"
+BIOSCHEMA_WORKFLOW_NS = "https://bioschemas.org/ComputationalWorkflow"
 BIOSCHEMA_FORMAL_PARAMETER_NS = "https://bioschemas.org/FormalParameter"
+BIOSCHEMA_FORMAL_PARAMETER_PROFILE = "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21"
 
 
 def main():
@@ -60,7 +61,8 @@ def main():
     j["isBasedOn"] = [
         {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION},
         {"@id": "https://pcdm.org/2016/04/18/models"},
-        {"@id": BIOSCHEMA_WORKFLOW_PROFILE }
+        {"@id": BIOSCHEMA_WORKFLOW_PROFILE },
+        {"@id": BIOSCHEMA_FORMAL_PARAMETER_PROFILE }
     ]
     j["license"] = {"@id": "https://creativecommons.org/publicdomain/zero/1.0/"}
     context = OrderedDict()
@@ -101,7 +103,7 @@ ADDITIONAL = OrderedDict([
           # proposed https://bioschemas.org/profiles/Workflow/ draft 0.5
           # Remove if/when added to schema.org release!
           ## BEGIN
-          ("Workflow", BIOSCHEMA_WORKFLOW_NS),
+          ("ComputationalWorkflow", BIOSCHEMA_WORKFLOW_NS),
           ("input", BIOSCHEMA_WORKFLOW_NS + "#input"),
           ("output", BIOSCHEMA_WORKFLOW_NS + "#output"),
           ("FormalParameter", BIOSCHEMA_FORMAL_PARAMETER_NS),
