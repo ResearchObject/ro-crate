@@ -139,7 +139,8 @@ ADDITIONAL = OrderedDict([
           ("wfprov", "http://purl.org/ro/wfprov#"),
           ("roterms", "http://purl.org/ro/roterms#"),
           ("wf4ever", "http://purl.org/ro/wf4ever#"),
-          
+          # Disabled, see https://github.com/ResearchObject/ro-crate/pull/73
+#          ("@base", None) 
 ])
 
 if __name__=="__main__":
