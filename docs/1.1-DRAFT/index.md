@@ -267,12 +267,6 @@ See the appendix [RO-Crate JSON-LD](#ro-crate-json-ld) for details.
 
 ### Additional metadata standards
 
-The following terms from the from the [Research Object ontologies](https://w3id.org/ro/2016-01-28/) are used:
-
-- `Workflow` for a workflow definition, mapped to [http://purl.org/wf4ever/wfdesc#Workflow](https://w3id.org/ro/2016-01-28/wfdesc#Workflow)
-- `Script` for a script, mapped to [http://purl.org/wf4ever/wf4ever#Script](https://w3id.org/ro/2016-01-28/wf4ever#Script)
-- `WorkflowSketch` for an image depicting a workflow, mapped to [http://purl.org/wf4ever/roterms#Sketch](https://w3id.org/ro/2016-01-28/roterms#Sketch).
-
 RO-Crate also uses the _Portland Common Data Model_ ([PCDM])) and imports these terms:
  
 - `RepositoryObject` mapped to <https://pcdm.org/2016/04/18/models#Object>
@@ -284,8 +278,16 @@ RO-Crate also uses the _Portland Common Data Model_ ([PCDM])) and imports these 
 The keys `RepositoryObject` and `RepositoryCollection` were chosen to avoid collision between the terms Collection and Object with other vocabularies.
 
 From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
+
 - `conformsTo` mapped to <http://purl.org/dc/terms/conformsTo>
 
+These keys are being proposed by [BioSchemas profile ComputationalWorkflow 0.5-DRAFT](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21) and [FormalParameter 0.1-DRAFT](https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21) to be integrated into schema.org. Reflecting their subject to change, in this specification they a temporary namespace; future releases of RO-Crate may reflect mapping to the `http://schema.org/` namespace:
+
+* `ComputationalWorkflow` mapped to <https://bioschemas.org/ComputationalWorkflow>
+* `FormalParameter` mapped to <https://bioschemas.org/FormalParameter>
+* `input` mapped to <https://bioschemas.org/ComputationalWorkflow#input>
+* `output` mapped to <https://bioschemas.org/ComputationalWorkflow#output>
+* `funding` mapped to <http://schema.org/funding> ([schemaorg #383](https://github.com/schemaorg/schemaorg/issues/383))
 
 ### Summary of Coverage
 
@@ -313,7 +315,7 @@ A future version of this specification will allow for variable-level assertions:
 
 ### Recommended Identifiers
 
-_RO-Crate JSON-LD_ SHOULD use the following IDs where possible: 
+_RO-Crate JSON-LD_ SHOULD use the following IDs where possible:
 
 * For a _Root Data Entity_, an `identifier` which is RECOMMENDED to be a  <https://doi.org/> URI. 
 * For a [Person] participating in the research process: [ORCID] identifiers, e.g. <https://orcid.org/0000-0002-1825-0097>
@@ -441,13 +443,13 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
 
 Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the Root Data Entity using the [hasPart] property. Directory hierarchies MAY be represented with nested Dataset _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
 
-_Data Entities_ representing files MUST have `File` as a value for `@type`.   `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ here is liberal, and includes "downloadable" resources where `@id` is an absolute URI.
+_Data Entities_ representing files MUST have `"File"` as a value for `@type`. `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ here is liberal, and includes "downloadable" resources where `@id` is an absolute URI.
 
-_Data Entities_ representing directories MUST be of `@type: Dataset`. The term _directory_ here includes HTTP file listings where `@id` is an absolute URI, however "external" directories SHOULD have a programmatic listing of their content (e.g. another RO-Crate).
+_Data Entities_ representing directories MUST be of `"@type": "Dataset"`. The term _directory_ here includes HTTP file listings where `@id` is an absolute URI, however "external" directories SHOULD have a programmatic listing of their content (e.g. another RO-Crate).
 
-_Data Entities_ can also be other types, for instance an online database. These SHOULD be of `@type: CreativeWork` and typically have a `@id` which is an absolute URI.
+_Data Entities_ can also be other types, for instance an online database. These SHOULD be of `"@type": "CreativeWork"` and typically have a `@id` which is an absolute URI.
 
-In all cases, `@type` MAY be an array in order to also specify a more specific type, e.g. `@type: [File, Workflow]`
+In all cases, `@type` MAY be an array in order to also specify a more specific type, e.g. `"@type": ["File", "ComputationalWorkflow"]`
 
 _Note: as indicated above, there is no requirement to represent every file and folder in an RO-Crate as Data Entities in the RO-Crate JSON-LD._
 
@@ -1255,22 +1257,37 @@ To record curation actions which modify a [File] within a DataSet - for example,
 
 ### Workflows and scripts
 
+Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. _Workflows_ and _scripts_ SHOULD be described using data entities of type [SoftwareSourceCode].
 
-Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts SHOULD be described using the data entities of type [SoftwareSourceCode].
+The distinction between [SoftwareSourceCode] and [SoftwareApplication] for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.
 
-The distinction between [SoftwareSourceCode] and [SoftwareApplication] for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.  
+A script is a _Data Entity_ which MUST have the following properties:
+* `@type` is an array with at least `File` and `SoftwareSourceCode` as values
+* `@id` is a File URI linking to the executable script
+* `name`: a human-readable [name] for the script.
 
 A workflow is a _Data Entity_ which MUST have the following properties:
-* `@type` is an array with at least `File` and `Workflow` as values.
+* `@type` is an array with at least `File`, `SoftwareSourceCode` and `ComputationalWorkflow` as values
 * `@id` is a File URI linking to the workflow entry-point.
-* [name]: a name for the workflow.
+* `name`: a human-readable [name] for the workflow.
 
-Minimal example describing a workflow:
+Short example describing a _script_:
+
+```json
+{
+  "@id": "scripts/analyse_csv.py",
+  "@type": ["File", "SoftwareSourceCode"],
+  "name": "Analyze CSV files",
+  "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"},
+},
+```
+
+Short example describing a _workflow_:
 
 ```json
 {
     "@id": "workflow/retropath.knime",  
-    "@type": ["File", "SoftwareSourceCode", "Workflow"],
+    "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
     "author": {"@id": "#thomas"},
     "name": "RetroPath Knime workflow",
     "description": "Retrosynthesis workflow calculating chemical reactions",
@@ -1279,29 +1296,31 @@ Minimal example describing a workflow:
 }
 ```
 
-The `@type` property SHOULD be an array, to also indicate the particular nature of the source code as a _script_ or a _workflow_. The distinction is fluid, depending on if the code is primarily indicating **what** should be done (`Workflow`), or **how** tasks should be executed (`Script`).
+There is no strong distinction between a _script_ and a _workflow_; many computational workflows are written in script-like languages, and many scripts perform a _pipeline_ of steps.
 
-To indicate that a `SoftwareSourceCode` is primarily in the form of an executable **script** (e.g. sequential batch/shell script that call other commands and manage files), use:
+Here are some indicators for when a script should be considered a _workflow_:
 
-```json
-  "@type": ["File", "SoftwareSourceCode", "Script"],
-```
+* It performs a series of steps (_pipeline_)
+* The executed steps are mainly external tools or services
+* The main work is performed by the steps (script is not algorithmic)
+* The steps exchange data in a _dataflow_, typically file inputs/outputs
+* The script has well-defined _inputs_ and _outputs_, e.g. file arguments
 
+Here are some counter-indicator for when a script might **not** be a workflow:
 
-If the `SoftwareSourceCode` is primarily in the form of a **workflow** (e.g. a pipeline of steps with data flow), use:
+* The script contains mainly algorithms or logic
+* Data is exchanged out of bands, e.g. a SQL database
+* The script relies on a particular state of the system (e.g. appends existing files)
+* An interactive user interface that controls the actions
 
-```json
-  "@type": ["File", "SoftwareSourceCode", "Workflow"],
-```
+Scripts written in a _programming language_, as well as workflows, generally need a _runtime_; in RO-Crate the runtime SHOULD be indicated using a liberal interpretation of [programmingLanguage].
 
-Workflows and scripts saved on disk using a _programming language_ generally need a _runtime_, in RO-Crate this SHOULD be indicated using a liberal interpretation of [programmingLanguage]. 
-
-Note that the language and its runtime MAY differ (e.g. multiple different C++-compilers), but for scripts and workflows, frequently the language and runtime are essentially the same, and thus the `programmingLanguage` can be described in one go as a hybrid of a [ComputerLanguage] and [SoftwareApplication]:
+Note that the language and its runtime MAY differ (e.g. different C++-compilers), but for scripts and workflows, frequently the language and runtime are essentially the same, and thus the `programmingLanguage`, implied to be a [ComputerLanguage], can also be described as an executable [SoftwareApplication]:
 
 ```json
 {
   "@id": "scripts/analyse_csv.py",
-  "@type": ["File", "SoftwareSourceCode", "Script"],
+  "@type": ["File", "SoftwareSourceCode"],
   "name": "Analyze CSV files",
   "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"},
 },
@@ -1313,14 +1332,14 @@ Note that the language and its runtime MAY differ (e.g. multiple different C++-c
 }
 ```
 
-A _contextual entity_ representing a [SoftwareApplication] or [ComputerLanguage] MUST have a [name], [url] and [version], which should indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance _“R”_ instead of _“The R Project for Statistical Computing”_.
+A _contextual entity_ representing a [ComputerLanguage] and/or [SoftwareApplication] MUST have a [name], [url] and [version], which should indicate a known version the workflow/script was developed or tested with. [alternateName] MAY be provided if there is a shorter colloquial name, for instance _“R”_ instead of _“The R Project for Statistical Computing”_.
 
-It is possible to indicate _steps_ that are executed as part of an `Workflow` or `Script`, by using [hasPart] to relate additional `SoftwareApplication` or nested `SoftwareSourceCode` contextual entities:
+It is possible to indicate _steps_ that are executed as part of an `ComputationalWorkflow` or `Script`, by using [hasPart] to relate additional `SoftwareApplication` or nested `SoftwareSourceCode` contextual entities:
 
 ```json
 {
     "@id": "workflow/analyze.cwl",  
-    "@type": ["File", "SoftwareSourceCode", "Workflow"],
+    "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
     "name": "CWL workflow to analyze CSV and make PNG",
     "programmingLanguage": {"@id": "https://w3id.org/cwl/v1.1/"},
     "hasPart": [
@@ -1333,12 +1352,12 @@ It is possible to indicate _steps_ that are executed as part of an `Workflow` or
 
 #### Workflow diagram/sketch
 
-It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. This diagram MAY be included as an [ImageObject] which is [about] the `SoftwareSourceCode`. The `@type` parameter SHOULD be an array to also include `WorkflowSketch` to indicate that this is an image that represent a sketch or diagram of the workflow.
+It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. This diagram MAY be included as an [ImageObject] which is [about] the `SoftwareSourceCode`:
 
 ```json
 {
   "@id": "workflow/workflow.svg",
-  "@type": ["File", "ImageObject", "WorkflowSketch"],
+  "@type": ["File", "ImageObject"],
   "encodingFormat":  "image/svg+xml",
   "name": "Diagram of RetroPath2.0 workflow",
   "about": {"@id": "workflow/workflow.knime"}
@@ -1350,7 +1369,7 @@ The image file format SHOULD be indicated with [encodingFormat] using an IANA re
 ```json
 {
   "@id": "workflow/workflow.svg",
-  "@type": ["File", "ImageObject", "WorkflowSketch"],
+  "@type": ["File", "ImageObject"],
   "encodingFormat":  ["image/svg+xml"],
   "description": "Diagram of RetroPath2.0 workflow",
   "about": {"@id": "workflow/workflow.knime"}
@@ -1358,20 +1377,161 @@ The image file format SHOULD be indicated with [encodingFormat] using an IANA re
 
 ```
 
-A _Sketch_ may still be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the workflow was done by hand). In this case the sketch itself is a proxy for the workflow and SHOULD have `@type` of `Workflow` and an `about` property referring to the _RO-Crate dataset_ as a whole (assuming the RO-Crate represents the outcome of a single workflow), or to other `Data Entities` otherwise:
+A workflow diagram may still be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the workflow was done by hand). In this case the sketch itself is a proxy for the workflow and SHOULD have an `about` property referring to the _RO-Crate dataset_ as a whole (assuming the RO-Crate represents the outcome of a single workflow), or to other `Data Entities` otherwise:
 
 ```json
 {
   "@id": "workflow/workflow.svg",
-  "@type": ["File", "ImageObject", "WorkflowSketch", "Workflow"],
+  "@type": ["File", "ImageObject"],
   "encodingFormat":  ["image/svg+xml"],
   "name": "Diagram of an ad hoc workflow",
   "about": {"@id": "./"}
 }
- 
 ```
 
+#### Complying with BioSchemas Computational Workflow profile
 
+To comply with the [BioSchemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/),
+where possible, data entities representing _workflows_ SHOULD describe these properties and their related contextual entities:
+
+* [name] giving a short descriptive name of the workflow
+* [programmingLanguage] identifying the workflow system, typed as `ProgrammingLanguage`
+* [creator] identifying the [Person](s) and/or [Organization](s) that made the workflow. (This may differ from the [author] of the conceptual workflow, e.g. if the workflow was converted from one language to another).
+* [dateCreated] the date the workflow was first made, e.g. `2020-05-23`
+* [license] identifying a [CreativeWork] that details license for distributing or editing the workflow
+* `input` and `output` identifying contextual entities for the `FormalParameter` describing input and output parameters/variables that may be varied on different workflow executions
+* [sdPublisher] to identify the [Person] or [Organization] who has made the JSON-LD description of the workflow
+* [url] to identify a public page or source code repository for the workflow
+* [version] to indicate the released version of this workflow file
+
+Contextual entities for `FormalParameter`, referenced by `input` or `output`, SHOULD describe:
+
+* [name] given the programmatic name for the parameter binding
+* [additionalType] identifying the most specific subtype of [EDAM Data](http://edamontology.org/data_0006) (fallbacks [Data](http://edamontology.org/data_0006) or [Text data](http://edamontology.org/data_2526))
+* [encodingFormat] identifying the most specific subtype of [EDAM Format](http://edamontology.org/format_1915) (fallbacks [Binary format](http://edamontology.org/format_2333) or [Textual format](http://edamontology.org/format_2330))
+* [valueRequired] `true` if this (input) parameter must be specified to run the workflow, or `false` (default) if parameter is optional.
+* [defaultValue] present if this (input) parameter has a default value. In RO-Crate this SHOULD be in the form of a `"string"` or a `{"@id": "data/entity.txt"}`
+
+<!--
+TODO: Update requirements from BioSchemas profile Workflow 0.5
+-->
+
+_Note: `input`, `output`, `FormalParameter`, and `mandatory` are at time of writing proposed by BioSchemas and not yet integrated in schema.org_
+
+
+The below is an example of an RO-Crate complying with the [BioSchemas ComputationalWorkflow profile 0.5](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/):
+
+```json
+{ "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context", 
+  "@graph": [
+    {
+      "@type": "CreativeWork",
+      "@id": "ro-crate-metadata.jsonld",
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
+      "about": {"@id": "./"}
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "hasPart": [
+          { "@id": "workflow/retropath.knime" }
+      ]
+    },
+    {
+      "@id": "workflow/alignment.knime",  
+      "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
+      "name": "Sequence alignment workflow",
+      "programmingLanguage": {"@id": "#knime"},
+      "creator": {"@id": "#alice"},
+      "dateCreated": "2020-05-23",
+      "license": { "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0"},
+      "input": [
+        { "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b"}
+      ],
+      "output": [
+        { "@id": "#6c703fee-6af7-4fdb-a57d-9e8bc4486044"},
+        { "@id": "#2f32b861-e43c-401f-8c42-04fd84273bdf"}
+      ],
+      "sdPublisher": {"@id": "#workflow-hub"},
+      "url": "http://example.com/workflows/alignment",
+      "version": "0.5.0"
+    },
+    {
+      "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
+      "@type": "FormalParameter",
+      "name": "genome_sequence",
+      "valueRequired": true,
+      "additionalType": {"@id": "http://edamontology.org/data_2977"},
+      "format": {"@id": "http://edamontology.org/format_1929"}
+    },
+    {
+      "@id": "#6c703fee-6af7-4fdb-a57d-9e8bc4486044",
+      "@type": "FormalParameter",
+      "name": "cleaned_sequence",
+      "additionalType": {"@id": "http://edamontology.org/data_2977"},
+      "encodingFormat": {"@id": "http://edamontology.org/format_2572"}
+    },
+    {
+      "@id": "#2f32b861-e43c-401f-8c42-04fd84273bdf",
+      "@type": "FormalParameter",
+      "name": "sequence_alignment",
+      "additionalType": {"@id": "http://edamontology.org/data_1383"},
+      "encodingFormat": {"@id": "http://edamontology.org/format_1982"}
+    },
+    {
+      "@id": "https://spdx.org/licenses/CC-BY-NC-SA-4.0",
+      "@type": "CreativeWork",
+      "name": "Creative Commons Attribution Non Commercial Share Alike 4.0 International",
+      "alternateName": "CC-BY-NC-SA-4.0"
+    },
+    {
+      "@id": "#knime",
+      "@type": "ProgrammingLanguage",
+      "name": "KNIME Analytics Platform",
+      "alternateName": "KNIME",
+      "url": "https://www.knime.com/whats-new-in-knime-41",
+      "version": "4.1.3"
+    },
+    {
+      "@id": "#alice",
+      "@type": "Person",
+      "name": "Alice Brown"
+    },
+    {
+      "@id": "#workflow-hub",
+      "@type": "Organization",
+      "name": "Example Workflow Hub",
+      "url":"http://example.com/workflows/"
+    },
+    {
+      "@id": "http://edamontology.org/format_1929",
+      "@type": "Thing",
+      "name": "FASTA sequence format"
+    },
+    {
+      "@id": "http://edamontology.org/format_1982",
+      "@type": "Thing",
+      "name": "ClustalW alignment format"
+    },
+    {
+      "@id": "http://edamontology.org/format_2572",
+      "@type": "Thing",
+      "name": "BAM format"
+    },
+    {
+      "@id": "http://edamontology.org/data_2977",
+      "@type": "Thing",
+      "name": "Nucleic acid sequence"
+    },
+    {
+      "@id": "http://edamontology.org/data_1383",
+      "@type": "Thing",
+      "name": "Nucleic acid sequence alignment"
+    }
+  ]
+}
+
+```
 
 ### Extra metadata such as Exif
 
@@ -2556,6 +2716,7 @@ https://kramdown.gettalong.org/syntax.html#reference-links
 [about]: http://schema.org/about
 [accountablePerson]: http://schema.org/accountablePerson
 [actionStatus]: http://schema.org/actionStatus
+[additionalType]: http://schema.org/additionalType
 [affiliation]: http://schema.org/affiliation
 [agent]: http://schema.org/agent
 [alternateName]: http://schema.org/alternateName
@@ -2567,7 +2728,10 @@ https://kramdown.gettalong.org/syntax.html#reference-links
 [contentLocation]: http://schema.org/contentLocation
 [contributor]: http://schema.org/contributor
 [copyrightHolder]: http://schema.org/copyrightHolder
+[creator]: http://schema.org/creator
+[dateCreated]: http://schema.org/dateCreated
 [datePublished]: http://schema.org/datePublished
+[defaultValue]: http://schema.org/defaultValue
 [description]: http://schema.org/description
 [distribution]: http://schema.org/distribution
 [email]: http://schema.org/email
@@ -2602,6 +2766,7 @@ https://kramdown.gettalong.org/syntax.html#reference-links
 [translationOf]: http://schema.org/translationOf
 [translator]: http://schema.org/translator
 [url]: http://schema.org/url
+[valueRequired]: http://schema.org/valueRequired
 [version]: http://schema.org/version
 
 [RFC 2119]: https://tools.ietf.org/html/rfc2119

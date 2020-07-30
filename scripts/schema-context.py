@@ -35,7 +35,14 @@ import urllib.request
 ROCRATE_VERSION="1.1-DRAFT"
 
 # Update version from http://schema.org/docs/releases.html
-SCHEMA_VERSION="7.01"
+SCHEMA_VERSION="8.0"
+
+# Update from https://bioschemas.org/profiles/Workflow/
+BIOSCHEMA_WORKFLOW_PROFILE = "https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21"
+BIOSCHEMA_WORKFLOW_NS = "https://bioschemas.org/ComputationalWorkflow"
+BIOSCHEMA_FORMAL_PARAMETER_NS = "https://bioschemas.org/FormalParameter"
+BIOSCHEMA_FORMAL_PARAMETER_PROFILE = "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21"
+
 
 def main():
     url="http://schema.org/version/%s/schemaorgcontext.jsonld" % SCHEMA_VERSION
@@ -51,6 +58,12 @@ def main():
     j["url"] = {"@id": "https://w3id.org/ro/crate/%s" % ROCRATE_VERSION}
     
     j["schemaVersion"] = {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION}
+    j["isBasedOn"] = [
+        {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION},
+        {"@id": "https://pcdm.org/2016/04/18/models"},
+        {"@id": BIOSCHEMA_WORKFLOW_PROFILE },
+        {"@id": BIOSCHEMA_FORMAL_PARAMETER_PROFILE }
+    ]
     j["license"] = {"@id": "https://creativecommons.org/publicdomain/zero/1.0/"}
     context = OrderedDict()
     j["@context"] = context
@@ -66,6 +79,7 @@ def main():
 
     context.update(ADDITIONAL)
     json.dump(j, sys.stdout, ensure_ascii=False, indent=5) # indent4 to match existing!
+    print() ## newline
 
 
 # Ordered so we keep a somewhat ordered presentation in the JSON
@@ -85,10 +99,17 @@ ADDITIONAL = OrderedDict([
           ("RepositoryCollection", "http://pcdm.org/models#Collection"),
           ("RepositoryObject", "http://pcdm.org/models#object"),
 
-          ("Workflow", "http://purl.org/ro/wfdesc#Workflow"),
-          ("Script", "http://purl.org/ro/wf4ever#Script"),
-          ("ExampleRun", "http://purl.org/ro/roterms#ExampleRun"),
-          ("WorkflowSketch", "http://purl.org/ro/roterms#Sketch"),
+          # Temporary namespace for properties/types
+          # proposed https://bioschemas.org/profiles/Workflow/ draft 0.5
+          # Remove if/when added to schema.org release!
+          ## BEGIN
+          ("ComputationalWorkflow", BIOSCHEMA_WORKFLOW_NS),
+          ("input", BIOSCHEMA_WORKFLOW_NS + "#input"),
+          ("output", BIOSCHEMA_WORKFLOW_NS + "#output"),
+          ("FormalParameter", BIOSCHEMA_FORMAL_PARAMETER_NS),
+          # https://github.com/schemaorg/schemaorg/issues/383#issuecomment-651040576
+          ("funding", "http://schema.org/funding"),
+          ## END 
 
           ("wasDerivedFrom", "http://www.w3.org/ns/prov#wasDerivedFrom"),
           
@@ -121,7 +142,6 @@ ADDITIONAL = OrderedDict([
           ("wfprov", "http://purl.org/ro/wfprov#"),
           ("roterms", "http://purl.org/ro/roterms#"),
           ("wf4ever", "http://purl.org/ro/wf4ever#"),
-          
           # Disabled, see https://github.com/ResearchObject/ro-crate/pull/73
 #          ("@base", None) 
 ])
