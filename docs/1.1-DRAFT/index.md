@@ -2013,6 +2013,50 @@ When generating the _RO-Crate Website_ from _RO-Crate JSON-LD_, the code MUST us
 
 Where there is no RDF ontology available, then implementors SHOULD attempt to provide context by creating stable web-accessible URIs to document properties and classes, for example, by linking to page describing an XML element or attribute from an XML schema, pending the publication of a formal ontology.
 
+
+### Adding new or ad hoc vocabulary terms
+
+Context terms must ultimately map to HTTP(s) URIs which poses challenges for crate-authors wishing to use their own vocabularies.
+
+RO-Crate provides some strategies To add a new term (a Class or Property) that is not in schema.org or another published vocabulary, so that there is a stable URI that can be added to the @context. 
+
+#### Choosing URLs for terms
+
+
+For projects that have their own web-presence URLs MAY defined and SHOULD resolve to useful content. For example for a project the property `education` could have a URL: https://criminalcharacters.com/vocab/#education which resolves to an HTML end-point which explains the term.
+
+For ad hoc terms where the crate author does not have the resources to put up an HTML page, an ad-hoc URL may be used of the form `https://w3id.org/ro/terms/criminalcharacters/education` where `criminalcharacters` is acting as a namespace.
+
+This MAY not resolve, but there is a mechanism for submitting terms and definitions to the RO-Crate project. TODO: Documented where?
+
+The either way, a URL MUST be included in a local context:
+
+```json
+{
+  "@context": [ 
+    "https://w3id.org/ro/crate/1.1-DRAFT/context",
+    {"education": "https://criminalcharacters.com/vocab/#education"},
+  ],
+  "@graph": [ ... ]
+}
+```
+
+
+#### Add local definitions
+
+Following the conventions used by Schema.org, ad-hoc terms SHOULD also include definitions in the RO-Crate with at minimum, a `@type` of either `Class` or `Property` the term in `rdfs:label` and and `rdf:comment` documenting the meaning of the term.
+
+```
+{
+    "@id": "https://criminalcharacters.com/vocab#education",
+    "@type": "rdf:Property",
+    "rdfs:label": "education",
+    "rdf:comment": "Literacy of prisoner. ..."
+}
+```
+
+More information about the relationship of this term to other terms MAY be provided using [domainIncludes]("http://schema.org/domainIncludes"), [rangeIncludes](http://schema.org/rangeIncludes), [rdfs:subClassOf](https://www.w3.org/TR/rdf-schema/#ch_subclassof) following the conventions used in the [Schema.org schema](https://schema.org/version/latest/schemaorg-current-http.jsonld).
+
 ### Handling relative URI references
 
 The _RO-Crate Metadata File_ use _relative URI references_ to identify files and directories
