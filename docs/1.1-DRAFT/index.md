@@ -576,7 +576,7 @@ The table below outlines the properties that Data Entities, when present, MUST h
 
 Note that all `@id` [identifiers must be valid URI references](#describing-entities-in-json-ld), care must be taken to express any relative paths using `/` separator, correct casing, and escape special characters like space (`%20`) and percent (`%25`), for instance a _File Data Entity_ from the Windows path `Results and Diagrams\almost-50%.png` becomes `"@id": "Results%20and%20Diagrams/almost-50%25.png"` in the _RO-Crate JSON-LD_.
  
-In this document the term _URI_ includes international _IRI_s; the _RO-Crate Metadata File_ is always UTF-8 and international characters in identifiers SHOULD be written using native UTF-8 characters (_IRI_s), however traditional URL encoding of Unicode characters with `%` MAY appear in `@id` strings. Example: `"@id": "面试.mp4"` is preferred over the equivalent `"@id": "%E9%9D%A2%E8%AF%95.mp4"`
+In this document the term _URI_ includes international *IRI*s; the _RO-Crate Metadata File_ is always UTF-8 and international characters in identifiers SHOULD be written using native UTF-8 characters (*IRI*s), however traditional URL encoding of Unicode characters with `%` MAY appear in `@id` strings. Example: `"@id": "面试.mp4"` is preferred over the equivalent `"@id": "%E9%9D%A2%E8%AF%95.mp4"`
 
 #### File Data Entity
 
@@ -588,7 +588,7 @@ A `File` _Data Entity_ MUST have the following properties:
 
 A `Dataset` (directory) _Data Entity_ MUST have the following properties:
 *  `@type` MUST be `Dataset` or an array where `Dataset` is one of the values.
-*  `@id`  MUST be either an a _URI Path_ relative to the _RO Crate root, or an absolute URI. The id SHOULD end with `/`
+*  `@id`  MUST be either an a _URI Path_ relative to the _RO Crate root_, or an absolute URI. The id SHOULD end with `/`
 
 ### Web-based Data Entities
 
@@ -691,6 +691,7 @@ A _Directory File Entry_ or `Dataset` identifier by an absolute URL on the web c
 
 Alternatively a common mechanism to provide downloads of a reasonably sized directory is as an archive file in formats like `.zip` or `.tar.gz`, described as a [DataDownload]. 
 
+```json
   {
       "@id": "lots_of_little_files/",
       "@type": "Dataset",
@@ -704,6 +705,7 @@ Alternatively a common mechanism to provide downloads of a reasonably sized dire
     "encodingFormat": "application/zip",
     "contentSize": "82818928"
   }
+```
 
 Similarly, the _RO-Crate root_ entity may also provide a `distribution` URL, in which case the download SHOULD be an archive that contain the _RO-Crate Metadata file_.
 
@@ -1987,7 +1989,7 @@ Requesting the RO-Crate metadata file from a browser may also need permission th
 
 To change configuration of **Apache HTTPD 2**, add to `.htaccess` or equivalent config file:
 
-```httpd
+```conf
 <Files "ro-crate-metadata.json">
   ForceType 'application/ld+json;profile="http://www.w3.org/ns/json-ld#flattened http://www.w3.org/ns/json-ld#compacted https://w3id.org/ro/crate"'
 
