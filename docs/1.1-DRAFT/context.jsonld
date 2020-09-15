@@ -8,11 +8,11 @@
           "@id": "https://w3id.org/ro/crate/1.1-DRAFT"
      },
      "schemaVersion": {
-          "@id": "http://schema.org/version/9.0/"
+          "@id": "http://schema.org/version/10.0/"
      },
      "isBasedOn": [
           {
-               "@id": "http://schema.org/version/9.0/"
+               "@id": "http://schema.org/version/10.0/"
           },
           {
                "@id": "https://pcdm.org/2016/04/18/models"
@@ -330,6 +330,17 @@
           "Duration": "http://schema.org/Duration",
           "EBook": "http://schema.org/EBook",
           "EPRelease": "http://schema.org/EPRelease",
+          "EUEnergyEfficiencyCategoryA": "http://schema.org/EUEnergyEfficiencyCategoryA",
+          "EUEnergyEfficiencyCategoryA1Plus": "http://schema.org/EUEnergyEfficiencyCategoryA1Plus",
+          "EUEnergyEfficiencyCategoryA2Plus": "http://schema.org/EUEnergyEfficiencyCategoryA2Plus",
+          "EUEnergyEfficiencyCategoryA3Plus": "http://schema.org/EUEnergyEfficiencyCategoryA3Plus",
+          "EUEnergyEfficiencyCategoryB": "http://schema.org/EUEnergyEfficiencyCategoryB",
+          "EUEnergyEfficiencyCategoryC": "http://schema.org/EUEnergyEfficiencyCategoryC",
+          "EUEnergyEfficiencyCategoryD": "http://schema.org/EUEnergyEfficiencyCategoryD",
+          "EUEnergyEfficiencyCategoryE": "http://schema.org/EUEnergyEfficiencyCategoryE",
+          "EUEnergyEfficiencyCategoryF": "http://schema.org/EUEnergyEfficiencyCategoryF",
+          "EUEnergyEfficiencyCategoryG": "http://schema.org/EUEnergyEfficiencyCategoryG",
+          "EUEnergyEfficiencyEnumeration": "http://schema.org/EUEnergyEfficiencyEnumeration",
           "Ear": "http://schema.org/Ear",
           "EatAction": "http://schema.org/EatAction",
           "EducationEvent": "http://schema.org/EducationEvent",
@@ -352,6 +363,10 @@
           "EndorseAction": "http://schema.org/EndorseAction",
           "EndorsementRating": "http://schema.org/EndorsementRating",
           "Energy": "http://schema.org/Energy",
+          "EnergyConsumptionDetails": "http://schema.org/EnergyConsumptionDetails",
+          "EnergyEfficiencyEnumeration": "http://schema.org/EnergyEfficiencyEnumeration",
+          "EnergyStarCertified": "http://schema.org/EnergyStarCertified",
+          "EnergyStarEnergyEfficiencyEnumeration": "http://schema.org/EnergyStarEnergyEfficiencyEnumeration",
           "EngineSpecification": "http://schema.org/EngineSpecification",
           "EnrollingByInvitation": "http://schema.org/EnrollingByInvitation",
           "EntertainmentBusiness": "http://schema.org/EntertainmentBusiness",
@@ -1301,6 +1316,7 @@
           "announcementLocation": "http://schema.org/announcementLocation",
           "annualPercentageRate": "http://schema.org/annualPercentageRate",
           "answerCount": "http://schema.org/answerCount",
+          "answerExplanation": "http://schema.org/answerExplanation",
           "antagonist": "http://schema.org/antagonist",
           "appearance": "http://schema.org/appearance",
           "applicableLocation": "http://schema.org/applicableLocation",
@@ -1627,6 +1643,7 @@
           "earlyPrepaymentPenalty": "http://schema.org/earlyPrepaymentPenalty",
           "editEIDR": "http://schema.org/editEIDR",
           "editor": "http://schema.org/editor",
+          "eduQuestionType": "http://schema.org/eduQuestionType",
           "educationRequirements": "http://schema.org/educationRequirements",
           "educationalAlignment": "http://schema.org/educationalAlignment",
           "educationalCredentialAwarded": "http://schema.org/educationalCredentialAwarded",
@@ -1660,6 +1677,8 @@
           "endTime": "http://schema.org/endTime",
           "endorsee": "http://schema.org/endorsee",
           "endorsers": "http://schema.org/endorsers",
+          "energyEfficiencyScaleMax": "http://schema.org/energyEfficiencyScaleMax",
+          "energyEfficiencyScaleMin": "http://schema.org/energyEfficiencyScaleMin",
           "engineDisplacement": "http://schema.org/engineDisplacement",
           "enginePower": "http://schema.org/enginePower",
           "engineType": "http://schema.org/engineType",
@@ -1776,12 +1795,15 @@
           "handlingTime": "http://schema.org/handlingTime",
           "hasBroadcastChannel": "http://schema.org/hasBroadcastChannel",
           "hasCategoryCode": "http://schema.org/hasCategoryCode",
+          "hasCourse": "http://schema.org/hasCourse",
           "hasCourseInstance": "http://schema.org/hasCourseInstance",
           "hasCredential": "http://schema.org/hasCredential",
           "hasDefinedTerm": "http://schema.org/hasDefinedTerm",
           "hasDeliveryMethod": "http://schema.org/hasDeliveryMethod",
           "hasDigitalDocumentPermission": "http://schema.org/hasDigitalDocumentPermission",
           "hasDriveThroughService": "http://schema.org/hasDriveThroughService",
+          "hasEnergyConsumptionDetails": "http://schema.org/hasEnergyConsumptionDetails",
+          "hasEnergyEfficiencyCategory": "http://schema.org/hasEnergyEfficiencyCategory",
           "hasHealthAspect": "http://schema.org/hasHealthAspect",
           "hasMap": "http://schema.org/hasMap",
           "hasMenu": "http://schema.org/hasMenu",
@@ -1923,6 +1945,7 @@
           "language": "http://schema.org/language",
           "lastReviewed": "http://schema.org/lastReviewed",
           "latitude": "http://schema.org/latitude",
+          "layoutImage": "http://schema.org/layoutImage",
           "learningResourceType": "http://schema.org/learningResourceType",
           "leaseLength": "http://schema.org/leaseLength",
           "legalName": "http://schema.org/legalName",

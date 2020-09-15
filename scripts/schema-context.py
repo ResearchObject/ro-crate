@@ -35,7 +35,7 @@ import urllib.request
 ROCRATE_VERSION="1.1-DRAFT"
 
 # Update version from http://schema.org/docs/releases.html
-SCHEMA_VERSION="9.0"
+SCHEMA_VERSION="10.0"
 
 # Update from https://bioschemas.org/profiles/Workflow/
 BIOSCHEMA_WORKFLOW_PROFILE = "https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21"
