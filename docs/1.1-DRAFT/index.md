@@ -2013,6 +2013,53 @@ When generating the _RO-Crate Website_ from _RO-Crate JSON-LD_, the code MUST us
 
 Where there is no RDF ontology available, then implementors SHOULD attempt to provide context by creating stable web-accessible URIs to document properties and classes, for example, by linking to page describing an XML element or attribute from an XML schema, pending the publication of a formal ontology.
 
+
+### Adding new or ad hoc vocabulary terms
+
+Context terms must ultimately map to HTTP(s) URIs which poses challenges for crate-authors wishing to use their own vocabularies.
+
+RO-Crate provides some strategies To add a new term (a Class or Property) that is not in schema.org or another published vocabulary, so that there is a stable URI that can be added to the @context. 
+
+#### Choosing URLs for ad hoc terms
+
+For projects that have their own web-presence, URLs MAY defined and SHOULD resolve to useful content. For example for a project with web page <https://criminalcharacters.com/> the property `education` could have a URL: https://criminalcharacters.com/vocab/#education which resolves to an HTML page that explains the term.
+
+For ad hoc terms where the crate author does not have the resources to put up an HTML page, an ad-hoc URL MAY be used in the form `https://w3id.org/ro/terms/criminalcharacters/education` where `criminalcharacters` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions](https://github.com/ResearchObject/ro-terms) to the RO-Crate project. 
+
+In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in the local context:
+
+```json
+{
+  "@context": [ 
+    "https://w3id.org/ro/crate/1.1-DRAFT/context",
+    {"education": "https://criminalcharacters.com/vocab/#education",
+     "interests": "https://w3id.org/ro/terms/school/interests"},
+  ],
+  "@graph": [ ... ]
+}
+```
+
+
+#### Add local definitions of ad hoc terms
+
+Following the conventions used by Schema.org, ad-hoc terms SHOULD also include definitions in the RO-Crate with at minimum:
+* `@type` of either `Class` (contextual entity type) or `Property` (attribute of an contextual entity)
+* `rdfs:label` with the human readable version of the term, e.g. `makesFood` has label `makes food`
+* `rdf:comment` documenting and clarifying the meaning of the term. For instance the term `sentence` in a prisoner vocabulary will have a different explanation than `sentence` in a linguistic vocabulary.
+
+It is **not** a requirement to use English for the terms, labels or comments.
+
+```
+{
+    "@id": "https://criminalcharacters.com/vocab/#education",
+    "@type": "rdf:Property",
+    "rdfs:label": "education",
+    "rdf:comment": "Literacy of prisoner. ..."
+}
+```
+
+More information about the relationship of this term to other terms MAY be provided using [domainIncludes]("http://schema.org/domainIncludes"), [rangeIncludes](http://schema.org/rangeIncludes), [rdfs:subClassOf](https://www.w3.org/TR/rdf-schema/#ch_subclassof) following the conventions used in the [Schema.org schema](https://schema.org/version/latest/schemaorg-current-http.jsonld).
+
 ### Handling relative URI references
 
 The _RO-Crate Metadata File_ use _relative URI references_ to identify files and directories
