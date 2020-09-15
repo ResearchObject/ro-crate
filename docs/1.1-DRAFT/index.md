@@ -143,7 +143,7 @@ RO-Crates can be _nested_ by including payload directories that themselves conta
 * In new RO-Crates the _RO-Crate Metadata File_ MUST be named `ro-crate-metadata.json` and appear in the _RO-Crate Root_
 * The _RO-Crate Metadata File_ MUST contain _RO-Crate JSON-LD_; a valid [JSON-LD 1.0](https://www.w3.org/TR/2014/REC-json-ld-20140116/) document in [flattened](https://www.w3.org/TR/json-ld/#flattened-document-form) and [compacted](https://www.w3.org/TR/json-ld/#compacted-document-form) form
 * The _RO-Crate JSON-LD_ SHOULD use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.1-DRAFT/context> by reference.
-* If an RO-Crate conforming to version 1.0 or earlier contains a file named `ro-crate-metadata.jsonld` instead of `ro-crate-metadata.json` processing software should treat this as the _RO-Crate Metadata File_. If the crate is updated then the file should SHOULD be renamed to `ro-crate-metadata.json` and the _RO-Crate Metadata File Descriptor_ SHOULD be updated to to reference it, with an up to date `conformsTo` property naming an appropriate version of this specification. 
+* If an RO-Crate conforming to version 1.0 or earlier contains a file named `ro-crate-metadata.jsonld` instead of `ro-crate-metadata.json` then processing software should treat this as the _RO-Crate Metadata File_. If the crate is updated then the file should SHOULD be renamed to `ro-crate-metadata.json` and the _RO-Crate Metadata File Descriptor_ SHOULD be updated to to reference it, with an up to date `conformsTo` property naming an appropriate version of this specification. 
 
 
 [JSON-LD](https://json-ld.org/) is a structured form of [JSON] that can represent a _Linked Data_ graph. 
@@ -711,7 +711,7 @@ In all cases, consumers should be aware that a `DataDownload` is a snapshot that
 
 ## Representing _Contextual Entities_
 
-The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.jsonld`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
+The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
 
 
 ### People
@@ -1426,7 +1426,7 @@ The below is an example of an RO-Crate complying with the [BioSchemas Computatio
   "@graph": [
     {
       "@type": "CreativeWork",
-      "@id": "ro-crate-metadata.jsonld",
+      "@id": "ro-crate-metadata.json",
       "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
       "about": {"@id": "./"}
     },
@@ -1974,12 +1974,11 @@ The [media type][RFC 6838] for `ro-crate-metadata.json` will, when following thi
 with the [flattened/compacted JSON-LD profiles](https://www.w3.org/TR/json-ld/#application-ld-json) as well as `https://w3id.org/ro/crate`, which may be indicated in a [HTTP response](https://tools.ietf.org/html/rfc7231#section-3.1.1.5) as:
 
 ```http
-    HEAD http://example.com/ro-123/ro-crate-metadata.jsonld HTTP/1.1
+    HEAD http://example.com/ro-123/ro-crate-metadata.json HTTP/1.1
 
     HTTP/1.1 200 OK
     Content-Type: application/ld+json; profile="http://www.w3.org/ns/json-ld#flattened http://www.w3.org/ns/json-ld#compacted https://w3id.org/ro/crate"
 ```
-
 
 ### Extending RO-Crate
 
@@ -2087,7 +2086,7 @@ Example, this JSON-LD is in [compacted form](https://www.w3.org/TR/json-ld11/#co
     {"@base": null},
     "https://w3id.org/ro/crate/1.1-DRAFT/context"
   ],
-  "@id": "ro-crate-metadata.jsonld",
+  "@id": "ro-crate-metadata.json",
   "@type": "CreativeWork",
   "description": "RO-Crate Metadata File Descriptor (this file)",
   "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
@@ -2124,7 +2123,7 @@ Results in a valid _RO-Crate JSON-LD_ (actual order in `@graph` may differ):
   "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context",
   "@graph": [
     {
-      "@id": "ro-crate-metadata.jsonld",
+      "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
         "@id": "https://w3id.org/ro/crate/1.1-DRAFT"
@@ -2169,7 +2168,7 @@ Note that the saved _RO-Crate JSON-LD_ SHOULD NOT include `{@base: null}` in its
 [JSON-LD Expansion](https://www.w3.org/TR/json-ld-api/#expansion) can be used to 
 resolve terms from the `@context` to absolute URIs, e.g. `http://schema.org/description`. This may be needed to parse [extended properties](#extending-ro-crate) or for combinations with other Linked Data.
 
-This algorithm would normally also expand `@id` fields based on the current [base URI](https://www.w3.org/TR/json-ld11/#base-iri) of the _RO-Crate Metadata File_, but this may be a temporary location like `file:///tmp/rocrate54/ro-crate-metadata.jsonld`, meaning `@id`: `subfolder/` becomes `file:///tmp/rocrate54/subfolder/` after JSON-LD expansion.
+This algorithm would normally also expand `@id` fields based on the current [base URI](https://www.w3.org/TR/json-ld11/#base-iri) of the _RO-Crate Metadata File_, but this may be a temporary location like `file:///tmp/rocrate54/ro-crate-metadata.json`, meaning `@id`: `subfolder/` becomes `file:///tmp/rocrate54/subfolder/` after JSON-LD expansion.
 
 To avoid absoluting local identifiers, before expanding, augment the JSON-LD `@context` to ensure it is an array that includes `{"@base": null}`.
 
@@ -2183,7 +2182,7 @@ For example, expanding
   ]
   "@graph": [
     {
-      "@id": "ro-crate-metadata.jsonld",
+      "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
         "@id": "https://w3id.org/ro/crate/1.1-DRAFT"
@@ -2216,7 +2215,7 @@ Results in a [expanded form](https://www.w3.org/TR/json-ld11/#expanded-document-
 ```json
 [
   {
-    "@id": "ro-crate-metadata.jsonld",
+    "@id": "ro-crate-metadata.json",
     "@type": [
       "http://schema.org/CreativeWork"
     ],
@@ -2281,11 +2280,11 @@ For instance, consider this HTTP redirection from a permalink (simplified):
 GET https://w3id.org/ro/crate/1.0/crate HTTP/1.1
 
 HTTP/1.1 301 Moved Permanently
-Location: https://researchobject.github.io/ro-crate/1.0/ro-crate-metadata.jsonld
+Location: https://www.researchobject.org/ro-crate/1.0/ro-crate-metadata.jsonld
 ```
 
 ```http
-GET https://researchobject.github.io/ro-crate/1.0/ro-crate-metadata.jsonld HTTP/1.1
+GET https://www.researchobject.org/ro-crate/1.0/ro-crate-metadata.jsonld HTTP/1.1
 
 HTTP/1.1 200 OK
 Content-Type: application/ld+json
@@ -2318,14 +2317,17 @@ Content-Type: application/ld+json
 }
 ```
 
-Following redirection we see that the _base URI_ of the _RO-Crate Metadata File_ becomes `https://researchobject.github.io/ro-crate/1.0/ro-crate-metadata.jsonld`, and therefore the absolute URI for `index.html` is `https://researchobject.github.io/ro-crate/1.0/index.html` rather than `https://w3id.org/ro/crate/1.0/index.html` which would not redirect correctly.
+Following redirection we see that the _base URI_ of the _RO-Crate Metadata File_ becomes `https://www.researchobject.org/ro-crate/1.0/ro-crate-metadata.jsonld`, and therefore the absolute URI for `index.html` is `https://www.researchobject.org/ro-crate/1.0/index.html` rather than `https://w3id.org/ro/crate/1.0/index.html` which would not redirect correctly.
 
+This example also use RO-Crate 1.0, where the _RO-Crate Metadata File_ is called `ro-crate-metadata.jsonld` instead of `ro-crate-metadata.json`. Note that the recommended
+[algorithm to find the Root Data Entity](#core-metadata-for-the-root-data-entity)
+is agnostic to the actual filename.
 
 ##### Finding RO-Crate Root in RDF triple stores
 
 When parsing _RO-Crate JSON-LD_ as RDF, where the RDF framework performs resolution to absolute URIs, it may be difficult to find the _RO-Crate Root_ in the parsed triples.
 
-The algoritm proposed in section [Core Metadata for the Root Data Entity](#core-metadata-for-the-root-data-entity) allows finding the `ro-crate-metadata.jsonld`. We can adopt this for RDF triples, thus finding crates conforming to this specification can be queried with [SPARQL](https://www.w3.org/TR/sparql11-query/):
+The algoritm proposed in section [Core Metadata for the Root Data Entity](#core-metadata-for-the-root-data-entity) allows finding the RDF resource describing `ro-crate-metadata.json`, independent of its parsed base URI. We can adopt this for RDF triples, thus finding crates conforming to this specification can be queried with [SPARQL](https://www.w3.org/TR/sparql11-query/):
 
 ```sparql
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -2361,9 +2363,10 @@ WHERE {
 When parsing a _RO-Crate Metadata File_ into [RDF triples](https://www.w3.org/TR/rdf11-concepts/), for instance uploading it to a _graph store_ like [Apache Jena](https://jena.apache.org/)'s [Fuseki](https://jena.apache.org/documentation/fuseki2/), it is important to ensure consistent _base URI_:
 
 * Some RDF stores and RDF formats don't support relative URI references in triples (see [RDF 1.1 concepts](https://www.w3.org/TR/rdf11-concepts/#note-iris))
-* The _RO-Crate Root_ may depend on where the _RO-Crate Metadata File_ was parsed from, e.g. `<file:///tmp/ro-crate-metadata.jsonld>` (file) or `<http://localhost:3030/test/ro-crate-metadata.jsonld>` (web upload)
+* The _RO-Crate Root_ may depend on where the _RO-Crate Metadata File_ was parsed from, e.g. `<file:///tmp/ro-crate-metadata.json>` (file) or `<http://localhost:3030/test/ro-crate-metadata.json>` (web upload)
 * Parsing multiple RO-Crates into the same RDF graph, using same base URI, may merge them into the same RO-Crate
 * `ro-crate-metadata.json` may not be recognized as JSON-LD and must be renamed to `ro-crate-metadata.jsonld`
+* Web servers hosting `ro-crate-metadata.json` may not send the [JSON-LD _Content-Type_](#ro-crate-json-ld-media-type)
 * If base URI is not correct it may be difficult to find the corresponding file and directory paths from an RDF query returning absolute URIs
 
 **Tip**: If the RDF library can parse the _RO-Crate JSON-LD_ directly by retrieving from a `http`/`https` URI of the _RO-Crate Metadata File_ it should calculate the correct base URI as detailed in section [Establishing absolute URI for RO-Crate Root](#establishing-absolute-uri-for-ro-crate-root) and you should **not** need to override the base URI as detailed here.
@@ -2378,7 +2381,7 @@ If a web-based URI for the _RO-Crate root_ is known, then this can be supplied a
   ],
   "@graph": [
     {
-      "@id": "ro-crate-metadata.jsonld",
+      "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
         "@id": "https://w3id.org/ro/crate/1.1-DRAFT"
@@ -2408,9 +2411,9 @@ If a web-based URI for the _RO-Crate root_ is known, then this can be supplied a
 Parsing this will generate triples like below using `http://example.com/crate255/` as the _RO-Crate Root_ (shortened):
 
 ```
-<http://example.com/crate255/ro-crate-metadata.jsonld> <http://purl.org/dc/terms/conformsTo> <https://w3id.org/ro/crate/1.1-DRAFT> .
+<http://example.com/crate255/ro-crate-metadata.json> <http://purl.org/dc/terms/conformsTo> <https://w3id.org/ro/crate/1.1-DRAFT> .
 
-<http://example.com/crate255/ro-crate-metadata.jsonld> <http://schema.org/about> <http://example.com/crate255/> .
+<http://example.com/crate255/ro-crate-metadata.json> <http://schema.org/about> <http://example.com/crate255/> .
 
 <http://example.com/crate255/> <http://schema.org/name> "Example RO-Crate" .
 
@@ -2444,7 +2447,7 @@ For instance, given a randomly generated UUID `029bcde1-dfa3-43cf-b7d9-a4fb75ccd
   ],
   "@graph": [
     {
-      "@id": "ro-crate-metadata.jsonld",
+      "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
         "@id": "https://w3id.org/ro/crate/1.1-DRAFT"
@@ -2483,7 +2486,7 @@ For instance, given a randomly generated UUID `029bcde1-dfa3-43cf-b7d9-a4fb75ccd
 Parsing this as RDF will generate triples including:
 
 ```turtle
-<arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/ro-crate-metadata.jsonld> <http://schema.org/about> <arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/> .
+<arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/ro-crate-metadata.json> <http://schema.org/about> <arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/> .
 
 <arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/> <http://schema.org/hasPart> <arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/data1.txt> .
 ```
@@ -2503,7 +2506,7 @@ Assuming a repository at `example.com` has JSON-LD with absolute URIs:
   "@context": "https://w3id.org/ro/crate/1.1-DRAFT",
   "@graph": [
     {
-      "@id": "http://example.com/crate415/ro-crate-metadata.jsonld",
+      "@id": "http://example.com/crate415/ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
         "@id": "https://w3id.org/ro/crate/1.1-DRAFT"
@@ -2567,7 +2570,7 @@ Will output _RO-Crate JSON-LD_ with relative URIs:
       "name": "Example RO-Crate"
     },
     {
-      "@id": "ro-crate-metadata.jsonld",
+      "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
         "@id": "https://w3id.org/ro/crate/1.1-DRAFT"
