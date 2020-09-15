@@ -2771,7 +2771,9 @@ _Root Data Entities_ MAY also have additional repository specific identifiers, d
   * Added Repository-specific identifiers
   * RO-Crate JSON-LD now licensed CC0
   * RO-Crate JSON-LD self-identifies its version
-* [RO-Crate 0.2.1](https://github.com/ResearchObject/ro-crate/releases/tag/0.2.1) <https://w3id.org/ro/crate/0.2>
+* [RO-Crate 0.2.1](https://github.com/ResearchObject/ro-crate/releases/tag/0.2.1) 
+  * Added DOI and document metadata
+* [RO-Crate 0.2.0](https://github.com/ResearchObject/ro-crate/releases/tag/0.2.0) <https://w3id.org/ro/crate/0.2>
   * Based on two earlier specifications:
     * [RO Lite 0.1.0](https://www.researchobject.org/ro-crate/0.1.0/)
     * [DataCrate Specification version 1.0.0 2019-04-12](https://github.com/UTS-eResearch/datacrate/blob/47a5046b6fb54fc8f2e751f67fb98b8b2216c955/spec/1.0/data_crate_specification_v1.0.md)
