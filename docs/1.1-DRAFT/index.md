@@ -2020,35 +2020,38 @@ Context terms must ultimately map to HTTP(s) URIs which poses challenges for cra
 
 RO-Crate provides some strategies To add a new term (a Class or Property) that is not in schema.org or another published vocabulary, so that there is a stable URI that can be added to the @context. 
 
-#### Choosing URLs for terms
+#### Choosing URLs for ad hoc terms
 
+For projects that have their own web-presence, URLs MAY defined and SHOULD resolve to useful content. For example for a project with web page <https://criminalcharacters.example.com/> the property `education` could have a URL: https://criminalcharacters.example.com/vocab#education which resolves to an HTML page that explains the term.
 
-For projects that have their own web-presence URLs MAY defined and SHOULD resolve to useful content. For example for a project the property `education` could have a URL: https://criminalcharacters.com/vocab/#education which resolves to an HTML end-point which explains the term.
+For ad hoc terms where the crate author does not have the resources to put up an HTML page, an ad-hoc URL MAY be used in the form `https://w3id.org/ro/terms/criminalcharacters/education` where `criminalcharacters` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions](https://github.com/ResearchObject/ro-terms) to the RO-Crate project. 
 
-For ad hoc terms where the crate author does not have the resources to put up an HTML page, an ad-hoc URL may be used of the form `https://w3id.org/ro/terms/criminalcharacters/education` where `criminalcharacters` is acting as a namespace.
-
-This MAY not resolve, but there is a mechanism for submitting terms and definitions to the RO-Crate project. TODO: Documented where?
-
-The either way, a URL MUST be included in a local context:
+In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in the local context:
 
 ```json
 {
   "@context": [ 
     "https://w3id.org/ro/crate/1.1-DRAFT/context",
-    {"education": "https://criminalcharacters.com/vocab/#education"},
+    {"education": "https://criminalcharacters.example.com/vocab#education"
+     "interests": "https://w3id.org/ro/terms/school/interests"},
   ],
   "@graph": [ ... ]
 }
 ```
 
 
-#### Add local definitions
+#### Add local definitions of ad hoc terms
 
-Following the conventions used by Schema.org, ad-hoc terms SHOULD also include definitions in the RO-Crate with at minimum, a `@type` of either `Class` or `Property` the term in `rdfs:label` and and `rdf:comment` documenting the meaning of the term.
+Following the conventions used by Schema.org, ad-hoc terms SHOULD also include definitions in the RO-Crate with at minimum:
+* `@type` of either `Class` (contextual entity type) or `Property` (attribute of an contextual entity)
+* `rdfs:label` with the human readable version of the term, e.g. `makesFood` has label `makes food`
+* `rdf:comment` documenting and clarifying the meaning of the term. For instance the term `sentence` in a prisoner vocabulary will have a different explanation than `sentence` in a linguistic vocabulary.
+
+It is **not** a requirement to use English for the terms, labels or comments.
 
 ```
 {
-    "@id": "https://criminalcharacters.com/vocab#education",
+    "@id": "https://criminalcharacters.example.com/vocab#education",
     "@type": "rdf:Property",
     "rdfs:label": "education",
     "rdf:comment": "Literacy of prisoner. ..."
