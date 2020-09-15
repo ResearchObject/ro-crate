@@ -2022,7 +2022,7 @@ RO-Crate provides some strategies To add a new term (a Class or Property) that i
 
 #### Choosing URLs for ad hoc terms
 
-For projects that have their own web-presence, URLs MAY defined and SHOULD resolve to useful content. For example for a project with web page <https://criminalcharacters.example.com/> the property `education` could have a URL: https://criminalcharacters.example.com/vocab#education which resolves to an HTML page that explains the term.
+For projects that have their own web-presence, URLs MAY defined and SHOULD resolve to useful content. For example for a project with web page <https://criminalcharacters.com/> the property `education` could have a URL: https://criminalcharacters.com/vocab/#education which resolves to an HTML page that explains the term.
 
 For ad hoc terms where the crate author does not have the resources to put up an HTML page, an ad-hoc URL MAY be used in the form `https://w3id.org/ro/terms/criminalcharacters/education` where `criminalcharacters` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions](https://github.com/ResearchObject/ro-terms) to the RO-Crate project. 
 
@@ -2032,7 +2032,7 @@ In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in
 {
   "@context": [ 
     "https://w3id.org/ro/crate/1.1-DRAFT/context",
-    {"education": "https://criminalcharacters.example.com/vocab#education",
+    {"education": "https://criminalcharacters.com/vocab/#education",
      "interests": "https://w3id.org/ro/terms/school/interests"},
   ],
   "@graph": [ ... ]
@@ -2051,7 +2051,7 @@ It is **not** a requirement to use English for the terms, labels or comments.
 
 ```
 {
-    "@id": "https://criminalcharacters.example.com/vocab#education",
+    "@id": "https://criminalcharacters.com/vocab/#education",
     "@type": "rdf:Property",
     "rdfs:label": "education",
     "rdf:comment": "Literacy of prisoner. ..."
