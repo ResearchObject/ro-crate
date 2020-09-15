@@ -2032,7 +2032,7 @@ In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in
 {
   "@context": [ 
     "https://w3id.org/ro/crate/1.1-DRAFT/context",
-    {"education": "https://criminalcharacters.example.com/vocab#education"
+    {"education": "https://criminalcharacters.example.com/vocab#education",
      "interests": "https://w3id.org/ro/terms/school/interests"},
   ],
   "@graph": [ ... ]
