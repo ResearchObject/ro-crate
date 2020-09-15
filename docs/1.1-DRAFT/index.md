@@ -1974,10 +1974,10 @@ The [media type][RFC 6838] for `ro-crate-metadata.json` will, when following thi
 with the [flattened/compacted JSON-LD profiles](https://www.w3.org/TR/json-ld/#application-ld-json) as well as `https://w3id.org/ro/crate`, which may be indicated in a [HTTP response](https://tools.ietf.org/html/rfc7231#section-3.1.1.5) as:
 
 ```http
-    HEAD http://example.com/ro-123/ro-crate-metadata.json HTTP/1.1
+HEAD http://example.com/ro-123/ro-crate-metadata.json HTTP/1.1
 
-    HTTP/1.1 200 OK
-    Content-Type: application/ld+json; profile="http://www.w3.org/ns/json-ld#flattened http://www.w3.org/ns/json-ld#compacted https://w3id.org/ro/crate"
+HTTP/1.1 200 OK
+Content-Type: application/ld+json; profile="http://www.w3.org/ns/json-ld#flattened http://www.w3.org/ns/json-ld#compacted https://w3id.org/ro/crate"
 ```
 
 
@@ -1985,7 +1985,7 @@ Note that most web servers will serve `ro-crate-metadata.json` with  `Content-Ty
 
 Requesting the RO-Crate metadata file from a browser may also need permission through CORS header `Access-Control-Allow-Origin` (however extra care should be taken if the RO-Crates require access control).
 
-To change configuration of _Apache HTTPD_ 2, add to `.htaccess` or equivalent config file:
+To change configuration of **Apache HTTPD 2**, add to `.htaccess` or equivalent config file:
 
 ```httpd
 <Files "ro-crate-metadata.json">
@@ -1996,18 +1996,18 @@ To change configuration of _Apache HTTPD_ 2, add to `.htaccess` or equivalent co
 </Files>
 ```
 
-For _NGINX_, try:
+For **NGINX**, try:
 
 ```nginx
-  location ~ ro-crate-metadata.json$ {
-          types { } default_type 'application/ld+json;profile="http://www.w3.org/ns/json-ld#flattened http://www.w3.org/ns/json-ld#compacted https://w3id.org/ro/crate"';
+location ~ ro-crate-metadata.json$ {
+        types { } default_type 'application/ld+json;profile="http://www.w3.org/ns/json-ld#flattened http://www.w3.org/ns/json-ld#compacted https://w3id.org/ro/crate"';
 
-          add_header 'Access-Control-Allow-Origin' '*';
-          add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range,Content-Type';
-  }
+        add_header 'Access-Control-Allow-Origin' '*';
+        add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range,Content-Type';
+}
 ```
 
-For Content-Delivery Networks (e.g. GitHub pages) a symbolic link to `ro-crate-metadata.jsonld` may help to create an alias that can be served as `application/ld+json`:
+For **Content-Delivery Networks** (e.g. GitHub pages) a symbolic link to `ro-crate-metadata.jsonld` may help to create an alias that can be served as `application/ld+json`:
 
 ```sh
 ln -s ro-crate-metadata.json ro-crate-metadata.jsonld
