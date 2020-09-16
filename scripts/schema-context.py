@@ -154,4 +154,19 @@ ADDITIONAL = OrderedDict([
 ])
 
 if __name__=="__main__":
-  main()
+  if "-v" in sys.argv or "--version" in sys.argv:
+    print("schema-context.py %s" % ROCRATE_VERSION)
+    print("schema.org %s" % SCHEMA_VERSION)
+    sys.exit(0)
+  elif "-h" in sys.argv or "--help" in sys.argv:
+    print("schema-context.py [VERSION] [TAG]")
+    print("")
+    print("Generates context.jsonld from schema.org and additional terms")
+    print(" VERSION is RO-Crate Specification version (default: %s)" % ROCRATE_VERSION)
+    print(" TAG is RO-Crate Semantic Versioning tag (default same as VERSION)")
+    sys.exit(0)
+  else:
+    main()
+
+
+
