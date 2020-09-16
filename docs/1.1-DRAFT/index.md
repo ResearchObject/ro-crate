@@ -187,6 +187,7 @@ If present in the root directory, `ro-crate-preview.html` MUST:
   ```
 
 `ro-crate-preview.html` SHOULD:
+
 *   Contain at least the same information as the _RO-Crate JSON-LD_, with the exception that files which have no description, author or similar metadata MAY not be listed in the website.
 *   Display at least the metadata relating to the _Root Data Enity_ as static HTML without the need for scripting. It MAY contain extra features enabled by JavaScript.
 *   When a _Data Entity_ or _Contextual Entity_ is referenced by its ID:
@@ -381,7 +382,6 @@ other than the _Root Data Entity_. Extensions of RO-Crate dealing with specific
 types of dataset may put further constraints or requirements of metadata beyond
 the Root Data Entity (see Extending RO-Crate below).
 
-
 The _RO-Crate Metadata File Descriptor_ MAY contain information such as
 licensing for the _RO-Crate Metadata File_ so metadata can be licensed
 separately from Data.
@@ -391,6 +391,7 @@ The table below outlines the properties that the _Root Data Entity_ MUST have to
 #### Direct properties of the Root Data Entity
 
 The _Root Data Entity_ MUST have the following properties:
+
 *  `@type`: MUST be [Dataset]
 *  `@id`:  MUST end with `/` and SHOULD be the string `./`
 *  `name`: SHOULD identify the dataset to humans well enough to disambiguate it from other RO-Crates
@@ -581,12 +582,14 @@ In this document the term _URI_ includes international *IRI*s; the _RO-Crate Met
 #### File Data Entity
 
 A `File` _Data Entity_ MUST have the following properties:
+
 *  `@type`: MUST be `File`, or an array where `File` is one of the values.
 *  `@id` MUST be either a _URI Path_ relative to the _RO Crate root_, or an absolute URI.
 
 #### Directory File Entity
 
 A `Dataset` (directory) _Data Entity_ MUST have the following properties:
+
 *  `@type` MUST be `Dataset` or an array where `Dataset` is one of the values.
 *  `@id`  MUST be either an a _URI Path_ relative to the _RO Crate root_, or an absolute URI. The id SHOULD end with `/`
 
@@ -1177,6 +1180,8 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
     },
 ```
 
+Note the use of double escape `\\` so that JSON preserves the `\` character from the command line.
+
 ### Provenance: Changes to RO-Crates
 
 To record an action which changes the DataSet's metadata, or changes its state in a publication or other workflow, a [CreateAction] or [UpdateAction] SHOULD be associated with a _Data Entity_.
@@ -1264,11 +1269,13 @@ Scientific workflows and scripts that were used (or can be used) to analyze or g
 The distinction between [SoftwareSourceCode] and [SoftwareApplication] for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.
 
 A script is a _Data Entity_ which MUST have the following properties:
+
 * `@type` is an array with at least `File` and `SoftwareSourceCode` as values
 * `@id` is a File URI linking to the executable script
 * `name`: a human-readable [name] for the script.
 
 A workflow is a _Data Entity_ which MUST have the following properties:
+
 * `@type` is an array with at least `File`, `SoftwareSourceCode` and `ComputationalWorkflow` as values
 * `@id` is a File URI linking to the workflow entry-point.
 * `name`: a human-readable [name] for the workflow.
@@ -2077,6 +2084,7 @@ In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in
 #### Add local definitions of ad hoc terms
 
 Following the conventions used by Schema.org, ad-hoc terms SHOULD also include definitions in the RO-Crate with at minimum:
+
 * `@type` of either `Class` (contextual entity type) or `Property` (attribute of an contextual entity)
 * `rdfs:label` with the human readable version of the term, e.g. `makesFood` has label `makes food`
 * `rdf:comment` documenting and clarifying the meaning of the term. For instance the term `sentence` in a prisoner vocabulary will have a different explanation than `sentence` in a linguistic vocabulary.
