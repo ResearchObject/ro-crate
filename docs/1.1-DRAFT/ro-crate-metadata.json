@@ -90,9 +90,9 @@
           }
         ],
         "citation": {
-          "@id": "https://doi.org/10.5281/zenodo.3250687"
+          "@id": "https://doi.org/DOI"
         },
-        "datePublished": "2020-06-24",
+        "datePublished": "UNPUBLISHED",
         "description": "This specification defines a method, known as RO-Crate (Research Object Crate), of organizing file-based data with associated metadata, using linked data principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata. \n\nThe core of RO-Crate is a JSON-LD file, the RO-Crate Metadata File, named ro-crate-metadata.jsonld. This file contains structured metadata about the dataset as a whole (the Root Data Entity) and, optionally, about some or all of its files. This provides a simple way to, for example, assert the authors (e.g. people, organizations) of the RO-Crate or one its files, or to capture more complex provenance for files, such as how they were created using software and equipment. \n\nWhile providing the formal specification for RO-Crate, this document also aims to be a practical guide for software authors to create tools for generating and consuming research data packages, with explanation by examples.",
         "hasPart": [
           {
@@ -102,7 +102,7 @@
             "@id": "context.jsonld"
           },
           {
-            "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.0/ro-crate-1.1.0.pdf"
+            "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf"
           }
         ],
         "identifier": {
@@ -112,7 +112,7 @@
           "@id": "https://www.apache.org/licenses/LICENSE-2.0"
         },
         "name": "RO-Crate specification dataset",
-        "version": "1.1-DRAFT"
+        "version": "TAG"
       },
       {
         "@id": "index.html",
@@ -121,7 +121,7 @@
           "File"
         ],
         "encoding": {
-          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.0/ro-crate-1.1.0.pdf"
+          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf"
         },
         "encodingFormat": [
           "text/html",
@@ -134,9 +134,9 @@
         },
         "name": "RO-Crate Metadata Specification 1.1-DRAFT",
         "sameAs": {
-          "@id": "https://zenodo.org/record/TODO/files/ro-crate-1.1.0.html"
+          "@id": "https://zenodo.org/record/DOI/files/ro-crate-TAG.html"
         },
-        "version": "1.0.0"
+        "version": "TAG"
       },
       {
         "@id": "context.jsonld",
@@ -150,12 +150,12 @@
         },
         "name": "RO-Crate JSON-LD Context",
         "sameAs": {
-          "@id": "https://zenodo.org/record/3541888/files/ro-crate-context-1.1.0.jsonld"
+          "@id": "https://zenodo.org/record/3541888/files/ro-crate-context-TAG.jsonld"
         },
-        "version": "1.1.0"
+        "version": "TAG"
       },
       {
-        "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.0/ro-crate-1.1.0.pdf",
+        "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf",
         "@type": "CreativeWork",
         "encodingFormat": [
           "application/pdf",
@@ -163,11 +163,11 @@
             "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/18"
           }
         ],
-        "name": "RO-Crate Metadata Specification 1.0",
+        "name": "RO-Crate Metadata Specification 1.1-DRAFT",
         "sameAs": {
-          "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf"
+          "@id": "https://zenodo.org/record/3541888/files/ro-crate-TAG.pdf"
         },
-        "version": "1.1.0"
+        "version": "TAG"
       },
       {
         "@id": "https://orcid.org/0000-0001-8131-2150",

@@ -20,13 +20,12 @@
 {:.no_toc}
 
 
-<!-- NOTE: Before release, update and uncomment below 
-(permalink, DOI, published, authors)
+<!-- NOTE: Before release, update and uncomment below (permalink, DOI, published, authors)
 * Permalink: <https://w3id.org/ro/crate/1.1>
 * Status: Recommendation
 * Published: 2019-11-15
 * Publisher: [researchobject.org](http://researchobject.org/) community
--->
+END NOTE -->
 * Status: Editor's Draft
 * JSON-LD context: <https://w3id.org/ro/crate/1.1-DRAFT/context>
 * This version: <https://w3id.org/ro/crate/1.1-DRAFT>
