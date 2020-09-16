@@ -4,7 +4,19 @@ This documents the release procedure for RO-Crate from the GitHub repository <ht
 
 Versions assumed by this document is that `1.1-DRAFT` is to be released as `1.1` (tag `1.1.0`), replacing `1.0` and making new draft `1.2-DRAFT`. Consistent use of `-DRAFT` simplifies the search-replace operations at release time, as replacing`1.0` could match other strings.
 
-Overview:
+## Prerequisites:
+
+A `Makefile` does most of the search-replacing using sed. Markdown is rendered to HTML and PDF using Pandoc and Xelatex. ro-crate-preview is made using the npm package ro-crate.
+
+This works best on a Linux or OS X machine. Installation for Ubuntu 20.04:
+
+```
+sudo apt -y install make pandoc texlive-base texlive-latex-recommended texlive-latex-extra nodejs npm sed
+npm i ro-crate
+```
+
+## Overview
+
 * GitHub housekeeping
   * Update team list in `docs/index.md` with new members in <https://github.com/ResearchObject/ro-crate/issues/1>
   * Ensure contributors of recent PRs are in team
@@ -18,7 +30,7 @@ Overview:
   * .. ideally wait 1 week, wait for typo fixes etc.
 * Copy `docs/1.1-DRAFT/` to `docs/1.1/`
 * Search-replace `1.1-DRAFT` to `1.1` in `docs/1.1/*`
-* Prepare a new version of the Zenodo record <https://zenodo.org/record/3541888>
+* Prepare a new version of the Zenodo record <https://zenodo.org/record/3406497>
   * **Important** Do not yet click **Publish**! * 
   * Delete the old uploads
   * Update author list for new members.
@@ -35,14 +47,8 @@ Overview:
 * Render `docs/1.1/ro-crate-preview.html` using [ro-crate from npm](https://www.npmjs.com/package/ro-crate)
   * Make sure output uses the (not-yet released) permalinks <https://w3id.org/ro/crate/1.1> and <<https://w3id.org/ro/crate/1.1/context>
 * Push `docs/1.1` to GitHub and verify GitHub Pages rendering and permalinks.
-* Convert docs/1.1/index.md to PDF using `pandoc`
-  * `apt install pandoc texlive-latex-recommended`
-  * `release/ro-crate-1.1.0.pdf`
-* Convert docs/1.1/index.md to PDF using `pandoc`
-  * `apt install pandoc wkhtmltopdf`
-  * `mkdir release` (do not check in this folder!)
-  * `pandoc -i docs/1.1/index.md -o release/ro-crate-1.1.0.html`
-  * `pandoc --pdf-engine wkhtmltopdf -i docs/1.1/index.md -o release/ro-crate-1.1.0.pdf`
+* Convert docs/1.1/index.md to HTML and PDF using `pandoc`
+  * `make`
 * Tag in GitHub. [Semantic Versioning](https://semver.org/) so RO-Crate 1.1 will be tagged `1.1.0`
 * Prepare release artifacts by copying from `docs/1.1` to a temporary folder. Rename to include version in filename and upload artifacts to the **release**:
     - `ro-crate-1.1.0.html` 

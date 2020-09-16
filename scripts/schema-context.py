@@ -21,7 +21,7 @@ the corresponding simplified @context for RO-Crate
 adding our additional properties.
 
 Run as:
-./schema-context.py > ../docs/0.3-DRAFT/context.jsonld
+./schema-context.py 0.3-DRAFT > ../docs/0.3-DRAFT/context.jsonld
 """ 
 
 import sys
@@ -48,14 +48,21 @@ def main():
     url="http://schema.org/version/%s/schemaorgcontext.jsonld" % SCHEMA_VERSION
     with urllib.request.urlopen(url) as f:
       schema = json.load(f)
+    if len(sys.argv) > 2:
+      version = sys.argv[1]
+      tag = sys.argv[2]
+    elif len(sys.argv) > 1:
+      tag = version = sys.argv[1]
+    else:
+      tag = version = ROCRATE_VERSION
 
     schemakeys = list(schema["@context"].keys())
     schemakeys.sort() # they are usually sorted anyway
     j = OrderedDict()
-    j["@id"] = "https://w3id.org/ro/crate/%s/context" % ROCRATE_VERSION
+    j["@id"] = "https://w3id.org/ro/crate/%s/context" % version
     j["name"] = "RO-Crate JSON-LD Context",
-    j["version"] = ROCRATE_VERSION
-    j["url"] = {"@id": "https://w3id.org/ro/crate/%s" % ROCRATE_VERSION}
+    j["version"] = tag
+    j["url"] = {"@id": "https://w3id.org/ro/crate/%s" % version}
     
     j["schemaVersion"] = {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION}
     j["isBasedOn"] = [
