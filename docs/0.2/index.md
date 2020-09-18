@@ -490,7 +490,7 @@ If there is no web-accessible decription for a file format it SHOULD be describe
     "@type": "File",
     "contentSize": "120",
     "description": "A file in a non-standard format",
-    "encodingFormat": ["text/plain", {"@id": "https://www.commonwl.org/v1.0/Workflow.html"}]
+    "encodingFormat": ["text/plain", {"@id": "some_extension.md"}]
   },
   {
   "@id": "some_extension.md",
