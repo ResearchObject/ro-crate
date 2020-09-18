@@ -1,2 +1,21 @@
 remote_theme: carlosperate/jekyll-theme-rtd
-logo: assets/img/ro-crate.svg
+logo: /ro-crate/assets/img/ro-crate.svg
+
+title: Research Object Crate (RO-Crate)
+description: |
+  RO-Crate is a community effort to establish a lightweight approach to
+  packaging research data with their metadata. It is based on schema.org
+  annotations in JSON-LD, and aims to make best-practice in formal metadata
+  description accessible and practical for use in a wider variety of situations,
+  from an individual researcher working with a folder of data, to large
+  data-intensive computational research environments.
+
+# Theme settings:
+site_author: researchobject.org community
+repo_url: "https://github.com/researchobject/ro-crate/"
+edit_on_github: true
+github_docs_folder: true
+sticky_navigation: true
+prev_next_buttons_location: bottom
+search_enabled: true
+hljs_style: github-gist
