@@ -6,3 +6,4 @@ Note that files outside `docs` are not accessible within `github.io` and must be
 
 It is more important that pages render well at <https://researchobject.github.io/ro-crate/> than in this  preview within the GitHub repository, as some MarkDown features only apply to the GitHub Pages (e.g. the `{:toc}` macro).
 
+{% include list.liquid all=true %}

@@ -136,3 +136,7 @@ See also [recent and upcoming events](outreach#upcoming-and-recent-events).
 Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): **A lightweight approach to research object data packaging** _Bioinformatics Open Source Conference (BOSC2019)_ <https://doi.org/10.5281/zenodo.3250687>
 
 See also [recent publications, presentations and citations](outreach).
+
+# Navigation
+
+{% include list.liquid all=true %}
