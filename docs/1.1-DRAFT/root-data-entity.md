@@ -84,7 +84,7 @@ separately from Data.
 
 The table below outlines the properties that the _Root Data Entity_ MUST have to be minimally valid and additionally highlights properties required to meet other common use-cases, including the minimum metadata necessary to mint a DataCite DOI:
 
-### Direct properties of the Root Data Entity
+## Direct properties of the Root Data Entity
 
 The _Root Data Entity_ MUST have the following properties:
 
