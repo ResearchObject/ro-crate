@@ -256,7 +256,7 @@ See the appendix [RO-Crate JSON-LD](#ro-crate-json-ld) for details.
 
 ### Additional metadata standards
 
-The following terms from the from the [Research Object ontologies](https://w3id.org/ro/2016-01-28/) are used:
+The following terms from the [Research Object ontologies](https://w3id.org/ro/2016-01-28/) are used:
 
 - `Workflow` for a workflow definition, mapped to [http://purl.org/wf4ever/wfdesc#Workflow](https://w3id.org/ro/2016-01-28/wfdesc#Workflow)
 - `Script` for a script, mapped to [http://purl.org/wf4ever/wf4ever#Script](https://w3id.org/ro/2016-01-28/wf4ever#Script)
