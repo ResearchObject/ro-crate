@@ -1759,7 +1759,7 @@ For example, this data is exported from an [Omeka](https://omeka.org) repository
 
 A [File] or any other item MAY have a [thumbnail] property which references another file.
 
-For example, the below [RepositoryObject](https://pcdm.org/2016/04/18/models#Object) is related to four files which are all versions of the same image (via [hasFile](https://pcdm.org/2016/04/18/models#hasFile)) one of which is a thumbnail. The thumbnail MUST be included in the RO-Crate.
+For example, the below [RepositoryObject](https://pcdm.org/2016/04/18/models#Object) (which is also an [ImageObject]) is related to four files which are all versions of the same image (via [hasFile](https://pcdm.org/2016/04/18/models#hasFile)) one of which is a thumbnail. The thumbnail MUST be included in the RO-Crate.
 
 If [thumbnail]s are incidental to the data set, they need not be referenced by [hasPart](http://schema.org/hasPart) or [hasFile](https://pcdm.org/2016/04/18/models#hasFile) relationships. but must be in the BagIt manifest if in a _Bagged RO-Crate_.
 
@@ -1769,7 +1769,7 @@ If [thumbnail]s are incidental to the data set, they need not be referenced by [
   "@id": "https://omeka.uws.edu.au/farmstofreeways/api/items/383",
   "@type": [
     "RepositoryObject",
-    "Image"
+    "ImageObject"
   ],
   "identifier": [
     "ftf_photo_stapleton1"
@@ -1809,9 +1809,6 @@ If [thumbnail]s are incidental to the data set, they need not be referenced by [
   ],
   "name": [
     "Photo of Eugenie Stapleton 1"
-  ],
-  "relatedLink": [
-    "<a href=\"https://omeka.uws.edu.au/farmstofreeways/items/show/512\">Audio recording of interview with Eugenie Stapleton</a><br /><a href=\"https://omeka.uws.edu.au/farmstofreeways/items/show/454\">Transcript of interview with Eugenie Stapleton</a> <br /><a href=\"https://omeka.uws.edu.au/farmstofreeways/items/show/384\">Photo of Eugenie Stapleton 2</a><br /><a href=\"https://omeka.uws.edu.au/farmstofreeways/items/show/464\">Letter from Eugenie Stapleton</a>"
   ],
   "copyrightHolder": [
     { "@id": "https://westernsydney.edu.au"}
