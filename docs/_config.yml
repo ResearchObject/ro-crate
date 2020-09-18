@@ -1,4 +1,5 @@
-remote_theme: carlosperate/jekyll-theme-rtd
+#remote_theme: carlosperate/jekyll-theme-rtd
+remote_theme: rundocs/jekyll-rtd-theme
 logo: /ro-crate/assets/img/ro-crate.svg
 
 title: Research Object Crate (RO-Crate)
