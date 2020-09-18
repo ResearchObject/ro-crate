@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Terminology
-sort: 1
+sort: 3
 excerpt: |
   ...
 ---

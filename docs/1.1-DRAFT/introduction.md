@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Introduction & definition of an RO-Crate
-sort: 1
+title: Introduction
+sort: 2
 excerpt: |
   ...
 ---
@@ -22,6 +22,8 @@ excerpt: |
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
+
+# Introduction
 
 This document specifies a method, known as _RO-Crate_ (Research Object Crate), of organizing file-based data with associated metadata, using [linked data] principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata.
 
