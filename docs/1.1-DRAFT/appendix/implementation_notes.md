@@ -1,8 +1,7 @@
 ---
 layout: default
-title: Appendix: RO-Crate JSON-LD
+title: Implementation notes
 excerpt: 
-sort: 5
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

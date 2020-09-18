@@ -1,8 +1,7 @@
 ---
 layout: default
-title: Appendix: RO-Crate JSON-LD
-excerpt: 
-sort: 5
+title: Changelog
+excerpt: List of changes in releases of this specifications
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

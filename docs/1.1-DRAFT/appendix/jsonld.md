@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Appendix: RO-Crate JSON-LD
+title: RO-Crate JSON-LD
 excerpt: Hello
 sort: 5
 ---
