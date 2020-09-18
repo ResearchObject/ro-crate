@@ -31,6 +31,8 @@ Scientific workflows and scripts that were used (or can be used) to analyze or g
 
 The distinction between [SoftwareSourceCode] and [SoftwareApplication] for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.
 
+## Describing scripts and workflows
+
 A script is a _Data Entity_ which MUST have the following properties:
 
 * `@type` is an array with at least `File` and `SoftwareSourceCode` as values
@@ -84,6 +86,8 @@ Here are some counter-indicator for when a script might **not** be a workflow:
 * Data is exchanged out of bands, e.g. a SQL database
 * The script relies on a particular state of the system (e.g. appends existing files)
 * An interactive user interface that controls the actions
+
+## Workflow Runtime and Programming Language
 
 Scripts written in a _programming language_, as well as workflows, generally need a _runtime_; in RO-Crate the runtime SHOULD be indicated using a liberal interpretation of [programmingLanguage].
 
@@ -190,7 +194,7 @@ TODO: Update requirements from BioSchemas profile Workflow 0.5
 
 _Note: `input`, `output`, `FormalParameter`, and `mandatory` are at time of writing proposed by BioSchemas and not yet integrated in schema.org_
 
-### Example
+## Complete Workflow Example
 
 The below is an example of an RO-Crate complying with the [BioSchemas ComputationalWorkflow profile 0.5](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/):
 
