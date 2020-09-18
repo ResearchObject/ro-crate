@@ -22,7 +22,7 @@ sort: 5
    limitations under the License.
 -->
 
-## APPENDIX: RO-Crate JSON-LD
+# APPENDIX: RO-Crate JSON-LD
 
 It is not necessary to use [JSON-LD tooling](https://json-ld.org/#developers) to generate or parse the _RO-Crate Metadata File_, although they may make it easier to conform to this specification, e.g. handling relative URIs. It is RECOMMENDED to use [JSON tooling](http://json.org/) to handle [JSON](https://tools.ietf.org/html/rfc7159) syntax and escaping rules.
 
