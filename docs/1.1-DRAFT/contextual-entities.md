@@ -7,7 +7,7 @@ excerpt: |
   which an RO-Crate is self-contained and self-describing, in that it reduces the
   need for the consumer of an RO-Crate to refer to external information which may
   change or become unavailable over time.
-sort: 40
+sort: 3
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -28,12 +28,12 @@ sort: 40
 -->
 
 
-## Representing Contextual Entities
+# Representing Contextual Entities
 
 The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
 
 
-### People
+## People
 
 A core principle of Linked data is to use URIs to identify things such as people. The following is the minimum recommended way of representing a [author] in a RO-Crate. This property MAY be applied in the context of a directory ([Dataset]) or to a [File].
 
@@ -56,7 +56,7 @@ This uses an [ORCID](https://orcid.org/) to unambiguously identify an author, wi
 Note the string-value of the organizational affiliation. This SHOULD be improved by also providing a _Contextual Entity_ for the organization (see example below).
 
 
-### Organizations as values
+## Organizations as values
 
 An [Organization] SHOULD be the value for the [publisher] property of a [Dataset] or [ScholarlyArticle] or [affiliation] property of a [Person].
 
@@ -102,7 +102,7 @@ An [Organization] SHOULD also be used for a [Person]'s [affiliation] property.
 
 
 
-### More detail on ContactPoint
+## More detail on ContactPoint
 
 A RO-Crate SHOULD have contact information, using a contextual entity of type [ContactPoint]. Note that in schema.org [Dataset] does not currently have the corresponding [contactPoint] property, so the contact point would need to be given through a [Person] or [Organization] contextual entity which are related to the Dataset via a [author] or [publisher] property.
 
@@ -136,7 +136,7 @@ A RO-Crate SHOULD have contact information, using a contextual entity of type [C
 
 
 
-### Publications via citation property
+## Publications via citation property
 
 To associate a publication with a dataset the _RO-Crate JSON-LD_ MUST include a URL (for example a DOI URL) as the `@id of a publication using the [citation] property.
 
@@ -181,7 +181,7 @@ The publication SHOULD be described in the _RO-Crate JSON-LD_.
 
 
 
-### Publisher
+## Publisher
 
 The _Root Data Entity_ SHOULD have a [publisher](http://schema.org/publisher) property. This SHOULD be an [Organization](http://schema.org/Organization) though it MAY be a [Person](http://schema.org/Person).
 
@@ -209,7 +209,7 @@ The _Root Data Entity_ SHOULD have a [publisher](http://schema.org/publisher) pr
 
 
 
-### Funding and grants
+## Funding and grants
 
 To associate a research project with a [Dataset], the _RO-Crate JSON-LD_ SHOULD contain an entity for the project using type [Organization], referenced by a [funder] property. The project `Organization` SHOULD in turn reference any external [funder], either by using its URL as an `@id` or via a _Contextual Entity_ describing the funder.
 
@@ -256,7 +256,7 @@ NOTE: To make it very clear where funding is coming from, the _Root Data Entity_
 
 
 
-### Licensing, Access control and copyright
+## Licensing, Access control and copyright
 
 If a _Data Entity_ has a [license] that is different from the license on the _Root Data Entity_, the entity SHOULD have a [license] property referencing a _Contextual Entity_ with a type [CreativeWork] to describe the license. The `@id` of the license SHOULD be its URL (e.g. a Creative Commons License URL) and, when possible, a summary of the license included using the [description] property.
 
@@ -306,7 +306,7 @@ The below _Data Entity_ has a [copyrightHolder] which is different from its [aut
 ```
 
 
-#### Metadata license
+### Metadata license
 
 In some cases the license of the RO-Crate metadata the (JSON-LD statements in the _RO-Crate Metadata File Descriptor_) is different from the license on the _Root Date Entity_ and its content (_data entities_ indicated by [hasPart]). 
 
@@ -339,7 +339,7 @@ If no explicit `license` is expressed on the _RO-Crate Metadata File Descriptor_
 
 <!-- TODO: This got a bit to complicated, commented out for 1.0
 
-### License of contextual entity metadata
+## License of contextual entity metadata
 
 In some cases, the JSON-LD metadata for some entities have been imported under a different (possibly more restrictive) license than the license of the _RO-Crate Metadata File Descriptor_ overall. For this the property [sdLicense] ("structured data license") MAY be used on the affected data entities or contextual entities. In this case it is RECOMMENDED to use [sdPublisher] ("structured data publisher") for attribution of the imported metadata:
 
@@ -381,7 +381,7 @@ As the RO-Crate uses _flattened_ JSON-LD, `sdLicense` should be expressed direct
 
 -->
 
-### Provenance: Equipment used to create files
+## Provenance: Equipment used to create files
 
 To specify which equipment was used to create or update a _Data Entity_, the _RO-Crate_ JSON-LD SHOULD have a _Context Entity_ for each item of equipment which SHOULD be of `@type` [IndividualProduct]. The entity SHOULD have a serial number, manufacturer that identifies it as completely as possible. In this case the equipment is a bespoke machine. The equipment SHOULD be described on a web page, and the address of the description SHOULD be used as its `@id`.
 
@@ -435,7 +435,7 @@ In this example the CreateAction has a human [agent], the object is a Place (a c
 
 
 
-### Provenance: Software used to create files
+## Provenance: Software used to create files
 
 To specify which software was used to create or update a file the software application SHOULD be represented with an entity of type [SoftwareApplication], with a [version] property, e.g. from `tool --version`.
 
@@ -496,7 +496,7 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
 
 Note the use of double escape `\\` so that JSON preserves the `\` character from the command line.
 
-### Provenance: Changes to RO-Crates
+## Provenance: Changes to RO-Crates
 
 To record an action which changes the DataSet's metadata, or changes its state in a publication or other workflow, a [CreateAction] or [UpdateAction] SHOULD be associated with a _Data Entity_.
 
@@ -576,7 +576,7 @@ To record curation actions which modify a [File] within a DataSet - for example,
 ```
 
 
-### Workflows and scripts
+## Workflows and scripts
 
 Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. _Workflows_ and _scripts_ SHOULD be described using data entities of type [SoftwareSourceCode].
 
@@ -673,7 +673,7 @@ It is possible to indicate _steps_ that are executed as part of an `Computationa
 ```
 
 
-#### Workflow diagram/sketch
+### Workflow diagram/sketch
 
 It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. This diagram MAY be included as an [ImageObject] which is [about] the `SoftwareSourceCode`:
 
@@ -712,7 +712,7 @@ A workflow diagram may still be provided even if there is no programmatic `Softw
 }
 ```
 
-#### Complying with BioSchemas Computational Workflow profile
+### Complying with BioSchemas Computational Workflow profile
 
 To comply with the [BioSchemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/),
 where possible, data entities representing _workflows_ SHOULD describe these properties and their related contextual entities:
@@ -856,7 +856,7 @@ The below is an example of an RO-Crate complying with the [BioSchemas Computatio
 
 ```
 
-### Extra metadata such as Exif
+## Extra metadata such as Exif
 
 Schema.org has a generic extension mechanism for encoding adding arbitrary properties and values which are not available as Schema.org properties. An example of of this is the Schema.org [recommended way (see example 2)](http://schema.org/ImageObject) of including [Exif](https://en.wikipedia.org/wiki/Exif) technical image metadata.
 
@@ -890,7 +890,7 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
 ```
 
 
-### Places
+## Places
 
 To associate a _Data Entity_ with a _Contextual Entity_ representing a _geographical location or region_ the entity SHOULD have a property of [contentLocation] with a value of type [Place].
 
@@ -972,7 +972,7 @@ And the place is referenced from the [contentLocation] property of the dataset.
   },
 ```
 
-### Subjects & keywords
+## Subjects & keywords
 
 Subject properties (equivalent to a Dublin Core Subject) on RO-Crate or a data entity MUST use the [about] property.
 
@@ -985,7 +985,7 @@ Keyword properties MUST use [keywords]. Note that by schema.org convention, keyw
 }
 ```
 
-### Time
+## Time
 
 To describe the time period which a RO-Crate Data Entity (or the RO-Crate itself) is _about_, use [temporalCoverage]:
 
@@ -1000,7 +1000,7 @@ To describe the time period which a RO-Crate Data Entity (or the RO-Crate itself
 ```
 
 
-### Digital Library and Repository content
+## Digital Library and Repository content
 
 To describe an export from a Digital Library or repository system, RO-Crate uses the _Portland Common Data Model_ ([PCDM]). A _Contextual Entity_ from a repository, representing an abstract entity such as a person, or a work, or a place SHOULD have a`@type` of [RepositoryObject](https://pcdm.org/2016/04/18/models#Object), in addition to any other types. Objects MAY be grouped together in [RepositoryCollection](https://pcdm.org/2016/04/18/models#Collection)s with [hasMember] pointing to the the [RepositoryObject](https://pcdm.org/2016/04/18/models#Object). The keys RepositoryObject and RepositoryCollection were chosen to avoid collision between the terms Collection and Object with other vocabularies.
 
@@ -1070,7 +1070,7 @@ For example, this data is exported from an [Omeka](https://omeka.org) repository
 
 
 
-### Thumbnails
+## Thumbnails
 
 A [File] or any other item MAY have a [thumbnail] property which references another file.
 

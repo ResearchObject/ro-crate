@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Introduction & definition of an RO-Crate
-sort: 10
+sort: 1
 excerpt: |
   ...
 ---
@@ -65,7 +65,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 **Note**: The RO-Crate [JSON-LD context](https://w3id.org/ro/crate/1.1-DRAFT/context) and JSON-LD examples within this specification are distributed under [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). 
 
-## Introduction & definition of an RO-Crate
+# Introduction & definition of an RO-Crate
 
 > The key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL in this document are to be interpreted as described in [RFC 2119].
 
@@ -76,7 +76,7 @@ The core of RO-Crate is a JSON-LD file, the _RO-Crate Metadata File_, named `ro-
 While providing the formal specification for RO-Crate, this document also aims to be a practical guide for software authors to create tools for generating and consuming research data packages, with explanation by examples. 
 
 
-### Terminology
+## Terminology
 
 _RO-Crate_: A directory structure that contains a dataset, which is described in an _RO-Crate Metadata File_.
 
@@ -108,7 +108,7 @@ _RO-Crate JSON-LD Context_: A JSON-LD [context](https://www.w3.org/TR/json-ld/#t
 
 _RO-Crate JSON-LD_: JSON-LD structure using the _RO-Crate JSON-LD Context_ and containing RO-Crate metadata, written as if [flattened](http://www.w3.org/TR/2014/REC-json-ld-20140116/#flattened-document-form) and then [compacted](http://www.w3.org/TR/2014/REC-json-ld-20140116/#compacted-document-form) according to the rules in JSON-LD 1.0. The _RO-Crate JSON-LD_ for an _RO-Crate_ is stored in the _RO-Crate Metadata File_.
 
-### Linked Data conventions
+## Linked Data conventions
 
 Throughout this specification, RDF terms are referred to using the keys defined in the _RO-Crate JSON-LD Context_.
 

@@ -7,7 +7,7 @@ excerpt: |
   metadata that describes the RO-Crate and its content. This machine-readable
   metadata can also be represented for human consumption in the RO-Crate Website,
   linking to data and Web resources.
-sort: 30
+sort: 2
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -27,7 +27,7 @@ sort: 30
    limitations under the License.
 -->
 
-## RO-Crate Metadata
+# RO-Crate Metadata
 
 RO-Crate aims to capture and describe the [Research Object](http://www.researchobject.org/overview/) using structured _metadata_.
 
@@ -39,7 +39,7 @@ The _RO-Crate Metadata File Descriptor_ contains the metadata that describes the
 
 This machine-readable metadata can also be represented for human consumption in the _RO-Crate Website_, linking to data and Web resources.
 
-### RO-Crate uses Linked Data principles
+## RO-Crate uses Linked Data principles
 
 RO-Crate makes use of [Linked Data principles](https://5stardata.info/en/) for its description. In particular:
 
@@ -57,13 +57,13 @@ RO-Crate realize these principles using a particular set of technologies and bes
 4. The _RO-Crate Website_ is [HTML 5](https://www.w3.org/TR/html52/), and the _RO-Crate Metadata File_ is [JSON-LD](https://www.w3.org/TR/json-ld/), one of the [W3C RDF 1.1 formats](https://www.w3.org/TR/rdf11-primer/).
 5. The _RO-Crate Metadata File_ reuse common vocabularies like [schema.org], and this specification [recommend identifiers](#recommended-identifiers) it should link to.
 
-### Base metadata standard for RO-Crate: Schema.org
+## Base metadata standard for RO-Crate: Schema.org
 
 [schema.org] is the base metadata standard for RO-Crate. Schema.org was chosen because it is widely used on the World Wide Web and supported by search engines, on the assumption that discovery is likely to be maximized if search engines index the content. NOTE: As far as we know there is no alternative, well-maintained linked-data schema for research data with the coverage needed for this project - i.e. a single standard for expressing all the examples presented in this specification.
 
 RO-Crate relies heavily on [schema.org] using a constrained subset of [JSON-LD], and this document gives opinionated recommendations on how to represent the metadata using existing [linked data] best practices.
 
-#### Differences from schema.org
+### Differences from schema.org
 
 Generally, the standard keys from [schema.org] should be used. However, RO-Crate uses variant names for some elements, specifically:
 
@@ -76,7 +76,7 @@ To simplify processing and avoid confusion with string values, the _RO-Crate JSO
 
 See the appendix [RO-Crate JSON-LD](#ro-crate-json-ld) for details.
 
-### Additional metadata standards
+## Additional metadata standards
 
 RO-Crate also uses the _Portland Common Data Model_ ([PCDM])) and imports these terms:
  
@@ -100,7 +100,7 @@ These keys are being proposed by [BioSchemas profile ComputationalWorkflow 0.5-D
 * `output` mapped to <https://bioschemas.org/ComputationalWorkflow#output>
 * `funding` mapped to <http://schema.org/funding> ([schemaorg #383](https://github.com/schemaorg/schemaorg/issues/383))
 
-### Summary of Coverage
+## Summary of Coverage
 
 RO-Crate is simply a way to make metadata assertions about a set of files and folders that make up a _Dataset_. These assertions can be made at three levels:
 
@@ -119,12 +119,12 @@ This document has guidelines for ways to represent common requirements for descr
 
 However, as RO-Crate uses _Linked Data_ principles, adopters of RO-Crate are free to supplement RO-Crate using [schema.org] metadata and/or assertions using other _Linked Data_ vocabularies.
 
-### Future coverage
+## Future coverage
 
 A future version of this specification will allow for variable-level assertions: In some cases, e.g. for tabular data, additional metadata may be provided about the structure and variables within a given file see the Use Case [Describe a tabular data file directly in RO-Crate metadata](https://github.com/ResearchObject/ro-crate/issues/27) for work-in-progress.
 
 
-### Recommended Identifiers
+## Recommended Identifiers
 
 _RO-Crate JSON-LD_ SHOULD use the following IDs where possible:
 
@@ -137,7 +137,7 @@ _RO-Crate JSON-LD_ SHOULD use the following IDs where possible:
 In the absence of the above, RO-Crates SHOULD contain stable persistent URIs to identify all entities wherever possible.
 
 
-### Core Metadata for the _Root Data Entity_
+## Core Metadata for the _Root Data Entity_
 
 The _Root Data Entity_ is a [Dataset] that represent the RO-Crate as a whole;
 a _Research Object_ that includes the _Data Entities_ and the related
@@ -198,7 +198,7 @@ separately from Data.
 
 The table below outlines the properties that the _Root Data Entity_ MUST have to be minimally valid and additionally highlights properties required to meet other common use-cases, including the minimum metadata necessary to mint a DataCite DOI:
 
-#### Direct properties of the Root Data Entity
+### Direct properties of the Root Data Entity
 
 The _Root Data Entity_ MUST have the following properties:
 
@@ -250,7 +250,7 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
 }
 ```
 
-### Referencing _Data Entities_ (files and folders) from the _Root Data Entity_
+## Referencing _Data Entities_ (files and folders) from the _Root Data Entity_
 
 Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the Root Data Entity using the [hasPart] property. Directory hierarchies MAY be represented with nested Dataset _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
 
@@ -264,7 +264,7 @@ In all cases, `@type` MAY be an array in order to also specify a more specific t
 
 _Note: as indicated above, there is no requirement to represent every file and folder in an RO-Crate as Data Entities in the RO-Crate JSON-LD._
 
-#### Example linking to a file and folders
+### Example linking to a file and folders
 
 ```
 <base directory>/
@@ -319,7 +319,7 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
 }
 ```
 
-#### Adding detailed descriptions of encodings
+### Adding detailed descriptions of encodings
 
 The above example provides a media type for the file `cp7glop.ai` - which is
 useful as it may not be apparent that the file readable as a PDF file from the
@@ -379,31 +379,31 @@ If there is no web-accessible description for a file format it SHOULD be describ
   }
 ```
 
-### Core Metadata for _Data Entities_
+## Core Metadata for _Data Entities_
 
 The table below outlines the properties that Data Entities, when present, MUST have to be minimally valid.
 
-#### Encoding file paths
+### Encoding file paths
 
 Note that all `@id` [identifiers must be valid URI references](#describing-entities-in-json-ld), care must be taken to express any relative paths using `/` separator, correct casing, and escape special characters like space (`%20`) and percent (`%25`), for instance a _File Data Entity_ from the Windows path `Results and Diagrams\almost-50%.png` becomes `"@id": "Results%20and%20Diagrams/almost-50%25.png"` in the _RO-Crate JSON-LD_.
  
 In this document the term _URI_ includes international *IRI*s; the _RO-Crate Metadata File_ is always UTF-8 and international characters in identifiers SHOULD be written using native UTF-8 characters (*IRI*s), however traditional URL encoding of Unicode characters with `%` MAY appear in `@id` strings. Example: `"@id": "面试.mp4"` is preferred over the equivalent `"@id": "%E9%9D%A2%E8%AF%95.mp4"`
 
-#### File Data Entity
+### File Data Entity
 
 A `File` _Data Entity_ MUST have the following properties:
 
 *  `@type`: MUST be `File`, or an array where `File` is one of the values.
 *  `@id` MUST be either a _URI Path_ relative to the _RO Crate root_, or an absolute URI.
 
-#### Directory File Entity
+### Directory File Entity
 
 A `Dataset` (directory) _Data Entity_ MUST have the following properties:
 
 *  `@type` MUST be `Dataset` or an array where `Dataset` is one of the values.
 *  `@id`  MUST be either an a _URI Path_ relative to the _RO Crate root_, or an absolute URI. The id SHOULD end with `/`
 
-### Web-based Data Entities
+## Web-based Data Entities
 
 While one use-case of RO-Crates is to describe _files_ contained within the _RO-Crate root_ directory, RO-Crates can also gather resources on the web, identified using _absolute URIs_ instead of relative _URI paths_.
 
@@ -470,7 +470,7 @@ A files on the web may change, the timestamp property `sdDatePublished` SHOULD b
   }
 ```
 
-#### Embedded data entities that are also on the web
+### Embedded data entities that are also on the web
 
 File Data Entities may already have a corresponding web presence, for instance a landing page that describes the file, including persistent identifiers (e.g. DOI) that goes to an intermediate HTML page instead of the downloadable file directly. 
 
@@ -498,7 +498,7 @@ These can be included for File Data Entities as additional metadata, regardless 
   }
 ```
 
-#### Directories on the web; dataset distributions
+### Directories on the web; dataset distributions
 
 A _Directory File Entry_ or `Dataset` identifier by an absolute URL on the web can be harder to download than a `File` because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in `hasPart`, enabling download traversal.
 
