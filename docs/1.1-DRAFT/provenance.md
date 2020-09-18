@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Detailing Provenance of entities
+title: Provenance of entities
 excerpt: |
   ..
 sort: 7
