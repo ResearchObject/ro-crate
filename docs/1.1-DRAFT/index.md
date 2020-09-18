@@ -1,3 +1,9 @@
+---
+layout: default
+title: RO-Crate Metadata Specification 1.1-DRAFT
+excerpt: Editor's Draft of next version of specification.
+nav_order: 2
+---
 <!--
    Copyright 2019-2020 University of Technology Sydney
    Copyright 2019-2020 The University of Manchester UK 
