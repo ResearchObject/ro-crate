@@ -3,7 +3,7 @@ layout: default
 title: Detailing Provenance of entities
 excerpt: |
   ..
-sort: 6
+sort: 7
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
