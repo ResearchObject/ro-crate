@@ -3,7 +3,7 @@ layout: default
 title: Data Entities
 excerpt: |
   ..
-sort: 5
+sort: 7
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

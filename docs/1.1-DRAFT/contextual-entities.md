@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Representing Contextual Entities
+title: Contextual Entities
 excerpt: |
   The RO-Crate contain additional information about Contextual Entities for the
   use of both humans and machines. This also helps to maximize the extent to
   which an RO-Crate is self-contained and self-describing, in that it reduces the
   need for the consumer of an RO-Crate to refer to external information which may
   change or become unavailable over time.
-sort: 6
+sort: 8
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
