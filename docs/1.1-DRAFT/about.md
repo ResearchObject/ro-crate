@@ -1,14 +1,9 @@
 ---
 layout: default
-title: RO-Crate 1.1-DRAFT
+title: RO-Crate Metadata Specification
 sort: 1
 excerpt: |
-
-  This document specifies a method, known as RO-Crate (Research Object Crate), of organizing file-based data with associated metadata, using Linked Data principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata.
-
-  The core of RO-Crate is a JSON-LD file, the RO-Crate Metadata File. This file contains structured metadata about the dataset as a whole and, optionally, about some or all of its files. This provides a simple way to, for example, assert the authors (e.g. people, organizations) of the RO-Crate or one its files, or to capture more complex provenance for files, such as how they were created using software and equipment. 
-
-  While providing the formal specification for RO-Crate, this document also aims to be a practical guide for software authors to create tools for generating and consuming research data packages, with explanation by examples.   
+  ...
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -70,16 +65,5 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 **Note**: The RO-Crate [JSON-LD context](https://w3id.org/ro/crate/1.1-DRAFT/context) and JSON-LD examples within this specification are distributed under [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). 
 
-
 > The key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL in this document are to be interpreted as described in [RFC 2119].
 
-
-This document specifies a method, known as _RO-Crate_ (Research Object Crate), of organizing file-based data with associated metadata, using [linked data] principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata.
-
-The core of RO-Crate is a JSON-LD file, the _RO-Crate Metadata File_, named `ro-crate-metadata.json`. This file contains structured metadata about the dataset as a whole (the _Root Data Entity_) and, optionally, about some or all of its files. This provides a simple way to, for example, assert the authors (e.g. people, organizations) of the RO-Crate or one its files, or to capture more complex provenance for files, such as how they were created using software and equipment. 
-
-While providing the formal specification for RO-Crate, this document also aims to be a practical guide for software authors to create tools for generating and consuming research data packages, with explanation by examples. 
-
-## Table of Contents
-
-{% include list.liquid all=true %}
