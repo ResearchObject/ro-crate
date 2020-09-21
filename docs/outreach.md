@@ -1,3 +1,7 @@
+---
+layout: default
+title: Outreach and Publications
+---
 <!--
    Copyright 2019 The University of Manchester and RO Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
@@ -15,7 +19,7 @@
    limitations under the License.
 -->
 
-# RO-Crate in 
+# RO-Crate Outreach and Publications 
 1. Table of Contents
 {:toc}
 

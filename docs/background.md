@@ -1,5 +1,9 @@
+---
+layout: default
+title: Background
+---
 <!--
-   Copyright 2019 RO Crate contributors 
+   Copyright 2019-2020 RO-Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");

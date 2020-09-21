@@ -1,3 +1,8 @@
+---
+layout: default
+title: RO-Crate 0.2
+exclude: true
+---
 <!--
    Copyright 2019 University of Technology Sydney
    Copyright 2019 The University of Manchester UK 
@@ -17,7 +22,6 @@
 -->
 
 # RO-Crate Metadata Specification 0.2
-{:.no_toc}
 
 * Permalink: <https://w3id.org/ro/crate/0.2>
 * Cite as: <https://doi.org/10.5281/zenodo.3406498> (this version)
