@@ -72,6 +72,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 > The key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL in this document are to be interpreted as described in [RFC 2119].
 
+## Abstract
 
 This document specifies a method, known as _RO-Crate_ (Research Object Crate), of organizing file-based data with associated metadata, using [linked data] principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata.
 
@@ -82,3 +83,5 @@ While providing the formal specification for RO-Crate, this document also aims t
 ## Table of Contents
 
 {% include list.liquid all=true %}
+
+[RFC 2119]: https://tools.ietf.org/html/rfc2119

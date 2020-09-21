@@ -85,7 +85,7 @@ In the _RO-Crate Metadata File_ the RDF terms use their RO-Crate JSON-LD names a
 [JSON-LD]: https://json-ld.org/
 [linked data]: https://en.wikipedia.org/wiki/Linked_data
 [OCFL]: https://ocfl.io/
-[OCFL Object]: https://ocfl.io/0.3/spec/#object-spec
+[OCFL Object]: https://ocfl.io/1.0/spec/#object-spec
 [ORCID]: https://orcid.org
 [Pairtree]: https://confluence.ucop.edu/display/Curation/PairTree
 [Pairtree specification]: https://confluence.ucop.edu/display/Curation/PairTree?preview=/14254128/16973838/PairtreeSpec.pdf

@@ -8,6 +8,7 @@ excerpt: |
   need for the consumer of an RO-Crate to refer to external information which may
   change or become unavailable over time.
 sort: 8
+jekyll-mentions: false
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -30,7 +31,7 @@ sort: 8
 
 # Representing Contextual Entities
 
-The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
+The _RO-Crate JSON-LD_ `@graph` SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
 
 
 ## People
@@ -183,7 +184,7 @@ The publication SHOULD be described in the _RO-Crate JSON-LD_.
 
 ## Publisher
 
-The _Root Data Entity_ SHOULD have a [publisher](http://schema.org/publisher) property. This SHOULD be an [Organization](http://schema.org/Organization) though it MAY be a [Person](http://schema.org/Person).
+The [Root Data Entity](root-data-entity.html) SHOULD have a [publisher](http://schema.org/publisher) property. This SHOULD be an [Organization](http://schema.org/Organization) though it MAY be a [Person](http://schema.org/Person).
 
 
 ```json
@@ -308,7 +309,7 @@ The below _Data Entity_ has a [copyrightHolder] which is different from its [aut
 
 ### Metadata license
 
-In some cases the license of the RO-Crate metadata the (JSON-LD statements in the _RO-Crate Metadata File Descriptor_) is different from the license on the _Root Date Entity_ and its content (_data entities_ indicated by [hasPart]). 
+In some cases the license of the [RO-Crate metadata](root-data-entity.md) the (JSON-LD statements in the _RO-Crate Metadata File Descriptor_) is different from the license on the [Root Date Entity](root-data-entity.md) and its content (_data entities_ indicated by [hasPart]). 
 
 For instance, a common pattern for repositories is to license metadata as [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/), while data is licensed as [CC-BY](https://creativecommons.org/licenses/by/4.0/) or similar.  This pattern allow metadata to be combined freely (e.g. the DataCite knowledge graph), while redistribution of data files would require explicit attribution and statement of their license.
 
@@ -630,7 +631,7 @@ https://kramdown.gettalong.org/syntax.html#reference-links
 [JSON-LD]: https://json-ld.org/
 [linked data]: https://en.wikipedia.org/wiki/Linked_data
 [OCFL]: https://ocfl.io/
-[OCFL Object]: https://ocfl.io/0.3/spec/#object-spec
+[OCFL Object]: https://ocfl.io/1.0/spec/#object-spec
 [ORCID]: https://orcid.org
 [Pairtree]: https://confluence.ucop.edu/display/Curation/PairTree
 [Pairtree specification]: https://confluence.ucop.edu/display/Curation/PairTree?preview=/14254128/16973838/PairtreeSpec.pdf

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: RO-Crate Metadata
+title: Metadata of the RO-Crate
 excerpt: |
   RO-Crate aims to capture and describe the Research Object using
   structured metadata. The RO-Crate Metadata File Descriptor contains the
@@ -74,7 +74,7 @@ Note that JSON-LD examples given on the <http://schema.org/> website may not be 
 
 To simplify processing and avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even where [schema.org] for some properties otherwise permit shorter forms like `"author": "http://example.com/alice"`.
 
-See the appendix [RO-Crate JSON-LD](#ro-crate-json-ld) for details.
+See the appendix [RO-Crate JSON-LD](appendix/jsonld.html) for details.
 
 ## Additional metadata standards
 

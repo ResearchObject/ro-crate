@@ -31,11 +31,11 @@ The primary purpose for RO-Crate is to gather and describe a set of _Data entiti
 * Directories
 * Web resources
 
-The data entities can be further described by referencing [contextual entitites](contextual-entities) such as persons, organizations and publications.
+The data entities can be further described by referencing [contextual entitites](contextual-entities.html) such as persons, organizations and publications.
 
 ## Referencing files and folders from the Root Data Entity
 
-Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the [Root Data Entity](root-data-entity) using the [hasPart] property. Directory hierarchies MAY be represented with nested [Dataset] _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
+Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the [Root Data Entity](root-data-entity.html) using the [hasPart] property. Directory hierarchies MAY be represented with nested [Dataset] _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
 
 _Data Entities_ representing files MUST have `"File"` as a value for `@type`. `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ here is liberal, and includes "downloadable" resources where `@id` is an absolute URI.
 
@@ -50,7 +50,7 @@ _Note: as indicated above, there is no requirement to represent every file and f
 ### Example linking to a file and folders
 
 ```
-<base directory>/
+<RO-Crate root>/
   |   ro-crate-metadata.json
   |   cp7glop.ai
   |   lots_of_little_files/
@@ -168,7 +168,7 @@ The table below outlines the properties that Data Entities, when present, MUST h
 
 ### Encoding file paths
 
-Note that all `@id` [identifiers must be valid URI references](#describing-entities-in-json-ld), care must be taken to express any relative paths using `/` separator, correct casing, and escape special characters like space (`%20`) and percent (`%25`), for instance a _File Data Entity_ from the Windows path `Results and Diagrams\almost-50%.png` becomes `"@id": "Results%20and%20Diagrams/almost-50%25.png"` in the _RO-Crate JSON-LD_.
+Note that all `@id` [identifiers must be valid URI references](appendix/jsonld.html#describing-entities-in-json-ld), care must be taken to express any relative paths using `/` separator, correct casing, and escape special characters like space (`%20`) and percent (`%25`), for instance a _File Data Entity_ from the Windows path `Results and Diagrams\almost-50%.png` becomes `"@id": "Results%20and%20Diagrams/almost-50%25.png"` in the _RO-Crate JSON-LD_.
  
 In this document the term _URI_ includes international *IRI*s; the _RO-Crate Metadata File_ is always UTF-8 and international characters in identifiers SHOULD be written using native UTF-8 characters (*IRI*s), however traditional URL encoding of Unicode characters with `%` MAY appear in `@id` strings. Example: `"@id": "面试.mp4"` is preferred over the equivalent `"@id": "%E9%9D%A2%E8%AF%95.mp4"`
 
@@ -333,7 +333,7 @@ https://kramdown.gettalong.org/syntax.html#reference-links
 [JSON-LD]: https://json-ld.org/
 [linked data]: https://en.wikipedia.org/wiki/Linked_data
 [OCFL]: https://ocfl.io/
-[OCFL Object]: https://ocfl.io/0.3/spec/#object-spec
+[OCFL Object]: https://ocfl.io/1.0/spec/#object-spec
 [ORCID]: https://orcid.org
 [Pairtree]: https://confluence.ucop.edu/display/Curation/PairTree
 [Pairtree specification]: https://confluence.ucop.edu/display/Curation/PairTree?preview=/14254128/16973838/PairtreeSpec.pdf

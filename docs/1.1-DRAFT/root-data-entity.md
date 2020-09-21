@@ -23,13 +23,20 @@ sort: 6
    limitations under the License.
 -->
 
-## Core Metadata for the Root Data Entity
+# Core Metadata for the Root Data Entity
 
 The _Root Data Entity_ is a [Dataset] that represent the RO-Crate as a whole;
 a _Research Object_ that includes the _Data Entities_ and the related
 _Contextual Entities_.
 
-The _RO-Crate JSON-LD_ MUST contain a _RO-Crate Metadata File Descriptor_ with
+As explained in section [RO-Crate structure](structure.html), the RO-Crate description 
+is stored as _JSON-LD_ in the _RO-Crate Metadata File_ `ro-crate-metadata.json` in 
+the _RO-Crate root_ directory. 
+
+## RO-Crate Metadata File Descriptor
+
+The _RO-Crate JSON-LD_ MUST contain a self-describing
+_RO-Crate Metadata File Descriptor_ with
 the `@id` value `ro-crate-metadata.json` (or `ro-crate-metadata.json` in legacy
 crates) and `@type` [CreativeWork]. This descriptor MUST have an [about]
 property referencing the _Root Data Entity_, which SHOULD have an `@id` of `./`.
@@ -59,6 +66,8 @@ SHOULD be a versioned permalink URI of the RO-Crate specification
 that the _RO-Crate JSON-LD_ conforms to. The URI SHOULD 
 start with `https://w3id.org/ro/crate/`. 
 
+### Finding the Root Data Entity
+
 Consumers processing the RO-Crate as an JSON-LD graph can thus reliably find
 the the _Root Data Entity_ by following this algorithm:
 
@@ -67,6 +76,8 @@ the the _Root Data Entity_ by following this algorithm:
 3. ....from this entity's `about` object keep the `@id` URI as variable _root_
 4. For each entity in `@graph` array
 5. .. if the entity has an `@id` URI that matches _root_ return it
+
+### Purpose of Metadata File
 
 To ensure a base-line interoperability between RO-Crates, and for an RO-Crate to
 be considered a _Valid RO-Crate_, a minimum set of metadata is required for the
@@ -103,6 +114,7 @@ NOTE: The properties above are not sufficient to generate a DataCite citation.
 Advice on integrating with DataCite will be provided in a future version of this
 specification, or as an implementation guide.
 
+## Minimal example of RO-Crate
 
 The following _RO-Crate Metadata File_ represents a minimal description of an _RO-Crate_. 
 
@@ -162,7 +174,7 @@ https://kramdown.gettalong.org/syntax.html#reference-links
 [JSON-LD]: https://json-ld.org/
 [linked data]: https://en.wikipedia.org/wiki/Linked_data
 [OCFL]: https://ocfl.io/
-[OCFL Object]: https://ocfl.io/0.3/spec/#object-spec
+[OCFL Object]: https://ocfl.io/1.0/spec/#object-spec
 [ORCID]: https://orcid.org
 [Pairtree]: https://confluence.ucop.edu/display/Curation/PairTree
 [Pairtree specification]: https://confluence.ucop.edu/display/Curation/PairTree?preview=/14254128/16973838/PairtreeSpec.pdf
