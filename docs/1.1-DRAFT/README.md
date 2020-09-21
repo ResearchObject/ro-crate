@@ -3,7 +3,6 @@ layout: default
 title: RO-Crate 1.1-DRAFT
 sort: 1
 excerpt: |
-
   This document specifies a method, known as RO-Crate (Research Object Crate), of organizing file-based data with associated metadata, using Linked Data principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata.
 
   The core of RO-Crate is a JSON-LD file, the RO-Crate Metadata File. This file contains structured metadata about the dataset as a whole and, optionally, about some or all of its files. This provides a simple way to, for example, assert the authors (e.g. people, organizations) of the RO-Crate or one its files, or to capture more complex provenance for files, such as how they were created using software and equipment. 
