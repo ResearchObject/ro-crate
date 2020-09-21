@@ -1,8 +1,8 @@
 ---
 layout: default
 title: RO-Crate JSON-LD
-excerpt: Hello
-sort: 5
+excerpt: |
+  ..
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
