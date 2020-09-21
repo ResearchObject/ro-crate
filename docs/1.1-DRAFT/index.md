@@ -80,7 +80,7 @@ _RO-Crate_: A directory structure that contains a dataset, which is described in
 
 _RO-Crate Root_: The top-level directory of the _RO-Crate_, indicated by the presence of the _RO-Crate Metadata File_ `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` for crates that comply with versions before v1.1 of this specification)
 
-_RO-Crate Metadata File_: A JSON-LD file stored as `ro-crate-metadata.json` in the _RO-Crate Root_. The metadata file describes the _RO-Crate_ with structured data in form of _RO-Crate JSON-LD_. (In version 1.0 this file was named `ro-crate-metadata.json` but has been renamed to improve the usability of crates.)
+_RO-Crate Metadata File_: A JSON-LD file stored as `ro-crate-metadata.json` in the _RO-Crate Root_. The metadata file describes the _RO-Crate_ with structured data in form of _RO-Crate JSON-LD_. (In version 1.0 this file was named `ro-crate-metadata.jsonld` but has been renamed to improve the usability of crates.)
 
 _RO-Crate Website_: Human-readable HTML pages which describe the RO-Crate (i.e. the _Root Data Entity_, its _Data Entities_ and _Context Entities_), with a home-page at `ro-crate-preview.html` (any additional files reside in `ro-crate-preview_files/`)
 
@@ -128,7 +128,7 @@ The structure an _RO-Crate_ MUST follow is:
 |   [payload files and directories]  # 0 or more
 ```
 
-The name of the _RO-Crate root_ directory is not defined, but a root directory is identifiable by the presence of the _RO-Crate Metadata File_, `ro-crate-metadata.json`. For instance, if an _RO-Crate_ is archived in a ZIP-file, the ZIP root directory correspond to _RO-Crate root_ directory if it contains `ro-crate-metadata.json`.
+The name of the _RO-Crate root_ directory is not defined, but a root directory is identifiable by the presence of the _RO-Crate Metadata File_, `ro-crate-metadata.json`. For instance, if an _RO-Crate_ is archived in a ZIP-file, the ZIP root directory is an _RO-Crate root_ directory if it contains `ro-crate-metadata.json`.
 
 
 [Data Entities](#core-metadata-for-data-entities) in the RO-Crate MUST either be _payload files/directories_ present within the RO-Crate root directory or its subdirectories, or be [Web-based Data Entities](#web-based-data-entities).
@@ -267,7 +267,7 @@ See the appendix [RO-Crate JSON-LD](#ro-crate-json-ld) for details.
 
 ### Additional metadata standards
 
-RO-Crate also uses the _Portland Common Data Model_ ([PCDM])) and imports these terms:
+RO-Crate also uses the _Portland Common Data Model_ ([PCDM])) to describe repositories or collections of digital objects and imports these terms:
  
 - `RepositoryObject` mapped to <https://pcdm.org/2016/04/18/models#Object>
 - `RepositoryCollection` mapped to <https://pcdm.org/2016/04/18/models#Collection>
@@ -333,7 +333,7 @@ a _Research Object_ that includes the _Data Entities_ and the related
 _Contextual Entities_.
 
 The _RO-Crate JSON-LD_ MUST contain a _RO-Crate Metadata File Descriptor_ with
-the `@id` value `ro-crate-metadata.json` (or `ro-crate-metadata.json` in legacy
+the `@id` value `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` in legacy
 crates) and `@type` [CreativeWork]. This descriptor MUST have an [about]
 property referencing the _Root Data Entity_, which SHOULD have an `@id` of `./`.
 
@@ -715,7 +715,7 @@ In all cases, consumers should be aware that a `DataDownload` is a snapshot that
 
 ## Representing _Contextual Entities_
 
-The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
+The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`). This also helps to maximize the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
 
 
 ### People
@@ -1842,7 +1842,7 @@ If [thumbnail]s are incidental to the data set, they need not be referenced by [
 
 ## APPENDIX: RO-Crate JSON-LD
 
-It is not necessary to use [JSON-LD tooling](https://json-ld.org/#developers) to generate or parse the _RO-Crate Metadata File_, although they may make it easier to conform to this specification, e.g. handling relative URIs. It is RECOMMENDED to use [JSON tooling](http://json.org/) to handle [JSON](https://tools.ietf.org/html/rfc7159) syntax and escaping rules.
+It is not necessary to use [JSON-LD tooling](https://json-ld.org/#developers) to generate or parse the _RO-Crate Metadata File_, although JSON-LD tools may make it easier to conform to this specification, e.g. handling relative URIs. It is RECOMMENDED to use JSON tooling to handle [JSON](https://tools.ietf.org/html/rfc7159) syntax and escaping rules.
 
 This appendix shows a brief JSON-LD introduction for complying with the _RO-Crate Metadata File_ requirements.
 
@@ -2058,11 +2058,11 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 
 Context terms must ultimately map to HTTP(s) URIs which poses challenges for crate-authors wishing to use their own vocabularies.
 
-RO-Crate provides some strategies To add a new term (a Class or Property) that is not in schema.org or another published vocabulary, so that there is a stable URI that can be added to the @context. 
+RO-Crate provides some strategies to add a new term (a Class or Property) that is not in schema.org or another published vocabulary, so that there is a stable URI that can be added to the @context. 
 
 #### Choosing URLs for ad hoc terms
 
-For projects that have their own web-presence, URLs MAY defined and SHOULD resolve to useful content. For example for a project with web page <https://criminalcharacters.com/> the property `education` could have a URL: https://criminalcharacters.com/vocab/#education which resolves to an HTML page that explains the term.
+For projects that have their own web-presence, URLs MAY defined and SHOULD resolve to useful content. For example for a project with web page <https://criminalcharacters.com/> the property `education` could have a URL: <https://criminalcharacters.com/vocab/#education> which resolves to an HTML page that explains the term.
 
 For ad hoc terms where the crate author does not have the resources to put up an HTML page, an ad-hoc URL MAY be used in the form `https://w3id.org/ro/terms/criminalcharacters/education` where `criminalcharacters` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions](https://github.com/ResearchObject/ro-terms) to the RO-Crate project. 
 
