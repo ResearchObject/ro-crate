@@ -13,16 +13,6 @@ description: |
   from an individual researcher working with a folder of data, to large
   data-intensive computational research environments.
 
-# carlosperate/jekyll-theme-rtd settings:
-##site_author: researchobject.org community
-##repo_url: "https://github.com/researchobject/ro-crate/"
-##edit_on_github: true
-##github_docs_folder: true
-##sticky_navigation: true
-##prev_next_buttons_location: bottom
-##search_enabled: true
-##hljs_style: github-gist
-
 
 # rundocs/jekyll-rtd-theme theme settings
 addons_branch: false
@@ -33,8 +23,10 @@ copyright:
   since: 2019
 
 embed: |
-  <a href="https://nodejs.org/en/black-lives-matter/">#BlackLivesMatter</a>
-  
+  Distributed under the
+  <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, version 2.0</a>; except 
+  JSON-LD examples and context where creators have waived all copyrights according to
+  <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal (CC0 1.0) Public Domain Dedication</a>.
 
 addons:
   - github
@@ -42,8 +34,7 @@ addons:
 
 copyright:
   revision: false
-
-
+  
 readme_index:
   with_frontmatter: true
 
@@ -56,5 +47,5 @@ plugins:
   - jekyll-avatar
   - jekyll-relative-links
 
-# If you want to turn off the order prefix in toctree  
-# show_sorted: false
+# Show the order prefix 1. 2. etc in toctree
+show_sorted: true
