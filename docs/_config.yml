@@ -1,5 +1,7 @@
-#remote_theme: carlosperate/jekyll-theme-rtd
-remote_theme: rundocs/jekyll-rtd-theme
+# Update according to
+# https://github.com/rundocs/jekyll-rtd-theme/releases/tag/v1.1.7
+#remote_theme: rundocs/jekyll-rtd-theme@bb00646afd7f05b3f4badb32ce1710197c483dfd
+theme: jekyll-rtd-theme
 logo: /ro-crate/assets/img/ro-crate.svg
 
 title: Research Object Crate (RO-Crate)
@@ -23,19 +25,36 @@ description: |
 
 
 # rundocs/jekyll-rtd-theme theme settings
-addons_branch: true
+addons_branch: false
 edit: true
+
+author: "University of Technology Sydney, The University of Manchester UK and RO-Crate contributors"
+copyright:
+  since: 2019
+
+embed: |
+  <a href="https://nodejs.org/en/black-lives-matter/">#BlackLivesMatter</a>
+  
 
 addons:
   - github
   - plugins
 
 copyright:
-  revision: true
+  revision: false
+
 
 readme_index:
   with_frontmatter: true
 
 plugins:
+  - jekyll-default-layout
+  - jekyll-readme-index
+  - jekyll-github-metadata
+  - jekyll-titles-from-headings
   - jemoji
   - jekyll-avatar
+  - jekyll-relative-links
+
+# If you want to turn off the order prefix in toctree  
+# show_sorted: false
