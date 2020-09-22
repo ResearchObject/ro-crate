@@ -187,7 +187,7 @@ If present in the root directory, `ro-crate-preview.html` MUST:
 
 `ro-crate-preview.html` SHOULD:
 
-*   Contain at least the same information as the _RO-Crate JSON-LD_, with the exception that files which have no description, author or similar metadata MAY not be listed in the website.
+*   Be useful to users of the RO-Crate - this will vary by community and intended use, but in general the aim to assist users in reusing data by explaining what it is, how it was created how it can be used and how to cite it. One simple approach to this is to expose *all* the metadata in the _RO-Crate Metadata File_.
 *   Display at least the metadata relating to the _Root Data Enity_ as static HTML without the need for scripting. It MAY contain extra features enabled by JavaScript.
 *   When a _Data Entity_ or _Contextual Entity_ is referenced by its ID:
   *   If it has a [name] property, provide a link to its HTML version.
@@ -281,7 +281,7 @@ From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
 
 - `conformsTo` mapped to <http://purl.org/dc/terms/conformsTo>
 
-These keys are being proposed by [BioSchemas profile ComputationalWorkflow 0.5-DRAFT](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21) and [FormalParameter 0.1-DRAFT](https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21) to be integrated into schema.org. Reflecting their subject to change, in this specification they a temporary namespace; future releases of RO-Crate may reflect mapping to the `http://schema.org/` namespace:
+These keys are being proposed by [BioSchemas profile ComputationalWorkflow 0.5-DRAFT](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21) and [FormalParameter 0.1-DRAFT](https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21) to be integrated into schema.org. In this specification they a temporary namespace (<https://bioschemas.org/>); future releases of RO-Crate may reflect mapping to the `http://schema.org/` namespace:
 
 * `ComputationalWorkflow` mapped to <https://bioschemas.org/ComputationalWorkflow>
 * `FormalParameter` mapped to <https://bioschemas.org/FormalParameter>
