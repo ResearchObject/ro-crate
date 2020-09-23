@@ -85,3 +85,5 @@ While providing the formal specification for RO-Crate, this document also aims t
 {% include list.liquid all=true %}
 
 [RFC 2119]: https://tools.ietf.org/html/rfc2119
+[linked data]: https://en.wikipedia.org/wiki/Linked_data
+

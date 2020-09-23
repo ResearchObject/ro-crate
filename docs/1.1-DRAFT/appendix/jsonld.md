@@ -156,7 +156,9 @@ To check which RO-Crate version is used (in terms of properties and types expect
 
 RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded context, but MAY use the [JSON-LD flattening](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) algorithm with _compaction_ to a referenced _RO-Crate JSON-LD context_ (but see notes on [handling relative URI references](#handling-relative-uri-references) below).
 
-**Tip**: The [JSON-LD flattening & compaction](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) algorithms can be used to rewrite to a different `@context`, e.g. to <http://schema.org> or a different version of the _RO-Crate JSON-LD Context_.
+```tip
+The [JSON-LD flattening & compaction](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) algorithms can be used to rewrite to a different `@context`, e.g. to `https://schema.org/docs/jsonldcontext.jsonld` or a different version of the _RO-Crate JSON-LD Context_.
+```
 
 ## RO-Crate JSON-LD Media type
 
@@ -283,15 +285,17 @@ Following the conventions used by Schema.org, ad-hoc terms SHOULD also include d
 * `rdfs:label` with the human readable version of the term, e.g. `makesFood` has label `makes food`
 * `rdf:comment` documenting and clarifying the meaning of the term. For instance the term `sentence` in a prisoner vocabulary will have a different explanation than `sentence` in a linguistic vocabulary.
 
-It is **not** a requirement to use English for the terms, labels or comments.
-
-```
+```json
 {
     "@id": "https://criminalcharacters.com/vocab/#education",
     "@type": "rdf:Property",
     "rdfs:label": "education",
     "rdf:comment": "Literacy of prisoner. ..."
 }
+```
+
+```tip
+It is **not** a requirement to use English for the terms, labels or comments.
 ```
 
 More information about the relationship of this term to other terms MAY be provided using [domainIncludes]("http://schema.org/domainIncludes"), [rangeIncludes](http://schema.org/rangeIncludes), [rdfs:subClassOf](https://www.w3.org/TR/rdf-schema/#ch_subclassof) following the conventions used in the [Schema.org schema](https://schema.org/version/latest/schemaorg-current-http.jsonld).

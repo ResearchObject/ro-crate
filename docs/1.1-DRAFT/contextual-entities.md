@@ -33,6 +33,8 @@ jekyll-mentions: false
 
 The _RO-Crate JSON-LD_ `@graph` SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
 
+## Contextual vs Data entities
+
 <!-- https://github.com/ResearchObject/ro-crate/pull/94/ START -->
 
 RO-Crate distinguishes between _Contextual entities_ and _Data entities_. 
@@ -41,19 +43,24 @@ RO-Crate distinguishes between _Contextual entities_ and _Data entities_.
 
 **Contextual entities** however primarily exist outside the digital sphere (e.g. [People](#people), [Places](#places)) or are  conceptual descriptions that primarily exists as metadata, like [GeoCoordinates] and [ContactPoint](#contact-information).
 
-A challenge can be how to assign [identifiers for contextual entities](appendix/jsonld.html#describing-entities-in-json-ld): 
-
-RO-Crate recommend that if an existing permalink (e.g. `https://orcid.org/0000-0002-1825-0097`) or other absolute URI (e.g. `https://en.wikipedia.org/wiki/Josiah_S._Carberry`) is reasonably unique for that entity, that URI should be used as identifier for the contextual entity in preference of an identifier local to the RO-Crate (e.g. `#josiah` or `#0fa587c6-4580-4ece-a5df-69af3c5590e3`). 
-
-Where a related URL exist, but is not unique enough to serve as identifier, it can instead be added to a locally identified contextual entity using [url].
-
-Care should be taken to not describe two conceptually different contextual entities with the same identifier - e.g. if `https://en.wikipedia.org/wiki/Josiah_S._Carberry` is a `Person` it should not also be a [CreativeWork] (although this example is a fictional person!).
-
 Some contextual entities can also be considered data entities - for instance the [license](#licensing-access-control-and-copyright) property refers to a [CreativeWork] that can reasonably be downloaded, however a license document is not usually considered as part of research outputs and would therefore typically not be included in [hasPart] on the [root data entity](root-data-entity.md). 
 
 Likewise, some data entities may also be described as contextual entities, for instance a `File` that is also a [ScholarlyArticle]. In such cases the _Contextual Data Entity_ SHOULD be described a single JSON object in the `@graph` with both types listed in a `@type` array. Consumers of an RO-Crate encountering two entities with the same `@id` SHOULD interpret them as a single entity.
 
 <!-- https://github.com/ResearchObject/ro-crate/pull/94/ END -->
+
+## Identifiers for contextual entities
+
+A challenge can be how to assign [identifiers for contextual entities](appendix/jsonld.html#describing-entities-in-json-ld), that is deciding on their `@id` value.
+
+RO-Crate recommend that if an existing permalink (e.g. `https://orcid.org/0000-0002-1825-0097`) or other absolute URI (e.g. `https://en.wikipedia.org/wiki/Josiah_S._Carberry`) is reasonably unique for that entity, that URI should be used as identifier for the contextual entity in preference of an identifier local to the RO-Crate (e.g. `#josiah` or `#0fa587c6-4580-4ece-a5df-69af3c5590e3`). 
+
+Care should be taken to not describe two conceptually different contextual entities with the same identifier - e.g. if `https://en.wikipedia.org/wiki/Josiah_S._Carberry` is a `Person` it should not also be a [CreativeWork] (although this example is a fictional person!).
+
+Where a related URL exist that may not be unique enough to serve as identifier, it can instead be added to a contextual entity using [url].
+
+
+See the [appendix on JSON-LD identifiers](appendix/jsonld.html#describing-entities-in-json-ld) for details.
 
 ## People
 
@@ -235,7 +242,9 @@ The [Root Data Entity](root-data-entity.html) SHOULD have a [publisher](http://s
 
 To associate a research project with a [Dataset], the _RO-Crate JSON-LD_ SHOULD contain an entity for the project using type [Organization], referenced by a [funder] property. The project `Organization` SHOULD in turn reference any external [funder], either by using its URL as an `@id` or via a _Contextual Entity_ describing the funder.
 
-NOTE: To make it very clear where funding is coming from, the _Root Data Entity_ SHOULD also reference funders directly, as well as via a chain of references.
+```tip
+To make it very clear where funding is coming from, the _Root Data Entity_ SHOULD also reference funders directly, as well as via a chain of references.
+```
 
 
 ```json

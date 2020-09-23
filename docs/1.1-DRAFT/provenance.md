@@ -140,7 +140,9 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
     },
 ```
 
-Note the use of double escape `\\` so that JSON preserves the `\` character from the command line.
+```tip
+Double escape `\\` so that JSON preserves the `\` character from the command line.
+```
 
 ## Recording changes to RO-Crates
 
@@ -232,7 +234,9 @@ A [Contextual Entity](contextual-entities.md) from a repository, representing an
 
 Objects MAY be grouped together in [RepositoryCollection](https://pcdm.org/2016/04/18/models#Collection)s with [hasMember] pointing to the the [RepositoryObject](https://pcdm.org/2016/04/18/models#Object). The aliases `RepositoryObject` and `RepositoryCollection` were chosen to avoid collision between the PCDM terms <del>Collection</del> and <del>Object</del> with other vocabularies.
 
-NOTE: PCDM specifies that Files should have only technical metadata, not descriptive metadata, which is _not_ a restriction in RO-Crate. If the RO-Crate is to be imported into a strict PCDM repository, modeling of object/file relationships will be necessary.
+```warning
+PCDM specifies that files should have only technical metadata, not descriptive metadata, which is _not_ a restriction in RO-Crate. If the RO-Crate is to be imported into a strict PCDM repository, modeling of object/file relationships will be necessary.
+```
 
 For example, this data is exported from an [Omeka](https://omeka.org) repository:
 

@@ -192,7 +192,9 @@ Contextual entities for [FormalParameter], referenced by `input` or `output`, SH
 TODO: Update requirements from BioSchemas profile Workflow 0.5
 -->
 
-_Note: `input`, `output` and `FormalParameter` are at time of writing proposed by BioSchemas and not yet integrated in schema.org_
+```note
+`input`, `output` and `FormalParameter` are at time of writing proposed by BioSchemas and not yet integrated in schema.org
+```
 
 ## Complete Workflow Example
 

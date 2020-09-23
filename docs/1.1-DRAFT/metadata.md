@@ -70,7 +70,9 @@ Generally, the standard keys from [schema.org] should be used. However, RO-Crate
 * `File` is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of schema.org or a research data extension may re-define `File`.
 * `Journal` is mapped to <http://schema.org/Periodical>.
 
-Note that JSON-LD examples given on the <http://schema.org/> website may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
+```warning
+JSON-LD examples given on the [schema.org website](http://schema.org/) may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
+```
 
 To simplify processing and avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even where [schema.org] for some properties otherwise permit shorter forms like `"author": "http://example.com/alice"`.
 
@@ -86,19 +88,25 @@ RO-Crate also uses the _Portland Common Data Model_ ([PCDM])) and imports these 
 - `hasMember` mapped to <https://pcdm.org/2016/04/18/models#hasMember>
 - `hasFile` mapped to <https://pcdm.org/2016/04/18/models#hasFile>
 
-The keys `RepositoryObject` and `RepositoryCollection` were chosen to avoid collision between the terms Collection and Object with other vocabularies.
+```note
+The keys `RepositoryObject` and `RepositoryCollection` were chosen to avoid collision between the PCDM terms ~~Collection~~ and ~~Object~~ with other vocabularies.
+```
 
 From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
 
 - `conformsTo` mapped to <http://purl.org/dc/terms/conformsTo>
 
-These keys are being proposed by [BioSchemas profile ComputationalWorkflow 0.5-DRAFT](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21) and [FormalParameter 0.1-DRAFT](https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21) to be integrated into schema.org. Reflecting their subject to change, in this specification they a temporary namespace; future releases of RO-Crate may reflect mapping to the `http://schema.org/` namespace:
+These keys are being proposed by [BioSchemas profile ComputationalWorkflow 0.5-DRAFT](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21) and [FormalParameter 0.1-DRAFT](https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21) to be integrated into schema.org: 
 
 * `ComputationalWorkflow` mapped to <https://bioschemas.org/ComputationalWorkflow>
 * `FormalParameter` mapped to <https://bioschemas.org/FormalParameter>
 * `input` mapped to <https://bioschemas.org/ComputationalWorkflow#input>
 * `output` mapped to <https://bioschemas.org/ComputationalWorkflow#output>
 * `funding` mapped to <http://schema.org/funding> ([schemaorg #383](https://github.com/schemaorg/schemaorg/issues/383))
+
+```note
+Temporary BioSchemas terms are subject to change; future releases of RO-Crate may reflect mapping to the `http://schema.org/` namespace.
+```
 
 ## Summary of Coverage
 
