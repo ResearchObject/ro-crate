@@ -34,8 +34,8 @@ software libraries, however, programmers should keep in mind the following:
 
 - Read the *whole* specification. In order to make the RO-Crate specification
   readable it deals with common use cases on a case by case basis, introducing
-  aspects of the specification as well. Some key points, such as "items may have
-  more than one value for @type" may not be apparent from a quick reading.
+  aspects of the specification as well. Some key points, such as _items may have
+  more than one value for `@type`_, may not be apparent from a quick reading.
 
 
 ## Combining with other packaging schemes
