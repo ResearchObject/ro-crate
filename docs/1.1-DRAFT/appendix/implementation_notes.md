@@ -21,9 +21,9 @@ excerpt:
    limitations under the License.
 -->
 
-## Implementation notes
+# Implementation notes
 
-### Programming with JSON-LD
+## Programming with JSON-LD
 
 When implementing tools to work with RO-Crate it is not necessary to use JSON-LD
 software libraries, however, programmers should keep in mind the following:
@@ -38,7 +38,7 @@ software libraries, however, programmers should keep in mind the following:
   more than one value for @type" may not be apparent from a quick reading.
 
 
-### Combining with other packaging schemes
+## Combining with other packaging schemes
 
 RO-Crates may co-exist with other packaging schemes, such as [BagIt] using two
 general approaches; either (a) _adding_ RO-Crate into a package as part of the payload
@@ -55,7 +55,7 @@ BagIt is described in [RFC 8493]:
 BagIt and RO-Crate have largely separate concerns - RO-Crate is focussed on rich
 metadata, the semantics of data, while BagIt is about reliable transfer.
 
-#### Example of adding RO-Crate to Bagit
+### Example of adding RO-Crate to Bagit
 
 RO-Crate can be combined with BagIt simply by placing the RO-Crate files in the BagIt
 payload (`data/`) directory.
@@ -78,9 +78,9 @@ payload (`data/`) directory.
     External-Identifier: urn:uuid:24e51ca2-5067-4598-935a-dac4e327d05a
 
 
-#### Example of wrapping a BagIt bag in an RO-Crate
+### Example of wrapping a BagIt bag in an RO-Crate
 
-Alternatively, an RO-Crate can wrap a BagIt bag, so that the RO-Crate metadata
+Alternatively, an RO-Crate can _wrap_ a BagIt bag, so that the RO-Crate metadata
 is outside of the bag directory and can be changed without changing the payload's checksums. 
 
 ```
@@ -98,7 +98,7 @@ is outside of the bag directory and can be changed without changing the payload'
   |          example.txt 
 ```
 
-A _Data Entity_ describing example.txt would have an `@id` of `bag/data/example.txt`:
+A [Data Entity](../data-entities.md) describing `example.txt` in this scenario would have an `@id` of `bag/data/example.txt`:
 
 ```json
 {
@@ -108,9 +108,9 @@ A _Data Entity_ describing example.txt would have an `@id` of `bag/data/example.
 ```
 
 
-### Repository-specific identifiers
+## Repository-specific identifiers
 
-_Root Data Entities_ MAY also have additional repository specific identifiers, described using `Contextual Entities` using a [PropertyValue], with a `name` that identifies the repository and the `identifier` as a value. The _same_ identifier MAY be used in multiple different repositories and effectively namespaced using the `name` of the ProperyValue.
+_Root Data Entities_ MAY also have additional repository specific identifiers, described using [Contextual Entities](../contextual-entities.md) using a [PropertyValue], with a [name] that identifies the repository and the [identifier] as a value. The _same_ identifier MAY be used in multiple different repositories and effectively namespaced using the `name` of the `ProperyValue`.
 
 ```json
 {

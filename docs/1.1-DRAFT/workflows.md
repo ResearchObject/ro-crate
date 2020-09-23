@@ -27,7 +27,7 @@ sort: 10
 
 # Workflows and Scripts
 
-Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. _Workflows_ and _scripts_ SHOULD be described using data entities of type [SoftwareSourceCode].
+Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. _Workflows_ and _scripts_ SHOULD be described using [data entities](data-entities.md) of type [SoftwareSourceCode].
 
 The distinction between [SoftwareSourceCode] and [SoftwareApplication] for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.
 
@@ -53,7 +53,7 @@ Short example describing a _script_:
   "@type": ["File", "SoftwareSourceCode"],
   "name": "Analyze CSV files",
   "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"},
-},
+}
 ```
 
 Short example describing a _workflow_:
@@ -80,7 +80,7 @@ Here are some indicators for when a script should be considered a _workflow_:
 * The steps exchange data in a _dataflow_, typically file inputs/outputs
 * The script has well-defined _inputs_ and _outputs_, e.g. file arguments
 
-Here are some counter-indicator for when a script might **not** be a workflow:
+Here are some counter-indicators for when a script might **not** be a workflow:
 
 * The script contains mainly algorithms or logic
 * Data is exchanged out of bands, e.g. a SQL database
@@ -153,7 +153,7 @@ The image file format SHOULD be indicated with [encodingFormat] using an IANA re
 
 ```
 
-A workflow diagram may still be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the workflow was done by hand). In this case the sketch itself is a proxy for the workflow and SHOULD have an `about` property referring to the _RO-Crate dataset_ as a whole (assuming the RO-Crate represents the outcome of a single workflow), or to other `Data Entities` otherwise:
+A workflow diagram may still be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the workflow was done by hand). In this case the sketch itself is a proxy for the workflow and SHOULD have an `about` property referring to the _RO-Crate dataset_ as a whole (assuming the RO-Crate represents the outcome of a single workflow), or to other [Data Entities](data-entities.md) otherwise:
 
 ```json
 {
@@ -175,12 +175,12 @@ where possible, data entities representing _workflows_ SHOULD describe these pro
 * [creator] identifying the [Person](s) and/or [Organization](s) that made the workflow. (This may differ from the [author] of the conceptual workflow, e.g. if the workflow was converted from one language to another).
 * [dateCreated] the date the workflow was first made, e.g. `2020-05-23`
 * [license] identifying a [CreativeWork] that details license for distributing or editing the workflow
-* `input` and `output` identifying contextual entities for the `FormalParameter` describing input and output parameters/variables that may be varied on different workflow executions
+* [input] and [output] identifying contextual entities for the [FormalParameter] describing input and output parameters/variables that may be varied on different workflow executions
 * [sdPublisher] to identify the [Person] or [Organization] who has made the JSON-LD description of the workflow
 * [url] to identify a public page or source code repository for the workflow
 * [version] to indicate the released version of this workflow file
 
-Contextual entities for `FormalParameter`, referenced by `input` or `output`, SHOULD describe:
+Contextual entities for [FormalParameter], referenced by `input` or `output`, SHOULD describe:
 
 * [name] given the programmatic name for the parameter binding
 * [additionalType] identifying the most specific subtype of [EDAM Data](http://edamontology.org/data_0006) (fallbacks [Data](http://edamontology.org/data_0006) or [Text data](http://edamontology.org/data_2526))
@@ -192,7 +192,7 @@ Contextual entities for `FormalParameter`, referenced by `input` or `output`, SH
 TODO: Update requirements from BioSchemas profile Workflow 0.5
 -->
 
-_Note: `input`, `output`, `FormalParameter`, and `mandatory` are at time of writing proposed by BioSchemas and not yet integrated in schema.org_
+_Note: `input`, `output` and `FormalParameter` are at time of writing proposed by BioSchemas and not yet integrated in schema.org_
 
 ## Complete Workflow Example
 
@@ -428,6 +428,10 @@ https://kramdown.gettalong.org/syntax.html#reference-links
 [url]: http://schema.org/url
 [valueRequired]: http://schema.org/valueRequired
 [version]: http://schema.org/version
+
+[input]: https://bioschemas.org/types/ComputationalWorkflow/0.1-DRAFT-2020_07_21/#input
+[output]: https://bioschemas.org/types/ComputationalWorkflow/0.1-DRAFT-2020_07_21/#output
+[FormalParameter]: https://bioschemas.org/types/FormalParameter/0.1-DRAFT-2020_07_21/
 
 [RFC 2119]: https://tools.ietf.org/html/rfc2119
 [RFC 3986]: https://tools.ietf.org/html/rfc3986

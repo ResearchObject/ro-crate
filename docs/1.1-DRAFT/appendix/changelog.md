@@ -26,18 +26,18 @@ excerpt: List of changes in releases of this specifications
 
 * [RO-Crate 1.1.0](https://github.com/ResearchObject/ro-crate/releases/tag/1.1.0) <https://w3id.org/ro/crate/1.1>
   * **Note**: The RO-Crate metadata file is renamed to `ro-crate-metadata.json` to facilitate use of JSON editors.  [#82](https://github.com/ResearchObject/ro-crate/issues/82) [#84](https://github.com/ResearchObject/ro-crate/issues/84)
-  * _Data entities_ can reference external resources with absolute URI [#74](https://github.com/ResearchObject/ro-crate/issues/74)
-  * Added section on considerations for _Web-based Data Entities_  [#74](https://github.com/ResearchObject/ro-crate/issues/74)
-  * The _root dataset_ is no longer required to be `./` [#74](ttps://github.com/ResearchObject/ro-crate/issues/74)
-  * _RO-Crate Root_ directory no longer requires payload files [#74](https://github.com/ResearchObject/ro-crate/issues/74)
-  * _Workflows and scripts_ section now aligned with [BioSchemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/)  [#81](https://github.com/ResearchObject/ro-crate/issues/81)
-  * Added section _Programming with JSON-LD_ and note that `@type` might be an array [#85](https://github.com/ResearchObject/ro-crate/issues/85)
-  * Added new section _Handling relative URI references_ [#73](https://github.com/ResearchObject/ro-crate/issues/73)
+  * [Data entities](../data-entities.md) can reference external resources with absolute URI [#74](https://github.com/ResearchObject/ro-crate/issues/74)
+  * Added section on considerations for [Web-based Data Entities](../data-entities.md#web-based-data-entities)  [#74](https://github.com/ResearchObject/ro-crate/issues/74)
+  * The [root dataset](../root-data-entity.md#direct-properties-of-the-root-data-entity) is no longer required to be `./` [#74](ttps://github.com/ResearchObject/ro-crate/issues/74)
+  * [RO-Crate Root](../structure.md) directory no longer requires payload files [#74](https://github.com/ResearchObject/ro-crate/issues/74)
+  * [Workflows and scripts](../workflows.md) section now aligned with [BioSchemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/)  [#81](https://github.com/ResearchObject/ro-crate/issues/81)
+  * Added section [Programming with JSON-LD](implementation_notes.md#programming-with-json-ld) and note that `@type` might be an array [#85](https://github.com/ResearchObject/ro-crate/issues/85)
+  * Added new section [Handling relative URI references](jsonld.html#handling-relative-uri-references) [#73](https://github.com/ResearchObject/ro-crate/issues/73)
   * JSON-LD context no longer sets `@base: null` [#73](https://github.com/ResearchObject/ro-crate/issues/73)
-  * Added note on _Encoding file paths_ [#77](https://github.com/ResearchObject/ro-crate/issues/77) [#80](https://github.com/ResearchObject/ro-crate/issues/80)
-  * Added section _Choosing URLs for ad hoc terms_ [#71](https://github.com/ResearchObject/ro-crate/issues/71) [#90](https://github.com/ResearchObject/ro-crate/issues/90)
-  * Section _RO-Crate JSON-LD Media type_ expanded to suggest HTTP server configuration
-  * Update JSON-LD context to schema.org 10.0 
+  * Added note on [Encoding file paths](../data-entities.md#encoding-file-paths) [#77](https://github.com/ResearchObject/ro-crate/issues/77) [#80](https://github.com/ResearchObject/ro-crate/issues/80)
+  * Added section [Choosing URLs for ad hoc terms](jsonld.md#adding-new-or-ad-hoc-vocabulary-terms) [#71](https://github.com/ResearchObject/ro-crate/issues/71) [#90](https://github.com/ResearchObject/ro-crate/issues/90)
+  * Section [RO-Crate JSON-LD Media type](jsonld.md#ro-crate-json-ld-media-type) expanded to suggest HTTP server configuration
+  * Update JSON-LD context to [schema.org 10.0](http://schema.org/version/10.0/)
   * Fixed some JSON typos
 * [RO-Crate 1.0.1](https://github.com/ResearchObject/ro-crate/releases/tag/1.0.1)
   * Fix JSON typo in example  

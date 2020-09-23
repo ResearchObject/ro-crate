@@ -29,7 +29,7 @@ sort: 9
 
 ## Equipment used to create files
 
-To specify which equipment was used to create or update a _Data Entity_, the _RO-Crate_ JSON-LD SHOULD have a _Context Entity_ for each item of equipment which SHOULD be of `@type` [IndividualProduct]. The entity SHOULD have a serial number, manufacturer that identifies it as completely as possible. In this case the equipment is a bespoke machine. The equipment SHOULD be described on a web page, and the address of the description SHOULD be used as its `@id`.
+To specify which **equipment** was used to create or update a [Data Entity](data-entities.md), the _RO-Crate JSON-LD_ SHOULD have a _Context Entity_ for each item of equipment which SHOULD be of `@type` [IndividualProduct]. The entity SHOULD have a serial number, manufacturer that identifies it as completely as possible. In this case the equipment is a bespoke machine. The equipment SHOULD be described on a web page, and the address of the description SHOULD be used as its `@id`.
 
 
 ```json
@@ -144,9 +144,9 @@ Note the use of double escape `\\` so that JSON preserves the `\` character from
 
 ## Recording changes to RO-Crates
 
-To record an action which changes the DataSet's metadata, or changes its state in a publication or other workflow, a [CreateAction] or [UpdateAction] SHOULD be associated with a _Data Entity_.
+To record an action which changes an entity's metadata, or changes its state in a publication or other workflow, a [CreateAction] or [UpdateAction] SHOULD be associated with a [Data Entity](data-entities.md) or, for the RO-Crate itself, with the [root data entity](root-data-entity.md).
 
-A curation Action MUST have at least one [object] which associates it with either the DataSet or one of its components.
+A curation Action MUST have at least one [object] which associates it with either the root data entity `Dataset` or one of its components.
 
 An Action which creates new _Data entities_ - for example, the creation of a new metadata file - SHOULD have these as [result]s.
 
@@ -226,7 +226,11 @@ To record curation actions which modify a [File] within a DataSet - for example,
 
 ## Digital Library and Repository content
 
-To describe an export from a Digital Library or repository system, RO-Crate uses the _Portland Common Data Model_ ([PCDM]). A _Contextual Entity_ from a repository, representing an abstract entity such as a person, or a work, or a place SHOULD have a`@type` of [RepositoryObject](https://pcdm.org/2016/04/18/models#Object), in addition to any other types. Objects MAY be grouped together in [RepositoryCollection](https://pcdm.org/2016/04/18/models#Collection)s with [hasMember] pointing to the the [RepositoryObject](https://pcdm.org/2016/04/18/models#Object). The keys RepositoryObject and RepositoryCollection were chosen to avoid collision between the terms Collection and Object with other vocabularies.
+To describe an export from a Digital Library or repository system, RO-Crate uses the _Portland Common Data Model_ ([PCDM]). 
+
+A [Contextual Entity](contextual-entities.md) from a repository, representing an abstract entity such as a person, or a work, or a place SHOULD have a`@type` of [RepositoryObject](https://pcdm.org/2016/04/18/models#Object), in addition to any other types. 
+
+Objects MAY be grouped together in [RepositoryCollection](https://pcdm.org/2016/04/18/models#Collection)s with [hasMember] pointing to the the [RepositoryObject](https://pcdm.org/2016/04/18/models#Object). The aliases `RepositoryObject` and `RepositoryCollection` were chosen to avoid collision between the PCDM terms <del>Collection</del> and <del>Object</del> with other vocabularies.
 
 NOTE: PCDM specifies that Files should have only technical metadata, not descriptive metadata, which is _not_ a restriction in RO-Crate. If the RO-Crate is to be imported into a strict PCDM repository, modeling of object/file relationships will be necessary.
 

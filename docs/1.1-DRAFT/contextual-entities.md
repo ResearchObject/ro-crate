@@ -33,6 +33,27 @@ jekyll-mentions: false
 
 The _RO-Crate JSON-LD_ `@graph` SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
 
+<!-- https://github.com/ResearchObject/ro-crate/pull/94/ START -->
+
+RO-Crate distinguishes between _Contextual entities_ and _Data entities_. 
+
+**[Data entities](data-entities.md)** primarily exist in their own right as a file or directory (which may be in the _RO-Crate Root_ directory or downloadable by URL). 
+
+**Contextual entities** however primarily exist outside the digital sphere (e.g. [People](#people), [Places](#places)) or are  conceptual descriptions that primarily exists as metadata, like [GeoCoordinates] and [ContactPoint](#contact-information).
+
+A challenge can be how to assign [identifiers for contextual entities](appendix/jsonld.html#describing-entities-in-json-ld): 
+
+RO-Crate recommend that if an existing permalink (e.g. `https://orcid.org/0000-0002-1825-0097`) or other absolute URI (e.g. `https://en.wikipedia.org/wiki/Josiah_S._Carberry`) is reasonably unique for that entity, that URI should be used as identifier for the contextual entity in preference of an identifier local to the RO-Crate (e.g. `#josiah` or `#0fa587c6-4580-4ece-a5df-69af3c5590e3`). 
+
+Where a related URL exist, but is not unique enough to serve as identifier, it can instead be added to a locally identified contextual entity using [url].
+
+Care should be taken to not describe two conceptually different contextual entities with the same identifier - e.g. if `https://en.wikipedia.org/wiki/Josiah_S._Carberry` is a `Person` it should not also be a [CreativeWork] (although this example is a fictional person!).
+
+Some contextual entities can also be considered data entities - for instance the [license](#licensing-access-control-and-copyright) property refers to a [CreativeWork] that can reasonably be downloaded, however a license document is not usually considered as part of research outputs and would therefore typically not be included in [hasPart] on the [root data entity](root-data-entity.md). 
+
+Likewise, some data entities may also be described as contextual entities, for instance a `File` that is also a [ScholarlyArticle]. In such cases the _Contextual Data Entity_ SHOULD be described a single JSON object in the `@graph` with both types listed in a `@type` array. Consumers of an RO-Crate encountering two entities with the same `@id` SHOULD interpret them as a single entity.
+
+<!-- https://github.com/ResearchObject/ro-crate/pull/94/ END -->
 
 ## People
 
@@ -103,7 +124,7 @@ An [Organization] SHOULD also be used for a [Person]'s [affiliation] property.
 
 
 
-## More detail on ContactPoint
+## Contact information
 
 A RO-Crate SHOULD have contact information, using a contextual entity of type [ContactPoint]. Note that in schema.org [Dataset] does not currently have the corresponding [contactPoint] property, so the contact point would need to be given through a [Person] or [Organization] contextual entity which are related to the Dataset via a [author] or [publisher] property.
 
@@ -139,7 +160,7 @@ A RO-Crate SHOULD have contact information, using a contextual entity of type [C
 
 ## Publications via citation property
 
-To associate a publication with a dataset the _RO-Crate JSON-LD_ MUST include a URL (for example a DOI URL) as the `@id of a publication using the [citation] property.
+To associate a publication with a dataset the _RO-Crate JSON-LD_ MUST include a URL (for example a DOI URL) as the `@id` of a publication using the [citation] property.
 
 For example:
 
@@ -259,7 +280,7 @@ NOTE: To make it very clear where funding is coming from, the _Root Data Entity_
 
 ## Licensing, Access control and copyright
 
-If a _Data Entity_ has a [license] that is different from the license on the _Root Data Entity_, the entity SHOULD have a [license] property referencing a _Contextual Entity_ with a type [CreativeWork] to describe the license. The `@id` of the license SHOULD be its URL (e.g. a Creative Commons License URL) and, when possible, a summary of the license included using the [description] property.
+If a [Data Entity](data-entities.md) has a [license] that is different from the license on the _Root Data Entity_, the entity SHOULD have a [license] property referencing a _Contextual Entity_ with a type [CreativeWork] to describe the license. The `@id` of the license SHOULD be its URL (e.g. a Creative Commons License URL) and, when possible, a summary of the license included using the [description] property.
 
 The below _Data Entity_ has a [copyrightHolder] which is different from its [author]. There is a reference to an [Organization] describing the copyright holder and, to give credit, a [sameAs] relation to a web page. The [license] property here refers to <https://creativecommons.org/licenses/by/4.0/> which is expanded in a separate contextual entity.
 
@@ -419,7 +440,7 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
 
 ## Places
 
-To associate a _Data Entity_ with a _Contextual Entity_ representing a _geographical location or region_ the entity SHOULD have a property of [contentLocation] with a value of type [Place].
+To associate a [Data Entity](data-entities.md) with a _Contextual Entity_ representing a _geographical location or region_ the entity SHOULD have a property of [contentLocation] with a value of type [Place].
 
 This example shows how to define a place, using a [geonames](https://www.geonames.org) ID:
 
@@ -501,7 +522,7 @@ And the place is referenced from the [contentLocation] property of the dataset.
 
 ## Subjects & keywords
 
-Subject properties (equivalent to a Dublin Core Subject) on RO-Crate or a data entity MUST use the [about] property.
+Subject properties (equivalent to a Dublin Core Subject) on the [root data entity](root-data-entity.md) or a [data entity](data-entities.md) MUST use the [about] property.
 
 Keyword properties MUST use [keywords]. Note that by schema.org convention, keywords are given as a single JSON string, with individual keywords separated by commas.
 
@@ -514,7 +535,7 @@ Keyword properties MUST use [keywords]. Note that by schema.org convention, keyw
 
 ## Time
 
-To describe the time period which a RO-Crate Data Entity (or the RO-Crate itself) is _about_, use [temporalCoverage]:
+To describe the _time period_ which a RO-Crate [Data Entity](date-entities.md) (or the [root data entity](root-data-entity.md)) is _about_, use [temporalCoverage]:
 
 ```json
 {
@@ -604,7 +625,7 @@ If [thumbnail]s are incidental to the data set, they need not be referenced by [
 {
   "@type": "File",
   "@id": "files/384/square_thumbnail_2ebbe681aa6ec138776343974ce8a3dd.jpg"
-},
+}
 ```
 
 <!--  Below are reference links not rendered in HTML, see
