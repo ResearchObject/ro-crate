@@ -120,6 +120,8 @@ The _RO-Crate_ team is:
 * Alexander Kanitz <https://orcid.org/0000-0002-3468-0652>
 * Ana Trisovic <https://orcid.org/0000-0003-1991-0533>
 * Gavin Kennedy <https://orcid.org/0000-0003-3910-0474>
+* Mark Graves <https://github.com/myiremark>
+* Jasper Koehorst <https://orcid.org/0000-0001-8172-8981>
 
 To suggest changes, improvements or issues, use the GitHub repository <https://github.com/ResearchObject/ro-crate> - if you are new to GitHub or Open Source you may appreciate the [GitHub guides](https://guides.github.com/) like [Hello World](https://guides.github.com/activities/hello-world/), [MarkDown](https://guides.github.com/features/mastering-markdown/) and [How to contribute to open source](https://opensource.guide/how-to-contribute/)
 
