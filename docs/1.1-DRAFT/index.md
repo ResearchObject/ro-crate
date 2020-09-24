@@ -2747,7 +2747,7 @@ _Root Data Entities_ MAY also have additional repository specific identifiers, d
   * **Note**: The RO-Crate metadata file is renamed to `ro-crate-metadata.json` to facilitate use of JSON editors.  [#82](https://github.com/ResearchObject/ro-crate/issues/82) [#84](https://github.com/ResearchObject/ro-crate/issues/84)
   * _Data entities_ can reference external resources with absolute URI [#74](https://github.com/ResearchObject/ro-crate/issues/74)
   * Added section on considerations for _Web-based Data Entities_  [#74](https://github.com/ResearchObject/ro-crate/issues/74)
-  * The _root dataset_ is no longer required to be `./` [#74](ttps://github.com/ResearchObject/ro-crate/issues/74)
+  * The _root dataset_ is no longer required to be `./` [#74](https://github.com/ResearchObject/ro-crate/issues/74)
   * _RO-Crate Root_ directory no longer requires payload files [#74](https://github.com/ResearchObject/ro-crate/issues/74)
   * _Workflows and scripts_ section now aligned with [BioSchemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/)  [#81](https://github.com/ResearchObject/ro-crate/issues/81)
   * Added section _Programming with JSON-LD_ and note that `@type` might be an array [#85](https://github.com/ResearchObject/ro-crate/issues/85)
