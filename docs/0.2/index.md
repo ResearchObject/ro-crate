@@ -1,3 +1,8 @@
+---
+layout: default
+title: RO-Crate 0.2
+exclude: true
+---
 <!--
    Copyright 2019 University of Technology Sydney
    Copyright 2019 The University of Manchester UK 
@@ -17,7 +22,6 @@
 -->
 
 # RO-Crate Metadata Specification 0.2
-{:.no_toc}
 
 * Permalink: <https://w3id.org/ro/crate/0.2>
 * Cite as: <https://doi.org/10.5281/zenodo.3406498> (this version)
@@ -528,7 +532,7 @@ schema property | constraints | Valid RO-Crate | Citation Use-case (DataCite) | 
 
 
 ## Representing _Context Entities_
-The _RO-Crate JSON-LD_ @graph SHOULD contain additional information about _Context Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.jsonld`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
+The _RO-Crate JSON-LD_ `@graph` SHOULD contain additional information about _Context Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.jsonld`). This also helps to maximise the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
 
 ### People
 
@@ -712,7 +716,7 @@ This is not ideal, as there is no direct semantic relationship between the conta
 
 ### Publications
 
-To associate a publication with a dataset the _RO-Crate JSON-LD_ MUST include a URL (for example a DOI URL) as the @id of a publication using the [citation] property.
+To associate a publication with a dataset the _RO-Crate JSON-LD_ MUST include a URL (for example a DOI URL) as the `@id` of a publication using the [citation] property.
 
 For example:
 

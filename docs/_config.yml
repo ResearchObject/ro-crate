@@ -1,2 +1,51 @@
-theme: jekyll-theme-minimal
+# Update according to
+# https://github.com/rundocs/jekyll-rtd-theme/releases/tag/v1.1.7
+remote_theme: rundocs/jekyll-rtd-theme@bb00646afd7f05b3f4badb32ce1710197c483dfd
+#theme: jekyll-rtd-theme
 logo: assets/img/ro-crate.svg
+
+title: Research Object Crate (RO-Crate)
+description: |
+  RO-Crate is a community effort to establish a lightweight approach to
+  packaging research data with their metadata. It is based on schema.org
+  annotations in JSON-LD, and aims to make best-practice in formal metadata
+  description accessible and practical for use in a wider variety of situations,
+  from an individual researcher working with a folder of data, to large
+  data-intensive computational research environments.
+
+
+# rundocs/jekyll-rtd-theme theme settings
+addons_branch: false
+edit: true
+
+author: "University of Technology Sydney, The University of Manchester UK and RO-Crate contributors"
+copyright:
+  since: 2019
+
+embed: |
+  Distributed under the
+  <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, version 2.0</a>; except 
+  JSON-LD examples and context where creators have waived all copyrights according to
+  <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal (CC0 1.0) Public Domain Dedication</a>.
+
+addons:
+  - github
+  - plugins
+
+copyright:
+  revision: false
+  
+readme_index:
+  with_frontmatter: true
+
+plugins:
+  - jekyll-default-layout
+  - jekyll-readme-index
+  - jekyll-github-metadata
+  - jekyll-titles-from-headings
+  - jemoji
+  - jekyll-avatar
+  - jekyll-relative-links
+
+# Show the order prefix 1. 2. etc in toctree
+show_sorted: true

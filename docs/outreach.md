@@ -1,3 +1,7 @@
+---
+layout: default
+title: Outreach and Publications
+---
 <!--
    Copyright 2019 The University of Manchester and RO Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
@@ -15,9 +19,7 @@
    limitations under the License.
 -->
 
-# RO-Crate in 
-1. Table of Contents
-{:toc}
+# RO-Crate Outreach and Publications 
 
 _Feel free to add to this page, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 
@@ -25,7 +27,7 @@ _Feel free to add to this page, either [edit and raise pull request](https://git
 ## Cite RO-Crate
 Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): **A lightweight approach to research object data packaging** _Bioinformatics Open Source Conference (BOSC2019)_, 2019-07-24/2019-07-25, Basel, Switzerland. <https://doi.org/10.5281/zenodo.3250687>
 
-### Recent publications, presentations, citations
+## Recent publications, presentations, citations
 
 Peter Sefton, Eoghan Ó Carragáin, Carole Goble, Stian Soiland-Reyes (2019): [Introducing RO-Crate: research object data packaging](http://ptsefton.com/2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm). _eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. [[slides](https://docs.google.com/presentation/d/10faXX13opY0DAVVVeX5lG83F4MA_woLHkeIcUOko2IU/)] [[abstract](https://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019-eResearch_103_-Introducing-RO-Crate-research-object-data-packaging.pdf)]
  
@@ -65,7 +67,7 @@ Talk at _Workshop on Research Objects ([RO 2018](http://www.researchobject.org/r
 <https://doi.org/10.5281/zenodo.1445817> [[abstract](https://data.research.uts.edu.au/examples/v1.0/datacrate-RO-2018/data/paper.html)] [[slides](http://ptsefton.com/2018/10/29/sefton-ro2018.htm)]
 
 
-### Upcoming and recent events
+## Upcoming and recent events
 
 _To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 
