@@ -41,7 +41,7 @@ You can also look at some [example RO-Crates](https://data.research.uts.edu.au/e
 
 ```warning
 Some of the below examples may be using [RO-Crate 0.2](0.2/), which may miss some subtle changes in [RO-Crate 1.0](1.0/).
- Implementers are advised to check relevant sections in the latest RO-Crate [specification](specification.html).
+ Implementers are advised to check relevant sections in the latest RO-Crate [specification](specification.md).
 ```
 
 * [Covid-19 Workflow Hub](https://covid19.workflowhub.eu/workflows) export workflows as RO-Crates, e.g. [a Galaxy workflow](https://covid19.workflowhub.eu/workflows/22/ro_crate?version=1)

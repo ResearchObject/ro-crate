@@ -212,7 +212,7 @@ The publication SHOULD be described in the _RO-Crate JSON-LD_.
 
 ## Publisher
 
-The [Root Data Entity](root-data-entity.html) SHOULD have a [publisher](http://schema.org/publisher) property. This SHOULD be an [Organization](http://schema.org/Organization) though it MAY be a [Person](http://schema.org/Person).
+The [Root Data Entity](root-data-entity.md) SHOULD have a [publisher](http://schema.org/publisher) property. This SHOULD be an [Organization](http://schema.org/Organization) though it MAY be a [Person](http://schema.org/Person).
 
 
 ```json

@@ -29,7 +29,7 @@ The _Root Data Entity_ is a [Dataset] that represent the RO-Crate as a whole;
 a _Research Object_ that includes the _Data Entities_ and the related
 _Contextual Entities_.
 
-As explained in section [RO-Crate structure](structure.html), the RO-Crate description 
+As explained in section [RO-Crate structure](structure.md), the RO-Crate description 
 is stored as _JSON-LD_ in the _RO-Crate Metadata File_ `ro-crate-metadata.json` in 
 the _RO-Crate root_ directory. 
 

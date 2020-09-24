@@ -76,7 +76,7 @@ JSON-LD examples given on the [schema.org website](http://schema.org/) may not b
 
 To simplify processing and avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even where [schema.org] for some properties otherwise permit shorter forms like `"author": "http://example.com/alice"`.
 
-See the appendix [RO-Crate JSON-LD](appendix/jsonld.html) for details.
+See the appendix [RO-Crate JSON-LD](appendix/jsonld.md) for details.
 
 ## Additional metadata standards
 

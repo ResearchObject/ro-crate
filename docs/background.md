@@ -38,7 +38,7 @@ Examples of items that should be included in a Research Object:
 
 ## Other Research Object formats
 
-The Research Object initiative have iteratively been developing [specifications](https://www.researchobject.org/specs//) for machine-readable formats of communicating Research Objects. The formalization of Research Object is a combination of existing [Linked Data](https://en.wikipedia.org/wiki/Linked_data) standards:
+The Research Object initiative have iteratively been developing [specifications](https://www.researchobject.org/specs/) for machine-readable formats of communicating Research Objects. The formalization of Research Object is a combination of existing [Linked Data](https://en.wikipedia.org/wiki/Linked_data) standards:
 
 * [W3C RDF](https://www.w3.org/TR/rdf11-primer/), primarily as [JSON-LD](https://json-ld.org/)
 * [OAI-ORE](http://www.openarchives.org/ore/1.0/primer) for aggregating resources
