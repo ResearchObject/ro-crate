@@ -21,9 +21,26 @@ title: Examples
 
 # Example RO-Crates
 
-The [specification](specification.md) has many inline examples for the different sections.
+The [RO-Crate structure](/1.0/#ro-crate-structure) is that a _RO-Crate root_ directory has a _RO-Crate Metadata File_ named `ro-crate-metadata.jsonld` that describe the other files, directories and URLs; as well as relating them to things in the world (e.g. people, instruments).
 
-You can also look at some [example RO-Crates](https://data.research.uts.edu.au/examples/ro-crate/0.2/): _Note: Some of these examples may be using RO-Crate 0.2, which may miss some subtle changes in RO-Crate 1.0._
+```info
+From RO-Crate 1.1 this file will be renamed `ro-crate-metadata.json`
+```
+
+The [specification](specification.md) has several inline examples:
+ * [Skeleton ro-crate-metadata.json](/1.0/#direct-properties-of-the-root-data-entity)
+ * [Minimal example](/1.0/#direct-properties-of-the-root-data-entity)
+ * [Example with files](/1.0/#example-linking-to-a-file-and-folders)
+ * [Example with file, author, location](/1.0/#appendix-ro-crate-json-ld)
+
+
+
+You can also look at some [example RO-Crates](https://data.research.uts.edu.au/examples/ro-crate/0.2/).
+
+```warning
+Some of the below examples may be using [RO-Crate 0.2](0.2/), which may miss some subtle changes in [RO-Crate 1.0](1.0/).
+ Implementers are advised to check relevant sections in the latest RO-Crate [specification](specification.html).
+```
 
 * [Covid-19 Workflow Hub](https://covid19.workflowhub.eu/workflows) export workflows as RO-Crates, e.g. [a Galaxy workflow](https://covid19.workflowhub.eu/workflows/22/ro_crate?version=1)
 * [Recordings in South Efate](http://vm-45-113-232-73.rc.cloud.unimelb.edu.au/paradisec.org.au/NT1/98007) ([ro-crate-metadata.jsonld](http://vm-45-113-232-73.rc.cloud.unimelb.edu.au/repository/3d/dc/34/6d/15/d2/66/c4/8e/ff/37/d3/2a/d1/29/7c/6e/56/7b/74/46/0d/85/23/d0/a7/ca/82/be/4e/c1/9d/v1/content/ro-crate-metadata.jsonld)) – one of [more than 10k RO-Crates](http://vm-45-113-232-73.rc.cloud.unimelb.edu.au/explore) from the [Pacific and Regional Archive for Digital Sources in Endangered Cultures](http://www.paradisec.org.au/) _(alpha)_
