@@ -23,7 +23,7 @@ title: Examples
 
 The [RO-Crate structure](/1.0/#ro-crate-structure) is that a _RO-Crate root_ directory has a _RO-Crate Metadata File_ named `ro-crate-metadata.jsonld` that describe the other files, directories and URLs; as well as relating them to things in the world (e.g. people, instruments).
 
-```info
+```note
 From RO-Crate 1.1 this file will be renamed `ro-crate-metadata.json`
 ```
 
@@ -33,7 +33,9 @@ The [specification](specification.md) has several inline examples:
  * [Example with files](/1.0/#example-linking-to-a-file-and-folders)
  * [Example with file, author, location](/1.0/#appendix-ro-crate-json-ld)
 
+<!-- TODO: Find a golden exemplar we can showcase here -->
 
+## UTS examples
 
 You can also look at some [example RO-Crates](https://data.research.uts.edu.au/examples/ro-crate/0.2/).
 
