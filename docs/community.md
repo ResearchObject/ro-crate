@@ -63,18 +63,23 @@ The _RO-Crate_ team is:
 * Mark Graves <https://github.com/myiremark>
 * Jasper Koehorst <https://orcid.org/0000-0001-8172-8981>
 
+## Meetings
+
+The RO-Crate team try to meet in a monthly telcon, see the [rolling agenda](https://s.apache.org/ro-crate-minutes) for schedule, call-in details and minutes.
+
+See also [recent and upcoming events](outreach#upcoming-and-recent-events).
+
+## Code of Conduct
+
+Contributors are expected to comply with our [Code of Conduct](https://github.com/ResearchObject/ro-crate/blob/master/CODE_OF_CONDUCT.md) to ensure an open and inclusive environment.
+
 ## Contributing
 
 To suggest changes, improvements or issues, use the GitHub repository <https://github.com/ResearchObject/ro-crate> - if you are new to GitHub or Open Source you may appreciate the [GitHub guides](https://guides.github.com/) like [Hello World](https://guides.github.com/activities/hello-world/), [MarkDown](https://guides.github.com/features/mastering-markdown/) and [How to contribute to open source](https://opensource.guide/how-to-contribute/)
 
 You are welcome to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! 
 
-Contributors are expected to comply with our [Code of Conduct](https://github.com/ResearchObject/ro-crate/blob/master/CODE_OF_CONDUCT.md) to ensure an open and inclusive environment.
+## Open Source
 
 This specification and documentation is Open Source and licensed as [Apache License, version 2.0](https://github.com/ResearchObject/ro-crate/blob/master/LICENSE), see <https://www.apache.org/licenses/LICENSE-2.0> for details.
 
-
-## Meetings
-The RO-Crate team try to meet in a monthly telcon, see the [rolling agenda](https://s.apache.org/ro-crate-minutes) for schedule, call-in details and minutes.
-
-See also [recent and upcoming events](outreach#upcoming-and-recent-events).
