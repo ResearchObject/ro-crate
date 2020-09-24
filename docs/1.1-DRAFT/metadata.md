@@ -80,7 +80,7 @@ See the appendix [RO-Crate JSON-LD](appendix/jsonld.html) for details.
 
 ## Additional metadata standards
 
-RO-Crate also uses the _Portland Common Data Model_ ([PCDM])) and imports these terms:
+RO-Crate also uses the _Portland Common Data Model_ ([PCDM])) to describe repositories or collections of digital objects and imports these terms:
  
 - `RepositoryObject` mapped to <https://pcdm.org/2016/04/18/models#Object>
 - `RepositoryCollection` mapped to <https://pcdm.org/2016/04/18/models#Collection>
@@ -105,7 +105,7 @@ These keys are being proposed by [BioSchemas profile ComputationalWorkflow 0.5-D
 * `funding` mapped to <http://schema.org/funding> ([schemaorg #383](https://github.com/schemaorg/schemaorg/issues/383))
 
 ```note
-Temporary BioSchemas terms are subject to change; future releases of RO-Crate may reflect mapping to the `http://schema.org/` namespace.
+In this specification the proposed BioSchemas terms use the temporary <https://bioschemas.org/> namespace; future releases of RO-Crate may reflect mapping to the `http://schema.org/` namespace.
 ```
 
 ## Summary of Coverage

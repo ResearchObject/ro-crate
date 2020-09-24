@@ -29,7 +29,7 @@ _RO-Crate_: A directory structure that contains a dataset, which is described in
 
 _RO-Crate Root_: The top-level directory of the _RO-Crate_, indicated by the presence of the _RO-Crate Metadata File_ `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` for crates that comply with versions before v1.1 of this specification)
 
-_RO-Crate Metadata File_: A JSON-LD file stored as `ro-crate-metadata.json` in the _RO-Crate Root_. The metadata file describes the _RO-Crate_ with structured data in form of _RO-Crate JSON-LD_. (In version 1.0 this file was named `ro-crate-metadata.json` but has been renamed to improve the usability of crates.)
+_RO-Crate Metadata File_: A JSON-LD file stored as `ro-crate-metadata.json` in the _RO-Crate Root_. The metadata file describes the _RO-Crate_ with structured data in form of _RO-Crate JSON-LD_. (In version 1.0 this file was named `ro-crate-metadata.jsonld` but has been renamed to improve the usability of crates.)
 
 _RO-Crate Website_: Human-readable HTML pages which describe the RO-Crate (i.e. the _Root Data Entity_, its _Data Entities_ and _Context Entities_), with a home-page at `ro-crate-preview.html` (any additional files reside in `ro-crate-preview_files/`)
 

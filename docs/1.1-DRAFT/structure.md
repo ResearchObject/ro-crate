@@ -36,7 +36,7 @@ The structure an _RO-Crate_ MUST follow is:
 |   [payload files and directories]  # 0 or more
 ```
 
-The name of the _RO-Crate root_ directory is not defined, but a root directory is identifiable by the presence of the _RO-Crate Metadata File_, `ro-crate-metadata.json`. For instance, if an _RO-Crate_ is archived in a ZIP-file, the ZIP root directory correspond to _RO-Crate root_ directory if it contains `ro-crate-metadata.json`.
+The name of the _RO-Crate root_ directory is not defined, but a root directory is identifiable by the presence of the _RO-Crate Metadata File_, `ro-crate-metadata.json`. For instance, if an _RO-Crate_ is archived in a ZIP-file, the ZIP root directory is an _RO-Crate root_ directory if it contains `ro-crate-metadata.json`.
 
 
 [Data Entities](data-entities.html) in the RO-Crate MUST either be _payload files/directories_ present within the RO-Crate root directory or its subdirectories, or be [Web-based Data Entities](data-entities.html#web-based-data-entities).
@@ -82,7 +82,7 @@ In addition to the machine-oriented _RO-Crate Metadata File_, the RO-Crate MAY i
 If present in the root directory, `ro-crate-preview.html` MUST:
 
   *   Be a valid [HTML 5](https://www.w3.org/TR/html52/) document 
-  *   Contain at least a human readable summary of metadata relating to the _Root Data Entity_
+  *   Be useful to users of the RO-Crate - this will vary by community and intended use, but in general the aim to assist users in reusing data by explaining what it is, how it was created how it can be used and how to cite it. One simple approach to this is to expose *all* the metadata in the _RO-Crate Metadata File_.
   *   Contain a copy of the _RO-Crate JSON-LD_ in a `script` element of the `head` element of the HTML, for example:
   ```html
     <script type="application/ld+json">

@@ -37,7 +37,7 @@ the _RO-Crate root_ directory.
 
 The _RO-Crate JSON-LD_ MUST contain a self-describing
 _RO-Crate Metadata File Descriptor_ with
-the `@id` value `ro-crate-metadata.json` (or `ro-crate-metadata.json` in legacy
+the `@id` value `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` in legacy
 crates) and `@type` [CreativeWork]. This descriptor MUST have an [about]
 property referencing the _Root Data Entity_, which SHOULD have an `@id` of `./`.
 
