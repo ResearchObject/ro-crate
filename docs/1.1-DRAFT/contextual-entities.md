@@ -339,7 +339,7 @@ The below _Data Entity_ has a [copyrightHolder] which is different from its [aut
 
 ### Metadata license
 
-In some cases the license of the [RO-Crate metadata](root-data-entity.md) the (JSON-LD statements in the _RO-Crate Metadata File Descriptor_) is different from the license on the [Root Date Entity](root-data-entity.md) and its content (_data entities_ indicated by [hasPart]). 
+In some cases the license of the [RO-Crate metadata](root-data-entity.md) (the JSON-LD statements in the _RO-Crate Metadata File Descriptor_) is different from the license on the [Root Data Entity](root-data-entity.md) and its content (_data entities_ indicated by [hasPart]). 
 
 For instance, a common pattern for repositories is to license metadata as [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/), while data is licensed as [CC-BY](https://creativecommons.org/licenses/by/4.0/) or similar.  This pattern allow metadata to be combined freely (e.g. the DataCite knowledge graph), while redistribution of data files would require explicit attribution and statement of their license.
 
@@ -402,7 +402,7 @@ In some cases, the JSON-LD metadata for some entities have been imported under a
 }
 ```
 
-In the above (abridged) example, there is no explicit license on the _RO-Crate Metadata File Description_, so the _Root Date Entity_ license [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0) would apply to RO-Crate JSON-LD statements, except for the statements on the imported <http://sws.geonames.org/8152662/>,  which metadata is re-distributed under license <https://creativecommons.org/licenses/by/4.0/>. 
+In the above (abridged) example, there is no explicit license on the _RO-Crate Metadata File Description_, so the _Root Data Entity_ license [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0) would apply to RO-Crate JSON-LD statements, except for the statements on the imported <http://sws.geonames.org/8152662/>,  which metadata is re-distributed under license <https://creativecommons.org/licenses/by/4.0/>. 
 
 In this example the CC-BY license requires retaining "a notice that refers to this Public License" and "identification of the creator(s) of the Licensed Material", here respected using `sdLicense` and `sdPublisher`.  
 
@@ -415,7 +415,7 @@ As the RO-Crate uses _flattened_ JSON-LD, `sdLicense` should be expressed direct
 
 ## Extra metadata such as Exif
 
-Schema.org has a generic extension mechanism for encoding adding arbitrary properties and values which are not available as Schema.org properties. An example of of this is the Schema.org [recommended way (see example 2)](http://schema.org/ImageObject) of including [Exif](https://en.wikipedia.org/wiki/Exif) technical image metadata.
+Schema.org has a generic extension mechanism for encoding arbitrary properties and values which are not available as Schema.org properties. An example of of this is the Schema.org [recommended way (see example 2)](http://schema.org/ImageObject) of including [Exif](https://en.wikipedia.org/wiki/Exif) technical image metadata.
 
 To include EXIF, or other data which can be encoded as property/value pairs, add an array of references to _Anonymous Entities_ which encode each property. This example shows one property of several hundred.
 
@@ -468,7 +468,7 @@ This example shows how to define a place, using a [geonames](https://www.geoname
 },
 ```
 
-**Tip**: To find the `@id` and `identifier` corresponding to a GeoNames HTML page like <https://www.geonames.org/8152662/catalina-park.html> click it's `.rdf` button to find the identifier <http://sws.geonames.org/8152662/> referred from <https://sws.geonames.org/8152662/about.rdf>:
+**Tip**: To find the `@id` and `identifier` corresponding to a GeoNames HTML page like <https://www.geonames.org/8152662/catalina-park.html> click its `.rdf` button to find the identifier <http://sws.geonames.org/8152662/> referred from <https://sws.geonames.org/8152662/about.rdf>:
 
 ```xml
 <gn:Feature rdf:about="http://sws.geonames.org/8152662/">
