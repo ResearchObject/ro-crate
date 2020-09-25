@@ -12,7 +12,7 @@ A clear and concise description of what the bug is.
 
 
 **URL**
-Provide link to RO-Lite page or source code most related to the bug.
+Provide link to RO-Crate page or source code most related to the bug.
 
 
 **Suggested fix**
