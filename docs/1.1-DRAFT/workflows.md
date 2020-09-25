@@ -91,7 +91,7 @@ Here are some counter-indicators for when a script might **not** be a workflow:
 
 Scripts written in a _programming language_, as well as workflows, generally need a _runtime_; in RO-Crate the runtime SHOULD be indicated using a liberal interpretation of [programmingLanguage].
 
-Note that the language and its runtime MAY differ (e.g. different C++-compilers), but for scripts and workflows, frequently the language and runtime are essentially the same, and thus the `programmingLanguage`, implied to be a [ComputerLanguage], can also be described as an executable [SoftwareApplication]:
+Note that the language and its runtime MAY differ (e.g. different C++ compilers), but for scripts and workflows, frequently the language and runtime are essentially the same, and thus the `programmingLanguage`, implied to be a [ComputerLanguage], can also be described as an executable [SoftwareApplication]:
 
 ```json
 {
