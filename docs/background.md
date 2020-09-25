@@ -1,5 +1,9 @@
+---
+layout: default
+title: Background
+---
 <!--
-   Copyright 2019 RO Crate contributors 
+   Copyright 2019-2020 RO-Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +21,7 @@
 
 # Research Object Background
 
-A [Research Object](http://researchobject.org/) (_RO_) provide a machine-readable mechanism to communicate the diverse set of digital and real-world resources that contribute to an item of research. The aim of an RO is to replace traditional academic publication as a PDF with a couple of supplementary materials; to instead provide a structured archive of all the items that contributed to the research outcome, including their identifiers, provenance, relations and annotations.
+A [Research Object](https://www.researchobject.org/) (_RO_) provide a machine-readable mechanism to communicate the diverse set of digital and real-world resources that contribute to an item of research. The aim of an RO is to replace traditional academic publication as a PDF with a couple of supplementary materials; to instead provide a structured archive of all the items that contributed to the research outcome, including their identifiers, provenance, relations and annotations.
 
 This is of particular importance as all domains of research and science are increasingly relying in computational analysis, yet we are facing a [reproducibility crisis](https://doi.org/10.1038/533452a) because key components are not sufficiently tracked, archived or reported. 
 
@@ -34,7 +38,7 @@ Examples of items that should be included in a Research Object:
 
 ## Other Research Object formats
 
-The Research Object initiative have iteratively been developing [specifications](http://www.researchobject.org/specifications/) for machine-readable formats of communicating Research Objects. The formalization of Research Object is a combination of existing [Linked Data](https://en.wikipedia.org/wiki/Linked_data) standards:
+The Research Object initiative have iteratively been developing [specifications](https://www.researchobject.org/specs/) for machine-readable formats of communicating Research Objects. The formalization of Research Object is a combination of existing [Linked Data](https://en.wikipedia.org/wiki/Linked_data) standards:
 
 * [W3C RDF](https://www.w3.org/TR/rdf11-primer/), primarily as [JSON-LD](https://json-ld.org/)
 * [OAI-ORE](http://www.openarchives.org/ore/1.0/primer) for aggregating resources
@@ -68,9 +72,9 @@ However work on [BDBag Research Objects](https://github.com/fair-research/bdbag/
 
 Recent advances like [schema.org](https://schema.org/) and [BioSchemas](http://bioschemas.org/) have simplified vocabularies for common metadata descriptions and made [JSON-LD](https://json-ld.org/) mainstream, negating some reasons for separating such annotations to separate files. 
 
-The freedom of separate annotations mean that consumers of ROs would not know what to expect inside their content - increasing the importance of formalizing [Research Object profiles](http://www.researchobject.org/scopes/). Previous work such as carefully crafted [Minimum Information Models](http://www.researchobject.org/initiative/mim/) and more recent work on [RDF Shapes](https://github.com/ResearchObject/ro-curate) provide RO validation that takes into account annotations, but what remains is how to communicating to developers and end-users how to programmatically generate ROs consistent for a particular profile.
+The freedom of separate annotations mean that consumers of ROs would not know what to expect inside their content - increasing the importance of formalizing [Research Object profiles](https://www.researchobject.org/scopes/). Previous work such as carefully crafted [Minimum Information Models](https://www.researchobject.org/initiative/mim/) and more recent work on [RDF Shapes](https://github.com/ResearchObject/ro-curate) provide RO validation that takes into account annotations, but what remains is how to communicating to developers and end-users how to programmatically generate ROs consistent for a particular profile.
 
 The recent [DataCrate](https://github.com/UTS-eResearch/datacrate) approach [points out](https://github.com/UTS-eResearch/datacrate#rdf-based-formats) that the existing RO manifest forces too much structure for simpler use-cases of general _who-what-where_ type metadata, and advocates a [simpler approach](https://github.com/UTS-eResearch/datacrate/blob/master/spec/1.0/data_crate_specification_v1.0.md) based primarily on [schema.org](https://schema.org/) in a JSON-LD `CATALOG.json`, but also mandating a human-readable HTML `CATALOG.html`.
 
-The [RO-Crate specification](./#drafts) is evolved from _DataCrate_ to add Research Object aspects and further formalize the recommendations. 
+Starting as a [community](community.md) project from the beginning, the [RO-Crate specification](specification.md) evolved from _DataCrate_ to add Research Object aspects and further formalize the recommendations. 
 

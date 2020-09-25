@@ -1,3 +1,8 @@
+---
+layout: default
+title: ROLite 0.1.0
+exclude: true
+---
 <!--
    Copyright 2019 RO Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
