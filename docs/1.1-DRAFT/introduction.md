@@ -32,5 +32,4 @@ The core of RO-Crate is a JSON-LD file, the _RO-Crate Metadata File_, named `ro-
 While providing the formal specification for RO-Crate, this document also aims to be a practical guide for software authors to create tools for generating and consuming research data packages, with explanation by examples. 
 
 
-[linked data]: https://en.wikipedia.org/wiki/Linked_data
-
+[linked data]: https://www.w3.org/wiki/LinkedData

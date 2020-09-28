@@ -49,7 +49,7 @@ excerpt: List of changes in releases of this specifications
     * .. must use `conformsTo` to indicate RO-Crate version
   * Clarified use of RO-Crate JSON-LD Context
   * Linked Data principles added
-  * RO-Crate JSON-LD Context updated to use schema.org 5.0
+  * RO-Crate JSON-LD Context updated to use [schema.org 5.0](http://schema.org/version/5.0/)
   * Workflow and Script now typed with `@type` array instead of `additionalType`
   * Simplified tables of direct properties to list of properties
   * Simplified example of `affiliation`
