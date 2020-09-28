@@ -57,7 +57,7 @@ Example, this JSON-LD is in [compacted form](https://www.w3.org/TR/json-ld11/#co
     "@id": "./",
     "@type": "Dataset",
     "name": "Example RO-Crate",
-    "description": "The RO-Crate Root Data Entity"
+    "description": "The RO-Crate Root Data Entity",
     "hasPart": [
       { "@id": "data1.txt",
         "@type": "File",
