@@ -128,9 +128,15 @@ It is possible to indicate _steps_ that are executed as part of an `Computationa
 
 ## Workflow diagram/sketch
 
-It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. This diagram MAY be included as an [ImageObject] which is [about] the `SoftwareSourceCode`:
+It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. This diagram MAY be included from the `SoftwareSourceCode` data entity by using `image`, pointing to an [ImageObject] data entity which is [about] the `SoftwareSourceCode`:
 
 ```json
+{
+  "@id": "workflow/workflow.knime",  
+  "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
+  "name": "RetroPath2.0 workflow",
+  "image": {"@id": "workflow/workflow.svg" } 
+},
 {
   "@id": "workflow/workflow.svg",
   "@type": ["File", "ImageObject"],
@@ -167,8 +173,11 @@ A workflow diagram may still be provided even if there is no programmatic `Softw
 
 ## Complying with BioSchemas Computational Workflow profile
 
-To comply with the [BioSchemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/),
-where possible, data entities representing _workflows_ SHOULD describe these properties and their related contextual entities:
+Data entities representing _workflows_ (`@type: ComputationalWorkflow`)
+SHOULD comply with the
+[BioSchemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/),
+where possible. When complying with this profile, the workflow data entities
+MUST describe these properties and their related contextual entities:
 
 * [name] giving a short descriptive name of the workflow
 * [programmingLanguage] identifying the workflow system, typed as `ProgrammingLanguage`
@@ -176,17 +185,59 @@ where possible, data entities representing _workflows_ SHOULD describe these pro
 * [dateCreated] the date the workflow was first made, e.g. `2020-05-23`
 * [license] identifying a [CreativeWork] that details license for distributing or editing the workflow
 * [input] and [output] identifying contextual entities for the [FormalParameter] describing input and output parameters/variables that may be varied on different workflow executions
-* [sdPublisher] to identify the [Person] or [Organization] who has made the JSON-LD description of the workflow
+* [sdPublisher] to identify the [Person] or [Organization] who has made this JSON-LD description of the workflow
 * [url] to identify a public page or source code repository for the workflow
 * [version] to indicate the released version of this workflow file
 
-Contextual entities for [FormalParameter], referenced by `input` or `output`, SHOULD describe:
+The [ComputationalWorkflow] data entity SHOULD also describe, where relevant:
+* [citation] to identify a [CreativeWork] that should be cited for this workflow
+* [contributor] to identify [Person] or [Organization] that helped conceive the workflow
+* [creativeWorkStatus] to indicate the development state of the workflow, e.g. `"Draft"` or `"Published"`
+* [description] to further describe the workflow's purpose and method
+* [funding] to a [Grant] contextual entity that has financially supported development of the workflow
+* [hasPart] to indicate individual steps as [SoftwareApplication], [SoftwareSourceCode] or [ComputationalWorkflow] entities
+* [isBasedOn] to indicate another [ComputationalWorkflow] or [CreativeWork] this workflow is based on or derived from
+* [keywords] with comma separated list of keywords that categorise this workflow
+* [maintainer] to indicate a [Person] or [Organization] responsible for maintaining the workflow, specially if different from [creator]
+* [producer] the [Organization] or [Person] that, when different from [creator] and [maintainer], can be considered to _produce_ the workflow; typically a [Project]
+* [publisher] the [Organization] or [Person] that is making the workflow publicly available, e.g. `https://workflowhub.eu/`, `https://usegalaxy.eu/` or `https://usegalaxy.eu/`
+* [runtimePlatform] the runtime platform or script interpreter as an informal text string, e.g. `"Python2.3"`, `"Galaxy"` (see also [programmingLanguage] above)
+* [softwareRequirements] indicating [SoftwareApplication]s or [SoftwareSourceCode]s needed for this workflow, its steps and workflow engine to execute, e.g. `https://bioconda.github.io/`, `https://docs.docker.com/engine/`, `https://bio.tools/samtools`
+* [targetProduct] to indicate a [SoftwareApplication] for the operating system or product which this code applies to, e.g. `https://www.microsoft.com/en-gb/windows/get-windows-10` or `https://releases.ubuntu.com/20.04/`
+
+The [ComputationalWorkflow] data entity MAY also describe, where relevant:
+* [alternateName] to indicate an alternative [name] that help identify the workflow, e.g. `nf-core/chipseq`
+* [conditionsOfAccess] to indicate restrictions on the availability of this workflow, e.g. `"To protect endangered wildlife, this biodiversity workflow is only available to approved research projects"`
+* [dateModified] to indicate a date later than [dateCreated] when this workflow was modified
+* [datePublished] to indicate a date different from [dateCreated] for when this workflow was made public
+* [encodingFormat] to indicate the [IANA media type](data-entities.md#adding-detailed-descriptions-of-encodings), e.g. `"application/xml"` or `"application/json"` (see also [programmingLanguage] above)
+* [image] to indicate an [ImageObject] that represents the workflow, e.g. a workflow diagram
+* [identifier] to provide a unique identifier for this workflow, e.g. `https://doi.org/10.5281/zenodo.3966161` or `urn:uuid:0a98135b-3e48-4f76-aed8-4a7f6421bd74`
+
+### Describing inputs and outputs
+
+The input and output _parameters_ for a workflow or script can be given with `input` and `output` to [FormalParameter]
+contextual entities. Note that this entity usually represent a _potential_ input/output value in a reusable
+workflow, much like [function parameter definitions](https://en.wikipedia.org/wiki/Parameter_(computer_programming))
+in general programming.
+
+When complying with the
+[BioSchemas FormalParameter profile](https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_06_23/)
+the _contextual entities_ for [FormalParameter], referenced by `input` or `output`, MUST describe:
 
 * [name] given the programmatic name for the parameter binding
 * [additionalType] identifying the most specific subtype of [EDAM Data](http://edamontology.org/data_0006) (fallbacks [Data](http://edamontology.org/data_0006) or [Text data](http://edamontology.org/data_2526))
 * [encodingFormat] identifying the most specific subtype of [EDAM Format](http://edamontology.org/format_1915) (fallbacks [Binary format](http://edamontology.org/format_2333) or [Textual format](http://edamontology.org/format_2330))
+
+
+The [FormalParameter] contextual entity SHOULD also describe:
+* [description] describing the parameter's expected value range and purpose
+
+The [FormalParameter] contextual entity MAY also describe:
 * [valueRequired] `true` if this (input) parameter must be specified to run the workflow, or `false` (default) if parameter is optional.
 * [defaultValue] present if this (input) parameter has a default value. In RO-Crate this SHOULD be in the form of a `"string"` or a `{"@id": "data/entity.txt"}`
+* [identifier] if the parameter has a global identifier that persists across workflows it is used in.
+
 
 <!--
 TODO: Update requirements from BioSchemas profile Workflow 0.5
