@@ -109,7 +109,7 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
 The above example provides a media type for the file `cp7glop.ai` - which is
 useful as it may not be apparent that the file readable as a PDF file from the
 extension. To add more detail, encodings SHOULD be linked using a [PRONOM]
-identifier to a _Contextual Entity_ of `@type` Website.
+identifier to a _Contextual Entity_ of `@type` [WebSite].
 
 ``` json
   {
@@ -122,7 +122,7 @@ identifier to a _Contextual Entity_ of `@type` Website.
   {
     "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19",
     "name": "Acrobat PDF 1.5 - Portable Document Format",
-    "@type": "Website"
+    "@type": "WebSite"
   }
 
 ```
@@ -142,7 +142,7 @@ For example:
     {
     "@id": "https://www.commonwl.org/v1.0/Workflow.html",
     "name": "Common Workflow Language (CWL) Workflow Description, v1.0.2",
-    "@type": "Website"
+    "@type": "WebSite"
   }
 ```
 
@@ -176,14 +176,14 @@ In this document the term _URI_ includes international *IRI*s; the _RO-Crate Met
 
 ### File Data Entity
 
-A `File` _Data Entity_ MUST have the following properties:
+A [File] _Data Entity_ MUST have the following properties:
 
 *  `@type`: MUST be `File`, or an array where `File` is one of the values.
 *  `@id` MUST be either a _URI Path_ relative to the _RO Crate root_, or an absolute URI.
 
 ### Directory File Entity
 
-A `Dataset` (directory) _Data Entity_ MUST have the following properties:
+A [Dataset] (directory) _Data Entity_ MUST have the following properties:
 
 *  `@type` MUST be `Dataset` or an array where `Dataset` is one of the values.
 *  `@id`  MUST be either an a _URI Path_ relative to the _RO Crate root_, or an absolute URI. The id SHOULD end with `/`
@@ -285,7 +285,7 @@ These can be included for File Data Entities as additional metadata, regardless 
 
 ### Directories on the web; dataset distributions
 
-A _Directory File Entry_ or `Dataset` identifier by an absolute URL on the web can be harder to download than a `File` because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in `hasPart`, enabling download traversal.
+A _Directory File Entry_ or [Dataset] identifier by an absolute URL on the web can be harder to download than a [File] because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in [hasPart], enabling download traversal.
 
 Alternatively a common mechanism to provide downloads of a reasonably sized directory is as an archive file in formats like `.zip` or `.tar.gz`, described as a [DataDownload]. 
 
@@ -305,7 +305,7 @@ Alternatively a common mechanism to provide downloads of a reasonably sized dire
   }
 ```
 
-Similarly, the _RO-Crate root_ entity may also provide a `distribution` URL, in which case the download SHOULD be an archive that contain the _RO-Crate Metadata file_.
+Similarly, the _RO-Crate root_ entity may also provide a [distribution] URL, in which case the download SHOULD be an archive that contain the _RO-Crate Metadata file_.
 
 In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not be reflecting the current state of the `Dataset` or RO-Crate.
 

@@ -39,9 +39,9 @@ consistent handling:
 ## Flattening JSON-LD from nested JSON
 
 If performing
-[JSON-LD flattening](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) to generate a valid _RO-Crate Metadata File_ , add `@base: null` to the input JSON-LD `@context` array to avoid expanding relative URI references. The flattening `@context` SHOULD NOT need `@base: null`.
+[JSON-LD flattening] to generate a valid _RO-Crate Metadata File_ , add `@base: null` to the input JSON-LD `@context` array to avoid expanding relative URI references. The flattening `@context` SHOULD NOT need `@base: null`.
 
-Example, this JSON-LD is in [compacted form](https://www.w3.org/TR/json-ld11/#compacted-document-form) which may be beneficial for processing, but is not yet valid _RO-Crate Metadata File_ as it has not been flattened into a `@graph` array.
+Example, this JSON-LD is in [compacted form][compacted] which may be beneficial for processing, but is not yet valid _RO-Crate Metadata File_ as it has not been flattened into a `@graph` array.
 
 ```json
 { 
@@ -71,7 +71,7 @@ Example, this JSON-LD is in [compacted form](https://www.w3.org/TR/json-ld11/#co
 }
 ```
 
-Performing [JSON-LD flattening](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) with:
+Performing [JSON-LD flattening] with:
 
 ```json
 { "@context": 
@@ -130,10 +130,10 @@ The saved _RO-Crate JSON-LD_ SHOULD NOT include `{@base: null}` in its `@context
 
 ## Expanding/parsing JSON-LD keeping relative referencing
 
-[JSON-LD Expansion](https://www.w3.org/TR/json-ld-api/#expansion) can be used to 
+[JSON-LD Expansion] can be used to 
 resolve terms from the `@context` to absolute URIs, e.g. `http://schema.org/description`. This may be needed to parse [extended properties](#extending-ro-crate) or for combinations with other Linked Data.
 
-This algorithm would normally also expand `@id` fields based on the current [base URI](https://www.w3.org/TR/json-ld11/#base-iri) of the _RO-Crate Metadata File_, but this may be a temporary location like `file:///tmp/rocrate54/ro-crate-metadata.json`, meaning `@id`: `subfolder/` becomes `file:///tmp/rocrate54/subfolder/` after JSON-LD expansion.
+This algorithm would normally also expand `@id` fields based on the current [base URI][JSON-LD base URI] of the _RO-Crate Metadata File_, but this may be a temporary location like `file:///tmp/rocrate54/ro-crate-metadata.json`, meaning `@id`: `subfolder/` becomes `file:///tmp/rocrate54/subfolder/` after JSON-LD expansion.
 
 To avoid absoluting local identifiers, before expanding, augment the JSON-LD `@context` to ensure it is an array that includes `{"@base": null}`.
 
@@ -175,7 +175,7 @@ For example, expanding this JSON-LD:
 }
 ```
 
-Results in a [expanded form](https://www.w3.org/TR/json-ld11/#expanded-document-form) without `@context`, using absolute URIs for properties and types, but retains relative URI references for entities within the _RO-Crate Root_:
+Results in a [expanded form][JSON-LD expanded form] without `@context`, using absolute URIs for properties and types, but retains relative URI references for entities within the _RO-Crate Root_:
 
 ```json
 [
@@ -238,11 +238,11 @@ Most RDF parsers supporting JSON-LD will perform this kind of expansion before g
 ## Establishing absolute URI for RO-Crate Root
 
 When loading _RO-Crate JSON-LD_ as RDF, or combining the crate's Linked Data into a larger JSON-LD, it is important to ensure correct
-[base URI](https://www.w3.org/TR/2014/REC-json-ld-20140116/#base-iri)
+[base URI][JSON-LD base URI]
 to resolve URI references that are relative to the _RO-Crate Root_.
 
 ```note
-Note that when retrieving an RO-Crate over the web, servers might have performed HTTP redirections so that the base URI is different from what was requested. It is RECOMMENDED to follow section [Establishing a Base URI of RFC3986](http://tools.ietf.org/html/rfc3986#section-5.1) before resolving relative links from the _RO-Crate Metadata File_.
+Note that when retrieving an RO-Crate over the web, servers might have performed HTTP redirections so that the base URI is different from what was requested. It is RECOMMENDED to follow section [Establishing a Base URI of RFC3986][RFC3986 base URI] before resolving relative links from the _RO-Crate Metadata File_.
 ```
 
 For instance, consider this HTTP redirection from a permalink (simplified):
@@ -298,7 +298,7 @@ is agnostic to the actual filename.
 
 When parsing _RO-Crate JSON-LD_ as RDF, where the RDF framework performs resolution to absolute URIs, it may be difficult to find the _RO-Crate Root_ in the parsed triples.
 
-The algoritm proposed in section [Core Metadata for the Root Data Entity](#core-metadata-for-the-root-data-entity) allows finding the RDF resource describing `ro-crate-metadata.json`, independent of its parsed base URI. We can adopt this for RDF triples, thus finding crates conforming to this specification can be queried with [SPARQL](https://www.w3.org/TR/sparql11-query/):
+The algoritm proposed in section [Core Metadata for the Root Data Entity](#core-metadata-for-the-root-data-entity) allows finding the RDF resource describing `ro-crate-metadata.json`, independent of its parsed base URI. We can adopt this for RDF triples, thus finding crates conforming to this specification can be queried with [SPARQL]:
 
 ```sparql
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -331,9 +331,9 @@ WHERE {
 
 ## Parsing as RDF with a different RO-Crate Root
 
-When parsing a _RO-Crate Metadata File_ into [RDF triples](https://www.w3.org/TR/rdf11-concepts/), for instance uploading it to a _graph store_ like [Apache Jena](https://jena.apache.org/)'s [Fuseki](https://jena.apache.org/documentation/fuseki2/), it is important to ensure consistent _base URI_:
+When parsing a _RO-Crate Metadata File_ into [RDF triples], for instance uploading it to a _graph store_ like [Apache Jena]'s [Fuseki], it is important to ensure consistent _base URI_:
 
-* Some RDF stores and RDF formats don't support relative URI references in triples (see [RDF 1.1 concepts](https://www.w3.org/TR/rdf11-concepts/#note-iris))
+* Some RDF stores and RDF formats don't support relative URI references in triples (see [RDF 1.1 note on IRIs])
 * The _RO-Crate Root_ may depend on where the _RO-Crate Metadata File_ was parsed from, e.g. `<file:///tmp/ro-crate-metadata.json>` (file) or `<http://localhost:3030/test/ro-crate-metadata.json>` (web upload)
 * Parsing multiple RO-Crates into the same RDF graph, using same base URI, may merge them into the same RO-Crate
 * `ro-crate-metadata.json` may not be recognized as JSON-LD and must be renamed to `ro-crate-metadata.jsonld`
@@ -406,7 +406,7 @@ Generating a _RO-Crate JSON-LD_ from such triples can be done by first [finding 
 An RO-Crate may have been packaged as a ZIP file or similar archive. RO-Crates may exist in a temporary file path which should not determine its identifiers.
 
 When parsing such crates it is recommended to use the
-[Archive and Package (arcp) URI scheme](https://tools.ietf.org/id/draft-soilandreyes-arcp-03.html)
+[Archive and Package (arcp) URI scheme][ARCP]
 to establish a temporary/location-based UUID or hash-based (SHA256) _base URI_. 
 
 For instance, given a randomly generated UUID `029bcde1-dfa3-43cf-b7d9-a4fb75ccd4eb` we can use `arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/` as the `@base`:
@@ -467,7 +467,7 @@ Parsing this as RDF will generate triples including:
 Here consumers can assume `/` is the _RO-Crate Root_ and generating relative URIs can safely be achieved by  search-replace as the arcp URI is unique. Saving _RO-Crate JSON-LD_ from the triples can be done by using the arcp URI to [relativize absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root).
 
 ```tip
-**Bagit**: The arcp specification suggests how [BagIt identifiers](https://tools.ietf.org/html/draft-soilandreyes-arcp-03#appendix-A.4) can be used to calculate the base URI. See also section [Combining with other packaging schemes](#combining-with-other-packaging-schemes) - note that in this approach the _RO-Crate Root_ will be the payload folder `/data/` under the calculated arcp base URI.
+**Bagit**: The arcp specification suggests how [BagIt identifiers][ARCP BagIt] can be used to calculate the base URI. See also section [Combining with other packaging schemes](#combining-with-other-packaging-schemes) - note that in this approach the _RO-Crate Root_ will be the payload folder `/data/` under the calculated arcp base URI.
 ```
 
 ## Relativizing absolute URIs within RO-Crate Root
@@ -508,8 +508,7 @@ Assuming a repository at `example.com` has JSON-LD with absolute URIs:
 }
 ```
 
-Then performing [JSON-LD flattening](https://www.w3.org/TR/json-ld-api/#flattening-algorithm)
-with this `@context`:
+Then performing [JSON-LD flattening] with this `@context`:
 
 ```json
 { "@context": [

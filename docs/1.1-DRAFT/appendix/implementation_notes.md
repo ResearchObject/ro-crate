@@ -73,7 +73,7 @@ payload (`data/`) directory.
       |     [payload files and directories]  # 1 or more SHOULD be present
 ```
 
-**Base URI**: The arcp specification suggests how [BagIt UUID identifiers](https://tools.ietf.org/html/draft-soilandreyes-arcp-03#appendix-A.4) can be used to calculate the base URI of a bag, see section [Establishing a base URI inside a ZIP file](#establishing-a-base-uri-inside-a-zip-file).  For this purpose it is RECOMMENDED that `bag-info.txt` includes a fresh UUID like:
+**Base URI**: The arcp specification suggests how [BagIt UUID identifiers] can be used to calculate the base URI of a bag, see section [Establishing a base URI inside a ZIP file](#establishing-a-base-uri-inside-a-zip-file).  For this purpose it is RECOMMENDED that `bag-info.txt` includes a fresh UUID like:
 
     External-Identifier: urn:uuid:24e51ca2-5067-4598-935a-dac4e327d05a
 

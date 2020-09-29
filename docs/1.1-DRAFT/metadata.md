@@ -29,7 +29,7 @@ sort: 5
 
 # RO-Crate Metadata
 
-RO-Crate aims to capture and describe the [Research Object](http://www.researchobject.org/overview/) using structured _metadata_.
+RO-Crate aims to capture and describe the [Research Object][ResearchObject] using structured _metadata_.
 
 The _RO-Crate Metadata File Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:
 
@@ -41,20 +41,20 @@ This machine-readable metadata can also be represented for human consumption in 
 
 ## RO-Crate uses Linked Data principles
 
-RO-Crate makes use of [Linked Data principles](https://5stardata.info/en/) for its description. In particular:
+RO-Crate makes use of [Linked Data principles] for its description. In particular:
 
 1. (Meta)data should be made available as **Open Data** on the web.
 2. (Meta)data should be **machine-readable** in a structured format.
 3. (Meta)data should _not_ require proprietary software packages.
-4. (Meta)data should use [open standards from W3C](https://www.w3.org/standards/), such as RDF and SPARQL.
+4. (Meta)data should use [open standards from W3C], such as RDF and SPARQL.
 5. (Meta)data should **link** to other people’s data to provide context, using _URIs_ as global identifiers
 
 RO-Crate realize these principles using a particular set of technologies and best practices:
 
 1. The _RO-Crate Metadata File_ and _RO-Crate Website_ can be directly published on the web together with the RO-Crate payload. In addition, a data package (e.g. BagIt Zip archive) that contain the RO-Crate can also be published on the web.
 2. The _RO-Crate Metadata File_ is based on the structured data format [JSON-LD](https://json-ld.org/). 
-3. Multiple open source tools/libraries are available [for JSON](http://json.org/) and [for JSON-LD](https://json-ld.org/).
-4. The _RO-Crate Website_ is [HTML 5](https://www.w3.org/TR/html52/), and the _RO-Crate Metadata File_ is [JSON-LD](https://www.w3.org/TR/json-ld/), one of the [W3C RDF 1.1 formats](https://www.w3.org/TR/rdf11-primer/).
+3. Multiple open source tools/libraries are available [for JSON][JSON] and [for JSON-LD][JSON].
+4. The _RO-Crate Website_ is [HTML 5], and the _RO-Crate Metadata File_ is [JSON-LD], one of the [W3C RDF 1.1 formats].
 5. The _RO-Crate Metadata File_ reuse common vocabularies like [schema.org], and this specification [recommend identifiers](#recommended-identifiers) it should link to.
 
 ## Base metadata standard: Schema.org
@@ -71,7 +71,7 @@ Generally, the standard keys from [schema.org] should be used. However, RO-Crate
 * `Journal` is mapped to <http://schema.org/Periodical>.
 
 ```warning
-JSON-LD examples given on the [schema.org website](http://schema.org/) may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
+JSON-LD examples given on the [schema.org website] may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
 ```
 
 To simplify processing and avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even where [schema.org] for some properties otherwise permit shorter forms like `"author": "http://example.com/alice"`.
@@ -138,7 +138,7 @@ _RO-Crate JSON-LD_ SHOULD use the following IDs where possible:
 
 * For a _Root Data Entity_, an `identifier` which is RECOMMENDED to be a  <https://doi.org/> URI. 
 * For a [Person] participating in the research process: [ORCID] identifiers, e.g. <https://orcid.org/0000-0002-1825-0097>
-* For [Organization]s including [funder]s,  [Research Organization Registry URIs](https://ror.org/), e.g. <https://ror.org/0384j8v12>
+* For [Organization]s including [funder]s,  [Research Organization Registry URIs], e.g. <https://ror.org/0384j8v12>
 * For items of type [Place], a [geonames] URL, e.g. <http://sws.geonames.org/8152662/>
 * For file formats, a [Pronom] URL, for example <https://www.nationalarchives.gov.uk/PRONOM/fmt/831>.
 

@@ -24,7 +24,7 @@ excerpt: |
 
 # APPENDIX: RO-Crate JSON-LD
 
-It is not necessary to use [JSON-LD tooling](https://json-ld.org/#developers) to generate or parse the _RO-Crate Metadata File_, although JSON-LD tools may make it easier to conform to this specification, e.g. handling relative URIs. It is RECOMMENDED to use JSON tooling to handle [JSON](https://tools.ietf.org/html/rfc7159) syntax and escaping rules.
+It is not necessary to use [JSON-LD tooling] to generate or parse the _RO-Crate Metadata File_, although JSON-LD tools may make it easier to conform to this specification, e.g. handling relative URIs. It is RECOMMENDED to use JSON tooling to handle [JSON][RFC 7159] syntax and escaping rules.
 
 This appendix shows a brief JSON-LD introduction for complying with the _RO-Crate Metadata File_ requirements.
 
@@ -298,6 +298,6 @@ Following the conventions used by Schema.org, ad-hoc terms SHOULD also include d
 It is **not** a requirement to use English for the terms, labels or comments.
 ```
 
-More information about the relationship of this term to other terms MAY be provided using [domainIncludes]("http://schema.org/domainIncludes"), [rangeIncludes](http://schema.org/rangeIncludes), [rdfs:subClassOf](https://www.w3.org/TR/rdf-schema/#ch_subclassof) following the conventions used in the [Schema.org schema](https://schema.org/version/latest/schemaorg-current-http.jsonld).
+More information about the relationship of this term to other terms MAY be provided using [domainIncludes], [rangeIncludes], [rdfs:subClassOf] following the conventions used in the [Schema.org schema].
 
 {% include references.liquid %}

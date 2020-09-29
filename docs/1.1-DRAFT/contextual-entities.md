@@ -80,7 +80,7 @@ A core principle of Linked data is to use URIs to identify things such as people
 }
 ```
 
-This uses an [ORCID](https://orcid.org/) to unambiguously identify an author, with a _Contextual Entity_ of type [Person].
+This uses an [ORCID] to unambiguously identify an author, with a _Contextual Entity_ of type [Person].
 
 Note the string-value of the organizational affiliation. This SHOULD be improved by also providing a _Contextual Entity_ for the organization (see example below).
 
@@ -212,7 +212,7 @@ The publication SHOULD be described in the _RO-Crate JSON-LD_.
 
 ## Publisher
 
-The [Root Data Entity](root-data-entity.md) SHOULD have a [publisher](http://schema.org/publisher) property. This SHOULD be an [Organization](http://schema.org/Organization) though it MAY be a [Person](http://schema.org/Person).
+The [Root Data Entity](root-data-entity.md) SHOULD have a [publisher] property. This SHOULD be an [Organization] though it MAY be a [Person].
 
 
 ```json
@@ -341,7 +341,7 @@ The below _Data Entity_ has a [copyrightHolder] which is different from its [aut
 
 In some cases the license of the [RO-Crate metadata](root-data-entity.md) (the JSON-LD statements in the _RO-Crate Metadata File Descriptor_) is different from the license on the [Root Data Entity](root-data-entity.md) and its content (_data entities_ indicated by [hasPart]). 
 
-For instance, a common pattern for repositories is to license metadata as [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/), while data is licensed as [CC-BY](https://creativecommons.org/licenses/by/4.0/) or similar.  This pattern allow metadata to be combined freely (e.g. the DataCite knowledge graph), while redistribution of data files would require explicit attribution and statement of their license.
+For instance, a common pattern for repositories is to license metadata as [CC0 Public Domain Dedication][CC0], while data is licensed as [CC-BY] or similar.  This pattern allow metadata to be combined freely (e.g. the DataCite knowledge graph), while redistribution of data files would require explicit attribution and statement of their license.
 
 To express the metadata license is different from the _Root Data Entity_, expand the _RO-Crate Metadata File Descriptor_  to include `license`:
 
@@ -402,7 +402,7 @@ In some cases, the JSON-LD metadata for some entities have been imported under a
 }
 ```
 
-In the above (abridged) example, there is no explicit license on the _RO-Crate Metadata File Description_, so the _Root Data Entity_ license [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0) would apply to RO-Crate JSON-LD statements, except for the statements on the imported <http://sws.geonames.org/8152662/>,  which metadata is re-distributed under license <https://creativecommons.org/licenses/by/4.0/>. 
+In the above (abridged) example, there is no explicit license on the _RO-Crate Metadata File Description_, so the _Root Data Entity_ license [GPL 3.0] would apply to RO-Crate JSON-LD statements, except for the statements on the imported <http://sws.geonames.org/8152662/>,  which metadata is re-distributed under license <https://creativecommons.org/licenses/by/4.0/>. 
 
 In this example the CC-BY license requires retaining "a notice that refers to this Public License" and "identification of the creator(s) of the Licensed Material", here respected using `sdLicense` and `sdPublisher`.  
 
@@ -415,7 +415,7 @@ As the RO-Crate uses _flattened_ JSON-LD, `sdLicense` should be expressed direct
 
 ## Extra metadata such as Exif
 
-Schema.org has a generic extension mechanism for encoding arbitrary properties and values which are not available as Schema.org properties. An example of of this is the Schema.org [recommended way (see example 2)](http://schema.org/ImageObject) of including [Exif](https://en.wikipedia.org/wiki/Exif) technical image metadata.
+Schema.org has a generic extension mechanism for encoding arbitrary properties and values which are not available as Schema.org properties. An example of of this is the Schema.org [recommended way (see example 2)][ImageObject] of including [Exif] technical image metadata.
 
 To include EXIF, or other data which can be encoded as property/value pairs, add an array of references to _Anonymous Entities_ which encode each property. This example shows one property of several hundred.
 
@@ -451,7 +451,7 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
 
 To associate a [Data Entity](data-entities.md) with a _Contextual Entity_ representing a _geographical location or region_ the entity SHOULD have a property of [contentLocation] with a value of type [Place].
 
-This example shows how to define a place, using a [geonames](https://www.geonames.org) ID:
+This example shows how to define a place, using a [geonames] ID:
 
 
 ```json
@@ -475,7 +475,7 @@ This example shows how to define a place, using a [geonames](https://www.geoname
 <!--... -->
 ```
 
-The place has a [geo](http://schema.org/geo) property, referencing an _Contextual Entity_ of `@type` [GeoCoordinates]:
+The place has a [geo] property, referencing an _Contextual Entity_ of `@type` [GeoCoordinates]:
 
 
 ```json
@@ -513,7 +513,7 @@ And the place is referenced from the [contentLocation] property of the dataset.
 ```
 
 
-[Place] MAY use any of the [resources available in Schema.org](http://schema.org/geo) to describe places. Future profiles of RO-Crate may mandate the use of a subset of these. Any directory or file or _Contextual Entity_ may be geo-located. For example this file:
+[Place] MAY use any of the [resources available in Schema.org][geo] to describe places. Future profiles of RO-Crate may mandate the use of a subset of these. Any directory or file or _Contextual Entity_ may be geo-located. For example this file:
 
 
 ```json
@@ -561,9 +561,9 @@ To describe the _time period_ which a RO-Crate [Data Entity](date-entities.md) (
 
 A [File] or any other item MAY have a [thumbnail] property which references another file.
 
-For example, the below [RepositoryObject](https://pcdm.org/2016/04/18/models#Object) is related to four files which are all versions of the same image (via [hasFile](https://pcdm.org/2016/04/18/models#hasFile)) one of which is a thumbnail. The thumbnail MUST be included in the RO-Crate.
+For example, the below [RepositoryObject] is related to four files which are all versions of the same image (via [hasFile]) one of which is a thumbnail. The thumbnail MUST be included in the RO-Crate.
 
-If [thumbnail]s are incidental to the data set, they need not be referenced by [hasPart](http://schema.org/hasPart) or [hasFile](https://pcdm.org/2016/04/18/models#hasFile) relationships. but must be in the BagIt manifest if in a _Bagged RO-Crate_.
+If [thumbnail]s are incidental to the data set, they need not be referenced by [hasPart]  or [hasFile] relationships. but must be in the BagIt manifest if in a _Bagged RO-Crate_.
 
 
 ```json
