@@ -140,7 +140,7 @@ It can be beneficial to show a diagram or sketch to explain the script/workflow.
 }
 ```
 
-The image file format SHOULD be indicated with [encodingFormat] using an IANA registered [media type] like `image/svg+xml` or `image/png`. Additionally a reference to [Pronom] identifier SHOULD be provided, which MAY be described as an additional contextual entity to give human-readable name to the format:
+The image file format SHOULD be indicated with [encodingFormat] using an IANA registered [media type] like `image/svg+xml` or `image/png`. Additionally a reference to a [Pronom] identifier SHOULD be provided, which MAY be described as an additional contextual entity to give human-readable name to the format:
 
 ```json
 {
@@ -170,14 +170,14 @@ A workflow diagram may still be provided even if there is no programmatic `Softw
 To comply with the BioSchemas [ComputationalWorkflow profile],
 where possible, data entities representing _workflows_ SHOULD describe these properties and their related contextual entities:
 
-* [name] giving a short descriptive name of the workflow
+* [name] giving a short descriptive human-readable name for the workflow
 * [programmingLanguage] identifying the workflow system, typed as `ProgrammingLanguage`
-* [creator] identifying the [Person](s) and/or [Organization](s) that made the workflow. (This may differ from the [author] of the conceptual workflow, e.g. if the workflow was converted from one language to another).
-* [dateCreated] the date the workflow was first made, e.g. `2020-05-23`
-* [license] identifying a [CreativeWork] that details license for distributing or editing the workflow
+* [creator] identifying the [Person](s) and/or [Organization](s) that assembled the workflow. (This may differ from the [author] of the conceptual workflow, e.g. if the workflow was converted from one language to another).
+* [dateCreated] the date the workflow was first created, e.g. `2020-05-23`
+* [license] identifying a [CreativeWork] that details the license for distributing or editing the workflow
 * [input] and [output] identifying contextual entities for the [FormalParameter] describing input and output parameters/variables that may be varied on different workflow executions
 * [sdPublisher] to identify the [Person] or [Organization] who has made the JSON-LD description of the workflow
-* [url] to identify a public page or source code repository for the workflow
+* [url] to identify a public webpage or source code repository for the workflow
 * [version] to indicate the released version of this workflow file
 
 Contextual entities for [FormalParameter], referenced by `input` or `output`, SHOULD describe:
