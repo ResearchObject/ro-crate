@@ -157,7 +157,7 @@ To check which RO-Crate version is used (in terms of properties and types expect
 RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded context, but MAY use the [JSON-LD flattening] algorithm with _compaction_ to a referenced _RO-Crate JSON-LD context_ (but see notes on [handling relative URI references](#handling-relative-uri-references) below).
 
 ```tip
-The [JSON-LD flattening & compaction][JSON-LD flattening] algorithms can be used to rewrite to a different `@context`, e.g. to `https://schema.org/docs/jsonldcontext.jsonld` or a different version of the _RO-Crate JSON-LD Context_.
+The [JSON-LD flattening & compaction](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) algorithms can be used to rewrite to a different `@context`, e.g. to `https://schema.org/docs/jsonldcontext.jsonld` or a different version of the _RO-Crate JSON-LD Context_.
 ```
 
 ## RO-Crate JSON-LD Media type

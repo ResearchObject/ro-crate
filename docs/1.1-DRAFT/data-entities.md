@@ -261,10 +261,10 @@ File Data Entities may already have a corresponding web presence, for instance a
 
 These can be included for File Data Entities as additional metadata, regardless of if the File is included in the _RO-Crate Root_ directory or exists on the Web, by using properties:
 
-* `identifier` for formal identifier string such as DOIs
-* `url` with a string URL for a *download* link (if not available, a download landing page) for this file
-* `subjectOf` to a `CreativeWork` (or `WebPage`) that mentions this file or its content (but also other resources).
-* `mainEntityOfPage` to a `CreativeWork`  (or `WebPage`) that primarily describes this file (or its content) 
+* [identifier] for formal identifier string such as DOIs
+* [url] with a string URL for a *download* link (if not available, a download landing page) for this file
+* [subjectOf] to a [CreativeWork] (or [WebPage]) that mentions this file or its content (but also other resources).
+* [mainEntityOfPage] to a [CreativeWork]  (or [WebPage]) that primarily describes this file (or its content) 
 
 ```json
   {

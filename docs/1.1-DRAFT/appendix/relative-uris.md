@@ -242,7 +242,7 @@ When loading _RO-Crate JSON-LD_ as RDF, or combining the crate's Linked Data int
 to resolve URI references that are relative to the _RO-Crate Root_.
 
 ```note
-Note that when retrieving an RO-Crate over the web, servers might have performed HTTP redirections so that the base URI is different from what was requested. It is RECOMMENDED to follow section [Establishing a Base URI of RFC3986][RFC3986 base URI] before resolving relative links from the _RO-Crate Metadata File_.
+Note that when retrieving an RO-Crate over the web, servers might have performed HTTP redirections so that the base URI is different from what was requested. It is RECOMMENDED to follow section [Establishing a Base URI of RFC3986](http://tools.ietf.org/html/rfc3986#section-5.1) before resolving relative links from the _RO-Crate Metadata File_.
 ```
 
 For instance, consider this HTTP redirection from a permalink (simplified):
@@ -288,7 +288,10 @@ Content-Type: application/ld+json
 }
 ```
 
-Following redirection we see that the _base URI_ of the _RO-Crate Metadata File_ becomes `https://www.researchobject.org/ro-crate/1.0/ro-crate-metadata.jsonld`, and therefore the absolute URI for `index.html` is `https://www.researchobject.org/ro-crate/1.0/index.html` rather than `https://w3id.org/ro/crate/1.0/index.html` which would not redirect correctly.
+Following redirection we see that:
+* _Base URI_ of the _RO-Crate Metadata File_ becomes `https://www.researchobject.org/ro-crate/1.0/ro-crate-metadata.jsonld`
+* The absolute URI for `index.html` resolves to `https://www.researchobject.org/ro-crate/1.0/index.html` 
+  * ..rather than `https://w3id.org/ro/crate/1.0/index.html` which would not redirect correctly
 
 This example also use RO-Crate 1.0, where the _RO-Crate Metadata File_ is called `ro-crate-metadata.jsonld` instead of `ro-crate-metadata.json`. Note that the recommended
 [algorithm to find the Root Data Entity](#core-metadata-for-the-root-data-entity)
@@ -383,7 +386,7 @@ If a web-based URI for the _RO-Crate root_ is known, then this can be supplied a
 
 Parsing this will generate triples like below using `http://example.com/crate255/` as the _RO-Crate Root_ (shortened):
 
-```
+```turtle
 <http://example.com/crate255/ro-crate-metadata.json> <http://purl.org/dc/terms/conformsTo> <https://w3id.org/ro/crate/1.1-DRAFT> .
 
 <http://example.com/crate255/ro-crate-metadata.json> <http://schema.org/about> <http://example.com/crate255/> .
