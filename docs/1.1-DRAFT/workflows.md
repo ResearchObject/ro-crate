@@ -140,7 +140,7 @@ It can be beneficial to show a diagram or sketch to explain the script/workflow.
 }
 ```
 
-The image file format SHOULD be indicated with [encodingFormat] using an IANA registered [media type](https://www.iana.org/assignments/media-types) like `image/svg+xml` or `image/png`. Additionally a reference to [Pronom] identifier SHOULD be provided, which MAY be described as an additional contextual entity to give human-readable name to the format:
+The image file format SHOULD be indicated with [encodingFormat] using an IANA registered [media type] like `image/svg+xml` or `image/png`. Additionally a reference to [Pronom] identifier SHOULD be provided, which MAY be described as an additional contextual entity to give human-readable name to the format:
 
 ```json
 {
@@ -167,7 +167,7 @@ A workflow diagram may still be provided even if there is no programmatic `Softw
 
 ## Complying with BioSchemas Computational Workflow profile
 
-To comply with the [BioSchemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/),
+To comply with the BioSchemas [ComputationalWorkflow profile],
 where possible, data entities representing _workflows_ SHOULD describe these properties and their related contextual entities:
 
 * [name] giving a short descriptive name of the workflow
@@ -198,7 +198,7 @@ TODO: Update requirements from BioSchemas profile Workflow 0.5
 
 ## Complete Workflow Example
 
-The below is an example of an RO-Crate complying with the [BioSchemas ComputationalWorkflow profile 0.5](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/):
+The below is an example of an RO-Crate complying with the [BioSchemas ComputationalWorkflow profile 0.5][ComputationalWorkflow profile]:
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context", 

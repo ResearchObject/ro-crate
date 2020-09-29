@@ -154,16 +154,16 @@ While the second form is more verbose, one advantage is that it is "archivable" 
 
 To check which RO-Crate version is used (in terms of properties and types expected), clients SHOULD check the property `conformsTo` on the _RO-Crate Metadata File Descriptor_ rather than the value of `@context`.
 
-RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded context, but MAY use the [JSON-LD flattening](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) algorithm with _compaction_ to a referenced _RO-Crate JSON-LD context_ (but see notes on [handling relative URI references](#handling-relative-uri-references) below).
+RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded context, but MAY use the [JSON-LD flattening] algorithm with _compaction_ to a referenced _RO-Crate JSON-LD context_ (but see notes on [handling relative URI references](#handling-relative-uri-references) below).
 
 ```tip
-The [JSON-LD flattening & compaction](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) algorithms can be used to rewrite to a different `@context`, e.g. to `https://schema.org/docs/jsonldcontext.jsonld` or a different version of the _RO-Crate JSON-LD Context_.
+The [JSON-LD flattening & compaction][JSON-LD flattening] algorithms can be used to rewrite to a different `@context`, e.g. to `https://schema.org/docs/jsonldcontext.jsonld` or a different version of the _RO-Crate JSON-LD Context_.
 ```
 
 ## RO-Crate JSON-LD Media type
 
 The [media type][RFC 6838] for `ro-crate-metadata.json` will, when following this specification, comply
-with the [flattened/compacted JSON-LD profiles](https://www.w3.org/TR/json-ld/#application-ld-json) as well as `https://w3id.org/ro/crate`, which may be indicated in a [HTTP response](https://tools.ietf.org/html/rfc7231#section-3.1.1.5) as:
+with the [flattened/compacted JSON-LD profiles][JSON-LD media type] as well as `https://w3id.org/ro/crate`, which may be indicated in a [HTTP response][RFC7231 response] as:
 
 ```http
 HEAD http://example.com/ro-123/ro-crate-metadata.json HTTP/1.1
@@ -213,7 +213,7 @@ The terms (properties and classes) used SHOULD be added as keys to the `@context
 
 URIs in the `@context` SHOULD resolve to a useful human readable page. Where this is not possible - for example if the URI resolves to an RDF ontology file, a human-readable URI SHOULD be provided using a [sameAs] description.
 
-For example. The `@id` URI <http://purl.org/ontology/bibo/interviewee> from the [BIBO ontology](http://neologism.ecs.soton.ac.uk/bibo.html) ontology itends to resolve to an ontology file, which is not useful for humans, however the HTML section <http://neologism.ecs.soton.ac.uk/bibo.html#interviewee> is human-readable.
+For example. The `@id` URI <http://purl.org/ontology/bibo/interviewee> from the [BIBO ontology] ontology intends to resolve to an ontology file, which is not useful for humans, however the HTML section <http://neologism.ecs.soton.ac.uk/bibo.html#interviewee> is human-readable.
 
 
 ```json
@@ -261,7 +261,7 @@ For projects that have their own web-presence, URLs MAY defined and SHOULD resol
 Ensure you have consistent use of `http` or `https` (preferring https) as well as consistent path `/vocab` vs `/vocab/` vs `/vocab/index.html` (preferring the shortest that is also visible in browser).
 ```
 
-For ad hoc terms where the crate author does not have the resources to put up an HTML page, an ad-hoc URL MAY be used in the form `https://w3id.org/ro/terms/criminalcharacters/education` where `criminalcharacters` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions](https://github.com/ResearchObject/ro-terms) to the RO-Crate project. 
+For ad hoc terms where the crate author does not have the resources to put up an HTML page, an ad-hoc URL MAY be used in the form `https://w3id.org/ro/terms/criminalcharacters/education` where `criminalcharacters` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions][ro-terms] to the RO-Crate project. 
 
 In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in the local context:
 

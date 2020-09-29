@@ -160,7 +160,7 @@ An Action SHOULD have a human [agent] who was responsible for authorizing the ac
 
 An Action's status MAY be recorded in an [actionStatus] property. The status must be one of the values enumerated by [ActionStatusType]: [ActiveActionStatus], [CompletedActionStatus], [FailedActionStatus] or [PotentialActionStatus].
 
-An Action which has failed MAY record any error information in an [error](http://schema.org/error) property.
+An Action which has failed MAY record any error information in an [error] property.
 
 [UpdateAction] SHOULD only be used for actions which affect the DataSet as a whole, such as movement through a workflow.
 
@@ -230,15 +230,15 @@ To record curation actions which modify a [File] within a DataSet - for example,
 
 To describe an export from a Digital Library or repository system, RO-Crate uses the _Portland Common Data Model_ ([PCDM]). 
 
-A [Contextual Entity](contextual-entities.md) from a repository, representing an abstract entity such as a person, or a work, or a place SHOULD have a`@type` of [RepositoryObject](https://pcdm.org/2016/04/18/models#Object), in addition to any other types. 
+A [Contextual Entity](contextual-entities.md) from a repository, representing an abstract entity such as a person, or a work, or a place SHOULD have a`@type` of [RepositoryObject], in addition to any other types. 
 
-Objects MAY be grouped together in [RepositoryCollection](https://pcdm.org/2016/04/18/models#Collection)s with [hasMember] pointing to the the [RepositoryObject](https://pcdm.org/2016/04/18/models#Object). The aliases `RepositoryObject` and `RepositoryCollection` were chosen to avoid collision between the PCDM terms <del>Collection</del> and <del>Object</del> with other vocabularies.
+Objects MAY be grouped together in [RepositoryCollection]s with [hasMember] pointing to the the [RepositoryObject]. The aliases `RepositoryObject` and `RepositoryCollection` were chosen to avoid collision between the PCDM terms <del>Collection</del> and <del>Object</del> with other vocabularies.
 
 ```warning
 PCDM specifies that files should have only technical metadata, not descriptive metadata, which is _not_ a restriction in RO-Crate. If the RO-Crate is to be imported into a strict PCDM repository, modeling of object/file relationships will be necessary.
 ```
 
-For example, this data is exported from an [Omeka](https://omeka.org) repository:
+For example, this data is exported from an [Omeka] repository:
 
 
 ```json
@@ -278,8 +278,7 @@ For example, this data is exported from an [Omeka](https://omeka.org) repository
    "publisher": { "@id": "https://westernsydney.edu.au"},
    "rights": "Copyright University of Western Sydney 2015",
    "originalFormat": "Paper",
-   "identifier": "FTF_flier_illust"
-   ],
+   "identifier": "FTF_flier_illust",   
    "rightsHolder": [
       "Western Sydney University"
    ],

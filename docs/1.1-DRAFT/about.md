@@ -29,7 +29,7 @@ excerpt: |
 * Permalink: <https://w3id.org/ro/crate/1.1>
 * Status: Recommendation
 * Published: 2019-11-15
-* Publisher: [researchobject.org](http://researchobject.org/) community
+* Publisher: [researchobject.org](https://www.researchobject.org/) community
 END NOTE -->
 * Status: Editor's Draft
 * JSON-LD context: <https://w3id.org/ro/crate/1.1-DRAFT/context>

@@ -408,7 +408,7 @@ In this example the CC-BY license requires retaining "a notice that refers to th
 
 As the RO-Crate uses _flattened_ JSON-LD, `sdLicense` should be expressed directly on each data/contextual entities where required. 
 
-**Tip**: If metadata is imported from a source licensed as [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/), no `sdLicense` statement is required.
+**Tip**: If metadata is imported from a source licensed as [CC0 Public Domain Dedication][CC0], no `sdLicense` statement is required.
 
 -->
 

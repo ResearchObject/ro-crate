@@ -25,7 +25,7 @@ sort: 6
 
 # Core Metadata for the Root Data Entity
 
-The _Root Data Entity_ is a [Dataset] that represent the RO-Crate as a whole;
+The **Root Data Entity** is a [Dataset] that represent the RO-Crate as a whole;
 a _Research Object_ that includes the _Data Entities_ and the related
 _Contextual Entities_.
 
@@ -36,7 +36,7 @@ the _RO-Crate root_ directory.
 ## RO-Crate Metadata File Descriptor
 
 The _RO-Crate JSON-LD_ MUST contain a self-describing
-_RO-Crate Metadata File Descriptor_ with
+**RO-Crate Metadata File Descriptor** with
 the `@id` value `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` in legacy
 crates) and `@type` [CreativeWork]. This descriptor MUST have an [about]
 property referencing the _Root Data Entity_, which SHOULD have an `@id` of `./`.
@@ -84,16 +84,18 @@ be considered a _Valid RO-Crate_, a minimum set of metadata is required for the
 _Root Data Entity_. As stated above the _RO-Crate Metadata File_ is not an
 exhaustive manifest or inventory, that is, it does not necessarily list or
 describe all files in the package. For this reason, there are no minimum
-metadata requirements in terms of describing _Data Entities_ (files and folders)
+metadata requirements in terms of describing [Data Entities](data-entities.md) (files and folders)
 other than the _Root Data Entity_. Extensions of RO-Crate dealing with specific
 types of dataset may put further constraints or requirements of metadata beyond
-the Root Data Entity (see Extending RO-Crate below).
+the Root Data Entity (see the appendix [Extending RO-Crate](appendix/jsonld.md#extending-ro-crate)).
 
 The _RO-Crate Metadata File Descriptor_ MAY contain information such as
 licensing for the _RO-Crate Metadata File_ so metadata can be licensed
 separately from Data.
 
-The table below outlines the properties that the _Root Data Entity_ MUST have to be minimally valid and additionally highlights properties required to meet other common use-cases, including the minimum metadata necessary to mint a DataCite DOI:
+The table below outlines the properties that the _Root Data Entity_ MUST have to
+be minimally valid and additionally highlights properties required to meet other
+common use-cases, including the minimum metadata necessary to mint a DataCite DOI:
 
 ## Direct properties of the Root Data Entity
 
@@ -108,12 +110,12 @@ The _Root Data Entity_ MUST have the following properties:
 
 ```note
 These requirements are stricter than those published for
-[Google Dataset Search](https://developers.google.com/search/docs/data-types/dataset)
+[Google Dataset Search]
 which requires a `Dataset` to have a `name` and `description`,
 ```
 
 ```warning
-The properties above are not sufficient to generate a [DataCite](https://schema.datacite.org/) citation. Advice on integrating with DataCite will be provided in a future version of this specification, or as an implementation guide.
+The properties above are not sufficient to generate a [DataCite] citation. Advice on integrating with DataCite will be provided in a future version of this specification, or as an implementation guide.
 ```
 
 ## Minimal example of RO-Crate
