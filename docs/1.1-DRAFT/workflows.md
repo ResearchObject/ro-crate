@@ -482,9 +482,23 @@ https://kramdown.gettalong.org/syntax.html#reference-links
 [valueRequired]: http://schema.org/valueRequired
 [version]: http://schema.org/version
 
+[creativeWorkStatus]: http://schema.org/creativeWorkStatus
+[funding]: https://github.com/schemaorg/schemaorg/pull/2618
+[isBasedOn]: http://schema.org/isBasedOn
+[maintainer]: http://schema.org/maintainer
+[producer]: http://schema.org/producer
+[runtimePlatform]: http://schema.org/runtimePlatform
+[softwareRequirements]: http://schema.org/softwareRequirements
+[targetProduct]: http://schema.org/targetProduct
+[conditionsOfAccess]: http://schema.org/conditionsOfAccess
+[dateModified]: http://schema.org/dateModified
+[image]: http://schema.org/image
+
 [input]: https://bioschemas.org/types/ComputationalWorkflow/0.1-DRAFT-2020_07_21/#input
 [output]: https://bioschemas.org/types/ComputationalWorkflow/0.1-DRAFT-2020_07_21/#output
 [FormalParameter]: https://bioschemas.org/types/FormalParameter/0.1-DRAFT-2020_07_21/
+[ComputationalWorkflow]: https://bioschemas.org/types/ComputationalWorkflow/0.1-DRAFT-2020_07_21/
+
 
 [RFC 2119]: https://tools.ietf.org/html/rfc2119
 [RFC 3986]: https://tools.ietf.org/html/rfc3986
