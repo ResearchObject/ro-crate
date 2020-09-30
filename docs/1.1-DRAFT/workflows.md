@@ -25,6 +25,8 @@ sort: 10
    limitations under the License.
 -->
 
+<div id="workflows"></div>
+
 # Workflows and Scripts
 
 Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an RO-Crate MAY be embedded in an RO-Crate. _Workflows_ and _scripts_ SHOULD be described using [data entities](data-entities.md) of type [SoftwareSourceCode].
@@ -146,7 +148,7 @@ It can be beneficial to show a diagram or sketch to explain the script/workflow.
 }
 ```
 
-The image file format SHOULD be indicated with [encodingFormat] using an IANA registered [media type] like `image/svg+xml` or `image/png`. Additionally a reference to [Pronom] identifier SHOULD be provided, which MAY be described as an additional contextual entity to give human-readable name to the format:
+The image file format SHOULD be indicated with [encodingFormat] using an IANA registered [media type] like `image/svg+xml` or `image/png`. Additionally a reference to a [Pronom] identifier SHOULD be provided, which MAY be described as an additional contextual entity to give human-readable name to the format:
 
 ```json
 {
@@ -179,11 +181,11 @@ BioSchemas [ComputationalWorkflow profile],
 where possible. When complying with this profile, the workflow data entities
 MUST describe these properties and their related contextual entities:
 
-* [name] giving a short descriptive name of the workflow
+* [name] giving a short descriptive human-readable name for the workflow
 * [programmingLanguage] identifying the workflow system, typed as `ProgrammingLanguage`
-* [creator] identifying the [Person](s) and/or [Organization](s) that made the workflow. (This may differ from the [author] of the conceptual workflow, e.g. if the workflow was converted from one language to another).
-* [dateCreated] the date the workflow was first made, e.g. `2020-05-23`
-* [license] identifying a [CreativeWork] that details license for distributing or editing the workflow
+* [creator] identifying the [Person](s) and/or [Organization](s) that assembled the workflow. (This may differ from the [author] of the conceptual workflow, e.g. if the workflow was converted from one language to another).
+* [dateCreated] the date the workflow was first created, e.g. `2020-05-23`
+* [license] identifying a [CreativeWork] that details the license for distributing or editing the workflow
 * [input] and [output] identifying contextual entities for the [FormalParameter] describing input and output parameters/variables that may be varied on different workflow executions
 * [sdPublisher] to identify the [Person] or [Organization] who has made this JSON-LD description of the workflow
 * [url] to identify a public page or source code repository for the workflow

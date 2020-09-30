@@ -28,6 +28,7 @@ jekyll-mentions: false
    limitations under the License.
 -->
 
+<div id="contextual-entities"></div>
 
 # Representing Contextual Entities
 
