@@ -257,11 +257,11 @@ A files on the web may change, the timestamp property `sdDatePublished` SHOULD b
 
 ### Embedded data entities that are also on the web
 
-File Data Entities may already have a corresponding web presence, for instance a landing page that describes the file, including persistent identifiers (e.g. DOI) that goes to an intermediate HTML page instead of the downloadable file directly. 
+File Data Entities may already have a corresponding web presence, for instance a landing page that describes the file, including persistent identifiers (e.g. DOI) that resolves to an intermediate HTML page instead of the downloadable file directly. 
 
-These can be included for File Data Entities as additional metadata, regardless of if the File is included in the _RO-Crate Root_ directory or exists on the Web, by using properties:
+These can be included for File Data Entities as additional metadata, regardless of whether the File is included in the _RO-Crate Root_ directory or exists on the Web, by using properties:
 
-* [identifier] for formal identifier string such as DOIs
+* [identifier] for formal identifier strings such as DOIs
 * [url] with a string URL for a *download* link (if not available, a download landing page) for this file
 * [subjectOf] to a [CreativeWork] (or [WebPage]) that mentions this file or its content (but also other resources).
 * [mainEntityOfPage] to a [CreativeWork]  (or [WebPage]) that primarily describes this file (or its content) 
@@ -285,7 +285,7 @@ These can be included for File Data Entities as additional metadata, regardless 
 
 ### Directories on the web; dataset distributions
 
-A _Directory File Entry_ or [Dataset] identifier by an absolute URL on the web can be harder to download than a [File] because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in [hasPart], enabling download traversal.
+A _Directory File Entry_ or [Dataset] identifier expressed as an absolute URL on the web can be harder to download than a [File] because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in [hasPart], enabling download traversal.
 
 Alternatively a common mechanism to provide downloads of a reasonably sized directory is as an archive file in formats like `.zip` or `.tar.gz`, described as a [DataDownload]. 
 
@@ -307,7 +307,7 @@ Alternatively a common mechanism to provide downloads of a reasonably sized dire
 
 Similarly, the _RO-Crate root_ entity may also provide a [distribution] URL, in which case the download SHOULD be an archive that contain the _RO-Crate Metadata file_.
 
-In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not be reflecting the current state of the `Dataset` or RO-Crate.
+In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not reflect the current state of the `Dataset` or RO-Crate.
 
 
 {% include references.liquid %}
