@@ -92,7 +92,6 @@ release/ro-crate-${TAG}.md: dependencies release/ docs/${RELEASE}/_metadata.liqu
 	   docs/${RELEASE}/appendix/*.md docs/_includes/references.liquid docs/${RELEASE}/.references.md |\
 	   grep -v '{%' > release/ro-crate-${TAG}.md
 	# Fix internal links to work in single-page
-	cp release/ro-crate-${TAG}.md release/ro-crate-${TAG}.md.orig
 	sed -i -E 's,]\(([^:)]*/)*([^:)]*)\.md\),](#\2),g' release/ro-crate-${TAG}.md
 	sed -i -E 's,]\([^):]*\.md#([^)]*)\),](#\1),g' release/ro-crate-${TAG}.md
 
