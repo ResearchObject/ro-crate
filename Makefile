@@ -34,24 +34,36 @@ docs/${RELEASE}/:
 	mkdir -p docs/${RELEASE}/
 
 docs/${RELEASE}/_metadata.liquid: docs/${RELEASE}/ docs/${DRAFT}/_metadata.liquid
-	cp docs/${DRAFT}/_metadata.liquid docs/${RELEASE}/_metadata.liquid
+	sed s/${DRAFT}/${RELEASE}/g < docs/${DRAFT}/_metadata.liquid > docs/${RELEASE}/_metadata.liquid
 	sed -i "/^<!-- NOTE: Before release.*/ d" docs/${RELEASE}/_metadata.liquid
 	sed -i "/^END NOTE -->/ d" docs/${RELEASE}/_metadata.liquid
 	sed -i "s/^* Status:.*/* Status: Recommendation/" docs/${RELEASE}/_metadata.liquid
 	sed -i "s/^* Published:.*/* Published: `date -I`/" docs/${RELEASE}/_metadata.liquid
 	sed -i "s,^* Cite as:.*,* Cite as: <https://doi.org/${DOI}> (this version)," docs/${RELEASE}/_metadata.liquid
+	
 
-docs/${RELEASE}/*.md: docs/${RELEASE}/ docs/${DRAFT}/*.md docs/${DRAFT}/_metadata.liquid
+
+docs/${RELEASE}/.references.md: docs/${RELEASE}/ docs/_includes/references.liquid
+	echo "---\ntitle: References\n---\n\n" > docs/${RELEASE}/.references.md
+	echo "# References" >> docs/${RELEASE}/.references.md
+	sed 's,^\[,* \\[,' < docs/_includes/references.liquid | \
+		sed 's,\]: ,\\]: <,' |\
+		sed 's,^\*.*$$,\0>,' \
+		>> docs/${RELEASE}/.references.md
+
+
+docs/${RELEASE}/*.md: docs/${RELEASE}/ docs/${DRAFT}/README.md docs/${DRAFT}/*.md docs/${DRAFT}/_metadata.liquid docs/${RELEASE}/.references.md
 	for f in docs/${DRAFT}/*.md ; do \
-		sed s/${DRAFT}/${RELEASE}/g < $f > docs/${RELEASE}/`basename $f`;\
+		sed s/${DRAFT}/${RELEASE}/g < $$f > docs/${RELEASE}/`basename $$f`;\
     done
+	sed -i "/^exclude:/ d" docs/${RELEASE}/README.md
 
 docs/${RELEASE}/appendix/:
 	mkdir -p docs/${RELEASE}/appendix/
 
 docs/${RELEASE}/appendix/*.md: docs/${RELEASE}/appendix/ docs/${DRAFT}/appendix/*.md
 	for f in docs/${DRAFT}/appendix/*.md ; do \
-		sed s/${DRAFT}/${RELEASE}/g < $f > docs/${RELEASE}/appendix/`basename $f` ;\
+		sed s/${DRAFT}/${RELEASE}/g < $$f > docs/${RELEASE}/appendix/`basename $$f` ;\
 	done
 
 docs/${RELEASE}/ro-crate-metadata.json: docs/${DRAFT}/ro-crate-metadata.json
@@ -71,10 +83,12 @@ docs/${RELEASE}/context.json: dependencies docs/${RELEASE}/ scripts/schema-conte
 release/:
 	mkdir -p release
 
-release/ro-crate-${TAG}.md: dependencies release/ docs/${RELEASE}/*md docs/${RELEASE}/appendix/*.md docs/_includes/references.liquid
+release/ro-crate-${TAG}.md: dependencies release/ docs/${RELEASE}/_metadata.liquid docs/${RELEASE}/.references.md docs/${RELEASE}/*.md docs/${RELEASE}/appendix/*.md docs/_includes/references.liquid
+	cp docs/${RELEASE}/_metadata.liquid docs/${RELEASE}/.metadata.md
 	pandoc --from=markdown+gfm_auto_identifiers --to=markdown+gfm_auto_identifiers \
-	   `grep ^sort: docs/${RELEASE}/*md | sort -n -k 2 | sed s/:.*//` \
-	   docs/${RELEASE}/appendix/* docs/_includes/references.liquid |\
+	   docs/${RELEASE}/.metadata.md \
+	   `grep ^sort: docs/${RELEASE}/*.md | sort -n -k 2 | grep -v README.md| grep -v about.md | sed s/:.*//` \
+	   docs/${RELEASE}/appendix/*.md docs/_includes/references.liquid docs/${RELEASE}/.references.md |\
 	   grep -v '{%' > release/ro-crate-${TAG}.md
 
 release/ro-crate-${TAG}.html: dependencies release/ release/ro-crate-${TAG}.md
