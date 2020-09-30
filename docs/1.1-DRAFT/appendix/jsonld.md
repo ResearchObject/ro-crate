@@ -22,6 +22,8 @@ excerpt: |
    limitations under the License.
 -->
 
+<div id="jsonld"></div>
+
 # APPENDIX: RO-Crate JSON-LD
 
 It is not necessary to use [JSON-LD tooling] to generate or parse the _RO-Crate Metadata File_, although JSON-LD tools may make it easier to conform to this specification, e.g. handling relative URIs. It is RECOMMENDED to use JSON tooling to handle [JSON][RFC 7159] syntax and escaping rules.

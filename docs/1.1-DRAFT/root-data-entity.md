@@ -23,7 +23,7 @@ sort: 6
    limitations under the License.
 -->
 
-# Core Metadata for the Root Data Entity
+# Root Data Entity
 
 The **Root Data Entity** is a [Dataset] that represent the RO-Crate as a whole;
 a _Research Object_ that includes the _Data Entities_ and the related
