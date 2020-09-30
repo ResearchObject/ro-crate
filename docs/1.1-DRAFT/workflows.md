@@ -232,14 +232,13 @@ the _contextual entities_ for [FormalParameter], referenced by `input` or `outpu
 * [encodingFormat] identifying the most specific subtype of [EDAM Format](http://edamontology.org/format_1915) (fallbacks [Binary format](http://edamontology.org/format_2333) or [Textual format](http://edamontology.org/format_2330))
 
 
-The [FormalParameter] contextual entity SHOULD also describe:
+In addition the `FormalParameter` contextual entities SHOULD also include:
 * [description] describing the parameter's expected value range and purpose
 
-The [FormalParameter] contextual entity MAY also describe:
+Contextual entities of type `FormalParameter` MAY also include any of:
 * [valueRequired] `true` if this (input) parameter must be specified to run the workflow, or `false` (default) if parameter is optional.
 * [defaultValue] present if this (input) parameter has a default value. In RO-Crate this SHOULD be in the form of a `"string"` or a `{"@id": "data/entity.txt"}`
 * [identifier] if the parameter has a global identifier that persists across workflows it is used in.
-
 
 <!--
 TODO: Update requirements from BioSchemas profile Workflow 0.5
