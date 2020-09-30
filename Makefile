@@ -33,13 +33,26 @@ node_modules/.bin/makehtml:
 docs/${RELEASE}/:
 	mkdir -p docs/${RELEASE}/
 
-docs/${RELEASE}/index.md: docs/${RELEASE}/ docs/${DRAFT}/index.md
-	sed s/${DRAFT}/${RELEASE}/g < docs/${DRAFT}/index.md > docs/${RELEASE}/index.md
-	sed -i "/^<!-- NOTE: Before release.*/ d" docs/${RELEASE}/index.md
-	sed -i "/^END NOTE -->/ d" docs/${RELEASE}/index.md
-	sed -i "s/^* Status:.*/* Status: Recommendation/" docs/${RELEASE}/index.md
-	sed -i "s/^* Published:.*/* Published: `date -I`/" docs/${RELEASE}/index.md
-	sed -i "s,^* Cite as:.*,* Cite as: <https://doi.org/${DOI}> (this version)," docs/${RELEASE}/index.md
+docs/${RELEASE}/_metadata.liquid: docs/${RELEASE}/ docs/${DRAFT}/_metadata.liquid
+	cp docs/${DRAFT}/_metadata.liquid docs/${RELEASE}/_metadata.liquid
+	sed -i "/^<!-- NOTE: Before release.*/ d" docs/${RELEASE}/_metadata.liquid
+	sed -i "/^END NOTE -->/ d" docs/${RELEASE}/_metadata.liquid
+	sed -i "s/^* Status:.*/* Status: Recommendation/" docs/${RELEASE}/_metadata.liquid
+	sed -i "s/^* Published:.*/* Published: `date -I`/" docs/${RELEASE}/_metadata.liquid
+	sed -i "s,^* Cite as:.*,* Cite as: <https://doi.org/${DOI}> (this version)," docs/${RELEASE}/_metadata.liquid
+
+docs/${RELEASE}/*.md: docs/${RELEASE}/ docs/${DRAFT}/*.md docs/${DRAFT}/_metadata.liquid
+	for f in docs/${DRAFT}/*.md ; do \
+		sed s/${DRAFT}/${RELEASE}/g < $f > docs/${RELEASE}/`basename $f`;\
+    done
+
+docs/${RELEASE}/appendix/:
+	mkdir -p docs/${RELEASE}/appendix/
+
+docs/${RELEASE}/appendix/*.md: docs/${RELEASE}/appendix/ docs/${DRAFT}/appendix/*.md
+	for f in docs/${DRAFT}/appendix/*.md ; do \
+		sed s/${DRAFT}/${RELEASE}/g < $f > docs/${RELEASE}/appendix/`basename $f` ;\
+	done
 
 docs/${RELEASE}/ro-crate-metadata.json: docs/${DRAFT}/ro-crate-metadata.json
 	sed s/${DRAFT}/${RELEASE}/g < docs/${DRAFT}/ro-crate-metadata.json > docs/${RELEASE}/ro-crate-metadata.json
@@ -58,14 +71,20 @@ docs/${RELEASE}/context.json: dependencies docs/${RELEASE}/ scripts/schema-conte
 release/:
 	mkdir -p release
 
-release/ro-crate-${TAG}.html: dependencies release/ docs/${RELEASE}/index.md
-	egrep -v '^{:(\.no_)?toc}' docs/${RELEASE}/index.md | \
+release/ro-crate-${TAG}.md: dependencies release/ docs/${RELEASE}/*md docs/${RELEASE}/appendix/*.md docs/_includes/references.liquid
+	pandoc --from=markdown+gfm_auto_identifiers --to=markdown+gfm_auto_identifiers \
+	   `grep ^sort: docs/${RELEASE}/*md | sort -n -k 2 | sed s/:.*//` \
+	   docs/${RELEASE}/appendix/* docs/_includes/references.liquid |\
+	   grep -v '{%' > release/ro-crate-${TAG}.md
+
+release/ro-crate-${TAG}.html: dependencies release/ release/ro-crate-${TAG}.md
+	egrep -v '^{:(\.no_)?toc}' release/ro-crate-${TAG}.md | \
 	pandoc --standalone --number-sections --toc --section-divs \
 	  --metadata pagetitle="RO-Crate Metadata Specification ${RELEASE}" \
 	  --from=markdown+gfm_auto_identifiers -o release/ro-crate-${TAG}.html
 
-release/ro-crate-${TAG}.pdf: dependencies release/ docs/${RELEASE}/index.md
-	egrep -v '^{:(\.no_)?toc}' docs/${RELEASE}/index.md | \
+release/ro-crate-${TAG}.pdf: dependencies release/ release/ro-crate-${TAG}.md
+	egrep -v '^{:(\.no_)?toc}' release/ro-crate-${TAG}.md | \
 	pandoc --pdf-engine xelatex --variable=hyperrefoptions:colorlinks=true,allcolors=blue \
 	  --variable papersize=a4 \
 	  --number-sections --toc  --metadata pagetitle="RO-Crate Metadata Specification ${RELEASE}" \
