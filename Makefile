@@ -71,7 +71,7 @@ docs/${RELEASE}/ro-crate-metadata.json: docs/${DRAFT}/ro-crate-metadata.json
 	sed -i "s/UNPUBLISHED/`date -I`/g" docs/${RELEASE}/ro-crate-metadata.json
 	sed -i "s/TAG/${TAG}/g" docs/${RELEASE}/ro-crate-metadata.json
 	sed -i "s,DOI,${DOI},g" docs/${RELEASE}/ro-crate-metadata.json
-	sed -i "s,ZENODO,`echo ${DOI}|sed s/10.5281/zenodo.//`,g" docs/${RELEASE}/ro-crate-metadata.json
+	sed -i "s;ZENODO;`echo ${DOI}|sed s,10.5281/zenodo.,,`;g" docs/${RELEASE}/ro-crate-metadata.json
 	rm -f docs/${RELEASE}/ro-crate-metadata.jsonld
 	ln -s ro-crate-metadata.json docs/${RELEASE}/ro-crate-metadata.jsonld
 
