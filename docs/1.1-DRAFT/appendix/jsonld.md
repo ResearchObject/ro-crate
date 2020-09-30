@@ -84,7 +84,7 @@ The below example shows the overall structure of a flattened, compacted _RO-Crat
 
 **Note**: entities above have been shortened for brevity, see their individual sections elsewhere in this specification.
 
-The order of the `@graph` list is not significant. Above we see that the RO-Crate JSON-LD graph contain the _RO-Crate Metadata File Descriptor_, the _Root Data Entity_, any _Data Entities_ and any _Contextual Entities_.
+The order of the `@graph` list is not significant. Above we see that the RO-Crate JSON-LD graph contains the _RO-Crate Metadata File Descriptor_, the _Root Data Entity_, any _Data Entities_ and any _Contextual Entities_.
 
 
 ## Describing entities in JSON-LD
@@ -213,9 +213,9 @@ To extend RO-Crate, implementers SHOULD try to use existing <http://schema.org/>
 
 The terms (properties and classes) used SHOULD be added as keys to the `@context` in the _RO-Crate JSON-LD_ (if not present). To avoid duplicating the _RO-Crate JSON-LD Context_ the `@context: []` array form SHOULD be used as shown below.
 
-URIs in the `@context` SHOULD resolve to a useful human readable page. Where this is not possible - for example if the URI resolves to an RDF ontology file, a human-readable URI SHOULD be provided using a [sameAs] description.
+URIs in the `@context` SHOULD resolve to a useful human readable page. When this is not possible - for example if the URI resolves to an RDF ontology file, a human-readable URI SHOULD be provided using a [sameAs] description.
 
-For example. The `@id` URI <http://purl.org/ontology/bibo/interviewee> from the [BIBO ontology] ontology intends to resolve to an ontology file, which is not useful for humans, however the HTML section <http://neologism.ecs.soton.ac.uk/bibo.html#interviewee> is human-readable.
+For example. The `@id` URI <http://purl.org/ontology/bibo/interviewee> from the [BIBO ontology] ontology intends to resolve to an ontology file, which is not useful for humans, however the HTML section <http://neologism.ecs.soton.ac.uk/bibo.html#interviewee> is human-readable. To read more about best practices for content negotiation of vocabularies, we refer the reader to <https://www.w3.org/TR/swbp-vocab-pub/>
 
 
 ```json
@@ -248,13 +248,12 @@ RO-Crate provides some strategies to add a new term (a Class or Property) that i
 
 ### Choosing URLs for ad hoc terms
 
-For projects that have their own web-presence, URLs MAY defined and SHOULD resolve to useful content. For example for a project with web page <https://criminalcharacters.com/> the property `education` could have a URL: <https://criminalcharacters.com/vocab/#education> which resolves to an HTML page that explains the term using HTML anchors:
+For projects that have their own web-presence, URLs MAY defined and SHOULD resolve to useful content. For example for a project with web page <https://criminalcharacters.com/> the property `education` could have a URL: <https://criminalcharacters.com/vocab#education> which resolves to an HTML page that explains the term using HTML anchors:
 
 ```html
 <div id="education">
   <h1>Property: education</h1>
-  <p>Literacy of prisoner. Prison authorities would record the prisoner’s statement 
-     as to whether they could read and write …
+  <p>Literacy of prisoner. Prison authorities would record the prisoner’s statement as to whether they could read and write …
   </p>
 </div>
 ```
@@ -263,7 +262,7 @@ For projects that have their own web-presence, URLs MAY defined and SHOULD resol
 Ensure you have consistent use of `http` or `https` (preferring https) as well as consistent path `/vocab` vs `/vocab/` vs `/vocab/index.html` (preferring the shortest that is also visible in browser).
 ```
 
-For ad hoc terms where the crate author does not have the resources to put up an HTML page, an ad-hoc URL MAY be used in the form `https://w3id.org/ro/terms/criminalcharacters/education` where `criminalcharacters` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions][ro-terms] to the RO-Crate project. 
+For ad hoc terms where the crate author does not have the resources to create and maintain an HTML page, authors may use the RO-crate public namespace (`https://w3id.org/ro/terms/`) to reserve their terms. For example, an ad-hoc URL MAY be used in the form `https://w3id.org/ro/terms/criminalcharacters#education` where `criminalcharacters` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions][ro-terms] to the RO-Crate terms project. 
 
 In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in the local context:
 
@@ -271,8 +270,8 @@ In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in
 {
   "@context": [ 
     "https://w3id.org/ro/crate/1.1-DRAFT/context",
-    {"education": "https://criminalcharacters.com/vocab/#education",
-     "interests": "https://w3id.org/ro/terms/school/interests"},
+    {"education": "https://criminalcharacters.com/vocab#education",
+     "interests": "https://w3id.org/ro/terms/criminalcharacters#interests"},
   ],
   "@graph": [ ... ]
 }
