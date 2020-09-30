@@ -501,7 +501,7 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
 The above example provides a media type for the file `cp7glop.ai` - which is
 useful as it may not be apparent that the file readable as a PDF file from the
 extension. To add more detail, encodings SHOULD be linked using a [PRONOM]
-identifier to a _Contextual Entity_ of `@type` Website.
+identifier to a _Contextual Entity_ of `@type` `WebSite`.
 
 ``` json
  {
@@ -514,7 +514,7 @@ identifier to a _Contextual Entity_ of `@type` Website.
   {
     "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19",
     "name": "Acrobat PDF 1.5 - Portable Document Format",
-    "@type": "Website"
+    "@type": "WebSite"
   }
 
 ```
@@ -534,7 +534,7 @@ For example:
     {
     "@id": "https://www.commonwl.org/v1.0/Workflow.html",
     "name": "Common Workflow Language (CWL) Workflow Description, v1.0.2",
-    "@type": "Website"
+    "@type": "WebSite"
   }
 ```
 

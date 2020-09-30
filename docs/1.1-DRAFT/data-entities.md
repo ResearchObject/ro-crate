@@ -109,7 +109,7 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
 The above example provides a media type for the file `cp7glop.ai` - which is
 useful as it may not be apparent that the file readable as a PDF file from the
 extension. To add more detail, encodings SHOULD be linked using a [PRONOM]
-identifier to a _Contextual Entity_ of `@type` Website.
+identifier to a _Contextual Entity_ of `@type` [WebSite].
 
 ``` json
   {
@@ -122,7 +122,7 @@ identifier to a _Contextual Entity_ of `@type` Website.
   {
     "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19",
     "name": "Acrobat PDF 1.5 - Portable Document Format",
-    "@type": "Website"
+    "@type": "WebSite"
   }
 
 ```
@@ -142,7 +142,7 @@ For example:
     {
     "@id": "https://www.commonwl.org/v1.0/Workflow.html",
     "name": "Common Workflow Language (CWL) Workflow Description, v1.0.2",
-    "@type": "Website"
+    "@type": "WebSite"
   }
 ```
 
@@ -176,14 +176,14 @@ In this document the term _URI_ includes international *IRI*s; the _RO-Crate Met
 
 ### File Data Entity
 
-A `File` _Data Entity_ MUST have the following properties:
+A [File] _Data Entity_ MUST have the following properties:
 
 *  `@type`: MUST be `File`, or an array where `File` is one of the values.
 *  `@id` MUST be either a _URI Path_ relative to the _RO Crate root_, or an absolute URI.
 
 ### Directory File Entity
 
-A `Dataset` (directory) _Data Entity_ MUST have the following properties:
+A [Dataset] (directory) _Data Entity_ MUST have the following properties:
 
 *  `@type` MUST be `Dataset` or an array where `Dataset` is one of the values.
 *  `@id`  MUST be either an a _URI Path_ relative to the _RO Crate root_, or an absolute URI. The id SHOULD end with `/`
@@ -261,10 +261,10 @@ File Data Entities may already have a corresponding web presence, for instance a
 
 These can be included for File Data Entities as additional metadata, regardless of if the File is included in the _RO-Crate Root_ directory or exists on the Web, by using properties:
 
-* `identifier` for formal identifier string such as DOIs
-* `url` with a string URL for a *download* link (if not available, a download landing page) for this file
-* `subjectOf` to a `CreativeWork` (or `WebPage`) that mentions this file or its content (but also other resources).
-* `mainEntityOfPage` to a `CreativeWork`  (or `WebPage`) that primarily describes this file (or its content) 
+* [identifier] for formal identifier string such as DOIs
+* [url] with a string URL for a *download* link (if not available, a download landing page) for this file
+* [subjectOf] to a [CreativeWork] (or [WebPage]) that mentions this file or its content (but also other resources).
+* [mainEntityOfPage] to a [CreativeWork]  (or [WebPage]) that primarily describes this file (or its content) 
 
 ```json
   {
@@ -285,7 +285,7 @@ These can be included for File Data Entities as additional metadata, regardless 
 
 ### Directories on the web; dataset distributions
 
-A _Directory File Entry_ or `Dataset` identifier by an absolute URL on the web can be harder to download than a `File` because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in `hasPart`, enabling download traversal.
+A _Directory File Entry_ or [Dataset] identifier by an absolute URL on the web can be harder to download than a [File] because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in [hasPart], enabling download traversal.
 
 Alternatively a common mechanism to provide downloads of a reasonably sized directory is as an archive file in formats like `.zip` or `.tar.gz`, described as a [DataDownload]. 
 
@@ -305,132 +305,9 @@ Alternatively a common mechanism to provide downloads of a reasonably sized dire
   }
 ```
 
-Similarly, the _RO-Crate root_ entity may also provide a `distribution` URL, in which case the download SHOULD be an archive that contain the _RO-Crate Metadata file_.
+Similarly, the _RO-Crate root_ entity may also provide a [distribution] URL, in which case the download SHOULD be an archive that contain the _RO-Crate Metadata file_.
 
 In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not be reflecting the current state of the `Dataset` or RO-Crate.
 
 
-
-<!--  Below are reference links not rendered in HTML, see
-https://kramdown.gettalong.org/syntax.html#reference-links
--->
-
-[BagIt]: https://en.wikipedia.org/wiki/BagIt
-[BagIt profile]: https://github.com/ruebot/bagit-profiles
-[BIBO]: http://purl.org/ontology/bibo/interviewee
-[conformsTo]: http://purl.org/dc/terms/conformsTo
-[CURIE]: https://www.w3.org/TR/curie/
-[DataCite]: https://www.datacite.org/
-[DataCite Schema v4.0]: https://schema.datacite.org/meta/kernel-4.0/metadata.xsd
-[DCAT]: https://www.w3.org/TR/vocab-dcat/
-[Exif]: https://en.wikipedia.org/wiki/Exif
-[Flattened Document Form]: https://json-ld.org/spec/latest/json-ld/#flattened-document-form
-[FRAPO]: https://www.sparontologies.net/ontologies/frapo
-[geonames]: https://www.geonames.org
-[git]: https://git-scm.com/
-[hasFile]: https://pcdm.org/2016/04/18/models#hasFile
-[hasMember]: https://pcdm.org/2016/04/18/models#hasMember
-[isOutputOf]: https://sparontologies.github.io/frapo/current/frapo.html#d4e526
-[JSON]: http://json.org/
-[JSON-LD]: https://json-ld.org/
-[linked data]: https://en.wikipedia.org/wiki/Linked_data
-[OCFL]: https://ocfl.io/
-[OCFL Object]: https://ocfl.io/1.0/spec/#object-spec
-[ORCID]: https://orcid.org
-[Pairtree]: https://confluence.ucop.edu/display/Curation/PairTree
-[Pairtree specification]: https://confluence.ucop.edu/display/Curation/PairTree?preview=/14254128/16973838/PairtreeSpec.pdf
-[PCDM]: https://github.com/duraspace/pcdm/wiki
-[Pronom]: https://www.nationalarchives.gov.uk/PRONOM/Default.aspx
-[RepositoryCollection]: https://pcdm.org/2016/04/18/models#Collection
-[RepositoryObject]: https://pcdm.org/2016/04/18/models#Object
-[ResearchObject]: https://www.researchobject.org/
-[schema.org]: http://schema.org
-[WorkflowSketch]: http://wf4ever.github.io/ro/2016-01-28/roterms/#Sketch
-
-[Action]: http://schema.org/Action
-[ActionStatusType]: http://schema.org/ActionStatusType
-[ActiveActionStatus]: http://schema.org/ActiveActionStatus
-[CompletedActionStatus]: http://schema.org/CompletedActionStatus
-[ComputerLanguage]: http://schema.org/ComputerLanguage
-[CreateAction]: http://schema.org/CreateAction
-[CreativeWork]: http://schema.org/CreativeWork
-[DataDownload]: http://schema.org/DataDownload
-[Dataset]: http://schema.org/Dataset
-[FailedActionStatus]: http://schema.org/FailedActionStatus
-[File]: http://schema.org/MediaObject
-[Journal]: http://schema.org/Periodical
-[GeoCoordinates]: http://schema.org/GeoCoordinates
-[ImageObject]: http://schema.org/ImageObject
-[MediaObject]: http://schema.org/MediaObject
-[Organization]: http://schema.org/Organization
-[Person]: http://schema.org/Person
-[PotentialActionStatus]: http://schema.org/PotentialActionStatus
-[Place]: http://schema.org/Place
-[Product]: http://schema.org/Product
-[PropertyValue]: http://schema.org/PropertyValue
-[ScholarlyArticle]: http://schema.org/ScholarlyArticle
-[SoftwareApplication]: http://schema.org/SoftwareApplication
-[SoftwareSourceCode]: http://schema.org/SoftwareSourceCode
-[UpdateAction]: http://schema.org/UpdateAction
-
-[about]: http://schema.org/about
-[accountablePerson]: http://schema.org/accountablePerson
-[actionStatus]: http://schema.org/actionStatus
-[additionalType]: http://schema.org/additionalType
-[affiliation]: http://schema.org/affiliation
-[agent]: http://schema.org/agent
-[alternateName]: http://schema.org/alternateName
-[author]: http://schema.org/author
-[citation]: http://schema.org/citation
-[contact]: http://schema.org/accountablePerson
-[contactPoint]: http://schema.org/contactPoint
-[contactType]: http://schema.org/contactType
-[contentLocation]: http://schema.org/contentLocation
-[contributor]: http://schema.org/contributor
-[copyrightHolder]: http://schema.org/copyrightHolder
-[creator]: http://schema.org/creator
-[dateCreated]: http://schema.org/dateCreated
-[datePublished]: http://schema.org/datePublished
-[defaultValue]: http://schema.org/defaultValue
-[description]: http://schema.org/description
-[distribution]: http://schema.org/distribution
-[email]: http://schema.org/email
-[encodingFormat]: http://schema.org/encodingFormat
-[endTime]: http://schema.org/endTime
-[error]: http://schema.org/error
-[event]: http://schema.org/event
-[familyName]: http://schema.org/familyName
-[funder]: http://schema.org/funder
-[geo]: http://schema.org/geo
-[givenName]: http://schema.org/givenName
-[hasPart]: http://schema.org/hasPart
-[identifier]: http://schema.org/identifier
-[IndividualProduct]: http://schema.org/IndividualProduct
-[instrument]: http://schema.org/instrument
-[keywords]: http://schema.org/keywords
-[license]: http://schema.org/license
-[memberOf]: http://schema.org/memberOf
-[name]: http://schema.org/name
-[object]: http://schema.org/object
-[phone]: http://schema.org/phone
-[programmingLanguage]: http://schema.org/programmingLanguage
-[publisher]: http://schema.org/publisher
-[relatedItem]: http://schema.org/relatedItem
-[result]: http://schema.org/result
-[sameAs]: http://schema.org/sameAs
-[sdLicense]: http://schema.org/sdLicense
-[sdPublisher]: http://schema.org/sdPublisher
-[startTime]: http://schema.org/startTime
-[temporalCoverage]: http://schema.org/temporalCoverage
-[thumbnail]: http://schema.org/thumbnail
-[translationOf]: http://schema.org/translationOf
-[translator]: http://schema.org/translator
-[url]: http://schema.org/url
-[valueRequired]: http://schema.org/valueRequired
-[version]: http://schema.org/version
-
-[RFC 2119]: https://tools.ietf.org/html/rfc2119
-[RFC 3986]: https://tools.ietf.org/html/rfc3986
-[RFC 6838]: https://tools.ietf.org/html/rfc6838
-[RFC 7159]: https://tools.ietf.org/html/rfc7159
-[RFC 8493]: https://tools.ietf.org/html/rfc8493
+{% include references.liquid %}

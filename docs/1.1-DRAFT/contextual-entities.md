@@ -80,7 +80,7 @@ A core principle of Linked data is to use URIs to identify things such as people
 }
 ```
 
-This uses an [ORCID](https://orcid.org/) to unambiguously identify an author, with a _Contextual Entity_ of type [Person].
+This uses an [ORCID] to unambiguously identify an author, with a _Contextual Entity_ of type [Person].
 
 Note the string-value of the organizational affiliation. This SHOULD be improved by also providing a _Contextual Entity_ for the organization (see example below).
 
@@ -212,7 +212,7 @@ The publication SHOULD be described in the _RO-Crate JSON-LD_.
 
 ## Publisher
 
-The [Root Data Entity](root-data-entity.md) SHOULD have a [publisher](http://schema.org/publisher) property. This SHOULD be an [Organization](http://schema.org/Organization) though it MAY be a [Person](http://schema.org/Person).
+The [Root Data Entity](root-data-entity.md) SHOULD have a [publisher] property. This SHOULD be an [Organization] though it MAY be a [Person].
 
 
 ```json
@@ -341,7 +341,7 @@ The below _Data Entity_ has a [copyrightHolder] which is different from its [aut
 
 In some cases the license of the [RO-Crate metadata](root-data-entity.md) (the JSON-LD statements in the _RO-Crate Metadata File Descriptor_) is different from the license on the [Root Data Entity](root-data-entity.md) and its content (_data entities_ indicated by [hasPart]). 
 
-For instance, a common pattern for repositories is to license metadata as [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/), while data is licensed as [CC-BY](https://creativecommons.org/licenses/by/4.0/) or similar.  This pattern allow metadata to be combined freely (e.g. the DataCite knowledge graph), while redistribution of data files would require explicit attribution and statement of their license.
+For instance, a common pattern for repositories is to license metadata as [CC0 Public Domain Dedication][CC0], while data is licensed as [CC-BY] or similar.  This pattern allow metadata to be combined freely (e.g. the DataCite knowledge graph), while redistribution of data files would require explicit attribution and statement of their license.
 
 To express the metadata license is different from the _Root Data Entity_, expand the _RO-Crate Metadata File Descriptor_  to include `license`:
 
@@ -402,20 +402,20 @@ In some cases, the JSON-LD metadata for some entities have been imported under a
 }
 ```
 
-In the above (abridged) example, there is no explicit license on the _RO-Crate Metadata File Description_, so the _Root Data Entity_ license [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0) would apply to RO-Crate JSON-LD statements, except for the statements on the imported <http://sws.geonames.org/8152662/>,  which metadata is re-distributed under license <https://creativecommons.org/licenses/by/4.0/>. 
+In the above (abridged) example, there is no explicit license on the _RO-Crate Metadata File Description_, so the _Root Data Entity_ license [GPL 3.0] would apply to RO-Crate JSON-LD statements, except for the statements on the imported <http://sws.geonames.org/8152662/>,  which metadata is re-distributed under license <https://creativecommons.org/licenses/by/4.0/>. 
 
 In this example the CC-BY license requires retaining "a notice that refers to this Public License" and "identification of the creator(s) of the Licensed Material", here respected using `sdLicense` and `sdPublisher`.  
 
 As the RO-Crate uses _flattened_ JSON-LD, `sdLicense` should be expressed directly on each data/contextual entities where required. 
 
-**Tip**: If metadata is imported from a source licensed as [CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/), no `sdLicense` statement is required.
+**Tip**: If metadata is imported from a source licensed as [CC0 Public Domain Dedication][CC0], no `sdLicense` statement is required.
 
 -->
 
 
 ## Extra metadata such as Exif
 
-Schema.org has a generic extension mechanism for encoding arbitrary properties and values which are not available as Schema.org properties. An example of of this is the Schema.org [recommended way (see example 2)](http://schema.org/ImageObject) of including [Exif](https://en.wikipedia.org/wiki/Exif) technical image metadata.
+Schema.org has a generic extension mechanism for encoding arbitrary properties and values which are not available as Schema.org properties. An example of of this is the Schema.org [recommended way (see example 2)][ImageObject] of including [Exif] technical image metadata.
 
 To include EXIF, or other data which can be encoded as property/value pairs, add an array of references to _Anonymous Entities_ which encode each property. This example shows one property of several hundred.
 
@@ -451,7 +451,7 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
 
 To associate a [Data Entity](data-entities.md) with a _Contextual Entity_ representing a _geographical location or region_ the entity SHOULD have a property of [contentLocation] with a value of type [Place].
 
-This example shows how to define a place, using a [geonames](https://www.geonames.org) ID:
+This example shows how to define a place, using a [geonames] ID:
 
 
 ```json
@@ -475,7 +475,7 @@ This example shows how to define a place, using a [geonames](https://www.geoname
 <!--... -->
 ```
 
-The place has a [geo](http://schema.org/geo) property, referencing an _Contextual Entity_ of `@type` [GeoCoordinates]:
+The place has a [geo] property, referencing an _Contextual Entity_ of `@type` [GeoCoordinates]:
 
 
 ```json
@@ -513,7 +513,7 @@ And the place is referenced from the [contentLocation] property of the dataset.
 ```
 
 
-[Place] MAY use any of the [resources available in Schema.org](http://schema.org/geo) to describe places. Future profiles of RO-Crate may mandate the use of a subset of these. Any directory or file or _Contextual Entity_ may be geo-located. For example this file:
+[Place] MAY use any of the [resources available in Schema.org][geo] to describe places. Future profiles of RO-Crate may mandate the use of a subset of these. Any directory or file or _Contextual Entity_ may be geo-located. For example this file:
 
 
 ```json
@@ -561,9 +561,9 @@ To describe the _time period_ which a RO-Crate [Data Entity](date-entities.md) (
 
 A [File] or any other item MAY have a [thumbnail] property which references another file.
 
-For example, the below [RepositoryObject](https://pcdm.org/2016/04/18/models#Object) is related to four files which are all versions of the same image (via [hasFile](https://pcdm.org/2016/04/18/models#hasFile)) one of which is a thumbnail. The thumbnail MUST be included in the RO-Crate.
+For example, the below [RepositoryObject] is related to four files which are all versions of the same image (via [hasFile]) one of which is a thumbnail. The thumbnail MUST be included in the RO-Crate.
 
-If [thumbnail]s are incidental to the data set, they need not be referenced by [hasPart](http://schema.org/hasPart) or [hasFile](https://pcdm.org/2016/04/18/models#hasFile) relationships. but must be in the BagIt manifest if in a _Bagged RO-Crate_.
+If [thumbnail]s are incidental to the data set, they need not be referenced by [hasPart]  or [hasFile] relationships. but must be in the BagIt manifest if in a _Bagged RO-Crate_.
 
 
 ```json
@@ -637,126 +637,4 @@ If [thumbnail]s are incidental to the data set, they need not be referenced by [
 }
 ```
 
-<!--  Below are reference links not rendered in HTML, see
-https://kramdown.gettalong.org/syntax.html#reference-links
--->
-
-[BagIt]: https://en.wikipedia.org/wiki/BagIt
-[BagIt profile]: https://github.com/ruebot/bagit-profiles
-[BIBO]: http://purl.org/ontology/bibo/interviewee
-[conformsTo]: http://purl.org/dc/terms/conformsTo
-[CURIE]: https://www.w3.org/TR/curie/
-[DataCite]: https://www.datacite.org/
-[DataCite Schema v4.0]: https://schema.datacite.org/meta/kernel-4.0/metadata.xsd
-[DCAT]: https://www.w3.org/TR/vocab-dcat/
-[Exif]: https://en.wikipedia.org/wiki/Exif
-[Flattened Document Form]: https://json-ld.org/spec/latest/json-ld/#flattened-document-form
-[FRAPO]: https://www.sparontologies.net/ontologies/frapo
-[geonames]: https://www.geonames.org
-[git]: https://git-scm.com/
-[hasFile]: https://pcdm.org/2016/04/18/models#hasFile
-[hasMember]: https://pcdm.org/2016/04/18/models#hasMember
-[isOutputOf]: https://sparontologies.github.io/frapo/current/frapo.html#d4e526
-[JSON]: http://json.org/
-[JSON-LD]: https://json-ld.org/
-[linked data]: https://en.wikipedia.org/wiki/Linked_data
-[OCFL]: https://ocfl.io/
-[OCFL Object]: https://ocfl.io/1.0/spec/#object-spec
-[ORCID]: https://orcid.org
-[Pairtree]: https://confluence.ucop.edu/display/Curation/PairTree
-[Pairtree specification]: https://confluence.ucop.edu/display/Curation/PairTree?preview=/14254128/16973838/PairtreeSpec.pdf
-[PCDM]: https://github.com/duraspace/pcdm/wiki
-[Pronom]: https://www.nationalarchives.gov.uk/PRONOM/Default.aspx
-[RepositoryCollection]: https://pcdm.org/2016/04/18/models#Collection
-[RepositoryObject]: https://pcdm.org/2016/04/18/models#Object
-[ResearchObject]: https://www.researchobject.org/
-[schema.org]: http://schema.org
-[WorkflowSketch]: http://wf4ever.github.io/ro/2016-01-28/roterms/#Sketch
-
-[Action]: http://schema.org/Action
-[ActionStatusType]: http://schema.org/ActionStatusType
-[ActiveActionStatus]: http://schema.org/ActiveActionStatus
-[CompletedActionStatus]: http://schema.org/CompletedActionStatus
-[ComputerLanguage]: http://schema.org/ComputerLanguage
-[CreateAction]: http://schema.org/CreateAction
-[CreativeWork]: http://schema.org/CreativeWork
-[DataDownload]: http://schema.org/DataDownload
-[Dataset]: http://schema.org/Dataset
-[FailedActionStatus]: http://schema.org/FailedActionStatus
-[File]: http://schema.org/MediaObject
-[Journal]: http://schema.org/Periodical
-[GeoCoordinates]: http://schema.org/GeoCoordinates
-[ImageObject]: http://schema.org/ImageObject
-[MediaObject]: http://schema.org/MediaObject
-[Organization]: http://schema.org/Organization
-[Person]: http://schema.org/Person
-[PotentialActionStatus]: http://schema.org/PotentialActionStatus
-[Place]: http://schema.org/Place
-[Product]: http://schema.org/Product
-[PropertyValue]: http://schema.org/PropertyValue
-[ScholarlyArticle]: http://schema.org/ScholarlyArticle
-[SoftwareApplication]: http://schema.org/SoftwareApplication
-[SoftwareSourceCode]: http://schema.org/SoftwareSourceCode
-[UpdateAction]: http://schema.org/UpdateAction
-
-[about]: http://schema.org/about
-[accountablePerson]: http://schema.org/accountablePerson
-[actionStatus]: http://schema.org/actionStatus
-[additionalType]: http://schema.org/additionalType
-[affiliation]: http://schema.org/affiliation
-[agent]: http://schema.org/agent
-[alternateName]: http://schema.org/alternateName
-[author]: http://schema.org/author
-[citation]: http://schema.org/citation
-[contact]: http://schema.org/accountablePerson
-[contactPoint]: http://schema.org/contactPoint
-[contactType]: http://schema.org/contactType
-[contentLocation]: http://schema.org/contentLocation
-[contributor]: http://schema.org/contributor
-[copyrightHolder]: http://schema.org/copyrightHolder
-[creator]: http://schema.org/creator
-[dateCreated]: http://schema.org/dateCreated
-[datePublished]: http://schema.org/datePublished
-[defaultValue]: http://schema.org/defaultValue
-[description]: http://schema.org/description
-[distribution]: http://schema.org/distribution
-[email]: http://schema.org/email
-[encodingFormat]: http://schema.org/encodingFormat
-[endTime]: http://schema.org/endTime
-[error]: http://schema.org/error
-[event]: http://schema.org/event
-[familyName]: http://schema.org/familyName
-[funder]: http://schema.org/funder
-[geo]: http://schema.org/geo
-[givenName]: http://schema.org/givenName
-[hasPart]: http://schema.org/hasPart
-[identifier]: http://schema.org/identifier
-[IndividualProduct]: http://schema.org/IndividualProduct
-[instrument]: http://schema.org/instrument
-[keywords]: http://schema.org/keywords
-[license]: http://schema.org/license
-[memberOf]: http://schema.org/memberOf
-[name]: http://schema.org/name
-[object]: http://schema.org/object
-[phone]: http://schema.org/phone
-[programmingLanguage]: http://schema.org/programmingLanguage
-[publisher]: http://schema.org/publisher
-[relatedItem]: http://schema.org/relatedItem
-[result]: http://schema.org/result
-[sameAs]: http://schema.org/sameAs
-[sdLicense]: http://schema.org/sdLicense
-[sdPublisher]: http://schema.org/sdPublisher
-[startTime]: http://schema.org/startTime
-[temporalCoverage]: http://schema.org/temporalCoverage
-[thumbnail]: http://schema.org/thumbnail
-[translationOf]: http://schema.org/translationOf
-[translator]: http://schema.org/translator
-[url]: http://schema.org/url
-[valueRequired]: http://schema.org/valueRequired
-[version]: http://schema.org/version
-
-[RFC 2119]: https://tools.ietf.org/html/rfc2119
-[RFC 3986]: https://tools.ietf.org/html/rfc3986
-[RFC 6838]: https://tools.ietf.org/html/rfc6838
-[RFC 7159]: https://tools.ietf.org/html/rfc7159
-[RFC 8493]: https://tools.ietf.org/html/rfc8493
+{% include references.liquid %}

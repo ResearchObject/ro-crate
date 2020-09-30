@@ -29,7 +29,7 @@ excerpt: |
 * Permalink: <https://w3id.org/ro/crate/1.1>
 * Status: Recommendation
 * Published: 2019-11-15
-* Publisher: [researchobject.org](http://researchobject.org/) community
+* Publisher: [researchobject.org](https://www.researchobject.org/) community
 END NOTE -->
 * Status: Editor's Draft
 * JSON-LD context: <https://w3id.org/ro/crate/1.1-DRAFT/context>
@@ -63,8 +63,8 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 </small>
 
-**Note**: The RO-Crate [JSON-LD context](https://w3id.org/ro/crate/1.1-DRAFT/context) and JSON-LD examples within this specification are distributed under [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). 
+**Note**: The RO-Crate [JSON-LD context](https://w3id.org/ro/crate/1.1-DRAFT/context) and JSON-LD examples within this specification are distributed under [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication][CC0]. 
 
 > The key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL in this document are to be interpreted as described in [RFC 2119].
 
-[RFC 2119]: https://tools.ietf.org/html/rfc2119
+{% include references.liquid %}

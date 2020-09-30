@@ -29,7 +29,7 @@ sort: 5
 
 # RO-Crate Metadata
 
-RO-Crate aims to capture and describe the [Research Object](http://www.researchobject.org/overview/) using structured _metadata_.
+RO-Crate aims to capture and describe the [Research Object][ResearchObject] using structured _metadata_.
 
 The _RO-Crate Metadata File Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:
 
@@ -41,20 +41,20 @@ This machine-readable metadata can also be represented for human consumption in 
 
 ## RO-Crate uses Linked Data principles
 
-RO-Crate makes use of [Linked Data principles](https://5stardata.info/en/) for its description. In particular:
+RO-Crate makes use of [Linked Data principles] for its description. In particular:
 
 1. (Meta)data should be made available as **Open Data** on the web.
 2. (Meta)data should be **machine-readable** in a structured format.
 3. (Meta)data should _not_ require proprietary software packages.
-4. (Meta)data should use [open standards from W3C](https://www.w3.org/standards/), such as RDF and SPARQL.
+4. (Meta)data should use [open standards from W3C], such as RDF and SPARQL.
 5. (Meta)data should **link** to other people’s data to provide context, using _URIs_ as global identifiers
 
 RO-Crate realize these principles using a particular set of technologies and best practices:
 
 1. The _RO-Crate Metadata File_ and _RO-Crate Website_ can be directly published on the web together with the RO-Crate payload. In addition, a data package (e.g. BagIt Zip archive) that contain the RO-Crate can also be published on the web.
-2. The _RO-Crate Metadata File_ is based on the structured data format [JSON-LD](https://json-ld.org/). 
-3. Multiple open source tools/libraries are available [for JSON](http://json.org/) and [for JSON-LD](https://json-ld.org/).
-4. The _RO-Crate Website_ is [HTML 5](https://www.w3.org/TR/html52/), and the _RO-Crate Metadata File_ is [JSON-LD](https://www.w3.org/TR/json-ld/), one of the [W3C RDF 1.1 formats](https://www.w3.org/TR/rdf11-primer/).
+2. The _RO-Crate Metadata File_ is based on the structured data format [JSON-LD]. 
+3. Multiple open source tools/libraries are available [for JSON][JSON] and [for JSON-LD][JSON-LD].
+4. The _RO-Crate Website_ is [HTML 5], and the _RO-Crate Metadata File_ is [JSON-LD], one of the [W3C RDF 1.1 formats].
 5. The _RO-Crate Metadata File_ reuse common vocabularies like [schema.org], and this specification [recommend identifiers](#recommended-identifiers) it should link to.
 
 ## Base metadata standard: Schema.org
@@ -71,7 +71,7 @@ Generally, the standard keys from [schema.org] should be used. However, RO-Crate
 * `Journal` is mapped to <http://schema.org/Periodical>.
 
 ```warning
-JSON-LD examples given on the [schema.org website](http://schema.org/) may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
+JSON-LD examples given on the [schema.org website] may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
 ```
 
 To simplify processing and avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even where [schema.org] for some properties otherwise permit shorter forms like `"author": "http://example.com/alice"`.
@@ -138,134 +138,11 @@ _RO-Crate JSON-LD_ SHOULD use the following IDs where possible:
 
 * For a _Root Data Entity_, an `identifier` which is RECOMMENDED to be a  <https://doi.org/> URI. 
 * For a [Person] participating in the research process: [ORCID] identifiers, e.g. <https://orcid.org/0000-0002-1825-0097>
-* For [Organization]s including [funder]s,  [Research Organization Registry URIs](https://ror.org/), e.g. <https://ror.org/0384j8v12>
+* For [Organization]s including [funder]s,  [Research Organization Registry URIs], e.g. <https://ror.org/0384j8v12>
 * For items of type [Place], a [geonames] URL, e.g. <http://sws.geonames.org/8152662/>
 * For file formats, a [Pronom] URL, for example <https://www.nationalarchives.gov.uk/PRONOM/fmt/831>.
 
 In the absence of the above, RO-Crates SHOULD contain stable persistent URIs to identify all entities wherever possible.
 
 
-
-<!--  Below are reference links not rendered in HTML, see
-https://kramdown.gettalong.org/syntax.html#reference-links
--->
-
-[BagIt]: https://en.wikipedia.org/wiki/BagIt
-[BagIt profile]: https://github.com/ruebot/bagit-profiles
-[BIBO]: http://purl.org/ontology/bibo/interviewee
-[conformsTo]: http://purl.org/dc/terms/conformsTo
-[CURIE]: https://www.w3.org/TR/curie/
-[DataCite]: https://www.datacite.org/
-[DataCite Schema v4.0]: https://schema.datacite.org/meta/kernel-4.0/metadata.xsd
-[DCAT]: https://www.w3.org/TR/vocab-dcat/
-[Exif]: https://en.wikipedia.org/wiki/Exif
-[Flattened Document Form]: https://json-ld.org/spec/latest/json-ld/#flattened-document-form
-[FRAPO]: https://www.sparontologies.net/ontologies/frapo
-[geonames]: https://www.geonames.org
-[git]: https://git-scm.com/
-[hasFile]: https://pcdm.org/2016/04/18/models#hasFile
-[hasMember]: https://pcdm.org/2016/04/18/models#hasMember
-[isOutputOf]: https://sparontologies.github.io/frapo/current/frapo.html#d4e526
-[JSON]: http://json.org/
-[JSON-LD]: https://json-ld.org/
-[linked data]: https://en.wikipedia.org/wiki/Linked_data
-[OCFL]: https://ocfl.io/
-[OCFL Object]: https://ocfl.io/0.3/spec/#object-spec
-[ORCID]: https://orcid.org
-[Pairtree]: https://confluence.ucop.edu/display/Curation/PairTree
-[Pairtree specification]: https://confluence.ucop.edu/display/Curation/PairTree?preview=/14254128/16973838/PairtreeSpec.pdf
-[PCDM]: https://github.com/duraspace/pcdm/wiki
-[Pronom]: https://www.nationalarchives.gov.uk/PRONOM/Default.aspx
-[RepositoryCollection]: https://pcdm.org/2016/04/18/models#Collection
-[RepositoryObject]: https://pcdm.org/2016/04/18/models#Object
-[ResearchObject]: https://www.researchobject.org/
-[schema.org]: http://schema.org
-[WorkflowSketch]: http://wf4ever.github.io/ro/2016-01-28/roterms/#Sketch
-
-[Action]: http://schema.org/Action
-[ActionStatusType]: http://schema.org/ActionStatusType
-[ActiveActionStatus]: http://schema.org/ActiveActionStatus
-[CompletedActionStatus]: http://schema.org/CompletedActionStatus
-[ComputerLanguage]: http://schema.org/ComputerLanguage
-[CreateAction]: http://schema.org/CreateAction
-[CreativeWork]: http://schema.org/CreativeWork
-[DataDownload]: http://schema.org/DataDownload
-[Dataset]: http://schema.org/Dataset
-[FailedActionStatus]: http://schema.org/FailedActionStatus
-[File]: http://schema.org/MediaObject
-[Journal]: http://schema.org/Periodical
-[GeoCoordinates]: http://schema.org/GeoCoordinates
-[ImageObject]: http://schema.org/ImageObject
-[MediaObject]: http://schema.org/MediaObject
-[Organization]: http://schema.org/Organization
-[Person]: http://schema.org/Person
-[PotentialActionStatus]: http://schema.org/PotentialActionStatus
-[Place]: http://schema.org/Place
-[Product]: http://schema.org/Product
-[PropertyValue]: http://schema.org/PropertyValue
-[ScholarlyArticle]: http://schema.org/ScholarlyArticle
-[SoftwareApplication]: http://schema.org/SoftwareApplication
-[SoftwareSourceCode]: http://schema.org/SoftwareSourceCode
-[UpdateAction]: http://schema.org/UpdateAction
-
-[about]: http://schema.org/about
-[accountablePerson]: http://schema.org/accountablePerson
-[actionStatus]: http://schema.org/actionStatus
-[additionalType]: http://schema.org/additionalType
-[affiliation]: http://schema.org/affiliation
-[agent]: http://schema.org/agent
-[alternateName]: http://schema.org/alternateName
-[author]: http://schema.org/author
-[citation]: http://schema.org/citation
-[contact]: http://schema.org/accountablePerson
-[contactPoint]: http://schema.org/contactPoint
-[contactType]: http://schema.org/contactType
-[contentLocation]: http://schema.org/contentLocation
-[contributor]: http://schema.org/contributor
-[copyrightHolder]: http://schema.org/copyrightHolder
-[creator]: http://schema.org/creator
-[dateCreated]: http://schema.org/dateCreated
-[datePublished]: http://schema.org/datePublished
-[defaultValue]: http://schema.org/defaultValue
-[description]: http://schema.org/description
-[distribution]: http://schema.org/distribution
-[email]: http://schema.org/email
-[encodingFormat]: http://schema.org/encodingFormat
-[endTime]: http://schema.org/endTime
-[error]: http://schema.org/error
-[event]: http://schema.org/event
-[familyName]: http://schema.org/familyName
-[funder]: http://schema.org/funder
-[geo]: http://schema.org/geo
-[givenName]: http://schema.org/givenName
-[hasPart]: http://schema.org/hasPart
-[identifier]: http://schema.org/identifier
-[IndividualProduct]: http://schema.org/IndividualProduct
-[instrument]: http://schema.org/instrument
-[keywords]: http://schema.org/keywords
-[license]: http://schema.org/license
-[memberOf]: http://schema.org/memberOf
-[name]: http://schema.org/name
-[object]: http://schema.org/object
-[phone]: http://schema.org/phone
-[programmingLanguage]: http://schema.org/programmingLanguage
-[publisher]: http://schema.org/publisher
-[relatedItem]: http://schema.org/relatedItem
-[result]: http://schema.org/result
-[sameAs]: http://schema.org/sameAs
-[sdLicense]: http://schema.org/sdLicense
-[sdPublisher]: http://schema.org/sdPublisher
-[startTime]: http://schema.org/startTime
-[temporalCoverage]: http://schema.org/temporalCoverage
-[thumbnail]: http://schema.org/thumbnail
-[translationOf]: http://schema.org/translationOf
-[translator]: http://schema.org/translator
-[url]: http://schema.org/url
-[valueRequired]: http://schema.org/valueRequired
-[version]: http://schema.org/version
-
-[RFC 2119]: https://tools.ietf.org/html/rfc2119
-[RFC 3986]: https://tools.ietf.org/html/rfc3986
-[RFC 6838]: https://tools.ietf.org/html/rfc6838
-[RFC 7159]: https://tools.ietf.org/html/rfc7159
-[RFC 8493]: https://tools.ietf.org/html/rfc8493
+{% include references.liquid %}
