@@ -190,11 +190,11 @@ A [Dataset] (directory) _Data Entity_ MUST have the following properties:
 
 ## Web-based Data Entities
 
-While one use-case of RO-Crates is to describe _files_ contained within the _RO-Crate root_ directory, RO-Crates can also gather resources on the web, identified using _absolute URIs_ instead of relative _URI paths_.
+While one use-case of RO-Crates is to describe _files_ contained within the _RO-Crate root_ directory, RO-Crates can also gather resources from the web identified by _absolute URIs_ instead of relative _URI paths_, i.e. Web-based data entities.
 
 Using Web-based data entities can be important particularly where a file can't be included in the _RO-Crate root_ because of licensing concerns, large data sizes, privacy, or where it is desirable to link to the latest online version.
 
-Example of an RO-Crate where some of the _File Data Entities_ are external to the _RO-Crate root_:
+Example of an RO-Crate including a _File Data Entity_ external to the _RO-Crate root_ (file entity https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf):
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context",
@@ -237,13 +237,13 @@ Example of an RO-Crate where some of the _File Data Entities_ are external to th
 }
 ```
 
-Additional care SHOULD be taken to improve persistence and longevity of web resources included 
-in an RO-Crate, as they can be more difficult to archive or move along with the _RO-Crate root_, and
-may change intentionally or unintentionally leaving the RO-Crate with partial or outdated information.
+Additional care SHOULD be taken to improve persistence and long-term preservation of web resources included 
+in an RO-Crate as they can be more difficult to archive or move along with the _RO-Crate root_, and
+may change intentionally or unintentionally leaving the RO-Crate with incomplete or outdated information.
 
-File Data Entries with an `@id` URI outside the _RO-Crate Root_ SHOULD at the time of RO-Crate creation be directly downloadable by a simple retrieval (e.g. HTTP GET), permitting redirections and HTTP authentication. For instance in the example above, <https://zenodo.org/record/3541888> and <https://doi.org/10.5281/zenodo.3541888> cannot be used as `@id` above as retrieving these URLS give a HTML landing page rather than the desired PDF as indicated by `encodingFormat`.
+File Data Entries with an `@id` URI outside the _RO-Crate Root_ SHOULD at the time of RO-Crate creation be directly downloadable by a simple retrieval (e.g. HTTP GET), permitting redirections and HTTP/HTTPS authentication. For instance, in the example above, <https://zenodo.org/record/3541888> and <https://doi.org/10.5281/zenodo.3541888> cannot be used as `@id` above as retrieving these URLS give a HTML landing page rather than the desired PDF as indicated by `encodingFormat`.
 
-A files on the web may change, the timestamp property `sdDatePublished` SHOULD be included to indicate when the absolute URL was accessed, and derived metadata like `encodingFormat` and `contentSize` was considered to be representative:
+As files on the web may change, the timestamp property `sdDatePublished` SHOULD be included to indicate when the absolute URL was accessed, and derived metadata like `encodingFormat` and `contentSize` was considered to be representative:
 
 ```json
   {
@@ -257,13 +257,13 @@ A files on the web may change, the timestamp property `sdDatePublished` SHOULD b
 
 ### Embedded data entities that are also on the web
 
-File Data Entities may already have a corresponding web presence, for instance a landing page that describes the file, including persistent identifiers (e.g. DOI) that resolves to an intermediate HTML page instead of the downloadable file directly. 
+File Data Entities may already have a corresponding web presence, for instance a landing page that describes the file, including persistent identifiers (e.g. DOI) resolving to an intermediate HTML page instead of the downloadable file directly. 
 
-These can be included for File Data Entities as additional metadata, regardless of whether the File is included in the _RO-Crate Root_ directory or exists on the Web, by using properties:
+These can be included for File Data Entities as additional metadata, regardless of whether the File is included in the _RO-Crate Root_ directory or exists on the Web, by using the properties:
 
 * [identifier] for formal identifier strings such as DOIs
-* [url] with a string URL for a *download* link (if not available, a download landing page) for this file
-* [subjectOf] to a [CreativeWork] (or [WebPage]) that mentions this file or its content (but also other resources).
+* [url] with a string URL corresponding to a *download* link (if not available, a download landing page) for this file
+* [subjectOf] to a [CreativeWork] (or [WebPage]) that mentions this file or its content (but also other resources)
 * [mainEntityOfPage] to a [CreativeWork]  (or [WebPage]) that primarily describes this file (or its content) 
 
 ```json
@@ -287,7 +287,7 @@ These can be included for File Data Entities as additional metadata, regardless 
 
 A _Directory File Entry_ or [Dataset] identifier expressed as an absolute URL on the web can be harder to download than a [File] because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in [hasPart], enabling download traversal.
 
-Alternatively a common mechanism to provide downloads of a reasonably sized directory is as an archive file in formats like `.zip` or `.tar.gz`, described as a [DataDownload]. 
+Alternatively, a common mechanism to provide downloads of a reasonably sized directory is as an archive file in formats such as `.zip` or `.tar.gz`, described as a [DataDownload]. 
 
 ```json
   {
@@ -305,7 +305,7 @@ Alternatively a common mechanism to provide downloads of a reasonably sized dire
   }
 ```
 
-Similarly, the _RO-Crate root_ entity may also provide a [distribution] URL, in which case the download SHOULD be an archive that contain the _RO-Crate Metadata file_.
+Similarly, the _RO-Crate root_ entity may also provide a [distribution] URL, in which case the download SHOULD be an archive that contains the _RO-Crate Metadata file_.
 
 In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not reflect the current state of the `Dataset` or RO-Crate.
 
