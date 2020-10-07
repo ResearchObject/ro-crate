@@ -30,7 +30,7 @@ It is not necessary to use [JSON-LD tooling] to generate or parse the _RO-Crate 
 
 This appendix shows a brief JSON-LD introduction for complying with the _RO-Crate Metadata File_ requirements.
 
-The below example shows the overall structure of a flattened, compacted _RO-Crate Metadata File_ where `@context` refers to the _RO-Crate JSON-LD Context_, while `@graph` is a flat list of the entities that constitute this RO-Crate. 
+The example below shows the overall structure of a flattened, compacted _RO-Crate Metadata File_ where `@context` refers to the _RO-Crate JSON-LD Context_, while `@graph` is a flat list of the entities that constitute this RO-Crate. 
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context",
@@ -84,20 +84,22 @@ The below example shows the overall structure of a flattened, compacted _RO-Crat
 
 **Note**: entities above have been shortened for brevity, see their individual sections elsewhere in this specification.
 
+
 The order of the `@graph` list is not significant. Above we see that the RO-Crate JSON-LD graph contains the _RO-Crate Metadata File Descriptor_, the _Root Data Entity_, any _Data Entities_ and any _Contextual Entities_.
+
 
 
 ## Describing entities in JSON-LD
 
 Properties of an entity can refer to another URL or entity by using the form `{"@id": "uri-reference"}` as in the example above, where the [author] property in the [File] entity refer to the [Person] entity, identified as `#alice`. 
 
-Identifiers in `@id` SHOULD be either a valid _absolute URIs_ like <http://example.com/>, or an _URI references_ _URI paths_ relative to the RO-Crate root directory. Care must be taken to express any relative paths using `/` separator and escape special characters like space (`%20`). As JSON-LD supports _IRIs_, international characters in identifiers SHOULD be encoded in UTF-8 rather than `%`-escaped.
+Identifiers in `@id` SHOULD be either a valid _absolute URI_ like <http://example.com/>, or a _URI references_ _URI paths_ relative to the RO-Crate root directory. Care must be taken to express any relative paths using `/` separator and escape special characters like space (`%20`). As JSON-LD supports _IRIs_, international characters in identifiers SHOULD be encoded in UTF-8 rather than `%`-escaped.
 
 Because the _RO-Crate JSON-LD_ is _flattened_, all described entities must be direct children of the `@graph` element rather than being nested under another property or list.
 
 If no obvious identifier is available for a contextual entity, an identifier local to the _RO-Crate Metadata File_ can be generated, for instance `{"@id": "#alice"}` or `{"@id": "#ac0bd781-7d91-4cdf-b2ad-7305921c7650"}`. Although it is RECOMMENDED to use `#`-based local identifiers, identifiers in `@id` MAY alternatively be a _blank node_ identifier (e.g. `_:alice`).
 
-Multiple values and references can be represented using JSON arrays, as exemplified in `hasPart` above, however as the `RO-Crate JSON-LD` is in _compacted form_ any single-element arrays like `"author": [{"@id": "#alice"}]` SHOULD be unpacked to a single value like `"author": {"@id": "#alice"}`.
+Multiple values and references can be represented using JSON arrays, as exemplified in `hasPart` above; however as the `RO-Crate JSON-LD` is in _compacted form_, any single-element arrays like `"author": [{"@id": "#alice"}]` SHOULD be unpacked to a single value like `"author": {"@id": "#alice"}`.
 
 
 ## RO-Crate JSON-LD Context
@@ -112,7 +114,7 @@ To find the full description of a particular property or type, follow its URI fr
    "author": "http://schema.org/author",
 ```
 
-The _RO-Crate JSON-LD Context_ may either be set by reference to <https://w3id.org/ro/crate/1.1-DRAFT/context>, or by value (merging the two documents).
+The _RO-Crate JSON-LD Context_ may either be set by reference to <https://w3id.org/ro/crate/1.1-DRAFT/context> or by value (merging the two documents).
 
 Consider the below (simplified) example of _by reference_ using a versioned permalink:
 
@@ -130,7 +132,7 @@ Consider the below (simplified) example of _by reference_ using a versioned perm
 }
 ```
 
-The above is equivalent to this JSON-LD using an embedded context, by adding the subset of corresponding keys from the external `@context`:
+The above is equivalent to the following JSON-LD using an embedded context, by adding the subset of corresponding keys from the external `@context`:
 
 ```json
 { "@context": {
@@ -156,7 +158,7 @@ While the second form is more verbose, one advantage is that it is "archivable" 
 
 To check which RO-Crate version is used (in terms of properties and types expected), clients SHOULD check the property `conformsTo` on the _RO-Crate Metadata File Descriptor_ rather than the value of `@context`.
 
-RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded context, but MAY use the [JSON-LD flattening] algorithm with _compaction_ to a referenced _RO-Crate JSON-LD context_ (but see notes on [handling relative URI references](#handling-relative-uri-references) below).
+RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded context, but MAY use the [JSON-LD flattening] algorithm with _compaction_ to a referenced _RO-Crate JSON-LD context_ (see also notes on [handling relative URI references](#handling-relative-uri-references) below).
 
 ```tip
 The [JSON-LD flattening & compaction](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) algorithms can be used to rewrite to a different `@context`, e.g. to `https://schema.org/docs/jsonldcontext.jsonld` or a different version of the _RO-Crate JSON-LD Context_.
@@ -179,7 +181,7 @@ Note that most web servers will serve `ro-crate-metadata.json` with  `Content-Ty
 
 Requesting the RO-Crate metadata file from a browser may also need permission through CORS header `Access-Control-Allow-Origin` (however extra care should be taken if the RO-Crates require access control).
 
-To change configuration of **Apache HTTPD 2**, add to `.htaccess` or equivalent config file:
+To change the configuration of **Apache HTTPD 2**, add the following to `.htaccess` or equivalent config file:
 
 ```conf
 <Files "ro-crate-metadata.json">
@@ -237,7 +239,7 @@ For example. The `@id` URI <http://purl.org/ontology/bibo/interviewee> from the 
 
 When generating the _RO-Crate Website_ from _RO-Crate JSON-LD_, the code MUST use a [sameAs] URI (if present) as a target for an explanatory link for the term instead of the Linked Data URI supplied in the `@context`.
 
-Where there is no RDF ontology available, then implementors SHOULD attempt to provide context by creating stable web-accessible URIs to document properties and classes, for example, by linking to page describing an XML element or attribute from an XML schema, pending the publication of a formal ontology.
+Where there is no RDF ontology available, then implementors SHOULD attempt to provide context by creating stable web-accessible URIs to document properties and classes, for example, by linking to a page describing an XML element or an attribute from an XML schema, pending the publication of a formal ontology.
 
 
 ## Adding new or ad hoc vocabulary terms
@@ -259,7 +261,7 @@ For projects that have their own web-presence, URLs MAY defined and SHOULD resol
 ```
 
 ```tip
-Ensure you have consistent use of `http` or `https` (preferring https) as well as consistent path `/vocab` vs `/vocab/` vs `/vocab/index.html` (preferring the shortest that is also visible in browser).
+Ensure you have a consistent use of `http` or `https` (preferring https) as well as consistent path `/vocab` vs `/vocab/` vs `/vocab/index.html` (preferring the shortest that is also visible in browser).
 ```
 
 For ad hoc terms where the crate author does not have the resources to create and maintain an HTML page, authors may use the RO-crate public namespace (`https://w3id.org/ro/terms/`) to reserve their terms. For example, an ad-hoc URL MAY be used in the form `https://w3id.org/ro/terms/criminalcharacters#education` where `criminalcharacters` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions][ro-terms] to the RO-Crate terms project. 
