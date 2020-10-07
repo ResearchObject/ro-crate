@@ -187,7 +187,13 @@
           { "@id": "https://zenodo.org/record/3541888/files/ro-crate-context-TAG.jsonld"},
           { "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-context-TAG.jsonld"}
         ],
-        "version": "TAG"
+        "version": "TAG",
+        "isBasedOn": [
+          {"@id": "http://schema.org/version/10.0/"},
+          {"@id": "https://pcdm.org/2016/04/18/models"},
+          {"@id": "https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21"},
+          {"@id": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21"}
+        ]
       },
       {
         "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html",

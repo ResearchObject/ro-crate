@@ -27,6 +27,8 @@ sort: 5
    limitations under the License.
 -->
 
+<div id="metadata"></div>
+
 # RO-Crate Metadata
 
 RO-Crate aims to capture and describe the [Research Object][ResearchObject] using structured _metadata_.

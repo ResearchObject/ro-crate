@@ -23,6 +23,8 @@ sort: 4
    limitations under the License.
 -->
 
+<div id="structure"></div>
+
 # RO-Crate Structure
 
 The structure an _RO-Crate_ MUST follow is:

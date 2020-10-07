@@ -25,6 +25,8 @@ sort: 10
    limitations under the License.
 -->
 
+<div id="workflows"></div>
+
 # Workflows and Scripts
 
 Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an RO-Crate MAY be embedded in an RO-Crate. _Workflows_ and _scripts_ SHOULD be described using [data entities](data-entities.md) of type [SoftwareSourceCode].

@@ -71,6 +71,7 @@ docs/${RELEASE}/ro-crate-metadata.json: docs/${DRAFT}/ro-crate-metadata.json
 	sed -i "s/UNPUBLISHED/`date -I`/g" docs/${RELEASE}/ro-crate-metadata.json
 	sed -i "s/TAG/${TAG}/g" docs/${RELEASE}/ro-crate-metadata.json
 	sed -i "s,DOI,${DOI},g" docs/${RELEASE}/ro-crate-metadata.json
+	sed -i "s;ZENODO;`echo ${DOI}|sed s,10.5281/zenodo.,,`;g" docs/${RELEASE}/ro-crate-metadata.json
 	rm -f docs/${RELEASE}/ro-crate-metadata.jsonld
 	ln -s ro-crate-metadata.json docs/${RELEASE}/ro-crate-metadata.jsonld
 
@@ -90,6 +91,9 @@ release/ro-crate-${TAG}.md: dependencies release/ docs/${RELEASE}/_metadata.liqu
 	   `grep ^sort: docs/${RELEASE}/*.md | sort -n -k 2 | grep -v README.md| grep -v about.md | sed s/:.*//` \
 	   docs/${RELEASE}/appendix/*.md docs/_includes/references.liquid docs/${RELEASE}/.references.md |\
 	   grep -v '{%' > release/ro-crate-${TAG}.md
+	# Fix internal links to work in single-page
+	sed -i -E 's,]\(([^:)]*/)*([^:)]*)\.md\),](#\2),g' release/ro-crate-${TAG}.md
+	sed -i -E 's,]\([^):]*\.md#([^)]*)\),](#\1),g' release/ro-crate-${TAG}.md
 
 release/ro-crate-${TAG}.html: dependencies release/ release/ro-crate-${TAG}.md
 	egrep -v '^{:(\.no_)?toc}' release/ro-crate-${TAG}.md | \
