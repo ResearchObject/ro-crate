@@ -60,7 +60,7 @@ The _RO-Crate_ team is:
 * Alexander Kanitz <https://orcid.org/0000-0002-3468-0652>
 * Ana Trisovic <https://orcid.org/0000-0003-1991-0533>
 * Gavin Kennedy <https://orcid.org/0000-0003-3910-0474>
-* Mark Graves <https://github.com/myiremark>
+* Mark Graves <https://orcid.org/0000-0003-3486-8193>
 * Jasper Koehorst <https://orcid.org/0000-0001-8172-8981>
 
 ## Meetings
