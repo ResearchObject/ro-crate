@@ -177,22 +177,23 @@ A workflow diagram may still be provided even if there is no programmatic `Softw
 
 Data entities representing _workflows_ (`@type: ComputationalWorkflow`)
 SHOULD comply with the BioSchemas [ComputationalWorkflow profile],
-where possible. When complying with this profile, the workflow data entities
-MUST describe these properties and their related contextual entities:
+where possible. 
 
-* [name] giving a short descriptive human-readable name for the workflow
-* [programmingLanguage] identifying the workflow system, typed as `ProgrammingLanguage`
-* [creator] identifying the [Person](s) and/or [Organization](s) that assembled the workflow. (This may differ from the [author] of the conceptual workflow, e.g. if the workflow was converted from one language to another).
-* [dateCreated] the date the workflow was first created, e.g. `2020-05-23`
-* [license] identifying a [CreativeWork] that details the license for distributing or editing the workflow
-* [input] and [output] identifying contextual entities for the [FormalParameter] describing input and output parameters/variables that may be varied on different workflow executions
-* [sdPublisher] to identify the [Person] or [Organization] who has made this JSON-LD description of the workflow
-* [url] to identify a public page or source code repository for the workflow
-* [version] to indicate the released version of this workflow file
+When complying with this profile, the workflow data entities
+MUST describe these properties and their related contextual entities:
+[name], [programmingLanguage], [creator], [dateCreated], [license], [sdPublisher], [url], [version].
 
 The [ComputationalWorkflow profile] specifies additional properties that the [ComputationalWorkflow] data entity can include: [citation], [contributor], [creativeWorkStatus], [description], [funding], [hasPart], [isBasedOn], [keywords], [maintainer], [producer], [publisher], [runtimePlatform], [softwareRequirements], [targetProduct]
 
-A data entity conforming to the [ComputationalWorkflow profile] SHOULD include the versioned profile URI using [conformsTo].
+A data entity conforming to the [ComputationalWorkflow profile] SHOULD declare the versioned profile URI using [conformsTo]:
+
+```json
+{ "@id": "workflow/alignment.knime",  
+  "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
+  "conformsTo": {"@id": "https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/"},
+  "..": ""
+}
+```
 
 ### Describing inputs and outputs
 
@@ -200,16 +201,25 @@ The input and output _parameters_ for a workflow or script can be given with `in
 contextual entities. Note that this entity usually represent a _potential_ input/output value in a reusable
 workflow, much like [function parameter definitions] in general programming.
 
-When complying with the BioSchemas [FormalParameter profile] 
+If complying with the BioSchemas [FormalParameter profile],
 the _contextual entities_ for [FormalParameter], referenced by `input` or `output`, MUST describe:
 
-* [name] given the programmatic name for the parameter binding
+* [name] given the programmatic name for the parameter
 * [additionalType] identifying the most specific subtype of [EDAM Data](http://edamontology.org/data_0006) (fallbacks [Data](http://edamontology.org/data_0006) or [Text data](http://edamontology.org/data_2526))
 * [encodingFormat] identifying the most specific subtype of [EDAM Format](http://edamontology.org/format_1915) (fallbacks [Binary format](http://edamontology.org/format_2333) or [Textual format](http://edamontology.org/format_2330))
 
 The BioSchemas [FormalParameter profile] describes additional properties that can be used, including [description], [valueRequired], [defaultValue] and [identifier]
 
-A contextual entity conforming to the [FormalParameter profile] SHOULD include the versioned profile URI using [conformsTo].
+A contextual entity conforming to the [FormalParameter profile] SHOULD declare the versioned profile URI using [conformsTo], e.g.:
+
+```json
+{
+  "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
+  "@type": "FormalParameter",
+  "conformsTo": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/",
+  "..": ""
+}
+```
 
 ```note
 `input`, `output` and `FormalParameter` are at time of writing proposed by BioSchemas and not yet integrated in schema.org
