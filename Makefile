@@ -35,11 +35,12 @@ docs/${RELEASE}/:
 
 docs/${RELEASE}/_metadata.liquid: docs/${RELEASE}/ docs/${DRAFT}/_metadata.liquid
 	sed s/${DRAFT}/${RELEASE}/g < docs/${DRAFT}/_metadata.liquid > docs/${RELEASE}/_metadata.liquid
+	sed -i s/TAG/${TAG}/g docs/${RELEASE}/_metadata.liquid
 	sed -i "/^<!-- NOTE: Before release.*/ d" docs/${RELEASE}/_metadata.liquid
 	sed -i "/^END NOTE -->/ d" docs/${RELEASE}/_metadata.liquid
 	sed -i "s/^* Status:.*/* Status: Recommendation/" docs/${RELEASE}/_metadata.liquid
 	sed -i "s/^* Published:.*/* Published: `date -I`/" docs/${RELEASE}/_metadata.liquid
-	sed -i "s,^* Cite as:.*,* Cite as: <https://doi.org/${DOI}> (this version)," docs/${RELEASE}/_metadata.liquid
+	sed -i "s,^* Cite as:.*,* Cite as: <https://doi.org/${DOI}> (this version)  ," docs/${RELEASE}/_metadata.liquid
 	
 
 
