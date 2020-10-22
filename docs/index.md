@@ -38,7 +38,7 @@ We continue to [gather usecases](https://github.com/ResearchObject/ro-crate/issu
   
 ## When can I use it?
 
-* [RO-Crate specification 1.0](1.0/) has been **released**.
+* [RO-Crate specification 1.1](1.1/) has been **released**.
 
 See the [specification](specification.md) page for older and future versions.
 

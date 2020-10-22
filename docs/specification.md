@@ -21,10 +21,11 @@ title: Specification
 
 # RO-Crate Specification
 
-The RO-Crate 1.0 specification has been **released**.
+The RO-Crate 1.1 specification has been **released**.
 
-* **[RO-Crate 1.0](1.0)** **(newest release)**
-* [RO-Crate 1.1-DRAFT](1.1-DRAFT) (draft for next release)
+* **[RO-Crate 1.1](1.1)** **(newest release)**
+* [RO-Crate 1.2-DRAFT](1.2-DRAFT) (draft for next release)
+* [RO-Crate 1.0](1.0)
 * [RO-Crate 0.2](0.2)
 * [DataCrate 1.0 review](https://docs.google.com/document/d/150SzIG8Zs3wecPTUue7wxKn6V26oi7rYucS5lxnmWZU/edit) 
   (imported from [datacrate](https://github.com/UTS-eResearch/datacrate/blob/master/spec/1.0/data_crate_specification_v1.0.md))
@@ -32,7 +33,7 @@ The RO-Crate 1.0 specification has been **released**.
 
 _Historical note_: After the initial draft, the community decided to base the specification on [DataCrate](https://github.com/UTS-eResearch/datacrate/), and changed the name from _ROLite_ to **RO-Crate**.
 
-[Feedback](https://github.com/researchobject/ro-crate/issues) and improvements are welcome [towards RO-Crate 1.1](https://github.com/ResearchObject/ro-crate/tree/master/docs/1.1-DRAFT), taking into account backwards compatibility according to [semantic versioning](https://semver.org/spec/v2.0.0.html).
+[Feedback](https://github.com/researchobject/ro-crate/issues) and improvements are welcome [towards RO-Crate 1.2](https://github.com/ResearchObject/ro-crate/tree/master/docs/1.2-DRAFT), taking into account backwards compatibility according to [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
 This specification and documentation is Open Source and licensed as [Apache License, version 2.0](https://github.com/ResearchObject/ro-crate/blob/master/LICENSE), see <https://www.apache.org/licenses/LICENSE-2.0> for details. 
 
