@@ -183,7 +183,7 @@ When complying with this profile, the workflow data entities
 MUST describe these properties and their related contextual entities:
 [name], [programmingLanguage], [creator], [dateCreated], [license], [sdPublisher], [url], [version].
 
-The [ComputationalWorkflow profile] specifies additional properties that the [ComputationalWorkflow] data entity can include: [citation], [contributor], [creativeWorkStatus], [description], [funding], [hasPart], [isBasedOn], [keywords], [maintainer], [producer], [publisher], [runtimePlatform], [softwareRequirements], [targetProduct]
+The [ComputationalWorkflow profile] explains the above and list additional properties that a compliant [ComputationalWorkflow] data entity SHOULD include: [citation], [contributor], [creativeWorkStatus], [description], [funding], [hasPart], [isBasedOn], [keywords], [maintainer], [producer], [publisher], [runtimePlatform], [softwareRequirements], [targetProduct]
 
 A data entity conforming to the [ComputationalWorkflow profile] SHOULD declare the versioned profile URI using [conformsTo]:
 
@@ -202,13 +202,9 @@ contextual entities. Note that this entity usually represent a _potential_ input
 workflow, much like [function parameter definitions] in general programming.
 
 If complying with the BioSchemas [FormalParameter profile],
-the _contextual entities_ for [FormalParameter], referenced by `input` or `output`, MUST describe:
+the _contextual entities_ for [FormalParameter], referenced by `input` or `output`, MUST describe: [name], [additionalType], [encodingFormat]
 
-* [name] given the programmatic name for the parameter
-* [additionalType] identifying the most specific subtype of [EDAM Data](http://edamontology.org/data_0006) (fallbacks [Data](http://edamontology.org/data_0006) or [Text data](http://edamontology.org/data_2526))
-* [encodingFormat] identifying the most specific subtype of [EDAM Format](http://edamontology.org/format_1915) (fallbacks [Binary format](http://edamontology.org/format_2333) or [Textual format](http://edamontology.org/format_2330))
-
-The BioSchemas [FormalParameter profile] describes additional properties that can be used, including [description], [valueRequired], [defaultValue] and [identifier]
+The BioSchemas [FormalParameter profile] explains the above and lists additional properties that can be used, including [description], [valueRequired], [defaultValue] and [identifier]
 
 A contextual entity conforming to the [FormalParameter profile] SHOULD declare the versioned profile URI using [conformsTo], e.g.:
 
