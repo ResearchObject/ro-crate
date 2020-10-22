@@ -97,7 +97,6 @@ If present in the root directory, `ro-crate-preview.html` MUST:
 
 `ro-crate-preview.html` SHOULD:
 
-*   Contain at least the same information as the _RO-Crate JSON-LD_, with the exception that files which have no description, author or similar metadata MAY not be listed in the website.
 *   Display at least the metadata relating to the _Root Data Enity_ as static HTML without the need for scripting. It MAY contain extra features enabled by JavaScript.
 *   When a _Data Entity_ or _Contextual Entity_ is referenced by its ID:
   *   If it has a [name] property, provide a link to its HTML version.
