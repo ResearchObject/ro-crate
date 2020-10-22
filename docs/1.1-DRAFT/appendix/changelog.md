@@ -30,7 +30,7 @@ excerpt: List of changes in releases of this specifications
   * Added section on considerations for [Web-based Data Entities](../data-entities.md#web-based-data-entities)  [#74](https://github.com/ResearchObject/ro-crate/issues/74)
   * The [root dataset](../root-data-entity.md#direct-properties-of-the-root-data-entity) is no longer required to be `./` [#74](https://github.com/ResearchObject/ro-crate/issues/74)
   * [RO-Crate Root](../structure.md) directory no longer requires payload files [#74](https://github.com/ResearchObject/ro-crate/issues/74)
-  * [Workflows and scripts](../workflows.md) section now aligned with [BioSchemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/)  [#81](https://github.com/ResearchObject/ro-crate/issues/81)
+  * [Workflows and scripts](../workflows.md) section now aligned with [BioSchemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/)  [#81](https://github.com/ResearchObject/ro-crate/issues/81) [#100](https://github.com/ResearchObject/ro-crate/pull/100)
   * Added section [Programming with JSON-LD](implementation-notes.md#programming-with-json-ld) and note that `@type` might be an array [#85](https://github.com/ResearchObject/ro-crate/issues/85)
   * Added new section [Handling relative URI references](jsonld.html#handling-relative-uri-references) [#73](https://github.com/ResearchObject/ro-crate/issues/73)
   * JSON-LD context no longer sets `@base: null` [#73](https://github.com/ResearchObject/ro-crate/issues/73)
@@ -38,10 +38,24 @@ excerpt: List of changes in releases of this specifications
   * Added section [Choosing URLs for ad hoc terms](jsonld.md#adding-new-or-ad-hoc-vocabulary-terms) [#71](https://github.com/ResearchObject/ro-crate/issues/71) [#90](https://github.com/ResearchObject/ro-crate/issues/90)
   * Section [RO-Crate JSON-LD Media type](jsonld.md#ro-crate-json-ld-media-type) expanded to suggest HTTP server configuration
   * Update JSON-LD context to [schema.org 10.0](http://schema.org/version/10.0/)
-  * Fixed some JSON typos
   * Remove HTML use of `relatedLink` property in [RepositoryCollection example](../provenance.md#digital-library-and-repository-content) [#91](https://github.com/ResearchObject/ro-crate/pull/91)
   * Distinguish between [contextual/data entities](../contextual-entities.md#contextual-vs-data-entities) [#94](https://github.com/ResearchObject/ro-crate/pull/94)
+  * RO-Crate preview HTML no longer needs to "contain same information as JSON-LD" [#108](https://github.com/ResearchObject/ro-crate/issues/108)
   * Change theme to `jekyll-rtd-theme` and split into multiple pages [#95](https://github.com/ResearchObject/ro-crate/pull/95)
+  * Fixed typos in JSON and English 
+  * Several sections reviewed to improve language and examples
+    [#91](https://github.com/ResearchObject/ro-crate/pull/91)
+    [#92](https://github.com/ResearchObject/ro-crate/pull/92)
+    [#93](https://github.com/ResearchObject/ro-crate/pull/93)
+    [#94](https://github.com/ResearchObject/ro-crate/pull/94)
+    [#96](https://github.com/ResearchObject/ro-crate/pull/96)
+    [#97](https://github.com/ResearchObject/ro-crate/pull/97)
+    [#98](https://github.com/ResearchObject/ro-crate/pull/98)
+    [#101](https://github.com/ResearchObject/ro-crate/pull/101)
+    [#102](https://github.com/ResearchObject/ro-crate/pull/102)
+    [#103](https://github.com/ResearchObject/ro-crate/pull/103)
+    [#104](https://github.com/ResearchObject/ro-crate/pull/104)
+    [#105](https://github.com/ResearchObject/ro-crate/pull/105)
 * [RO-Crate 1.0.1](https://github.com/ResearchObject/ro-crate/releases/tag/1.0.1)
   * Fix JSON typo in example  
 * [RO-Crate 1.0.0](https://github.com/ResearchObject/ro-crate/releases/tag/1.0.0) <https://w3id.org/ro/crate/1.0>
