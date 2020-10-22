@@ -24,7 +24,7 @@ dependencies: node_modules/.bin/makehtml
 clean:
 	rm -rf release "docs/${RELEASE}/"
 
-release: release/ro-crate-${TAG}.html release/ro-crate-${TAG}.pdf release/ro-crate-context-${TAG}.json release/ro-crate-metadata.json release/ro-crate-preview.html
+release: release/ro-crate-${TAG}.html release/ro-crate-${TAG}.pdf release/ro-crate-context-${TAG}.jsonld release/ro-crate-metadata.json release/ro-crate-preview.html
 
 # Install dependencies for node
 node_modules/.bin/makehtml:
