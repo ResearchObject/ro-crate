@@ -99,7 +99,7 @@
           { "@id": "https://orcid.org/0000-0002-3468-0652"},
           { "@id": "https://orcid.org/0000-0003-1991-0533"},
           { "@id": "https://orcid.org/0000-0003-3910-0474"},
-          { "@id": "https://github.com/myiremark"},
+          { "@id": "https://orcid.org/0000-0003-3486-8193"},
           { "@id": "https://orcid.org/0000-0001-8172-8981"}
         ],
         "citation": {
@@ -424,7 +424,7 @@
         "@type": "Person",
         "name": "Gavin Kennedy"
       },
-      { "@id": "https://github.com/myiremark",
+      { "@id": "https://orcid.org/0000-0003-3486-8193",
         "@type": "Person",
         "name": "Mark Graves"
       },

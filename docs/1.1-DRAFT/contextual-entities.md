@@ -46,7 +46,9 @@ RO-Crate distinguishes between _Contextual entities_ and _Data entities_.
 
 Some contextual entities can also be considered data entities - for instance the [license](#licensing-access-control-and-copyright) property refers to a [CreativeWork] that can reasonably be downloaded, however a license document is not usually considered as part of research outputs and would therefore typically not be included in [hasPart] on the [root data entity](root-data-entity.md). 
 
-Likewise, some data entities may also be described as contextual entities, for instance a `File` that is also a [ScholarlyArticle]. In such cases the _Contextual Data Entity_ SHOULD be described a single JSON object in the `@graph` with both types listed in a `@type` array. Consumers of an RO-Crate encountering two entities with the same `@id` SHOULD interpret them as a single entity.
+Likewise, some data entities may also be described as contextual entities, for instance a `File` that is also a [ScholarlyArticle]. In such cases the _Contextual Data Entity_ MUST be described as a single JSON object in the RO-Crate Metadata JSON `@graph` and SHOULD list both relevant data and contextual types in a `@type` array. 
+
+The RO-Crate Metadata JSON `@graph` MUST NOT list multiple entities with the same `@id`; behaviour of consumers of an RO-Crate encountering multiple entities with the same `@id` is undefined.
 
 <!-- https://github.com/ResearchObject/ro-crate/pull/94/ END -->
 
