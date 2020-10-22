@@ -78,8 +78,8 @@ docs/${RELEASE}/ro-crate-metadata.json: docs/${DRAFT}/ro-crate-metadata.json
 docs/${RELEASE}/ro-crate-preview.html: dependencies docs/${RELEASE}/ro-crate-metadata.json
 	node_modules/.bin/makehtml docs/${RELEASE}/ro-crate-metadata.json
 
-docs/${RELEASE}/context.json: dependencies docs/${RELEASE}/ scripts/schema-context.py
-	scripts/schema-context.py ${RELEASE} ${TAG} > docs/${RELEASE}/context.json
+docs/${RELEASE}/context.jsonld: dependencies docs/${RELEASE}/ scripts/schema-context.py
+	scripts/schema-context.py ${RELEASE} ${TAG} > docs/${RELEASE}/context.jsonld
 
 release/:
 	mkdir -p release
@@ -108,8 +108,8 @@ release/ro-crate-${TAG}.pdf: dependencies release/ release/ro-crate-${TAG}.md
 	  --number-sections --toc  --metadata pagetitle="RO-Crate Metadata Specification ${RELEASE}" \
 	  --from=markdown+gfm_auto_identifiers -o release/ro-crate-${TAG}.pdf
 
-release/ro-crate-context-${TAG}.json: dependencies release/ docs/${RELEASE}/context.json
-	cp docs/${RELEASE}/context.json release/ro-crate-context-${TAG}.json
+release/ro-crate-context-${TAG}.jsonld: dependencies release/ docs/${RELEASE}/context.jsonld
+	cp docs/${RELEASE}/context.jsonld release/ro-crate-context-${TAG}.jsonld
 
 release/ro-crate-metadata.json: dependencies release/ docs/${RELEASE}/ro-crate-metadata.json
 	cp docs/${RELEASE}/ro-crate-metadata.json release/ro-crate-metadata.json
