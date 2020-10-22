@@ -26,7 +26,7 @@ excerpt: |
 
 # APPENDIX: RO-Crate JSON-LD
 
-It is not necessary to use [JSON-LD tooling] to generate or parse the _RO-Crate Metadata File_, although JSON-LD tools may make it easier to conform to this specification, e.g. handling relative URIs. It is RECOMMENDED to use JSON tooling to handle [JSON][RFC 7159] syntax and escaping rules.
+It is not necessary to use [JSON-LD tooling] to generate or parse the _RO-Crate Metadata File_, although JSON-LD tools may make it easier to conform to this specification, e.g. handling relative URIs. It is RECOMMENDED to use [JSON tooling][JSON] to handle [JSON][RFC 7159] syntax and escaping rules.
 
 This appendix shows a brief JSON-LD introduction for complying with the _RO-Crate Metadata File_ requirements.
 
@@ -82,7 +82,7 @@ The example below shows the overall structure of a flattened, compacted _RO-Crat
 }
 ```
 
-**Note**: entities above have been shortened for brevity, see their individual sections elsewhere in this specification.
+**Note**: entities above have been shortened for brevity, see the individual sections for [data entities](../data-entities.md) and [contextual entities](../contextual-entities.md).
 
 
 The order of the `@graph` list is not significant. Above we see that the RO-Crate JSON-LD graph contains the _RO-Crate Metadata File Descriptor_, the _Root Data Entity_, any _Data Entities_ and any _Contextual Entities_.
@@ -154,11 +154,13 @@ The above is equivalent to the following JSON-LD using an embedded context, by a
 }
 ```
 
-While the second form is more verbose, one advantage is that it is "archivable" as it does not require Internet access for retrieving the `@context` permalink. Tools consuming or archiving RO-Crate MAY replace by-reference `@context` URIs with an embedded context by using version-specific hard-coded contexts, see <https://github.com/ResearchObject/ro-crate/releases>
+Note that `conformsTo` is retained to indicate which version of RO-Crate specification the [root data entity](../root-data-entity.md) conforms to.
+
+While the second form is more verbose, one advantage is that it is "archivable" as it does not require Internet access for retrieving the `@context` permalink. Tools consuming or archiving RO-Crate MAY replace by-reference `@context` URIs with an embedded context by using version-specific hard-coded contexts. See <https://github.com/ResearchObject/ro-crate/releases> to download the JSON-LD contexts corresponding to each version of this specification.
 
 To check which RO-Crate version is used (in terms of properties and types expected), clients SHOULD check the property `conformsTo` on the _RO-Crate Metadata File Descriptor_ rather than the value of `@context`.
 
-RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded context, but MAY use the [JSON-LD flattening] algorithm with _compaction_ to a referenced _RO-Crate JSON-LD context_ (see also notes on [handling relative URI references](#handling-relative-uri-references) below).
+RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded context, but MAY use the [JSON-LD flattening] algorithm with _compaction_ to a referenced _RO-Crate JSON-LD context_ (see also notes on [handling relative URI references](relative-uris.md) below).
 
 ```tip
 The [JSON-LD flattening & compaction](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) algorithms can be used to rewrite to a different `@context`, e.g. to `https://schema.org/docs/jsonldcontext.jsonld` or a different version of the _RO-Crate JSON-LD Context_.
