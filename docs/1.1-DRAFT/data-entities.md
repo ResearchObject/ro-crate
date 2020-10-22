@@ -194,7 +194,7 @@ While one use-case of RO-Crates is to describe _files_ contained within the _RO-
 
 Using Web-based data entities can be important particularly where a file can't be included in the _RO-Crate root_ because of licensing concerns, large data sizes, privacy, or where it is desirable to link to the latest online version.
 
-Example of an RO-Crate including a _File Data Entity_ external to the _RO-Crate root_ (file entity https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf):
+Example of an RO-Crate including a _File Data Entity_ external to the _RO-Crate root_ (file entity <https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf>):
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context",
