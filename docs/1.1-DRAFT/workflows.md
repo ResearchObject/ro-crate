@@ -130,9 +130,15 @@ It is possible to indicate _steps_ that are executed as part of an `Computationa
 
 ## Workflow diagram/sketch
 
-It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. This diagram MAY be included as an [ImageObject] which is [about] the `SoftwareSourceCode`:
+It can be beneficial to show a diagram or sketch to explain the script/workflow. This may have been generated from a workflow management system, or drawn manually as a diagram. This diagram MAY be included from the `SoftwareSourceCode` data entity by using `image`, pointing to an [ImageObject] data entity which is [about] the `SoftwareSourceCode`:
 
 ```json
+{
+  "@id": "workflow/workflow.knime",  
+  "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
+  "name": "RetroPath2.0 workflow",
+  "image": {"@id": "workflow/workflow.svg" } 
+},
 {
   "@id": "workflow/workflow.svg",
   "@type": ["File", "ImageObject"],
@@ -169,30 +175,47 @@ A workflow diagram may still be provided even if there is no programmatic `Softw
 
 ## Complying with BioSchemas Computational Workflow profile
 
-To comply with the BioSchemas [ComputationalWorkflow profile],
-where possible, data entities representing _workflows_ SHOULD describe these properties and their related contextual entities:
+Data entities representing _workflows_ (`@type: ComputationalWorkflow`)
+SHOULD comply with the BioSchemas [ComputationalWorkflow profile],
+where possible. 
 
-* [name] giving a short descriptive human-readable name for the workflow
-* [programmingLanguage] identifying the workflow system, typed as `ProgrammingLanguage`
-* [creator] identifying the [Person](s) and/or [Organization](s) that assembled the workflow. (This may differ from the [author] of the conceptual workflow, e.g. if the workflow was converted from one language to another).
-* [dateCreated] the date the workflow was first created, e.g. `2020-05-23`
-* [license] identifying a [CreativeWork] that details the license for distributing or editing the workflow
-* [input] and [output] identifying contextual entities for the [FormalParameter] describing input and output parameters/variables that may be varied on different workflow executions
-* [sdPublisher] to identify the [Person] or [Organization] who has made the JSON-LD description of the workflow
-* [url] to identify a public webpage or source code repository for the workflow
-* [version] to indicate the released version of this workflow file
+When complying with this profile, the workflow data entities
+MUST describe these properties and their related contextual entities:
+[name], [programmingLanguage], [creator], [dateCreated], [license], [sdPublisher], [url], [version].
 
-Contextual entities for [FormalParameter], referenced by `input` or `output`, SHOULD describe:
+The [ComputationalWorkflow profile] explains the above and list additional properties that a compliant [ComputationalWorkflow] data entity SHOULD include: [citation], [contributor], [creativeWorkStatus], [description], [funding], [hasPart], [isBasedOn], [keywords], [maintainer], [producer], [publisher], [runtimePlatform], [softwareRequirements], [targetProduct]
 
-* [name] given the programmatic name for the parameter binding
-* [additionalType] identifying the most specific subtype of [EDAM Data](http://edamontology.org/data_0006) (fallbacks [Data](http://edamontology.org/data_0006) or [Text data](http://edamontology.org/data_2526))
-* [encodingFormat] identifying the most specific subtype of [EDAM Format](http://edamontology.org/format_1915) (fallbacks [Binary format](http://edamontology.org/format_2333) or [Textual format](http://edamontology.org/format_2330))
-* [valueRequired] `true` if this (input) parameter must be specified to run the workflow, or `false` (default) if parameter is optional.
-* [defaultValue] present if this (input) parameter has a default value. In RO-Crate this SHOULD be in the form of a `"string"` or a `{"@id": "data/entity.txt"}`
+A data entity conforming to the [ComputationalWorkflow profile] SHOULD declare the versioned profile URI using [conformsTo]:
 
-<!--
-TODO: Update requirements from BioSchemas profile Workflow 0.5
--->
+```json
+{ "@id": "workflow/alignment.knime",  
+  "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
+  "conformsTo": {"@id": "https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/"},
+  "..": ""
+}
+```
+
+### Describing inputs and outputs
+
+The input and output _parameters_ for a workflow or script can be given with `input` and `output` to [FormalParameter]
+contextual entities. Note that this entity usually represent a _potential_ input/output value in a reusable
+workflow, much like [function parameter definitions] in general programming.
+
+If complying with the BioSchemas [FormalParameter profile],
+the _contextual entities_ for [FormalParameter], referenced by `input` or `output`, MUST describe: [name], [additionalType], [encodingFormat]
+
+The BioSchemas [FormalParameter profile] explains the above and lists additional properties that can be used, including [description], [valueRequired], [defaultValue] and [identifier].
+
+A contextual entity conforming to the [FormalParameter profile] SHOULD declare the versioned profile URI using [conformsTo], e.g.:
+
+```json
+{
+  "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
+  "@type": "FormalParameter",
+  "conformsTo": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/",
+  "..": ""
+}
+```
 
 ```note
 `input`, `output` and `FormalParameter` are at time of writing proposed by BioSchemas and not yet integrated in schema.org
@@ -221,6 +244,7 @@ The below is an example of an RO-Crate complying with the [BioSchemas Computatio
     {
       "@id": "workflow/alignment.knime",  
       "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
+      "conformsTo": {"@id": "https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/"},
       "name": "Sequence alignment workflow",
       "programmingLanguage": {"@id": "#knime"},
       "creator": {"@id": "#alice"},
@@ -240,6 +264,7 @@ The below is an example of an RO-Crate complying with the [BioSchemas Computatio
     {
       "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
       "@type": "FormalParameter",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/",
       "name": "genome_sequence",
       "valueRequired": true,
       "additionalType": {"@id": "http://edamontology.org/data_2977"},
@@ -248,6 +273,7 @@ The below is an example of an RO-Crate complying with the [BioSchemas Computatio
     {
       "@id": "#6c703fee-6af7-4fdb-a57d-9e8bc4486044",
       "@type": "FormalParameter",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/",
       "name": "cleaned_sequence",
       "additionalType": {"@id": "http://edamontology.org/data_2977"},
       "encodingFormat": {"@id": "http://edamontology.org/format_2572"}
@@ -255,6 +281,7 @@ The below is an example of an RO-Crate complying with the [BioSchemas Computatio
     {
       "@id": "#2f32b861-e43c-401f-8c42-04fd84273bdf",
       "@type": "FormalParameter",
+      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/",
       "name": "sequence_alignment",
       "additionalType": {"@id": "http://edamontology.org/data_1383"},
       "encodingFormat": {"@id": "http://edamontology.org/format_1982"}
