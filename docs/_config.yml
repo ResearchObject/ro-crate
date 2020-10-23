@@ -2,7 +2,7 @@
 # https://github.com/rundocs/jekyll-rtd-theme/releases/tag/v1.1.7
 remote_theme: rundocs/jekyll-rtd-theme@bb00646afd7f05b3f4badb32ce1710197c483dfd
 #theme: jekyll-rtd-theme
-logo: assets/img/ro-crate.svg
+logo: assets/img/ro-crate-w-text.svg?20201023T0944
 
 title: Research Object Crate (RO-Crate)
 description: |
