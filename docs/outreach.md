@@ -29,11 +29,20 @@ Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): **
 
 ## Recent publications, presentations, citations
 
+Peter Sefton, Nick Thieberger, Marco La Rosa, Michael Lynch (2020):
+[**An open, composable standards–based research eResearch platform: Arkisto**](https://conference.eresearch.edu.au/2020/09/an-open-composable-standards-based-research-eresearch-platform-arkisto/), 
+_eResearch Australasia_
+
+Stian Soiland-Reyes, Ignacio Eguinoa (2020): [Packaging workflows with RO-Crate](https://doi.org/10.5281/zenodo.4011999), [_Workshop on FAIR Computational Workflows_](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).
+<https://doi.org/10.5281/zenodo.4011999>
+
+Simone Leo, Salvador Capella-Gutierrez (2020): [Testing workflows: Life Monitor and OpenEBench](https://docs.google.com/presentation/d/15113lwn8_H7ftDF9I650O3rZGeAVr6LVSU4-XDkBgA0/edit#slide=id.g9337569ecf_1_0), [_Workshop on FAIR Computational Workflows_](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).
+
 Peter Sefton, Eoghan Ó Carragáin, Carole Goble, Stian Soiland-Reyes (2019): [Introducing RO-Crate: research object data packaging](http://ptsefton.com/2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm). _eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. [[slides](https://docs.google.com/presentation/d/10faXX13opY0DAVVVeX5lG83F4MA_woLHkeIcUOko2IU/)] [[abstract](https://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019-eResearch_103_-Introducing-RO-Crate-research-object-data-packaging.pdf)]
  
 Mike Lynch: [Publishing versioned datasets using OCFL and nginx](https://eresearch.uts.edu.au/2019/11/05/eResearch2019_lighting_ocfl_nginx.htm).  _eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. 
 
-Peter Sefton, Mike Lynch: [ FAIR Simple Scalable Static Research Data Repository ](https://eresearch.uts.edu.au/2019/11/05/FAIR%20Repo%20-%20eResearch%20Presentation.htm). _eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. 
+Peter Sefton, Mike Lynch: [FAIR Simple Scalable Static Research Data Repository ](https://eresearch.uts.edu.au/2019/11/05/FAIR%20Repo%20-%20eResearch%20Presentation.htm). _eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. 
 
 Eoghan Ó Carragáin, Carole Goble, Peter Sefton, Stian Soiland-Reyes (2019): **RO-Crate, a lightweight approach to Research Object data packaging.**
 RO-15 at _Workshop on Research Objects ([RO 2019](http://www.researchobject.org/ro2019/))_, IEEE eScience 2019, 2019-09-24, San Diego, CA, USA.
@@ -71,7 +80,15 @@ Talk at _Workshop on Research Objects ([RO 2018](http://www.researchobject.org/r
 
 _To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 
-**[ELIXIR Biohackathon Europe 2019](https://www.biohackathon-europe.org/)**,  2019-11-18/2019-11-22, Paris, France. Project on [Research Object shape profiles](https://github.com/elixir-europe/BioHackathon-projects-2019/tree/master/projects/22).
+**[ELIXIR Biohackathon Europe 2020](https://www.biohackathon-europe.org/)** 2020-11-09/2020-11-13, Virtual. Project on [Galaxy export of RO-Crate](https://github.com/elixir-europe/BioHackathon-projects-2020/tree/master/projects/14).
+
+**[FAIR Computational Workflows workshop](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/)** (2020-09-02) at the 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).
+
+**[BCC2020 CollaborationFest](https://bcc2020.github.io/cofest/)** (2020-07-22 / 2020-07-23) topic _Exporting RO-Crate/BioCompute-Object packaged workflows from Galaxy_ made a first release of the [RO-Crate Python library](https://pypi.org/project/rocrate/).
+
+**[Virtual COVID-19 BioHackathon](https://github.com/virtual-biohackathons/covid-19-bh20/)** (2020-04-05 / 2020-04-11) topic _WorkflowHub_ launched <https://covid19.workflowhub.eu/> with RO-Crate support.
+
+**[ELIXIR Biohackathon Europe 2019](https://www.biohackathon-europe.org/)** 2019-11-18/2019-11-22, Paris, France. Project on [Research Object shape profiles](https://github.com/elixir-europe/BioHackathon-projects-2019/tree/master/projects/22).
 
 **[eResearch Australasia 2019](https://conference.eresearch.edu.au/)** 2019-10-21/2019-10-25. [Data Packaging](https://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019_eResearch_104_Digital-Preservation-and-Data-Packaging.pdf) birds of a feather session.
 
