@@ -122,7 +122,7 @@ This document has guidelines for ways to represent common requirements for descr
 
 * Contact information for a data set.
 * Descriptive information for a dataset and the files within it and their contexts such as an abstract, spatial and temporal coverage.
-* Associated Publications.
+* Associated publications.
 * Funding relationships.
 * Provenance information of various kinds; who (people and organizations) and what (instruments and computer programs) created or contributed to the data set and individual files within it.
 * Workflows that operate on the data using standard workflow descriptions including ‘single step workflows’; executable files or environments such as singularity containers or Jupyter notebooks.
@@ -131,7 +131,7 @@ However, as RO-Crate uses _Linked Data_ principles, adopters of RO-Crate are fre
 
 ## Future coverage
 
-A future version of this specification will allow for variable-level assertions: In some cases, e.g. for tabular data, additional metadata may be provided about the structure and variables within a given file see the Use Case [Describe a tabular data file directly in RO-Crate metadata](https://github.com/ResearchObject/ro-crate/issues/27) for work-in-progress.
+A future version of this specification will allow for variable-level assertions: In some cases, e.g. for tabular data, additional metadata may be provided about the structure and variables within a given file see the use case [Describe a tabular data file directly in RO-Crate metadata](https://github.com/ResearchObject/ro-crate/issues/27) for work-in-progress.
 
 
 ## Recommended Identifiers
