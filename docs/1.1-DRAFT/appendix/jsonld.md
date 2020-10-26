@@ -248,7 +248,7 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 
 Context terms must ultimately map to HTTP(s) URIs which poses challenges for crate-authors wishing to use their own vocabularies.
 
-RO-Crate provides some strategies to add a new term (a Class or Property) that is not in schema.org or another published vocabulary, so that there is a stable URI that can be added to the @context. 
+RO-Crate provides some strategies to add a new term (a Class or Property) that is not in Schema.org or another published vocabulary, so that there is a stable URI that can be added to the @context. 
 
 ### Choosing URLs for ad hoc terms
 

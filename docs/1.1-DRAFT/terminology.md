@@ -51,7 +51,7 @@ _URI_: A _Uniform Resource Identifier_ as defined in [RFC 3986], for example `ht
 
 _URI Path_: The relative _path_ element of an _URI_ as defined in [RFC3986 section 3.3], e.g. `path/file.html`
 
-_RO-Crate JSON-LD Context_: A JSON-LD [context][JSON-LD context] that provides Linked Data mapping for RO-Crate metadata to vocabularies like [schema.org].
+_RO-Crate JSON-LD Context_: A JSON-LD [context][JSON-LD context] that provides Linked Data mapping for RO-Crate metadata to vocabularies like [Schema.org].
 
 _RO-Crate JSON-LD_: JSON-LD structure using the _RO-Crate JSON-LD Context_ and containing RO-Crate metadata, written as if [flattened]  and then [compacted] according to the rules in JSON-LD 1.0. The _RO-Crate JSON-LD_ for an _RO-Crate_ is stored in the _RO-Crate Metadata File_.
 
@@ -59,7 +59,7 @@ _RO-Crate JSON-LD_: JSON-LD structure using the _RO-Crate JSON-LD Context_ and c
 
 Throughout this specification, RDF terms are referred to using the keys defined in the _RO-Crate JSON-LD Context_.
 
-Following [schema.org] practice, `property` names start with lowercase letters and `Class` names start with uppercase letters.
+Following [Schema.org] practice, `property` names start with lowercase letters and `Class` names start with uppercase letters.
 
 In the _RO-Crate Metadata File_ the RDF terms use their RO-Crate JSON-LD names as defined in the _RO-Crate JSON-LD Context_, which is available at <https://w3id.org/ro/crate/1.1-DRAFT/context>
 

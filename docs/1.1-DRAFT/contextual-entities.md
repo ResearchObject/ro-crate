@@ -136,7 +136,7 @@ An [Organization] SHOULD also be used for a [Person]'s [affiliation] property.
 
 ## Contact information
 
-A RO-Crate SHOULD have contact information, using a contextual entity of type [ContactPoint]. Note that in schema.org [Dataset] does not currently have the corresponding [contactPoint] property, so the contact point would need to be given through a [Person] or [Organization] contextual entity which are related to the Dataset via a [author] or [publisher] property.
+A RO-Crate SHOULD have contact information, using a contextual entity of type [ContactPoint]. Note that in Schema.org [Dataset] does not currently have the corresponding [contactPoint] property, so the contact point would need to be given through a [Person] or [Organization] contextual entity which are related to the Dataset via a [author] or [publisher] property.
 
 
 ```json
@@ -536,7 +536,7 @@ And the place is referenced from the [contentLocation] property of the dataset.
 
 Subject properties (equivalent to a Dublin Core Subject) on the [root data entity](root-data-entity.md) or a [data entity](data-entities.md) MUST use the [about] property.
 
-Keyword properties MUST use [keywords]. Note that by schema.org convention, keywords are given as a single JSON string, with individual keywords separated by commas.
+Keyword properties MUST use [keywords]. Note that by Schema.org convention, keywords are given as a single JSON string, with individual keywords separated by commas.
 
 ```json
 {

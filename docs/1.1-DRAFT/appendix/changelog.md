@@ -37,7 +37,7 @@ excerpt: List of changes in releases of this specifications
   * Added note on [Encoding file paths](../data-entities.md#encoding-file-paths) [#77](https://github.com/ResearchObject/ro-crate/issues/77) [#80](https://github.com/ResearchObject/ro-crate/issues/80)
   * Added section [Choosing URLs for ad hoc terms](jsonld.md#adding-new-or-ad-hoc-vocabulary-terms) [#71](https://github.com/ResearchObject/ro-crate/issues/71) [#90](https://github.com/ResearchObject/ro-crate/issues/90)
   * Section [RO-Crate JSON-LD Media type](jsonld.md#ro-crate-json-ld-media-type) expanded to suggest HTTP server configuration
-  * Update JSON-LD context to [schema.org 10.0](http://schema.org/version/10.0/)
+  * Update JSON-LD context to [Schema.org 10.0](http://schema.org/version/10.0/)
   * Remove HTML use of `relatedLink` property in [RepositoryCollection example](../provenance.md#digital-library-and-repository-content) [#91](https://github.com/ResearchObject/ro-crate/pull/91)
   * Distinguish between [contextual/data entities](../contextual-entities.md#contextual-vs-data-entities) [#94](https://github.com/ResearchObject/ro-crate/pull/94)
   * RO-Crate preview HTML no longer needs to "contain same information as JSON-LD" [#108](https://github.com/ResearchObject/ro-crate/issues/108)
@@ -63,7 +63,7 @@ excerpt: List of changes in releases of this specifications
     * .. must use `conformsTo` to indicate RO-Crate version
   * Clarified use of RO-Crate JSON-LD Context
   * Linked Data principles added
-  * RO-Crate JSON-LD Context updated to use [schema.org 5.0](http://schema.org/version/5.0/)
+  * RO-Crate JSON-LD Context updated to use [Schema.org 5.0](http://schema.org/version/5.0/)
   * Workflow and Script now typed with `@type` array instead of `additionalType`
   * Simplified tables of direct properties to list of properties
   * Simplified example of `affiliation`

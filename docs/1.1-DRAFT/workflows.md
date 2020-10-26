@@ -218,7 +218,7 @@ A contextual entity conforming to the [FormalParameter profile] SHOULD declare t
 ```
 
 ```note
-`input`, `output` and `FormalParameter` are at time of writing proposed by BioSchemas and not yet integrated in schema.org
+`input`, `output` and `FormalParameter` are at time of writing proposed by BioSchemas and not yet integrated in Schema.org
 ```
 
 ## Complete Workflow Example

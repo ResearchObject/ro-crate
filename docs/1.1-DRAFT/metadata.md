@@ -57,26 +57,26 @@ RO-Crate realize these principles using a particular set of technologies and bes
 2. The _RO-Crate Metadata File_ is based on the structured data format [JSON-LD]. 
 3. Multiple open source tools/libraries are available [for JSON][JSON] and [for JSON-LD][JSON-LD].
 4. The _RO-Crate Website_ is [HTML 5], and the _RO-Crate Metadata File_ is [JSON-LD], one of the [W3C RDF 1.1 formats].
-5. The _RO-Crate Metadata File_ reuse common vocabularies like [schema.org], and this specification [recommend identifiers](#recommended-identifiers) it should link to.
+5. The _RO-Crate Metadata File_ reuse common vocabularies like [Schema.org], and this specification [recommend identifiers](#recommended-identifiers) it should link to.
 
 ## Base metadata standard: Schema.org
 
-[schema.org] is the base metadata standard for RO-Crate. Schema.org was chosen because it is widely used on the World Wide Web and supported by search engines, on the assumption that discovery is likely to be maximized if search engines index the content. NOTE: As far as we know there is no alternative, well-maintained linked-data schema for research data with the coverage needed for this project - i.e. a single standard for expressing all the examples presented in this specification.
+[Schema.org] is the base metadata standard for RO-Crate. Schema.org was chosen because it is widely used on the World Wide Web and supported by search engines, on the assumption that discovery is likely to be maximized if search engines index the content. NOTE: As far as we know there is no alternative, well-maintained linked-data schema for research data with the coverage needed for this project - i.e. a single standard for expressing all the examples presented in this specification.
 
-RO-Crate relies heavily on [schema.org] using a constrained subset of [JSON-LD], and this document gives opinionated recommendations on how to represent the metadata using existing [linked data] best practices.
+RO-Crate relies heavily on [Schema.org] using a constrained subset of [JSON-LD], and this document gives opinionated recommendations on how to represent the metadata using existing [linked data] best practices.
 
-### Differences from schema.org
+### Differences from Schema.org
 
-Generally, the standard keys from [schema.org] should be used. However, RO-Crate uses variant names for some elements, specifically:
+Generally, the standard keys from [Schema.org] should be used. However, RO-Crate uses variant names for some elements, specifically:
 
 * `File` is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of schema.org or a research data extension may re-define `File`.
 * `Journal` is mapped to <http://schema.org/Periodical>.
 
 ```warning
-JSON-LD examples given on the [schema.org website] may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
+JSON-LD examples given on the [Schema.org website] may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
 ```
 
-To simplify processing and avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even where [schema.org] for some properties otherwise permit shorter forms like `"author": "http://example.com/alice"`.
+To simplify processing and avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even where [Schema.org] for some properties otherwise permit shorter forms like `"author": "http://example.com/alice"`.
 
 See the appendix [RO-Crate JSON-LD](appendix/jsonld.md) for details.
 
@@ -98,7 +98,7 @@ From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
 
 - `conformsTo` mapped to <http://purl.org/dc/terms/conformsTo>
 
-These keys are being proposed by [BioSchemas profile ComputationalWorkflow 0.5-DRAFT](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21) and [FormalParameter 0.1-DRAFT](https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21) to be integrated into schema.org: 
+These keys are being proposed by [BioSchemas profile ComputationalWorkflow 0.5-DRAFT](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21) and [FormalParameter 0.1-DRAFT](https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21) to be integrated into Schema.org: 
 
 * `ComputationalWorkflow` mapped to <https://bioschemas.org/ComputationalWorkflow>
 * `FormalParameter` mapped to <https://bioschemas.org/FormalParameter>
@@ -127,7 +127,7 @@ This document has guidelines for ways to represent common requirements for descr
 * Provenance information of various kinds; who (people and organizations) and what (instruments and computer programs) created or contributed to the data set and individual files within it.
 * Workflows that operate on the data using standard workflow descriptions including ‘single step workflows’; executable files or environments such as singularity containers or Jupyter notebooks.
 
-However, as RO-Crate uses _Linked Data_ principles, adopters of RO-Crate are free to supplement RO-Crate using [schema.org] metadata and/or assertions using other _Linked Data_ vocabularies.
+However, as RO-Crate uses _Linked Data_ principles, adopters of RO-Crate are free to supplement RO-Crate using [Schema.org] metadata and/or assertions using other _Linked Data_ vocabularies.
 
 ## Future coverage
 
