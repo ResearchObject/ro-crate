@@ -30,7 +30,7 @@ It is not necessary to use [JSON-LD tooling] to generate or parse the _RO-Crate 
 
 This appendix shows a brief JSON-LD introduction for complying with the _RO-Crate Metadata File_ requirements.
 
-The example below shows the overall structure of a flattened, compacted _RO-Crate Metadata File_ where `@context` refers to the _RO-Crate JSON-LD Context_, while `@graph` is a flat list of the entities that constitute this RO-Crate. 
+The example below shows the overall structure of a flattened, compacted _RO-Crate Metadata File_ where `@context` refers to the _RO-Crate JSON-LD Context_, while `@graph` is a flat array of the entities that constitute this RO-Crate. 
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context",
@@ -85,7 +85,7 @@ The example below shows the overall structure of a flattened, compacted _RO-Crat
 **Note**: entities above have been shortened for brevity, see the individual sections for [data entities](../data-entities.md) and [contextual entities](../contextual-entities.md).
 
 
-The order of the `@graph` list is not significant. Above we see that the RO-Crate JSON-LD graph contains the _RO-Crate Metadata File Descriptor_, the _Root Data Entity_, any _Data Entities_ and any _Contextual Entities_.
+The order of the `@graph` array is not significant. Above we see that the RO-Crate JSON-LD graph contains the _RO-Crate Metadata File Descriptor_, the _Root Data Entity_, any _Data Entities_ and any _Contextual Entities_.
 
 
 
@@ -95,7 +95,7 @@ Properties of an entity can refer to another URL or entity by using the form `{"
 
 Identifiers in `@id` SHOULD be either a valid _absolute URI_ like <http://example.com/>, or a _URI references_ _URI paths_ relative to the RO-Crate root directory. Care must be taken to express any relative paths using `/` separator and escape special characters like space (`%20`). As JSON-LD supports _IRIs_, international characters in identifiers SHOULD be encoded in UTF-8 rather than `%`-escaped.
 
-Because the _RO-Crate JSON-LD_ is _flattened_, all described entities must be direct children of the `@graph` element rather than being nested under another property or list.
+Because the _RO-Crate JSON-LD_ is _flattened_, all described entities must be JSON objects as direct children of the `@graph` element rather than being nested under another object or array. Properties referencing entities must use a JSON object with `@id` as the only key, e.g. `"author": {"@id": "https://orcid.org/0000-0002-1825-0097"}`
 
 If no obvious identifier is available for a contextual entity, an identifier local to the _RO-Crate Metadata File_ can be generated, for instance `{"@id": "#alice"}` or `{"@id": "#ac0bd781-7d91-4cdf-b2ad-7305921c7650"}`. Although it is RECOMMENDED to use `#`-based local identifiers, identifiers in `@id` MAY alternatively be a _blank node_ identifier (e.g. `_:alice`).
 
@@ -215,7 +215,7 @@ ln -s ro-crate-metadata.json ro-crate-metadata.jsonld
 
 To extend RO-Crate, implementers SHOULD try to use existing <http://schema.org/> properties and classes and MAY use terms from other vocabularies and ontologies when this is not possible.
 
-The terms (properties and classes) used SHOULD be added as keys to the `@context` in the _RO-Crate JSON-LD_ (if not present). To avoid duplicating the _RO-Crate JSON-LD Context_ the `@context: []` array form SHOULD be used as shown below.
+The _terms_ (properties and classes) used SHOULD be added as keys to the `@context` in the _RO-Crate JSON-LD_ (if not present). To avoid duplicating the _RO-Crate JSON-LD Context_ the `@context: []` array form SHOULD be used as shown below.
 
 URIs in the `@context` SHOULD resolve to a useful human readable page. When this is not possible - for example if the URI resolves to an RDF ontology file, a human-readable URI SHOULD be provided using a [sameAs] description.
 
@@ -248,7 +248,7 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 
 Context terms must ultimately map to HTTP(s) URIs which poses challenges for crate-authors wishing to use their own vocabularies.
 
-RO-Crate provides some strategies to add a new term (a Class or Property) that is not in schema.org or another published vocabulary, so that there is a stable URI that can be added to the @context. 
+RO-Crate provides some strategies to add a new term (a Class or Property) that is not in Schema.org or another published vocabulary, so that there is a stable URI that can be added to the @context. 
 
 ### Choosing URLs for ad hoc terms
 

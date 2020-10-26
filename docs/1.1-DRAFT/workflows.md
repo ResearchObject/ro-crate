@@ -173,10 +173,10 @@ A workflow diagram may still be provided even if there is no programmatic `Softw
 }
 ```
 
-## Complying with BioSchemas Computational Workflow profile
+## Complying with Bioschemas Computational Workflow profile
 
 Data entities representing _workflows_ (`@type: ComputationalWorkflow`)
-SHOULD comply with the BioSchemas [ComputationalWorkflow profile],
+SHOULD comply with the Bioschemas [ComputationalWorkflow profile],
 where possible. 
 
 When complying with this profile, the workflow data entities
@@ -201,10 +201,10 @@ The input and output _parameters_ for a workflow or script can be given with `in
 contextual entities. Note that this entity usually represent a _potential_ input/output value in a reusable
 workflow, much like [function parameter definitions] in general programming.
 
-If complying with the BioSchemas [FormalParameter profile],
+If complying with the Bioschemas [FormalParameter profile],
 the _contextual entities_ for [FormalParameter], referenced by `input` or `output`, MUST describe: [name], [additionalType], [encodingFormat]
 
-The BioSchemas [FormalParameter profile] explains the above and lists additional properties that can be used, including [description], [valueRequired], [defaultValue] and [identifier].
+The Bioschemas [FormalParameter profile] explains the above and lists additional properties that can be used, including [description], [valueRequired], [defaultValue] and [identifier].
 
 A contextual entity conforming to the [FormalParameter profile] SHOULD declare the versioned profile URI using [conformsTo], e.g.:
 
@@ -218,12 +218,12 @@ A contextual entity conforming to the [FormalParameter profile] SHOULD declare t
 ```
 
 ```note
-`input`, `output` and `FormalParameter` are at time of writing proposed by BioSchemas and not yet integrated in schema.org
+`input`, `output` and `FormalParameter` are at time of writing proposed by Bioschemas and not yet integrated in Schema.org
 ```
 
 ## Complete Workflow Example
 
-The below is an example of an RO-Crate complying with the [BioSchemas ComputationalWorkflow profile 0.5][ComputationalWorkflow profile]:
+The below is an example of an RO-Crate complying with the [Bioschemas ComputationalWorkflow profile 0.5][ComputationalWorkflow profile]:
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context", 

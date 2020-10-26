@@ -136,7 +136,7 @@ An [Organization] SHOULD also be used for a [Person]'s [affiliation] property.
 
 ## Contact information
 
-A RO-Crate SHOULD have contact information, using a contextual entity of type [ContactPoint]. Note that in schema.org [Dataset] does not currently have the corresponding [contactPoint] property, so the contact point would need to be given through a [Person] or [Organization] contextual entity which are related to the Dataset via a [author] or [publisher] property.
+A RO-Crate SHOULD have contact information, using a contextual entity of type [ContactPoint]. Note that in Schema.org [Dataset] does not currently have the corresponding [contactPoint] property, so the contact point would need to be given through a [Person] or [Organization] contextual entity which are related to the Dataset via a [author] or [publisher] property.
 
 
 ```json
@@ -344,7 +344,7 @@ The below _Data Entity_ has a [copyrightHolder] which is different from its [aut
 
 In some cases the license of the [RO-Crate metadata](root-data-entity.md) (the JSON-LD statements in the _RO-Crate Metadata File Descriptor_) is different from the license on the [Root Data Entity](root-data-entity.md) and its content (_data entities_ indicated by [hasPart]). 
 
-For instance, a common pattern for repositories is to license metadata as [CC0 Public Domain Dedication][CC0], while data is licensed as [CC-BY] or similar.  This pattern allow metadata to be combined freely (e.g. the DataCite knowledge graph), while redistribution of data files would require explicit attribution and statement of their license.
+For instance, a common pattern for repositories is to license metadata as [CC0 Public Domain Dedication][CC0], while data is licensed as [CC-BY] or similar.  This pattern allow metadata to be combined freely (e.g. the [DataCite] knowledge graph), while redistribution of data files would require explicit attribution and statement of their license.
 
 To express the metadata license is different from the _Root Data Entity_, expand the _RO-Crate Metadata File Descriptor_  to include `license`:
 
@@ -492,7 +492,7 @@ The place has a [geo] property, referencing an _Contextual Entity_ of `@type` [G
 ```
 
 
-The [GeoCoordinates] item SHOULD have a human readable [name], which is used in  generating the `ro-crate-preview.html` file.
+The [GeoCoordinates] contextual entity SHOULD have a human readable [name], which is used in  generating the `ro-crate-preview.html` file.
 
 And the place is referenced from the [contentLocation] property of the dataset.
 
@@ -536,7 +536,7 @@ And the place is referenced from the [contentLocation] property of the dataset.
 
 Subject properties (equivalent to a Dublin Core Subject) on the [root data entity](root-data-entity.md) or a [data entity](data-entities.md) MUST use the [about] property.
 
-Keyword properties MUST use [keywords]. Note that by schema.org convention, keywords are given as a single JSON string, with individual keywords separated by commas.
+Keyword properties MUST use [keywords]. Note that by Schema.org convention, keywords are given as a single JSON string, with individual keywords separated by commas.
 
 ```json
 {
@@ -562,7 +562,7 @@ To describe the _time period_ which a RO-Crate [Data Entity](date-entities.md) (
 
 ## Thumbnails
 
-A [File] or any other item MAY have a [thumbnail] property which references another file.
+A [File] or any other entity MAY have a [thumbnail] property which references another file.
 
 For example, the below [RepositoryObject] is related to four files which are all versions of the same image (via [hasFile]) one of which is a thumbnail. The thumbnail MUST be included in the RO-Crate.
 
