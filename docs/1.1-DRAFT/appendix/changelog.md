@@ -56,6 +56,7 @@ excerpt: List of changes in releases of this specifications
     [#103](https://github.com/ResearchObject/ro-crate/pull/103)
     [#104](https://github.com/ResearchObject/ro-crate/pull/104)
     [#105](https://github.com/ResearchObject/ro-crate/pull/105)
+    [#111](https://github.com/ResearchObject/ro-crate/pull/111)
 * [RO-Crate 1.0.1](https://github.com/ResearchObject/ro-crate/releases/tag/1.0.1)
   * Fix JSON typo in example  
 * [RO-Crate 1.0.0](https://github.com/ResearchObject/ro-crate/releases/tag/1.0.0) <https://w3id.org/ro/crate/1.0>
