@@ -141,7 +141,7 @@ _RO-Crate JSON-LD_ SHOULD use the following IDs where possible:
 * For a _Root Data Entity_, an `identifier` which is RECOMMENDED to be a  <https://doi.org/> URI. 
 * For a [Person] participating in the research process: [ORCID] identifiers, e.g. <https://orcid.org/0000-0002-1825-0097>
 * For [Organization]s including [funder]s,  [Research Organization Registry URIs], e.g. <https://ror.org/0384j8v12>
-* For items of type [Place], a [geonames] URL, e.g. <http://sws.geonames.org/8152662/>
+* For entities of type [Place], a [geonames] URL, e.g. <http://sws.geonames.org/8152662/>
 * For file formats, a [Pronom] URL, for example <https://www.nationalarchives.gov.uk/PRONOM/fmt/831>.
 
 In the absence of the above, RO-Crates SHOULD contain stable persistent URIs to identify all entities wherever possible.

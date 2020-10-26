@@ -492,7 +492,7 @@ The place has a [geo] property, referencing an _Contextual Entity_ of `@type` [G
 ```
 
 
-The [GeoCoordinates] item SHOULD have a human readable [name], which is used in  generating the `ro-crate-preview.html` file.
+The [GeoCoordinates] contextual entity SHOULD have a human readable [name], which is used in  generating the `ro-crate-preview.html` file.
 
 And the place is referenced from the [contentLocation] property of the dataset.
 
@@ -562,7 +562,7 @@ To describe the _time period_ which a RO-Crate [Data Entity](date-entities.md) (
 
 ## Thumbnails
 
-A [File] or any other item MAY have a [thumbnail] property which references another file.
+A [File] or any other entity MAY have a [thumbnail] property which references another file.
 
 For example, the below [RepositoryObject] is related to four files which are all versions of the same image (via [hasFile]) one of which is a thumbnail. The thumbnail MUST be included in the RO-Crate.
 
