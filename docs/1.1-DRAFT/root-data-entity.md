@@ -95,7 +95,7 @@ separately from Data.
 
 The table below outlines the properties that the _Root Data Entity_ MUST have to
 be minimally valid and additionally highlights properties required to meet other
-common use-cases, including the minimum metadata necessary to mint a DataCite DOI:
+common use-cases:
 
 ## Direct properties of the Root Data Entity
 
@@ -115,7 +115,7 @@ requires a `Dataset` to have a `name` and `description`,
 ```
 
 ```warning
-The properties above are not sufficient to generate a [DataCite](https://schema.datacite.org/) citation. Advice on integrating with DataCite will be provided in a future version of this specification, or as an implementation guide.
+The properties above are not sufficient to generate a [DataCite][DataCite Schema] citation. Advice on integrating with [DataCite] will be provided in a future version of this specification, or as an implementation guide.
 ```
 
 ## Minimal example of RO-Crate
