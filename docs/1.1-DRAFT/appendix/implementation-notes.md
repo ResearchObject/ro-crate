@@ -27,7 +27,7 @@ excerpt:
 
 When implementing tools to work with RO-Crate it is not necessary to use JSON-LD software libraries, however, programmers should keep in mind the following:
 
-- **_RO-Crate JSON-lD_ has a flat structure**; every item is in a list in the `@graph` in the _RO-Crate Metadata File_. A useful strategy when processing a crate is to build a look-up table and/or function so that items can be found via their ID, for example provide a method such as `getItem(id)` which returns an item by its id or a null value if it's not there.
+- **_RO-Crate JSON-lD_ has a flat structure**; every entity is a JSON object directly within the `@graph` array in the _RO-Crate Metadata File_. A useful strategy when processing a crate is to build a look-up table and/or function so that entities can be found via their ID, for example provide a method such as `getItem(id)` which returns an item by its id or a `null` value if it's not there.
 
 - **Code defensively**. Code should not assume that values will always be a String; values for properties may be single scalar values such as strings or integers (`"2"` or 2), or references to other items such as `{"@id", "_:1"}` (where the referenced item may or may not be in the crate, see the point above about having a `getItem()` method).
 
