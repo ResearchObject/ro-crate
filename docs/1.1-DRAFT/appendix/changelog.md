@@ -43,6 +43,7 @@ excerpt: List of changes in releases of this specifications
   * RO-Crate preview HTML no longer needs to "contain same information as JSON-LD" [#108](https://github.com/ResearchObject/ro-crate/issues/108)
   * Change theme to `jekyll-rtd-theme` and split into multiple pages [#95](https://github.com/ResearchObject/ro-crate/pull/95)
   * Fixed typos in JSON and English 
+  * [Additional metadata standards](../metadata.md#additional-metadata-standards) showed wrong PCDM namespace [#112](https://github.com/ResearchObject/ro-crate/pull/112)
   * Several sections reviewed to improve language and examples
     [#91](https://github.com/ResearchObject/ro-crate/pull/91)
     [#92](https://github.com/ResearchObject/ro-crate/pull/92)
