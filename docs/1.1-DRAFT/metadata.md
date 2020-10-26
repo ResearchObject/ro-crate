@@ -67,7 +67,7 @@ RO-Crate relies heavily on [Schema.org] using a constrained subset of [JSON-LD],
 
 ### Differences from Schema.org
 
-Generally, the standard keys from [Schema.org] should be used. However, RO-Crate uses variant names for some elements, specifically:
+Generally, the standard class and property names (_terms_) from [Schema.org] should be used. However, RO-Crate uses variant names for some elements, specifically:
 
 * `File` is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of Schema.org or a research data extension may re-define `File`.
 * `Journal` is mapped to <http://schema.org/Periodical>.
@@ -91,14 +91,14 @@ RO-Crate also uses the _Portland Common Data Model_ ([PCDM])) to describe reposi
 - `hasFile` mapped to <https://pcdm.org/2016/04/18/models#hasFile>
 
 ```note
-The keys `RepositoryObject` and `RepositoryCollection` were chosen to avoid collision between the PCDM terms ~~Collection~~ and ~~Object~~ with other vocabularies.
+The terms `RepositoryObject` and `RepositoryCollection` were renamed to avoid collision between other vocabularies and the PCDM terms `Collection` and `Object`.
 ```
 
 From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
 
 - `conformsTo` mapped to <http://purl.org/dc/terms/conformsTo>
 
-These keys are being proposed by [Bioschemas profile ComputationalWorkflow 0.5-DRAFT](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21) and [FormalParameter 0.1-DRAFT](https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21) to be integrated into Schema.org: 
+These terms are being proposed by [Bioschemas profile ComputationalWorkflow 0.5-DRAFT](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21) and [FormalParameter 0.1-DRAFT](https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21) to be integrated into Schema.org: 
 
 * `ComputationalWorkflow` mapped to <https://bioschemas.org/ComputationalWorkflow>
 * `FormalParameter` mapped to <https://bioschemas.org/FormalParameter>
@@ -107,7 +107,7 @@ These keys are being proposed by [Bioschemas profile ComputationalWorkflow 0.5-D
 * `funding` mapped to <http://schema.org/funding> ([schemaorg #383](https://github.com/schemaorg/schemaorg/issues/383))
 
 ```note
-In this specification the proposed Bioschemas terms use the temporary <https://bioschemas.org/> namespace; future releases of RO-Crate may reflect mapping to the `http://schema.org/` namespace.
+In this specification the proposed Bioschemas terms use the temporary <https://bioschemas.org/> namespace; future releases of RO-Crate may reflect mapping to the <http://schema.org/> namespace.
 ```
 
 ## Summary of Coverage
