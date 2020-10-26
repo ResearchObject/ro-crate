@@ -43,7 +43,7 @@ This machine-readable metadata can also be represented for human consumption in 
 
 ## RO-Crate uses Linked Data principles
 
-RO-Crate makes use of [Linked Data principles] for its description. In particular:
+RO-Crate makes use of the [Linked Data principles] for its description. In particular:
 
 1. (Meta)data should be made available as **Open Data** on the web.
 2. (Meta)data should be **machine-readable** in a structured format.
@@ -127,7 +127,7 @@ This document has guidelines for ways to represent common requirements for descr
 * Provenance information of various kinds; who (people and organizations) and what (instruments and computer programs) created or contributed to the data set and individual files within it.
 * Workflows that operate on the data using standard workflow descriptions including ‘single step workflows’; executable files or environments such as singularity containers or Jupyter notebooks.
 
-However, as RO-Crate uses _Linked Data_ principles, adopters of RO-Crate are free to supplement RO-Crate using [Schema.org] metadata and/or assertions using other _Linked Data_ vocabularies.
+However, as RO-Crate uses the [Linked Data principles], adopters of RO-Crate are free to supplement RO-Crate using [Schema.org] metadata and/or assertions using other _Linked Data_ vocabularies.
 
 ## Future coverage
 
