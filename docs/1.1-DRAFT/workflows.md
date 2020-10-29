@@ -155,7 +155,7 @@ The image file format SHOULD be indicated with [encodingFormat] using an IANA re
   "@id": "workflow/workflow.svg",
   "@type": ["File", "ImageObject"],
   "encodingFormat":  ["image/svg+xml"],
-  "description": "Diagram of RetroPath2.0 workflow",
+  "name": "Diagram of RetroPath2.0 workflow",
   "about": {"@id": "workflow/workflow.knime"}
 },
 
