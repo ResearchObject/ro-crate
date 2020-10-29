@@ -291,9 +291,10 @@ Content-Type: application/ld+json
 ```
 
 Following redirection we see that:
+
 * _Base URI_ of the _RO-Crate Metadata File_ becomes `https://www.researchobject.org/ro-crate/1.0/ro-crate-metadata.jsonld`
 * The absolute URI for `index.html` resolves to `https://www.researchobject.org/ro-crate/1.0/index.html` 
-  * ..rather than `https://w3id.org/ro/crate/1.0/index.html` which would not redirect correctly
+  - ..rather than `https://w3id.org/ro/crate/1.0/index.html` which would not redirect correctly
 
 This example also use RO-Crate 1.0, where the _RO-Crate Metadata File_ is called `ro-crate-metadata.jsonld` instead of `ro-crate-metadata.json`. Note that the recommended
 [algorithm to find the Root Data Entity](../root-data-entity.md#finding-the-root-data-entity)

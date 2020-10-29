@@ -83,9 +83,9 @@ In addition to the machine-oriented _RO-Crate Metadata File_, the RO-Crate MAY i
 
 If present in the root directory, `ro-crate-preview.html` MUST:
 
-  *   Be a valid [HTML 5] document 
-  *   Be useful to users of the RO-Crate - this will vary by community and intended use, but in general the aim to assist users in reusing data by explaining what it is, how it was created how it can be used and how to cite it. One simple approach to this is to expose *all* the metadata in the _RO-Crate Metadata File_.
-  *   Contain a copy of the _RO-Crate JSON-LD_ in a `script` element of the `head` element of the HTML, for example:
+* Be a valid [HTML 5] document 
+* Be useful to users of the RO-Crate - this will vary by community and intended use, but in general the aim to assist users in reusing data by explaining what it is, how it was created how it can be used and how to cite it. One simple approach to this is to expose *all* the metadata in the _RO-Crate Metadata File_.
+* Contain a copy of the _RO-Crate JSON-LD_ in a `script` element of the `head` element of the HTML, for example:
   ```html
     <script type="application/ld+json">
     {
@@ -97,14 +97,14 @@ If present in the root directory, `ro-crate-preview.html` MUST:
 
 `ro-crate-preview.html` SHOULD:
 
-*   Display at least the metadata relating to the _Root Data Enity_ as static HTML without the need for scripting. It MAY contain extra features enabled by JavaScript.
-*   When a _Data Entity_ or _Contextual Entity_ is referenced by its ID:
-  *   If it has a [name] property, provide a link to its HTML version.
-  *   If it does not have a name (e.g. a [GeoCoordinates] location), show it embedded in the HTML for the entity.
-*   For keys that resolve in the `RO-Crate JSON-LD Context` to a URI, indicate this (the simplest way is to link the key to its definition.
-*   For external URI values, provide a link.
-*   If there is sufficient metadata, contain a prominent _“Cite-as”_ text with a natural language data citation (see for example the [FORCE11 Data Citation Principles]).
-*   If there are additional resources necessary to render the preview (e.g. CSS, JSON, HTML), link to them in a subdirectory `ro-crate-preview-files/`
+* Display at least the metadata relating to the _Root Data Enity_ as static HTML without the need for scripting. It MAY contain extra features enabled by JavaScript.
+* When a _Data Entity_ or _Contextual Entity_ is referenced by its ID:
+  - If it has a [name] property, provide a link to its HTML version.
+  - If it does not have a name (e.g. a [GeoCoordinates] location), show it embedded in the HTML for the entity.
+  - For external URI values, provide a link.
+* For keys that resolve in the `RO-Crate JSON-LD Context` to a URI, indicate this (the simplest way is to link the key to its definition.
+* If there is sufficient metadata, contain a prominent _“Cite-as”_ text with a natural language data citation (see for example the [FORCE11 Data Citation Principles]).
+* If there are additional resources necessary to render the preview (e.g. CSS, JSON, HTML), link to them in a subdirectory `ro-crate-preview-files/`
 
 ## Payload files and directories
 
