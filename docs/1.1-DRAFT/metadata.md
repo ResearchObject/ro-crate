@@ -82,16 +82,16 @@ See the appendix [RO-Crate JSON-LD](appendix/jsonld.md) for details.
 
 ## Additional metadata standards
 
-RO-Crate also uses the _Portland Common Data Model_ ([PCDM])) to describe repositories or collections of digital objects and imports these terms:
+RO-Crate also uses the _Portland Common Data Model_ ([PCDM] version <https://pcdm.org/2016/04/18/models>) to describe repositories or collections of digital objects and imports these terms:
  
-- `RepositoryObject` mapped to <https://pcdm.org/2016/04/18/models#Object>
-- `RepositoryCollection` mapped to <https://pcdm.org/2016/04/18/models#Collection>
-- `RepositoryFile` mapped to <https://pcdm.org/2016/04/18/models#Collection>
-- `hasMember` mapped to <https://pcdm.org/2016/04/18/models#hasMember>
-- `hasFile` mapped to <https://pcdm.org/2016/04/18/models#hasFile>
+- `RepositoryObject` mapped to <http://pcdm.org/models#Object>
+- `RepositoryCollection` mapped to <http://pcdm.org/models#Collection>
+- `RepositoryFile` mapped to <http://pcdm.org/models#File>
+- `hasMember` mapped to <http://pcdm.org/models#hasMember>
+- `hasFile` mapped to <http://pcdm.org/models#hasFile>
 
 ```note
-The terms `RepositoryObject` and `RepositoryCollection` were renamed to avoid collision between other vocabularies and the PCDM terms `Collection` and `Object`.
+The terms `RepositoryObject` and `RepositoryCollection` are renamed to avoid collision between other vocabularies and the PCDM terms `Collection` and `Object`. The term `RepositoryFile` is renamed to avoid clash with RO-Crate's `File` mapping to <http://schema.org/MediaObject>.
 ```
 
 From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
