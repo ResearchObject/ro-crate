@@ -86,7 +86,7 @@ e1105ed0…5e13  data/chipseq_20200910.json
 37fd3a02…bb95  data/results/pipeline_info/design_reads.csv
 ```
 
-```info
+```note
 The SHA-512 checksums have been shortened in the above example.
 ```
 
