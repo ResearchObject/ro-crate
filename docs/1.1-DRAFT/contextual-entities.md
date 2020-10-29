@@ -547,7 +547,7 @@ Keyword properties MUST use [keywords]. Note that by Schema.org convention, keyw
 
 ## Time
 
-To describe the _time period_ which a RO-Crate [Data Entity](date-entities.md) (or the [root data entity](root-data-entity.md)) is _about_, use [temporalCoverage]:
+To describe the _time period_ which a RO-Crate [Data Entity](data-entities.md) (or the [root data entity](root-data-entity.md)) is _about_, use [temporalCoverage]:
 
 ```json
 {

@@ -296,14 +296,14 @@ Following redirection we see that:
   * ..rather than `https://w3id.org/ro/crate/1.0/index.html` which would not redirect correctly
 
 This example also use RO-Crate 1.0, where the _RO-Crate Metadata File_ is called `ro-crate-metadata.jsonld` instead of `ro-crate-metadata.json`. Note that the recommended
-[algorithm to find the Root Data Entity](#core-metadata-for-the-root-data-entity)
+[algorithm to find the Root Data Entity](../root-data-entity.md#finding-the-root-data-entity)
 is agnostic to the actual filename.
 
 ## Finding RO-Crate Root in RDF triple stores
 
 When parsing _RO-Crate JSON-LD_ as RDF, where the RDF framework performs resolution to absolute URIs, it may be difficult to find the _RO-Crate Root_ in the parsed triples.
 
-The algoritm proposed in section [Core Metadata for the Root Data Entity](#core-metadata-for-the-root-data-entity) allows finding the RDF resource describing `ro-crate-metadata.json`, independent of its parsed base URI. We can adopt this for RDF triples, thus finding crates conforming to this specification can be queried with [SPARQL]:
+The algoritm proposed in section [Root Data Entity](../root-data-entity.md#finding-the-root-data-entity) allows finding the RDF resource describing `ro-crate-metadata.json`, independent of its parsed base URI. We can adopt this for RDF triples, thus finding crates conforming to this specification can be queried with [SPARQL]:
 
 ```sparql
 PREFIX dcterms: <http://purl.org/dc/terms/>

@@ -154,7 +154,7 @@ BagIt tools can help complete the bag and verify the checksum of the downloaded
 files according to the manifest.
 
 The RO-Crate contained in `data/` MAY describe the bag with 
-[data entities](../data-entities.md#embedded data-entities-that-are-also-on-the-web)
+[data entities](../data-entities.md#embedded-data-entities-that-are-also-on-the-web)
 as if the bag was _complete_, even if the large file is not (yet) present:
 
 ```json
