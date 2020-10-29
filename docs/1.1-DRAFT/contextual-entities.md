@@ -176,11 +176,17 @@ For example:
 
 
 ```json
-"citation": {"@id": "https://doi.org/10.1109/TCYB.2014.2386282"}
+{
+    "@id": "./",
+    "@type": "Dataset",
+    "citation": {"@id": "https://doi.org/10.1109/TCYB.2014.2386282"}
+}
 ```
 
 
-The publication SHOULD be described in the _RO-Crate JSON-LD_.
+The publication SHOULD be described further 
+as an additional contextual entity of
+type [ScholarlyArticle] or [CreativeWork].
 
 
 ```json
