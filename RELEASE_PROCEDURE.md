@@ -6,13 +6,20 @@ Versions assumed by this document is that `1.1-DRAFT` is to be released as `1.1`
 
 ## Prerequisites:
 
-A `Makefile` does most of the search-replacing using sed. Markdown is rendered to HTML and PDF using Pandoc and Xelatex. ro-crate-preview is made using the npm package ro-crate.
+A `Makefile` does most of the search-replacing using sed. Markdown is rendered to HTML and PDF using Pandoc and Xelatex. `ro-crate-preview` for the release is made using the [npm package ro-crate](https://www.npmjs.com/package/ro-crate).
 
 This works best on a Linux or OS X machine. Installation for Ubuntu 20.04:
 
 ```
-sudo apt -y install make pandoc texlive-base texlive-latex-recommended texlive-latex-extra nodejs npm sed
+sudo apt -y install make pandoc texlive-xetex texlive-latex-recommended texlive-latex-extra nodejs npm sed
 npm i ro-crate
+```
+
+Alternatively the [Conda](https://conda.io/) `environment.yml` can install these packages (except xelatex):
+
+```
+conda env create
+conda activate ro-crate
 ```
 
 ## Overview
