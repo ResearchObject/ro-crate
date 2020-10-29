@@ -90,6 +90,7 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
     {
       "@id": "cp7glop.ai",
       "@type": "File",
+      "name": "Diagram showing trend to increase",
       "contentSize": "383766",
       "description": "Illustrator file for Glop Pot",
       "encodingFormat": "application/pdf"
@@ -97,8 +98,8 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
     {
       "@id": "lots_of_little_files/",
       "@type": "Dataset",
-      "description": "This directory contains many small files, that we're not going to describe in detail.",
-      "name": "Too many files"
+      "name": "Too many files",
+      "description": "This directory contains many small files, that we're not going to describe in detail."
     }
   ]
 }
@@ -115,6 +116,7 @@ identifier to a _Contextual Entity_ of `@type` [WebSite].
   {
     "@id": "cp7glop.ai",
     "@type": "File",
+    "name": "Diagram showing trend to increase",
     "contentSize": "383766",
     "description": "Illustrator file for Glop Pot",
     "encodingFormat": ["application/pdf", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19"}]
@@ -136,6 +138,7 @@ For example:
     "@id": "1st-tool.cwl",
     "@type": "File",
     "contentSize": "120",
+    "name": "First executable tool",
     "description": "An example Common Workflow Language File",
     "encodingFormat": ["text/plain", {"@id": "https://www.commonwl.org/v1.0/Workflow.html"}]
   },
@@ -152,14 +155,15 @@ If there is no web-accessible description for a file format it SHOULD be describ
  {
     "@id": "some-file.some_extension",
     "@type": "File",
-    "contentSize": "120",
+    "name": "Some file",
     "description": "A file in a non-standard format",
-    "encodingFormat": ["text/plain", {"@id": "https://www.commonwl.org/v1.0/Workflow.html"}]
+    "contentSize": "120",
+    "encodingFormat": ["text/plain", {"@id": "some_extension.md"}]
   },
   {
     "@id": "some_extension.md",
-    "encodingFormat": "text/markdown",
     "name": "Description of some_extension file format",
+    "encodingFormat": "text/markdown",
     "@type": ["File", "CreativeWork"]
   }
 ```
@@ -222,6 +226,7 @@ Example of an RO-Crate including a _File Data Entity_ external to the _RO-Crate 
   {
     "@id": "survey-responses-2019.csv",
     "@type": "File",
+    "name": "Survey responses",
     "contentSize": "26452",
     "description": "Survey responses",
     "encodingFormat": "text/csv"
@@ -229,6 +234,7 @@ Example of an RO-Crate including a _File Data Entity_ external to the _RO-Crate 
   {
     "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf",
     "@type": "File",
+    "name": "RO-Crate specification",
     "contentSize": "310691",
     "description": "RO-Crate specification",
     "encodingFormat": "application/pdf"
@@ -249,6 +255,7 @@ As files on the web may change, the timestamp property `sdDatePublished` SHOULD 
   {
     "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf",
     "@type": "File",
+    "name": "RO-Crate specification",
     "contentSize": "310691",
     "encodingFormat": "application/pdf",
     "sdDatePublished": "2020-04-09T13:09:21+01:00Z"
@@ -270,6 +277,7 @@ These can be included for File Data Entities as additional metadata, regardless 
   {
     "@id": "survey-responses-2019.csv",
     "@type": "File",
+    "name": "Survey responses",
     "encodingFormat": "text/csv",
     "url": "http://example.com/downloads/2019/survey-responses-2019.csv",
     "subjectOf": {"@id": "http://example.com/reports/2019/annual-survey.html"}
@@ -277,6 +285,7 @@ These can be included for File Data Entities as additional metadata, regardless 
   {
     "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf",
     "@type": "File",
+    "name": "RO-Crate specification",
     "encodingFormat": "application/pdf",
     "identifier": "https://doi.org/10.5281/zenodo.3541888",
     "url": "https://zenodo.org/record/3541888"
@@ -291,11 +300,11 @@ Alternatively, a common mechanism to provide downloads of a reasonably sized dir
 
 ```json
   {
-      "@id": "lots_of_little_files/",
-      "@type": "Dataset",
-      "description": "This directory contains many small files, that we're not going to describe in detail.",
-      "name": "Too many files",
-      "distribution": {"@id": "http://example.com/downloads/2020/lots_of_little_files.zip"}
+    "@id": "lots_of_little_files/",
+    "@type": "Dataset",
+    "name": "Too many files",
+    "description": "This directory contains many small files, that we're not going to describe in detail.",
+    "distribution": {"@id": "http://example.com/downloads/2020/lots_of_little_files.zip"}
   },
   {
     "@id": "http://example.com/downloads/2020/lots_of_little_files.zip",
