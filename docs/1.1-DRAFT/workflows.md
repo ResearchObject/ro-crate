@@ -190,7 +190,8 @@ A data entity conforming to the [ComputationalWorkflow profile] SHOULD declare t
 ```json
 { "@id": "workflow/alignment.knime",  
   "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
-  "conformsTo": {"@id": "https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/"},
+  "conformsTo": 
+    {"@id": "https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/"},
   "..": ""
 }
 ```
@@ -212,7 +213,8 @@ A contextual entity conforming to the [FormalParameter profile] SHOULD declare t
 {
   "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
   "@type": "FormalParameter",
-  "conformsTo": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/",
+  "conformsTo": 
+    {"@id": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/"},
   "..": ""
 }
 ```
@@ -244,7 +246,8 @@ The below is an example of an RO-Crate complying with the [Bioschemas Computatio
     {
       "@id": "workflow/alignment.knime",  
       "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
-      "conformsTo": {"@id": "https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/"},
+      "conformsTo": 
+        {"@id": "https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/"},
       "name": "Sequence alignment workflow",
       "programmingLanguage": {"@id": "#knime"},
       "creator": {"@id": "#alice"},
@@ -264,7 +267,7 @@ The below is an example of an RO-Crate complying with the [Bioschemas Computatio
     {
       "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
       "@type": "FormalParameter",
-      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/",
+      "conformsTo": {"@id": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/"},
       "name": "genome_sequence",
       "valueRequired": true,
       "additionalType": {"@id": "http://edamontology.org/data_2977"},
@@ -273,7 +276,7 @@ The below is an example of an RO-Crate complying with the [Bioschemas Computatio
     {
       "@id": "#6c703fee-6af7-4fdb-a57d-9e8bc4486044",
       "@type": "FormalParameter",
-      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/",
+      "conformsTo": {"@id": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/"},
       "name": "cleaned_sequence",
       "additionalType": {"@id": "http://edamontology.org/data_2977"},
       "encodingFormat": {"@id": "http://edamontology.org/format_2572"}
@@ -281,7 +284,7 @@ The below is an example of an RO-Crate complying with the [Bioschemas Computatio
     {
       "@id": "#2f32b861-e43c-401f-8c42-04fd84273bdf",
       "@type": "FormalParameter",
-      "conformsTo": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/",
+      "conformsTo": {"@id": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/"},
       "name": "sequence_alignment",
       "additionalType": {"@id": "http://edamontology.org/data_1383"},
       "encodingFormat": {"@id": "http://edamontology.org/format_1982"}
