@@ -137,15 +137,15 @@ For example:
  {
     "@id": "1st-tool.cwl",
     "@type": "File",
-    "contentSize": "120",
     "name": "First executable tool",
     "description": "An example Common Workflow Language File",
+    "contentSize": "120",
     "encodingFormat": ["text/plain", {"@id": "https://www.commonwl.org/v1.0/Workflow.html"}]
   },
-    {
+  {
     "@id": "https://www.commonwl.org/v1.0/Workflow.html",
-    "name": "Common Workflow Language (CWL) Workflow Description, v1.0.2",
-    "@type": "WebSite"
+    "@type": "WebSite",
+    "name": "Common Workflow Language (CWL) Workflow Description, v1.0.2"
   }
 ```
 
@@ -162,9 +162,9 @@ If there is no web-accessible description for a file format it SHOULD be describ
   },
   {
     "@id": "some_extension.md",
+    "@type": ["File", "CreativeWork"],
     "name": "Description of some_extension file format",
-    "encodingFormat": "text/markdown",
-    "@type": ["File", "CreativeWork"]
+    "encodingFormat": "text/markdown"
   }
 ```
 
