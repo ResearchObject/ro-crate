@@ -47,11 +47,14 @@ from panflute import toJSONFilter, Str, Para, Image, CodeBlock, Block, Header, D
 
 EMOJI = {
     "tip": "✅",
-    "info": "🛈",
+    "note": "🛈",
     "warning": "⚠️",
     "danger": "☠️",
 }
 LEVELS = set(EMOJI.keys())
+
+# In case [Foo] references exists inside tip
+REFERENCES = "\n" + open("docs/_includes/references.liquid").read()
 
 def admonition(elem, doc):    
     if type(elem) == CodeBlock and (LEVELS & set(elem.classes)):
@@ -59,7 +62,7 @@ def admonition(elem, doc):
         code = elem.text
         levelClass = level.pop()
         levelText = Str(EMOJI[levelClass] + " " + levelClass.capitalize())
-        content = convert_text(code) # re-parse as markdown
+        content = convert_text(code + REFERENCES) # re-parse as markdown
         header = LineBlock(LineItem(SmallCaps(levelText)))
         return Div(header, Div(*content), classes="admonition %s" % levelClass)
 
