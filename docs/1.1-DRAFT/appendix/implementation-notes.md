@@ -27,11 +27,11 @@ excerpt:
 
 When implementing tools to work with RO-Crate it is not necessary to use JSON-LD software libraries, however, programmers should keep in mind the following:
 
-- **_RO-Crate JSON-lD_ has a flat structure**; every item is in a list in the `@graph` in the _RO-Crate Metadata File_. A useful strategy when processing a crate is to build a look-up table and/or function so that items can be found via their ID, for example provide a method such as `getItem(id)` which returns an item by its id or a null value if it's not there.
+- **_RO-Crate JSON-lD_ has a flat structure**; every entity is a JSON object directly within the `@graph` array in the _RO-Crate Metadata File_. A useful strategy when processing a crate is to build a look-up table and/or function so that entities can be found via their ID, for example provide a method such as `getEntity(id)` which returns an entity by its id or a `null` value if it's not there.
 
-- **Code defensively**. Code should not assume that values will always be a String; values for properties may be single scalar values such as strings or integers (`"2"` or 2), or references to other items such as `{"@id", "_:1"}` (where the referenced item may or may not be in the crate, see the point above about having a `getItem()` method).
+- **Code defensively**. Code should not assume that values will always be a String; values for properties may be single scalar values such as strings or integers (`"2"` or 2), or references to other entities such as `{"@id", "_:1"}` (where the referenced entity may or may not be described in the crate, see the point above about having a `getEntity()` method).
 
-- **Read the *whole* specification**. The RO-Crate specification addresses  common use cases individually, introducing aspects of the specification as in a progressive manner. Some key points, such as _items may have more than one value for `@type`_, may not be apparent from a quick reading.
+- **Read the *whole* specification**. The RO-Crate specification addresses  common use cases individually, introducing aspects of the specification as in a progressive manner. Some key points, such as _entities may have more than one value for `@type`_, may not be apparent from a quick reading.
 
 
 ## Combining with other packaging schemes
@@ -49,27 +49,158 @@ BagIt is described in [RFC 8493]:
 BagIt and RO-Crate have largely separate concerns - RO-Crate is focussed on rich
 metadata, the semantics of data, while BagIt is about reliable transfer.
 
-### Example of adding RO-Crate to Bagit
+### Adding RO-Crate to Bagit
 
-RO-Crate can be combined with BagIt simply by placing the RO-Crate files in the BagIt
-payload (`data/`) directory.
+RO-Crate can be combined with BagIt simply by placing the RO-Crate files 
+within the BagIt payload (`data/`) directory.
 
 ```
-<RO-Crate root directory>/
+<BagIt base directory>/
   |   bagit.txt                 # As per BagIt specification
   |   bag-info.txt              # As per BagIt specification
   |   manifest-<algorithm>.txt  # As per BagIt specification
   |   fetch.txt                 # Optional, per BagIt Specification
-  |   data/
-      |   ro-crate-metadata.json  # RO-Crate Metadata File MUST be present
-      |   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
-      |   ro-crate-preview_files/   # MAY be present
-      |     [payload files and directories]  # 1 or more SHOULD be present
+  |   data/                     # Payload: RO-Crate root directory
+      |   ro-crate-metadata.json           # RO-Crate Metadata File MUST be present
+      |   ro-crate-preview.html            # RO-Crate Website homepage MAY be present
+      |   ro-crate-preview_files/          # MAY be present
+      |   [payload files and directories]  # 1 or more SHOULD be present
 ```
 
-**Base URI**: The arcp specification suggests how [BagIt UUID identifiers] can be used to calculate the base URI of a bag, see section [Establishing a base URI inside a ZIP file](#establishing-a-base-uri-inside-a-zip-file).  For this purpose it is RECOMMENDED that `bag-info.txt` includes a fresh UUID like:
+The [Bag declaration](https://www.rfc-editor.org/rfc/rfc8493.html#section-2.1.1) `bagit.txt` MUST be present, the main role of this file is to mark the folder as a bag according to [RFC8493](https://www.rfc-editor.org/rfc/rfc8493.html). The file SHOULD have this fixed content in UTF-8:
+
+```
+BagIt-version: 1.0
+Tag-File-Character-Encoding: UTF-8
+```
+
+The _BagIt base directory_ containing `bagit.txt` can have any name, and can be archived/transferred in any way, e.g.  within a ZIP archive, SFTP or even be exposed on the web.
+
+The manifest file contains file checksums; the BagIt specifications [recommends SHA-512](https://www.rfc-editor.org/rfc/rfc8493.html#section-2.4) as default algorithm, that is `manifest-sha512.txt` SHOULD be present. 
+
+The BagIt manifest file MUST list the checksum of _all_ payload files in `data/` and its subdirectories. Where `data/` is also the [RO-Crate Root](../structure.md) the manifest therefore MUST include `ro-crate-metadata.json`:
+
+```
+41846747…ee71  data/ro-crate-metadata.json
+e1105ed0…5e13  data/chipseq_20200910.json
+37fd3a02…bb95  data/results/pipeline_info/design_reads.csv
+```
+
+```note
+The SHA-512 checksums have been shortened in the above example.
+```
+
+Creating the manifest file without using BagIt tools/libraries can be done using the equivalent of:
+
+```sh
+$ find data -type f -print0 | xargs -0 sha512sum > manifest-sha512.txt
+```
+
+Similarly checking the payload directory:
+
+```sh
+$ sha512sum --quiet -c manifest-sha512.txt
+data/chipseq_20200910.json: FAILED
+data/ro-crate-metadata.json: FAILED
+sha512sum: WARNING: 2 computed checksums did NOT match
+```
+
+The BagIt manifest complements the [RO-Crate structure](../structure.md) as 
+it provide a complete listing of all payload files with
+cryptographically strong checksums, ensuring the crate has been fully 
+archived/transferred, which the weak CRC-32 checksum (TCP/IP,
+ZIP, gzip) is insufficient to guarantee, particularly for large crates. 
+
+To ensure the manifest file itself is complete, it is RECOMMENDED to include its 
+checksum in `tagmanifest-sha512.txt`:
+
+```
+b0556450…8802  bag-info.txt
+000b27e3…c52e  manifest-sha512.txt
+```
+
+```warning
+The BagIt manifest is intended to detect "bit rot" and accidental damage,
+it does not provide proof the RO-Crate has not been deliberately
+tampered with, as a malicious actor can also update the checksums.
+
+Guarding against such scenarious would require additional cryptographic
+measures, e.g.  
+`gpg --detach-sign --armor --output tagmanifest-sha512.txt.asc tagmanifest-sha512.txt`
+in combination with a secure PGP key exchange or equivalent trust network.
+```
+
+#### Base URI in BagIt
+
+The arcp specification suggests how [BagIt UUID identifiers] can be used to calculate the base URI of a bag, see section [Establishing a base URI inside a ZIP file](relative-uris.md#establishing-a-base-uri-inside-a-zip-file).  For this purpose it is RECOMMENDED that `bag-info.txt` includes a fresh UUID like:
 
     External-Identifier: urn:uuid:24e51ca2-5067-4598-935a-dac4e327d05a
+
+
+#### Referencing external files
+
+The [BagIt fetch file](https://www.rfc-editor.org/rfc/rfc8493.html#section-2.2.3) MAY
+be used to reference files to be downloaded into particular `data/` paths
+to _complete_ the bag.  These files may be large, require authentication or otherwise
+inconvenient to transfer within the BagIt folder.
+
+Example `fetch.txt` using [Git LFS](https://git-lfs.github.com/):
+
+```
+https://media.githubusercontent.com/…/SPT5_INPUT_R1.bigWig 963489 data/results/SPT5_INPUT_R1.bigWig
+```
+
+BagIt tools can help complete the bag and verify the checksum of the downloaded
+files according to the manifest.
+
+The RO-Crate contained in `data/` MAY describe the bag with 
+[data entities](../data-entities.md#embedded-data-entities-that-are-also-on-the-web)
+as if the bag was _complete_, even if the large file is not (yet) present:
+
+```json
+  {
+    "@id": "results/SPT5_INPUT_R1.bigWig",
+    "@type": "File",
+    "name": "Normalized SPT5_INPUT_R1 bigWig for genome browsers",
+    "encodingFormat": {"@id": "http://edamontology.org/format_3006"},
+    "url": "https://media.githubusercontent.com/media/biocompute-objects/bco-ro-example-chipseq/main/data/results/bwa/mergedLibrary/bigwig/SPT5_INPUT_R1.bigWig"}
+  }
+```
+
+It is RECOMMENDED that the `url` is provided in the data entity
+and consistent with the line in `fetch.txt` in case the RO-Crate 
+is transferred outside its BagIt container.
+
+The `fetch.txt` approach can also be useful where other files in the RO-Crate
+reference a downloadable file by relative paths within `data/`, even if 
+this file is not itself described in the RO-Crate metadata.
+
+
+#### Snapshots of external files
+
+As an alternative to the above, [web-based data entities](../data-entities.md#web-based-data-entities)
+can be used in the RO-Crate:
+
+```json
+  {
+    "@id": "https://media.githubusercontent.com/media/biocompute-objects/bco-ro-example-chipseq/main/data/results/bwa/mergedLibrary/bigwig/SPT5_INPUT_R1.bigWig",
+    "@type": "File",
+    "name": "Normalized SPT5_INPUT_R1 bigWig for genome browsers",
+    "encodingFormat": {"@id": "http://edamontology.org/format_3006"}
+  }
+```
+
+The above data entity MAY be combined with `fetch.txt` in the BagIt base directory:
+
+```
+https://media.githubusercontent.com/…/SPT5_INPUT_R1.bigWig 963489 data/snapshots/SPT5_INPUT_R1.bigWig
+```
+
+In this case the file `data/snapshots/SPT5_INPUT_R1.bigWig` may be present,
+but unknown by RO-Crate; BagIt contains a checksummed snapshot of the 
+web resource. Compared with the first approach, the RO-Crate is here 
+primarily pointing at a web resource which is allowed to change
+without causing a BagIt checksum error.
 
 
 ### Example of wrapping a BagIt bag in an RO-Crate
@@ -79,17 +210,17 @@ is outside of the bag directory and can be changed without changing the payload'
 
 ```
 <RO-Crate root directory>/
-  |   ro-crate-metadata.json  # RO-Crate Metadata File MUST be present
+  |   ro-crate-metadata.json    # RO-Crate Metadata File MUST be present
   |   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
   |   ro-crate-preview_files/   # MAY be present
-  |   bag/                      # "Wrapped" bag - could have any name
+  |   bag1/                     # "Wrapped" bag - could have any name
   |      bagit.txt                 # As per BagIt specification
   |      bag-info.txt              # As per BagIt specification
   |      manifest-<algorithm>.txt  # As per BagIt specification
   |      fetch.txt                 # Optional, per BagIt Specification
   |      data/
   |         [payload files and directories]  # 1 or more SHOULD be present
-  |          example.txt 
+  |         example.txt 
 ```
 
 A [Data Entity](../data-entities.md) describing `example.txt` in this scenario would have an `@id` of `bag/data/example.txt`:

@@ -1,0 +1,17 @@
+name: ro-crate
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - make=4.3
+  - coreutils=8
+  - tar=1
+  - curl=7
+  - python=3.8
+  - requests=2.24
+  - panflute=1.12
+  - rb-jekyll=4.0 # for binary deps, use "bundle exec jekyll serve" for jekyll 5
+  - pandoc=2.11
+  # - weasyprint=v51
+  # - xelatex 3.14159265-2.6-0.999991

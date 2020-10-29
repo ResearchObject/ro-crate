@@ -233,7 +233,11 @@ To describe an export from a Digital Library or repository system, RO-Crate uses
 
 A [Contextual Entity](contextual-entities.md) from a repository, representing an abstract entity such as a person, or a work, or a place SHOULD have a`@type` of [RepositoryObject], in addition to any other types. 
 
-Objects MAY be grouped together in [RepositoryCollection]s with [hasMember] pointing to the the [RepositoryObject]. The aliases `RepositoryObject` and `RepositoryCollection` were chosen to avoid collision between the PCDM terms <del>Collection</del> and <del>Object</del> with other vocabularies.
+Objects MAY be grouped together in [RepositoryCollection]s with [hasMember] pointing to the the [RepositoryObject]. 
+
+```note
+The terms `RepositoryObject` and `RepositoryCollection` are renamed to avoid collision between other vocabularies and the PCDM terms `Collection` and `Object`. The term `RepositoryFile` is renamed to avoid clash with RO-Crate's `File` mapping to <http://schema.org/MediaObject>.
+```
 
 ```warning
 PCDM specifies that files should have only technical metadata, not descriptive metadata, which is _not_ a restriction in RO-Crate. If the RO-Crate is to be imported into a strict PCDM repository, modeling of object/file relationships will be necessary.

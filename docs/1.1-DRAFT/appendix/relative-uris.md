@@ -291,19 +291,20 @@ Content-Type: application/ld+json
 ```
 
 Following redirection we see that:
+
 * _Base URI_ of the _RO-Crate Metadata File_ becomes `https://www.researchobject.org/ro-crate/1.0/ro-crate-metadata.jsonld`
 * The absolute URI for `index.html` resolves to `https://www.researchobject.org/ro-crate/1.0/index.html` 
-  * ..rather than `https://w3id.org/ro/crate/1.0/index.html` which would not redirect correctly
+  - ..rather than `https://w3id.org/ro/crate/1.0/index.html` which would not redirect correctly
 
 This example also use RO-Crate 1.0, where the _RO-Crate Metadata File_ is called `ro-crate-metadata.jsonld` instead of `ro-crate-metadata.json`. Note that the recommended
-[algorithm to find the Root Data Entity](#core-metadata-for-the-root-data-entity)
+[algorithm to find the Root Data Entity](../root-data-entity.md#finding-the-root-data-entity)
 is agnostic to the actual filename.
 
 ## Finding RO-Crate Root in RDF triple stores
 
 When parsing _RO-Crate JSON-LD_ as RDF, where the RDF framework performs resolution to absolute URIs, it may be difficult to find the _RO-Crate Root_ in the parsed triples.
 
-The algoritm proposed in section [Core Metadata for the Root Data Entity](#core-metadata-for-the-root-data-entity) allows finding the RDF resource describing `ro-crate-metadata.json`, independent of its parsed base URI. We can adopt this for RDF triples, thus finding crates conforming to this specification can be queried with [SPARQL]:
+The algoritm proposed in section [Root Data Entity](../root-data-entity.md#finding-the-root-data-entity) allows finding the RDF resource describing `ro-crate-metadata.json`, independent of its parsed base URI. We can adopt this for RDF triples, thus finding crates conforming to this specification can be queried with [SPARQL]:
 
 ```sparql
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -389,18 +390,29 @@ If a web-based URI for the _RO-Crate root_ is known, then this can be supplied a
 Parsing this will generate triples like below using `http://example.com/crate255/` as the _RO-Crate Root_ (shortened):
 
 ```turtle
-<http://example.com/crate255/ro-crate-metadata.json> <http://purl.org/dc/terms/conformsTo> <https://w3id.org/ro/crate/1.1-DRAFT> .
+<http://example.com/crate255/ro-crate-metadata.json> 
+  <http://purl.org/dc/terms/conformsTo> 
+  <https://w3id.org/ro/crate/1.1-DRAFT> .
 
-<http://example.com/crate255/ro-crate-metadata.json> <http://schema.org/about> <http://example.com/crate255/> .
+<http://example.com/crate255/ro-crate-metadata.json> 
+  <http://schema.org/about> 
+  <http://example.com/crate255/> .
 
-<http://example.com/crate255/> <http://schema.org/name> "Example RO-Crate" .
+<http://example.com/crate255/> 
+  <http://schema.org/name> 
+  "Example RO-Crate" .
 
-<http://example.com/crate255/> <http://schema.org/hasPart> <http://example.com/crate255/data1.txt> .
+<http://example.com/crate255/>
+  <http://schema.org/hasPart>
+  <http://example.com/crate255/data1.txt> .
 
-<http://example.com/crate255/> <http://schema.org/hasPart> <http://example.com/crate255/subfolder/> .
+<http://example.com/crate255/>
+  <http://schema.org/hasPart>
+  <http://example.com/crate255/subfolder/> .
 
-<http://example.com/crate255/data1.txt> <http://schema.org/description> "One of hopefully many Data Entities" .
-
+<http://example.com/crate255/data1.txt>
+ <http://schema.org/description> 
+ "One of hopefully many Data Entities" .
 ```
 
 Generating a _RO-Crate JSON-LD_ from such triples can be done by first [finding the RO-Crate Root](#finding-ro-crate-root-in-rdf-triple-stores) and then use it as base URI to [relativize absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root).
@@ -464,9 +476,13 @@ For instance, given a randomly generated UUID `029bcde1-dfa3-43cf-b7d9-a4fb75ccd
 Parsing this as RDF will generate triples including:
 
 ```turtle
-<arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/ro-crate-metadata.json> <http://schema.org/about> <arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/> .
+<arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/ro-crate-metadata.json> 
+  <http://schema.org/about> 
+  <arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/> .
 
-<arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/> <http://schema.org/hasPart> <arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/data1.txt> .
+<arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/> 
+  <http://schema.org/hasPart> 
+  <arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/data1.txt> .
 ```
 
 Here consumers can assume `/` is the _RO-Crate Root_ and generating relative URIs can safely be achieved by  search-replace as the arcp URI is unique. Saving _RO-Crate JSON-LD_ from the triples can be done by using the arcp URI to [relativize absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root).

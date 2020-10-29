@@ -41,7 +41,7 @@ _RO-Crate Metadata File Descriptor_: A _Contextual Entity_ of type [CreativeWork
 
 _JSON-LD_: A JSON-based file format for storing _Linked Data_. This document assumes [JSON-LD 1.0]. JSON-LD use a _context_ to map from JSON keys to _URIs_.
 
-_JSON_: The _JavaScript Object Notation (JSON) Data Interchange Format_ as defined by [RFC 7159]; a structured text file format that can be programmatically consumed and generated in a wide range of programming languages.
+_JSON_: The _JavaScript Object Notation (JSON) Data Interchange Format_ as defined by [RFC 7159]; a structured text file format that can be programmatically consumed and generated in a wide range of programming languages. The main JSON structures are _objects_ (`{}`), _arrays_ (`[]`) and _values_ (`""`).
 
 _Contextual Entity_: A JSON-LD representation of an entity associated with a _Data Entity_, needed to adequately describe that _Data Entity_. For example, a [Person], [Organization] (including research projects), item of equipment ([IndividualProduct]), [license] or any other _thing_ or _event_ that forms part of the metadata for a _Data Entity_ or supporting information.
 
@@ -51,7 +51,7 @@ _URI_: A _Uniform Resource Identifier_ as defined in [RFC 3986], for example `ht
 
 _URI Path_: The relative _path_ element of an _URI_ as defined in [RFC3986 section 3.3], e.g. `path/file.html`
 
-_RO-Crate JSON-LD Context_: A JSON-LD [context][JSON-LD context] that provides Linked Data mapping for RO-Crate metadata to vocabularies like [schema.org].
+_RO-Crate JSON-LD Context_: A JSON-LD [context][JSON-LD context] that provides Linked Data mapping for RO-Crate metadata to vocabularies like [Schema.org].
 
 _RO-Crate JSON-LD_: JSON-LD structure using the _RO-Crate JSON-LD Context_ and containing RO-Crate metadata, written as if [flattened]  and then [compacted] according to the rules in JSON-LD 1.0. The _RO-Crate JSON-LD_ for an _RO-Crate_ is stored in the _RO-Crate Metadata File_.
 
@@ -59,7 +59,7 @@ _RO-Crate JSON-LD_: JSON-LD structure using the _RO-Crate JSON-LD Context_ and c
 
 Throughout this specification, RDF terms are referred to using the keys defined in the _RO-Crate JSON-LD Context_.
 
-Following [schema.org] practice, `property` names start with lowercase letters and `Class` names start with uppercase letters.
+Following [Schema.org] practice, `property` names start with lowercase letters and `Class` names start with uppercase letters.
 
 In the _RO-Crate Metadata File_ the RDF terms use their RO-Crate JSON-LD names as defined in the _RO-Crate JSON-LD Context_, which is available at <https://w3id.org/ro/crate/1.1-DRAFT/context>
 
