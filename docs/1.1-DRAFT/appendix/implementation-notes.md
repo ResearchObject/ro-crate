@@ -235,7 +235,7 @@ A [Data Entity](../data-entities.md) describing `example.txt` in this scenario w
 
 ## Repository-specific identifiers
 
-_Root Data Entities_ MAY also have additional repository specific identifiers, described using [Contextual Entities](../contextual-entities.md) using a [PropertyValue], with a [name] that identifies the repository and the [identifier] as a value. The _same_ identifier MAY be used in multiple different repositories and effectively namespaced using the `name` of the `ProperyValue`.
+_Root Data Entities_ MAY include repository-specific identifiers, described using [Contextual Entities](../contextual-entities.md) using a [PropertyValue], with a [name] that identifies the repository and the [identifier] as a value. The _same_ identifier MAY be used in multiple different repositories and effectively namespaced using the `name` of the `ProperyValue`.
 
 ```json
 {
