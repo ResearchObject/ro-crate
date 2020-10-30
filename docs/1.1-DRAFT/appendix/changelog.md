@@ -44,6 +44,11 @@ excerpt: List of changes in releases of this specifications
   * Change theme to `jekyll-rtd-theme` and split into multiple pages [#95](https://github.com/ResearchObject/ro-crate/pull/95)
   * Fixed typos in JSON and English 
   * [Additional metadata standards](../metadata.md#additional-metadata-standards) showed wrong PCDM namespace [#112](https://github.com/ResearchObject/ro-crate/pull/112)
+  * [Citation example](../contextual-entities.md#publications-via-citation-property) expanded 12a6754
+  * [Terminology](../terminology.md) adds property, type, entity cc10e28
+  * In [People](../contextual-entities.md#people) `author` can also be applied to `CreativeWork` e086b8b
+  * [Provenance section](../provenance.md) on Software-used now points to [Workflows](../workflows.md) section (and vice versa) 5d89872 40de6c7
+  * In [JSON-LD appendix](jsonld.md) `@id` should not include `../` 74ef6f1
   * Several sections reviewed to improve language and examples
     [#91](https://github.com/ResearchObject/ro-crate/pull/91)
     [#92](https://github.com/ResearchObject/ro-crate/pull/92)
@@ -58,6 +63,7 @@ excerpt: List of changes in releases of this specifications
     [#104](https://github.com/ResearchObject/ro-crate/pull/104)
     [#105](https://github.com/ResearchObject/ro-crate/pull/105)
     [#111](https://github.com/ResearchObject/ro-crate/pull/111)
+    [#114](https://github.com/ResearchObject/ro-crate/pull/114)
 * [RO-Crate 1.0.1](https://github.com/ResearchObject/ro-crate/releases/tag/1.0.1)
   * Fix JSON typo in example  
 * [RO-Crate 1.0.0](https://github.com/ResearchObject/ro-crate/releases/tag/1.0.0) <https://w3id.org/ro/crate/1.0>
