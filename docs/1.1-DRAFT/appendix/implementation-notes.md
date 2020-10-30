@@ -223,11 +223,11 @@ is outside of the bag directory and can be changed without changing the payload'
   |         example.txt 
 ```
 
-A [Data Entity](../data-entities.md) describing `example.txt` in this scenario would have an `@id` of `bag/data/example.txt`:
+A [Data Entity](../data-entities.md) describing `example.txt` in this scenario would have an `@id` of `bag1/data/example.txt`:
 
 ```json
 {
-  "@id": "bag/data/example.txt",
+  "@id": "bag1/data/example.txt",
   "name": "Example file"
 }
 ```
