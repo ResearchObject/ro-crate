@@ -67,7 +67,7 @@ See the [appendix on JSON-LD identifiers](appendix/jsonld.md#describing-entities
 
 ## People
 
-A core principle of Linked data is to use URIs to identify important entities such as people. The following is the minimum recommended way of representing a [author] in a RO-Crate. This property MAY be applied in the context of a directory ([Dataset]) or to a [File].
+A core principle of Linked data is to use URIs to identify important entities such as people. The following is the minimum recommended way of representing a [author] of a RO-Crate. The [author] property MAY also be applied to a directory ([Dataset]), a [File] or other [CreativeWork] entities.
 
 ```json
 {
@@ -83,9 +83,9 @@ A core principle of Linked data is to use URIs to identify important entities su
 }
 ```
 
-This uses an [ORCID] to unambiguously identify an author, with a _Contextual Entity_ of type [Person].
+This uses an [ORCID] to unambiguously identify an author, represented as a _Contextual Entity_ of type [Person].
 
-Note the string-value of the organizational affiliation. This SHOULD be improved by also providing a _Contextual Entity_ for the organization (see example below).
+Note the string _value_ for the organizational affiliation. This SHOULD be improved by also providing a _Contextual Entity_ for the organization (see example below).
 
 
 ## Organizations as values
