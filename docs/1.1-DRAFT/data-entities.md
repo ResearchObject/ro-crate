@@ -228,7 +228,6 @@ Example of an RO-Crate including a _File Data Entity_ external to the _RO-Crate 
     "@type": "File",
     "name": "Survey responses",
     "contentSize": "26452",
-    "description": "Survey responses",
     "encodingFormat": "text/csv"
   },
   {
