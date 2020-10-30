@@ -84,7 +84,7 @@ In this example the CreateAction has a human [agent], the object is a Place (a c
 
 ## Software used to create files
 
-To specify which software was used to create or update a file the software application SHOULD be represented with an entity of type [SoftwareApplication], with a [version] property, e.g. from `tool --version`.
+To specify which software was used to create or update a file, the software application SHOULD be represented with an entity of type [SoftwareApplication], with a [version] property, e.g. from `tool --version`.
 
 For example:
 
@@ -98,9 +98,9 @@ For example:
 }
 ```
 
-The software SHOULD be associated with the [File] it created using a [CreateAction] with the [File] referenced by a [result] property. Any input files SHOULD be referenced by the [object] property.
+The software SHOULD be associated with the [File](s) (or other [data entities](data-entities.md)) it created as an [instrument] of a [CreateAction], with the [File] referenced by a [result] property. Any input files SHOULD be referenced by the [object] property.
 
-In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg` was transformed into an new image `pics/sepia_fence.jpg` using the _ImageMagick_ software application. Actions MAY have human-readable names, which MAY be machine generated for use at scale.
+In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg` was transformed into an new image `pics/sepia_fence.jpg` using the _ImageMagick_ software application as "instrument". Actions MAY have human-readable names, which MAY be machine generated for use at scale.
 
 ```json
 {
@@ -142,8 +142,10 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
 ```
 
 ```tip
-Double escape `\\` so that JSON preserves the `\` character from the command line.
+If representing command lines, double escape `\\` so that JSON preserves the `\` character.
 ```
+
+If multiple [SoftwareApplication]s have been used in composition, such as from a script or workflow, then the `CreateAction` SHOULD rather reference a [SoftwareSourceCode] which can be further described as explained in the [Workflows and scripts](workflows.md) section.
 
 ## Recording changes to RO-Crates
 
