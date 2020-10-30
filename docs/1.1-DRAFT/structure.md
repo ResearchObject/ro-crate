@@ -52,7 +52,7 @@ RO-Crates can be _nested_ by including payload directories that themselves conta
 * In new RO-Crates the _RO-Crate Metadata File_ MUST be named `ro-crate-metadata.json` and appear in the _RO-Crate Root_
 * The _RO-Crate Metadata File_ MUST contain _RO-Crate JSON-LD_; a valid [JSON-LD 1.0] document in [flattened]  and [compacted] form
 * The _RO-Crate JSON-LD_ SHOULD use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.1-DRAFT/context> by reference.
-* If an RO-Crate conforming to version 1.0 or earlier contains a file named `ro-crate-metadata.jsonld` instead of `ro-crate-metadata.json` then processing software should treat this as the _RO-Crate Metadata File_. If the crate is updated then the file should SHOULD be renamed to `ro-crate-metadata.json` and the _RO-Crate Metadata File Descriptor_ SHOULD be updated to to reference it, with an up to date [conformsTo] property naming an appropriate version of this specification. 
+* If an RO-Crate conforming to version 1.0 or earlier contains a file named `ro-crate-metadata.jsonld` instead of `ro-crate-metadata.json` then processing software should treat this as the _RO-Crate Metadata File_. If the crate is updated then the file SHOULD be renamed to `ro-crate-metadata.json` and the _RO-Crate Metadata File Descriptor_ SHOULD be updated to to reference it, with an up to date [conformsTo] property naming an appropriate version of this specification. 
 
 
 [JSON-LD](https://json-ld.org/) is a structured form of [JSON] that can represent a _Linked Data_ graph. 
@@ -102,7 +102,7 @@ If present in the root directory, `ro-crate-preview.html` MUST:
   - If it has a [name] property, provide a link to its HTML version.
   - If it does not have a name (e.g. a [GeoCoordinates] location), show it embedded in the HTML for the entity.
   - For external URI values, provide a link.
-* For keys that resolve in the `RO-Crate JSON-LD Context` to a URI, indicate this (the simplest way is to link the key to its definition.
+* For keys that resolve in the `RO-Crate JSON-LD Context` to a URI, indicate this (the simplest way is to link the key to its definition).
 * If there is sufficient metadata, contain a prominent _“Cite-as”_ text with a natural language data citation (see for example the [FORCE11 Data Citation Principles]).
 * If there are additional resources necessary to render the preview (e.g. CSS, JSON, HTML), link to them in a subdirectory `ro-crate-preview-files/`
 

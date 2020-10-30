@@ -41,7 +41,7 @@ consistent handling:
 ## Flattening JSON-LD from nested JSON
 
 If performing
-[JSON-LD flattening] to generate a valid _RO-Crate Metadata File_ , add `@base: null` to the input JSON-LD `@context` array to avoid expanding relative URI references. The flattening `@context` SHOULD NOT need `@base: null`.
+[JSON-LD flattening] to generate a valid _RO-Crate Metadata File_, add `@base: null` to the input JSON-LD `@context` array to avoid expanding relative URI references. The flattening `@context` SHOULD NOT need `@base: null`.
 
 Example, this JSON-LD is in [compacted form][compacted] which may be beneficial for processing, but is not yet valid _RO-Crate Metadata File_ as it has not been flattened into a `@graph` array.
 
@@ -146,7 +146,7 @@ For example, expanding this JSON-LD:
   "@context": [
     "https://w3id.org/ro/crate/1.1-DRAFT/context",
     {"@base": null}
-  ]
+  ],
   "@graph": [
     {
       "@id": "ro-crate-metadata.json",
@@ -230,7 +230,7 @@ Results in a [expanded form][JSON-LD expanded form] without `@context`, using ab
 ```
 
 ```note
-Note that `@base: null` will not relativize existing absolute URIs that happen to be contained by the _RO-Crate Root_ (see section [Relativizing absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root)).
+`@base: null` will not relativize existing absolute URIs that happen to be contained by the _RO-Crate Root_ (see section [Relativizing absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root)).
 ```
 
 ```tip
@@ -244,7 +244,7 @@ When loading _RO-Crate JSON-LD_ as RDF, or combining the crate's Linked Data int
 to resolve URI references that are relative to the _RO-Crate Root_.
 
 ```note
-Note that when retrieving an RO-Crate over the web, servers might have performed HTTP redirections so that the base URI is different from what was requested. It is RECOMMENDED to follow section [Establishing a Base URI of RFC3986](http://tools.ietf.org/html/rfc3986#section-5.1) before resolving relative links from the _RO-Crate Metadata File_.
+When retrieving an RO-Crate over the web, servers might have performed HTTP redirections so that the base URI is different from what was requested. It is RECOMMENDED to follow section [Establishing a Base URI of RFC3986](http://tools.ietf.org/html/rfc3986#section-5.1) before resolving relative links from the _RO-Crate Metadata File_.
 ```
 
 For instance, consider this HTTP redirection from a permalink (simplified):
@@ -426,7 +426,7 @@ When parsing such crates it is recommended to use the
 [Archive and Package (arcp) URI scheme][ARCP]
 to establish a temporary/location-based UUID or hash-based (SHA256) _base URI_. 
 
-For instance, given a randomly generated UUID `029bcde1-dfa3-43cf-b7d9-a4fb75ccd4eb` we can use `arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/` as the `@base`:
+For instance, given a randomly generated UUID `b7749d0b-0e47-5fc4-999d-f154abe68065` we can use `arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/` as the `@base`:
 
 
 ```json

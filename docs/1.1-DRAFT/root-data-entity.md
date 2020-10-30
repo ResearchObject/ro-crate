@@ -69,7 +69,7 @@ start with `https://w3id.org/ro/crate/`.
 ### Finding the Root Data Entity
 
 Consumers processing the RO-Crate as an JSON-LD graph can thus reliably find
-the the _Root Data Entity_ by following this algorithm:
+the _Root Data Entity_ by following this algorithm:
 
 1. For each entity in `@graph` array
 2. ..if the `conformsTo` property is a URI that starts with `https://w3id.org/ro/crate/`
@@ -77,11 +77,15 @@ the the _Root Data Entity_ by following this algorithm:
 4. For each entity in `@graph` array
 5. .. if the entity has an `@id` URI that matches _root_ return it
 
+See also the appendix on
+[finding RO-Crate Root in RDF triple stores](appendix/relative-uris.md#finding-ro-crate-root-in-rdf-triple-stores).
+
 ### Purpose of Metadata File
 
 To ensure a base-line interoperability between RO-Crates, and for an RO-Crate to
 be considered a _Valid RO-Crate_, a minimum set of metadata is required for the
-_Root Data Entity_. As stated above the _RO-Crate Metadata File_ is not an
+_Root Data Entity_. As [stated earlier](structure.md#self-describing-and-self-contained)
+the _RO-Crate Metadata File_ is not an
 exhaustive manifest or inventory, that is, it does not necessarily list or
 describe all files in the package. For this reason, there are no minimum
 metadata requirements in terms of describing [Data Entities](data-entities.md) (files and folders)
@@ -105,7 +109,7 @@ The _Root Data Entity_ MUST have the following properties:
 *  `@id`:  MUST end with `/` and SHOULD be the string `./`
 *  `name`: SHOULD identify the dataset to humans well enough to disambiguate it from other RO-Crates
 *  `description`: SHOULD further elaborate on the name to provide a summary of the context in which the dataset is important.
-*  `datePublished`: MUST be a string in ISO 8601 date format and SHOULD be specified to at least the precision of a day, MAY be a timestamp down to the millisecond. 
+*  `datePublished`: MUST be a string in [ISO 8601 date format][DateTime] and SHOULD be specified to at least the precision of a day, MAY be a timestamp down to the millisecond. 
 *  `license`: SHOULD link to a _Contextual Entity_ in the _RO-Crate Metadata File_ with a name and description. MAY have a URI (eg for Creative Commons or Open Source licenses). MAY, if necessary be a textual description of how the RO-Crate may be used.
 
 ```note
@@ -115,7 +119,7 @@ requires a `Dataset` to have a `name` and `description`,
 ```
 
 ```warning
-The properties above are not sufficient to generate a [DataCite][DataCite Schema] citation. Advice on integrating with [DataCite] will be provided in a future version of this specification, or as an implementation guide.
+The properties above are not sufficient to generate a [DataCite](https://schema.datacite.org/) citation. Advice on integrating with [DataCite](https://www.datacite.org/) will be provided in a future version of this specification, or as an implementation guide.
 ```
 
 ## Minimal example of RO-Crate

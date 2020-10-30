@@ -33,15 +33,21 @@ _RO-Crate Metadata File_: A JSON-LD file stored as `ro-crate-metadata.json` in t
 
 _RO-Crate Website_: Human-readable HTML pages which describe the RO-Crate (i.e. the _Root Data Entity_, its _Data Entities_ and _Context Entities_), with a home-page at `ro-crate-preview.html` (any additional files reside in `ro-crate-preview_files/`)
 
+_Entity_: An identified object, which have a given _type_ and may be described using a set of _properties_.
+
+_Type_: A classification of objects or their descriptions. The type (or _class_) is identified by a _URI_, mapped to a _key_ by _JSON-LD_.
+
+_Property_: A relationship from one _entity_ to another entity, or to a _value_. The type of relationship is identified by a _URI_, mapped to a _key_ by _JSON-LD_.
+
 _Data Entity_: A JSON-LD representation, in the _RO-Crate Metadata File_, of a directory, file or other resource contained or described by the RO-Crate.
 
-_Root Data Entity_: A _Data Entity_ of type [Dataset], representing the RO-Crate as a whole.  
+_Root Data Entity_: A _Data Entity_ of _type_ [Dataset], representing the RO-Crate as a whole.  
 
 _RO-Crate Metadata File Descriptor_: A _Contextual Entity_ of type [CreativeWork], which describes the _RO-Crate Metadata File_ and links it to the _Root Data Entity_.
 
 _JSON-LD_: A JSON-based file format for storing _Linked Data_. This document assumes [JSON-LD 1.0]. JSON-LD use a _context_ to map from JSON keys to _URIs_.
 
-_JSON_: The _JavaScript Object Notation (JSON) Data Interchange Format_ as defined by [RFC 7159]; a structured text file format that can be programmatically consumed and generated in a wide range of programming languages. The main JSON structures are _objects_ (`{}`), _arrays_ (`[]`) and _values_ (`""`).
+_JSON_: The _JavaScript Object Notation (JSON) Data Interchange Format_ as defined by [RFC 7159]; a structured text file format that can be programmatically consumed and generated in a wide range of programming languages. The main JSON structures are _objects_ (`{}`) indexed by _keys_, sequential _arrays_ (`[]`) and literal _values_ (`""`).
 
 _Contextual Entity_: A JSON-LD representation of an entity associated with a _Data Entity_, needed to adequately describe that _Data Entity_. For example, a [Person], [Organization] (including research projects), item of equipment ([IndividualProduct]), [license] or any other _thing_ or _event_ that forms part of the metadata for a _Data Entity_ or supporting information.
 
@@ -57,9 +63,9 @@ _RO-Crate JSON-LD_: JSON-LD structure using the _RO-Crate JSON-LD Context_ and c
 
 ## Linked Data conventions
 
-Throughout this specification, RDF terms are referred to using the keys defined in the _RO-Crate JSON-LD Context_.
+Throughout this specification, RDF terms (_properties_, _types_) are referred to using the _keys_ defined in the _RO-Crate JSON-LD Context_.
 
-Following [Schema.org] practice, `property` names start with lowercase letters and `Class` names start with uppercase letters.
+Following [Schema.org] practice, `property` names start with lowercase letters and `Type` names start with uppercase letters.
 
 In the _RO-Crate Metadata File_ the RDF terms use their RO-Crate JSON-LD names as defined in the _RO-Crate JSON-LD Context_, which is available at <https://w3id.org/ro/crate/1.1-RC2/context>
 

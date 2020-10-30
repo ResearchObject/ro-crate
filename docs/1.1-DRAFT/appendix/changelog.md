@@ -22,7 +22,7 @@ excerpt: List of changes in releases of this specifications
 -->
 
 
-# Changelog
+# APPENDIX: Changelog
 
 * [RO-Crate 1.1.0](https://github.com/ResearchObject/ro-crate/releases/tag/1.1.0) <https://w3id.org/ro/crate/1.1>
   * **Note**: The RO-Crate metadata file is renamed to `ro-crate-metadata.json` to facilitate use of JSON editors.  [#82](https://github.com/ResearchObject/ro-crate/issues/82) [#84](https://github.com/ResearchObject/ro-crate/issues/84)
@@ -32,7 +32,7 @@ excerpt: List of changes in releases of this specifications
   * [RO-Crate Root](../structure.md) directory no longer requires payload files [#74](https://github.com/ResearchObject/ro-crate/issues/74)
   * [Workflows and scripts](../workflows.md) section now aligned with [BioSchemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/)  [#81](https://github.com/ResearchObject/ro-crate/issues/81) [#100](https://github.com/ResearchObject/ro-crate/pull/100)
   * Added section [Programming with JSON-LD](implementation-notes.md#programming-with-json-ld) and note that `@type` might be an array [#85](https://github.com/ResearchObject/ro-crate/issues/85)
-  * Added new section [Handling relative URI references](jsonld.html#handling-relative-uri-references) [#73](https://github.com/ResearchObject/ro-crate/issues/73)
+  * Added new section [Handling relative URI references](jsonld.md#handling-relative-uri-references) [#73](https://github.com/ResearchObject/ro-crate/issues/73)
   * JSON-LD context no longer sets `@base: null` [#73](https://github.com/ResearchObject/ro-crate/issues/73)
   * Added note on [Encoding file paths](../data-entities.md#encoding-file-paths) [#77](https://github.com/ResearchObject/ro-crate/issues/77) [#80](https://github.com/ResearchObject/ro-crate/issues/80)
   * Added section [Choosing URLs for ad hoc terms](jsonld.md#adding-new-or-ad-hoc-vocabulary-terms) [#71](https://github.com/ResearchObject/ro-crate/issues/71) [#90](https://github.com/ResearchObject/ro-crate/issues/90)
@@ -44,6 +44,11 @@ excerpt: List of changes in releases of this specifications
   * Change theme to `jekyll-rtd-theme` and split into multiple pages [#95](https://github.com/ResearchObject/ro-crate/pull/95)
   * Fixed typos in JSON and English 
   * [Additional metadata standards](../metadata.md#additional-metadata-standards) showed wrong PCDM namespace [#112](https://github.com/ResearchObject/ro-crate/pull/112)
+  * [Citation example](../contextual-entities.md#publications-via-citation-property) expanded 12a6754
+  * [Terminology](../terminology.md) adds property, type, entity cc10e28
+  * In [People](../contextual-entities.md#people) `author` can also be applied to `CreativeWork` e086b8b
+  * [Provenance section](../provenance.md) on Software-used now points to [Workflows](../workflows.md) section (and vice versa) 5d89872 40de6c7
+  * In [JSON-LD appendix](jsonld.md) `@id` should not include `../` 74ef6f1
   * Several sections reviewed to improve language and examples
     [#91](https://github.com/ResearchObject/ro-crate/pull/91)
     [#92](https://github.com/ResearchObject/ro-crate/pull/92)
@@ -58,6 +63,7 @@ excerpt: List of changes in releases of this specifications
     [#104](https://github.com/ResearchObject/ro-crate/pull/104)
     [#105](https://github.com/ResearchObject/ro-crate/pull/105)
     [#111](https://github.com/ResearchObject/ro-crate/pull/111)
+    [#114](https://github.com/ResearchObject/ro-crate/pull/114)
 * [RO-Crate 1.0.1](https://github.com/ResearchObject/ro-crate/releases/tag/1.0.1)
   * Fix JSON typo in example  
 * [RO-Crate 1.0.0](https://github.com/ResearchObject/ro-crate/releases/tag/1.0.0) <https://w3id.org/ro/crate/1.0>
