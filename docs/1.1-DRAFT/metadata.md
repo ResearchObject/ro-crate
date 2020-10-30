@@ -71,7 +71,7 @@ RO-Crate relies heavily on [Schema.org], using a constrained subset of [JSON-LD]
 
 ### Differences from Schema.org
 
-Generally, the standard class and property names (_terms_) from [Schema.org] should be used. However, RO-Crate uses variant names for some elements, specifically:
+Generally, the standard _type_ and _property_ names (_terms_) from [Schema.org] should be used. However, RO-Crate uses variant names for some elements, specifically:
 
 * `File` is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of Schema.org or a research data extension may re-define `File`.
 * `Journal` is mapped to <http://schema.org/Periodical>.

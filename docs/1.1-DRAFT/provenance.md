@@ -44,7 +44,7 @@ To specify which **equipment** was used to create or update a [Data Entity](data
 ```
 
 
-Uses [CreateAction] and [UpdateAction] class to model the contributions of _Context Entities_ of type [Person] or [Organization] in the creation of files.
+Uses [CreateAction] and [UpdateAction] type to model the contributions of _Context Entities_ of type [Person] or [Organization] in the creation of files.
 
 In this example the CreateAction has a human [agent], the object is a Place (a cave) and the Hovermap drone is the [instrument] used in the file creation event.
 
