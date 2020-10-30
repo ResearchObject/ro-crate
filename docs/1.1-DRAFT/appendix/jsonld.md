@@ -221,7 +221,7 @@ The _terms_ (properties and types) used SHOULD be added as keys to the `@context
 
 URIs in the `@context` SHOULD resolve to a useful human readable page. When this is not possible - for example if the URI resolves to an RDF ontology file, a human-readable URI SHOULD be provided using a [sameAs] description.
 
-For example. The `@id` URI <http://purl.org/ontology/bibo/interviewee> from the [BIBO ontology] ontology intends to resolve to an ontology file, which is not useful for humans, however the HTML section <http://neologism.ecs.soton.ac.uk/bibo.html#interviewee> is human-readable. To read more about best practices for content negotiation of vocabularies, we refer the reader to <https://www.w3.org/TR/swbp-vocab-pub/>
+For example. The `@id` URI <http://purl.org/ontology/bibo/interviewee> from the [BIBO ontology] ontology intends to resolve to an ontology file, which is not useful for humans, however the HTML section <http://neologism.ecs.soton.ac.uk/bibo.html#interviewee> is human-readable. To read more about best practices for content negotiation of vocabularies, we refer the reader to [Best Practice Recipes for Publishing RDF Vocabularies].
 
 
 ```json
@@ -250,7 +250,7 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 
 Context terms must ultimately map to HTTP(s) URIs which poses challenges for crate-authors wishing to use their own vocabularies.
 
-RO-Crate provides some strategies to add a new term (a Class or Property) that is not in Schema.org or another published vocabulary, so that there is a stable URI that can be added to the @context. 
+RO-Crate provides some strategies to add a new term (a [Class] or [Property]) that is not in Schema.org or another published vocabulary, so that there is a stable URI that can be added to the @context. 
 
 ### Choosing URLs for ad hoc terms
 
