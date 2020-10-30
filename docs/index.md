@@ -23,7 +23,7 @@ Permalink: <https://w3id.org/ro/crate>
 1. Table of Contents
 {:toc}
 
-**News**: [RO-Crate Metadata specification 1.0](https://w3id.org/ro/crate/1.0) released
+**News**: [RO-Crate Metadata specification 1.1](https://w3id.org/ro/crate/1.1) released
 
 ## What is RO-Crate? 
 RO-Crate is a community effort to establish a lightweight approach to packaging research data with their metadata. It is based on schema.org annotations in JSON-LD, and aims to make best-practice in formal metadata description accessible and practical for use in a wider variety of situations, from an individual researcher working with a folder of data, to large data-intensive computational research environments. 
@@ -38,7 +38,7 @@ We continue to [gather usecases](https://github.com/ResearchObject/ro-crate/issu
   
 ## When can I use it?
 
-* [RO-Crate specification 1.0](1.0/) has been **released**.
+* [RO-Crate specification 1.1](1.1/) has been **released**.
 
 See the [specification](specification.md) page for older and future versions.
 
