@@ -145,7 +145,7 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
 If representing command lines, double escape `\\` so that JSON preserves the `\` character.
 ```
 
-If multiple [SoftwareApplication]s have been used in composition, such as from a script or workflow, then the `CreateAction` SHOULD rather reference a [SoftwareSourceCode] which can be further described as explained in the [Workflows and scripts](workflows.md) section.
+If multiple [SoftwareApplication]s have been used in composition, such as from a script or workflow, then the `CreateAction`'s [instrument] SHOULD rather reference a [SoftwareSourceCode] which can be further described as explained in the [Workflows and scripts](workflows.md) section.
 
 ## Recording changes to RO-Crates
 
@@ -157,7 +157,7 @@ An Action which creates new _Data entities_ - for example, the creation of a new
 
 An Action SHOULD have a [name] and MAY have a [description].
 
-An Action SHOULD have an [endTime], which MUST be in ISO 8601 date format and SHOULD be specified to at least the precision of a day. An Action MAY have a [startTime] meeting the same specifications.
+An Action SHOULD have an [endTime], which MUST be in [ISO 8601 date format][DateTime] and SHOULD be specified to at least the precision of a day. An Action MAY have a [startTime] meeting the same specifications.
 
 An Action SHOULD have a human [agent] who was responsible for authorizing the action, and MAY have an [instrument] which associates the action with a particular piece of software (for example, the content management system or data catalogue through which an update was approved) which SHOULD be of `@type` SoftwareApplication.
 
