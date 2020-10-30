@@ -108,8 +108,8 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
 ### Adding detailed descriptions of encodings
 
 The above example provides a media type for the file `cp7glop.ai` - which is
-useful as it may not be apparent that the file readable as a PDF file from the
-extension. To add more detail, encodings SHOULD be linked using a [PRONOM]
+useful as it may not be apparent that the file is readable as a PDF file from the
+extension alone. To add more detail, encodings SHOULD be linked using a [PRONOM]
 identifier to a _Contextual Entity_ of `@type` [WebSite].
 
 ``` json
