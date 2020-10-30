@@ -69,7 +69,7 @@ start with `https://w3id.org/ro/crate/`.
 ### Finding the Root Data Entity
 
 Consumers processing the RO-Crate as an JSON-LD graph can thus reliably find
-the the _Root Data Entity_ by following this algorithm:
+the _Root Data Entity_ by following this algorithm:
 
 1. For each entity in `@graph` array
 2. ..if the `conformsTo` property is a URI that starts with `https://w3id.org/ro/crate/`
@@ -77,11 +77,15 @@ the the _Root Data Entity_ by following this algorithm:
 4. For each entity in `@graph` array
 5. .. if the entity has an `@id` URI that matches _root_ return it
 
+See also the appendix on
+[finding RO-Crate Root in RDF triple stores](appendix/relative-uris.md#finding-ro-crate-root-in-rdf-triple-stores).
+
 ### Purpose of Metadata File
 
 To ensure a base-line interoperability between RO-Crates, and for an RO-Crate to
 be considered a _Valid RO-Crate_, a minimum set of metadata is required for the
-_Root Data Entity_. As stated above the _RO-Crate Metadata File_ is not an
+_Root Data Entity_. As [stated earlier](structure.md#self-describing-and-self-contained)
+the _RO-Crate Metadata File_ is not an
 exhaustive manifest or inventory, that is, it does not necessarily list or
 describe all files in the package. For this reason, there are no minimum
 metadata requirements in terms of describing [Data Entities](data-entities.md) (files and folders)
