@@ -24,7 +24,7 @@ dependencies: node_modules/.bin/makehtml
 clean:
 	rm -rf release "docs/${RELEASE}/"
 
-release: release/ro-crate-${TAG}.html release/ro-crate-${TAG}.pdf release/ro-crate-context-${TAG}.json release/ro-crate-metadata.json release/ro-crate-preview.html
+release: release/ro-crate-${TAG}.html release/ro-crate-${TAG}.pdf release/ro-crate-context-${TAG}.jsonld release/ro-crate-metadata.json release/ro-crate-preview.html
 
 # Install dependencies for node
 node_modules/.bin/makehtml:
@@ -35,6 +35,7 @@ docs/${RELEASE}/:
 
 docs/${RELEASE}/_metadata.liquid: docs/${RELEASE}/ docs/${DRAFT}/_metadata.liquid
 	sed s/${DRAFT}/${RELEASE}/g < docs/${DRAFT}/_metadata.liquid > docs/${RELEASE}/_metadata.liquid
+	sed -i s/TAG/${TAG}/g docs/${RELEASE}/_metadata.liquid
 	sed -i "/^<!-- NOTE: Before release.*/ d" docs/${RELEASE}/_metadata.liquid
 	sed -i "/^END NOTE -->/ d" docs/${RELEASE}/_metadata.liquid
 	sed -i "s/^* Status:.*/* Status: Recommendation/" docs/${RELEASE}/_metadata.liquid
@@ -78,8 +79,8 @@ docs/${RELEASE}/ro-crate-metadata.json: docs/${DRAFT}/ro-crate-metadata.json
 docs/${RELEASE}/ro-crate-preview.html: dependencies docs/${RELEASE}/ro-crate-metadata.json
 	node_modules/.bin/makehtml docs/${RELEASE}/ro-crate-metadata.json
 
-docs/${RELEASE}/context.json: dependencies docs/${RELEASE}/ scripts/schema-context.py
-	scripts/schema-context.py ${RELEASE} ${TAG} > docs/${RELEASE}/context.json
+docs/${RELEASE}/context.jsonld: dependencies docs/${RELEASE}/ scripts/schema-context.py
+	scripts/schema-context.py ${RELEASE} ${TAG} > docs/${RELEASE}/context.jsonld
 
 release/:
 	mkdir -p release
@@ -110,8 +111,8 @@ release/ro-crate-${TAG}.pdf: dependencies release/ release/ro-crate-${TAG}.md
 	  --number-sections --toc  --metadata pagetitle="RO-Crate Metadata Specification ${RELEASE}" \
 	  --from=markdown+gfm_auto_identifiers -o release/ro-crate-${TAG}.pdf
 
-release/ro-crate-context-${TAG}.json: dependencies release/ docs/${RELEASE}/context.json
-	cp docs/${RELEASE}/context.json release/ro-crate-context-${TAG}.json
+release/ro-crate-context-${TAG}.jsonld: dependencies release/ docs/${RELEASE}/context.jsonld
+	cp docs/${RELEASE}/context.jsonld release/ro-crate-context-${TAG}.jsonld
 
 release/ro-crate-metadata.json: dependencies release/ docs/${RELEASE}/ro-crate-metadata.json
 	cp docs/${RELEASE}/ro-crate-metadata.json release/ro-crate-metadata.json
