@@ -426,7 +426,7 @@ When parsing such crates it is recommended to use the
 [Archive and Package (arcp) URI scheme][ARCP]
 to establish a temporary/location-based UUID or hash-based (SHA256) _base URI_. 
 
-For instance, given a randomly generated UUID `029bcde1-dfa3-43cf-b7d9-a4fb75ccd4eb` we can use `arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/` as the `@base`:
+For instance, given a randomly generated UUID `b7749d0b-0e47-5fc4-999d-f154abe68065` we can use `arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/` as the `@base`:
 
 
 ```json
