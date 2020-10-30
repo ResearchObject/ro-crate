@@ -176,11 +176,16 @@ For example:
 
 
 ```json
-"citation": {"@id": "https://doi.org/10.1109/TCYB.2014.2386282"}
+{
+    "@id": "./",
+    "@type": "Dataset",
+    "citation": {"@id": "https://doi.org/10.1109/TCYB.2014.2386282"}
+}
 ```
 
-
-The publication SHOULD be described in the _RO-Crate JSON-LD_.
+The publication SHOULD be described further 
+as an additional contextual entity of
+type [ScholarlyArticle] or [CreativeWork].
 
 
 ```json
@@ -209,8 +214,30 @@ The publication SHOULD be described in the _RO-Crate JSON-LD_.
 }
 ```
 
+[citation] MAY also be used with other data and contextual entities:
 
+```json
+{
+  "@id": "communities-2018.csv",
+  "@type": "File",
+  "name": "Snapshot of RO Community efforts",
+  "citation": {"@id": "https://doi.org/10.5281/zenodo.1313066"},
+  "encodingFormat": "text/csv"
+}
+```
 
+A [data entity](data-entities.md) MAY provide a published DOI [identifier] that, compared with any related publication in [citation], primarily captures that file or dataset:
+
+```json
+{
+  "@id": "figure.png",
+  "@type": ["File", "ImageObject"],
+  "name": "XXL-CT-scan of an XXL Tyrannosaurus rex skull",
+  "identifier": "https://doi.org/10.5281/zenodo.3479743",
+  "citation": {"@id": "http://ndt.net/?id=19249"},
+  "encodingFormat": "image/png"
+}
+```
 
 
 ## Publisher
