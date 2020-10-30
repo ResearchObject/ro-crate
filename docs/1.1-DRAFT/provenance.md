@@ -165,9 +165,9 @@ An Action's status MAY be recorded in an [actionStatus] property. The status mus
 
 An Action which has failed MAY record any error information in an [error] property.
 
-[UpdateAction] SHOULD only be used for actions which affect the DataSet as a whole, such as movement through a workflow.
+[UpdateAction] SHOULD only be used for actions which affect the Dataset as a whole, such as movement through a workflow.
 
-To record curation actions which modify a [File] within a DataSet - for example, by correcting or enhancing metadata - the old version of the [File] SHOULD be retained, and a [CreateAction] added which has the original version as its [object] and the new version as its [result].
+To record curation actions which modify a [File] within a Dataset - for example, by correcting or enhancing metadata - the old version of the [File] SHOULD be retained, and a [CreateAction] added which has the original version as its [object] and the new version as its [result].
 
 ```json
 {
