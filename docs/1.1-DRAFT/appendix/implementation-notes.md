@@ -21,7 +21,7 @@ excerpt:
    limitations under the License.
 -->
 
-# Implementation notes
+# APPENDIX: Implementation notes
 
 ## Programming with JSON-LD
 
