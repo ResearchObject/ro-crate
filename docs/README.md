@@ -52,6 +52,28 @@ Note that although section folders have a `README.md` (alternatively `index.md`)
 
 This is also helpful for navigating drafts as `exclude: true` does not show their sections in the left-hand menu.
 
+#### Admonition cards
+
+With jekyll-rtd-theme it is possible to insert colourful admonition cards to bring attention to caveats and best practices. 
+These are written as a Markdown code-block with the language set as `tip`, `note`, `warning` or `danger`, and can
+include a restricted set of Markdown.
+
+    ```tip
+    JSON-LD supports [many other features](https://json-ld.org/) that SHOULD NOT be used excessively.
+    ```
+
+Will be rendered in the style of:
+
+> **✅ Tip**
+> JSON-LD supports [many other features](https://json-ld.org/) that SHOULD NOT be used excessively.
+
+Try to keep the admonition card short, like a single paragraph.
+
+For the [Makefile](Makefile) rendering to PDF, a rudimentary [Pandoc filter](scripts/admonition.py)
+attempts to translate these blocks back to paragraph rendering, although they don't show up as a box. 
+See the [release procedure](RELEASE_PROCEDURE.md).
+
+
 #### Theme config
 
 The theme is locked to a fixed version in [_config.yml](_config.yml) to avoid unexpected upgrade surprises. This file also specifies some site-wide properties like copyright.
