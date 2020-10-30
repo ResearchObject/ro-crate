@@ -170,7 +170,7 @@ The [JSON-LD flattening & compaction](https://www.w3.org/TR/json-ld-api/#flatten
 
 ## RO-Crate JSON-LD Media type
 
-The [media type][RFC 6838] for `ro-crate-metadata.json` will, when following this specification, comply
+The [media type][RFC 6838] `application/ld+json` for `ro-crate-metadata.json` will, when following this specification, comply
 with the [flattened/compacted JSON-LD profiles][JSON-LD media type] as well as `https://w3id.org/ro/crate`, which may be indicated in a [HTTP response][RFC7231 response] as:
 
 ```http
@@ -181,7 +181,7 @@ Content-Type: application/ld+json; profile="http://www.w3.org/ns/json-ld#flatten
 ```
 
 
-Note that most web servers will serve `ro-crate-metadata.json` with  `Content-Type: application/json`. 
+Note that most web servers will however serve `*.json` as `Content-Type: application/json`. 
 
 Requesting the RO-Crate metadata file from a browser may also need permission through CORS header `Access-Control-Allow-Origin` (however extra care should be taken if the RO-Crates require access control).
 
