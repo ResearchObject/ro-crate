@@ -21,7 +21,7 @@ excerpt:
    limitations under the License.
 -->
 
-# Implementation notes
+# APPENDIX: Implementation notes
 
 ## Programming with JSON-LD
 
@@ -223,11 +223,11 @@ is outside of the bag directory and can be changed without changing the payload'
   |         example.txt 
 ```
 
-A [Data Entity](../data-entities.md) describing `example.txt` in this scenario would have an `@id` of `bag/data/example.txt`:
+A [Data Entity](../data-entities.md) describing `example.txt` in this scenario would have an `@id` of `bag1/data/example.txt`:
 
 ```json
 {
-  "@id": "bag/data/example.txt",
+  "@id": "bag1/data/example.txt",
   "name": "Example file"
 }
 ```
@@ -235,7 +235,7 @@ A [Data Entity](../data-entities.md) describing `example.txt` in this scenario w
 
 ## Repository-specific identifiers
 
-_Root Data Entities_ MAY also have additional repository specific identifiers, described using [Contextual Entities](../contextual-entities.md) using a [PropertyValue], with a [name] that identifies the repository and the [identifier] as a value. The _same_ identifier MAY be used in multiple different repositories and effectively namespaced using the `name` of the `ProperyValue`.
+_Root Data Entities_ MAY include repository-specific identifiers, described using [Contextual Entities](../contextual-entities.md) using a [PropertyValue], with a [name] that identifies the repository and the [identifier] as a value. The _same_ identifier MAY be used in multiple different repositories and effectively namespaced using the `name` of the `ProperyValue`.
 
 ```json
 {

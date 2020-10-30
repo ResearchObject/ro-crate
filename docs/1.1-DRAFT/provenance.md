@@ -44,7 +44,7 @@ To specify which **equipment** was used to create or update a [Data Entity](data
 ```
 
 
-Uses [CreateAction] and [UpdateAction] class to model the contributions of _Context Entities_ of type [Person] or [Organization] in the creation of files.
+Uses [CreateAction] and [UpdateAction] type to model the contributions of _Context Entities_ of type [Person] or [Organization] in the creation of files.
 
 In this example the CreateAction has a human [agent], the object is a Place (a cave) and the Hovermap drone is the [instrument] used in the file creation event.
 
@@ -84,7 +84,7 @@ In this example the CreateAction has a human [agent], the object is a Place (a c
 
 ## Software used to create files
 
-To specify which software was used to create or update a file the software application SHOULD be represented with an entity of type [SoftwareApplication], with a [version] property, e.g. from `tool --version`.
+To specify which software was used to create or update a file, the software application SHOULD be represented with an entity of type [SoftwareApplication], with a [version] property, e.g. from `tool --version`.
 
 For example:
 
@@ -98,9 +98,9 @@ For example:
 }
 ```
 
-The software SHOULD be associated with the [File] it created using a [CreateAction] with the [File] referenced by a [result] property. Any input files SHOULD be referenced by the [object] property.
+The software SHOULD be associated with the [File](s) (or other [data entities](data-entities.md)) it created as an [instrument] of a [CreateAction], with the [File] referenced by a [result] property. Any input files SHOULD be referenced by the [object] property.
 
-In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg` was transformed into an new image `pics/sepia_fence.jpg` using the _ImageMagick_ software application. Actions MAY have human-readable names, which MAY be machine generated for use at scale.
+In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg` was transformed into an new image `pics/sepia_fence.jpg` using the _ImageMagick_ software application as "instrument". Actions MAY have human-readable names, which MAY be machine generated for use at scale.
 
 ```json
 {
@@ -142,8 +142,10 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
 ```
 
 ```tip
-Double escape `\\` so that JSON preserves the `\` character from the command line.
+If representing command lines, double escape `\\` so that JSON preserves the `\` character.
 ```
+
+If multiple [SoftwareApplication]s have been used in composition, such as from a script or workflow, then the `CreateAction`'s [instrument] SHOULD rather reference a [SoftwareSourceCode] which can be further described as explained in the [Workflows and scripts](workflows.md) section.
 
 ## Recording changes to RO-Crates
 
@@ -155,7 +157,7 @@ An Action which creates new _Data entities_ - for example, the creation of a new
 
 An Action SHOULD have a [name] and MAY have a [description].
 
-An Action SHOULD have an [endTime], which MUST be in ISO 8601 date format and SHOULD be specified to at least the precision of a day. An Action MAY have a [startTime] meeting the same specifications.
+An Action SHOULD have an [endTime], which MUST be in [ISO 8601 date format][DateTime] and SHOULD be specified to at least the precision of a day. An Action MAY have a [startTime] meeting the same specifications.
 
 An Action SHOULD have a human [agent] who was responsible for authorizing the action, and MAY have an [instrument] which associates the action with a particular piece of software (for example, the content management system or data catalogue through which an update was approved) which SHOULD be of `@type` SoftwareApplication.
 
@@ -163,9 +165,9 @@ An Action's status MAY be recorded in an [actionStatus] property. The status mus
 
 An Action which has failed MAY record any error information in an [error] property.
 
-[UpdateAction] SHOULD only be used for actions which affect the DataSet as a whole, such as movement through a workflow.
+[UpdateAction] SHOULD only be used for actions which affect the Dataset as a whole, such as movement through a workflow.
 
-To record curation actions which modify a [File] within a DataSet - for example, by correcting or enhancing metadata - the old version of the [File] SHOULD be retained, and a [CreateAction] added which has the original version as its [object] and the new version as its [result].
+To record curation actions which modify a [File] within a Dataset - for example, by correcting or enhancing metadata - the old version of the [File] SHOULD be retained, and a [CreateAction] added which has the original version as its [object] and the new version as its [result].
 
 ```json
 {
@@ -231,12 +233,12 @@ To record curation actions which modify a [File] within a DataSet - for example,
 
 To describe an export from a Digital Library or repository system, RO-Crate uses the _Portland Common Data Model_ ([PCDM]). 
 
-A [Contextual Entity](contextual-entities.md) from a repository, representing an abstract entity such as a person, or a work, or a place SHOULD have a`@type` of [RepositoryObject], in addition to any other types. 
+A [Contextual Entity](contextual-entities.md) from a repository, representing an abstract entity such as a person, or a work, or a place SHOULD have a `@type` of [RepositoryObject], in addition to any other types. 
 
-Objects MAY be grouped together in [RepositoryCollection]s with [hasMember] pointing to the the [RepositoryObject]. 
+Objects MAY be grouped together in [RepositoryCollection]s with [hasMember] pointing to the [RepositoryObject]. 
 
 ```note
-The terms `RepositoryObject` and `RepositoryCollection` are renamed to avoid collision between other vocabularies and the PCDM terms `Collection` and `Object`. The term `RepositoryFile` is renamed to avoid clash with RO-Crate's `File` mapping to <http://schema.org/MediaObject>.
+The terms `RepositoryObject` and `RepositoryCollection` are renamed in RO-Crate to avoid collision between other vocabularies and the PCDM terms `Collection` and `Object`. The term `RepositoryFile` is renamed to avoid clash with RO-Crate's `File` mapping to <http://schema.org/MediaObject>.
 ```
 
 ```warning

@@ -32,7 +32,7 @@ jekyll-mentions: false
 
 # Representing Contextual Entities
 
-The _RO-Crate JSON-LD_ `@graph` SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`). This also helps to maximize the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
+The RO-Crate SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`). This also helps to maximize the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
 
 ## Contextual vs Data entities
 
@@ -54,20 +54,20 @@ The RO-Crate Metadata JSON `@graph` MUST NOT list multiple entities with the sam
 
 ## Identifiers for contextual entities
 
-A challenge can be how to assign [identifiers for contextual entities](appendix/jsonld.html#describing-entities-in-json-ld), that is deciding on their `@id` value.
+A challenge can be how to assign [identifiers for contextual entities](appendix/jsonld.md#describing-entities-in-json-ld), that is deciding on their `@id` value.
 
 RO-Crate recommend that if an existing permalink (e.g. `https://orcid.org/0000-0002-1825-0097`) or other absolute URI (e.g. `https://en.wikipedia.org/wiki/Josiah_S._Carberry`) is reasonably unique for that entity, that URI should be used as identifier for the contextual entity in preference of an identifier local to the RO-Crate (e.g. `#josiah` or `#0fa587c6-4580-4ece-a5df-69af3c5590e3`). 
 
-Care should be taken to not describe two conceptually different contextual entities with the same identifier - e.g. if `https://en.wikipedia.org/wiki/Josiah_S._Carberry` is a `Person` it should not also be a [CreativeWork] (although this example is a fictional person!).
+Care should be taken to not describe two conceptually different contextual entities with the same identifier - e.g. if `https://en.wikipedia.org/wiki/Josiah_S._Carberry` is a [Person] it should not also be a [CreativeWork] (although this example is a fictional person!).
 
-Where a related URL exist that may not be unique enough to serve as identifier, it can instead be added to a contextual entity using [url].
+Where a related URL exist that may not be unique enough to serve as identifier, it can instead be added to a contextual entity using the property [url].
 
 
-See the [appendix on JSON-LD identifiers](appendix/jsonld.html#describing-entities-in-json-ld) for details.
+See the [appendix on JSON-LD identifiers](appendix/jsonld.md#describing-entities-in-json-ld) for details.
 
 ## People
 
-A core principle of Linked data is to use URIs to identify things such as people. The following is the minimum recommended way of representing a [author] in a RO-Crate. This property MAY be applied in the context of a directory ([Dataset]) or to a [File].
+A core principle of Linked data is to use URIs to identify important entities such as people. The following is the minimum recommended way of representing a [author] of a RO-Crate. The [author] property MAY also be applied to a directory ([Dataset]), a [File] or other [CreativeWork] entities.
 
 ```json
 {
@@ -83,9 +83,9 @@ A core principle of Linked data is to use URIs to identify things such as people
 }
 ```
 
-This uses an [ORCID] to unambiguously identify an author, with a _Contextual Entity_ of type [Person].
+This uses an [ORCID] to unambiguously identify an author, represented as a _Contextual Entity_ of type [Person].
 
-Note the string-value of the organizational affiliation. This SHOULD be improved by also providing a _Contextual Entity_ for the organization (see example below).
+Note the string _value_ for the organizational affiliation. This SHOULD be improved by also providing a _Contextual Entity_ for the organization (see example below).
 
 
 ## Organizations as values
@@ -176,11 +176,16 @@ For example:
 
 
 ```json
-"citation": {"@id": "https://doi.org/10.1109/TCYB.2014.2386282"}
+{
+    "@id": "./",
+    "@type": "Dataset",
+    "citation": {"@id": "https://doi.org/10.1109/TCYB.2014.2386282"}
+}
 ```
 
-
-The publication SHOULD be described in the _RO-Crate JSON-LD_.
+The publication SHOULD be described further 
+as an additional contextual entity of
+type [ScholarlyArticle] or [CreativeWork].
 
 
 ```json
@@ -209,8 +214,30 @@ The publication SHOULD be described in the _RO-Crate JSON-LD_.
 }
 ```
 
+[citation] MAY also be used with other data and contextual entities:
 
+```json
+{
+  "@id": "communities-2018.csv",
+  "@type": "File",
+  "name": "Snapshot of RO Community efforts",
+  "citation": {"@id": "https://doi.org/10.5281/zenodo.1313066"},
+  "encodingFormat": "text/csv"
+}
+```
 
+A [data entity](data-entities.md) MAY provide a published DOI [identifier] that, compared with any related publication in [citation], primarily captures that file or dataset:
+
+```json
+{
+  "@id": "figure.png",
+  "@type": ["File", "ImageObject"],
+  "name": "XXL-CT-scan of an XXL Tyrannosaurus rex skull",
+  "identifier": "https://doi.org/10.5281/zenodo.3479743",
+  "citation": {"@id": "http://ndt.net/?id=19249"},
+  "encodingFormat": "image/png"
+}
+```
 
 
 ## Publisher
