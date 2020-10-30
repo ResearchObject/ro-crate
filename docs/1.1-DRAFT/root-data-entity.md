@@ -119,7 +119,7 @@ requires a `Dataset` to have a `name` and `description`,
 ```
 
 ```warning
-The properties above are not sufficient to generate a [DataCite][DataCite Schema] citation. Advice on integrating with [DataCite] will be provided in a future version of this specification, or as an implementation guide.
+The properties above are not sufficient to generate a [DataCite](https://schema.datacite.org/) citation. Advice on integrating with [DataCite](https://www.datacite.org/) will be provided in a future version of this specification, or as an implementation guide.
 ```
 
 ## Minimal example of RO-Crate
