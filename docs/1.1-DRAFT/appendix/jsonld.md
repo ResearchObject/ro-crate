@@ -254,7 +254,7 @@ RO-Crate provides some strategies to add a new term (a [Class] or [Property]) th
 
 ### Choosing URLs for ad hoc terms
 
-For projects that have their own web-presence, URLs MAY defined and SHOULD resolve to useful content. For example for a project with web page <https://criminalcharacters.com/> the property `education` could have a URL: <https://criminalcharacters.com/vocab#education> which resolves to an HTML page that explains the term using HTML anchors:
+For projects that have their own web-presence, URLs MAY be defined there and SHOULD resolve to useful content. For example for a project with web page <https://criminalcharacters.com/> the property `education` could have a URL: <https://criminalcharacters.com/vocab#education> which resolves to an HTML page that explains the term using HTML anchors:
 
 ```html
 <div id="education">
@@ -268,7 +268,7 @@ For projects that have their own web-presence, URLs MAY defined and SHOULD resol
 Ensure you have a consistent use of `http` or `https` (preferring https) as well as consistent path `/vocab` vs `/vocab/` vs `/vocab/index.html` (preferring the shortest that is also visible in browser).
 ```
 
-For ad hoc terms where the crate author does not have the resources to create and maintain an HTML page, authors may use the RO-crate public namespace (`https://w3id.org/ro/terms/`) to reserve their terms. For example, an ad-hoc URL MAY be used in the form `https://w3id.org/ro/terms/criminalcharacters#education` where `criminalcharacters` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions][ro-terms] to the RO-Crate terms project. 
+For ad hoc terms where the crate author does not have the resources to create and maintain an HTML page, authors may use the RO-Crate public namespace (`https://w3id.org/ro/terms/`) to reserve their terms. For example, an ad-hoc URL MAY be used in the form `https://w3id.org/ro/terms/criminalcharacters#education` where `criminalcharacters` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions][ro-terms] to the RO-Crate terms project. 
 
 In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in the local context:
 
@@ -294,7 +294,7 @@ Following the conventions used by Schema.org, ad-hoc terms SHOULD also include d
 
 ```json
 {
-    "@id": "https://criminalcharacters.com/vocab/#education",
+    "@id": "https://criminalcharacters.com/vocab#education",
     "@type": "rdf:Property",
     "rdfs:label": "education",
     "rdf:comment": "Literacy of prisoner. ..."
