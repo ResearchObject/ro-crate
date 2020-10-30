@@ -35,9 +35,9 @@ RO-Crate aims to capture and describe the [Research Object][ResearchObject] usin
 
 The _RO-Crate Metadata File Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:
 
-* Root Data Entity - the `Dataset` itself, a gathering of data
-* Data Entities - the _data_ payload, in the form of files and folders
-* Contextual Entities - related things in the world (e.g. people, organizations, places), providing provenance for the data entities and the RO-Crate.
+* [Root Data Entity](root-data-entity.md) - the RO-Crate `Dataset` itself, a gathering of data
+* [Data Entities](data-entities.md) - the _data_ payload, in the form of files and folders
+* [Contextual Entities](contextual-entities.md) - related things in the world (e.g. people, organizations, places), providing provenance for the data entities and the RO-Crate.
 
 This machine-readable metadata can also be represented for human consumption in the _RO-Crate Website_, linking to data and Web resources.
 
@@ -61,9 +61,13 @@ RO-Crate realize these principles using a particular set of technologies and bes
 
 ## Base metadata standard: Schema.org
 
-[Schema.org] is the base metadata standard for RO-Crate. Schema.org was chosen because it is widely used on the World Wide Web and supported by search engines, on the assumption that discovery is likely to be maximized if search engines index the content. NOTE: As far as we know there is no alternative, well-maintained linked-data schema for research data with the coverage needed for this project - i.e. a single standard for expressing all the examples presented in this specification.
+[Schema.org] is the base metadata standard for RO-Crate. Schema.org was chosen because it is widely used on the World Wide Web and supported by search engines, on the assumption that discovery is likely to be maximized if search engines index the content. 
 
-RO-Crate relies heavily on [Schema.org] using a constrained subset of [JSON-LD], and this document gives opinionated recommendations on how to represent the metadata using existing [linked data] best practices.
+```note
+As far as we know there is no alternative, well-maintained linked-data schema for research data with the coverage needed for this project - i.e. a single standard for expressing all the examples presented in this specification.
+```
+
+RO-Crate relies heavily on [Schema.org], using a constrained subset of [JSON-LD], and this document gives opinionated recommendations on how to represent the metadata using existing [linked data] best practices.
 
 ### Differences from Schema.org
 
