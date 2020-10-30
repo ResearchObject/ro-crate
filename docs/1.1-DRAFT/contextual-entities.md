@@ -67,7 +67,7 @@ See the [appendix on JSON-LD identifiers](appendix/jsonld.md#describing-entities
 
 ## People
 
-A core principle of Linked data is to use URIs to identify things such as people. The following is the minimum recommended way of representing a [author] in a RO-Crate. This property MAY be applied in the context of a directory ([Dataset]) or to a [File].
+A core principle of Linked data is to use URIs to identify important entities such as people. The following is the minimum recommended way of representing a [author] in a RO-Crate. This property MAY be applied in the context of a directory ([Dataset]) or to a [File].
 
 ```json
 {
