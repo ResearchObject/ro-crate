@@ -41,7 +41,7 @@ The [RO-Crate 1.1](https://w3id.org/ro/crate/1.1/) specification is largely **ex
  * [Web resources](1.1/data-entities.html#web-based-data-entities)
  * [Contextual entities](1.1/contextual-entities.html) such as [people](1.1/contextual-entities.html#people), [organizations](1.1/contextual-entities.html#organizations-as-values), [citations](1.1/contextual-entities.html#publications-via-citation-property), [licensing](1.1/contextual-entities.html#licensing-access-control-and-copyright), [places](1.1/contextual-entities.html#places)
  * Section on [provenance](1.1/provenance.html) details how the creation of resources can be recorded
- * [Computational workflows and scripts](1.1/workflows.html) can be 
+ * [Computational workflows and scripts](1.1/workflows.html) can be further described showing programming language, inputs, outputs, etc.
  * The RO-Crate [JSON-LD can be extended](1.1/appendix/jsonld.html#extending-ro-crate) for additional vocabularies, including [ad-hoc](1.1/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms) terms
  * Section on [combining with other packaging schemas](1.1/appendix/implementation-notes.html#combining-with-other-packaging-schemes) explain how an RO-Crate can be packaged in a single archive using BagIt
  
