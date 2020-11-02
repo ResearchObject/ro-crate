@@ -36,7 +36,15 @@ The [specification](specification.md) has several inline examples:
  * [Example with computational workflow](1.1/workflows.html#complete-workflow-example)
  * [RO-Crate specification](1.1/ro-crate-preview.html) ([ro-crate-metadata.jsonld](1.1/ro-crate-metadata.jsonld)) – the specification itself and its publication
 
-
+The [RO-Crate 1.1](https://w3id.org/ro/crate/1.1/) specification is largely **explained by examples** by showing additional fragments:
+ * [Data entities](1.1/data-entities.html) (files, folders)
+ * [Web resources](1.1/data-entities.html#web-based-data-entities)
+ * [Contextual entities](1.1/contextual-entities.html) such as [people](1.1/contextual-entities.html#people), [organizations](1.1/contextual-entities.html#organizations-as-values), [citations](1.1/contextual-entities.html#publications-via-citation-property), [licensing](1.1/contextual-entities.html#licensing-access-control-and-copyright), [places](1.1/contextual-entities.html#places)
+ * Section on [provenance](1.1/provenance.html) details how the creation of resources can be recorded
+ * [Computational workflows and scripts](1.1/workflows.html) can be 
+ * The RO-Crate [JSON-LD can be extended](1.1/appendix/jsonld.html#extending-ro-crate) for additional vocabularies, including [ad-hoc](1.1/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms) terms
+ * Section on [combining with other packaging schemas](1.1/appendix/implementation-notes.html#combining-with-other-packaging-schemes) explain how an RO-Crate can be packaged in a single archive using BagIt
+ 
 <!-- TODO: Find a golden exemplar we can showcase here -->
 
 ## UTS examples
