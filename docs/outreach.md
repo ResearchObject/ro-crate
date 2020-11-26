@@ -3,7 +3,7 @@ layout: default
 title: Outreach and Publications
 ---
 <!--
-   Copyright 2019 The University of Manchester and RO Crate contributors 
+   Copyright 2019-2020 The University of Manchester and RO Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,6 +37,9 @@ Stian Soiland-Reyes, Ignacio Eguinoa (2020): [Packaging workflows with RO-Crate]
 <https://doi.org/10.5281/zenodo.4011999>
 
 Simone Leo, Salvador Capella-Gutierrez (2020): [Testing workflows: Life Monitor and OpenEBench](https://docs.google.com/presentation/d/15113lwn8_H7ftDF9I650O3rZGeAVr6LVSU4-XDkBgA0/edit#slide=id.g9337569ecf_1_0), [_Workshop on FAIR Computational Workflows_](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).
+
+Gavin Kennedy (2020): [Interoperable Research Workspaces and the Mesh](https://indico.cern.ch/event/854707/contributions/3680449/attachments/1975672/3288266/CS3_2020_Research_Workspaces_Gavin_Kennedy_v2.pptx), 
+[_CS3 2020 - Cloud Storage Synchronization and Sharing Services_](http://cs3.deic.dk/), 2020-01-27 / 2020-01-29, Copenhagen, Denmark.
 
 Peter Sefton, Eoghan Ó Carragáin, Carole Goble, Stian Soiland-Reyes (2019): [Introducing RO-Crate: research object data packaging](http://ptsefton.com/2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm). _eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. [[slides](https://docs.google.com/presentation/d/10faXX13opY0DAVVVeX5lG83F4MA_woLHkeIcUOko2IU/)] [[abstract](https://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019-eResearch_103_-Introducing-RO-Crate-research-object-data-packaging.pdf)]
  
