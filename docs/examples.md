@@ -60,7 +60,6 @@ Some of the below examples may be using [RO-Crate 0.2](0.2/), which may miss som
  Implementers are advised to check relevant sections in the latest RO-Crate [specification](specification.md).
 ```
 
-* [Covid-19 Workflow Hub](https://covid19.workflowhub.eu/workflows) export workflows as RO-Crates, e.g. [a Galaxy workflow](https://covid19.workflowhub.eu/workflows/22/ro_crate?version=1)
 * [Recordings in South Efate](http://www.eopas.org/view/NT1/98007?version=v1) ([ro-crate-metadata.jsonld](http://www.eopas.org/repository/72/b3/dc/14/01/c8/ff/06/aa/cb/a0/99/0a/12/8f/c1/13/cf/9a/d5/27/5f/49/4b/05/c1/14/21/77/35/65/61/bd/7f/4c/0e/88/00/ba/de/2c/bb/be/d7/5f/6d/9d/01/98/94/73/5a/d7/e4/07/62/68/4d/24/3a/44/2d/65/8a/v1/content/ro-crate-metadata.jsonld)) – one of [more than 14k RO-Crates](http://www.eopas.org/) from the [Pacific and Regional Archive for Digital Sources in Endangered Cultures](http://www.paradisec.org.au/) _(beta)_
 * [Dataset for IDRC Project: Exploring the opportunities and challenges of implementing open research strategies within development institutions](https://data.research.uts.edu.au/examples/ro-crate/0.2/Data_Package-IDRC_Opportunities_and_Challenges_Open_Research_Strategies/ro-crate-preview.html) ([ro-crate-metadata.jsonld](https://data.research.uts.edu.au/examples/ro-crate/0.2/Data_Package-IDRC_Opportunities_and_Challenges_Open_Research_Strategies/ro-crate-metadata.jsonld))
 * [Dataset, Book: Pioneer Work in the Alps of New Zealand](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/IE4783007/) ([ro-crate-metadata.jsonld](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/IE4783007/ro-crate-metadata.jsonld))
@@ -71,5 +70,10 @@ Some of the below examples may be using [RO-Crate 0.2](0.2/), which may miss som
 
 The <https://workflowhub.eu/> accepts upload by RO-Crate and generates RO-Crate to improve reproducability of computational workflow that follow the [Workflow RO-Crate profile](https://about.workflowhub.eu/Workflow-RO-Crate/), see also [RO-Crate section on workflows](1.1/workflows.html).
 
-* [RetroPath2.0 IBISBA Node](https://github.com/ResearchObject/ro-crate/tree/master/examples/workflow-0.2.0) [ro-crate-metadata.jsonld](https://raw.githubusercontent.com/ResearchObject/ro-crate/master/examples/workflow-0.2.0/ro-crate-metadata.jsonld) – a dataset containing a scientific workflow represented in two different languages.
+Workflows can be exported from Workflow Hub as RO-Crates, e.g. [a Galaxy workflow](https://workflowhub.eu/workflows/22/ro_crate?version=1). Workflows can also be navigated programmatically using the [TRS API](https://about.workflowhub.eu/TRS/), e.g. <https://workflowhub.eu/ga4gh/trs/v2/tools/26/versions/1/PLAIN_CWL/descriptor/ro-crate-metadata.jsonld>
 
+
+
+## Biocompute Object
+
+<https://github.com/biocompute-objects/bco-ro-example-chipseq> hosts an example RO-Crate ([ro-crate-metadata.json](https://rawcdn.githack.com/biocompute-objects/bco-ro-example-chipseq/76cb84c8d6a17a3fd7ae3102f68de3f780458601/data/ro-crate-metadata.json), [ro-crate-preview.html](https://rawcdn.githack.com/biocompute-objects/bco-ro-example-chipseq/76cb84c8d6a17a3fd7ae3102f68de3f780458601/data/ro-crate-preview.html)) that capture a [BioCompute Object](https://www.biocomputeobject.org/) (IEEE 2791) using [BagIt](https://www.researchobject.org/ro-crate/1.1/appendix/implementation-notes.html#adding-ro-crate-to-bagit).  See the tutorial [Create an BCO RO-Crate](https://biocompute-objects.github.io/bco-ro-crate/tutorial/) for step-by-step details.
