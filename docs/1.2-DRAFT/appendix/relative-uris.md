@@ -49,12 +49,12 @@ Example, this JSON-LD is in [compacted form][compacted] which may be beneficial 
 { 
   "@context": [
     {"@base": null},
-    "https://w3id.org/ro/crate/1.1-DRAFT/context"
+    "https://w3id.org/ro/crate/1.2-DRAFT/context"
   ],
   "@id": "ro-crate-metadata.json",
   "@type": "CreativeWork",
   "description": "RO-Crate Metadata File Descriptor (this file)",
-  "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
+  "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
   "about": {
     "@id": "./",
     "@type": "Dataset",
@@ -77,7 +77,7 @@ Performing [JSON-LD flattening] with:
 
 ```json
 { "@context": 
-     "https://w3id.org/ro/crate/1.1-DRAFT/context"
+     "https://w3id.org/ro/crate/1.2-DRAFT/context"
 }
 ```
 
@@ -85,13 +85,13 @@ Results in a valid _RO-Crate JSON-LD_ (actual order in `@graph` may differ):
 
 ```json
 {
-  "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context",
+  "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
   "@graph": [
     {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.1-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
       },
       "about": {
         "@id": "./"
@@ -144,7 +144,7 @@ For example, expanding this JSON-LD:
 ```json
 {
   "@context": [
-    "https://w3id.org/ro/crate/1.1-DRAFT/context",
+    "https://w3id.org/ro/crate/1.2-DRAFT/context",
     {"@base": null}
   ],
   "@graph": [
@@ -152,7 +152,7 @@ For example, expanding this JSON-LD:
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.1-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
       },
       "about": {
         "@id": "./"
@@ -193,7 +193,7 @@ Results in a [expanded form][JSON-LD expanded form] without `@context`, using ab
     ],
     "http://purl.org/dc/terms/conformsTo": [
       {
-        "@id": "https://w3id.org/ro/crate/1.1-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
       }
     ],
     "http://schema.org/description": [
@@ -314,7 +314,7 @@ SELECT ?crate ?metadatafile
 WHERE {
   ?crate        a                  schema:Dataset .
   ?metadatafile schema:about       ?crate .
-  ?metadatafile dcterms:conformsTo <https://w3id.org/ro/crate/1.1-DRAFT> .
+  ?metadatafile dcterms:conformsTo <https://w3id.org/ro/crate/1.2-DRAFT> .
 }
 ```
 
@@ -355,7 +355,7 @@ If a web-based URI for the _RO-Crate root_ is known, then this can be supplied a
 ```json
 {
   "@context": [
-    "https://w3id.org/ro/crate/1.1-DRAFT/context",
+    "https://w3id.org/ro/crate/1.2-DRAFT/context",
     {"@base": "http://example.com/crate255/"}
   ],
   "@graph": [
@@ -363,7 +363,7 @@ If a web-based URI for the _RO-Crate root_ is known, then this can be supplied a
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.1-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
       },
       "about": {
         "@id": "./"
@@ -392,7 +392,7 @@ Parsing this will generate triples like below using `http://example.com/crate255
 ```turtle
 <http://example.com/crate255/ro-crate-metadata.json> 
   <http://purl.org/dc/terms/conformsTo> 
-  <https://w3id.org/ro/crate/1.1-DRAFT> .
+  <https://w3id.org/ro/crate/1.2-DRAFT> .
 
 <http://example.com/crate255/ro-crate-metadata.json> 
   <http://schema.org/about> 
@@ -432,7 +432,7 @@ For instance, given a randomly generated UUID `b7749d0b-0e47-5fc4-999d-f154abe68
 ```json
 {
   "@context": [
-    "https://w3id.org/ro/crate/1.1-DRAFT/context",
+    "https://w3id.org/ro/crate/1.2-DRAFT/context",
     {"@base": "arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/"}
   ],
   "@graph": [
@@ -440,7 +440,7 @@ For instance, given a randomly generated UUID `b7749d0b-0e47-5fc4-999d-f154abe68
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.1-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
       },
       "about": {
         "@id": "./"
@@ -499,13 +499,13 @@ Assuming a repository at `example.com` has JSON-LD with absolute URIs:
 
 ```json
 {
-  "@context": "https://w3id.org/ro/crate/1.1-DRAFT",
+  "@context": "https://w3id.org/ro/crate/1.2-DRAFT",
   "@graph": [
     {
       "@id": "http://example.com/crate415/ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.1-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
       },
       "about": {
         "@id": "http://example.com/crate415/"
@@ -534,7 +534,7 @@ Then performing [JSON-LD flattening] with this `@context`:
 ```json
 { "@context": [
     {"@base": "http://example.com/crate415/"},
-     "https://w3id.org/ro/crate/1.1-DRAFT"
+     "https://w3id.org/ro/crate/1.2-DRAFT"
   ]
 }
 ```
@@ -547,7 +547,7 @@ Will output _RO-Crate JSON-LD_ with relative URIs:
     {
       "@base": "http://example.com/crate415/"
     },
-    "https://w3id.org/ro/crate/1.1-DRAFT"
+    "https://w3id.org/ro/crate/1.2-DRAFT"
   ],
   "@graph": [
     {
@@ -568,7 +568,7 @@ Will output _RO-Crate JSON-LD_ with relative URIs:
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.1-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
       },
       "about": {
         "@id": "./"

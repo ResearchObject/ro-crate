@@ -43,12 +43,12 @@ property referencing the _Root Data Entity_, which SHOULD have an `@id` of `./`.
 
 ```json
 
-{ "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context", 
+{ "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context", 
   "@graph": [
     {
         "@type": "CreativeWork",
         "@id": "ro-crate-metadata.json",
-        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
         "about": {"@id": "./"}
     },
     
@@ -127,13 +127,13 @@ The properties above are not sufficient to generate a [DataCite][DataCite Schema
 The following _RO-Crate Metadata File_ represents a minimal description of an _RO-Crate_. 
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context", 
+{ "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context", 
   "@graph": [
 
  {
     "@type": "CreativeWork",
     "@id": "ro-crate-metadata.json",
-    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
     "about": {"@id": "./"}
  },  
  {

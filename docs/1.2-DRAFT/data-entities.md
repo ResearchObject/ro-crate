@@ -65,12 +65,12 @@ There is no requirement to represent _every_ file and folder in an RO-Crate as D
 An example _RO-Crate JSON-LD_ for the above would be as follows:
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context",
+{ "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
   "@graph": [
     {
       "@type": "CreativeWork",
       "@id": "ro-crate-metadata.json",
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
       "about": {"@id": "./"}
     },  
     {
@@ -201,12 +201,12 @@ Using Web-based data entities can be important particularly where a file can't b
 Example of an RO-Crate including a _File Data Entity_ external to the _RO-Crate root_ (file entity <https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf>):
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context",
+{ "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
   "@graph": [
     {
         "@type": "CreativeWork",
         "@id": "ro-crate-metadata.json",
-        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
         "about": {"@id": "./"}
   },  
   {

@@ -230,12 +230,12 @@ A contextual entity conforming to the [FormalParameter profile] SHOULD declare t
 The below is an example of an RO-Crate complying with the [Bioschemas ComputationalWorkflow profile 0.5][ComputationalWorkflow profile]:
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context", 
+{ "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context", 
   "@graph": [
     {
       "@type": "CreativeWork",
       "@id": "ro-crate-metadata.json",
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1-DRAFT"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
       "about": {"@id": "./"}
     },
     {

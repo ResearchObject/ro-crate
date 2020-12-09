@@ -51,7 +51,7 @@ RO-Crates can be _nested_ by including payload directories that themselves conta
 
 * In new RO-Crates the _RO-Crate Metadata File_ MUST be named `ro-crate-metadata.json` and appear in the _RO-Crate Root_
 * The _RO-Crate Metadata File_ MUST contain _RO-Crate JSON-LD_; a valid [JSON-LD 1.0] document in [flattened]  and [compacted] form
-* The _RO-Crate JSON-LD_ SHOULD use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.1-DRAFT/context> by reference.
+* The _RO-Crate JSON-LD_ SHOULD use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.2-DRAFT/context> by reference.
 * If an RO-Crate conforming to version 1.0 or earlier contains a file named `ro-crate-metadata.jsonld` instead of `ro-crate-metadata.json` then processing software should treat this as the _RO-Crate Metadata File_. If the crate is updated then the file SHOULD be renamed to `ro-crate-metadata.json` and the _RO-Crate Metadata File Descriptor_ SHOULD be updated to to reference it, with an up to date [conformsTo] property naming an appropriate version of this specification. 
 
 
@@ -69,7 +69,7 @@ It is RECOMMENDED that any referenced _contextual entities_ are also described i
 The appendix [RO-Crate JSON-LD](appendix/jsonld.md) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata File_. In short, the rest of this specification describe the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` array below:
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context",
+{ "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
   "@graph": [
 
   ]
@@ -89,7 +89,7 @@ If present in the root directory, `ro-crate-preview.html` MUST:
   ```html
     <script type="application/ld+json">
     {
-        "@context": "https://w3id.org/ro/crate/1.1-DRAFT/context",
+        "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
         "@graph": [ ...]
     }
     </script>
