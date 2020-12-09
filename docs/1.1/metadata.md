@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Metadata of the RO-Crate
+redirect_from:
+  - /1.1-DRAFT/metadata
 excerpt: |
   RO-Crate aims to capture and describe the Research Object using
   structured metadata. The RO-Crate Metadata File Descriptor contains the

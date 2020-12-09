@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Data Entities
+redirect_from:
+  - /1.1-DRAFT/data-entities
 excerpt: |
   ..
 sort: 7

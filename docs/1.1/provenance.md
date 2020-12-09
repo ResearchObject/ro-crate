@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Provenance of entities
+redirect_from:
+  - /1.1-DRAFT/provenance
 excerpt: |
   ..
 sort: 9

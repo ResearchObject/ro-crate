@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Implementation notes
+redirect_from:
+  - /1.1-DRAFT/appendix/implementation-notes
 excerpt: 
 ---
 <!--

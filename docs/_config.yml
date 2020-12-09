@@ -46,6 +46,7 @@ plugins:
   - jemoji
   - jekyll-avatar
   - jekyll-relative-links
+  - jekyll-redirect-from
 
 # Show the order prefix 1. 2. etc in toctree
 show_sorted: true

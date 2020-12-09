@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Workflows and scripts
+redirect_from:
+  - /1.1-DRAFT/workflows
 excerpt: |
   Scientific workflows and Scripts that were used (or can be used) to 
   analyze or generate files contained in an RO-Crate can be embedded

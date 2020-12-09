@@ -2,6 +2,8 @@
 layout: default
 title: About this document
 sort: 1
+redirect_from:
+  - /1.1-DRAFT/about
 excerpt: |
   ...
 ---

@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Terminology
+redirect_from:
+  - /1.1-DRAFT/terminology
 sort: 3
 excerpt: |
   ...
