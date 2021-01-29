@@ -29,6 +29,10 @@ Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): **
 
 ## Recent publications, presentations, citations
 
+Marco La Rosa, Peter Sefton (2021):
+[**Describo and RO-Crate - the FAIR data research helpers**](https://indico.cern.ch/event/970232/contributions/4158369/attachments/2176946/3679697/CS3%202021.pdf)<!-- https://arkisto-platform.github.io/assets/docs/CS3-2021.pdf -->
+_Cloud Storage Services for Synchronization and Sharing ([CS3](https://www.cs3community.org/2021/))_
+
 Peter Sefton, Nick Thieberger, Marco La Rosa, Michael Lynch (2020):
 [**An open, composable standards–based research eResearch platform: Arkisto**](https://conference.eresearch.edu.au/2020/09/an-open-composable-standards-based-research-eresearch-platform-arkisto/), 
 _eResearch Australasia_
