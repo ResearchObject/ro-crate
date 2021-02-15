@@ -128,7 +128,7 @@
           { "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.1/ro-crate-1.1.1.html"},
           { "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.1/ro-crate-1.1.1.pdf"}
         ],
-        "identifier": "https://doi.org/10.5281/zenodo.4031327",
+        "identifier": "https://doi.org/10.5281/zenodo.4541002",
         "license": {
           "@id": "https://www.apache.org/licenses/LICENSE-2.0"
         },
@@ -154,7 +154,7 @@
         "identifier": "https://w3id.org/ro/crate/1.1",
         "name": "RO-Crate Metadata Specification 1.1",
         "sameAs": {
-          "@id": "https://zenodo.org/record/4031327/files/ro-crate-1.1.1.html"
+          "@id": "https://zenodo.org/record/4541002/files/ro-crate-1.1.1.html"
         },
         "version": "1.1.1"
       },

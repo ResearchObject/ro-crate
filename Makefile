@@ -9,7 +9,7 @@ TAG=1.1.0
 NEXT=1.2-DRAFT
 # Prepare (but do not Publish!) the next version of https://zenodo.org/record/3541888
 # then copy its DOI here so it can be included in generated HTML/PDF
-DOI=10.5281/zenodo.4031327
+DOI=10.5281/zenodo.4541002
 
 all: dependencies release
 
