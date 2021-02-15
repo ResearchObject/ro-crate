@@ -1,0 +1,11 @@
+{
+  "requires": true,
+  "dependencies": {
+    "lodash": {
+      "version": "4.17.20"
+    },
+    "ro-crate": {
+      "version": "1.6.4"
+    }
+  }
+}
