@@ -105,7 +105,7 @@
         "citation": {
           "@id": "https://doi.org/10.5281/zenodo.3250687"
         },
-        "datePublished": "2020-10-30",
+        "datePublished": "2021-02-15",
         "description": "This specification defines a method, known as RO-Crate (Research Object Crate), of organizing file-based data with associated metadata, using linked data principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata. \n\nThe core of RO-Crate is a JSON-LD file, the RO-Crate Metadata File, named ro-crate-metadata.json. This file contains structured metadata about the dataset as a whole (the Root Data Entity) and, optionally, about some or all of its files. This provides a simple way to, for example, assert the authors (e.g. people, organizations) of the RO-Crate or one its files, or to capture more complex provenance for files, such as how they were created using software and equipment. \n\nWhile providing the formal specification for RO-Crate, this document also aims to be a practical guide for software authors to create tools for generating and consuming research data packages, with explanation by examples.",
         "hasPart": [
           { "@id": "https://www.researchobject.org/ro-crate/1.1/index.html"},
@@ -125,18 +125,18 @@
           { "@id": "https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html"},
           { "@id": "https://www.researchobject.org/ro-crate/1.1/appendix/relative-uris.html"},
           { "@id": "https://www.researchobject.org/ro-crate/1.1/context.jsonld"},
-          { "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.0/ro-crate-1.1.0.html"},
-          { "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.0/ro-crate-1.1.0.pdf"}
+          { "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.1/ro-crate-1.1.1.html"},
+          { "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.1/ro-crate-1.1.1.pdf"}
         ],
         "identifier": "https://doi.org/10.5281/zenodo.4031327",
         "license": {
           "@id": "https://www.apache.org/licenses/LICENSE-2.0"
         },
         "name": "RO-Crate specification dataset",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "encoding": [
-          {"@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.0/ro-crate-1.1.0.html"},
-          {"@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.0/ro-crate-1.1.0.pdf"}
+          {"@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.1/ro-crate-1.1.1.html"},
+          {"@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.1/ro-crate-1.1.1.pdf"}
         ]
       },
       {
@@ -154,9 +154,9 @@
         "identifier": "https://w3id.org/ro/crate/1.1",
         "name": "RO-Crate Metadata Specification 1.1",
         "sameAs": {
-          "@id": "https://zenodo.org/record/4031327/files/ro-crate-1.1.0.html"
+          "@id": "https://zenodo.org/record/4031327/files/ro-crate-1.1.1.html"
         },
-        "version": "1.1.0"
+        "version": "1.1.1"
       },
       
       { "@id": "https://www.researchobject.org/ro-crate/1.1/about.html", "name": "About this document", "@type": ["WebPage", "CreativeWork"]},
@@ -184,10 +184,10 @@
         },
         "name": "RO-Crate JSON-LD Context",
         "sameAs": [ 
-          { "@id": "https://zenodo.org/record/3541888/files/ro-crate-context-1.1.0.jsonld"},
-          { "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.0/ro-crate-context-1.1.0.jsonld"}
+          { "@id": "https://zenodo.org/record/3541888/files/ro-crate-context-1.1.1.jsonld"},
+          { "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.1/ro-crate-context-1.1.1.jsonld"}
         ],
-        "version": "1.1.0",
+        "version": "1.1.1",
         "isBasedOn": [
           {"@id": "http://schema.org/version/10.0/"},
           {"@id": "https://pcdm.org/2016/04/18/models"},
@@ -196,7 +196,7 @@
         ]
       },
       {
-        "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.0/ro-crate-1.1.0.html",
+        "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.1/ro-crate-1.1.1.html",
         "@type": "CreativeWork",
         "encodingFormat": [
           "text/html",
@@ -206,9 +206,9 @@
         ],
         "name": "RO-Crate Metadata Specification 1.1 (single-page HTML)",
         "sameAs": {
-          "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.1.0.html"
+          "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.1.1.html"
         },
-        "version": "1.1.0",
+        "version": "1.1.1",
         "isBasedOn": [
           { "@id": "https://www.researchobject.org/ro-crate/1.1/index.html"},
           { "@id": "https://www.researchobject.org/ro-crate/1.1/about.html"},
@@ -229,7 +229,7 @@
         ]
       },
       {
-        "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.0/ro-crate-1.1.0.pdf",
+        "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.1.1/ro-crate-1.1.1.pdf",
         "@type": "CreativeWork",
         "encodingFormat": [
           "application/pdf",
@@ -239,7 +239,7 @@
         ],
         "name": "RO-Crate Metadata Specification 1.1 (PDF)",
         "sameAs": {
-          "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.1.0.pdf"
+          "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.1.1.pdf"
         },
         "isBasedOn": [
           { "@id": "https://www.researchobject.org/ro-crate/1.1/index.html"},
@@ -259,7 +259,7 @@
           { "@id": "https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html"},
           { "@id": "https://www.researchobject.org/ro-crate/1.1/appendix/relative-uris.html"}
         ],
-        "version": "1.1.0"
+        "version": "1.1.1"
       },
       {
         "@id": "https://orcid.org/0000-0001-8131-2150",

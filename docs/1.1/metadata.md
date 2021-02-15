@@ -14,7 +14,7 @@ sort: 5
 <!--
    Copyright 2019-2020 University of Technology Sydney
    Copyright 2019-2020 The University of Manchester UK 
-   Copyright 2019-2020 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019-2021 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.

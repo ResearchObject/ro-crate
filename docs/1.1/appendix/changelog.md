@@ -6,7 +6,7 @@ excerpt: List of changes in releases of this specifications
 <!--
    Copyright 2019-2020 University of Technology Sydney
    Copyright 2019-2020 The University of Manchester UK 
-   Copyright 2019-2020 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019-2021 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -24,6 +24,8 @@ excerpt: List of changes in releases of this specifications
 
 # APPENDIX: Changelog
 
+* [RO-Crate 1.1.1](https://github.com/ResearchObject/ro-crate/releases/tag/1.1.1)
+  * Introduction highlight not all Data entities are files [#125](https://github.com/ResearchObject/ro-crate/issues/125) [#127](https://github.com/ResearchObject/ro-crate/pull/127)
 * [RO-Crate 1.1.0](https://github.com/ResearchObject/ro-crate/releases/tag/1.1.0) <https://w3id.org/ro/crate/1.1>
   * **Note**: The RO-Crate metadata file is renamed to `ro-crate-metadata.json` to facilitate use of JSON editors.  [#82](https://github.com/ResearchObject/ro-crate/issues/82) [#84](https://github.com/ResearchObject/ro-crate/issues/84)
   * [Data entities](../data-entities.md) can reference external resources with absolute URI [#74](https://github.com/ResearchObject/ro-crate/issues/74)
