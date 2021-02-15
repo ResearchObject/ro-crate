@@ -35,6 +35,7 @@ import urllib.request
 ROCRATE_VERSION="1.1-DRAFT"
 
 # Update version from http://schema.org/docs/releases.html
+# NOTE: Breaks due to https://github.com/schemaorg/schemaorg/issues/2805
 SCHEMA_VERSION="10.0"
 
 # Update from https://bioschemas.org/profiles/Workflow/
@@ -45,7 +46,9 @@ BIOSCHEMA_FORMAL_PARAMETER_PROFILE = "https://bioschemas.org/profiles/FormalPara
 
 
 def main():
-    url="http://schema.org/version/%s/schemaorgcontext.jsonld" % SCHEMA_VERSION
+    #url="http://schema.org/version/%s/schemaorgcontext.jsonld" % SCHEMA_VERSION
+    # Workaround for https://github.com/schemaorg/schemaorg/issues/2805
+    url="https://raw.githubusercontent.com/schemaorg/schemaorg/V%s-release/data/releases/%s/schemaorgcontext.jsonld" % (SCHEMA_VERSION, SCHEMA_VERSION)
     with urllib.request.urlopen(url) as f:
       schema = json.load(f)
     if len(sys.argv) > 2:
@@ -64,7 +67,7 @@ def main():
     j["version"] = tag
     j["url"] = {"@id": "https://w3id.org/ro/crate/%s" % version}
     
-    j["schemaVersion"] = {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION}
+    j["schemaVersion"] = {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION}    
     j["isBasedOn"] = [
         {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION},
         {"@id": "https://pcdm.org/2016/04/18/models"},
