@@ -63,6 +63,7 @@ The _RO-Crate_ team is:
 * Mark Graves <https://orcid.org/0000-0003-3486-8193>
 * Jasper Koehorst <https://orcid.org/0000-0001-8172-8981>
 * Simone Leo <https://orcid.org/0000-0001-8271-5429>
+* Marc Portier <https://orcid.org/0000-0002-9648-6484>
 
 ## Meetings
 
