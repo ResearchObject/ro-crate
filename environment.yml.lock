@@ -1,87 +1,52 @@
 name: ro-crate
 channels:
   - conda-forge
-  - bioconda
   - defaults
-  - r
 dependencies:
-  - _libgcc_mutex=0.1=conda_forge
-  - _openmp_mutex=4.5=1_gnu
-  - brotlipy=0.7.0=py38h8df0ef7_1001
-  - c-ares=1.16.1=h516909a_3
-  - ca-certificates=2020.6.20=hecda079_0
-  - cairo=1.16.0=h488836b_1006
-  - cairocffi=1.1.0=py_0
-  - cairosvg=2.4.2=py_0
-  - certifi=2020.6.20=py38h924ce5b_2
-  - cffi=1.14.3=py38h1bdcb99_1
-  - chardet=3.0.4=py38h924ce5b_1008
+  - brotlipy=0.7.0=py38h5406a74_1001
+  - c-ares=1.17.1=hc929b4f_0
+  - ca-certificates=2021.1.19=hecd8cb5_0
+  - certifi=2020.12.5=py38hecd8cb5_0
+  - cffi=1.14.4=py38h979bc6b_1
+  - chardet=3.0.4=py38h5347e94_1008
   - click=7.1.2=pyh9f0ad1d_0
-  - coreutils=8.31=h516909a_0
-  - cryptography=3.2=py38hb23e4d4_0
-  - cssselect2=0.2.1=pyh9f0ad1d_1
-  - curl=7.71.1=he644dc0_8
-  - defusedxml=0.6.0=py_0
-  - fontconfig=2.13.1=h1056068_1002
-  - freetype=2.10.4=he06d7ca_0
-  - fribidi=1.0.10=h516909a_0
-  - gdbm=1.18=h0a1914f_2
-  - gettext=0.19.8.1=hf34092f_1004
-  - gmp=6.2.0=he1b5a44_3
-  - graphite2=1.3.13=he1b5a44_1001
-  - harfbuzz=2.7.2=hb1ce69c_1
-  - html5lib=1.1=pyh9f0ad1d_0
-  - icu=67.1=he1b5a44_0
+  - coreutils=8.31=h0b31af3_0
+  - cryptography=3.4.4=py38h43df06b_0
+  - curl=7.71.1=hcb81553_8
+  - gdbm=1.18=h8a0c380_2
+  - gettext=0.19.8.1=h7937167_1005
+  - gmp=6.2.1=h2e338ed_0
   - idna=2.10=pyh9f0ad1d_0
-  - jpeg=9d=h516909a_0
-  - krb5=1.17.1=hfafb76e_3
-  - lcms2=2.11=hbd6801e_0
-  - ld_impl_linux-64=2.35=h769bd43_9
-  - libcurl=7.71.1=hcdd3856_8
-  - libedit=3.1.20191231=he28a2e2_2
-  - libev=4.33=h516909a_1
-  - libffi=3.2.1=he1b5a44_1007
-  - libgcc-ng=9.3.0=h5dbcf3e_17
-  - libglib=2.66.2=h0dae87d_0
-  - libgomp=9.3.0=h5dbcf3e_17
-  - libiconv=1.16=h516909a_0
-  - libnghttp2=1.41.0=h8cfc5f6_2
-  - libpng=1.6.37=hed695b0_2
-  - libssh2=1.9.0=hab1572f_5
-  - libstdcxx-ng=9.3.0=h2ae2ef3_17
-  - libtiff=4.1.0=hc7e4089_6
-  - libuuid=2.32.1=h14c3975_1000
-  - libwebp-base=1.1.0=h516909a_3
-  - libxcb=1.13=h14c3975_1002
-  - libxml2=2.9.10=h68273f3_2
-  - lz4-c=1.9.2=he1b5a44_3
-  - make=4.3=hd18ef5c_1
-  - ncurses=6.2=he1b5a44_2
-  - olefile=0.46=pyh9f0ad1d_1
-  - openssl=1.1.1h=h516909a_0
-  - pandoc=2.11.0.4=hd18ef5c_0
+  - krb5=1.17.2=h60d9502_0
+  - libcurl=7.71.1=h9bf37e3_8
+  - libcxx=11.0.1=habf9029_0
+  - libedit=3.1.20191231=h0678c8f_2
+  - libev=4.33=haf1e3a3_1
+  - libffi=3.3=h046ec9c_2
+  - libiconv=1.16=haf1e3a3_0
+  - libnghttp2=1.43.0=h07e645a_0
+  - libssh2=1.9.0=h8a08a2b_5
+  - make=4.3=h22f3db7_1
+  - ncurses=6.2=h2e338ed_4
+  - nodejs=10.13.0=h0a44026_0
+  - openssl=1.1.1i=h9ed2024_0
+  - pandoc=2.11.4=h35c211d_0
   - panflute=1.12.5=py_0
-  - pango=1.42.4=h80147aa_5
-  - pcre=8.44=he1b5a44_0
-  - pillow=8.0.1=py38h9776b28_0
-  - pip=20.2.4=py_0
-  - pixman=0.38.0=h516909a_1003
-  - pthread-stubs=0.4=h14c3975_1001
+  - pip=21.0.1=pyhd8ed1ab_0
   - pycparser=2.20=pyh9f0ad1d_2
-  - pyopenssl=19.1.0=py_1
-  - pyphen=0.9.5=py_0
-  - pysocks=1.7.1=py38h924ce5b_2
-  - python=3.8.6=h852b56e_0_cpython
+  - pyopenssl=20.0.1=pyhd8ed1ab_0
+  - pysocks=1.7.1=py38h50d1736_3
+  - python=3.8.6=h624753d_5_cpython
   - python_abi=3.8=1_cp38
-  - pyyaml=5.3.1=py38h8df0ef7_1
+  - pyyaml=5.4.1=py38h5406a74_0
   - rb-addressable=2.7.0=hc42de5b_0
   - rb-colorator=1.1.0=hc42de5b_0
   - rb-concurrent-ruby=1.1.6=hc42de5b_0
   - rb-em-websocket=0.5.1=hc42de5b_1
-  - rb-eventmachine=1.2.7=h07ebd69_2
-  - rb-ffi=1.11.1=he682be4_1
+  - rb-eventmachine=1.2.7=h3437904_2
+  - rb-ffi=1.11.1=h09b45be_2
   - rb-forwardable-extended=2.6.0=hc42de5b_0
-  - rb-http_parser.rb=0.6.0=hb89128f_1
+  - rb-http_parser.rb=0.6.0=h1d5a451_1
   - rb-i18n=1.7.0=hc42de5b_0
   - rb-jekyll=4.0.0=hc42de5b_0
   - rb-jekyll-sass-converter=2.0.1=hc42de5b_0
@@ -98,35 +63,20 @@ dependencies:
   - rb-rouge=3.16.0=hc42de5b_0
   - rb-ruby_dep=1.5.0=hc42de5b_1
   - rb-safe_yaml=1.0.5=hc42de5b_0
-  - rb-sassc=2.3.0=h16e5e93_0
+  - rb-sassc=2.3.0=h5c00d4b_0
   - rb-terminal-table=1.8.0=hc42de5b_0
   - rb-unicode-display_width=1.6.0=hc42de5b_0
-  - readline=8.0=he28a2e2_2
+  - readline=8.0=h0678c8f_2
   - requests=2.24.0=pyh9f0ad1d_0
-  - ruby=2.6.6=hebe951e_0
-  - setuptools=49.6.0=py38h924ce5b_2
+  - ruby=2.6.6=hf0cbd5d_2
+  - setuptools=49.6.0=py38h50d1736_3
   - six=1.15.0=pyh9f0ad1d_0
-  - sqlite=3.33.0=h4cf870e_1
-  - tar=1.32=hd4ba37b_0
-  - tinycss2=1.0.2=py_1
-  - tk=8.6.10=hed695b0_1
+  - sqlite=3.34.0=h17101e1_0
+  - tar=1.34=hbb58dfb_0
+  - tk=8.6.10=h0419947_1
   - urllib3=1.25.11=py_0
-  - weasyprint=51=py38hb084482_2
-  - webencodings=0.5.1=py_1
-  - wheel=0.35.1=pyh9f0ad1d_0
-  - xorg-kbproto=1.0.7=h14c3975_1002
-  - xorg-libice=1.0.10=h516909a_0
-  - xorg-libsm=1.2.3=h84519dc_1000
-  - xorg-libx11=1.6.12=h516909a_0
-  - xorg-libxau=1.0.9=h14c3975_0
-  - xorg-libxdmcp=1.1.3=h516909a_0
-  - xorg-libxext=1.3.4=h516909a_0
-  - xorg-libxrender=0.9.10=h516909a_1002
-  - xorg-renderproto=0.11.1=h14c3975_1002
-  - xorg-xextproto=7.3.0=h14c3975_1002
-  - xorg-xproto=7.0.31=h14c3975_1007
-  - xz=5.2.5=h516909a_1
-  - yaml=0.2.5=h516909a_0
-  - zlib=1.2.11=h516909a_1010
-  - zstd=1.4.5=h6597ccf_2
-prefix: /home/stain/miniconda3/envs/ro-crate
+  - wheel=0.36.2=pyhd3deb0d_0
+  - xz=5.2.5=haf1e3a3_1
+  - yaml=0.2.5=haf1e3a3_0
+  - zlib=1.2.11=h7795811_1010
+prefix: /Users/stain/miniconda3/envs/ro-crate
