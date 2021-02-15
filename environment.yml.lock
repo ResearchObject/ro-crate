@@ -28,7 +28,7 @@ dependencies:
   - libssh2=1.9.0=h8a08a2b_5
   - make=4.3=h22f3db7_1
   - ncurses=6.2=h2e338ed_4
-  - nodejs=10.13.0=h0a44026_0
+  - nodejs=8.12.0=h0a44026_0
   - openssl=1.1.1i=h9ed2024_0
   - pandoc=2.11.4=h35c211d_0
   - panflute=1.12.5=py_0
@@ -69,6 +69,7 @@ dependencies:
   - readline=8.0=h0678c8f_2
   - requests=2.24.0=pyh9f0ad1d_0
   - ruby=2.6.6=hf0cbd5d_2
+  - sed=4.8=haf1e3a3_0
   - setuptools=49.6.0=py38h50d1736_3
   - six=1.15.0=pyh9f0ad1d_0
   - sqlite=3.34.0=h17101e1_0

@@ -36,12 +36,12 @@ docs/${RELEASE}/:
 
 docs/${RELEASE}/_metadata.liquid: docs/${RELEASE}/ docs/${DRAFT}/_metadata.liquid
 	sed s/${DRAFT}/${RELEASE}/g < docs/${DRAFT}/_metadata.liquid > docs/${RELEASE}/_metadata.liquid
-	sed -i '' s/TAG/${TAG}/g docs/${RELEASE}/_metadata.liquid
-	sed -i '' "/^<!-- NOTE: Before release.*/ d" docs/${RELEASE}/_metadata.liquid
-	sed -i '' "/^END NOTE -->/ d" docs/${RELEASE}/_metadata.liquid
-	sed -i '' "s/^* Status:.*/* Status: Recommendation/" docs/${RELEASE}/_metadata.liquid
-	sed -i '' "s/^* Published:.*/* Published: `date -I`/" docs/${RELEASE}/_metadata.liquid
-	sed -i '' "s,^* Cite as:.*,* Cite as: <https://doi.org/${DOI}> (this version)," docs/${RELEASE}/_metadata.liquid
+	sed -i s/TAG/${TAG}/g docs/${RELEASE}/_metadata.liquid
+	sed -i "/^<!-- NOTE: Before release.*/ d" docs/${RELEASE}/_metadata.liquid
+	sed -i "/^END NOTE -->/ d" docs/${RELEASE}/_metadata.liquid
+	sed -i "s/^* Status:.*/* Status: Recommendation/" docs/${RELEASE}/_metadata.liquid
+	sed -i "s/^* Published:.*/* Published: `date -I`/" docs/${RELEASE}/_metadata.liquid
+	sed -i "s,^* Cite as:.*,* Cite as: <https://doi.org/${DOI}> (this version)," docs/${RELEASE}/_metadata.liquid
 	
 
 
@@ -58,7 +58,7 @@ docs/${RELEASE}/*.md: docs/${RELEASE}/ docs/${DRAFT}/README.md docs/${DRAFT}/*.m
 	for f in docs/${DRAFT}/*.md ; do \
 		sed s/${DRAFT}/${RELEASE}/g < $$f > docs/${RELEASE}/`basename $$f`;\
     done
-	sed -i '' "/^exclude:/ d" docs/${RELEASE}/README.md
+	sed -i "/^exclude:/ d" docs/${RELEASE}/README.md
 
 docs/${RELEASE}/appendix/:
 	mkdir -p docs/${RELEASE}/appendix/
@@ -70,10 +70,10 @@ docs/${RELEASE}/appendix/*.md: docs/${RELEASE}/appendix/ docs/${DRAFT}/appendix/
 
 docs/${RELEASE}/ro-crate-metadata.json: docs/${DRAFT}/ro-crate-metadata.json
 	sed s/${DRAFT}/${RELEASE}/g < docs/${DRAFT}/ro-crate-metadata.json > docs/${RELEASE}/ro-crate-metadata.json
-	sed -i '' "s/UNPUBLISHED/`date -I`/g" docs/${RELEASE}/ro-crate-metadata.json
-	sed -i '' "s/TAG/${TAG}/g" docs/${RELEASE}/ro-crate-metadata.json
-	sed -i '' "s,DOI,${DOI},g" docs/${RELEASE}/ro-crate-metadata.json
-	sed -i '' "s;ZENODO;`echo ${DOI}|sed s,10.5281/zenodo.,,`;g" docs/${RELEASE}/ro-crate-metadata.json
+	sed -i "s/UNPUBLISHED/`date -I`/g" docs/${RELEASE}/ro-crate-metadata.json
+	sed -i "s/TAG/${TAG}/g" docs/${RELEASE}/ro-crate-metadata.json
+	sed -i "s,DOI,${DOI},g" docs/${RELEASE}/ro-crate-metadata.json
+	sed -i "s;ZENODO;`echo ${DOI}|sed s,10.5281/zenodo.,,`;g" docs/${RELEASE}/ro-crate-metadata.json
 	rm -f docs/${RELEASE}/ro-crate-metadata.jsonld
 	ln -s ro-crate-metadata.json docs/${RELEASE}/ro-crate-metadata.jsonld
 
@@ -94,8 +94,8 @@ release/ro-crate-${TAG}.md: dependencies release/ docs/${RELEASE}/_metadata.liqu
 	   docs/${RELEASE}/appendix/*.md docs/_includes/references.liquid docs/${RELEASE}/.references.md |\
 	   grep -v '{%' > release/ro-crate-${TAG}.md
 	# Fix internal links to work in single-page
-	sed -i '' -E 's,]\(([^:)]*/)*([^:)]*)\.md\),](#\2),g' release/ro-crate-${TAG}.md
-	sed -i '' -E 's,]\([^):]*\.md#([^)]*)\),](#\1),g' release/ro-crate-${TAG}.md
+	sed -i -E 's,]\(([^:)]*/)*([^:)]*)\.md\),](#\2),g' release/ro-crate-${TAG}.md
+	sed -i -E 's,]\([^):]*\.md#([^)]*)\),](#\1),g' release/ro-crate-${TAG}.md
 
 
 release/ro-crate-${TAG}.html: dependencies release/ release/ro-crate-${TAG}.md
