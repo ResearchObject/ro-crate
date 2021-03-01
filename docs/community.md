@@ -65,6 +65,7 @@ The _RO-Crate_ team is:
 * Simone Leo <https://orcid.org/0000-0001-8271-5429>
 * Marc Portier <https://orcid.org/0000-0002-9648-6484>
 * Paul Brack <https://github.com/PaulBrack>
+* Milan Ojsteršek <https://orcid.org/0000-0003-1743-8300>
 
 ## Meetings
 
