@@ -58,21 +58,23 @@ See also [recent and upcoming events](outreach.md#upcoming-and-recent-events).
 
 ## Cite RO-Crate
 
-To cite RO-Crate as project/approach:
+### Cite RO-Crate as project/approach
 
-* Eoghan Ó Carragáin, Carole Goble, Peter Sefton, Stian Soiland-Reyes (2019):  
- **A lightweight approach to research object data packaging**  
- _Bioinformatics Open Source Conference (BOSC2019)_  
- <https://doi.org/10.5281/zenodo.3250687>
+Eoghan Ó Carragáin, Carole Goble, Peter Sefton, Stian Soiland-Reyes (2019):  
+**A lightweight approach to research object data packaging**  
+_Bioinformatics Open Source Conference (BOSC2019)_  
+<https://doi.org/10.5281/zenodo.3250687>
 
-To cite RO-Crate Specification (any version):
+### Cite RO-Crate Specification (any version)
 
-* Peter Sefton, Eoghan Ó Carragáin, Stian Soiland-Reyes, Oscar Corcho, Daniel Garijo, Raul Palma, Frederik Coppens, Carole Goble, José María Fernández, Kyle Chard, Jose Manuel Gomez-Perez, Michael R Crusoe, Ignacio Eguinoa, Nick Juty, Kristi Holmes, Jason A. Clark, Salvador Capella-Gutierrez, Alasdair J. G. Gray, Stuart Owen, Alan R Williams, Giacomo Tartari, Finn Bacall, Thomas Thelen, Hervé Ménager, Laura Rodríguez Navas, Paul Walk, brandon whitehead, Mark Wilkinson, Paul Groth, Erich Bremer, LJ Garcia Castro, Karl Sebby, Alexander Kanitz, Ana Trisovic, Gavin Kennedy, Mark Graves, Jasper Koehorst, Simone Leo, Marc Portier (2020):  
- **RO-Crate Metadata Specification**  
- _researchobject.org / Zenodo_  
- <https://doi.org/10.5281/zenodo.3406497> 
+Peter Sefton, Eoghan Ó Carragáin, Stian Soiland-Reyes, Oscar Corcho, Daniel Garijo, Raul Palma, Frederik Coppens, Carole Goble, José María Fernández, Kyle Chard, Jose Manuel Gomez-Perez, Michael R Crusoe, Ignacio Eguinoa, Nick Juty, Kristi Holmes, Jason A. Clark, Salvador Capella-Gutierrez, Alasdair J. G. Gray, Stuart Owen, Alan R Williams, Giacomo Tartari, Finn Bacall, Thomas Thelen, Hervé Ménager, Laura Rodríguez Navas, Paul Walk, brandon whitehead, Mark Wilkinson, Paul Groth, Erich Bremer, LJ Garcia Castro, Karl Sebby, Alexander Kanitz, Ana Trisovic, Gavin Kennedy, Mark Graves, Jasper Koehorst, Simone Leo, Marc Portier (2020):  
+**RO-Crate Metadata Specification**  
+_researchobject.org / Zenodo_  
+<https://doi.org/10.5281/zenodo.3406497> 
 
 For citing a particular [version of RO-Crate specification](https://www.researchobject.org/ro-crate/specification.html) see its embedded _Cite this version_ DOI.
+
+### Other citations
 
 See also [recent publications, presentations and citations](outreach.md).
 
