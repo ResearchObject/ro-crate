@@ -29,10 +29,15 @@ Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): **
 
 ## Recent publications, presentations, citations
 
-Carole Goble (2021):
+Carole Goble, Stian Soiland-Reyes (2021):
+[**RO-Crate: A framework for packaging research products into FAIR Research Objects**](https://www.dropbox.com/s/wzh2v6knlpzzvq0/2021-02-25-ro-crate-fdo-FINAL.pptx?dl=0)
+[_RDA IG Data Fabric: FAIR Digital Objects_](https://www.rd-alliance.org/group/data-fabric-ig/wiki/rda-ig-data-fabric-fair-digital-objects) 2021-02-25.
+[[Video recording](https://www.youtube.com/watch?v=pz-MLdI7GLA)]
+
+Carole Goble (2021):  
 [**The swings and roundabouts of a decade of fun and games with Research Objects**](https://www.slideshare.net/carolegoble/the-swings-and-roundabouts-of-a-decade-of-fun-and-games-with-research-objects)
 [_17th Italian Research Conference on Digital Libraries_](http://ircdl2021.dei.unipd.it/) (IRCDL 2021)
-Padova, Italy - 18-19 February 2021
+Padova, Italy - 18-19 February 2021 [[Video recording](https://youtu.be/xDV1mzLudAY?list=PLKynRfLznsVxASq5t5apewqZCggWg7fwU&t=220)]
 
 Marco La Rosa, Peter Sefton (2021):
 [**Describo and RO-Crate - the FAIR data research helpers**](https://indico.cern.ch/event/970232/contributions/4158369/attachments/2176946/3679697/CS3%202021.pdf)<!-- https://arkisto-platform.github.io/assets/docs/CS3-2021.pdf -->
