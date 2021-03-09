@@ -45,9 +45,8 @@ _Data Entities_ can also be other types, for instance an online database. These 
 
 In all cases, `@type` MAY be an array in order to also specify a more specific type, e.g. `"@type": ["File", "ComputationalWorkflow"]`
 
-```tip
-There is no requirement to represent _every_ file and folder in an RO-Crate as Data Entities in the RO-Crate JSON-LD.
-```
+{: .tip }
+> There is no requirement to represent _every_ file and folder in an RO-Crate as Data Entities in the RO-Crate JSON-LD.
 
 ### Example linking to a file and folders
 

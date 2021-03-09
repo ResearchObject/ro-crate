@@ -85,9 +85,9 @@ With jekyll-rtd-theme it is possible to insert colourful admonition cards to bri
 These are written as a Markdown code-block with the language set as `tip`, `note`, `warning` or `danger`, and can
 include a restricted set of Markdown.
 
-    ```tip
-    JSON-LD supports [many other features](https://json-ld.org/) that SHOULD NOT be used excessively.
-    ```
+    {: .tip }
+>     JSON-LD supports [many other features](https://json-ld.org/) that SHOULD NOT be used excessively.
+>     
 
 Will be rendered in the style of:
 

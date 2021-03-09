@@ -141,9 +141,8 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
     },
 ```
 
-```tip
-If representing command lines, double escape `\\` so that JSON preserves the `\` character.
-```
+{: .tip }
+> If representing command lines, double escape `\\` so that JSON preserves the `\` character.
 
 If multiple [SoftwareApplication]s have been used in composition, such as from a script or workflow, then the `CreateAction`'s [instrument] SHOULD rather reference a [SoftwareSourceCode] which can be further described as explained in the [Workflows and scripts](workflows.md) section.
 

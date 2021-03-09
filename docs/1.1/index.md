@@ -31,8 +31,5 @@ excerpt: |
 
 {% include_relative _metadata.liquid  %}
 
-## Table of Contents
-
-
 
 {% include references.liquid %}
