@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Use Cases
+title: RO-Crate In Use
 redirect_from:
   - /use_cases/
 ---
@@ -21,7 +21,7 @@ redirect_from:
    limitations under the License.
 -->
 
-# Use Cases
+# RO-Crate in use
 
 These applications use or expose RO-Crates:
 
