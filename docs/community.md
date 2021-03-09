@@ -66,6 +66,7 @@ The _RO-Crate_ team is:
 * Marc Portier <https://orcid.org/0000-0002-9648-6484>
 * Paul Brack <https://github.com/PaulBrack>
 * Milan Ojsteršek <https://orcid.org/0000-0003-1743-8300>
+* Bert Droesbeke <https://orcid.org/0000-0003-0522-5674>
 
 ## Meetings
 
