@@ -48,3 +48,13 @@ plugins:
 
 # Show the order prefix 1. 2. etc in toctree
 show_sorted: true
+
+scss: |
+  .sidebar .header {background-color: #e7eaec;
+    height: 364px;
+    background-image: url(https://raw.githubusercontent.com/ResearchObject/ro-crate/master/docs/assets/img/ro-crate-w-text.svg);
+    background-repeat: no-repeat;
+    background-position: top;}
+  .sidebar .version {display:none;}
+  .sidebar .title {margin-top: 230px;}
+  .sidebar .title a {color: #3c454e}
