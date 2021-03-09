@@ -21,9 +21,9 @@ title: Profiles
 
 # RO-Crate Profiles
 
-While RO-Crates can be considered general-purpose containers of arbitrary data and open-ended metadata, in a practical use within a particular domain, application or framework, it will be benefitial to further constrain RO-Crate to a specific **profile**, a set of conventions, types and properties that one minimally can require and expect to be present in that subset of RO-Crates.
+While RO-Crates can be considered general-purpose containers of arbitrary data and open-ended metadata, in practical use within a particular domain, application or framework, it will be benefitial to further constrain RO-Crate to a specific **profile**: a set of conventions, types and properties that one minimally can require and expect to be present in that subset of RO-Crates.
 
-Defining and conforming to such a profile enables reliable programmatic consumption of RO-Crates, as well as their consistent creation, e.g. a user interface form can firmly suggest the required types and properties, and likewise a rendering of an RO-Crate can easier make rich UI components if it can reliably assume for instance that the [`Person`](1.1/contextual-entities.html#people) always has a `affiliation` to a [`Organization`](1.1/contextual-entities.html#organizations-as-values) which has a `url` - a restriction that may not be appropriate for all types of RO-Crates.
+Defining and conforming to such a profile enables reliable programmatic consumption of an RO-Crate's content, as well as consistent creation, e.g. a form in a user interface form firmly suggest the required types and properties, and likewise a rendering of an RO-Crate can easier make rich UI components if it can reliably assume for instance that the [`Person`](1.1/contextual-entities.html#people) always has a `affiliation` to a [`Organization`](1.1/contextual-entities.html#organizations-as-values) which has a `url` - a restriction that may not be appropriate for all types of RO-Crates.
 
 The RO-Crate profile can also lock down serialization expectation, for instance using a particular [version of RO-Crate](specification.html), [JSON-LD context](1.1/appendix/jsonld.html?highlight=@context#ro-crate-json-ld-context) or particular [packaging](1.1/appendix/implementation-notes.html#combining-with-other-packaging-schemes) like .zip or BagIt.
 
