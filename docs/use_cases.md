@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Use Cases
-redirect_from: use_cases/
+redirect_from:
+  - /use_cases/
 ---
 <!--
    Copyright 2019-2020 The University of Manchester and RO Crate contributors 
@@ -30,5 +31,5 @@ These applications use or expose RO-Crates:
  - [ocfl-tools](https://github.com/CoEDL/ocfl-tools)
  - [ocfl-viewer](https://hub.docker.com/r/coedl/ocfl-viewer)
  - [Research Object Composer](https://github.com/researchobject/research-object-composer) is a REST API for gradually building and depositing Research Objects according to a pre-defined profile.  (RO-Crate support _alpha_)
- - [Life Monitor](use_cases/life_monitor.md) uses RO-Crate as an exchange format for workflow testing metadata.
+ - [Life Monitor](use_cases/life_monitor.md) uses RO-Crate as an exchange format for workflow testing metadata
 - ... (yours?)
