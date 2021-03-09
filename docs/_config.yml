@@ -1,6 +1,6 @@
 # Update according to
 # https://github.com/rundocs/jekyll-rtd-theme/releases/tag/v1.1.7
-remote_theme: rundocs/jekyll-rtd-theme@bb00646afd7f05b3f4badb32ce1710197c483dfd
+remote_theme: rundocs/jekyll-rtd-theme
 #theme: jekyll-rtd-theme
 logo: assets/img/ro-crate-w-text.svg?20201023T1353
 
@@ -21,6 +21,7 @@ edit: true
 author: "University of Technology Sydney, The University of Manchester UK and RO-Crate contributors"
 copyright:
   since: 2019
+  revision: false
 
 embed: |
   Distributed under the
@@ -32,9 +33,6 @@ addons:
   - github
   - plugins
 
-copyright:
-  revision: false
-  
 readme_index:
   with_frontmatter: true
 
