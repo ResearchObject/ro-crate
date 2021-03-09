@@ -26,5 +26,5 @@ title: Life Monitor
 Life Monitor uses RO-Crate as an exchange format for the description of test suites associated with workflows. To this end, the Life Monitor team is developing [an extension to the Workflow RO-Crate specification](https://github.com/crs4/life_monitor/wiki/Workflow-Testing-RO-Crate) to support the inclusion of metadata related to the testing of computational workflows stored in the crate.
 
 <p style="vertical-align: bottom">
-  <img src="assets/img/ro-crate-exchange.png" style="vertical-align: middle" />
+  <img src="../assets/img/ro-crate-exchange.png" style="vertical-align: middle" />
 </p>
