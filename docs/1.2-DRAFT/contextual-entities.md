@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Contextual Entities
 excerpt: |
   The RO-Crate contain additional information about Contextual Entities for the

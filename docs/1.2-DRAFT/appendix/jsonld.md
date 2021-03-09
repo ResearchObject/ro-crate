@@ -1,5 +1,4 @@
 ---
-layout: default
 title: RO-Crate JSON-LD
 nav_exclude: true
 excerpt: |

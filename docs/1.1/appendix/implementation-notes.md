@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Implementation notes
 parent: Appendix
 grand_parent: RO-Crate 1.1
@@ -90,9 +89,8 @@ e1105ed0…5e13  data/chipseq_20200910.json
 37fd3a02…bb95  data/results/pipeline_info/design_reads.csv
 ```
 
-```note
-The SHA-512 checksums have been shortened in the above example.
-```
+{: .note }
+> The SHA-512 checksums have been shortened in the above example.
 
 Creating the manifest file without using BagIt tools/libraries can be done using the equivalent of:
 
@@ -123,7 +121,7 @@ b0556450…8802  bag-info.txt
 000b27e3…c52e  manifest-sha512.txt
 ```
 
-```warning
+{: .warning }
 The BagIt manifest is intended to detect "bit rot" and accidental damage,
 it does not provide proof the RO-Crate has not been deliberately
 tampered with, as a malicious actor can also update the checksums.
@@ -132,7 +130,7 @@ Guarding against such scenarious would require additional cryptographic
 measures, e.g.  
 `gpg --detach-sign --armor --output tagmanifest-sha512.txt.asc tagmanifest-sha512.txt`
 in combination with a secure PGP key exchange or equivalent trust network.
-```
+
 
 #### Base URI in BagIt
 

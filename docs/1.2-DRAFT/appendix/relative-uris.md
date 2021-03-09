@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Handling relative URI references
 nav_exclude: true
 excerpt: |
@@ -126,9 +125,8 @@ Results in a valid _RO-Crate JSON-LD_ (actual order in `@graph` may differ):
 }
 ```
 
-```note
-The saved _RO-Crate JSON-LD_ SHOULD NOT include `{@base: null}` in its `@context`.
-```
+{: .note }
+> The saved _RO-Crate JSON-LD_ SHOULD NOT include `{@base: null}` in its `@context`.
 
 
 ## Expanding/parsing JSON-LD keeping relative referencing
@@ -230,9 +228,8 @@ Results in a [expanded form][JSON-LD expanded form] without `@context`, using ab
 ]
 ```
 
-```note
-`@base: null` will not relativize existing absolute URIs that happen to be contained by the _RO-Crate Root_ (see section [Relativizing absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root)).
-```
+{: .note }
+> `@base: null` will not relativize existing absolute URIs that happen to be contained by the _RO-Crate Root_ (see section [Relativizing absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root)).
 
 ```tip
 Most RDF parsers supporting JSON-LD will perform this kind of expansion before generating triples, but not all RDF stores or serializations support relative URI references. Consider using an alternative `@base` as detailed in sections below.
@@ -244,9 +241,8 @@ When loading _RO-Crate JSON-LD_ as RDF, or combining the crate's Linked Data int
 [base URI][JSON-LD base URI]
 to resolve URI references that are relative to the _RO-Crate Root_.
 
-```note
-When retrieving an RO-Crate over the web, servers might have performed HTTP redirections so that the base URI is different from what was requested. It is RECOMMENDED to follow section [Establishing a Base URI of RFC3986](http://tools.ietf.org/html/rfc3986#section-5.1) before resolving relative links from the _RO-Crate Metadata File_.
-```
+{: .note }
+> When retrieving an RO-Crate over the web, servers might have performed HTTP redirections so that the base URI is different from what was requested. It is RECOMMENDED to follow section [Establishing a Base URI of RFC3986](http://tools.ietf.org/html/rfc3986#section-5.1) before resolving relative links from the _RO-Crate Metadata File_.
 
 For instance, consider this HTTP redirection from a permalink (simplified):
 
@@ -579,8 +575,7 @@ Will output _RO-Crate JSON-LD_ with relative URIs:
 }
 ```
 
-```warning
-This method would also relativize URIs outside the _RO-Crate Root_ that are on the same host, e.g. `http://example.com/crate255/other.txt` would become `../create255/other.txt` - this can particularly be a challenge with local `file:///` URIs. 
-````
+{: .warning }
+> This method would also relativize URIs outside the _RO-Crate Root_ that are on the same host, e.g. `http://example.com/crate255/other.txt` would become `../create255/other.txt` - this can particularly be a challenge with local `file:///` URIs. `
 
 {% include references.liquid %}

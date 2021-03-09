@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Life Monitor
 parent: RO-Crate In Use
 ---

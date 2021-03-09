@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Appendix
 nav_order: 5
 parent: RO-Crate 1.1

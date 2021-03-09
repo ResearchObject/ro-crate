@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Workflows and scripts
 redirect_from:
   - /1.1-DRAFT/workflows
@@ -224,9 +223,8 @@ A contextual entity conforming to the [FormalParameter profile] SHOULD declare t
 }
 ```
 
-```note
-`input`, `output` and `FormalParameter` are at time of writing proposed by Bioschemas and not yet integrated in Schema.org
-```
+{: .note }
+> `input`, `output` and `FormalParameter` are at time of writing proposed by Bioschemas and not yet integrated in Schema.org
 
 ## Complete Workflow Example
 

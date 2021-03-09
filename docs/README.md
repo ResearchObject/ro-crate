@@ -40,7 +40,6 @@ Note that the specification `1.1` onwards uses split files for different section
 
 ```
 ---
-layout: default
 title: Metadata of the RO-Crate
 excerpt: |
   RO-Crate aims to capture and describe the Research Object using
@@ -61,7 +60,6 @@ To hide a section (`README.md`) or other file from the main table of content, e.
 
 ```
 ---
-layout: default
 nav_exclude: true
 title: Draft section
 ---

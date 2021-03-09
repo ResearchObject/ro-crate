@@ -1,5 +1,4 @@
 ---
-layout: default
 title: About this document
 nav_order: 1
 nav_exclude: true

@@ -1,5 +1,4 @@
 ---
-layout: default
 title: RO-Crate In Use
 has_children: true
 ---

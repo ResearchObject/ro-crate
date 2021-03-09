@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Contextual Entities
 redirect_from:
   - /1.1-DRAFT/contextual-entities

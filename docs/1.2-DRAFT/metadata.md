@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Metadata of the RO-Crate
 excerpt: |
   RO-Crate aims to capture and describe the Research Object using
@@ -64,9 +63,8 @@ RO-Crate realize these principles using a particular set of technologies and bes
 
 [Schema.org] is the base metadata standard for RO-Crate. Schema.org was chosen because it is widely used on the World Wide Web and supported by search engines, on the assumption that discovery is likely to be maximized if search engines index the content. 
 
-```note
-As far as we know there is no alternative, well-maintained linked-data schema for research data with the coverage needed for this project - i.e. a single standard for expressing all the examples presented in this specification.
-```
+{: .note }
+> As far as we know there is no alternative, well-maintained linked-data schema for research data with the coverage needed for this project - i.e. a single standard for expressing all the examples presented in this specification.
 
 RO-Crate relies heavily on [Schema.org], using a constrained subset of [JSON-LD], and this document gives opinionated recommendations on how to represent the metadata using existing [linked data] best practices.
 
@@ -77,9 +75,8 @@ Generally, the standard _type_ and _property_ names (_terms_) from [Schema.org] 
 * `File` is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of Schema.org or a research data extension may re-define `File`.
 * `Journal` is mapped to <http://schema.org/Periodical>.
 
-```warning
-JSON-LD examples given on the [Schema.org website] may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
-```
+{: .warning }
+> JSON-LD examples given on the [Schema.org website] may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
 
 To simplify processing and avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even where [Schema.org] for some properties otherwise permit shorter forms like `"author": "http://example.com/alice"`.
 
@@ -95,9 +92,8 @@ RO-Crate also uses the _Portland Common Data Model_ ([PCDM] version <https://pcd
 - `hasMember` mapped to <http://pcdm.org/models#hasMember>
 - `hasFile` mapped to <http://pcdm.org/models#hasFile>
 
-```note
-The terms `RepositoryObject` and `RepositoryCollection` are renamed to avoid collision between other vocabularies and the PCDM terms `Collection` and `Object`. The term `RepositoryFile` is renamed to avoid clash with RO-Crate's `File` mapping to <http://schema.org/MediaObject>.
-```
+{: .note }
+> The terms `RepositoryObject` and `RepositoryCollection` are renamed to avoid collision between other vocabularies and the PCDM terms `Collection` and `Object`. The term `RepositoryFile` is renamed to avoid clash with RO-Crate's `File` mapping to <http://schema.org/MediaObject>.
 
 From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
 
@@ -111,9 +107,8 @@ These terms are being proposed by [Bioschemas profile ComputationalWorkflow 0.5-
 * `output` mapped to <https://bioschemas.org/ComputationalWorkflow#output>
 * `funding` mapped to <http://schema.org/funding> ([schemaorg #383](https://github.com/schemaorg/schemaorg/issues/383))
 
-```note
-In this specification the proposed Bioschemas terms use the temporary <https://bioschemas.org/> namespace; future releases of RO-Crate may reflect mapping to the <http://schema.org/> namespace.
-```
+{: .note }
+> In this specification the proposed Bioschemas terms use the temporary <https://bioschemas.org/> namespace; future releases of RO-Crate may reflect mapping to the <http://schema.org/> namespace.
 
 ## Summary of Coverage
 

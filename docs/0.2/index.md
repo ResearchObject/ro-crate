@@ -1,5 +1,4 @@
 ---
-layout: default
 title: RO-Crate 0.2
 nav_exclude: true
 ---
