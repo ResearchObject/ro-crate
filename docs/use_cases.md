@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Implementations
+title: Use Cases
+redirect_from:
+  - /use_cases/
 ---
 <!--
    Copyright 2019-2020 The University of Manchester and RO Crate contributors 
@@ -19,16 +21,7 @@ title: Implementations
    limitations under the License.
 -->
 
-# RO-Crate implementations
-
-While we're mostly focusing on the [RO-Crate specification](specification.md) some tools already exist for working with RO-Crates:
-
- - [Describo](https://arkisto-platform.github.io/describo/) interactive desktop application to create, update and export RO-Crates for different profiles. (~ _beta_)
- - [CalcyteJS](https://github.com/UTS-eResearch/CalcyteJS) is a command-line tool to help create RO-Crates and HTML-readable rendering (~ _beta_)
- - [ro-crate](https://www.npmjs.com/package/ro-crate) - JavaScript/NodeJS library for RO-Crate rendering as HTML. (~ _beta_)
- - [ro-crate-js](https://github.com/UTS-eResearch/ro-crate-js) - utility to render HTML from RO-Crate (~ _alpha_)
- - [ro-crate-ruby](https://github.com/fbacall/ro-crate-ruby) Ruby library to consume/produce RO-Crates (~ _alpha_)
- - [ro-crate-py](https://github.com/researchobject/ro-crate-py) Python library to consume/produce RO-Crates (~ _planning_)
+# Use Cases
 
 These applications use or expose RO-Crates:
 
@@ -38,4 +31,5 @@ These applications use or expose RO-Crates:
  - [ocfl-tools](https://github.com/CoEDL/ocfl-tools)
  - [ocfl-viewer](https://hub.docker.com/r/coedl/ocfl-viewer)
  - [Research Object Composer](https://github.com/researchobject/research-object-composer) is a REST API for gradually building and depositing Research Objects according to a pre-defined profile.  (RO-Crate support _alpha_)
+ - [Life Monitor](use_cases/life_monitor.md) uses RO-Crate as an exchange format for workflow testing metadata
 - ... (yours?)
