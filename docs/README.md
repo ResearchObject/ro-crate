@@ -6,6 +6,34 @@ Note that files outside `docs` are not accessible within `github.io` and must be
 
 It is more important that pages render well at <https://researchobject.github.io/ro-crate/> than in this  preview within the GitHub repository, as some MarkDown features only apply to the GitHub Pages (e.g. the `{:toc}` macro and).
 
+### Running Jekyll locally
+
+To test out your changes locally it may be worth running [Jekyll](https://jekyllrb.com/) locally to generate the pages. However installing Jekyll, Ruby and their dependencies locally can be a bit of a challenge depending on your operating system, local permissions and paths.
+
+With [Ruby 2.4](https://www.ruby-lang.org/) or newer installed (possibly using [rvm](https://rvm.io/)), try **from `docs/` folder** the equivalent of:
+
+    sudo gem install bundler
+    bundle install
+    bundle exec jekyll serve
+
+
+If you have [Docker] you can avoid the Ruby/Bundler/Jekyll install dance and run from a container:
+
+    make jekyll-docker-serve
+
+Then visit http://0.0.0.0:3000/ to browse a local rendering. 
+
+Alternatively, to render HTML files into `site/` folder, run:
+
+    make jekyll-docker-oneshot
+
+Equivalent commands for using [Podman](https://podman.io/):
+
+    make jekyll-podman-serve  
+    # or
+    make jekyll-podman-oneshot
+
+
 ### Using the jekyll-rtd-theme
 
 Note that the specification `1.1` onwards uses split files for different sections, these are indexed by the [RunDocs theme](https://rundocs.io/) aka [rundocs/jekyll-rtd-theme](https://github.com/rundocs/jekyll-rtd-theme). The `---` preamble is required on all `*.md` files to help the theme, e.g.:
