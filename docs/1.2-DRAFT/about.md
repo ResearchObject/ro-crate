@@ -1,7 +1,8 @@
 ---
 layout: default
 title: About this document
-sort: 1
+nav_order: 1
+nav_exclude: true
 excerpt: |
   ...
 ---

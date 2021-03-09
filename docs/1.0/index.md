@@ -1,7 +1,7 @@
 ---
 layout: default
 title: RO-Crate 1.0
-exclude: true
+nav_exclude: true
 ---
 <!--
    Copyright 2019 University of Technology Sydney

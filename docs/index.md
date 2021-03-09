@@ -1,3 +1,7 @@
+---
+Title: Research Object Crate (RO-Crate)
+---
+
 <!--
    Copyright 2019-2020 The University of Manchester and RO Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
@@ -81,4 +85,4 @@ See also [recent publications, presentations and citations](outreach.md).
 
 # Navigation
 
-{% include list.liquid all=true %}
+

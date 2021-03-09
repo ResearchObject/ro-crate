@@ -1,6 +1,8 @@
 ---
 layout: default
 title: RO-Crate JSON-LD
+parent: Appendix
+grand_parent: RO-Crate 1.1
 excerpt: |
   ..
 ---

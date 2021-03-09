@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Handling relative URI references
+nav_exclude: true
 excerpt: |
   ..
 ---

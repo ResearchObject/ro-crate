@@ -1,7 +1,9 @@
 ---
 layout: default
 title: Appendix
-sort: 5
+nav_order: 5
+parent: RO-Crate 1.1
+has_children: true
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -23,5 +25,5 @@ sort: 5
 
 ## Appendixes
 
-{% include list.liquid %}
+
 

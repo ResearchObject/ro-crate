@@ -3,9 +3,10 @@ layout: default
 title: Terminology
 redirect_from:
   - /1.1-DRAFT/terminology
-sort: 3
+nav_order: 3
 excerpt: |
   ...
+parent: RO-Crate 1.1
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

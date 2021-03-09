@@ -3,7 +3,8 @@ layout: default
 title: Introduction
 redirect_from:
   - /1.1-DRAFT/introduction
-sort: 2
+nav_order: 2
+parent: RO-Crate 1.1
 excerpt: |
   ...
 ---

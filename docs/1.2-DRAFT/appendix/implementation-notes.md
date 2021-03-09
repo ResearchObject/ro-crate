@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Implementation notes
+nav_exclude: true
 excerpt: 
 ---
 <!--

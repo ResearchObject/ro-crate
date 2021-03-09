@@ -3,7 +3,8 @@ layout: default
 title: Root Data Entity
 excerpt: |
   ..
-sort: 6
+nav_order: 6
+nav_exclude: true
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

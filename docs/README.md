@@ -48,7 +48,8 @@ excerpt: |
   metadata that describes the RO-Crate and its content. This machine-readable
   metadata can also be represented for human consumption in the RO-Crate Website,
   linking to data and Web resources.
-sort: 5
+nav_order: 5
+nav_exclude: true
 ---
 ```
 
@@ -56,12 +57,12 @@ Tip: Only add `sort` for numbered sections. Unfortunately the number is shown as
 
 #### Hiding a section
 
-To hide a section (`README.md`) or other file from the main table of content, e.g. a draft, add `exclude: true` to its preamble:
+To hide a section (`README.md`) or other file from the main table of content, e.g. a draft, add `nav_exclude: true` to its preamble:
 
 ```
 ---
 layout: default
-exclude: true
+nav_exclude: true
 title: Draft section
 ---
 ```
@@ -75,10 +76,10 @@ For the RO-Crate specification we should only show the **current** specification
 Note that although section folders have a `README.md` (alternatively `index.md`) - it is not generally shown in the left-hand menu, only in the breadcrumb. It is therefore recommended to make these index page minimal and only include a list of subpages of that section, using this Liquid include:
 
 ```
-{% include list.liquid all=true %}
+
 ```
 
-This is also helpful for navigating drafts as `exclude: true` does not show their sections in the left-hand menu.
+This is also helpful for navigating drafts as `nav_exclude: true` does not show their sections in the left-hand menu.
 
 #### Admonition cards
 
@@ -111,4 +112,4 @@ The theme is locked to a fixed version in [_config.yml](_config.yml) to avoid un
 The [_includes/references.liquid](_includes/references.liquid) file includes Markdown [hyperlink references](https://kramdown.gettalong.org/syntax.html#reference-links) that can be used on shortform, e.g. `[CreativeWork]` gets expanded to `[CreativeWork](http://schema.org/CreativeWork)`  or `[creative work][CreativeWork]` becomes  `[creative work](http://schema.org/CreativeWork)`. This only works on `*.md` pages that have the `{% include references.liquid %}` footer.
 
 
-{% include list.liquid all=true %}
+

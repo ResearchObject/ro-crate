@@ -7,7 +7,8 @@ excerpt: |
   which an RO-Crate is self-contained and self-describing, in that it reduces the
   need for the consumer of an RO-Crate to refer to external information which may
   change or become unavailable over time.
-sort: 8
+nav_order: 8
+nav_exclude: true
 jekyll-mentions: false
 ---
 <!--

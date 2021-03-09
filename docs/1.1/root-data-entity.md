@@ -5,7 +5,8 @@ redirect_from:
   - /1.1-DRAFT/root-data-entity
 excerpt: |
   ..
-sort: 6
+nav_order: 6
+parent: RO-Crate 1.1
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

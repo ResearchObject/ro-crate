@@ -1,7 +1,7 @@
 ---
 layout: default
 title: ROLite 0.1.0
-exclude: true
+nav_exclude: true
 ---
 <!--
    Copyright 2019 RO Crate contributors 

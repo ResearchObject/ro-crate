@@ -3,7 +3,8 @@ layout: default
 title: Provenance of entities
 excerpt: |
   ..
-sort: 9
+nav_order: 9
+nav_exclude: true
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

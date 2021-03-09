@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Changelog
+nav_exclude: true
 excerpt: List of changes in releases of this specifications
 ---
 <!--

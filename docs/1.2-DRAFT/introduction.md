@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Introduction
-sort: 2
+nav_order: 2
+nav_exclude: true
 excerpt: |
   ...
 ---

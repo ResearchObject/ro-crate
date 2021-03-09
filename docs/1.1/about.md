@@ -1,7 +1,8 @@
 ---
 layout: default
 title: About this document
-sort: 1
+parent: RO-Crate 1.1
+nav_order: 1
 redirect_from:
   - /1.1-DRAFT/about
 excerpt: |

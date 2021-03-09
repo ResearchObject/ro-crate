@@ -7,7 +7,8 @@ excerpt: |
   metadata that describes the RO-Crate and its content. This machine-readable
   metadata can also be represented for human consumption in the RO-Crate Website,
   linking to data and Web resources.
-sort: 5
+nav_order: 5
+nav_exclude: true
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

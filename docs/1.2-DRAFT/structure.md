@@ -3,7 +3,8 @@ layout: default
 title: RO-Crate Structure
 excerpt: |
   ..
-sort: 4
+nav_order: 4
+nav_exclude: true
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

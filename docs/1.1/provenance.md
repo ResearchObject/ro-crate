@@ -5,7 +5,8 @@ redirect_from:
   - /1.1-DRAFT/provenance
 excerpt: |
   ..
-sort: 9
+nav_order: 9
+parent: RO-Crate 1.1
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

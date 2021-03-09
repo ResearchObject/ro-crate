@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Terminology
-sort: 3
+nav_order: 3
+nav_exclude: true
 excerpt: |
   ...
 ---

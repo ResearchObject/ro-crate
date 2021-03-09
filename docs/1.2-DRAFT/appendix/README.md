@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Appendix
-sort: 5
+nav_order: 5
+nav_exclude: true
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -23,5 +24,5 @@ sort: 5
 
 ## Appendixes
 
-{% include list.liquid %}
+
 
