@@ -38,6 +38,37 @@ This profile of RO-Crate is used by the [WorkflowHub](https://workflowhub.eu/) b
 
 ## Describo profiles
 
+[Describo](tool/describo) has pre-defined _default profile_ based on the RO-Crate specifications, which informs the user interface which entity types and properties should be offered and requested when a user is editing an RO-Crate.
+
+The [default profile](https://github.com/UTS-eResearch/describo/blob/master/src/components/profiles/default/index.js) covers the recommendations in [RO-Crate 1.1 specifications](1.1/), adding form help such as description of each field. 
+
+In addition, a [Domain-specific profile](https://github.com/Arkisto-Platform/describo/wiki/dsp-index) can be created as JSON and used by Describo to customize the selection of types and properties, including adding third-party vocabularies.
+
 ## Paradisec profiles
 
+The [PARADISEC Describo profile](https://github.com/UTS-eResearch/describo/blob/master/src/components/profiles/paradisec.describo.profile.json) is built in to 
+[Describo](tool/describo) and is the basis for the [PARADISEC](https://arkisto-platform.github.io/case-studies/paradisec/) RO-Crates exposed in the [Modern PARADISEC demonstrator](https://mod.paradisec.org.au/) to annotate and expose digital cultural heritage records.
+
+
 ## Making a RO-Crate profile
+
+As a starting point, an RO-Crate profile can be written down in structured human language, as exemplified by [Workflow RO-Crate](https://about.workflowhub.eu/Workflow-RO-Crate/). 
+
+Consistent use of the key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL as described in [RFC 2119](https://tools.ietf.org/html/rfc2119) makes explicit what is a strict requirement of the profile, what are best practice recommendations, and what are open-ended extensions.
+
+A more formal definition of the profile can take multiple forms, depending on the serialization requirements for the RO-Crate, and how open-ended or restricted the profile is intended to be:
+
+* [JSON Schema](https://json-schema.org/) requiring a restricted JSON form of [RO-Crate JSON-LD](1.1/appendix/jsonld.html). May include restricted JSON forms for expressing selected [data](1.1/data-entities.html) and [contextual entities](1.1/contextual-entities.html) in a certain way.
+* RDF Shapes expressed in [ShEx](https://shex.io/) or [SHACL](https://www.w3.org/TR/shacl/) to check graph patterns like _`author` must be of `@type: Person` and have `affiliation` to a `@type: Organization` that has a `url` to a valid URL_
+* Hard-coded validator, e.g. checking expected folders like `test/` exists or that a file really is of declared media type.
+
+Implementors making validators may also want to first check that the [RO-Crate metadata file](1.1/structure.html#ro-crate-metadata-file-ro-crate-metadatajson) is:
+
+* Valid [JSON](https://www.json.org/)
+* Has expected/supported JSON-LD `@context`
+* Valid JSON-LD Compacted form
+* Valid [JSON-LD](https://json-ld.org/)
+* Valid RDF triples
+* Correct use of schema.org types/properties
+
+Depending on requirements it may be benefitial to combine these approaches - for instance a hard-coded validator can rely on structural RO-Crate JSON checks before inspecting a particular data item in detail.
