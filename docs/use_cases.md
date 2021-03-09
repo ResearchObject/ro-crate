@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Use Cases
+redirect_from: use_cases/
 ---
 <!--
    Copyright 2019-2020 The University of Manchester and RO Crate contributors 
@@ -19,4 +20,15 @@ title: Use Cases
    limitations under the License.
 -->
 
-{% include_relative use_cases/index.md  %}
+# Use Cases
+
+These applications use or expose RO-Crates:
+
+ - [Workflow Hub](https://about.workflowhub.eu/) imports and exports [Workflow RO-Crates](https://about.workflowhub.eu/Workflow-RO-Crate/)
+ - [OCFL-indexer](https://github.com/CoEDL/modpdsc/) NodeJS application that walks the [Oxford Common File Layout](https://ocfl.io/) on the file system, validate RO-Crate Metadata Files and parse into objects registered in Elasticsearch. (~ _alpha_)
+ - [ONI indexer](https://github.com/UTS-eResearch/oni-indexer)
+ - [ocfl-tools](https://github.com/CoEDL/ocfl-tools)
+ - [ocfl-viewer](https://hub.docker.com/r/coedl/ocfl-viewer)
+ - [Research Object Composer](https://github.com/researchobject/research-object-composer) is a REST API for gradually building and depositing Research Objects according to a pre-defined profile.  (RO-Crate support _alpha_)
+ - [Life Monitor](use_cases/life_monitor.md) uses RO-Crate as an exchange format for workflow testing metadata.
+- ... (yours?)
