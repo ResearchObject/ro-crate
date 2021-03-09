@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Provenance of entities
 excerpt: |
   ..

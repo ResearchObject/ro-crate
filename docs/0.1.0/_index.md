@@ -1,5 +1,4 @@
 ---
-layout: default
 title: ROLite 0.1.0
 exclude: true
 ---

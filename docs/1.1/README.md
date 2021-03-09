@@ -1,5 +1,4 @@
 ---
-layout: default
 title: RO-Crate 1.1
 sort: 1
 excerpt: |

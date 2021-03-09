@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Workflows and scripts
 redirect_from:
   - /1.1-DRAFT/workflows

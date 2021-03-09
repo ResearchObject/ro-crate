@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Workflows and scripts
 excerpt: |
   Scientific workflows and Scripts that were used (or can be used) to 

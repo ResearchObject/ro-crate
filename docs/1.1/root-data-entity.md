@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Root Data Entity
 redirect_from:
   - /1.1-DRAFT/root-data-entity

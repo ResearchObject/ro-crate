@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Handling relative URI references
 redirect_from:
   - /1.1-DRAFT/appendix/relative-uris

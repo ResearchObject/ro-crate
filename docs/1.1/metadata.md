@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Metadata of the RO-Crate
 redirect_from:
   - /1.1-DRAFT/metadata

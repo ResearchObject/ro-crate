@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Handling relative URI references
 excerpt: |
   ..

@@ -1,5 +1,4 @@
 ---
-layout: default
 title: About this document
 sort: 1
 excerpt: |

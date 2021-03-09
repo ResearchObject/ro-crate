@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Terminology
 sort: 3
 excerpt: |

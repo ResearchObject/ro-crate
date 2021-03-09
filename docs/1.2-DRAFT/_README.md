@@ -1,5 +1,4 @@
 ---
-layout: default
 title: RO-Crate 1.2-DRAFT
 sort: 1
 exclude: true

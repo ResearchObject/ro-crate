@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Introduction
 redirect_from:
   - /1.1-DRAFT/introduction

@@ -1,5 +1,4 @@
 ---
-layout: default
 title: RO-Crate Structure
 excerpt: |
   ..

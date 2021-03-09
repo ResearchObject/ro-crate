@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Metadata of the RO-Crate
 excerpt: |
   RO-Crate aims to capture and describe the Research Object using

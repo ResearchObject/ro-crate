@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Root Data Entity
 excerpt: |
   ..

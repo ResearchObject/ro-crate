@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Introduction
 sort: 2
 excerpt: |

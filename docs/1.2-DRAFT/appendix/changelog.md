@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Changelog
 excerpt: List of changes in releases of this specifications
 ---
