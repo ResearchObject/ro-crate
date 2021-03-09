@@ -120,3 +120,30 @@ release/ro-crate-metadata.json: dependencies release/ docs/${RELEASE}/ro-crate-m
 
 release/ro-crate-preview.html: dependencies release/ docs/${RELEASE}/ro-crate-preview.html
 	cp docs/${RELEASE}/ro-crate-preview.html release/ro-crate-preview.html
+
+# From https://stackoverflow.com/a/18137056
+mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
+mkfile_absdir := $(dir $(mkfile_path))
+current_dir := $(notdir $(patsubst %/,%,$(dir $(mkfile_path))))
+
+podman-pre:
+	chmod go+w "${mkfile_absdir}/docs" "${mkfile_absdir}/docs/Gemfile.lock"
+
+docker-fix-permissions:
+	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll chown -R $(shell id -u):$(shell id -g) /srv/jekyll
+
+jekyll-podman-serve:	podman-pre
+	podman run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume="${mkfile_absdir}/docs:/srv/jekyll" -p 4000:4000 jekyll/jekyll jekyll serve --incremental
+
+jekyll-podman-oneshot:	podman-pre
+	podman run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll jekyll build
+
+jekyll-docker-serve:
+	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume="${mkfile_absdir}/docs:/srv/jekyll" -p 4000:4000 jekyll/jekyll jekyll serve --incremental
+	# Next one fixes permissions
+	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll chown -R $(shell id -u):$(shell id -g) /srv/jekyll
+
+jekyll-docker-oneshot:
+	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll jekyll build
+	# Next one fixes permissions
+	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll chown -R $(shell id -u):$(shell id -g) /srv/jekyll
