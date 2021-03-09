@@ -23,7 +23,7 @@ title: Implementations
 
 While we're mostly focusing on the [RO-Crate specification](specification.md) some tools already exist for working with RO-Crates:
 
- - [Describo](https://uts-eresearch.github.io/describo/) interactive desktop application to create, update and export RO-Crates for different profiles. (~ _beta_)
+ - [Describo](https://arkisto-platform.github.io/describo/) interactive desktop application to create, update and export RO-Crates for different profiles. (~ _beta_)
  - [CalcyteJS](https://github.com/UTS-eResearch/CalcyteJS) is a command-line tool to help create RO-Crates and HTML-readable rendering (~ _beta_)
  - [ro-crate](https://www.npmjs.com/package/ro-crate) - JavaScript/NodeJS library for RO-Crate rendering as HTML. (~ _beta_)
  - [ro-crate-js](https://github.com/UTS-eResearch/ro-crate-js) - utility to render HTML from RO-Crate (~ _alpha_)
