@@ -15,9 +15,10 @@ color_scheme: rocrate
 footer_content:  "Copyright 2021. University of Technology Sydney, The University of Manchester UK and RO-Crate contributors"
 gh_edit_link: true
 gh_edit_link_text: "Edit this page on GitHub."
-gh_edit_repository: "https://github.com/ResearchObject/ro-crate" # the github URL for your repo
-gh_edit_view_mode: "tree"
-gh_edit_branch: "master" # the branch that your docs is served from
+gh_edit_repository: "https://github.com/ResearchObject/ro-crate"
+gh_edit_view_mode: "edit"
+gh_edit_source: "docs" 
+gh_edit_branch: "master" 
 
 embed: |
   Distributed under the
