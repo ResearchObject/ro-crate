@@ -1,6 +1,6 @@
 ---
 title: Appendix
-nav_order: 5
+nav_order: 10
 parent: RO-Crate 1.1
 has_children: true
 ---
@@ -22,7 +22,7 @@ has_children: true
    limitations under the License.
 -->
 
-## Appendixes
+# Appendixes
 
 
 

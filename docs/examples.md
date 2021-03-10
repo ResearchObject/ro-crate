@@ -19,6 +19,13 @@ title: Examples
 -->
 
 # Example RO-Crates
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 The [RO-Crate structure](1.1/structure.html) is that a _RO-Crate root_ directory has a _RO-Crate Metadata File_ named `ro-crate-metadata.json` that describe the other files, directories and URLs; as well as relating them to things in the world (e.g. people, instruments).
 

@@ -8,7 +8,7 @@ excerpt: |
   metadata that describes the RO-Crate and its content. This machine-readable
   metadata can also be represented for human consumption in the RO-Crate Website,
   linking to data and Web resources.
-nav_order: 5
+nav_order: 4
 parent: RO-Crate 1.1
 ---
 <!--
@@ -32,6 +32,14 @@ parent: RO-Crate 1.1
 <div id="metadata"></div>
 
 # RO-Crate Metadata
+
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 RO-Crate aims to capture and describe the [Research Object][ResearchObject] using structured _metadata_.
 

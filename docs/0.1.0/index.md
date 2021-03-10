@@ -20,12 +20,16 @@ nav_exclude: true
 -->
 
 # ROLite 0.1.0
+{: .no_toc }
 
 This first draft of ~~ROLite~~ [RO-Crate](../) is more of an example playground to initiate discussion.
 
 This example is based on [DataCrate](https://github.com/UTS-eResearch/datacrate) and [BioSchemas](http://bioschemas.org/specifications/), bringing in Research Object vocabularies where appropriate.
 
-1. Table of Contents
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
 {:toc}
 
 ## Explaining by example: a simple dataset

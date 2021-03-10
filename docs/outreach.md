@@ -19,6 +19,13 @@ title: Outreach and Publications
 -->
 
 # RO-Crate Outreach and Publications 
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 _Feel free to add to this page, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 

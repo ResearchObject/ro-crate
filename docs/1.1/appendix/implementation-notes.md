@@ -25,6 +25,13 @@ excerpt:
 -->
 
 # APPENDIX: Implementation notes
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Programming with JSON-LD
 

@@ -1,5 +1,7 @@
 ---
 title: Handling relative URI references
+parent: Appendix
+grand_parent: RO-Crate 2.0-DRAFT
 nav_exclude: true
 excerpt: |
   ..

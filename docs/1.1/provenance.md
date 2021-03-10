@@ -4,7 +4,7 @@ redirect_from:
   - /1.1-DRAFT/provenance
 excerpt: |
   ..
-nav_order: 9
+nav_order: 8
 parent: RO-Crate 1.1
 ---
 <!--
@@ -28,7 +28,13 @@ parent: RO-Crate 1.1
 <div id="provenance"></div>
 
 # Detailing provenance of entities
+{: .no_toc }
 
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Equipment used to create files
 

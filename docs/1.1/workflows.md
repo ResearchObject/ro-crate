@@ -6,7 +6,7 @@ excerpt: |
   Scientific workflows and Scripts that were used (or can be used) to 
   analyze or generate files contained in an RO-Crate can be embedded
   in an RO-Crate and described in detail.
-nav_order: 10
+nav_order: 9
 parent: RO-Crate 1.1
 ---
 <!--
@@ -30,6 +30,13 @@ parent: RO-Crate 1.1
 <div id="workflows"></div>
 
 # Workflows and Scripts
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an RO-Crate MAY be embedded in an RO-Crate. See also the Provenance section on [Software Used to Create Files](provenance.md#software-used-to-create-files).
 

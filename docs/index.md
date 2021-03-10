@@ -20,11 +20,13 @@ Title: Research Object Crate (RO-Crate)
 -->
 
 # Research Object Crate (RO-Crate)
-{:.no_toc}
-
+{: .no_toc }
 Permalink: <https://w3id.org/ro/crate>
 
-1. Table of Contents
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
 {:toc}
 
 **News**: [RO-Crate Metadata specification 1.1](https://w3id.org/ro/crate/1.1) released
@@ -82,7 +84,3 @@ For citing a particular [version of RO-Crate specification](https://www.research
 ### Other citations
 
 See also [recent publications, presentations and citations](outreach.md).
-
-# Navigation
-
-

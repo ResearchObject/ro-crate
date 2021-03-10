@@ -30,6 +30,13 @@ nav_exclude: true
 <div id="metadata"></div>
 
 # RO-Crate Metadata
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 RO-Crate aims to capture and describe the [Research Object][ResearchObject] using structured _metadata_.
 

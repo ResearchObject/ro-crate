@@ -1,5 +1,7 @@
 ---
 title: Changelog
+parent: Appendix
+grand_parent: RO-Crate 2.0-DRAFT
 nav_exclude: true
 excerpt: List of changes in releases of this specifications
 ---

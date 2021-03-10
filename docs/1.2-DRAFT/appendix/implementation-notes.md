@@ -1,5 +1,7 @@
 ---
 title: Implementation notes
+parent: Appendix
+grand_parent: RO-Crate 2.0-DRAFT
 nav_exclude: true
 excerpt: 
 ---
@@ -22,6 +24,13 @@ excerpt:
 -->
 
 # APPENDIX: Implementation notes
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Programming with JSON-LD
 

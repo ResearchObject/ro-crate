@@ -24,6 +24,13 @@ excerpt: |
 -->
 
 # Terminology
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 _RO-Crate_: A directory structure that contains a dataset, which is described in an _RO-Crate Metadata File_.
 

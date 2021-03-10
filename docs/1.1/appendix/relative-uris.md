@@ -28,6 +28,13 @@ excerpt: |
 <div id="relative-uris"></div>
 
 # APPENDIX: Handling relative URI references
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 The _RO-Crate Metadata File_ use _relative URI references_ to identify files and directories
 contained within the _RO-Crate Root_ and its children.  As described in section

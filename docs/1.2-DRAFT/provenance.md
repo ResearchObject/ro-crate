@@ -26,7 +26,13 @@ nav_exclude: true
 <div id="provenance"></div>
 
 # Detailing provenance of entities
+{: .no_toc }
 
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Equipment used to create files
 
