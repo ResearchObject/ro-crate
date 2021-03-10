@@ -29,4 +29,4 @@ Life Monitor uses RO-Crate as an exchange format for the description of test sui
   <img src="../assets/img/ro-crate-exchange.png" style="vertical-align: middle" />
 </p>
 
-As shown in the above picture, Life Monitor gets metadata about the workflow, including test suites, from the workflow's RO-Crate, and uses them to communicate with the relevant CI services.
+As shown in the above picture, Life Monitor gets metadata about the workflow, including test suites, from the workflow's RO-Crate, and uses them to communicate with the relevant CI services. Test outcomes are then collected and exposed via a REST API.
