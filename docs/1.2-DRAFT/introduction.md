@@ -1,7 +1,8 @@
 ---
 title: Introduction
-nav_order: 2
+nav_order: 1
 nav_exclude: true
+parent: RO-Crate 2.0-DRAFT 
 excerpt: |
   ...
 ---

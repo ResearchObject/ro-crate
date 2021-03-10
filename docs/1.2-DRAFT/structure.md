@@ -2,8 +2,9 @@
 title: RO-Crate Structure
 excerpt: |
   ..
-nav_order: 4
+nav_order: 3
 nav_exclude: true
+parent: RO-Crate 2.0-DRAFT 
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

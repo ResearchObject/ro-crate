@@ -1,6 +1,6 @@
 ---
 title: Appendix
-nav_order: 5
+nav_order: 10
 parent: RO-Crate 2.0-DRAFT 
 nav_exclude: true
 ---

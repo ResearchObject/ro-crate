@@ -2,8 +2,9 @@
 title: Provenance of entities
 excerpt: |
   ..
-nav_order: 9
+nav_order: 8
 nav_exclude: true
+parent: RO-Crate 2.0-DRAFT 
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

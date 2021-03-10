@@ -4,8 +4,9 @@ excerpt: |
   Scientific workflows and Scripts that were used (or can be used) to 
   analyze or generate files contained in an RO-Crate can be embedded
   in an RO-Crate and described in detail.
-nav_order: 10
+nav_order: 9
 nav_exclude: true
+parent: RO-Crate 2.0-DRAFT 
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
