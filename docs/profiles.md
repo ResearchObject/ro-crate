@@ -37,36 +37,38 @@ This profile of RO-Crate is used by the [WorkflowHub](https://workflowhub.eu/) b
 
 In summary the _Workflow RO-Crate profile_ covers as of 2021-03-09:
 
-* [RO-Crate Root](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#direct-properties-of-the-root-data-entity)) `Dataset`
-  - `hasPart`: 
+* [`Dataset`](http://schema.org/Dataset) ([RO-Crate Root](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#direct-properties-of-the-root-data-entity))
+  - [`hasPart`](1.1/data-entities.html#referencing-files-and-folders-from-the-root-data-entity): 
     * `File,SoftwareSourceCode,ComputationalWorkflow` (required)
     * `File,SoftwareSourceCode,HowTo`
-    * `"README.md"`: `CreativeWork`?
+    * `"README.md"`: `CreativeWork` _?_
     * `"test"`: `Dataset`
     * `"examples"`: `Dataset`
-  - `mainEntity`: 
+  - [`mainEntity`](http://schema.org/mainEntity): 
     * `File,SoftwareSourceCode,ComputationalWorkflow` (required)
     * `File,SoftwareSourceCode,HowTo`
-  - `license`: (`Text` | `CreativeWork`?)
+  - [`license`](1.1/contextual-entities.html#licensing-access-control-and-copyright): `(Text|CreativeWork)` ?
     * `"AFL-3.0"`
     * `"Apache-2.0"`
     * `"BSD-3-Clause"`
     * ...
-  - `name`
-  - `description`
-  - `author`
-  - `keywords`
-* `File,SoftwareSourceCode,ComputationalWorkflow`
-  - `programmingLanguage`: `ComputerLanguage`  (required)
+  - [`name`](1.1/root-data-entity.html#direct-properties-of-the-root-data-entity): Text
+  - [`description`]((1.1/root-data-entity.html#direct-properties-of-the-root-data-entity)): Text
+  - [`author`](1.1/contextual-entities.html#people): _`(Person|Organization)`??_
+  - [`keywords`](1.1/contextual-entities.html#subjects--keywords): Text
+* [`File`](1.1/data-entities.html#file-data-entity),[`SoftwareSourceCode`](http://schema.org/SoftwareSourceCode),[`ComputationalWorkflow`](1.1/workflows.html)
+  - [`programmingLanguage`](http://schema.org/programmingLanguage): `ComputerLanguage`  (required)
+  - [`subjectOf`](http://schema.org/subjectOf): `File,SoftwareSourceCode,HowTo`
+  - [`image`](http://schema.org/image): `File,ImageObject`
+* [`File`](1.1/data-entities.html#file-data-entity),[`SoftwareSourceCode`](http://schema.org/SoftwareSourceCode),[`HowTo`](http://schema.org/HowTo)
+* [`File`](1.1/data-entities.html#file-data-entity),[`ImageObject`](http://schema.org/ImageObject)
+* [`ComputerLanguage`](http://schema.org/ComputerLanguage) _recommends instances:_
     * `"@id": "#cwl"`
     * `"@id": "#galaxy"`
     * `"@id": "#knime"`
     * `"@id": "#nextflow"`
     * `"@id": "#snakemake"`
-  - `subjectOf`: `File,SoftwareSourceCode,HowTo`
-  - `image`: `File,ImageObject`
-* `File,SoftwareSourceCode,HowTo`
-* `File,ImageObject`
+
 
 ## Describo profiles
 
@@ -74,24 +76,24 @@ In summary the _Workflow RO-Crate profile_ covers as of 2021-03-09:
 
 The [default profile](https://github.com/UTS-eResearch/describo/blob/master/src/components/profiles/default/index.js) covers the recommendations in [RO-Crate 1.1 specifications](1.1/), adding UI details such as value type, labels and description for each field. 
 
-In addition, a [Domain-specific profile](https://github.com/Arkisto-Platform/describo/wiki/dsp-index) can be created as JSON and used by Describo to customize the selection of types and properties, including adding additional [schema.org](https://schema.org/) types,  third-party vocabularies and inline ad-hoc term definitions.
+In addition, a [Domain-specific profile](https://github.com/Arkisto-Platform/describo/wiki/dsp-index) can be created as JSON and used by Describo to customize the selection of types and properties, including adding additional [schema.org](http://schema.org/) types,  third-party vocabularies and inline ad-hoc term definitions.
 
 In summary the _default profile_ covers as of [Describo 0.13.0](https://github.com/UTS-eResearch/describo/blob/v0.13.0/src/components/profiles/default/index.js):
     
-* [`Dataset`](https://schema.org/Dataset) (e.g. [RO-Crate Root](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#direct-properties-of-the-root-data-entity))
-  - `name`: `Text` (required)
-  - `description`: `Text`
-  - `license`: `CreativeWork`
-  - `keywords`: `Text`
-  - `datePublished`: `Date`
-  - `author`: `(Person|Organization)` (required)
-  - `publisher`: `Publisher` (required)
-  - `contactPoint`: `ContactPoint` (required)
-  - `citation`: `ScholarlyArticle` (required)
-  - `funder`: `(Organization|Person)`
-  - `contentLocation`: `Place`
-  - `hasPart`: `(File|Dataset|Workflow|RepositoryCollection|RepositoryObject)`
-  - `distribution`: DataDownload
+* [`Dataset`](http://schema.org/Dataset) (e.g. [RO-Crate Root](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#direct-properties-of-the-root-data-entity))
+  - [`name`](1.1/root-data-entity.html#direct-properties-of-the-root-data-entity): `Text` (required)
+  - [`description`](1.1/root-data-entity.html#direct-properties-of-the-root-data-entity): `Text`
+  - [`license`](1.1/contextual-entities.html#licensing-access-control-and-copyright): [`CreativeWork`](http://schema.org/CreativeWork)
+  - [`keywords`](1.1/contextual-entities.html#subjects--keywords): `Text`
+  - [`datePublished`](1.1/root-data-entity.html#direct-properties-of-the-root-data-entity): `Date`
+  - [`author`](1.1/contextual-entities.html#people): `(`[`Person`](http://schema.org/Person)`|`[`Organization`](http://schema.org/Organization)`)` (required)
+  - [`publisher`](1.1/contextual-entities.html#publisher): `Publisher` (required; ad-hoc type?
+  - [`contactPoint`](1.1/contextual-entities.html#contact-information): [`ContactPoint`](http://schema.org/ContactPoint) (required)
+  - [`citation`](1.1/contextual-entities.html#publications-via-citation-property): [`ScholarlyArticle`](http://schema.org/ScholarlyArticle) (required)
+  - [`funder`](1.1/contextual-entities.html#funding-and-grants): `(`[`Organization`](http://schema.org/Organization)`|`[`Person`](http://schema.org/Person)`)`
+  - [`contentLocation`](1.1/contextual-entities.html#places): [`Place`](http://schema.org/Place)
+  - [`hasPart`](1.1/data-entities.html#referencing-files-and-folders-from-the-root-data-entity): `(File|Dataset|Workflow|RepositoryCollection|RepositoryObject)`
+  - [`distribution`](1.1/data-entities.html#directories-on-the-web-dataset-distributions): [`DataDownload`](http://schema.org/DataDownload)
 
 ## Paradisec profile
 
@@ -100,22 +102,22 @@ The [PARADISEC Describo profile](https://github.com/UTS-eResearch/describo/blob/
 
 In summary the _PARADISEC profile_ covers as of [Describo 0.13.0](https://github.com/UTS-eResearch/describo/blob/v0.13.0/src/components/profiles/paradisec.describo.profile.json):
 
-* [`Collection`](https://schema.org/Collection)
-  - `additionalType`: `Value`
-  - `name`: `Text` (required)
-  - `description`: `Text` (required)
-  - `contributor`: `Person` (required)
-  - `comments`: `Text`
-  - `dateCreated`: `Date`
-  - `dateModified`: `Date`
+* [`Collection`](http://schema.org/Collection)
+  - [`additionalType`](http://schema.org/additionalType): `Value`
+  - [`name`](http://schema.org/name): `Text` (required)
+  - [`description`](http://schema.org/description): `Text` (required)
+  - [`contributor`](https//schema.org/contributor): `Person` (required)
+  - `comments`: `Text` _(ad-hoc term??)_
+  - [`dateCreated`](http://schema.org/dateCreated): `Date`
+  - [`dateModified`](http://schema.org/dateModified): `Date`
   - `depositFormReceived`: `Date` (ad-hoc term)
-  - `license`: `License` (ad-hoc type)
+  - [`license`](1.1/contextual-entities.html#licensing-access-control-and-copyright): `License` (ad-hoc type)
   - `media`: `Text` (ad-hoc term)
   - `orthographicNotes`: `Text` (ad-hoc term)
   - `private`: `Text` (ad-hoc term)
   - `contentLanguages`: `Language` (PARADISEC term)
   - `subjectLanguages`: `Language` _(ad-hoc term??)_
-  - `contentLocation`: `Place`
+  - [`contentLocation`](1.1/contextual-entities.html#places): [`Place`](http://schema.org/Place)
 * `Item` _(unknown type)_
   - `additionalType`: `Value`
   - `name`: `Text` (required)
@@ -132,26 +134,26 @@ In summary the _PARADISEC profile_ covers as of [Describo 0.13.0](https://github
   - `citeAs`: `Text` (ad-hoc term)
   - `ingestNotes`: `Text` (ad-hoc term)
   - `languageAsGiven`: `Text` (ad-hoc term)
-  - `license`: `License` (ad-hoc type)
-  - `hasPart`: `File`
+  - [`license`](1.1/contextual-entities.html#licensing-access-control-and-copyright): `License`
+  - [`hasPart`](http://schema.org/hasPart): [`File`](1.1/data-entities.html#file-data-entity)
   - `contentLanguages`: `Language` _(ad-hoc term??)_
   - `subjectLanguages`: `Language` _(ad-hoc term??)_
   - `private`: `Text` (ad-hoc term)
   - `originatedOn`: `Date` (ad-hoc term)
   - `originatedOnNarrative`: `Text`
   - `receivedOn`: `Text`
-  - `publisher`: `Organization`
-  - `contentLocation`: `Place`
+  - [`publisher`](1.1/contextual-entities.html#publisher): [`Organization`](http://schema.org/Organization)
+  - [`contentLocation`](1.1/contextual-entities.html#places): [`Place`](http://schema.org/Place)
 * `GeoBox` (ad-hoc type)
   - `name`: `Text`
   - `box`: `Text`
-* `License`
+* `License` (ad-hoc type)
   - `name`: (selection of 4 values)
   - `description`: `Text`
 
-This is a good example of how a specific profile can guide a user interface and [extend RO-Crate](1.1/appendix/jsonld.html#extending-ro-crate).
+This is a good example of how a specific profile can guide a user interface and [extend RO-Crate](1.1/appendix/jsonld.html#extending-ro-crate) with additional terms.
 
-_Note that some RO-Crates in the [Modern PARADISEC demonstrator](https://mod.paradisec.org.au/) have evolved slightly from this profile to conform with RO-Crate 1.1_
+_Note that some RO-Crates in the [Modern PARADISEC demonstrator](https://mod.paradisec.org.au/) have evolved from this profile to conform with RO-Crate 1.1's [repository content types](1.1/provenance.html#digital-library-and-repository-content)_
 
 ## Making a RO-Crate profile
 
