@@ -1,6 +1,8 @@
 ---
 title: RO-Crate In Use
 has_children: true
+redirect_from:
+    - /implementations
 ---
 <!--
    Copyright 2019-2020 The University of Manchester and RO Crate contributors 
