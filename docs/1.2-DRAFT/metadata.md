@@ -7,7 +7,7 @@ excerpt: |
   metadata can also be represented for human consumption in the RO-Crate Website,
   linking to data and Web resources.
 nav_order: 4
-parent: RO-Crate 2.0-DRAFT 
+parent: RO-Crate 1.2-DRAFT 
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

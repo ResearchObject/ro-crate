@@ -88,7 +88,7 @@ For the RO-Crate specification we should only show the **current** specification
 
     ```
     ---
-    title: RO-Crate 2.0-DRAFT
+    title: RO-Crate 1.2-DRAFT
     has_children: true
     nav_exclude: true
     ---
@@ -104,7 +104,7 @@ For the RO-Crate specification we should only show the **current** specification
     analyze or generate files contained in an RO-Crate can be embedded
     in an RO-Crate and described in detail.
     nav_order: 9
-    parent: RO-Crate 2.0-DRAFT 
+    parent: RO-Crate 1.2-DRAFT 
     ---
     ```
 

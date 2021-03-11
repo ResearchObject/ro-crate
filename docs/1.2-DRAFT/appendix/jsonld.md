@@ -1,7 +1,7 @@
 ---
 title: RO-Crate JSON-LD
 parent: Appendix
-grand_parent: RO-Crate 2.0-DRAFT
+grand_parent: RO-Crate 1.2-DRAFT
 excerpt: |
   ..
 ---
