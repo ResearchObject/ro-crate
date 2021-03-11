@@ -3,7 +3,6 @@ title: RO-Crate Structure
 excerpt: |
   ..
 nav_order: 3
-nav_exclude: true
 parent: RO-Crate 2.0-DRAFT 
 ---
 <!--

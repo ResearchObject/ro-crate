@@ -3,7 +3,6 @@ title: Data Entities
 excerpt: |
   ..
 nav_order: 6
-nav_exclude: true
 parent: RO-Crate 2.0-DRAFT 
 ---
 <!--

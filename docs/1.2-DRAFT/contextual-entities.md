@@ -7,7 +7,6 @@ excerpt: |
   need for the consumer of an RO-Crate to refer to external information which may
   change or become unavailable over time.
 nav_order: 7
-nav_exclude: true
 parent: RO-Crate 2.0-DRAFT 
 jekyll-mentions: false
 ---

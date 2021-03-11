@@ -1,10 +1,7 @@
 ---
 title: Terminology
 nav_order: 2
-nav_exclude: true
 parent: RO-Crate 2.0-DRAFT 
-excerpt: |
-  ...
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

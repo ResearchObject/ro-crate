@@ -33,9 +33,9 @@ Equivalent commands for using [Podman](https://podman.io/):
     make jekyll-podman-oneshot
 
 
-### Using the jekyll-rtd-theme
+### Using the just-the-docs theme
 
-Note that the specification `1.1` onwards uses split files for different sections, these are indexed by the [RunDocs theme](https://rundocs.io/) aka [rundocs/jekyll-rtd-theme](https://github.com/rundocs/jekyll-rtd-theme). The `---` preamble is required on all `*.md` files to help the theme, e.g.:
+Note that the specification `1.1` onwards uses split files for different sections, these are indexed by the [RunDocs theme](https://rundocs.io/) aka [pmarsceill/just-the-docs](https://github.com/pmarsceill/just-the-docs). The `---` preamble is required on all `*.md` files to help the theme, e.g.:
 
 ```
 ---
@@ -48,12 +48,16 @@ excerpt: |
   linking to data and Web resources.
 nav_order: 5
 nav_exclude: true
+redirect_from:
+  - /1.1/about
 ---
 ```
 
-Tip: Only add `sort` for numbered sections. Unfortunately the number is shown as-is (no `GOTO 20` tricks), leading to frequent renumbering.
+- `excerpt`: This attribute can be used to specify the metadata description of the page
+- `redirect_from`: 
+- `nav_order`:
 
-#### Hiding a section
+#### Hiding a page
 
 To hide a section (`README.md`) or other file from the main table of content, e.g. a draft, add `nav_exclude: true` to its preamble:
 
@@ -64,17 +68,10 @@ title: Draft section
 ---
 ```
 
-This is checked by a crude filter in the overriding [_includes/reset/site_pages.liquid](_includes/reset/site_pages.liquid). This file might need to be moved/updated when upgrading the theme. 
-
 For the RO-Crate specification we should only show the **current** specification in the menu, the older and draft versions are indexed from [specificaton.md](specification.md) and therefore have an `exclude`.
 
 #### Sections and child pages
 
-Note that although section folders have a `README.md` (alternatively `index.md`) - it is not generally shown in the left-hand menu, only in the breadcrumb. It is therefore recommended to make these index page minimal and only include a list of subpages of that section, using this Liquid include:
-
-```
-
-```
 
 This is also helpful for navigating drafts as `nav_exclude: true` does not show their sections in the left-hand menu.
 
@@ -82,17 +79,11 @@ Note that the [concatination](Makefile) step to make single page HTML/PDF assume
 
 #### Admonition cards
 
-With jekyll-rtd-theme it is possible to insert colourful admonition cards to bring attention to caveats and best practices. 
-These are written as a Markdown code-block with the language set as `tip`, `note`, `warning` or `danger`, and can
+With theme it is possible to insert colourful admonition cards to bring attention to caveats and best practices. 
+These are written as a Markdown code-block with the language set as `tip`, `note` or `warning`, and can
 include a restricted set of Markdown.
 
-    {: .tip }
->     JSON-LD supports [many other features](https://json-ld.org/) that SHOULD NOT be used excessively.
->     
-
-Will be rendered in the style of:
-
-> **✅ Tip**
+{: .tip }
 > JSON-LD supports [many other features](https://json-ld.org/) that SHOULD NOT be used excessively.
 
 Try to keep the admonition card short, like a single paragraph.

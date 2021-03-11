@@ -5,7 +5,6 @@ excerpt: |
   analyze or generate files contained in an RO-Crate can be embedded
   in an RO-Crate and described in detail.
 nav_order: 9
-nav_exclude: true
 parent: RO-Crate 2.0-DRAFT 
 ---
 <!--

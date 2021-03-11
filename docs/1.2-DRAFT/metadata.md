@@ -7,7 +7,6 @@ excerpt: |
   metadata can also be represented for human consumption in the RO-Crate Website,
   linking to data and Web resources.
 nav_order: 4
-nav_exclude: true
 parent: RO-Crate 2.0-DRAFT 
 ---
 <!--

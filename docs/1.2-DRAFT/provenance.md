@@ -3,7 +3,6 @@ title: Provenance of entities
 excerpt: |
   ..
 nav_order: 8
-nav_exclude: true
 parent: RO-Crate 2.0-DRAFT 
 ---
 <!--
