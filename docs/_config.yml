@@ -26,6 +26,10 @@ embed: |
   JSON-LD examples and context where creators have waived all copyrights according to
   <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal (CC0 1.0) Public Domain Dedication</a>.
 
+aux_links:
+  "RO-Crate on GitHub":
+    - "https://github.com/ResearchObject/ro-crate"
+
 callouts:
   warning:
     title: Warning
