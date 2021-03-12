@@ -69,6 +69,51 @@ In summary the _Workflow RO-Crate profile_ covers as of 2021-03-09:
     * `"@id": "#nextflow"`
     * `"@id": "#snakemake"`
 
+### Workflow Testing RO-Crate profile
+
+[Workflow Testing RO-Crate](https://github.com/crs4/life_monitor/wiki/Workflow-Testing-RO-Crate) is a specialization of Workflow RO-Crate used by [Life Monitor](in-use/life_monitor) to support the submission of test suites for computational workflows.
+
+This profile is an [RO-Crate extension](1.1/appendix/jsonld.html#extending-ro-crate) that employs additional terms from the [ro-terms test namespace](https://w3id.org/ro/terms/test) https://github.com/ResearchObject/ro-terms:
+
+```json
+[
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+        "TestSuite": "https://w3id.org/ro/terms/test#TestSuite",
+        "TestInstance": "https://w3id.org/ro/terms/test#TestInstance",
+        "TestService": "https://w3id.org/ro/terms/test#TestService",
+        "TestDefinition": "https://w3id.org/ro/terms/test#TestDefinition",
+        "PlanemoEngine": "https://w3id.org/ro/terms/test#PlanemoEngine",
+        "JenkinsService": "https://w3id.org/ro/terms/test#JenkinsService",
+        "TravisService": "https://w3id.org/ro/terms/test#TravisService",
+        "instance": "https://w3id.org/ro/terms/test#instance",
+        "runsOn": "https://w3id.org/ro/terms/test#runsOn",
+        "resource": "https://w3id.org/ro/terms/test#resource",
+        "definition": "https://w3id.org/ro/terms/test#definition",
+        "engineVersion": "https://w3id.org/ro/terms/test#engineVersion"
+    }
+]
+```
+
+A Workflow Testing RO-Crate is essentially a Workflow RO-Crate with additional specification on how to structure test suites and refer to them from the `"test"` Dataset:
+
+```json
+{
+    "@id": "test/",
+    "@type": "Dataset",
+    "about": [
+        {
+            "@id": "#test1"
+        },
+        {
+            "@id": "#test2"
+        }
+    ]
+}
+```
+
+More details are available from the [spec page](https://github.com/crs4/life_monitor/wiki/Workflow-Testing-RO-Crate).
+
 
 ## Describo profiles
 
