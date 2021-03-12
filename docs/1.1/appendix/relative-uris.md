@@ -4,8 +4,6 @@ parent: Appendix
 grand_parent: RO-Crate 1.1
 redirect_from:
   - /1.1-DRAFT/appendix/relative-uris
-excerpt: |
-  ..
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

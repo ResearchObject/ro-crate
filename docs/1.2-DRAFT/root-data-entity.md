@@ -1,7 +1,5 @@
 ---
 title: Root Data Entity
-excerpt: |
-  ..
 nav_order: 5
 parent: RO-Crate 1.2-DRAFT 
 ---

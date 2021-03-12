@@ -1,7 +1,5 @@
 ---
 title: Data Entities
-excerpt: |
-  ..
 nav_order: 6
 parent: RO-Crate 1.2-DRAFT 
 ---

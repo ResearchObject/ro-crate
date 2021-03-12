@@ -2,8 +2,6 @@
 title: Provenance of entities
 redirect_from:
   - /1.1-DRAFT/provenance
-excerpt: |
-  ..
 nav_order: 8
 parent: RO-Crate 1.1
 ---

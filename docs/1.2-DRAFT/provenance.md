@@ -1,7 +1,5 @@
 ---
 title: Provenance of entities
-excerpt: |
-  ..
 nav_order: 8
 parent: RO-Crate 1.2-DRAFT 
 ---

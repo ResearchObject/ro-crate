@@ -2,8 +2,6 @@
 title: Data Entities
 redirect_from:
   - /1.1-DRAFT/data-entities
-excerpt: |
-  ..
 nav_order: 6
 parent: RO-Crate 1.1
 ---

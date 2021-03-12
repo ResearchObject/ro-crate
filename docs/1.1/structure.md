@@ -1,7 +1,5 @@
 ---
 title: RO-Crate Structure
-excerpt: |
-  ..
 nav_order: 3
 parent: RO-Crate 1.1
 ---
