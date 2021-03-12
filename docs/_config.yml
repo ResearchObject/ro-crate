@@ -43,3 +43,11 @@ callouts:
 
 plugins:
   - jekyll-redirect-from
+
+defaults:
+  - scope:
+      path: 1.2-DRAFT
+      type: pages
+    values:
+      nav_exclude: true
+      search_exclude: true

@@ -70,17 +70,18 @@ nav_order: 4
 
 The parameter values determine the order of the top-level pages, and of child pages with the same parent. You can reuse the same parameter values (e.g., integers starting from 1) for the child pages of different parents.
 
-#### Excluding pages
+#### Excluding pages form navigation and/or search
 To hide a page from the main table of content, e.g. a draft, add `nav_exclude: true` to its preamble:
 
 ```
 ---
 nav_exclude: true
+search_exclude: true
 title: Draft section
 ---
 ```
 
-For the RO-Crate specification we should only show the **current** specification in the menu, the older and draft versions are indexed from [specificaton.md](specification.md) and therefore have an `nav_exclude` in the index page.
+For the RO-Crate specification we should only show the **current** specification in the menu, the older and draft versions are indexed from [specificaton.md](specification.md), therefore `nav_exclude` and `search_exclude` is set to true automatically or manually.
 
 #### Sub pages in a subdirectory
 
@@ -145,7 +146,7 @@ See the [release procedure](RELEASE_PROCEDURE.md).
 
 ### Theme config
 
-The theme is locked to a fixed version in [_config.yml](_config.yml) to avoid unexpected upgrade surprises. This file also specifies some site-wide properties like copyright.
+This file specifies some site-wide properties like copyright text or which folders that need to be excluded from the navigation and/or search.
 
 ## References
 
