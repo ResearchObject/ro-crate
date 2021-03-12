@@ -21,7 +21,7 @@ title: Profiles
 
 # RO-Crate Profiles
 
-While RO-Crates can be considered general-purpose containers of arbitrary data and open-ended metadata, in practical use within a particular domain, application or framework, it will be benefitial to further constrain RO-Crate to a specific **profile**: a set of conventions, types and properties that one minimally can require and expect to be present in that subset of RO-Crates.
+While RO-Crates can be considered general-purpose containers of arbitrary data and open-ended metadata, in practical use within a particular domain, application or framework, it will be beneficial to further constrain RO-Crate to a specific **profile**: a set of conventions, types and properties that one minimally can require and expect to be present in that subset of RO-Crates.
 
 Defining and conforming to such a profile enables reliable programmatic consumption of an RO-Crate's content, as well as consistent creation, e.g. a form in a user interface form firmly suggest the required types and properties, and likewise a rendering of an RO-Crate can easier make rich UI components if it can reliably assume for instance that the [`Person`](1.1/contextual-entities.html#people) always has a `affiliation` to a [`Organization`](1.1/contextual-entities.html#organizations-as-values) which has a `url` - a restriction that may not be appropriate for all types of RO-Crates.
 
@@ -155,7 +155,7 @@ This is a good example of how a specific profile can guide a user interface and 
 
 _Note that some RO-Crates in the [Modern PARADISEC demonstrator](https://mod.paradisec.org.au/) have evolved from this profile to conform with RO-Crate 1.1's [repository content types](1.1/provenance.html#digital-library-and-repository-content)_
 
-## Making a RO-Crate profile
+## Making an RO-Crate profile
 
 As a starting point, an RO-Crate profile can be written down in structured human language, as exemplified by [Workflow RO-Crate](https://about.workflowhub.eu/Workflow-RO-Crate/). 
 
@@ -176,4 +176,4 @@ Implementors making validators may also want to first check that the [RO-Crate m
 * Valid RDF triples
 * Correct use of schema.org types/properties
 
-Depending on requirements it may be benefitial to combine these approaches - for instance a hard-coded validator can rely on structural RO-Crate JSON checks before inspecting a particular data item in detail.
+Depending on requirements it may be beneficial to combine these approaches - for instance a hard-coded validator can rely on structural RO-Crate JSON checks before inspecting a particular data item in detail.
