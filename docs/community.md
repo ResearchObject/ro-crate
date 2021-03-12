@@ -64,7 +64,7 @@ The _RO-Crate_ team is:
 * Jasper Koehorst <https://orcid.org/0000-0001-8172-8981>
 * Simone Leo <https://orcid.org/0000-0001-8271-5429>
 * Marc Portier <https://orcid.org/0000-0002-9648-6484>
-* Paul Brack <https://github.com/PaulBrack>
+* Paul Brack <https://orcid.org/0000-0002-5432-2748>
 * Milan Ojsteršek <https://orcid.org/0000-0003-1743-8300>
 * Bert Droesbeke <https://orcid.org/0000-0003-0522-5674>
 
