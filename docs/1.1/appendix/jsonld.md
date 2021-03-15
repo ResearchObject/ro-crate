@@ -1,8 +1,7 @@
 ---
-layout: default
 title: RO-Crate JSON-LD
-excerpt: |
-  ..
+parent: Appendix
+grand_parent: RO-Crate 1.1
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -25,6 +24,13 @@ excerpt: |
 <div id="jsonld"></div>
 
 # APPENDIX: RO-Crate JSON-LD
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 It is not necessary to use [JSON-LD tooling] to generate or parse the _RO-Crate Metadata File_, although JSON-LD tools may make it easier to conform to this specification, e.g. handling relative URIs. It is however RECOMMENDED to use [JSON tooling][JSON] to handle [JSON][RFC 7159] syntax and escaping rules.
 
@@ -164,9 +170,8 @@ To check which RO-Crate version is used (in terms of properties and types expect
 
 RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded context, but MAY use the [JSON-LD flattening] algorithm with _compaction_ to a referenced _RO-Crate JSON-LD context_ (see also notes on [handling relative URI references](relative-uris.md) below).
 
-```tip
-The [JSON-LD flattening & compaction](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) algorithms can be used to rewrite to a different `@context`, e.g. to `https://schema.org/docs/jsonldcontext.jsonld` or a different version of the _RO-Crate JSON-LD Context_.
-```
+{: .tip }
+> The [JSON-LD flattening & compaction](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) algorithms can be used to rewrite to a different `@context`, e.g. to `https://schema.org/docs/jsonldcontext.jsonld` or a different version of the _RO-Crate JSON-LD Context_.
 
 ## RO-Crate JSON-LD Media type
 
@@ -264,9 +269,8 @@ For projects that have their own web-presence, URLs MAY be defined there and SHO
 </div>
 ```
 
-```tip
-Ensure you have a consistent use of `http` or `https` (preferring https) as well as consistent path `/vocab` vs `/vocab/` vs `/vocab/index.html` (preferring the shortest that is also visible in browser).
-```
+{: .tip }
+> Ensure you have a consistent use of `http` or `https` (preferring https) as well as consistent path `/vocab` vs `/vocab/` vs `/vocab/index.html` (preferring the shortest that is also visible in browser).
 
 For ad hoc terms where the crate author does not have the resources to create and maintain an HTML page, authors may use the RO-Crate public namespace (`https://w3id.org/ro/terms/`) to reserve their terms. For example, an ad-hoc URL MAY be used in the form `https://w3id.org/ro/terms/criminalcharacters#education` where `criminalcharacters` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions][ro-terms] to the RO-Crate terms project. 
 
@@ -301,9 +305,8 @@ Following the conventions used by Schema.org, ad-hoc terms SHOULD also include d
 }
 ```
 
-```tip
-It is **not** a requirement to use English for the terms, labels or comments.
-```
+{: .tip }
+> It is **not** a requirement to use English for the terms, labels or comments.
 
 More information about the relationship of this term to other terms MAY be provided using [domainIncludes], [rangeIncludes], [rdfs:subClassOf] following the conventions used in the [Schema.org schema].
 

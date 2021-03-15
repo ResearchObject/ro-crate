@@ -1,9 +1,7 @@
 ---
-layout: default
 title: RO-Crate Structure
-excerpt: |
-  ..
-sort: 4
+nav_order: 3
+parent: RO-Crate 1.2-DRAFT
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -26,6 +24,13 @@ sort: 4
 <div id="structure"></div>
 
 # RO-Crate Structure
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 The structure an _RO-Crate_ MUST follow is:
 

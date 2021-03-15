@@ -1,11 +1,9 @@
 ---
-layout: default
 title: Data Entities
 redirect_from:
   - /1.1-DRAFT/data-entities
-excerpt: |
-  ..
-sort: 7
+nav_order: 6
+parent: RO-Crate 1.1
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -26,6 +24,13 @@ sort: 7
 -->
 
 # Data Entities
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 The primary purpose for RO-Crate is to gather and describe a set of _Data entities_ in the form of:
 
@@ -47,9 +52,8 @@ _Data Entities_ can also be other types, for instance an online database. These 
 
 In all cases, `@type` MAY be an array in order to also specify a more specific type, e.g. `"@type": ["File", "ComputationalWorkflow"]`
 
-```tip
-There is no requirement to represent _every_ file and folder in an RO-Crate as Data Entities in the RO-Crate JSON-LD.
-```
+{: .tip }
+> There is no requirement to represent _every_ file and folder in an RO-Crate as Data Entities in the RO-Crate JSON-LD.
 
 ### Example linking to a file and folders
 

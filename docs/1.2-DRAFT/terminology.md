@@ -1,9 +1,7 @@
 ---
-layout: default
 title: Terminology
-sort: 3
-excerpt: |
-  ...
+nav_order: 2
+parent: RO-Crate 1.2-DRAFT
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -24,6 +22,13 @@ excerpt: |
 -->
 
 # Terminology
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 _RO-Crate_: A directory structure that contains a dataset, which is described in an _RO-Crate Metadata File_.
 

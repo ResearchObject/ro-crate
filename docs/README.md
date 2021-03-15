@@ -6,7 +6,7 @@ Note that files outside `docs` are not accessible within `github.io` and must be
 
 It is more important that pages render well at <https://researchobject.github.io/ro-crate/> than in this  preview within the GitHub repository, as some MarkDown features only apply to the GitHub Pages (e.g. the `{:toc}` macro and).
 
-### Running Jekyll locally
+## Running Jekyll locally
 
 To test out your changes locally it may be worth running [Jekyll](https://jekyllrb.com/) locally to generate the pages. However installing Jekyll, Ruby and their dependencies locally can be a bit of a challenge depending on your operating system, local permissions and paths.
 
@@ -33,13 +33,12 @@ Equivalent commands for using [Podman](https://podman.io/):
     make jekyll-podman-oneshot
 
 
-### Using the jekyll-rtd-theme
+## Using the just-the-docs theme
 
-Note that the specification `1.1` onwards uses split files for different sections, these are indexed by the [RunDocs theme](https://rundocs.io/) aka [rundocs/jekyll-rtd-theme](https://github.com/rundocs/jekyll-rtd-theme). The `---` preamble is required on all `*.md` files to help the theme, e.g.:
+Note that the specification `1.1` onwards uses split files for different sections, these are indexed by the [RunDocs theme](https://rundocs.io/) aka [pmarsceill/just-the-docs](https://github.com/pmarsceill/just-the-docs). The `---` preamble is required on all `*.md` files to help the theme, e.g.:
 
 ```
 ---
-layout: default
 title: Metadata of the RO-Crate
 excerpt: |
   RO-Crate aims to capture and describe the Research Object using
@@ -47,54 +46,96 @@ excerpt: |
   metadata that describes the RO-Crate and its content. This machine-readable
   metadata can also be represented for human consumption in the RO-Crate Website,
   linking to data and Web resources.
-sort: 5
+redirect_from:
+  - /1.1/about
 ---
 ```
 
-Tip: Only add `sort` for numbered sections. Unfortunately the number is shown as-is (no `GOTO 20` tricks), leading to frequent renumbering.
+- `excerpt`: This attribute can be used to specify the metadata description of the page
+- `redirect_from`: this can be used to list links from which you want to redirect to the page you are editing.
 
-#### Hiding a section
+### Navigation
 
-To hide a section (`README.md`) or other file from the main table of content, e.g. a draft, add `exclude: true` to its preamble:
+#### Ordering pages
+
+Ordering pages
+To specify a page order, you can use the nav_order parameter in your pages’ YAML front matter.
 
 ```
 ---
-layout: default
-exclude: true
+title: test
+nav_order: 4
+---
+```
+
+The parameter values determine the order of the top-level pages, and of child pages with the same parent. You can reuse the same parameter values (e.g., integers starting from 1) for the child pages of different parents.
+
+#### Excluding pages form navigation and/or search
+To hide a page from the main table of content, e.g. a draft, add `nav_exclude: true` to its preamble:
+
+```
+---
+nav_exclude: true
+search_exclude: true
 title: Draft section
 ---
 ```
 
-This is checked by a crude filter in the overriding [_includes/reset/site_pages.liquid](_includes/reset/site_pages.liquid). This file might need to be moved/updated when upgrading the theme. 
+For the RO-Crate specification we should only show the **current** specification in the menu, the older and draft versions are indexed from [specificaton.md](specification.md), therefore `nav_exclude` and `search_exclude` is set to true automatically or manually.
 
-For the RO-Crate specification we should only show the **current** specification in the menu, the older and draft versions are indexed from [specificaton.md](specification.md) and therefore have an `exclude`.
+#### Sub pages in a subdirectory
 
-#### Sections and child pages
+* Parent page:
 
-Note that although section folders have a `README.md` (alternatively `index.md`) - it is not generally shown in the left-hand menu, only in the breadcrumb. It is therefore recommended to make these index page minimal and only include a list of subpages of that section, using this Liquid include:
+    ```
+    ---
+    title: RO-Crate 1.2-DRAFT
+    has_children: true
+    nav_exclude: true
+    ---
+    ```
+
+* Child page:
+
+    ```
+    ---
+    title: Workflows and scripts
+    excerpt: |
+    Scientific workflows and Scripts that were used (or can be used) to 
+    analyze or generate files contained in an RO-Crate can be embedded
+    in an RO-Crate and described in detail.
+    nav_order: 9
+    parent: RO-Crate 1.2-DRAFT 
+    ---
+    ```
+
+#### Table of Contents
 
 ```
-{% include list.liquid all=true %}
+# H1 Title
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 ```
 
-This is also helpful for navigating drafts as `exclude: true` does not show their sections in the left-hand menu.
+### Sections and child pages
 
 Note that the [concatination](Makefile) step to make single page HTML/PDF assumes `<div id="filename">` blobs in top of each section's markdown, as the `Makefile` replaces links to say `"appendix/jsonld.md"` with `#jsonld`. See commit [bfd9b2f530](https://github.com/ResearchObject/ro-crate/commit/bfd9b2f53075f464b069b017c9648460879dda94)
 
-#### Admonition cards
+### Admonition cards
 
-With jekyll-rtd-theme it is possible to insert colourful admonition cards to bring attention to caveats and best practices. 
-These are written as a Markdown code-block with the language set as `tip`, `note`, `warning` or `danger`, and can
+With theme it is possible to insert colourful admonition cards to bring attention to caveats and best practices. 
+These are written as a Markdown code-block with the language set as `tip`, `note` or `warning`, and can
 include a restricted set of Markdown.
 
-    ```tip
-    JSON-LD supports [many other features](https://json-ld.org/) that SHOULD NOT be used excessively.
-    ```
-
-Will be rendered in the style of:
-
-> **✅ Tip**
+```
+{: .tip }
 > JSON-LD supports [many other features](https://json-ld.org/) that SHOULD NOT be used excessively.
+```
 
 Try to keep the admonition card short, like a single paragraph.
 
@@ -103,13 +144,13 @@ attempts to translate these blocks back to paragraph rendering, although they do
 See the [release procedure](RELEASE_PROCEDURE.md).
 
 
-#### Theme config
+### Theme config
 
-The theme is locked to a fixed version in [_config.yml](_config.yml) to avoid unexpected upgrade surprises. This file also specifies some site-wide properties like copyright.
+This file specifies some site-wide properties like copyright text or which folders that need to be excluded from the navigation and/or search.
 
-### References
+## References
 
 The [_includes/references.liquid](_includes/references.liquid) file includes Markdown [hyperlink references](https://kramdown.gettalong.org/syntax.html#reference-links) that can be used on shortform, e.g. `[CreativeWork]` gets expanded to `[CreativeWork](http://schema.org/CreativeWork)`  or `[creative work][CreativeWork]` becomes  `[creative work](http://schema.org/CreativeWork)`. This only works on `*.md` pages that have the `{% include references.liquid %}` footer.
 
 
-{% include list.liquid all=true %}
+

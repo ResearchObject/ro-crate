@@ -1,6 +1,7 @@
 ---
-layout: default
 title: Changelog
+parent: Appendix
+grand_parent: RO-Crate 1.2-DRAFT
 excerpt: List of changes in releases of this specifications
 ---
 <!--

@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Contextual Entities
 redirect_from:
   - /1.1-DRAFT/contextual-entities
@@ -9,8 +8,8 @@ excerpt: |
   which an RO-Crate is self-contained and self-describing, in that it reduces the
   need for the consumer of an RO-Crate to refer to external information which may
   change or become unavailable over time.
-sort: 8
-jekyll-mentions: false
+nav_order: 7
+parent: RO-Crate 1.1
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -33,6 +32,13 @@ jekyll-mentions: false
 <div id="contextual-entities"></div>
 
 # Representing Contextual Entities
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 The RO-Crate SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`). This also helps to maximize the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
 
@@ -274,9 +280,8 @@ The [Root Data Entity](root-data-entity.md) SHOULD have a [publisher] property. 
 
 To associate a research project with a [Dataset], the _RO-Crate JSON-LD_ SHOULD contain an entity for the project using type [Organization], referenced by a [funder] property. The project `Organization` SHOULD in turn reference any external [funder], either by using its URL as an `@id` or via a _Contextual Entity_ describing the funder.
 
-```tip
-To make it very clear where funding is coming from, the _Root Data Entity_ SHOULD also reference funders directly, as well as via a chain of references.
-```
+{: .tip }
+> To make it very clear where funding is coming from, the _Root Data Entity_ SHOULD also reference funders directly, as well as via a chain of references.
 
 
 ```json

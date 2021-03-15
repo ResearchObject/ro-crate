@@ -1,9 +1,7 @@
 ---
-layout: default
 title: Provenance of entities
-excerpt: |
-  ..
-sort: 9
+nav_order: 8
+parent: RO-Crate 1.2-DRAFT 
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -26,7 +24,13 @@ sort: 9
 <div id="provenance"></div>
 
 # Detailing provenance of entities
+{: .no_toc }
 
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Equipment used to create files
 
@@ -141,9 +145,8 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
     },
 ```
 
-```tip
-If representing command lines, double escape `\\` so that JSON preserves the `\` character.
-```
+{: .tip }
+> If representing command lines, double escape `\\` so that JSON preserves the `\` character.
 
 If multiple [SoftwareApplication]s have been used in composition, such as from a script or workflow, then the `CreateAction`'s [instrument] SHOULD rather reference a [SoftwareSourceCode] which can be further described as explained in the [Workflows and scripts](workflows.md) section.
 
@@ -237,13 +240,11 @@ A [Contextual Entity](contextual-entities.md) from a repository, representing an
 
 Objects MAY be grouped together in [RepositoryCollection]s with [hasMember] pointing to the [RepositoryObject]. 
 
-```note
-The terms `RepositoryObject` and `RepositoryCollection` are renamed in RO-Crate to avoid collision between other vocabularies and the PCDM terms `Collection` and `Object`. The term `RepositoryFile` is renamed to avoid clash with RO-Crate's `File` mapping to <http://schema.org/MediaObject>.
-```
+{: .note }
+> The terms `RepositoryObject` and `RepositoryCollection` are renamed in RO-Crate to avoid collision between other vocabularies and the PCDM terms `Collection` and `Object`. The term `RepositoryFile` is renamed to avoid clash with RO-Crate's `File` mapping to <http://schema.org/MediaObject>.
 
-```warning
-PCDM specifies that files should have only technical metadata, not descriptive metadata, which is _not_ a restriction in RO-Crate. If the RO-Crate is to be imported into a strict PCDM repository, modeling of object/file relationships will be necessary.
-```
+{: .warning }
+> PCDM specifies that files should have only technical metadata, not descriptive metadata, which is _not_ a restriction in RO-Crate. If the RO-Crate is to be imported into a strict PCDM repository, modeling of object/file relationships will be necessary.
 
 For example, this data is exported from an [Omeka] repository:
 

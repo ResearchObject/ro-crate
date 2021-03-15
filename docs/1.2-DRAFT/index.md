@@ -1,9 +1,6 @@
 ---
-layout: default
-title: About this document
-sort: 1
-excerpt: |
-  ...
+title: RO-Crate 1.2-DRAFT
+has_children: true
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

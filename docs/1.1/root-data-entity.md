@@ -1,11 +1,9 @@
 ---
-layout: default
 title: Root Data Entity
 redirect_from:
   - /1.1-DRAFT/root-data-entity
-excerpt: |
-  ..
-sort: 6
+nav_order: 5
+parent: RO-Crate 1.1
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -26,6 +24,13 @@ sort: 6
 -->
 
 # Root Data Entity
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 The **Root Data Entity** is a [Dataset] that represent the RO-Crate as a whole;
 a _Research Object_ that includes the _Data Entities_ and the related
@@ -114,15 +119,13 @@ The _Root Data Entity_ MUST have the following properties:
 *  `datePublished`: MUST be a string in [ISO 8601 date format][DateTime] and SHOULD be specified to at least the precision of a day, MAY be a timestamp down to the millisecond. 
 *  `license`: SHOULD link to a _Contextual Entity_ in the _RO-Crate Metadata File_ with a name and description. MAY have a URI (eg for Creative Commons or Open Source licenses). MAY, if necessary be a textual description of how the RO-Crate may be used.
 
-```note
-These requirements are stricter than those published 
-for [Google Dataset Search](https://developers.google.com/search/docs/data-types/dataset) which 
-requires a `Dataset` to have a `name` and `description`,
-```
+{: .note }
+> These requirements are stricter than those published 
+> for [Google Dataset Search](https://developers.google.com/search/docs/data-types/dataset) which 
+> requires a `Dataset` to have a `name` and `description`,
 
-```warning
-The properties above are not sufficient to generate a [DataCite][DataCite Schema] citation. Advice on integrating with [DataCite] will be provided in a future version of this specification, or as an implementation guide.
-```
+{: .warning }
+> The properties above are not sufficient to generate a [DataCite][DataCite Schema] citation. Advice on integrating with [DataCite] will be provided in a future version of this specification, or as an implementation guide.
 
 ## Minimal example of RO-Crate
 

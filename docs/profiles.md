@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Profiles
 ---
 <!--
@@ -20,6 +19,13 @@ title: Profiles
 -->
 
 # RO-Crate Profiles
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 While RO-Crates can be considered general-purpose containers of arbitrary data and open-ended metadata, in practical use within a particular domain, application or framework, it will be benefitial to further constrain RO-Crate to a specific **profile**: a set of conventions, types and properties that one minimally can require and expect to be present in that subset of RO-Crates.
 

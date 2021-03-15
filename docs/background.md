@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Background
 ---
 <!--
@@ -20,6 +19,13 @@ title: Background
 -->
 
 # Research Object Background
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 A [Research Object](https://www.researchobject.org/) (_RO_) provide a machine-readable mechanism to communicate the diverse set of digital and real-world resources that contribute to an item of research. The aim of an RO is to replace traditional academic publication as a PDF with a couple of supplementary materials; to instead provide a structured archive of all the items that contributed to the research outcome, including their identifiers, provenance, relations and annotations.
 

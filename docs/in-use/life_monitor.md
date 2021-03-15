@@ -1,6 +1,6 @@
 ---
-layout: default
 title: Life Monitor
+parent: RO-Crate In Use
 ---
 <!--
    Copyright 2019-2020 The University of Manchester and RO Crate contributors

@@ -1,11 +1,11 @@
 ---
-layout: default
 title: Workflows and scripts
 excerpt: |
   Scientific workflows and Scripts that were used (or can be used) to 
   analyze or generate files contained in an RO-Crate can be embedded
   in an RO-Crate and described in detail.
-sort: 10
+nav_order: 9
+parent: RO-Crate 1.2-DRAFT
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -28,6 +28,13 @@ sort: 10
 <div id="workflows"></div>
 
 # Workflows and Scripts
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an RO-Crate MAY be embedded in an RO-Crate. See also the Provenance section on [Software Used to Create Files](provenance.md#software-used-to-create-files).
 
@@ -221,9 +228,8 @@ A contextual entity conforming to the [FormalParameter profile] SHOULD declare t
 }
 ```
 
-```note
-`input`, `output` and `FormalParameter` are at time of writing proposed by Bioschemas and not yet integrated in Schema.org
-```
+{: .note }
+> `input`, `output` and `FormalParameter` are at time of writing proposed by Bioschemas and not yet integrated in Schema.org
 
 ## Complete Workflow Example
 

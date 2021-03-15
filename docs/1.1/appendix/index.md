@@ -1,7 +1,8 @@
 ---
-layout: default
 title: Appendix
-sort: 5
+nav_order: 10
+parent: RO-Crate 1.1
+has_children: true
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -21,7 +22,7 @@ sort: 5
    limitations under the License.
 -->
 
-## Appendixes
+# Appendixes
 
-{% include list.liquid %}
+
 

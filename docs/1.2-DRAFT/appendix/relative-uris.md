@@ -1,8 +1,7 @@
 ---
-layout: default
 title: Handling relative URI references
-excerpt: |
-  ..
+parent: Appendix
+grand_parent: RO-Crate 1.2-DRAFT
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -125,9 +124,8 @@ Results in a valid _RO-Crate JSON-LD_ (actual order in `@graph` may differ):
 }
 ```
 
-```note
-The saved _RO-Crate JSON-LD_ SHOULD NOT include `{@base: null}` in its `@context`.
-```
+{: .note }
+> The saved _RO-Crate JSON-LD_ SHOULD NOT include `{@base: null}` in its `@context`.
 
 
 ## Expanding/parsing JSON-LD keeping relative referencing
@@ -229,13 +227,11 @@ Results in a [expanded form][JSON-LD expanded form] without `@context`, using ab
 ]
 ```
 
-```note
-`@base: null` will not relativize existing absolute URIs that happen to be contained by the _RO-Crate Root_ (see section [Relativizing absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root)).
-```
+{: .note }
+> `@base: null` will not relativize existing absolute URIs that happen to be contained by the _RO-Crate Root_ (see section [Relativizing absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root)).
 
-```tip
-Most RDF parsers supporting JSON-LD will perform this kind of expansion before generating triples, but not all RDF stores or serializations support relative URI references. Consider using an alternative `@base` as detailed in sections below.
-```
+{: .tip }
+> Most RDF parsers supporting JSON-LD will perform this kind of expansion before generating triples, but not all RDF stores or serializations support relative URI references. Consider using an alternative `@base` as detailed in sections below.
 
 ## Establishing absolute URI for RO-Crate Root
 
@@ -243,9 +239,8 @@ When loading _RO-Crate JSON-LD_ as RDF, or combining the crate's Linked Data int
 [base URI][JSON-LD base URI]
 to resolve URI references that are relative to the _RO-Crate Root_.
 
-```note
-When retrieving an RO-Crate over the web, servers might have performed HTTP redirections so that the base URI is different from what was requested. It is RECOMMENDED to follow section [Establishing a Base URI of RFC3986](http://tools.ietf.org/html/rfc3986#section-5.1) before resolving relative links from the _RO-Crate Metadata File_.
-```
+{: .note }
+> When retrieving an RO-Crate over the web, servers might have performed HTTP redirections so that the base URI is different from what was requested. It is RECOMMENDED to follow section [Establishing a Base URI of RFC3986](http://tools.ietf.org/html/rfc3986#section-5.1) before resolving relative links from the _RO-Crate Metadata File_.
 
 For instance, consider this HTTP redirection from a permalink (simplified):
 
@@ -346,9 +341,8 @@ When parsing a _RO-Crate Metadata File_ into [RDF triples], for instance uploadi
 * Web servers hosting `ro-crate-metadata.json` may not send the [JSON-LD _Content-Type_](#ro-crate-json-ld-media-type)
 * If base URI is not correct it may be difficult to find the corresponding file and directory paths from an RDF query returning absolute URIs
 
-```tip
-If the RDF library can parse the _RO-Crate JSON-LD_ directly by retrieving from a `http`/`https` URI of the _RO-Crate Metadata File_ it should calculate the correct base URI as detailed in section [Establishing absolute URI for RO-Crate Root](#establishing-absolute-uri-for-ro-crate-root) and you should **not** need to override the base URI as detailed here.
-```
+{: .tip }
+> If the RDF library can parse the _RO-Crate JSON-LD_ directly by retrieving from a `http`/`https` URI of the _RO-Crate Metadata File_ it should calculate the correct base URI as detailed in section [Establishing absolute URI for RO-Crate Root](#establishing-absolute-uri-for-ro-crate-root) and you should **not** need to override the base URI as detailed here.
 
 If a web-based URI for the _RO-Crate root_ is known, then this can be supplied as a _base URI_. Most RDF tools support a `--base` option or similar. If this is not possible, then the `@context` of the `RO-Crate JSON-LD` can be modified by ensuring the `@context` is an array that sets the desired `@base`:
 
@@ -487,9 +481,8 @@ Parsing this as RDF will generate triples including:
 
 Here consumers can assume `/` is the _RO-Crate Root_ and generating relative URIs can safely be achieved by  search-replace as the arcp URI is unique. Saving _RO-Crate JSON-LD_ from the triples can be done by using the arcp URI to [relativize absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root).
 
-```tip
-**Bagit**: The arcp specification suggests how [BagIt identifiers][ARCP BagIt] can be used to calculate the base URI. See also section [Combining with other packaging schemes](#combining-with-other-packaging-schemes) - note that in this approach the _RO-Crate Root_ will be the payload folder `/data/` under the calculated arcp base URI.
-```
+{: .tip }
+> **Bagit**: The arcp specification suggests how [BagIt identifiers][ARCP BagIt] can be used to calculate the base URI. See also section [Combining with other packaging schemes](#combining-with-other-packaging-schemes) - note that in this approach the _RO-Crate Root_ will be the payload folder `/data/` under the calculated arcp base URI.
 
 ## Relativizing absolute URIs within RO-Crate Root
 
@@ -578,8 +571,7 @@ Will output _RO-Crate JSON-LD_ with relative URIs:
 }
 ```
 
-```warning
-This method would also relativize URIs outside the _RO-Crate Root_ that are on the same host, e.g. `http://example.com/crate255/other.txt` would become `../create255/other.txt` - this can particularly be a challenge with local `file:///` URIs. 
-````
+{: .warning }
+> This method would also relativize URIs outside the _RO-Crate Root_ that are on the same host, e.g. `http://example.com/crate255/other.txt` would become `../create255/other.txt` - this can particularly be a challenge with local `file:///` URIs. `
 
 {% include references.liquid %}
