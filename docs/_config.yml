@@ -1,7 +1,6 @@
 remote_theme: pdmosses/just-the-docs@callouts
 logo: assets/img/ro-crate-wide.svg?20201023T1353
 baseurl: https://www.researchobject.org/ro-crate/
-canonical_url: https://www.researchobject.org/ro-crate/
 
 title: Research Object Crate (RO-Crate)
 description: |
