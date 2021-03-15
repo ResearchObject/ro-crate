@@ -46,6 +46,9 @@ plugins:
   - jekyll-redirect-from
   - jekyll-seo-tag
 
+back_to_top: true
+back_to_top_text: "Back to top"
+
 defaults:
   - scope:
       path: 1.2-DRAFT
