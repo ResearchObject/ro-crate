@@ -70,7 +70,7 @@ The _RO-Crate_ team is:
 
 ## Meetings
 
-The RO-Crate team try to meet in a monthly telcon, see the [rolling agenda](https://s.apache.org/ro-crate-minutes) for schedule, call-in details and minutes.
+The RO-Crate team try to meet at least monthly in a telcon, see the [rolling agenda](https://s.apache.org/ro-crate-minutes) for schedule, call-in details and minutes.
 
 See also [recent and upcoming events](outreach#upcoming-and-recent-events).
 
