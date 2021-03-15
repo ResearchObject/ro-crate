@@ -74,9 +74,20 @@ The RO-Crate team try to meet in a monthly telcon, see the [rolling agenda](http
 
 See also [recent and upcoming events](outreach#upcoming-and-recent-events).
 
+## Mailing list
+
+The RO-Crate Community has a low-traffic public [RO-Crate mailing list](https://lists.elixir-europe.org/mailman/listinfo/ro-crate_elixir-europe.org), used for announcements and general enquiries. 
+
+Note that most discussion about the [RO-Crate specifications](specification.md) typically happen in [GitHub issues](https://github.com/ResearchObject/ro-crate/issues) and [community meetings](https://s.apache.org/ro-crate-minutes).
+
+## Slack Chat
+
+We have an informal Slack chat channel [#ro-crate on seek4science.slack.com](https://seek4science.slack.com/archives/C01LQQAAAS1) ([join](https://join.slack.com/t/seek4science/shared_invite/zt-csqh94qb-kf~kFbZxuHl1Hpxhbc8avw)).
+
 ## Code of Conduct
 
-Contributors are expected to comply with our [Code of Conduct](https://github.com/ResearchObject/ro-crate/blob/master/CODE_OF_CONDUCT.md) to ensure an open and inclusive environment.
+Contributors to the RO-Crate community are expected to comply with our [Code of Conduct](https://github.com/ResearchObject/ro-crate/blob/master/CODE_OF_CONDUCT.md) to ensure an open and inclusive environment.
+
 
 ## Contributing
 
