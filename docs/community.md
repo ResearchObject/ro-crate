@@ -74,6 +74,8 @@ The _RO-Crate_ team is:
 * Milan Ojsteršek <https://orcid.org/0000-0003-1743-8300>
 * Bert Droesbeke <https://orcid.org/0000-0003-0522-5674>
 
+The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! 
+
 ## Meetings
 
 The RO-Crate team try to meet at least monthly in a telcon, see the [rolling agenda](https://s.apache.org/ro-crate-minutes) for schedule, call-in details and minutes.
