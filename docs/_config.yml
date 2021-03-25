@@ -1,6 +1,5 @@
 remote_theme: pdmosses/just-the-docs@callouts
 logo: assets/img/ro-crate-wide.svg?20201023T1353
-#baseurl: https://www.researchobject.org/ro-crate/
 
 title: Research Object Crate (RO-Crate)
 description: |
@@ -13,7 +12,7 @@ description: |
 
 color_scheme: rocrate
 
-footer_content:  "Copyright 2021. University of Technology Sydney, The University of Manchester UK and RO-Crate contributors"
+footer_content:  "&#169; Copyright 2021. University of Technology Sydney, The University of Manchester UK and RO-Crate contributors"
 gh_edit_link: true
 gh_edit_link_text: "Edit this page on GitHub."
 gh_edit_repository: "https://github.com/ResearchObject/ro-crate"
@@ -44,6 +43,10 @@ callouts:
 
 plugins:
   - jekyll-redirect-from
+  - jekyll-seo-tag
+
+back_to_top: true
+back_to_top_text: "Back to top"
 
 defaults:
   - scope:
