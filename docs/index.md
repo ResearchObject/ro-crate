@@ -1,5 +1,5 @@
 ---
-Title: Research Object Crate (RO-Crate)
+title: Research Object Crate (RO-Crate)
 ---
 
 <!--
