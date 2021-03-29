@@ -1,5 +1,5 @@
 ---
-Title: Research Object Crate (RO-Crate)
+title: Research Object Crate (RO-Crate)
 ---
 
 <!--
@@ -50,7 +50,7 @@ See the [specification](specification.md) page for older and future versions.
 
 ## How can I use it?
 
-We try to maintain a list of RO-Crate [tools](tools.md) and [examples](examples.md).
+We try to maintain a list of RO-Crate [tools](tools/) and [examples](examples.md).
 
 ## Contribute to RO-Crate community
 
