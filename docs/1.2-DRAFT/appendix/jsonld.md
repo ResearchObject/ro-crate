@@ -219,7 +219,7 @@ The _terms_ (properties and types) used SHOULD be added as keys to the `@context
 
 URIs in the `@context` SHOULD resolve to a useful human readable page. When this is not possible - for example if the URI resolves to an RDF ontology file, a human-readable URI SHOULD be provided using a [sameAs] description.
 
-For example. The `@id` URI <http://purl.org/ontology/bibo/interviewee> from the [BIBO ontology] ontology intends to resolve to an ontology file, which is not useful for humans, however the HTML section <http://neologism.ecs.soton.ac.uk/bibo.html#interviewee> is human-readable. To read more about best practices for content negotiation of vocabularies, we refer the reader to [Best Practice Recipes for Publishing RDF Vocabularies].
+For example. The `@id` URI <http://purl.org/ontology/bibo/interviewee> from the [BIBO ontology] intends to resolve to an ontology file, which is not useful for humans, however the HTML section <http://neologism.ecs.soton.ac.uk/bibo.html#interviewee> is human-readable. To read more about best practices for content negotiation of vocabularies, we refer the reader to [Best Practice Recipes for Publishing RDF Vocabularies].
 
 
 ```json
