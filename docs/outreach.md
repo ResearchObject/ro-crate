@@ -103,12 +103,18 @@ Peter Sefton, Gerard Devine, Christian Evenhuis, Michael Lynch, Sharyn Wise, Mic
 Talk at _Workshop on Research Objects ([RO 2018](http://www.researchobject.org/ro2018/))_, 29 Oct 2018, Amsterdam, Netherlands.
 <https://doi.org/10.5281/zenodo.1445817> [[abstract](https://data.research.uts.edu.au/examples/v1.0/datacrate-RO-2018/data/paper.html)] [[slides](http://ptsefton.com/2018/10/29/sefton-ro2018.htm)]
 
+### Research Object publications
+
+See also [publications about Research Objects](https://www.researchobject.org/publications/) which includes work pre-dating RO-Crate and about [Research Objects](https://www.researchobject.org/) in general.
 
 ## Upcoming and recent events
 
 _To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 
-**[ELIXIR Biohackathon Europe 2020](https://www.biohackathon-europe.org/)** 2020-11-09/2020-11-13, Virtual. Project on [Galaxy export of RO-Crate](https://github.com/elixir-europe/BioHackathon-projects-2020/tree/master/projects/14).
+**[ELIXIR Biohackathon Europe 2021](https://www.biohackathon-europe.org/)** 2021-11-08/2020-11-12, Hybrid. Projects proposed for RO-Crate and WorkflowHub.
+
+
+**[ELIXIR Biohackathon Europe 2020](https://2020.biohackathon-europe.org/)** 2020-11-09/2020-11-13, Virtual. Project on [Galaxy export of RO-Crate](https://github.com/elixir-europe/BioHackathon-projects-2020/tree/master/projects/14).
 
 **[FAIR Computational Workflows workshop](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/)** (2020-09-02) at the 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).
 
