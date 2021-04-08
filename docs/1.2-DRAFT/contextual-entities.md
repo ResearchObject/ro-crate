@@ -404,48 +404,6 @@ To express the metadata license is different from the _Root Data Entity_, expand
 
 If no explicit `license` is expressed on the _RO-Crate Metadata File Descriptor_, the `license` expressed on the _Root Data Entity_ apply also on the RO-Crate metadata.
 
-<!-- TODO: This got a bit to complicated, commented out for 1.0
-
-## License of contextual entity metadata
-
-In some cases, the JSON-LD metadata for some entities have been imported under a different (possibly more restrictive) license than the license of the _RO-Crate Metadata File Descriptor_ overall. For this the property [sdLicense] ("structured data license") MAY be used on the affected data entities or contextual entities. In this case it is RECOMMENDED to use [sdPublisher] ("structured data publisher") for attribution of the imported metadata:
-
-```json
-{
-  "@id": "./",
-  "@type": "Dataset",
-  "license": {
-    "@id": "https://www.gnu.org/licenses/gpl-3.0"
-  },
-  "contentLocation": {
-    "@id": "http://sws.geonames.org/8152662/"
-  }  
-},
-{
-  "@id": "http://sws.geonames.org/8152662/",
-  "@type": "Place",
-  "sdLicense": {
-    "@id": "https://creativecommons.org/licenses/by/4.0/"
-  },
-  "sdPublisher": {
-    "@id": "http://www.geonames.org"
-  },
-  "http://www.geonames.org/ontology#countryCode": "AU",
-  "http://www.geonames.org/ontology#wikipediaArticle": {
-    "@id": "https://en.wikipedia.org/wiki/Catalina_Park"
-  },
-  ...
-}
-```
-
-In the above (abridged) example, there is no explicit license on the _RO-Crate Metadata File Description_, so the _Root Data Entity_ license [GPL 3.0] would apply to RO-Crate JSON-LD statements, except for the statements on the imported <http://sws.geonames.org/8152662/>,  which metadata is re-distributed under license <https://creativecommons.org/licenses/by/4.0/>. 
-
-In this example the CC-BY license requires retaining "a notice that refers to this Public License" and "identification of the creator(s) of the Licensed Material", here respected using `sdLicense` and `sdPublisher`.  
-
-As the RO-Crate uses _flattened_ JSON-LD, `sdLicense` should be expressed directly on each data/contextual entities where required. 
-
-**Tip**: If metadata is imported from a source licensed as [CC0 Public Domain Dedication][CC0], no `sdLicense` statement is required.
-
 
 ## Extra metadata such as Exif
 
