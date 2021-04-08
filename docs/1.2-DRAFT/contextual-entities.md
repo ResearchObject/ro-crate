@@ -12,8 +12,8 @@ jekyll-mentions: false
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
-   Copyright 2019-2020 The University of Manchester UK 
-   Copyright 2019-2020 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019-2021 The University of Manchester UK 
+   Copyright 2019-2021 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -43,7 +43,6 @@ The RO-Crate SHOULD contain additional information about _Contextual Entities_ f
 
 ## Contextual vs Data entities
 
-<!-- https://github.com/ResearchObject/ro-crate/pull/94/ START -->
 
 RO-Crate distinguishes between _Contextual entities_ and _Data entities_. 
 
@@ -57,7 +56,6 @@ Likewise, some data entities may also be described as contextual entities, for i
 
 The RO-Crate Metadata JSON `@graph` MUST NOT list multiple entities with the same `@id`; behaviour of consumers of an RO-Crate encountering multiple entities with the same `@id` is undefined.
 
-<!-- https://github.com/ResearchObject/ro-crate/pull/94/ END -->
 
 ## Identifiers for contextual entities
 
