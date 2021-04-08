@@ -12,8 +12,8 @@ jekyll-mentions: false
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
-   Copyright 2019-2020 The University of Manchester UK 
-   Copyright 2019-2020 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019-2021 The University of Manchester UK 
+   Copyright 2019-2021 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -43,7 +43,6 @@ The RO-Crate SHOULD contain additional information about _Contextual Entities_ f
 
 ## Contextual vs Data entities
 
-<!-- https://github.com/ResearchObject/ro-crate/pull/94/ START -->
 
 RO-Crate distinguishes between _Contextual entities_ and _Data entities_. 
 
@@ -57,7 +56,6 @@ Likewise, some data entities may also be described as contextual entities, for i
 
 The RO-Crate Metadata JSON `@graph` MUST NOT list multiple entities with the same `@id`; behaviour of consumers of an RO-Crate encountering multiple entities with the same `@id` is undefined.
 
-<!-- https://github.com/ResearchObject/ro-crate/pull/94/ END -->
 
 ## Identifiers for contextual entities
 
@@ -404,54 +402,10 @@ To express the metadata license is different from the _Root Data Entity_, expand
 
 If no explicit `license` is expressed on the _RO-Crate Metadata File Descriptor_, the `license` expressed on the _Root Data Entity_ apply also on the RO-Crate metadata.
 
-<!-- TODO: This got a bit to complicated, commented out for 1.0
-
-## License of contextual entity metadata
-
-In some cases, the JSON-LD metadata for some entities have been imported under a different (possibly more restrictive) license than the license of the _RO-Crate Metadata File Descriptor_ overall. For this the property [sdLicense] ("structured data license") MAY be used on the affected data entities or contextual entities. In this case it is RECOMMENDED to use [sdPublisher] ("structured data publisher") for attribution of the imported metadata:
-
-```json
-{
-  "@id": "./",
-  "@type": "Dataset",
-  "license": {
-    "@id": "https://www.gnu.org/licenses/gpl-3.0"
-  },
-  "contentLocation": {
-    "@id": "http://sws.geonames.org/8152662/"
-  }  
-},
-{
-  "@id": "http://sws.geonames.org/8152662/",
-  "@type": "Place",
-  "sdLicense": {
-    "@id": "https://creativecommons.org/licenses/by/4.0/"
-  },
-  "sdPublisher": {
-    "@id": "http://www.geonames.org"
-  },
-  "http://www.geonames.org/ontology#countryCode": "AU",
-  "http://www.geonames.org/ontology#wikipediaArticle": {
-    "@id": "https://en.wikipedia.org/wiki/Catalina_Park"
-  },
-  ...
-}
-```
-
-In the above (abridged) example, there is no explicit license on the _RO-Crate Metadata File Description_, so the _Root Data Entity_ license [GPL 3.0] would apply to RO-Crate JSON-LD statements, except for the statements on the imported <http://sws.geonames.org/8152662/>,  which metadata is re-distributed under license <https://creativecommons.org/licenses/by/4.0/>. 
-
-In this example the CC-BY license requires retaining "a notice that refers to this Public License" and "identification of the creator(s) of the Licensed Material", here respected using `sdLicense` and `sdPublisher`.  
-
-As the RO-Crate uses _flattened_ JSON-LD, `sdLicense` should be expressed directly on each data/contextual entities where required. 
-
-**Tip**: If metadata is imported from a source licensed as [CC0 Public Domain Dedication][CC0], no `sdLicense` statement is required.
-
--->
-
 
 ## Extra metadata such as Exif
 
-Schema.org has a generic extension mechanism for encoding arbitrary properties and values which are not available as Schema.org properties. An example of of this is the Schema.org [recommended way (see example 2)][ImageObject] of including [Exif] technical image metadata.
+Schema.org has a generic extension mechanism for encoding arbitrary properties and values which are not available as Schema.org properties. An example of this is the Schema.org [recommended way (see example 2)][ImageObject] of including [Exif] technical image metadata.
 
 To include EXIF, or other data which can be encoded as property/value pairs, add an array of references to _Anonymous Entities_ which encode each property. This example shows one property of several hundred.
 
