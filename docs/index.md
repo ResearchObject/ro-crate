@@ -1,5 +1,6 @@
 ---
 title: Research Object Crate (RO-Crate)
+nav_exclude: true
 ---
 
 <!--
