@@ -92,6 +92,7 @@ This profile is an [RO-Crate extension](1.1/appendix/jsonld.html#extending-ro-cr
         "PlanemoEngine": "https://w3id.org/ro/terms/test#PlanemoEngine",
         "JenkinsService": "https://w3id.org/ro/terms/test#JenkinsService",
         "TravisService": "https://w3id.org/ro/terms/test#TravisService",
+        "GithubService": "https://w3id.org/ro/terms/test#GithubService",
         "instance": "https://w3id.org/ro/terms/test#instance",
         "runsOn": "https://w3id.org/ro/terms/test#runsOn",
         "resource": "https://w3id.org/ro/terms/test#resource",
@@ -101,20 +102,23 @@ This profile is an [RO-Crate extension](1.1/appendix/jsonld.html#extending-ro-cr
 ]
 ```
 
-A Workflow Testing RO-Crate is essentially a Workflow RO-Crate with additional specification on how to structure test suites and refer to them from the `"test"` Dataset:
+The most recent version of the context is at https://github.com/ResearchObject/ro-terms/blob/master/test/context.json.
+
+A Workflow Testing RO-Crate is essentially a Workflow RO-Crate with additional specification on how to structure test suites and refer to them from the root dataset:
 
 ```json
 {
-    "@id": "test/",
+    "@id": "./",
     "@type": "Dataset",
-    "about": [
+    "mentions": [
         {
             "@id": "#test1"
         },
         {
             "@id": "#test2"
         }
-    ]
+    ],
+    ...
 }
 ```
 
