@@ -55,7 +55,7 @@ The _RO-Crate_ team is:
 * Finn Bacall <https://orcid.org/0000-0002-0048-3300>
 * Thomas Thelen <https://orcid.org/0000-0002-1756-2128>
 * Hervé Ménager <https://orcid.org/0000-0002-7552-1009>
-* Laura Rodríguez Navas <https://orcid.org/0000-0003-4929-1219>
+* Laura Rodríguez-Navas <https://orcid.org/0000-0003-4929-1219>
 * Paul Walk <https://orcid.org/0000-0003-1541-5631>
 * brandon whitehead <https://orcid.org/0000-0002-0337-8610>
 * Mark Wilkinson <https://orcid.org/0000-0001-6960-357X>
