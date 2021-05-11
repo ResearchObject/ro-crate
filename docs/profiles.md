@@ -77,9 +77,9 @@ In summary the _Workflow RO-Crate profile_ covers as of 2021-03-09:
 
 ### Workflow Testing RO-Crate profile
 
-[Workflow Testing RO-Crate](https://github.com/crs4/life_monitor/wiki/Workflow-Testing-RO-Crate) is a specialization of Workflow RO-Crate used by [Life Monitor](in-use/life_monitor) to support the submission of test suites for computational workflows.
+[Workflow Testing RO-Crate](https://crs4.github.io/life_monitor/workflow_testing_ro_crate) is a specialization of Workflow RO-Crate used by [Life Monitor](in-use/life_monitor) to support the submission of test suites for computational workflows.
 
-This profile is an [RO-Crate extension](1.1/appendix/jsonld.html#extending-ro-crate) that employs additional terms from the [ro-terms test namespace](https://github.com/ResearchObject/ro-terms/blob/master/test/vocabulary.csv):
+This profile is an [RO-Crate extension](1.1/appendix/jsonld.html#extending-ro-crate) that employs additional terms from the [ro-terms test namespace](https://github.com/ResearchObject/ro-terms/tree/master/test):
 
 ```json
 [
@@ -102,7 +102,7 @@ This profile is an [RO-Crate extension](1.1/appendix/jsonld.html#extending-ro-cr
 ]
 ```
 
-The most recent version of the context is at [https://github.com/ResearchObject/ro-terms/blob/master/test/context.json](https://github.com/ResearchObject/ro-terms/blob/master/test/context.json).
+The most recent version of the context is at <https://github.com/ResearchObject/ro-terms/tree/master/test>.
 
 A Workflow Testing RO-Crate is essentially a Workflow RO-Crate with additional specification on how to structure test suites and refer to them from the root dataset:
 
@@ -122,7 +122,7 @@ A Workflow Testing RO-Crate is essentially a Workflow RO-Crate with additional s
 }
 ```
 
-More details are available from the [spec page](https://github.com/crs4/life_monitor/wiki/Workflow-Testing-RO-Crate).
+More details are available from the [spec page](https://crs4.github.io/life_monitor/workflow_testing_ro_crate).
 
 
 ## Describo profiles
