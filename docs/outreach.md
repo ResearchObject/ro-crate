@@ -40,6 +40,10 @@ Carole Goble, Stian Soiland-Reyes (2021):
 [_RDA IG Data Fabric: FAIR Digital Objects_](https://www.rd-alliance.org/group/data-fabric-ig/wiki/rda-ig-data-fabric-fair-digital-objects) 2021-02-25.
 [[Video recording](https://www.youtube.com/watch?v=pz-MLdI7GLA)]
 
+Thanasis Vergoulis, Konstantinos Zagganas, Loukas Kavouras, Martin Reczko, Stelios Sartzetakis, and Theodore Dalamagas (2021):  
+[**SCHeMa: Scheduling Scientific Containers on a Cluster of Heterogeneous Machines**](https://arxiv.org/pdf/2103.13138.pdf)   
+_arXiv CoRR_ [arXiv:2103.13138](https://arxiv.org/abs/2103.13138) 
+
 Carole Goble (2021):
 [**The swings and roundabouts of a decade of fun and games with Research Objects**](https://www.slideshare.net/carolegoble/the-swings-and-roundabouts-of-a-decade-of-fun-and-games-with-research-objects)
 [_17th Italian Research Conference on Digital Libraries_](http://ircdl2021.dei.unipd.it/) (IRCDL 2021)
@@ -49,59 +53,95 @@ Marco La Rosa, Peter Sefton (2021):
 [**Describo and RO-Crate - the FAIR data research helpers**](https://indico.cern.ch/event/970232/contributions/4158369/attachments/2176946/3679697/CS3%202021.pdf)<!-- https://arkisto-platform.github.io/assets/docs/CS3-2021.pdf -->
 _Cloud Storage Services for Synchronization and Sharing ([CS3](https://www.cs3community.org/2021/))_
 
+Tomasz Miksa, Maroua Jaoua, Ghaith Arfaoui (2020):  
+**Research Object Crates and Machine-actionable Data Management Plans**. 
+_First Workshop on Data and Research Objects Management for Linked Open Science ([DaMaLOS](https://zbmed.github.io/damalos/docs/2020.html))_ at _The 19th International Semantic Web Conference ([ISWC 2020](https://iswc2020.semanticweb.org/))_.  
+<https://doi.org/10.4126/frl01-006423291>
+
 Carole Goble (2020):
 [**The swings and roundabouts of a decade of fun and games with Research Objects**](https://www.slideshare.net/carolegoble/the-swings-and-roundabouts-of-a-decade-of-fun-and-games-with-research-objects?next_slideshow=1)
-[_DaMaLOS 2020 workshop_](https://zbmed.github.io/damalos ) at 
-_The 19th International Semantic Web Conference ([ISWC 2020](https://iswc2020.semanticweb.org/))_
+_First Workshop on Data and Research Objects Management for Linked Open Science ([DaMaLOS](https://zbmed.github.io/damalos/docs/2020.html))_ at
+_The 19th International Semantic Web Conference ([ISWC 2020](https://iswc2020.semanticweb.org/))_.  
+<https://doi.org/10.4126/frl01-006423950>
 
 Peter Sefton, Nick Thieberger, Marco La Rosa, Michael Lynch (2020):
 [**An open, composable standards–based research eResearch platform: Arkisto**](https://conference.eresearch.edu.au/2020/09/an-open-composable-standards-based-research-eresearch-platform-arkisto/), 
-_eResearch Australasia_
+_eResearch Australasia 2020_
 
-Stian Soiland-Reyes, Ignacio Eguinoa (2020): [Packaging workflows with RO-Crate](https://doi.org/10.5281/zenodo.4011999), [_Workshop on FAIR Computational Workflows_](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).
+Stian Soiland-Reyes, Ignacio Eguinoa (2020):  
+[**Packaging workflows with RO-Crate**](https://doi.org/10.5281/zenodo.4011999).  
+[_Workshop on FAIR Computational Workflows_](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).
 <https://doi.org/10.5281/zenodo.4011999>
 
-Simone Leo, Salvador Capella-Gutierrez (2020): [Testing workflows: Life Monitor and OpenEBench](https://docs.google.com/presentation/d/15113lwn8_H7ftDF9I650O3rZGeAVr6LVSU4-XDkBgA0/edit#slide=id.g9337569ecf_1_0), [_Workshop on FAIR Computational Workflows_](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).
+Simone Leo, Salvador Capella-Gutierrez (2020):  
+[**Testing workflows: Life Monitor and OpenEBench**](https://docs.google.com/presentation/d/15113lwn8_H7ftDF9I650O3rZGeAVr6LVSU4-XDkBgA0/edit#slide=id.g9337569ecf_1_0).  
+[_Workshop on FAIR Computational Workflows_](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).
 
-Gavin Kennedy (2020): [Interoperable Research Workspaces and the Mesh](https://indico.cern.ch/event/854707/contributions/3680449/attachments/1975672/3288266/CS3_2020_Research_Workspaces_Gavin_Kennedy_v2.pptx), 
+Gavin Kennedy (2020):  
+[**Interoperable Research Workspaces and the Mesh**](https://indico.cern.ch/event/854707/contributions/3680449/attachments/1975672/3288266/CS3_2020_Research_Workspaces_Gavin_Kennedy_v2.pptx).  
 [_CS3 2020 - Cloud Storage Synchronization and Sharing Services_](http://cs3.deic.dk/), 2020-01-27 / 2020-01-29, Copenhagen, Denmark.
 
-Peter Sefton, Eoghan Ó Carragáin, Carole Goble, Stian Soiland-Reyes (2019): [Introducing RO-Crate: research object data packaging](http://ptsefton.com/2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm). _eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. [[slides](https://docs.google.com/presentation/d/10faXX13opY0DAVVVeX5lG83F4MA_woLHkeIcUOko2IU/)] [[abstract](https://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019-eResearch_103_-Introducing-RO-Crate-research-object-data-packaging.pdf)]
+Peter Sefton, Eoghan Ó Carragáin, Carole Goble, Stian Soiland-Reyes (2019):  
+[**Introducing RO-Crate: research object data packaging**](http://ptsefton.com/2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm).  
+_eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. [[slides](https://docs.google.com/presentation/d/10faXX13opY0DAVVVeX5lG83F4MA_woLHkeIcUOko2IU/)] [[abstract](https://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019-eResearch_103_-Introducing-RO-Crate-research-object-data-packaging.pdf)]
  
-Mike Lynch: [Publishing versioned datasets using OCFL and nginx](https://eresearch.uts.edu.au/2019/11/05/eResearch2019_lighting_ocfl_nginx.htm).  _eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. 
+Mike Lynch:  
+[**Publishing versioned datasets using OCFL and nginx**](https://eresearch.uts.edu.au/2019/11/05/eResearch2019_lighting_ocfl_nginx.htm).  
+_eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. 
 
-Peter Sefton, Mike Lynch: [FAIR Simple Scalable Static Research Data Repository ](https://eresearch.uts.edu.au/2019/11/05/FAIR%20Repo%20-%20eResearch%20Presentation.htm). _eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. 
+Peter Sefton, Mike Lynch:  
+[**FAIR Simple Scalable Static Research Data Repository**](https://eresearch.uts.edu.au/2019/11/05/FAIR%20Repo%20-%20eResearch%20Presentation.htm).  
+_eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. 
 
-Eoghan Ó Carragáin, Carole Goble, Peter Sefton, Stian Soiland-Reyes (2019): **RO-Crate, a lightweight approach to Research Object data packaging.**
-RO-15 at _Workshop on Research Objects ([RO 2019](http://www.researchobject.org/ro2019/))_, IEEE eScience 2019, 2019-09-24, San Diego, CA, USA.
+Eoghan Ó Carragáin, Carole Goble, Peter Sefton, Stian Soiland-Reyes (2019):  
+**RO-Crate, a lightweight approach to Research Object data packaging.**.  
+RO-15 at _Workshop on Research Objects ([RO 2019](http://www.researchobject.org/ro2019/))_, IEEE eScience 2019, 2019-09-24, San Diego, CA, USA.  
 <https://doi.org/10.5281/zenodo.3337883> [[slides](http://slides.com/soilandreyes/2019-09-24-ro-crate)]
 
-Kyle Chard, Niall Gaffney, Matthew B. Jones, Kacper Kowalik, Bertram Ludäscher, Jarek Nabrzyski, Victoria Stodden, Ian Taylor, Thomas Thelen, Matthew J. Turk, Craig Willis (2019):
-**Application of BagIt-Serialized Research Object Bundles for Packaging and Re-execution of Computational Analyses.**
+Kyle Chard, Niall Gaffney, Matthew B. Jones, Kacper Kowalik, Bertram Ludäscher, Jarek Nabrzyski, Victoria Stodden, Ian Taylor, Thomas Thelen, Matthew J. Turk, Craig Willis (2019):  
+**Application of BagIt-Serialized Research Object Bundles for Packaging and Re-execution of Computational Analyses.**. 
 at _Workshop on Research Objects ([RO 2019](http://www.researchobject.org/ro2019/))_, IEEE eScience 2019, 2019-09-24, San Diego, CA, USA.
-To appear in _2019 IEEE 15th International Conference on e-Science (e-Science)_.
-[preprint <https://doi.org/10.5281/zenodo.3271763>] 
+_2019 IEEE 15th International Conference on e-Science (e-Science)_. 
+<https://doi.org/10.1109/eScience.2019.00068> [[preprint](https://doi.org/10.5281/zenodo.3271763)]
 
-Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): ***RO-Crate, a lightweight approach to Research Object data packaging*** [version 1; not peer reviewed]. Poster at _Bioinformatics Open Source Conference (BOSC2019)_.  _F1000Research_ 2019, **8**(ISCB Comm J):1197 (poster) <https://doi.org/10.7490/f1000research.1117130.1> 
+Eoghan Ó Carragáin, Carole Goble, Peter Sefton, Stian Soiland-Reyes (2019):  
+***RO-Crate, a lightweight approach to Research Object data packaging*** [version 1; not peer reviewed].  
+Poster at _Bioinformatics Open Source Conference (BOSC2019)_.  _F1000Research_ 2019, **8**(ISCB Comm J):1197 (poster)  
+<https://doi.org/10.7490/f1000research.1117130.1> 
 
-Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): ***RO-Crate, a lightweight approach to Research Object data packaging*** [version 1; not peer reviewed]. Talk at _Bioinformatics Open Source Conference (BOSC2019)_. _F1000Research_ 2019, **8**(ISCB Comm J):1196 (slides) <https://doi.org/10.7490/f1000research.1117129.1> <https://slides.com/soilandreyes/2019-07-24-bosc-ro-crate>
+Eoghan Ó Carragáin, Carole Goble, Peter Sefton, Stian Soiland-Reyes (2019):  
+***RO-Crate, a lightweight approach to Research Object data packaging*** [version 1; not peer reviewed].  
+Talk at _Bioinformatics Open Source Conference (BOSC2019)_. _F1000Research_ 2019, **8**(ISCB Comm J):1196 (slides)  
+<https://doi.org/10.7490/f1000research.1117129.1> [[slides](https://slides.com/soilandreyes/2019-07-24-bosc-ro-crate>)]
 
-Peter Sefton (2019): **DataCrate - a progress report on packaging research data for distribution via your repository**
-<https://eresearch.uts.edu.au/2019/07/01/DataCrate-OR2019.htm> Talk at _Open Repositories (OR2019)_, Hamburg, 2019-06-11 
+Peter Sefton (2019):  
+[**DataCrate - a progress report on packaging research data for distribution via your repository**](https://eresearch.uts.edu.au/2019/07/01/DataCrate-OR2019.htm).  
+<https://eresearch.uts.edu.au/2019/07/01/DataCrate-OR2019.htm>  
+Talk at _Open Repositories (OR2019)_, Hamburg, 2019-06-11 
 
+Peter Sefton (2019):  
+**What's in a package? Data packaging overview**.  
+[[slides](https://docs.google.com/presentation/d/1qPDaLAqzOghnLTdpk01grp3Ya6qvmGCdVvYeTIe6V8I/edit?usp=sharing)] at _Open Repositories (OR2019)_, Hamburg, 2019-06-10 
 
-Peter Sefton (2019) **What's in a package? Data packaging overview** [[slides](https://docs.google.com/presentation/d/1qPDaLAqzOghnLTdpk01grp3Ya6qvmGCdVvYeTIe6V8I/edit?usp=sharing)] at _Open Repositories (OR2019)_, Hamburg, 2019-06-10 
+Stian Soiland-Reyes; Carole Goble (2019):  
+**Research Object**.  
+_Research Data Packaging Workshop_ at _Open Repositories (OR2019)_, Hamburg, 2019-06-10.  
+<https://slides.com/soilandreyes/2019-06-10-ro-or2019>
 
-Stian Soiland-Reyes; Carole Goble (2019): **Research Object** at _Research Data Packaging Workshop_ at _Open Repositories (OR2019)_, Hamburg, 2019-06-10 <https://slides.com/soilandreyes/2019-06-10-ro-or2019>
+Peter Sefton (2019):  
+**Research Data Packaging**  
+_Research Data Packaging Workshop_ at _Open Repositories (OR2019)_, Hamburg, 2019-06-10.  
+[[slides](https://docs.google.com/presentation/d/1T_VX8WPh3MZny2VUVR8n81uENEuQsyrAIYAUOlnS-2A/edit?usp=sharing)]
 
-Peter Sefton (2019): **Research Data Packaging** at _Research Data Packaging Workshop_ at _Open Repositories (OR2019)_, Hamburg, 2019-06-10 [[slides](https://docs.google.com/presentation/d/1T_VX8WPh3MZny2VUVR8n81uENEuQsyrAIYAUOlnS-2A/edit?usp=sharing)]
+Peter Sefton, Michael Lynch, Liz Stokes, Gerard Devine (2018):  
+[**Launching DataCrate v1.0 a general purpose data packaging format for research data distribution and web-display**](https://eresearch.uts.edu.au/2018/11/01/launch_datacrate_1.htm).   
+Talk at _eResearch Australasia 2018_ <https://eresearch.uts.edu.au/2018/11/01/launch_datacrate_1.htm>
 
-Peter Sefton, Michael Lynch, Liz Stokes, Gerard Devine (2018): **Launching DataCrate v1.0 a general purpose data packaging format for research data distribution and web-display** Talk at _eResearch Australasia 2018_ <https://eresearch.uts.edu.au/2018/11/01/launch_datacrate_1.htm>
-
-Peter Sefton, Gerard Devine, Christian Evenhuis, Michael Lynch, Sharyn Wise, Michael Lake, Duncan Loxton (2018):
-**DataCrate: a method of packaging, distributing, displaying and archiving Research Objects**
+Peter Sefton, Gerard Devine, Christian Evenhuis, Michael Lynch, Sharyn Wise, Michael Lake, Duncan Loxton (2018):  
+[**DataCrate: a method of packaging, distributing, displaying and archiving Research Objects**](https://doi.org/10.5281/zenodo.1445817). 
 Talk at _Workshop on Research Objects ([RO 2018](http://www.researchobject.org/ro2018/))_, 29 Oct 2018, Amsterdam, Netherlands.
 <https://doi.org/10.5281/zenodo.1445817> [[abstract](https://data.research.uts.edu.au/examples/v1.0/datacrate-RO-2018/data/paper.html)] [[slides](http://ptsefton.com/2018/10/29/sefton-ro2018.htm)]
+
 
 ### Research Object publications
 
