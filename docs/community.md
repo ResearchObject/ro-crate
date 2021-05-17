@@ -73,8 +73,10 @@ The _RO-Crate_ team is:
 * Paul Brack <https://orcid.org/0000-0002-5432-2748>
 * Milan Ojsteršek <https://orcid.org/0000-0003-1743-8300>
 * Bert Droesbeke <https://orcid.org/0000-0003-0522-5674>
-* Chenxu Niu <https://github.com/UstcChenxu>
+* Chenxu Niu <https://orcid.org/0000-0002-2142-1731>
 * Kosuke Tanabe <https://orcid.org/0000-0002-9986-7223>
+* Tomasz Miksa <https://orcid.org/0000-0002-4929-7875>
+* Marco La Rosa <https://github.com/marcolarosa>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! 
 
