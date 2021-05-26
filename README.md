@@ -24,9 +24,9 @@ to ensure an open and inclusive environment.
 
 ## License
 
-* © 2019 Research Object Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
-* © 2018-2019 University of Technology Sydney, Australia
-* © 2018-2019 The University of Manchester, UK
+* © 2019-2021 Research Object Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+* © 2018-2020 University of Technology Sydney, Australia
+* © 2018-2021 The University of Manchester, UK
 
 The specification and documentation maintained in this repository is Open Source and licensed as [Apache License, version 2.0](LICENSE), see <https://www.apache.org/licenses/LICENSE-2.0> for details.
 
