@@ -121,6 +121,8 @@ ADDITIONAL = OrderedDict([
           ("funding", "http://schema.org/funding"),
           ## END 
 
+          ("sdConformsTo", "https://w3id.org/ro/terms#sdConformsTo")
+
           ("wasDerivedFrom", "http://www.w3.org/ns/prov#wasDerivedFrom"),
           
           ("importedFrom", "http://purl.org/pav/importedFrom"),
