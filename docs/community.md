@@ -77,6 +77,7 @@ The _RO-Crate_ team is:
 * Kosuke Tanabe <https://orcid.org/0000-0002-9986-7223>
 * Tomasz Miksa <https://orcid.org/0000-0002-4929-7875>
 * Marco La Rosa <https://orcid.org/0000-0001-5383-6993>
+* Cedric Decruw <https://github.com/cedricdcc>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! 
 
