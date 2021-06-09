@@ -35,42 +35,56 @@ Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): **
 
 ## Recent publications, presentations, citations
 
+Carole Goble, Stian Soiland-Reyes, Oscar Corcho (2021):  
+[**Packaging and describing Data Collections with RO-Crate**](https://doi.org/10.5281/zenodo.4916168).  
+_2nd Workshop of the Data Citation Community of Practice for Earth, Space, and Environmental Sciences (and Related Sciences)_ ([DataCitationCoP](https://agu-data.github.io/DataCitationCoP/2nd-workshop-data-citation)), AGU Data Citation Community of Practice, 2021-06-08.  
+<https://doi.org/10.5281/zenodo.4916168>
+
+Stian Soiland-Reyes (2021):  
+[**Describing and packaging workflows using RO-Crate and BioCompute Objects**](https://youtu.be/3APqPwRIRkA).  
+_Webinar for U.S. Food and Drug Administration (FDA)_, 2021-05-12.  [[Video recording](https://youtu.be/3APqPwRIRkA)] [[slides](https://doi.org/10.5281/zenodo.4633732)]  
+<https://doi.org/10.5281/zenodo.4633732>
+
 Carole Goble, Stian Soiland-Reyes (2021):
-[**RO-Crate: A framework for packaging research products into FAIR Research Objects**](https://www.slideshare.net/carolegoble/rocrate-a-framework-for-packaging-research-products-into-fair-research-objects)
+[**RO-Crate: A framework for packaging research products into FAIR Research Objects**](https://www.slideshare.net/carolegoble/rocrate-a-framework-for-packaging-research-products-into-fair-research-objects).  
 [_RDA IG Data Fabric: FAIR Digital Objects_](https://www.rd-alliance.org/group/data-fabric-ig/wiki/rda-ig-data-fabric-fair-digital-objects) 2021-02-25.
-[[Video recording](https://www.youtube.com/watch?v=pz-MLdI7GLA)]
+[[Video recording](https://www.youtube.com/watch?v=pz-MLdI7GLA)] [[slides](https://www.slideshare.net/carolegoble/rocrate-a-framework-for-packaging-research-products-into-fair-research-objects)]
 
 Thanasis Vergoulis, Konstantinos Zagganas, Loukas Kavouras, Martin Reczko, Stelios Sartzetakis, and Theodore Dalamagas (2021):  
-[**SCHeMa: Scheduling Scientific Containers on a Cluster of Heterogeneous Machines**](https://arxiv.org/pdf/2103.13138.pdf)   
+[**SCHeMa: Scheduling Scientific Containers on a Cluster of Heterogeneous Machines**](https://arxiv.org/pdf/2103.13138.pdf).   
 _arXiv CoRR_ [arXiv:2103.13138](https://arxiv.org/abs/2103.13138) 
 
 Carole Goble (2021):
-[**The swings and roundabouts of a decade of fun and games with Research Objects**](https://www.slideshare.net/carolegoble/the-swings-and-roundabouts-of-a-decade-of-fun-and-games-with-research-objects)
+[**The swings and roundabouts of a decade of fun and games with Research Objects**](https://www.slideshare.net/carolegoble/the-swings-and-roundabouts-of-a-decade-of-fun-and-games-with-research-objects).  
 [_17th Italian Research Conference on Digital Libraries_](http://ircdl2021.dei.unipd.it/) (IRCDL 2021)
 Padova, Italy - 18-19 February 2021 [[Video recording](https://youtu.be/xDV1mzLudAY?list=PLKynRfLznsVxASq5t5apewqZCggWg7fwU&t=220)]
 
+Stian Soiland-Reyes, Carole Goble (2021):  
+[**RO-Crate: Describing and packaging FAIR Research Objects**](https://doi.org/10.5281/zenodo.4633655).  
+_[Scottish Covid-19 Response Consortium](https://www.gla.ac.uk/research/az/scrc/)_, 2021-03-18 
+
 Marco La Rosa, Peter Sefton (2021):
-[**Describo and RO-Crate - the FAIR data research helpers**](https://indico.cern.ch/event/970232/contributions/4158369/attachments/2176946/3679697/CS3%202021.pdf)<!-- https://arkisto-platform.github.io/assets/docs/CS3-2021.pdf -->
+[**Describo and RO-Crate - the FAIR data research helpers**](https://indico.cern.ch/event/970232/contributions/4158369/attachments/2176946/3679697/CS3%202021.pdf)<!-- https://arkisto-platform.github.io/assets/docs/CS3-2021.pdf -->.  
 _Cloud Storage Services for Synchronization and Sharing ([CS3](https://www.cs3community.org/2021/))_
 
 Tomasz Miksa, Maroua Jaoua, Ghaith Arfaoui (2020):  
-**Research Object Crates and Machine-actionable Data Management Plans**. 
+**Research Object Crates and Machine-actionable Data Management Plans**.  
 _First Workshop on Data and Research Objects Management for Linked Open Science ([DaMaLOS](https://zbmed.github.io/damalos/docs/2020.html))_ at _The 19th International Semantic Web Conference ([ISWC 2020](https://iswc2020.semanticweb.org/))_.  
 <https://doi.org/10.4126/frl01-006423291>
 
 Carole Goble (2020):
-[**The swings and roundabouts of a decade of fun and games with Research Objects**](https://www.slideshare.net/carolegoble/the-swings-and-roundabouts-of-a-decade-of-fun-and-games-with-research-objects?next_slideshow=1)
+[**The swings and roundabouts of a decade of fun and games with Research Objects**](https://www.slideshare.net/carolegoble/the-swings-and-roundabouts-of-a-decade-of-fun-and-games-with-research-objects?next_slideshow=1).  
 _First Workshop on Data and Research Objects Management for Linked Open Science ([DaMaLOS](https://zbmed.github.io/damalos/docs/2020.html))_ at
 _The 19th International Semantic Web Conference ([ISWC 2020](https://iswc2020.semanticweb.org/))_.  
 <https://doi.org/10.4126/frl01-006423950>
 
 Peter Sefton, Nick Thieberger, Marco La Rosa, Michael Lynch (2020):
-[**An open, composable standards–based research eResearch platform: Arkisto**](https://conference.eresearch.edu.au/2020/09/an-open-composable-standards-based-research-eresearch-platform-arkisto/), 
+[**An open, composable standards–based research eResearch platform: Arkisto**](https://conference.eresearch.edu.au/2020/09/an-open-composable-standards-based-research-eresearch-platform-arkisto/).  
 _eResearch Australasia 2020_
 
 Stian Soiland-Reyes, Ignacio Eguinoa (2020):  
 [**Packaging workflows with RO-Crate**](https://doi.org/10.5281/zenodo.4011999).  
-[_Workshop on FAIR Computational Workflows_](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).
+[_Workshop on FAIR Computational Workflows_](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).  
 <https://doi.org/10.5281/zenodo.4011999>
 
 Simone Leo, Salvador Capella-Gutierrez (2020):  
