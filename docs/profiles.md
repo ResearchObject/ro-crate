@@ -211,6 +211,10 @@ This is a good example of how a specific profile can guide a user interface and 
 _Note that some RO-Crates in the [Modern PARADISEC demonstrator](https://mod.paradisec.org.au/) have evolved from this profile to conform with RO-Crate 1.1's [repository content types](1.1/provenance.html#digital-library-and-repository-content)_
 
 
+## RELIANCE-RO (Earth Science Data Cubes profile)
+
+[RELIANCE-RO](https://doi.org/10.5281/zenodo.4913285) is a profile for expressing Earth Science _Data Cubes_ in RO-Crate, being developed by the [RELIANCE project](https://www.reliance-project.eu/).
+
 ## Making an RO-Crate profile
 
 As a starting point, an RO-Crate profile can be written down in structured human language, as exemplified by [Workflow RO-Crate](https://about.workflowhub.eu/Workflow-RO-Crate/). 
