@@ -225,7 +225,7 @@ which vocabulary/ontology it uses as a [DefinedTermSet]:
 The `@id` of the vocabulary SHOULD be the _namespace_, 
 while `url` SHOULD go to a human-readable description of the vocabulary.
 
-#### Extension terms
+#### Extension terms
 
 A profile that [extends RO-Crate](appendix/jsonld.md#extending-ro-crate) MAY indicate particular terms
 directly as [DefinedTerm] instances:
