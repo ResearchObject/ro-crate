@@ -208,3 +208,74 @@ If conforming RO-Crates should be [packaged](https://www.researchobject.org/ro-c
 
 <!-- TODO: Make BagIt profile similar to https://w3id.org/ro/bagit -->
 
+#### Extension vocabularies
+
+A profile that [extends RO-Crate](appendix/jsonld.md#extending-ro-crate) SHOULD indicate
+which vocabulary/ontology it uses as a [DefinedTermSet]:
+
+```json
+{
+    "@id": "https://w3id.org/ro/terms/test#",
+    "@type": "DefinedTermSet",
+    "name": "Namespace for workflow testing metadata",
+    "url": "https://github.com/ResearchObject/ro-terms/tree/master/test",
+}
+```
+
+The `@id` of the vocabulary SHOULD be the _namespace_, 
+while `url` SHOULD go to a human-readable description of the vocabulary.
+
+#### Extension terms
+
+A profile that [extends RO-Crate](appendix/jsonld.md#extending-ro-crate) MAY indicate particular terms
+directly as [DefinedTerm] instances:
+
+```json
+{
+    "@id": "https://criminalcharacters.com/vocab#education",
+    "@type": "DefinedTerm",
+    "termCode": "education",
+    "name": "Literacy of prisoner",
+    "description": "Prison authorities would record the prisoner’s statement as to whether they could read and write.",
+    "url": "https://github.com/ResearchObject/ro-terms/tree/master/test",
+}
+```
+
+The `termCode` SHOULD be valid as a key in JSON-LD `@context` of conforming RO-Crates.
+
+
+#### JSON-LD Context
+
+A profile that have a corresponding JSON-LD `@context` (e.g. to map its extensions terms,
+or to suggest a version of RO-Crate's official context) SHOULD indicate the 
+context in the Profile Crate:
+
+```json
+{
+    "@id": "https://w3id.org/ro/crate/1.1/context",
+    "@type": "CreativeWork",
+    "name": "RO-Crate JSON-LD Context",
+    "encodingFormat": [
+        "application/ld+json",
+        {"@id": "http://www.w3.org/ns/json-ld#context"}
+    ],
+    "version": "1.1.1",
+}
+```
+
+The JSON-LD Context:
+
+* SHOULD have a _permalink_ (persistent identifier) as `@id`
+  - e.g. starting with <https://w3id.org/> <http://purl.org/>
+* SHOULD use `https` rather than `http` with a certificate commonly accepted by browsers
+* SHOULD have a `@id` URI that is _versioned_ with [`MAJOR.MINOR`][semver], e.g. `https://example.com/image-profile-2.4`
+* SHOULD have a descriptive [name]
+* MAY declare [version] according to [Semantic Versioning][semver]
+
+Note that the referenced context URI does _not_ have to match the `@context` of the Profile Crate itself.
+
+{: .tip }
+The `@context` MAY be the Profile Crate's Metadata JSON-LD file if 
+it is [resolvable](appendix/jsonld.md#ro-crate-json-ld-media-type)
+as media type `application/ld+json` over HTTP.
+
