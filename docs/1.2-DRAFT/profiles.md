@@ -134,7 +134,7 @@ An optional machine-readable schema of the profile, for instance a [Describo](ht
 },
 {
     "@id": "https://github.com/UTS-eResearch/describo/wiki/dsp-index",
-    "@type": "WebSite",
+    "@type": "WebPage",
     "name": "Describo JSON profile"
 }
 ```
@@ -197,7 +197,7 @@ If conforming RO-Crates should be [packaged](https://www.researchobject.org/ro-c
 ```json
 {
    "@id": "https://w3id.org/ro/bagit/profile/0.3",
-   "@type": "WebSite",
+   "@type": "WebPage",
    "name":  "BagIt profile for RO-Crate in ZIP",
    "encodingFormat": [
         "application/json", 
