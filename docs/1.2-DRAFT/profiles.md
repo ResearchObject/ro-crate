@@ -257,9 +257,15 @@ context in the Profile Crate:
     "name": "RO-Crate JSON-LD Context",
     "encodingFormat": [
         "application/ld+json",
-        {"@id": "http://www.w3.org/ns/json-ld#context"}
+        {"@id": "http://www.w3.org/ns/json-ld#Context"}
     ],
     "version": "1.1.1",
+},
+{
+    "@id": "http://www.w3.org/ns/json-ld#Context",
+    "@type": "Thing",
+    "name": "JSON-LD Context",
+    "url": "https://www.w3.org/TR/json-ld/"
 }
 ```
 
@@ -270,6 +276,7 @@ The JSON-LD Context:
 * SHOULD use `https` rather than `http` with a certificate commonly accepted by browsers
 * SHOULD have a `@id` URI that is _versioned_ with [`MAJOR.MINOR`][semver], e.g. `https://example.com/image-profile-2.4`
 * SHOULD have a descriptive [name]
+* SHOULD have a `encodingFormat` to the contextual entity `http://www.w3.org/ns/json-ld#Context`
 * MAY declare [version] according to [Semantic Versioning][semver]
 
 Note that the referenced context URI does _not_ have to match the `@context` of the Profile Crate itself.
