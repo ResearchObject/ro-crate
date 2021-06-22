@@ -79,6 +79,8 @@ The _RO-Crate_ team is:
 * Marco La Rosa <https://orcid.org/0000-0001-5383-6993>
 * Cedric Decruw <https://github.com/cedricdcc>
 * Andreas Czerniak <https://orcid.org/0000-0003-3883-4169>
+* Jeremy Jay <https://orcid.org/0000-0002-5761-7533>
+* Sergio Serra <https://orcid.org/0000-0002-0792-8157>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! 
 
