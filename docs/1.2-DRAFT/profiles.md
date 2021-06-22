@@ -96,7 +96,7 @@ get `https://example.org/ro-profiles/paradisec-0.1.0/ro-crate-metadata.json`
 
 <!-- TODO Make both examples above actually work! -->
 
-### What is included in the Profile Crate?
+### What is included in the Profile Crate?
 
 Below follows the suggested [data entities](data-entities.md) to include in a Profile Crate:
 
