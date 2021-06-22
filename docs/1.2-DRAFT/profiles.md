@@ -89,7 +89,7 @@ To resolve a Profile URI to a machine-readable _Profile Crate_, two approaches a
   Requesting `https://w3id.org/ro/profile/paradisec/0.1` with HTTP header  
   `Accept: application/ld+json;profile=https://w3id.org/ro/crate` redirects to the _RO-Crate Metadata file_
   `https://example.org/ro-profiles/paradisec-0.1.0/ro-crate-metadata.json`
-2. The above approach may fails (or returns a HTML page), e.g. for content-delivery networks that do not support content-negotiation. The fallback is to try resolving the path `./ro-crate-metadata.json` from the _resolved_ URI (after permalink redirects). For example:  
+2. The above approach may fail (or returns a HTML page), e.g. for content-delivery networks that do not support content-negotiation. The fallback is to try resolving the path `./ro-crate-metadata.json` from the _resolved_ URI (after permalink redirects). For example:  
 If permalink `https://w3id.org/ro/profile/paradisec/0.1` redirects to `https://example.org/ro-profiles/paradisec-0.1.0/`, then
 get `https://example.org/ro-profiles/paradisec-0.1.0/ro-crate-metadata.json`
 3. If none of these approaches worked, then this profile probably does not have a corresponding Profile Crate. For humans, display a hyperlink to its `@id` described by its `name`.
