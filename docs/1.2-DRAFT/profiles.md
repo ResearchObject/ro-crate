@@ -147,14 +147,15 @@ a graph-level (e.g. what types/properties) as well as serialization level
 Below are known schema types and their suggested
 [encodingFormat](data-entities.md#adding-detailed-descriptions-of-encodings) identifiers:
 
-| Name          | Media Type                | URI             |
-| ============= | ========================= | =============== | 
+| Name          | Media Type                | URI                        |
+| ------------- | ------------------------- | -------------------------- | 
 | JSON Schema   | `application/schema+json` | <https://json-schema.org/draft/2020-12/schema> |
 | Describo      | `application/json`        | <https://github.com/UTS-eResearch/describo/wiki/dsp-index> |
 | CheckMyCrate  | `application/json`        | <https://github.com/KockataEPich/CheckMyCrate#profiles> |
 | SHACL         | `text/turtle`             | <https://www.w3.org/TR/shacl/> |
 | ShEx          | `text/shex`               | <http://shex.io/shex-semantics/> |
 | BagIt Profile | `application/json`        | <https://bagit-profiles.github.io/bagit-profiles-specification/> |
+
 
 {: .tip }
 Some of the above schema languages are based on general data structure syntaxes 
