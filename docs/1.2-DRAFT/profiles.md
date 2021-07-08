@@ -287,3 +287,4 @@ The `@context` MAY be the Profile Crate's Metadata JSON-LD file if
 it is [resolvable](appendix/jsonld.md#ro-crate-json-ld-media-type)
 as media type `application/ld+json` over HTTP.
 
+{% include references.liquid %}
