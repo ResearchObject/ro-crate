@@ -117,6 +117,11 @@ These terms are being proposed by [Bioschemas profile ComputationalWorkflow 0.5-
 {: .note }
 > In this specification the proposed Bioschemas terms use the temporary <https://bioschemas.org/> namespace; future releases of RO-Crate may reflect mapping to the <http://schema.org/> namespace.
 
+Additional terms in RO-Crate's own [ro-terms vocabulary][ro-terms]:
+
+* `sdConformsTo` mapped to <https://w3id.org/ro/terms#sdConformsTo> (see [profiles](profiles.md))
+
+
 ## Summary of Coverage
 
 RO-Crate is simply a way to make metadata assertions about a set of files and folders that make up a _Dataset_. These assertions can be made at two levels:

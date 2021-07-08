@@ -53,8 +53,8 @@ property referencing the _Root Data Entity_, which SHOULD have an `@id` of `./`.
     {
         "@type": "CreativeWork",
         "@id": "ro-crate-metadata.json",
-        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
-        "about": {"@id": "./"}
+        "about": {"@id": "./"},
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
     },
     
     {
@@ -71,16 +71,22 @@ SHOULD be a versioned permalink URI of the RO-Crate specification
 that the _RO-Crate JSON-LD_ conforms to. The URI SHOULD 
 start with `https://w3id.org/ro/crate/`. 
 
+```info
+The `conformsTo` property MAY be an array, to additionally indicate 
+specializing [RO-Crate profiles](profiles.md).
+```
+
 ### Finding the Root Data Entity
 
 Consumers processing the RO-Crate as an JSON-LD graph can thus reliably find
 the _Root Data Entity_ by following this algorithm:
 
 1. For each entity in `@graph` array
-2. ..if the `conformsTo` property is a URI that starts with `https://w3id.org/ro/crate/`
-3. ....from this entity's `about` object keep the `@id` URI as variable _root_
-4. For each entity in `@graph` array
-5. .. if the entity has an `@id` URI that matches _root_ return it
+2. ..for each value of the `conformsTo` property (if array) or its value (if string)
+3. ....if the value is a URI that starts with `https://w3id.org/ro/crate/`
+4. ......then from this entity's `about` object, keep the `@id` URI as variable _root_
+5. For each entity in `@graph` array
+6. .. if the entity has an `@id` URI that matches _root_ return it
 
 See also the appendix on
 [finding RO-Crate Root in RDF triple stores](appendix/relative-uris.md#finding-ro-crate-root-in-rdf-triple-stores).
@@ -136,8 +142,8 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
  {
     "@type": "CreativeWork",
     "@id": "ro-crate-metadata.json",
-    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
-    "about": {"@id": "./"}
+    "about": {"@id": "./"},
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
  },  
  {
     "@id": "./",
