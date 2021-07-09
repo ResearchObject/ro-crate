@@ -233,12 +233,12 @@ directly as [DefinedTerm] instances:
 
 ```json
 {
-    "@id": "https://criminalcharacters.com/vocab#education",
+    "@id": "https://w3id.org/ro/terms/test#runsOn",
     "@type": "DefinedTerm",
-    "termCode": "education",
-    "name": "Literacy of prisoner",
-    "description": "Prison authorities would record the prisoner’s statement as to whether they could read and write.",
-    "url": "https://github.com/ResearchObject/ro-terms/tree/master/test",
+    "termCode": "runsOn",
+    "name": "Runs on",
+    "description": "Service where the test instance is executed",
+    "url": "https://lifemonitor.eu/workflow_testing_ro_crate#test-instance",
 }
 ```
 
