@@ -41,11 +41,20 @@ Stian Soiland-Reyes (2021):
 _ZB-Med Seminar_, 2021-07-15.
 <https://doi.org/10.5281/zenodo.5105857>
 
+Carole Goble (2021):
+[**FAIR Computational Workflows**](https://www.slideshare.net/carolegoble/fair-computational-workflows-249721518).
+_[JOBIM 2021](https://jobim2021.sciencesconf.org/)_ (Journées Ouvertes en Biologie, Informatique et Mathématiques), 2021-07-08
+
+
 Stian Soiland-Reyes (2021):
 [**RO-Crate, workflows and FAIR Digital Objects**](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo)
 _FAIR Digital Object Forum_, [CWFR & FDO SEM meeting](https://osf.io/v8xjz/), 2021-07-02
 [[video recording](https://youtu.be/gTT0m_zQsPU)], [[slides](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo)]
 <https://doi.org/10.5281/zenodo.5060283>
+
+Carole Goble (2021):
+[**FAIR Computational Workflows: the what, why how and who**](https://www.slideshare.net/carolegoble/fair-computational-workflows).
+_[ICTESSH 2021](http://ictessh.uns.ac.rs/) (International Conference on ICT enhanced Social Sciences and Humanities 2022)_, 2021-06-30
 
 Stian Soiland-Reyes (2021):
 [**Capturing “Just enough” Data, Software and Metadata with RO-Crate**](http://slides.com/soilandreyes/2021-06-21-capturing-just-enough-data-software-and-metadata-with-ro-crate).
@@ -54,8 +63,12 @@ _FAIR Festival 2021_, FAIR Implementation Challenges & Solutions, 2021-06-21.
 
 Stian Soiland-Reyes (2021):
 [**Capturing Just Enough Data, Software and Metadata with RO-Crate**](http://slides.com/soilandreyes/2021-06-17-capturing-just-enough-with-ro-crate).
-_Dataverse community meeting 2021_, Software Metadata and Containerization, 2021-06-17.
+_[Dataverse community meeting 2021](https://projects.iq.harvard.edu/dcm2021)_, Software Metadata and Containerization, 2021-06-17.
 <https://doi.org/10.5281/zenodo.4973678>
+
+Carole Goble (2021):
+[**FAIR Workflows and Research Objects get a Workout**](https://www.slideshare.net/carolegoble/fair-workflows-and-research-objects-get-a-workout-249369204).
+_[Dataverse community meeting 2021](https://projects.iq.harvard.edu/dcm2021)_, keynote, 2021-06-15
 
 Stian Soiland-Reyes (2021):
 [**Capturing workflow life cycle with RO-Crate**](http://slides.com/soilandreyes/2021-06-11-ro-crate-workflows).
@@ -71,6 +84,10 @@ Stian Soiland-Reyes (2021):
 [**Describing and packaging workflows using RO-Crate and BioCompute Objects**](https://youtu.be/3APqPwRIRkA).  
 _Webinar for U.S. Food and Drug Administration (FDA)_, 2021-05-12.  [[Video recording](https://youtu.be/3APqPwRIRkA)] [[slides](https://doi.org/10.5281/zenodo.4633732)]  
 <https://doi.org/10.5281/zenodo.4633732>
+
+Carole Goble (2021):
+[**FAIRy stories: the FAIR Data principles in theory and in practice**](https://www.slideshare.net/carolegoble/fairy-stories-the-fair-data-principles-in-theory-and-in-practice).
+_[NSF Convergence Accelerator Series Tracks A&B](http://spatial.ucsb.edu/2021/Carole-Goble)_, 2021-05-19
 
 Stian Soiland-Reyes (2021):
 [**Data provenance with RO-Crate**](http://slides.com/soilandreyes/2021-05-19-recording-provenance-with-ro-crate).
@@ -93,6 +110,7 @@ Padova, Italy - 18-19 February 2021 [[Video recording](https://youtu.be/xDV1mzLu
 Stian Soiland-Reyes, Carole Goble (2021):  
 [**RO-Crate: Describing and packaging FAIR Research Objects**](https://doi.org/10.5281/zenodo.4633655).  
 _[Scottish Covid-19 Response Consortium](https://www.gla.ac.uk/research/az/scrc/)_, 2021-03-18 
+<https://doi.org/10.5281/zenodo.4633655>
 
 Marco La Rosa, Peter Sefton (2021):
 [**Describo and RO-Crate - the FAIR data research helpers**](https://indico.cern.ch/event/970232/contributions/4158369/attachments/2176946/3679697/CS3%202021.pdf)<!-- https://arkisto-platform.github.io/assets/docs/CS3-2021.pdf -->.  
