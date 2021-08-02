@@ -64,6 +64,7 @@ _[EOSC Symposium 2021](https://www.eoscsecretariat.eu/eosc-symposium-2021-progra
 
 Oscar Corcho, Raúl Palma, Daniel Garijo (2021):
 [**Metadata models and Research Objects for Earth Observation Data Cubes**](https://repository.eoscsecretariat.eu/index.php/s/ERebmpJcyjFRqcx/download?path=%2F18%20June%2F1115%20-%20Metadata%20and%20data%20quality&files=04%20-%20Daniel%20Garijo%20-%20Metadata%20models%20and%20Research%20Objects%20for%20Earth%20Observation%20Data%20Cubes.pdf&downloadStartSecret=9vslv3tqvmf). 
+_[EOSC Symposium 2021](https://www.eoscsecretariat.eu/eosc-symposium-2021-programme)_, 2021-06-18
 [[video recording](https://youtu.be/qvtWJWsMLRg?list=PLbISfqJh3Tstmx6CgrBmYI7lyyVXiY5VE&t=1090)]
 [[slides](https://repository.eoscsecretariat.eu/index.php/s/ERebmpJcyjFRqcx/download?path=%2F18%20June%2F1115%20-%20Metadata%20and%20data%20quality&files=04%20-%20Daniel%20Garijo%20-%20Metadata%20models%20and%20Research%20Objects%20for%20Earth%20Observation%20Data%20Cubes.pdf&downloadStartSecret=9vslv3tqvmf)]
 
