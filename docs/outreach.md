@@ -77,6 +77,16 @@ Stian Soiland-Reyes (2021):
 [**Capturing “Just enough” Data, Software and Metadata with RO-Crate**](http://slides.com/soilandreyes/2021-06-21-capturing-just-enough-data-software-and-metadata-with-ro-crate).
 _FAIR Festival 2021_, FAIR Implementation Challenges & Solutions, 2021-06-21.
 <https://doi.org/10.5281/zenodo.5007432>
+ 
+Peter Sefton, Marco La Rosa, Michael Lynch (2021):  
+[**Arkisto: a repository based platform for managing all kinds of research data**](http://ptsefton.com/2021/06/11/or-2021-arkisto/).  
+_[Open Repositories 2021](https://or2021.openrepositories.org/)_ (OR2021), 2021-06-10.
+[[video recording](https://youtu.be/x72CPv3rJMw?t=7)] [[slides](http://ptsefton.com/2021/06/11/or-2021-arkisto)]
+
+Peter Sefton, Stian Soiland-Reyes (2021):
+[**Research Object Crate (RO-Crate) Update**](http://ptsefton.com/2021/06/11/or-2021-ro-crate/)
+_[Open Repositories 2021](https://or2021.openrepositories.org/)_ (OR2021), 2021-06-10.
+[[video recording](https://youtu.be/x72CPv3rJMw?t=940)] [[slides](http://ptsefton.com/2021/06/11/or-2021-ro-crate)]
 
 Stian Soiland-Reyes (2021):
 [**Capturing Just Enough Data, Software and Metadata with RO-Crate**](http://slides.com/soilandreyes/2021-06-17-capturing-just-enough-with-ro-crate).
@@ -123,6 +133,11 @@ Carole Goble (2021):
 [**The swings and roundabouts of a decade of fun and games with Research Objects**](https://www.slideshare.net/carolegoble/the-swings-and-roundabouts-of-a-decade-of-fun-and-games-with-research-objects).  
 [_17th Italian Research Conference on Digital Libraries_](http://ircdl2021.dei.unipd.it/) (IRCDL 2021)
 Padova, Italy - 18-19 February 2021 [[Video recording](https://youtu.be/xDV1mzLudAY?list=PLKynRfLznsVxASq5t5apewqZCggWg7fwU&t=220)]
+
+Marc Portier (2021):
+[**Open Science: the WorkZones**](https://docs.google.com/presentation/d/19QjSpWykgacwTTQAjNIaqXzyg6lYZMTK340YmlWAPp0/edit#slide=id.gb46c320b14_0_0).
+_[Open Belgium 2021](https://2021.openbelgium.be/)_, 2021-03-24.
+[[video recording](https://youtu.be/0BrXRDCGizk?t=1135) [[slides](http://bit.ly/opsci-workzones-2021-openbe)]
 
 Stian Soiland-Reyes, Carole Goble (2021):  
 [**RO-Crate: Describing and packaging FAIR Research Objects**](https://doi.org/10.5281/zenodo.4633655).  
