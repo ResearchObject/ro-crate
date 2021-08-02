@@ -120,6 +120,12 @@ Marco La Rosa, Peter Sefton (2021):
 [**Describo and RO-Crate - the FAIR data research helpers**](https://indico.cern.ch/event/970232/contributions/4158369/attachments/2176946/3679697/CS3%202021.pdf)<!-- https://arkisto-platform.github.io/assets/docs/CS3-2021.pdf -->.  
 _Cloud Storage Services for Synchronization and Sharing ([CS3](https://www.cs3community.org/2021/))_
 
+Stian Soiland-Reyes (2020):
+[**Packaging workflows with RO-Crate**](https://docs.google.com/presentation/d/1lYAdqm7RESqA9zplTXd4JFJUmome66ui/edit#slide=id.p18)
+_FAIR Workflows_ workshop at [International FAIR Convergence Symposium](https://www.go-fair.org/events/international-fair-convergence-symposium/)_, 2020-11-30.
+[Video recording](https://vimeo.com/499270810) 
+[Slides](https://drive.google.com/file/d/1lYAdqm7RESqA9zplTXd4JFJUmome66ui/view?usp=sharing)
+
 Tomasz Miksa, Maroua Jaoua, Ghaith Arfaoui (2020):  
 **Research Object Crates and Machine-actionable Data Management Plans**.  
 _First Workshop on Data and Research Objects Management for Linked Open Science ([DaMaLOS](https://zbmed.github.io/damalos/docs/2020.html))_ at _The 19th International Semantic Web Conference ([ISWC 2020](https://iswc2020.semanticweb.org/))_.  
