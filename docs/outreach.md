@@ -45,12 +45,16 @@ Carole Goble (2021):
 [**FAIR Computational Workflows**](https://www.slideshare.net/carolegoble/fair-computational-workflows-249721518).
 _[JOBIM 2021](https://jobim2021.sciencesconf.org/)_ (Journées Ouvertes en Biologie, Informatique et Mathématiques), 2021-07-08
 
-
 Stian Soiland-Reyes (2021):
 [**RO-Crate, workflows and FAIR Digital Objects**](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo)
 _FAIR Digital Object Forum_, [CWFR & FDO SEM meeting](https://osf.io/v8xjz/), 2021-07-02
 [[video recording](https://youtu.be/gTT0m_zQsPU)], [[slides](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo)]
 <https://doi.org/10.5281/zenodo.5060283>
+
+Laura Rodríguez-Navas (2021):
+[**WfExS: a software component to enable the use of RO-Crate in the EOSC-Life collaboratory**](https://osf.io/tb5ku/).
+_FAIR Digital Object Forum_, [CWFR & FDO SEM meeting](https://osf.io/v8xjz/), 2021-07-02
+[[video recording](https://osf.io/wna42/)], [[slides](https://osf.io/tb5ku/)]
 
 Carole Goble (2021):
 [**FAIR Computational Workflows: the what, why how and who**](https://www.slideshare.net/carolegoble/fair-computational-workflows).
