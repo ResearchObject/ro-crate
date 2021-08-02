@@ -33,7 +33,34 @@ _Feel free to add to this page, either [edit and raise pull request](https://git
 ## Cite RO-Crate
 Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): **A lightweight approach to research object data packaging** _Bioinformatics Open Source Conference (BOSC2019)_, 2019-07-24/2019-07-25, Basel, Switzerland. <https://doi.org/10.5281/zenodo.3250687>
 
+
 ## Recent publications, presentations, citations
+
+Stian Soiland-Reyes (2021):
+[**Sharing FAIR Research Objects to improve reproducibility**](http://slides.com/soilandreyes/2021-07-15-sharing-fair-research-objects)
+_ZB-Med Seminar_, 2021-07-15.
+<https://doi.org/10.5281/zenodo.5105857>
+
+Stian Soiland-Reyes (2021):
+[**RO-Crate, workflows and FAIR Digital Objects**](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo)
+_FAIR Digital Object Forum_, [CWFR & FDO SEM meeting](https://osf.io/v8xjz/), 2021-07-02
+[[video recording](https://youtu.be/gTT0m_zQsPU)], [[slides](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo)]
+<https://doi.org/10.5281/zenodo.5060283>
+
+Stian Soiland-Reyes (2021):
+[**Capturing “Just enough” Data, Software and Metadata with RO-Crate**](http://slides.com/soilandreyes/2021-06-21-capturing-just-enough-data-software-and-metadata-with-ro-crate).
+_FAIR Festival 2021_, FAIR Implementation Challenges & Solutions, 2021-06-21.
+<https://doi.org/10.5281/zenodo.5007432>
+
+Stian Soiland-Reyes (2021):
+[**Capturing Just Enough Data, Software and Metadata with RO-Crate**](http://slides.com/soilandreyes/2021-06-17-capturing-just-enough-with-ro-crate).
+_Dataverse community meeting 2021_, Software Metadata and Containerization, 2021-06-17.
+<https://doi.org/10.5281/zenodo.4973678>
+
+Stian Soiland-Reyes (2021):
+[**Capturing workflow life cycle with RO-Crate**](http://slides.com/soilandreyes/2021-06-11-ro-crate-workflows).
+_ELIXIR All Hands 2021_, Workshop: Workflow Life Cycle, 2021-06-11
+<https://doi.org/10.5281/zenodo.4926088>
 
 Carole Goble, Stian Soiland-Reyes, Oscar Corcho (2021):  
 [**Packaging and describing Data Collections with RO-Crate**](https://doi.org/10.5281/zenodo.4916168).  
@@ -44,6 +71,10 @@ Stian Soiland-Reyes (2021):
 [**Describing and packaging workflows using RO-Crate and BioCompute Objects**](https://youtu.be/3APqPwRIRkA).  
 _Webinar for U.S. Food and Drug Administration (FDA)_, 2021-05-12.  [[Video recording](https://youtu.be/3APqPwRIRkA)] [[slides](https://doi.org/10.5281/zenodo.4633732)]  
 <https://doi.org/10.5281/zenodo.4633732>
+
+Stian Soiland-Reyes (2021):
+[**Data provenance with RO-Crate**](http://slides.com/soilandreyes/2021-05-19-recording-provenance-with-ro-crate).
+_EOSC-Life retreat 2021_, Provenance of tools and workflows; FAIRification of workflows, 2021-05-19.
 
 Carole Goble, Stian Soiland-Reyes (2021):
 [**RO-Crate: A framework for packaging research products into FAIR Research Objects**](https://www.slideshare.net/carolegoble/rocrate-a-framework-for-packaging-research-products-into-fair-research-objects).  
