@@ -3,7 +3,7 @@ title: Provenance of entities
 redirect_from:
   - /1.1-DRAFT/provenance
 nav_order: 8
-parent: RO-Crate 1.1
+parent: RO-Crate 1.1 (latest)
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

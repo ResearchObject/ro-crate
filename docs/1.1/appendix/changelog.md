@@ -1,7 +1,7 @@
 ---
 title: Changelog
 parent: Appendix
-grand_parent: RO-Crate 1.1
+grand_parent: RO-Crate 1.1 (latest)
 excerpt: List of changes in releases of this specifications
 ---
 <!--

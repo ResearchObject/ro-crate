@@ -3,7 +3,7 @@ title: Root Data Entity
 redirect_from:
   - /1.1-DRAFT/root-data-entity
 nav_order: 5
-parent: RO-Crate 1.1
+parent: RO-Crate 1.1 (latest)
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

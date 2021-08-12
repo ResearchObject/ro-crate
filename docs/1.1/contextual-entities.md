@@ -9,7 +9,7 @@ excerpt: |
   need for the consumer of an RO-Crate to refer to external information which may
   change or become unavailable over time.
 nav_order: 7
-parent: RO-Crate 1.1
+parent: RO-Crate 1.1 (latest)
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

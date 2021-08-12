@@ -1,7 +1,7 @@
 ---
 title: Implementation notes
 parent: Appendix
-grand_parent: RO-Crate 1.1
+grand_parent: RO-Crate 1.1 (latest)
 redirect_from:
   - /1.1-DRAFT/appendix/implementation-notes
 excerpt: 
