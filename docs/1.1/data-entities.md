@@ -3,7 +3,7 @@ title: Data Entities
 redirect_from:
   - /1.1-DRAFT/data-entities
 nav_order: 6
-parent: RO-Crate 1.1
+parent: RO-Crate 1.1 (latest)
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

@@ -7,7 +7,7 @@ excerpt: |
   analyze or generate files contained in an RO-Crate can be embedded
   in an RO-Crate and described in detail.
 nav_order: 9
-parent: RO-Crate 1.1
+parent: RO-Crate 1.1 (latest)
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

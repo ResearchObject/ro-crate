@@ -1,7 +1,7 @@
 ---
 title: RO-Crate JSON-LD
 parent: Appendix
-grand_parent: RO-Crate 1.1
+grand_parent: RO-Crate 1.1 (latest)
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

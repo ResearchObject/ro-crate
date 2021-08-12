@@ -1,7 +1,7 @@
 ---
 title: Appendix
 nav_order: 10
-parent: RO-Crate 1.1
+parent: RO-Crate 1.1 (latest)
 has_children: true
 ---
 <!--
