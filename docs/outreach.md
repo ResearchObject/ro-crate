@@ -31,10 +31,25 @@ _Feel free to add to this page, either [edit and raise pull request](https://git
 
 
 ## Cite RO-Crate
-Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): **A lightweight approach to research object data packaging** _Bioinformatics Open Source Conference (BOSC2019)_, 2019-07-24/2019-07-25, Basel, Switzerland. <https://doi.org/10.5281/zenodo.3250687>
+
+Stian Soiland-Reyes; Peter Sefton; Mercè Crosas; Leyla Jael Castro; Frederik Coppens; José M. Fernández; Daniel Garijo; Björn Grüning; Marco La Rosa; Simone Leo; Eoghan Ó Carragáin; Marc Portier; Ana Trisovic; RO-Crate Community; Paul Groth; Carole Goble (2021):  
+**Packaging research artefacts with RO-Crate**.  
+_Submitted_  [arXiv:2108.06503v1](https://arxiv.org/abs/arXiv:2108.06503v1) [cs.DL]
+[[html](https://stain.github.io/ro-crate-paper/)]
+[[RO-Crate]](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/)  
+<https://doi.org/10.5281/zenodo.5146228> 
 
 
 ## Recent publications, presentations, citations
+
+
+Stian Soiland-Reyes; Peter Sefton; Mercè Crosas; Leyla Jael Castro; Frederik Coppens; José M. Fernández; Daniel Garijo; Björn Grüning; Marco La Rosa; Simone Leo; Eoghan Ó Carragáin; Marc Portier; Ana Trisovic; RO-Crate Community; Paul Groth; Carole Goble (2021):  
+**Packaging research artefacts with RO-Crate**.  
+_Submitted_  [arXiv:2108.06503v1](https://arxiv.org/abs/arXiv:2108.06503v1) [cs.DL]
+[[html](https://stain.github.io/ro-crate-paper/)]
+[[RO-Crate]](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/)  
+<https://doi.org/10.5281/zenodo.5146228> 
+
 
 Stian Soiland-Reyes (2021):
 [**Sharing FAIR Research Objects to improve reproducibility**](http://slides.com/soilandreyes/2021-07-15-sharing-fair-research-objects)
@@ -204,6 +219,8 @@ Kyle Chard, Niall Gaffney, Matthew B. Jones, Kacper Kowalik, Bertram Ludäscher,
 at _Workshop on Research Objects ([RO 2019](http://www.researchobject.org/ro2019/))_, IEEE eScience 2019, 2019-09-24, San Diego, CA, USA.
 _2019 IEEE 15th International Conference on e-Science (e-Science)_. 
 <https://doi.org/10.1109/eScience.2019.00068> [[preprint](https://doi.org/10.5281/zenodo.3271763)]
+
+Eoghan Ó Carragáin; Carole Goble; Peter Sefton; Stian Soiland-Reyes (2019): **A lightweight approach to research object data packaging** _Bioinformatics Open Source Conference (BOSC2019)_, 2019-07-24/2019-07-25, Basel, Switzerland. <https://doi.org/10.5281/zenodo.3250687>
 
 Eoghan Ó Carragáin, Carole Goble, Peter Sefton, Stian Soiland-Reyes (2019):  
 ***RO-Crate, a lightweight approach to Research Object data packaging*** [version 1; not peer reviewed].  
