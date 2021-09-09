@@ -82,6 +82,7 @@ The _RO-Crate_ team is:
 * Jeremy Jay <https://orcid.org/0000-0002-5761-7533>
 * Sergio Serra <https://orcid.org/0000-0002-0792-8157>
 * Ronald Siebes <https://orcid.org/0000-0001-8772-7904>
+* Shaun de Witt <https://orcid.org/0000-0003-4196-3658>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! 
 
