@@ -40,6 +40,7 @@ Stian Soiland-Reyes, Peter Sefton, Mercè Crosas, Leyla Jael Castro, Frederik Co
 
 ## Recent publications, presentations, citations
 
+### 2021
 
 Stian Soiland-Reyes, Peter Sefton, Mercè Crosas, Leyla Jael Castro, Frederik Coppens, José M. Fernández, Daniel Garijo, Björn Grüning, Marco La Rosa, Simone Leo, Eoghan Ó Carragáin, Marc Portier, Ana Trisovic, RO-Crate Community, Paul Groth, Carole Goble (2021):  
 **Packaging research artefacts with RO-Crate**.  
@@ -184,6 +185,14 @@ Marco La Rosa, Peter Sefton (2021):
 [**Describo and RO-Crate - the FAIR data research helpers**](https://indico.cern.ch/event/970232/contributions/4158369/attachments/2176946/3679697/CS3%202021.pdf)<!-- https://arkisto-platform.github.io/assets/docs/CS3-2021.pdf -->.  
 _Cloud Storage Services for Synchronization and Sharing ([CS3](https://www.cs3community.org/2021/))_
 
+### 2020
+
+Stephanie Walton, Laurence Livermore, Olaf Bánki, Robert W. N. Cubey, Robyn Drinkwater, Markus Englund, Carole Goble, Quentin Groom, Christopher Kermorvant, Isabel Rey, Celia M Santos, Ben Scott, Alan R. Williams, Zhengzhe Wu (2020):  
+[**Landscape Analysis for the Specimen Data Refinery**](https://doi.org/10.3897/rio.6.e57602).  
+_Research Ideas and Outcomes_ **6**:e57602
+<https://doi.org/10.3897/rio.6.e57602>
+
+
 Stian Soiland-Reyes (2020):
 [**Packaging workflows with RO-Crate**](https://docs.google.com/presentation/d/1lYAdqm7RESqA9zplTXd4JFJUmome66ui/edit#slide=id.p18)
 _FAIR Workflows_ workshop at [International FAIR Convergence Symposium](https://www.go-fair.org/events/international-fair-convergence-symposium/)_, 2020-11-30.
@@ -221,6 +230,8 @@ Simone Leo, Salvador Capella-Gutierrez (2020):
 Gavin Kennedy (2020):  
 [**Interoperable Research Workspaces and the Mesh**](https://indico.cern.ch/event/854707/contributions/3680449/attachments/1975672/3288266/CS3_2020_Research_Workspaces_Gavin_Kennedy_v2.pptx).  
 [_CS3 2020 - Cloud Storage Synchronization and Sharing Services_](http://cs3.deic.dk/), 2020-01-27 / 2020-01-29, Copenhagen, Denmark.
+
+### 2019
 
 Peter Sefton, Eoghan Ó Carragáin, Carole Goble, Stian Soiland-Reyes (2019):  
 [**Introducing RO-Crate: research object data packaging**](http://ptsefton.com/2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm).  
@@ -275,6 +286,8 @@ Peter Sefton (2019):
 **Research Data Packaging**  
 _Research Data Packaging Workshop_ at _Open Repositories (OR2019)_, Hamburg, 2019-06-10.  
 [[slides](https://docs.google.com/presentation/d/1T_VX8WPh3MZny2VUVR8n81uENEuQsyrAIYAUOlnS-2A/edit?usp=sharing)]
+
+### 2018
 
 Peter Sefton, Michael Lynch, Liz Stokes, Gerard Devine (2018):  
 [**Launching DataCrate v1.0 a general purpose data packaging format for research data distribution and web-display**](https://eresearch.uts.edu.au/2018/11/01/launch_datacrate_1.htm).   
