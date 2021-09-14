@@ -32,24 +32,26 @@ _Feel free to add to this page, either [edit and raise pull request](https://git
 
 ## Cite RO-Crate
 
-Stian Soiland-Reyes; Peter Sefton; Mercè Crosas; Leyla Jael Castro; Frederik Coppens; José M. Fernández; Daniel Garijo; Björn Grüning; Marco La Rosa; Simone Leo; Eoghan Ó Carragáin; Marc Portier; Ana Trisovic; RO-Crate Community; Paul Groth; Carole Goble (2021):  
+Stian Soiland-Reyes, Peter Sefton, Mercè Crosas, Leyla Jael Castro, Frederik Coppens, José M. Fernández, Daniel Garijo, Björn Grüning, Marco La Rosa, Simone Leo, Eoghan Ó Carragáin, Marc Portier, Ana Trisovic, RO-Crate Community, Paul Groth, Carole Goble (2021):  
 **Packaging research artefacts with RO-Crate**.  
-_Submitted_  [arXiv:2108.06503v1](https://arxiv.org/abs/arXiv:2108.06503v1) [cs.DL]
-[[html](https://stain.github.io/ro-crate-paper/)]
-[[RO-Crate]](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/)  
+[arXiv:2108.06503v1](https://arxiv.org/abs/arXiv:2108.06503v1) [cs.DL]
 <https://doi.org/10.5281/zenodo.5146228> 
 
 
 ## Recent publications, presentations, citations
 
 
-Stian Soiland-Reyes; Peter Sefton; Mercè Crosas; Leyla Jael Castro; Frederik Coppens; José M. Fernández; Daniel Garijo; Björn Grüning; Marco La Rosa; Simone Leo; Eoghan Ó Carragáin; Marc Portier; Ana Trisovic; RO-Crate Community; Paul Groth; Carole Goble (2021):  
+Stian Soiland-Reyes, Peter Sefton, Mercè Crosas, Leyla Jael Castro, Frederik Coppens, José M. Fernández, Daniel Garijo, Björn Grüning, Marco La Rosa, Simone Leo, Eoghan Ó Carragáin, Marc Portier, Ana Trisovic, RO-Crate Community, Paul Groth, Carole Goble (2021):  
 **Packaging research artefacts with RO-Crate**.  
 _Submitted_  [arXiv:2108.06503v1](https://arxiv.org/abs/arXiv:2108.06503v1) [cs.DL]
 [[html](https://stain.github.io/ro-crate-paper/)]
 [[RO-Crate]](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/)  
 <https://doi.org/10.5281/zenodo.5146228> 
 
+Jeremy Leipzig, Daniel Nüst, Charles Tapley Hoyt, Karthik Ram, Jane Greenberg (2021):  
+[**The role of metadata in reproducible computational research**](https://arxiv.org/pdf/2006.08589.pdf)  
+_Patterns_ **2**(1):100322
+<https://doi.org/10.1016/j.patter.2021.100322>
 
 Stian Soiland-Reyes (2021):
 [**Sharing FAIR Research Objects to improve reproducibility**](http://slides.com/soilandreyes/2021-07-15-sharing-fair-research-objects)
@@ -76,6 +78,11 @@ Laura Rodríguez-Navas (2021):
 _[EOSC Symposium 2021](https://www.eoscsecretariat.eu/eosc-symposium-2021-programme)_, 2021-06-17
 [[video recording](https://youtu.be/x5lLEym-gug?list=PLbISfqJh3Tstmx6CgrBmYI7lyyVXiY5VE&t=3238)]
 [[slides](https://drive.google.com/file/d/1LJkmI_gyl9VnuQ2_ZHBGeFkt_QTWFieg/view)
+
+Krzysztof Kurowski, Oscar Corcho, Christine Choirat, Magnus Eriksson, Frederik Coppens, Mark van de Sanden, Milan Ojsteršek (2021):  
+[**EOSC Interoperability Framework**](https://op.europa.eu/flexpaper/common/view.jsp?doc=d787ea54-6a87-11eb-aeb5-01aa75ed71a1.en.PDF.pdf&format=pdf).  
+KI-02-21-055-EN-N. Report from the EOSC Executive Board, Working Groups FAIR and Architecture. _Publications Office of the EU_.  
+<https://doi.org/10.2777/620649>
 
 Oscar Corcho, Raúl Palma, Daniel Garijo (2021):
 [**Metadata models and Research Objects for Earth Observation Data Cubes**](https://repository.eoscsecretariat.eu/index.php/s/ERebmpJcyjFRqcx/download?path=%2F18%20June%2F1115%20-%20Metadata%20and%20data%20quality&files=04%20-%20Daniel%20Garijo%20-%20Metadata%20models%20and%20Research%20Objects%20for%20Earth%20Observation%20Data%20Cubes.pdf&downloadStartSecret=9vslv3tqvmf). 
@@ -270,7 +277,6 @@ See also [publications about Research Objects](https://www.researchobject.org/pu
 _To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 
 **[ELIXIR Biohackathon Europe 2021](https://www.biohackathon-europe.org/)** 2021-11-08/2020-11-12, Hybrid. Projects proposed for RO-Crate and WorkflowHub.
-
 
 **[ELIXIR Biohackathon Europe 2020](https://2020.biohackathon-europe.org/)** 2020-11-09/2020-11-13, Virtual. Project on [Galaxy export of RO-Crate](https://github.com/elixir-europe/BioHackathon-projects-2020/tree/master/projects/14).
 
