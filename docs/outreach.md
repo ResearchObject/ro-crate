@@ -193,6 +193,12 @@ _Research Ideas and Outcomes_ **6**:e57602
 <https://doi.org/10.3897/rio.6.e57602>
 
 
+Nick Thieberger, Amanda Harris (2019):  
+[**Be Not Like the Wind: Access to Language and Music Records, Next Steps**](https://lt4all.elra.info/proceedings/lt4all2019/pdf/2019.lt4all-1.26.pdf).  
+_[Proceedings of the 1st International Conference on Language Technologies for All](https://lt4all.elra.info/proceedings/lt4all2019/)_ (LT4All), pp. 101-103. Paris, December 2019.
+European Language Resources Association (ELRA).  
+<https://lt4all.elra.info/proceedings/lt4all2019/pdf/2019.lt4all-1.26.pdf>
+
 Stian Soiland-Reyes (2020):
 [**Packaging workflows with RO-Crate**](https://docs.google.com/presentation/d/1lYAdqm7RESqA9zplTXd4JFJUmome66ui/edit#slide=id.p18)
 _FAIR Workflows_ workshop at [International FAIR Convergence Symposium](https://www.go-fair.org/events/international-fair-convergence-symposium/)_, 2020-11-30.
