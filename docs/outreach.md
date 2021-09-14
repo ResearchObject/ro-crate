@@ -190,6 +190,10 @@ _FAIR Workflows_ workshop at [International FAIR Convergence Symposium](https://
 [Video recording](https://vimeo.com/499270810) 
 [Slides](https://drive.google.com/file/d/1lYAdqm7RESqA9zplTXd4JFJUmome66ui/view?usp=sharing)
 
+Michael L. Nelson, Herbert Van de Sompel (2020):  
+[**A 25 Year Retrospective on D-Lib Magazine**](https://arxiv.org/pdf/2008.11680.pdf).  
+[arXiv:2008.11680](https://arxiv.org/abs/2008.11680) [cs.DL]
+
 Tomasz Miksa, Maroua Jaoua, Ghaith Arfaoui (2020):  
 **Research Object Crates and Machine-actionable Data Management Plans**.  
 _First Workshop on Data and Research Objects Management for Linked Open Science ([DaMaLOS](https://zbmed.github.io/damalos/docs/2020.html))_ at _The 19th International Semantic Web Conference ([ISWC 2020](https://iswc2020.semanticweb.org/))_.  
