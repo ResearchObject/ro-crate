@@ -49,12 +49,12 @@ _Submitted_  [arXiv:2108.06503v1](https://arxiv.org/abs/arXiv:2108.06503v1) [cs.
 <https://doi.org/10.5281/zenodo.5146228> 
 
 Jeremy Leipzig, Daniel Nüst, Charles Tapley Hoyt, Karthik Ram, Jane Greenberg (2021):  
-[**The role of metadata in reproducible computational research**](https://arxiv.org/pdf/2006.08589.pdf)  
+[**The role of metadata in reproducible computational research**](https://doi.org/10.1016/j.patter.2021.100322).  
 _Patterns_ **2**(1):100322
 <https://doi.org/10.1016/j.patter.2021.100322>
 
 Stian Soiland-Reyes (2021):
-[**Sharing FAIR Research Objects to improve reproducibility**](http://slides.com/soilandreyes/2021-07-15-sharing-fair-research-objects)
+[**Sharing FAIR Research Objects to improve reproducibility**](http://slides.com/soilandreyes/2021-07-15-sharing-fair-research-objects).
 _ZB-Med Seminar_, 2021-07-15.
 <https://doi.org/10.5281/zenodo.5105857>
 
@@ -63,7 +63,7 @@ Carole Goble (2021):
 _[JOBIM 2021](https://jobim2021.sciencesconf.org/)_ (Journées Ouvertes en Biologie, Informatique et Mathématiques), 2021-07-08
 
 Stian Soiland-Reyes (2021):
-[**RO-Crate, workflows and FAIR Digital Objects**](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo)
+[**RO-Crate, workflows and FAIR Digital Objects**](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo).
 _FAIR Digital Object Forum_, [CWFR & FDO SEM meeting](https://osf.io/v8xjz/), 2021-07-02
 [[video recording](https://youtu.be/gTT0m_zQsPU)], [[slides](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo)]
 <https://doi.org/10.5281/zenodo.5060283>
@@ -80,7 +80,7 @@ _[EOSC Symposium 2021](https://www.eoscsecretariat.eu/eosc-symposium-2021-progra
 [[slides](https://drive.google.com/file/d/1LJkmI_gyl9VnuQ2_ZHBGeFkt_QTWFieg/view)
 
 Krzysztof Kurowski, Oscar Corcho, Christine Choirat, Magnus Eriksson, Frederik Coppens, Mark van de Sanden, Milan Ojsteršek (2021):  
-[**EOSC Interoperability Framework**](https://op.europa.eu/flexpaper/common/view.jsp?doc=d787ea54-6a87-11eb-aeb5-01aa75ed71a1.en.PDF.pdf&format=pdf).  
+[**EOSC Interoperability Framework**](https://op.europa.eu/flexpaper/common/view.jsp?doc=d787ea54-6a87-11eb-aeb5-01aa75ed71a1.en.PDF.pdf&format=pdf#page=10).  
 KI-02-21-055-EN-N. Report from the EOSC Executive Board, Working Groups FAIR and Architecture. _Publications Office of the EU_.  
 <https://doi.org/10.2777/620649>
 
