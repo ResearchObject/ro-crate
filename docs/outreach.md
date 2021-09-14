@@ -53,6 +53,20 @@ Jeremy Leipzig, Daniel Nüst, Charles Tapley Hoyt, Karthik Ram, Jane Greenberg (
 _Patterns_ **2**(1):100322
 <https://doi.org/10.1016/j.patter.2021.100322>
 
+
+Anna-Lena Lamprecht, Magnus Palmblad, Jon Ison, Veit Schwämmle,
+Mohammad Sadnan Al Manir, Ilkay Altintas, Christopher J. O. Baker, Ammar Ben Hadj Amor, Salvador Capella-Gutierrez,
+Paulos Charonyktakis, Michael R. Crusoe,
+Yolanda Gil, Carole Goble, Timothy J. Griffin,
+Paul Groth, Hans Ienasescu, Pratik Jagtap,
+Matúš Kalaš, Vedran Kasalica, Alireza Khanteymoori,
+Tobias Kuhn, Hailiang Mei, Hervé Ménager, Steffen Möller, Robin A. Richardson,
+Vincent Robert, Stian Soiland-Reyes, Robert Stevens, Szoke Szaniszlo, 
+Suzan Verberne, Aswin Verhoeven, Katherine Wolstencroft (2021):  
+[**Perspectives on automated composition of workflows in the life sciences** [version 1; peer review: awaiting peer review]](https://doi.org/10.12688/f1000research.54159.1).  
+_F1000Research_ **10**:897  
+<https://doi.org/10.12688/f1000research.54159.1>
+
 Stian Soiland-Reyes (2021):
 [**Sharing FAIR Research Objects to improve reproducibility**](http://slides.com/soilandreyes/2021-07-15-sharing-fair-research-objects).
 _ZB-Med Seminar_, 2021-07-15.
