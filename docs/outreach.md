@@ -32,27 +32,44 @@ _Feel free to add to this page, either [edit and raise pull request](https://git
 
 ## Cite RO-Crate
 
-Stian Soiland-Reyes; Peter Sefton; Mercè Crosas; Leyla Jael Castro; Frederik Coppens; José M. Fernández; Daniel Garijo; Björn Grüning; Marco La Rosa; Simone Leo; Eoghan Ó Carragáin; Marc Portier; Ana Trisovic; RO-Crate Community; Paul Groth; Carole Goble (2021):  
+Stian Soiland-Reyes, Peter Sefton, Mercè Crosas, Leyla Jael Castro, Frederik Coppens, José M. Fernández, Daniel Garijo, Björn Grüning, Marco La Rosa, Simone Leo, Eoghan Ó Carragáin, Marc Portier, Ana Trisovic, RO-Crate Community, Paul Groth, Carole Goble (2021):  
 **Packaging research artefacts with RO-Crate**.  
-_Submitted_  [arXiv:2108.06503v1](https://arxiv.org/abs/arXiv:2108.06503v1) [cs.DL]
-[[html](https://stain.github.io/ro-crate-paper/)]
-[[RO-Crate]](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/)  
+[arXiv:2108.06503v1](https://arxiv.org/abs/arXiv:2108.06503v1) [cs.DL]
 <https://doi.org/10.5281/zenodo.5146228> 
 
 
 ## Recent publications, presentations, citations
 
+### 2021
 
-Stian Soiland-Reyes; Peter Sefton; Mercè Crosas; Leyla Jael Castro; Frederik Coppens; José M. Fernández; Daniel Garijo; Björn Grüning; Marco La Rosa; Simone Leo; Eoghan Ó Carragáin; Marc Portier; Ana Trisovic; RO-Crate Community; Paul Groth; Carole Goble (2021):  
+Stian Soiland-Reyes, Peter Sefton, Mercè Crosas, Leyla Jael Castro, Frederik Coppens, José M. Fernández, Daniel Garijo, Björn Grüning, Marco La Rosa, Simone Leo, Eoghan Ó Carragáin, Marc Portier, Ana Trisovic, RO-Crate Community, Paul Groth, Carole Goble (2021):  
 **Packaging research artefacts with RO-Crate**.  
 _Submitted_  [arXiv:2108.06503v1](https://arxiv.org/abs/arXiv:2108.06503v1) [cs.DL]
 [[html](https://stain.github.io/ro-crate-paper/)]
 [[RO-Crate]](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/)  
 <https://doi.org/10.5281/zenodo.5146228> 
 
+Jeremy Leipzig, Daniel Nüst, Charles Tapley Hoyt, Karthik Ram, Jane Greenberg (2021):  
+[**The role of metadata in reproducible computational research**](https://doi.org/10.1016/j.patter.2021.100322).  
+_Patterns_ **2**(1):100322
+<https://doi.org/10.1016/j.patter.2021.100322>
+
+
+Anna-Lena Lamprecht, Magnus Palmblad, Jon Ison, Veit Schwämmle,
+Mohammad Sadnan Al Manir, Ilkay Altintas, Christopher J. O. Baker, Ammar Ben Hadj Amor, Salvador Capella-Gutierrez,
+Paulos Charonyktakis, Michael R. Crusoe,
+Yolanda Gil, Carole Goble, Timothy J. Griffin,
+Paul Groth, Hans Ienasescu, Pratik Jagtap,
+Matúš Kalaš, Vedran Kasalica, Alireza Khanteymoori,
+Tobias Kuhn, Hailiang Mei, Hervé Ménager, Steffen Möller, Robin A. Richardson,
+Vincent Robert, Stian Soiland-Reyes, Robert Stevens, Szoke Szaniszlo, 
+Suzan Verberne, Aswin Verhoeven, Katherine Wolstencroft (2021):  
+[**Perspectives on automated composition of workflows in the life sciences** [version 1; peer review: awaiting peer review]](https://doi.org/10.12688/f1000research.54159.1).  
+_F1000Research_ **10**:897  
+<https://doi.org/10.12688/f1000research.54159.1>
 
 Stian Soiland-Reyes (2021):
-[**Sharing FAIR Research Objects to improve reproducibility**](http://slides.com/soilandreyes/2021-07-15-sharing-fair-research-objects)
+[**Sharing FAIR Research Objects to improve reproducibility**](http://slides.com/soilandreyes/2021-07-15-sharing-fair-research-objects).
 _ZB-Med Seminar_, 2021-07-15.
 <https://doi.org/10.5281/zenodo.5105857>
 
@@ -61,7 +78,7 @@ Carole Goble (2021):
 _[JOBIM 2021](https://jobim2021.sciencesconf.org/)_ (Journées Ouvertes en Biologie, Informatique et Mathématiques), 2021-07-08
 
 Stian Soiland-Reyes (2021):
-[**RO-Crate, workflows and FAIR Digital Objects**](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo)
+[**RO-Crate, workflows and FAIR Digital Objects**](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo).
 _FAIR Digital Object Forum_, [CWFR & FDO SEM meeting](https://osf.io/v8xjz/), 2021-07-02
 [[video recording](https://youtu.be/gTT0m_zQsPU)], [[slides](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo)]
 <https://doi.org/10.5281/zenodo.5060283>
@@ -76,6 +93,11 @@ Laura Rodríguez-Navas (2021):
 _[EOSC Symposium 2021](https://www.eoscsecretariat.eu/eosc-symposium-2021-programme)_, 2021-06-17
 [[video recording](https://youtu.be/x5lLEym-gug?list=PLbISfqJh3Tstmx6CgrBmYI7lyyVXiY5VE&t=3238)]
 [[slides](https://drive.google.com/file/d/1LJkmI_gyl9VnuQ2_ZHBGeFkt_QTWFieg/view)
+
+Krzysztof Kurowski, Oscar Corcho, Christine Choirat, Magnus Eriksson, Frederik Coppens, Mark van de Sanden, Milan Ojsteršek (2021):  
+[**EOSC Interoperability Framework**](https://op.europa.eu/flexpaper/common/view.jsp?doc=d787ea54-6a87-11eb-aeb5-01aa75ed71a1.en.PDF.pdf&format=pdf#page=10).  
+KI-02-21-055-EN-N. Report from the EOSC Executive Board, Working Groups FAIR and Architecture. _Publications Office of the EU_.  
+<https://doi.org/10.2777/620649>
 
 Oscar Corcho, Raúl Palma, Daniel Garijo (2021):
 [**Metadata models and Research Objects for Earth Observation Data Cubes**](https://repository.eoscsecretariat.eu/index.php/s/ERebmpJcyjFRqcx/download?path=%2F18%20June%2F1115%20-%20Metadata%20and%20data%20quality&files=04%20-%20Daniel%20Garijo%20-%20Metadata%20models%20and%20Research%20Objects%20for%20Earth%20Observation%20Data%20Cubes.pdf&downloadStartSecret=9vslv3tqvmf). 
@@ -163,11 +185,29 @@ Marco La Rosa, Peter Sefton (2021):
 [**Describo and RO-Crate - the FAIR data research helpers**](https://indico.cern.ch/event/970232/contributions/4158369/attachments/2176946/3679697/CS3%202021.pdf)<!-- https://arkisto-platform.github.io/assets/docs/CS3-2021.pdf -->.  
 _Cloud Storage Services for Synchronization and Sharing ([CS3](https://www.cs3community.org/2021/))_
 
+### 2020
+
+Stephanie Walton, Laurence Livermore, Olaf Bánki, Robert W. N. Cubey, Robyn Drinkwater, Markus Englund, Carole Goble, Quentin Groom, Christopher Kermorvant, Isabel Rey, Celia M Santos, Ben Scott, Alan R. Williams, Zhengzhe Wu (2020):  
+[**Landscape Analysis for the Specimen Data Refinery**](https://doi.org/10.3897/rio.6.e57602).  
+_Research Ideas and Outcomes_ **6**:e57602
+<https://doi.org/10.3897/rio.6.e57602>
+
+
+Nick Thieberger, Amanda Harris (2019):  
+[**Be Not Like the Wind: Access to Language and Music Records, Next Steps**](https://lt4all.elra.info/proceedings/lt4all2019/pdf/2019.lt4all-1.26.pdf).  
+_[Proceedings of the 1st International Conference on Language Technologies for All](https://lt4all.elra.info/proceedings/lt4all2019/)_ (LT4All), pp. 101-103. Paris, December 2019.
+European Language Resources Association (ELRA).  
+<https://lt4all.elra.info/proceedings/lt4all2019/pdf/2019.lt4all-1.26.pdf>
+
 Stian Soiland-Reyes (2020):
 [**Packaging workflows with RO-Crate**](https://docs.google.com/presentation/d/1lYAdqm7RESqA9zplTXd4JFJUmome66ui/edit#slide=id.p18)
 _FAIR Workflows_ workshop at [International FAIR Convergence Symposium](https://www.go-fair.org/events/international-fair-convergence-symposium/)_, 2020-11-30.
 [Video recording](https://vimeo.com/499270810) 
 [Slides](https://drive.google.com/file/d/1lYAdqm7RESqA9zplTXd4JFJUmome66ui/view?usp=sharing)
+
+Michael L. Nelson, Herbert Van de Sompel (2020):  
+[**A 25 Year Retrospective on D-Lib Magazine**](https://arxiv.org/pdf/2008.11680.pdf).  
+[arXiv:2008.11680](https://arxiv.org/abs/2008.11680) [cs.DL]
 
 Tomasz Miksa, Maroua Jaoua, Ghaith Arfaoui (2020):  
 **Research Object Crates and Machine-actionable Data Management Plans**.  
@@ -196,6 +236,8 @@ Simone Leo, Salvador Capella-Gutierrez (2020):
 Gavin Kennedy (2020):  
 [**Interoperable Research Workspaces and the Mesh**](https://indico.cern.ch/event/854707/contributions/3680449/attachments/1975672/3288266/CS3_2020_Research_Workspaces_Gavin_Kennedy_v2.pptx).  
 [_CS3 2020 - Cloud Storage Synchronization and Sharing Services_](http://cs3.deic.dk/), 2020-01-27 / 2020-01-29, Copenhagen, Denmark.
+
+### 2019
 
 Peter Sefton, Eoghan Ó Carragáin, Carole Goble, Stian Soiland-Reyes (2019):  
 [**Introducing RO-Crate: research object data packaging**](http://ptsefton.com/2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm).  
@@ -251,6 +293,8 @@ Peter Sefton (2019):
 _Research Data Packaging Workshop_ at _Open Repositories (OR2019)_, Hamburg, 2019-06-10.  
 [[slides](https://docs.google.com/presentation/d/1T_VX8WPh3MZny2VUVR8n81uENEuQsyrAIYAUOlnS-2A/edit?usp=sharing)]
 
+### 2018
+
 Peter Sefton, Michael Lynch, Liz Stokes, Gerard Devine (2018):  
 [**Launching DataCrate v1.0 a general purpose data packaging format for research data distribution and web-display**](https://eresearch.uts.edu.au/2018/11/01/launch_datacrate_1.htm).   
 Talk at _eResearch Australasia 2018_ <https://eresearch.uts.edu.au/2018/11/01/launch_datacrate_1.htm>
@@ -270,7 +314,6 @@ See also [publications about Research Objects](https://www.researchobject.org/pu
 _To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 
 **[ELIXIR Biohackathon Europe 2021](https://www.biohackathon-europe.org/)** 2021-11-08/2020-11-12, Hybrid. Projects proposed for RO-Crate and WorkflowHub.
-
 
 **[ELIXIR Biohackathon Europe 2020](https://2020.biohackathon-europe.org/)** 2020-11-09/2020-11-13, Virtual. Project on [Galaxy export of RO-Crate](https://github.com/elixir-europe/BioHackathon-projects-2020/tree/master/projects/14).
 
