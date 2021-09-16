@@ -115,6 +115,10 @@ Stian Soiland-Reyes (2021):
 _FAIR Festival 2021_, FAIR Implementation Challenges & Solutions, 2021-06-21.
 <https://doi.org/10.5281/zenodo.5007432>
  
+Marco La Rosa (2021):  
+[**From endangered languages to the Science Mesh - petascale FAIR data repositories**](https://cs3mesh4eosc.eu/news-events/news/blogpost-endangered-languages-science-mesh-petascale-fair-data-repositories)  
+_CS3MESH4EOSC Blog_
+ 
 Peter Sefton, Marco La Rosa, Michael Lynch (2021):  
 [**Arkisto: a repository based platform for managing all kinds of research data**](http://ptsefton.com/2021/06/11/or-2021-arkisto/).  
 _[Open Repositories 2021](https://or2021.openrepositories.org/)_ (OR2021), 2021-06-10.
