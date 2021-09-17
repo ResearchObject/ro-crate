@@ -51,7 +51,13 @@ See the [specification](specification.md) page for older and future versions.
 
 ## How can I use it?
 
-We try to maintain a list of RO-Crate [tools](tools/) and [examples](examples).
+We maintain a list of RO-Crate [tools](tools/) and [examples](examples).
+
+## RO-Crate in use
+
+We describe some current cases and applications of where [RO-Crate is in use](in-use) for packaging and describing Data, Datasets and Workflows.
+
+## Current
 
 ## Contribute to RO-Crate community
 
