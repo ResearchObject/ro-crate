@@ -23,13 +23,44 @@ redirect_from:
 
 # RO-Crate in use
 
-These applications use or expose RO-Crates:
+These applications use or expose RO-Crates to describe Data, Datasets and Workflows:
 
- - [Workflow Hub](https://about.workflowhub.eu/) imports and exports [Workflow RO-Crates](https://about.workflowhub.eu/Workflow-RO-Crate/)
- - [OCFL-indexer](https://github.com/CoEDL/modpdsc/) NodeJS application that walks the [Oxford Common File Layout](https://ocfl.io/) on the file system, validate RO-Crate Metadata Files and parse into objects registered in Elasticsearch. (~ _alpha_)
- - [ONI indexer](https://github.com/UTS-eResearch/oni-indexer)
- - [ocfl-tools](https://github.com/CoEDL/ocfl-tools)
- - [ocfl-viewer](https://hub.docker.com/r/coedl/ocfl-viewer)
- - [Research Object Composer](https://github.com/researchobject/research-object-composer) is a REST API for gradually building and depositing Research Objects according to a pre-defined profile.  (RO-Crate support _alpha_)
- - [Life Monitor](life_monitor) uses RO-Crate as an exchange format for workflow testing metadata
-- ... (yours?)
+## WorkflowHub
+
+[Workflow Hub](https://about.workflowhub.eu/) imports and exports [Workflow RO-Crates](https://about.workflowhub.eu/Workflow-RO-Crate/), which are a specialization of RO Crate for packaging an executable workflow with all necessary documentation. It is aligned with, and intends to strictly extend, the more general [Bioschemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/).
+
+WorkflowHub uses Workflow RO Crates as an exchange format for users to upload a packaged workflow.
+
+## Life Monitor
+
+[Life Monitor](life_monitor) uses RO-Crate as an exchange format for the description of test suites associated with workflows. To this end, the Life Monitor team is developing an extension to the [Workflow RO-Crate specification](https://about.workflowhub.eu/Workflow-RO-Crate/) to support the inclusion of metadata related to the testing of computational workflows stored in the crate.
+
+## Arkisto
+
+[Arkisto uses RO-Crate](https://arkisto-platform.github.io/standards/ro-crate/) for packaging data objects in the 3 uses cases described below.
+
+As part of these use-cases they have been developing or enhancing their tooling to facilitate their use of RO-Crate
+
+  * [OCFL-indexer](https://github.com/CoEDL/modpdsc/) is a NodeJS application that walks the [Oxford Common File Layout](https://ocfl.io/) on the file system, validate RO-Crate Metadata Files and parse into objects registered in Elasticsearch. (~ _alpha_) 
+  * [ocfl-tools](https://github.com/CoEDL/ocfl-tools) contains tools for managing RO-Crates in an OCFL repository .
+  * [ocfl-viewer](https://hub.docker.com/r/coedl/ocfl-viewer)
+  * [ONI indexer](https://github.com/UTS-eResearch/oni-indexer)
+
+
+**Modern PARADISEC**
+
+[Modern PARADISEC](https://arkisto-platform.github.io/case-studies/paradisec/) demonstrates the use of RO-Crate to describe the collections and items and store those items within an OCFL system. The demonstrator includes an elastic search service and a webserver but the key feature is that the it keeps working with only the filesystem and a webserver.
+
+
+**UTS Research Data Repository**
+
+The [UTS Data Repository](https://arkisto-platform.github.io/case-studies/uts-repo/) UTS Research Data Repository is a searchable portal for discovering and accessing public datasets by UTS researchers. Datasets are described with RO-Crates and published either through the University’s institutional research data management system or direct import from research storage devices for very large datasets.
+
+**UTS Cultural Datasets**
+
+The [UTS Cultural Datasets](https://arkisto-platform.github.io/case-studies/uts-cultural/) project is collaborating with Humanities and Social Science (HASS) researchers and is re-using existing UTS Data infrastructure to build interactive services that allow people to use the data. They make use of RO-Crate to able to directly transfer data and mappings to the [Expert Nation database](https://expertnation.org/).
+
+
+## Research Object Composer
+
+[Research Object Composer](https://github.com/researchobject/research-object-composer) is a REST API for gradually building and depositing Research Objects according to a pre-defined profile. It uses JSON as an intermediate format and modified JSON schemas to define a Profile (RO-Crate support _alpha_)
