@@ -5,7 +5,7 @@ redirect_from:
     - /implementations
 ---
 <!--
-   Copyright 2019-2020 The University of Manchester and RO Crate contributors 
+   Copyright 2019-2020 The University of Manchester and RO-Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,13 +27,12 @@ These applications use or expose RO-Crates to describe Data, Datasets and Workfl
 
 ## WorkflowHub
 
-[Workflow Hub](https://about.workflowhub.eu/) imports and exports [Workflow RO-Crates](https://about.workflowhub.eu/Workflow-RO-Crate/), which are a specialization of RO Crate for packaging an executable workflow with all necessary documentation. It is aligned with, and intends to strictly extend, the more general [Bioschemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/).
+[Workflow Hub](https://about.workflowhub.eu/) imports and exports [Workflow RO-Crates](https://about.workflowhub.eu/Workflow-RO-Crate/), using it as an exchange format. They are a specialization of RO-Crate for packaging an executable workflow with all necessary documentation. It is aligned with, and intends to strictly extend, the more general [Bioschemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/).
 
-WorkflowHub uses Workflow RO Crates as an exchange format for users to upload a packaged workflow.
 
 ## Life Monitor
 
-[Life Monitor](life_monitor) uses RO-Crate as an exchange format for the description of test suites associated with workflows. To this end, the Life Monitor team is developing an extension to the [Workflow RO-Crate specification](https://about.workflowhub.eu/Workflow-RO-Crate/) to support the inclusion of metadata related to the testing of computational workflows stored in the crate.
+[Life Monitor](life_monitor) uses RO-Crate as an exchange format for describing test suites associated with workflows. To this end, the Life Monitor team is developing an extension to the [Workflow RO-Crate specification](https://about.workflowhub.eu/Workflow-RO-Crate/) to support the inclusion of metadata related to the testing of computational workflows stored in the crate.
 
 ## Arkisto
 
