@@ -20,7 +20,7 @@ If you have [Docker] you can avoid the Ruby/Bundler/Jekyll install dance and run
 
     make jekyll-docker-serve
 
-Then visit http://0.0.0.0:3000/ to browse a local rendering. 
+Then visit http://0.0.0.0:4000/ to browse a local rendering. 
 
 Alternatively, to render HTML files into `site/` folder, run:
 
