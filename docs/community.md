@@ -85,6 +85,7 @@ The _RO-Crate_ team is:
 * Shaun de Witt <https://orcid.org/0000-0003-4196-3658>
 * Shady El Damaty <https://orcid.org/0000-0002-2318-4477>
 * Douglas Lowe <https://orcid.org/0000-0002-1248-3594>
+* Xuanqi Li <https://github.com/Logan-174>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! 
 
