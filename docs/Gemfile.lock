@@ -264,7 +264,7 @@ GEM
 
 PLATFORMS
   ruby
-  x86_64-linux-musl
+  x86_64-linux
 
 DEPENDENCIES
   github-pages
@@ -272,4 +272,4 @@ DEPENDENCIES
   just-the-docs
 
 BUNDLED WITH
-   2.2.6
+   2.2.16

@@ -59,6 +59,20 @@ The [UTS Data Repository](https://arkisto-platform.github.io/case-studies/uts-re
 
 The [UTS Cultural Datasets](https://arkisto-platform.github.io/case-studies/uts-cultural/) project is collaborating with Humanities and Social Science (HASS) researchers and is re-using existing UTS Data infrastructure to build interactive services that allow people to use the data. They make use of RO-Crate to be able to directly transfer data and mappings to the [Expert Nation database](https://expertnation.org/).
 
+## Workflow Execution Service (WfExS)
+
+[WfExS-backend](https://github.com/inab/WfExS-backend) is a high-level workflow execution command line program that consumes and creates RO-Crates, focusing on
+the interconnection of content-sensitive research infrastructures for handling sensitive human data analysis scenarios.
+WfExS-backend delegates workflow execution of existing workflow engines, and it is designed to facilitate more secure
+and reproducible workflow executions to promote analysis reproducibility and replicability. Secure executions are
+achieved using FUSE encrypted directories for non-disclosable inputs, intermediate workflow execution results and output
+files.
+
+RO-Crates are, indeed, an element of knowledge transfer between repeated workflow executions. WfExS-backend stores all
+the gathered details, output metadata and execution provenance in the output RO-Crate to achieve future reproducible
+executions. Final execution results can be encrypted with crypt4gh GA4GH standard using the public keys of the target
+researchers or destination, so the results can be safely moved outside the execution environments through unsecured
+networks and storages.
 
 ## Research Object Composer
 
