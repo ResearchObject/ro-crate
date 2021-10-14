@@ -143,7 +143,7 @@ topics:  #these can be moved to ./_data/intro.yml - referencing then via assign 
 
 <div class="p-5 mb-4 bg-light rounded-3">
     <div class="container-fluid">
-      <img src="assets/img/ro-crate.svg" class="img-fluid logo float-start me-4"/>
+      <img src="{{'assets/img/ro-crate.svg' | relative_url}}" class="img-fluid logo float-start me-4"/>
       <h1 class="display-5 fw-bold">5' intro to RO-Crate </h1>
     <p>Scroll down through our quick introduction to learn what RO-Crate can do for you.</p>       
     </div>
@@ -155,7 +155,7 @@ topics:  #these can be moved to ./_data/intro.yml - referencing then via assign 
   <div class="row {{alternate_style}} align-items-center g-5 py-5 justify-content-center">
     <div class="col-10 col-sm-8 col-lg-6">
       <img class="d-block mx-lg-auto img-fluid" loading="lazy"
-        src="{{topic.img.src}}"
+        src="{{topic.img.src | relative_url}}"
         title="{{topic.img.title}}" />
     </div>
     <div class="col-lg-6">
