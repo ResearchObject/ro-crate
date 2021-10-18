@@ -77,3 +77,7 @@ networks and storages.
 ## Research Object Composer
 
 [Research Object Composer](https://github.com/researchobject/research-object-composer) is a REST API for gradually building and depositing Research Objects according to a pre-defined profile. It uses JSON as an intermediate format and modified JSON schemas to define a Profile (RO-Crate support _alpha_)
+
+## Machine-actionable data management plans
+
+[RDA maDMP Mapper](https://github.com/GhaithArf/ro-crate-rda-madmp-mapper) and [Ro-Crate_2_ma-DMP](https://github.com/BrennerG/Ro-Crate_2_ma-DMP/tree/r2d_) can convert between machine-actionable data management plans (maDMP) and RO-Crate. See <https://doi.org/10.4126/frl01-006423291> for details.
