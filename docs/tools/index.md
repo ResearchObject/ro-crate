@@ -22,8 +22,8 @@ title: Tools
 
 While we're mostly focusing on the [RO-Crate specification](specification.md) some tools already exist for working with RO-Crates:
 
- - [Describo](https://arkisto-platform.github.io/describo/) interactive desktop application to create, update and export RO-Crates for different profiles. (~ _RC_)
- - [Describo Online](https://arkisto-platform.github.io/describo-online/) Web-based application to create RO-Crates using cloud storage (~ _alpha_)
+ - [Describo](https://arkisto-platform.github.io/describo/) - interactive desktop application to create, update and export RO-Crates for different profiles. (~ _RC_)
+ - [Describo Online](https://arkisto-platform.github.io/describo-online/) - Web-based application to create RO-Crates using cloud storage (~ _alpha_)
  - [ro-crate-excel](https://www.npmjs.com/package/ro-crate-excel) - Command-line tool to help create RO-Crates from spreadsheets (~ _beta_)
  - [ro-crate-html-js](https://www.npmjs.com/package/ro-crate-html-js) - HTML rendering of RO-Crate (~ _beta_)
  - [ro-crate-js](https://www.npmjs.com/package/ro-crate) - JavaScript/NodeJS library for RO-Crate rendering as HTML. (~ _beta_)
