@@ -61,7 +61,7 @@ RO-Crate makes use of the [Linked Data principles] for its description. In parti
 4. (Meta)data should use [open standards from W3C], such as RDF and SPARQL.
 5. (Meta)data should **link** to other people’s data to provide context, using _URIs_ as global identifiers
 
-RO-Crate realize these principles using a particular set of technologies and best practices:
+RO-Crate realizes these principles using a particular set of technologies and best practices:
 
 1. The _RO-Crate Metadata File_ and _RO-Crate Website_ can be directly published on the web together with the RO-Crate payload. In addition, a data package (e.g. BagIt Zip archive) that contain the RO-Crate can also be published on the web.
 2. The _RO-Crate Metadata File_ is based on the structured data format [JSON-LD]. 
