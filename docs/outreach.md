@@ -56,7 +56,6 @@ Jeremy Leipzig, Daniel Nüst, Charles Tapley Hoyt, Karthik Ram, Jane Greenberg (
 _Patterns_ **2**(1):100322
 <https://doi.org/10.1016/j.patter.2021.100322>
 
-
 Anna-Lena Lamprecht, Magnus Palmblad, Jon Ison, Veit Schwämmle,
 Mohammad Sadnan Al Manir, Ilkay Altintas, Christopher J. O. Baker, Ammar Ben Hadj Amor, Salvador Capella-Gutierrez,
 Paulos Charonyktakis, Michael R. Crusoe,
@@ -69,6 +68,11 @@ Suzan Verberne, Aswin Verhoeven, Katherine Wolstencroft (2021):
 [**Perspectives on automated composition of workflows in the life sciences** [version 1; peer review: awaiting peer review]](https://doi.org/10.12688/f1000research.54159.1).  
 _F1000Research_ **10**:897  
 <https://doi.org/10.12688/f1000research.54159.1>
+
+Stian Soiland-Reyes (2021)
+[**Reproducibility; Research Objects (RO-Crate) and Common Workflow Language (CWL)**](https://slides.com/soilandreyes/2021-10-07-reproducibility-research-objects)
+_[WoSSS21](https://wosss.org/wosss21/agenda):Workshop on Sustainable Software Sustainability_, 2021-10-07.
+[[video recording](https://www.youtube.com/watch?v=vNHqTcHnfyI)]
 
 Stian Soiland-Reyes (2021):
 [**Sharing FAIR Research Objects to improve reproducibility**](http://slides.com/soilandreyes/2021-07-15-sharing-fair-research-objects).
@@ -107,7 +111,6 @@ _[EOSC Symposium 2021](https://www.eoscsecretariat.eu/eosc-symposium-2021-progra
 [[video recording](https://youtu.be/qvtWJWsMLRg?list=PLbISfqJh3Tstmx6CgrBmYI7lyyVXiY5VE&t=1090)]
 [[slides](https://repository.eoscsecretariat.eu/index.php/s/ERebmpJcyjFRqcx/download?path=%2F18%20June%2F1115%20-%20Metadata%20and%20data%20quality&files=04%20-%20Daniel%20Garijo%20-%20Metadata%20models%20and%20Research%20Objects%20for%20Earth%20Observation%20Data%20Cubes.pdf&downloadStartSecret=9vslv3tqvmf)]
 
-
 Carole Goble (2021):
 [**FAIR Computational Workflows: the what, why how and who**](https://www.slideshare.net/carolegoble/fair-computational-workflows).
 _[ICTESSH 2021](http://ictessh.uns.ac.rs/) (International Conference on ICT enhanced Social Sciences and Humanities 2022)_, 2021-06-30
@@ -134,7 +137,7 @@ _[Open Repositories 2021](https://or2021.openrepositories.org/)_ (OR2021), 2021-
 Stian Soiland-Reyes (2021):
 [**Capturing Just Enough Data, Software and Metadata with RO-Crate**](http://slides.com/soilandreyes/2021-06-17-capturing-just-enough-with-ro-crate).
 _[Dataverse community meeting 2021](https://projects.iq.harvard.edu/dcm2021)_, Software Metadata and Containerization, 2021-06-17.
-[[video](https://youtu.be/LJq-mzT9v8o?t=1731)]
+[[video recording](https://youtu.be/LJq-mzT9v8o?t=1731)]
 <https://doi.org/10.5281/zenodo.4973678>
 
 Carole Goble (2021):
@@ -187,6 +190,11 @@ Stian Soiland-Reyes, Carole Goble (2021):
 [**RO-Crate: Describing and packaging FAIR Research Objects**](https://doi.org/10.5281/zenodo.4633655).  
 _[Scottish Covid-19 Response Consortium](https://www.gla.ac.uk/research/az/scrc/)_, 2021-03-18 
 <https://doi.org/10.5281/zenodo.4633655>
+
+Stian Soiland-Reyes, Carole Goble (2021):  
+[**Publishing workflows in WorkflowHub.eu using CWL, and packaging with RO-Crate**](https://cwl.discourse.group/t/publishing-workflows-in-workflowhub-eu-using-cwl-and-packaging-with-ro-crate/293).  
+_[2021 Common Workflow Language Virtual Conference](https://github.com/common-workflow-language/common-workflow-language/wiki/2021-CWL-Mini-Conference)_
+[[video](https://youtu.be/_tyMPj4emw0)]
 
 Marco La Rosa, Peter Sefton (2021):
 [**Describo and RO-Crate - the FAIR data research helpers**](https://indico.cern.ch/event/970232/contributions/4158369/attachments/2176946/3679697/CS3%202021.pdf)<!-- https://arkisto-platform.github.io/assets/docs/CS3-2021.pdf -->.  
