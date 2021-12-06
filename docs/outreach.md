@@ -134,6 +134,7 @@ _[Open Repositories 2021](https://or2021.openrepositories.org/)_ (OR2021), 2021-
 Stian Soiland-Reyes (2021):
 [**Capturing Just Enough Data, Software and Metadata with RO-Crate**](http://slides.com/soilandreyes/2021-06-17-capturing-just-enough-with-ro-crate).
 _[Dataverse community meeting 2021](https://projects.iq.harvard.edu/dcm2021)_, Software Metadata and Containerization, 2021-06-17.
+[[video](https://youtu.be/LJq-mzT9v8o?t=1731)]
 <https://doi.org/10.5281/zenodo.4973678>
 
 Carole Goble (2021):
