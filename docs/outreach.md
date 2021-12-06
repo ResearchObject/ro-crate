@@ -71,7 +71,7 @@ _F1000Research_ **10**:897
 
 Stian Soiland-Reyes (2021)
 [**Reproducibility; Research Objects (RO-Crate) and Common Workflow Language (CWL)**](https://slides.com/soilandreyes/2021-10-07-reproducibility-research-objects)
-_[WoSSS21](https://wosss.org/wosss21/agenda):Workshop on Sustainable Software Sustainability_, 2021-10-07.
+_[WoSSS21](https://wosss.org/wosss21/S3-StianSoiland-Reyes):Workshop on Sustainable Software Sustainability_, 2021-10-07.
 [[video recording](https://www.youtube.com/watch?v=vNHqTcHnfyI)]
 
 Stian Soiland-Reyes (2021):
@@ -194,7 +194,12 @@ _[Scottish Covid-19 Response Consortium](https://www.gla.ac.uk/research/az/scrc/
 Stian Soiland-Reyes, Carole Goble (2021):  
 [**Publishing workflows in WorkflowHub.eu using CWL, and packaging with RO-Crate**](https://cwl.discourse.group/t/publishing-workflows-in-workflowhub-eu-using-cwl-and-packaging-with-ro-crate/293).  
 _[2021 Common Workflow Language Virtual Conference](https://github.com/common-workflow-language/common-workflow-language/wiki/2021-CWL-Mini-Conference)_
-[[video](https://youtu.be/_tyMPj4emw0)]
+[[video recording](https://youtu.be/_tyMPj4emw0)]
+
+Mike Lynch (2021):
+[**Arkisto: an open-source, standards-based framework for digital preservation**](https://mikelynch.org/2021/Jan/23/arkisto/)
+_[Linux.conf.au 2021](https://lca2021.linux.org.au/schedule/presentation/90/)_, 2021-01-23.
+[[video recording](https://www.youtube.com/watch?v=_36csDow7J8)]
 
 Marco La Rosa, Peter Sefton (2021):
 [**Describo and RO-Crate - the FAIR data research helpers**](https://indico.cern.ch/event/970232/contributions/4158369/attachments/2176946/3679697/CS3%202021.pdf)<!-- https://arkisto-platform.github.io/assets/docs/CS3-2021.pdf -->.  
@@ -202,17 +207,20 @@ _Cloud Storage Services for Synchronization and Sharing ([CS3](https://www.cs3co
 
 ### 2020
 
+Peter Sefton (2020):  
+[**Progress report on using Schema.org, additional vocabularies and ad-hoc terms to describe and package research diverse research data collection using Research Object Crate v.1.1**](https://www.youtube.com/watch?v=GYeeZdVx0S0).  
+_Australian Vocabulary Special Interest Group ([AVSIG](https://www.ands.org.au/partners-and-communities/ands-communities/avsig)_, 2020-12-01.
+[[video recording](https://www.youtube.com/watch?v=GYeeZdVx0S0)]
+
 Stephanie Walton, Laurence Livermore, Olaf Bánki, Robert W. N. Cubey, Robyn Drinkwater, Markus Englund, Carole Goble, Quentin Groom, Christopher Kermorvant, Isabel Rey, Celia M Santos, Ben Scott, Alan R. Williams, Zhengzhe Wu (2020):  
 [**Landscape Analysis for the Specimen Data Refinery**](https://doi.org/10.3897/rio.6.e57602).  
 _Research Ideas and Outcomes_ **6**:e57602
 <https://doi.org/10.3897/rio.6.e57602>
 
-
-Nick Thieberger, Amanda Harris (2019):  
-[**Be Not Like the Wind: Access to Language and Music Records, Next Steps**](https://lt4all.elra.info/proceedings/lt4all2019/pdf/2019.lt4all-1.26.pdf).  
-_[Proceedings of the 1st International Conference on Language Technologies for All](https://lt4all.elra.info/proceedings/lt4all2019/)_ (LT4All), pp. 101-103. Paris, December 2019.
-European Language Resources Association (ELRA).  
-<https://lt4all.elra.info/proceedings/lt4all2019/pdf/2019.lt4all-1.26.pdf>
+Peter Sefton (2020):  
+[**Using schema.org in RO-crate**](https://www.youtube.com/watch?v=5W9n2htI42o).  
+_Australian Vocabulary Special Interest Group ([AVSIG](https://www.ands.org.au/partners-and-communities/ands-communities/avsig)_, 2020-06-02.
+[[video recording](https://www.youtube.com/watch?v=5W9n2htI42o)
 
 Stian Soiland-Reyes (2020):
 [**Packaging workflows with RO-Crate**](https://docs.google.com/presentation/d/1lYAdqm7RESqA9zplTXd4JFJUmome66ui/edit#slide=id.p18)
@@ -257,7 +265,13 @@ Gavin Kennedy (2020):
 Peter Sefton, Eoghan Ó Carragáin, Carole Goble, Stian Soiland-Reyes (2019):  
 [**Introducing RO-Crate: research object data packaging**](http://ptsefton.com/2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm).  
 _eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. [[slides](https://docs.google.com/presentation/d/10faXX13opY0DAVVVeX5lG83F4MA_woLHkeIcUOko2IU/)] [[abstract](https://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019-eResearch_103_-Introducing-RO-Crate-research-object-data-packaging.pdf)]
- 
+
+Nick Thieberger, Amanda Harris (2019):  
+[**Be Not Like the Wind: Access to Language and Music Records, Next Steps**](https://lt4all.elra.info/proceedings/lt4all2019/pdf/2019.lt4all-1.26.pdf).  
+_[Proceedings of the 1st International Conference on Language Technologies for All](https://lt4all.elra.info/proceedings/lt4all2019/)_ (LT4All), pp. 101-103. Paris, December 2019.
+European Language Resources Association (ELRA).  
+<https://lt4all.elra.info/proceedings/lt4all2019/pdf/2019.lt4all-1.26.pdf>
+
 Mike Lynch:  
 [**Publishing versioned datasets using OCFL and nginx**](https://eresearch.uts.edu.au/2019/11/05/eResearch2019_lighting_ocfl_nginx.htm).  
 _eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. 
