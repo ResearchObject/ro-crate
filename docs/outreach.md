@@ -154,6 +154,8 @@ Carole Goble, Stian Soiland-Reyes, Oscar Corcho (2021):
 _2nd Workshop of the Data Citation Community of Practice for Earth, Space, and Environmental Sciences (and Related Sciences)_ ([DataCitationCoP](https://agu-data.github.io/DataCitationCoP/2nd-workshop-data-citation)), AGU Data Citation Community of Practice, 2021-06-08.  
 <https://doi.org/10.5281/zenodo.4916168>
 
+
+
 Stian Soiland-Reyes (2021):  
 [**Describing and packaging workflows using RO-Crate and BioCompute Objects**](https://youtu.be/3APqPwRIRkA).  
 _Webinar for U.S. Food and Drug Administration (FDA)_, 2021-05-12.  [[Video recording](https://youtu.be/3APqPwRIRkA)] [[slides](https://doi.org/10.5281/zenodo.4633732)]  
@@ -167,6 +169,11 @@ Stian Soiland-Reyes (2021):
 [**Data provenance with RO-Crate**](http://slides.com/soilandreyes/2021-05-19-recording-provenance-with-ro-crate).
 _EOSC-Life retreat 2021_, Provenance of tools and workflows; FAIRification of workflows, 2021-05-19.
 
+Nick Thieberger, Marco La Rosa (2021):  
+[**Collection data management and repatriation of archival materials back to their source communities**](https://www.youtube.com/watch?v=O1EPcq6oJUI).
+_[7th International Conference on Language Documentation & Conservation (ICLDC)](https://icldc7.sched.com/event/hgxR/paper-qa-session-21)_
+[[video recording](https://www.youtube.com/watch?v=O1EPcq6oJUI)]
+
 Carole Goble, Stian Soiland-Reyes (2021):
 [**RO-Crate: A framework for packaging research products into FAIR Research Objects**](https://www.slideshare.net/carolegoble/rocrate-a-framework-for-packaging-research-products-into-fair-research-objects).  
 [_RDA IG Data Fabric: FAIR Digital Objects_](https://www.rd-alliance.org/group/data-fabric-ig/wiki/rda-ig-data-fabric-fair-digital-objects) 2021-02-25.
@@ -179,7 +186,7 @@ _arXiv CoRR_ [arXiv:2103.13138](https://arxiv.org/abs/2103.13138)
 Carole Goble (2021):
 [**The swings and roundabouts of a decade of fun and games with Research Objects**](https://www.slideshare.net/carolegoble/the-swings-and-roundabouts-of-a-decade-of-fun-and-games-with-research-objects).  
 [_17th Italian Research Conference on Digital Libraries_](http://ircdl2021.dei.unipd.it/) (IRCDL 2021)
-Padova, Italy - 18-19 February 2021 [[Video recording](https://youtu.be/xDV1mzLudAY?list=PLKynRfLznsVxASq5t5apewqZCggWg7fwU&t=220)]
+Padova, Italy, 2021-02-18. [[Video recording](https://youtu.be/xDV1mzLudAY?list=PLKynRfLznsVxASq5t5apewqZCggWg7fwU&t=220)]
 
 Marc Portier (2021):
 [**Open Science: the WorkZones**](https://docs.google.com/presentation/d/19QjSpWykgacwTTQAjNIaqXzyg6lYZMTK340YmlWAPp0/edit#slide=id.gb46c320b14_0_0).
