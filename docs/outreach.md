@@ -77,6 +77,7 @@ _[WoSSS21](https://wosss.org/wosss21/S3-StianSoiland-Reyes):Workshop on Sustaina
 Stian Soiland-Reyes (2021):
 [**Sharing FAIR Research Objects to improve reproducibility**](http://slides.com/soilandreyes/2021-07-15-sharing-fair-research-objects).
 _ZB-Med Seminar_, 2021-07-15.
+[[video recording](https://youtu.be/CL_fqtQRPmw)]
 <https://doi.org/10.5281/zenodo.5105857>
 
 Carole Goble (2021):
