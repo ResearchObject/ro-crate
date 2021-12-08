@@ -73,13 +73,10 @@ See also [recent and upcoming events](outreach.md#upcoming-and-recent-events).
 
 ### Cite RO-Crate as project/approach
 
-
-
-Stian Soiland-Reyes; Peter Sefton; Mercè Crosas; Leyla Jael Castro; Frederik Coppens; José M. Fernández; Daniel Garijo; Björn Grüning; Marco La Rosa; Simone Leo; Eoghan Ó Carragáin; Marc Portier; Ana Trisovic; RO-Crate Community; Paul Groth; Carole Goble (2021):  
+Stian Soiland-Reyes, Peter Sefton, Mercè Crosas, Leyla Jael Castro, Frederik Coppens, José M. Fernández, Daniel Garijo, Björn Grüning, Marco La Rosa, Simone Leo, Eoghan Ó Carragáin, Marc Portier, Ana Trisovic, RO-Crate Community, Paul Groth, Carole Goble (2021):  
 **Packaging research artefacts with RO-Crate**.  
-_Submitted_  [arXiv:2108.06503v1](https://arxiv.org/abs/arXiv:2108.06503v1) [cs.DL]
-<https://doi.org/10.5281/zenodo.5146228> 
-
+_Data Science_ (accepted).  
+[arXiv:2108.06503v2](https://arxiv.org/abs/arXiv:2108.06503v2) [cs.DL]
 
 ### Cite RO-Crate Specification (any version)
 
