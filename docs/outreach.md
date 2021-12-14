@@ -64,7 +64,7 @@ Matúš Kalaš, Vedran Kasalica, Alireza Khanteymoori,
 Tobias Kuhn, Hailiang Mei, Hervé Ménager, Steffen Möller, Robin A. Richardson,
 Vincent Robert, Stian Soiland-Reyes, Robert Stevens, Szoke Szaniszlo, 
 Suzan Verberne, Aswin Verhoeven, Katherine Wolstencroft (2021):  
-[**Perspectives on automated composition of workflows in the life sciences** [version 1; peer review: awaiting peer review]](https://doi.org/10.12688/f1000research.54159.1).  
+[**Perspectives on automated composition of workflows in the life sciences** [version 1; peer review: 2 approved]](https://doi.org/10.12688/f1000research.54159.1).  
 _F1000Research_ **10**:897  
 <https://doi.org/10.12688/f1000research.54159.1>
 
