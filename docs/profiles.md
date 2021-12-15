@@ -33,9 +33,17 @@ Defining and conforming to such a profile enables reliable programmatic consumpt
 
 The RO-Crate profile can also lock down serialization expectation, for instance using a particular [version of RO-Crate](specification.html), [JSON-LD context](1.1/appendix/jsonld.html?highlight=@context#ro-crate-json-ld-context) or particular [packaging](1.1/appendix/implementation-notes.html#combining-with-other-packaging-schemes) like .zip or BagIt.
 
+For more examples, see the section [Profiles of RO-Crate in use](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html#inuse) in the recent RO-Crate paper.
+
+## Formalizing RO-Crate profiles
+
+Currently an RO-Crate profile is in the form of an informal documentation for humans rather than machine-readable.
+
+Next version of the RO-Crate specification 1.2 will [formalize RO-Crate profiles](researchobject.org/ro-crate/1.2-DRAFT/profiles) as a **Profile Crate** - an RO-Crate that defines the profile. See the [Workflow Profile Crate](https://about.workflowhub.eu/Workflow-RO-Crate/ro-crate-preview.html) as example.
+
 ## Workflow RO-Crate profile
 
-[Workflow RO-Crate](https://about.workflowhub.eu/Workflow-RO-Crate/) is a profile of RO-Crate 1.1, which requires at least one [data entity](1.1/data-entities.html) that is a [ComputationalWorkflow](1.1/workflows.html). This workflow must also be indicated with `mainEntity` from the [Root Data set](1.1/root-data-entity.html). The Workflow RO-Crate profile further recommends how to accompany the native workflow definition with a [abstract CWL description](https://www.commonwl.org/v1.2/Workflow.html#Operation), diagram, and meaning of named subfolders `test` and `examples`. 
+[Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/) is a profile of RO-Crate 1.1, which requires at least one [data entity](1.1/data-entities.html) that is a [ComputationalWorkflow](1.1/workflows.html). This workflow must also be indicated with `mainEntity` from the [Root Data set](1.1/root-data-entity.html). The Workflow RO-Crate profile further recommends how to accompany the native workflow definition with a [abstract CWL description](https://www.commonwl.org/v1.2/Workflow.html#Operation), diagram, and meaning of named subfolders `test` and `examples`. 
 
 Profiles can also provide recommendations, for instance Workflow RO-Crate has a list of recognized [workflow languages](https://about.workflowhub.eu/Workflow-RO-Crate/#supported-workflow-types) and licenses. Serialization of Workflow RO-Crates are restricted to ZIP archives and with a filename ending with `.crate.zip`.
 
@@ -75,9 +83,11 @@ In summary the _Workflow RO-Crate profile_ covers as of 2021-03-09:
     * `"@id": "#nextflow"`
     * `"@id": "#snakemake"`
 
+An experimental [Profile Crate](https://about.workflowhub.eu/Workflow-RO-Crate/ro-crate-preview.html) has been created in preparation for [formalized RO-Crate profiles](researchobject.org/ro-crate/1.2-DRAFT/profiles) (draft for next release of specification).
+
 ### Workflow Testing RO-Crate profile
 
-[Workflow Testing RO-Crate](https://crs4.github.io/life_monitor/workflow_testing_ro_crate) is a specialization of Workflow RO-Crate used by [Life Monitor](in-use/life_monitor) to support the submission of test suites for computational workflows.
+[Workflow Testing RO-Crate](https://lifemonitor.eu/workflow_testing_ro_crate) is a specialization of Workflow RO-Crate used by [Life Monitor](in-use/life_monitor) to support the submission of test suites for computational workflows.
 
 This profile is an [RO-Crate extension](1.1/appendix/jsonld.html#extending-ro-crate) that employs additional terms from the [ro-terms test namespace](https://github.com/ResearchObject/ro-terms/tree/master/test):
 
@@ -122,7 +132,7 @@ A Workflow Testing RO-Crate is essentially a Workflow RO-Crate with additional s
 }
 ```
 
-More details are available from the [spec page](https://crs4.github.io/life_monitor/workflow_testing_ro_crate).
+More details are available from the [spec page](https://lifemonitor.eu/workflow_testing_ro_crate).
 
 
 ## Describo profiles
