@@ -134,6 +134,9 @@ A Workflow Testing RO-Crate is essentially a Workflow RO-Crate with additional s
 
 More details are available from the [spec page](https://lifemonitor.eu/workflow_testing_ro_crate).
 
+### Workflow Run Crate
+
+[Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/) is in development as a profile to capture the **provenance** of a workflow run. Join the [RO-Crate community](community.md) to help contribute!
 
 ## Describo profiles
 
