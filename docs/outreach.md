@@ -35,6 +35,7 @@ _Feel free to add to this page, either [edit and raise pull request](https://git
 Stian Soiland-Reyes, Peter Sefton, Mercè Crosas, Leyla Jael Castro, Frederik Coppens, José M. Fernández, Daniel Garijo, Björn Grüning, Marco La Rosa, Simone Leo, Eoghan Ó Carragáin, Marc Portier, Ana Trisovic, RO-Crate Community, Paul Groth, Carole Goble (2021):  
 **Packaging research artefacts with RO-Crate**.  
 _Data Science_ (accepted).  
+To appear as https://doi.org/10.3233/DS-210053  
 [arXiv:2108.06503v2](https://arxiv.org/abs/arXiv:2108.06503v2) [cs.DL]
 
 ## Recent publications, presentations, citations
@@ -44,7 +45,7 @@ _Data Science_ (accepted).
 Stian Soiland-Reyes, Peter Sefton, Mercè Crosas, Leyla Jael Castro, Frederik Coppens, José M. Fernández, Daniel Garijo, Björn Grüning, Marco La Rosa, Simone Leo, Eoghan Ó Carragáin, Marc Portier, Ana Trisovic, RO-Crate Community, Paul Groth, Carole Goble (2022):  
 [**Packaging research artefacts with RO-Crate**](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html).  
 _Data Science_ (accepted).  
-To appear as <https://doi.org/10.3233/DS-210053>  
+To appear as https://doi.org/10.3233/DS-210053  
 [arXiv:2108.06503v2](https://arxiv.org/abs/arXiv:2108.06503v2) [cs.DL]
 [[html](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html)]
 [[pdf](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.pdf)]
