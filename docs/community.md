@@ -87,7 +87,7 @@ The _RO-Crate_ team is:
 * Douglas Lowe <https://orcid.org/0000-0002-1248-3594>
 * Sergio Serra <https://orcid.org/0000-0002-0792-8157>
 * Xuanqi Li <https://orcid.org/0000-0003-1498-6205>
-
+* Sveinung Gundersen <https://orcid.org/0000-0001-9888-7954>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! 
 
