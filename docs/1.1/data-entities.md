@@ -38,7 +38,7 @@ The primary purpose for RO-Crate is to gather and describe a set of _Data entiti
 * Directories
 * Web resources
 
-The data entities can be further described by referencing [contextual entitites](contextual-entities.md) such as persons, organizations and publications.
+The data entities can be further described by referencing [contextual entities](contextual-entities.md) such as persons, organizations and publications.
 
 ## Referencing files and folders from the Root Data Entity
 
@@ -196,7 +196,7 @@ A [File] _Data Entity_ MUST have the following properties:
 A [Dataset] (directory) _Data Entity_ MUST have the following properties:
 
 *  `@type` MUST be `Dataset` or an array where `Dataset` is one of the values.
-*  `@id`  MUST be either an a _URI Path_ relative to the _RO Crate root_, or an absolute URI. The id SHOULD end with `/`
+*  `@id`  MUST be either a _URI Path_ relative to the _RO Crate root_, or an absolute URI. The id SHOULD end with `/`
 
 ## Web-based Data Entities
 
