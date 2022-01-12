@@ -250,7 +250,7 @@ The below is an example of an RO-Crate complying with the [Bioschemas Computatio
       "@id": "./",
       "@type": "Dataset",
       "hasPart": [
-          { "@id": "workflow/retropath.knime" }
+          { "@id": "workflow/alignment.knime" }
       ]
     },
     {
