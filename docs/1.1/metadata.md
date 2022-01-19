@@ -86,7 +86,7 @@ Generally, the standard _type_ and _property_ names (_terms_) from [Schema.org] 
 * `Journal` is mapped to <http://schema.org/Periodical>.
 
 {: .warning }
-> JSON-LD examples given on the [Schema.org website] may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
+> JSON-LD examples given on the [Schema.org] website may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
 
 To simplify processing and avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even where [Schema.org] for some properties otherwise permit shorter forms like `"author": "http://example.com/alice"`.
 

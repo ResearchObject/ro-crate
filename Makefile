@@ -91,6 +91,14 @@ release/ro-crate-${TAG}.md: dependencies release/ docs/${RELEASE}/_metadata.liqu
 	   `grep ^nav_order: docs/${RELEASE}/*.md | sort -n -k 2 | grep -v index.md| grep -v about.md | sed s/:.*//` \
 	   docs/${RELEASE}/appendix/*.md docs/_includes/references.liquid docs/${RELEASE}/.references.md |\
 	   grep -v '{%' > release/ro-crate-${TAG}.md
+	# Our own rendering of Note/Warning/Tip
+	sed -i -E 's/\{: ?\.note ?\} \\>/**Note**:/g' release/ro-crate-${TAG}.md
+	sed -i -E 's/\{: ?\.warning ?\} \\>/**Warning**:/g' release/ro-crate-${TAG}.md
+	sed -i -E 's/\{: ?\.tip ?\} \\>/**Tip**:/g' release/ro-crate-${TAG}.md
+	# Skip intermediate table-of-contents
+	sed -i -E 's/1..*\{:toc\}//g' release/ro-crate-${TAG}.md
+	sed -i -E 's/## Table of contents//g' release/ro-crate-${TAG}.md
+	sed -i -E 's/\{:[^}]*\}//g' release/ro-crate-${TAG}.md
 	# Fix internal links to work in single-page
 	sed -i -E 's,]\(([^:)]*/)*([^:)]*)\.md\),](#\2),g' release/ro-crate-${TAG}.md
 	sed -i -E 's,]\([^):]*\.md#([^)]*)\),](#\1),g' release/ro-crate-${TAG}.md
