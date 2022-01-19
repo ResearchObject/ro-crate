@@ -14,7 +14,7 @@ parent: RO-Crate 1.1
 <!--
    Copyright 2019-2020 University of Technology Sydney
    Copyright 2019-2020 The University of Manchester UK 
-   Copyright 2019-2020 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019-2022 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -452,7 +452,7 @@ As the RO-Crate uses _flattened_ JSON-LD, `sdLicense` should be expressed direct
 
 ## Extra metadata such as Exif
 
-Schema.org has a generic extension mechanism for encoding arbitrary properties and values which are not available as Schema.org properties. An example of of this is the Schema.org [recommended way (see example 2)][ImageObject] of including [Exif] technical image metadata.
+Schema.org has a generic extension mechanism for encoding arbitrary properties and values which are not available as Schema.org properties. An example of this is the Schema.org [recommended way (see example 2)][ImageObject] of including [Exif] technical image metadata.
 
 To include EXIF, or other data which can be encoded as property/value pairs, add an array of references to _Anonymous Entities_ which encode each property. This example shows one property of several hundred.
 
