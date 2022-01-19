@@ -2,7 +2,6 @@
 title: Implementation notes
 parent: Appendix
 grand_parent: RO-Crate 1.2-DRAFT
-excerpt: 
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
