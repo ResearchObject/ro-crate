@@ -292,16 +292,16 @@ In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in
 
 Following the conventions used by Schema.org, ad-hoc terms SHOULD also include definitions in the RO-Crate with at minimum:
 
-* `@type` of either `Class` (contextual entity type) or `Property` (attribute of an contextual entity)
+* `@type` of either `rdfs:Class` (contextual entity type) or `rdf:Property` (attribute of an contextual entity)
 * `rdfs:label` with the human readable version of the term, e.g. `makesFood` has label `makes food`
-* `rdf:comment` documenting and clarifying the meaning of the term. For instance the term `sentence` in a prisoner vocabulary will have a different explanation than `sentence` in a linguistic vocabulary.
+* `rdfs:comment` documenting and clarifying the meaning of the term. For instance the term `sentence` in a prisoner vocabulary will have a different explanation than `sentence` in a linguistic vocabulary.
 
 ```json
 {
     "@id": "https://criminalcharacters.com/vocab#education",
     "@type": "rdf:Property",
     "rdfs:label": "education",
-    "rdf:comment": "Literacy of prisoner. ..."
+    "rdfs:comment": "Literacy of prisoner. ..."
 }
 ```
 
