@@ -53,11 +53,10 @@ docs/${RELEASE}/.references.md: docs/${RELEASE}/ docs/_includes/references.liqui
 		>> docs/${RELEASE}/.references.md
 
 
-docs/${RELEASE}/*.md: docs/${RELEASE}/ docs/${DRAFT}/README.md docs/${DRAFT}/*.md docs/${DRAFT}/_metadata.liquid docs/${RELEASE}/.references.md
+docs/${RELEASE}/*.md: docs/${RELEASE}/ docs/${DRAFT}/*.md docs/${DRAFT}/_metadata.liquid docs/${RELEASE}/.references.md
 	for f in docs/${DRAFT}/*.md ; do \
 		sed s/${DRAFT}/${RELEASE}/g < $$f > docs/${RELEASE}/`basename $$f`;\
-    done
-	sed -i "/^exclude:/ d" docs/${RELEASE}/README.md
+    done	
 
 docs/${RELEASE}/appendix/:
 	mkdir -p docs/${RELEASE}/appendix/
@@ -89,7 +88,7 @@ release/ro-crate-${TAG}.md: dependencies release/ docs/${RELEASE}/_metadata.liqu
 	cp docs/${RELEASE}/_metadata.liquid docs/${RELEASE}/.metadata.md
 	pandoc --from=markdown+gfm_auto_identifiers --to=markdown+gfm_auto_identifiers \
 	   docs/${RELEASE}/.metadata.md \
-	   `grep ^sort: docs/${RELEASE}/*.md | sort -n -k 2 | grep -v README.md| grep -v about.md | sed s/:.*//` \
+	   `grep ^nav_order: docs/${RELEASE}/*.md | sort -n -k 2 | grep -v index.md| grep -v about.md | sed s/:.*//` \
 	   docs/${RELEASE}/appendix/*.md docs/_includes/references.liquid docs/${RELEASE}/.references.md |\
 	   grep -v '{%' > release/ro-crate-${TAG}.md
 	# Fix internal links to work in single-page
