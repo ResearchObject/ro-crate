@@ -1,8 +1,8 @@
 ---
 title: Appendix
 nav_order: 10
-has_children: true
 parent: RO-Crate 1.2-DRAFT
+has_children: true
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -22,7 +22,7 @@ parent: RO-Crate 1.2-DRAFT
    limitations under the License.
 -->
 
-## Appendixes
+# Appendixes
 
 
 
