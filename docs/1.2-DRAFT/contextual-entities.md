@@ -7,13 +7,13 @@ excerpt: |
   need for the consumer of an RO-Crate to refer to external information which may
   change or become unavailable over time.
 nav_order: 7
-parent: RO-Crate 1.2-DRAFT 
 jekyll-mentions: false
+parent: RO-Crate 1.2-DRAFT
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
-   Copyright 2019-2021 The University of Manchester UK 
-   Copyright 2019-2021 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019-2020 The University of Manchester UK 
+   Copyright 2019-2022 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -43,7 +43,6 @@ The RO-Crate SHOULD contain additional information about _Contextual Entities_ f
 
 ## Contextual vs Data entities
 
-
 RO-Crate distinguishes between _Contextual entities_ and _Data entities_. 
 
 **[Data entities](data-entities.md)** primarily exist in their own right as a file or directory (which may be in the _RO-Crate Root_ directory or downloadable by URL). 
@@ -55,7 +54,6 @@ Some contextual entities can also be considered data entities - for instance the
 Likewise, some data entities may also be described as contextual entities, for instance a `File` that is also a [ScholarlyArticle]. In such cases the _Contextual Data Entity_ MUST be described as a single JSON object in the RO-Crate Metadata JSON `@graph` and SHOULD list both relevant data and contextual types in a `@type` array. 
 
 The RO-Crate Metadata JSON `@graph` MUST NOT list multiple entities with the same `@id`; behaviour of consumers of an RO-Crate encountering multiple entities with the same `@id` is undefined.
-
 
 ## Identifiers for contextual entities
 
