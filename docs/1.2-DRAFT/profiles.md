@@ -4,7 +4,7 @@ excerpt: |
   Profiles of RO-Crates and their entities can be used to specialize and recommend
   further which metadata types and properties are expected.
 nav_order: 9
-parent: RO-Crate 1.2-DRAFT 
+parent: RO-Crate 1.2-DRAFT
 ---
 
 # RO-Crate profiles
@@ -193,7 +193,7 @@ A [repository](provenance.md#digital-library-and-repository-content) or collecti
 
 #### BagIt packaging
 
-If conforming RO-Crates should be [packaged](https://www.researchobject.org/ro-crate/1.1/appendix/implementation-notes.html#adding-ro-crate-to-bagit) according to a [BagIt profile] (e.g. must be serialized as an `application/zip`):
+If conforming RO-Crates should be [packaged](appendix/implementation-notes.md#adding-ro-crate-to-bagit) according to a [BagIt profile] (e.g. must be serialized as an `application/zip`):
 
 ```json
 {
@@ -253,7 +253,7 @@ context in the Profile Crate:
 
 ```json
 {
-    "@id": "https://w3id.org/ro/crate/1.1/context",
+    "@id": "https://w3id.org/ro/crate/1.2-DRAFT/context",
     "@type": "CreativeWork",
     "name": "RO-Crate JSON-LD Context",
     "encodingFormat": [
