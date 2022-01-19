@@ -85,7 +85,6 @@ The _RO-Crate_ team is:
 * Shaun de Witt <https://orcid.org/0000-0003-4196-3658>
 * Shady El Damaty <https://orcid.org/0000-0002-2318-4477>
 * Douglas Lowe <https://orcid.org/0000-0002-1248-3594>
-* Sergio Serra <https://orcid.org/0000-0002-0792-8157>
 * Xuanqi Li <https://orcid.org/0000-0003-1498-6205>
 * Sveinung Gundersen <https://orcid.org/0000-0001-9888-7954>
 * Muhammad Radifar <https://orcid.org/0000-0001-9156-9478>
