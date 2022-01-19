@@ -1,9 +1,9 @@
 ## See RELEASE_PROCEDURE.md
 
 # Where to copy from
-DRAFT=1.1
+DRAFT=1.1-RC
 # Official release
-RELEASE=1.1.2
+RELEASE=1.1
 # Semantic versioning
 TAG=1.1.2
 NEXT=1.2-DRAFT
@@ -14,9 +14,9 @@ DOI=10.5281/zenodo.5841615
 all: dependencies release
 
 # Check dependencies before we do the rest
-dependencies: node_modules/.bin/makehtml
+dependencies: node_modules/.bin/rochtml
 	scripts/schema-context.py --version
-	node_modules/.bin/makehtml --version
+	node_modules/.bin/rochtml --version
 	pandoc --version
 	xelatex --version
 
@@ -27,9 +27,9 @@ clean:
 release: release/ro-crate-${TAG}.html release/ro-crate-${TAG}.pdf release/ro-crate-context-${TAG}.jsonld release/ro-crate-metadata.json release/ro-crate-preview.html
 
 # Install dependencies for node
-node_modules/.bin/makehtml:
+node_modules/.bin/rochtml:
 	npm install lodash
-	npm install ro-crate
+	npm install ro-crate-html-js
 
 docs/${RELEASE}/:
 	mkdir -p docs/${RELEASE}/
@@ -77,7 +77,7 @@ docs/${RELEASE}/ro-crate-metadata.json: docs/${DRAFT}/ro-crate-metadata.json
 	ln -s ro-crate-metadata.json docs/${RELEASE}/ro-crate-metadata.jsonld
 
 docs/${RELEASE}/ro-crate-preview.html: dependencies docs/${RELEASE}/ro-crate-metadata.json
-	node_modules/.bin/makehtml docs/${RELEASE}/ro-crate-metadata.json
+	node_modules/.bin/rochtml docs/${RELEASE}/ro-crate-metadata.json
 
 docs/${RELEASE}/context.jsonld: dependencies docs/${RELEASE}/ scripts/schema-context.py
 	scripts/schema-context.py ${RELEASE} ${TAG} > docs/${RELEASE}/context.jsonld
