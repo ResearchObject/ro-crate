@@ -1,15 +1,15 @@
 ## See RELEASE_PROCEDURE.md
 
 # Where to copy from
-DRAFT=1.2-DRAFT
+DRAFT=1.1
 # Official release
-RELEASE=1.1
+RELEASE=1.1.2
 # Semantic versioning
-TAG=1.1.1
+TAG=1.1.2
 NEXT=1.2-DRAFT
 # Prepare (but do not Publish!) the next version of https://zenodo.org/record/3541888
 # then copy its DOI here so it can be included in generated HTML/PDF
-DOI=10.5281/zenodo.4541002
+DOI=10.5281/zenodo.5841615
 
 all: dependencies release
 
@@ -43,7 +43,6 @@ docs/${RELEASE}/_metadata.liquid: docs/${RELEASE}/ docs/${DRAFT}/_metadata.liqui
 	sed -i "s/^* Published:.*/* Published: `date -I`/" docs/${RELEASE}/_metadata.liquid
 	sed -i "s,^* Cite as:.*,* Cite as: <https://doi.org/${DOI}> (this version)," docs/${RELEASE}/_metadata.liquid
 	
-
 
 docs/${RELEASE}/.references.md: docs/${RELEASE}/ docs/_includes/references.liquid
 	echo "---\ntitle: References\n---\n\n" > docs/${RELEASE}/.references.md
