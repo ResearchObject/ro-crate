@@ -2630,6 +2630,7 @@
           "output": "https://bioschemas.org/ComputationalWorkflow#output",
           "FormalParameter": "https://bioschemas.org/FormalParameter",
           "funding": "http://schema.org/funding",
+          "sdConformsTo": "https://w3id.org/ro/terms#sdConformsTo",
           "wasDerivedFrom": "http://www.w3.org/ns/prov#wasDerivedFrom",
           "importedFrom": "http://purl.org/pav/importedFrom",
           "importedOn": "http://purl.org/pav/importedOn",
