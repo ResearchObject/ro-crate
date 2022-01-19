@@ -2,7 +2,7 @@
 title: Community
 ---
 <!--
-   Copyright 2019-2020 The University of Manchester and RO Crate contributors 
+   Copyright 2019-2022 The University of Manchester and RO-Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -88,6 +88,7 @@ The _RO-Crate_ team is:
 * Sergio Serra <https://orcid.org/0000-0002-0792-8157>
 * Xuanqi Li <https://orcid.org/0000-0003-1498-6205>
 * Sveinung Gundersen <https://orcid.org/0000-0001-9888-7954>
+* Muhammad Radifar <https://orcid.org/0000-0001-9156-9478>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! 
 
