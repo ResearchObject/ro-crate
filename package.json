@@ -1,11 +1,8 @@
 {
   "requires": true,
   "dependencies": {
-    "lodash": {
-      "version": "4.17.20"
-    },
-    "ro-crate": {
-      "version": "1.6.4"
-    }
+    "lodash": "^4.17.21",
+    "ro-crate": "^2.0.7",
+    "ro-crate-html-js": "^1.4.19"
   }
 }
