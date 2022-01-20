@@ -1,12 +1,12 @@
 ## See RELEASE_PROCEDURE.md
 
 # Where to copy from
-DRAFT=1.1-RC
+DRAFT=1.2-DRAFT
 # Official release
-RELEASE=1.1
+RELEASE=1.2
 # Semantic versioning
-TAG=1.1.2
-NEXT=1.2-DRAFT
+TAG=1.2.0
+NEXT=1.3-DRAFT
 # Prepare (but do not Publish!) the next version of https://zenodo.org/record/3541888
 # then copy its DOI here so it can be included in generated HTML/PDF
 DOI=10.5281/zenodo.5841615
