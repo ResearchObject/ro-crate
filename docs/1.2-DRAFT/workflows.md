@@ -194,18 +194,18 @@ MUST describe these properties and their related contextual entities:
 
 The [ComputationalWorkflow profile][ComputationalWorkflow profile 1.0] explains the above and list additional properties that a compliant [ComputationalWorkflow][ComputationalWorkflow 1.0] data entity SHOULD include: [citation], [contributor], [creativeWorkStatus], [description], [funding], [hasPart], [isBasedOn], [keywords], [maintainer], [producer], [publisher], [runtimePlatform], [softwareRequirements], [targetProduct]
 
-A data entity conforming to the [ComputationalWorkflow profile][ComputationalWorkflow profile 1.0] SHOULD declare the versioned profile URI using `sdConformsTo` [^18]:
+A data entity conforming to the [ComputationalWorkflow profile][ComputationalWorkflow profile 1.0] SHOULD declare the versioned profile URI using [conformsTo] [^18]:
 
 ```json
 { "@id": "workflow/alignment.knime",  
   "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
-  "sdConformsTo": 
+  "conformsTo": 
     {"@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"},
   "..": ""
 }
 ```
 
-[^18]: The reason for introducing the RO-Crate term `sdConformsTo` instead of [conformsTo] is that here it is the _structured data_ about the workflow (this JSON-LD object) that conforms to the ComputationalWorkflow profile, not the file content of a workflow data entity (`workflow/alignment.knime`). See [schema.org issue #1516](https://github.com/schemaorg/schemaorg/issues/1516#issuecomment-855842619). Similarly, [sdPublisher] indicates who catalogued/published the JSON-LD structured data in his RO-Crate Metadata file, which may be different from the [publisher] of the workflow file. 
+[^18]: This is a liberal interpretation of [conformsTo] as it is the _structured data_ about the workflow (this JSON-LD object) that conforms to the ComputationalWorkflow profile, not the file content of a workflow data entity (`workflow/alignment.knime`). Instead of introducing a `sdConformsTo` similar to [sdPublisher], we here follow the current Bioschemas convention of indicating profile conformance when the JSON-LD is embedded within HTML pages.
 
 
 ### Describing inputs and outputs
@@ -219,13 +219,13 @@ the _contextual entities_ for [FormalParameter][FormalParameter 1.0], referenced
 
 The Bioschemas [FormalParameter profile][FormalParameter profile 1.0] explains the above and lists additional properties that can be used, including [description], [valueRequired], [defaultValue] and [identifier].
 
-A contextual entity conforming to the [FormalParameter profile][FormalParameter profile 1.0] SHOULD declare the versioned profile URI using `sdConformsTo` e.g.:
+A contextual entity conforming to the [FormalParameter profile][FormalParameter profile 1.0] SHOULD declare the versioned profile URI using `conformsTo` e.g.:
 
 ```json
 {
   "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
   "@type": "FormalParameter",
-  "sdConformsTo": 
+  "conformsTo": 
     {"@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"},
   "..": ""
 }
@@ -257,7 +257,7 @@ The below is an example of an RO-Crate complying with the Bioschemas [Computatio
     {
       "@id": "workflow/alignment.knime",  
       "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
-      "sdConformsTo": {
+      "conformsTo": {
         "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
       },
       "name": "Sequence alignment workflow",
@@ -272,14 +272,14 @@ The below is an example of an RO-Crate complying with the Bioschemas [Computatio
         { "@id": "#6c703fee-6af7-4fdb-a57d-9e8bc4486044"},
         { "@id": "#2f32b861-e43c-401f-8c42-04fd84273bdf"}
       ],
-      "sdPublisher": {"@id": "#workflow-hub"},
+      "sdPublisher": {"@id": "#workflow-repo"},
       "url": "http://example.com/workflows/alignment",
       "version": "0.5.0"
     },
     {
       "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
       "@type": "FormalParameter",
-      "sdConformsTo": {
+      "conformsTo": {
         "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
       },
       "name": "genome_sequence",
@@ -290,7 +290,7 @@ The below is an example of an RO-Crate complying with the Bioschemas [Computatio
     {
       "@id": "#6c703fee-6af7-4fdb-a57d-9e8bc4486044",
       "@type": "FormalParameter",
-      "sdConformsTo": {
+      "conformsTo": {
         "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
       },
       "name": "cleaned_sequence",
@@ -300,7 +300,7 @@ The below is an example of an RO-Crate complying with the Bioschemas [Computatio
     {
       "@id": "#2f32b861-e43c-401f-8c42-04fd84273bdf",
       "@type": "FormalParameter",
-      "sdConformsTo": {"@id": "
+      "conformsTo": {"@id": "
         https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
       },
       "name": "sequence_alignment",
@@ -327,9 +327,9 @@ The below is an example of an RO-Crate complying with the Bioschemas [Computatio
       "name": "Alice Brown"
     },
     {
-      "@id": "#workflow-hub",
+      "@id": "#workflow-repo",
       "@type": "Organization",
-      "name": "Example Workflow Hub",
+      "name": "Example Workflow repository",
       "url":"http://example.com/workflows/"
     },
     {

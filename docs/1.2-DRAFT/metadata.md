@@ -117,10 +117,6 @@ These terms are being proposed by [Bioschemas profile ComputationalWorkflow 1.0-
 {: .note }
 > In this specification the proposed Bioschemas terms use the temporary <https://bioschemas.org/> namespace; future releases of RO-Crate may reflect mapping to the <http://schema.org/> namespace.
 
-Additional terms in RO-Crate's own [ro-terms vocabulary][ro-terms]:
-
-* `sdConformsTo` mapped to <https://w3id.org/ro/terms#sdConformsTo> (see [profiles](profiles.md))
-
 
 ## Summary of Coverage
 
