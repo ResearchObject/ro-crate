@@ -334,27 +334,27 @@ The below is an example of an RO-Crate complying with the Bioschemas [Computatio
     },
     {
       "@id": "http://edamontology.org/format_1929",
-      "@type": "NamedTerm",
+      "@type": "DefinedTerm",
       "name": "FASTA sequence format"
     },
     {
       "@id": "http://edamontology.org/format_1982",
-      "@type": "NamedTerm",
+      "@type": "DefinedTerm",
       "name": "ClustalW alignment format"
     },
     {
       "@id": "http://edamontology.org/format_2572",
-      "@type": "NamedTerm",
+      "@type": "DefinedTerm",
       "name": "BAM format"
     },
     {
       "@id": "http://edamontology.org/data_2977",
-      "@type": "NamedTerm",
+      "@type": "DefinedTerm",
       "name": "Nucleic acid sequence"
     },
     {
       "@id": "http://edamontology.org/data_1383",
-      "@type": "NamedTerm",
+      "@type": "DefinedTerm",
       "name": "Nucleic acid sequence alignment"
     }
   ]
