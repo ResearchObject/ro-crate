@@ -106,7 +106,7 @@ From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
 
 - `conformsTo` mapped to <http://purl.org/dc/terms/conformsTo>
 
-These terms are being proposed by [Bioschemas profile ComputationalWorkflow 0.5-DRAFT](https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21) and [FormalParameter 0.1-DRAFT](https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21) to be integrated into Schema.org: 
+These terms are being proposed by [Bioschemas profile ComputationalWorkflow 0.5-DRAFT][ComputationalWorkflow profile 0.5] and [FormalParameter 0.1-DRAFT][FormalParameter profile 0.1] to be integrated into Schema.org: 
 
 * `ComputationalWorkflow` mapped to <https://bioschemas.org/ComputationalWorkflow>
 * `FormalParameter` mapped to <https://bioschemas.org/FormalParameter>

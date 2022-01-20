@@ -185,16 +185,16 @@ A workflow diagram may still be provided even if there is no programmatic `Softw
 ## Complying with Bioschemas Computational Workflow profile
 
 Data entities representing _workflows_ (`@type: ComputationalWorkflow`)
-SHOULD comply with the Bioschemas [ComputationalWorkflow profile],
+SHOULD comply with the Bioschemas [ComputationalWorkflow profile][ComputationalWorkflow profile 0.5],
 where possible. 
 
 When complying with this profile, the workflow data entities
 MUST describe these properties and their related contextual entities:
 [name], [programmingLanguage], [creator], [dateCreated], [license], [sdPublisher], [url], [version].
 
-The [ComputationalWorkflow profile] explains the above and list additional properties that a compliant [ComputationalWorkflow] data entity SHOULD include: [citation], [contributor], [creativeWorkStatus], [description], [funding], [hasPart], [isBasedOn], [keywords], [maintainer], [producer], [publisher], [runtimePlatform], [softwareRequirements], [targetProduct]
+The [ComputationalWorkflow profile][ComputationalWorkflow profile 0.5] explains the above and list additional properties that a compliant [ComputationalWorkflow][ComputationalWorkflow 0.1] data entity SHOULD include: [citation], [contributor], [creativeWorkStatus], [description], [funding], [hasPart], [isBasedOn], [keywords], [maintainer], [producer], [publisher], [runtimePlatform], [softwareRequirements], [targetProduct]
 
-A data entity conforming to the [ComputationalWorkflow profile] SHOULD declare the versioned profile URI using [conformsTo]:
+A data entity conforming to the [ComputationalWorkflow profile][ComputationalWorkflow profile 0.5] SHOULD declare the versioned profile URI using [conformsTo]:
 
 ```json
 { "@id": "workflow/alignment.knime",  
@@ -207,16 +207,16 @@ A data entity conforming to the [ComputationalWorkflow profile] SHOULD declare t
 
 ### Describing inputs and outputs
 
-The input and output _parameters_ for a workflow or script can be given with `input` and `output` to [FormalParameter]
+The input and output _parameters_ for a workflow or script can be given with `input` and `output` to [FormalParameter][FormalParameter 0.1]
 contextual entities. Note that this entity usually represent a _potential_ input/output value in a reusable
 workflow, much like [function parameter definitions] in general programming.
 
-If complying with the Bioschemas [FormalParameter profile],
-the _contextual entities_ for [FormalParameter], referenced by `input` or `output`, MUST describe: [name], [additionalType], [encodingFormat]
+If complying with the Bioschemas [FormalParameter profile][FormalParameter profile 0.1],
+the _contextual entities_ for [FormalParameter][FormalParameter 0.1], referenced by `input` or `output`, MUST describe: [name], [additionalType], [encodingFormat]
 
-The Bioschemas [FormalParameter profile] explains the above and lists additional properties that can be used, including [description], [valueRequired], [defaultValue] and [identifier].
+The Bioschemas [FormalParameter profile][FormalParameter profile 0.1] explains the above and lists additional properties that can be used, including [description], [valueRequired], [defaultValue] and [identifier].
 
-A contextual entity conforming to the [FormalParameter profile] SHOULD declare the versioned profile URI using [conformsTo], e.g.:
+A contextual entity conforming to the [FormalParameter profile][FormalParameter profile 0.1] SHOULD declare the versioned profile URI using [conformsTo], e.g.:
 
 ```json
 {
@@ -233,7 +233,7 @@ A contextual entity conforming to the [FormalParameter profile] SHOULD declare t
 
 ## Complete Workflow Example
 
-The below is an example of an RO-Crate complying with the [Bioschemas ComputationalWorkflow profile 0.5][ComputationalWorkflow profile]:
+The below is an example of an RO-Crate complying with the Bioschemas [ComputationalWorkflow profile 0.5]:
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context", 
