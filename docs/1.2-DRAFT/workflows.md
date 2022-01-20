@@ -185,45 +185,48 @@ A workflow diagram may still be provided even if there is no programmatic `Softw
 ## Complying with Bioschemas Computational Workflow profile
 
 Data entities representing _workflows_ (`@type: ComputationalWorkflow`)
-SHOULD comply with the Bioschemas [ComputationalWorkflow profile][ComputationalWorkflow profile 0.5],
+SHOULD comply with the Bioschemas [ComputationalWorkflow profile][ComputationalWorkflow profile 1.0],
 where possible. 
 
 When complying with this profile, the workflow data entities
 MUST describe these properties and their related contextual entities:
 [name], [programmingLanguage], [creator], [dateCreated], [license], [sdPublisher], [url], [version].
 
-The [ComputationalWorkflow profile][ComputationalWorkflow profile 0.5] explains the above and list additional properties that a compliant [ComputationalWorkflow][ComputationalWorkflow 0.1] data entity SHOULD include: [citation], [contributor], [creativeWorkStatus], [description], [funding], [hasPart], [isBasedOn], [keywords], [maintainer], [producer], [publisher], [runtimePlatform], [softwareRequirements], [targetProduct]
+The [ComputationalWorkflow profile][ComputationalWorkflow profile 1.0] explains the above and list additional properties that a compliant [ComputationalWorkflow][ComputationalWorkflow 1.0] data entity SHOULD include: [citation], [contributor], [creativeWorkStatus], [description], [funding], [hasPart], [isBasedOn], [keywords], [maintainer], [producer], [publisher], [runtimePlatform], [softwareRequirements], [targetProduct]
 
-A data entity conforming to the [ComputationalWorkflow profile][ComputationalWorkflow profile 0.5] SHOULD declare the versioned profile URI using [conformsTo]:
+A data entity conforming to the [ComputationalWorkflow profile][ComputationalWorkflow profile 1.0] SHOULD declare the versioned profile URI using `sdConformsTo` [^18]:
 
 ```json
 { "@id": "workflow/alignment.knime",  
   "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
-  "conformsTo": 
-    {"@id": "https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/"},
+  "sdConformsTo": 
+    {"@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"},
   "..": ""
 }
 ```
 
+[^18]: The reason for introducing the RO-Crate term `sdConformsTo` instead of [conformsTo] is that here it is the _structured data_ about the workflow (this JSON-LD object) that conforms to the ComputationalWorkflow profile, not the file content of a workflow data entity (`workflow/alignment.knime`). See [schema.org issue #1516](https://github.com/schemaorg/schemaorg/issues/1516#issuecomment-855842619). Similarly, [sdPublisher] indicates who catalogued/published the JSON-LD structured data in his RO-Crate Metadata file, which may be different from the [publisher] of the workflow file. 
+
+
 ### Describing inputs and outputs
 
-The input and output _parameters_ for a workflow or script can be given with `input` and `output` to [FormalParameter][FormalParameter 0.1]
+The input and output _parameters_ for a workflow or script can be given with `input` and `output` to [FormalParameter][FormalParameter 1.0]
 contextual entities. Note that this entity usually represent a _potential_ input/output value in a reusable
 workflow, much like [function parameter definitions] in general programming.
 
-If complying with the Bioschemas [FormalParameter profile][FormalParameter profile 0.1],
-the _contextual entities_ for [FormalParameter][FormalParameter 0.1], referenced by `input` or `output`, MUST describe: [name], [additionalType], [encodingFormat]
+If complying with the Bioschemas [FormalParameter profile][FormalParameter profile 1.0],
+the _contextual entities_ for [FormalParameter][FormalParameter 1.0], referenced by `input` or `output`, MUST describe: [name], [additionalType], [encodingFormat]
 
-The Bioschemas [FormalParameter profile][FormalParameter profile 0.1] explains the above and lists additional properties that can be used, including [description], [valueRequired], [defaultValue] and [identifier].
+The Bioschemas [FormalParameter profile][FormalParameter profile 1.0] explains the above and lists additional properties that can be used, including [description], [valueRequired], [defaultValue] and [identifier].
 
-A contextual entity conforming to the [FormalParameter profile][FormalParameter profile 0.1] SHOULD declare the versioned profile URI using [conformsTo], e.g.:
+A contextual entity conforming to the [FormalParameter profile][FormalParameter profile 1.0] SHOULD declare the versioned profile URI using `sdConformsTo` e.g.:
 
 ```json
 {
   "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
   "@type": "FormalParameter",
-  "conformsTo": 
-    {"@id": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/"},
+  "sdConformsTo": 
+    {"@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"},
   "..": ""
 }
 ```
@@ -233,7 +236,7 @@ A contextual entity conforming to the [FormalParameter profile][FormalParameter 
 
 ## Complete Workflow Example
 
-The below is an example of an RO-Crate complying with the Bioschemas [ComputationalWorkflow profile 0.5]:
+The below is an example of an RO-Crate complying with the Bioschemas [ComputationalWorkflow profile 1.0]:
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context", 
@@ -254,8 +257,9 @@ The below is an example of an RO-Crate complying with the Bioschemas [Computatio
     {
       "@id": "workflow/alignment.knime",  
       "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
-      "conformsTo": 
-        {"@id": "https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21/"},
+      "sdConformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+      },
       "name": "Sequence alignment workflow",
       "programmingLanguage": {"@id": "#knime"},
       "creator": {"@id": "#alice"},
@@ -275,7 +279,9 @@ The below is an example of an RO-Crate complying with the Bioschemas [Computatio
     {
       "@id": "#36aadbd4-4a2d-4e33-83b4-0cbf6a6a8c5b",
       "@type": "FormalParameter",
-      "conformsTo": {"@id": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/"},
+      "sdConformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
       "name": "genome_sequence",
       "valueRequired": true,
       "additionalType": {"@id": "http://edamontology.org/data_2977"},
@@ -284,7 +290,9 @@ The below is an example of an RO-Crate complying with the Bioschemas [Computatio
     {
       "@id": "#6c703fee-6af7-4fdb-a57d-9e8bc4486044",
       "@type": "FormalParameter",
-      "conformsTo": {"@id": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/"},
+      "sdConformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
       "name": "cleaned_sequence",
       "additionalType": {"@id": "http://edamontology.org/data_2977"},
       "encodingFormat": {"@id": "http://edamontology.org/format_2572"}
@@ -292,7 +300,9 @@ The below is an example of an RO-Crate complying with the Bioschemas [Computatio
     {
       "@id": "#2f32b861-e43c-401f-8c42-04fd84273bdf",
       "@type": "FormalParameter",
-      "conformsTo": {"@id": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21/"},
+      "sdConformsTo": {"@id": "
+        https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
       "name": "sequence_alignment",
       "additionalType": {"@id": "http://edamontology.org/data_1383"},
       "encodingFormat": {"@id": "http://edamontology.org/format_1982"}
@@ -324,27 +334,27 @@ The below is an example of an RO-Crate complying with the Bioschemas [Computatio
     },
     {
       "@id": "http://edamontology.org/format_1929",
-      "@type": "Thing",
+      "@type": "NamedTerm",
       "name": "FASTA sequence format"
     },
     {
       "@id": "http://edamontology.org/format_1982",
-      "@type": "Thing",
+      "@type": "NamedTerm",
       "name": "ClustalW alignment format"
     },
     {
       "@id": "http://edamontology.org/format_2572",
-      "@type": "Thing",
+      "@type": "NamedTerm",
       "name": "BAM format"
     },
     {
       "@id": "http://edamontology.org/data_2977",
-      "@type": "Thing",
+      "@type": "NamedTerm",
       "name": "Nucleic acid sequence"
     },
     {
       "@id": "http://edamontology.org/data_1383",
-      "@type": "Thing",
+      "@type": "NamedTerm",
       "name": "Nucleic acid sequence alignment"
     }
   ]
