@@ -2638,7 +2638,6 @@
           "retrievedOn": "http://purl.org/pav/retrievedOn",
           "retrievedBy": "http://purl.org/pav/retrievedBy",
           "conformsTo": "http://purl.org/dc/terms/conformsTo",
-          "sdConformsTo": "https://w3id.org/ro/terms#sdConformsTo",
           "@label": "http://www.w3.org/2000/01/rdf-schema#label",
           "pcdm": "http://pcdm.org/models#",
           "bibo": "http://purl.org/ontology/bibo/",
