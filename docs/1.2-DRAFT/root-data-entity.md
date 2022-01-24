@@ -105,12 +105,11 @@ types of dataset may put further constraints or requirements of metadata beyond
 the Root Data Entity (see the appendix [Extending RO-Crate](appendix/jsonld.md#extending-ro-crate)).
 
 The _RO-Crate Metadata File Descriptor_ MAY contain information such as
-licensing for the _RO-Crate Metadata File_ so metadata can be licensed
-separately from Data.
+licensing for the _RO-Crate Metadata File_ if metadata is licensed
+separately from the crate's Data entities.
 
-The table below outlines the properties that the _Root Data Entity_ MUST have to
-be minimally valid and additionally highlights properties required to meet other
-common use-cases:
+The section below outlines the properties that the _Root Data Entity_ MUST have to
+be minimally valid.
 
 ## Direct properties of the Root Data Entity
 
@@ -121,8 +120,8 @@ The _Root Data Entity_ MUST have the following properties:
 *  `name`: SHOULD identify the dataset to humans well enough to disambiguate it from other RO-Crates
 *  `description`: SHOULD further elaborate on the name to provide a summary of the context in which the dataset is important.
 *  `datePublished`: MUST be a string in [ISO 8601 date format][DateTime] and SHOULD be specified to at least the precision of a day, MAY be a timestamp down to the millisecond. 
-*  `license`: SHOULD link to a _Contextual Entity_ in the _RO-Crate Metadata File_ with a name and description. MAY have a URI (eg for Creative Commons or Open Source licenses). MAY, if necessary be a textual description of how the RO-Crate may be used.
-
+*  `license`: SHOULD link to a _Contextual Entity_ in the _RO-Crate Metadata File_ with a name and description (see section on [licensing](contextual-entities.md#licensing-access-control-and-copyright))
+. MAY, if necessary be a textual description of how the RO-Crate may be used. 
 {: .note }
 > These requirements are stricter than those published 
 > for [Google Dataset Search](https://developers.google.com/search/docs/data-types/dataset) which 
@@ -130,6 +129,8 @@ The _Root Data Entity_ MUST have the following properties:
 
 {: .warning }
 > The properties above are not sufficient to generate a [DataCite][DataCite Schema] citation. Advice on integrating with [DataCite] will be provided in a future version of this specification, or as an implementation guide.
+
+Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be added to further describe the RO-Crate as a whole, e.g. [author], [abstract], [publisher]. See sections [contextual entities](contextual-entities.md) and [provenance](provenance.md) for further details.
 
 ## Minimal example of RO-Crate
 
