@@ -44,7 +44,7 @@ The _RO-Crate JSON-LD_ MUST contain a self-describing
 **RO-Crate Metadata File Descriptor** with
 the `@id` value `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` in legacy
 crates) and `@type` [CreativeWork]. This descriptor MUST have an [about]
-property referencing the _Root Data Entity_, which SHOULD have an `@id` of `./`.
+property referencing the _Root Data Entity_'s `@id`.
 
 ```json
 
@@ -116,7 +116,7 @@ be minimally valid.
 The _Root Data Entity_ MUST have the following properties:
 
 *  `@type`: MUST be [Dataset]
-*  `@id`:  MUST end with `/` and SHOULD be the string `./`
+*  `@id`:  SHOULD be the string `./` or an absolute URI (see below)
 *  `name`: SHOULD identify the dataset to humans well enough to disambiguate it from other RO-Crates
 *  `description`: SHOULD further elaborate on the name to provide a summary of the context in which the dataset is important.
 *  `datePublished`: MUST be a string in [ISO 8601 date format][DateTime] and SHOULD be specified to at least the precision of a day, MAY be a timestamp down to the millisecond. 
@@ -130,7 +130,16 @@ The _Root Data Entity_ MUST have the following properties:
 {: .warning }
 > The properties above are not sufficient to generate a [DataCite][DataCite Schema] citation. Advice on integrating with [DataCite] will be provided in a future version of this specification, or as an implementation guide.
 
+
 Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be added to further describe the RO-Crate as a whole, e.g. [author], [abstract], [publisher]. See sections [contextual entities](contextual-entities.md) and [provenance](provenance.md) for further details.
+
+
+### Root Data Entity identifier
+
+The root data entity's `@id` SHOULD be either `./` (indicating the directory of `ro-crate-metadata.json` is the [RO-Crate Root](structure.md)), or an absolute URI (indicating a _root-less_ RO-Crate). 
+
+If the `@id` of the Root Data Entity is an absolute URI, the Crate SHOULD NOT contain [data entities](data-entities.md) using relative URI references, but MAY contain [Web-based Data Entities](data-entities.html#web-based-data-entities) using absolute URIs.
+
 
 ## Minimal example of RO-Crate
 
