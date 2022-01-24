@@ -32,7 +32,23 @@ parent: RO-Crate 1.2-DRAFT
 1. TOC
 {:toc}
 
-The structure an _RO-Crate_ MUST follow is:
+## Types of RO-Crate
+
+There are two classes of RO-Crate:
+
+1. Regular RO-Crate
+2. Rootless RO-Crate
+
+A **Regular RO-Crate**  is a crate that is stored on a typical hierarchical file system (e.g. `/files/shared/crates/my-crate-01/` or `c:\Users\alice\Desktop\crate-01\`), exposed as a web resource within a folder structure (e.g. `https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/`), or archived in another way that would support relative file paths such as `example/data.txt` (including [packaging](appendix/implementation-notes.md#combining-with-other-packaging-schemes) like ZIP files, BagIt, OCFL). 
+
+A _Regular RO-Crate_ has a well-defined _RO-Crate Root directory_ which can carry a _payload_ of local [data entities](data-entities.md) as regular files (combined with [Web-based Data Entities](data-entities.html#web-based-data-entities) where needed). The payload is  described within the _RO-Crate Metadata File_. This type of RO-Crate can be suitable for long-term preservation, transfer and publishing, as the metadata is stored alongside its payload. 
+
+A **Rootless RO-Crate** is a crate without a defined payload directory. In this kind of crate, all URI references are absolute. This type of crate may be suitable for use with dynamic web service APIs and repositories that do not support hierarchical URIs. As these crates can only contain [Web-based Data Entities](data-entities.html#web-based-data-entities), the payload is implicit and must be individually preserved/transferred/archived independent of the _RO-Crate Metadata File_. 
+
+
+## Regular RO-Crate
+
+The structure a _Regular RO-Crate_ MUST follow is:
 
 ```
 <RO-Crate root directory>/
@@ -52,12 +68,26 @@ The name of the _RO-Crate root_ directory is not defined, but a root directory i
 RO-Crates can be _nested_ by including payload directories that themselves contain an _RO-Crate Metadata File_.
 -->
 
+
+## Rootless RO-Crate
+
+A _Rootless RO-Crate_ is an RO-Crate without a defined root directory, where the _RO-Crate Metadata File_ and/or _RO-Crate Website_ content is accessed independently (e.g. as part of a programmatic API).
+
+
+These crates cannot carry their own data _payload_, but may reference data deposited separately, or purely reference [contextual entities](contextual-entities.md).
+
+Any [data entities](data-entities.md) in a _Rootless RO-Crate_ MUST be [Web-based Data Entities](data-entities.html#web-based-data-entities). Using relative URI references like `example/data.txt` in a Rootless RO-Crate is NOT RECOMMENDED as this is considered ambigious and fragile. 
+
+A _Rootless RO-Crate_ can be identified by the [root data entity](root-data-entity.md) having an `@id` different from `./`. 
+
+Note that [finding the Root Data Entity](root-data-entity.md#finding-the-root-data-entity) is harder for consumers of rootless crates, particularly if the platform serving the _RO-Crate Metadata File_ is unable to URI path ending with `…/ro-crate-metadata.json`. 
+
 ## RO-Crate Metadata File (`ro-crate-metadata.json`)
 
-* In new RO-Crates the _RO-Crate Metadata File_ MUST be named `ro-crate-metadata.json` and appear in the _RO-Crate Root_
+* In a _Regular RO-Crate_ the _RO-Crate Metadata File_ MUST be named `ro-crate-metadata.json` and appear in the _RO-Crate Root_
+  - If an RO-Crate conforming to version 1.0 or earlier contains a file named `ro-crate-metadata.jsonld` but not `ro-crate-metadata.json`, then processing software should treat this as the _RO-Crate Metadata File_. If the crate is updated, the file SHOULD be renamed to `ro-crate-metadata.json` and the _RO-Crate Metadata File Descriptor_ SHOULD be updated to reference it, with an up to date [conformsTo] property naming an appropriate version of this specification. 
 * The _RO-Crate Metadata File_ MUST contain _RO-Crate JSON-LD_; a valid [JSON-LD 1.0] document in [flattened]  and [compacted] form
 * The _RO-Crate JSON-LD_ SHOULD use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.2-DRAFT/context> by reference.
-* If an RO-Crate conforming to version 1.0 or earlier contains a file named `ro-crate-metadata.jsonld` instead of `ro-crate-metadata.json` then processing software should treat this as the _RO-Crate Metadata File_. If the crate is updated then the file SHOULD be renamed to `ro-crate-metadata.json` and the _RO-Crate Metadata File Descriptor_ SHOULD be updated to reference it, with an up to date [conformsTo] property naming an appropriate version of this specification. 
 
 
 [JSON-LD](https://json-ld.org/) is a structured form of [JSON] that can represent a _Linked Data_ graph. 
@@ -86,7 +116,7 @@ The appendix [RO-Crate JSON-LD](appendix/jsonld.md) details the general structur
 
 In addition to the machine-oriented _RO-Crate Metadata File_, the RO-Crate MAY include a human-readable HTML rendering of the same information, known as the _RO-Crate Website_.
 
-If present in the root directory, `ro-crate-preview.html` MUST:
+If present in the root directory of a _Regular RO-Crate_ as `ro-crate-preview.html`, (or otherwise served in a _Rootless RO-Crate_), the RO-Crate Website MUST:
 
 * Be a valid [HTML 5] document 
 * Be useful to users of the RO-Crate - this will vary by community and intended use, but in general the aim to assist users in reusing data by explaining what it is, how it was created how it can be used and how to cite it. One simple approach to this is to expose *all* the metadata in the _RO-Crate Metadata File_.
@@ -111,11 +141,23 @@ If present in the root directory, `ro-crate-preview.html` MUST:
 * If there is sufficient metadata, contain a prominent _“Cite-as”_ text with a natural language data citation (see for example the [FORCE11 Data Citation Principles]).
 * If there are additional resources necessary to render the preview (e.g. CSS, JSON, HTML), link to them in a subdirectory `ro-crate-preview-files/`
 
+
+{: .warning }
+> In a _Rootless RO-Crate_ it is **undefined** how to find the _RO-Crate Website_ from the _RO-Crate Metadata File_ or vice versa.
+
+
 ## Payload files and directories
 
-These are the actual files and directories that make up the dataset being described.
+These are the actual files and directories that make up the **payload** of the dataset being described in a _Regular RO-Crate_.
 
-The base RO-Crate specification makes no assumptions about the presence of any specific files or folders beyond the reserved RO-Crate files described above. Payload files may appear directly in the _RO-Crate Root_ alongside the _RO-Crate Metadata File_, and/or appear in sub-directories of the _RO-Crate Root_. Each file and directory MAY be represented as [Data Entities](data-entities.md) in the _RO-Crate Metadata File_.
+The base RO-Crate specification makes no assumptions about the presence of any specific files or folders beyond the reserved RO-Crate files described above. 
+
+Payload files may appear directly in the _RO-Crate Root_ alongside the _RO-Crate Metadata File_, and/or appear in sub-directories of the _RO-Crate Root_. Each file and directory MAY be represented as [Data Entities](data-entities.md) in the _RO-Crate Metadata File_.
+
+A RO-Crate may also contain [Web-based Data Entities](data-entities.html#web-based-data-entities) that are not present as part of the payload and referenced using absolute URIs. These may require additional preservation measures.
+
+{: .tip }
+> A RO-Crate [packaged with BagIt](appendix/implementation-notes.md#adding-ro-crate-to-bagit) may be [referencing external files](appendix/implementation-notes.md#referencing-external-files) which are not present in the _RO-Crate Root_ hierarchy until the BagIt has been _completed_. This method can be used for files that are large, require authentication or otherwise inconvenient to transfer with the RO-Crate, but which should nevertheless still be considered part of the _payload_.
 
 
 ## Self-describing and self-contained
