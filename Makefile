@@ -136,20 +136,30 @@ podman-pre:
 	chmod go+w "${mkfile_absdir}/docs" "${mkfile_absdir}/docs/Gemfile.lock"
 
 docker-fix-permissions:
-	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll chown -R $(shell id -u):$(shell id -g) /srv/jekyll
+	docker run -it --volume="${mkfile_absdir}/docs:/srv/jekyll" alpine:3.15 chown -R $(shell id -u):$(shell id -g) /srv/jekyll
+
+docker-clean: docker-fix-permissions
+	docker volume inspect ro-crate-jekyll >/dev/null && docker volume rm ro-crate-jekyll
+	docker rm jekyll-ro-crate
 
 jekyll-podman-serve:	podman-pre
-	podman run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume="${mkfile_absdir}/docs:/srv/jekyll" -p 4000:4000 jekyll/jekyll jekyll serve --incremental
+	podman run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate -e JEKYLL_ENV=docker --volume="${mkfile_absdir}/docs:/srv/jekyll" -p 4000:4000 jekyll/jekyll jekyll serve --incremental --config  _config.yml,_config.docker.yml
 
 jekyll-podman-oneshot:	podman-pre
 	podman run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll jekyll build
 
-jekyll-docker-serve:
-	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume="${mkfile_absdir}/docs:/srv/jekyll" -p 4000:4000 jekyll/jekyll jekyll serve --incremental
-	# Next one fixes permissions
-	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll chown -R $(shell id -u):$(shell id -g) /srv/jekyll
+jekyll-docker-dependencies:
+	docker volume inspect ro-crate-jekyll 2>/dev/null >/dev/null || \
+	(docker volume create ro-crate-jekyll && \
+	 docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume ro-crate-jekyll:/usr/local/bundle --volume="${mkfile_absdir}/docs:/srv/jekyll" -p 4000:4000 jekyll/jekyll jekyll clean)
 
-jekyll-docker-oneshot:
-	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll jekyll build
+## See https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/
+jekyll-docker-serve: jekyll-docker-dependencies
+	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate -e JEKYLL_ENV=docker --volume ro-crate-jekyll:/usr/local/bundle --volume="${mkfile_absdir}/docs:/srv/jekyll" -p 4000:4000 jekyll/jekyll jekyll serve --incremental --config  _config.yml,_config.docker.yml
 	# Next one fixes permissions
-	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll chown -R $(shell id -u):$(shell id -g) /srv/jekyll
+	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume ro-crate-jekyll:/usr/local/bundle --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll chown -R $(shell id -u):$(shell id -g) /srv/jekyll
+
+jekyll-docker-oneshot: jekyll-docker-dependencies
+	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume ro-crate-jekyll:/usr/local/bundle --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll jekyll build
+	# Next one fixes permissions
+	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume ro-crate-jekyll:/usr/local/bundle --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll chown -R $(shell id -u):$(shell id -g) /srv/jekyll
