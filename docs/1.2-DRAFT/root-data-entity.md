@@ -71,10 +71,9 @@ SHOULD be a versioned permalink URI of the RO-Crate specification
 that the _RO-Crate JSON-LD_ conforms to. The URI SHOULD 
 start with `https://w3id.org/ro/crate/`. 
 
-```info
-The `conformsTo` property MAY be an array, to additionally indicate 
+{: .tip }
+> The `conformsTo` property MAY be an array, to additionally indicate 
 specializing [RO-Crate profiles](profiles.md).
-```
 
 ### Finding the Root Data Entity
 
