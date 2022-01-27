@@ -46,8 +46,7 @@ consistent handling:
 
 ## Flattening JSON-LD from nested JSON
 
-If performing
-[JSON-LD flattening] to generate a valid _RO-Crate Metadata File_, add `@base: null` to the input JSON-LD `@context` array to avoid expanding relative URI references. The flattening `@context` SHOULD NOT need `@base: null`.
+If performing [JSON-LD flattening] to generate a valid _RO-Crate Metadata File_ for a _Regular RO-Crate_, add `@base: null` to the input JSON-LD `@context` array to avoid expanding relative URI references. The flattening `@context` SHOULD NOT need `@base: null`.
 
 Example, this JSON-LD is in [compacted form][compacted] which may be beneficial for processing, but is not yet valid _RO-Crate Metadata File_ as it has not been flattened into a `@graph` array.
 
