@@ -999,13 +999,13 @@
     },
     {
       "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/471",
-      "@type": "Thing",
+      "@type": "WebPage",
       "name": "Hypertext Markup Language 5",
       "alternateName": "HTML5"
     },
     {
       "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/18",
-      "@type": "Thing",
+      "@type": "WebPage",
       "name": "Acrobat PDF 1.4 - Portable Document Format",
       "alternateName": "PDF 1.4"
     }
