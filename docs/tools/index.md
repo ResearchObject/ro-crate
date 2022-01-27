@@ -31,5 +31,6 @@ While we're mostly focusing on the [RO-Crate specification](specification.md) so
  - [ro-crate-py](https://github.com/researchobject/ro-crate-py) - Python library to consume/produce RO-Crates (~ _alpha_)
  - [CheckMyCrate](https://github.com/KockataEPich/CheckMyCrate/tree/Version_0.2) - Validation according to Workflow RO-Crate profile (~ _alpha_)
  - [galaxy2cwl](https://github.com/workflowhub-eu/galaxy2cwl) - Wraps Galaxy workflow as Workflow RO-Crate (~ _alpha_)
+ - [ya2ro](https://github.com/oeg-upm/ya2ro) - Generate RO-Crate and HTML page from YAML template with look-up of DOI/ORCID/GitHub metadata (~ _prototype_)
 
 See also [applications using RO-Crate](../in-use/).
