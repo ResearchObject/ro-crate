@@ -1,5 +1,5 @@
 ---
-title: RO-Crate 1.1
+title: RO-Crate 1.2-DRAFT
 has_children: true
 nav_order: 1
 excerpt: |
