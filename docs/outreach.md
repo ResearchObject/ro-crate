@@ -49,13 +49,6 @@ _Data Science_ (in press).
 
 ## 2021
 
-田辺 浩介, 松田 朝彦 (2021): [**RO-Crateを用いた材料研究データのデータリポジトリへの登録**](http://www.jsik.jp/archive/v31n4.pdf#page=75)  
-**Ingesting materials research data into a data repository using RO-Crate**  
-_情報知識学会誌_ **31**(4) p. 497-502. 第26回情報知識学フォーラム予稿  
-[_Journal of Japan Society of Information and Knowledge (Jōhō Chishiki Gakkaishi)_](https://www.jstage.jst.go.jp/browse/jsik/list/-char/en) **31**(4) pp. 497-502.
-26th Information and Knowledge Study Forum, 2021-12-18, Kyoto University, Kyoto, Japan.
-(awaiting DOI assigned)
-
 Jeremy Leipzig, Daniel Nüst, Charles Tapley Hoyt, Karthik Ram, Jane Greenberg (2021):  
 [**The role of metadata in reproducible computational research**](https://doi.org/10.1016/j.patter.2021.100322).  
 _Patterns_ **2**(1):100322
@@ -73,6 +66,36 @@ Suzan Verberne, Aswin Verhoeven, Katherine Wolstencroft (2021):
 [**Perspectives on automated composition of workflows in the life sciences** [version 1; peer review: 2 approved]](https://doi.org/10.12688/f1000research.54159.1).  
 _F1000Research_ **10**:897  
 <https://doi.org/10.12688/f1000research.54159.1>
+
+Thanasis Vergoulis, Konstantinos Zagganas, Loukas Kavouras, Martin Reczko, Stelios Sartzetakis, and Theodore Dalamagas (2021):  
+[**SCHeMa: Scheduling Scientific Containers on a Cluster of Heterogeneous Machines**](https://arxiv.org/pdf/2103.13138.pdf).   
+_arXiv CoRR_ [arXiv:2103.13138](https://arxiv.org/abs/2103.13138) 
+
+Marco La Rosa (2021):  
+[**From endangered languages to the Science Mesh - petascale FAIR data repositories**](https://cs3mesh4eosc.eu/news-events/news/blogpost-endangered-languages-science-mesh-petascale-fair-data-repositories)  
+_CS3MESH4EOSC Blog_
+
+田辺 浩介, 松田 朝彦 (2021): [**RO-Crateを用いた材料研究データのデータリポジトリへの登録**](http://www.jsik.jp/archive/v31n4.pdf#page=75)  
+Kosuke Tanabe, Asahiko Matsuda (2021) **Ingesting materials research data into a data repository using RO-Crate**  
+_情報知識学会誌_ **31**(4) p. 497-502. 
+_Journal of Japan Society of Information and Knowledge (Jōhō Chishiki Gakkaishi)_ **31**(4) pp. 497-502.  
+第26回情報知識学フォーラム予稿  
+26th Information and Knowledge Study Forum, 2021-12-18, Kyoto University, Kyoto, Japan.
+([awaiting DOI](https://www.jstage.jst.go.jp/browse/jsik/list/-char/en))
+
+Myles Axton (2021):
+[**A network database for the human biobank**](https://doi.org/10.1002/ggn2.10049)
+_Advanced Genetics_ **2(2):e10049
+<https://doi.org/10.1002/ggn2.10049>
+
+Sonia Natalie Mitchell, Andrew Lahiff, Nathan Cummings, Jonathan Hollocombe, Bram Boskamp, Dennis Reddyhoff, Ryan Field, Kristian Zarebski, Antony Wilson, Martin Burke, Blair Archibald, Paul Bessell, Richard Blackwell, Lisa A Boden, Alys Brett, Sam Brett, Ruth Dundas, Jessica Enright, Alejandra N. Gonzalez-Beltran, Claire Harris, Ian Hinder, Christopher David Hughes, Martin Knight, Vino Mano, Ciaran McMonagle, Dominic Mellor, Sibylle Mohr, Glenn Marion, Louise Matthews, Iain J. McKendrick, Christopher Mark Pooley, Thibaud Porphyre, Aaron Reeves, Edward Townsend, Robert Turner, Jeremy Walton, Richard Reeve (2021):  
+[**FAIR Data Pipeline: provenance-driven data management for traceable scientific workflows**](https://arxiv.org/pdf/2110.07117).  
+_arXiv CoRR_ [arXiv:2110.07117](https://arxiv.org/abs/2110.07117) [q-bio.QM]
+
+Vernon Gayle (2021):  
+[**A practical guide to developing research objects when undertaking reproducible statistically orientated social science research during COVID-19**](https://eprints.ncrm.ac.uk/id/eprint/4465/1/research_objects_practical%20guide.pdf).  
+_National Centre for Research Methods_
+<https://eprints.ncrm.ac.uk/id/eprint/4465>
 
 Stian Soiland-Reyes (2021):
 [**RO-Crate — A brief "crash course"**](https://slides.com/soilandreyes/2021-11-23-ro-crate-crash-course/)
@@ -130,10 +153,6 @@ Stian Soiland-Reyes (2021):
 _FAIR Festival 2021_, FAIR Implementation Challenges & Solutions, 2021-06-21.
 <https://doi.org/10.5281/zenodo.5007432>
  
-Marco La Rosa (2021):  
-[**From endangered languages to the Science Mesh - petascale FAIR data repositories**](https://cs3mesh4eosc.eu/news-events/news/blogpost-endangered-languages-science-mesh-petascale-fair-data-repositories)  
-_CS3MESH4EOSC Blog_
- 
 Peter Sefton, Marco La Rosa, Michael Lynch (2021):  
 [**Arkisto: a repository based platform for managing all kinds of research data**](http://ptsefton.com/2021/06/11/or-2021-arkisto/).  
 _[Open Repositories 2021](https://or2021.openrepositories.org/)_ (OR2021), 2021-06-10.
@@ -189,9 +208,7 @@ Carole Goble, Stian Soiland-Reyes (2021):
 [_RDA IG Data Fabric: FAIR Digital Objects_](https://www.rd-alliance.org/group/data-fabric-ig/wiki/rda-ig-data-fabric-fair-digital-objects) 2021-02-25.
 [[Video recording](https://www.youtube.com/watch?v=pz-MLdI7GLA)] [[slides](https://www.slideshare.net/carolegoble/rocrate-a-framework-for-packaging-research-products-into-fair-research-objects)]
 
-Thanasis Vergoulis, Konstantinos Zagganas, Loukas Kavouras, Martin Reczko, Stelios Sartzetakis, and Theodore Dalamagas (2021):  
-[**SCHeMa: Scheduling Scientific Containers on a Cluster of Heterogeneous Machines**](https://arxiv.org/pdf/2103.13138.pdf).   
-_arXiv CoRR_ [arXiv:2103.13138](https://arxiv.org/abs/2103.13138) 
+
 
 Carole Goble (2021):
 [**The swings and roundabouts of a decade of fun and games with Research Objects**](https://www.slideshare.net/carolegoble/the-swings-and-roundabouts-of-a-decade-of-fun-and-games-with-research-objects).  
