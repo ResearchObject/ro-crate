@@ -75,6 +75,7 @@ Marco La Rosa (2021):
 [**From endangered languages to the Science Mesh - petascale FAIR data repositories**](https://cs3mesh4eosc.eu/news-events/news/blogpost-endangered-languages-science-mesh-petascale-fair-data-repositories)  
 _CS3MESH4EOSC Blog_
 
+
 田辺 浩介, 松田 朝彦 (2021): [**RO-Crateを用いた材料研究データのデータリポジトリへの登録**](http://www.jsik.jp/archive/v31n4.pdf#page=75)  
 Kosuke Tanabe, Asahiko Matsuda (2021) **Ingesting materials research data into a data repository using RO-Crate**  
 _情報知識学会誌_ **31**(4) p. 497-502. 
@@ -96,6 +97,18 @@ Vernon Gayle (2021):
 [**A practical guide to developing research objects when undertaking reproducible statistically orientated social science research during COVID-19**](https://eprints.ncrm.ac.uk/id/eprint/4465/1/research_objects_practical%20guide.pdf).  
 _National Centre for Research Methods_
 <https://eprints.ncrm.ac.uk/id/eprint/4465>
+
+Daniel S. Katz, Fotis Psomopoulos, Leyla Jael Castro (2021):  
+[**Working Towards Understanding the Role of FAIR for Machine Learning**](https://repository.publisso.de/resource/frl:6430060).  
+_2nd Workshop on Data and Research Objects Management for Linked Open Science_
+[[article](https://repository.publisso.de/resource/frl:6430060/data)] [[slides](https://doi.org/10.5281/zenodo.5594990)]  
+<https://doi.org/10.4126/FRL01-006429415>
+
+Mario Scrocca, Damiano Scandolari, Gloria Re Calegari, Ilaria Baroni, Irene Celino (2021):  
+[**The Survey Ontology: Packaging Survey Research as Research Objects**](https://repository.publisso.de/resource/frl:6430056/data).  
+_2nd Workshop on Data and Research Objects Management for Linked Open Science_
+[[article](https://repository.publisso.de/resource/frl:6430056/data)] [[slides](https://repository.publisso.de/resource/frl:6430057/data)] [[ontology](https://w3id.org/survey-ontology)] [[ro-crate](https://doi.org/10.5281/zenodo.5753764)] 
+<https://doi.org/10.4126/FRL01-006429412>
 
 Stian Soiland-Reyes (2021):
 [**RO-Crate — A brief "crash course"**](https://slides.com/soilandreyes/2021-11-23-ro-crate-crash-course/)
@@ -184,7 +197,6 @@ _2nd Workshop of the Data Citation Community of Practice for Earth, Space, and E
 <https://doi.org/10.5281/zenodo.4916168>
 
 
-
 Stian Soiland-Reyes (2021):  
 [**Describing and packaging workflows using RO-Crate and BioCompute Objects**](https://youtu.be/3APqPwRIRkA).  
 _Webinar for U.S. Food and Drug Administration (FDA)_, 2021-05-12.  [[Video recording](https://youtu.be/3APqPwRIRkA)] [[slides](https://doi.org/10.5281/zenodo.4633732)]  
@@ -207,8 +219,6 @@ Carole Goble, Stian Soiland-Reyes (2021):
 [**RO-Crate: A framework for packaging research products into FAIR Research Objects**](https://www.slideshare.net/carolegoble/rocrate-a-framework-for-packaging-research-products-into-fair-research-objects).  
 [_RDA IG Data Fabric: FAIR Digital Objects_](https://www.rd-alliance.org/group/data-fabric-ig/wiki/rda-ig-data-fabric-fair-digital-objects) 2021-02-25.
 [[Video recording](https://www.youtube.com/watch?v=pz-MLdI7GLA)] [[slides](https://www.slideshare.net/carolegoble/rocrate-a-framework-for-packaging-research-products-into-fair-research-objects)]
-
-
 
 Carole Goble (2021):
 [**The swings and roundabouts of a decade of fun and games with Research Objects**](https://www.slideshare.net/carolegoble/the-swings-and-roundabouts-of-a-decade-of-fun-and-games-with-research-objects).  
@@ -267,8 +277,9 @@ Michael L. Nelson, Herbert Van de Sompel (2020):
 [arXiv:2008.11680](https://arxiv.org/abs/2008.11680) [cs.DL]
 
 Tomasz Miksa, Maroua Jaoua, Ghaith Arfaoui (2020):  
-**Research Object Crates and Machine-actionable Data Management Plans**.  
+[**Research Object Crates and Machine-actionable Data Management Plans**](https://repository.publisso.de/resource/frl:6424240/data).  
 _First Workshop on Data and Research Objects Management for Linked Open Science ([DaMaLOS](https://zbmed.github.io/damalos/docs/2020.html))_ at _The 19th International Semantic Web Conference ([ISWC 2020](https://iswc2020.semanticweb.org/))_.  
+[[article](https://repository.publisso.de/resource/frl:6424240/data)] [[slides](https://repository.publisso.de/resource/frl:6424243/data)] [[video](https://repository.publisso.de/resource/frl:6424255)]
 <https://doi.org/10.4126/frl01-006423291>
 
 Carole Goble (2020):
