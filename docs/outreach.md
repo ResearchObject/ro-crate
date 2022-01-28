@@ -387,9 +387,15 @@ See also [publications about Research Objects](https://www.researchobject.org/pu
 
 _To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 
+**[International Conference on Theory and Practice of Digital Libraries](http://tpdl2022.dei.unipd.it/calls/full_papers.html)** (TPDL), 2022-10-20/2022-10-23. [Call for papers 2022-05-22](http://tpdl2022.dei.unipd.it/calls/full_papers.html) topics incl. FAIR data and software, Research objects, Nanopublications, Linked Data, Digital Preservation.
+
+**[Workshop on Data and Research Objects Management for Linked Open Science](https://zbmed.github.io/damalos/docs/2021.html)** (DaMaLOS) 2021-10-24, _20th International Semantic Web Conference_ (ISWC 2021).
+
 **[ELIXIR Biohackathon Europe 2021](https://www.biohackathon-europe.org/)** 2021-11-08/2020-11-12, Hybrid. Projects proposed for RO-Crate and WorkflowHub.
 
 **[ELIXIR Biohackathon Europe 2020](https://2020.biohackathon-europe.org/)** 2020-11-09/2020-11-13, Virtual. Project on [Galaxy export of RO-Crate](https://github.com/elixir-europe/BioHackathon-projects-2020/tree/master/projects/14).
+
+**[Workshop on Data and Research Objects Management for Linked Open Science](https://zbmed.github.io/damalos/docs/2020.html)** (DaMaLOS) 2020-11-02, _19th International Semantic Web Conference (ISWC 2020)_.
 
 **[FAIR Computational Workflows workshop](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/)** (2020-09-02) at the 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).
 
