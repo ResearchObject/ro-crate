@@ -49,6 +49,13 @@ _Data Science_ (in press).
 
 ## 2021
 
+田辺 浩介, 松田 朝彦 (2021): [**RO-Crateを用いた材料研究データのデータリポジトリへの登録**](http://www.jsik.jp/archive/v31n4.pdf#page=75)  
+**Ingesting materials research data into a data repository using RO-Crate**  
+_情報知識学会誌_ **31**(4) p. 497-502. 第26回情報知識学フォーラム予稿  
+[_Journal of Japan Society of Information and Knowledge (Jōhō Chishiki Gakkaishi)_](https://www.jstage.jst.go.jp/browse/jsik/list/-char/en) **31**(4) pp. 497-502.
+26th Information and Knowledge Study Forum, 2021-12-18, Kyoto University, Kyoto, Japan.
+(awaiting DOI assigned)
+
 Jeremy Leipzig, Daniel Nüst, Charles Tapley Hoyt, Karthik Ram, Jane Greenberg (2021):  
 [**The role of metadata in reproducible computational research**](https://doi.org/10.1016/j.patter.2021.100322).  
 _Patterns_ **2**(1):100322
