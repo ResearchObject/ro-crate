@@ -294,12 +294,12 @@ _eResearch Australasia 2020_
 
 Stian Soiland-Reyes, Ignacio Eguinoa (2020):  
 [**Packaging workflows with RO-Crate**](https://doi.org/10.5281/zenodo.4011999).  
-[_Workshop on FAIR Computational Workflows_](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).  
+[_Workshop on FAIR Computational Workflows_](https://web.archive.org/web/20201203233816/https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://web.archive.org/web/20201203233816/https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/)).  
 <https://doi.org/10.5281/zenodo.4011999>
 
 Simone Leo, Salvador Capella-Gutierrez (2020):  
 [**Testing workflows: Life Monitor and OpenEBench**](https://docs.google.com/presentation/d/15113lwn8_H7ftDF9I650O3rZGeAVr6LVSU4-XDkBgA0/edit#slide=id.g9337569ecf_1_0).  
-[_Workshop on FAIR Computational Workflows_](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).
+[_Workshop on FAIR Computational Workflows_](https://web.archive.org/web/20201203233816/https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://web.archive.org/web/20201203233816/https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/)).  
 
 Gavin Kennedy (2020):  
 [**Interoperable Research Workspaces and the Mesh**](https://indico.cern.ch/event/854707/contributions/3680449/attachments/1975672/3288266/CS3_2020_Research_Workspaces_Gavin_Kennedy_v2.pptx).  
