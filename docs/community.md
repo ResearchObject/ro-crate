@@ -89,6 +89,8 @@ The _RO-Crate_ team is:
 * Sveinung Gundersen <https://orcid.org/0000-0001-9888-7954>
 * Muhammad Radifar <https://orcid.org/0000-0001-9156-9478>
 * Rudolf Wittner <https://orcid.org/0000-0002-0003-2024>
+* Oliver Woolland <https://github.com/OliverWoolland>
+* Paul De Geest <https://orcid.org/0000-0002-8940-4946>
 
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! 
