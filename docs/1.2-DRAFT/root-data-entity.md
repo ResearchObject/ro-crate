@@ -119,8 +119,8 @@ The _Root Data Entity_ MUST have the following properties:
 *  `name`: SHOULD identify the dataset to humans well enough to disambiguate it from other RO-Crates
 *  `description`: SHOULD further elaborate on the name to provide a summary of the context in which the dataset is important.
 *  `datePublished`: MUST be a string in [ISO 8601 date format][DateTime] and SHOULD be specified to at least the precision of a day, MAY be a timestamp down to the millisecond. 
-*  `license`: SHOULD link to a _Contextual Entity_ in the _RO-Crate Metadata File_ with a name and description (see section on [licensing](contextual-entities.md#licensing-access-control-and-copyright))
-. MAY, if necessary be a textual description of how the RO-Crate may be used. 
+*  `license`: SHOULD link to a _Contextual Entity_ in the _RO-Crate Metadata File_ with a name and description (see section on [licensing](contextual-entities.md#licensing-access-control-and-copyright)). MAY, if necessary be a textual description of how the RO-Crate may be used. 
+
 {: .note }
 > These requirements are stricter than those published 
 > for [Google Dataset Search](https://developers.google.com/search/docs/data-types/dataset) which 
@@ -128,7 +128,6 @@ The _Root Data Entity_ MUST have the following properties:
 
 {: .warning }
 > The properties above are not sufficient to generate a [DataCite][DataCite Schema] citation. Advice on integrating with [DataCite] will be provided in a future version of this specification, or as an implementation guide.
-
 
 Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be added to further describe the RO-Crate as a whole, e.g. [author], [publisher]. See sections [contextual entities](contextual-entities.md) and [provenance](provenance.md) for further details.
 

@@ -67,6 +67,49 @@ Suzan Verberne, Aswin Verhoeven, Katherine Wolstencroft (2021):
 _F1000Research_ **10**:897  
 <https://doi.org/10.12688/f1000research.54159.1>
 
+Thanasis Vergoulis, Konstantinos Zagganas, Loukas Kavouras, Martin Reczko, Stelios Sartzetakis, and Theodore Dalamagas (2021):  
+[**SCHeMa: Scheduling Scientific Containers on a Cluster of Heterogeneous Machines**](https://arxiv.org/pdf/2103.13138.pdf).   
+_arXiv CoRR_ [arXiv:2103.13138](https://arxiv.org/abs/2103.13138) 
+
+Marco La Rosa (2021):  
+[**From endangered languages to the Science Mesh - petascale FAIR data repositories**](https://cs3mesh4eosc.eu/news-events/news/blogpost-endangered-languages-science-mesh-petascale-fair-data-repositories)  
+_CS3MESH4EOSC Blog_
+
+
+田辺 浩介, 松田 朝彦 (2021): [**RO-Crateを用いた材料研究データのデータリポジトリへの登録**](http://www.jsik.jp/archive/v31n4.pdf#page=75)  
+Kosuke Tanabe, Asahiko Matsuda (2021) **Ingesting materials research data into a data repository using RO-Crate**  
+_情報知識学会誌_ **31**(4) p. 497-502. 
+_Journal of Japan Society of Information and Knowledge (Jōhō Chishiki Gakkaishi)_ **31**(4) pp. 497-502.  
+第26回情報知識学フォーラム予稿  
+26th Information and Knowledge Study Forum, 2021-12-18, Kyoto University, Kyoto, Japan.
+([awaiting DOI](https://www.jstage.jst.go.jp/browse/jsik/list/-char/en))
+
+Myles Axton (2021):
+[**A network database for the human biobank**](https://doi.org/10.1002/ggn2.10049)
+_Advanced Genetics_ **2(2):e10049
+<https://doi.org/10.1002/ggn2.10049>
+
+Sonia Natalie Mitchell, Andrew Lahiff, Nathan Cummings, Jonathan Hollocombe, Bram Boskamp, Dennis Reddyhoff, Ryan Field, Kristian Zarebski, Antony Wilson, Martin Burke, Blair Archibald, Paul Bessell, Richard Blackwell, Lisa A Boden, Alys Brett, Sam Brett, Ruth Dundas, Jessica Enright, Alejandra N. Gonzalez-Beltran, Claire Harris, Ian Hinder, Christopher David Hughes, Martin Knight, Vino Mano, Ciaran McMonagle, Dominic Mellor, Sibylle Mohr, Glenn Marion, Louise Matthews, Iain J. McKendrick, Christopher Mark Pooley, Thibaud Porphyre, Aaron Reeves, Edward Townsend, Robert Turner, Jeremy Walton, Richard Reeve (2021):  
+[**FAIR Data Pipeline: provenance-driven data management for traceable scientific workflows**](https://arxiv.org/pdf/2110.07117).  
+_arXiv CoRR_ [arXiv:2110.07117](https://arxiv.org/abs/2110.07117) [q-bio.QM]
+
+Vernon Gayle (2021):  
+[**A practical guide to developing research objects when undertaking reproducible statistically orientated social science research during COVID-19**](https://eprints.ncrm.ac.uk/id/eprint/4465/1/research_objects_practical%20guide.pdf).  
+_National Centre for Research Methods_
+<https://eprints.ncrm.ac.uk/id/eprint/4465>
+
+Daniel S. Katz, Fotis Psomopoulos, Leyla Jael Castro (2021):  
+[**Working Towards Understanding the Role of FAIR for Machine Learning**](https://repository.publisso.de/resource/frl:6430060).  
+_2nd Workshop on Data and Research Objects Management for Linked Open Science_
+[[article](https://repository.publisso.de/resource/frl:6430060/data)] [[slides](https://doi.org/10.5281/zenodo.5594990)]  
+<https://doi.org/10.4126/FRL01-006429415>
+
+Mario Scrocca, Damiano Scandolari, Gloria Re Calegari, Ilaria Baroni, Irene Celino (2021):  
+[**The Survey Ontology: Packaging Survey Research as Research Objects**](https://repository.publisso.de/resource/frl:6430056/data).  
+_2nd Workshop on Data and Research Objects Management for Linked Open Science_
+[[article](https://repository.publisso.de/resource/frl:6430056/data)] [[slides](https://repository.publisso.de/resource/frl:6430057/data)] [[ontology](https://w3id.org/survey-ontology)] [[ro-crate](https://doi.org/10.5281/zenodo.5753764)] 
+<https://doi.org/10.4126/FRL01-006429412>
+
 Stian Soiland-Reyes (2021):
 [**RO-Crate — A brief "crash course"**](https://slides.com/soilandreyes/2021-11-23-ro-crate-crash-course/)
 _[ELIXIR Data-Interoperability](https://elixir-europe.org/events/data-interoperability-joint-platform-f2f-hybrid-meeting) Joint Platform F2F Hybrid Meeting_, 2021-11-23.
@@ -123,10 +166,6 @@ Stian Soiland-Reyes (2021):
 _FAIR Festival 2021_, FAIR Implementation Challenges & Solutions, 2021-06-21.
 <https://doi.org/10.5281/zenodo.5007432>
  
-Marco La Rosa (2021):  
-[**From endangered languages to the Science Mesh - petascale FAIR data repositories**](https://cs3mesh4eosc.eu/news-events/news/blogpost-endangered-languages-science-mesh-petascale-fair-data-repositories)  
-_CS3MESH4EOSC Blog_
- 
 Peter Sefton, Marco La Rosa, Michael Lynch (2021):  
 [**Arkisto: a repository based platform for managing all kinds of research data**](http://ptsefton.com/2021/06/11/or-2021-arkisto/).  
 _[Open Repositories 2021](https://or2021.openrepositories.org/)_ (OR2021), 2021-06-10.
@@ -158,7 +197,6 @@ _2nd Workshop of the Data Citation Community of Practice for Earth, Space, and E
 <https://doi.org/10.5281/zenodo.4916168>
 
 
-
 Stian Soiland-Reyes (2021):  
 [**Describing and packaging workflows using RO-Crate and BioCompute Objects**](https://youtu.be/3APqPwRIRkA).  
 _Webinar for U.S. Food and Drug Administration (FDA)_, 2021-05-12.  [[Video recording](https://youtu.be/3APqPwRIRkA)] [[slides](https://doi.org/10.5281/zenodo.4633732)]  
@@ -181,10 +219,6 @@ Carole Goble, Stian Soiland-Reyes (2021):
 [**RO-Crate: A framework for packaging research products into FAIR Research Objects**](https://www.slideshare.net/carolegoble/rocrate-a-framework-for-packaging-research-products-into-fair-research-objects).  
 [_RDA IG Data Fabric: FAIR Digital Objects_](https://www.rd-alliance.org/group/data-fabric-ig/wiki/rda-ig-data-fabric-fair-digital-objects) 2021-02-25.
 [[Video recording](https://www.youtube.com/watch?v=pz-MLdI7GLA)] [[slides](https://www.slideshare.net/carolegoble/rocrate-a-framework-for-packaging-research-products-into-fair-research-objects)]
-
-Thanasis Vergoulis, Konstantinos Zagganas, Loukas Kavouras, Martin Reczko, Stelios Sartzetakis, and Theodore Dalamagas (2021):  
-[**SCHeMa: Scheduling Scientific Containers on a Cluster of Heterogeneous Machines**](https://arxiv.org/pdf/2103.13138.pdf).   
-_arXiv CoRR_ [arXiv:2103.13138](https://arxiv.org/abs/2103.13138) 
 
 Carole Goble (2021):
 [**The swings and roundabouts of a decade of fun and games with Research Objects**](https://www.slideshare.net/carolegoble/the-swings-and-roundabouts-of-a-decade-of-fun-and-games-with-research-objects).  
@@ -243,8 +277,9 @@ Michael L. Nelson, Herbert Van de Sompel (2020):
 [arXiv:2008.11680](https://arxiv.org/abs/2008.11680) [cs.DL]
 
 Tomasz Miksa, Maroua Jaoua, Ghaith Arfaoui (2020):  
-**Research Object Crates and Machine-actionable Data Management Plans**.  
+[**Research Object Crates and Machine-actionable Data Management Plans**](https://repository.publisso.de/resource/frl:6424240/data).  
 _First Workshop on Data and Research Objects Management for Linked Open Science ([DaMaLOS](https://zbmed.github.io/damalos/docs/2020.html))_ at _The 19th International Semantic Web Conference ([ISWC 2020](https://iswc2020.semanticweb.org/))_.  
+[[article](https://repository.publisso.de/resource/frl:6424240/data)] [[slides](https://repository.publisso.de/resource/frl:6424243/data)] [[video](https://repository.publisso.de/resource/frl:6424255)]
 <https://doi.org/10.4126/frl01-006423291>
 
 Carole Goble (2020):
@@ -259,12 +294,12 @@ _eResearch Australasia 2020_
 
 Stian Soiland-Reyes, Ignacio Eguinoa (2020):  
 [**Packaging workflows with RO-Crate**](https://doi.org/10.5281/zenodo.4011999).  
-[_Workshop on FAIR Computational Workflows_](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).  
+[_Workshop on FAIR Computational Workflows_](https://web.archive.org/web/20201203233816/https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://web.archive.org/web/20201203233816/https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/)).  
 <https://doi.org/10.5281/zenodo.4011999>
 
 Simone Leo, Salvador Capella-Gutierrez (2020):  
 [**Testing workflows: Life Monitor and OpenEBench**](https://docs.google.com/presentation/d/15113lwn8_H7ftDF9I650O3rZGeAVr6LVSU4-XDkBgA0/edit#slide=id.g9337569ecf_1_0).  
-[_Workshop on FAIR Computational Workflows_](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).
+[_Workshop on FAIR Computational Workflows_](https://web.archive.org/web/20201203233816/https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/), 19th European Conference on Computational Biology ([ECCB 2020](https://web.archive.org/web/20201203233816/https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/)).  
 
 Gavin Kennedy (2020):  
 [**Interoperable Research Workspaces and the Mesh**](https://indico.cern.ch/event/854707/contributions/3680449/attachments/1975672/3288266/CS3_2020_Research_Workspaces_Gavin_Kennedy_v2.pptx).  
@@ -352,9 +387,15 @@ See also [publications about Research Objects](https://www.researchobject.org/pu
 
 _To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 
+**[International Conference on Theory and Practice of Digital Libraries](http://tpdl2022.dei.unipd.it/calls/full_papers.html)** (TPDL), 2022-10-20/2022-10-23. [Call for papers 2022-05-22](http://tpdl2022.dei.unipd.it/calls/full_papers.html) topics incl. FAIR data and software, Research objects, Nanopublications, Linked Data, Digital Preservation.
+
+**[Workshop on Data and Research Objects Management for Linked Open Science](https://zbmed.github.io/damalos/docs/2021.html)** (DaMaLOS) 2021-10-24, _20th International Semantic Web Conference_ (ISWC 2021).
+
 **[ELIXIR Biohackathon Europe 2021](https://www.biohackathon-europe.org/)** 2021-11-08/2020-11-12, Hybrid. Projects proposed for RO-Crate and WorkflowHub.
 
 **[ELIXIR Biohackathon Europe 2020](https://2020.biohackathon-europe.org/)** 2020-11-09/2020-11-13, Virtual. Project on [Galaxy export of RO-Crate](https://github.com/elixir-europe/BioHackathon-projects-2020/tree/master/projects/14).
+
+**[Workshop on Data and Research Objects Management for Linked Open Science](https://zbmed.github.io/damalos/docs/2020.html)** (DaMaLOS) 2020-11-02, _19th International Semantic Web Conference (ISWC 2020)_.
 
 **[FAIR Computational Workflows workshop](https://eccb2020.info/ntbew01-workshop-on-fair-computational-workflows/)** (2020-09-02) at the 19th European Conference on Computational Biology ([ECCB 2020](https://eccb2020.info/)).
 
