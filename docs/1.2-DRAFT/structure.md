@@ -88,6 +88,8 @@ A _Detached RO-Crate_ can be identified by the [root data entity](root-data-enti
 {: .note }
 > [Finding the Root Data Entity](root-data-entity.md#finding-the-root-data-entity) can be harder for consumers of detached crates, particularly if the platform serving the _RO-Crate Metadata File_ is unable to ensure the URI path ends with `…/ro-crate-metadata.json`. 
 
+Note that a detached RO-Crate may still use `#`-based local identifiers for [contextual entities](contextual-entities.md).
+
 
 ## RO-Crate Metadata File (`ro-crate-metadata.json`)
 
