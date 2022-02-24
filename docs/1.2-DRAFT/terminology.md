@@ -5,7 +5,7 @@ parent: RO-Crate 1.2-DRAFT
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
-   Copyright 2019-2020 The University of Manchester UK 
+   Copyright 2019-2022 The University of Manchester UK 
    Copyright 2019-2020 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,11 +25,11 @@ parent: RO-Crate 1.2-DRAFT
 
 _RO-Crate_: A directory structure that contains a dataset, which is described in an _RO-Crate Metadata File_.
 
-_RO-Crate Root_: The top-level directory of a _Regular RO-Crate_, indicated by the presence of the _RO-Crate Metadata File_ `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` for crates that comply with versions before v1.1 of this specification)
+_RO-Crate Root_: The top-level directory of a _Attached RO-Crate_, indicated by the presence of the _RO-Crate Metadata File_ `ro-crate-metadata.json`. See section [RO-Crate structure](structure.md)
 
-_Regular RO-Crate_: An RO-Crate that contains a payload of files, stored/published on a typical file system
+_Attached RO-Crate_: An RO-Crate that contains a payload of files, stored/published on a typical file system. See section [Types of RO-Crate](structure.md#types-of-ro-crate).
 
-_Detached RO-Crate_: A RO-Crate without a payload of files, not having its own _RO-Crate Root_.
+_Detached RO-Crate_: A RO-Crate without a payload of files, not having its own _RO-Crate Root_. See section [Types of RO-Crate](structure.md#types-of-ro-crate).
 
 _RO-Crate Metadata File_: A JSON-LD file stored as `ro-crate-metadata.json` in the _RO-Crate Root_. The metadata file describes the _RO-Crate_ with structured data in form of _RO-Crate JSON-LD_. (In version 1.0 this file was named `ro-crate-metadata.jsonld` but has been renamed to improve the usability of crates.)
 
