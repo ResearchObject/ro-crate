@@ -40,11 +40,11 @@ the _RO-Crate root_ directory.
 
 ## RO-Crate Metadata File Descriptor
 
-The _RO-Crate JSON-LD_ MUST contain a self-describing
-**RO-Crate Metadata File Descriptor** with
-the `@id` value `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` in legacy
-crates) and `@type` [CreativeWork]. This descriptor MUST have an [about]
-property referencing the _Root Data Entity_, which SHOULD have an `@id` of `./`.
+The _RO-Crate JSON-LD_ MUST contain a self-describing **RO-Crate Metadata File
+Descriptor** whose `@id` MUST have `ro-crate-metadata.json` (or
+`ro-crate-metadata.jsonld` in legacy crates) as its last path segment, and
+`@type` [CreativeWork]. This descriptor MUST have an [about] property
+referencing the _Root Data Entity_, which SHOULD have an `@id` of `./`.
 
 ```json
 
@@ -77,15 +77,74 @@ specializing [RO-Crate profiles](profiles.md).
 
 ### Finding the Root Data Entity
 
-Consumers processing the RO-Crate as an JSON-LD graph can thus reliably find
-the _Root Data Entity_ by following this algorithm:
+In most cases, consumers processing the RO-Crate as a JSON-LD graph can thus
+reliably find the _Root Data Entity_ by following this algorithm:
 
 1. For each entity in `@graph` array
-2. ..for each value of the `conformsTo` property (if array) or its value (if string)
-3. ....if the value is a URI that starts with `https://w3id.org/ro/crate/`
-4. ......then from this entity's `about` object, keep the `@id` URI as variable _root_
-5. For each entity in `@graph` array
-6. .. if the entity has an `@id` URI that matches _root_ return it
+2. .. if the `@id` is `ro-crate-metadata.json`
+3. .... from this entity's `about` object, keep the `@id` URI as variable _root_
+4. For each entity in `@graph` array
+5. .. if the entity has an `@id` URI that matches _root_ return it
+
+Note that the above can be implemented efficiently by first building a map of
+all entities using their `@id` as keys (which is typically also helpful for
+further processing) and then performing a series of lookups:
+
+```javascript
+metadata_entity = entity_map["ro-crate-metadata.json"]
+root_entity = entity_map[metadata_entity["about"]["@id"]]
+```
+
+More generally, the metadata id can be a URI whose last path segment is
+`ro-crate-metadata.json`. In this case, an additional entity map can be built
+using the last path segment of each id as the key and the set of corresponding
+ids as the value. In most cases there is only one such URI, so the search
+ends with two simple lookups as before. Things get a bit complicated when
+there is more than one candidate URI, for instance in the case of nested
+crates:
+
+```json
+{
+    "@context": "https://w3id.org/ro/crate/1.1/context",
+    "@graph": [
+        {
+            "@id": "https://example.org/crate/ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {"@id": "https://example.org/crate"},
+            "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"}
+        },
+        {
+            "@id": "https://example.org/crate",
+            "@type": "Dataset",
+            "hasPart": [
+                {"@id": "https://example.org/crate/nested"},
+                {"@id": "https://example.org/crate/nested/ro-crate-metadata.json"}
+            ],
+        },
+        {
+            "@id": "https://example.org/crate/nested/ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {"@id": "https://example.org/crate/nested"},
+            "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"}
+        },
+        {
+            "@id": "https://example.org/crate/nested",
+            "@type": "Dataset",
+            "hasPart": [{"@id": "https://example.org/crate/nested/foo.txt"}]
+        },
+        {
+            "@id": "https://example.org/crate/nested/foo.txt",
+            "@type": "File"
+        }
+    ]
+}
+```
+
+In the above case, there are two candidates:
+`https://example.org/crate/ro-crate-metadata.json` and
+`https://example.org/crate/nested/ro-crate-metadata.json`. However, the former
+is `about` a dataset that contains (`hasPart`) the latter, but the opposite is
+not true. Thus, `https://example.org/crate` is the actual root dataset.
 
 See also the appendix on
 [finding RO-Crate Root in RDF triple stores](appendix/relative-uris.md#finding-ro-crate-root-in-rdf-triple-stores).
