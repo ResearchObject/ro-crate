@@ -163,6 +163,17 @@ In summary the _default profile_ covers as of [Describo 0.13.0](https://github.c
   - [`hasPart`](1.1/data-entities.html#referencing-files-and-folders-from-the-root-data-entity): `(File|Dataset|Workflow|RepositoryCollection|RepositoryObject)`
   - [`distribution`](1.1/data-entities.html#directories-on-the-web-dataset-distributions): [`DataDownload`](http://schema.org/DataDownload)
 
+
+### Workflow Run Crate profiles
+
+An RO-Crate task force are currently developing the [Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/) profiles for capturing execution provenance of computational workflows and scripts.
+
+## RELIANCE RO-crate profile
+
+[RELIANCE RO-Crates](https://reliance-eosc.github.io/reliance-ro-crate/) are a specialization of RO-Crate for packaging **data cubes** enabling access earth observation data, along with all the necessary and other related artifacts like documentation, images, related infrastructures, etc.
+
+The [RELIANCE project](https://reliance-project.eu/) uses RELIANCE RO-Crates as an exchange format to package data cubes in Earth Science.
+
 ## Paradisec profile
 
 The [PARADISEC Describo profile](https://github.com/UTS-eResearch/describo/blob/master/src/components/profiles/paradisec.describo.profile.json) is built in to 
