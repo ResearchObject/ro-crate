@@ -25,7 +25,7 @@ parent: RO-Crate In Use
 
 [ROHub](https://reliance.rohub.org/), one of [EOSC](https://eosc.eu/) research enabling services, is a holistic solution for the storage, lifecycle management and preservation of scientific work and operational processes via research objects. It makes these resources available to others, allows to publish and release them through a DOI, and allows to discover and reuse pre-existing scientific knowledge. 
 
-ROHub is a reference platform implementing natively the full Research Object (RO) model and paradigm, which provides the backbone to a wealth of RO-centric applications and interfaces across different scientific communities.
+ROHub is a reference platform implementing natively the full [Research Object (RO) model](https://www.researchobject.org/specs/) and paradigm, which provides the backbone to a wealth of RO-centric applications and interfaces across different scientific communities.
 
 ROHub imports and exports RO-Crates, using it as an exchange format, and is integrated with or leverages other EOSC services (e.g., EOSC AAI ([EGI Check-In](https://www.egi.eu/services/check-in/)) to enable SSO across different EOSC services, export and dissemination of research objects in other EOSC repositories/services ([Zenodo](https://zenodo.org/), [B2Share](https://b2share.eudat.eu/)), use of storage systems/services provided by EOSC to enable larger scalability ([B2drop](https://www.eudat.eu/services/b2drop)), and connection with computational services ([EGI Notebooks](https://www.egi.eu/services/notebooks/)). 
 
