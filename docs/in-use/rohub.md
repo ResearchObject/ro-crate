@@ -3,7 +3,7 @@ title: ROHub
 parent: RO-Crate In Use
 ---
 <!--
-   Copyright 2019-2020 The University of Manchester and RO Crate contributors
+   Copyright 2019-2022 The University of Manchester and RO Crate contributors
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,14 +33,8 @@ Additionally, as part of [RELIANCE project](https://www.reliance-project.eu/), R
 
 ROHub functionalities can be used via the [Web portal](https://reliance.rohub.org/) and via the provided [Python library](https://reliance-eosc.github.io/ROHUB-API_documentation/html/).
 
-## Resources
+![ROHub screenshot, export to publication service B2SHare with DOI](../assets/img/rohub-screenshot.png)
 
-* [ROHub Portal](https://reliance.rohub.org/)
-* [Portal documentation](https://reliance-eosc.github.io/rohub-portal-documentation/)
-* [ROHub library](https://reliance-eosc.github.io/ROHUB-API_documentation/html/) ([pypi](https://pypi.org/project/rohub/), [git](https://git.man.poznan.pl/stash/projects/ROHUB/repos/rohub-api/))
-* [ROHub Tutorials](https://reliance-eosc.github.io/ROHUB-API_documentation/html/tutorials.html)
-* [Materials for adopters](https://www.reliance-project.eu/adopters/)
-* [RELIANCE RO-Crate profile](https://reliance-eosc.github.io/reliance-ro-crate/)
 
 ## RO-Crate in ROHub API
 
@@ -96,3 +90,13 @@ Archive:  crate.zip
     testing: output/VSM_res_sar1.png   OK
     testing: output/VSM_res_sar3.png   OK
 ```
+
+## Resources
+
+* [ROHub Portal](https://reliance.rohub.org/)
+* [Portal documentation](https://reliance-eosc.github.io/rohub-portal-documentation/)
+* [ROHub library](https://reliance-eosc.github.io/ROHUB-API_documentation/html/) ([pypi](https://pypi.org/project/rohub/), [git](https://git.man.poznan.pl/stash/projects/ROHUB/repos/rohub-api/))
+* [ROHub Tutorials](https://reliance-eosc.github.io/ROHUB-API_documentation/html/tutorials.html)
+* [Materials for adopters](https://www.reliance-project.eu/adopters/)
+* [RELIANCE RO-Crate profile](https://reliance-eosc.github.io/reliance-ro-crate/)
+
