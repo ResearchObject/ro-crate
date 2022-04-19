@@ -44,9 +44,9 @@ ROHub functionalities can be used via the [Web portal](https://reliance.rohub.or
 
 ## RO-Crate in ROHub API
 
-The [ROHub API](https://api.rohub.org/api/) provides support for [upload](https://api.rohub.org/api/redoc/#operation/ros_upload), [export](https://api.rohub.org/api/redoc/#operation/ros_crate_export_to_crate) and [download](https://api.rohub.org/api/redoc/#operation/ros_crate_download_read). 
+The [ROHub API](https://api.rohub.org/api/) provides support for [upload](https://api.rohub.org/api/redoc/#operation/ros_upload), [export](https://api.rohub.org/api/redoc/#operation/ros_crate_export_to_crate) and [customized download](https://api.rohub.org/api/redoc/#operation/ros_crate_download_read). 
 
-In addition publication to Zenodo/B2Share uses RO-Crate [evolution](https://api.rohub.org/api/redoc/#operation/ros_evolution)
+In addition, publication of an RO to Zenodo/B2Share ([evolution](https://api.rohub.org/api/redoc/#operation/ros_evolution) to `ARCHIVE`) uses RO-Crate  for archival purposes.
 
 The API uses [content-negotiation](https://datatracker.ietf.org/doc/html/rfc7231#section-3.4) for different content types.
 
