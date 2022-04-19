@@ -172,7 +172,9 @@ An RO-Crate task force are currently developing the [Workflow Run Crate](https:/
 
 [RELIANCE RO-Crates](https://reliance-eosc.github.io/reliance-ro-crate/) are a specialization of RO-Crate for packaging **data cubes** enabling access earth observation data, along with all the necessary and other related artifacts like documentation, images, related infrastructures, etc.
 
-The [RELIANCE project](https://reliance-project.eu/) uses RELIANCE RO-Crates as an exchange format to package data cubes in Earth Science.
+The [RELIANCE project](https://reliance-project.eu/) uses RELIANCE RO-Crates as an exchange format to package data cubes in Earth Science, used as import/export by the [ROHub](in-use/rohub.md) portal.
+
+See [RELIANCE deliverable D5.1 RO Model Adapted to EOSC](https://doi.org/10.5281/zenodo.4913285) for further details.
 
 ## Paradisec profile
 
@@ -234,10 +236,6 @@ This is a good example of how a specific profile can guide a user interface and 
 
 _Note that some RO-Crates in the [Modern PARADISEC demonstrator](https://mod.paradisec.org.au/) have evolved from this profile to conform with RO-Crate 1.1's [repository content types](1.1/provenance.html#digital-library-and-repository-content)_
 
-
-## RELIANCE-RO (Earth Science Data Cubes profile)
-
-[RELIANCE-RO](https://doi.org/10.5281/zenodo.4913285) is a profile for expressing Earth Science _Data Cubes_ in RO-Crate, being developed by the [RELIANCE project](https://www.reliance-project.eu/).
 
 ## Making an RO-Crate profile
 
