@@ -41,3 +41,58 @@ ROHub functionalities can be used via the [Web portal](https://reliance.rohub.or
 * [ROHub Tutorials](https://reliance-eosc.github.io/ROHUB-API_documentation/html/tutorials.html)
 * [Materials for adopters](https://www.reliance-project.eu/adopters/)
 * [RELIANCE RO-Crate profile](https://reliance-eosc.github.io/reliance-ro-crate/)
+
+## RO-Crate in ROHub API
+
+The [ROHub API](https://api.rohub.org/api/) provides support for [upload](https://api.rohub.org/api/redoc/#operation/ros_upload), [export](https://api.rohub.org/api/redoc/#operation/ros_crate_export_to_crate) and [download](https://api.rohub.org/api/redoc/#operation/ros_crate_download_read). 
+
+In addition publication to Zenodo/B2Share uses RO-Crate [evolution](https://api.rohub.org/api/redoc/#operation/ros_evolution)
+
+The API uses [content-negotiation](https://datatracker.ietf.org/doc/html/rfc7231#section-3.4) for different content types.
+
+Example, for `application/ld+json` gives the RO-Crate Metadata file:
+
+```
+curl -H "Accept: application/ld+json" https://api.rohub.org/api/ros/b83a814a-27e6-499c-a6b2-61a0a921e53b/crate/download/
+
+{
+  "@context": { … },
+  "@graph": [
+   …
+    {
+      "@id": "./",
+      "identifier": "https://w3id.org/ro-id/b83a814a-27e6-499c-a6b2-61a0a921e53b",
+      "hasPart": […],
+      "@type": [
+        "Dataset",
+        "http://w3id.org/ro/earth-scienceExecutableResearchObject",
+        "http://purl.org/wf4ever/ro#ResearchObject",
+        "http://purl.org/wf4ever/roevo#ArchiveRO"
+      ],
+   …
+}
+```
+
+For `application/zip` as a zipped RO-Crate:
+
+```
+$ curl -f -o crate.zip -H "Accept: application/zip" https://api.rohub.org/api/ros/b83a814a-27e6-499c-a6b2-61a0a921e53b/crate/download/
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  402k  100  402k    0     0  40897      0  0:00:10  0:00:10 --:--:--  104k
+
+$ unzip -t crate.zip
+Archive:  crate.zip
+    testing: tool/                    OK
+    testing: output/                  OK
+    testing: input/                   OK
+    testing: biblio/                  OK
+    testing: ro-crate-preview.html    OK
+    testing: ro-crate-metadata.json   OK
+    testing: tool/VSM_logo.gif        OK
+    testing: output/VSM_res_sar2.png   OK
+    testing: output/VSM.log           OK
+    testing: output/VSM_best.csv      OK
+    testing: output/VSM_res_sar1.png   OK
+    testing: output/VSM_res_sar3.png   OK
+```
