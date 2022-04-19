@@ -23,7 +23,7 @@ parent: RO-Crate In Use
 
 [![ROHub logo](../assets/img/rohub.svg)](https://reliance.rohub.org/)
 
-[ROHub](https://reliance.rohub.org/), one of [EOSC](https://eosc.eu/) research enabling services, is a holistic solution for the storage, lifecycle management and preservation of scientific work and operational processes via research objects. It makes these resources available to others, allows to publish and release them through a DOI, and allows to discover and reuse pre-existing scientific knowledge. 
+[ROHub](https://reliance.rohub.org/) (Research Object Hub), one of [EOSC](https://eosc.eu/) research enabling services, is a holistic solution for the storage, lifecycle management and preservation of scientific work and operational processes via research objects. It makes these resources available to others, allows to publish and release them through a DOI, and allows to discover and reuse pre-existing scientific knowledge. 
 
 ROHub is a reference platform implementing natively the full [Research Object (RO) model](https://www.researchobject.org/specs/) and paradigm, which provides the backbone to a wealth of RO-centric applications and interfaces across different scientific communities.
 
