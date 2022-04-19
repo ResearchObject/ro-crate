@@ -45,17 +45,15 @@ As part of these use-cases they have been developing or enhancing their tooling 
   * [ocfl-viewer](https://hub.docker.com/r/coedl/ocfl-viewer)
   * [ONI indexer](https://github.com/UTS-eResearch/oni-indexer)
 
-
-**Modern PARADISEC**
+### Modern PARADISEC
 
 [Modern PARADISEC](https://arkisto-platform.github.io/case-studies/paradisec/) demonstrates the use of RO-Crate to describe the collections and items and store those items within an OCFL system. The demonstrator includes an elastic search service and a webserver but the key feature is that the it keeps working with only the filesystem and a webserver.
 
-
-**UTS Research Data Repository**
+### UTS Research Data Repository
 
 The [UTS Data Repository](https://arkisto-platform.github.io/case-studies/uts-repo/) UTS Research Data Repository is a searchable portal for discovering and accessing public datasets by UTS researchers. Datasets are described with RO-Crates and published either through the University’s institutional research data management system or direct import from research storage devices for very large datasets.
 
-**UTS Cultural Datasets**
+### UTS Cultural Datasets
 
 The [UTS Cultural Datasets](https://arkisto-platform.github.io/case-studies/uts-cultural/) project is collaborating with Humanities and Social Science (HASS) researchers and is re-using existing UTS Data infrastructure to build interactive services that allow people to use the data. They make use of RO-Crate to be able to directly transfer data and mappings to the [Expert Nation database](https://expertnation.org/).
 
@@ -73,6 +71,12 @@ the gathered details, output metadata and execution provenance in the output RO-
 executions. Final execution results can be encrypted with crypt4gh GA4GH standard using the public keys of the target
 researchers or destination, so the results can be safely moved outside the execution environments through unsecured
 networks and storages.
+
+## ROHub
+
+[ROHub](rohub.md) is a solution for the storage, lifecycle management and preservation of scientific work and operational processes via research objects. It makes these resources available to others, allows to publish and release them through a DOI, and allows to discover and reuse pre-existing scientific knowledge.
+
+ROHub imports and exports RO-Crates, using it as an exchange format, particularly for Earth Science _data cubes_ following the [RELIANE RO-Crate profile](https://reliance-eosc.github.io/reliance-ro-crate/).
 
 ## Research Object Composer
 
