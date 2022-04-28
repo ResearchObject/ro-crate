@@ -99,4 +99,16 @@ Archive:  crate.zip
 * [ROHub Tutorials](https://reliance-eosc.github.io/ROHUB-API_documentation/html/tutorials.html)
 * [Materials for adopters](https://www.reliance-project.eu/adopters/)
 * [RELIANCE RO-Crate profile](https://reliance-eosc.github.io/reliance-ro-crate/)
+* [ROHub screencasts](https://www.youtube.com/playlist?list=PLuFbwYmIXrVfSol_iD9dKpuJ5uHD40C4i)
 
+## Publications
+
+Andres Garcia-Silva, Jose Manuel Gomez-Perez, Raul Palma, Marcin Krystek, Simone Mantovani, Federica Foglini, Valentina Grande, Francesco De Leo, Stefano Salvi, Elisa Trasatti, Vito Romaniello, Mirko Albani, Cristiano Silvagni, Rosemarie Leone, Fulvio Marelli, Sergio Albani, Michele Lazzarini, Hazel J. Napier, Helen M. Glaves, Timothy Aldridge, Charles Meertens, Fran Boler, Henry W. Loescher, Christine Laney, Melissa  A. Genazzio, Daniel Crawl, Ilkay Altintas (2019):  
+**Enabling FAIR research in Earth Science through research objects**.
+_Future Generation Computing Systems_ **98**  
+<https://doi.org/10.1016/j.future.2019.03.046> [[preprint](https://arxiv.org/abs/1809.10617)]
+
+Raul Palma, Andrés García-Silva, Jose Manuel Gomez-Perez, Marcin Krystek (2018):  
+**A Research Object-based Toolkit to Support the Earth Science Research Lifecycle**.  
+_2018 IEEE 14th International Conference on e-Science (e-Science)_  
+<https://doi.org/10.1109/eScience.2018.00020> [[preprint](https://doi.org/10.24424/ro-id.DBIMALEDRQ)] [[pdf](http://sandbox.rohub.org/rodl/ROs/ROToolkit_ro2018-published/ROToolkit-ES-CR.pdf)] [[html .zip](http://sandbox.rohub.org/rodl/ROs/ROToolkit_ro2018-published/ROToolkit-ES-CR.zip)] [[research object](http://sandbox.rohub.org/rodl/ROs/ROToolkit_ro2018-published/)]  
