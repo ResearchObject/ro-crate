@@ -174,7 +174,11 @@ An RO-Crate task force are currently developing the [Workflow Run Crate](https:/
 
 The [RELIANCE project](https://reliance-project.eu/) uses RELIANCE RO-Crates as an exchange format to package data cubes in Earth Science, used as import/export by the [ROHub](in-use/rohub.md) portal.
 
-See [RELIANCE deliverable D5.1 RO Model Adapted to EOSC](https://doi.org/10.5281/zenodo.4913285) for further details.
+References:
+ * [**Metadata models and Research Objects for Earth Observation Data Cubes**](https://repository.eoscsecretariat.eu/index.php/s/ERebmpJcyjFRqcx/download?path=%2F18%20June%2F1115%20-%20Metadata%20and%20data%20quality&files=04%20-%20Daniel%20Garijo%20-%20Metadata%20models%20and%20Research%20Objects%20for%20Earth%20Observation%20Data%20Cubes.pdf&downloadStartSecret=9vslv3tqvmf) at 
+_[EOSC Symposium 2021](https://www.eoscsecretariat.eu/eosc-symposium-2021-programme)_, 2021-06-18. 
+[[video recording](https://youtu.be/qvtWJWsMLRg?list=PLbISfqJh3Tstmx6CgrBmYI7lyyVXiY5VE&t=1090)] 
+ * [RELIANCE deliverable D5.1 RO Model Adapted to EOSC](https://doi.org/10.5281/zenodo.4913285)
 
 ## Paradisec profile
 
