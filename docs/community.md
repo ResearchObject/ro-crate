@@ -93,7 +93,7 @@ The _RO-Crate_ team is:
 * Paul De Geest <https://orcid.org/0000-0002-8940-4946>
 * Douglas Fils <https://orcid.org/0000-0002-2257-9127>
 * Florian Wetzels <https://orcid.org/0000-0002-5526-7138>
-
+* Raül Sirvent <https://orcid.org/0000-0003-0606-2512>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! 
 
