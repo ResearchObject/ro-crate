@@ -94,8 +94,8 @@ _Data Intelligence_ **4**(2)
 <https://doi.org/10.1162/dint_a_00142>
 
 Andreas Pfeil, Thomas Jejkal, Danah Tonne, Germaine Götzelmann (2022): 
+[**From a Dynamic Image Annotation Process within the Humanities to a Canonical Workflow**](https://doi.org/10.1162/dint_a_00138).  
 _Data Intelligence_ **4**(2)  
-[**From a Dynamic Image Annotation Process within the Humanities to a Canonical Workflow**](https://doi.org/10.1162/dint_a_00138)
 <https://doi.org/10.1162/dint_a_00138>
 
 ## 2021
