@@ -47,6 +47,57 @@ _Data Science_ (in press).
 <https://doi.org/10.3233/DS-210053>  
 (see also associated [[RO-Crate]](https://w3id.org/ro/doi/10.5281/zenodo.5146227))
 
+Nick Thieberger, Amanda Harris (2022):  
+[**When Your Data is My Grandparents Singing. Digitisation and Access for Cultural Records, the Pacific and Regional Archive for Digital Sources in Endangered Cultures (PARADISEC)**](https://doi.org/10.5334/dsj-2022-009).  
+_Data Science Journal_ **21**(1)  
+<https://doi.org/10.5334/dsj-2022-009>
+
+Max Schröder, Susanne Staehlke, Paul Groth, J. Barbara Nebe, Sascha Spors & Frank Krüger (2022):  
+[**Structure-based knowledge acquisition from electronic lab notebooks for research data provenance documentation**](https://doi.org/10.1186/s13326-021-00257-x).  
+_Journal of Biomedical Semantics_ **13**:4
+<https://doi.org/10.1186/s13326-021-00257-x>
+
+Stian Soiland-Reyes, Genís Bayarri, Pau Andrio, Robin Long, Douglas Lowe, Ania Niewielska, Adam Hospital, Paul Groth (2022):  
+[**Making Canonical Workflow Building Blocks interoperable across workflow languages**](https://doi.org/10.1162/dint_a_00135).  
+_Data Intelligence_ **4**(2)  
+<https://doi.org/10.1162/dint_a_00135>
+
+Alex Hardisty, Paul Brack, Carole Goble, Laurence Livermore, Ben Scott, Quentin Groom, Stuart Owen, Stian Soiland-Reyes (2022):  
+[**The Specimen Data Refinery: A canonical workflow framework and FAIR Digital Object approach to speeding up digital mobilisation of natural history collections**](https://doi.org/10.1162/dint_a_00134).  
+_Data Intelligence_ **4**(2)  
+<https://doi.org/10.1162/dint_a_00134>
+
+Amirpasha Mozaffari, Michael Langguth, Bing Gong, Jessica Ahring, Adrian Rojas Campos, Pascal Nieters, Otoniel José Campos Escobar, Martin Wittenbrink,
+Peter Baumann, Martin G. Schultz (2022):  
+[**HPC-oriented Canonical Workflows for Machine Learning Applications in Climate and Weather Prediction**](https://doi.org/10.1162/dint_a_00131).  
+_Data Intelligence_ **4**(2)  
+<https://doi.org/10.1162/dint_a_00131>
+
+Peter Wittenburg, Alex Hardisty, Yann Le Franc, Amirpasha Mozaffari, Limor Peer, Nikolay A. Skvortsov, Zhiming Zhao, Alessandro Spinuso (2022):  
+[**Canonical Workflows to Make Data FAIR**](https://doi.org/10.1162/dint_a_00132).  
+_Data Intelligence_ **4**(2)  
+<https://doi.org/10.1162/dint_a_00132>
+
+Beatriz Serrano-Solano, Anne Fouilloux, Ignacio Eguinoa, Matúš Kalaš, Björn Grüning, Frederik Coppens (2022):  
+[**Galaxy: A Decade of Realising CWFR Concepts**](https://doi.org/10.1162/dint_a_00136).  
+_Data Intelligence_ **4**(2)  
+<https://doi.org/10.1162/dint_a_00136>
+
+Thomas Jejkal, Sabrine Chelbi, Andreas Pfeil, Peter Wittenburg (2022):  
+[**Evaluation of Application Possibilities for Packaging Technologies in Canonical Workflows**](https://doi.org/10.1162/dint_a_00137).  
+_Data Intelligence_ **4**(2)  
+<https://doi.org/10.1162/dint_a_00137>
+
+Nikolay A. Skvortsov, Sergey A. Stupnikov (2022):  
+[**A Semantic Approach to Workflow Management and Reuse for Research Problem Solving**](https://doi.org/10.1162/dint_a_00142).  
+_Data Intelligence_ **4**(2)  
+<https://doi.org/10.1162/dint_a_00142>
+
+Andreas Pfeil, Thomas Jejkal, Danah Tonne, Germaine Götzelmann (2022): 
+_Data Intelligence_ **4**(2)  
+[**From a Dynamic Image Annotation Process within the Humanities to a Canonical Workflow**](https://doi.org/10.1162/dint_a_00138)
+<https://doi.org/10.1162/dint_a_00138>
+
 ## 2021
 
 Jeremy Leipzig, Daniel Nüst, Charles Tapley Hoyt, Karthik Ram, Jane Greenberg (2021):  
