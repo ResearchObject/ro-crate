@@ -96,55 +96,49 @@ root_entity = entity_map[metadata_entity["about"]["@id"]]
 ```
 
 More generally, the metadata id can be a URI whose last path segment is
-`ro-crate-metadata.json`. In this case, an additional entity map can be built
-using the last path segment of each id as the key and the set of corresponding
-ids as the value. In most cases there is only one such URI, so the search
-ends with two simple lookups as before. Things get a bit complicated when
-there is more than one candidate URI, for instance in the case of nested
-crates:
+`ro-crate-metadata.json`: in this case, the first lookup will fail. We can
+find the root entity by executing an algorithm similar to the one shown above,
+with the only difference that step 2 must be replaced by:
+
+2. .. if the `@id`'s last path segment is `ro-crate-metadata.json`
+
+It is possible to build an RO-Crate having more than one entity whose `@id`
+has `ro-crate-metadata.json` as its last path segment. For instance, the crate
+could reference a collection of sample RO-Crate metadata files available from
+different web sites, or from the same web site but at different locations. In
+order to facilitate consumption, data entities representing such files SHOULD
+NOT have an `about` property pointing to a [Dataset] in the crate, so they can
+be told apart from the actual metadata file descriptor. A scenario that can
+potentially lead to confusion is when a dataset in the crate is itself an
+RO-Crate (_nested_ RO-Crate): again, the crate could be a collection of
+RO-Crate examples. In this case, the top-level crate SHOULD NOT list any files
+or directories belonging to the nested crates, but only the nested crate
+directories as [Dataset] entries. For instance:
 
 ```json
 {
-    "@context": "https://w3id.org/ro/crate/1.1/context",
-    "@graph": [
-        {
-            "@id": "https://example.org/crate/ro-crate-metadata.json",
-            "@type": "CreativeWork",
-            "about": {"@id": "https://example.org/crate"},
-            "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"}
-        },
-        {
-            "@id": "https://example.org/crate",
-            "@type": "Dataset",
-            "hasPart": [
-                {"@id": "https://example.org/crate/nested"},
-                {"@id": "https://example.org/crate/nested/ro-crate-metadata.json"}
-            ],
-        },
-        {
-            "@id": "https://example.org/crate/nested/ro-crate-metadata.json",
-            "@type": "CreativeWork",
-            "about": {"@id": "https://example.org/crate/nested"},
-            "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"}
-        },
-        {
-            "@id": "https://example.org/crate/nested",
-            "@type": "Dataset",
-            "hasPart": [{"@id": "https://example.org/crate/nested/foo.txt"}]
-        },
-        {
-            "@id": "https://example.org/crate/nested/foo.txt",
-            "@type": "File"
-        }
-    ]
+  "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
+  "@graph": [
+    {
+      "@id": "http://example.org/ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {"@id": "http://example.org/"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
+    },
+    {
+      "@id": "http://example.org/",
+      "@type": "Dataset",
+      "hasPart": [
+        {"@id": "http://example.org/nested/"}
+      ]
+    },
+    {
+      "@id": "http://example.org/nested/",
+      "@type": "Dataset"
+    }
+  ]
 }
 ```
-
-In the above case, there are two candidates:
-`https://example.org/crate/ro-crate-metadata.json` and
-`https://example.org/crate/nested/ro-crate-metadata.json`. However, the former
-is `about` a dataset that contains (`hasPart`) the latter, but the opposite is
-not true. Thus, `https://example.org/crate` is the actual root dataset.
 
 See also the appendix on
 [finding RO-Crate Root in RDF triple stores](appendix/relative-uris.md#finding-ro-crate-root-in-rdf-triple-stores).
