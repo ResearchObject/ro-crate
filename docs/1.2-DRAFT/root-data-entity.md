@@ -40,11 +40,11 @@ the _RO-Crate root_ directory.
 
 ## RO-Crate Metadata File Descriptor
 
-The _RO-Crate JSON-LD_ MUST contain a self-describing **RO-Crate Metadata File
-Descriptor** whose `@id` MUST have `ro-crate-metadata.json` (or
-`ro-crate-metadata.jsonld` in legacy crates) as its last path segment, and
-`@type` [CreativeWork]. This descriptor MUST have an [about] property
-referencing the _Root Data Entity_, which SHOULD have an `@id` of `./`.
+The _RO-Crate JSON-LD_ MUST contain a self-describing
+**RO-Crate Metadata File Descriptor** with
+the `@id` value `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` in legacy
+crates) and `@type` [CreativeWork]. This descriptor MUST have an [about]
+property referencing the _Root Data Entity_, which SHOULD have an `@id` of `./`.
 
 ```json
 
@@ -74,6 +74,11 @@ start with `https://w3id.org/ro/crate/`.
 {: .tip }
 > The `conformsTo` property MAY be an array, to additionally indicate 
 specializing [RO-Crate profiles](profiles.md).
+
+If the root data entity `@id` is an absolute URI, the RO-Crate is considered
+web-based: in this case, the metadata descriptor SHOULD also have an absolute
+URI as its `@id`, which MUST have `ro-crate-metadata.json` (or
+`ro-crate-metadata.jsonld` in legacy crates) as its last path segment.
 
 ### Finding the Root Data Entity
 
