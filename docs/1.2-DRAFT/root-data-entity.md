@@ -101,7 +101,7 @@ root_entity = entity_map[metadata_entity["about"]["@id"]]
 ```
 
 More generally, the metadata id can be a URI whose last path segment is
-`ro-crate-metadata.json`: in this case, the first lookup will fail. We can
+`ro-crate-metadata.json`, so the above lookup can fail. In this case we can
 find the root entity by executing an algorithm similar to the one shown above,
 with the only difference that step 2 must be replaced by:
 
@@ -117,28 +117,28 @@ be told apart from the actual metadata file descriptor. A scenario that can
 potentially lead to confusion is when a dataset in the crate is itself an
 RO-Crate (_nested_ RO-Crate): again, the crate could be a collection of
 RO-Crate examples. In this case, the top-level crate SHOULD NOT list any files
-or directories belonging to the nested crates, but only the nested crate
-directories as [Dataset] entries. For instance:
+or directories belonging to the nested crates, but only the nested crates
+themselves as [Dataset] entries. For instance:
 
 ```json
 {
   "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
   "@graph": [
     {
-      "@id": "http://example.org/ro-crate-metadata.json",
+      "@id": "http://example.org/crate/ro-crate-metadata.json",
       "@type": "CreativeWork",
-      "about": {"@id": "http://example.org/"},
+      "about": {"@id": "http://example.org/crate/"},
       "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
     },
     {
-      "@id": "http://example.org/",
+      "@id": "http://example.org/crate/",
       "@type": "Dataset",
       "hasPart": [
-        {"@id": "http://example.org/nested/"}
+        {"@id": "http://example.org/crate/nested/"}
       ]
     },
     {
-      "@id": "http://example.org/nested/",
+      "@id": "http://example.org/crate/nested/",
       "@type": "Dataset"
     }
   ]
