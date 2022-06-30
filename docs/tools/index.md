@@ -23,14 +23,15 @@ title: Tools
 While we're mostly focusing on the [RO-Crate specification](specification.md) some tools already exist for working with RO-Crates:
 
  - [Describo](https://arkisto-platform.github.io/describo/) - interactive desktop application to create, update and export RO-Crates for different profiles. (~ _RC_)
- - [Describo Online](https://arkisto-platform.github.io/describo-online/) - Web-based application to create RO-Crates using cloud storage (~ _alpha_)
- - [ro-crate-excel](https://www.npmjs.com/package/ro-crate-excel) - Command-line tool to help create RO-Crates from spreadsheets (~ _beta_)
- - [ro-crate-html-js](https://www.npmjs.com/package/ro-crate-html-js) - HTML rendering of RO-Crate (~ _beta_)
- - [ro-crate-js](https://www.npmjs.com/package/ro-crate) - JavaScript/NodeJS library for RO-Crate rendering as HTML. (~ _beta_)
+ - [Describo Online](https://arkisto-platform.github.io/describo-online/) -- Web-based application to create RO-Crates using cloud storage (~ _alpha_)
+ - [ro-crate-excel](https://www.npmjs.com/package/ro-crate-excel) -- Command-line tool to help create RO-Crates from spreadsheets (~ _beta_)
+ - [ro-crate-html-js](https://www.npmjs.com/package/ro-crate-html-js) -- HTML rendering of RO-Crate (~ _beta_)
+ - [ro-crate-js](https://www.npmjs.com/package/ro-crate) -- JavaScript/NodeJS library for RO-Crate rendering as HTML. (~ _beta_)
  - [ro-crate-ruby](https://github.com/fbacall/ro-crate-ruby) - Ruby library to consume/produce RO-Crates (~ _beta_)
- - [ro-crate-py](https://github.com/researchobject/ro-crate-py) - Python library to consume/produce RO-Crates (~ _alpha_)
- - [CheckMyCrate](https://github.com/KockataEPich/CheckMyCrate/tree/Version_0.2) - Validation according to Workflow RO-Crate profile (~ _alpha_)
- - [galaxy2cwl](https://github.com/workflowhub-eu/galaxy2cwl) - Wraps Galaxy workflow as Workflow RO-Crate (~ _alpha_)
- - [ya2ro](https://github.com/oeg-upm/ya2ro) - Generate RO-Crate and HTML page from YAML template with look-up of DOI/ORCID/GitHub metadata (~ _prototype_)
-
+ - [ro-crate-py](https://github.com/researchobject/ro-crate-py) -- Python library to consume/produce RO-Crates (~ _alpha_)
+ - [CheckMyCrate](https://github.com/KockataEPich/CheckMyCrate/tree/Version_0.2) -- Validation according to Workflow RO-Crate profile (~ _alpha_)
+ - [galaxy2cwl](https://github.com/workflowhub-eu/galaxy2cwl) -- Wraps Galaxy workflow as Workflow RO-Crate (~ _alpha_)
+ - [ya2ro](https://github.com/oeg-upm/ya2ro) -- Generate RO-Crate and HTML page from YAML template with look-up of DOI/ORCID/GitHub metadata (~ _prototype_)
+ - [arc-to-roc](https://github.com/nfdi4plants/arc-to-roc) -- Generate RO-Crate from an Annotated Research Context ([ARC](https://nfdi4plants.org/content/docs/AnnotatedResearchContext.html)), see [DataPlant](in-use.md#dataplant)
+  
 See also [applications using RO-Crate](../in-use/).
