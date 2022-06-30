@@ -20,7 +20,7 @@ title: Tools
 
 # Tools
 
-While we're mostly focusing on the [RO-Crate specification](specification.md) some tools already exist for working with RO-Crates:
+While we're mostly focusing on the [RO-Crate specification](../specification.md) some tools already exist for working with RO-Crates:
 
  - [Describo](https://arkisto-platform.github.io/describo/) - interactive desktop application to create, update and export RO-Crates for different profiles. (~ _RC_)
  - [Describo Online](https://arkisto-platform.github.io/describo-online/) -- Web-based application to create RO-Crates using cloud storage (~ _alpha_)
@@ -32,6 +32,6 @@ While we're mostly focusing on the [RO-Crate specification](specification.md) so
  - [CheckMyCrate](https://github.com/KockataEPich/CheckMyCrate/tree/Version_0.2) -- Validation according to Workflow RO-Crate profile (~ _alpha_)
  - [galaxy2cwl](https://github.com/workflowhub-eu/galaxy2cwl) -- Wraps Galaxy workflow as Workflow RO-Crate (~ _alpha_)
  - [ya2ro](https://github.com/oeg-upm/ya2ro) -- Generate RO-Crate and HTML page from YAML template with look-up of DOI/ORCID/GitHub metadata (~ _prototype_)
- - [arc-to-roc](https://github.com/nfdi4plants/arc-to-roc) -- Generate RO-Crate from an Annotated Research Context ([ARC](https://nfdi4plants.org/content/docs/AnnotatedResearchContext.html)), see [DataPlant](in-use.md#dataplant)
+ - [arc-to-roc](https://github.com/nfdi4plants/arc-to-roc) -- Generate RO-Crate from an Annotated Research Context ([ARC](https://nfdi4plants.org/content/docs/AnnotatedResearchContext.html)), see [DataPlant](../in-use/index.md#dataplant)
   
 See also [applications using RO-Crate](../in-use/).
