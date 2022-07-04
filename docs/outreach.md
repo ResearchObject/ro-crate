@@ -41,6 +41,11 @@ _Data Science_ (in press)
 
 ### 2022
 
+Carole Goble, Stian Soiland-Reyes (2022):  
+[**RO-Crate for Research Reproducibility & Data Management**](https://doi.org/10.5281/zenodo.6793758).  
+[_ELIXIR All Hands Meeting_](https://elixir-europe.org/events/elixir-all-hands-2022), Amsterdam, 2022-06-08  
+<https://doi.org/10.5281/zenodo.6793758>
+
 Stian Soiland-Reyes, Peter Sefton, Mercè Crosas, Leyla Jael Castro, Frederik Coppens, José M. Fernández, Daniel Garijo, Björn Grüning, Marco La Rosa, Simone Leo, Eoghan Ó Carragáin, Marc Portier, Ana Trisovic, RO-Crate Community, Paul Groth, Carole Goble (2022):  
 [**Packaging research artefacts with RO-Crate**](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html).  
 _Data Science_ (in press).  
