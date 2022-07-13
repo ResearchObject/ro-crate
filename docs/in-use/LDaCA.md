@@ -22,7 +22,9 @@ parent: RO-Crate In Use
 # Lanagugue Data Commons of Australia Program
 
 <!-- linking to logo online cos the current one is a placeholder only and should get updated -->
-[![LDaCA Logo](https://www.ldaca.edu.au//LDaCA_logo-sm.png)](https://www.ldaca.edu.au/)
+[![LDaCA Logo](https://www.ldaca.edu.au//LDaCA_logo-sm.png)][LDaCA]
+
+[![ATAP LOGO](https://www.atap.edu.au/ATAP_logo-sm.png)][ATAP]
 
 The LDaCA Program architecture consists of a set of modular services; data preservation/archiving, APIs for delivery, access control and a discovery portal for data and analysis tools as well as automated container-based notebook environments to run analytics via the Australian Text Analytics Platform (which is a component of the broader program). 
 
@@ -58,16 +60,12 @@ standardize inputs to analytical tools, so that they do not need to be continual
 
 ## Resources
 
-* [Example Homepage](https://example.org/)
-* [Example documentation](https://example.org/docs/)
-* [RO-Crate profile for Example](https://example.org/crate-profile)
-* [Example Tutorials](https://example.org/docs/tutorial)
-* [Example presentation](http://example.org/)
+* [Language Data Commons of Australia (LDaCA) Homepage](https://ldaca.edu.au)
+* [Australian Text Analytics Platform](https://atap.edu.au)
+* [RO-Crate profile for Ldaca (DRAFT - in development)](https://purl.archive.org/textcommons/profile)
+* [RO-Crate metadata vocabulary (DRAFT - in development)](https://purl.archive.org/textcommons/terms)
+* [Presentation explaining the architecture](https://www.ldaca.edu.au/rdc-tech-meeting/)
 
-## Publications
 
-Alice Land, Bob Bunny (2020):  
-**Example and RO-Crate**.  
-_Example Journal_ **0**(1)
-<https://doi.org/10.1234/example>  
-[[preprint](http://example.com/preprint.pdf)]
+[ATAP]: https://atap.edu.au
+[LDaCA]: https://ldaca.edu.au
