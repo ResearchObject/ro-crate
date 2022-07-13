@@ -49,7 +49,10 @@ RO-Crate distinguishes between _Contextual entities_ and _Data entities_.
 
 **Contextual entities** however primarily exist outside the digital sphere (e.g. [People](#people), [Places](#places)) or are  conceptual descriptions that primarily exists as metadata, like [GeoCoordinates] and [ContactPoint](#contact-information).
 
-Some contextual entities can also be considered data entities - for instance the [license](#licensing-access-control-and-copyright) property refers to a [CreativeWork] that can reasonably be downloaded, however a license document is not usually considered as part of research outputs and would therefore typically not be included in [hasPart] on the [root data entity](root-data-entity.md). 
+Some contextual entities can also be considered data entities -- for instance the [license](#licensing-access-control-and-copyright) property refers to a [CreativeWork] that can reasonably be downloaded, however a license document is not usually considered as part of research outputs and would therefore typically not be included in [hasPart] on the [root data entity](root-data-entity.md). 
+
+{: .tip }
+> Files in the _RO-Crate Root_ are not necessarily _data entities_ -- the [RO-Crate Metadata File Descriptor](root-data-entity.md#ro-crate-metadata-file-descriptor) is a file in the _RO-Crate Root_, but is considered a _Contextual Entity_ as it is describing the RO-Crate, rather than being part of it. On the other hand, the [Root Data Entity](root-data-entity.md#root-data-entity) is a _data entity_ within its own metadata file.
 
 Likewise, some data entities may also be described as contextual entities, for instance a `File` that is also a [ScholarlyArticle]. In such cases the _Contextual Data Entity_ MUST be described as a single JSON object in the RO-Crate Metadata JSON `@graph` and SHOULD list both relevant data and contextual types in a `@type` array. 
 
