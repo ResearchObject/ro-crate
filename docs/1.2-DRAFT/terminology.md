@@ -31,7 +31,7 @@ _RO-Crate Metadata File_: A JSON-LD file stored as `ro-crate-metadata.json` in t
 
 _RO-Crate Website_: Human-readable HTML pages which describe the RO-Crate (i.e. the _Root Data Entity_, its _Data Entities_ and _Context Entities_), with a home-page at `ro-crate-preview.html` (any additional files reside in `ro-crate-preview_files/`)
 
-_Entity_: An identified object, which have a given _type_ and is described using a set of _properties_ as a _JSON_ object in the _RO-Crate Metadata File_. Properties may link to other entities using their identifier key `@id`.
+_Entity_: An identified object, which has a given _type_ and is described using a set of _properties_ as a _JSON_ object in the _RO-Crate Metadata File_. Properties may link to other entities using their identifier key `@id`.
 
 _Type_: A classification of objects or their descriptions. The type (or "class") is given as a short-hand _key_, mapped by the _RO-Crate JSON-LD Context_ to a _URI_ that has the type definition.
 
@@ -51,7 +51,7 @@ _Contextual Entity_: An entity associated with another _Entity_, in order to ade
 
 _Linked Data_: A data structure where properties, types and resources are identified with _URIs_, which if retrieved over the Web, further describe or provide the identified property/type/resource.
 
-_URI_: A _Uniform Resource Identifier_ as defined in [RFC 3986], for example `http://example.com/path/file.html` - commonly known as _URL_. In this document the term _URI_ includes _IRI_, which also permit international Unicode characters. The URI identify a downloadable resource (e.g. an image) or a concept (e.g. a _type_ definition).
+_URI_: A _Uniform Resource Identifier_ as defined in [RFC 3986], for example `http://example.com/path/file.html` - commonly known as _URL_. In this document the term _URI_ includes _IRI_, which also permit international Unicode characters. The URI identifies a downloadable resource (e.g. an image) or a concept (e.g. a _type_ definition).
 
 _URI Path_: The relative _path_ element of an _URI_ as defined in [RFC3986 section 3.3], e.g. `path/file.html`
 
