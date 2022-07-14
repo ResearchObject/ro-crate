@@ -36,5 +36,6 @@ While we're mostly focusing on the [RO-Crate specification](../specification.md)
  - [ROCrate_enrichment_service](https://github.com/oeg-upm/ROCrate_enrichment_service) -- API-based metadata enrichment service for RO-Crates (~ _prototype_)
  - [rocrate-to-html](https://github.com/vliz-be-opsci/rocrate-to-html)  -- Github Action to publish rocrate objects as Github Pages (~ _alpha_)
  - [FAIR-Research-Object](https://github.com/oeg-upm/FAIR-Research-Object) -- evaluate FAIRness of Research Objects (~ _prototype_)
+ - [repo2crate](https://github.com/crs4/repo2crate) -- Generate a Workflow Testing RO-Crate from a "best-practices" workflow repository
 
 See also [applications using RO-Crate](../in-use/).
