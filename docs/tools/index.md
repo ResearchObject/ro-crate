@@ -35,7 +35,7 @@ While we're mostly focusing on the [RO-Crate specification](../specification.md)
  - [arc-to-roc](https://github.com/nfdi4plants/arc-to-roc) -- Generate RO-Crate from an Annotated Research Context ([ARC](https://nfdi4plants.org/content/docs/AnnotatedResearchContext.html)), see [DataPlant](../in-use/index.md#dataplant)
  - [ROCrate_enrichment_service](https://github.com/oeg-upm/ROCrate_enrichment_service) -- API-based metadata enrichment service for RO-Crates (~ _prototype_)
  - [rocrate-to-html](https://github.com/vliz-be-opsci/rocrate-to-html)  -- Github Action to publish rocrate objects as Github Pages (~ _alpha_)
- - [FAIR-Research-Object](https://github.com/oeg-upm/FAIR-Research-Object) -- evaluate FAIRness of Research Objects (~ _prototype_)
+ - [FAIR-Research-Object](https://github.com/oeg-upm/FAIR-Research-Object) -- evaluate FAIRness of Research Objects through an [API](https://app.swaggerhub.com/apis/esgg/FAIROs/1.0.0-oas3) (~ _prototype_)
  - [repo2crate](https://github.com/crs4/repo2crate) -- Generate a Workflow Testing RO-Crate from a "best-practices" workflow repository
 
 See also [applications using RO-Crate](../in-use/).
