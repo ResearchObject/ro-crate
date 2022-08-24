@@ -37,5 +37,7 @@ While we're mostly focusing on the [RO-Crate specification](../specification.md)
  - [rocrate-to-html](https://github.com/vliz-be-opsci/rocrate-to-html)  -- Github Action to publish rocrate objects as Github Pages (~ _alpha_)
  - [FAIR-Research-Object](https://github.com/oeg-upm/FAIR-Research-Object) -- evaluate FAIRness of Research Objects through an [API](https://app.swaggerhub.com/apis/esgg/FAIROs/1.0.0-oas3) (~ _prototype_)
  - [repo2crate](https://github.com/crs4/repo2crate) -- Generate a Workflow Testing RO-Crate from a "best-practices" workflow repository
+ - [ro-crate-java](https://github.com/kit-data-manager/ro-crate-java) -- Java API for creating and modifying RO-Crate using builder pattern
+ - [ro-crate-benchmarks](https://github.com/kit-data-manager/ro-crate-benchmarks) -- Benchmarks for performance testing RO-Crate libraries
 
 See also [applications using RO-Crate](../in-use/).
