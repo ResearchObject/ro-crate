@@ -449,7 +449,7 @@ _To suggest an event, either [edit and raise pull request](https://github.com/Re
 
 
 
-**[ELIXIR Biohackathon 2022]**(https://biohackathon-europe.org/) 2022-11-07/--11, Paris, France. Projects include [Bioschemas](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/5), [Galaxy w/RO-Crate+RDM](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/10), [Linked Open Science](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/17), [Schema.org datafeeds](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/23), [Workflow Execution Service](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/35)
+**[ELIXIR Biohackathon 2022](https://biohackathon-europe.org/)** 2022-11-07/--11, Paris, France. Projects include [Bioschemas](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/5), [Galaxy w/RO-Crate+RDM](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/10), [Linked Open Science](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/17), [Schema.org datafeeds](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/23), [Workflow Execution Service](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/35)
 
 **[International conference on FAIR Digital Objects](https://www.fdo2022.org/)**, 2022-10-26/--28, Leiden, Netherlands incl. talk on [Updating Linked Data practices](https://s11.no/2022/phd/updating-ld-for-fdo/) and posters on [RO-Crate](https://s11.no/2022/phd/fdo-with-ro-crate/), [Galaxy Workflow Run Crate](https://s11.no/2022/phd/galaxy-ro-crate/), [Specimen Data Refinery workflows](https://s11.no/2022/phd/incrementally-building-fdos/)
 
@@ -461,7 +461,7 @@ _To suggest an event, either [edit and raise pull request](https://github.com/Re
 
 **[eResearch Australasia](https://conference.eresearch.edu.au/)** 2022-10-17/--21, Brisbane, Australia
 
-**[Helmholtz Metadata Collaboration Conference](https://events.hifis.net/event/469/timetable/), 2022-10-05/--06, virtual.
+**[Helmholtz Metadata Collaboration Conference](https://events.hifis.net/event/469/timetable/)**, 2022-10-05/--06, virtual.
 
 **[ELIXIR Biohackathon Europe 2021](https://www.biohackathon-europe.org/)** 2021-11-08/2020-11-12, Hybrid. Projects proposed for RO-Crate and WorkflowHub.
 
