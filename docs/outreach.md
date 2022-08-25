@@ -103,6 +103,10 @@ Andreas Pfeil, Thomas Jejkal, Danah Tonne, Germaine Götzelmann (2022):
 _Data Intelligence_ **4**(2)  
 <https://doi.org/10.1162/dint_a_00138>
 
+Marc Portier (2022):  
+[**Data Publishing with RO-Crate and git**](https://docs.google.com/presentation/d/1Li9tfcEnHgz_EUIsPcW6gry04cqaztr4hDjYa89JA80/edit).  
+_[Open Belgium 2022](https://2022.openbelgium.be/)_, 2022-04-29.
+
 ## 2021
 
 Jeremy Leipzig, Daniel Nüst, Charles Tapley Hoyt, Karthik Ram, Jane Greenberg (2021):  
@@ -442,6 +446,8 @@ See also [publications about Research Objects](https://www.researchobject.org/pu
 ## Upcoming and recent events
 
 _To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
+
+
 
 **[ELIXIR Biohackathon 2022]**(https://biohackathon-europe.org/) 2022-11-07/--11, Paris, France. Projects include [Bioschemas](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/5), [Galaxy w/RO-Crate+RDM](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/10), [Linked Open Science](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/17), [Schema.org datafeeds](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/23), [Workflow Execution Service](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/35)
 
