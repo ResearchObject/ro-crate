@@ -36,7 +36,9 @@ _Contextual Entities_.
 
 As explained in section [RO-Crate structure](structure.md), the RO-Crate description 
 is stored as _JSON-LD_ in the _RO-Crate Metadata File_ `ro-crate-metadata.json` in 
-the _RO-Crate root_ directory. 
+the _RO-Crate root_ directory.  In this section we define how the RO-Crate Metadata file
+describes itself and the RO-Crate root.
+
 
 ## RO-Crate Metadata File Descriptor
 
