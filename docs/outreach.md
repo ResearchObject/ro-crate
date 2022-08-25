@@ -2,7 +2,7 @@
 title: Outreach and Publications
 ---
 <!--
-   Copyright 2019-2020 The University of Manchester and RO Crate contributors 
+   Copyright 2019-2022 The University of Manchester and RO Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -443,9 +443,19 @@ See also [publications about Research Objects](https://www.researchobject.org/pu
 
 _To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 
-**[International Conference on Theory and Practice of Digital Libraries](http://tpdl2022.dei.unipd.it/calls/full_papers.html)** (TPDL), 2022-10-20/2022-10-23. [Call for papers 2022-05-22](http://tpdl2022.dei.unipd.it/calls/full_papers.html) topics incl. FAIR data and software, Research objects, Nanopublications, Linked Data, Digital Preservation.
+**[ELIXIR Biohackathon 2022]**(https://biohackathon-europe.org/) 2022-11-07/--11, Paris, France. Projects include [Bioschemas](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/5), [Galaxy w/RO-Crate+RDM](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/10), [Linked Open Science](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/17), [Schema.org datafeeds](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/23), [Workflow Execution Service](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/35)
+
+**[International conference on FAIR Digital Objects](https://www.fdo2022.org/)**, 2022-10-26/--28, Leiden, Netherlands incl. talk on [Updating Linked Data practices](https://s11.no/2022/phd/updating-ld-for-fdo/) and posters on [RO-Crate](https://s11.no/2022/phd/fdo-with-ro-crate/), [Galaxy Workflow Run Crate](https://s11.no/2022/phd/galaxy-ro-crate/), [Specimen Data Refinery workflows](https://s11.no/2022/phd/incrementally-building-fdos/)
+
+**[3rd Workshop on Research Objects, Metadata and Management for Linked Open Science - DaMaLOS 2022](https://zbmed.github.io/damalos/)**, 2022-10-23, Co-located with [ISWC 2022](https://iswc2022.semanticweb.org).
 
 **[Workshop on Data and Research Objects Management for Linked Open Science](https://zbmed.github.io/damalos/docs/2021.html)** (DaMaLOS) 2021-10-24, _20th International Semantic Web Conference_ (ISWC 2021).
+
+**[International Conference on Theory and Practice of Digital Libraries](http://tpdl2022.dei.unipd.it/calls/full_papers.html)** (TPDL), 2022-10-20/2022-10-23, topics incl. FAIR data and software, Research objects, Nanopublications, Linked Data, Digital Preservation.
+
+**[eResearch Australasia](https://conference.eresearch.edu.au/)** 2022-10-17/--21, Brisbane, Australia
+
+**[Helmholtz Metadata Collaboration Conference](https://events.hifis.net/event/469/timetable/), 2022-10-05/--06, virtual.
 
 **[ELIXIR Biohackathon Europe 2021](https://www.biohackathon-europe.org/)** 2021-11-08/2020-11-12, Hybrid. Projects proposed for RO-Crate and WorkflowHub.
 
