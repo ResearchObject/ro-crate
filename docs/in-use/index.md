@@ -51,7 +51,7 @@ As part of these use-cases they have been developing or enhancing their tooling 
 
 ### Modern PARADISEC
 
-[Modern PARADISEC](https://arkisto-platform.github.io/case-studies/paradisec/) demonstrates the use of RO-Crate to describe the collections and items. The demonstrator includes an elastic search service and a webserver but the key feature is that the it keeps working with only the filesystem and a webserver.
+[Modern PARADISEC](https://arkisto-platform.github.io/case-studies/paradisec/) demonstrates the use of RO-Crate to describe the collections and items. The demonstrator includes an elastic search service and a webserver but the key feature is that it keeps working with only the filesystem and a webserver.
 
 ### UTS Research Data Repository
 

@@ -19,7 +19,7 @@ parent: RO-Crate In Use
    limitations under the License.
 -->
 
-# Lanagugue Data Commons of Australia Program
+# Language Data Commons of Australia Program
 
 <!-- linking to logo online cos the current one is a placeholder only and should get updated -->
 [![LDaCA Logo](https://www.ldaca.edu.au//LDaCA_logo-sm.png)][LDaCA]
@@ -38,7 +38,7 @@ RO-Crate is the central metadata standard for all data within the LDaCA environm
 
 ### Archiving
 
-RO-Crate provides a consitent metadata model for long term archiving and preservation and is used to store archival copies of lanuage datasets using the [Oxford Common File Layout](https://arkisto-platform.github.io/standards/ocfl/). 
+RO-Crate provides a consistent metadata model for long term archiving and preservation and is used to store archival copies of language datasets using the [Oxford Common File Layout](https://arkisto-platform.github.io/standards/ocfl/). 
 
 ### API Access 
 
@@ -54,7 +54,7 @@ For example, this query looks for RO-Crates which package objects, with a confor
 ```
 
 
-In this demonstration this returns 10 results (turncated here), which can then be fetched using the crateId property.
+In this demonstration this returns 10 results (truncated here), which can then be fetched using the crateId property.
 
 ```
 {
