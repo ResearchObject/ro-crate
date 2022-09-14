@@ -28,11 +28,8 @@ parent: RO-Crate In Use
 
 The LDaCA Program architecture consists of a set of modular services; data preservation/archiving, APIs for delivery, access control and a discovery portal for data and analysis tools as well as automated container-based notebook environments to run analytics via the Australian Text Analytics Platform (which is a component of the broader program). 
 
+The [data portal](https://data.atap.edu.au) for the ATAP platform is the first released product, there will be more data portals which provide access to a broader range of data in 2023.
 
-
-
-
-![Example screenshot with RO-Crate(../assets/img/example-screenshot.png)
 
 
 ## RO-Crate in the LDaCA Program
@@ -41,14 +38,15 @@ RO-Crate is the central metadata standard for all data within the LDaCA environm
 
 ### Archiving
 
-Provide a consitent metadata model for long term archiving and preservation. RO-Crate data is used to store archival copies of lanuage datasets using the [Oxford Common File Layout](https://arkisto-platform.github.io/standards/ocfl/). 
+RO-Crate provides a consitent metadata model for long term archiving and preservation and is used to store archival copies of lanuage datasets using the [Oxford Common File Layout](https://arkisto-platform.github.io/standards/ocfl/). 
 
-### API ACcess / 
- Provide access-controlled API access to data. Access control is important for language data as it is created by and collected from humans who have intellectual property rights over the data and some of he content may be confidential
+### API Access 
 
- RO-Crates can be made available over an API using the [Oni]() tool.
 
- For example, this query looks for RO-Crates which package objects, with a conformsTo property from the (draft) profile: <https://purl.archive.org/textcommons/profile#Collection>
+The LDaCA project provide access-controlled API access to data using the [Oni](https://github.com/Arkisto-Platform/oni) tool. Access control is important for language data as it is created by and collected from humans who have intellectual property rights over the data and some of he content may be confidential
+
+
+For example, this query looks for RO-Crates which package objects, with a conformsTo property from the (draft) profile: <https://purl.archive.org/textcommons/profile#Collection>
 
 ```
  curl --location --request GET 'http://localhost:9000/api/object?conformsTo=https://purl.archive.org/textcommons/profile%23Collection' \
