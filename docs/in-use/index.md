@@ -34,6 +34,10 @@ These applications use or expose RO-Crates to describe Data, Datasets and Workfl
 
 [LifeMonitor](life_monitor) uses RO-Crate as an exchange format for describing test suites associated with workflows. To this end, the LifeMonitor team is developing an extension to the [Workflow RO-Crate specification](https://about.workflowhub.eu/Workflow-RO-Crate/) to support the inclusion of metadata related to the testing of computational workflows stored in the crate.
 
+## Language Data Commons of Australia (LDaCA)
+
+[LDaCA](LDaCA) uses RO-Crate as an interchange and archive format for language data, and is providing data discovery portals and API access to data using RO-Crate-centric APIs.]
+
 ## Arkisto
 
 [Arkisto uses RO-Crate](https://arkisto-platform.github.io/standards/ro-crate/) for packaging data objects in the 3 uses cases described below.
@@ -47,7 +51,7 @@ As part of these use-cases they have been developing or enhancing their tooling 
 
 ### Modern PARADISEC
 
-[Modern PARADISEC](https://arkisto-platform.github.io/case-studies/paradisec/) demonstrates the use of RO-Crate to describe the collections and items and store those items within an OCFL system. The demonstrator includes an elastic search service and a webserver but the key feature is that the it keeps working with only the filesystem and a webserver.
+[Modern PARADISEC](https://arkisto-platform.github.io/case-studies/paradisec/) demonstrates the use of RO-Crate to describe the collections and items. The demonstrator includes an elastic search service and a webserver but the key feature is that the it keeps working with only the filesystem and a webserver.
 
 ### UTS Research Data Repository
 
