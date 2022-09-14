@@ -290,6 +290,11 @@ In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in
 ```
 
 
+
+
+
+
+
 ### Add local definitions of ad hoc terms
 
 Following the conventions used by Schema.org, ad-hoc terms SHOULD also include definitions in the RO-Crate with at minimum:
