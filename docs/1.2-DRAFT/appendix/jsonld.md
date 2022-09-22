@@ -259,12 +259,14 @@ RO-Crate provides some strategies to add a new term (a [Class] or [Property]) th
 
 ### Choosing URLs for ad hoc terms
 
-For projects that have their own web-presence, URLs MAY be defined there and SHOULD resolve to useful content. For example for a project with web page <https://criminalcharacters.com/> the property `education` could have a URL: <https://criminalcharacters.com/vocab#education> which resolves to an HTML page that explains the term using HTML anchors:
+For projects that have their own web-presence, URLs MAY be defined there and SHOULD resolve to useful content. For example
+
+for a project with web page <https://example.com/some-project> the property `myProperty` could have a URL: <https://example.com/some-project/terms#myProperty> which resolves to an HTML page that explains the term using HTML anchors:
 
 ```html
-<div id="education">
-  <h1>Property: education</h1>
-  <p>Literacy of prisoner. Prison authorities would record the prisoner’s statement as to whether they could read and write …
+<div id="myProperty">
+  <h1>Property: myProperty</h1>
+  <p>Description of property ...
   </p>
 </div>
 ```
@@ -272,7 +274,7 @@ For projects that have their own web-presence, URLs MAY be defined there and SHO
 {: .tip }
 > Ensure you have a consistent use of `http` or `https` (preferring https) as well as consistent path `/vocab` vs `/vocab/` vs `/vocab/index.html` (preferring the shortest that is also visible in browser).
 
-For ad hoc terms where the crate author does not have the resources to create and maintain an HTML page, authors may use the RO-Crate public namespace (`https://w3id.org/ro/terms/`) to reserve their terms. For example, an ad-hoc URL MAY be used in the form `https://w3id.org/ro/terms/criminalcharacters#education` where `criminalcharacters` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions][ro-terms] to the RO-Crate terms project. 
+For ad hoc terms where the crate author does not have the resources to create and maintain an HTML page, authors may use the RO-Crate public namespace (`https://w3id.org/ro/terms/`) to reserve their terms. For example, an ad-hoc URL MAY be used in the form `https://w3id.org/ro/terms/some-project#myProperty` where `some-project` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions][ro-terms] to the RO-Crate terms project. 
 
 In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in the local context:
 
@@ -280,12 +282,17 @@ In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in
 {
   "@context": [ 
     "https://w3id.org/ro/crate/1.2-DRAFT/context",
-    {"education": "https://criminalcharacters.com/vocab#education",
-     "interests": "https://w3id.org/ro/terms/criminalcharacters#interests"},
+    {"education": "https://example.com/some-project/terms#myProperty",
+     "interests": "https://w3id.org/ro/terms/some-project#education"},
   ],
   "@graph": [ ... ]
 }
 ```
+
+
+
+
+
 
 
 ### Add local definitions of ad hoc terms
@@ -294,15 +301,23 @@ Following the conventions used by Schema.org, ad-hoc terms SHOULD also include d
 
 * `@type` of either `rdfs:Class` (contextual entity type) or `rdf:Property` (attribute of an contextual entity)
 * `rdfs:label` with the human readable version of the term, e.g. `makesFood` has label `makes food`
-* `rdfs:comment` documenting and clarifying the meaning of the term. For instance the term `sentence` in a prisoner vocabulary will have a different explanation than `sentence` in a linguistic vocabulary.
+* `rdfs:comment` documenting and clarifying the meaning of the term. For instance the term `title` in a real estate context will have a different explanation than `title` in a vocabulary about people.
 
 ```json
-{
-    "@id": "https://criminalcharacters.com/vocab#education",
-    "@type": "rdf:Property",
-    "rdfs:label": "education",
-    "rdfs:comment": "Literacy of prisoner. ..."
-}
+ {
+      "@id": "http://purl.archive.org/textcommons/terms#participant",
+      "@type": "rdf:Property",
+      "name": "participant",
+      "description": "This role is intended for minor participants such as audience members or other peripherally-involved participants in the event. ...",
+      "domainIncludes": "schema:CreativeWork",
+      "rangeIncludes": [
+        "schema:Person",
+        "schema:Organization"
+      ],
+      "sameAs": "http://www.language-archives.org/REC/role.html#participant",
+      "rdfs:comment": "The participant was present during the creation of the resource, but did not contribute substantially to its content.",
+      "rdfs:label": "participant"
+    },
 ```
 
 {: .tip }
