@@ -96,6 +96,7 @@ The _RO-Crate_ team is:
 * Raül Sirvent <https://orcid.org/0000-0003-0606-2512>
 * Abigail Miller <https://orcid.org/0000-0001-9228-2882>
 * Jake Emerson <https://orcid.org/0000-0003-0617-9219>
+* Davide Fucci <https://orcid.org/0000-0002-0679-4361>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! 
 
