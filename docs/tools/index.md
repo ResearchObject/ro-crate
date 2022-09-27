@@ -39,5 +39,6 @@ While we're mostly focusing on the [RO-Crate specification](../specification.md)
  - [repo2crate](https://github.com/crs4/repo2crate) -- Generate a Workflow Testing RO-Crate from a "best-practices" workflow repository
  - [ro-crate-java](https://github.com/kit-data-manager/ro-crate-java) -- Java API for creating and modifying RO-Crate using builder pattern
  - [ro-crate-benchmarks](https://github.com/kit-data-manager/ro-crate-benchmarks) -- Benchmarks for performance testing RO-Crate libraries
+ - [tonkaz](https://github.com/sapporo-wes/tonkaz) -- Tool to verify workflow reproducibility, compares RO-Crates of workflow execution results.
 
 See also [applications using RO-Crate](../in-use/).
