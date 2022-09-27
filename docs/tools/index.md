@@ -40,5 +40,6 @@ While we're mostly focusing on the [RO-Crate specification](../specification.md)
  - [ro-crate-java](https://github.com/kit-data-manager/ro-crate-java) -- Java API for creating and modifying RO-Crate using builder pattern
  - [ro-crate-benchmarks](https://github.com/kit-data-manager/ro-crate-benchmarks) -- Benchmarks for performance testing RO-Crate libraries
  - [tonkaz](https://github.com/sapporo-wes/tonkaz) -- Tool to verify workflow reproducibility, compares RO-Crates of workflow execution results.
+ - [signposting](https://pypi.org/project/signposting/) -- Python library & CLI tool for resolving PIDs as [FAIR Signposting](https://signposting.org/FAIR/), e.g. DOIs from [WorkflowHub](https://workflowhub.eu/) to RO-Crate
 
 See also [applications using RO-Crate](../in-use/).
