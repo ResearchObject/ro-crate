@@ -59,9 +59,10 @@ _[RO-Crate community call](https://s.apache.org/ro-crate-minutes)_, 2022-08-25.
 <https://doi.org/10.5281/zenodo.7025336>
 
 Abigail Miller (2022):  
-[**BioConnect Data Packages**: Use of RO-Crate, ISA model and Frictionless Data](https://youtu.be/p-LdZRU3Cwk)
+[**BioConnect Data Packages**: Use of RO-Crate, ISA model and Frictionless Data](https://doi.org/10.5281/zenodo.7116702)
 _[RO-Crate community call](https://s.apache.org/ro-crate-minutes)_, 2022-07-28.  
-<https://youtu.be/p-LdZRU3Cwk>
+[[video](https://youtu.be/p-LdZRU3Cwk)] [[slides](https://zenodo.org/record/7116702/preview/2022-07-28-abigail-miller-bioconnect.pdf)] [[transcript](https://zenodo.org/record/7116702/preview/2022-07-28-transcript.pdf)] [[example](https://zenodo.org/record/7116702/files/example-ro-crate-JAXDP000018.zip)] 
+<https://doi.org/10.5281/zenodo.7116702>
 
 Carole Goble, Stian Soiland-Reyes (2022):  
 [**RO-Crate for Research Reproducibility & Data Management**](https://doi.org/10.5281/zenodo.6793758).  
