@@ -41,6 +41,17 @@ _Data Science_ **5**(2)
 
 ### 2022
 
+Renske de Wit (2022):  
+[**A Non-Intimidating Approach to Workflow Reproducibility in Bioinformatics**: Adding Metadata to Research Objects through the Design and Evaluation of Use-Focused Extensions to CWLProv](https://doi.org/10.5281/zenodo.7113250).  
+Master thesis, _Vrije Universiteit Amsterdam_ / _Zenodo_.  
+[[video](https://www.youtube.com/watch?v=IgqOG6IORy4)] [[slides](https://zenodo.org/record/7113250/preview/20220829_Defense_final.pdf)]
+<https://doi.org/10.5281/zenodo.7113250>
+
+Tazro Ohta, Hirotaka Suetake (2022):  
+[**Verifying workflow reproducibility using RO-Crate**](https://youtu.be/LFoX0wnTfuc).  
+_[Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/) Meeting_ 2022-09-27  
+<https://youtu.be/LFoX0wnTfuc>
+
 Carole Goble, Stian Soiland-Reyes (2022):  
 [**RO-Crate for Research Reproducibility & Data Management**](https://doi.org/10.5281/zenodo.6793758).  
 [_ELIXIR All Hands Meeting_](https://elixir-europe.org/events/elixir-all-hands-2022), Amsterdam, 2022-06-08  
