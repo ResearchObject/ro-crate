@@ -52,6 +52,17 @@ Tazro Ohta, Hirotaka Suetake (2022):
 _[Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/) Meeting_ 2022-09-27  
 <https://youtu.be/LFoX0wnTfuc>
 
+Nikola Tzochev, Andreas Pfeil (2022):  
+[**A Java Library for RO-Crate**](https://doi.org/10.5281/zenodo.7025336)  
+_[RO-Crate community call](https://s.apache.org/ro-crate-minutes)_, 2022-08-25.  
+[[video](https://youtu.be/piliBFEPqIA)] [[slides](https://zenodo.org/record/7025336/preview/ro-crate-java%20overview.pdf)]
+<https://doi.org/10.5281/zenodo.7025336>
+
+Abigail Miller (2022):  
+[**BioConnect Data Packages**: Use of RO-Crate, ISA model and Frictionless Data](https://youtu.be/p-LdZRU3Cwk)
+_[RO-Crate community call](https://s.apache.org/ro-crate-minutes)_, 2022-07-28.  
+<https://youtu.be/p-LdZRU3Cwk>
+
 Carole Goble, Stian Soiland-Reyes (2022):  
 [**RO-Crate for Research Reproducibility & Data Management**](https://doi.org/10.5281/zenodo.6793758).  
 [_ELIXIR All Hands Meeting_](https://elixir-europe.org/events/elixir-all-hands-2022), Amsterdam, 2022-06-08  
