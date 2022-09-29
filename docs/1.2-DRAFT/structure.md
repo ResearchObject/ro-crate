@@ -84,11 +84,11 @@ The appendix [RO-Crate JSON-LD](appendix/jsonld.md) details the general structur
 
 ## RO-Crate Website (`ro-crate-preview.html` and `ro-crate-preview_files/`)
 
-In addition to the machine-oriented _RO-Crate Metadata File_, the RO-Crate MAY include a human-readable HTML rendering of the same information, known as the _RO-Crate Website_.
+In addition to the machine-oriented _RO-Crate Metadata File_, the RO-Crate MAY include a human-readable HTML rendering of the same information, known as the _RO-Crate Website_. If present, the _RO-Crate Website_ MUST be a file named `ro-crate-preview.html` in the root directory, which MAY serve as the entry point to other web-resources, which MUST be in `ro-crate-preview_files/` in the root directory.
 
 If present in the root directory, `ro-crate-preview.html` MUST:
 
-* Be a valid [HTML 5] document 
+* Be a valid [HTML 5] document the
 * Be useful to users of the RO-Crate - this will vary by community and intended use, but in general the aim to assist users in reusing data by explaining what it is, how it was created how it can be used and how to cite it. One simple approach to this is to expose *all* the metadata in the _RO-Crate Metadata File_.
 * Contain a copy of the _RO-Crate JSON-LD_ in a `script` element of the `head` element of the HTML, for example:
   ```html
@@ -110,6 +110,47 @@ If present in the root directory, `ro-crate-preview.html` MUST:
 * For keys that resolve in the `RO-Crate JSON-LD Context` to a URI, indicate this (the simplest way is to link the key to its definition).
 * If there is sufficient metadata, contain a prominent _“Cite-as”_ text with a natural language data citation (see for example the [FORCE11 Data Citation Principles]).
 * If there are additional resources necessary to render the preview (e.g. CSS, JSON, HTML), link to them in a subdirectory `ro-crate-preview-files/`
+
+The _RO-Crate Website_ is not considered to part of the RO-Crate but serves as a way to make metadata available in an user-appropriate format. The `ro-crate-preview.html` file and the `ro-crate-preview-files/` directory and any contents SHOULD NOT be included in the `hasPart` property of the _Root Dataset_ or any other `Dataset` entity within an RO-Crate.
+
+Metadata about parts of the _RO-Crate Website_ an entity MAY be included in an RO-Crate as in the following example. Metadata such as and `author` property, `dateCreated` or other provenance can be included, including details about the software that created it, as described in [Software used to create files](./provenance.html#software-used-to-create-files)).
+
+```
+{
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {"@id": "./"}
+}
+
+{
+      "@id": "https://www.npmjs.com/package/ro-crate-html-js",
+      "@type": "SoftwareApplication",
+      "url": "ttps://www.npmjs.com/package/ro-crate-html-js",
+      "name": "ro-crate-html-js",
+      "version": "1.4.19"
+}
+
+{
+      "@id": "#ro-crate-preview-generation",
+      "@type": "CreateAction",
+      "name": "Create HTML summary",
+      "endTime": "2022-10-019T17:01:07+10:00",
+      "instrument": {
+        "@id": "https://www.npmjs.com/package/ro-crate-html-js"
+      },
+      "object": {
+        "@id": "ro-crate-metadata.json"
+      },
+      "result": {
+        "@id": "ro-crate-preview.html"
+      }
+    }
+
+
+```
+
+
+
 
 ## Payload files and directories
 
