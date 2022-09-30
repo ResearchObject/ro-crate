@@ -41,5 +41,6 @@ While we're mostly focusing on the [RO-Crate specification](../specification.md)
  - [ro-crate-benchmarks](https://github.com/kit-data-manager/ro-crate-benchmarks) -- Benchmarks for performance testing RO-Crate libraries
  - [tonkaz](https://github.com/sapporo-wes/tonkaz) -- Tool to verify workflow reproducibility, compares RO-Crates of workflow execution results.
  - [signposting](https://pypi.org/project/signposting/) -- Python library & CLI tool for resolving PIDs as [FAIR Signposting](https://signposting.org/FAIR/), e.g. DOIs from [WorkflowHub](https://workflowhub.eu/) to RO-Crate
-
+ - [RO-Crates-and-Excel](https://github.com/e11938258/RO-Crates-and-Excel) -- generate RO-Crate from Excel file, following the RO-Crates-and-Excel profile.
+ 
 See also [applications using RO-Crate](../in-use/).
