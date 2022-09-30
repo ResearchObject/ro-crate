@@ -22,8 +22,13 @@ redirect_from:
 -->
 
 # RO-Crate in use
+{: .no_toc }
 
 These applications use or expose RO-Crates to describe Data, Datasets and Workflows:
+
+1. TOC
+{:toc}
+
 
 ## WorkflowHub
 
@@ -36,7 +41,7 @@ These applications use or expose RO-Crates to describe Data, Datasets and Workfl
 
 ## Arkisto
 
-[Arkisto uses RO-Crate](https://arkisto-platform.github.io/standards/ro-crate/) for packaging data objects in the 3 uses cases described below.
+[Arkisto uses RO-Crate](https://arkisto-platform.github.io/standards/ro-crate/) for packaging data objects in the 3 uses cases described below, **Modern PARADISEC**, **UTS Research Data Repository** and **UTS Cultural Datasets**.
 
 As part of these use-cases they have been developing or enhancing their tooling to facilitate their use of RO-Crate
 
