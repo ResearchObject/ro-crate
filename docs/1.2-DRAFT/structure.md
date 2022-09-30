@@ -88,7 +88,7 @@ In addition to the machine-oriented _RO-Crate Metadata File_, the RO-Crate MAY i
 
 If present in the root directory, `ro-crate-preview.html` MUST:
 
-* Be a valid [HTML 5] document the
+* Be a valid [HTML 5] document
 * Be useful to users of the RO-Crate - this will vary by community and intended use, but in general the aim to assist users in reusing data by explaining what it is, how it was created how it can be used and how to cite it. One simple approach to this is to expose *all* the metadata in the _RO-Crate Metadata File_.
 * Contain a copy of the _RO-Crate JSON-LD_ in a `script` element of the `head` element of the HTML, for example:
   ```html
@@ -111,9 +111,9 @@ If present in the root directory, `ro-crate-preview.html` MUST:
 * If there is sufficient metadata, contain a prominent _“Cite-as”_ text with a natural language data citation (see for example the [FORCE11 Data Citation Principles]).
 * If there are additional resources necessary to render the preview (e.g. CSS, JSON, HTML), link to them in a subdirectory `ro-crate-preview-files/`
 
-The _RO-Crate Website_ is not considered to part of the RO-Crate but serves as a way to make metadata available in an user-appropriate format. The `ro-crate-preview.html` file and the `ro-crate-preview-files/` directory and any contents SHOULD NOT be included in the `hasPart` property of the _Root Dataset_ or any other `Dataset` entity within an RO-Crate.
+The _RO-Crate Website_ is not considered a part of the RO-Crate, but serves as a way to make metadata available in a user-appropriate format. The `ro-crate-preview.html` file and the `ro-crate-preview-files/` directory and any contents SHOULD NOT be included in the `hasPart` property of the _Root Dataset_ or any other `Dataset` entity within an RO-Crate.
 
-Metadata about parts of the _RO-Crate Website_ an entity MAY be included in an RO-Crate as in the following example. Metadata such as and `author` property, `dateCreated` or other provenance can be included, including details about the software that created it, as described in [Software used to create files](./provenance.html#software-used-to-create-files)).
+Metadata about parts of the _RO-Crate Website_ MAY be included in an RO-Crate as in the following example. Metadata such as an `author` property, `dateCreated` or other provenance can be included, including details about the software that created them, as described in [Software used to create files](./provenance.html#software-used-to-create-files)).
 
 ```
 {
@@ -144,12 +144,8 @@ Metadata about parts of the _RO-Crate Website_ an entity MAY be included in an R
       "result": {
         "@id": "ro-crate-preview.html"
       }
-    }
-
-
+}
 ```
-
-
 
 
 ## Payload files and directories
