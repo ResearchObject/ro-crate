@@ -52,6 +52,12 @@ Tazro Ohta, Hirotaka Suetake (2022):
 _[Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/) Meeting_ 2022-09-27  
 <https://youtu.be/LFoX0wnTfuc>
 
+Esteban González, Alejandro Benítez & Daniel Garijo (2022):  
+[**FAIROs: Towards FAIR Assessment in Research Objects**](https://dgarijo.com/papers/TPDL2022_gonzalez.pdf).  
+_TPDL 2022: Linking Theory and Practice of Digital Libraries_  
+<https://doi.org/10.1007/978-3-031-16802-4_6>
+[[preprint](https://dgarijo.com/papers/TPDL2022_gonzalez.pdf)]
+
 Nikola Tzochev, Andreas Pfeil (2022):  
 [**A Java Library for RO-Crate**](https://doi.org/10.5281/zenodo.7025336)  
 _[RO-Crate community call](https://s.apache.org/ro-crate-minutes)_, 2022-08-25.  
