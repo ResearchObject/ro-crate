@@ -35,7 +35,7 @@ An RO-Crate may have a single main entity that is considered the point, or focus
 
 ### mainEntity is a _Data Entity_
 
-In the [Workflow RO_Crate profile](https://www.researchobject.org/ro-crate/profiles.html#workflow-ro-crate-profile) - where the `mainEntity` has a compund type `File,SoftwareSourceCode,ComputationalWorkflow`. the use of `mainEntity` singles-out the workflow file from supporting files.
+In the [Workflow RO-Crate profile](https://www.researchobject.org/ro-crate/profiles.html#workflow-ro-crate-profile), where the `mainEntity` has a compound type `["File", "SoftwareSourceCode", "ComputationalWorkflow"]`, the use of `mainEntity` singles-out the workflow file from supporting files.
 
 ```
 {
@@ -45,33 +45,30 @@ In the [Workflow RO_Crate profile](https://www.researchobject.org/ro-crate/profi
     "description": "An example workflow RO Crate",
     "license": "Apache-2.0",
     "mainEntity": {
-    "@id": "example_workflow.cwl"
+      "@id": "example_workflow.cwl"
     },
     "hasPart": [
-    {
+      {
         "@id": "example_workflow.cwl"
-    },
-    {
+      },
+      {
         "@id": "diagram.svg"
-    },
-    {
+      },
+      {
         "@id": "README.md"
-    }
+      }
     ]
 }
-
 ```
 
+### mainEntity is a _Contextual Entity_
 
-### mainEntity is a _contextualEntity_
-
-The focus of the RO-Crate may be a description of a _Contextual Entity_ for example in an RO-Crate used in repository or encyclopedia where a RepositoryObject bundles together images and other files, but the main focus of the RO-Crate is on describing a person.
-
+The focus of the RO-Crate may be a description of a _Contextual Entity_, for example in an RO-Crate used in a repository or encyclopedia where a RepositoryObject bundles together images and other files, but the main focus of the RO-Crate is on describing a person.
 
 ```
- {
+{
     "@id": "./",
-    "@type": ["Dataset", "RepostioryObject"],
+    "@type": ["Dataset", "RepositoryObject"],
     "name": "Reibey, Mary (1777 - 1855)",
     "mainEntity": {
         "@id": "https://en.wikipedia.org/wiki/Mary_Reibey"
@@ -80,28 +77,23 @@ The focus of the RO-Crate may be a description of a _Contextual Entity_ for exam
         {"@id": "photo1.jpg"},
         {"@id": "photo2.jpg"}
     ]
-
 }
 
-    {
-        "@id": "https://en.wikipedia.org/wiki/Mary_Reibey",
-        "@type": "Person",
-        "name": "Mary Reibey",
-        "description": "Mary Reibey née Haydock (12 May 1777 – 30 May 1855) was an English-born merchant, shipowner and trader ..."
-    }
-
-
+{
+    "@id": "https://en.wikipedia.org/wiki/Mary_Reibey",
+    "@type": "Person",
+    "name": "Mary Reibey",
+    "description": "Mary Reibey née Haydock (12 May 1777 – 30 May 1855) was an English-born merchant, shipowner and trader ..."
 }
 ```
 
-## Crates which describe _Contetual Entities_ 
+## Crates which describe _Contextual Entities_
 
-RO-Crates may describe _Contextual Entities_ which are not linked to a_Root Dataset_ via `hasPart` relationships.
+RO-Crates may describe _Contextual Entities_ which are not linked to a_Root Dataset_ via `mentions` relationships.
 
 For example RO-Crates can be used as containers for schema.org-style vocabularies.
 
 ```
-
 {
       "@id": "./",
       "@type": "Dataset",
@@ -109,7 +101,7 @@ For example RO-Crates can be used as containers for schema.org-style vocabularie
       "description": "This is an experimental language data ontology based on OLAC terms for use in the ATAP and LDaCA projects",
       "hasPart": [],
       "name": "Language Data Ontology",
-      "mentions": ["txc:Annotation", t"xc:CollectionEvent"]
+      "mentions": ["txc:Annotation", "txc:CollectionEvent"]
     },
     {
       "@id": "txc:Annotation",
@@ -140,11 +132,10 @@ For example RO-Crates can be used as containers for schema.org-style vocabularie
 ```
 
 
-
 The following example shows both a `mainEntity` which is a _Data Entity_ and also a _Contextual Entity_ which is a test suite (`#test1`)
 
 ```
- {
+        {
             "@id": "./",
             "@type": "Dataset",
             "name": "sort-and-change-case",
@@ -162,7 +153,8 @@ The following example shows both a `mainEntity` which is a _Data Entity_ and als
                     "@id": "test/test1/sort-and-change-case-test.yml"
                 }
             ]
-        } {
+        }
+		{
             "@id": "#test1",
             "name": "test1",
             "@type": "TestSuite",
@@ -200,8 +192,6 @@ The following example shows both a `mainEntity` which is a _Data Entity_ and als
             "url": {"@id": "https://github.com/galaxyproject/planemo"},
             "version": ">=0.70"
         }
-
-
 ```
 
 {% include references.liquid %}
