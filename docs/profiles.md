@@ -136,7 +136,8 @@ More details are available from the [spec page](https://lifemonitor.eu/workflow_
 
 ### Workflow Run Crate
 
-[Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/) is in development as a profile to capture the **provenance** of a workflow run. Join the [RO-Crate community](community.md) to help contribute!
+[Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/) is in development as a profile to capture the **provenance** of execution provenance of computational workflows and scripts. Join the [RO-Crate community](community.md) to help contribute!
+
 
 ## Describo profiles
 
@@ -163,10 +164,6 @@ In summary the _default profile_ covers as of [Describo 0.13.0](https://github.c
   - [`hasPart`](1.1/data-entities.html#referencing-files-and-folders-from-the-root-data-entity): `(File|Dataset|Workflow|RepositoryCollection|RepositoryObject)`
   - [`distribution`](1.1/data-entities.html#directories-on-the-web-dataset-distributions): [`DataDownload`](http://schema.org/DataDownload)
 
-
-### Workflow Run Crate profiles
-
-An RO-Crate task force are currently developing the [Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/) profiles for capturing execution provenance of computational workflows and scripts.
 
 ## RELIANCE RO-crate profile
 
