@@ -81,7 +81,7 @@ networks and storages.
 
 [ROHub](rohub.md) is a solution for the storage, lifecycle management and preservation of scientific work and operational processes via research objects. It makes these resources available to others, allows to publish and release them through a DOI, and allows to discover and reuse pre-existing scientific knowledge.
 
-ROHub imports and exports RO-Crates, using it as an exchange format, particularly for Earth Science _data cubes_ following the [RELIANE RO-Crate profile](https://reliance-eosc.github.io/reliance-ro-crate/).
+ROHub imports and exports RO-Crates, using it as an exchange format, particularly for Earth Science _data cubes_ following the [RELIANCE RO-Crate profile](https://reliance-eosc.github.io/reliance-ro-crate/).
 
 ## Research Object Composer
 
