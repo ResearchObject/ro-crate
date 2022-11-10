@@ -171,6 +171,25 @@ For distribution on disk or in packaged format such as a zip file or disk image,
 TODO: Screenshot and links to examples.
 
 
+## Overview of specification
+
+The rest of this specification is structured as follows:
+
+* [Terminology](terminology.md) defines terms such as _Entity_ used in the rest of the document. You may use this page as a quick-reference, but also note that most of these are also covered in detail in separate pages.
+* [RO-Crate structure](structure.md) defines further how the `ro-crate-metadata.json` and data files can be organized within an _RO-Crate Root_ directory
+* [Metadata of the RO-Crate](metadata.md) explains the connection to Linked Data principles and how RO-Crate keys are mapped to global identifiers. This is mainly of interest for readers already familiar with JSON-LD or ontologies, or which want to expand RO-Crate metadata keys.
+* [Root Data Entity](root-data-entity.md) defines the entities _RO-Crate Metadata Descriptor_ (`ro-crate-metdata.json`) and _RO-Crate Root_ (`./`) including their required and recommended properties.
+* [Data Entities](data-entities.md) explores further how to describe data, including files, directories and Web references. Metadata such as file formats help inform RO-Crate consumers on which tools may be able to process the data. 
+* [Contextual Entities](contextual-entities.md) adds additional entities to further annotate entities, adding `People` and `Organization` referenced from `author`, `publication`, `affiliation` etc. Metadata like licensing, funding, locations and subjects can be described using additional entities.
+* [Provenance of Entities](provenance.md) explores how the history of making an entity can be added to the RO-Crate using a series of _actions_ -- this may include real-world activities and instruments, as well as software executions and modifications to the RO-Crate metadata itself. 
+* Subsection [Digital Library and Repository content](provenance.md#digital-library-and-repository-content) details how records in an existing repository (which may  reference files, but also physical objects) can be described and published using RO-Crate.
+* [Workflows and Scripts](workflows.md) explains how computional software and code can be added to an RO-Crate, possibly as part of explaining provenance, but also for providing potential usage and further processing of the data. 
+* [Profiles](profiles.md) formalises how a set of RO-Crates can indicate they are conforming to a specific profile, which may add additional requirements beyond this general RO-Crate specification. Profiles may add additional terms from `schema.org` and other vocabularies, or require a certain type of data entity used in a particular research domain.  Profiles can themselves be expressed as an RO-Crate, explored in this section.
+* [Appendixes](appendix/) contain more technical references and suggestions for developers, e.g. for deciding on `@id` [in JSON-LD](appendix/jsonld.ld#describing-entities-in-json-ld) or [extending RO-Crate terms](appendix/jsonld.kd#extending-ro-crate). The appendix also explores how an RO-Crate can be [packaged with BagIt](appendix/implementation-notes.html#combining-with-other-packaging-schemes) or used as part of a repository.
+
+Throughout the specifications you will find references to the keys and types reused from `schema.org` through the JSON-LD context, for instance [Dataset] which define many more properties than the ones highlighted by pages like [Root Data Entity](root-data-entity.md). The intention is that the RO-Crate specification gives a common minimum of metadata, and that producers of RO-Crate can use additional `schema.org` types and properties as needed. When some patterns emerge from such extensions they can be formalized in a published [profile](profiles.md) to ensure they are also used consistently.
+
+
 ## NEW SECTION Serving RO-Crate metadata documents from a service
 
 If an RO-Crate Metadata Document is served from a service use the following DCAT properties:
