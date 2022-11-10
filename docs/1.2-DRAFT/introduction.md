@@ -63,7 +63,7 @@ In this example, the content of the RO Crate Metadata document is:
     "@type": "Dataset",
     "datePublished": "2022-12-01",
     "name": "Example dataset for RO-Crate specification",
-    "description": "Official rainfall readings for Katoomba, NSW 2022, Australia"
+    "description": "Official rainfall readings for Katoomba, NSW 2022, Australia",
     "hasPart": [ {"@id": "data.csv"} ]
   },
   {
@@ -99,22 +99,46 @@ This required entity, known as the *RO-Crate Metadata Descriptor*, self-identifi
 ![alt_text](images/image1.png "image_tooltip")
 
 
-By convention, in RO-Crate the `@id` value of  `./` means that this document describes the directory of content in which the RO-Crate metadata is located as in the example above. This is therefore marking the `crate-dir` directory as being the RO-Crate root.
+By convention, in RO-Crate the `@id` value of  `./` means that this document describes the directory of content in which the RO-Crate metadata is located as in the example above. This reference from `ro-crate-metadata.json` is therefore marking the `crate-dir` directory as being the RO-Crate root.
+
+{: .note }
+This example is a directory-based RO-Crate stored on disk. If the crate is being served from a Web service, such as a data repository or database where files are not organized in directories, then the `@id` might be an absolute URI instead of `"./"` -- see section [Root Data Entity](root-data-entity.md) for details
+
+In RO-Crate Metadata Files, entities are cross-referenced using `@id` reference objects, rather than using deeply nested JSON objects. In short this _flattened JSON-LD_ style allows any entity to reference any other entity, and for RO-Crate consumers to directly find all the descriptions of an entity within a single JSON object. So let's have a look at the Root Data Entity `./`:
 
 
-(Note: This example uses a directory-based RO-Crate that is stored on disk. If the crate is being served from a Web service, such as a data repository or database where files are not organized in directories, then the ID might be an absolute URI instead of `"./"` -- see section [Root Data Entity](root-data-entity.md) for details).
+```json
+{
+    "@id": "./",
+    "@type": "Dataset",
+    "…": "",
+    "hasPart": [ {"@id": "data.csv"} ]
+}
+```
 
-Data aggregated from the Root Dataset is via `hasPart` property, which in this example is an array with one value only, a reference to an entity describing the file `data.csv`, which has `@type` value of `File`. For more information on files and directories, which are known as `Data Entities` see xxxxxxx (TODO: Link to the section on File and Dataset Data Entities).
+The root is always typed `Dataset` and have several metadata properties that describe the RO-Crate as a whole, as a collection of resources.
+
+A main type of resources collected are _data_ -- retrievable files. These are aggregated by the Root Dataset with the `hasPart` property. In this example we have an array with a single value, a reference to the entity describing the file `data.csv`. 
+
+Again following the `@id` reference for this _data entity_, we see it has `@type` value of `File` and additional metadata such as `encodingFormat`. It is recommended that every entity has a human readable `name`, which as shown in this example, do not need t omatch the filename/identifier.
 
 
+```json
+  {
+    "@id": "data.csv",
+    "@type": "File",
+    "name": "Rainfall data for Katoomba, NSW Australia February 2022",
+    "encodingFormat": "text/csv",
+    "…": "",
+    "license": "CC BY-NC-SA 3.0 AU"
+  }
+```
 
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
+For more information on describing files and directories, see section on [data entities](data-entitites.md)
 
 ![alt_text](images/image2.png "image_tooltip")
 
-
-The publisher of this Dataset SHOULD be indicated using the property `publisher` using a URI to identify the `Organization`, linking to what is known as a `Contextual Entity` that provides some information about the Organization such as its name and web address.
+Moving back to the RO-Crate root `./`, the publisher of this Dataset should be indicated using the property `publisher` using a URI to identify the `Organization`, linking to what is known as a _Contextual Entity_ that provides some information about the Organization such as its name and web address.
 
 
 ```
@@ -135,8 +159,9 @@ The publisher of this Dataset SHOULD be indicated using the property `publisher`
 }
 ```
 
+The section on [root data entity](root-data-entity.md) explores further the required and recommended properties of the root `./`.
 
-There is more information about providing information on data context in the section on Contextual Entities, which includes how to provide links to authors and their affiliations, etc.
+You may notice the subtle difference between a _data entity_ that is conceptually part of the RO-Crate and is file-like (containing bytes), while this _contextual entity_ is a representation of a real-life organization that can't be downloaded, following the URL we would only get its _description_. The section [contextual entities](contextual-entities.md) explores several of the entities that can be added to the RO-Crate to provide it with a **context**, for instance how to link to authors and their affiliations.  Simplifying slightly, a data entity is referenced from `hasPart` in a `Dataset`, while a contextual entity is referenced using any other defined property.
 
 
 ## HTML preview
