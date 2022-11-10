@@ -274,6 +274,6 @@ Depending on requirements it may be beneficial to combine these approaches - for
 
 Currently an RO-Crate profile is in the form of an informal documentation for humans rather than machine-readable.
 
-Next version of the RO-Crate specification 1.2 will [formalize RO-Crate profiles](researchobject.org/ro-crate/1.2-DRAFT/profiles) as a **Profile Crate** - an RO-Crate that defines the profile. See the [Workflow Profile Crate](https://about.workflowhub.eu/Workflow-RO-Crate/ro-crate-preview.html) as example.
+Next version of the RO-Crate specification 1.2 will [formalize RO-Crate profiles](1.2-DRAFT/profiles) as a **Profile Crate** - an RO-Crate that defines the profile. See the [Workflow Profile Crate](https://about.workflowhub.eu/Workflow-RO-Crate/ro-crate-preview.html) as example.
 
 
