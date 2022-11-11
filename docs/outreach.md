@@ -41,6 +41,48 @@ _Data Science_ **5**(2)
 
 ### 2022
 
+Aben G, Hößelbarth J (2022):  
+[**Starting FDO in the Cradle -- ROcrating Live Data**](https://doi.org/10.3897/rio.8.e95972).  
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)
+_Research Ideas and Outcomes_ **8**: e95972.  
+[[poster](https://doi.org/10.5281/zenodo.7310739)]
+<https://doi.org/10.3897/rio.8.e95972>
+
+Soiland-Reyes S, Sefton P, Castro LJ, Coppens F, Garijo D, Leo S, Portier M, Groth P (2022):  
+[**Creating lightweight FAIR Digital Objects with RO-Crate**](https://doi.org/10.3897/rio.8.e93937). 
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)
+_Research Ideas and Outcomes_  **8**: e93937.
+[[poster](https://doi.org/10.5281/zenodo.7245315)]
+<https://doi.org/10.3897/rio.8.e93937>
+
+Woolland O, Brack P, Soiland-Reyes S, Scott B, Livermore L (2022):  
+[**Incrementally building FAIR Digital Objects with Specimen Data Refinery workflows**](https://doi.org/10.3897/rio.8.e94349).  
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)
+_Research Ideas and Outcomes_  **8**: e94349.
+[[poster](https://doi.org/10.5281/zenodo.7233688)]
+<https://doi.org/10.3897/rio.8.e94349>
+
+De Geest P, Coppens F, Soiland-Reyes S, Eguinoa I, Leo S (2022):  
+[**Enhancing RDM in Galaxy by integrating RO-Crate**](https://doi.org/10.3897/rio.8.e95164).  
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)
+_Research Ideas and Outcomes_  **8**: e95164.
+[[poster](https://doi.org/10.5281/zenodo.7257146)]
+<https://doi.org/10.3897/rio.8.e95164>
+ 
+Giraldo O, Alves R, Bampalikis D, Fernandez JM, Martin del Pico E, Psomopoulos FE, Via A, Castro LJ (2022):
+[**A FAIRification roadmap for ELIXIR Software Management Plans**](https://doi.org/10.3897/rio.8.e94608).  
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)
+_Research Ideas and Outcomes_  **8**: e94608.
+[[poster](https://doi.org/10.5281/zenodo.7249674)]
+<https://doi.org/10.3897/rio.8.e94608>
+ 
+Niehues A, de Visser C, Hagenbeek FA, Karu N, Kindt ASD, Kulkarni P, Pool R, Boomsma DI, van Dongen J, van Gool AJ, 't Hoen PAC (2022):
+[**A Multi-omics Data Analysis Workflow Packaged as a FAIR Digital Object**](https://doi.org/10.3897/rio.8.e94042).  
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)
+_Research Ideas and Outcomes_  **8**: e94042.  
+[[poster](https://doi.org/10.5281/zenodo.7303932)]
+<https://doi.org/10.3897/rio.8.e94042>
+
 Renske de Wit (2022):  
 [**A Non-Intimidating Approach to Workflow Reproducibility in Bioinformatics**: Adding Metadata to Research Objects through the Design and Evaluation of Use-Focused Extensions to CWLProv](https://doi.org/10.5281/zenodo.7113250).  
 Master thesis, _Vrije Universiteit Amsterdam_ / _Zenodo_.  
