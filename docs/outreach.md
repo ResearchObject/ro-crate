@@ -29,6 +29,9 @@ title: Outreach and Publications
 
 _Feel free to add to this page, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 
+## Zenodo community
+
+Please submit your RO-Crate-related contributions (including RO-Crate deposits!) to the [Zenodo ResearchObject community](https://zenodo.org/communities/ro/).
 
 ## Cite RO-Crate
 
