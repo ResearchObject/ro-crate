@@ -23,7 +23,6 @@ parent: RO-Crate 1.2-DRAFT
 
 # Introduction
 
-
 This document specifies a method, known as _RO-Crate_ (Research Object Crate), of aggregating and describing data for distribution, re-use, publishing, preservation and archiving. RO-Crates aggregate data into a Dataset, and may describe any resource including files, URI-addressable resources, or use other addressing schemes to locate digital or physical data. Describing resources includes technical metadata such as file sizes and types as well as contextual information including how datasets and files were created, and where, how they were collated and collected, who was involved in the process, what equipment and software was who funded the work, how to cite it, and crucially, how it may be reused, and by whom.
 
 The core of RO-Crate is a machine-readable linked-data document in JSON-LD format known as an **RO-Crate Metadata Document**. RO-Crate metadata documents can to a large extent be created and processed just like any other JSON, knowledge of JSON-LD is not needed unless extending RO-Crate with additional concepts or combining RO-Crate with other Linked Data technologies.
@@ -45,34 +44,48 @@ In the example below, a single file `data.csv` is placed with the RO-Crate Metad
 
 The presence of the `ro-crate-metadata.json` file means that `crate-dir` and its children can now be considered to be an **RO-Crate**.
 
-In this example, the content of the RO Crate Metadata document is:
+In this running example, the content of the RO Crate Metadata document is:
 
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.1/context", 
+{ "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context", 
   "@graph": [
 
   {
-    "@type": "CreativeWork",
     "@id": "ro-crate-metadata.json",
+    "@type": "CreativeWork",
     "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
     "about": {"@id": "./"}
   },  
   {
     "@id": "./",
     "@type": "Dataset",
-    "datePublished": "2022-12-01",
     "name": "Example dataset for RO-Crate specification",
     "description": "Official rainfall readings for Katoomba, NSW 2022, Australia",
+    "datePublished": "2022-12-01",
+    "publisher": {"@id": "https://ror.org/04dkp1p98"},
     "hasPart": [ {"@id": "data.csv"} ]
   },
   {
     "@id": "data.csv",
     "@type": "File",
-    "encodingFormat": "text/csv",
     "name": "Rainfall data for Katoomba, NSW Australia February 2022",
-    "license": "CC BY-NC-SA 3.0 AU"
-  }
+    "encodingFormat": "text/csv",
+    "license": { "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/" }
+  },
+  {
+    "@id": "https://ror.org/04dkp1p98",
+    "@type": "Organization",
+    "name": "Bureau of Meteorology",
+    "description": "Australian Government Bureau of Meteorology",
+    "url": "http://www.bom.gov.au/"
+ },
+ {
+    "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
+    "@type": "CreativeWork",
+    "name": "CC BY-NC-SA 3.0 AU",
+    "description": "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia"
+ } 
  ]
 }
 ```
@@ -86,18 +99,16 @@ The first JSON-LD _entity_ in our example above has the @id `ro-crate-metadata.j
 
 ```json
 {
-    "@type": "CreativeWork",
     "@id": "ro-crate-metadata.json",
+    "@type": "CreativeWork",
     "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
     "about": {"@id": "./"}
 }
 ```
 
-This required entity, known as the *RO-Crate Metadata Descriptor*, self-identifies this file as an RO-Crate Metadata Document, that is conforming to the RO-Crate version 1.2-DRAFT specification (`conformsTo`). The descriptor also indicates via the `about` property which entity in the `@graph` array is the _RO-Crate Root Dataset_, that is, the starting point of this RO-Crate. We can visualise this as:
+This required entity, known as the *RO-Crate Metadata Descriptor*, self-identifies this file as an RO-Crate Metadata Document, which is conforming to the RO-Crate version 1.2-DRAFT specification (`conformsTo`). The descriptor also indicates via the `about` property which entity in the `@graph` array is the _RO-Crate Root Dataset_, that is, the starting point of this RO-Crate. We can visualise this as:
 
-
-![alt_text](images/image1.png "image_tooltip")
-
+![JSON block with id "ro-crate-metadata.json" has some attributes, "conforms to" RO-Crate 1.2, and "about" with id "./"/. In second JSON block with id "./" we see additional attributes such as its name and description](../assets/img/introduction-figure-1.svg 'Figure 1 showing RO-Crate Metadata descriptor's "about" property pointing at the RO-Crate Root entity with matching "@id"')
 
 By convention, in RO-Crate the `@id` value of  `./` means that this document describes the directory of content in which the RO-Crate metadata is located as in the example above. This reference from `ro-crate-metadata.json` is therefore marking the `crate-dir` directory as being the RO-Crate root.
 
@@ -111,62 +122,64 @@ In RO-Crate Metadata Files, entities are cross-referenced using `@id` reference 
 {
     "@id": "./",
     "@type": "Dataset",
-    "…": "",
+    "…": "…",
     "hasPart": [ {"@id": "data.csv"} ]
 }
 ```
 
-The root is always typed `Dataset` and have several metadata properties that describe the RO-Crate as a whole, as a collection of resources.
+The root is always typed `Dataset` and have several metadata properties that describe the RO-Crate as a whole, as a collection of resources. The section on [root data entity](root-data-entity.md) explores further the required and recommended properties of the root `./`.
 
-A main type of resources collected are _data_ -- retrievable files. These are aggregated by the Root Dataset with the `hasPart` property. In this example we have an array with a single value, a reference to the entity describing the file `data.csv`. 
+A main type of resources collected are _data_ -- simplified we can consider data as any kind of file that can be opened in other programs. These are aggregated by the Root Dataset with the `hasPart` property. In this example we have an array with a single value, a reference to the entity describing the file `data.csv`. 
 
-Again following the `@id` reference for this _data entity_, we see it has `@type` value of `File` and additional metadata such as `encodingFormat`. It is recommended that every entity has a human readable `name`, which as shown in this example, do not need t omatch the filename/identifier.
+{: .tip}
+RO-Crates can also contain data entities that are folders and Web resources, as well as non-File-like data like online databases -- see section on [data entities](data-entitites.md).
+
+
+![JSON block with id "./" has an array under "has part", listing id "data.csv". In second JSON block with id "data.csv" we see it is typed "File" and have other properties](../assets/img/introduction-figure-2.svg 'Figure 2 showing RO-Crate Root entity referencing the data entity with "@id" identifier "data.csv"')
+
+If we now follow the `@id` reference for the corresponding _data entity_ JSON block, we see it has `@type` value of `File` and additional metadata such as `encodingFormat`. It is recommended that every entity has a human readable `name`, which as shown in this example, do not need to match the filename/identifier. The `encodingFormat` indicates the media file type so that consumers of the crate can open `data.csv` in an appropriate program.
 
 
 ```json
-  {
-    "@id": "data.csv",
-    "@type": "File",
-    "name": "Rainfall data for Katoomba, NSW Australia February 2022",
-    "encodingFormat": "text/csv",
-    "…": "",
-    "license": "CC BY-NC-SA 3.0 AU"
-  }
+{
+  "@id": "data.csv",
+  "@type": "File",
+  "name": "Rainfall data for Katoomba, NSW Australia February 2022",
+  "encodingFormat": "text/csv",
+  "license": { "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/" }
+},
 ```
 
-For more information on describing files and directories, see section on [data entities](data-entitites.md)
+For more information on describing files and directories, including their recommended and required attributes, see section on [data entities](data-entitites.md).
 
-![alt_text](images/image2.png "image_tooltip")
 
 Moving back to the RO-Crate root `./`, the publisher of this Dataset should be indicated using the property `publisher` using a URI to identify the `Organization`, linking to what is known as a _Contextual Entity_ that provides some information about the Organization such as its name and web address.
 
 
-```
+```json
 {
     "@id": "./",
     "@type": "Dataset",
     "publisher": {"@id": "https://ror.org/04dkp1p98"},
-…
+    "…": "…"
  }
 
 {
    "@id": "https://ror.org/04dkp1p98",
-   "@type": "Organization"
+   "@type": "Organization",
    "name": "Bureau of Meteorology",
-   "description: "Australian Government Bureau of Meteorology",
-   "URL": "http://www.bom.gov.au/"
-
+   "description": "Australian Government Bureau of Meteorology",
+   "url": "http://www.bom.gov.au/"
 }
 ```
 
-The section on [root data entity](root-data-entity.md) explores further the required and recommended properties of the root `./`.
 
 You may notice the subtle difference between a _data entity_ that is conceptually part of the RO-Crate and is file-like (containing bytes), while this _contextual entity_ is a representation of a real-life organization that can't be downloaded, following the URL we would only get its _description_. The section [contextual entities](contextual-entities.md) explores several of the entities that can be added to the RO-Crate to provide it with a **context**, for instance how to link to authors and their affiliations.  Simplifying slightly, a data entity is referenced from `hasPart` in a `Dataset`, while a contextual entity is referenced using any other defined property.
 
 
 ## HTML preview
 
-For distribution on disk or in packaged format such as a zip file or disk image, or when placed on a plain-old website an RO-Crate SHOULD have an accompanying HTML version which is designed to be readable for people. The contents of this may vary and may be generated automatically from the RO-Crate Metadata Document, or by hand.
+An RO-Crate can be distributed on disk, in packaged format such as a zip file or disk image, or placed on a static website. In any of these casesm an RO-Crate should have an accompanying HTML version (`ro-crate-metadata.html`), which is designed to be readable for people. The exact contents of the preview may vary but should correspond to the RO-Crate Metadata file content and link to the contained data entities. The preview may be generated automatically from the RO-Crate Metadata Document (see [RO-Crate tools](../../tools/)), or even by hand (equivalent to a README).
 
 TODO: Screenshot and links to examples.
 
