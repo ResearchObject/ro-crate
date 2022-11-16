@@ -64,6 +64,7 @@ In this running example, the content of the RO Crate Metadata document is:
     "description": "Official rainfall readings for Katoomba, NSW 2022, Australia",
     "datePublished": "2022-12-01",
     "publisher": {"@id": "https://ror.org/04dkp1p98"},
+    "license": { "@id": "http://spdx.org/licenses/CC0-1.0" },
     "hasPart": [ {"@id": "data.csv"} ]
   },
   {
@@ -181,7 +182,9 @@ You may notice the subtle difference between a _data entity_ that is conceptuall
 
 An RO-Crate can be distributed on disk, in packaged format such as a zip file or disk image, or placed on a static website. In any of these casesm an RO-Crate should have an accompanying HTML version (`ro-crate-metadata.html`), which is designed to be readable for people. The exact contents of the preview may vary but should correspond to the RO-Crate Metadata file content and link to the contained data entities. The preview may be generated automatically from the RO-Crate Metadata Document (see [RO-Crate tools](../../tools/)), or even by hand (equivalent to a README).
 
-TODO: Screenshot and links to examples.
+Below is a [preview of the running example](examples/rainfall-1.2.0/ro-crate-preview.html):
+
+![Example dataset for RO-Crate specification](../assets/img/ro-crate-preview-example.png 'Figure 3 showing RO-Crate preview of the running example')
 
 
 ## Overview of specification
