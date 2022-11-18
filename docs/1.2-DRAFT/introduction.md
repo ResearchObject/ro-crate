@@ -111,9 +111,10 @@ This required entity, known as the *RO-Crate Metadata Descriptor*, self-identifi
 
 <figure id="figure2">
 <object type="image/svg+xml" data="../assets/img/introduction-figure-1.svg">
-JSON block with id "ro-crate-metadata.json" has some attributes, "conforms to" RO-Crate 1.2, and "about" with id "./"/. In second JSON block with id "./" we see additional attributes such as its name and description
+JSON block with id <code>ro-crate-metadata.json</code> has some attributes, `conformsTo` RO-Crate 1.2, and <code>about</code> referencing id <code>./</code>. 
+In second JSON block with id <code>./</code> we see additional attributes such as its name and description.
 </object>
-<figcaption>Figure 1: showing RO-Crate Metadata descriptor's <code>"about"</code> property pointing at the RO-Crate Root entity with matching <code>"@id"</code></figcaption>
+<figcaption>Figure 1: showing RO-Crate Metadata descriptor's <code>about</code> property pointing at the RO-Crate Root entity with matching <code>@id</code></figcaption>
 </figure>
 
 By convention, in RO-Crate the `@id` value of  `./` means that this document describes the directory of content in which the RO-Crate metadata is located as in the example above. This reference from `ro-crate-metadata.json` is therefore marking the `crate-dir` directory as being the RO-Crate root.
@@ -142,9 +143,9 @@ RO-Crates can also contain data entities that are folders and Web resources, as 
 
 <figure id="figure2">
 <object type="image/svg+xml" data="../assets/img/introduction-figure-2.svg">
-JSON block with id "./" has an array under "has part", listing id "data.csv". In second JSON block with id "data.csv" we see it is typed "File" and have other properties.
+JSON block with id <code>./</code> has an array under  <code>hasPart</code> listing id <code>data.csv</code>. In second JSON block with id <code>data.csv</code> we see it is typed <code>File</code> and have other properties.
 </object>
-<figcaption>Figure 2: RO-Crate Root entity referencing the data entity with "@id" identifier "data.csv"</figcaption>
+<figcaption>Figure 2: RO-Crate Root entity referencing the data entity with <code>@id</code> identifier <code>data.csv</code></figcaption>
 </figure>
 
 If we now follow the `@id` reference for the corresponding _data entity_ JSON block, we see it has `@type` value of `File` and additional metadata such as `encodingFormat`. It is recommended that every entity has a human readable `name`, which as shown in this example, do not need to match the filename/identifier. The `encodingFormat` indicates the media file type so that consumers of the crate can open `data.csv` in an appropriate program.
