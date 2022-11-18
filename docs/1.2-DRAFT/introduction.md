@@ -29,20 +29,20 @@ The core of RO-Crate is a machine-readable linked-data document in JSON-LD forma
 
 This page introduces the general RO-Crate concepts through a running example, while the normative pages in the rest of the RO-Crate specification define in more detail these and other concepts using separate examples and recommendations.
 
-## An initial RO-Crate
+## Walkthrough: An initial RO-Crate
 
 In the simplest form, to describe some data on disk, an RO-Crate Metadata Document named `ro-crate-metadata.json` is placed in a directory alongside a set of files or directories. 
 
-In the example below, a single file `data.csv` is placed with the RO-Crate Metadata Document in a directory named for instance `crate-dir`:
+In the example below, a single file `data.csv` is placed with the RO-Crate Metadata Document in a directory named `crate1`:
 
+<figure>
+  <img src="../assets/img/crate1-folders.png" alt="Folder listing of crate1, including data.csv and ro-crate-metadata.json" style="max-height: 5em;" />
+  <figcaption>Figure 1: Any folder can be made into an RO-Crate by adding <code>ro-crate-metadata.json</code></figcaption>
+</figure>
 
-```
-— crate-dir / 
-            | - data.csv
-            | - ro-crate-metadata.json
-```
+The presence of the `ro-crate-metadata.json` file means that `crate1` and its children can now be considered to be an **RO-Crate**.
 
-The presence of the `ro-crate-metadata.json` file means that `crate-dir` and its children can now be considered to be an **RO-Crate**.
+### Running example
 
 In this running example, the content of the RO Crate Metadata document is:
 
@@ -91,9 +91,13 @@ In this running example, the content of the RO Crate Metadata document is:
 }
 ```
 
-The pre-amble of `@context` and `@graph` are JSON-LD structures that help provide global identifiers to the JSON keys and types used in the rest of the RO-Crate document. These will largely map to definitions in the [schema.org](http://schema.org/) vocabulary, which can be used by RO-Crate extensions to provide additional metadata beyond the RO-Crate specifications. It is this feature of JSON-LD that helps make RO-Crate extensible for many different purposes -- this is explored further in [appendix on JSON-LD](appendix/jsonld.md).
+### JSON-LD preamble
 
-However, in the general case it should be sufficient to follow the RO-Crate JSON examples directly without deeper JSON-LD understanding. In short, an RO-Crate metadata file contains a flat list of _entities_ as objects in the `@graph` array. These entities are cross-related using `@id` identifiers rather than being deeply nested.
+The preamble of `@context` and `@graph` are JSON-LD structures that help provide global identifiers to the JSON keys and types used in the rest of the RO-Crate document. These will largely map to definitions in the [schema.org](http://schema.org/) vocabulary, which can be used by RO-Crate extensions to provide additional metadata beyond the RO-Crate specifications. It is this feature of JSON-LD that helps make RO-Crate extensible for many different purposes -- this is explored further in [appendix on JSON-LD](appendix/jsonld.md).
+
+However, in the general case it should be sufficient to follow the RO-Crate JSON examples directly without deeper JSON-LD understanding. In short, an RO-Crate metadata file contains a flat list of _entities_ as objects in the `@graph` array. These entities are cross-referenced using `@id` identifiers rather than being deeply nested.
+
+### RO-Crate Metadata descriptor 
 
 The first JSON-LD _entity_ in our example above has the @id `ro-crate-metadata.json`:
 
@@ -107,20 +111,28 @@ The first JSON-LD _entity_ in our example above has the @id `ro-crate-metadata.j
 }
 ```
 
-This required entity, known as the *RO-Crate Metadata Descriptor*, self-identifies this file as an RO-Crate Metadata Document, which is conforming to the RO-Crate version 1.2-DRAFT specification (`conformsTo`). The descriptor also indicates via the `about` property which entity in the `@graph` array is the _RO-Crate Root Dataset_, that is, the starting point of this RO-Crate. We can visualise this as:
+This required entity, known as the *RO-Crate Metadata Descriptor*, helps this file self-identify as an RO-Crate Metadata Document, which is conforming to (`conformsTo`) the RO-Crate specification version 1.2-DRAFT. 
+
+The descriptor also indicates via the `about` property which entity in the `@graph` array is the _RO-Crate Root Dataset_ -- the starting point of this RO-Crate. 
+
+### RO-Crate Root
+
+We can visualise how the above entity references the **RO-Crate Root** as:
 
 <figure id="figure2">
 <object type="image/svg+xml" data="../assets/img/introduction-figure-1.svg">
 JSON block with id <code>ro-crate-metadata.json</code> has some attributes, `conformsTo` RO-Crate 1.2, and <code>about</code> referencing id <code>./</code>. 
 In second JSON block with id <code>./</code> we see additional attributes such as its name and description.
 </object>
-<figcaption>Figure 1: showing RO-Crate Metadata descriptor's <code>about</code> property pointing at the RO-Crate Root entity with matching <code>@id</code></figcaption>
+<figcaption>Figure 2: showing RO-Crate Metadata descriptor's <code>about</code> property pointing at the RO-Crate Root entity with matching <code>@id</code></figcaption>
 </figure>
 
-By convention, in RO-Crate the `@id` value of  `./` means that this document describes the directory of content in which the RO-Crate metadata is located as in the example above. This reference from `ro-crate-metadata.json` is therefore marking the `crate-dir` directory as being the RO-Crate root.
+By convention, in RO-Crate the `@id` value of  `./` means that this document describes the directory of content in which the RO-Crate metadata is located as in the example above. This reference from `ro-crate-metadata.json` is therefore marking the `crate1` directory as being the RO-Crate root.
 
 {: .note }
 This example is a directory-based RO-Crate stored on disk. If the crate is being served from a Web service, such as a data repository or database where files are not organized in directories, then the `@id` might be an absolute URI instead of `"./"` -- see section [Root Data Entity](root-data-entity.md) for details
+
+### About cross-references
 
 In RO-Crate Metadata Files, entities are cross-referenced using `@id` reference objects, rather than using deeply nested JSON objects. In short this _flattened JSON-LD_ style allows any entity to reference any other entity, and for RO-Crate consumers to directly find all the descriptions of an entity within a single JSON object. So let's have a look at the Root Data Entity `./`:
 
@@ -136,6 +148,8 @@ In RO-Crate Metadata Files, entities are cross-referenced using `@id` reference 
 
 The root is always typed `Dataset` and have several metadata properties that describe the RO-Crate as a whole, as a collection of resources. The section on [root data entity](root-data-entity.md) explores further the required and recommended properties of the root `./`.
 
+### Data entities
+
 A main type of resources collected are _data_ -- simplified we can consider data as any kind of file that can be opened in other programs. These are aggregated by the Root Dataset with the `hasPart` property. In this example we have an array with a single value, a reference to the entity describing the file `data.csv`. 
 
 {: .tip}
@@ -145,7 +159,7 @@ RO-Crates can also contain data entities that are folders and Web resources, as 
 <object type="image/svg+xml" data="../assets/img/introduction-figure-2.svg">
 JSON block with id <code>./</code> has an array under  <code>hasPart</code> listing id <code>data.csv</code>. In second JSON block with id <code>data.csv</code> we see it is typed <code>File</code> and have other properties.
 </object>
-<figcaption>Figure 2: RO-Crate Root entity referencing the data entity with <code>@id</code> identifier <code>data.csv</code></figcaption>
+<figcaption>Figure 3: RO-Crate Root entity referencing the data entity with <code>@id</code> identifier <code>data.csv</code></figcaption>
 </figure>
 
 If we now follow the `@id` reference for the corresponding _data entity_ JSON block, we see it has `@type` value of `File` and additional metadata such as `encodingFormat`. It is recommended that every entity has a human readable `name`, which as shown in this example, do not need to match the filename/identifier. The `encodingFormat` indicates the media file type so that consumers of the crate can open `data.csv` in an appropriate program.
@@ -163,6 +177,8 @@ If we now follow the `@id` reference for the corresponding _data entity_ JSON bl
 
 For more information on describing files and directories, including their recommended and required attributes, see section on [data entities](data-entitites.md).
 
+
+### Contextual entities
 
 Moving back to the RO-Crate root `./`, the publisher of this Dataset should be indicated using the property `publisher` using a URI to identify the `Organization`, linking to what is known as a _Contextual Entity_ that provides some information about the Organization such as its name and web address.
 
