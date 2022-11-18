@@ -13,6 +13,11 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+<defs>
+<style type="text/css"><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Roboto+Slab:wght@400;700&amp;display=swap');
+]]></style>
+</defs>
   <sodipodi:namedview
      id="namedview137"
      pagecolor="#ffffff"
