@@ -116,7 +116,7 @@ be minimally valid.
 
 The _Root Data Entity_ MUST have the following properties:
 
-*  `@type`: MUST be [Dataset]
+*  `@type`: MUST have [Dataset] as one of its values
 *  `@id`:  MUST end with `/` and SHOULD be the string `./`
 *  `name`: SHOULD identify the dataset to humans well enough to disambiguate it from other RO-Crates
 *  `description`: SHOULD further elaborate on the name to provide a summary of the context in which the dataset is important.
@@ -130,7 +130,7 @@ The _Root Data Entity_ MUST have the following properties:
 {: .warning }
 > The properties above are not sufficient to generate a [DataCite][DataCite Schema] citation. Advice on integrating with [DataCite] will be provided in a future version of this specification, or as an implementation guide.
 
-Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be added to further describe the RO-Crate as a whole, e.g. [author], [abstract], [publisher]. See sections [contextual entities](contextual-entities.md) and [provenance](provenance.md) for further details.
+Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be added to further describe the RO-Crate as a whole, e.g. [creator], [author], [abstract], [publisher]. See sections [contextual entities](contextual-entities.md) and [provenance](provenance.md) for further details.
 
 ## Minimal example of RO-Crate
 

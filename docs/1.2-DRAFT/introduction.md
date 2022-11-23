@@ -146,7 +146,7 @@ In RO-Crate Metadata Files, entities are cross-referenced using `@id` reference 
 }
 ```
 
-The root is always typed `Dataset` and have several metadata properties that describe the RO-Crate as a whole, as a collection of resources. The section on [root data entity](root-data-entity.md) explores further the required and recommended properties of the root `./`.
+The root is always has `Dataset` as one of its values, though it may have more than one type. It has several metadata properties that describe the RO-Crate as a whole, as a collection of resources. The section on [root data entity](root-data-entity.md) explores further the required and recommended properties of the root `./`.
 
 ### Data entities
 
@@ -199,7 +199,6 @@ Moving back to the RO-Crate root `./`, the publisher of this Dataset should be i
    "url": "http://www.bom.gov.au/"
 }
 ```
-
 
 You may notice the subtle difference between a _data entity_ that is conceptually part of the RO-Crate and is file-like (containing bytes), while this _contextual entity_ is a representation of a real-life organization that can't be downloaded, following the URL we would only get its _description_. The section [contextual entities](contextual-entities.md) explores several of the entities that can be added to the RO-Crate to provide it with a **context**, for instance how to link to authors and their affiliations.  Simplifying slightly, a data entity is referenced from `hasPart` in a `Dataset`, while a contextual entity is referenced using any other defined property.
 
