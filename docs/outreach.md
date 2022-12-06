@@ -145,6 +145,11 @@ Marc Portier (2022):
 [**Data Publishing with RO-Crate and git**](https://docs.google.com/presentation/d/1Li9tfcEnHgz_EUIsPcW6gry04cqaztr4hDjYa89JA80/edit).  
 _[Open Belgium 2022](https://2022.openbelgium.be/)_, 2022-04-29.
 
+Luiz Gadelha, Martin Hohmuth, Mahnoor Zulfiqar, David Schöne, Sheeba Samuel, Maria Sorokina, Christoph Steinbeck, Birgitta König-Ries (2022):  
+[**Toward a Framework for Integrative, FAIR, and Reproducible Management of Data on the Dynamic Balance of Microbial Communities**](https://doi.org/10.48550/arXiv.2207.06890).  
+_arXiv_ 2207.06890 [cs.DB]  
+<https://doi.org/10.48550/arXiv.2207.06890>
+
 ## 2021
 
 Jeremy Leipzig, Daniel Nüst, Charles Tapley Hoyt, Karthik Ram, Jane Greenberg (2021):  
