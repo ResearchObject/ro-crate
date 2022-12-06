@@ -104,6 +104,12 @@ Alex Hardisty, Paul Brack, Carole Goble, Laurence Livermore, Ben Scott, Quentin 
 _Data Intelligence_ **4**(2)  
 <https://doi.org/10.1162/dint_a_00134>
 
+Marc Portier, Cedric Decruw, Katrina Exter, Rory Meyer, Lennert Tyberghein, Laurian Van Maldeghem (2022):  
+**Contemporary Data Management for Biodiversity Observation Networks leading to Linked Open Data Publishing through Distributed Techniques applying RO-Crate and GitHub Actions**.  
+_Biodiversity Information Standards_ ([TDWG 2022](https://www.tdwg.org/conferences/2022/)), Sofia, Bulgaria.  
+_Biodiversity Information Science and Standards_ **6**:e94630  
+<https://doi.org/10.3897/biss.6.94630>
+
 Amirpasha Mozaffari, Michael Langguth, Bing Gong, Jessica Ahring, Adrian Rojas Campos, Pascal Nieters, Otoniel José Campos Escobar, Martin Wittenbrink,
 Peter Baumann, Martin G. Schultz (2022):  
 [**HPC-oriented Canonical Workflows for Machine Learning Applications in Climate and Weather Prediction**](https://doi.org/10.1162/dint_a_00131).  
