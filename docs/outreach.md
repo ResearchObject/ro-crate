@@ -44,53 +44,64 @@ _Data Science_ **5**(2)
 
 ### 2022
 
+Justin Clark-Casey, Stian Soiland-Reyes (2022):  
+[**Making EOSC Research Objects FAIR with RO-Crate: A common metadata overlay for EOSC repositories**](https://doi.org/10.5281/zenodo.7323480).  
+_[EOSC Symposium 2022](https://events.eoscfuture.eu/symposium2022/programme)_, Prague, CZ, 2022-11-14 / --17  
+<https://doi.org/10.5281/zenodo.7323480>
+
+Carole Goble, Stian Soiland-Reyes (2022):  
+[**RO-Crate: packaging metadata love notes into FAIR Digital Objects**](https://events.hifis.net/event/469/timetable/#9-ro-crate-packaging-metadata). (Keynote)  
+_Helmholtz Metadata Collaboration conference 2022_, virtual, 2022-10-05.  
+<https://doi.org/10.5281/zenodo.7147703>
+
 Aben G, Hößelbarth J (2022):  
 [**Starting FDO in the Cradle -- ROcrating Live Data**](https://doi.org/10.3897/rio.8.e95972).  
-1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)
-_Research Ideas and Outcomes_ **8**: e95972.  
-[[poster](https://doi.org/10.5281/zenodo.7310739)]
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
+_Research Ideas and Outcomes_ **8**: e95972  
 <https://doi.org/10.3897/rio.8.e95972>
+[[poster](https://doi.org/10.5281/zenodo.7310739)]  
 
 Soiland-Reyes S, Sefton P, Castro LJ, Coppens F, Garijo D, Leo S, Portier M, Groth P (2022):  
 [**Creating lightweight FAIR Digital Objects with RO-Crate**](https://doi.org/10.3897/rio.8.e93937). 
-1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)
-_Research Ideas and Outcomes_  **8**: e93937.
-[[poster](https://doi.org/10.5281/zenodo.7245315)]
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
+_Research Ideas and Outcomes_  **8**: e93937  
 <https://doi.org/10.3897/rio.8.e93937>
+[[poster](https://doi.org/10.5281/zenodo.7245315)]
 
 Woolland O, Brack P, Soiland-Reyes S, Scott B, Livermore L (2022):  
 [**Incrementally building FAIR Digital Objects with Specimen Data Refinery workflows**](https://doi.org/10.3897/rio.8.e94349).  
-1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)
-_Research Ideas and Outcomes_  **8**: e94349.
-[[poster](https://doi.org/10.5281/zenodo.7233688)]
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
+_Research Ideas and Outcomes_  **8**: e94349  
 <https://doi.org/10.3897/rio.8.e94349>
+[[poster](https://doi.org/10.5281/zenodo.7233688)]
 
 De Geest P, Coppens F, Soiland-Reyes S, Eguinoa I, Leo S (2022):  
 [**Enhancing RDM in Galaxy by integrating RO-Crate**](https://doi.org/10.3897/rio.8.e95164).  
-1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)
-_Research Ideas and Outcomes_  **8**: e95164.
-[[poster](https://doi.org/10.5281/zenodo.7257146)]
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
+_Research Ideas and Outcomes_  **8**: e95164  
 <https://doi.org/10.3897/rio.8.e95164>
+[[poster](https://doi.org/10.5281/zenodo.7257146)] 
  
-Giraldo O, Alves R, Bampalikis D, Fernandez JM, Martin del Pico E, Psomopoulos FE, Via A, Castro LJ (2022):
+Giraldo O, Alves R, Bampalikis D, Fernandez JM, Martin del Pico E, Psomopoulos FE, Via A, Castro LJ (2022):  
 [**A FAIRification roadmap for ELIXIR Software Management Plans**](https://doi.org/10.3897/rio.8.e94608).  
-1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)
-_Research Ideas and Outcomes_  **8**: e94608.
-[[poster](https://doi.org/10.5281/zenodo.7249674)]
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
+_Research Ideas and Outcomes_  **8**: e94608  
 <https://doi.org/10.3897/rio.8.e94608>
+[[poster](https://doi.org/10.5281/zenodo.7249674)]
  
-Niehues A, de Visser C, Hagenbeek FA, Karu N, Kindt ASD, Kulkarni P, Pool R, Boomsma DI, van Dongen J, van Gool AJ, 't Hoen PAC (2022):
+Niehues A, de Visser C, Hagenbeek FA, Karu N, Kindt ASD, Kulkarni P, Pool R, Boomsma DI, van Dongen J, van Gool AJ, 't Hoen PAC (2022):  
 [**A Multi-omics Data Analysis Workflow Packaged as a FAIR Digital Object**](https://doi.org/10.3897/rio.8.e94042).  
-1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
 _Research Ideas and Outcomes_  **8**: e94042.  
-[[poster](https://doi.org/10.5281/zenodo.7303932)]
 <https://doi.org/10.3897/rio.8.e94042>
+[[poster](https://doi.org/10.5281/zenodo.7303932)]
+
+
 
 Renske de Wit (2022):  
 [**A Non-Intimidating Approach to Workflow Reproducibility in Bioinformatics**: Adding Metadata to Research Objects through the Design and Evaluation of Use-Focused Extensions to CWLProv](https://doi.org/10.5281/zenodo.7113250).  
 Master thesis, _Vrije Universiteit Amsterdam_ / _Zenodo_.  
-[[video](https://www.youtube.com/watch?v=IgqOG6IORy4)] [[slides](https://zenodo.org/record/7113250/preview/20220829_Defense_final.pdf)]
-<https://doi.org/10.5281/zenodo.7113250>
+<https://doi.org/10.5281/zenodo.7113250> [[video](https://www.youtube.com/watch?v=IgqOG6IORy4)] [[slides](https://zenodo.org/record/7113250/preview/20220829_Defense_final.pdf)]
 
 Tazro Ohta, Hirotaka Suetake (2022):  
 [**Verifying workflow reproducibility using RO-Crate**](https://youtu.be/LFoX0wnTfuc).  
@@ -532,13 +543,29 @@ See also [publications about Research Objects](https://www.researchobject.org/pu
 
 _To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 
+**[Bioinformatics Open Source Conference](https://www.open-bio.org/events/bosc-2023/)** (BOSC2023)+hackfest, 2023-07-24/--28, ISMB/ECCB 2023, Lyon, France.
 
+**[Galaxy Community Conference 2023](https://galaxyproject.org/gcc/)** (GCC2023), 2023-07-17/--23, Minneapolis, Minnesota, US.
+
+**[Information-communication technologies enhanced Social Sciences and Humanities](https://ictessh.uns.ac.rs/)** (ICTeSSH), June 2023, (location TBD). Workshop proposals by 2023-01-15.
+
+**[20th IEEE International Conference on Software Architecture](https://icsa-conferences.org/2023/)** (ICSA 2023), L'Aquila, Italy, 2023-03-13/--17. [Artifact Evaluation Track](https://icsa-conferences.org/2023/call-for-papers/artifact-evaluation-track/) due 2023-01-08.
+
+**[ELIXIR All Hands 2023](https://elixir-europe.org/events/elixir-all-hands-2023)**, 2023-06-05/--08, Dublin, Ireland. Workshop submissions due 2023-01-23.
+
+**[Open Repositories 2023](https://or2023.openrepositories.org/)** (OR2023), 2023-06-12/--15, Stellenbosch, Cape Town, South Africa. Proposal due 2023-01-15.
+
+**[Semantic Web Applciations and Tools for Health Care and Life Sciences](https://www.swat4ls.org/)** (SWAT4HCLS 2023), 2023-02-13/--16, Basel, CH. 
+
+**[2023 Common Workflow Language Conference](https://cwl.discourse.group/c/cwlcon-2023/13) (CWLCon 2023). 2023-02-27/-03-03, virtual. Talk proposals due 2023-01-16.
+
+**[1st BioHackathon Germany](https://www.denbi.de/de-nbi-events/1454-biohackathon-germany)**. 1st BioHackathon Germany, Lutherstadt Wittenberg - Leucorea, GE, 2022-12-12/--16 incl. project on [DataPLANT](https://www.denbi.de/de-nbi-events/2-uncategorised/1486-dataplant-facilitating-research-data-management-to-combat-the-reproducibility-crisis), [ELIXIR:GA4GH](https://www.denbi.de/de-nbi-events/2-uncategorised/1487-the-elixir-ga4gh-cloud), [FAIR Computational Workflows](https://www.denbi.de/de-nbi-events/2-uncategorised/1484-towards-fair-computational-workflows-improving-provenance-collection)
 
 **[ELIXIR Biohackathon 2022](https://biohackathon-europe.org/)** 2022-11-07/--11, Paris, France. Projects include [Bioschemas](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/5), [Galaxy w/RO-Crate+RDM](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/10), [Linked Open Science](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/17), [Schema.org datafeeds](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/23), [Workflow Execution Service](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/35)
 
 **[International conference on FAIR Digital Objects](https://www.fdo2022.org/)**, 2022-10-26/--28, Leiden, Netherlands incl. talk on [Updating Linked Data practices](https://s11.no/2022/phd/updating-ld-for-fdo/) and posters on [RO-Crate](https://s11.no/2022/phd/fdo-with-ro-crate/), [Galaxy Workflow Run Crate](https://s11.no/2022/phd/galaxy-ro-crate/), [Specimen Data Refinery workflows](https://s11.no/2022/phd/incrementally-building-fdos/)
 
-**[3rd Workshop on Research Objects, Metadata and Management for Linked Open Science - DaMaLOS 2022](https://zbmed.github.io/damalos/)**, 2022-10-23, Co-located with [ISWC 2022](https://iswc2022.semanticweb.org).
+~~[3rd Workshop on Research Objects, Metadata and Management for Linked Open Science - DaMaLOS 2022](https://zbmed.github.io/damalos/)~~ (cancelled)
 
 **[Workshop on Data and Research Objects Management for Linked Open Science](https://zbmed.github.io/damalos/docs/2021.html)** (DaMaLOS) 2021-10-24, _20th International Semantic Web Conference_ (ISWC 2021).
 
