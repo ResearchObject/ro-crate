@@ -194,7 +194,8 @@ MUST describe these properties and their related contextual entities:
 
 The [ComputationalWorkflow profile][ComputationalWorkflow profile 1.0] explains the above and list additional properties that a compliant [ComputationalWorkflow][ComputationalWorkflow 1.0] data entity SHOULD include: [citation], [contributor], [creativeWorkStatus], [description], [funding], [hasPart], [isBasedOn], [keywords], [maintainer], [producer], [publisher], [runtimePlatform], [softwareRequirements], [targetProduct]
 
-A data entity conforming to the [ComputationalWorkflow profile][ComputationalWorkflow profile 1.0] SHOULD declare the versioned profile URI using [conformsTo] [^18]:
+A data entity conforming to the [ComputationalWorkflow profile][ComputationalWorkflow profile 1.0] SHOULD declare the versioned profile URI using the [conformsTo] property [^18]:
+
 
 ```json
 { "@id": "workflow/alignment.knime",  
@@ -363,3 +364,4 @@ The below is an example of an RO-Crate complying with the Bioschemas [Computatio
 ```
 
 {% include references.liquid %}
+
