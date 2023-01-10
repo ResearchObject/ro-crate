@@ -44,6 +44,7 @@ _Data Science_ **5**(2)
 
 ### 2022
 
+
 Justin Clark-Casey, Stian Soiland-Reyes (2022):  
 [**Making EOSC Research Objects FAIR with RO-Crate: A common metadata overlay for EOSC repositories**](https://doi.org/10.5281/zenodo.7323480).  
 _[EOSC Symposium 2022](https://events.eoscfuture.eu/symposium2022/programme)_, Prague, CZ, 2022-11-14 / --17  
@@ -53,6 +54,11 @@ Carole Goble, Stian Soiland-Reyes (2022):
 [**RO-Crate: packaging metadata love notes into FAIR Digital Objects**](https://events.hifis.net/event/469/timetable/#9-ro-crate-packaging-metadata). (Keynote)  
 _Helmholtz Metadata Collaboration conference 2022_, virtual, 2022-10-05.  
 <https://doi.org/10.5281/zenodo.7147703>
+
+Fidan Limani (2022):  
+[**FAIR Digital Objects and Linked Data**](https://www.youtube.com/watch?v=BpUrQYIX2IA).  
+_Semantic Web in Libraries_ ([SWIB22](https://swib.org/swib22/)), 2022-11-28/-12-02  
+<https://www.youtube.com/watch?v=BpUrQYIX2IA>
 
 Aben G, Hößelbarth J (2022):  
 [**Starting FDO in the Cradle -- ROcrating Live Data**](https://doi.org/10.3897/rio.8.e95972).  
