@@ -2,7 +2,7 @@
 title: Outreach and Publications
 ---
 <!--
-   Copyright 2019-2022 The University of Manchester and RO Crate contributors 
+   Copyright 2019-2023 The University of Manchester and RO Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,8 +61,15 @@ _Research Ideas and Outcomes_ **8**: e95972
 <https://doi.org/10.3897/rio.8.e95972>
 [[poster](https://doi.org/10.5281/zenodo.7310739)]  
 
+Stian Soiland-Reyes, Leyla Jael Castro, Daniel Garijo, Marc Portier, Carole Goble, Paul Groth (2022):  
+[**Updating Linked Data practices for FAIR Digital Object principles**](https://doi.org/10.3897/rio.8.e94501).  
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (presentation).  
+_Research Ideas and Outcomes_ **8**:e94501  
+<https://doi.org/10.3897/rio.8.e94501> 
+[[slides](https://doi.org/10.5281/zenodo.7256428)]
+
 Soiland-Reyes S, Sefton P, Castro LJ, Coppens F, Garijo D, Leo S, Portier M, Groth P (2022):  
-[**Creating lightweight FAIR Digital Objects with RO-Crate**](https://doi.org/10.3897/rio.8.e93937). 
+[**Creating lightweight FAIR Digital Objects with RO-Crate**](https://doi.org/10.3897/rio.8.e93937).  
 1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
 _Research Ideas and Outcomes_  **8**: e93937  
 <https://doi.org/10.3897/rio.8.e93937>
@@ -158,7 +165,7 @@ _Data Intelligence_ **4**(2)
 <https://doi.org/10.1162/dint_a_00134>
 
 Marc Portier, Cedric Decruw, Katrina Exter, Rory Meyer, Lennert Tyberghein, Laurian Van Maldeghem (2022):  
-**Contemporary Data Management for Biodiversity Observation Networks leading to Linked Open Data Publishing through Distributed Techniques applying RO-Crate and GitHub Actions**.  
+[**Contemporary Data Management for Biodiversity Observation Networks leading to Linked Open Data Publishing through Distributed Techniques applying RO-Crate and GitHub Actions**](https://doi.org/10.3897/biss.6.94630).  
 _Biodiversity Information Standards_ ([TDWG 2022](https://www.tdwg.org/conferences/2022/)), Sofia, Bulgaria.  
 _Biodiversity Information Science and Standards_ **6**:e94630  
 <https://doi.org/10.3897/biss.6.94630>
