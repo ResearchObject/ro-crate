@@ -46,8 +46,8 @@ _Data Science_ **5**(2)
 
 
 Justin Clark-Casey, Stian Soiland-Reyes (2022):  
-[**Making EOSC Research Objects FAIR with RO-Crate: A common metadata overlay for EOSC repositories**](https://doi.org/10.5281/zenodo.7323480).  
-_[EOSC Symposium 2022](https://events.eoscfuture.eu/symposium2022/programme)_, Prague, CZ, 2022-11-14 / --17  
+[**Making EOSC Research Objects FAIR with RO-Crate**: A common metadata overlay for EOSC repositories](https://doi.org/10.5281/zenodo.7323480).  
+_[EOSC Symposium 2022](https://events.eoscfuture.eu/symposium2022/programme)_  
 <https://doi.org/10.5281/zenodo.7323480>
 
 Carole Goble, Stian Soiland-Reyes (2022):  
@@ -110,11 +110,17 @@ _Research Ideas and Outcomes_  **8**: e94042.
 [[poster](https://doi.org/10.5281/zenodo.7303932)]
 
 
+Hirotaka Suetake, Tsukasa Fukusato, Takeo Igarashi, Tazro Ohta (2022):  
+[**A workflow reproducibility scale for automatic validation of biological interpretation results**](https://doi.org/10.1101/2022.10.11.511695)
+_bioRxiv_ 2022.10.11.511695
+<https://doi.org/10.1101/2022.10.11.511695>
 
 Renske de Wit (2022):  
 [**A Non-Intimidating Approach to Workflow Reproducibility in Bioinformatics**: Adding Metadata to Research Objects through the Design and Evaluation of Use-Focused Extensions to CWLProv](https://doi.org/10.5281/zenodo.7113250).  
 Master thesis, _Vrije Universiteit Amsterdam_ / _Zenodo_.  
 <https://doi.org/10.5281/zenodo.7113250> [[video](https://www.youtube.com/watch?v=IgqOG6IORy4)] [[slides](https://zenodo.org/record/7113250/preview/20220829_Defense_final.pdf)]
+<https://doi.org/10.5281/zenodo.7113250>
+[[video](https://www.youtube.com/watch?v=IgqOG6IORy4)] [[slides](https://zenodo.org/record/7113250/preview/20220829_Defense_final.pdf)]  
 
 Tazro Ohta, Hirotaka Suetake (2022):  
 [**Verifying workflow reproducibility using RO-Crate**](https://youtu.be/LFoX0wnTfuc).  
@@ -134,7 +140,7 @@ _[RO-Crate community call](https://s.apache.org/ro-crate-minutes)_, 2022-08-25.
 <https://doi.org/10.5281/zenodo.7025336>
 
 Abigail Miller (2022):  
-[**BioConnect Data Packages**: Use of RO-Crate, ISA model and Frictionless Data](https://doi.org/10.5281/zenodo.7116702)
+[**BioConnect Data Packages**: Use of RO-Crate, ISA model and Frictionless Data](https://doi.org/10.5281/zenodo.7116702).  
 _[RO-Crate community call](https://s.apache.org/ro-crate-minutes)_, 2022-07-28.  
 [[video](https://youtu.be/p-LdZRU3Cwk)] [[slides](https://zenodo.org/record/7116702/preview/2022-07-28-abigail-miller-bioconnect.pdf)] [[transcript](https://zenodo.org/record/7116702/preview/2022-07-28-transcript.pdf)] [[example](https://zenodo.org/record/7116702/files/example-ro-crate-JAXDP000018.zip)] 
 <https://doi.org/10.5281/zenodo.7116702>
@@ -245,17 +251,19 @@ Marco La Rosa (2021):
 _CS3MESH4EOSC Blog_
 
 
-田辺 浩介, 松田 朝彦 (2021): [**RO-Crateを用いた材料研究データのデータリポジトリへの登録**](http://www.jsik.jp/archive/v31n4.pdf#page=75)  
-Kosuke Tanabe, Asahiko Matsuda (2021) **Ingesting materials research data into a data repository using RO-Crate**  
-_情報知識学会誌_ **31**(4) p. 497-502. 
+田辺 浩介, 松田 朝彦 (2021):  
+[**RO-Crateを用いた材料研究データのデータリポジトリへの登録**](http://www.jsik.jp/archive/v31n4.pdf#page=75)  
+Kosuke Tanabe, Asahiko Matsuda (2021):  
+**Ingesting materials research data into a data repository using RO-Crate**.  
+_情報知識学会誌_ **31**(4) p. 497-502.  
 _Journal of Japan Society of Information and Knowledge (Jōhō Chishiki Gakkaishi)_ **31**(4) pp. 497-502.  
 第26回情報知識学フォーラム予稿  
 26th Information and Knowledge Study Forum, 2021-12-18, Kyoto University, Kyoto, Japan.
-([awaiting DOI](https://www.jstage.jst.go.jp/browse/jsik/list/-char/en))
+<https://doi.org/10.2964/jsik_2021_067>
 
-Myles Axton (2021):
-[**A network database for the human biobank**](https://doi.org/10.1002/ggn2.10049)
-_Advanced Genetics_ **2(2):e10049
+Myles Axton (2021):  
+[**A network database for the human biobank**](https://doi.org/10.1002/ggn2.10049).  
+_Advanced Genetics_ **2(2):e10049  
 <https://doi.org/10.1002/ggn2.10049>
 
 Sonia Natalie Mitchell, Andrew Lahiff, Nathan Cummings, Jonathan Hollocombe, Bram Boskamp, Dennis Reddyhoff, Ryan Field, Kristian Zarebski, Antony Wilson, Martin Burke, Blair Archibald, Paul Bessell, Richard Blackwell, Lisa A Boden, Alys Brett, Sam Brett, Ruth Dundas, Jessica Enright, Alejandra N. Gonzalez-Beltran, Claire Harris, Ian Hinder, Christopher David Hughes, Martin Knight, Vino Mano, Ciaran McMonagle, Dominic Mellor, Sibylle Mohr, Glenn Marion, Louise Matthews, Iain J. McKendrick, Christopher Mark Pooley, Thibaud Porphyre, Aaron Reeves, Edward Townsend, Robert Turner, Jeremy Walton, Richard Reeve (2021):  
@@ -279,37 +287,37 @@ _2nd Workshop on Data and Research Objects Management for Linked Open Science_
 [[article](https://repository.publisso.de/resource/frl:6430056/data)] [[slides](https://repository.publisso.de/resource/frl:6430057/data)] [[ontology](https://w3id.org/survey-ontology)] [[ro-crate](https://doi.org/10.5281/zenodo.5753764)] 
 <https://doi.org/10.4126/FRL01-006429412>
 
-Stian Soiland-Reyes (2021):
-[**RO-Crate — A brief "crash course"**](https://slides.com/soilandreyes/2021-11-23-ro-crate-crash-course/)
+Stian Soiland-Reyes (2021):  
+[**RO-Crate — A brief "crash course"**](https://slides.com/soilandreyes/2021-11-23-ro-crate-crash-course/).  
 _[ELIXIR Data-Interoperability](https://elixir-europe.org/events/data-interoperability-joint-platform-f2f-hybrid-meeting) Joint Platform F2F Hybrid Meeting_, 2021-11-23.
 
-Stian Soiland-Reyes (2021):
-[**Reproducibility; Research Objects (RO-Crate) and Common Workflow Language (CWL)**](https://slides.com/soilandreyes/2021-10-07-reproducibility-research-objects)
+Stian Soiland-Reyes (2021):  
+[**Reproducibility; Research Objects (RO-Crate) and Common Workflow Language (CWL)**](https://slides.com/soilandreyes/2021-10-07-reproducibility-research-objects).  
 _[WoSSS21](https://wosss.org/wosss21/S3-StianSoiland-Reyes):Workshop on Sustainable Software Sustainability_, 2021-10-07.
 [[video recording](https://www.youtube.com/watch?v=vNHqTcHnfyI)]
 
-Stian Soiland-Reyes (2021):
-[**Sharing FAIR Research Objects to improve reproducibility**](http://slides.com/soilandreyes/2021-07-15-sharing-fair-research-objects).
-_ZB-Med Seminar_, 2021-07-15.
+Stian Soiland-Reyes (2021):  
+[**Sharing FAIR Research Objects to improve reproducibility**](http://slides.com/soilandreyes/2021-07-15-sharing-fair-research-objects).  
+_ZB-Med Seminar_, 2021-07-15.  
 [[video recording](https://youtu.be/CL_fqtQRPmw)]
 <https://doi.org/10.5281/zenodo.5105857>
 
-Carole Goble (2021):
-[**FAIR Computational Workflows**](https://www.slideshare.net/carolegoble/fair-computational-workflows-249721518).
+Carole Goble (2021):  
+[**FAIR Computational Workflows**](https://www.slideshare.net/carolegoble/fair-computational-workflows-249721518).  
 _[JOBIM 2021](https://jobim2021.sciencesconf.org/)_ (Journées Ouvertes en Biologie, Informatique et Mathématiques), 2021-07-08
 
-Stian Soiland-Reyes (2021):
-[**RO-Crate, workflows and FAIR Digital Objects**](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo).
+Stian Soiland-Reyes (2021):  
+[**RO-Crate, workflows and FAIR Digital Objects**](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo).  
 _FAIR Digital Object Forum_, [CWFR & FDO SEM meeting](https://osf.io/v8xjz/), 2021-07-02
 [[video recording](https://youtu.be/gTT0m_zQsPU)], [[slides](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo)]
 <https://doi.org/10.5281/zenodo.5060283>
 
-Laura Rodríguez-Navas (2021):
-[**WfExS: a software component to enable the use of RO-Crate in the EOSC-Life collaboratory**](https://osf.io/tb5ku/).
+Laura Rodríguez-Navas (2021):  
+[**WfExS: a software component to enable the use of RO-Crate in the EOSC-Life collaboratory**](https://osf.io/tb5ku/).  
 _FAIR Digital Object Forum_, [CWFR & FDO SEM meeting](https://osf.io/v8xjz/), 2021-07-02
 [[video recording](https://osf.io/wna42/)], [[slides](https://osf.io/tb5ku/)]
 
-Laura Rodríguez-Navas (2021):
+Laura Rodríguez-Navas (2021):  
 [**WfExS: a software component to enable the use of RO-Crate in the EOSC-Life tools collaboratory**](https://repository.eoscsecretariat.eu/index.php/s/ERebmpJcyjFRqcx/download?path=%2F17%20June%2F1400%20-%20Technical%20challenges%20on%20EOSC%2FBreakout%203%20-%20Interoperability%20challenges%20for%20thematic%20communities&files=05%20-%20Laura%20Rodr%C3%ADguez-Navas%20-%20WfExS.pdf&downloadStartSecret=zwwx23xrow).  
 _[EOSC Symposium 2021](https://www.eoscsecretariat.eu/eosc-symposium-2021-programme)_, 2021-06-17
 [[video recording](https://youtu.be/x5lLEym-gug?list=PLbISfqJh3Tstmx6CgrBmYI7lyyVXiY5VE&t=3238)]
@@ -320,18 +328,18 @@ Krzysztof Kurowski, Oscar Corcho, Christine Choirat, Magnus Eriksson, Frederik C
 KI-02-21-055-EN-N. Report from the EOSC Executive Board, Working Groups FAIR and Architecture. _Publications Office of the EU_.  
 <https://doi.org/10.2777/620649>
 
-Oscar Corcho, Raúl Palma, Daniel Garijo (2021):
-[**Metadata models and Research Objects for Earth Observation Data Cubes**](https://repository.eoscsecretariat.eu/index.php/s/ERebmpJcyjFRqcx/download?path=%2F18%20June%2F1115%20-%20Metadata%20and%20data%20quality&files=04%20-%20Daniel%20Garijo%20-%20Metadata%20models%20and%20Research%20Objects%20for%20Earth%20Observation%20Data%20Cubes.pdf&downloadStartSecret=9vslv3tqvmf). 
+Oscar Corcho, Raúl Palma, Daniel Garijo (2021):  
+[**Metadata models and Research Objects for Earth Observation Data Cubes**](https://repository.eoscsecretariat.eu/index.php/s/ERebmpJcyjFRqcx/download?path=%2F18%20June%2F1115%20-%20Metadata%20and%20data%20quality&files=04%20-%20Daniel%20Garijo%20-%20Metadata%20models%20and%20Research%20Objects%20for%20Earth%20Observation%20Data%20Cubes.pdf&downloadStartSecret=9vslv3tqvmf).  
 _[EOSC Symposium 2021](https://www.eoscsecretariat.eu/eosc-symposium-2021-programme)_, 2021-06-18
 [[video recording](https://youtu.be/qvtWJWsMLRg?list=PLbISfqJh3Tstmx6CgrBmYI7lyyVXiY5VE&t=1090)]
 [[slides](https://repository.eoscsecretariat.eu/index.php/s/ERebmpJcyjFRqcx/download?path=%2F18%20June%2F1115%20-%20Metadata%20and%20data%20quality&files=04%20-%20Daniel%20Garijo%20-%20Metadata%20models%20and%20Research%20Objects%20for%20Earth%20Observation%20Data%20Cubes.pdf&downloadStartSecret=9vslv3tqvmf)]
 
-Carole Goble (2021):
-[**FAIR Computational Workflows: the what, why how and who**](https://www.slideshare.net/carolegoble/fair-computational-workflows).
+Carole Goble (2021):  
+[**FAIR Computational Workflows: the what, why how and who**](https://www.slideshare.net/carolegoble/fair-computational-workflows).  
 _[ICTESSH 2021](http://ictessh.uns.ac.rs/) (International Conference on ICT enhanced Social Sciences and Humanities 2022)_, 2021-06-30
 
-Stian Soiland-Reyes (2021):
-[**Capturing “Just enough” Data, Software and Metadata with RO-Crate**](http://slides.com/soilandreyes/2021-06-21-capturing-just-enough-data-software-and-metadata-with-ro-crate).
+Stian Soiland-Reyes (2021):  
+[**Capturing “Just enough” Data, Software and Metadata with RO-Crate**](http://slides.com/soilandreyes/2021-06-21-capturing-just-enough-data-software-and-metadata-with-ro-crate).  
 _FAIR Festival 2021_, FAIR Implementation Challenges & Solutions, 2021-06-21.
 <https://doi.org/10.5281/zenodo.5007432>
  
@@ -340,13 +348,13 @@ Peter Sefton, Marco La Rosa, Michael Lynch (2021):
 _[Open Repositories 2021](https://or2021.openrepositories.org/)_ (OR2021), 2021-06-10.
 [[video recording](https://youtu.be/x72CPv3rJMw?t=7)] [[slides](http://ptsefton.com/2021/06/11/or-2021-arkisto)]
 
-Peter Sefton, Stian Soiland-Reyes (2021):
-[**Research Object Crate (RO-Crate) Update**](http://ptsefton.com/2021/06/11/or-2021-ro-crate/)
+Peter Sefton, Stian Soiland-Reyes (2021):  
+[**Research Object Crate (RO-Crate) Update**](http://ptsefton.com/2021/06/11/or-2021-ro-crate/)  
 _[Open Repositories 2021](https://or2021.openrepositories.org/)_ (OR2021), 2021-06-10.
 [[video recording](https://youtu.be/x72CPv3rJMw?t=940)] [[slides](http://ptsefton.com/2021/06/11/or-2021-ro-crate)]
 
-Stian Soiland-Reyes (2021):
-[**Capturing Just Enough Data, Software and Metadata with RO-Crate**](http://slides.com/soilandreyes/2021-06-17-capturing-just-enough-with-ro-crate).
+Stian Soiland-Reyes (2021):  
+[**Capturing Just Enough Data, Software and Metadata with RO-Crate**](http://slides.com/soilandreyes/2021-06-17-capturing-just-enough-with-ro-crate).  
 _[Dataverse community meeting 2021](https://projects.iq.harvard.edu/dcm2021)_, Software Metadata and Containerization, 2021-06-17.
 [[video recording](https://youtu.be/LJq-mzT9v8o?t=1731)]
 <https://doi.org/10.5281/zenodo.4973678>
@@ -375,8 +383,8 @@ Carole Goble (2021):
 [**FAIRy stories: the FAIR Data principles in theory and in practice**](https://www.slideshare.net/carolegoble/fairy-stories-the-fair-data-principles-in-theory-and-in-practice).
 _[NSF Convergence Accelerator Series Tracks A&B](http://spatial.ucsb.edu/2021/Carole-Goble)_, 2021-05-19
 
-Stian Soiland-Reyes (2021):
-[**Data provenance with RO-Crate**](http://slides.com/soilandreyes/2021-05-19-recording-provenance-with-ro-crate).
+Stian Soiland-Reyes (2021):  
+[**Data provenance with RO-Crate**](http://slides.com/soilandreyes/2021-05-19-recording-provenance-with-ro-crate).  
 _EOSC-Life retreat 2021_, Provenance of tools and workflows; FAIRification of workflows, 2021-05-19.
 
 Nick Thieberger, Marco La Rosa (2021):  
