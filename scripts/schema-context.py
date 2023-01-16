@@ -32,23 +32,23 @@ import urllib.request
 
 
 # Our own version
-ROCRATE_VERSION="1.1-DRAFT"
+ROCRATE_VERSION="1.2-DRAFT"
 
 # Update version from http://schema.org/docs/releases.html
 # NOTE: Breaks due to https://github.com/schemaorg/schemaorg/issues/2805
-SCHEMA_VERSION="10.0"
+SCHEMA_VERSION="15.0"
 
 # Update from https://bioschemas.org/profiles/Workflow/
-BIOSCHEMA_WORKFLOW_PROFILE = "https://bioschemas.org/profiles/ComputationalWorkflow/0.5-DRAFT-2020_07_21"
+BIOSCHEMA_WORKFLOW_PROFILE = "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
 BIOSCHEMA_WORKFLOW_NS = "https://bioschemas.org/ComputationalWorkflow"
 BIOSCHEMA_FORMAL_PARAMETER_NS = "https://bioschemas.org/FormalParameter"
-BIOSCHEMA_FORMAL_PARAMETER_PROFILE = "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21"
+BIOSCHEMA_FORMAL_PARAMETER_PROFILE = "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
 
 
 def main():
     #url="http://schema.org/version/%s/schemaorgcontext.jsonld" % SCHEMA_VERSION
     # Workaround for https://github.com/schemaorg/schemaorg/issues/2805
-    url="https://raw.githubusercontent.com/schemaorg/schemaorg/V%s-release/data/releases/%s/schemaorgcontext.jsonld" % (SCHEMA_VERSION, SCHEMA_VERSION)
+    url="https://raw.githubusercontent.com/schemaorg/schemaorg/v%s-release/data/releases/%s/schemaorgcontext.jsonld" % (SCHEMA_VERSION, SCHEMA_VERSION)
     with urllib.request.urlopen(url) as f:
       schema = json.load(f)
     if len(sys.argv) > 2:
