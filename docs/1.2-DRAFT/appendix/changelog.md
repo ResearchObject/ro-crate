@@ -26,7 +26,7 @@ excerpt: List of changes in releases of this specifications
 # APPENDIX: Changelog
 
 * RO-Crate 1.2-DRAFT
-  * JSON-LD context updated to [schema.org 15.0](https://github.com/schemaorg/schemaorg/tree/main/data/releases/15.0/) 
+  * eSON-LD context updated to [schema.org 15.0](https://github.com/schemaorg/schemaorg/tree/main/data/releases/15.0/). Note that upstream adds ~230 terms, removed terms `AuthenticContent` `MissingContext`  
   * `TODO`
 * [RO-Crate 1.1.2](https://github.com/ResearchObject/ro-crate/releases/tag/1.1.2) 
   * Typo fixes in [data entity section](../data-entities.md) [#177](https://github.com/ResearchObject/ro-crate/issues/177), [workflow section](../workflows.md) [#180](https://github.com/ResearchObject/ro-crate/issues/180), [metadata section](../metadata.md) [#181](https://github.com/ResearchObject/ro-crate/issues/181) 

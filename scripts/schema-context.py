@@ -87,6 +87,15 @@ def main():
           continue # bibo etc.
       context[k] = schema["@context"][k]["@id"].replace("schema:", "http://schema.org/")
 
+    for k in ADDITIONAL:
+        if k in context:
+            if context[k] != ADDITIONAL[k]:
+                print("ERROR: Key already in context with different URI: \"%s\" <%s> <%s>" % 
+                        (k, context[k], ADDITIONAL[k]), file=sys.stderr)
+                sys.exit(1)
+            else:
+                print("WARN: Key already in context: \"%s\" <%s>" % 
+                        (k, context[k]), file=sys.stderr)
     context.update(ADDITIONAL)
     json.dump(j, sys.stdout, ensure_ascii=False, indent=5) # indent4 to match existing!
     print() ## newline
@@ -117,8 +126,6 @@ ADDITIONAL = OrderedDict([
           ("input", BIOSCHEMA_WORKFLOW_NS + "#input"),
           ("output", BIOSCHEMA_WORKFLOW_NS + "#output"),
           ("FormalParameter", BIOSCHEMA_FORMAL_PARAMETER_NS),
-          # https://github.com/schemaorg/schemaorg/issues/383#issuecomment-651040576
-          ("funding", "http://schema.org/funding"),
           ## END 
 
           ##("sdConformsTo", "https://w3id.org/ro/terms#sdConformsTo"),
