@@ -114,13 +114,6 @@ RO-Crate use the [Profiles Vocabulary](https://www.w3.org/TR/2019/NOTE-dx-prof-2
 - `isInheritedFrom` mapped to <http://www.w3.org/ns/dx/prof/isInheritedFrom>
 - `isProfileOf` mapped to <http://www.w3.org/ns/dx/prof/isProfileOf>
 - `isTransitiveProfileOf` mapped to <http://www.w3.org/ns/dx/prof/isTransitiveProfileOf>
-- `constraints` mapped to <http://www.w3.org/ns/dx/prof/role/constraints>
-- `example` mapped to <http://www.w3.org/ns/dx/prof/role/example>
-- `guidance` mapped to <http://www.w3.org/ns/dx/prof/role/guidance>
-- `mapping` mapped to <http://www.w3.org/ns/dx/prof/role/mapping>
-- `schema` mapped to <http://www.w3.org/ns/dx/prof/role/schema>
-- `specification` mapped to <http://www.w3.org/ns/dx/prof/role/specification>
-- `validation` mapped to <http://www.w3.org/ns/dx/prof/role/validation>
 
 From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
 

@@ -158,16 +158,6 @@ ADDITIONAL = OrderedDict([
           ("ResourceRole", "http://www.w3.org/ns/dx/prof/ResourceRole"),
           ("Profile", "http://www.w3.org/ns/dx/prof/Profile"),
           ## END
-          ## Resource Roles vocabulary
-          ("constraints", "http://www.w3.org/ns/dx/prof/role/constraints"),
-          ("example", "http://www.w3.org/ns/dx/prof/role/example"),
-          ("guidance", "http://www.w3.org/ns/dx/prof/role/guidance"),
-          ("mapping", "http://www.w3.org/ns/dx/prof/role/mapping"),
-          ("schema", "http://www.w3.org/ns/dx/prof/role/schema"),
-          ("specification", "http://www.w3.org/ns/dx/prof/role/specification"),
-          ("validation", "http://www.w3.org/ns/dx/prof/role/validation"),
-          ## END
-
 
           ## FIXME: Where is this used from?
           ("@label", "http://www.w3.org/2000/01/rdf-schema#label"),
