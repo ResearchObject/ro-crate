@@ -43,7 +43,7 @@ RO-Crate can describe a profile by adding it as an [contextual entity](contextua
 ```json
 {
     "@id": "https://w3id.org/ro/wfrun/process/0.1",
-    "@type": "CreativeWork",
+    "@type": ["CreativeWork", "Profile"],
     "name": "Process Run crate profile",
     "version": "0.1.0"
 }
@@ -51,6 +51,7 @@ RO-Crate can describe a profile by adding it as an [contextual entity](contextua
 
 The contextual entity for a profile:
 
+* MUST have `Profile` listed amongst its `@type`, wwhich SHOULD be an array and SHOULD include `CreativeWork`.
 * SHOULD have an absolute URI as `@id`
 * SHOULD have a descriptive [name]
 * MAY declare [version], preferably according to [Semantic Versioning][semver]
