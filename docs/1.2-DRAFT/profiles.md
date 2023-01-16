@@ -62,7 +62,7 @@ RO-Crates conforming to (or intending to conform to) such a profile declare this
     "@id": "./",
     "@type": "Dataset",
     "conformsTo":
-        {"@id": "https://w3id.org/ro/profile/paradisec/0.1"}
+        {"@id": "https://w3id.org/ro/wfrun/process/0.1"}
     
 }
 ```
