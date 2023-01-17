@@ -325,4 +325,57 @@ Following the conventions used by Schema.org, ad-hoc terms SHOULD also include d
 
 More information about the relationship of this term to other terms MAY be provided using [domainIncludes], [rangeIncludes], [rdfs:subClassOf] following the conventions used in the [Schema.org schema].
 
+## Grouping extensions as an RO-Crate profile
+
+If several RO-Crates are using the same `@context` extension terms, or define the same additional ad-hoc terms, then it may make sense to specify these within an [RO-Crate profile](../profiles.md) that the crates can then explicitly declare conformance to.   
+
+The `@id` of the extension terms should after the move be made absolute URIs that resolve to the profile crate -- if these were made using <https://w3id.org/ro/terms/> then a request to set up such redirects can be made. If it is not possible to set up a redirection.
+
+For terms it is RECOMMENDED to change the `@id` of the terms after moving to be based on the profile's permalink, e.g. the profile with `@id` <https://w3id.org/cpm/ro-crate> defines the term <https://w3id.org/cpm/ro-crate#CPMProvenanceFile>.
+
+See sections on [profile extension terms](../profiles.md#extension-terms) and [Profile JSON-LD context](../profiles.md#json-ld-context).  [Custom file formats](../data-entities.md#adding-detailed-descriptions-of-encodings) and common [contextual entities](../contextual-entities.md) may also be moved to the profile, ensuring their `@id` are absolute URI and resolve to the profile JSON-LD.
+
+This can reduce repetition in their JSON-LD, but means additional measures must be taken to ensure the resulting RO-Crates remain functional over time, e.g. not to remove terms as the profile evolves over time.
+
+Example:
+
+```json
+{ "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    "https://w3id.org/cpm/ro-crate/0.1"
+  ],
+  "@graph": [
+
+ {
+    "@type": "CreativeWork",
+    "@id": "ro-crate-metadata.json",
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"},
+    "about": {"@id": "./"}
+ },
+ {
+    "@id": "./",
+    "@type": "Dataset",
+    "conformsTo": {"@id": "https://w3id.org/cpm/crate/0.1"},
+    "hasPart": [
+        { "@id": "CPM_COMPLIANT_PROVENANCE" }
+    ],
+    "…" : ""
+ },
+ {
+   "@id": "CPM_COMPLIANT_PROVENANCE",
+   "@type": ["File", "CPMProvenanceFile"],
+   "encodingFormat": [
+      "text/provenance-notation",
+      { "@id": "http://www.w3.org/TR/2013/REC-prov-n-20130430/"}
+   ],
+   "name": "Provenance file"
+ }
+]
+}
+```
+
+In the example above, the type `CPMProvenanceFile` is resolved to <https://w3id.org/cpm/ro-crate#CPMProvenanceFile> by the matching key in the second `@context` when content-negotiating for `application/ld+json` (browsers may see the human-readable documentations).
+
+The contextual entity `http://www.w3.org/TR/2013/REC-prov-n-20130430/` for `encodingFormat` is defined within the profile rather in this specific crate, however in this example that `@id` resolves to the textual specification at W3C rather than back to the Profile Crate. 
+
 {% include references.liquid %}
