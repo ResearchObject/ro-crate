@@ -578,7 +578,7 @@ _To suggest an event, either [edit and raise pull request](https://github.com/Re
 
 **[Semantic Web Applciations and Tools for Health Care and Life Sciences](https://www.swat4ls.org/)** (SWAT4HCLS 2023), 2023-02-13/--16, Basel, CH. 
 
-**[2023 Common Workflow Language Conference](https://cwl.discourse.group/c/cwlcon-2023/13) (CWLCon 2023). 2023-02-27/-03-03, virtual. Talk proposals due 2023-01-16.
+**[2023 Common Workflow Language Conference](https://cwl.discourse.group/c/cwlcon-2023/13)** (CWLCon 2023). 2023-02-27/-03-03, virtual. 
 
 **[1st BioHackathon Germany](https://www.denbi.de/de-nbi-events/1454-biohackathon-germany)**. 1st BioHackathon Germany, Lutherstadt Wittenberg - Leucorea, GE, 2022-12-12/--16 incl. project on [DataPLANT](https://www.denbi.de/de-nbi-events/2-uncategorised/1486-dataplant-facilitating-research-data-management-to-combat-the-reproducibility-crisis), [ELIXIR:GA4GH](https://www.denbi.de/de-nbi-events/2-uncategorised/1487-the-elixir-ga4gh-cloud), [FAIR Computational Workflows](https://www.denbi.de/de-nbi-events/2-uncategorised/1484-towards-fair-computational-workflows-improving-provenance-collection)
 
