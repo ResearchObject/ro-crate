@@ -44,7 +44,6 @@ _Data Science_ **5**(2)
 
 ### 2022
 
-
 Justin Clark-Casey, Stian Soiland-Reyes (2022):  
 [**Making EOSC Research Objects FAIR with RO-Crate**: A common metadata overlay for EOSC repositories](https://doi.org/10.5281/zenodo.7323480).  
 _[EOSC Symposium 2022](https://events.eoscfuture.eu/symposium2022/programme)_  
@@ -52,8 +51,18 @@ _[EOSC Symposium 2022](https://events.eoscfuture.eu/symposium2022/programme)_
 
 Carole Goble, Stian Soiland-Reyes (2022):  
 [**RO-Crate: packaging metadata love notes into FAIR Digital Objects**](https://events.hifis.net/event/469/timetable/#9-ro-crate-packaging-metadata). (Keynote)  
-_Helmholtz Metadata Collaboration conference 2022_, virtual, 2022-10-05.  
+_Helmholtz Metadata Collaboration conference 2022_, virtual, 2022-10-05/--06.  
 <https://doi.org/10.5281/zenodo.7147703>
+
+Gerrit Günther, Jan Schweikert, Oonagh Mannix, Wolfgang Süß (2022):   
+[**Use Cases in HMC – from Generation to Reuse of Data**](https://doi.org/10.5281/zenodo.7157694).  
+_Helmholtz Metadata Collaboration conference 2022_, virtual, 2022-10-05/--06.  
+https://doi.org/10.5281/zenodo.7157694
+
+Roman Gerlach (2022):  
+[**Datenverarbeitungsprozesse planen und dokumentieren - Eine Einführung in Research Objects und RO-Crate**](https://www.youtube.com/watch?v=mKU-6FRHrH0).  
+_FDM Thuringen_ [Coffee Lecture](https://forschungsdaten-thueringen.de/veranstaltung/coffee-lecture-datenverarbeitungsprozesse-de.html), 2022-11-30.  
+<https://doi.org/10.5281/zenodo.7385632> [[video](https://www.youtube.com/watch?v=mKU-6FRHrH0)] [[slides](https://doi.org/10.5281/zenodo.7385632)]
 
 Fidan Limani (2022):  
 [**FAIR Digital Objects and Linked Data**](https://www.youtube.com/watch?v=BpUrQYIX2IA).  
