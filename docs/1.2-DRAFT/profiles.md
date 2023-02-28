@@ -82,9 +82,9 @@ A **Profile Crate** is a type of RO-Crate that gathers resources which further d
 To resolve a Profile URI to a machine-readable _Profile Crate_, two approaches are recommended to retrieve its [RO-Crate metadata file](root-data-entity.md#ro-crate-metadata-file-descriptor):
 
 1. [HTTP Content-negotiation](https://httpd.apache.org/docs/2.4/content-negotiation.html) for the [RO-Crate media type](appendix/jsonld.md#ro-crate-json-ld-media-type), for example:  
-  Requesting `https://w3id.org/ro/wfrun/process/0.1` with HTTP header  
+  Requesting `https://w3id.org/workflowhub/workflow-ro-crate/1.0` with HTTP header
   `Accept: application/ld+json;profile=https://w3id.org/ro/crate` redirects to the _RO-Crate Metadata file_
-  `https://www.researchobject.org/workflow-run-crate/profiles/0.1/process_run_crate/ro-crate-metadata.json`
+  `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`
 2. The above approach may fail (or returns a HTML page), e.g. for content-delivery networks that do not support content-negotiation. The fallback is to try resolving the path `./ro-crate-metadata.json` from the _resolved_ URI (after permalink redirects). For example:  
 If permalink `https://w3id.org/workflowhub/workflow-ro-crate/1.0` redirects to `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/index.html` (a HTML page), then
 try retrieving `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`
