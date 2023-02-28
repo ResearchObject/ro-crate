@@ -106,7 +106,7 @@ A Profile Crate MUST declare a human-readable _profile description_, which is [a
     "@type": "File",
     "name": "Workflow RO-Crate profile description",
     "encodingFormat": "text/html",
-    "about": "./",
+    "about": "./"
 }
 ```
 
@@ -120,7 +120,7 @@ The _profile description_ MAY be equivalent to the
     "@type": "CreativeWork",
     "name": "RO-Crate preview of the Process Run Crate",
     "encodingFormat": "text/html",
-    "about": "./",
+    "about": "./"
 }
 ```
 
