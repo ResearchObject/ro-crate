@@ -47,5 +47,6 @@ While we're mostly focusing on the [RO-Crate specification](../specification.md)
  - [ROcrate-interface](https://github.com/GusEllerm/ROcrate-interface) -- Initial development in creating an interface between workflow languages and a LivePublication RO-crate specification (~ _prototype_)
  - [aiida-rocrate](https://github.com/sphuber/aiida-rocrate) -- [AiiDA](https://www.aiida.net/) plugin that allows exporting (parts) of the provenance graph as Research Object Crates. (~ _planning_)
  - [RO-Crate-Registry](https://github.com/XiaotianWang0918/RO-Crate-Registry) -- a Web-based registry of RO-Crates (assumes ZIP on http/https) (~ _prototype_)
+ - [ro-crate-validator-py](https://github.com/ResearchObject/ro-crate-validator-py/) -- a modular RO-Crate validator (~ _alpha_)
  
 See also [applications using RO-Crate](../in-use/).
