@@ -660,7 +660,7 @@ _To suggest an event, either [edit and raise pull request](https://github.com/Re
 
 **[Open Science Festival 2023](https://www.zbmed.de/en/networking/events/open-science-festival-2023/)**, 2023-07-04/--05, Cologne, Germany. **Workshop**: [Quo vadis Open Standards for Data Management? ORKG meets RO-Crates](https://www.zbmed.de/vernetzen/veranstaltungen/open-science-festival/open-standards-for-data-management)
 
-**[Open Repositories 2023](https://or2023.openrepositories.org/) (OR2023), 2023-06-12/--15, Stellenbosch University, South Africa.  Presentation by Peter Sefton, **Packaging data with detailed metadata using RO-Crate in FAIR open repositories**.
+**[Open Repositories 2023](https://or2023.openrepositories.org/)** (OR2023), 2023-06-12/--15, Stellenbosch University, South Africa.  Presentation by Peter Sefton, **Packaging data with detailed metadata using RO-Crate in FAIR open repositories**.
 
 **[Information-communication technologies enhanced Social Sciences and Humanities](https://ictessh.uns.ac.rs/)** (ICTeSSH), June 2023, (location TBD). 
 
