@@ -648,11 +648,13 @@ _To suggest an event, either [edit and raise pull request](https://github.com/Re
 
 [**International Conference on Knowledge Engineering and Ontology Development**](https://keod.scitevents.org/) (KEOD 2023), 2023-11-13/--15, Rome, Italy. Co-located with [IC3K](https://ic3k.scitevents.org/)/[WEBIST](https://webist.scitevents.org/). Papers due 2023-06-02
 
-[**The 22nd International Semantic Web Conference**](https://iswc2023.semanticweb.org/) (ISWC 2023_, 2023-11-06/--10, Athens, Greece. Workshop calls due 2023-03-24, papers due 2023-05-02. 
+[**The 22nd International Semantic Web Conference**](https://iswc2023.semanticweb.org/) (ISWC 2023), 2023-11-06/--10, Athens, Greece. Workshop calls due 2023-03-24, papers due 2023-05-02. 
 
 **[BioHackathon Europe 2023](https://biohackathon-europe.org/)**, 2023-10-30/-11-03. Barcelona, Spain. Project proposals due 2023-04-10
 
 **[19th IEEE International Conference on eScience](https://www.escience-conference.org/2023/)**, 2023-10-09/--13, Limassol, Cyprus. Papers due 2023-05-26. 
+
+**[Open Science Fair](https://www.opensciencefair.eu/)**, 2023-09-25/--27, Madrid, Spain. Papers due 2023-04-17.
 
 **[Bioinformatics Open Source Conference](https://www.open-bio.org/events/bosc-2023/)** (BOSC2023)+hackfest, 2023-07-24/--28, ISMB/ECCB 2023, Lyon, France. Abstracts due 2023-04-10.
 
@@ -662,19 +664,13 @@ _To suggest an event, either [edit and raise pull request](https://github.com/Re
 
 **[Open Repositories 2023](https://or2023.openrepositories.org/)** (OR2023), 2023-06-12/--15, Stellenbosch University, South Africa.  Presentation by Peter Sefton, **Packaging data with detailed metadata using RO-Crate in FAIR open repositories**.
 
-**[Information-communication technologies enhanced Social Sciences and Humanities](https://ictessh.uns.ac.rs/)** (ICTeSSH), June 2023, (location TBD). 
-
 **[3rd Workshop on Metadata and Research (objects) Management for Linked Open Science - DaMaLOS 2023](https://zbmed.github.io/damalos/)**, 2023-06-29, Co-located with [ESWC](https://2023.eswc-conferences.org/), Hersonissos, Greece. Call for papers due 2023-03-31.
-
-**[Galaxy Smörgåsbord 2023]()**, 2023-05-22/--26, virtual. Training includes [Module: FAIR data and provenance with RO-Crate and Galaxy](https://gallantries.github.io/video-library/modules/ro-crate).
 
 **[20th IEEE International Conference on Software Architecture](https://icsa-conferences.org/2023/)** (ICSA 2023), L'Aquila, Italy, 2023-03-13/--17.  -08.
 
 **[ELIXIR All Hands 2023](https://elixir-europe.org/events/elixir-all-hands-2023)**, 2023-06-05/--08, Dublin, Ireland + hybrid. **Workshop**: [Building lightweight FAIR data packages with Bioschemas and RO-Crate](https://docs.google.com/document/d/1Vh9mUBWvNEsvC5YZRITtZxsyE6Wr18rJUgp9KweJFNg)
 
-**[Open Repositories 2023](https://or2023.openrepositories.org/)** (OR2023), 2023-06-12/--15, Stellenbosch, Cape Town, South Africa.
-
-**[Semantic Web Applciations and Tools for Health Care and Life Sciences](https://www.swat4ls.org/)** (SWAT4HCLS 2023), 2023-02-13/--16, Basel, CH. 
+**[Galaxy Smörgåsbord 2023]()**, 2023-05-22/--26, virtual. Training includes [Module: FAIR data and provenance with RO-Crate and Galaxy](https://gallantries.github.io/video-library/modules/ro-crate).
 
 **[2023 Common Workflow Language Conference](https://cwl.discourse.group/c/cwlcon-2023/13)** (CWLCon 2023). 2023-02-27/-03-03, virtual. 
 
