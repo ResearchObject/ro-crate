@@ -304,7 +304,7 @@ _arXiv_ 2207.06890 [cs.DB]
 <https://doi.org/10.48550/arXiv.2207.06890>
 
 
-## 2021
+### 2021
 
 Jeremy Leipzig, Daniel Nüst, Charles Tapley Hoyt, Karthik Ram, Jane Greenberg (2021):  
 [**The role of metadata in reproducible computational research**](https://doi.org/10.1016/j.patter.2021.100322).  
