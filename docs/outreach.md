@@ -104,9 +104,9 @@ _[EOSC Symposium 2022](https://events.eoscfuture.eu/symposium2022/programme)_
 <https://doi.org/10.5281/zenodo.7323480>
 
 Raül Sirvent, Javier Conejero, Francesc Lordan, Jorge Ejarque, Laura Rodríguez-Navas, José M. Fernández, Salvador Capella-Gutiérrez, Rosa M. Badia (2022):  
-**Automatic, Efficient and Scalable Provenance Registration for FAIR HPC Workflows**.  
+[**Automatic, Efficient and Scalable Provenance Registration for FAIR HPC Workflows**](http://hdl.handle.net/2117/384589).  
 _2022 IEEE/ACM Workshop on Workflows in Support of Large-Scale Science (WORKS)_  
-<https://doi.org/10.1109/WORKS56498.2022.00006> 
+<https://doi.org/10.1109/WORKS56498.2022.00006>
 [[preprint](http://hdl.handle.net/2117/384589)]
 [[slides](https://doi.org/10.5281/zenodo.7701868)]
 
