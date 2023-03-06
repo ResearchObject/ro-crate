@@ -44,6 +44,19 @@ _Data Science_ **5**(2)
 
 ### 2023
 
+Simone Leo (2023):  
+[**RO-Crate for workflow run provenance**](https://cwl.discourse.group/t/ro-crate-for-workflow-run-provenance/754).  
+_CWL Conference 2023_, 
+[[video (YouTube)](https://www.youtube.com/watch?v=JXI3pOPMKrw)]
+[[video (ConfTube)](https://conf.tube/w/jDkRHqp2rjqzqtXih9445J)]
+[[slides](https://docs.google.com/presentation/d/1gqKj5eLacw9CYu8H7BxZ7kFBeC8421DCeL11sWRnIds/edit?usp=sharing)]
+
+Mahnoor Zulfiqar (2023):  
+[**Running Reproducible Metabolomics Workflow with CWL**](https://cwl.discourse.group/t/running-reproducible-metabolomics-workflow-with-cwl/762).  
+_CWL Conference 2023_, 
+[[video (YouTube)](https://www.youtube.com/watch?v=usr0Kau2ihE)]
+[[video (ConfTube)](https://conf.tube/w/5vd8tkpECJNHjx7mhpLGQd)]
+
 Romain David, Audrey S. Richard, Claire Connellan, Katharina B. Lauer, Maria Luisa Chiusano, Carole Goble, Martin Houde, Isabel Kemmer, Antje Keppler, Philippe Lieutaud, Christian Ohmann, Maria Panagiotopoulou, Sara Raza Khan, Arina Rybina, Stian Soiland-Reyes, Charlotte Wit, Rudolf Wittner, Rafael Andrade Buono, Sarah Arnaud Marsh, Pauline Audergon, Dylan Bonfils, Jose-Maria Carazo, Remi Charrel, Frederik Coppens, Wolfgang Fecke, Claudia Filippone, Eva Garcia Alvarez, Sheraz Gul, Henning Hermjakob, Katja Herzog, Petr Holub, Lukasz Kozera, Allyson L. Lister, José López-Coronado, Bénédicte Madon, Kurt Majcen, William Martin, Wolfgang Müller, Elli Papadopoulou, Christine M.A. Prat, Paolo Romano, Susanna-Assunta Sansone, Gary Saunders, Niklas Blomberg, Jonathan Ewbank (2023):  
 [**Umbrella Data Management Plans to integrate FAIR data: lessons from the ISIDORe and BY-COVID consortia for pandemic preparedness**](https://doi.org/10.5281/zenodo.7520086).  
 (submitted to Data Science Journal).  
@@ -67,6 +80,12 @@ _Research Ideas and Outcomes_ **8**:e98457
 
 
 ### 2022
+
+Leyla Jael Castro, Zeyd Boukhers, Olga Giraldo, Adamantios Koumpis, Oya Beyan, Dietrich Rebholz-Schuhmann (2022):  
+[**NFDI4DataScience registry for reproducible Data Science and Artificial Intelligence**](https://doi.org/10.5281/zenodo.7129715).  
+_Workshop On Open Citations And Open Scholarly Metadata 2022_ ([WOOC2022](https://workshop-oc.github.io/)) 2022-10-05  
+<https://doi.org/10.5281/zenodo.7129715>
+[[video](https://www.youtube.com/watch?v=Too-OQ6jSfk)]
 
 Mauro Del Rio, Luca Lianas, Oskar Aspegren, Giovanni Busonera, Francesco Versaci, Renata Zelic, Per H. Vincent, Simone Leo, Andreas Pettersson, Olof Akre & Luca Pireddu (2022):  
 [**AI Support for Accelerating Histopathological Slide Examinations of Prostate Cancer in Clinical Studies**](https://doi.org/10.1007/978-3-031-13321-3_48).  
@@ -274,6 +293,7 @@ Luiz Gadelha, Martin Hohmuth, Mahnoor Zulfiqar, David Schöne, Sheeba Samuel, Ma
 [**Toward a Framework for Integrative, FAIR, and Reproducible Management of Data on the Dynamic Balance of Microbial Communities**](https://doi.org/10.48550/arXiv.2207.06890).  
 _arXiv_ 2207.06890 [cs.DB]  
 <https://doi.org/10.48550/arXiv.2207.06890>
+
 
 ## 2021
 
