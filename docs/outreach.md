@@ -573,17 +573,31 @@ See also [publications about Research Objects](https://www.researchobject.org/pu
 
 _To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 
-**[Bioinformatics Open Source Conference](https://www.open-bio.org/events/bosc-2023/)** (BOSC2023)+hackfest, 2023-07-24/--28, ISMB/ECCB 2023, Lyon, France.
+[**International Conference on Knowledge Engineering and Ontology Development**](https://keod.scitevents.org/) (KEOD 2023), 2023-11-13/--15, Rome, Italy. Co-located with [IC3K](https://ic3k.scitevents.org/)/[WEBIST](https://webist.scitevents.org/). Papers due 2023-06-02
+
+[**The 22nd International Semantic Web Conference**](https://iswc2023.semanticweb.org/) (ISWC 2023_, 2023-11-06/--10, Athens, Greece. Workshop calls due 2023-03-24, papers due 2023-05-02. 
+
+**[BioHackathon Europe 2023](https://biohackathon-europe.org/)**, 2023-10-30/-11-03. Barcelona, Spain. Project proposals due 2023-04-10
+
+**[19th IEEE International Conference on eScience](https://www.escience-conference.org/2023/)**, 2023-10-09/--13, Limassol, Cyprus. Papers due 2023-05-26. 
+
+**[Bioinformatics Open Source Conference](https://www.open-bio.org/events/bosc-2023/)** (BOSC2023)+hackfest, 2023-07-24/--28, ISMB/ECCB 2023, Lyon, France. Abstracts due 2023-04-10.
 
 **[Galaxy Community Conference 2023](https://galaxyproject.org/gcc/)** (GCC2023), 2023-07-17/--23, Minneapolis, Minnesota, US.
 
-**[Information-communication technologies enhanced Social Sciences and Humanities](https://ictessh.uns.ac.rs/)** (ICTeSSH), June 2023, (location TBD). Workshop proposals by 2023-01-15.
+**[Open Science Festival 2023](https://www.zbmed.de/en/networking/events/open-science-festival-2023/)**, 2023-07-04/--05, Cologne, Germany. **Workshop**: [Quo vadis Open Standards for Data Management? ORKG meets RO-Crates](https://www.zbmed.de/vernetzen/veranstaltungen/open-science-festival/open-standards-for-data-management)
 
-**[20th IEEE International Conference on Software Architecture](https://icsa-conferences.org/2023/)** (ICSA 2023), L'Aquila, Italy, 2023-03-13/--17. [Artifact Evaluation Track](https://icsa-conferences.org/2023/call-for-papers/artifact-evaluation-track/) due 2023-01-08.
+**[Information-communication technologies enhanced Social Sciences and Humanities](https://ictessh.uns.ac.rs/)** (ICTeSSH), June 2023, (location TBD). 
 
-**[ELIXIR All Hands 2023](https://elixir-europe.org/events/elixir-all-hands-2023)**, 2023-06-05/--08, Dublin, Ireland. Workshop submissions due 2023-01-23.
+**[3rd Workshop on Metadata and Research (objects) Management for Linked Open Science - DaMaLOS 2023](https://zbmed.github.io/damalos/)**, 2023-06-29, Co-located with [ESWC](https://2023.eswc-conferences.org/), Hersonissos, Greece. Call for papers due 2023-03-31.
 
-**[Open Repositories 2023](https://or2023.openrepositories.org/)** (OR2023), 2023-06-12/--15, Stellenbosch, Cape Town, South Africa. Proposal due 2023-01-15.
+**[Galaxy Smörgåsbord 2023]()**, 2023-05-22/--26, virtual. Training includes [Module: FAIR data and provenance with RO-Crate and Galaxy](https://gallantries.github.io/video-library/modules/ro-crate).
+
+**[20th IEEE International Conference on Software Architecture](https://icsa-conferences.org/2023/)** (ICSA 2023), L'Aquila, Italy, 2023-03-13/--17.  -08.
+
+**[ELIXIR All Hands 2023](https://elixir-europe.org/events/elixir-all-hands-2023)**, 2023-06-05/--08, Dublin, Ireland + hybrid. **Workshop**: [Building lightweight FAIR data packages with Bioschemas and RO-Crate](https://docs.google.com/document/d/1Vh9mUBWvNEsvC5YZRITtZxsyE6Wr18rJUgp9KweJFNg)
+
+**[Open Repositories 2023](https://or2023.openrepositories.org/)** (OR2023), 2023-06-12/--15, Stellenbosch, Cape Town, South Africa.
 
 **[Semantic Web Applciations and Tools for Health Care and Life Sciences](https://www.swat4ls.org/)** (SWAT4HCLS 2023), 2023-02-13/--16, Basel, CH. 
 
