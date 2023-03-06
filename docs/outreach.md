@@ -74,7 +74,7 @@ International Conference on Image Analysis and Processing (ICIAP 2022): Image An
 _Lecture Notes in Computer Science_ (LNCS) **13373**  
 <https://doi.org/10.1007/978-3-031-13321-3_48>
 
-Daniel Arend Sebastian Beier laurent bouri Marco Brandizi Donald Hobern Erwan Le Floch Timo Mühlhaus Cyril Pommier Stuart Owen Philippe Rocca-Serra Thomas Rosnet Stian Soiland-Reyes (2022):  
+Daniel Arend, Sebastian Beier, laurent bouri Marco Brandizi, Donald Hobern, Erwan Le Floch, Timo Mühlhaus, Cyril Pommier, Stuart Owen, Philippe Rocca-Serra, Thomas Rosnet, Stian Soiland-Reyes (2022):  
 [**BioHackEU22 Project 22: Plant data exchange and standard interoperability**](https://doi.org/10.37044/osf.io/c724r).  
 _BioHackrXiv_  
 <https://doi.org/10.37044/osf.io/c724r>
@@ -104,7 +104,7 @@ Fidan Limani (2022):
 _Semantic Web in Libraries_ ([SWIB22](https://swib.org/swib22/)), 2022-11-28/-12-02  
 <https://www.youtube.com/watch?v=BpUrQYIX2IA>
 
-Aben G, Hößelbarth J (2022):  
+Guido Aben, Juri Hößelbarth (2022):  
 [**Starting FDO in the Cradle -- ROcrating Live Data**](https://doi.org/10.3897/rio.8.e95972).  
 1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
 _Research Ideas and Outcomes_ **8**: e95972  
@@ -118,41 +118,40 @@ _Research Ideas and Outcomes_ **8**:e94501
 <https://doi.org/10.3897/rio.8.e94501> 
 [[slides](https://doi.org/10.5281/zenodo.7256428)]
 
-Soiland-Reyes S, Sefton P, Castro LJ, Coppens F, Garijo D, Leo S, Portier M, Groth P (2022):  
+Stian Soiland-Reyes, Peter Sefton, Leyla Jael Castro, Frederik Coppens, Daniel Garijo, Simone Leo, Marc Portier, Paul Groth (2022):  
 [**Creating lightweight FAIR Digital Objects with RO-Crate**](https://doi.org/10.3897/rio.8.e93937).  
 1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
 _Research Ideas and Outcomes_  **8**: e93937  
 <https://doi.org/10.3897/rio.8.e93937>
 [[poster](https://doi.org/10.5281/zenodo.7245315)]
 
-Woolland O, Brack P, Soiland-Reyes S, Scott B, Livermore L (2022):  
+Oliver Woolland, Paul Brack, Stian Soiland-Reyes, Ben Scott, Laurence Livermore (2022):  
 [**Incrementally building FAIR Digital Objects with Specimen Data Refinery workflows**](https://doi.org/10.3897/rio.8.e94349).  
 1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
 _Research Ideas and Outcomes_  **8**: e94349  
 <https://doi.org/10.3897/rio.8.e94349>
 [[poster](https://doi.org/10.5281/zenodo.7233688)]
 
-De Geest P, Coppens F, Soiland-Reyes S, Eguinoa I, Leo S (2022):  
+Paul De Geest, Frederik Coppens, Stian Soiland-Reyes, Ignacio Eguinoa, Simone Leo (2022):  
 [**Enhancing RDM in Galaxy by integrating RO-Crate**](https://doi.org/10.3897/rio.8.e95164).  
 1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
 _Research Ideas and Outcomes_  **8**: e95164  
 <https://doi.org/10.3897/rio.8.e95164>
 [[poster](https://doi.org/10.5281/zenodo.7257146)] 
  
-Giraldo O, Alves R, Bampalikis D, Fernandez JM, Martin del Pico E, Psomopoulos FE, Via A, Castro LJ (2022):  
+Olga Giraldo, Renato Alves, Dimitrios Bampalikis, Jose M Fernandez, Eva Martin del Pico, Fotis E Psomopoulos, Allegra Via, Leyla Jael Castro (2022):  
 [**A FAIRification roadmap for ELIXIR Software Management Plans**](https://doi.org/10.3897/rio.8.e94608).  
 1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
 _Research Ideas and Outcomes_  **8**: e94608  
 <https://doi.org/10.3897/rio.8.e94608>
 [[poster](https://doi.org/10.5281/zenodo.7249674)]
- 
-Niehues A, de Visser C, Hagenbeek FA, Karu N, Kindt ASD, Kulkarni P, Pool R, Boomsma DI, van Dongen J, van Gool AJ, 't Hoen PAC (2022):  
+
+Anna Niehues, Casper de Visser, Fiona A. Hagenbeek, Naama Karu, Alida S. D. Kindt, Purva Kulkarni, René Pool, Dorret I. Boomsma, Jenny van Dongen, Alain J. van Gool, Peter A. C. 't Hoen (2022):  
 [**A Multi-omics Data Analysis Workflow Packaged as a FAIR Digital Object**](https://doi.org/10.3897/rio.8.e94042).  
 1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
 _Research Ideas and Outcomes_  **8**: e94042.  
 <https://doi.org/10.3897/rio.8.e94042>
 [[poster](https://doi.org/10.5281/zenodo.7303932)]
-
 
 Hirotaka Suetake, Tsukasa Fukusato, Takeo Igarashi, Tazro Ohta (2022):  
 [**A workflow reproducibility scale for automatic validation of biological interpretation results**](https://doi.org/10.1101/2022.10.11.511695)
