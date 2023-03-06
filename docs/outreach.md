@@ -42,7 +42,42 @@ _Data Science_ **5**(2)
 
 ## Recent publications, presentations, citations
 
+### 2023
+
+Romain David, Audrey S. Richard, Claire Connellan, Katharina B. Lauer, Maria Luisa Chiusano, Carole Goble, Martin Houde, Isabel Kemmer, Antje Keppler, Philippe Lieutaud, Christian Ohmann, Maria Panagiotopoulou, Sara Raza Khan, Arina Rybina, Stian Soiland-Reyes, Charlotte Wit, Rudolf Wittner, Rafael Andrade Buono, Sarah Arnaud Marsh, Pauline Audergon, Dylan Bonfils, Jose-Maria Carazo, Remi Charrel, Frederik Coppens, Wolfgang Fecke, Claudia Filippone, Eva Garcia Alvarez, Sheraz Gul, Henning Hermjakob, Katja Herzog, Petr Holub, Lukasz Kozera, Allyson L. Lister, José López-Coronado, Bénédicte Madon, Kurt Majcen, William Martin, Wolfgang Müller, Elli Papadopoulou, Christine M.A. Prat, Paolo Romano, Susanna-Assunta Sansone, Gary Saunders, Niklas Blomberg, Jonathan Ewbank (2023):  
+[**Umbrella Data Management Plans to integrate FAIR data: lessons from the ISIDORe and BY-COVID consortia for pandemic preparedness**](https://doi.org/10.5281/zenodo.7520086).  
+(submitted to Data Science Journal).  
+_Zenodo_  
+<https://doi.org/10.5281/zenodo.7520086>
+
+Molly A Bogue, Robyn L Ball, Vivek M Philip, David O Walton, Matthew H Dunn, Georgi Kolishovski, Anna Lamoureux, Matthew Gerring, Hongping Liang, Jake Emerson, Tim Stearns, Hao He, Gaurab Mukherjee, John Bluis, Sejal Desai, Beth Sundberg, Beena Kadakkuzha, Govindarajan Kunde-Ramamoorthy, Elissa J Chesler (2023):  
+[**Mouse Phenome Database: towards a more FAIR-compliant and TRUST-worthy data repository and tool suite for phenotypes and genotypes**]().  
+_Nucleic Acids Research_ **51**(D1)  
+<https://doi.org/10.1093/nar/gkac1007>
+
+Andrea L. Berez-Kroeker, Shirley Gabber, Aliya Slayton (2023):  
+[**Recent Advances in Technologies for Resource Creation and Mobilization in Language Documentation**](https://doi.org/10.1146/annurev-linguistics-031220-120504).  
+_Annual Review of Linguistics_ **9**  
+<https://doi.org/10.1146/annurev-linguistics-031220-120504>
+
+Tony Ross-Hellauer, Thomas Klebel, Alexandra Bannach-Brown, Serge P.J.M. Horbach, Hajira Jabeen, Natalia Manola, Teodor Metodiev, Haris Papageorgiou, Martin Reczko, Susanna-Assunta Sansone, Jesper Schneider, Joeri Tijdink, Thanasis Vergoulis (2023):  
+[**TIER2: enhancing Trust, Integrity and Efficiency in Research through next-level Reproducibility**](https://doi.org/10.3897/rio.8.e98457).  
+_Research Ideas and Outcomes_ **8**:e98457  
+<https://doi.org/10.3897/rio.8.e98457>
+
+
 ### 2022
+
+Mauro Del Rio, Luca Lianas, Oskar Aspegren, Giovanni Busonera, Francesco Versaci, Renata Zelic, Per H. Vincent, Simone Leo, Andreas Pettersson, Olof Akre & Luca Pireddu (2022):  
+[**AI Support for Accelerating Histopathological Slide Examinations of Prostate Cancer in Clinical Studies**](https://doi.org/10.1007/978-3-031-13321-3_48).  
+International Conference on Image Analysis and Processing (ICIAP 2022): Image Analysis and Processing.  
+_Lecture Notes in Computer Science_ (LNCS) **13373**  
+<https://doi.org/10.1007/978-3-031-13321-3_48>
+
+Daniel Arend Sebastian Beier laurent bouri Marco Brandizi Donald Hobern Erwan Le Floch Timo Mühlhaus Cyril Pommier Stuart Owen Philippe Rocca-Serra Thomas Rosnet Stian Soiland-Reyes (2022):  
+[**BioHackEU22 Project 22: Plant data exchange and standard interoperability**](https://doi.org/10.37044/osf.io/c724r).  
+_BioHackrXiv_  
+<https://doi.org/10.37044/osf.io/c724r>
 
 Justin Clark-Casey, Stian Soiland-Reyes (2022):  
 [**Making EOSC Research Objects FAIR with RO-Crate**: A common metadata overlay for EOSC repositories](https://doi.org/10.5281/zenodo.7323480).  
@@ -170,6 +205,11 @@ Nick Thieberger, Amanda Harris (2022):
 _Data Science Journal_ **21**(1)  
 <https://doi.org/10.5334/dsj-2022-009>
 
+River Tae Smith, Louisa Willoughby, Trevor Johnston (2022):  
+[**Integrating Auslan Resources into the Language Data Commons of Australia**](https://aclanthology.org/2022.signlang-1.28).  
+_Proceedings of the LREC2022 10th Workshop on the Representation and Processing of Sign Languages: Multilingual Sign Language Resources_  
+<https://aclanthology.org/2022.signlang-1.28>
+
 Max Schröder, Susanne Staehlke, Paul Groth, J. Barbara Nebe, Sascha Spors & Frank Krüger (2022):  
 [**Structure-based knowledge acquisition from electronic lab notebooks for research data provenance documentation**](https://doi.org/10.1186/s13326-021-00257-x).  
 _Journal of Biomedical Semantics_ **13**:4
@@ -181,7 +221,7 @@ _Data Intelligence_ **4**(2)
 <https://doi.org/10.1162/dint_a_00135>
 
 Alex Hardisty, Paul Brack, Carole Goble, Laurence Livermore, Ben Scott, Quentin Groom, Stuart Owen, Stian Soiland-Reyes (2022):  
-[**The Specimen Data Refinery: A canonical workflow framework and FAIR Digital Object approach to speeding up digital mobilisation of natural history collections**](https://doi.org/10.1162/dint_a_00134).  
+[**The Specimen Data Refinery: A canonical workflow framework and FAIR Digital Object approach to speeding up digital mobilisation of natural history collections**](https://doi.org/10.1162/dint_a_00134). 
 _Data Intelligence_ **4**(2)  
 <https://doi.org/10.1162/dint_a_00134>
 
