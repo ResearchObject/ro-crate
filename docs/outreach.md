@@ -84,14 +84,7 @@ Justin Clark-Casey, Stian Soiland-Reyes (2022):
 _[EOSC Symposium 2022](https://events.eoscfuture.eu/symposium2022/programme)_  
 <https://doi.org/10.5281/zenodo.7323480>
 
-Raül Sirvent,  
-Javier Conejero, 
-Francesc Lordan, 
-Jorge Ejarque, 
-Laura Rodríguez-Navas, 
-José M. Fernández, 
-Salvador Capella-Gutiérrez, 
-Rosa M. Badia (2022):  
+Raül Sirvent, Javier Conejero, Francesc Lordan, Jorge Ejarque, Laura Rodríguez-Navas, José M. Fernández, Salvador Capella-Gutiérrez, Rosa M. Badia (2022):  
 **Automatic, Efficient and Scalable Provenance Registration for FAIR HPC Workflows**.  
 _2022 IEEE/ACM Workshop on Workflows in Support of Large-Scale Science (WORKS)_  
 <https://doi.org/10.1109/WORKS56498.2022.00006>  (No OA preprint available)
