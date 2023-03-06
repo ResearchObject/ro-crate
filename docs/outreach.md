@@ -107,6 +107,7 @@ Raül Sirvent, Javier Conejero, Francesc Lordan, Jorge Ejarque, Laura Rodríguez
 **Automatic, Efficient and Scalable Provenance Registration for FAIR HPC Workflows**.  
 _2022 IEEE/ACM Workshop on Workflows in Support of Large-Scale Science (WORKS)_  
 <https://doi.org/10.1109/WORKS56498.2022.00006>  (No OA preprint available)
+[[slides](https://doi.org/10.5281/zenodo.7701868)]
 
 Carole Goble, Stian Soiland-Reyes (2022):  
 [**RO-Crate: packaging metadata love notes into FAIR Digital Objects**](https://events.hifis.net/event/469/timetable/#9-ro-crate-packaging-metadata). (Keynote)  
