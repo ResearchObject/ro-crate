@@ -87,6 +87,13 @@ _Workshop On Open Citations And Open Scholarly Metadata 2022_ ([WOOC2022](https:
 <https://doi.org/10.5281/zenodo.7129715>
 [[video](https://www.youtube.com/watch?v=Too-OQ6jSfk)]
 
+José M Fernández, Laura Rodríguez-Navas, Salvador Capella-Gutiérrez (2022):  
+[**Secured and annotated execution of workflows with WfExS-backend**](https://doi.org/10.7490/f1000research.1119198.1).  
+_European Conference on Computational Biology (ECCB) 2022_, 
+The Global Alliance for Genomics And Health (GA4GH) 10th Plenary Meeting.  
+_F1000Research_ **11**:1318 (poster)  
+<https://doi.org/10.7490/f1000research.1119198.1>
+
 Mauro Del Rio, Luca Lianas, Oskar Aspegren, Giovanni Busonera, Francesco Versaci, Renata Zelic, Per H. Vincent, Simone Leo, Andreas Pettersson, Olof Akre & Luca Pireddu (2022):  
 [**AI Support for Accelerating Histopathological Slide Examinations of Prostate Cancer in Clinical Studies**](https://doi.org/10.1007/978-3-031-13321-3_48).  
 International Conference on Image Analysis and Processing (ICIAP 2022): Image Analysis and Processing.  
