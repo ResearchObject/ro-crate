@@ -42,9 +42,9 @@ RO-Crate can describe a profile by adding it as an [contextual entity](contextua
 
 ```json
 {
-    "@id": "https://w3id.org/ro/profile/paradisec/0.1",
+    "@id": "https://w3id.org/ro/wfrun/process/0.1",
     "@type": "CreativeWork",
-    "name": "Profile for RO-Crates for PARADISEC repository",
+    "name": "Process Run crate profile",
     "version": "0.1.0"
 }
 ```
@@ -53,30 +53,26 @@ The contextual entity for a profile:
 
 * SHOULD have an absolute URI as `@id`
 * SHOULD have a descriptive [name]
-* MAY declare [version] according to [Semantic Versioning][semver]
+* MAY declare [version], preferably according to [Semantic Versioning][semver]
 
-RO-Crates conforming to (or intending to conform to) such a profile SHOULD expand the `conformsTo` declaration of the [metadata file descriptor](root-data-entity.md#ro-crate-metadata-file-descriptor) to be an array and include the profile identifier:
+RO-Crates conforming to (or intending to conform to) such a profile declare this using `conformsTo` on the [root data entity](root-data-entity.md):
 
 ```json
 {
-    "@type": "CreativeWork",
-    "@id": "ro-crate-metadata.json",
-    "about": {"@id": "./"},
-    "conformsTo": [
-        {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
-        {"@id": "https://w3id.org/ro/profile/paradisec/0.1"}
-    ]
+    "@id": "./",
+    "@type": "Dataset",
+    "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.1"}
 }
 ```
 
-It is valid for a crate to conform to multiple profiles.
+It is valid for a crate to conform to multiple profiles, in which case `conformsTo` is an unordered array.
 
-Note that although profile conformance is declared on the RO-Crate Metadata File `ro-crate-metadata.json`, the profile applies to the whole RO-Crate, and may cover aspects beyond the crate's JSON-LD serialization (e.g. identifiers, packaging, purpose).
+Note that as profile conformance is declared on the RO-Crate Root (`./` in this example), the profile applies to the whole RO-Crate, and may cover aspects beyond the crate's metadata file (e.g. identifiers, packaging, purpose).
 
 
 ## Profile Crate
 
-While the Profile URI `@id` can resolve to a human-readable _profile description_, it can additionally be made to [resolve](#how-to-retrieve-a-profile-crate) to a _Profile Crate_.
+While the Profile URI `@id` must resolve to a human-readable _profile description_, it can additionally be made to [resolve](#how-to-retrieve-a-profile-crate) to a _Profile Crate_.
 
 A **Profile Crate** is a type of RO-Crate that gathers resources which further define the profile. This allows formalizing alternative profile description for machine-readability, for instance for validation, but also additional resources like examples.
 
@@ -86,41 +82,53 @@ A **Profile Crate** is a type of RO-Crate that gathers resources which further d
 To resolve a Profile URI to a machine-readable _Profile Crate_, two approaches are recommended to retrieve its [RO-Crate metadata file](root-data-entity.md#ro-crate-metadata-file-descriptor):
 
 1. [HTTP Content-negotiation](https://httpd.apache.org/docs/2.4/content-negotiation.html) for the [RO-Crate media type](appendix/jsonld.md#ro-crate-json-ld-media-type), for example:  
-  Requesting `https://w3id.org/ro/profile/paradisec/0.1` with HTTP header  
+  Requesting `https://w3id.org/workflowhub/workflow-ro-crate/1.0` with HTTP header
   `Accept: application/ld+json;profile=https://w3id.org/ro/crate` redirects to the _RO-Crate Metadata file_
-  `https://example.org/ro-profiles/paradisec-0.1.0/ro-crate-metadata.json`
+  `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`
 2. The above approach may fail (or returns a HTML page), e.g. for content-delivery networks that do not support content-negotiation. The fallback is to try resolving the path `./ro-crate-metadata.json` from the _resolved_ URI (after permalink redirects). For example:  
-If permalink `https://w3id.org/ro/profile/paradisec/0.1` redirects to `https://example.org/ro-profiles/paradisec-0.1.0/`, then
-get `https://example.org/ro-profiles/paradisec-0.1.0/ro-crate-metadata.json`
+If permalink `https://w3id.org/workflowhub/workflow-ro-crate/1.0` redirects to `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/index.html` (a HTML page), then
+try retrieving `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`
 3. If none of these approaches worked, then this profile probably does not have a corresponding Profile Crate. For humans, display a hyperlink to its `@id` described by its `name`.
 
 <!-- TODO Make both examples above actually work! -->
 
 ### What is included in the Profile Crate?
 
-Below follows the suggested [data entities](data-entities.md) to include in a Profile Crate:
+Below follows the suggested [data entities](data-entities.md) to include in a Profile Crate using `hasPart`:
 
 #### Profile description entity
 
-A Profile Crate MUST declare a human-readable _profile description_, which is [about] this Profile Crate:
+A Profile Crate MUST declare a human-readable _profile description_, which is [about] this Profile Crate and SHOULD have `encodingFormat` as `text/html`:
 
 ```json
 {
     "@id": "index.html",
     "@type": "File",
-    "name": "PARADISEC profile description",
-    "about": "./",
+    "name": "Workflow RO-Crate profile description",
+    "encodingFormat": "text/html",
+    "about": "./"
 }
 ```
 
 The _profile description_ MAY be equivalent to the
 [RO-Crate Website](structure.md#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files)
-`ro-crate-preview.html`.
+`ro-crate-preview.html` (promoted to become a data entity):
+
+```json
+{
+    "@id": "ro-crate-preview.html",
+    "@type": "CreativeWork",
+    "name": "RO-Crate preview of the Process Run Crate",
+    "encodingFormat": "text/html",
+    "about": "./"
+}
+```
+
 
 #### Profile Schema entity
 
 
-An optional machine-readable schema of the profile, for instance a [Describo](https://arkisto-platform.github.io/describo/) [JSON profile](https://github.com/UTS-eResearch/describo/wiki/dsp-index):
+An optional machine-readable _schema_ of the profile, for instance a [Describo](https://arkisto-platform.github.io/describo/) [JSON profile](https://github.com/UTS-eResearch/describo/wiki/dsp-index):
 
 ```json
 {
