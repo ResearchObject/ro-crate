@@ -58,18 +58,20 @@ Likewise, some data entities may also be described as contextual entities, for i
 
 The RO-Crate Metadata JSON `@graph` MUST NOT list multiple entities with the same `@id`; behaviour of consumers of an RO-Crate encountering multiple entities with the same `@id` is undefined.
 
+
 ## Identifiers for contextual entities
 
 A challenge can be how to assign [identifiers for contextual entities](appendix/jsonld.md#describing-entities-in-json-ld), that is deciding on their `@id` value.
 
-RO-Crate recommend that if an existing permalink (e.g. `https://orcid.org/0000-0002-1825-0097`) or other absolute URI (e.g. `https://en.wikipedia.org/wiki/Josiah_S._Carberry`) is reasonably unique for that entity, that URI should be used as identifier for the contextual entity in preference of an identifier local to the RO-Crate (e.g. `#josiah` or `#0fa587c6-4580-4ece-a5df-69af3c5590e3`). 
+If an existing permalink (e.g. `https://orcid.org/0000-0002-1825-0097`) or other absolute URI (e.g. `https://en.wikipedia.org/wiki/Josiah_S._Carberry`) is reasonably unique for that entity, that URI SHOULD be used as identifier for the contextual entity in preference of an identifier local to the RO-Crate (e.g. `#josiah` or `#0fa587c6-4580-4ece-a5df-69af3c5590e3`). 
 
-Care should be taken to not describe two conceptually different contextual entities with the same identifier - e.g. if `https://en.wikipedia.org/wiki/Josiah_S._Carberry` is a [Person] it should not also be a [CreativeWork] (although this example is a fictional person!).
+Care should be taken to not describe two conceptually different contextual entities with the same identifier - e.g. if `https://en.wikipedia.org/wiki/Josiah_S._Carberry` is a [Person] it SHOULD NOT also be a [CreativeWork] (although this example is a fictional person!).
 
 Where a related URL exist that may not be unique enough to serve as identifier, it can instead be added to a contextual entity using the property [url].
 
 
 See the [appendix on JSON-LD identifiers](appendix/jsonld.md#describing-entities-in-json-ld) for details.
+
 
 ## People
 

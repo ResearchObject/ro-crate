@@ -58,15 +58,14 @@ The contextual entity for a profile:
 * SHOULD have a descriptive [name]
 * MAY declare [version], preferably according to [Semantic Versioning][semver]
 
-RO-Crates that are _conforming to_ (or intending to conform to) such a profile declare this using `conformsTo` on the [root data entity](root-data-entity.md):
+RO-Crates that are _conforming to_ (or intending to conform to) such a profile SHOULD declare this using `conformsTo` on the [root data entity](root-data-entity.md):
 
 ```json
 {
     "@id": "./",
     "@type": "Dataset",
     "conformsTo":
-        {"@id": "https://w3id.org/ro/wfrun/process/0.1"}
-    
+        {"@id": "https://w3id.org/ro/wfrun/process/0.1"}       
 }
 ```
 
@@ -107,9 +106,11 @@ The rest of the requirements for being referenced as a contextual entity also ap
 To resolve a Profile URI to a machine-readable _Profile Crate_, two approaches are recommended to retrieve its [RO-Crate metadata file](root-data-entity.md#ro-crate-metadata-file-descriptor):
 
 1. [HTTP Content-negotiation](https://httpd.apache.org/docs/2.4/content-negotiation.html) for the [RO-Crate media type](appendix/jsonld.md#ro-crate-json-ld-media-type), for example:  
-  Requesting `https://w3id.org/ro/wfrun/process/0.1` with HTTP header  
+
+Requesting `https://w3id.org/workflowhub/workflow-ro-crate/1.0` with HTTP header
   `Accept: application/ld+json;profile=https://w3id.org/ro/crate` redirects to the _RO-Crate Metadata file_
-  `https://www.researchobject.org/workflow-run-crate/profiles/0.1/process_run_crate/ro-crate-metadata.json`
+  `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`
+
 2. The above approach may fail (or returns a HTML page), e.g. for content-delivery networks that do not support content-negotiation. The fallback is to try resolving the path `./ro-crate-metadata.json` from the _resolved_ URI (after permalink redirects). For example:  
 If permalink `https://w3id.org/workflowhub/workflow-ro-crate/1.0` redirects to `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/index.html` (a HTML page), then
 try retrieving `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`
@@ -215,6 +216,8 @@ The recommended [predefined roles](https://www.w3.org/TR/dx-prof/#resource-roles
 
 The examples in the rest of this document will list the data entities with a corresponding `ResourceDescriptor` entity, but for brevity not repeating the required `hasPart` `hasArtifact` and `DefinedTerm` declarations.
 
+Below follows the suggested [data entities](data-entities.md) to include in a Profile Crate using `hasPart`:
+
 #### Profile description entity
 
 A Profile Crate MUST declare a human-readable _profile description_, which is [about] this Profile Crate and SHOULD have `encodingFormat` as `text/html`. The corresponding `ResourceDescriptor` SHOULD have identifier `http://www.w3.org/ns/dx/prof/role/specification` or `http://www.w3.org/ns/dx/prof/role/guidance` -- for example:
@@ -232,8 +235,8 @@ A Profile Crate MUST declare a human-readable _profile description_, which is [a
     "@type": "ResourceDescriptor",
     "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/specification" },
     "hasArtifact": {"@id": "index.html"}
+    "about": "./"
 }
-
 ```
 
 The _profile description_ MAY be equivalent to the
@@ -371,10 +374,39 @@ which vocabulary/ontology it uses as a [DefinedTermSet]:
 The `@id` of the vocabulary SHOULD be the _namespace_, 
 while `url` SHOULD go to a human-readable description of the vocabulary.
 
+A profile that defines many extensions term MAY define its own `DefinedTermSet` and relate the terms using `hasDefinedTerm`:
+
+```json
+ {
+    "@id": "https://w3id.org/cpm/ro-crate",
+    "@type": "Dataset",
+    "identifier": "https://w3id.org/cpm/ro-crate",
+    "name": "Common Provenance Model RO-Crate profiles and vocabulary",
+    "hasPart": [
+      { "@id": "https://w3id.org/cpm/ro-crate#" }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpm/ro-crate#",
+    "@type": "DefinedTermSet",
+    "name": "Namespace for Common Provenance Model RO-Crate model",
+    "hasDefinedTerm": [
+      { "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile" },
+      { "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile" }
+    ]
+  },
+  { 
+    "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile",
+    "@type": "DefinedTerm",
+    "…" : ""
+  }
+```
+
+
 #### Extension terms
 
 A profile that [extends RO-Crate](appendix/jsonld.md#extending-ro-crate) MAY indicate particular terms
-directly as [DefinedTerm] instances:
+directly as [DefinedTerm], [Class] and/or [Property] instances:
 
 ```json
 {
@@ -387,7 +419,8 @@ directly as [DefinedTerm] instances:
 }
 ```
 
-The `termCode` SHOULD be valid as a key in JSON-LD `@context` of conforming RO-Crates.
+The `termCode` SHOULD be valid as a key in JSON-LD `@context` of conforming RO-Crates. The term SHOULD be mapped to the terms' `@id` in the `@context` of this Profile Crate.
+
 
 
 #### JSON-LD Context
@@ -401,35 +434,40 @@ context in the Profile Crate:
     "@id": "https://w3id.org/ro/crate/1.2-DRAFT/context",
     "@type": "CreativeWork",
     "name": "RO-Crate JSON-LD Context",
-    "encodingFormat": [
-        "application/ld+json",
-        {"@id": "http://www.w3.org/ns/json-ld#Context"}
-    ],
+    "encodingFormat": "application/ld+json",
+    "conformsTo": {"@id": "http://www.w3.org/ns/json-ld#Context"},
     "version": "1.1.1",
 },
 {
     "@id": "http://www.w3.org/ns/json-ld#Context",
-    "@type": "Thing",
+    "@type": "DefinedTerm",
     "name": "JSON-LD Context",
     "url": "https://www.w3.org/TR/json-ld/"
 }
 ```
 
-The JSON-LD Context:
+The JSON-LD Context entity:
 
+* MUST have an `encodingFormat` of `application/ld+json`
+* MUST have an absolute URI as `@id`, which MUST be retrievable as JSON-LD directly or with content-negotiation and/or HTTP redirects.
 * SHOULD have a _permalink_ (persistent identifier) as `@id`
   - e.g. starting with <https://w3id.org/> <http://purl.org/>
+  - MAY embed major.minor version in the PID, e.g. <https://w3id.org/ro/crate/1.2/context>
 * SHOULD use `https` rather than `http` with a certificate commonly accepted by browsers
 * SHOULD have a `@id` URI that is _versioned_ with [`MAJOR.MINOR`][semver], e.g. `https://example.com/image-profile-2.4`
 * SHOULD have a descriptive [name]
 * SHOULD have a `encodingFormat` to the contextual entity `http://www.w3.org/ns/json-ld#Context`
 * MAY declare [version] according to [Semantic Versioning][semver]
+- Updates MAY add new terms or patch fixes (with corresponding `version` change)
+* Updates SHOULD NOT remove terms already published and potentially used by consumers of the profile
+* Updates SHOULD NOT replace URIs terms map to -- except for typos.
 
 Note that the referenced context URI does _not_ have to match the `@context` of the Profile Crate itself.
 
 {: .tip }
 The `@context` MAY be the Profile Crate's Metadata JSON-LD file if 
 it is [resolvable](appendix/jsonld.md#ro-crate-json-ld-media-type)
-as media type `application/ld+json` over HTTP.
+as media type `application/ld+json` over HTTP. Make sure the crate includes the 
+defined terms both within its `@context` and ideally as entities in its `@graph`.
 
 {% include references.liquid %}

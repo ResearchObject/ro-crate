@@ -114,7 +114,7 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
 The above example provides an media type for the file `cp7glop.ai` - which is
 useful as it may not be apparent that the file is readable as a PDF file from the
 extension alone. To add more detail, encodings SHOULD be linked using a [PRONOM]
-identifier to a _Contextual Entity_ of `@type` array containing [WebPage] and `Standard`.
+identifier to a _Contextual Entity_ with `@type` array containing [WebPage] and `Standard`.
 
 ``` json
   {
@@ -133,9 +133,9 @@ identifier to a _Contextual Entity_ of `@type` array containing [WebPage] and `S
 
 ```
 
-If there is no PRONOM identifier (and typically no media type string), then a contextual entity with a different URL as an `@id` MAY be used, e.g. documentation page of a software's file format. The contextual entity SHOULD NOT include `Standard` in its `@type` if the page do not sufficiently document the format. The `@type` SHOULD be [WebPage], or MAY be [WebPageElement] to indicate a section of the page.
+If there is no PRONOM identifier (and typically no media type string), then a contextual entity with a different URL as an `@id` MAY be used, e.g. documentation page of a software's file format. The contextual entity SHOULD NOT include `Standard` in its `@type` if the page do not sufficiently document the format. The `@type` SHOULD include [WebPage], or MAY include [WebPageElement] to indicate a section of the page.
 
-For example:
+For example, `.trr` is a an internal GROMACS file format that is not further documented as a standard, but is referenced from a `WebPageElement` adressable by an `#anchor`:
 
 ```json
  {
@@ -153,7 +153,7 @@ For example:
   }
 ```
 
-If there is no web-accessible description for a file format it SHOULD be described locally in the dataset, for example in a Markdown file:
+If there is no web-accessible description for a file format it SHOULD be described locally in the RO-Crate, for example in a Markdown file:
 
 ```json
  {
@@ -195,7 +195,7 @@ Some generic file formats like `application/json` may be specialized using a _pr
 Profiles expressed in formal languages (e.g. XML Schema for validation) can have their own `encodingFormat` and `conformsTo` to indicate their file format.
 
 {: .note}
-The [Metadata File Descriptor](root-data-entity.md#ro-crate-metadata-file-descriptor) is not a data entity, but is described with `conformsTo` to an implicit contextual entity for the RO-Crate specification, a profile of [JSON-LD](appendix/jsonld). RO-Crates themselves can be specialized using [Profile Crates](profiles), specified with `conformsTo` on the root data entity.
+The [Metadata File Descriptor](root-data-entity.md#ro-crate-metadata-file-descriptor) `ro-crate-metadata.json` is not a data entity, but is described with `conformsTo` to an _implicit contextual entity_ for the RO-Crate specification, a profile of [JSON-LD](appendix/jsonld). RO-Crates themselves can be specialized using [Profile Crates](profiles), specified with `conformsTo` on the root data entity.
 
 
 ## Core Metadata for Data Entities

@@ -126,7 +126,6 @@ These terms are being proposed by [Bioschemas profile ComputationalWorkflow 1.0-
 * `FormalParameter` mapped to <https://bioschemas.org/FormalParameter>
 * `input` mapped to <https://bioschemas.org/ComputationalWorkflow#input>
 * `output` mapped to <https://bioschemas.org/ComputationalWorkflow#output>
-* `funding` mapped to <http://schema.org/funding> ([schemaorg #383](https://github.com/schemaorg/schemaorg/issues/383))
 
 {: .note }
 > In this specification the proposed Bioschemas terms use the temporary <https://bioschemas.org/> namespace; future releases of RO-Crate may reflect mapping to the <http://schema.org/> namespace.

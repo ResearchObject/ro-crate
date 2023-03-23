@@ -4,7 +4,7 @@ excerpt: |
   Scientific workflows and Scripts that were used (or can be used) to 
   analyze or generate files contained in an RO-Crate can be embedded
   in an RO-Crate and described in detail.
-nav_order: 9
+nav_order: 10
 parent: RO-Crate 1.2-DRAFT
 ---
 <!--
@@ -216,7 +216,7 @@ contextual entities. Note that this entity usually represent a _potential_ input
 workflow, much like [function parameter definitions] in general programming.
 
 If complying with the Bioschemas [FormalParameter profile][FormalParameter profile 1.0],
-the _contextual entities_ for [FormalParameter][FormalParameter 1.0], referenced by `input` or `output`, MUST describe: [name], [additionalType], [encodingFormat]
+the _contextual entities_ for [FormalParameter][FormalParameter 1.0], referenced by `input` or `output`, MUST describe [name].
 
 The Bioschemas [FormalParameter profile][FormalParameter profile 1.0] explains the above and lists additional properties that can be used, including [description], [valueRequired], [defaultValue] and [identifier].
 
