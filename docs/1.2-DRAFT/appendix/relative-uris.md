@@ -308,30 +308,13 @@ When parsing _RO-Crate JSON-LD_ as RDF, where the RDF framework performs resolut
 The algoritm proposed in section [Root Data Entity](../root-data-entity.md#finding-the-root-data-entity) allows finding the RDF resource describing `ro-crate-metadata.json`, independent of its parsed base URI. We can adopt this for RDF triples, thus finding crates conforming to this specification can be queried with [SPARQL]:
 
 ```sparql
-PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX schema:  <http://schema.org/>
 
 SELECT ?crate ?metadatafile
 WHERE {
   ?crate        a                  schema:Dataset .
   ?metadatafile schema:about       ?crate .
-  ?metadatafile dcterms:conformsTo <https://w3id.org/ro/crate/1.2-DRAFT> .
-}
-```
-
-..or (less efficient) for any RO-Crate version:
-
-```sparql
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX schema:  <http://schema.org/>
-
-SELECT ?crate ?metadatafile ?spec
-WHERE {
-  ?crate        a                  schema:Dataset .
-  ?metadatafile schema:about       ?crate .
-  ?metadatafile dcterms:conformsTo ?spec .
-
-  FILTER STRSTARTS(str(?spec), "https://w3id.org/ro/crate/")
+  filter(contains(str(?metadatafile), "ro-crate-metadata.json"))
 }
 ```
 
