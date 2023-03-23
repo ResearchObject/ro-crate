@@ -172,6 +172,31 @@ If there is no web-accessible description for a file format it SHOULD be describ
   }
 ```
 
+### File format profiles
+
+Some generic file formats like `application/json` may be specialized using a _profile_ document that define expectations for the file's content as expected by some applications, by using [conformsTo] to a contextual entity with type [CreativeWork]:
+
+```json
+ { 
+  "@id": "attributes.csv",
+  "@type": "File",
+  "encodingFormat": ["text/csv", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/18"}],
+  "conformsTo": {"@id": "https://docs.ropensci.org/dataspice/#create-spice"}
+ },
+ {
+  "@id": "https://docs.ropensci.org/dataspice/#create-spice",
+  "@type": "CreativeWork",
+  "name": "dataspice CSV profile"
+ }
+```
+
+{: .tip }
+Profiles expressed in formal languages (e.g. XML Schema for validation) can have their own `encodingFormat` and `conformsTo` to indicate their file format.
+
+{: .note}
+The [Metadata File Descriptor](root-data-entity.md#ro-crate-metadata-file-descriptor) `ro-crate-metadata.json` is not a data entity, but is described with `conformsTo` to an implicit contextual entity for the RO-Crate specification, a profile of [JSON-LD](appendix/jsonld). RO-Crates themselves can be specialized using [Profile Crates](profiles), specified with `conformsTo` on the root data entity.
+
+
 ## Core Metadata for Data Entities
 
 The table below outlines the properties that Data Entities, when present, MUST have to be minimally valid.
