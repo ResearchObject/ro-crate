@@ -52,7 +52,7 @@ RO-Crate can describe a profile by adding it as an [contextual entity](contextua
 
 The contextual entity for a profile:
 
-* The `@type` SHOULD be an array. The `@type` MUST include `Profile`.
+* The `@type` SHOULD be an array. The `@type` MUST include [Profile].
 * The `'@type` SHOULD include `CreativeWork` (indicating a Web Page) or `Dataset` (indicating a Profile Crate).
 * SHOULD have an absolute URI as `@id`
 * SHOULD have a descriptive [name]
