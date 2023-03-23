@@ -22,8 +22,13 @@ redirect_from:
 -->
 
 # RO-Crate in use
+{: .no_toc }
 
 These applications use or expose RO-Crates to describe Data, Datasets and Workflows:
+
+1. TOC
+{:toc}
+
 
 ## WorkflowHub
 
@@ -34,9 +39,13 @@ These applications use or expose RO-Crates to describe Data, Datasets and Workfl
 
 [LifeMonitor](life_monitor) uses RO-Crate as an exchange format for describing test suites associated with workflows. To this end, the LifeMonitor team is developing an extension to the [Workflow RO-Crate specification](https://about.workflowhub.eu/Workflow-RO-Crate/) to support the inclusion of metadata related to the testing of computational workflows stored in the crate.
 
+## Language Data Commons of Australia (LDaCA)
+
+[LDaCA](LDaCA) uses RO-Crate as an interchange and archive format for language data, and is providing data discovery portals and API access to data using RO-Crate-centric APIs.]
+
 ## Arkisto
 
-[Arkisto uses RO-Crate](https://arkisto-platform.github.io/standards/ro-crate/) for packaging data objects in the 3 uses cases described below.
+[Arkisto uses RO-Crate](https://arkisto-platform.github.io/standards/ro-crate/) for packaging data objects in the 3 uses cases described below, **Modern PARADISEC**, **UTS Research Data Repository** and **UTS Cultural Datasets**.
 
 As part of these use-cases they have been developing or enhancing their tooling to facilitate their use of RO-Crate
 
@@ -45,17 +54,15 @@ As part of these use-cases they have been developing or enhancing their tooling 
   * [ocfl-viewer](https://hub.docker.com/r/coedl/ocfl-viewer)
   * [ONI indexer](https://github.com/UTS-eResearch/oni-indexer)
 
+### Modern PARADISEC
 
-**Modern PARADISEC**
+[Modern PARADISEC](https://arkisto-platform.github.io/case-studies/paradisec/) demonstrates the use of RO-Crate to describe the collections and items. The demonstrator includes an elastic search service and a webserver but the key feature is that it keeps working with only the filesystem and a webserver.
 
-[Modern PARADISEC](https://arkisto-platform.github.io/case-studies/paradisec/) demonstrates the use of RO-Crate to describe the collections and items and store those items within an OCFL system. The demonstrator includes an elastic search service and a webserver but the key feature is that the it keeps working with only the filesystem and a webserver.
-
-
-**UTS Research Data Repository**
+### UTS Research Data Repository
 
 The [UTS Data Repository](https://arkisto-platform.github.io/case-studies/uts-repo/) UTS Research Data Repository is a searchable portal for discovering and accessing public datasets by UTS researchers. Datasets are described with RO-Crates and published either through the University’s institutional research data management system or direct import from research storage devices for very large datasets.
 
-**UTS Cultural Datasets**
+### UTS Cultural Datasets
 
 The [UTS Cultural Datasets](https://arkisto-platform.github.io/case-studies/uts-cultural/) project is collaborating with Humanities and Social Science (HASS) researchers and is re-using existing UTS Data infrastructure to build interactive services that allow people to use the data. They make use of RO-Crate to be able to directly transfer data and mappings to the [Expert Nation database](https://expertnation.org/).
 
@@ -74,6 +81,12 @@ executions. Final execution results can be encrypted with crypt4gh GA4GH standar
 researchers or destination, so the results can be safely moved outside the execution environments through unsecured
 networks and storages.
 
+## ROHub
+
+[ROHub](rohub.md) is a solution for the storage, lifecycle management and preservation of scientific work and operational processes via research objects. It makes these resources available to others, allows to publish and release them through a DOI, and allows to discover and reuse pre-existing scientific knowledge.
+
+ROHub imports and exports RO-Crates, using it as an exchange format, particularly for Earth Science _data cubes_ following the [RELIANCE RO-Crate profile](https://reliance-eosc.github.io/reliance-ro-crate/).
+
 ## Research Object Composer
 
 [Research Object Composer](https://github.com/researchobject/research-object-composer) is a REST API for gradually building and depositing Research Objects according to a pre-defined profile. It uses JSON as an intermediate format and modified JSON schemas to define a Profile (RO-Crate support _alpha_)
@@ -81,3 +94,9 @@ networks and storages.
 ## Machine-actionable data management plans
 
 [RDA maDMP Mapper](https://github.com/GhaithArf/ro-crate-rda-madmp-mapper) and [Ro-Crate_2_ma-DMP](https://github.com/BrennerG/Ro-Crate_2_ma-DMP/tree/r2d_) can convert between machine-actionable data management plans (maDMP) and RO-Crate. See <https://doi.org/10.4126/frl01-006423291> for details.
+
+## DataPlant
+
+[DataPlant](https://nfdi4plants.org/) is implementing [Annotated Research Context (ARC)](https://nfdi4plants.org/content/learn-more/annotated-research-context.html), an RO-Crate profile that combines the Investigation Study Assay model ([ISA](https://isa-specs.readthedocs.io/en/latest/isamodel.html)) and the Common Workflow Language ([CWL](https://www.commonwl.org/)) to capture a range from single experimental setups to complex experimental designs. 
+
+In ARC, files are managed in a git repository with a fixed structure following the ISA model, in addition to metadata in an Excel spreadsheet. The [arcCommander](https://github.com/nfdi4plants/arcCommander) tool can help with managing this structure, while the tool [arc--to-roc](https://github.com/nfdi4plants/arc-to-roc) can inspect the structure to generate an RO-Crate metadata file.

@@ -4,7 +4,7 @@ nav_exclude: true
 ---
 
 <!--
-   Copyright 2019-2020 The University of Manchester and RO Crate contributors 
+   Copyright 2019-2022 The University of Manchester and RO Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -75,7 +75,7 @@ See also [recent and upcoming events](outreach.md#upcoming-and-recent-events).
 
 Stian Soiland-Reyes, Peter Sefton, Mercè Crosas, Leyla Jael Castro, Frederik Coppens, José M. Fernández, Daniel Garijo, Björn Grüning, Marco La Rosa, Simone Leo, Eoghan Ó Carragáin, Marc Portier, Ana Trisovic, RO-Crate Community, Paul Groth, Carole Goble (2022):  
 **Packaging research artefacts with RO-Crate**.  
-_Data Science_ (in press).  
+_Data Science_ **5**(2)  
 <https://doi.org/10.3233/DS-210053>  
 
 

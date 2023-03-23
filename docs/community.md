@@ -89,9 +89,16 @@ The _RO-Crate_ team is:
 * Sveinung Gundersen <https://orcid.org/0000-0001-9888-7954>
 * Muhammad Radifar <https://orcid.org/0000-0001-9156-9478>
 * Rudolf Wittner <https://orcid.org/0000-0002-0003-2024>
-* Oliver Woolland <https://github.com/OliverWoolland>
+* Oliver Woolland <https://orcid.org/0000-0002-4565-9760>
 * Paul De Geest <https://orcid.org/0000-0002-8940-4946>
-
+* Douglas Fils <https://orcid.org/0000-0002-2257-9127>
+* Florian Wetzels <https://orcid.org/0000-0002-5526-7138>
+* Raül Sirvent <https://orcid.org/0000-0003-0606-2512>
+* Abigail Miller <https://orcid.org/0000-0001-9228-2882>
+* Jake Emerson <https://orcid.org/0000-0003-0617-9219>
+* Davide Fucci <https://orcid.org/0000-0002-0679-4361>
+* Bruno P. Kinoshita <https://orcid.org/0000-0001-8250-4074>
+* Maciek Bąk <https://orcid.org/0000-0003-1361-7301>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! 
 

@@ -1,4 +1,4 @@
-remote_theme: pdmosses/just-the-docs@callouts
+remote_theme: just-the-docs/just-the-docs@v0.4.0
 logo: assets/img/ro-crate-wide.svg?20201023T1353
 
 title: Research Object Crate (RO-Crate)
