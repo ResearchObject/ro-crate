@@ -272,7 +272,7 @@ context in the Profile Crate:
 },
 {
     "@id": "http://www.w3.org/ns/json-ld#Context",
-    "@type": "Thing",
+    "@type": "DefinedTerm",
     "name": "JSON-LD Context",
     "url": "https://www.w3.org/TR/json-ld/"
 }
