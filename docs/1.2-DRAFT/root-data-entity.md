@@ -174,8 +174,8 @@ be minimally valid.
 
 The _Root Data Entity_ MUST have the following properties:
 
-*  `@type`: MUST be [Dataset]
-*  `@id`:  SHOULD be the string `./` or an absolute URI (see below)
+*  `@type`: MUST be [Dataset] or an array that contain `Dataset`
+*  `@id`:  SHOULD be the string `./` or an absolute URI (see [below](#root-data-entity-identifier))
 *  `name`: SHOULD identify the dataset to humans well enough to disambiguate it from other RO-Crates
 *  `description`: SHOULD further elaborate on the name to provide a summary of the context in which the dataset is important.
 *  `datePublished`: MUST be a string in [ISO 8601 date format][DateTime] and SHOULD be specified to at least the precision of a day, MAY be a timestamp down to the millisecond. 
@@ -189,7 +189,7 @@ The _Root Data Entity_ MUST have the following properties:
 {: .warning }
 > The properties above are not sufficient to generate a [DataCite][DataCite Schema] citation. Advice on integrating with [DataCite] will be provided in a future version of this specification, or as an implementation guide.
 
-Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be added to further describe the RO-Crate as a whole, e.g. [author], [publisher]. See sections [contextual entities](contextual-entities.md) and [provenance](provenance.md) for further details.
+Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be added to further describe the RO-Crate as a whole, e.g. [author], [abstract], [publisher]. See sections [contextual entities](contextual-entities.md) and [provenance](provenance.md) for further details.
 
 
 ### Root Data Entity identifier
@@ -197,6 +197,8 @@ Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be 
 The root data entity's `@id` SHOULD be either `./` (indicating the directory of `ro-crate-metadata.json` is the [RO-Crate Root](structure.md)), or an absolute URI (indicating a [detached RO-Crate](structure.md#detached-ro-crate)). 
 
 If the `@id` of the Root Data Entity is an absolute URI, the Crate SHOULD NOT contain [data entities](data-entities.md) using relative URI references, but MAY contain [Web-based Data Entities](data-entities.html#web-based-data-entities) using absolute URIs.
+
+RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) SHOULD indicate this using [identifier] on the root data entity. It is RECOMMENDED that resolving the identifier programmatically return the RO-Crate Metadata File or an archive (e.g. ZIP) that contain the RO-Crate Metadata File, using [content negotiation](profiles.md#how-to-retrieve-a-profile-crate) and/or [Signposting](https://signposting.org/adopters/#workflowhub).
 
 
 ## Minimal example of RO-Crate
