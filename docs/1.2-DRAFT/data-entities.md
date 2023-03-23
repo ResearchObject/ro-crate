@@ -5,8 +5,8 @@ parent: RO-Crate 1.2-DRAFT
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
-   Copyright 2019-2020 The University of Manchester UK 
-   Copyright 2019-2022 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019-2023 The University of Manchester UK 
+   Copyright 2019-2023 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@ _Data Entities_ representing files MUST have `"File"` as a value for `@type`. `F
 
 _Data Entities_ representing directories MUST be of `"@type": "Dataset"`. The term _directory_ here includes HTTP file listings where `@id` is an absolute URI, however "external" directories SHOULD have a programmatic listing of their content (e.g. another RO-Crate). It follows that the _RO-Crate Root_ is itself a data entity.
 
-_Data Entities_ can also be other types, for instance an online database. These SHOULD be of `"@type": "CreativeWork"` and typically have a `@id` which is an absolute URI.
+_Data Entities_ can also be other types, for instance an online database. These SHOULD be a `@type` of [CreativeWork] (or one of its subtypes) and typically have a `@id` which is an absolute URI.
 
 In all cases, `@type` MAY be an array in order to also specify a more specific type, e.g. `"@type": ["File", "ComputationalWorkflow"]`
 
@@ -114,7 +114,7 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
 The above example provides a media type for the file `cp7glop.ai` - which is
 useful as it may not be apparent that the file is readable as a PDF file from the
 extension alone. To add more detail, encodings SHOULD be linked using a [PRONOM]
-identifier to a _Contextual Entity_ of `@type` [WebSite].
+identifier to a _Contextual Entity_ of `@type` [WebPage].
 
 ``` json
   {
@@ -128,32 +128,32 @@ identifier to a _Contextual Entity_ of `@type` [WebSite].
   {
     "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19",
     "name": "Acrobat PDF 1.5 - Portable Document Format",
-    "@type": "WebSite"
+    "@type": "WebPage"
   }
 
 ```
 
-If there is no PRONOM identifier, then a contextual entity with a URL as an `@id` MAY be used:
+If there is no PRONOM identifier (and typically no media type string), then a contextual entity with a different URL as an `@id` MAY be used, e.g. documentation page of a software's file format. The `@type` SHOULD be [WebPage], or MAY be [WebPageElement] to indicate a section of the page.
 
 For example:
 
 ```json
  {
-    "@id": "1st-tool.cwl",
+    "@id": "traj.trr",
     "@type": "File",
-    "name": "First executable tool",
-    "description": "An example Common Workflow Language File",
-    "contentSize": "120",
-    "encodingFormat": ["text/plain", {"@id": "https://www.commonwl.org/v1.0/Workflow.html"}]
+    "name": "Trajectory",
+    "description": "Trajectory of molecular dynamics simulation using GROMACS",
+    "contentSize": "45512",
+    "encodingFormat": {"@id": "https://manual.gromacs.org/documentation/2021/reference-manual/file-formats.html#trr"}]
   },
   {
-    "@id": "https://www.commonwl.org/v1.0/Workflow.html",
-    "@type": "WebSite",
-    "name": "Common Workflow Language (CWL) Workflow Description, v1.0.2"
+    "@id": "https://manual.gromacs.org/documentation/2021/reference-manual/file-formats.html#trr",
+    "@type": "WebPageElement",
+    "name": "GROMACS trajectory of a simulation (trr)"
   }
 ```
 
-If there is no web-accessible description for a file format it SHOULD be described locally in the dataset, for example in a file:
+If there is no web-accessible description for a file format it SHOULD be described locally in the dataset, for example in a Markdown file:
 
 ```json
  {
@@ -167,7 +167,7 @@ If there is no web-accessible description for a file format it SHOULD be describ
   {
     "@id": "some_extension.md",
     "@type": ["File", "CreativeWork"],
-    "name": "Description of some_extension file format",
+    "name": "Description of some_extension text-based file format",
     "encodingFormat": "text/markdown"
   }
 ```
@@ -178,7 +178,7 @@ The table below outlines the properties that Data Entities, when present, MUST h
 
 ### Encoding file paths
 
-Note that all `@id` [identifiers must be valid URI references](appendix/jsonld.html#describing-entities-in-json-ld), care must be taken to express any relative paths using `/` separator, correct casing, and escape special characters like space (`%20`) and percent (`%25`), for instance a _File Data Entity_ from the Windows path `Results and Diagrams\almost-50%.png` becomes `"@id": "Results%20and%20Diagrams/almost-50%25.png"` in the _RO-Crate JSON-LD_.
+Note that all `@id` [identifiers must be valid URI references](appendix/jsonld.md#describing-entities-in-json-ld), care must be taken to express any relative paths using `/` separator, correct casing, and escape special characters like space (`%20`) and percent (`%25`), for instance a _File Data Entity_ from the Windows path `Results and Diagrams\almost-50%.png` becomes `"@id": "Results%20and%20Diagrams/almost-50%25.png"` in the _RO-Crate JSON-LD_.
  
 In this document the term _URI_ includes international *IRI*s; the _RO-Crate Metadata File_ is always UTF-8 and international characters in identifiers SHOULD be written using native UTF-8 characters (*IRI*s), however traditional URL encoding of Unicode characters with `%` MAY appear in `@id` strings. Example: `"@id": "面试.mp4"` is preferred over the equivalent `"@id": "%E9%9D%A2%E8%AF%95.mp4"`
 
@@ -189,12 +189,30 @@ A [File] _Data Entity_ MUST have the following properties:
 *  `@type`: MUST be `File`, or an array where `File` is one of the values.
 *  `@id` MUST be either a _URI Path_ relative to the _RO Crate root_, or an absolute URI.
 
+Additionally, `File` entities SHOULD have:
+
+* [name] giving a human readable name (not necessarily the filename)
+* [description] giving a longer description, e.g. the role of this file within this crate
+* [encodingFormat] indicating the the IANA [media type] as a string (e.g. `"text/plain") and/or a reference to [file format](#adding-detailed-descriptions-of-encodings) contextual entity.
+* [conformsTo] to a contextual entity of type [Profile], that indicate a [profile](profiles) of the encoding format
+* [contentSize] with the size of the file in bytes
+
+RO-Crate's `File` is an alias for schema.org type [MediaObject], any of its properties MAY also be used (adding contextual entities as needed).  [Files on the web](#embedded-data-entities-that-are-also-on-the-web) SHOULD also use `identifier`, `url`, `subjectOf`, and/or `mainEntityOfPage`.
+
 ### Directory File Entity
 
 A [Dataset] (directory) _Data Entity_ MUST have the following properties:
 
 *  `@type` MUST be `Dataset` or an array where `Dataset` is one of the values.
 *  `@id`  MUST be either a _URI Path_ relative to the _RO Crate root_, or an absolute URI. The id SHOULD end with `/`
+
+Additionally, `Dataset` entities SHOULD have:
+
+* [name] giving a human readable name (not necessarily the directory name)
+* [description] giving a longer description, e.g. the content of this directory
+* [hasPart] listing directly contained data entities
+
+Any of the properties of schema.org [Dataset] MAY additionally be used (adding contextual entities as needed). [Directories on the web](#directories-on-the-web-dataset-distributions) SHOULD also provide `distribution`.
 
 ## Web-based Data Entities
 
@@ -299,7 +317,7 @@ These can be included for File Data Entities as additional metadata, regardless 
 
 A _Directory File Entry_ or [Dataset] identifier expressed as an absolute URL on the web can be harder to download than a [File] because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in [hasPart], enabling download traversal.
 
-Alternatively, a common mechanism to provide downloads of a reasonably sized directory is as an archive file in formats such as `.zip` or `.tar.gz`, described as a [DataDownload]. 
+Alternatively, a common mechanism to provide downloads of a reasonably sized directory is as an archive file in formats such as [`application/zip`](https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263) or [`application/gzip`](https://www.nationalarchives.gov.uk/PRONOM/x-fmt/266), described as a [DataDownload]. 
 
 ```json
   {
@@ -312,7 +330,7 @@ Alternatively, a common mechanism to provide downloads of a reasonably sized dir
   {
     "@id": "http://example.com/downloads/2020/lots_of_little_files.zip",
     "@type": "DataDownload",
-    "encodingFormat": "application/zip",
+    "encodingFormat": ["application/zip", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263"}],
     "contentSize": "82818928"
   }
 ```
