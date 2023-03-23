@@ -194,7 +194,8 @@ MUST describe these properties and their related contextual entities:
 
 The [ComputationalWorkflow profile][ComputationalWorkflow profile 1.0] explains the above and list additional properties that a compliant [ComputationalWorkflow][ComputationalWorkflow 1.0] data entity SHOULD include: [citation], [contributor], [creativeWorkStatus], [description], [funding], [hasPart], [isBasedOn], [keywords], [maintainer], [producer], [publisher], [runtimePlatform], [softwareRequirements], [targetProduct]
 
-A data entity conforming to the [ComputationalWorkflow profile][ComputationalWorkflow profile 1.0] SHOULD declare the versioned profile URI using [conformsTo] [^18]:
+A data entity conforming to the [ComputationalWorkflow profile][ComputationalWorkflow profile 1.0] SHOULD declare the versioned profile URI using the [conformsTo] property [^18]:
+
 
 ```json
 { "@id": "workflow/alignment.knime",  
@@ -215,7 +216,7 @@ contextual entities. Note that this entity usually represent a _potential_ input
 workflow, much like [function parameter definitions] in general programming.
 
 If complying with the Bioschemas [FormalParameter profile][FormalParameter profile 1.0],
-the _contextual entities_ for [FormalParameter][FormalParameter 1.0], referenced by `input` or `output`, MUST describe: [name], [additionalType], [encodingFormat]
+the _contextual entities_ for [FormalParameter][FormalParameter 1.0], referenced by `input` or `output`, MUST describe [name].
 
 The Bioschemas [FormalParameter profile][FormalParameter profile 1.0] explains the above and lists additional properties that can be used, including [description], [valueRequired], [defaultValue] and [identifier].
 
@@ -363,3 +364,4 @@ The below is an example of an RO-Crate complying with the Bioschemas [Computatio
 ```
 
 {% include references.liquid %}
+
