@@ -2,7 +2,7 @@
 title: Outreach and Publications
 ---
 <!--
-   Copyright 2019-2022 The University of Manchester and RO Crate contributors 
+   Copyright 2019-2023 The University of Manchester and RO Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -42,13 +42,161 @@ _Data Science_ **5**(2)
 
 ## Recent publications, presentations, citations
 
+### 2023
+
+Simone Leo (2023):  
+[**RO-Crate for workflow run provenance**](https://cwl.discourse.group/t/ro-crate-for-workflow-run-provenance/754).  
+_CWL Conference 2023_, 
+[[video (YouTube)](https://www.youtube.com/watch?v=JXI3pOPMKrw)]
+[[video (ConfTube)](https://conf.tube/w/jDkRHqp2rjqzqtXih9445J)]
+[[slides](https://docs.google.com/presentation/d/1gqKj5eLacw9CYu8H7BxZ7kFBeC8421DCeL11sWRnIds/edit?usp=sharing)]
+
+Mahnoor Zulfiqar (2023):  
+[**Running Reproducible Metabolomics Workflow with CWL**](https://cwl.discourse.group/t/running-reproducible-metabolomics-workflow-with-cwl/762).  
+_CWL Conference 2023_, 
+[[video (YouTube)](https://www.youtube.com/watch?v=usr0Kau2ihE)]
+[[video (ConfTube)](https://conf.tube/w/5vd8tkpECJNHjx7mhpLGQd)]
+
+Romain David, Audrey S. Richard, Claire Connellan, Katharina B. Lauer, Maria Luisa Chiusano, Carole Goble, Martin Houde, Isabel Kemmer, Antje Keppler, Philippe Lieutaud, Christian Ohmann, Maria Panagiotopoulou, Sara Raza Khan, Arina Rybina, Stian Soiland-Reyes, Charlotte Wit, Rudolf Wittner, Rafael Andrade Buono, Sarah Arnaud Marsh, Pauline Audergon, Dylan Bonfils, Jose-Maria Carazo, Remi Charrel, Frederik Coppens, Wolfgang Fecke, Claudia Filippone, Eva Garcia Alvarez, Sheraz Gul, Henning Hermjakob, Katja Herzog, Petr Holub, Lukasz Kozera, Allyson L. Lister, José López-Coronado, Bénédicte Madon, Kurt Majcen, William Martin, Wolfgang Müller, Elli Papadopoulou, Christine M.A. Prat, Paolo Romano, Susanna-Assunta Sansone, Gary Saunders, Niklas Blomberg, Jonathan Ewbank (2023):  
+[**Umbrella Data Management Plans to integrate FAIR data: lessons from the ISIDORe and BY-COVID consortia for pandemic preparedness**](https://doi.org/10.5281/zenodo.7520086).  
+(submitted to Data Science Journal).  
+_Zenodo_  
+<https://doi.org/10.5281/zenodo.7520086>
+
+Molly A Bogue, Robyn L Ball, Vivek M Philip, David O Walton, Matthew H Dunn, Georgi Kolishovski, Anna Lamoureux, Matthew Gerring, Hongping Liang, Jake Emerson, Tim Stearns, Hao He, Gaurab Mukherjee, John Bluis, Sejal Desai, Beth Sundberg, Beena Kadakkuzha, Govindarajan Kunde-Ramamoorthy, Elissa J Chesler (2023):  
+[**Mouse Phenome Database: towards a more FAIR-compliant and TRUST-worthy data repository and tool suite for phenotypes and genotypes**]().  
+_Nucleic Acids Research_ **51**(D1)  
+<https://doi.org/10.1093/nar/gkac1007>
+
+Andrea L. Berez-Kroeker, Shirley Gabber, Aliya Slayton (2023):  
+[**Recent Advances in Technologies for Resource Creation and Mobilization in Language Documentation**](https://doi.org/10.1146/annurev-linguistics-031220-120504).  
+_Annual Review of Linguistics_ **9**  
+<https://doi.org/10.1146/annurev-linguistics-031220-120504>
+
+Tony Ross-Hellauer, Thomas Klebel, Alexandra Bannach-Brown, Serge P.J.M. Horbach, Hajira Jabeen, Natalia Manola, Teodor Metodiev, Haris Papageorgiou, Martin Reczko, Susanna-Assunta Sansone, Jesper Schneider, Joeri Tijdink, Thanasis Vergoulis (2023):  
+[**TIER2: enhancing Trust, Integrity and Efficiency in Research through next-level Reproducibility**](https://doi.org/10.3897/rio.8.e98457).  
+_Research Ideas and Outcomes_ **8**:e98457  
+<https://doi.org/10.3897/rio.8.e98457>
+
+
 ### 2022
+
+Leyla Jael Castro, Zeyd Boukhers, Olga Giraldo, Adamantios Koumpis, Oya Beyan, Dietrich Rebholz-Schuhmann (2022):  
+[**NFDI4DataScience registry for reproducible Data Science and Artificial Intelligence**](https://doi.org/10.5281/zenodo.7129715).  
+_Workshop On Open Citations And Open Scholarly Metadata 2022_ ([WOOC2022](https://workshop-oc.github.io/)) 2022-10-05  
+<https://doi.org/10.5281/zenodo.7129715>
+[[video](https://www.youtube.com/watch?v=Too-OQ6jSfk)]
+
+José M Fernández, Laura Rodríguez-Navas, Salvador Capella-Gutiérrez (2022):  
+[**Secured and annotated execution of workflows with WfExS-backend**](https://doi.org/10.7490/f1000research.1119198.1).  
+_European Conference on Computational Biology (ECCB) 2022_, 
+The Global Alliance for Genomics And Health (GA4GH) 10th Plenary Meeting.  
+_F1000Research_ **11**:1318 (poster)  
+<https://doi.org/10.7490/f1000research.1119198.1>
+
+Mauro Del Rio, Luca Lianas, Oskar Aspegren, Giovanni Busonera, Francesco Versaci, Renata Zelic, Per H. Vincent, Simone Leo, Andreas Pettersson, Olof Akre & Luca Pireddu (2022):  
+[**AI Support for Accelerating Histopathological Slide Examinations of Prostate Cancer in Clinical Studies**](https://doi.org/10.1007/978-3-031-13321-3_48).  
+International Conference on Image Analysis and Processing (ICIAP 2022): Image Analysis and Processing.  
+_Lecture Notes in Computer Science_ (LNCS) **13373**  
+<https://doi.org/10.1007/978-3-031-13321-3_48>
+
+Daniel Arend, Sebastian Beier, laurent bouri Marco Brandizi, Donald Hobern, Erwan Le Floch, Timo Mühlhaus, Cyril Pommier, Stuart Owen, Philippe Rocca-Serra, Thomas Rosnet, Stian Soiland-Reyes (2022):  
+[**BioHackEU22 Project 22: Plant data exchange and standard interoperability**](https://doi.org/10.37044/osf.io/c724r).  
+_BioHackrXiv_  
+<https://doi.org/10.37044/osf.io/c724r>
+
+Justin Clark-Casey, Stian Soiland-Reyes (2022):  
+[**Making EOSC Research Objects FAIR with RO-Crate**: A common metadata overlay for EOSC repositories](https://doi.org/10.5281/zenodo.7323480).  
+_[EOSC Symposium 2022](https://events.eoscfuture.eu/symposium2022/programme)_  
+<https://doi.org/10.5281/zenodo.7323480>
+
+Raül Sirvent, Javier Conejero, Francesc Lordan, Jorge Ejarque, Laura Rodríguez-Navas, José M. Fernández, Salvador Capella-Gutiérrez, Rosa M. Badia (2022):  
+[**Automatic, Efficient and Scalable Provenance Registration for FAIR HPC Workflows**](http://hdl.handle.net/2117/384589).  
+_2022 IEEE/ACM Workshop on Workflows in Support of Large-Scale Science (WORKS)_  
+<https://doi.org/10.1109/WORKS56498.2022.00006>
+[[preprint](http://hdl.handle.net/2117/384589)]
+[[slides](https://doi.org/10.5281/zenodo.7701868)]
+
+Carole Goble, Stian Soiland-Reyes (2022):  
+[**RO-Crate: packaging metadata love notes into FAIR Digital Objects**](https://events.hifis.net/event/469/timetable/#9-ro-crate-packaging-metadata). (Keynote)  
+_Helmholtz Metadata Collaboration conference 2022_, virtual, 2022-10-05/--06.  
+<https://doi.org/10.5281/zenodo.7147703>
+
+Gerrit Günther, Jan Schweikert, Oonagh Mannix, Wolfgang Süß (2022):   
+[**Use Cases in HMC – from Generation to Reuse of Data**](https://doi.org/10.5281/zenodo.7157694).  
+_Helmholtz Metadata Collaboration conference 2022_, virtual, 2022-10-05/--06.  
+https://doi.org/10.5281/zenodo.7157694
+
+Roman Gerlach (2022):  
+[**Datenverarbeitungsprozesse planen und dokumentieren - Eine Einführung in Research Objects und RO-Crate**](https://www.youtube.com/watch?v=mKU-6FRHrH0).  
+_FDM Thuringen_ [Coffee Lecture](https://forschungsdaten-thueringen.de/veranstaltung/coffee-lecture-datenverarbeitungsprozesse-de.html), 2022-11-30.  
+<https://doi.org/10.5281/zenodo.7385632> [[video](https://www.youtube.com/watch?v=mKU-6FRHrH0)] [[slides](https://doi.org/10.5281/zenodo.7385632)]
+
+Fidan Limani (2022):  
+[**FAIR Digital Objects and Linked Data**](https://www.youtube.com/watch?v=BpUrQYIX2IA).  
+_Semantic Web in Libraries_ ([SWIB22](https://swib.org/swib22/)), 2022-11-28/-12-02  
+<https://www.youtube.com/watch?v=BpUrQYIX2IA>
+
+Guido Aben, Juri Hößelbarth (2022):  
+[**Starting FDO in the Cradle -- ROcrating Live Data**](https://doi.org/10.3897/rio.8.e95972).  
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
+_Research Ideas and Outcomes_ **8**: e95972  
+<https://doi.org/10.3897/rio.8.e95972>
+[[poster](https://doi.org/10.5281/zenodo.7310739)]  
+
+Stian Soiland-Reyes, Leyla Jael Castro, Daniel Garijo, Marc Portier, Carole Goble, Paul Groth (2022):  
+[**Updating Linked Data practices for FAIR Digital Object principles**](https://doi.org/10.3897/rio.8.e94501).  
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (presentation).  
+_Research Ideas and Outcomes_ **8**:e94501  
+<https://doi.org/10.3897/rio.8.e94501> 
+[[slides](https://doi.org/10.5281/zenodo.7256428)]
+
+Stian Soiland-Reyes, Peter Sefton, Leyla Jael Castro, Frederik Coppens, Daniel Garijo, Simone Leo, Marc Portier, Paul Groth (2022):  
+[**Creating lightweight FAIR Digital Objects with RO-Crate**](https://doi.org/10.3897/rio.8.e93937).  
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
+_Research Ideas and Outcomes_  **8**: e93937  
+<https://doi.org/10.3897/rio.8.e93937>
+[[poster](https://doi.org/10.5281/zenodo.7245315)]
+
+Oliver Woolland, Paul Brack, Stian Soiland-Reyes, Ben Scott, Laurence Livermore (2022):  
+[**Incrementally building FAIR Digital Objects with Specimen Data Refinery workflows**](https://doi.org/10.3897/rio.8.e94349).  
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
+_Research Ideas and Outcomes_  **8**: e94349  
+<https://doi.org/10.3897/rio.8.e94349>
+[[poster](https://doi.org/10.5281/zenodo.7233688)]
+
+Paul De Geest, Frederik Coppens, Stian Soiland-Reyes, Ignacio Eguinoa, Simone Leo (2022):  
+[**Enhancing RDM in Galaxy by integrating RO-Crate**](https://doi.org/10.3897/rio.8.e95164).  
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
+_Research Ideas and Outcomes_  **8**: e95164  
+<https://doi.org/10.3897/rio.8.e95164>
+[[poster](https://doi.org/10.5281/zenodo.7257146)] 
+ 
+Olga Giraldo, Renato Alves, Dimitrios Bampalikis, Jose M Fernandez, Eva Martin del Pico, Fotis E Psomopoulos, Allegra Via, Leyla Jael Castro (2022):  
+[**A FAIRification roadmap for ELIXIR Software Management Plans**](https://doi.org/10.3897/rio.8.e94608).  
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
+_Research Ideas and Outcomes_  **8**: e94608  
+<https://doi.org/10.3897/rio.8.e94608>
+[[poster](https://doi.org/10.5281/zenodo.7249674)]
+
+Anna Niehues, Casper de Visser, Fiona A. Hagenbeek, Naama Karu, Alida S. D. Kindt, Purva Kulkarni, René Pool, Dorret I. Boomsma, Jenny van Dongen, Alain J. van Gool, Peter A. C. 't Hoen (2022):  
+[**A Multi-omics Data Analysis Workflow Packaged as a FAIR Digital Object**](https://doi.org/10.3897/rio.8.e94042).  
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/)) (poster)  
+_Research Ideas and Outcomes_  **8**: e94042.  
+<https://doi.org/10.3897/rio.8.e94042>
+[[poster](https://doi.org/10.5281/zenodo.7303932)]
+
+Hirotaka Suetake, Tsukasa Fukusato, Takeo Igarashi, Tazro Ohta (2022):  
+[**A workflow reproducibility scale for automatic validation of biological interpretation results**](https://doi.org/10.1101/2022.10.11.511695)
+_bioRxiv_ 2022.10.11.511695
+<https://doi.org/10.1101/2022.10.11.511695>
 
 Renske de Wit (2022):  
 [**A Non-Intimidating Approach to Workflow Reproducibility in Bioinformatics**: Adding Metadata to Research Objects through the Design and Evaluation of Use-Focused Extensions to CWLProv](https://doi.org/10.5281/zenodo.7113250).  
 Master thesis, _Vrije Universiteit Amsterdam_ / _Zenodo_.  
-[[video](https://www.youtube.com/watch?v=IgqOG6IORy4)] [[slides](https://zenodo.org/record/7113250/preview/20220829_Defense_final.pdf)]
+<https://doi.org/10.5281/zenodo.7113250> [[video](https://www.youtube.com/watch?v=IgqOG6IORy4)] [[slides](https://zenodo.org/record/7113250/preview/20220829_Defense_final.pdf)]
 <https://doi.org/10.5281/zenodo.7113250>
+[[video](https://www.youtube.com/watch?v=IgqOG6IORy4)] [[slides](https://zenodo.org/record/7113250/preview/20220829_Defense_final.pdf)]  
 
 Tazro Ohta, Hirotaka Suetake (2022):  
 [**Verifying workflow reproducibility using RO-Crate**](https://youtu.be/LFoX0wnTfuc).  
@@ -68,7 +216,7 @@ _[RO-Crate community call](https://s.apache.org/ro-crate-minutes)_, 2022-08-25.
 <https://doi.org/10.5281/zenodo.7025336>
 
 Abigail Miller (2022):  
-[**BioConnect Data Packages**: Use of RO-Crate, ISA model and Frictionless Data](https://doi.org/10.5281/zenodo.7116702)
+[**BioConnect Data Packages**: Use of RO-Crate, ISA model and Frictionless Data](https://doi.org/10.5281/zenodo.7116702).  
 _[RO-Crate community call](https://s.apache.org/ro-crate-minutes)_, 2022-07-28.  
 [[video](https://youtu.be/p-LdZRU3Cwk)] [[slides](https://zenodo.org/record/7116702/preview/2022-07-28-abigail-miller-bioconnect.pdf)] [[transcript](https://zenodo.org/record/7116702/preview/2022-07-28-transcript.pdf)] [[example](https://zenodo.org/record/7116702/files/example-ro-crate-JAXDP000018.zip)] 
 <https://doi.org/10.5281/zenodo.7116702>
@@ -89,6 +237,11 @@ Nick Thieberger, Amanda Harris (2022):
 _Data Science Journal_ **21**(1)  
 <https://doi.org/10.5334/dsj-2022-009>
 
+River Tae Smith, Louisa Willoughby, Trevor Johnston (2022):  
+[**Integrating Auslan Resources into the Language Data Commons of Australia**](https://aclanthology.org/2022.signlang-1.28).  
+_Proceedings of the LREC2022 10th Workshop on the Representation and Processing of Sign Languages: Multilingual Sign Language Resources_  
+<https://aclanthology.org/2022.signlang-1.28>
+
 Max Schröder, Susanne Staehlke, Paul Groth, J. Barbara Nebe, Sascha Spors & Frank Krüger (2022):  
 [**Structure-based knowledge acquisition from electronic lab notebooks for research data provenance documentation**](https://doi.org/10.1186/s13326-021-00257-x).  
 _Journal of Biomedical Semantics_ **13**:4
@@ -100,9 +253,15 @@ _Data Intelligence_ **4**(2)
 <https://doi.org/10.1162/dint_a_00135>
 
 Alex Hardisty, Paul Brack, Carole Goble, Laurence Livermore, Ben Scott, Quentin Groom, Stuart Owen, Stian Soiland-Reyes (2022):  
-[**The Specimen Data Refinery: A canonical workflow framework and FAIR Digital Object approach to speeding up digital mobilisation of natural history collections**](https://doi.org/10.1162/dint_a_00134).  
+[**The Specimen Data Refinery: A canonical workflow framework and FAIR Digital Object approach to speeding up digital mobilisation of natural history collections**](https://doi.org/10.1162/dint_a_00134). 
 _Data Intelligence_ **4**(2)  
 <https://doi.org/10.1162/dint_a_00134>
+
+Marc Portier, Cedric Decruw, Katrina Exter, Rory Meyer, Lennert Tyberghein, Laurian Van Maldeghem (2022):  
+[**Contemporary Data Management for Biodiversity Observation Networks leading to Linked Open Data Publishing through Distributed Techniques applying RO-Crate and GitHub Actions**](https://doi.org/10.3897/biss.6.94630).  
+_Biodiversity Information Standards_ ([TDWG 2022](https://www.tdwg.org/conferences/2022/)), Sofia, Bulgaria.  
+_Biodiversity Information Science and Standards_ **6**:e94630  
+<https://doi.org/10.3897/biss.6.94630>
 
 Amirpasha Mozaffari, Michael Langguth, Bing Gong, Jessica Ahring, Adrian Rojas Campos, Pascal Nieters, Otoniel José Campos Escobar, Martin Wittenbrink,
 Peter Baumann, Martin G. Schultz (2022):  
@@ -139,7 +298,13 @@ Marc Portier (2022):
 [**Data Publishing with RO-Crate and git**](https://docs.google.com/presentation/d/1Li9tfcEnHgz_EUIsPcW6gry04cqaztr4hDjYa89JA80/edit).  
 _[Open Belgium 2022](https://2022.openbelgium.be/)_, 2022-04-29.
 
-## 2021
+Luiz Gadelha, Martin Hohmuth, Mahnoor Zulfiqar, David Schöne, Sheeba Samuel, Maria Sorokina, Christoph Steinbeck, Birgitta König-Ries (2022):  
+[**Toward a Framework for Integrative, FAIR, and Reproducible Management of Data on the Dynamic Balance of Microbial Communities**](https://doi.org/10.48550/arXiv.2207.06890).  
+_arXiv_ 2207.06890 [cs.DB]  
+<https://doi.org/10.48550/arXiv.2207.06890>
+
+
+### 2021
 
 Jeremy Leipzig, Daniel Nüst, Charles Tapley Hoyt, Karthik Ram, Jane Greenberg (2021):  
 [**The role of metadata in reproducible computational research**](https://doi.org/10.1016/j.patter.2021.100322).  
@@ -168,17 +333,19 @@ Marco La Rosa (2021):
 _CS3MESH4EOSC Blog_
 
 
-田辺 浩介, 松田 朝彦 (2021): [**RO-Crateを用いた材料研究データのデータリポジトリへの登録**](http://www.jsik.jp/archive/v31n4.pdf#page=75)  
-Kosuke Tanabe, Asahiko Matsuda (2021) **Ingesting materials research data into a data repository using RO-Crate**  
-_情報知識学会誌_ **31**(4) p. 497-502. 
+田辺 浩介, 松田 朝彦 (2021):  
+[**RO-Crateを用いた材料研究データのデータリポジトリへの登録**](http://www.jsik.jp/archive/v31n4.pdf#page=75)  
+Kosuke Tanabe, Asahiko Matsuda (2021):  
+**Ingesting materials research data into a data repository using RO-Crate**.  
+_情報知識学会誌_ **31**(4) p. 497-502.  
 _Journal of Japan Society of Information and Knowledge (Jōhō Chishiki Gakkaishi)_ **31**(4) pp. 497-502.  
 第26回情報知識学フォーラム予稿  
 26th Information and Knowledge Study Forum, 2021-12-18, Kyoto University, Kyoto, Japan.
-([awaiting DOI](https://www.jstage.jst.go.jp/browse/jsik/list/-char/en))
+<https://doi.org/10.2964/jsik_2021_067>
 
-Myles Axton (2021):
-[**A network database for the human biobank**](https://doi.org/10.1002/ggn2.10049)
-_Advanced Genetics_ **2(2):e10049
+Myles Axton (2021):  
+[**A network database for the human biobank**](https://doi.org/10.1002/ggn2.10049).  
+_Advanced Genetics_ **2(2):e10049  
 <https://doi.org/10.1002/ggn2.10049>
 
 Sonia Natalie Mitchell, Andrew Lahiff, Nathan Cummings, Jonathan Hollocombe, Bram Boskamp, Dennis Reddyhoff, Ryan Field, Kristian Zarebski, Antony Wilson, Martin Burke, Blair Archibald, Paul Bessell, Richard Blackwell, Lisa A Boden, Alys Brett, Sam Brett, Ruth Dundas, Jessica Enright, Alejandra N. Gonzalez-Beltran, Claire Harris, Ian Hinder, Christopher David Hughes, Martin Knight, Vino Mano, Ciaran McMonagle, Dominic Mellor, Sibylle Mohr, Glenn Marion, Louise Matthews, Iain J. McKendrick, Christopher Mark Pooley, Thibaud Porphyre, Aaron Reeves, Edward Townsend, Robert Turner, Jeremy Walton, Richard Reeve (2021):  
@@ -202,37 +369,37 @@ _2nd Workshop on Data and Research Objects Management for Linked Open Science_
 [[article](https://repository.publisso.de/resource/frl:6430056/data)] [[slides](https://repository.publisso.de/resource/frl:6430057/data)] [[ontology](https://w3id.org/survey-ontology)] [[ro-crate](https://doi.org/10.5281/zenodo.5753764)] 
 <https://doi.org/10.4126/FRL01-006429412>
 
-Stian Soiland-Reyes (2021):
-[**RO-Crate — A brief "crash course"**](https://slides.com/soilandreyes/2021-11-23-ro-crate-crash-course/)
+Stian Soiland-Reyes (2021):  
+[**RO-Crate — A brief "crash course"**](https://slides.com/soilandreyes/2021-11-23-ro-crate-crash-course/).  
 _[ELIXIR Data-Interoperability](https://elixir-europe.org/events/data-interoperability-joint-platform-f2f-hybrid-meeting) Joint Platform F2F Hybrid Meeting_, 2021-11-23.
 
-Stian Soiland-Reyes (2021):
-[**Reproducibility; Research Objects (RO-Crate) and Common Workflow Language (CWL)**](https://slides.com/soilandreyes/2021-10-07-reproducibility-research-objects)
+Stian Soiland-Reyes (2021):  
+[**Reproducibility; Research Objects (RO-Crate) and Common Workflow Language (CWL)**](https://slides.com/soilandreyes/2021-10-07-reproducibility-research-objects).  
 _[WoSSS21](https://wosss.org/wosss21/S3-StianSoiland-Reyes):Workshop on Sustainable Software Sustainability_, 2021-10-07.
 [[video recording](https://www.youtube.com/watch?v=vNHqTcHnfyI)]
 
-Stian Soiland-Reyes (2021):
-[**Sharing FAIR Research Objects to improve reproducibility**](http://slides.com/soilandreyes/2021-07-15-sharing-fair-research-objects).
-_ZB-Med Seminar_, 2021-07-15.
+Stian Soiland-Reyes (2021):  
+[**Sharing FAIR Research Objects to improve reproducibility**](http://slides.com/soilandreyes/2021-07-15-sharing-fair-research-objects).  
+_ZB-Med Seminar_, 2021-07-15.  
 [[video recording](https://youtu.be/CL_fqtQRPmw)]
 <https://doi.org/10.5281/zenodo.5105857>
 
-Carole Goble (2021):
-[**FAIR Computational Workflows**](https://www.slideshare.net/carolegoble/fair-computational-workflows-249721518).
+Carole Goble (2021):  
+[**FAIR Computational Workflows**](https://www.slideshare.net/carolegoble/fair-computational-workflows-249721518).  
 _[JOBIM 2021](https://jobim2021.sciencesconf.org/)_ (Journées Ouvertes en Biologie, Informatique et Mathématiques), 2021-07-08
 
-Stian Soiland-Reyes (2021):
-[**RO-Crate, workflows and FAIR Digital Objects**](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo).
+Stian Soiland-Reyes (2021):  
+[**RO-Crate, workflows and FAIR Digital Objects**](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo).  
 _FAIR Digital Object Forum_, [CWFR & FDO SEM meeting](https://osf.io/v8xjz/), 2021-07-02
 [[video recording](https://youtu.be/gTT0m_zQsPU)], [[slides](http://slides.com/soilandreyes/2021-07-02-ro-crate-workflows-fdo)]
 <https://doi.org/10.5281/zenodo.5060283>
 
-Laura Rodríguez-Navas (2021):
-[**WfExS: a software component to enable the use of RO-Crate in the EOSC-Life collaboratory**](https://osf.io/tb5ku/).
+Laura Rodríguez-Navas (2021):  
+[**WfExS: a software component to enable the use of RO-Crate in the EOSC-Life collaboratory**](https://osf.io/tb5ku/).  
 _FAIR Digital Object Forum_, [CWFR & FDO SEM meeting](https://osf.io/v8xjz/), 2021-07-02
 [[video recording](https://osf.io/wna42/)], [[slides](https://osf.io/tb5ku/)]
 
-Laura Rodríguez-Navas (2021):
+Laura Rodríguez-Navas (2021):  
 [**WfExS: a software component to enable the use of RO-Crate in the EOSC-Life tools collaboratory**](https://repository.eoscsecretariat.eu/index.php/s/ERebmpJcyjFRqcx/download?path=%2F17%20June%2F1400%20-%20Technical%20challenges%20on%20EOSC%2FBreakout%203%20-%20Interoperability%20challenges%20for%20thematic%20communities&files=05%20-%20Laura%20Rodr%C3%ADguez-Navas%20-%20WfExS.pdf&downloadStartSecret=zwwx23xrow).  
 _[EOSC Symposium 2021](https://www.eoscsecretariat.eu/eosc-symposium-2021-programme)_, 2021-06-17
 [[video recording](https://youtu.be/x5lLEym-gug?list=PLbISfqJh3Tstmx6CgrBmYI7lyyVXiY5VE&t=3238)]
@@ -243,18 +410,18 @@ Krzysztof Kurowski, Oscar Corcho, Christine Choirat, Magnus Eriksson, Frederik C
 KI-02-21-055-EN-N. Report from the EOSC Executive Board, Working Groups FAIR and Architecture. _Publications Office of the EU_.  
 <https://doi.org/10.2777/620649>
 
-Oscar Corcho, Raúl Palma, Daniel Garijo (2021):
-[**Metadata models and Research Objects for Earth Observation Data Cubes**](https://repository.eoscsecretariat.eu/index.php/s/ERebmpJcyjFRqcx/download?path=%2F18%20June%2F1115%20-%20Metadata%20and%20data%20quality&files=04%20-%20Daniel%20Garijo%20-%20Metadata%20models%20and%20Research%20Objects%20for%20Earth%20Observation%20Data%20Cubes.pdf&downloadStartSecret=9vslv3tqvmf). 
+Oscar Corcho, Raúl Palma, Daniel Garijo (2021):  
+[**Metadata models and Research Objects for Earth Observation Data Cubes**](https://repository.eoscsecretariat.eu/index.php/s/ERebmpJcyjFRqcx/download?path=%2F18%20June%2F1115%20-%20Metadata%20and%20data%20quality&files=04%20-%20Daniel%20Garijo%20-%20Metadata%20models%20and%20Research%20Objects%20for%20Earth%20Observation%20Data%20Cubes.pdf&downloadStartSecret=9vslv3tqvmf).  
 _[EOSC Symposium 2021](https://www.eoscsecretariat.eu/eosc-symposium-2021-programme)_, 2021-06-18
 [[video recording](https://youtu.be/qvtWJWsMLRg?list=PLbISfqJh3Tstmx6CgrBmYI7lyyVXiY5VE&t=1090)]
 [[slides](https://repository.eoscsecretariat.eu/index.php/s/ERebmpJcyjFRqcx/download?path=%2F18%20June%2F1115%20-%20Metadata%20and%20data%20quality&files=04%20-%20Daniel%20Garijo%20-%20Metadata%20models%20and%20Research%20Objects%20for%20Earth%20Observation%20Data%20Cubes.pdf&downloadStartSecret=9vslv3tqvmf)]
 
-Carole Goble (2021):
-[**FAIR Computational Workflows: the what, why how and who**](https://www.slideshare.net/carolegoble/fair-computational-workflows).
+Carole Goble (2021):  
+[**FAIR Computational Workflows: the what, why how and who**](https://www.slideshare.net/carolegoble/fair-computational-workflows).  
 _[ICTESSH 2021](http://ictessh.uns.ac.rs/) (International Conference on ICT enhanced Social Sciences and Humanities 2022)_, 2021-06-30
 
-Stian Soiland-Reyes (2021):
-[**Capturing “Just enough” Data, Software and Metadata with RO-Crate**](http://slides.com/soilandreyes/2021-06-21-capturing-just-enough-data-software-and-metadata-with-ro-crate).
+Stian Soiland-Reyes (2021):  
+[**Capturing “Just enough” Data, Software and Metadata with RO-Crate**](http://slides.com/soilandreyes/2021-06-21-capturing-just-enough-data-software-and-metadata-with-ro-crate).  
 _FAIR Festival 2021_, FAIR Implementation Challenges & Solutions, 2021-06-21.
 <https://doi.org/10.5281/zenodo.5007432>
  
@@ -263,13 +430,13 @@ Peter Sefton, Marco La Rosa, Michael Lynch (2021):
 _[Open Repositories 2021](https://or2021.openrepositories.org/)_ (OR2021), 2021-06-10.
 [[video recording](https://youtu.be/x72CPv3rJMw?t=7)] [[slides](http://ptsefton.com/2021/06/11/or-2021-arkisto)]
 
-Peter Sefton, Stian Soiland-Reyes (2021):
-[**Research Object Crate (RO-Crate) Update**](http://ptsefton.com/2021/06/11/or-2021-ro-crate/)
+Peter Sefton, Stian Soiland-Reyes (2021):  
+[**Research Object Crate (RO-Crate) Update**](http://ptsefton.com/2021/06/11/or-2021-ro-crate/)  
 _[Open Repositories 2021](https://or2021.openrepositories.org/)_ (OR2021), 2021-06-10.
 [[video recording](https://youtu.be/x72CPv3rJMw?t=940)] [[slides](http://ptsefton.com/2021/06/11/or-2021-ro-crate)]
 
-Stian Soiland-Reyes (2021):
-[**Capturing Just Enough Data, Software and Metadata with RO-Crate**](http://slides.com/soilandreyes/2021-06-17-capturing-just-enough-with-ro-crate).
+Stian Soiland-Reyes (2021):  
+[**Capturing Just Enough Data, Software and Metadata with RO-Crate**](http://slides.com/soilandreyes/2021-06-17-capturing-just-enough-with-ro-crate).  
 _[Dataverse community meeting 2021](https://projects.iq.harvard.edu/dcm2021)_, Software Metadata and Containerization, 2021-06-17.
 [[video recording](https://youtu.be/LJq-mzT9v8o?t=1731)]
 <https://doi.org/10.5281/zenodo.4973678>
@@ -298,8 +465,8 @@ Carole Goble (2021):
 [**FAIRy stories: the FAIR Data principles in theory and in practice**](https://www.slideshare.net/carolegoble/fairy-stories-the-fair-data-principles-in-theory-and-in-practice).
 _[NSF Convergence Accelerator Series Tracks A&B](http://spatial.ucsb.edu/2021/Carole-Goble)_, 2021-05-19
 
-Stian Soiland-Reyes (2021):
-[**Data provenance with RO-Crate**](http://slides.com/soilandreyes/2021-05-19-recording-provenance-with-ro-crate).
+Stian Soiland-Reyes (2021):  
+[**Data provenance with RO-Crate**](http://slides.com/soilandreyes/2021-05-19-recording-provenance-with-ro-crate).  
 _EOSC-Life retreat 2021_, Provenance of tools and workflows; FAIRification of workflows, 2021-05-19.
 
 Nick Thieberger, Marco La Rosa (2021):  
@@ -479,13 +646,41 @@ See also [publications about Research Objects](https://www.researchobject.org/pu
 
 _To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 
+[**International Conference on Knowledge Engineering and Ontology Development**](https://keod.scitevents.org/) (KEOD 2023), 2023-11-13/--15, Rome, Italy. Co-located with [IC3K](https://ic3k.scitevents.org/)/[WEBIST](https://webist.scitevents.org/). Papers due 2023-06-02
 
+[**The 22nd International Semantic Web Conference**](https://iswc2023.semanticweb.org/) (ISWC 2023), 2023-11-06/--10, Athens, Greece. Workshop calls due 2023-03-24, papers due 2023-05-02. 
+
+**[BioHackathon Europe 2023](https://biohackathon-europe.org/)**, 2023-10-30/-11-03. Barcelona, Spain. Project proposals due 2023-04-10
+
+**[19th IEEE International Conference on eScience](https://www.escience-conference.org/2023/)**, 2023-10-09/--13, Limassol, Cyprus. Papers due 2023-05-26. 
+
+**[Open Science Fair](https://www.opensciencefair.eu/)**, 2023-09-25/--27, Madrid, Spain. Papers due 2023-04-17.
+
+**[Bioinformatics Open Source Conference](https://www.open-bio.org/events/bosc-2023/)** (BOSC2023)+hackfest, 2023-07-24/--28, ISMB/ECCB 2023, Lyon, France. Abstracts due 2023-04-10.
+
+**[Galaxy Community Conference 2023](https://galaxyproject.org/gcc/)** (GCC2023), 2023-07-17/--23, Minneapolis, Minnesota, US.
+
+**[Open Science Festival 2023](https://www.zbmed.de/en/networking/events/open-science-festival-2023/)**, 2023-07-04/--05, Cologne, Germany. **Workshop**: [Quo vadis Open Standards for Data Management? ORKG meets RO-Crates](https://www.zbmed.de/vernetzen/veranstaltungen/open-science-festival/open-standards-for-data-management)
+
+**[Open Repositories 2023](https://or2023.openrepositories.org/)** (OR2023), 2023-06-12/--15, Stellenbosch University, South Africa.  Presentation by Peter Sefton, **Packaging data with detailed metadata using RO-Crate in FAIR open repositories**.
+
+**[3rd Workshop on Metadata and Research (objects) Management for Linked Open Science - DaMaLOS 2023](https://zbmed.github.io/damalos/)**, 2023-06-29, Co-located with [ESWC](https://2023.eswc-conferences.org/), Hersonissos, Greece. Call for papers due 2023-03-31.
+
+**[20th IEEE International Conference on Software Architecture](https://icsa-conferences.org/2023/)** (ICSA 2023), L'Aquila, Italy, 2023-03-13/--17.  -08.
+
+**[ELIXIR All Hands 2023](https://elixir-europe.org/events/elixir-all-hands-2023)**, 2023-06-05/--08, Dublin, Ireland + hybrid. **Workshop**: [Building lightweight FAIR data packages with Bioschemas and RO-Crate](https://docs.google.com/document/d/1Vh9mUBWvNEsvC5YZRITtZxsyE6Wr18rJUgp9KweJFNg)
+
+**[Galaxy Smörgåsbord 2023]()**, 2023-05-22/--26, virtual. Training includes [Module: FAIR data and provenance with RO-Crate and Galaxy](https://gallantries.github.io/video-library/modules/ro-crate).
+
+**[2023 Common Workflow Language Conference](https://cwl.discourse.group/c/cwlcon-2023/13)** (CWLCon 2023). 2023-02-27/-03-03, virtual. 
+
+**[1st BioHackathon Germany](https://www.denbi.de/de-nbi-events/1454-biohackathon-germany)**. 1st BioHackathon Germany, Lutherstadt Wittenberg - Leucorea, GE, 2022-12-12/--16 incl. project on [DataPLANT](https://www.denbi.de/de-nbi-events/2-uncategorised/1486-dataplant-facilitating-research-data-management-to-combat-the-reproducibility-crisis), [ELIXIR:GA4GH](https://www.denbi.de/de-nbi-events/2-uncategorised/1487-the-elixir-ga4gh-cloud), [FAIR Computational Workflows](https://www.denbi.de/de-nbi-events/2-uncategorised/1484-towards-fair-computational-workflows-improving-provenance-collection)
 
 **[ELIXIR Biohackathon 2022](https://biohackathon-europe.org/)** 2022-11-07/--11, Paris, France. Projects include [Bioschemas](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/5), [Galaxy w/RO-Crate+RDM](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/10), [Linked Open Science](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/17), [Schema.org datafeeds](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/23), [Workflow Execution Service](https://github.com/elixir-europe/biohackathon-projects-2022/tree/main/35)
 
 **[International conference on FAIR Digital Objects](https://www.fdo2022.org/)**, 2022-10-26/--28, Leiden, Netherlands incl. talk on [Updating Linked Data practices](https://s11.no/2022/phd/updating-ld-for-fdo/) and posters on [RO-Crate](https://s11.no/2022/phd/fdo-with-ro-crate/), [Galaxy Workflow Run Crate](https://s11.no/2022/phd/galaxy-ro-crate/), [Specimen Data Refinery workflows](https://s11.no/2022/phd/incrementally-building-fdos/)
 
-**[3rd Workshop on Research Objects, Metadata and Management for Linked Open Science - DaMaLOS 2022](https://zbmed.github.io/damalos/)**, 2022-10-23, Co-located with [ISWC 2022](https://iswc2022.semanticweb.org).
+~~[3rd Workshop on Research Objects, Metadata and Management for Linked Open Science - DaMaLOS 2022](https://zbmed.github.io/damalos/)~~ (cancelled)
 
 **[Workshop on Data and Research Objects Management for Linked Open Science](https://zbmed.github.io/damalos/docs/2021.html)** (DaMaLOS) 2021-10-24, _20th International Semantic Web Conference_ (ISWC 2021).
 

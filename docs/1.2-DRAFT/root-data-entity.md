@@ -46,7 +46,7 @@ The _RO-Crate JSON-LD_ MUST contain a self-describing
 **RO-Crate Metadata File Descriptor** with
 the `@id` value `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` in legacy
 crates) and `@type` [CreativeWork]. This descriptor MUST have an [about]
-property referencing the _Root Data Entity_, which SHOULD have an `@id` of `./`.
+property referencing the _Root Data Entity_'s `@id`.
 
 ```json
 
@@ -77,17 +77,75 @@ start with `https://w3id.org/ro/crate/`.
 > The `conformsTo` property MAY be an array, to additionally indicate 
 specializing [RO-Crate profiles](profiles.md).
 
+If the root data entity `@id` is an absolute URI, the RO-Crate is considered
+web-based: in this case, the metadata descriptor SHOULD also have an absolute
+URI as its `@id`, which MUST have `ro-crate-metadata.json` (or
+`ro-crate-metadata.jsonld` in legacy crates) as its last path segment.
+
 ### Finding the Root Data Entity
 
-Consumers processing the RO-Crate as an JSON-LD graph can thus reliably find
-the _Root Data Entity_ by following this algorithm:
+In most cases, consumers processing the RO-Crate as a JSON-LD graph can thus
+reliably find the _Root Data Entity_ by following this algorithm:
 
 1. For each entity in `@graph` array
-2. ..for each value of the `conformsTo` property (if array) or its value (if string)
-3. ....if the value is a URI that starts with `https://w3id.org/ro/crate/`
-4. ......then from this entity's `about` object, keep the `@id` URI as variable _root_
-5. For each entity in `@graph` array
-6. .. if the entity has an `@id` URI that matches _root_ return it
+2. .. if the `@id` is `ro-crate-metadata.json`
+3. .... from this entity's `about` object, keep the `@id` URI as variable _root_
+4. For each entity in `@graph` array
+5. .. if the entity has an `@id` URI that matches _root_ return it
+
+Note that the above can be implemented efficiently by first building a map of
+all entities using their `@id` as keys (which is typically also helpful for
+further processing) and then performing a series of lookups:
+
+```javascript
+metadata_entity = entity_map["ro-crate-metadata.json"]
+root_entity = entity_map[metadata_entity["about"]["@id"]]
+```
+
+More generally, the metadata id can be a URI whose last path segment is
+`ro-crate-metadata.json`, so the above lookup can fail. In this case we can
+find the root entity by executing an algorithm similar to the one shown above,
+with the only difference that step 2 must be replaced by:
+
+2. .. if the `@id`'s last path segment is `ro-crate-metadata.json`
+
+It is possible to build an RO-Crate having more than one entity whose `@id`
+has `ro-crate-metadata.json` as its last path segment. For instance, the crate
+could reference a collection of sample RO-Crate metadata files available from
+different web sites, or from the same web site but at different locations. In
+order to facilitate consumption, data entities representing such files SHOULD
+NOT have an `about` property pointing to a [Dataset] in the crate, so they can
+be told apart from the actual metadata file descriptor. A scenario that can
+potentially lead to confusion is when a dataset in the crate is itself an
+RO-Crate (_nested_ RO-Crate): again, the crate could be a collection of
+RO-Crate examples. In this case, the top-level crate SHOULD NOT list any files
+or directories belonging to the nested crates, but only the nested crates
+themselves as [Dataset] entries. For instance:
+
+```json
+{
+  "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
+  "@graph": [
+    {
+      "@id": "http://example.org/crate/ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {"@id": "http://example.org/crate/"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
+    },
+    {
+      "@id": "http://example.org/crate/",
+      "@type": "Dataset",
+      "hasPart": [
+        {"@id": "http://example.org/crate/nested/"}
+      ]
+    },
+    {
+      "@id": "http://example.org/crate/nested/",
+      "@type": "Dataset"
+    }
+  ]
+}
+```
 
 See also the appendix on
 [finding RO-Crate Root in RDF triple stores](appendix/relative-uris.md#finding-ro-crate-root-in-rdf-triple-stores).
@@ -116,12 +174,13 @@ be minimally valid.
 
 The _Root Data Entity_ MUST have the following properties:
 
-*  `@type`: MUST have [Dataset] as one of its values
-*  `@id`:  MUST end with `/` and SHOULD be the string `./`
+*  `@type`: MUST be [Dataset] or an array that contain `Dataset`
+*  `@id`:  SHOULD be the string `./` or an absolute URI (see [below](#root-data-entity-identifier))
 *  `name`: SHOULD identify the dataset to humans well enough to disambiguate it from other RO-Crates
 *  `description`: SHOULD further elaborate on the name to provide a summary of the context in which the dataset is important.
 *  `datePublished`: MUST be a string in [ISO 8601 date format][DateTime] and SHOULD be specified to at least the precision of a day, MAY be a timestamp down to the millisecond. 
-*  `license`: SHOULD link to a _Contextual Entity_ in the _RO-Crate Metadata File_ with a name and description (see section on [licensing](contextual-entities.md#licensing-access-control-and-copyright)). MAY, if necessary be a textual description of how the RO-Crate may be used. 
+*  `license`: SHOULD link to a _Contextual Entity_ or _Data Entity_ in the _RO-Crate Metadata File_ with a name and description (see section on [licensing](contextual-entities.md#licensing-access-control-and-copyright)). MAY, if necessary be a textual description of how the RO-Crate may be used. 
+
 {: .note }
 > These requirements are stricter than those published 
 > for [Google Dataset Search](https://developers.google.com/search/docs/data-types/dataset) which 
@@ -130,7 +189,17 @@ The _Root Data Entity_ MUST have the following properties:
 {: .warning }
 > The properties above are not sufficient to generate a [DataCite][DataCite Schema] citation. Advice on integrating with [DataCite] will be provided in a future version of this specification, or as an implementation guide.
 
-Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be added to further describe the RO-Crate as a whole, e.g. [creator], [author], [abstract], [publisher]. See sections [contextual entities](contextual-entities.md) and [provenance](provenance.md) for further details.
+Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be added to further describe the RO-Crate as a whole, e.g. [author], [abstract], [publisher]. See sections [contextual entities](contextual-entities.md) and [provenance](provenance.md) for further details.
+
+
+### Root Data Entity identifier
+
+The root data entity's `@id` SHOULD be either `./` (indicating the directory of `ro-crate-metadata.json` is the [RO-Crate Root](structure.md)), or an absolute URI (indicating a [detached RO-Crate](structure.md#detached-ro-crate)). 
+
+If the `@id` of the Root Data Entity is an absolute URI, the Crate SHOULD NOT contain [data entities](data-entities.md) using relative URI references, but MAY contain [Web-based Data Entities](data-entities.html#web-based-data-entities) using absolute URIs.
+
+RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) SHOULD indicate this using [identifier] on the root data entity. It is RECOMMENDED that resolving the identifier programmatically return the RO-Crate Metadata File or an archive (e.g. ZIP) that contain the RO-Crate Metadata File, using [content negotiation](profiles.md#how-to-retrieve-a-profile-crate) and/or [Signposting](https://signposting.org/adopters/#workflowhub).
+
 
 ## Minimal example of RO-Crate
 

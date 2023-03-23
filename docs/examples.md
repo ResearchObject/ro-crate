@@ -56,19 +56,12 @@ The [RO-Crate 1.1](https://w3id.org/ro/crate/1.1/) specification is largely **ex
 
 The [Arkisto platform case studies](https://arkisto-platform.github.io/case-studies/) highlight multiple ways RO-Crate has been used:
 * [PARADISEC](https://arkisto-platform.github.io/case-studies/paradisec/) (the Pacific And Regional Archive for Digital Sources in Endangered Cultures) deployed on <http://mod.paradisec.org.au/> (example [ro-crate-metadata.json](http://mod.paradisec.org.au/repository/72/b3/dc/14/01/c8/ff/06/aa/cb/a0/99/0a/12/8f/c1/13/cf/9a/d5/27/5f/49/4b/05/c1/14/21/77/35/65/61/bd/7f/4c/0e/88/00/ba/de/2c/bb/be/d7/5f/6d/9d/01/98/94/73/5a/d7/e4/07/62/68/4d/24/3a/44/2d/65/8a/v1/content/ro-crate-metadata.json) via OCFL)
+* [Recordings in South Efate](http://mod.paradisec.org.au/view/NT1/98007?version=v1) ([ro-crate-metadata.jsonld](http://mod.paradisec.org.au/repository/72/b3/dc/14/01/c8/ff/06/aa/cb/a0/99/0a/12/8f/c1/13/cf/9a/d5/27/5f/49/4b/05/c1/14/21/77/35/65/61/bd/7f/4c/0e/88/00/ba/de/2c/bb/be/d7/5f/6d/9d/01/98/94/73/5a/d7/e4/07/62/68/4d/24/3a/44/2d/65/8a/v1/content/ro-crate-metadata.json)) – one of [more than 470 RO-Crates](http://mod.paradisec.org.au/) from the [Pacific and Regional Archive for Digital Sources in Endangered Cultures](http://www.paradisec.org.au/) _(beta)_
 
+The [UTS Research Data Portal](https://data.research.uts.edu.au/) includes several RO-Crates:
+* [A room impulse response database for multizone sound field reproduction](https://doi.org/10.26195/0wx8-v473) 
+* [PCFA Telenursing eResource](https://data.research.uts.edu.au/publication/60145760e2d511ec87d63dd96ff2e9f4/)
 
-You can also look at some [example RO-Crates](https://data.research.uts.edu.au/examples/ro-crate/0.2/).
-
-{: .warning }
-> Some of the below examples may be using [RO-Crate 0.2](0.2/), which may miss some subtle changes in [RO-Crate 1.0](1.0/) and [RO-Crate 1.1](1.1/).
-> Implementers are advised to check relevant sections in the latest RO-Crate [specification](specification.md).
-
-* [Recordings in South Efate](http://mod.paradisec.org.au/view/NT1/98007?version=v1) ([ro-crate-metadata.jsonld](http://mod.paradisec.org.au/repository/72/b3/dc/14/01/c8/ff/06/aa/cb/a0/99/0a/12/8f/c1/13/cf/9a/d5/27/5f/49/4b/05/c1/14/21/77/35/65/61/bd/7f/4c/0e/88/00/ba/de/2c/bb/be/d7/5f/6d/9d/01/98/94/73/5a/d7/e4/07/62/68/4d/24/3a/44/2d/65/8a/v1/content/ro-crate-metadata.jsonld)) – one of [more than 14k RO-Crates](http://mod.paradisec.org.au/) from the [Pacific and Regional Archive for Digital Sources in Endangered Cultures](http://www.paradisec.org.au/) _(beta)_
-* [Dataset for IDRC Project: Exploring the opportunities and challenges of implementing open research strategies within development institutions](https://data.research.uts.edu.au/examples/ro-crate/0.2/Data_Package-IDRC_Opportunities_and_Challenges_Open_Research_Strategies/ro-crate-preview.html) ([ro-crate-metadata.jsonld](https://data.research.uts.edu.au/examples/ro-crate/0.2/Data_Package-IDRC_Opportunities_and_Challenges_Open_Research_Strategies/ro-crate-metadata.jsonld))
-* [Dataset, Book: Pioneer Work in the Alps of New Zealand](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/IE4783007/) ([ro-crate-metadata.jsonld](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/IE4783007/ro-crate-metadata.jsonld))
-* [Glop Pot data](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/Glop_Pot/ro-crate-preview.html) ([ro-crate-metadata.jsonld](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/Glop_Pot/ro-crate-metadata.jsonld)) – shows how Calcyte's preview HTML can [nest folders](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/Glop_Pot/ro-crate-preview.html#sketchsheets)
-* [Dharmae Example Dataset](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/dharmae/ro-crate-preview.html) ([ro-crate-metadata.jsonld](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/dharmae/ro-crate-metadata.jsonld)) – shows how RO-Crate can carry [rich metadata](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/dharmae/ro-crate-preview.html#https://dharmae.research.uts.edu.au/api/collections/24) for individual resources which can have [multiple representations](https://data.research.uts.edu.au/examples/ro-crate/examples/src/samples/dharmae/ro-crate-preview.html#385)
 
 ## WorkflowHub examples
 
