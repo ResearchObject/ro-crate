@@ -329,9 +329,9 @@ More information about the relationship of this term to other terms MAY be provi
 
 If several RO-Crates are using the same `@context` extension terms, or define the same additional ad-hoc terms, then it may make sense to specify these within an [RO-Crate profile](../profiles.md) that the crates can then explicitly declare conformance to.   
 
-The `@id` of the extension terms should after the move be made absolute URIs that resolve to the profile crate -- if these were made using <https://w3id.org/ro/terms/> then a request to set up such redirects can be made. If it is not possible to set up a redirection.
+The `@id` of the extension terms should after the move be made absolute URIs that resolve to the profile crate -- if these were made using <https://w3id.org/ro/terms/> then a request to set up such redirects can be made. 
 
-For terms it is RECOMMENDED to change the `@id` of the terms after moving to be based on the profile's permalink, e.g. the profile with `@id` <https://w3id.org/cpm/ro-crate> defines the term <https://w3id.org/cpm/ro-crate#CPMProvenanceFile>.
+For terms it is RECOMMENDED to change the `@id` of the terms after moving to be based on the profile's permalink, e.g. the profile with `@id` <https://w3id.org/cpm/ro-crate> defines the term <https://w3id.org/cpm/ro-crate#CPMProvenanceFile>. 
 
 See sections on [profile extension terms](../profiles.md#extension-terms) and [Profile JSON-LD context](../profiles.md#json-ld-context).  [Custom file formats](../data-entities.md#adding-detailed-descriptions-of-encodings) and common [contextual entities](../contextual-entities.md) may also be moved to the profile, ensuring their `@id` are absolute URI and resolve to the profile JSON-LD.
 
