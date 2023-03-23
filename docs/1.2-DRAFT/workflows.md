@@ -216,7 +216,7 @@ contextual entities. Note that this entity usually represent a _potential_ input
 workflow, much like [function parameter definitions] in general programming.
 
 If complying with the Bioschemas [FormalParameter profile][FormalParameter profile 1.0],
-the _contextual entities_ for [FormalParameter][FormalParameter 1.0], referenced by `input` or `output`, MUST describe: [name], [additionalType], [encodingFormat]
+the _contextual entities_ for [FormalParameter][FormalParameter 1.0], referenced by `input` or `output`, MUST describe [name].
 
 The Bioschemas [FormalParameter profile][FormalParameter profile 1.0] explains the above and lists additional properties that can be used, including [description], [valueRequired], [defaultValue] and [identifier].
 
