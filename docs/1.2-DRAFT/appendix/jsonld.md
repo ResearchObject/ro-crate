@@ -97,7 +97,7 @@ The order of the `@graph` array is not significant. Above we see that the RO-Cra
 
 ## Describing entities in JSON-LD
 
-Properties of an entity can refer to another URL or entity by using the form `{"@id": "uri-reference"}` as in the example above, where the [author] property in the [File] entity refer to the [Person] entity, identified as `#alice`. 
+Properties of an entity can refer to another URI or entity by using the form `{"@id": "uri-reference"}` as in the example above, where the [author] property in the [File] entity refer to the [Person] entity, identified as `#alice`. 
 
 Identifiers in `@id` SHOULD be either a valid _absolute URI_ like <http://example.com/>, or a _URI path_ relative to the RO-Crate root directory. Although legal in JSON-LD, `@id` paths in RO-Crate SHOULD NOT use `../` to climb out of the _RO-Crate Root_, rather such references SHOULD be translated to absolute URIs. See also section [Core Metadata for Data Entities](../data-entities.md#core-metadata-for-data-entities).
 
@@ -220,11 +220,11 @@ ln -s ro-crate-metadata.json ro-crate-metadata.jsonld
 
 ## Extending RO-Crate
 
-To extend RO-Crate, implementers SHOULD try to use existing <http://schema.org/> properties and classes and MAY use terms from other vocabularies and ontologies when this is not possible.
+To extend RO-Crate, implementers SHOULD try to use existing <http://schema.org/> properties and classes and MAY use terms from other vocabularies and ontologies when this is not possible. In many cases, a liberal interpretation of an schema.org term can be sufficient, e.g. even if <https://schema.org/HowTo> is explained with an example of changing a tire, `HowTo` could also help explain a Linux shell script as a series of computational steps.
 
-The _terms_ (properties and types) used SHOULD be added as keys to the `@context` in the _RO-Crate JSON-LD_ (if not present). To avoid duplicating the _RO-Crate JSON-LD Context_ the `@context: []` array form SHOULD be used as shown below.
+Any additional _terms_ (properties and types) from outside schema.org MUST be added as keys to the `@context` in the _RO-Crate JSON-LD_ (if not present) (or be defined by the JSON-LD context in other ways). To avoid duplicating the _RO-Crate JSON-LD Context_ the `@context: []` array form SHOULD be used as shown below.
 
-URIs in the `@context` SHOULD resolve to a useful human readable page. When this is not possible - for example if the URI resolves to an RDF ontology file, a human-readable URI SHOULD be provided using a [sameAs] description.
+URIs in the `@context` SHOULD resolve to a useful human readable page. When this is not possible - for example if the URI resolves to an RDF ontology file, a human-readable URI SHOULD be provided as a [DefinedTerm] using a [sameAs] description.
 
 For example. The `@id` URI <http://purl.org/ontology/bibo/interviewee> from the [BIBO ontology] intends to resolve to an ontology file, which is not useful for humans, however the HTML section <http://neologism.ecs.soton.ac.uk/bibo.html#interviewee> is human-readable. To read more about best practices for content negotiation of vocabularies, we refer the reader to [Best Practice Recipes for Publishing RDF Vocabularies].
 
@@ -238,43 +238,44 @@ For example. The `@id` URI <http://purl.org/ontology/bibo/interviewee> from the 
   "@graph": [
   {
       "@id": "http://purl.org/ontology/bibo/interviewee",
-      "sameAs": "http://neologism.ecs.soton.ac.uk/bibo.html#interviewee",
-      "@type": "Thing"
+      "@type": "DefinedTerm",
+      "name": "interviewee",
+      "sameAs": "http://neologism.ecs.soton.ac.uk/bibo.html#interviewee"
   }
  ]
 }
 ```
 
-
 When generating the _RO-Crate Website_ from _RO-Crate JSON-LD_, the code MUST use a [sameAs] URI (if present) as a target for an explanatory link for the term instead of the Linked Data URI supplied in the `@context`.
 
-Where there is no RDF ontology available, then implementors SHOULD attempt to provide context by creating stable web-accessible URIs to document properties and classes, for example, by linking to a page describing an XML element or an attribute from an XML schema, pending the publication of a formal ontology.
+Where there is no RDF ontology available, then implementors SHOULD attempt to provide context by creating stable web-accessible URIs to document properties and classes, for example, by linking to a page describing the term.
 
 
 ## Adding new or ad hoc vocabulary terms
 
 Context terms must ultimately map to HTTP(s) URIs which poses challenges for crate-authors wishing to use their own vocabularies.
 
-RO-Crate provides some strategies to add a new term (a [Class] or [Property]) that is not in Schema.org or another published vocabulary, so that there is a stable URI that can be added to the @context. 
+RO-Crate provides some strategies to add a new term ([DefinedTerm], [Class] or [Property]) that is not in Schema.org or another published vocabulary, so that there is a stable URI that can be added to the `@context`. 
 
-### Choosing URLs for ad hoc terms
+### Choosing URIs for ad hoc terms
 
-For projects that have their own web-presence, URLs MAY be defined there and SHOULD resolve to useful content. For example
-
-for a project with web page <https://example.com/some-project> the property `myProperty` could have a URL: <https://example.com/some-project/terms#myProperty> which resolves to an HTML page that explains the term using HTML anchors:
+For projects that have their own web-presence, URIs MAY be defined there and SHOULD resolve to useful content. For example, for a project with web page <https://example.com/some-project> the property `myProperty` could have a URI: <https://example.com/some-project/terms#myProperty> which resolves to an HTML page that explains each term using HTML anchors:
 
 ```html
-<div id="myProperty">
-  <h1>Property: myProperty</h1>
+<section id="myProperty">
+  <h2>Property: myProperty</h2>
+  <dl><dt>Permalink:</dt> 
+      <dd>https://example.com/some-project/terms#myProperty</dd>
+  </dl>
   <p>Description of property ...
   </p>
-</div>
+</section>
 ```
 
 {: .tip }
 > Ensure you have a consistent use of `http` or `https` (preferring https) as well as consistent path `/vocab` vs `/vocab/` vs `/vocab/index.html` (preferring the shortest that is also visible in browser).
 
-For ad hoc terms where the crate author does not have the resources to create and maintain an HTML page, authors may use the RO-Crate public namespace (`https://w3id.org/ro/terms/`) to reserve their terms. For example, an ad-hoc URL MAY be used in the form `https://w3id.org/ro/terms/some-project#myProperty` where `some-project` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions][ro-terms] to the RO-Crate terms project. 
+For ad hoc terms where the crate author does not have the resources to create and maintain an HTML page, authors may use the RO-Crate public namespace (`https://w3id.org/ro/terms/`) to reserve their terms. For example, an ad-hoc URI MAY be used in the form `https://w3id.org/ro/terms/some-project#myProperty` where `some-project` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions][ro-terms] to the RO-Crate terms project. 
 
 In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in the local context:
 
@@ -289,40 +290,49 @@ In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in
 }
 ```
 
-
-
-
-
-
-
 ### Add local definitions of ad hoc terms
 
 Following the conventions used by Schema.org, ad-hoc terms SHOULD also include definitions in the RO-Crate with at minimum:
 
-* `@type` of either `rdfs:Class` (contextual entity type) or `rdf:Property` (attribute of an contextual entity)
-* `rdfs:label` with the human readable version of the term, e.g. `makesFood` has label `makes food`
-* `rdfs:comment` documenting and clarifying the meaning of the term. For instance the term `title` in a real estate context will have a different explanation than `title` in a vocabulary about people.
+* `@id` is an absolute URI (see [choosing ])
+* `@type` of [DefinedTerm], [Property] or [Class]. Use [Property] for terms that can be used as JSON-LD keys (after being mapped by the context), or [Class] for terms that can be used with `@type`. Use [DefinedTerm] for any other defined concepts that will be referenced by `@id`, e.g. from [creativeWorkStatus].
+* `name` with the human readable version of the term, e.g. `http://example.com/vocab#makesFood` has label `"makes food"`
+* `description` documenting and clarifying the meaning of the term. For instance the term `education` meaning _Person's education level, e.g. primary school_ (compared to the meaning _Educational Material_)
 
 ```json
- {
-      "@id": "http://purl.archive.org/textcommons/terms#participant",
-      "@type": "rdf:Property",
-      "name": "participant",
-      "description": "This role is intended for minor participants such as audience members or other peripherally-involved participants in the event. ...",
-      "domainIncludes": "schema:CreativeWork",
-      "rangeIncludes": [
-        "schema:Person",
-        "schema:Organization"
-      ],
-      "sameAs": "http://www.language-archives.org/REC/role.html#participant",
-      "rdfs:comment": "The participant was present during the creation of the resource, but did not contribute substantially to its content.",
-      "rdfs:label": "participant"
-    },
+{
+    "@id": "http://purl.archive.org/textcommons/terms#participant",
+    "@type": "DefinedTerm",
+    "name": "participant",
+    "description": "This role is intended for minor participants such as audience members or other peripherally-involved participants in the event…"
+}
 ```
+
 
 {: .tip }
 > It is **not** a requirement to use English for the terms, labels or comments.
 
-More information about the relationship of this term to other terms MAY be provided using [domainIncludes], [rangeIncludes], [rdfs:subClassOf] following the conventions used in the [Schema.org schema].
+More information about the relationship of this term to other terms MAY be provided using [domainIncludes], [rangeIncludes], [rdfs:subClassOf], [rdfs:subPropertyOf], [sameAs] following the conventions used in the [Schema.org schema]. For compatibility with RDFS/OWL tools, the equivalent of [Property] (`rdf:Property`) or of [Class] (`rdfs:Class`) MAY be added, together with duplication of `name` and `description` using the RDFS properties `rdfs:label` and `rdfs:comment`:
+
+```json
+ {
+      "@id": "http://purl.archive.org/textcommons/terms#participant",
+      "@type": ["Property", "rdf:Property"],
+      "name":       "participant",
+      "rdfs:label": "participant",
+      "description":  "This role is intended for minor participants such as audience members or other peripherally-involved participants in the event…",
+      "rdfs:comment": "This role is intended for minor participants such as audience members or other peripherally-involved participants in the event…",
+      "rdfs:subPropertyOf": {"@id": "http://schema.org/participant"},
+      "domainIncludes": {"@id": "http://schema.org/CreativeWork"},
+      "rangeIncludes": [
+         {"@id": "http://schema.org/Person"},
+         {"@id": "http://schema.org/Organization"}
+      ],
+      "sameAs": "http://www.language-archives.org/REC/role.html#participant",
+    }
+```
+
+{: .note }
+For compatibility with the official schema.org JSON-LD context, make sure any referenced `@id` to schema.org terms starts with `http://` rather than `https://` as shown in the browser.
 
 {% include references.liquid %}
