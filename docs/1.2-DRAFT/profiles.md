@@ -23,7 +23,7 @@ Recommendations:
 * The profile URI MUST resolve to a human-readable _profile description_ (e.g. a HTML web page)
   - The profile URI MAY have a corresponding machine-readable [_Profile Crate_](#profile-crate)
 * The profile URI SHOULD be a _permalink_ (persistent identifier)
-  - e.g. starting with <https://w3id.org/> <http://purl.org/> or <https://www.doi.org/>
+  - e.g. starting with <https://w3id.org/> <http://purl.org/> or <https://doi.org/> 
 * The profile URI SHOULD be _versioned_ with [`MAJOR.MINOR`][semver], e.g. `http://example.com/image-profile-2.4`
 * The profile description SHOULD use key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL as described in [RFC 2119].
 
