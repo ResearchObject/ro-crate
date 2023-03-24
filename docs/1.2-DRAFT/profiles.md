@@ -43,7 +43,8 @@ RO-Crate can describe a profile by adding it as an [contextual entity](contextua
 ```json
 {
     "@id": "https://w3id.org/ro/wfrun/process/0.1",
-    "@type": "CreativeWork",
+    "@type": ["CreativeWork", "Profile"],
+    "@id": "https://w3id.org/ro/wfrun/process/0.1",
     "name": "Process Run crate profile",
     "version": "0.1.0"
 }
@@ -51,17 +52,20 @@ RO-Crate can describe a profile by adding it as an [contextual entity](contextua
 
 The contextual entity for a profile:
 
+* The `@type` SHOULD be an array. The `@type` MUST include [Profile].
+* The `'@type` SHOULD include `CreativeWork` (indicating a Web Page) or `Dataset` (indicating a Profile Crate).
 * SHOULD have an absolute URI as `@id`
 * SHOULD have a descriptive [name]
 * MAY declare [version], preferably according to [Semantic Versioning][semver]
 
-RO-Crates conforming to (or intending to conform to) such a profile declare this using `conformsTo` on the [root data entity](root-data-entity.md):
+RO-Crates that are _conforming to_ (or intending to conform to) such a profile SHOULD declare this using `conformsTo` on the [root data entity](root-data-entity.md):
 
 ```json
 {
     "@id": "./",
     "@type": "Dataset",
-    "conformsTo": {"@id": "https://w3id.org/ro/wfrun/process/0.1"}
+    "conformsTo":
+        {"@id": "https://w3id.org/ro/wfrun/process/0.1"}       
 }
 ```
 
@@ -76,15 +80,38 @@ While the Profile URI `@id` must resolve to a human-readable _profile descriptio
 
 A **Profile Crate** is a type of RO-Crate that gathers resources which further define the profile. This allows formalizing alternative profile description for machine-readability, for instance for validation, but also additional resources like examples.
 
+The [Root Data entity](root-data-entity) of a Profile Crate MUST declare `Profile` as an additional `@type`:
+
+```json
+{
+    "@id": "http://example.com/",
+    "@type": ["Dataset", "Profile"],
+    "@id": "https://w3id.org/ro/wfrun/process/0.1",
+    "name": "Process Run crate profile",
+    "version": "0.1.0",
+    "hasPart": [ ],
+    "…": ""
+}
+```
+
+The rest of the requirements for being referenced as a contextual entity also apply here:
+
+* SHOULD have an absolute URI as `@id`
+* SHOULD have a descriptive [name]
+* MAY declare [version], preferably according to [Semantic Versioning][semver] (e.g. `0.4.0`)
+* SHOULD list related data entities using `hasPart` (see [below](#what-is-included-in-the-profile-crate))
 
 ### How to retrieve a Profile Crate
 
 To resolve a Profile URI to a machine-readable _Profile Crate_, two approaches are recommended to retrieve its [RO-Crate metadata file](root-data-entity.md#ro-crate-metadata-file-descriptor):
 
 1. [HTTP Content-negotiation] for the [RO-Crate media type](appendix/jsonld.md#ro-crate-json-ld-media-type), for example:  
-  Requesting `https://w3id.org/workflowhub/workflow-ro-crate/1.0` with HTTP header
+
+Requesting `https://w3id.org/workflowhub/workflow-ro-crate/1.0` with HTTP header
+
   `Accept: application/ld+json;profile=https://w3id.org/ro/crate` redirects to the _RO-Crate Metadata file_
   `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`
+
 2. The above approach may fail (or returns a HTML page), e.g. for content-delivery networks that do not support content-negotiation. The fallback is to try resolving the path `./ro-crate-metadata.json` from the _resolved_ URI (after permalink redirects). For example:  
 If permalink `https://w3id.org/workflowhub/workflow-ro-crate/1.0` redirects to `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/index.html` (a HTML page), then
 try retrieving `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`
@@ -92,13 +119,109 @@ try retrieving `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-meta
 
 <!-- TODO Make both examples above actually work! -->
 
-### What is included in the Profile Crate?
+### What is included in the Profile Crate? 
+
+Below follows the suggested [data entities](data-entities.md) to include in a Profile Crate using `hasPart`. 
+
+#### Declaring the role within the crate
+
+In order for programmatic use of the Profile Crate to consume particular subresources, e.g. for validation, the _role_ of each entity SHOULD be declared by including them using `hasResource` to a `ResourceDescriptor` contextual entity that references the subresource using `hasResource`, as defined by the [Profiles Vocabulary]:
+
+```json
+{
+    "@id": "http://example.com/my-crate-profile/0.1/",
+    "@type": ["Dataset", "Profile"],
+    "name": "My Crate Profile",
+    "version": "0.1.0",
+    "hasPart": [
+        {"@id": "http://example.com/my-crate-profile/0.1/shape.shex"}
+    ],
+    "hasResource": [
+        {"@id": "#hasShape"}
+    ]
+}
+{ 
+    "@id": "#hasShape",
+    "@type": "ResourceDescriptor",
+    "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/constraints" },
+    "hasArtifact": {"@id": "http://example.com/my-crate-profile/0.1/shape.shex"}
+}
+```
+
+The [`ResourceDescriptor`](https://www.w3.org/TR/dx-prof/#Class:ResourceDescriptor) entity MAY also declare `dct:format` or `dct:conformsTo`, however the data entity referenced with `hasArtifact` SHOULD declare `encodingFormat` (with OPTIONAL `conformsTo`) to specify its [encoding format](data-entities#adding-detailed-descriptions-of-encodings), e.g.:
+
+```json
+{
+    "@id": "http://example.com/my-crate-profile/0.1/shape.shex",
+    "@type": "File",
+    "encodingFormat": [
+        "text/shex", 
+        {"@id": "http://shex.io/shex-semantics/" }
+    ]
+}
+```
+
+The referenced role SHOULD be declared as a `DefinedTerm` contextual entity. 
+The recommended [predefined roles](https://www.w3.org/TR/dx-prof/#resource-roles-vocab) from the Profiles Vocabulary are:
+
+```json
+{
+    "@id": "http://www.w3.org/ns/dx/prof/role/constraints",
+    "@type": ["DefinedTerm", "ResourceRole"],
+    "name": "Constraints", 
+    "description": "Descriptions of obligations, limitations or extensions that the profile defines"
+},
+{
+    "@id": "http://www.w3.org/ns/dx/prof/role/example",
+    "@type": ["DefinedTerm", "ResourceRole"],
+    "name": "Example", 
+    "description": "Sample instance data conforming to the profile"
+},
+{
+    "@id": "http://www.w3.org/ns/dx/prof/role/guidance",
+    "@type": ["DefinedTerm", "ResourceRole"],
+    "name": "Guidance", 
+    "description": "Documents, in human-readable form, how to use the profile"
+},
+{
+    "@id": "http://www.w3.org/ns/dx/prof/role/mapping",
+    "@type": ["DefinedTerm", "ResourceRole"],
+    "name": "Mapping", 
+    "description": "Describes conversions between two specifications"
+},
+{
+    "@id": "http://www.w3.org/ns/dx/prof/role/schema",
+    "@type": ["DefinedTerm", "ResourceRole"],
+    "name": "Schema", 
+    "description": "Machine-readable structural descriptions of data defined by the profile"
+},
+{
+    "@id": "http://www.w3.org/ns/dx/prof/role/specification",
+    "@type": ["DefinedTerm", "ResourceRole"],
+    "name": "Specification", 
+    "description": "Defining the profile in human-readable form"
+},
+{
+    "@id": "http://www.w3.org/ns/dx/prof/role/validation",
+    "@type": ["DefinedTerm", "ResourceRole"],
+    "name": "Validation", 
+    "description": "Supplies instructions about how to verify conformance of data to the profile"
+},
+{
+    "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary",
+    "@type": ["DefinedTerm", "ResourceRole"],
+    "name": "Vocabulary", 
+    "description": "Defines terms used in the profile specification"
+}
+```
+
+The examples in the rest of this document will list the data entities with a corresponding `ResourceDescriptor` entity, but for brevity not repeating the required `hasPart` `hasArtifact` and `DefinedTerm` declarations.
 
 Below follows the suggested [data entities](data-entities.md) to include in a Profile Crate using `hasPart`:
 
 #### Profile description entity
 
-A Profile Crate MUST declare a human-readable _profile description_, which is [about] this Profile Crate and SHOULD have [encodingFormat] as `text/html`:
+A Profile Crate MUST declare a human-readable _profile description_, which is [about] this Profile Crate and SHOULD have [encodingFormat] as `text/html`. The corresponding `ResourceDescriptor` SHOULD have identifier `http://www.w3.org/ns/dx/prof/role/specification` or `http://www.w3.org/ns/dx/prof/role/guidance` -- for example:
 
 ```json
 {
@@ -106,13 +229,20 @@ A Profile Crate MUST declare a human-readable _profile description_, which is [a
     "@type": "File",
     "name": "Workflow RO-Crate profile description",
     "encodingFormat": "text/html",
+    "about": "./",
+},
+{ 
+    "@id": "#hasSpecification",
+    "@type": "ResourceDescriptor",
+    "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/specification" },
+    "hasArtifact": {"@id": "index.html"}
     "about": "./"
 }
 ```
 
 The _profile description_ MAY be equivalent to the
-[RO-Crate Website](structure.md#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files)
-`ro-crate-preview.html` (promoted to become a data entity):
+[RO-Crate Website](structure.md#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files) entity
+`ro-crate-preview.html` (becoming a data entity by listing it under `hasPart`):
 
 ```json
 {
@@ -120,7 +250,7 @@ The _profile description_ MAY be equivalent to the
     "@type": "CreativeWork",
     "name": "RO-Crate preview of the Process Run Crate",
     "encodingFormat": "text/html",
-    "about": "./"
+    "about": "./",
 }
 ```
 
@@ -135,14 +265,18 @@ An optional machine-readable _schema_ of the profile, for instance a [Describo J
     "@id": "https://raw.githubusercontent.com/UTS-eResearch/describo/v0.13.0/src/components/profiles/paradisec.describo.profile.json",
     "@type": "File",
     "name": "PARADISEC profile for Describo",
-    "encodingFormat": [
-        "application/json", 
-        {"@id": "https://github.com/UTS-eResearch/describo/wiki/dsp-index"}
-    ]
+    "encodingFormat": "application/json",
+    "conformsTo": {"@id": "https://github.com/UTS-eResearch/describo/wiki/dsp-index#profile-structure"}
+},
+{ 
+    "@id": "#hasSchema",
+    "@type": "ResourceDescriptor",
+    "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/schema" },
+    "hasArtifact": {"@id": "https://raw.githubusercontent.com/UTS-eResearch/describo/v0.13.0/src/components/profiles/paradisec.describo.profile.json"}
 },
 {
-    "@id": "https://github.com/UTS-eResearch/describo/wiki/dsp-index",
-    "@type": "WebPage",
+    "@id": "https://github.com/UTS-eResearch/describo/wiki/dsp-index#profile-structure",
+    "@type": "Profile",
     "name": "Describo JSON profile"
 }
 ```
@@ -150,26 +284,32 @@ An optional machine-readable _schema_ of the profile, for instance a [Describo J
 A schema may formalize restrictions on the 
 [RO-Crate metadata file](root-data-entity.md#ro-crate-metadata-file-descriptor) on 
 a graph-level (e.g. what types/properties) as well as serialization level
-(e.g. use of JSON arrays).
+(e.g. use of JSON arrays). 
 
-Below are known schema types and their suggested
-[encodingFormat](data-entities.md#adding-detailed-descriptions-of-encodings) identifiers:
+This interpretation of _schema_ assumes the resource somewhat describes the data structure, e.g. expected types and attributes the RO-Crate's JSON-LD. Use alternatively the role `http://www.w3.org/ns/dx/prof/role/validation` if the schema is primarily a set of constraint for validation purposes, or `http://www.w3.org/ns/dx/prof/role/vocabulary` for ontologies and term listings.
 
-| Name          | Media Type                | URI                        |
-| ------------- | ------------------------- | -------------------------- | 
-| JSON Schema   | `application/schema+json` | <https://json-schema.org/draft/2020-12/schema> |
-| Describo      | `application/json`        | <https://github.com/UTS-eResearch/describo/wiki/dsp-index> |
-| CheckMyCrate  | `application/json`        | <https://github.com/KockataEPich/CheckMyCrate#profiles> |
-| SHACL         | `text/turtle`             | <https://www.w3.org/TR/shacl/> |
-| ShExC         | `text/shex`               | <http://shex.io/shex-semantics/#shexc> |
-| ShExJ         | `application/ld+json`     | <http://shex.io/shex-semantics/#shexj> |
-| BagIt Profile | `application/json`        | <https://bagit-profiles.github.io/bagit-profiles-specification/> |
 
+
+Below are known schema types in their recommended media type, with suggested identifiers for the contextual entities of
+[encodingFormat](data-entities.md#adding-detailed-descriptions-of-encodings) with type `Standard` and `conformsTo` with type `Profile`:
+
+| Name           | `encodingFormat` Media Type   | `encodingFormat` URI   | `conformsTo` URI |  role  | 
+| -------------- | ------------------------- | -------------------------- | ---------- |
+| JSON Schema    | `application/schema+json` | <https://json-schema.org/draft/2020-12/schema> |  |  `schema` | 
+| Describo       | `application/json`        | <https://www.nationalarchives.gov.uk/PRONOM/fmt/817> | <https://github.com/UTS-eResearch/describo/wiki/dsp-index#profile-structure> | `schema` |
+| CheckMyCrate   | `application/json`        | <https://www.nationalarchives.gov.uk/PRONOM/fmt/817> | <https://github.com/KockataEPich/CheckMyCrate#profiles> | `validation` |
+| SHACL          | `text/turtle`             | <https://www.nationalarchives.gov.uk/PRONOM/fmt/874> |  <https://www.w3.org/TR/shacl/> | `validation` |
+| ShExC          | `text/shex`               | <http://shex.io/shex-semantics/#shexc> |  |  `validation`
+| ShExJ          | `application/ld+json`     | <https://www.nationalarchives.gov.uk/PRONOM/fmt/880> | <http://shex.io/shex-semantics/#shexj> |  `validation` |
+| BagIt Profile  | `application/json`        | <https://www.nationalarchives.gov.uk/PRONOM/fmt/817>  | <https://bagit-profiles.github.io/bagit-profiles-specification/> | `schema`
+| SKOS           | `text/turtle`             | <https://www.nationalarchives.gov.uk/PRONOM/fmt/874> | <http://www.w3.org/TR/skos-reference> | `vocabulary`
+| OWL 2 (in RDF) | `text/turtle`             | <https://www.nationalarchives.gov.uk/PRONOM/fmt/874> | <http://www.w3.org/TR/owl2-mapping-to-rdf/>  | `vocabulary` |
 
 {: .tip }
 Some of the above schema languages are based on general data structure syntaxes 
 like `application/json` and `text/turtle`, and therefore have a 
-generic  _Media Type_ accompanied by a specialized  _URI_.
+generic  `encodingFormat` with a specialized `conformsTo` _URI_, which itself is declared as a `Profile`.
+
 
 
 #### Software that works with the profile

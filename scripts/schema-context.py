@@ -105,7 +105,7 @@ def main():
 ADDITIONAL = OrderedDict([
 
     # This list should correspond to listing in
-    # https://researchobject.github.io/ro-crate/0.3-DRAFT/#additional-metadata-standards
+    # metadata.html#additional-metadata-standards
 
 
           ("File", "http://schema.org/MediaObject"),
@@ -119,7 +119,7 @@ ADDITIONAL = OrderedDict([
           ("RepositoryObject", "http://pcdm.org/models#object"),
 
           # Temporary namespace for properties/types
-          # proposed https://bioschemas.org/profiles/Workflow/ draft 0.5
+          # proposed https://bioschemas.org/profiles/Workflow/ 
           # Remove if/when added to schema.org release!
           ## BEGIN
           ("ComputationalWorkflow", BIOSCHEMA_WORKFLOW_NS),
@@ -130,8 +130,8 @@ ADDITIONAL = OrderedDict([
 
           ##("sdConformsTo", "https://w3id.org/ro/terms#sdConformsTo"),
 
+          ## PAV terms -- not mentioned in spec!
           ("wasDerivedFrom", "http://www.w3.org/ns/prov#wasDerivedFrom"),
-          
           ("importedFrom", "http://purl.org/pav/importedFrom"),
           ("importedOn", "http://purl.org/pav/importedOn"),
           ("importedBy", "http://purl.org/pav/importedBy"),
@@ -139,16 +139,38 @@ ADDITIONAL = OrderedDict([
           ("retrievedFrom", "http://purl.org/pav/retrievedFrom"),
           ("retrievedOn", "http://purl.org/pav/retrievedOn"),
           ("retrievedBy", "http://purl.org/pav/retrievedBy"),
+          ## END 
 
+          ## from DC Terms, used in profiles and metadata file
           ("conformsTo", "http://purl.org/dc/terms/conformsTo"),
+          ("Standard", "http://purl.org/dc/terms/Standard"),
 
+          ## The Profiles Vocabulary
+          # https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/
+          ("hasArtifact", "http://www.w3.org/ns/dx/prof/hasArtifact"),
+          ("hasResource", "http://www.w3.org/ns/dx/prof/hasResource"),
+          ("hasRole", "http://www.w3.org/ns/dx/prof/hasRole"),
+          ("hasToken", "http://www.w3.org/ns/dx/prof/hasToken"),
+          ("isInheritedFrom", "http://www.w3.org/ns/dx/prof/isInheritedFrom"),
+          ("isProfileOf", "http://www.w3.org/ns/dx/prof/isProfileOf"),
+          ("isTransitiveProfileOf", "http://www.w3.org/ns/dx/prof/isTransitiveProfileOf"),
+          ("ResourceDescriptor", "http://www.w3.org/ns/dx/prof/ResourceDescriptor"),
+          ("ResourceRole", "http://www.w3.org/ns/dx/prof/ResourceRole"),
+          ("Profile", "http://www.w3.org/ns/dx/prof/Profile"),
+          ## END
+
+          ## FIXME: Where is this used from?
           ("@label", "http://www.w3.org/2000/01/rdf-schema#label"),
+
+          # Some common namespaces
 
           ("pcdm", "http://pcdm.org/models#"),
           ("bibo", "http://purl.org/ontology/bibo/"),
           ("cc", "http://creativecommons.org/ns#"),
           ("dct", "http://purl.org/dc/terms/"),
           ("foaf", "http://xmlns.com/foaf/0.1/"),
+          ("prof", "http://www.w3.org/ns/dx/prof/"),
+          ("role", "http://www.w3.org/ns/dx/prof/role/"),
           ("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#"),
           ("rdfa", "http://www.w3.org/ns/rdfa#"),
           ("rdfs", "http://www.w3.org/2000/01/rdf-schema#"),
