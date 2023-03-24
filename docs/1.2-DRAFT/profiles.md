@@ -23,9 +23,9 @@ Recommendations:
 * The profile URI MUST resolve to a human-readable _profile description_ (e.g. a HTML web page)
   - The profile URI MAY have a corresponding machine-readable [_Profile Crate_](#profile-crate)
 * The profile URI SHOULD be a _permalink_ (persistent identifier)
-  - e.g. starting with <https://w3id.org/> <http://purl.org/> or <https://www.doi.org/>
+  - e.g. starting with <https://w3id.org/> <http://purl.org/> or <https://doi.org/> 
 * The profile URI SHOULD be _versioned_ with [`MAJOR.MINOR`][semver], e.g. `http://example.com/image-profile-2.4`
-* The profile description SHOULD use key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL as described in [RFC2119].
+* The profile description SHOULD use key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL as described in [RFC 2119].
 
 Suggestions:
 * The profile MAY require/suggest which `@type` of [data entities](data-entities.md) and/or [contextual entities](contextual-entities.md) are expected.
@@ -105,9 +105,10 @@ The rest of the requirements for being referenced as a contextual entity also ap
 
 To resolve a Profile URI to a machine-readable _Profile Crate_, two approaches are recommended to retrieve its [RO-Crate metadata file](root-data-entity.md#ro-crate-metadata-file-descriptor):
 
-1. [HTTP Content-negotiation](https://httpd.apache.org/docs/2.4/content-negotiation.html) for the [RO-Crate media type](appendix/jsonld.md#ro-crate-json-ld-media-type), for example:  
+1. [HTTP Content-negotiation] for the [RO-Crate media type](appendix/jsonld.md#ro-crate-json-ld-media-type), for example:  
 
 Requesting `https://w3id.org/workflowhub/workflow-ro-crate/1.0` with HTTP header
+
   `Accept: application/ld+json;profile=https://w3id.org/ro/crate` redirects to the _RO-Crate Metadata file_
   `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`
 
@@ -220,7 +221,7 @@ Below follows the suggested [data entities](data-entities.md) to include in a Pr
 
 #### Profile description entity
 
-A Profile Crate MUST declare a human-readable _profile description_, which is [about] this Profile Crate and SHOULD have `encodingFormat` as `text/html`. The corresponding `ResourceDescriptor` SHOULD have identifier `http://www.w3.org/ns/dx/prof/role/specification` or `http://www.w3.org/ns/dx/prof/role/guidance` -- for example:
+A Profile Crate MUST declare a human-readable _profile description_, which is [about] this Profile Crate and SHOULD have [encodingFormat] as `text/html`. The corresponding `ResourceDescriptor` SHOULD have identifier `http://www.w3.org/ns/dx/prof/role/specification` or `http://www.w3.org/ns/dx/prof/role/guidance` -- for example:
 
 ```json
 {
@@ -257,7 +258,7 @@ The _profile description_ MAY be equivalent to the
 #### Profile Schema entity
 
 
-An optional machine-readable _schema_ of the profile, for instance a [Describo](https://arkisto-platform.github.io/describo/) [JSON profile](https://github.com/UTS-eResearch/describo/wiki/dsp-index):
+An optional machine-readable _schema_ of the profile, for instance a [Describo JSON profile]:
 
 ```json
 {
@@ -288,26 +289,26 @@ a graph-level (e.g. what types/properties) as well as serialization level
 This interpretation of _schema_ assumes the resource somewhat describes the data structure, e.g. expected types and attributes the RO-Crate's JSON-LD. Use alternatively the role `http://www.w3.org/ns/dx/prof/role/validation` if the schema is primarily a set of constraint for validation purposes, or `http://www.w3.org/ns/dx/prof/role/vocabulary` for ontologies and term listings.
 
 
+
 Below are known schema types in their recommended media type, with suggested identifiers for the contextual entities of
 [encodingFormat](data-entities.md#adding-detailed-descriptions-of-encodings) with type `Standard` and `conformsTo` with type `Profile`:
 
-| Name          | `encodingFormat` Media Type   | `encodingFormat` URI   | `conformsTo` URI |  role  | 
-| ------------- | ------------------------- | -------------------------- | ---------- |
-| JSON Schema   | `application/schema+json` | <https://json-schema.org/draft/2020-12/schema> |  |  `schema` | 
-| Describo      | `application/json`        | <https://www.nationalarchives.gov.uk/PRONOM/fmt/817> | <https://github.com/UTS-eResearch/describo/wiki/dsp-index#profile-structure> | `schema` |
-| CheckMyCrate  | `application/json`        | <https://www.nationalarchives.gov.uk/PRONOM/fmt/817> | <https://github.com/KockataEPich/CheckMyCrate#profiles> | `validation` |
-| SHACL         | `text/turtle`             | <https://www.nationalarchives.gov.uk/PRONOM/fmt/874> |  <https://www.w3.org/TR/shacl/> | `validation` |
-| ShEx          | `text/shex`               | <http://shex.io/shex-semantics/> |  | `validation` |
-| ShExJ         | `application/json+shexschema`  <http://shexspec.github.io/primer/ShExJ> | | `validation` |
-| BagIt Profile | `application/json`        | <https://www.nationalarchives.gov.uk/PRONOM/fmt/817>  | <https://bagit-profiles.github.io/bagit-profiles-specification/> | `schema`
-| SKOS          | `text/turtle`             | <https://www.nationalarchives.gov.uk/PRONOM/fmt/874> | <http://www.w3.org/TR/skos-reference> | `vocabulary`
-| OWL 2 (in RDF)} | `text/turtle`           | <https://www.nationalarchives.gov.uk/PRONOM/fmt/874> | <http://www.w3.org/TR/owl2-mapping-to-rdf/>  | `vocabulary` |
+| Name           | `encodingFormat` Media Type   | `encodingFormat` URI   | `conformsTo` URI |  role  | 
+| -------------- | ------------------------- | -------------------------- | ---------- |
+| JSON Schema    | `application/schema+json` | <https://json-schema.org/draft/2020-12/schema> |  |  `schema` | 
+| Describo       | `application/json`        | <https://www.nationalarchives.gov.uk/PRONOM/fmt/817> | <https://github.com/UTS-eResearch/describo/wiki/dsp-index#profile-structure> | `schema` |
+| CheckMyCrate   | `application/json`        | <https://www.nationalarchives.gov.uk/PRONOM/fmt/817> | <https://github.com/KockataEPich/CheckMyCrate#profiles> | `validation` |
+| SHACL          | `text/turtle`             | <https://www.nationalarchives.gov.uk/PRONOM/fmt/874> |  <https://www.w3.org/TR/shacl/> | `validation` |
+| ShExC          | `text/shex`               | <http://shex.io/shex-semantics/#shexc> |  |  `validation`
+| ShExJ          | `application/ld+json`     | <https://www.nationalarchives.gov.uk/PRONOM/fmt/880> | <http://shex.io/shex-semantics/#shexj> |  `validation` |
+| BagIt Profile  | `application/json`        | <https://www.nationalarchives.gov.uk/PRONOM/fmt/817>  | <https://bagit-profiles.github.io/bagit-profiles-specification/> | `schema`
+| SKOS           | `text/turtle`             | <https://www.nationalarchives.gov.uk/PRONOM/fmt/874> | <http://www.w3.org/TR/skos-reference> | `vocabulary`
+| OWL 2 (in RDF) | `text/turtle`             | <https://www.nationalarchives.gov.uk/PRONOM/fmt/874> | <http://www.w3.org/TR/owl2-mapping-to-rdf/>  | `vocabulary` |
 
 {: .tip }
 Some of the above schema languages are based on general data structure syntaxes 
 like `application/json` and `text/turtle`, and therefore have a 
-generic  `encodingFormat` by a specialized `conformsTo` _URI_, which itself is declared as a `Profile`.
-
+generic  `encodingFormat` with a specialized `conformsTo` _URI_, which itself is declared as a `Profile`.
 
 
 
