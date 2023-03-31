@@ -21,6 +21,12 @@ title: Outreach and Publications
 # RO-Crate Outreach and Publications 
 {: .no_toc }
 
+{: .tip }
+**Upcoming RO-Crate workshops and training events**:  
+[_Building lightweight FAIR data packages with Bioschemas and RO-Crate_](https://docs.google.com/document/d/1Vh9mUBWvNEsvC5YZRITtZxsyE6Wr18rJUgp9KweJFNg) at **[ELIXIR All Hands 2023](https://elixir-europe.org/events/elixir-all-hands-2023)**, 2023-06-05/--08, Dublin, Ireland + hybrid.  
+[_Quo vadis Open Standards for Data Management? ORKG meets RO-Crates_](https://www.zbmed.de/vernetzen/veranstaltungen/open-science-festival/open-standards-for-data-management) at **[Open Science Festival 2023](https://www.zbmed.de/en/networking/events/open-science-festival-2023/)**, 2023-07-04/--05, Cologne, Germany.
+
+
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -670,7 +676,7 @@ _To suggest an event, either [edit and raise pull request](https://github.com/Re
 
 **[ELIXIR All Hands 2023](https://elixir-europe.org/events/elixir-all-hands-2023)**, 2023-06-05/--08, Dublin, Ireland + hybrid. **Workshop**: [Building lightweight FAIR data packages with Bioschemas and RO-Crate](https://docs.google.com/document/d/1Vh9mUBWvNEsvC5YZRITtZxsyE6Wr18rJUgp9KweJFNg)
 
-**[Galaxy Smörgåsbord 2023]()**, 2023-05-22/--26, virtual. Training includes [Module: FAIR data and provenance with RO-Crate and Galaxy](https://gallantries.github.io/video-library/modules/ro-crate).
+**[Galaxy Smörgåsbord 2023](https://gallantries.github.io/video-library/events/smorgasbord3/)**, 2023-05-22/--26, virtual. Training includes [Module: FAIR data and provenance with RO-Crate and Galaxy](https://gallantries.github.io/video-library/modules/ro-crate).
 
 **[2023 Common Workflow Language Conference](https://cwl.discourse.group/c/cwlcon-2023/13)** (CWLCon 2023). 2023-02-27/-03-03, virtual. 
 
