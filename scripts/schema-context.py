@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-#   Copyright 2019 The University of Manchester UK
+#   Copyright 2019-2023 The University of Manchester UK
 #   Copyright 2019 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
@@ -112,7 +112,7 @@ ADDITIONAL = OrderedDict([
           ("path", "http://schema.org/contentUrl"),
           ("Journal", "http://schema.org/Periodical"),
 
-          ("cite-as", "https://www.w3.org/ns/iana/link-relations/relation#cite-as"),
+          ("cite-as", "http://www.iana.org/assignments/relation/cite-as"),
           ("hasFile", "http://pcdm.org/models#hasFile"),
           ("hasMember", "http://pcdm.org/models#hasMember"),
           ("RepositoryCollection", "http://pcdm.org/models#Collection"),
