@@ -57,8 +57,6 @@ We maintain a list of RO-Crate [tools](tools/) and [examples](examples).
 
 We describe some current cases and applications of where [RO-Crate is in use](in-use) for packaging and describing Data, Datasets and Workflows.
 
-## Current
-
 ## Contribute to RO-Crate community
 
 RO-Crate is developed as a [community effort](community.md) and an Open Source project.
