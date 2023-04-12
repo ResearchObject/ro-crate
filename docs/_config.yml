@@ -1,4 +1,6 @@
-remote_theme: just-the-docs/just-the-docs@v0.4.0
+# theme now through gem
+theme: just-the-docs
+#remote_theme: just-the-docs/just-the-docs@v0.4.2
 logo: assets/img/ro-crate-wide.svg?20201023T1353
 
 title: Research Object Crate (RO-Crate)
