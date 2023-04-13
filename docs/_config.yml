@@ -1,7 +1,7 @@
 # theme now through gem
 theme: just-the-docs
 #remote_theme: just-the-docs/just-the-docs@v0.4.2
-logo: assets/img/ro-crate-wide.svg?20201023T1353
+logo: assets/img/ro-crate-wide.svg
 
 title: Research Object Crate (RO-Crate)
 description: |
@@ -14,7 +14,7 @@ description: |
 
 color_scheme: rocrate
 
-footer_content:  "&#169; Copyright 2021. University of Technology Sydney, The University of Manchester UK and RO-Crate contributors"
+footer_content:  "&#169; Copyright 2021-2023. University of Technology Sydney, The University of Manchester UK and RO-Crate contributors"
 gh_edit_link: true
 gh_edit_link_text: "Edit this page on GitHub."
 gh_edit_repository: "https://github.com/ResearchObject/ro-crate"
