@@ -50,6 +50,21 @@ _Data Science_ **5**(2)
 
 ### 2023
 
+Rudolf Wittner, Petr Holub, Cecilia Mascia, Francesca Frexia,
+Heimo Müller, Markus Plass, Clare Allocca, Fay Betsou, 
+Tony Burdett, Ibon Cancio, Adriane Chapman, Martin Chapman,
+Mélanie Courtot, Vasa Curcin, Johann Eder, Mark Elliot, 
+Katrina Exter, Carole Goble, Martin Golebiewski,
+Bron Kisler, Andreas Kremer, Simone Leo, Sheng Lin-Gibson,
+Anna Marsano, Marco Mattavelli, Josh Moore, Hiroki Nakae,
+Isabelle Perseil, Ayat Salman, James Sluka, 
+Stian Soiland-Reyes, Caterina Strambio-De-Castillia, 
+Michael Sussman, Jason R. Swedlow, Kurt Zatloukal, Jörg Geiger (2023):  
+[**Towards a common standard for data and specimen provenance in life sciences**](https://doi.org/10.1002/lrh2.10365).  
+_Learning Health Systems_  
+<https://doi.org/10.1002/lrh2.10365>
+
+
 Simone Leo (2023):  
 [**RO-Crate for workflow run provenance**](https://cwl.discourse.group/t/ro-crate-for-workflow-run-provenance/754).  
 _CWL Conference 2023_, 
