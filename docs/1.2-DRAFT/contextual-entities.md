@@ -47,7 +47,7 @@ RO-Crate distinguishes between _contextual entities_ and _data entities_.
 
 **[Data entities](data-entities.md)** primarily exist in their own right as a file or directory (which may be in the _RO-Crate Root_ directory or downloadable by URL). 
 
-**Contextual entities** however primarily exist outside the digital sphere (e.g. [People](#people), [Places](#places)) or are  conceptual descriptions that primarily exists as metadata, like [GeoCoordinates] and [ContactPoint](#contact-information).
+**Contextual entities** however primarily exist outside the digital sphere (e.g. [People](#people), [Places](#places)) or are  conceptual descriptions that primarily exist as metadata, like [GeoCoordinates] and [ContactPoint](#contact-information).
 
 Some contextual entities can also be considered data entities -- for instance the [license](#licensing-access-control-and-copyright) property refers to a [CreativeWork] that can reasonably be downloaded, however a license document is not usually considered as part of research outputs and would therefore typically not be included in [hasPart] on the [root data entity](root-data-entity.md). 
 
@@ -67,7 +67,7 @@ If an existing permalink (e.g. `https://orcid.org/0000-0002-1825-0097`) or other
 
 Care should be taken to not describe two conceptually different contextual entities with the same identifier - e.g. if `https://en.wikipedia.org/wiki/Josiah_S._Carberry` is a [Person] it SHOULD NOT also be a [CreativeWork] (although this example is a fictional person!).
 
-Where a related URL exist that may not be unique enough to serve as identifier, it can instead be added to a contextual entity using the property [url].
+Where a related URL exists that may not be unique enough to serve as identifier, it can instead be added to a contextual entity using the property [url].
 
 
 See the [appendix on JSON-LD identifiers](appendix/jsonld.md#describing-entities-in-json-ld) for details.
