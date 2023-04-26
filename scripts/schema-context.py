@@ -116,7 +116,7 @@ ADDITIONAL = OrderedDict([
           ("hasFile", "http://pcdm.org/models#hasFile"),
           ("hasMember", "http://pcdm.org/models#hasMember"),
           ("RepositoryCollection", "http://pcdm.org/models#Collection"),
-          ("RepositoryObject", "http://pcdm.org/models#object"),
+          ("RepositoryObject", "http://pcdm.org/models#Object"),
 
           # Temporary namespace for properties/types
           # proposed https://bioschemas.org/profiles/Workflow/ 
