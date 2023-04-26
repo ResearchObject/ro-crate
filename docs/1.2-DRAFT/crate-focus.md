@@ -33,11 +33,11 @@ In addition to simple data packaging, Crates may have a "main" entry point or to
 
 An RO-Crate may have a single main entity that is considered the point, or focus of the crate.
 
-### mainEntity is a _Data Entity_
+### Crates with a data entity as mainEntity
 
 In the [Workflow RO-Crate profile](https://www.researchobject.org/ro-crate/profiles.html#workflow-ro-crate-profile), where the `mainEntity` has a compound type `["File", "SoftwareSourceCode", "ComputationalWorkflow"]`, the use of `mainEntity` singles-out the workflow file from supporting files.
 
-```
+```json
 {
     "@id": "./",
     "@type": "Dataset",
@@ -61,11 +61,11 @@ In the [Workflow RO-Crate profile](https://www.researchobject.org/ro-crate/profi
 }
 ```
 
-### mainEntity is a _Contextual Entity_
+### Crates with a contextual entity as mainEntity
 
 The focus of the RO-Crate may be a description of a _Contextual Entity_, for example in an RO-Crate used in a repository or encyclopedia where a RepositoryObject bundles together images and other files, but the main focus of the RO-Crate is on describing a person.
 
-```
+```json
 {
     "@id": "./",
     "@type": ["Dataset", "RepositoryObject"],
@@ -89,15 +89,14 @@ The focus of the RO-Crate may be a description of a _Contextual Entity_, for exa
 
 ## Crates which describe _Contextual Entities_
 
-RO-Crates may describe _Contextual Entities_ which are not linked to a_Root Dataset_ via `mentions` relationships.
+RO-Crates may describe _Contextual Entities_ which are linked to the [Root Dataset](root-data-entity.md) via `mentions` relationships.
 
-For example RO-Crates can be used as containers for schema.org-style vocabularies.
+For example, RO-Crates can be used as containers for schema.org-style vocabularies.
 
-```
-{
+```json
+    {
       "@id": "./",
       "@type": "Dataset",
-      "hasFile": "",
       "description": "This is an experimental language data ontology based on OLAC terms for use in the ATAP and LDaCA projects",
       "hasPart": [],
       "name": "Language Data Ontology",
@@ -108,7 +107,7 @@ For example RO-Crates can be used as containers for schema.org-style vocabularie
       "@type": "rdfs:Class",
       "name": "Annotation",
       "sameAs": "http://www.language-archives.org/REC/type-20020628.html#annotation",
-      "rdfs:comment": "The resource includes information which annotates, describes or otherwise an some other linguistic record.",
+      "rdfs:comment": "The resource includes information which annotates some other linguistic record.",
       "rdfs:label": "Annotation",
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
@@ -118,7 +117,7 @@ For example RO-Crates can be used as containers for schema.org-style vocabularie
       "@id": "txc:CollectionEvent",
       "@type": "rdfs:Class",
       "name": "CollectionEvent",
-      "rdfs:comment": "A description of an event at which one or more PrimaryTexts were captured,  eg as video or audio",
+      "rdfs:comment": "A description of an event at which one or more PrimaryTexts were captured, e.g. as video or audio",
       "rdfs:label": "CollectionEvent",
       "rdfs:subClassOf": [
         {
@@ -132,9 +131,9 @@ For example RO-Crates can be used as containers for schema.org-style vocabularie
 ```
 
 
-The following example shows both a `mainEntity` which is a _Data Entity_ and also a _Contextual Entity_ which is a test suite (`#test1`)
+The following example shows both a `mainEntity` which is a _Data Entity_ and a _Contextual Entity_ which is a test suite (`#test1`).
 
-```
+```json
         {
             "@id": "./",
             "@type": "Dataset",
@@ -144,7 +143,7 @@ The following example shows both a `mainEntity` which is a _Data Entity_ and als
             "mainEntity": {
                 "@id": "sort-and-change-case.ga"
             },
-            "mentions": [ {"@id": "#test1" } ],
+            "mentions": [ {"@id": "#test1"} ],
             "hasPart": [
                 {
                     "@id": "sort-and-change-case.ga"
@@ -154,7 +153,7 @@ The following example shows both a `mainEntity` which is a _Data Entity_ and als
                 }
             ]
         }
-		{
+        {
             "@id": "#test1",
             "name": "test1",
             "@type": "TestSuite",
