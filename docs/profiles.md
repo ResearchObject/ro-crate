@@ -131,8 +131,15 @@ More details are available from the [spec page](https://lifemonitor.eu/workflow_
 
 ### Workflow Run Crate
 
-[Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/) is in development as a profile to capture the **provenance** of execution provenance of computational workflows and scripts. Join the [RO-Crate community](community.md) to help contribute!
+[Workflow Run Crate working group](https://www.researchobject.org/workflow-run-crate/) have developed [three profile](https://www.researchobject.org/workflow-run-crate/profiles) to capture the **provenance** of execution provenance of computational workflows and scripts. Join the [RO-Crate community](community.md) to help contribute!
 
+* [Process Run Crate](https://w3id.org/ro/wfrun/process) can be used to describe the execution of one or more tools that contribute to the same computation;
+* [Workflow Run Crate](https://w3id.org/ro/wfrun/workflow) is similar to Process Run Crate, but assumes that the coordinated execution of the tools is driven by a computational workflow
+* [Provenance Run Crate](https://w3id.org/ro/wfrun/provenance) extends Workflow Run Crate with guidelines for describing the internal details of each step of the workflow.
+
+### Common Provenance Model RO-Crate profile
+
+The Common Provenance Model ([CPM](https://doi.org/10.1038/s41597-022-01537-6)) provides a baseline for distributed provenance chains based on W3C PROV. The [Common Provenance Model RO-Crate profile](https://w3id.org/cpm/ro-crate) specifies how to identify and handle CPM compliant provenance files and CPM compliant meta-provenance files in an RO-Crate.  It is compatible with the Workflow Run Crate profile.
 
 ## Describo profiles
 
