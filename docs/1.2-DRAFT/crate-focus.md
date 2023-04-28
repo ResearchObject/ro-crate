@@ -89,7 +89,7 @@ The focus of the RO-Crate may be a description of a _Contextual Entity_, for exa
 
 ## Crates which describe _Contextual Entities_
 
-RO-Crates may describe _Contextual Entities_ which are not linked to a_Root Dataset_ via `mentions` relationships.
+RO-Crates may describe _Contextual Entities_ which are not linked to a _Root Dataset_ via `mentions` relationships.
 
 For example RO-Crates can be used as containers for schema.org-style vocabularies.
 
