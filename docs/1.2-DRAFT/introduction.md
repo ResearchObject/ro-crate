@@ -31,7 +31,7 @@ This page introduces the general RO-Crate concepts through a running example, wh
 
 ## Walkthrough: An initial RO-Crate
 
-In the simplest form, to describe some data on disk, an RO-Crate Metadata Document named `ro-crate-metadata.json` is placed in a directory alongside a set of files or directories. 
+In the simplest form, to describe some data on disk, an _RO-Crate Metadata Document_ named `ro-crate-metadata.json` is placed in a directory alongside a set of files or directoriesm (this file is known as the _RO-Crate Metadata File_).
 
 In the example below, a single file `data.csv` is placed with the RO-Crate Metadata Document in a directory named `crate1`:
 
@@ -44,7 +44,7 @@ The presence of the `ro-crate-metadata.json` file means that `crate1` and its ch
 
 ### Running example
 
-In this running example, the content of the RO Crate Metadata document is:
+In this running example, the content of the _RO Crate Metadata Document_ is:
 
 
 ```json
@@ -95,9 +95,9 @@ In this running example, the content of the RO Crate Metadata document is:
 
 ### JSON-LD preamble
 
-The preamble of `@context` and `@graph` are JSON-LD structures that help provide global identifiers to the JSON keys and types used in the rest of the RO-Crate document. These will largely map to definitions in the [schema.org](http://schema.org/) vocabulary, which can be used by RO-Crate extensions to provide additional metadata beyond the RO-Crate specifications. It is this feature of JSON-LD that helps make RO-Crate extensible for many different purposes -- this is explored further in [appendix on JSON-LD](appendix/jsonld.md).
+The preamble of `@context` and `@graph` are JSON-LD structures that help provide global identifiers to the JSON keys and types used in the rest of the _RO-Crate Metadata Document_. These will largely map to definitions in the [schema.org](http://schema.org/) vocabulary, which can be used by RO-Crate extensions to provide additional metadata beyond the RO-Crate specifications. It is this feature of JSON-LD that helps make RO-Crate extensible for many different purposes -- this is explored further in [appendix on JSON-LD](appendix/jsonld.md).
 
-However, in the general case it should be sufficient to follow the RO-Crate JSON examples directly without deeper JSON-LD understanding. In short, an RO-Crate metadata file contains a flat list of _entities_ as objects in the `@graph` array. These entities are cross-referenced using `@id` identifiers rather than being deeply nested.
+However, in the general case it should be sufficient to follow the RO-Crate JSON examples directly without deeper JSON-LD understanding. In short, an _RO-Crate metadata Document_ contains a flat list of _entities_ as objects in the `@graph` array. These entities are cross-referenced using `@id` identifiers rather than being deeply nested.
 
 ### RO-Crate Metadata descriptor 
 
@@ -113,7 +113,7 @@ The first JSON-LD _entity_ in our example above has the `@id` `ro-crate-metadata
 }
 ```
 
-This required entity, known as the *RO-Crate Metadata Descriptor*, helps this file self-identify as an RO-Crate Metadata Document, which is conforming to (`conformsTo`) the RO-Crate specification version 1.2-DRAFT. 
+This required entity, known as the _RO-Crate Metadata Descriptor_, helps this file self-identify as an _RO-Crate Metadata Document_, which is conforming to (`conformsTo`) the RO-Crate specification version 1.2-DRAFT. 
 
 The descriptor also indicates via the `about` property which entity in the `@graph` array is the _RO-Crate Root Dataset_ -- the starting point of this RO-Crate. 
 
@@ -136,7 +136,7 @@ This example is a directory-based RO-Crate stored on disk. If the crate is being
 
 ### About cross-references
 
-In RO-Crate Metadata Files, entities are cross-referenced using `@id` reference objects, rather than using deeply nested JSON objects. In short, this _flattened JSON-LD_ style allows any entity to reference any other entity, and RO-Crate consumers to directly find all the descriptions of an entity within a single JSON object. So let's have a look at the Root Data Entity `./`:
+In _RO-Crate Metadata Document_s, entities are cross-referenced using `@id` reference objects, rather than using deeply nested JSON objects. In short, this _flattened JSON-LD_ style allows any entity to reference any other entity, and RO-Crate consumers to directly find all the descriptions of an entity within a single JSON object. So let's have a look at the Root Data Entity `./`:
 
 
 ```json
@@ -206,7 +206,7 @@ You may notice the subtle difference between a _data entity_ that is conceptuall
 
 ## HTML preview
 
-An RO-Crate can be distributed on disk, in packaged format such as a zip file or disk image, or placed on a static website. In any of these cases, an RO-Crate should have an accompanying HTML version (`ro-crate-metadata.html`) designed to be human-readable. The exact contents of the preview may vary but should correspond to the RO-Crate Metadata file content and link to the contained data entities. The preview may be generated automatically from the RO-Crate Metadata Document (see [RO-Crate tools](../../tools/)), or even by hand (equivalent to a README).
+An RO-Crate can be distributed on disk, in packaged format such as a zip file or disk image, or placed on a static website. In any of these cases, an RO-Crate should have an accompanying HTML version (`ro-crate-metadata.html`) designed to be human-readable. The exact contents of the preview may vary but should correspond to the _RO-Crate Metadata Document_ content and link to the contained data entities. The preview may be generated automatically from the RO-Crate Metadata Document (see [RO-Crate tools](../../tools/)), or even by hand (equivalent to a README).
 
 Below is a [preview of the running example](examples/rainfall-1.2.0/ro-crate-preview.html):
 

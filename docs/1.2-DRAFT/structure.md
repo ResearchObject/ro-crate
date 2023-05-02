@@ -94,7 +94,7 @@ Note that a detached RO-Crate may still use `#`-based local identifiers for [con
 ## RO-Crate Metadata Document(`ro-crate-metadata.json`) 
 
 * In an _Attached RO-Crate_ the _RO-Crate Metadata Document_ MUST be present, named `ro-crate-metadata.json` and appear in the _RO-Crate Root_
-  - If an RO-Crate conforming to version 1.0 or earlier contains a file named `ro-crate-metadata.jsonld` but not `ro-crate-metadata.json`, then processing software should treat this as the _RO-Crate Metadata File_. If the crate is updated, the file SHOULD be renamed to `ro-crate-metadata.json` and the _RO-Crate Metadata File Descriptor_ SHOULD be updated to reference it, with an up to date [conformsTo] property naming an appropriate version of this specification. 
+  - If an RO-Crate conforming to version 1.0 or earlier contains a file named `ro-crate-metadata.jsonld` but not `ro-crate-metadata.json`, then processing software should treat this as the _RO-Crate Metadata File_. If the crate is updated, the file SHOULD be renamed to `ro-crate-metadata.json` and the _RO-Crate Metadata Descriptor_ SHOULD be updated to reference it, with an up to date [conformsTo] property naming an appropriate version of this specification. 
 * In a _Detached RO-Crate_ the _RO-Crate Metadata Document_ is a JSON-LD document served over an API or loaded via other means.
 * The _RO-Crate Metadata Document_ MUST contain _RO-Crate JSON-LD_; a valid [JSON-LD 1.0] document in [flattened]  and [compacted] form
 * The _RO-Crate JSON-LD_ SHOULD use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.2-DRAFT/context> by reference.
@@ -104,14 +104,14 @@ Note that a detached RO-Crate may still use `#`-based local identifiers for [con
 
 A valid _RO-Crate JSON-LD_ graph MUST describe:
 
-1. The [RO-Crate Metadata File Descriptor](root-data-entity.md#ro-crate-metadata-file-descriptor)
+1. The [RO-Crate Metadata Descriptor](root-data-entity.md#ro-crate-metadata-file-descriptor)
 2. The [Root Data Entity](root-data-entity.md#direct-properties-of-the-root-data-entity)
 3. Zero or more [Data Entities](data-entities.md)
 4. Zero or more [Contextual Entities](contextual-entities.md)
 
 It is RECOMMENDED that any referenced _contextual entities_ are also described in the _RO-Crate Metadata Document_ with the same identifier. Similarly it is RECOMMENDED that any _contextual entity_ in the _RO-Crate Metadata Document_ is linked to from at least one of the other entities using the same identifier. 
 
-The appendix [RO-Crate JSON-LD](appendix/jsonld.md) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata File_. In short, the rest of this specification describe the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` array below:
+The appendix [RO-Crate JSON-LD](appendix/jsonld.md) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata Document_. In short, the rest of this specification describe the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` array below:
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
@@ -124,12 +124,12 @@ The appendix [RO-Crate JSON-LD](appendix/jsonld.md) details the general structur
 
 ## RO-Crate Website (`ro-crate-preview.html` and `ro-crate-preview_files/`)
 
-In addition to the machine-oriented _RO-Crate Metadata File_, the RO-Crate MAY include a human-readable HTML rendering of the same information, known as the _RO-Crate Website_. If present, the _RO-Crate Website_ MUST be a file named `ro-crate-preview.html` in the root directory, which MAY serve as the entry point to other web-resources, which MUST be in `ro-crate-preview_files/` in the root directory.
+In addition to the machine-oriented _RO-Crate Metadata Document_, the RO-Crate MAY include a human-readable HTML rendering of the same information, known as the _RO-Crate Website_. If present, the _RO-Crate Website_ MUST be a file named `ro-crate-preview.html` in the root directory, which MAY serve as the entry point to other web-resources, which MUST be in `ro-crate-preview_files/` in the root directory.
 
 If present in the root directory of a _Attached RO-Crate_ as `ro-crate-preview.html`, (or otherwise served in a _Detached RO-Crate_), the RO-Crate Website MUST:
 
 * Be a valid [HTML 5] document
-* Be useful to users of the RO-Crate - this will vary by community and intended use, but in general the aim to assist users in reusing data by explaining what it is, how it was created how it can be used and how to cite it. One simple approach to this is to expose *all* the metadata in the _RO-Crate Metadata File_.
+* Be useful to users of the RO-Crate - this will vary by community and intended use, but in general the aim to assist users in reusing data by explaining what it is, how it was created how it can be used and how to cite it. One simple approach to this is to expose *all* the metadata in the _RO-Crate Metadata Document_.
 * Contain a copy of the _RO-Crate JSON-LD_ in a `script` element of the `head` element of the HTML, for example:
   ```html
     <script type="application/ld+json">
@@ -188,11 +188,11 @@ Metadata about parts of the _RO-Crate Website_ MAY be included in an RO-Crate as
 ```
 
 {: .warning }
-> In a _Detached RO-Crate_ it is **undefined** how to find the _RO-Crate Website_ from the _RO-Crate Metadata File_ or vice versa  It is RECOMMENDED to describe both as contextual entities.
+> In a _Detached RO-Crate_ it is **undefined** how to find the _RO-Crate Website_ from the _RO-Crate Metadata Document_ or vice versa  It is RECOMMENDED to describe both as contextual entities.
 
 
 
-## Payload files and directories
+## Payload files and directories for _Attached RO-Crate_s
 
 These are the actual files and directories that make up the **payload** of the dataset being described in a _Attached RO-Crate_.
 
@@ -210,13 +210,13 @@ A RO-Crate may also contain [Web-based Data Entities](data-entities.html#web-bas
 
 RO-Crates SHOULD be self-describing and self-contained.
 
-A minimal RO-Crate is a directory containing a single _RO-Crate Metadata File_ stored as an [RO-Crate Metadata File](root-data-entity.md) `ro-crate-metadata.json`. 
+A minimal RO-Crate is a directory containing a single _RO-Crate Metadata Document_ stored as an [RO-Crate Metadata File](root-data-entity.md) `ro-crate-metadata.json`. 
 
-At the basic level, an RO-Crate is a collection of files and resources represented as a Schema.org [Dataset], that together form a meaningful unit for the purposes of communication, citation, distribution, preservation, etc.  The _RO-Crate Metadata File_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. 
+At the basic level, an RO-Crate is a collection of files and resources represented as a Schema.org [Dataset], that together form a meaningful unit for the purposes of communication, citation, distribution, preservation, etc.  The _RO-Crate Metadata Document_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. 
 
 While RO-Crate is well catered for describing a _Dataset_ as files and relevant metadata that are _contained_ by the RO-Crate in the sense of living within the same root directory, RO-Crates can also reference external resources which are stored or accessed separately, via absolute URIs. This is particularly recommended where some resources cannot be co-hosted for practical or legal reasons, or if the RO-Crate itself is primarily web-based.
 
-It is important to note that the _RO-Crate Metadata File_ is **not an exhaustive manifest** or inventory, that is, it does not necessarily list or describe all files in the package.  Rather it is focused on providing sufficient amount of metadata to understand and use the content, and is designed to be compatible with existing and future approaches that _do_ have full inventories / manifest and integrity checks, e.g. by using checksums, such as [BagIt] and Oxford Common File Layout [OCFL Objects][OCFL Object].
+It is important to note that the _RO-Crate Metadata Document_ is **not an exhaustive manifest** or inventory, that is, it does not necessarily list or describe all files in the package.  Rather it is focused on providing sufficient amount of metadata to understand and use the content, and is designed to be compatible with existing and future approaches that _do_ have full inventories / manifest and integrity checks, e.g. by using checksums, such as [BagIt] and Oxford Common File Layout [OCFL Objects][OCFL Object].
 
 The intention is that RO-Crates can work well with a variety of archive file formats, e.g. tar, zip, etc., and approaches to capturing file manifests and file fixity, such as [BagIt], [OCFL] and [git] (see also appendix [Combining with other packaging schemes](appendix/implementation-notes.md#combining-with-other-packaging-schemes)). An RO-Crate can also be hosted on the web or mainly refer to web resources, although extra care to ensure persistence and consistency should be taken for archiving such RO-Crates.
 

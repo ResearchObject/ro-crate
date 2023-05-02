@@ -2,7 +2,7 @@
 title: Metadata of the RO-Crate
 excerpt: |
   RO-Crate aims to capture and describe the Research Object using
-  structured metadata. The RO-Crate Metadata File Descriptor contains the
+  structured metadata. The RO-Crate Metadata Descriptor contains the
   metadata that describes the RO-Crate and its content. This machine-readable
   metadata can also be represented for human consumption in the RO-Crate Website,
   linking to data and Web resources.
@@ -40,7 +40,7 @@ parent: RO-Crate 1.2-DRAFT
 
 RO-Crate aims to capture and describe the [Research Object][ResearchObject] using structured _metadata_.
 
-The _RO-Crate Metadata File Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:
+The _RO-Crate Metadata Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:
 
 * [Root Data Entity](root-data-entity.md) - the RO-Crate `Dataset` itself, a gathering of data
 * [Data Entities](data-entities.md) - the _data_ payload, in the form of files and folders

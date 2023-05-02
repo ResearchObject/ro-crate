@@ -150,7 +150,7 @@ Example, this JSON-LD is in [compacted form][compacted] which may be beneficial 
   ],
   "@id": "ro-crate-metadata.json",
   "@type": "CreativeWork",
-  "description": "RO-Crate Metadata File Descriptor (this file)",
+  "description": "RO-Crate Metadata Descriptor (this file)",
   "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
   "about": {
     "@id": "./",
@@ -193,7 +193,7 @@ Results in a valid _RO-Crate JSON-LD_ (actual order in `@graph` may differ):
       "about": {
         "@id": "./"
       },
-      "description": "RO-Crate Metadata File Descriptor (this file)"
+      "description": "RO-Crate Metadata Descriptor (this file)"
     },
     {
       "@id": "./",
@@ -253,7 +253,7 @@ For example, expanding this JSON-LD:
       "about": {
         "@id": "./"
       },
-      "description": "RO-Crate Metadata File Descriptor (this file)"
+      "description": "RO-Crate Metadata Descriptor (this file)"
     },
     {
       "@id": "./",
@@ -294,7 +294,7 @@ Results in a [expanded form][JSON-LD expanded form] without `@context`, using ab
     ],
     "http://schema.org/description": [
       {
-        "@value": "RO-Crate Metadata File Descriptor (this file)"
+        "@value": "RO-Crate Metadata Descriptor (this file)"
       }
     ]
   },

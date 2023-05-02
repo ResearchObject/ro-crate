@@ -103,7 +103,7 @@ The rest of the requirements for being referenced as a contextual entity also ap
 
 ### How to retrieve a Profile Crate
 
-To resolve a Profile URI to a machine-readable _Profile Crate_, two approaches are recommended to retrieve its [RO-Crate metadata file](root-data-entity.md#ro-crate-metadata-file-descriptor):
+To resolve a Profile URI to a machine-readable _Profile Crate_, two approaches are recommended to retrieve its [RO-Crate Metadata Document](root-data-entity.md#ro-crate-metadata-file-descriptor):
 
 1. [HTTP Content-negotiation] for the [RO-Crate media type](appendix/jsonld.md#ro-crate-json-ld-media-type), for example:  
 
@@ -282,7 +282,7 @@ An optional machine-readable _schema_ of the profile, for instance a [Describo J
 ```
 
 A schema may formalize restrictions on the 
-[RO-Crate metadata file](root-data-entity.md#ro-crate-metadata-file-descriptor) on 
+[RO-Crate Metadata Document](root-data-entity.md#ro-crate-metadata-file-descriptor) on 
 a graph-level (e.g. what types/properties) as well as serialization level
 (e.g. use of JSON arrays). 
 

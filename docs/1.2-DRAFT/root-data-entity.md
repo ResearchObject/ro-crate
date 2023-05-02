@@ -37,10 +37,10 @@ _Contextual Entities_.
 An RO-Crate is described using _JSON-LD_ by an _RO-Crate Metadata Document_. As explained in section [RO-Crate structure](structure.md) this may be stored in and _RO-Craate Metadata File_. In this section we describe the format of the JSON-LD document.
 
 
-## RO-Crate Metadata File Descriptor
+## RO-Crate Metadata Descriptor
 
 The _RO-Crate Metadata Document_ MUST contain a self-describing
-**RO-Crate Metadata File Descriptor** with
+**RO-Crate Metadata Descriptor** with
 the `@id` value `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` in legacy
 crates) and `@type` [CreativeWork]. This descriptor MUST have an [about]
 property referencing the _Root Data Entity_'s `@id`.
@@ -65,7 +65,9 @@ property referencing the _Root Data Entity_'s `@id`.
 }
 ```
 
-The [conformsTo] of the _RO-Crate Metadata File Descriptor_ 
+NOTE that even in _Detached RO-Crates_ which do not have an _RO-Crate Metadata File_ present the value `ro-crate-metadata.json` MUST be used.
+
+The [conformsTo] of the _RO-Crate Metadata Descriptor_ 
 SHOULD be a versioned permalink URI of the RO-Crate specification
 that the _RO-Crate JSON-LD_ conforms to. The URI SHOULD 
 start with `https://w3id.org/ro/crate/`. 
@@ -108,11 +110,11 @@ with the only difference that step 2 must be replaced by:
 
 It is possible to build an RO-Crate having more than one entity whose `@id`
 has `ro-crate-metadata.json` as its last path segment. For instance, the crate
-could reference a collection of sample RO-Crate metadata files available from
+could reference a collection of sample _RO-Crate metadata file_s available from
 different web sites, or from the same web site but at different locations. In
 order to facilitate consumption, data entities representing such files SHOULD
 NOT have an `about` property pointing to a [Dataset] in the crate, so they can
-be told apart from the actual metadata file descriptor. A scenario that can
+be told apart from the actual Metadata Descriptor. A scenario that can
 potentially lead to confusion is when a dataset in the crate is itself an
 RO-Crate (_nested_ RO-Crate): again, the crate could be a collection of
 RO-Crate examples. In this case, the top-level crate SHOULD NOT list any files
@@ -160,7 +162,7 @@ other than the _Root Data Entity_. Extensions of RO-Crate dealing with specific
 types of dataset may put further constraints or requirements of metadata beyond
 the Root Data Entity (see the appendix [Extending RO-Crate](appendix/jsonld.md#extending-ro-crate)).
 
-The _RO-Crate Metadata File Descriptor_ MAY contain information such as
+The _RO-Crate Metadata Descriptor_ MAY contain information such as
 licensing for the _RO-Crate Metadata Document_ if metadata is licensed
 separately from the crate's Data entities.
 
@@ -195,7 +197,7 @@ The root data entity's `@id` SHOULD be either `./` (indicating the directory of 
 
 If the `@id` of the Root Data Entity is an absolute URI, the Crate SHOULD NOT contain [data entities](data-entities.md) using relative URI references, but MAY contain [Web-based Data Entities](data-entities.html#web-based-data-entities) using absolute URIs.
 
-RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) SHOULD indicate this using [identifier] on the root data entity. It is RECOMMENDED that resolving the identifier programmatically return the _RO-Crate Metadata Document_ or an archive (e.g. ZIP) that contains the _RO-Crate Metadata Document_ as an RO-Crate Metadata File, using [content negotiation](profiles.md#how-to-retrieve-a-profile-crate) and/or [Signposting](https://signposting.org/adopters/#workflowhub).
+RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) SHOULD indicate this using [identifier] on the root data entity. It is RECOMMENDED that resolving the identifier programmatically return the _RO-Crate Metadata Document_ or an archive (e.g. ZIP) that contains the _RO-Crate Metadata Document_ as an _RO-Crate Metadata File_, using [content negotiation](profiles.md#how-to-retrieve-a-profile-crate) and/or [Signposting](https://signposting.org/adopters/#workflowhub).
 
 
 ## Minimal example of RO-Crate

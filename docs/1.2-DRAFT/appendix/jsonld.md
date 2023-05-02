@@ -47,7 +47,7 @@ The example below shows the overall structure of a flattened, compacted _RO-Crat
       "@id": "ro-crate-metadata.json",
       "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
       "about": {"@id": "./"},
-      "description": "RO-Crate Metadata File Descriptor (this file)"
+      "description": "RO-Crate Metadata Descriptor (this file)"
     },
     {
       "@id": "./",
@@ -91,7 +91,7 @@ The example below shows the overall structure of a flattened, compacted _RO-Crat
 **Note**: entities above have been shortened for brevity, see the individual sections for [data entities](../data-entities.md) and [contextual entities](../contextual-entities.md).
 
 
-The order of the `@graph` array is not significant. Above we see that the RO-Crate JSON-LD graph contains the _RO-Crate Metadata File Descriptor_, the _Root Data Entity_, any _Data Entities_ and any _Contextual Entities_.
+The order of the `@graph` array is not significant. Above we see that the RO-Crate JSON-LD graph contains the _RO-Crate Metadata Descriptor_, the _Root Data Entity_, any _Data Entities_ and any _Contextual Entities_.
 
 
 
@@ -132,7 +132,7 @@ Consider the below (simplified) example of _by reference_ using a versioned perm
     {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
-      "description": "RO-Crate Metadata File Descriptor (this file)",
+      "description": "RO-Crate Metadata Descriptor (this file)",
       "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
       "about": {"@id": "./"}
     }
@@ -154,7 +154,7 @@ The above is equivalent to the following JSON-LD using an embedded context, by a
     {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
-      "description": "RO-Crate Metadata File Descriptor (this file)",
+      "description": "RO-Crate Metadata Descriptor (this file)",
       "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
       "about": {"@id": "./"}
     }
@@ -166,7 +166,7 @@ Note that `conformsTo` is retained to indicate which version of RO-Crate specifi
 
 While the second form is more verbose, one advantage is that it is "archivable" as it does not require Internet access for retrieving the `@context` permalink. Tools consuming or archiving RO-Crate MAY replace by-reference `@context` URIs with an embedded context by using version-specific hard-coded contexts. See <https://github.com/ResearchObject/ro-crate/releases> to download the JSON-LD contexts corresponding to each version of this specification.
 
-To check which RO-Crate version is used (in terms of properties and types expected), clients SHOULD check the property `conformsTo` on the _RO-Crate Metadata File Descriptor_ rather than the value of `@context`.
+To check which RO-Crate version is used (in terms of properties and types expected), clients SHOULD check the property `conformsTo` on the _RO-Crate Metadata Descriptor_ rather than the value of `@context`.
 
 RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded context, but MAY use the [JSON-LD flattening] algorithm with _compaction_ to a referenced _RO-Crate JSON-LD context_ (see also notes on [handling relative URI references](relative-uris.md) below).
 
