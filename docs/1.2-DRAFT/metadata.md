@@ -60,11 +60,11 @@ RO-Crate makes use of the [Linked Data principles] for its description. In parti
 
 RO-Crate realizes these principles using a particular set of technologies and best practices:
 
-1. The _RO-Crate Metadata File_ and _RO-Crate Website_ can be directly published on the web together with the RO-Crate payload. In addition, a data package (e.g. BagIt Zip archive) that contain the RO-Crate can also be published on the web.
-2. The _RO-Crate Metadata File_ is based on the structured data format [JSON-LD]. 
+1. The _RO-Crate Metadata Document_ can be stored in an _RO-Crate Metadata File_ and an _RO-Crate Website_ can be directly published on the web together with the RO-Crate payload. In addition, a data package (e.g. BagIt Zip archive) that contain the RO-Crate can also be published on the web.
+2. The _RO-Crate Metadata Document_ is based on the structured data format [JSON-LD]. 
 3. Multiple open source tools/libraries are available [for JSON][JSON] and [for JSON-LD][JSON-LD].
-4. The _RO-Crate Website_ is [HTML 5], and the _RO-Crate Metadata File_ is [JSON-LD], one of the [W3C RDF 1.1 formats].
-5. The _RO-Crate Metadata File_ reuse common vocabularies like [Schema.org], and this specification [recommend identifiers](#recommended-identifiers) it should link to.
+4. The _RO-Crate Website_ is [HTML 5], and the _RO-Crate Metadata Document_ is [JSON-LD], one of the [W3C RDF 1.1 formats].
+5. The _RO-Crate Metadata Document_ reuse common vocabularies like [Schema.org], and this specification [recommend identifiers](#recommended-identifiers) it should link to.
 
 ## Base metadata standard: Schema.org
 
@@ -135,7 +135,7 @@ These terms are being proposed by [Bioschemas profile ComputationalWorkflow 1.0-
 
 RO-Crate is simply a way to make metadata assertions about a set of files and folders that make up a _Dataset_. These assertions can be made at two levels:
 
-* Assertions at the RO-Crate level: for an RO-Crate to be useful, some metadata should be provided about the dataset as a whole (see minimum requirements for different use-cases below). In the _RO-Crate Metadata File_, we distinguish the _Root Data Entity_ which represents the RO-Crate as a whole, from other _Data Entities_ (files and folders contained in the RO-Crate) and _Contextual Entities_, e.g. a person, organisation, place related to an RO-Crate _Data Entity_
+* Assertions at the RO-Crate level: for an RO-Crate to be useful, some metadata should be provided about the dataset as a whole (see minimum requirements for different use-cases below). In the _RO-Crate Metadata Document_, we distinguish the _Root Data Entity_ which represents the RO-Crate as a whole, from other _Data Entities_ (files and folders contained in the RO-Crate) and _Contextual Entities_, e.g. a person, organisation, place related to an RO-Crate _Data Entity_
 * Assertions about files and folders contained in the RO-Crate: in addition to providing metadata about the RO-Crate as a whole, RO-Crate allows metadata assertions to be made about any other _Data Entity_
 
 

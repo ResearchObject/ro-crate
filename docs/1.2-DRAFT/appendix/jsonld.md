@@ -32,11 +32,11 @@ grand_parent: RO-Crate 1.2-DRAFT
 1. TOC
 {:toc}
 
-It is not necessary to use [JSON-LD tooling] to generate or parse the _RO-Crate Metadata File_, although JSON-LD tools may make it easier to conform to this specification, e.g. handling relative URIs. It is however RECOMMENDED to use [JSON tooling][JSON] to handle [JSON][RFC 7159] syntax and escaping rules.
+It is not necessary to use [JSON-LD tooling] to generate or parse the _RO-Crate Metadata Document_, although JSON-LD tools may make it easier to conform to this specification, e.g. handling relative URIs. It is however RECOMMENDED to use [JSON tooling][JSON] to handle [JSON][RFC 7159] syntax and escaping rules.
 
-This appendix shows a brief JSON-LD introduction for complying with the _RO-Crate Metadata File_ requirements.
+This appendix shows a brief JSON-LD introduction for complying with the _RO-Crate Metadata Document_ requirements.
 
-The example below shows the overall structure of a flattened, compacted _RO-Crate Metadata File_ where `@context` refers to the _RO-Crate JSON-LD Context_, while `@graph` is a flat array of the entities that constitute this RO-Crate. 
+The example below shows the overall structure of a flattened, compacted _RO-Crate Metadata Document_ where `@context` refers to the _RO-Crate JSON-LD Context_, while `@graph` is a flat array of the entities that constitute this RO-Crate. 
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
@@ -105,7 +105,7 @@ Care must be taken to express any relative paths using `/` separator and escape 
 
 Because the _RO-Crate JSON-LD_ is _flattened_, all described entities must be JSON objects as direct children of the `@graph` element rather than being nested under another object or array. Properties referencing entities must use a JSON object with `@id` as the only key, e.g. `"author": {"@id": "https://orcid.org/0000-0002-1825-0097"}`
 
-If no obvious identifier is available for a contextual entity, an identifier local to the _RO-Crate Metadata File_ can be generated, for instance `{"@id": "#alice"}` or `{"@id": "#ac0bd781-7d91-4cdf-b2ad-7305921c7650"}`. Although it is RECOMMENDED to use `#`-based local identifiers, identifiers in `@id` MAY alternatively be a _blank node_ identifier (e.g. `_:alice`).
+If no obvious identifier is available for a contextual entity, an identifier local to the _RO-Crate Metadata Document_ can be generated, for instance `{"@id": "#alice"}` or `{"@id": "#ac0bd781-7d91-4cdf-b2ad-7305921c7650"}`. Although it is RECOMMENDED to use `#`-based local identifiers, identifiers in `@id` MAY alternatively be a _blank node_ identifier (e.g. `_:alice`).
 
 Multiple values and references can be represented using JSON arrays, as exemplified in `hasPart` above; however as the `RO-Crate JSON-LD` is in _compacted form_, any single-element arrays like `"author": [{"@id": "#alice"}]` SHOULD be unpacked to a single value like `"author": {"@id": "#alice"}`.
 
@@ -188,7 +188,7 @@ Content-Type: application/ld+json; profile="http://www.w3.org/ns/json-ld#flatten
 
 Note that most web servers will however serve `*.json` as `Content-Type: application/json`. 
 
-Requesting the RO-Crate metadata file from a browser may also need permission through CORS header `Access-Control-Allow-Origin` (however extra care should be taken if the RO-Crates require access control).
+Requesting the _RO-Crate metadata Document_ from a browser may also need permission through CORS header `Access-Control-Allow-Origin` (however extra care should be taken if the RO-Crates require access control).
 
 To change the configuration of **Apache HTTPD 2**, add the following to `.htaccess` or equivalent config file:
 

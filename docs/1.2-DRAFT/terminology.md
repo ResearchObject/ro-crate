@@ -24,11 +24,17 @@ parent: RO-Crate 1.2-DRAFT
 # Terminology
 
 
-_RO-Crate_: A directory structure that contains a dataset, which is described in an _RO-Crate Metadata File_.
+_RO-Crate_: A dataset, which is described in an _RO-Crate Metadata Document_. 
+
+_RO-Crate Metadata Document_: A JSON-LD document that describes the _RO-Crate_ with structured data in form of _RO-Crate JSON-LD_. This may be stored in a file-system as an _RO-Crate Metadata File_ or served via an API. 
+
+_RO-Crate Metadata File_: An _RO-Crate Metadata Document_ stored in a file named  `ro-crate-metadata.json` in the _RO-Crate Root_. See section [RO-Crate Metadata File](structure.md#ro-crate-metadata-file-ro-crate-metadatajson). 
+
+_Attached RO-Crate_: An RO-Crate that contains a payload of one or more files, stored/published on a typical file system.  See section [Types of RO-Crate](structure.md#types-of-ro-crate).
+
+_Detached RO-Crate_: A RO-Crate without a payload of files, not having its own _RO-Crate Root_. See section [Types of RO-Crate](structure.md#types-of-ro-crate).
 
 _RO-Crate Root_: The top-level directory of a _Attached RO-Crate_, indicated by the presence of the _RO-Crate Metadata File_ `ro-crate-metadata.json`. See section [RO-Crate structure](structure.md)
-
-_RO-Crate Metadata File_: A JSON-LD file, typically stored as `ro-crate-metadata.json` in the _RO-Crate Root_. The metadata file describes the _RO-Crate_ with structured data in form of _RO-Crate JSON-LD_. See section [RO-Crate Metadata File](structure.md#ro-crate-metadata-file-ro-crate-metadatajson)
 
 _RO-Crate Metadata File Descriptor_: A _Contextual Entity_ of type [CreativeWork], which describes the _RO-Crate Metadata File_ and links it to the _Root Data Entity_. See section [RO-Crate Metadata File Descriptor](root-data-entity.md#ro-crate-metadata-file-descriptor)
 
@@ -56,11 +62,8 @@ _URI Path_: The relative _path_ element of an _URI_ as defined in [RFC3986 secti
 
 _RO-Crate JSON-LD Context_: A JSON-LD [context][JSON-LD context] that provides Linked Data mapping for RO-Crate metadata to vocabularies like [Schema.org]. This mapping assigns meaning to the JSON keys, see appendix [RO-Crate JSON-LD](jsonld.md).
 
-_RO-Crate JSON-LD_: JSON-LD that use the _RO-Crate JSON-LD Context_ and contain RO-Crate metadata, written as if [flattened] and then [compacted] according to the rules in JSON-LD 1.0. The _RO-Crate JSON-LD_ for an _RO-Crate_ is stored in the _RO-Crate Metadata File_.
+_RO-Crate JSON-LD_: JSON-LD that use the _RO-Crate JSON-LD Context_ and contain RO-Crate metadata, written as if [flattened] and then [compacted] according to the rules in JSON-LD 1.0. The _RO-Crate JSON-LD_ for an _RO-Crate_ is stored or transmitted in the _RO-Crate Metadata Document.
 
-_Attached RO-Crate_: An RO-Crate that contains a payload of files, stored/published on a typical file system. See section [Types of RO-Crate](structure.md#types-of-ro-crate).
-
-_Detached RO-Crate_: A RO-Crate without a payload of files, not having its own _RO-Crate Root_. See section [Types of RO-Crate](structure.md#types-of-ro-crate).
 
 
 ## Linked Data conventions
@@ -69,6 +72,6 @@ Throughout this specification, RDF terms (_properties_, _types_) are referred to
 
 Following [Schema.org] practice, `property` names start with lowercase letters and `Type` names start with uppercase letters.
 
-In the _RO-Crate Metadata File_ the RDF terms use their RO-Crate JSON-LD names as defined in the _RO-Crate JSON-LD Context_, which is available at <https://w3id.org/ro/crate/1.2-DRAFT/context>
+In the _RO-Crate Metadata Document_ the RDF terms use their RO-Crate JSON-LD names as defined in the _RO-Crate JSON-LD Context_, which is available at <https://w3id.org/ro/crate/1.2-DRAFT/context>
 
 {% include references.liquid %}

@@ -34,15 +34,12 @@ The **Root Data Entity** is a [Dataset] that represent the RO-Crate as a whole;
 a _Research Object_ that includes the _Data Entities_ and the related
 _Contextual Entities_.
 
-As explained in section [RO-Crate structure](structure.md), the RO-Crate description 
-is stored as _JSON-LD_ in the _RO-Crate Metadata File_ `ro-crate-metadata.json` in 
-the _RO-Crate root_ directory.  In this section we define how the RO-Crate Metadata file
-describes itself and the RO-Crate root.
+An RO-Crate is described using _JSON-LD_ by an _RO-Crate Metadata Document_. As explained in section [RO-Crate structure](structure.md) this may be stored in and _RO-Craate Metadata File_. In this section we describe the format of the JSON-LD document.
 
 
 ## RO-Crate Metadata File Descriptor
 
-The _RO-Crate JSON-LD_ MUST contain a self-describing
+The _RO-Crate Metadata Document_ MUST contain a self-describing
 **RO-Crate Metadata File Descriptor** with
 the `@id` value `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` in legacy
 crates) and `@type` [CreativeWork]. This descriptor MUST have an [about]
@@ -150,12 +147,12 @@ themselves as [Dataset] entries. For instance:
 See also the appendix on
 [finding RO-Crate Root in RDF triple stores](appendix/relative-uris.md#finding-ro-crate-root-in-rdf-triple-stores).
 
-### Purpose of Metadata File
+### Purpose of Metadata Document
 
 To ensure a base-line interoperability between RO-Crates, and for an RO-Crate to
 be considered a _Valid RO-Crate_, a minimum set of metadata is required for the
 _Root Data Entity_. As [stated earlier](structure.md#self-describing-and-self-contained)
-the _RO-Crate Metadata File_ is not an
+the _RO-Crate Metadata Document_ is not an
 exhaustive manifest or inventory, that is, it does not necessarily list or
 describe all files in the package. For this reason, there are no minimum
 metadata requirements in terms of describing [Data Entities](data-entities.md) (files and folders)
@@ -164,7 +161,7 @@ types of dataset may put further constraints or requirements of metadata beyond
 the Root Data Entity (see the appendix [Extending RO-Crate](appendix/jsonld.md#extending-ro-crate)).
 
 The _RO-Crate Metadata File Descriptor_ MAY contain information such as
-licensing for the _RO-Crate Metadata File_ if metadata is licensed
+licensing for the _RO-Crate Metadata Document_ if metadata is licensed
 separately from the crate's Data entities.
 
 The section below outlines the properties that the _Root Data Entity_ MUST have to
@@ -179,7 +176,7 @@ The _Root Data Entity_ MUST have the following properties:
 *  `name`: SHOULD identify the dataset to humans well enough to disambiguate it from other RO-Crates
 *  `description`: SHOULD further elaborate on the name to provide a summary of the context in which the dataset is important.
 *  `datePublished`: MUST be a string in [ISO 8601 date format][DateTime] and SHOULD be specified to at least the precision of a day, MAY be a timestamp down to the millisecond. 
-*  `license`: SHOULD link to a _Contextual Entity_ or _Data Entity_ in the _RO-Crate Metadata File_ with a name and description (see section on [licensing](contextual-entities.md#licensing-access-control-and-copyright)). MAY, if necessary be a textual description of how the RO-Crate may be used. 
+*  `license`: SHOULD link to a _Contextual Entity_ or _Data Entity_ in the _RO-Crate Metadata Document_ with a name and description (see section on [licensing](contextual-entities.md#licensing-access-control-and-copyright)). MAY, if necessary be a textual description of how the RO-Crate may be used. 
 
 {: .note }
 > These requirements are stricter than those published 
@@ -198,12 +195,12 @@ The root data entity's `@id` SHOULD be either `./` (indicating the directory of 
 
 If the `@id` of the Root Data Entity is an absolute URI, the Crate SHOULD NOT contain [data entities](data-entities.md) using relative URI references, but MAY contain [Web-based Data Entities](data-entities.html#web-based-data-entities) using absolute URIs.
 
-RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) SHOULD indicate this using [identifier] on the root data entity. It is RECOMMENDED that resolving the identifier programmatically return the RO-Crate Metadata File or an archive (e.g. ZIP) that contain the RO-Crate Metadata File, using [content negotiation](profiles.md#how-to-retrieve-a-profile-crate) and/or [Signposting](https://signposting.org/adopters/#workflowhub).
+RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) SHOULD indicate this using [identifier] on the root data entity. It is RECOMMENDED that resolving the identifier programmatically return the _RO-Crate Metadata Document_ or an archive (e.g. ZIP) that contains the _RO-Crate Metadata Document_ as an RO-Crate Metadata File, using [content negotiation](profiles.md#how-to-retrieve-a-profile-crate) and/or [Signposting](https://signposting.org/adopters/#workflowhub).
 
 
 ## Minimal example of RO-Crate
 
-The following _RO-Crate Metadata File_ represents a minimal description of an _RO-Crate_. 
+The following _RO-Crate Metadata Document_ represents a minimal description of an _RO-Crate_. 
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context", 
