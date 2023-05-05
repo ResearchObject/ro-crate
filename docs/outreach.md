@@ -50,6 +50,14 @@ _Data Science_ **5**(2)
 
 ### 2023
 
+Line Pouchard (2023):  
+[**FAIR enabling reuse of data-intensive workflows and scientific reproducibility**](https://doi.org/10.5281/zenodo.7893867).  
+Keynote, _The First Practically FAIR Workshop_ 2023 ([PFAIR 2023](https://sites.google.com/view/pfair23/))  
+_14th ACM/SPEC International Conference on Performance Engineering_ ([ICPE 23](https://icpe2023.spec.org/)), Coimbra, Portugal, 2023-04-15.  
+<https://doi.org/10.5281/zenodo.7893867>
+[[slides](https://doi.org/10.5281/zenodo.7893867)]
+[[abstract](https://doi.org/10.1145/3578245.3586012)]
+
 Rudolf Wittner, Petr Holub, Cecilia Mascia, Francesca Frexia,
 Heimo Müller, Markus Plass, Clare Allocca, Fay Betsou, 
 Tony Burdett, Ibon Cancio, Adriane Chapman, Martin Chapman,
@@ -63,7 +71,6 @@ Michael Sussman, Jason R. Swedlow, Kurt Zatloukal, Jörg Geiger (2023):
 [**Towards a common standard for data and specimen provenance in life sciences**](https://doi.org/10.1002/lrh2.10365).  
 _Learning Health Systems_  
 <https://doi.org/10.1002/lrh2.10365>
-
 
 Simone Leo (2023):  
 [**RO-Crate for workflow run provenance**](https://cwl.discourse.group/t/ro-crate-for-workflow-run-provenance/754).  
