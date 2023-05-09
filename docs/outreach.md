@@ -15,7 +15,7 @@ title: Outreach and Publications
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
-   limitations under the License.
+   limitations under the License.   
 -->
 
 # RO-Crate Outreach and Publications 
@@ -50,6 +50,12 @@ _Data Science_ **5**(2)
 
 ### 2023
 
+Stian Soiland-Reyes, Carole Goble (2023):  
+[**Building diverse FDO Collections using RO-Crate**](https://doi.org/10.5281/zenodo.7828632).  
+_FAIR Digital Object Forum_, workshop "[Defining FDO Collections](https://drive.google.com/drive/folders/1B59aoM2sPVJaISNLwPdVTnfiRASA-rFP)", 2023-04-14.  
+[[slides](https://doi.org/10.5281/zenodo.7828632)]
+[[video](https://youtu.be/5GYdN5B1tc8)]
+
 Line Pouchard (2023):  
 [**FAIR enabling reuse of data-intensive workflows and scientific reproducibility**](https://doi.org/10.5281/zenodo.7893867).  
 Keynote, _The First Practically FAIR Workshop_ 2023 ([PFAIR 2023](https://sites.google.com/view/pfair23/))  
@@ -57,6 +63,13 @@ _14th ACM/SPEC International Conference on Performance Engineering_ ([ICPE 23](h
 <https://doi.org/10.5281/zenodo.7893867>
 [[slides](https://doi.org/10.5281/zenodo.7893867)]
 [[abstract](https://doi.org/10.1145/3578245.3586012)]
+
+Carole Goble, Stian Soiland-Reyes (2023):  
+[**Sharing research artefacts as FAIR Digital Objects using RO-Crate**](https://doi.org/10.5281/zenodo.7559338).  
+_Brookhaven National Laboratory_, 2023-01-23.  
+<https://doi.org/10.5281/zenodo.7559338>
+[[slides](https://doi.org/10.5281/zenodo.7559338)]
+[[video](https://youtu.be/0T4FBbpgtQo)]
 
 Rudolf Wittner, Petr Holub, Cecilia Mascia, Francesca Frexia,
 Heimo Müller, Markus Plass, Clare Allocca, Fay Betsou, 
