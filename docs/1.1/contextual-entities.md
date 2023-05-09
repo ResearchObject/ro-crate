@@ -474,13 +474,13 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
           "@id": "#c2521494-9b94-4b23-a713-6b281f540823"
         },
       ]
-
+},
 {
       "@id": "#c2521494-9b94-4b23-a713-6b281f540823",
       "@type": "PropertyValue",
       "name": "InternalSerialNumber",
-      "value": "4102011002108002               "
-    },
+      "value": "4102011002108002"
+},
 ```
 
 

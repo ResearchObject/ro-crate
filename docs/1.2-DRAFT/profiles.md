@@ -235,7 +235,7 @@ A Profile Crate MUST declare a human-readable _profile description_, which is [a
     "@id": "#hasSpecification",
     "@type": "ResourceDescriptor",
     "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/specification" },
-    "hasArtifact": {"@id": "index.html"}
+    "hasArtifact": {"@id": "index.html"},
     "about": "./"
 }
 ```
@@ -250,7 +250,7 @@ The _profile description_ MAY be equivalent to the
     "@type": "CreativeWork",
     "name": "RO-Crate preview of the Process Run Crate",
     "encodingFormat": "text/html",
-    "about": "./",
+    "about": "./"
 }
 ```
 
@@ -416,7 +416,7 @@ directly as [DefinedTerm], [Class] and/or [Property] instances:
     "termCode": "runsOn",
     "name": "Runs on",
     "description": "Service where the test instance is executed",
-    "url": "https://lifemonitor.eu/workflow_testing_ro_crate#test-instance",
+    "url": "https://lifemonitor.eu/workflow_testing_ro_crate#test-instance"
 }
 ```
 
@@ -437,7 +437,7 @@ context in the Profile Crate:
     "name": "RO-Crate JSON-LD Context",
     "encodingFormat": "application/ld+json",
     "conformsTo": {"@id": "http://www.w3.org/ns/json-ld#Context"},
-    "version": "1.1.1",
+    "version": "1.1.1"
 },
 {
     "@id": "http://www.w3.org/ns/json-ld#Context",

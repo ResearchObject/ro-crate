@@ -144,7 +144,7 @@ For example, `.trr` is a an internal GROMACS file format that is not further doc
     "name": "Trajectory",
     "description": "Trajectory of molecular dynamics simulation using GROMACS",
     "contentSize": "45512",
-    "encodingFormat": {"@id": "https://manual.gromacs.org/documentation/2021/reference-manual/file-formats.html#trr"}]
+    "encodingFormat": {"@id": "https://manual.gromacs.org/documentation/2021/reference-manual/file-formats.html#trr"}
   },
   {
     "@id": "https://manual.gromacs.org/documentation/2021/reference-manual/file-formats.html#trr",
@@ -268,8 +268,8 @@ Example of an RO-Crate including a _File Data Entity_ external to the _RO-Crate 
       },
       {
         "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf"
-      },
-      ]
+      }
+    ]
   },
   {
     "@id": "survey-responses-2019.csv",
