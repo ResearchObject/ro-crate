@@ -63,7 +63,7 @@ Short example describing a _script_:
   "@id": "scripts/analyse_csv.py",
   "@type": ["File", "SoftwareSourceCode"],
   "name": "Analyze CSV files",
-  "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"},
+  "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"}
 }
 ```
 
@@ -109,7 +109,7 @@ Note that the language and its runtime MAY differ (e.g. different C++ compilers)
   "@id": "scripts/analyse_csv.py",
   "@type": ["File", "SoftwareSourceCode"],
   "name": "Analyze CSV files",
-  "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"},
+  "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"}
 },
 {
   "@id": "https://www.python.org/downloads/release/python-380/",
@@ -131,7 +131,7 @@ It is possible to indicate _steps_ that are executed as part of an `Computationa
     "programmingLanguage": {"@id": "https://w3id.org/cwl/v1.1/"},
     "hasPart": [
       {"@id": "scripts/analyse_csv.py"},
-      {"@id": "https://www.imagemagick.org/"},
+      {"@id": "https://www.imagemagick.org/"}
     ]
 }
 ```
@@ -301,8 +301,8 @@ The below is an example of an RO-Crate complying with the Bioschemas [Computatio
     {
       "@id": "#2f32b861-e43c-401f-8c42-04fd84273bdf",
       "@type": "FormalParameter",
-      "conformsTo": {"@id": "
-        https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
       },
       "name": "sequence_alignment",
       "additionalType": {"@id": "http://edamontology.org/data_1383"},

@@ -37,7 +37,7 @@ An RO-Crate may have a single main entity that is considered the point, or focus
 
 In the [Workflow RO-Crate profile](https://www.researchobject.org/ro-crate/profiles.html#workflow-ro-crate-profile), where the `mainEntity` has a compound type `["File", "SoftwareSourceCode", "ComputationalWorkflow"]`, the use of `mainEntity` singles-out the workflow file from supporting files.
 
-```
+```json
 {
     "@id": "./",
     "@type": "Dataset",
@@ -65,7 +65,7 @@ In the [Workflow RO-Crate profile](https://www.researchobject.org/ro-crate/profi
 
 The focus of the RO-Crate may be a description of a _Contextual Entity_, for example in an RO-Crate used in a repository or encyclopedia where a RepositoryObject bundles together images and other files, but the main focus of the RO-Crate is on describing a person.
 
-```
+```json
 {
     "@id": "./",
     "@type": ["Dataset", "RepositoryObject"],
@@ -93,7 +93,7 @@ RO-Crates may describe _Contextual Entities_ which are not linked to a _Root Dat
 
 For example RO-Crates can be used as containers for schema.org-style vocabularies.
 
-```
+```json
 {
       "@id": "./",
       "@type": "Dataset",
@@ -134,7 +134,7 @@ For example RO-Crates can be used as containers for schema.org-style vocabularie
 
 The following example shows both a `mainEntity` which is a _Data Entity_ and also a _Contextual Entity_ which is a test suite (`#test1`)
 
-```
+```json
         {
             "@id": "./",
             "@type": "Dataset",
@@ -153,8 +153,8 @@ The following example shows both a `mainEntity` which is a _Data Entity_ and als
                     "@id": "test/test1/sort-and-change-case-test.yml"
                 }
             ]
-        }
-		{
+        },
+		    {
             "@id": "#test1",
             "name": "test1",
             "@type": "TestSuite",
