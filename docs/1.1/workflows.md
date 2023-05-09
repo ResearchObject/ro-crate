@@ -65,7 +65,7 @@ Short example describing a _script_:
   "@id": "scripts/analyse_csv.py",
   "@type": ["File", "SoftwareSourceCode"],
   "name": "Analyze CSV files",
-  "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"},
+  "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"}
 }
 ```
 
@@ -111,7 +111,7 @@ Note that the language and its runtime MAY differ (e.g. different C++ compilers)
   "@id": "scripts/analyse_csv.py",
   "@type": ["File", "SoftwareSourceCode"],
   "name": "Analyze CSV files",
-  "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"},
+  "programmingLanguage": {"@id": "https://www.python.org/downloads/release/python-380/"}
 },
 {
   "@id": "https://www.python.org/downloads/release/python-380/",
@@ -133,7 +133,7 @@ It is possible to indicate _steps_ that are executed as part of an `Computationa
     "programmingLanguage": {"@id": "https://w3id.org/cwl/v1.1/"},
     "hasPart": [
       {"@id": "scripts/analyse_csv.py"},
-      {"@id": "https://www.imagemagick.org/"},
+      {"@id": "https://www.imagemagick.org/"}
     ]
 }
 ```
