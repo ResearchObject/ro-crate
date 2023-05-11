@@ -16,7 +16,7 @@
     },
     {
       "@id": "./",
-      "@type": "Dataset",
+      "@type": ["Dataset", "Profile"],
       "author": [
         {
           "@id": "https://orcid.org/0000-0001-8131-2150"
@@ -189,9 +189,24 @@
         { "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/implementation-notes.html"},
         { "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/jsonld.html"},
         { "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/relative-uris.html"},
-        { "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/context.jsonld"},
+        { "@id": "https://w3id.org/ro/crate/1.2-DRAFT/context"},
         { "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html"},
-        { "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf"}
+        { "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf"},
+        { "@id": "http://www.w3.org/ns/dx/prof/ResourceDescriptor"},
+        { "@id": "http://www.w3.org/ns/dx/prof/ResourceRole"},
+        { "@id": "http://www.w3.org/ns/dx/prof/Profile"},
+        { "@id": "http://www.w3.org/ns/dx/prof/hasArtifact"},
+        { "@id": "http://www.w3.org/ns/dx/prof/hasResource"},
+        { "@id": "http://www.w3.org/ns/dx/prof/hasRole"},
+        { "@id": "http://www.iana.org/assignments/relation/cite-as"},
+        { "@id": "http://pcdm.org/models#Object"},
+        { "@id": "http://pcdm.org/models#Collection"},
+        { "@id": "http://pcdm.org/models#File"},
+        { "@id": "http://pcdm.org/models#hasMember"},
+        { "@id": "http://pcdm.org/models#hasFile"}
+      ],
+      "hasResource": [
+
       ],
       "identifier": "https://doi.org/DOI",
       "isPartOf": {
@@ -213,6 +228,97 @@
         {"@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf"}
       ]
     },
+    { "@id": "http://www.w3.org/ns/dx/prof/ResourceDescriptor",
+      "@type": ["DefinedTerm", "Class"],
+      "name": "Resource descriptor",
+      "inDefinedTermSet": { "@id": "http://www.w3.org/ns/dx/prof"},      
+      "termCode": "ResourceDescriptor",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Class:ResourceDescriptor"
+    },
+    { "@id": "http://www.w3.org/ns/dx/prof/ResourceRole",
+      "@type": ["DefinedTerm", "Class"],
+      "name": "Resource role",
+      "inDefinedTermSet": { "@id": "http://www.w3.org/ns/dx/prof"},
+      "termCode": "ResourceRole",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Class:ResourceRole"
+    },
+    { "@id": "http://www.w3.org/ns/dx/prof/Profile",
+      "@type": ["DefinedTerm", "Class"],
+      "name": "Profile",
+      "inDefinedTermSet": { "@id": "http://www.w3.org/ns/dx/prof"},
+      "termCode": "Profile",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Class:Profile"
+    },
+    { "@id": "http://www.w3.org/ns/dx/prof/hasArtifact",
+      "@type": ["DefinedTerm", "Property"],
+      "name": "has artifact",
+      "inDefinedTermSet": { "@id": "http://www.w3.org/ns/dx/prof"},
+      "termCode": "hasArtifact",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasArtifact"
+    },
+    { "@id": "http://www.w3.org/ns/dx/prof/hasResource",
+      "@type": ["DefinedTerm", "Property"],
+      "inDefinedTermSet": { "@id": "http://www.w3.org/ns/dx/prof"},
+      "name": "has resource",
+      "termCode": "hasResource",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasResource"
+    },
+    { "@id": "http://www.w3.org/ns/dx/prof/hasRole",
+      "@type": ["DefinedTerm", "Property"],
+      "name": "has role",
+      "inDefinedTermSet": { "@id": "http://www.w3.org/ns/dx/prof"},
+      "termCode": "hasRole",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasRole"
+    },
+    { "@id": "http://www.iana.org/assignments/relation/cite-as",
+      "@type": ["DefinedTerm", "Property"],
+      "name": "Cite as",
+      "termCode": "cite-as",
+      "url": "https://doi.org/10.17487/RFC8574"
+    },
+    { "@id": "http://pcdm.org/models#Object",
+      "@type": ["DefinedTerm", "Class"],
+      "name": "Repository object",
+      "inDefinedTermSet": { "@id": "http://pcdm.org/models#"},
+      "termCode": "RepositoryObject"
+    },
+    { "@id": "http://pcdm.org/models#Collection",
+      "@type": ["DefinedTerm", "Class"],
+      "name": "Repository collection",
+      "inDefinedTermSet": { "@id": "http://pcdm.org/models#"},
+      "termCode": "RepositoryCollection"
+    },
+    { "@id": "http://pcdm.org/models#File",
+      "@type": ["DefinedTerm", "Class"],
+      "name": "Repository file",
+      "termCode": "RepositoryFile",
+      "inDefinedTermSet": { "@id": "http://pcdm.org/models#"}
+    },
+    { "@id": "http://pcdm.org/models#hasMember",
+      "@type": ["DefinedTerm", "Property"],
+      "name": "has member",
+      "inDefinedTermSet": { "@id": "http://pcdm.org/models#"},
+      "termCode": "hasMember"
+    },
+    { "@id": "http://pcdm.org/models#hasFile",
+      "@type": ["DefinedTerm", "Property"],
+      "name": "has file",
+      "inDefinedTermSet": { "@id": "http://pcdm.org/models#"},
+      "termCode": "hasFile"
+    },
+    { "@id": "http://pcdm.org/models#",
+      "@type": "DefinedTermSet",
+      "name": "Portland Common Data Model",
+      "version": "2016/04/18",
+      "sameAs": "https://pcdm.org/2016/04/18/models"
+    },
+    { "@id": "http://www.w3.org/ns/dx/prof",
+      "@type": "DefinedTermSet",
+      "name": "Profiles Vocabulary",
+      "version": "1.0",
+      "url": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/",
+      "sameAs": "http://www.w3.org/ns/dx/prof/1.0"
+    },    
     {
       "@id": "https://www.researchobject.org/ro-crate/community",
       "@type": "Project",
@@ -464,10 +570,10 @@
     { "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/jsonld.html", "name": "RO-Crate JSON-LD", "@type": ["WebPage", "CreativeWork"]},
     { "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/relative-uris.html", "name": "Handling relative URI references", "@type": ["WebPage", "CreativeWork"]},      
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/context.jsonld",
+      "@id": "https://w3id.org/ro/crate/1.2-DRAFT/context",
       "@type": "File",
       "encodingFormat": "application/ld+json",
-      "identifier": "https://w3id.org/ro/crate/1.2-DRAFT/context",
+      "conformsTo": {"@id": "http://www.w3.org/ns/json-ld#Context"},
       "license": {
         "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
       },
@@ -484,6 +590,12 @@
         {"@id": "https://bioschemas.org/profiles/FormalParameter/0.1-DRAFT-2020_07_21"}
       ]
     },
+    {
+      "@id": "http://www.w3.org/ns/json-ld#Context",
+      "@type": "DefinedTerm",
+      "name": "JSON-LD Context",
+      "url": "https://www.w3.org/TR/json-ld/"
+    },    
     {
       "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html",
       "@type": "CreativeWork",
