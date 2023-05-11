@@ -15,16 +15,17 @@ title: Outreach and Publications
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
-   limitations under the License.
+   limitations under the License.   
 -->
 
 # RO-Crate Outreach and Publications 
 {: .no_toc }
 
-{: .tip }
+{: .tip } 
 **Upcoming RO-Crate workshops and training events**:  
-[_Building lightweight FAIR data packages with Bioschemas and RO-Crate_](https://docs.google.com/document/d/1Vh9mUBWvNEsvC5YZRITtZxsyE6Wr18rJUgp9KweJFNg) at **[ELIXIR All Hands 2023](https://elixir-europe.org/events/elixir-all-hands-2023)**, 2023-06-05/--08, Dublin, Ireland + hybrid.  
-[_Quo vadis Open Standards for Data Management? ORKG meets RO-Crates_](https://www.zbmed.de/vernetzen/veranstaltungen/open-science-festival/open-standards-for-data-management) at **[Open Science Festival 2023](https://www.zbmed.de/en/networking/events/open-science-festival-2023/)**, 2023-07-04/--05, Cologne, Germany.
+[_FAIR data and provenance with RO-Crate and Galaxy_](https://gallantries.github.io/video-library/modules/ro-crate) module at **[Galaxy Smörgåsbord 2023](https://gallantries.github.io/video-library/events/smorgasbord3/)**, 2023-05-22 / --26, virtual/async.  
+[_Building lightweight FAIR data packages with Bioschemas and RO-Crate_](https://docs.google.com/document/d/1Vh9mUBWvNEsvC5YZRITtZxsyE6Wr18rJUgp9KweJFNg) workshop at **[ELIXIR All Hands 2023](https://elixir-europe.org/events/elixir-all-hands-2023)**, 2023-06-05/--08, Dublin, Ireland + hybrid (ELIXIR members only).  
+[_Data exchange with RO-Crates and Knowledge Graphs_](https://www.zbmed.de/vernetzen/veranstaltungen/open-science-festival/open-standards-for-data-management) workshop at **[Open Science Festival 2023](https://www.zbmed.de/en/networking/events/open-science-festival/)**, 2023-07-04/--05, Cologne, Germany.
 
 
 ## Table of contents
@@ -50,6 +51,27 @@ _Data Science_ **5**(2)
 
 ### 2023
 
+Stian Soiland-Reyes, Carole Goble (2023):  
+[**Building diverse FDO Collections using RO-Crate**](https://doi.org/10.5281/zenodo.7828632).  
+_FAIR Digital Object Forum_, workshop "[Defining FDO Collections](https://drive.google.com/drive/folders/1B59aoM2sPVJaISNLwPdVTnfiRASA-rFP)", 2023-04-14.  
+[[slides](https://doi.org/10.5281/zenodo.7828632)]
+[[video](https://youtu.be/5GYdN5B1tc8)]
+
+Line Pouchard (2023):  
+[**FAIR enabling reuse of data-intensive workflows and scientific reproducibility**](https://doi.org/10.5281/zenodo.7893867).  
+Keynote, _The First Practically FAIR Workshop_ 2023 ([PFAIR 2023](https://sites.google.com/view/pfair23/))  
+_14th ACM/SPEC International Conference on Performance Engineering_ ([ICPE 23](https://icpe2023.spec.org/)), Coimbra, Portugal, 2023-04-15.  
+<https://doi.org/10.5281/zenodo.7893867>
+[[slides](https://doi.org/10.5281/zenodo.7893867)]
+[[abstract](https://doi.org/10.1145/3578245.3586012)]
+
+Carole Goble, Stian Soiland-Reyes (2023):  
+[**Sharing research artefacts as FAIR Digital Objects using RO-Crate**](https://doi.org/10.5281/zenodo.7559338).  
+_Brookhaven National Laboratory_, 2023-01-23.  
+<https://doi.org/10.5281/zenodo.7559338>
+[[slides](https://doi.org/10.5281/zenodo.7559338)]
+[[video](https://youtu.be/0T4FBbpgtQo)]
+
 Rudolf Wittner, Petr Holub, Cecilia Mascia, Francesca Frexia,
 Heimo Müller, Markus Plass, Clare Allocca, Fay Betsou, 
 Tony Burdett, Ibon Cancio, Adriane Chapman, Martin Chapman,
@@ -63,7 +85,6 @@ Michael Sussman, Jason R. Swedlow, Kurt Zatloukal, Jörg Geiger (2023):
 [**Towards a common standard for data and specimen provenance in life sciences**](https://doi.org/10.1002/lrh2.10365).  
 _Learning Health Systems_  
 <https://doi.org/10.1002/lrh2.10365>
-
 
 Simone Leo (2023):  
 [**RO-Crate for workflow run provenance**](https://cwl.discourse.group/t/ro-crate-for-workflow-run-provenance/754).  
