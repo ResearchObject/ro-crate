@@ -34,7 +34,7 @@ The **Root Data Entity** is a [Dataset] that represent the RO-Crate as a whole;
 a _Research Object_ that includes the _Data Entities_ and the related
 _Contextual Entities_.
 
-An RO-Crate is described using _JSON-LD_ by an _RO-Crate Metadata Document_. As explained in section [RO-Crate structure](structure.md) this may be stored in and _RO-Craate Metadata File_. In this section we describe the format of the JSON-LD document.
+An RO-Crate is described using _JSON-LD_ by an _RO-Crate Metadata Document_. As explained in section [RO-Crate structure](structure.md) this may be stored in and _RO-Crate Metadata File_. In this section we describe the format of the JSON-LD document.
 
 
 ## RO-Crate Metadata Descriptor
