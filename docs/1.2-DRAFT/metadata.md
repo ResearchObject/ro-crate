@@ -60,7 +60,7 @@ RO-Crate makes use of the [Linked Data principles] for its description. In parti
 
 RO-Crate realizes these principles using a particular set of technologies and best practices:
 
-1. The _RO-Crate Metadata Document_ can be stored in an _RO-Crate Metadata File_ and an _RO-Crate Website_ can be directly published on the web together with the RO-Crate payload. In addition, a data package (e.g. BagIt Zip archive) that contain the RO-Crate can also be published on the web.
+1. The _RO-Crate Metadata Document_ can be stored in an _RO-Crate Metadata File_. The _RO-Crate Metadata File_ and an _RO-Crate Website_ can be directly published on the web together with the RO-Crate payload. In addition, a data package (e.g. BagIt Zip archive) that contain the RO-Crate can also be published on the web.
 2. The _RO-Crate Metadata Document_ is based on the structured data format [JSON-LD]. 
 3. Multiple open source tools/libraries are available [for JSON][JSON] and [for JSON-LD][JSON-LD].
 4. The _RO-Crate Website_ is [HTML 5], and the _RO-Crate Metadata Document_ is [JSON-LD], one of the [W3C RDF 1.1 formats].
