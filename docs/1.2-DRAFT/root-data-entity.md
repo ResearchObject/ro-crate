@@ -65,7 +65,8 @@ property referencing the _Root Data Entity_'s `@id`.
 }
 ```
 
-NOTE that even in _Detached RO-Crates_ which do not have an _RO-Crate Metadata File_ present the value `ro-crate-metadata.json` MUST be used.
+{: .note}
+> Even in [Detached RO-Crates](structure.md#detached-ro-crate) which do not have an _RO-Crate Metadata File_ present, the identifier `ro-crate-metadata.json` MUST be used.
 
 The [conformsTo] of the _RO-Crate Metadata Descriptor_ 
 SHOULD be a versioned permalink URI of the RO-Crate specification
