@@ -91,9 +91,21 @@ The focus of the RO-Crate may be a description of a _Contextual Entity_, for exa
 
 RO-Crates may describe _Contextual Entities_ which are linked to the [Root Dataset](root-data-entity.md) via `mentions` relationships.
 
-For example, RO-Crates can be used as containers for schema.org-style vocabularies.
+For example, RO-Crates can be used as containers for schema.org-style vocabularies (here also extending the [RO-Crate JSON-LD context](appendix/jsonld.html#ro-crate-json-ld-context) to define the namespace for `txc:`):
 
 ```json
+{ "@context": [
+    "https://w3id.org/ro/crate/1.2-DRAFT/context",
+    {"txc": "https://purl.archive.org/language-data-commons/terms#"}
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "description": "RO-Crate Metadata File Descriptor (this file)",
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
+      "about": {"@id": "./"}
+    },
     {
       "@id": "./",
       "@type": "Dataset",
@@ -128,6 +140,8 @@ For example, RO-Crates can be used as containers for schema.org-style vocabulari
         }
       ]
     }
+  ]
+}    
 ```
 
 
@@ -152,8 +166,8 @@ The following example shows both a `mainEntity` which is a _Data Entity_ and a _
                     "@id": "test/test1/sort-and-change-case-test.yml"
                 }
             ]
-        }
-        {
+        },
+		    {
             "@id": "#test1",
             "name": "test1",
             "@type": "TestSuite",

@@ -294,7 +294,7 @@ In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in
 
 Following the conventions used by Schema.org, ad-hoc terms SHOULD also include definitions in the RO-Crate with at minimum:
 
-* `@id` is an absolute URI (see [choosing ])
+* `@id` is an absolute URI (see [choosing](#choosing-uris-for-ad-hoc-terms))
 * `@type` of [DefinedTerm], [Property] or [Class]. Use [Property] for terms that can be used as JSON-LD keys (after being mapped by the context), or [Class] for terms that can be used with `@type`. Use [DefinedTerm] for any other defined concepts that will be referenced by `@id`, e.g. from [creativeWorkStatus].
 * `name` with the human readable version of the term, e.g. `http://example.com/vocab#makesFood` has label `"makes food"`
 * `description` documenting and clarifying the meaning of the term. For instance the term `education` meaning _Person's education level, e.g. primary school_ (compared to the meaning _Educational Material_)
@@ -386,6 +386,6 @@ Example:
 
 In the example above, the type `CPMProvenanceFile` is resolved to <https://w3id.org/cpm/ro-crate#CPMProvenanceFile> by the matching key in the second `@context` when content-negotiating for `application/ld+json` (browsers may see the human-readable documentations).
 
-The contextual entity `http://www.w3.org/TR/2013/REC-prov-n-20130430/` for `encodingFormat` is defined within the profile rather in this specific crate, however in this example that `@id` resolves to the textual specification at W3C rather than back to the Profile Crate. 
+The contextual entity `http://www.w3.org/TR/2013/REC-prov-n-20130430/` for `encodingFormat` is defined within the profile rather than in this specific crate, however in this example that `@id` resolves to the textual specification at W3C rather than back to the Profile Crate. 
 
 {% include references.liquid %}
