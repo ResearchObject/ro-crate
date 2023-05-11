@@ -49,7 +49,7 @@ These applications use or expose RO-Crates to describe Data, Datasets and Workfl
 
 As part of these use-cases they have been developing or enhancing their tooling to facilitate their use of RO-Crate
 
-  * [OCFL-indexer](https://github.com/CoEDL/modpdsc/) is a NodeJS application that walks the [Oxford Common File Layout](https://ocfl.io/) on the file system, validate RO-Crate Metadata Files and parse into objects registered in Elasticsearch. (~ _alpha_) 
+  * [OCFL-indexer](https://github.com/CoEDL/modpdsc/) is a NodeJS application that walks the [Oxford Common File Layout](https://ocfl.io/) on the file system, validate _RO-Crate Metadata Files_ and parse into objects registered in Elasticsearch. (~ _alpha_) 
   * [ocfl-tools](https://github.com/CoEDL/ocfl-tools) contains tools for managing RO-Crates in an OCFL repository .
   * [ocfl-viewer](https://hub.docker.com/r/coedl/ocfl-viewer)
   * [ONI indexer](https://github.com/UTS-eResearch/oni-indexer)
