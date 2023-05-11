@@ -102,23 +102,26 @@ RO-Crate also uses the _Portland Common Data Model_ ([PCDM] version <https://pcd
 {: .note }
 > The terms `RepositoryObject` and `RepositoryCollection` are renamed to avoid collision between other vocabularies and the PCDM terms `Collection` and `Object`. The term `RepositoryFile` is renamed to avoid clash with RO-Crate's `File` mapping to <http://schema.org/MediaObject>.
 
-RO-Crate use the [Profiles Vocabulary](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/) to describe [profiles](../profiles) using these terms:
+RO-Crate use the [Profiles Vocabulary](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/) to describe [profiles](../profiles) using these terms and definitions:
 
-- `ResourceDescriptor` mapped to <http://www.w3.org/ns/dx/prof/ResourceDescriptor>
-- `ResourceRole` mapped to <http://www.w3.org/ns/dx/prof/ResourceRole>
-- `Profile` mapped to <http://www.w3.org/ns/dx/prof/Profile>
-- `hasArtifact` mapped to <http://www.w3.org/ns/dx/prof/hasArtifact>
-- `hasResource` mapped to <http://www.w3.org/ns/dx/prof/hasResource>
-- `hasRole` mapped to <http://www.w3.org/ns/dx/prof/hasRole>
-- `hasToken` mapped to <http://www.w3.org/ns/dx/prof/hasToken>
-- `isInheritedFrom` mapped to <http://www.w3.org/ns/dx/prof/isInheritedFrom>
-- `isProfileOf` mapped to <http://www.w3.org/ns/dx/prof/isProfileOf>
-- `isTransitiveProfileOf` mapped to <http://www.w3.org/ns/dx/prof/isTransitiveProfileOf>
+- `ResourceDescriptor` mapped to <http://www.w3.org/ns/dx/prof/ResourceDescriptor> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Class:ResourceDescriptor))
+- `ResourceRole` mapped to <http://www.w3.org/ns/dx/prof/ResourceRole> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Class:ResourceRole))
+- `Profile` mapped to <http://www.w3.org/ns/dx/prof/Profile>  ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Class:Profile))
+- `hasArtifact` mapped to <http://www.w3.org/ns/dx/prof/hasArtifact>  ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasArtifact))
+- `hasResource` mapped to <http://www.w3.org/ns/dx/prof/hasResource> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasResource))
+- `hasRole` mapped to <http://www.w3.org/ns/dx/prof/hasRole> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasRole))
+- `hasToken` mapped to <http://www.w3.org/ns/dx/prof/hasToken> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasToken))
+- `isInheritedFrom` mapped to <http://www.w3.org/ns/dx/prof/isInheritedFrom> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:isInheritedFrom))
+- `isProfileOf` mapped to <http://www.w3.org/ns/dx/prof/isProfileOf> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:isProfileOf))
+- `isTransitiveProfileOf` mapped to <http://www.w3.org/ns/dx/prof/isTransitiveProfileOf> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:isTransitiveProfileOf))
 
 From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
 
 - `conformsTo` mapped to <http://purl.org/dc/terms/conformsTo>
 - `Standard` mapped to <http://purl.org/dc/terms/Standard>
+
+From the [IANA link relations] registry:
+- `cite-as` mapped to <http://www.iana.org/assignments/relation/cite-as> (defined by [RFC8574])
 
 These terms are being proposed by [Bioschemas profile ComputationalWorkflow 1.0-RELEASE][ComputationalWorkflow profile 1.0] and [FormalParameter 1.0-RELEASE][FormalParameter profile 1.0] to be integrated into Schema.org: 
 
