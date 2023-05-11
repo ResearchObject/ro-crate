@@ -12,8 +12,8 @@ parent: RO-Crate 1.2-DRAFT
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
-   Copyright 2019-2020 The University of Manchester UK 
-   Copyright 2019-2022 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019-2023 The University of Manchester UK 
+   Copyright 2019-2023 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -43,18 +43,18 @@ The RO-Crate SHOULD contain additional information about _Contextual Entities_ f
 
 ## Contextual vs Data entities
 
-RO-Crate distinguishes between _Contextual entities_ and _Data entities_. 
+RO-Crate distinguishes between _contextual entities_ and _data entities_.
 
 **[Data entities](data-entities.md)** primarily exist in their own right as a file or directory (which may be in the _RO-Crate Root_ directory or downloadable by URL). 
 
-**Contextual entities** however primarily exist outside the digital sphere (e.g. [People](#people), [Places](#places)) or are  conceptual descriptions that primarily exists as metadata, like [GeoCoordinates] and [ContactPoint](#contact-information).
+**Contextual entities** however primarily exist outside the digital sphere (e.g. [People](#people), [Places](#places)) or are  conceptual descriptions that primarily exist as metadata, like [GeoCoordinates] and [ContactPoint](#contact-information).
 
 Some contextual entities can also be considered data entities -- for instance the [license](#licensing-access-control-and-copyright) property refers to a [CreativeWork] that can reasonably be downloaded, however a license document is not usually considered as part of research outputs and would therefore typically not be included in [hasPart] on the [root data entity](root-data-entity.md). 
 
 {: .tip }
-> Files in the _RO-Crate Root_ are not necessarily _data entities_ -- the [RO-Crate Metadata File Descriptor](root-data-entity.md#ro-crate-metadata-file-descriptor) is a file in the _RO-Crate Root_, but is considered a _Contextual Entity_ as it is describing the RO-Crate, rather than being part of it. On the other hand, the [Root Data Entity](root-data-entity.md#root-data-entity) is a _data entity_ within its own metadata file.
+> Files in the _RO-Crate Root_ are not necessarily data entities -- the [RO-Crate Metadata Descriptor](root-data-entity.md#ro-crate-metadata-file-descriptor) is a file in the _RO-Crate Root_, but is considered a _Contextual Entity_ as it is describing the RO-Crate, rather than being part of it. On the other hand, the [Root Data Entity](root-data-entity.md#root-data-entity) is a data entity within its own metadata file.
 
-Likewise, some data entities may also be described as contextual entities, for instance a `File` that is also a [ScholarlyArticle]. In such cases the _Contextual Data Entity_ MUST be described as a single JSON object in the RO-Crate Metadata JSON `@graph` and SHOULD list both relevant data and contextual types in a `@type` array. 
+Likewise, some data entities may also be described as contextual entities, for instance a `File` that is also a [ScholarlyArticle]. In such cases the _contextual data entity_ MUST be described as a single JSON object in the RO-Crate Metadata JSON `@graph` and SHOULD list both relevant data and contextual types in a `@type` array. 
 
 The RO-Crate Metadata JSON `@graph` MUST NOT list multiple entities with the same `@id`; behaviour of consumers of an RO-Crate encountering multiple entities with the same `@id` is undefined.
 
@@ -67,7 +67,7 @@ If an existing permalink (e.g. `https://orcid.org/0000-0002-1825-0097`) or other
 
 Care should be taken to not describe two conceptually different contextual entities with the same identifier - e.g. if `https://en.wikipedia.org/wiki/Josiah_S._Carberry` is a [Person] it SHOULD NOT also be a [CreativeWork] (although this example is a fictional person!).
 
-Where a related URL exist that may not be unique enough to serve as identifier, it can instead be added to a contextual entity using the property [url].
+Where a related URL exists that may not be unique enough to serve as identifier, it can instead be added to a contextual entity using the property [url].
 
 
 See the [appendix on JSON-LD identifiers](appendix/jsonld.md#describing-entities-in-json-ld) for details.
@@ -376,11 +376,11 @@ The below _Data Entity_ has a [copyrightHolder] which is different from its [aut
 
 ### Metadata license
 
-In some cases the license of the [RO-Crate metadata](root-data-entity.md) (the JSON-LD statements in the _RO-Crate Metadata File Descriptor_) is different from the license on the [Root Data Entity](root-data-entity.md) and its content (_data entities_ indicated by [hasPart]). 
+In some cases the license of the [RO-Crate metadata](root-data-entity.md) (the JSON-LD statements in the _RO-Crate Metadata Descriptor_) is different from the license on the [Root Data Entity](root-data-entity.md) and its content (_data entities_ indicated by [hasPart]). 
 
 For instance, a common pattern for repositories is to license metadata as [CC0 Public Domain Dedication][CC0], while data is licensed as [CC-BY] or similar.  This pattern allow metadata to be combined freely (e.g. the [DataCite] knowledge graph), while redistribution of data files would require explicit attribution and statement of their license.
 
-To express the metadata license is different from the _Root Data Entity_, expand the _RO-Crate Metadata File Descriptor_  to include `license`:
+To express the metadata license is different from the _Root Data Entity_, expand the _RO-Crate Metadata Descriptor_  to include `license`:
 
 ```json
 {
@@ -403,7 +403,7 @@ To express the metadata license is different from the _Root Data Entity_, expand
 
 ```
 
-If no explicit `license` is expressed on the _RO-Crate Metadata File Descriptor_, the `license` expressed on the _Root Data Entity_ apply also on the RO-Crate metadata.
+If no explicit `license` is expressed on the _RO-Crate Metadata Descriptor_, the `license` expressed on the _Root Data Entity_ apply also on the RO-Crate metadata.
 
 
 ## Extra metadata such as Exif
@@ -430,13 +430,13 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
           "@id": "#c2521494-9b94-4b23-a713-6b281f540823"
         },
       ]
-
+},
 {
       "@id": "#c2521494-9b94-4b23-a713-6b281f540823",
       "@type": "PropertyValue",
       "name": "InternalSerialNumber",
-      "value": "4102011002108002               "
-    },
+      "value": "4102011002108002"
+},
 ```
 
 

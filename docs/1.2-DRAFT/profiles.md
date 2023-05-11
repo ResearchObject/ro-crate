@@ -11,7 +11,7 @@ parent: RO-Crate 1.2-DRAFT
     
 While RO-Crates can be considered general-purpose containers of arbitrary data and open-ended metadata, in practical use within a particular domain, application or framework, it will be beneficial to further constrain RO-Crate to a specific **profile**: a set of conventions, types and properties that one minimally can require and expect to be present in that subset of RO-Crates.
 
-Defining and conforming to such a profile enables reliable programmatic consumption of an RO-Crate’s content, as well as consistent creation, e.g. a form in a user interface form firmly suggest the required types and properties, and likewise a rendering of an RO-Crate can easier make rich UI components if it can reliably assume for instance that the [`Person`](contextual-entities.md#people) always has an `affiliation` to a [`Organization`](contextual-entities.md#organizations-as-values) which has a `url` - a restriction that may not be appropriate for all types of RO-Crates.
+Defining and conforming to such a profile enables reliable programmatic consumption of an RO-Crate’s content, as well as consistent creation, e.g. a form in a user interface containing the required types and properties, and likewise a rendering of an RO-Crate can easier make rich UI components if it can reliably assume for instance that the [`Person`](contextual-entities.md#people) always has an `affiliation` to a [`Organization`](contextual-entities.md#organizations-as-values) which has a `url` - a restriction that may not be appropriate for all types of RO-Crates.
 
 As such RO-Crate Profiles can be considered a _duck typing_ mechanism for RO-Crates, but also as a classifier to indicate the crate's purpose, expectations and focus.
 
@@ -103,7 +103,7 @@ The rest of the requirements for being referenced as a contextual entity also ap
 
 ### How to retrieve a Profile Crate
 
-To resolve a Profile URI to a machine-readable _Profile Crate_, two approaches are recommended to retrieve its [RO-Crate metadata file](root-data-entity.md#ro-crate-metadata-file-descriptor):
+To resolve a Profile URI to a machine-readable _Profile Crate_, two approaches are recommended to retrieve its [RO-Crate Metadata Document](root-data-entity.md#ro-crate-metadata-file-descriptor):
 
 1. [HTTP Content-negotiation] for the [RO-Crate media type](appendix/jsonld.md#ro-crate-json-ld-media-type), for example:  
 
@@ -235,7 +235,7 @@ A Profile Crate MUST declare a human-readable _profile description_, which is [a
     "@id": "#hasSpecification",
     "@type": "ResourceDescriptor",
     "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/specification" },
-    "hasArtifact": {"@id": "index.html"}
+    "hasArtifact": {"@id": "index.html"},
     "about": "./"
 }
 ```
@@ -250,7 +250,7 @@ The _profile description_ MAY be equivalent to the
     "@type": "CreativeWork",
     "name": "RO-Crate preview of the Process Run Crate",
     "encodingFormat": "text/html",
-    "about": "./",
+    "about": "./"
 }
 ```
 
@@ -282,7 +282,7 @@ An optional machine-readable _schema_ of the profile, for instance a [Describo J
 ```
 
 A schema may formalize restrictions on the 
-[RO-Crate metadata file](root-data-entity.md#ro-crate-metadata-file-descriptor) on 
+[RO-Crate Metadata Document](root-data-entity.md#ro-crate-metadata-file-descriptor) on 
 a graph-level (e.g. what types/properties) as well as serialization level
 (e.g. use of JSON arrays). 
 
@@ -296,7 +296,7 @@ Below are known schema types in their recommended media type, with suggested ide
 | Name           | `encodingFormat` Media Type   | `encodingFormat` URI   | `conformsTo` URI |  role  | 
 | -------------- | ------------------------- | -------------------------- | ---------- |
 | JSON Schema    | `application/schema+json` | <https://json-schema.org/draft/2020-12/schema> |  |  `schema` | 
-| Describo       | `application/json`        | <https://www.nationalarchives.gov.uk/PRONOM/fmt/817> | <https://github.com/UTS-eResearch/describo/wiki/dsp-index#profile-structure> | `schema` |
+| Describo       | `application/json`        | <https://www.nationalarchives.gov.uk/PRONOM/fmt/817> | <https://github.com/describo/profiles> | `schema` |
 | CheckMyCrate   | `application/json`        | <https://www.nationalarchives.gov.uk/PRONOM/fmt/817> | <https://github.com/KockataEPich/CheckMyCrate#profiles> | `validation` |
 | SHACL          | `text/turtle`             | <https://www.nationalarchives.gov.uk/PRONOM/fmt/874> |  <https://www.w3.org/TR/shacl/> | `validation` |
 | ShExC          | `text/shex`               | <http://shex.io/shex-semantics/#shexc> |  |  `validation`
@@ -416,7 +416,7 @@ directly as [DefinedTerm], [Class] and/or [Property] instances:
     "termCode": "runsOn",
     "name": "Runs on",
     "description": "Service where the test instance is executed",
-    "url": "https://lifemonitor.eu/workflow_testing_ro_crate#test-instance",
+    "url": "https://lifemonitor.eu/workflow_testing_ro_crate#test-instance"
 }
 ```
 
@@ -437,7 +437,7 @@ context in the Profile Crate:
     "name": "RO-Crate JSON-LD Context",
     "encodingFormat": "application/ld+json",
     "conformsTo": {"@id": "http://www.w3.org/ns/json-ld#Context"},
-    "version": "1.1.1",
+    "version": "1.1.1"
 },
 {
     "@id": "http://www.w3.org/ns/json-ld#Context",
