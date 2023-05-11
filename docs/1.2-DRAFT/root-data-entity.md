@@ -198,7 +198,7 @@ The root data entity's `@id` SHOULD be either `./` (indicating the directory of 
 
 If the `@id` of the Root Data Entity is an absolute URI, an _Attached RO-Crate__ MAY contain both [data entities](data-entities.md) using relative URI references (relative to the _RO-Crate Root_, and [Web-based Data Entities](data-entities.html#web-based-data-entities) using absolute URIs but it is RECOMMENDED that data entities are referenced using absolute URIs.
 
-RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) SHOULD indicate this using [identifier] on the root data entity using the approach set out in the [Science On Schema.org guides](https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#identifier). It is RECOMMENDED that resolving the identifier programmatically return the RO-Crate Metadata File or an archive (e.g. ZIP) that contain the RO-Crate Metadata File, using [content negotiation](profiles.md#how-to-retrieve-a-profile-crate) and/or [Signposting](https://signposting.org/adopters/#workflowhub).
+RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) SHOULD indicate this using [identifier] on the root data entity using the approach set out in the [Science On Schema.org guides]. It is RECOMMENDED that resolving the identifier programmatically return the RO-Crate Metadata File or an archive (e.g. ZIP) that contain the RO-Crate Metadata File, using [content negotiation](profiles.md#how-to-retrieve-a-profile-crate) and/or [Signposting](https://signposting.org/adopters/#workflowhub).
 
 
 ## Minimal example of RO-Crate
