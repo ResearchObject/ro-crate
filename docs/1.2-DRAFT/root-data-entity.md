@@ -200,10 +200,16 @@ If the `@id` of the Root Data Entity is an absolute URI, an _Attached RO-Crate__
 
 RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) SHOULD indicate this using [identifier] on the root data entity using the approach set out in the [Science On Schema.org guides], that is through a `PropertyValue`. 
 
-It is RECOMMENDED that resolving the identifier programmatically return the _RO-Crate Metadata Document_ or an archive (e.g. ZIP) that contain the _RO-Crate Metadata File_, using [content negotiation](profiles.md#how-to-retrieve-a-profile-crate) and/or [Signposting]. With an RO-Crate identifier that is persistant and resolvable in this way from a URI, the root data entity SHOULD indicate this using the `cite-as` property according to [RFC8574]. Likewise, an HTTP/HTTPS server of the resolved RO-Crate Metadata Document or archive (possibly after redirection) SHOULD indicate that persistent identifier in its [Signposting] headers using `Link rel="cite-as"`.
-
 {: note}
-> Earlier RO-Crate 1.1 and earlier recommended `identifier` to be plain string URIs. Clients SHOULD be permissive of an RO-Crate `identifier` being a string (which MAY be a URI), or a `@id` reference, which SHOULD be represented as an `PropertyValue` entity which MUST have a human readable `value`, and SHOULD have a `url` if the identifier is Web-resolvable.
+> Earlier RO-Crate 1.1 and earlier recommended `identifier` to be plain string URIs. Clients SHOULD be permissive of an RO-Crate `identifier` being a string (which MAY be a URI), or a `@id` reference, which SHOULD be represented as an `PropertyValue` entity which MUST have a human readable `value`, and SHOULD have a `url` if the identifier is Web-resolvable. A citable representation of this persistent identifier MAY be given as a `description` of the `PropertyValue`, but as there are more than 10.000 known [citation styles], no attempt should be made to parse this string.
+
+#### Resolvable persistent identifiers
+
+It is RECOMMENDED that resolving the `identifier` programmatically return the _RO-Crate Metadata Document_ or an archive (e.g. ZIP) that contain the _RO-Crate Metadata File_, using [content negotiation](profiles.md#how-to-retrieve-a-profile-crate) and/or [Signposting]. With an RO-Crate identifier that is persistant and resolvable in this way from a URI, the root data entity SHOULD indicate this using the `cite-as` property according to [RFC8574]. Likewise, an HTTP/HTTPS server of the resolved RO-Crate Metadata Document or archive (possibly after redirection) SHOULD indicate that persistent identifier in its [Signposting] headers using `Link rel="cite-as"`. 
+
+{: tip}
+> The above `cite-as` MAY go to a repository landing page, and MAY require authentication, but MUST ultimately have the RO-Crate as a downloadable item, which SHOULD be programmatically accessible through content negotiation or [Signposting] (`Link rel="describedby"` for a _RO-Crate Metadata Document_, or `Link rel="item"` for an archive). To rather associate a textual scholarly citation for a crate (e.g. journal article), indicate instead a [publication via `citation` property](contextual-entities.md#publications-via-citation-property).
+
 
 ## Minimal example of RO-Crate
 
@@ -230,18 +236,19 @@ The following _RO-Crate Metadata Document_ represents a minimal description of a
     "license": {"@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/"}
  },
  {
-  "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
-  "@type": "CreativeWork",
-  "description": "This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/au/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.",
-  "identifier": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
-  "name": "Attribution-NonCommercial-ShareAlike 3.0 Australia (CC BY-NC-SA 3.0 AU)"
+    "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
+    "@type": "CreativeWork",
+    "description": "This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/au/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.",
+    "identifier": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
+    "name": "Attribution-NonCommercial-ShareAlike 3.0 Australia (CC BY-NC-SA 3.0 AU)"
  }
  {
-        "@id": "https://doi.org/10.4225/59/59672c09f4a4b",
-        "@type": "PropertyValue",
-        "propertyID": "https://registry.identifiers.org/registry/doi",
-        "value": "doi:10.4225/59/59672c09f4a4b",
-        "url": "https://doi.org/10.4225/59/59672c09f4a4b"
+    "@id": "https://doi.org/10.4225/59/59672c09f4a4b",
+    "@type": "PropertyValue",
+    "propertyID": "https://registry.identifiers.org/registry/doi",
+    "value": "doi:10.4225/59/59672c09f4a4b",
+    "description": "Agar, M. et al., 2017. Data supporting \"Effects of facilitated family case conferencing for advanced dementia: A cluster randomised clinical trial\". https://doi.org/10.4225/59/59672c09f4a4b",
+    "url": "https://doi.org/10.4225/59/59672c09f4a4b"
   }
  ]
 }
