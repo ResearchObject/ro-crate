@@ -232,11 +232,11 @@ The following _RO-Crate Metadata File_ represents a minimal description of an _R
   "name": "Attribution-NonCommercial-ShareAlike 3.0 Australia (CC BY-NC-SA 3.0 AU)"
  }
  {
-        "@id": "https://doi.org/10.4225/59/59672c09f4a4",
+        "@id": "https://doi.org/10.4225/59/59672c09f4a4b",
         "@type": "PropertyValue",
         "propertyID": "https://registry.identifiers.org/registry/doi",
-        "value": "doi:10.4225/59/59672c09f4a4",
-        "url": "https://doi.org/10.4225/59/59672c09f4a4"
+        "value": "doi:10.4225/59/59672c09f4a4b",
+        "url": "https://doi.org/10.4225/59/59672c09f4a4b"
       }
  ]
 }
