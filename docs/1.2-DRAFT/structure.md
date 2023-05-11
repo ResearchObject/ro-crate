@@ -192,7 +192,7 @@ Metadata about parts of the _RO-Crate Website_ MAY be included in an RO-Crate as
 
 
 
-## Payload files and directories for _Attached RO-Crate_s
+## Payload files and directories (_Attached RO-Crates_)
 
 These are the actual files and directories that make up the **payload** of the dataset being described in a _Attached RO-Crate_.
 
@@ -210,9 +210,9 @@ A RO-Crate may also contain [Web-based Data Entities](data-entities.html#web-bas
 
 RO-Crates SHOULD be self-describing and self-contained.
 
-A minimal RO-Crate is a directory containing a single _RO-Crate Metadata Document_ stored as an [RO-Crate Metadata File](root-data-entity.md) `ro-crate-metadata.json`. 
+A minimal Attached RO-Crate is a directory containing a single _RO-Crate Metadata Document_ stored as an [RO-Crate Metadata File](root-data-entity.md) `ro-crate-metadata.json`. 
 
-At the basic level, an RO-Crate is a collection of files and resources represented as a Schema.org [Dataset], that together form a meaningful unit for the purposes of communication, citation, distribution, preservation, etc.  The _RO-Crate Metadata Document_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. 
+At the basic level, an Attached RO-Crate is a collection of files and resources represented as a Schema.org [Dataset], that together form a meaningful unit for the purposes of communication, citation, distribution, preservation, etc.  The _RO-Crate Metadata Document_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. 
 
 While RO-Crate is well catered for describing a _Dataset_ as files and relevant metadata that are _contained_ by the RO-Crate in the sense of living within the same root directory, RO-Crates can also reference external resources which are stored or accessed separately, via absolute URIs. This is particularly recommended where some resources cannot be co-hosted for practical or legal reasons, or if the RO-Crate itself is primarily web-based.
 
