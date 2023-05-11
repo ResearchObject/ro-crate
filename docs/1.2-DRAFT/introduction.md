@@ -31,7 +31,7 @@ This page introduces the general RO-Crate concepts through a running example, wh
 
 ## Walkthrough: An initial RO-Crate
 
-In the simplest form, to describe some data on disk, an _RO-Crate Metadata Document_ named `ro-crate-metadata.json` is placed in a directory alongside a set of files or directoriesm (this file is known as the _RO-Crate Metadata File_).
+In the simplest form, to describe some data on disk, an _RO-Crate Metadata Document_ named `ro-crate-metadata.json` is placed in a directory alongside a set of files or directories (this file is known as the _RO-Crate Metadata File_).
 
 In the example below, a single file `data.csv` is placed with the RO-Crate Metadata Document in a directory named `crate1`:
 
@@ -136,7 +136,7 @@ This example is a directory-based RO-Crate stored on disk. If the crate is being
 
 ### About cross-references
 
-In _RO-Crate Metadata Document_s, entities are cross-referenced using `@id` reference objects, rather than using deeply nested JSON objects. In short, this _flattened JSON-LD_ style allows any entity to reference any other entity, and RO-Crate consumers to directly find all the descriptions of an entity within a single JSON object. So let's have a look at the Root Data Entity `./`:
+In _RO-Crate Metadata Documents_, entities are cross-referenced using `@id` reference objects, rather than using deeply nested JSON objects. In short, this _flattened JSON-LD_ style allows any entity to reference any other entity, and RO-Crate consumers to directly find all the descriptions of an entity within a single JSON object. So let's have a look at the Root Data Entity `./`:
 
 
 ```json
