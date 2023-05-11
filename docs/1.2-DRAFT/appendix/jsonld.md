@@ -188,7 +188,7 @@ Content-Type: application/ld+json; profile="http://www.w3.org/ns/json-ld#flatten
 
 Note that most web servers will however serve `*.json` as `Content-Type: application/json`. 
 
-Requesting the _RO-Crate metadata Document_ from a browser may also need permission through CORS header `Access-Control-Allow-Origin` (however extra care should be taken if the RO-Crates require access control).
+Requesting the _RO-Crate Metadata Document_ from a browser may also need permission through CORS header `Access-Control-Allow-Origin` (however extra care should be taken if the RO-Crates require access control).
 
 To change the configuration of **Apache HTTPD 2**, add the following to `.htaccess` or equivalent config file:
 
