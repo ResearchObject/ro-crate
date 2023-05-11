@@ -196,10 +196,12 @@ Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be 
 
 The root data entity's `@id` SHOULD be either `./` (indicating the directory of `ro-crate-metadata.json` is the [RO-Crate Root](structure.md)), or an absolute URI (indicating a [detached RO-Crate](structure.md#detached-ro-crate)). 
 
-If the `@id` of the Root Data Entity is an absolute URI, the Crate SHOULD NOT contain [data entities](data-entities.md) using relative URI references, but MAY contain [Web-based Data Entities](data-entities.html#web-based-data-entities) using absolute URIs.
+If the `@id` of the Root Data Entity is an absolute URI, an _Attached RO-Crate__ MAY contain both [data entities](data-entities.md) using relative URI references (relative to the _RO-Crate Root_, and [Web-based Data Entities](data-entities.html#web-based-data-entities) using absolute URIs but it is RECOMMENDED that data entities are referenced using absolute URIs.
 
-RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) SHOULD indicate this using [identifier] on the root data entity. It is RECOMMENDED that resolving the identifier programmatically return the _RO-Crate Metadata Document_ or an archive (e.g. ZIP) that contains the _RO-Crate Metadata Document_ as an _RO-Crate Metadata File_, using [content negotiation](profiles.md#how-to-retrieve-a-profile-crate) and/or [Signposting](https://signposting.org/adopters/#workflowhub).
+RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) SHOULD indicate this using [identifier] on the root data entity using the approach set out in the [Science On Schema.org guides], that is through a `PropertyValue`. It is RECOMMENDED that resolving the identifier programmatically return the _RO-Crate Metadata Document_ or an archive (e.g. ZIP) that contain the _RO-Crate Metadata File_, using [content negotiation](profiles.md#how-to-retrieve-a-profile-crate) and/or [Signposting].
 
+{: note}
+> Earlier RO-Crate 1.1 and earlier recommended `identifier` to be plain string URIs. Clients SHOULD be permissive of an RO-Crate `identifier` being a string (which MAY be a URI), or a `@id` reference, which SHOULD be represented as an `PropertyValue` entity which MUST have a human readable `value`, and SHOULD have a `url` if the identifier is Web-resolvable.
 
 ## Minimal example of RO-Crate
 
@@ -217,7 +219,7 @@ The following _RO-Crate Metadata Document_ represents a minimal description of a
  },  
  {
     "@id": "./",
-    "identifier": "https://doi.org/10.4225/59/59672c09f4a4b",
+    "identifier": {"@id": "https://doi.org/10.4225/59/59672c09f4a4b"},
     "@type": "Dataset",
     "datePublished": "2017",
     "name": "Data files associated with the manuscript:Effects of facilitated family case conferencing for ...",
@@ -231,6 +233,13 @@ The following _RO-Crate Metadata Document_ represents a minimal description of a
   "identifier": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
   "name": "Attribution-NonCommercial-ShareAlike 3.0 Australia (CC BY-NC-SA 3.0 AU)"
  }
+ {
+        "@id": "https://doi.org/10.4225/59/59672c09f4a4b",
+        "@type": "PropertyValue",
+        "propertyID": "https://registry.identifiers.org/registry/doi",
+        "value": "doi:10.4225/59/59672c09f4a4b",
+        "url": "https://doi.org/10.4225/59/59672c09f4a4b"
+      }
  ]
 }
 ```
