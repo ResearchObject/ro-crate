@@ -74,7 +74,7 @@ The payload directory (and its child directory) contains files and directories t
 
 ## Detached RO-Crate
 
-A _Detached RO-Crate_ is an RO-Crate without a defined root directory, where the _RO-Crate Metadata Document and/or _RO-Crate Website_ content is accessed independently (e.g. as part of a programmatic API).
+A _Detached RO-Crate_ is an RO-Crate without a defined root directory, where the _RO-Crate Metadata Document_ and/or _RO-Crate Website_ content is accessed independently (e.g. as part of a programmatic API).
 
 These crates cannot carry their own data _payload_, but may reference data deposited separately, or purely reference [contextual entities](contextual-entities.md). 
 
