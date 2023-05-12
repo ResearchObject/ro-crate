@@ -1,0 +1,28 @@
+name: Generate RO-Crate preview
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-22.04
+    concurrency: ci-${{github.ref}}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+        
+      - name: Build RO Crate Preview
+        uses: ResearchObject/ro-crate-preview-action@v1.3.0
+        with:
+          crate_path: docs/1.2-DRAFT
+      
+      - name: Commit RO Crate Preview
+        uses: swinton/commit@v2.0.0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
+        with:
+          files: |
+            docs/1.2-DRAFT/ro-crate-preview.html
+          commit-message: |
+            Updated RO-Crate preview
