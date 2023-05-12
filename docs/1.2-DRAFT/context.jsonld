@@ -2853,6 +2853,7 @@
           "hasFile": "http://pcdm.org/models#hasFile",
           "hasMember": "http://pcdm.org/models#hasMember",
           "RepositoryCollection": "http://pcdm.org/models#Collection",
+          "RepositoryFile": "http://pcdm.org/models#File",
           "RepositoryObject": "http://pcdm.org/models#Object",
           "ComputationalWorkflow": "https://bioschemas.org/ComputationalWorkflow",
           "input": "https://bioschemas.org/ComputationalWorkflow#input",

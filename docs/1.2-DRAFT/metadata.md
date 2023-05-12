@@ -110,10 +110,6 @@ RO-Crate use the [Profiles Vocabulary](https://www.w3.org/TR/2019/NOTE-dx-prof-2
 - `hasArtifact` mapped to <http://www.w3.org/ns/dx/prof/hasArtifact>  ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasArtifact))
 - `hasResource` mapped to <http://www.w3.org/ns/dx/prof/hasResource> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasResource))
 - `hasRole` mapped to <http://www.w3.org/ns/dx/prof/hasRole> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasRole))
-- `hasToken` mapped to <http://www.w3.org/ns/dx/prof/hasToken> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasToken))
-- `isInheritedFrom` mapped to <http://www.w3.org/ns/dx/prof/isInheritedFrom> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:isInheritedFrom))
-- `isProfileOf` mapped to <http://www.w3.org/ns/dx/prof/isProfileOf> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:isProfileOf))
-- `isTransitiveProfileOf` mapped to <http://www.w3.org/ns/dx/prof/isTransitiveProfileOf> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:isTransitiveProfileOf))
 
 From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
 
