@@ -110,10 +110,6 @@ RO-Crate use the [Profiles Vocabulary](https://www.w3.org/TR/2019/NOTE-dx-prof-2
 - `hasArtifact` mapped to <http://www.w3.org/ns/dx/prof/hasArtifact>
 - `hasResource` mapped to <http://www.w3.org/ns/dx/prof/hasResource>
 - `hasRole` mapped to <http://www.w3.org/ns/dx/prof/hasRole>
-- `hasToken` mapped to <http://www.w3.org/ns/dx/prof/hasToken>
-- `isInheritedFrom` mapped to <http://www.w3.org/ns/dx/prof/isInheritedFrom>
-- `isProfileOf` mapped to <http://www.w3.org/ns/dx/prof/isProfileOf>
-- `isTransitiveProfileOf` mapped to <http://www.w3.org/ns/dx/prof/isTransitiveProfileOf>
 
 From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
 
