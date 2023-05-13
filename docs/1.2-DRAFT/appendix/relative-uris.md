@@ -2,6 +2,7 @@
 title: Handling relative URI references
 parent: Appendix
 grand_parent: RO-Crate 1.2-DRAFT
+nav_order: 23
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
