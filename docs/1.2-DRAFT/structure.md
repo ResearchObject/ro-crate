@@ -188,7 +188,7 @@ Metadata about parts of the _RO-Crate Website_ MAY be included in an RO-Crate as
 ```
 
 {: .warning }
-> In a _Detached RO-Crate_ it is **undefined** how to find the _RO-Crate Website_ from the _RO-Crate Metadata Document_ or vice versa  It is RECOMMENDED to describe both as contextual entities.
+> In a _Detached RO-Crate_ it is **undefined** how to find the _RO-Crate Website_ from the _RO-Crate Metadata Document_ or vice versa; it is RECOMMENDED to describe both as contextual entities.
 
 
 
