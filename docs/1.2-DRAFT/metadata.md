@@ -72,11 +72,11 @@ For all entities listed in an _RO-Crate Metadata Document_ the following princip
 
 1. The entity MUST have a `@id` (see [Describing entities in JSON-LD](appendix/jsonld.md#describing-entities-in-json-ld))
 2. The entity MUST have a `@type`, which MAY be an array. 
-3. The `@type` SHOULD include at least one [Schema.org] type, chosen to most accurately describe the entity (ultimate fallback: [Thing]), except where defined in this specification
-4. The entity SHOULD have a human-readable `name`, in particular if its `@id` do not go to a human-readable Web page
-5. The properties used on the entity SHOULD be applicable to the `@type` (or superclass) according to their definitions. For instance, the property [publisher] can be used on a [Dataset] as it applies to its superclass [CreativeWork].
-6. Property references to other entities (e.g. `author` property to a `Person` entity) SHOULD use the `{ "@id": "..."}` object form (see [JSON-LD appendix](appendix/jsonld.md))
-7. The entity SHOULD be ultimately referencable from the root data set (possibly through another reachable data- or [contextual entity](contextual-entities.md))
+3. The `@type` SHOULD include at least one [Schema.org] type that accurately describe the entity. [Thing] or [CreativeWork] are valid fallbacks if no alternative external or ad-hoc term is found (see [Extending RO-Crate](appendix/jsonld.md#extending-ro-crate)).
+5. The entity SHOULD have a human-readable `name`, in particular if its `@id` do not go to a human-readable Web page
+6. The properties used on the entity SHOULD be applicable to the `@type` (or superclass) according to their definitions. For instance, the property [publisher] can be used on a [Dataset] as it applies to its superclass [CreativeWork].
+7. Property references to other entities (e.g. `author` property to a `Person` entity) SHOULD use the `{ "@id": "..."}` object form (see [JSON-LD appendix](appendix/jsonld.md))
+8. The entity SHOULD be ultimately referencable from the root data set (possibly through another reachable data- or [contextual entity](contextual-entities.md))
 
 
 ## Base metadata standard: Schema.org
