@@ -66,6 +66,19 @@ RO-Crate realizes these principles using a particular set of technologies and be
 4. The _RO-Crate Website_ is [HTML 5], and the _RO-Crate Metadata Document_ is [JSON-LD], one of the [W3C RDF 1.1 formats].
 5. The _RO-Crate Metadata Document_ reuse common vocabularies like [Schema.org], and this specification [recommend identifiers](#recommended-identifiers) it should link to.
 
+## Common principles for RO-Crate entities
+
+For all entities listed in an _RO-Crate Metadata Document_ the following principles apply:
+
+1. The entity MUST have a `@id` (see [Describing entities in JSON-LD](appendix/jsonld.md#describing-entities-in-json-ld))
+2. The entity MUST have a `@type`, which MAY be an array. 
+3. The `@type` SHOULD include at least one [Schema.org] type, chosen to most accurately describe the entity (ultimate fallback: [Thing]), except where defined in this specification
+4. The entity SHOULD have a human-readable `name`, in particular if its `@id` do not go to a human-readable Web page
+5. The properties used on the entity SHOULD be applicable to the `@type` (or superclass) according to their definitions. For instance, the property [publisher] can be used on a [Dataset] as it applies to its superclass [CreativeWork].
+6. Property references to other entities (e.g. `author` property to a `Person` entity) SHOULD use the `{ "@id": "..."}` object form (see [JSON-LD appendix](appendix/jsonld.md))
+7. The entity SHOULD be ultimately referencable from the root data set (possibly through another reachable data- or [contextual entity](contextual-entities.md))
+
+
 ## Base metadata standard: Schema.org
 
 [Schema.org] is the base metadata standard for RO-Crate. Schema.org was chosen because it is widely used on the World Wide Web and supported by search engines, on the assumption that discovery is likely to be maximized if search engines index the content. 
@@ -73,7 +86,11 @@ RO-Crate realizes these principles using a particular set of technologies and be
 {: .note }
 > As far as we know there is no alternative, well-maintained linked-data schema for research data with the coverage needed for this project - i.e. a single standard for expressing all the examples presented in this specification.
 
-RO-Crate relies heavily on [Schema.org], using a constrained subset of [JSON-LD], and this document gives opinionated recommendations on how to represent the metadata using existing [linked data] best practices.
+RO-Crate relies heavily on [Schema.org], using a constrained subset of [JSON-LD], and this specification gives opinionated recommendations on how to represent the metadata using existing [linked data] best practices.
+
+{: .tip }
+> The main principle of RO-Crate is to use a [Schema.org] whenever possible, even if its official definition may seem broad or related to every day objects. For instance, [IndividualProduct] can describe scientific equipment and instruments (see [Provenance of entities](provenance.md)). RO-Crate implementers are free to use additional properties and types beyond this specification (see also appendix [Extending RO-Crate(appendix/jsonld.md#extending-ro-crate)]).
+
 
 ### Differences from Schema.org
 
