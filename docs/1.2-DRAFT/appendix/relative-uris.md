@@ -153,7 +153,7 @@ To additionally save Web-based Data entities to become part of the Detached Crat
   + Decide based on `@id` URI elements, `contentSize` `encodingFormat` and (possibly implied) `licence` if this file is acceptable to archive
   + Retrieve the file and check the `contentSize` matches, if specified
   + Store the file with a file path generated in a way consistent with the `Dataset`s, ideally added to the folder of the first `Dataset` that directly has this data entity as its `hasPart`
-  + Add the previous `@id` downloaded from as `url` according to [Embedded data entnties that are also on the Web](../data-entities.md#embedded-data-entities-that-are-also-on-the-web)
+  + Add the previous `@id` downloaded from as `contentUrl` according to [Embedded data entnties that are also on the Web](../data-entities.md#embedded-data-entities-that-are-also-on-the-web)
   + Replace the `@id` of the `File` with the _relative URI_ based on the path from the RO-Crate Root, [encoding file paths](../data-entities.md#encoding-file-paths) as necessary.
   
 As this procedure can be error-prone (e.g. a Web-based entity may not be accessible or may require authentication), the implementation should consider the new Attached Crate as a _fork_ and update `identifier` and `isDefinedBy` as specified above.
