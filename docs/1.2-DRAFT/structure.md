@@ -91,7 +91,7 @@ A _Detached RO-Crate_ can be identified by the [root data entity](root-data-enti
 Note that a detached RO-Crate may still use `#`-based local identifiers for [contextual entities](contextual-entities.md).
 
 
-## RO-Crate Metadata Document(`ro-crate-metadata.json`) 
+## RO-Crate Metadata Document (`ro-crate-metadata.json`)
 
 * In an _Attached RO-Crate_ the _RO-Crate Metadata Document_ MUST be present, named `ro-crate-metadata.json` and appear in the _RO-Crate Root_
   - If an RO-Crate conforming to version 1.0 or earlier contains a file named `ro-crate-metadata.jsonld` but not `ro-crate-metadata.json`, then processing software should treat this as the _RO-Crate Metadata File_. If the crate is updated, the file SHOULD be renamed to `ro-crate-metadata.json` and the _RO-Crate Metadata Descriptor_ SHOULD be updated to reference it, with an up to date [conformsTo] property naming an appropriate version of this specification. 
