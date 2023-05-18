@@ -26,6 +26,7 @@ excerpt: List of changes in releases of this specifications
 # APPENDIX: Changelog
 
 * RO-Crate 1.2-DRAFT
+  * [Clarify entity terminology](../contextual-entities.md#contextual-vs-data-entities)  [#204](https://github.com/ResearchObject/ro-crate/issues/204)
   * JSON-LD context updated to [schema.org 15.0](https://github.com/schemaorg/schemaorg/tree/main/data/releases/15.0/). Note that upstream adds ~230 terms and removed terms `AuthenticContent` `MissingContext`.
   * Remove custom mapping of `funding` for Bioschemas (now officially in schema.org)
   * `TODO`
