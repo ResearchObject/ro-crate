@@ -44,7 +44,6 @@ RO-Crate can describe a profile by adding it as an [contextual entity](contextua
 {
     "@id": "https://w3id.org/ro/wfrun/process/0.1",
     "@type": ["CreativeWork", "Profile"],
-    "@id": "https://w3id.org/ro/wfrun/process/0.1",
     "name": "Process Run crate profile",
     "version": "0.1.0"
 }
