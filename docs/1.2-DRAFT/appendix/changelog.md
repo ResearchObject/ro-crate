@@ -36,33 +36,28 @@ excerpt: List of changes in releases of this specifications
 * [Allow more types on root](../root-data-entity.html#ro-crate-metadata-file-descriptor)  [#182](https://github.com/ResearchObject/ro-crate/issues/182) [#223](https://github.com/ResearchObject/ro-crate/issues/223)
 * [Added new name-based algorithm for root](../root-data-entity.html#finding-the-root-data-entity)  [#198](https://github.com/ResearchObject/ro-crate/issues/198)
 * [Added subsection on root data entity identifier](../root-data-entity.html#root-data-entity-identifier)   [#183](https://github.com/ResearchObject/ro-crate/issues/183)
-  (new subsection) @ljgarcia   
-  
+* [Introduces distinction of Attached/Detached RO-Crate](../structure) [#248](https://github.com/ResearchObject/ro-crate/issues/248) [#189](https://github.com/ResearchObject/ro-crate/issues/189) [#183](https://github.com/ResearchObject/ro-crate/issues/183)
+* [Rephrased description of payload files](../structure#payload-files-and-directories)   [#183](https://github.com/ResearchObject/ro-crate/issues/183)  [#189](https://github.com/ResearchObject/ro-crate/issues/189)
+* [Describes ro-crate-preview.html file](../structure#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files)  [#106](https://github.com/ResearchObject/ro-crate/issues/106) [#210](https://github.com/ResearchObject/ro-crate/issues/210)
+* [Included Attached/Detached RO-Crate to terminology](../terminology)  [#248](https://github.com/ResearchObject/ro-crate/issues/248)
+* [Updated for ComputationalWorkflow 1.0 profile](../workflows#complying-with-bioschemas-computational-workflow-profile)   [#185](https://github.com/ResearchObject/ro-crate/issues/185)
+* [Added usage of DefinedTerm; rdfs:label and comment optional; replaced example](..T/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms)  [#232](https://github.com/ResearchObject/ro-crate/issues/232) [#208](https://github.com/ResearchObject/ro-crate/issues/208) [#106](https://github.com/ResearchObject/ro-crate/issues/106)
+* [Added subsection for grouping extensions in a profile](../appendix/jsonld.html#grouping-extensions-as-an-ro-crate-profile)   [#233](https://github.com/ResearchObject/ro-crate/issues/233) [#233](https://github.com/ResearchObject/ro-crate/issues/252)
+* [Added section on converting Attached/Detached RO-Crates](../appendix/relative-uris.html#converting-from-attached-to-detached-ro-crate)  [#189](https://github.com/ResearchObject/ro-crate/issues/189)
+* [Updated algorithm to always use string filter to find root](../appendix/relative-uris.html#finding-ro-crate-root-in-rdf-triple-stores)  [#189](https://github.com/ResearchObject/ro-crate/issues/189)
+ (see [algorithm](../root-data-entity.html#finding-the-root-data-entity))
+ 
+
   * [TITLE](../metadata.html#additional-metadata-standards)  [#](https://github.com/ResearchObject/ro-crate/issues/)
   
   
 
 
-* [x] [1.2-DRAFT/structure](https://www.researchobject.org/ro-crate/1.2-DRAFT/structure)   #189 #183 
-  (adds distinction Attached/Detached RO-Crate) @ptsefton  --> #248
-* [ ] [1.2-DRAFT/structure#payload-files-and-directories](https://www.researchobject.org/ro-crate/1.2-DRAFT/structure#payload-files-and-directories)  
-  (rephrased on payload files)
-* [x] [1.2-DRAFT/structure#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files](https://www.researchobject.org/ro-crate/1.2-DRAFT/structure#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files) #106 #210  
-  (allows `ro-crate-preview.html` as entity) 
-* [x] [1.2-DRAFT/terminology](https://www.researchobject.org/ro-crate/1.2-DRAFT/terminology)  
-  (adds Attached/Detached) @ptsefton  --> #248
-* [x] [1.2-DRAFT/workflows#complying-with-bioschemas-computational-workflow-profile](https://www.researchobject.org/ro-crate/1.2-DRAFT/workflows#complying-with-bioschemas-computational-workflow-profile)   
-  (updated for ComputationalWorkflow 1.0 profile, uses DefinedTerm) @marc-portier 
-* [x] [1.2-DRAFT/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms](https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms)   #232 #208 #106
-  (uses DefinedTerm with name/description; rdfs:label and rdfs:comment now optional) @abigail-miller  --> #252
-* [x] [1.2-DRAFT/appendix/jsonld.html#grouping-extensions-as-an-ro-crate-profile](https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/jsonld.html#grouping-extensions-as-an-ro-crate-profile)   #233 
-  (new subsection) @abigail-miller --> #252
-* [x] [1.2-DRAFT/appendix/relative-uris.html#converting-from-attached-to-detached-ro-crate](https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/relative-uris.html#converting-from-attached-to-detached-ro-crate)  
-   (new subsections for Attached/Detached conversion) 
-  * [ ] Remove missing section _Converting from Detached to Attached RO-Crate_
-* [x] [1.2-DRAFT/appendix/relative-uris.html#finding-ro-crate-root-in-rdf-triple-stores](https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/relative-uris.html#finding-ro-crate-root-in-rdf-triple-stores)
-    - Now always uses string filter in SPARQL to find root (see [algorithm](https://www.researchobject.org/ro-crate/1.2-DRAFT/root-data-entity.html#finding-the-root-data-entity))
-* [x](https://www.researchobject.org/ro-crate/1.2-DRAFT/root-data-entity#resolvable-persistent-identifiers) Specify cite-as and Signposting for root data entity #255 @ptsefton 
+
+
+
+
+
 * [ ] List required properties for entities #260 @simleo 
 * [x] contentUrl for direct download, add section on Converting to Attached RO-Crate #259 @ptsefton 
 
