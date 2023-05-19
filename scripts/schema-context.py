@@ -152,9 +152,7 @@ ADDITIONAL = OrderedDict([
           ("hasResource", "http://www.w3.org/ns/dx/prof/hasResource"),
           ("hasRole", "http://www.w3.org/ns/dx/prof/hasRole"),
           ("hasToken", "http://www.w3.org/ns/dx/prof/hasToken"),
-          ("isInheritedFrom", "http://www.w3.org/ns/dx/prof/isInheritedFrom"),
           ("isProfileOf", "http://www.w3.org/ns/dx/prof/isProfileOf"),
-          ("isTransitiveProfileOf", "http://www.w3.org/ns/dx/prof/isTransitiveProfileOf"),
           ("ResourceDescriptor", "http://www.w3.org/ns/dx/prof/ResourceDescriptor"),
           ("ResourceRole", "http://www.w3.org/ns/dx/prof/ResourceRole"),
           ("Profile", "http://www.w3.org/ns/dx/prof/Profile"),
@@ -171,7 +169,7 @@ ADDITIONAL = OrderedDict([
           ("dct", "http://purl.org/dc/terms/"),
           ("foaf", "http://xmlns.com/foaf/0.1/"),
           ("prof", "http://www.w3.org/ns/dx/prof/"),
-          ("role", "http://www.w3.org/ns/dx/prof/role/"),
+          ("profrole", "http://www.w3.org/ns/dx/prof/role/"),
           ("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#"),
           ("rdfa", "http://www.w3.org/ns/rdfa#"),
           ("rdfs", "http://www.w3.org/2000/01/rdf-schema#"),
@@ -183,7 +181,9 @@ ADDITIONAL = OrderedDict([
           ("wfdesc", "http://purl.org/ro/wfdesc#"),
           ("wfprov", "http://purl.org/ro/wfprov#"),
           ("roterms", "http://purl.org/ro/roterms#"),
+          ("relation", "http://www.iana.org/assignments/relation/"),
           ("wf4ever", "http://purl.org/ro/wf4ever#"),
+          ("vann", "http://purl.org/vocab/vann/"),
           # Disabled, see https://github.com/ResearchObject/ro-crate/pull/73
 #          ("@base", None) 
 ])
