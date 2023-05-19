@@ -1,0 +1,55 @@
+name: Generate RO-Crate preview
+
+on:
+  workflow_call:
+  push:
+    branches: ["main", "master"]
+    paths:
+      - '**/ro-crate-metadata.json'
+
+concurrency:
+  group: "commits"
+  cancel-in-progress: false    
+    
+permissions:
+  contents: write
+  pages: write
+  id-token: write      
+
+jobs:
+  generate:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: RO Crate Preview for RO-Crate 1.2
+        uses: ResearchObject/ro-crate-preview-action@v1.3.0
+        with:
+          crate_path: docs/1.2-DRAFT
+        
+      - name: RO Crate Preview for Rainfall example
+        uses: ResearchObject/ro-crate-preview-action@v1.3.0
+        with:
+          crate_path: docs/1.2-DRAFT/examples/rainfall-1.2.0
+          
+      - name: Commit RO Crate Previews
+        uses: swinton/commit@v2.0.0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
+        with:
+          files: |
+            docs/1.2-DRAFT/ro-crate-preview.html
+            docs/1.2-DRAFT/examples/rainfall-1.2.0/ro-crate-preview.html
+          commit-message: |
+            Updated RO-Crate preview
+      - name: Get new git commit
+        id: sha
+        run: |
+              sha_new=$(git rev-parse HEAD)
+              echo $sha_new
+              echo "::set-output name=SHA::$sha_new"
+      - name: New commit
+        run:
+          echo ${{ steps.sha.outputs.SHA }}
+            
