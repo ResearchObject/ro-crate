@@ -27,8 +27,8 @@ excerpt: List of changes in releases of this specifications
 
 * RO-Crate 1.2-DRAFT
  ** [Clarify entity terminology](../contextual-entities.md#contextual-vs-data-entities)  [#204](https://github.com/ResearchObject/ro-crate/issues/204)
-  ** **needs issue** [Update JSON-LD context] (*link*) to [schema.org 15.0]](https://github.com/schemaorg/schemaorg/tree/main/data/releases/15.0/). Note that upstream adds ~230 terms and removed terms `AuthenticContent` `MissingContext`.
-  ** Remove custom mapping of `funding` for Bioschemas (now officially in schema.org)
+ ** [Update JSON-LD context](../ro-crate-metadata.json) to [schema.org 15.0]](https://github.com/schemaorg/schemaorg/tree/main/data/releases/15.0/). Note that upstream adds ~230 terms and removed terms `AuthenticContent` `MissingContext`. [#263](https://github.com/ResearchObject/ro-crate/issues/263)
+ ** Remove custom mapping of `funding` for Bioschemas (now officially in schema.org)
  ** [Specify format application/zip](../data-entities.html#directories-on-the-web-dataset-distributions)  [#205](https://github.com/ResearchObject/ro-crate/issues/235)  
  ** [Updated introduction (running example)](../introduction.html)  [#227](https://github.com/ResearchObject/ro-crate/issues/227) [#215](https://github.com/ResearchObject/ro-crate/issues/215) [#219](https://github.com/ResearchObject/ro-crate/issues/219)
  ** [Define terms for Profiles](../metadata.html#additional-metadata-standards)  [#248](https://github.com/ResearchObject/ro-crate/issues/248)
@@ -46,14 +46,8 @@ excerpt: List of changes in releases of this specifications
  ** [Added section on converting Attached/Detached RO-Crates](../appendix/relative-uris.html#converting-from-attached-to-detached-ro-crate)  [#189](https://github.com/ResearchObject/ro-crate/issues/189)
  ** [Updated algorithm to always use string filter to find root](../appendix/relative-uris.html#finding-ro-crate-root-in-rdf-triple-stores)  [#189](https://github.com/ResearchObject/ro-crate/issues/189)
  (see [algorithm](../root-data-entity.html#finding-the-root-data-entity))
- 
-
-  * [TITLE](../)  [#](https://github.com/ResearchObject/ro-crate/issues/) -- **template to delete** --
-  
- 
-* ** can't find on where to link to [ ] List required properties for entities (https://github.com/ResearchObject/ro-crate/issues/260) 
-* ** can't find on where to link to [Added link for direct download](https://github.com/ResearchObject/ro-crate/issues/259)  
-
+* ** Added [Common principles for RO-Crate entities](../metadata.html#common-principles-for-ro-crate-entities) [#225](https://github.com/ResearchObject/ro-crate/issues/225) [#260](https://github.com/ResearchObject/ro-crate/issues/260) 
+* ** [Files on the web](../data-entities.html#embedded-data-entities-that-are-also-on-the-web) should now use `contentUrl` for direct download [#259](https://github.com/ResearchObject/ro-crate/issues/259)  
 * [RO-Crate 1.1.2](https://github.com/ResearchObject/ro-crate/releases/tag/1.1.2) 
   * Typo fixes in [data entity section](../data-entities.md) [#177](https://github.com/ResearchObject/ro-crate/issues/177), [workflow section](../workflows.md) [#180](https://github.com/ResearchObject/ro-crate/issues/180), [metadata section](../metadata.md) [#181](https://github.com/ResearchObject/ro-crate/issues/181) 
   * Correct namespace for `rdfs:comment` on [ad-hoc terms](jsonld.md#add-local-definitions-of-ad-hoc-terms) [#164](https://github.com/ResearchObject/ro-crate/issues/164)
