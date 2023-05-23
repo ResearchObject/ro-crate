@@ -89,6 +89,7 @@ It is valid for a crate to conform to multiple profiles, in which case `conforms
 Note that as profile conformance is declared on the RO-Crate Root (`./` in this example), the profile applies to the whole RO-Crate, and may cover aspects beyond the crate's metadata file (e.g. identifiers, packaging, purpose).
 
 
+
 ## Profile Crate
 
 While the Profile URI `@id` must resolve to a human-readable _profile description_, it can additionally be made to [resolve](#how-to-retrieve-a-profile-crate) to a _Profile Crate_.
@@ -119,7 +120,7 @@ The rest of the earlier requirements for a Profile entity also apply here, addin
 * SHOULD have a descriptive [name]
 * MAY declare [version], preferably according to [Semantic Versioning][semver] (e.g. `0.4.0`)
 * SHOULD reference the minimally expected RO-Crate specification as `isProfileOf`, which MAY be declared as contextual entity
-* MAY list additional profiles to inherit from as `isProfileOf`, including other profile crates, which MUST be declared as contextual entities (typed `Profile` or `Standard`)  
+* MAY list additional profiles to inherit from as `isProfileOf`, including other profile crates, which MUST be declared as contextual entities (typed `Profile` or `Standard`)  (see [below](#profile-inheritance))
 * SHOULD list related data entities using `hasPart` (see [below](#what-is-included-in-the-profile-crate))
 * MAY list profile descriptors using `hasResource` (see [below](#declaring-the-role-within-the-crate))
 
@@ -269,8 +270,7 @@ A Profile Crate MUST declare a human-readable _profile description_, which is [a
     "@id": "#hasSpecification",
     "@type": "ResourceDescriptor",
     "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/specification" },
-    "hasArtifact": {"@id": "index.html"},
-    "about": "./"
+    "hasArtifact": {"@id": "index.html"}
 }
 ```
 
@@ -505,5 +505,52 @@ The `@context` MAY be the Profile Crate's Metadata JSON-LD file if
 it is [resolvable](appendix/jsonld.md#ro-crate-json-ld-media-type)
 as media type `application/ld+json` over HTTP. Make sure the crate includes the 
 defined terms both within its `@context` and ideally as entities in its `@graph`.
+
+
+#### Profile inheritance
+
+RO-Crate profiles sometimes build on each other. Note that unlike in traditional object-oriented programming with strict class hierarchies, profiles are a looser construct of conventions rather than rules. Therefore there are roughly these ways to inherit or import one profile from another:
+
+1. Crates conforming to profile B MUST also conform to the profile A ("inheritance")
+2. Some crates that conform to Profile C SHOULD also conform to profile A  ("interoperability")
+3. A particular crate conforms to both profile D and A, but the profiles are not related ("mix-in")
+
+In all these cases, a crate SHOULD explicitly declare the `conformsTo` of each of the profiles it conforms to independent of any hierarchy. One reason for this is to avoid versioning issues in diamond inheritance situations. A second is to avoid forced resolution of extension profiles for a client that only knows the parent profile.
+
+For mix-in case #3, as any additional profiles are added to the `conformsTo` of the particular crate, it is up to the crate creator to ensure it is conforming to both profiles. The interoperability case #2 to declare an intended compatiblity with a second profiles, this can be appropriate where only a subset of conforming crates would inherit profile A. For instance, a crate conforming to a _Workflow Request_ profile may evolve to also conform to a _Workflow Run Provenance_ profile once the workflow has executed. 
+
+A Profile Crate can list an interoperable profile under `hasPart`, and recommend it by using the role `http://purl.org/dc/terms/conformsTo` in a resource descriptor:
+
+```json
+{
+    "@id": "https://w3id.org/ro/wfrun/process/0.1",
+    "@type": ["CreativeWork", "Profile"],
+    "name": "Process Run crate profile",
+    "version": "0.1.0"
+},
+{ 
+    "@id": "#shouldConformTo",
+    "@type": "ResourceDescriptor",
+    "hasRole": { "@id": "http://purl.org/dc/terms/conformsTo" },
+    "hasArtifact": {"@id": "https://w3id.org/ro/wfrun/process/0.1"}
+}
+```
+
+In the inheritance case #1, profile B requires that conforming crates also conform to profile A. In this case, the referenced Profile Crate is declared as above, and additionally listed in the `isProfileOf` of the root entity:
+
+```json
+{
+    "@id": "http://example.com/profile",
+    "@type": ["Dataset", "Profile"],
+    "isProfileOf": [
+        {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
+        {"@id": "https://w3id.org/ro/wfrun/process/0.1"}
+    ],
+    "hasPart": [ ],
+    "hasResource": [ ],
+    "…": ""
+}
+
+```
 
 {% include references.liquid %}
