@@ -104,17 +104,28 @@ The [Root Data entity](root-data-entity) of a Profile Crate MUST declare `Profil
     "@id": "https://w3id.org/ro/wfrun/process/0.1",
     "name": "Process Run crate profile",
     "version": "0.1.0",
+    "isProfileOf": [
+        {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
+    ],
     "hasPart": [ ],
+    "hasResource": [ ],
     "…": ""
 }
 ```
 
-The rest of the requirements for being referenced as a contextual entity also apply here:
+The rest of the earlier requirements for a Profile entity also apply here, adding:
 
 * SHOULD have an absolute URI as `@id`
 * SHOULD have a descriptive [name]
 * MAY declare [version], preferably according to [Semantic Versioning][semver] (e.g. `0.4.0`)
+* SHOULD reference the minimally expected RO-Crate specification as `isProfileOf`, which MAY be declared as contextual entity
+* MAY list additional profiles to inherit from as `isProfileOf`, including other profile crates, which MUST be declared as contextual entities (typed `Profile` or `Standard`)  
 * SHOULD list related data entities using `hasPart` (see [below](#what-is-included-in-the-profile-crate))
+* MAY list profile descriptors using `hasResource` (see [below](#declaring-the-role-within-the-crate))
+
+{: .tip}
+> The base RO-Crate specification referenced by `isProfileOf` is a Profile Crate itself, see [ro-crate-preview.html](ro-crate-metadata.json) or [ro-crate-preview.html](ro-crate-preview.html). 
+
 
 ### How to retrieve a Profile Crate
 
@@ -133,6 +144,15 @@ try retrieving `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-meta
 3. If none of these approaches worked, then this profile probably does not have a corresponding Profile Crate. For humans, display a hyperlink to its `@id` described by its `name`.
 
 <!-- TODO Make both examples above actually work! -->
+
+#### Inheriting contextual entities from a Profile Crate
+
+If an RO-Crate declares conformance to a given profile crate with `conformsTo` on its root data entity, contextual entities declared in the corresponding Profile Crate do _not_ need to be repeated in the conforming crate. 
+
+For instance, if a Profile Crate adds a `DefinedTerm` entity according to the [ad-hoc definitions](appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms), the term can be referenced in the conforming crate without making a contextual entity there. For archival purposes it may however still be preferrable to copy such entities across to each conforming crate.
+
+It is recommended that `@id` of such inheritable entities are absolute URIs on both sides to avoid resolving relative paths, or that the profile recommends a [JSON-LD Context](#json-ld-context) to ensure consistent identifiers.
+
 
 ### What is included in the Profile Crate? 
 
@@ -176,8 +196,7 @@ The [`ResourceDescriptor`](https://www.w3.org/TR/dx-prof/#Class:ResourceDescript
 }
 ```
 
-The referenced role SHOULD be declared as a `DefinedTerm` contextual entity. 
-The recommended [predefined roles](https://www.w3.org/TR/dx-prof/#resource-roles-vocab) from the Profiles Vocabulary are:
+The referenced role do not need to be declared as a `DefinedTerm` contextual entity unless it differs from the recommended [predefined roles](https://www.w3.org/TR/dx-prof/#resource-roles-vocab):
 
 ```json
 {
@@ -477,6 +496,7 @@ The JSON-LD Context entity:
 - Updates MAY add new terms or patch fixes (with corresponding `version` change)
 * Updates SHOULD NOT remove terms already published and potentially used by consumers of the profile
 * Updates SHOULD NOT replace URIs terms map to -- except for typos.
+* Including the `DefinedTerm` for JSON-LD is optional.
 
 Note that the referenced context URI does _not_ have to match the `@context` of the Profile Crate itself.
 
