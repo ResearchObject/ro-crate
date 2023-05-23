@@ -36,7 +36,7 @@ In the simplest form, to describe some data on disk, an _RO-Crate Metadata Docum
 In the example below, a single file `data.csv` is placed with the RO-Crate Metadata Document in a directory named `crate1`:
 
 <figure>
-  <img src="../assets/img/crate1-folders.png" alt="Folder listing of crate1, including data.csv and ro-crate-metadata.json" style="max-height: 5em;" />
+  <img src="../assets/img/crate1-folders.svg" alt="Folder listing of crate1, including data.csv and ro-crate-metadata.json" style="max-height: 5em;" />
   <figcaption>Figure 1: Any folder can be made into an RO-Crate by adding <code>ro-crate-metadata.json</code></figcaption>
 </figure>
 
