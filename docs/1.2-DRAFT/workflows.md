@@ -4,7 +4,7 @@ excerpt: |
   Scientific workflows and Scripts that were used (or can be used) to 
   analyze or generate files contained in an RO-Crate can be embedded
   in an RO-Crate and described in detail.
-nav_order: 10
+nav_order: 11
 parent: RO-Crate 1.2-DRAFT
 ---
 <!--
