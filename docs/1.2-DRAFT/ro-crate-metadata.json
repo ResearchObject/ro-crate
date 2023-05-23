@@ -2,67 +2,20 @@
   "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
   "@graph": [
     {
-      "@id": "#example-rainfall",
-      "@type": "ResourceDescriptor",
-      "hasArtifact": {
-        "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/examples/rainfall-1.2.0/"
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
       },
-      "hasRole": {
-        "@id": "role:example"
+      "about": {
+        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
+      },
+      "license": {
+        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
       }
     },
     {
-      "@id": "#specification",
-      "@type": "ResourceDescriptor",
-      "hasArtifact": {
-        "@id": "http://schema.org/"
-      },
-      "hasRole": {
-        "@id": "role:specification"
-      }
-    },
-    {
-      "@id": "#vocabulary-pcdm",
-      "@type": "ResourceDescriptor",
-      "hasArtifact": {
-        "@id": "http://pcdm.org/models"
-      },
-      "hasRole": {
-        "@id": "role:vocabulary"
-      }
-    },
-    {
-      "@id": "#vocabulary-prof",
-      "@type": "ResourceDescriptor",
-      "hasArtifact": {
-        "@id": "http://www.w3.org/ns/dx/prof"
-      },
-      "hasRole": {
-        "@id": "role:vocabulary"
-      }
-    },
-    {
-      "@id": "#vocabulary-prof-roles",
-      "@type": "ResourceDescriptor",
-      "hasArtifact": {
-        "@id": "http://pcdm.org/models"
-      },
-      "hasRole": {
-        "@id": "role:vocabulary"
-      }
-    },
-    {
-      "@id": "#vocabulary-schema",
-      "@type": "ResourceDescriptor",
-      "hasArtifact": {
-        "@id": "http://schema.org/"
-      },
-      "hasRole": {
-        "@id": "role:vocabulary"
-      }
-    },
-    {
-      "@id": "./",
+      "@id": "https://w3id.org/ro/crate/1.2-DRAFT",
       "@type": [
         "Dataset",
         "Profile"
@@ -276,75 +229,15 @@
           "@id": "https://orcid.org/0000-0003-3234-6762"
         }
       ],
-      "citation": [
-        {
-          "@id": "https://doi.org/10.3233/DS-210053"
-        },
-        {
-          "@id": "https://doi.org/10.5281/zenodo.3250687"
-        }
-      ],
+      "cite-as": "https://doi.org/DOI",
+      "citation": {
+        "@id": "https://doi.org/10.3233/DS-210053"
+      },
       "datePublished": "UNPUBLISHED",
-      "description": "This specification defines a method, known as RO-Crate (Research Object Crate), of organizing file-based data with associated metadata, using linked data principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata. \n\nThe core of RO-Crate is a JSON-LD file, the RO-Crate Metadata File, named ro-crate-metadata.json. This file contains structured metadata about the dataset as a whole (the Root Data Entity) and, optionally, about some or all of its files. This provides a simple way to, for example, assert the authors (e.g. people, organizations) of the RO-Crate or one its files, or to capture more complex provenance for files, such as how they were created using software and equipment. \n\nWhile providing the formal specification for RO-Crate, this document also aims to be a practical guide for software authors to create tools for generating and consuming research data packages, with explanation by examples.",
-      "encoding": [
-        {
-          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html"
-        },
-        {
-          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf"
-        }
-      ],
+      "description": "Profile Crate for RO-Crate specification. This specification defines a method, known as RO-Crate (Research Object Crate), of organizing file-based data with associated metadata, using linked data principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata. \n\nThe core of RO-Crate is a JSON-LD file, the RO-Crate Metadata File, named ro-crate-metadata.json. This file contains structured metadata about the dataset as a whole (the Root Data Entity) and, optionally, about some or all of its files. This provides a simple way to, for example, assert the authors (e.g. people, organizations) of the RO-Crate or one its files, or to capture more complex provenance for files, such as how they were created using software and equipment. \n\nWhile providing the formal specification for RO-Crate, this document also aims to be a practical guide for software authors to create tools for generating and consuming research data packages, with explanation by examples.",
       "hasPart": [
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/index.html"
-        },
-        {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/introduction.html"
-        },
-        {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/terminology.html"
-        },
-        {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/structure.html"
-        },
-        {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/metadata.html"
-        },
-        {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/root-data-entity.html"
-        },
-        {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/data-entities.html"
-        },
-        {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/crate-focus.html"
-        },
-        {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/contextual-entities.html"
-        },
-        {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/provenance.html"
-        },
-        {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles.html"
-        },
-        {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/workflows.html"
-        },
-        {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/index.html"
-        },
-        {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/changelog.html"
-        },
-        {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/implementation-notes.html"
-        },
-        {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/jsonld.html"
-        },
-        {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/relative-uris.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/"
         },
         {
           "@id": "https://w3id.org/ro/crate/1.2-DRAFT/context"
@@ -359,46 +252,72 @@
           "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf"
         },
         {
-          "@id": "prof:ResourceDescriptor"
+          "@id": "http://www.w3.org/ns/dx/prof#ResourceDescriptor"
         },
         {
-          "@id": "prof:ResourceRole"
+          "@id": "http://www.w3.org/ns/dx/prof#ResourceRole"
         },
         {
-          "@id": "prof:Profile"
+          "@id": "http://www.w3.org/ns/dx/prof#Profile"
         },
         {
-          "@id": "prof:hasArtifact"
+          "@id": "http://www.w3.org/ns/dx/prof#hasArtifact"
         },
         {
-          "@id": "prof:hasResource"
+          "@id": "http://www.w3.org/ns/dx/prof#hasResource"
         },
         {
-          "@id": "prof:hasRole"
+          "@id": "http://www.w3.org/ns/dx/prof#hasRole"
         },
         {
           "@id": "http://www.iana.org/assignments/relation/cite-as"
         },
         {
-          "@id": "pcdm:Object"
+          "@id": "http://pcdm.org/models#Object"
         },
         {
-          "@id": "pcdm:Collection"
+          "@id": "http://pcdm.org/models#Collection"
         },
         {
-          "@id": "pcdm:File"
+          "@id": "http://pcdm.org/models#File"
         },
         {
-          "@id": "pcdm:hasMember"
+          "@id": "http://pcdm.org/models#hasMember"
         },
         {
-          "@id": "pcdm:hasFile"
+          "@id": "http://pcdm.org/models#hasFile"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        },
+        {
+          "@id": "http://schema.org/Class"
+        },
+        {
+          "@id": "http://schema.org/Property"
         }
       ],
-      "identifier": "https://doi.org/DOI",
+      "identifier": {"@id": "https://doi.org/DOI"},      
+      "isBasedOn": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      },
       "isPartOf": {
         "@id": "https://w3id.org/ro/crate/"
       },
+      "isProfileOf": [
+        {
+          "@id": "http://www.w3.org/TR/2014/REC-json-ld-20140116/"
+        },
+        {
+          "@id": "http://www.w3.org/ns/json-ld#flattened"
+        },
+        {
+          "@id": "http://schema.org/version/15.0/"
+        }
+      ],
       "license": {
         "@id": "https://www.apache.org/licenses/LICENSE-2.0"
       },
@@ -424,6 +343,9 @@
           "@id": "#vocabulary-prof-roles"
         },
         {
+          "@id": "#vocabulary-rdfs"
+        },
+        {
           "@id": "#specification"
         },
         {
@@ -446,11 +368,8 @@
       "version": "2016/04/18"
     },
     {
-      "@id": "pcdm:Collection",
-      "@type": [
-        "DefinedTerm",
-        "Class"
-      ],
+      "@id": "http://pcdm.org/models#Collection",
+      "@type": ["DefinedTerm", "Class"],
       "inDefinedTermSet": {
         "@id": "http://pcdm.org/models#"
       },
@@ -458,11 +377,8 @@
       "termCode": "RepositoryCollection"
     },
     {
-      "@id": "pcdm:File",
-      "@type": [
-        "DefinedTerm",
-        "Class"
-      ],
+      "@id": "http://pcdm.org/models#File",
+      "@type": ["DefinedTerm", "Class"],
       "inDefinedTermSet": {
         "@id": "http://pcdm.org/models#"
       },
@@ -470,11 +386,8 @@
       "termCode": "RepositoryFile"
     },
     {
-      "@id": "pcdm:Object",
-      "@type": [
-        "DefinedTerm",
-        "Class"
-      ],
+      "@id": "http://pcdm.org/models#Object",
+      "@type": ["DefinedTerm", "Class"],
       "inDefinedTermSet": {
         "@id": "http://pcdm.org/models#"
       },
@@ -482,11 +395,8 @@
       "termCode": "RepositoryObject"
     },
     {
-      "@id": "pcdm:hasFile",
-      "@type": [
-        "DefinedTerm",
-        "Property"
-      ],
+      "@id": "http://pcdm.org/models#hasFile",
+      "@type": ["DefinedTerm", "Property"],
       "inDefinedTermSet": {
         "@id": "http://pcdm.org/models#"
       },
@@ -494,48 +404,105 @@
       "termCode": "hasFile"
     },
     {
-      "@id": "pcdm:hasMember",
-      "@type": [
-        "DefinedTerm",
-        "Property"
-      ],
+      "@id": "http://pcdm.org/models#hasMember",
+      "@type": ["DefinedTerm", "Property"],
       "inDefinedTermSet": {
         "@id": "http://pcdm.org/models#"
       },
       "name": "has member",
       "termCode": "hasMember"
     },
+    {      
+      "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
+      "@type": "DefinedTerm",
+      "name": "preferred namespace prefix",
+      "description": "The preferred namespace prefix to use when using terms from this vocabulary in an document.",
+      "url": "https://vocab.org/vann/#preferredNamespacePrefix"
+    },
     {
-      "@id": "http://schema.org/",
-      "@type": "DefinedTermSet",
+      "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
+      "@type": "DefinedTerm",
+      "name": "preferred namespace URI",
+      "description": "The preferred namespace URI to use when using terms from this vocabulary in an document",
+      "url": "https://vocab.org/vann/#preferredNamespaceUri"
+    },
+    {
+      "@id": "http://schema.org/version/15.0/",
+      "@type": ["DefinedTermSet", "Standard"],
+      "name": "Schema.org vocabulary (http prefix)",
       "encoding": {
         "@id": "https://schema.org/version/15.0/schemaorg-current-http.jsonld"
       },
-      "sameAs": {
-        "@id": "https://schema.org/version/15.0/"
-      },
-      "version": "15.0"
+      "vann:preferredNamespaceUri": "http://schema.org/",
+      "version": "15.0",
+      "url": "https://schema.org/docs/developers.html"
     },
     {
-      "@id": "http://sws.geonames.org/2661604/",
-      "@type": "Place",
-      "name": "Basel",
-      "sameAs": {
-        "@id": "https://www.geonames.org/2661604/basel.html"
-      }
+      "@id": "https://schema.org/version/15.0/schemaorg-current-http.jsonld",
+      "@type": "CreativeWork",
+      "encodingFormat": "application/ld+json",
+      "conformsTo": {"@id": "https://www.w3.org/TR/rdf-schema/"}
     },
     {
       "@id": "http://www.iana.org/assignments/relation/cite-as",
-      "@type": [
-        "DefinedTerm",
-        "Property"
-      ],
+      "@type": ["DefinedTerm","Property"],
       "inDefinedTermSet": {
         "@id": "https://www.iana.org/assignments/link-relations/"
       },
       "name": "Cite as",
       "termCode": "cite-as",
       "url": "https://doi.org/10.17487/RFC8574"
+    },
+    {
+      "@id": "https://www.w3.org/TR/rdf-schema/",
+      "@type": "Standard",
+      "name": "RDF Schema (rdfs)",
+      "hasPart": {"@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"}
+    },
+    {
+      "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "@type": "DefinedTermSet",
+      "url": "https://www.w3.org/TR/rdf-schema/",
+      "vann:preferredNamespacePrefix": "rdfs",
+      "vann:preferredNamespaceUri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    },
+    {
+      "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class",
+      "@type": ["DefinedTerm","Class"],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      },
+      "name": "Class (rdfs)",
+      "description": "Class definition as part of a Profile Crate",
+      "url": "https://www.w3.org/TR/rdf-schema/#ch_class"
+    },
+    {
+      "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": ["DefinedTerm","Class"],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      },
+      "name": "Property (rdfs)",
+      "description": "Property definition as part of a Profile Crate",
+      "url": "https://www.w3.org/TR/rdf-schema/#ch_property"
+    },
+    {
+      "@id": "http://schema.org/Class",
+      "@type": ["DefinedTerm","Class"],
+      "inDefinedTermSet": {
+        "@id": "http://schema.org/version/15.0/"
+      },
+      "name": "Class (schema.org)",
+      "description": "Class reference, defined outside the Profile Crate as indicated by @id url or inDefinedTermSet"
+    },
+    {
+      "@id": "http://schema.org/Property",
+      "@type": ["DefinedTerm","Class"],
+      "inDefinedTermSet": {
+        "@id": "http://schema.org/version/15.0/"
+      },
+      "name": "Property (schema.org)",
+      "description": "Property reference, defined outside the Profile Crate as indicated by @id url or inDefinedTermSet"      
     },
     {
       "@id": "http://www.w3.org/ns/dx/prof",
@@ -546,11 +513,8 @@
       "version": "1.0"
     },
     {
-      "@id": "prof:Profile",
-      "@type": [
-        "DefinedTerm",
-        "Class"
-      ],
+      "@id": "http://www.w3.org/ns/dx/prof#Profile",
+      "@type": ["DefinedTerm","Class"],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/ns/dx/prof"
       },
@@ -559,11 +523,8 @@
       "termCode": "Profile"
     },
     {
-      "@id": "prof:ResourceDescriptor",
-      "@type": [
-        "DefinedTerm",
-        "Class"
-      ],
+      "@id": "http://www.w3.org/ns/dx/prof#ResourceDescriptor",
+      "@type": ["DefinedTerm","Class"],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/ns/dx/prof"
       },
@@ -572,11 +533,8 @@
       "termCode": "ResourceDescriptor"
     },
     {
-      "@id": "prof:ResourceRole",
-      "@type": [
-        "DefinedTerm",
-        "Class"
-      ],
+      "@id": "http://www.w3.org/ns/dx/prof#ResourceRole",
+      "@type": ["DefinedTerm","Class"],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/ns/dx/prof"
       },
@@ -585,11 +543,8 @@
       "termCode": "ResourceRole"
     },
     {
-      "@id": "prof:hasArtifact",
-      "@type": [
-        "DefinedTerm",
-        "Property"
-      ],
+      "@id": "http://www.w3.org/ns/dx/prof#hasArtifact",
+      "@type": ["DefinedTerm","Property"],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/ns/dx/prof"
       },
@@ -598,11 +553,8 @@
       "termCode": "hasArtifact"
     },
     {
-      "@id": "prof:hasResource",
-      "@type": [
-        "DefinedTerm",
-        "Property"
-      ],
+      "@id": "http://www.w3.org/ns/dx/prof#hasResource",
+      "@type": ["DefinedTerm","Property"],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/ns/dx/prof"
       },
@@ -611,11 +563,8 @@
       "termCode": "hasResource"
     },
     {
-      "@id": "prof:hasRole",
-      "@type": [
-        "DefinedTerm",
-        "Property"
-      ],
+      "@id": "http://www.w3.org/ns/dx/prof#hasRole",
+      "@type": ["DefinedTerm","Property"],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/ns/dx/prof"
       },
@@ -624,113 +573,89 @@
       "termCode": "hasRole"
     },
     {
-      "@id": "prof:role/",
+      "@id": "http://www.w3.org/ns/dx/prof#role/",
       "@type": "DefinedTermSet",
       "hasDefinedTerm": [
         {
-          "@id": "role:constraints"
+          "@id": "http://www.w3.org/ns/dx/prof/role/constraints"
         },
         {
-          "@id": "role:example"
+          "@id": "http://www.w3.org/ns/dx/prof/role/example"
         },
         {
-          "@id": "role:guidance"
+          "@id": "http://www.w3.org/ns/dx/prof/role/guidance"
         },
         {
-          "@id": "role:mapping"
+          "@id": "http://www.w3.org/ns/dx/prof/role/mapping"
         },
         {
-          "@id": "role:schema"
+          "@id": "http://www.w3.org/ns/dx/prof/role/schema"
         },
         {
-          "@id": "role:specification"
+          "@id": "http://www.w3.org/ns/dx/prof/role/specification"
         },
         {
-          "@id": "role:validation"
+          "@id": "http://www.w3.org/ns/dx/prof/role/validation"
         },
         {
-          "@id": "role:vocabulary"
+          "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
         }
       ],
       "name": "Resource Roles vocabulary",
       "url": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#resource-roles-vocab"
     },
     {
-      "@id": "role:constraints",
-      "@type": [
-        "DefinedTerm",
-        "ResourceRole"
-      ],
+      "@id": "http://www.w3.org/ns/dx/prof/role/constraints",
+      "@type": ["DefinedTerm","ResourceRole"],
       "description": "Descriptions of obligations, limitations or extensions that the profile defines",
       "name": "Constraints",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:constraints"
     },
     {
-      "@id": "role:example",
-      "@type": [
-        "DefinedTerm",
-        "ResourceRole"
-      ],
+      "@id": "http://www.w3.org/ns/dx/prof/role/example",
+      "@type": ["DefinedTerm","ResourceRole"],
       "description": "Sample instance data conforming to the profile",
       "name": "Example",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:example"
     },
     {
-      "@id": "role:guidance",
-      "@type": [
-        "DefinedTerm",
-        "ResourceRole"
-      ],
+      "@id": "http://www.w3.org/ns/dx/prof/role/guidance",
+      "@type": ["DefinedTerm","ResourceRole"],
       "description": "Documents, in human-readable form, how to use the profile",
       "name": "Guidance",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:guidance"
     },
     {
-      "@id": "role:mapping",
-      "@type": [
-        "DefinedTerm",
-        "ResourceRole"
-      ],
+      "@id": "http://www.w3.org/ns/dx/prof/role/mapping",
+      "@type": ["DefinedTerm","ResourceRole"],
       "description": "Describes conversions between two specifications",
       "name": "Mapping",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:mapping"
     },
     {
-      "@id": "role:schema",
-      "@type": [
-        "DefinedTerm",
-        "ResourceRole"
-      ],
+      "@id": "http://www.w3.org/ns/dx/prof/role/schema",
+      "@type": ["DefinedTerm","ResourceRole"],
       "description": "Machine-readable structural descriptions of data defined by the profile",
       "name": "Schema",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:schema"
     },
     {
-      "@id": "role:specification",
-      "@type": [
-        "DefinedTerm",
-        "ResourceRole"
-      ],
+      "@id": "http://www.w3.org/ns/dx/prof/role/specification",
+      "@type": ["DefinedTerm","ResourceRole"],
       "description": "Defining the profile in human-readable form",
       "name": "Specification",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:specification"
     },
     {
-      "@id": "role:validation",
-      "@type": [
-        "DefinedTerm",
-        "ResourceRole"
-      ],
+      "@id": "http://www.w3.org/ns/dx/prof/role/validation",
+      "@type": ["DefinedTerm","ResourceRole"],
       "description": "Supplies instructions about how to verify conformance of data to the profile",
       "name": "Validation",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:validation"
     },
     {
-      "@id": "role:vocabulary",
-      "@type": [
-        "DefinedTerm",
-        "ResourceRole"
-      ],
+      "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary",
+      "@type": ["DefinedTerm","ResourceRole"],
       "description": "Defines terms used in the profile specification",
       "name": "Vocabulary",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:vocabulary"
@@ -740,6 +665,24 @@
       "@type": "DefinedTerm",
       "name": "JSON-LD Context",
       "url": "https://www.w3.org/TR/json-ld/"
+    },
+    {
+      "@id": "http://www.w3.org/ns/json-ld#flattened",
+      "@type": "Profile",
+      "name": "Flattened JSON-LD",
+      "isProfileOf": {
+        "@id": "http://www.w3.org/TR/2014/REC-json-ld-20140116/"
+      },
+      "version": "1.0",
+      "url": "https://www.w3.org/TR/json-ld1/#flattened-document-form"
+    },
+    {
+      "@id": "http://www.w3.org/TR/2014/REC-json-ld-20140116/",
+      "@type": "Standard",
+      "name": "JSON-LD 1.0",
+      "description": "A JSON-based Serialization for Linked Data",
+      "version": "1.0",
+      "sameAs": {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/880"}
     },
     {
       "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE",
@@ -757,9 +700,23 @@
     {
       "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
       "@type": "CreativeWork",
-      "identifier": "CC0-1.0",
+      "identifier": { "@id": "http://spdx.org/licenses/CC0-1.0"},
       "name": "Creative Commons Zero v1.0 Universal",
       "version": "1.0"
+    },
+    {
+      "@id": "https://creativecommons.org/licenses/by/4.0/",
+      "@type": "CreativeWork",
+      "identifier": { "@id": "http://spdx.org/licenses/CC-BY-4.0"},
+      "name": "Creative Commons Attribution 4.0 International",
+      "version": "4.0"
+    },
+    {
+      "@id": "https://doi.org/DOI",
+      "@type": "PropertyValue", 
+      "propertyID": "https://registry.identifiers.org/registry/doi",
+      "value": "doi:DOI",
+      "url": "https://doi.org/DOI"
     },
     {
       "@id": "https://doi.org/10.3233/DS-210053",
@@ -824,35 +781,6 @@
       "name": "Packaging research artefacts with RO-Crate"
     },
     {
-      "@id": "https://doi.org/10.5281/zenodo.3250687",
-      "@type": "ScholarlyArticle",
-      "author": [
-        {
-          "@id": "https://orcid.org/0000-0001-8131-2150"
-        },
-        {
-          "@id": "https://orcid.org/0000-0003-1219-2137"
-        },
-        {
-          "@id": "https://orcid.org/0000-0002-3545-944X"
-        },
-        {
-          "@id": "https://orcid.org/0000-0001-9842-9718"
-        }
-      ],
-      "datePublished": "2019",
-      "isPartOf": {
-        "@id": "https://drive.google.com/uc?id=16jt37tmTXG4z6JqBKJ0TYGDPrdzcyyND&export=download"
-      },
-      "name": "A lightweight approach to research object data packaging",
-      "releasedEvent": {
-        "@id": "https://www.open-bio.org/events/bosc-2019/bosc-2019-schedule/"
-      },
-      "subjectOf": {
-        "@id": "https://www.youtube.com/watch?v=AociW94muLM"
-      }
-    },
-    {
       "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html",
       "@type": "CreativeWork",
       "encodingFormat": [
@@ -863,7 +791,7 @@
       ],
       "isBasedOn": [
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/index.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/"
         },
         {
           "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/about.html"
@@ -902,7 +830,7 @@
           "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/workflows.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/index.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/"
         },
         {
           "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/changelog.html"
@@ -934,7 +862,7 @@
       ],
       "isBasedOn": [
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/index.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/"
         },
         {
           "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/about.html"
@@ -973,7 +901,7 @@
           "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/workflows.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/index.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/"
         },
         {
           "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/changelog.html"
@@ -1351,6 +1279,27 @@
       "name": "Laura Rodríguez-Navas"
     },
     {
+      "@id": "http://spdx.org/licenses/CC0-1.0",
+      "@type": "PropertyValue",
+      "propertyID": "http://spdx.org/rdf/terms#licenseId",
+      "name": "spdx",
+      "value": "CC0-1.0"
+    },
+    {
+      "@id": "http://spdx.org/licenses/CC0-1.0",
+      "@type": "PropertyValue",
+      "propertyID": "http://spdx.org/rdf/terms#licenseId",      
+      "name": "spdx",
+      "value": "CC-BY-4.0"
+    },
+    { 
+      "@id": "http://spdx.org/licenses/Apache-2.0",
+      "@type": "PropertyValue",
+      "propertyID": "http://spdx.org/rdf/terms#licenseId",
+      "name": "spdx",
+      "value": "Apache-2.0"
+    },
+    {
       "@id": "https://w3id.org/ro/crate/",
       "@type": "WebSite",
       "maintainer": {
@@ -1363,6 +1312,12 @@
       "url": "https://www.researchobject.org/ro-crate/"
     },
     {
+      "@id": "https://w3id.org/ro/crate/1.1",
+      "@type": "Dataset",      
+      "name": "RO-Crate 1.1",
+      "version": "1.1.2"      
+    },    
+    {
       "@id": "https://w3id.org/ro/crate/1.2-DRAFT/context",
       "@type": "File",
       "conformsTo": {
@@ -1371,7 +1326,7 @@
       "encodingFormat": "application/ld+json",
       "isBasedOn": [
         {
-          "@id": "schema:version/15.0/"
+          "@id": "http://schema.org/version/15.0/"
         },
         {
           "@id": "https://pcdm.org/2016/04/18/models"
@@ -1393,6 +1348,9 @@
         },
         {
           "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-context-TAG.jsonld"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/context.jsonld"
         }
       ],
       "version": "TAG"
@@ -1405,24 +1363,14 @@
     {
       "@id": "https://www.apache.org/licenses/LICENSE-2.0",
       "@type": "CreativeWork",
-      "identifier": "Apache-2.0",
       "name": "Apache License 2.0",
-      "version": "2.0"
+      "version": "2.0",
+      "identifier": { "@id": "http://spdx.org/licenses/Apache-2.0"}
     },
     {
       "@id": "https://www.iana.org/assignments/link-relations/",
       "@type": "DefinedTermSet",
       "name": "IANA Link Relations"
-    },
-    {
-      "@id": "https://www.iscb.org/ismbeccb2019",
-      "@type": "PublicationEvent",
-      "endDate": "2019-06-25",
-      "location": {
-        "@id": "http://sws.geonames.org/2661604/"
-      },
-      "name": "ISMB ECCB 2019",
-      "startDate": "2019-06-21"
     },
     {
       "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/18",
@@ -1437,20 +1385,6 @@
       "name": "Hypertext Markup Language 5"
     },
     {
-      "@id": "https://www.open-bio.org/events/bosc-2019/bosc-2019-schedule/",
-      "@type": "PublicationEvent",
-      "alternateName": "BOSC2019",
-      "endDate": "2019-06-25",
-      "location": {
-        "@id": "http://sws.geonames.org/2661604/"
-      },
-      "name": "Bioinformatics Open Source Conference 2019",
-      "startDate": "2019-06-24",
-      "superEvent": {
-        "@id": "https://www.iscb.org/ismbeccb2019"
-      }
-    },
-    {
       "@id": "https://www.researchobject.org/",
       "@type": "Organization",
       "name": "ResearchObject.org",
@@ -1458,74 +1392,61 @@
     },
     {
       "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/about.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "@type": "WebPage",
       "name": "About this document"
     },
     {
       "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/changelog.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "@type": "WebPage",
       "name": "Changelog"
     },
     {
       "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/implementation-notes.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "@type": "WebPage",
       "name": "Implementation notes"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/index.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
-      "name": "Appendix"
+      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/",
+      "@type": "WebPage",
+      "name": "Appendix",
+      "hasPart": [
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/changelog.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/implementation-notes.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/jsonld.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/relative-uris.html"
+        }        
+      ]
     },
     {
       "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/jsonld.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "@type": "WebPage",
       "name": "RO-Crate JSON-LD"
     },
     {
       "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/relative-uris.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "@type": "WebPage",
       "name": "Handling relative URI references"
     },
     {
       "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/contextual-entities.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "@type": "WebPage",
       "name": "Contextual Entities"
     },
     {
       "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/crate-focus.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "@type": "WebPage",
       "name": "The focus of an RO-Crate"
     },
     {
       "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/data-entities.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "@type": "WebPage",
       "name": "Data Entities"
     },
     {
@@ -1535,6 +1456,9 @@
         "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
       },
       "name": "Example dataset for RO-Crate specification",
+      "license": {
+        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
       "subjectOf": [
         {
           "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/examples/rainfall-1.2.0/ro-crate-metadata.json"
@@ -1545,9 +1469,9 @@
       ]
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/index.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/",
       "@type": [
-        "CreativeWork",
+        "WebSite",
         "File"
       ],
       "encodingFormat": [
@@ -1556,75 +1480,109 @@
           "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/471"
         }
       ],
-      "identifier": "https://w3id.org/ro/crate/1.2-DRAFT",
+      "encoding": [
+        {
+          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html"
+        },
+        {
+          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf"
+        }
+      ],      
+      "identifier": {"@id": "https://doi.org/DOI"},
       "name": "RO-Crate Metadata Specification 1.2-DRAFT",
       "sameAs": {
         "@id": "https://zenodo.org/record/ZENODO/files/ro-crate-TAG.html"
       },
-      "version": "TAG"
+      "version": "TAG",
+      "hasPart": [
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/introduction.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/terminology.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/structure.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/metadata.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/root-data-entity.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/data-entities.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/crate-focus.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/contextual-entities.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/provenance.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/workflows.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/changelog.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/implementation-notes.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/jsonld.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/relative-uris.html"
+        }
+      ]
     },
     {
       "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/introduction.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "@type": "WebPage",
       "name": "Introduction"
     },
     {
       "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/metadata.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "@type": "WebPage",
       "name": "Metadata of the RO-Crate"
     },
     {
       "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "@type": "WebPage",
       "name": "Profiles"
     },
     {
       "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/provenance.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "@type": "WebPage",
       "name": "Provenance of entities"
     },
     {
       "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/root-data-entity.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "@type": "WebPage",
       "name": "Root Data Entity"
     },
     {
       "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/structure.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "@type": "WebPage",
       "name": "RO-Crate Structure"
     },
     {
       "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/terminology.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "@type": "WebPage",
       "name": "Terminology"
     },
     {
       "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/workflows.html",
-      "@type": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "@type": "WebPage",
       "name": "Workflows and scripts"
     },
     {
@@ -1847,29 +1805,75 @@
       "url": "https://www.researchobject.org/ro-crate/community"
     },
     {
-      "@id": "https://www.youtube.com/watch?v=AociW94muLM",
-      "@type": "VideoObject",
-      "datePublished": "2019-08-29",
-      "isBasedOn": {
-        "@id": "https://doi.org/10.5281/zenodo.3250687"
+      "@id": "#example-rainfall",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/examples/rainfall-1.2.0/"
       },
-      "name": "A lightweight approach to research object... - Stian Soiland-Reyes - OBF: BOSC - ISMB ECCB 2019",
-      "releasedEvent": {
-        "@id": "https://www.iscb.org/ismbeccb2019"
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/example"
       }
     },
     {
-      "@id": "ro-crate-metadata.json",
-      "@type": "CreativeWork",
-      "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
+      "@id": "#specification",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html"
       },
-      "about": {
-        "@id": "./"
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/specification"
+      }
+    },
+    {
+      "@id": "#vocabulary-pcdm",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "http://pcdm.org/models"
       },
-      "license": {
-        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+      }
+    },
+    {
+      "@id": "#vocabulary-prof",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "http://www.w3.org/ns/dx/prof"
+      },
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+      }
+    },
+    {
+      "@id": "#vocabulary-prof-roles",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "http://pcdm.org/models"
+      },
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+      }
+    },
+    {
+      "@id": "#vocabulary-schema",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "http://schema.org/version/15.0/"
+      },
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+      }
+    },
+    {
+      "@id": "#vocabulary-rdfs",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      },
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
       }
     }
+
   ]
 }
