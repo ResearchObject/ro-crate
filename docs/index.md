@@ -43,19 +43,27 @@ The RO-Crate effort brings together practitioners from very different background
 
 We continue to [gather usecases](https://github.com/ResearchObject/ro-crate/issues?q=is%3Aissue+is%3Aopen+label%3Ause-case), please help us by [adding more](https://github.com/ResearchObject/ro-crate/issues/new/choose).
   
-## When can I use it?
+## How can I get started?
+
+Follow the [RO-Crate tutorials](tutorials) for training material that introduce RO-Crate. 
+
+Alternatively, see the [walk-through of an RO-Crate](https://www.researchobject.org/ro-crate/1.2-DRAFT/introduction.html) to learn by example.
+
+RO-Crate is defined as an specification with recommendations and many inline [examples](examples.html):
 
 * [RO-Crate specification 1.1](1.1/) has been **released**.
 
 See the [specification](specification.md) page for older and future versions.
 
-## How can I use it?
+
+## What can I use RO-Crate with?
 
 We maintain a list of RO-Crate [tools](tools/) and [examples](examples).
 
+
 ## RO-Crate in use
 
-We describe some current cases and applications of where [RO-Crate is in use](in-use) for packaging and describing Data, Datasets and Workflows.
+We describe some current cases and applications of where [RO-Crate is in use](in-use) for packaging and describing data, datasets and workflows.
 
 ## Contribute to RO-Crate community
 
