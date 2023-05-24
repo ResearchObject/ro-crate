@@ -316,7 +316,8 @@ File Data Entities may already have a corresponding web presence, for instance a
 These can be included for File Data Entities as additional metadata, regardless of whether the File is included in the _RO-Crate Root_ directory or exists on the Web, by using the properties:
 
 * [identifier] for formal identifier strings such as DOIs
-* [url] with a string URL corresponding to a *download* link (if not available, a download landing page) for this file
+* [contentUrl] with a string URL corresponding to a *download* link. Following the link (allowing for HTTP redirects) SHOULD directly download the file.
+* [url] with a string URL for a download/landing page for this particular file (e.g. direct download is not available)
 * [subjectOf] to a [CreativeWork] (or [WebPage]) that mentions this file or its content (but also other resources)
 * [mainEntityOfPage] to a [CreativeWork]  (or [WebPage]) that primarily describes this file (or its content) 
 
@@ -326,7 +327,7 @@ These can be included for File Data Entities as additional metadata, regardless 
     "@type": "File",
     "name": "Survey responses",
     "encodingFormat": "text/csv",
-    "url": "http://example.com/downloads/2019/survey-responses-2019.csv",
+    "contentUrl": "http://example.com/downloads/2019/survey-responses-2019.csv",
     "subjectOf": {"@id": "http://example.com/reports/2019/annual-survey.html"}
   },
   {
