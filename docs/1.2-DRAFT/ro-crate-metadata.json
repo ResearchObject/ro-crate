@@ -324,7 +324,7 @@
       "maintainer": {
         "@id": "https://www.researchobject.org/ro-crate/community"
       },
-      "name": "RO-Crate specification dataset",
+      "name": "RO-Crate specification 1.2",
       "publisher": {
         "@id": "https://www.researchobject.org/"
       },
@@ -1314,7 +1314,7 @@
     {
       "@id": "https://w3id.org/ro/crate/1.1",
       "@type": "Dataset",      
-      "name": "RO-Crate 1.1",
+      "name": "RO-Crate specification 1.1",
       "version": "1.1.2"      
     },    
     {
