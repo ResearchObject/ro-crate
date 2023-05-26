@@ -114,7 +114,7 @@ The [Root Data entity](root-data-entity) of a Profile Crate MUST declare `Profil
 }
 ```
 
-The rest of the earlier requirements for a Profile entity also apply here, adding:
+The rest of the [earlier requirements](#declaring-conformance-of-an-ro-crate-profile) for a Profile entity also apply here, adding:
 
 * SHOULD have an absolute URI as `@id`
 * SHOULD have a descriptive [name]
