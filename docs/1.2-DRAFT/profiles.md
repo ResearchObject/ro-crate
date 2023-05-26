@@ -150,9 +150,9 @@ try retrieving `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-meta
 
 If an RO-Crate declares conformance to a given profile crate with `conformsTo` on its root data entity, contextual entities declared in the corresponding Profile Crate do _not_ need to be repeated in the conforming crate. 
 
-For instance, if a Profile Crate adds a `DefinedTerm` entity according to the [ad-hoc definitions](appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms), the term can be referenced in the conforming crate without making a contextual entity there. For archival purposes it may however still be preferrable to copy such entities across to each conforming crate.
+For instance, if a Profile Crate adds a `DefinedTerm` entity according to the [ad-hoc definitions](appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms), the term MAY be referenced in the conforming crate without making a contextual entity there. For archival purposes it MAY however still be preferrable to copy such entities across to each conforming crate.
 
-It is recommended that `@id` of such inheritable entities are absolute URIs on both sides to avoid resolving relative paths, or that the profile recommends a [JSON-LD Context](#json-ld-context) to ensure consistent identifiers.
+It is RECMMMENDED that `@id` of such inheritable entities are absolute URIs on both sides to avoid resolving relative paths, and that the profile's recommended [JSON-LD Context](#json-ld-context) used by conforming crates SHOULD have a mapping to the URIs, see section [Extending RO-Crate](appendix/jsonld.md#extending-ro-crate).
 
 
 ### What is included in the Profile Crate? 
