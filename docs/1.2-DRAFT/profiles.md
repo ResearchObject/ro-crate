@@ -101,7 +101,6 @@ The [Root Data entity](root-data-entity) of a Profile Crate MUST declare `Profil
 {
     "@id": "http://example.com/",
     "@type": ["Dataset", "Profile"],
-    "@id": "https://w3id.org/ro/wfrun/process/0.1",
     "name": "Process Run crate profile",
     "version": "0.1.0",
     "hasPart": [ ],
