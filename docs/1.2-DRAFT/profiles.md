@@ -92,17 +92,23 @@ Note that as profile conformance is declared on the RO-Crate Root (`./` in this 
 
 ## Profile Crate
 
-While the Profile URI `@id` must resolve to a human-readable _profile description_, it can additionally be made to [resolve](#how-to-retrieve-a-profile-crate) to a _Profile Crate_.
+While the Profile URI `@id` must resolve to a human-readable _profile description_, it MAY additionally be made to [resolve](#how-to-retrieve-a-profile-crate) to a _Profile Crate_.
 
-A **Profile Crate** is a type of RO-Crate that gathers resources which further define the profile. This allows formalizing alternative profile description for machine-readability, for instance for validation, but also additional resources like examples.
+A **Profile Crate** is a type of RO-Crate that gathers resources which further define the profile. This allows formalizing alternative profile description for machine-readability, for instance for validation, but also additional resources like examples. The rest of this subsection declares the content of this Profile Crate.
+
+The Profile Crate `@id` declared within its own RO-Crate Metadata Document SHOULD be an absolute URI, and the corresponding reference from its RO-Crate Metadata Descriptor updated accordingly. 
 
 The [Root Data entity](root-data-entity) of a Profile Crate MUST declare `Profile` as an additional `@type`:
 
 ```json
 {
-    "@id": "http://example.com/",
-    "@type": ["Dataset", "Profile"],
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {"@id": "https://w3id.org/ro/wfrun/process/0.1"}
+}
+{
     "@id": "https://w3id.org/ro/wfrun/process/0.1",
+    "@type": ["Dataset", "Profile"],
     "name": "Process Run crate profile",
     "version": "0.1.0",
     "isProfileOf": [
@@ -125,7 +131,7 @@ The rest of the [earlier requirements](#declaring-conformance-of-an-ro-crate-pro
 * MAY list profile descriptors using `hasResource` (see [below](#declaring-the-role-within-the-crate))
 
 {: .tip}
-> The base RO-Crate specification referenced by `isProfileOf` is a Profile Crate itself, see [ro-crate-preview.html](ro-crate-metadata.json) or [ro-crate-preview.html](ro-crate-preview.html). 
+> The base RO-Crate specification referenced by `isProfileOf` is a Profile Crate itself, see [ro-crate-metadata.json](ro-crate-metadata.json) or [ro-crate-preview.html](ro-crate-preview.html). 
 
 
 ### How to retrieve a Profile Crate
@@ -522,6 +528,7 @@ For mix-in case #3, as any additional profiles are added to the `conformsTo` of 
 A Profile Crate can list an interoperable profile under `hasPart`, and recommend it by using the role `http://purl.org/dc/terms/conformsTo` in a resource descriptor:
 
 ```json
+
 {
     "@id": "https://w3id.org/ro/wfrun/process/0.1",
     "@type": ["CreativeWork", "Profile"],
