@@ -51,6 +51,16 @@ _Data Science_ **5**(2)
 
 ### 2023
 
+Stian Soiland-Reyes, Leyla Jael Garcia (2023):  
+[**Overview of FAIR data publishing with Bioschemas & RO-Crate**](https://f1000research.com/slides/12-618).  
+_ELIXIR All Hands meeting 2023_, workshop "Building lightweight FAIR data packages with Bioschemas and RO-Crate", Dublin, Ireland, 2023-06-05/--08  
+(awaiting DOI)
+
+
+Stian Soiland-Reyes, Carole Goble (2023):  
+[**Building diverse collections using RO-Crate**](https://f1000research.com/slides/12-624).  
+_ELIXIR All Hands meeting 2023_, mini-symposium "Biodiversity, Food Security and Pathogens", Dublin, Ireland, 2023-06-05/--08  
+(awaiting DOI)
 
 Peter Sefton et al. (2023):  
 **Packaging data with detailed metadata using RO-Crate in FAIR open repositories**.  
