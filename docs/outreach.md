@@ -23,8 +23,6 @@ title: Outreach and Publications
 
 {: .tip } 
 **Upcoming RO-Crate workshops and training events**:  
-[_FAIR data and provenance with RO-Crate and Galaxy_](https://gallantries.github.io/video-library/modules/ro-crate) module at **[Galaxy Smörgåsbord 2023](https://gallantries.github.io/video-library/events/smorgasbord3/)**, 2023-05-22 / --26, virtual/async.  
-[_Building lightweight FAIR data packages with Bioschemas and RO-Crate_](https://docs.google.com/document/d/1Vh9mUBWvNEsvC5YZRITtZxsyE6Wr18rJUgp9KweJFNg) workshop at **[ELIXIR All Hands 2023](https://elixir-europe.org/events/elixir-all-hands-2023)**, 2023-06-05/--08, Dublin, Ireland + hybrid (ELIXIR members only).  
 [_Data exchange with RO-Crates and Knowledge Graphs_](https://www.zbmed.de/vernetzen/veranstaltungen/open-science-festival/open-standards-for-data-management) workshop at **[Open Science Festival 2023](https://www.zbmed.de/en/networking/events/open-science-festival/)**, 2023-07-04/--05, Cologne, Germany.
 
 
