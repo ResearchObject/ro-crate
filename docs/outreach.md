@@ -23,8 +23,8 @@ title: Outreach and Publications
 
 {: .tip } 
 **Upcoming RO-Crate workshops and training events**:  
-[_Data exchange with RO-Crates and Knowledge Graphs_](https://www.zbmed.de/vernetzen/veranstaltungen/open-science-festival/open-standards-for-data-management) workshop at **[Open Science Festival 2023](https://www.zbmed.de/en/networking/events/open-science-festival/)**, 2023-07-04/--05, Cologne, Germany.
-
+[_Data exchange with RO-Crates and Knowledge Graphs_](https://www.zbmed.de/vernetzen/veranstaltungen/open-science-festival/open-standards-for-data-management) workshop at **[Open Science Festival 2023](https://www.zbmed.de/en/networking/events/open-science-festival/)**, 2023-07-04/--05, Cologne, Germany.  
+See also [tutorials](https://www.researchobject.org/ro-crate/tutorials.html).
 
 ## Table of contents
 {: .no_toc .text-delta }
