@@ -320,8 +320,6 @@ evolved from this profile to conform with RO-Crate 1.1's
 
 ## ARC RO-Crate profile
 
-## ARC RO-Crate profile
-
 A profile of RO-Crate for [Annotated Research Contexts](https://nfdi4plants.org/content/learn-more/annotated-research-context.html) (ARC), developed by [DataPLANT](https://nfdi4plants.org/).
 An ARC consists of [ISA](https://isa-specs.readthedocs.io/en/latest/isamodel.html) metadata describing the experimental setup and computational workflows given in CWL.
 The current [profile](https://github.com/nfdi4plants/ARC-specification/blob/main/ARC%20specification.md#appendix-conversion-of-arcs-to-ro-crates) requires the crate to follow the ISA Investigation profile on the top level.
