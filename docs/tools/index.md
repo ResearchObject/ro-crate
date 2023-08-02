@@ -86,5 +86,6 @@ exist for working with RO-Crates:
     registry of RO-Crates (assumes ZIP on http/https) (~ _prototype_)
 -   [ro-crate-validator-py](https://github.com/ResearchObject/ro-crate-validator-py/) -- a modular
     RO-Crate validator (~ _alpha_)
+-   [Sciebo Research Data Services](https://www.research-data-services.org/) -- move research data from OwnCloud to Zenodo or OSF, parsing/creating RO-Crate Metadata file 
 
 See also [applications using RO-Crate](../in-use/).
