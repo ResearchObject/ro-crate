@@ -21,10 +21,6 @@ title: Outreach and Publications
 # RO-Crate Outreach and Publications 
 {: .no_toc }
 
-{: .tip } 
-**Upcoming RO-Crate workshops and training events**:  
-[_Data exchange with RO-Crates and Knowledge Graphs_](https://www.zbmed.de/vernetzen/veranstaltungen/open-science-festival/open-standards-for-data-management) workshop at **[Open Science Festival 2023](https://www.zbmed.de/en/networking/events/open-science-festival/)**, 2023-07-04/--05, Cologne, Germany.  
-See also [tutorials](tutorials.md).
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -49,6 +45,22 @@ _Data Science_ **5**(2)
 
 ### 2023
 
+Peter Sefton, Stian Soiland-Reyes (2023):  
+[**Packaging data with detailed metadata using RO-Crate in FAIR open repositories**](https://ptsefton.com/2023/06/13/ro-crate-or-2023/).  
+_Open Repositories 2023_ ([OR2023](https://or2023.openrepositories.org)), 2023-06-12/--15, Stellenbosch University, South Africa.  
+<https://ptsefton.com/2023/06/13/ro-crate-or-2023/>
+
+Peter Sefton, Moises Sacal Bonequi, Alvin Sebastian, Mark Raadgever (2023):  
+[**Introducing the Oni Repository Stack**](https://ptsefton.com/2023/06/13/oni-dev-track-or-2023/).  
+_Open Repositories 2023_ ([OR2023](https://or2023.openrepositories.org)), 2023-06-12/--15, Stellenbosch University, South Africa.  
+<https://ptsefton.com/2023/06/13/oni-dev-track-or-2023/>
+
+Peter Sefton (2023):
+[**Towards a Generic Research Data Commons: A highly scalable standard-based repository framework for Language and other Humanities data**](https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/).  
+_Open Repositories 2023_ ([OR2023](https://or2023.openrepositories.org)), 2023-06-12/--15, Stellenbosch University, South Africa.  
+<https://www.ldaca.edu.au/posts/arkisto-stack-or-2023/>  
+<https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/> [[slides](https://www.ldaca.edu.au/posts/arkisto-stack-or-2023/arkisto-stack-or-2023.pdf)]
+
 Stian Soiland-Reyes, Leyla Jael Garcia (2023):  
 [**Overview of FAIR data publishing with Bioschemas & RO-Crate**](https://doi.org/10.7490/f1000research.1119459.1).  
 _ELIXIR All Hands meeting 2023_, workshop "Building lightweight FAIR data packages with Bioschemas and RO-Crate", Dublin, Ireland, 2023-06-05/--08  
@@ -59,14 +71,11 @@ Stian Soiland-Reyes, Carole Goble (2023):
 _ELIXIR All Hands meeting 2023_, mini-symposium "Biodiversity, Food Security and Pathogens", Dublin, Ireland, 2023-06-05/--08  
 <https://doi.org/10.7490/f1000research.1119466.1>
 
-Peter Sefton et al. (2023):  
-**Packaging data with detailed metadata using RO-Crate in FAIR open repositories**.  
-_Open Repositories 2023_ ([OR2023](https://or2023.openrepositories.org)), 2023-06-12/--15, Stellenbosch University, South Africa.
-(awaiting DOI)
-
 Stian Soiland-Reyes, Simone Leo, Leyla Jael Castro, Peter Sefton, Carole Goble (2023):  
 [**Sharing data as machine-actionable objects using RO-Crate, Bioschemas and Signposting**](https://doi.org/10.5281/zenodo.8004796).  
 _ELIXIR All Hands meeting 2023_ (poster), Dublin, Ireland, 2023-06-05/--08  
+_F1000Research_ **12**(ELIXIR):572 (poster)  
+<https://doi.org/10.7490/f1000research.1119431.1>  
 <https://doi.org/10.5281/zenodo.8004796>
 
 Simone Leo, Laura Rodríguez-Navas, José M. Fernández, Paul De Geest, Luca Pireddu, Michael R. Crusoe, Daniel Garijo, Iacopo Colonnelli, Raül Sirvent, Stian Soiland-Reyes (2023):  
@@ -75,14 +84,16 @@ _ELIXIR All Hands meeting 2023_ (poster), Dublin, Ireland, 2023-06-05/--08
 <https://doi.org/10.5281/zenodo.8004793>
 
 José M. Fernández, Laura Rodriguez-Navas, Salvador Capella-Gutiérrez (2023):  
-[**WfExS-backend in the WRROC world?**](https://f1000research.com/posters/12-616).  
+[**WfExS-backend in the WRROC world?**](https://doi.org/10.7490/f1000research.1119457.1).  
 _ELIXIR All Hands meeting 2023_ (poster), Dublin, Ireland, 2023-06-05/--08  
-(awaiting DOI)
+_F1000Research_ **12**(ELIXIR):616 (poster)  
+<https://doi.org/10.7490/f1000research.1119457.1>
 
 Aikaterina Mastoraki, Panagiotis Deligiannis, Eleni Adamidi, Thanasis Vergoulis (2023):  
-[**Improving reproducibility of computational analyses performed on the ELIXIR-GR cloud**](https://f1000research.com/posters/12-557).  
+[**Improving reproducibility of computational analyses performed on the ELIXIR-GR cloud**](https://doi.org/10.7490/f1000research.1119423.1).  
 _ELIXIR All Hands meeting 2023_ (poster), Dublin, Ireland, 2023-06-05/--08  
-(awaiting DOI)
+_F1000Research_ **12**(ELIXIR):557 (poster)
+<https://doi.org/10.7490/f1000research.1119423.1>
 
 Stian Soiland-Reyes, Carole Goble (2023):  
 [**Building diverse FDO Collections using RO-Crate**](https://doi.org/10.5281/zenodo.7828632).  
