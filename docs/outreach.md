@@ -45,6 +45,12 @@ _Data Science_ **5**(2)
 
 ### 2023
 
+Alessandro Lotta, Gianmaria Silvello (2023):  
+[**How to Cite a Web Ranking and Make it FAIR**](https://www.dei.unipd.it/~silvello/papers/2023_TPDL_LS.pdf).  
+_Theory and Practice of Digital Libraries_ ([TPDL 2023](https://tpdl2023.dei.unipd.it/)), 26-29 Sept 2023, Zadar, Croatia.  
+(awaiting DOI)  
+[[preprint](https://www.dei.unipd.it/~silvello/papers/2023_TPDL_LS.pdf)]
+
 Peter Sefton, Stian Soiland-Reyes (2023):  
 [**Packaging data with detailed metadata using RO-Crate in FAIR open repositories**](https://ptsefton.com/2023/06/13/ro-crate-or-2023/).  
 _Open Repositories 2023_ ([OR2023](https://or2023.openrepositories.org)), 2023-06-12/--15, Stellenbosch University, South Africa.  
