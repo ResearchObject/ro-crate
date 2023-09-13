@@ -45,8 +45,13 @@ _Data Science_ **5**(2)
 
 ### 2023
 
+Ove Johan Ragnar Gustafsson, Nicola Soranzo, Bjoern Gruening, Marius van den Beek, Finn Bacall, Carole Goble, Farah Zaib Khan, Gareth Price, Nigel Ward, Jeff Christiansen (2023):  
+[**Finding workflows in the Galaxy universe**: integrating a global ecosystem using workflow registries](https://doi.org/10.5281/zenodo.8157532).  
+_2023 Galaxy Community Conference_ (GCC2023), 2023-07-10/--16, Brisbane, Australia.   
+<https://doi.org/10.5281/zenodo.8157532>
+
 Anne Fouilloux, Elisa Trasatti, Federica Foglini, Alejandro Coca-Castro, Jean Iaquinta (2023):  
-[**FAIR Research Objects for realising Open Science with the EOSC project RELIANCE**]().  
+[**FAIR Research Objects for realising Open Science with the EOSC project RELIANCE**](https://doi.org/10.3897/rio.9.e108765).  
 _Research Ideas and Outcomes_ **9**:e108765  
 <https://doi.org/10.3897/rio.9.e108765>
 
@@ -59,18 +64,18 @@ _Theory and Practice of Digital Libraries_ ([TPDL 2023](https://tpdl2023.dei.uni
 Peter Sefton, Stian Soiland-Reyes (2023):  
 [**Packaging data with detailed metadata using RO-Crate in FAIR open repositories**](https://ptsefton.com/2023/06/13/ro-crate-or-2023/).  
 _Open Repositories 2023_ ([OR2023](https://or2023.openrepositories.org)), 2023-06-12/--15, Stellenbosch University, South Africa.  
-<https://ptsefton.com/2023/06/13/ro-crate-or-2023/>
+<https://doi.org/10.5281/zenodo.8091505>
 
 Peter Sefton, Moises Sacal Bonequi, Alvin Sebastian, Mark Raadgever (2023):  
 [**Introducing the Oni Repository Stack**](https://ptsefton.com/2023/06/13/oni-dev-track-or-2023/).  
 _Open Repositories 2023_ ([OR2023](https://or2023.openrepositories.org)), 2023-06-12/--15, Stellenbosch University, South Africa.  
-<https://ptsefton.com/2023/06/13/oni-dev-track-or-2023/>
+<https://doi.org/10.5281/zenodo.8091519>
 
 Peter Sefton (2023):
 [**Towards a Generic Research Data Commons: A highly scalable standard-based repository framework for Language and other Humanities data**](https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/).  
 _Open Repositories 2023_ ([OR2023](https://or2023.openrepositories.org)), 2023-06-12/--15, Stellenbosch University, South Africa.  
 <https://www.ldaca.edu.au/posts/arkisto-stack-or-2023/>  
-<https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/> [[slides](https://www.ldaca.edu.au/posts/arkisto-stack-or-2023/arkisto-stack-or-2023.pdf)]
+<https://doi.org/10.5281/zenodo.8091653>
 
 Stian Soiland-Reyes, Leyla Jael Garcia (2023):  
 [**Overview of FAIR data publishing with Bioschemas & RO-Crate**](https://doi.org/10.7490/f1000research.1119459.1).  
