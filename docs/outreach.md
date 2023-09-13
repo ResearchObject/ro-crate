@@ -54,21 +54,25 @@ _Biodiversity Information Science and Standards_ **7**:e112373
 
 Leyla Jael Castro, Stian Soiland-Reyes, Dietrich Rebholz-Schuhmann (2023):  
 [**RO-Crates Meets FAIR Digital Objects**](https://www.tib-op.org/ojs/index.php/CoRDI/article/view/396/577).  
+1st Conference on Research Data Infrastructure ([CoRDI 2023](https://www.nfdi.de/cordi-2023/)), 2023-09-12/--14, Karlsruhe, Germay.  
 _Proceedings of the Conference on Research Data Infrastructure_ **1**  
 <https://doi.org/10.52825/cordi.v1i.396>
 
 Sebastian Schaaf, Anika Erxleben-Eggenhofer, Bjoern Gruening (2023):  
 [**Galaxy and RDM**](https://doi.org/10.52825/cordi.v1i.421).  
+1st Conference on Research Data Infrastructure ([CoRDI 2023](https://www.nfdi.de/cordi-2023/)), 2023-09-12/--14, Karlsruhe, Germay.  
 _Proceedings of the Conference on Research Data Infrastructure_ **1**  
 <https://doi.org/10.52825/cordi.v1i.421>
 
 Peter Wittenburg, Dimitris Koureas (2023):  
 [**FDO to Structure the Domain of Knowledge **](https://doi.org/10.52825/cordi.v1i.374).  
+1st Conference on Research Data Infrastructure ([CoRDI 2023](https://www.nfdi.de/cordi-2023/)), 2023-09-12/--14, Karlsruhe, Germay.  
 _Proceedings of the Conference on Research Data Infrastructure_ **1**  
 <https://doi.org/10.52825/CoRDI.v1i.374>
 
 Carole Goble, Finn Bacall, Stian Soiland-Reyes, Stuart Owen, Ignacio Eguinoa, Bert Droesbeke, Hervé Ménager, Laura Rodriguez-Navas, José M. Fernández, Björn Grüning, Simone Leo, Luca Pireddu, Michael Crusoe, Johan Gustafsson, Salvador Capella-Gutierrez, Frederik Coppens (2023):  
 [**EOSC-Life Workflow Collaboratory for the Life Sciences](https://doi.org/10.52825/cordi.v1i.352).  
+1st Conference on Research Data Infrastructure ([CoRDI 2023](https://www.nfdi.de/cordi-2023/)), 2023-09-12/--14, Karlsruhe, Germay.  
 _Proceedings of the Conference on Research Data Infrastructure_ **1**  
 <https://doi.org/10.52825/cordi.v1i.352>
 
@@ -79,6 +83,7 @@ _2023 Galaxy Community Conference_ (GCC2023), 2023-07-10/--16, Brisbane, Austral
 
 Anne Fouilloux, Elisa Trasatti, Federica Foglini, Alejandro Coca-Castro, Jean Iaquinta (2023):  
 [**FAIR Research Objects for realising Open Science with the EOSC project RELIANCE**](https://doi.org/10.3897/rio.9.e108765).  
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/))  
 _Research Ideas and Outcomes_ **9**:e108765  
 <https://doi.org/10.3897/rio.9.e108765>
 
