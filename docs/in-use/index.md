@@ -109,4 +109,9 @@ The [ARC specification](https://github.com/nfdi4plants/ARC-specification/blob/ma
 * Example: <https://doi.org/10.5281/zenodo.8132917>
 * Publication: <https://doi.org/10.1007/978-3-030-80960-7_3>
 
+## Data Stewardship Wizard
 
+The [Data Stewardship Wizard](https://ds-wizard.org/) (DSW) is an interactive platform for making data management plans. By using the [ro-crate-template](https://github.com/ds-wizard/ro-crate-template) it is possible to export RO-Crate from DSW.
+
+* Preprint: <https://doi.org/10.37044/osf.io/24jst>
+   
