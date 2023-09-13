@@ -101,3 +101,9 @@ ROHub imports and exports RO-Crates, using it as an exchange format, particularl
 
 In ARC, files are managed in a git repository with a fixed structure following the ISA model, in addition to metadata in an Excel spreadsheet. The [arcCommander](https://github.com/nfdi4plants/arcCommander) tool can help with managing this structure, while the tool [arc--to-roc](https://github.com/nfdi4plants/arc-to-roc) can inspect the structure to generate an RO-Crate metadata file.
 The [ARC specification](https://github.com/nfdi4plants/ARC-specification/blob/main/ARC%20specification.md#appendix-conversion-of-arcs-to-ro-crates) allows augmentation by adding an explicit `ro-crate-metadata.json` to the ARC.
+
+## FAIRSCAPE
+
+[FAIRSCAPE](https://fairscape.github.io/) is a framework for reusable cloud-based computations using [ARK identifiers](https://arks.org/) with rich provenance in an evidence graph. The command line [fairscape-cli](https://fairscape.github.io/fairscape-cli/)
+uses RO-Crate and BagIt for data validation and packaging in FAIRSCAPE.
+

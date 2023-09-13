@@ -87,5 +87,8 @@ exist for working with RO-Crates:
 -   [ro-crate-validator-py](https://github.com/ResearchObject/ro-crate-validator-py/) -- a modular
     RO-Crate validator (~ _alpha_)
 -   [Sciebo Research Data Services](https://www.research-data-services.org/) -- move research data from OwnCloud to Zenodo or OSF, parsing/creating RO-Crate Metadata file 
+-   [Crate-O](https://github.com/Language-Research-Technology/crate-o) --  browser-based editor for Research Object Crates, inspired by Describo, with vocabulary support (~ _alpha_)
+-   [tuw-rocrate-automation/](https://github.com/MoritzRenkin/tuw-rocrate-automation/) -- Convert RO-Crate (Research Object Crate) to reposit into InvenioRDM (~ _alpha_) 
+-   [ro-crates-deposit](https://github.com/beerphilipp/ro-crates-deposit) -- Command line tool to deposit a RO-Crate directory to an InvenioRD (~_alpha_)
 
 See also [applications using RO-Crate](../in-use/).
