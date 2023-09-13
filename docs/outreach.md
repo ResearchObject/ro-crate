@@ -45,6 +45,33 @@ _Data Science_ **5**(2)
 
 ### 2023
 
+
+Sharif Islam, Hanna Koivula, Dag Endresen, Erik Kusch, Dmitry Schigel, Wouter Addink (2023):  
+[**Data Standards and Interoperability Challenges for Biodiversity Digital Twin: A novel and transformative approach to biodiversity research and application**]().  
+_Biodiversity Information Standards_ ([TDWG 2023](https://www.tdwg.org/conferences/2023/)), Hobert, Australia, 2023-10-09/--13.  
+_Biodiversity Information Science and Standards_ **7**:e112373  
+<https://doi.org/10.3897/biss.7.112373>
+
+Leyla Jael Castro, Stian Soiland-Reyes, Dietrich Rebholz-Schuhmann (2023):  
+[**RO-Crates Meets FAIR Digital Objects**](https://www.tib-op.org/ojs/index.php/CoRDI/article/view/396/577).  
+_Proceedings of the Conference on Research Data Infrastructure_ **1**  
+<https://doi.org/10.52825/cordi.v1i.396>
+
+Sebastian Schaaf, Anika Erxleben-Eggenhofer, Bjoern Gruening (2023):  
+[**Galaxy and RDM**](https://doi.org/10.52825/cordi.v1i.421).  
+_Proceedings of the Conference on Research Data Infrastructure_ **1**  
+<https://doi.org/10.52825/cordi.v1i.421>
+
+Peter Wittenburg, Dimitris Koureas (2023):  
+[**FDO to Structure the Domain of Knowledge **](https://doi.org/10.52825/cordi.v1i.374).  
+_Proceedings of the Conference on Research Data Infrastructure_ **1**  
+<https://doi.org/10.52825/CoRDI.v1i.374>
+
+Carole Goble, Finn Bacall, Stian Soiland-Reyes, Stuart Owen, Ignacio Eguinoa, Bert Droesbeke, Hervé Ménager, Laura Rodriguez-Navas, José M. Fernández, Björn Grüning, Simone Leo, Luca Pireddu, Michael Crusoe, Johan Gustafsson, Salvador Capella-Gutierrez, Frederik Coppens (2023):  
+[**EOSC-Life Workflow Collaboratory for the Life Sciences](https://doi.org/10.52825/cordi.v1i.352).  
+_Proceedings of the Conference on Research Data Infrastructure_ **1**  
+<https://doi.org/10.52825/cordi.v1i.352>
+
 Ove Johan Ragnar Gustafsson, Nicola Soranzo, Bjoern Gruening, Marius van den Beek, Finn Bacall, Carole Goble, Farah Zaib Khan, Gareth Price, Nigel Ward, Jeff Christiansen (2023):  
 [**Finding workflows in the Galaxy universe**: integrating a global ecosystem using workflow registries](https://doi.org/10.5281/zenodo.8157532).  
 _2023 Galaxy Community Conference_ (GCC2023), 2023-07-10/--16, Brisbane, Australia.   
@@ -57,7 +84,7 @@ _Research Ideas and Outcomes_ **9**:e108765
 
 Alessandro Lotta, Gianmaria Silvello (2023):  
 [**How to Cite a Web Ranking and Make it FAIR**](https://www.dei.unipd.it/~silvello/papers/2023_TPDL_LS.pdf).  
-_Theory and Practice of Digital Libraries_ ([TPDL 2023](https://tpdl2023.dei.unipd.it/)), 26-29 Sept 2023, Zadar, Croatia.  
+_Theory and Practice of Digital Libraries_ ([TPDL 2023](https://tpdl2023.dei.unipd.it/)), 2023-09-26/--29, Zadar, Croatia.  
 (awaiting DOI)  
 [[preprint](https://www.dei.unipd.it/~silvello/papers/2023_TPDL_LS.pdf)]
 
