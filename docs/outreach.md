@@ -70,13 +70,13 @@ _Proceedings of the Conference on Research Data Infrastructure_ **1**
 <https://doi.org/10.52825/cordi.v1i.421>
 
 Peter Wittenburg, Dimitris Koureas (2023):  
-[**FDO to Structure the Domain of Knowledge **](https://doi.org/10.52825/cordi.v1i.374).  
+[**FDO to Structure the Domain of Knowledge**](https://doi.org/10.52825/cordi.v1i.374).  
 1st Conference on Research Data Infrastructure ([CoRDI 2023](https://www.nfdi.de/cordi-2023/)), 2023-09-12/--14, Karlsruhe, Germany.  
 _Proceedings of the Conference on Research Data Infrastructure_ **1**  
 <https://doi.org/10.52825/CoRDI.v1i.374>
 
 Carole Goble, Finn Bacall, Stian Soiland-Reyes, Stuart Owen, Ignacio Eguinoa, Bert Droesbeke, Hervé Ménager, Laura Rodriguez-Navas, José M. Fernández, Björn Grüning, Simone Leo, Luca Pireddu, Michael Crusoe, Johan Gustafsson, Salvador Capella-Gutierrez, Frederik Coppens (2023):  
-[**EOSC-Life Workflow Collaboratory for the Life Sciences](https://doi.org/10.52825/cordi.v1i.352).  
+[**EOSC-Life Workflow Collaboratory for the Life Sciences**](https://doi.org/10.52825/cordi.v1i.352).  
 1st Conference on Research Data Infrastructure ([CoRDI 2023](https://www.nfdi.de/cordi-2023/)), 2023-09-12/--14, Karlsruhe, Germany.  
 _Proceedings of the Conference on Research Data Infrastructure_ **1**  
 <https://doi.org/10.52825/cordi.v1i.352>
