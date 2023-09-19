@@ -61,6 +61,7 @@ Leyla Jael Castro, Stian Soiland-Reyes, Dietrich Rebholz-Schuhmann (2023):
 1st Conference on Research Data Infrastructure ([CoRDI 2023](https://www.nfdi.de/cordi-2023/)), 2023-09-12/--14, Karlsruhe, Germany.  
 _Proceedings of the Conference on Research Data Infrastructure_ **1**  
 <https://doi.org/10.52825/cordi.v1i.396>
+[[poster](10.5281/zenodo.8348924)]
 
 Sebastian Schaaf, Anika Erxleben-Eggenhofer, Bjoern Gruening (2023):  
 [**Galaxy and RDM**](https://doi.org/10.52825/cordi.v1i.421).  
@@ -79,6 +80,7 @@ Carole Goble, Finn Bacall, Stian Soiland-Reyes, Stuart Owen, Ignacio Eguinoa, Be
 1st Conference on Research Data Infrastructure ([CoRDI 2023](https://www.nfdi.de/cordi-2023/)), 2023-09-12/--14, Karlsruhe, Germany.  
 _Proceedings of the Conference on Research Data Infrastructure_ **1**  
 <https://doi.org/10.52825/cordi.v1i.352>
+[[slides](https://doi.org/10.5281/zenodo.8348470)]
 
 Ove Johan Ragnar Gustafsson, Nicola Soranzo, Bjoern Gruening, Marius van den Beek, Finn Bacall, Carole Goble, Farah Zaib Khan, Gareth Price, Nigel Ward, Jeff Christiansen (2023):  
 [**Finding workflows in the Galaxy universe**: integrating a global ecosystem using workflow registries](https://doi.org/10.5281/zenodo.8157532).  
