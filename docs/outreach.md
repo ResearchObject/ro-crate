@@ -61,7 +61,7 @@ Leyla Jael Castro, Stian Soiland-Reyes, Dietrich Rebholz-Schuhmann (2023):
 1st Conference on Research Data Infrastructure ([CoRDI 2023](https://www.nfdi.de/cordi-2023/)), 2023-09-12/--14, Karlsruhe, Germany.  
 _Proceedings of the Conference on Research Data Infrastructure_ **1**  
 <https://doi.org/10.52825/cordi.v1i.396>
-[[poster](10.5281/zenodo.8348924)]
+[[poster](https://doi.org/10.5281/zenodo.8348924)]
 
 Sebastian Schaaf, Anika Erxleben-Eggenhofer, Bjoern Gruening (2023):  
 [**Galaxy and RDM**](https://doi.org/10.52825/cordi.v1i.421).  
