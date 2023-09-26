@@ -56,6 +56,7 @@ _Biodiversity Information Standards_ ([TDWG 2023](https://www.tdwg.org/conferenc
 _Biodiversity Information Science and Standards_ **7**:e112373  
 <https://doi.org/10.3897/biss.7.112373>
 
+
 Leyla Jael Castro, Stian Soiland-Reyes, Dietrich Rebholz-Schuhmann (2023):  
 [**RO-Crates Meets FAIR Digital Objects**](https://www.tib-op.org/ojs/index.php/CoRDI/article/view/396/577).  
 1st Conference on Research Data Infrastructure ([CoRDI 2023](https://www.nfdi.de/cordi-2023/)), 2023-09-12/--14, Karlsruhe, Germany.  
@@ -81,6 +82,20 @@ Carole Goble, Finn Bacall, Stian Soiland-Reyes, Stuart Owen, Ignacio Eguinoa, Be
 _Proceedings of the Conference on Research Data Infrastructure_ **1**  
 <https://doi.org/10.52825/cordi.v1i.352>
 [[slides](https://doi.org/10.5281/zenodo.8348470)]
+
+Rudolf Wittner, Petr Holub, Cecilia Mascia, Francesca Frexia,
+Heimo Müller, Markus Plass, Clare Allocca, Fay Betsou, 
+Tony Burdett, Ibon Cancio, Adriane Chapman, Martin Chapman,
+Mélanie Courtot, Vasa Curcin, Johann Eder, Mark Elliot, 
+Katrina Exter, Carole Goble, Martin Golebiewski,
+Bron Kisler, Andreas Kremer, Simone Leo, Sheng Lin-Gibson,
+Anna Marsano, Marco Mattavelli, Josh Moore, Hiroki Nakae,
+Isabelle Perseil, Ayat Salman, James Sluka, 
+Stian Soiland-Reyes, Caterina Strambio-De-Castillia, 
+Michael Sussman, Jason R. Swedlow, Kurt Zatloukal, Jörg Geiger (2023):  
+[**Towards a common standard for data and specimen provenance in life sciences**](https://doi.org/10.1002/lrh2.10365).  
+_Learning Health Systems_  
+<https://doi.org/10.1002/lrh2.10365>
 
 Ove Johan Ragnar Gustafsson, Nicola Soranzo, Bjoern Gruening, Marius van den Beek, Finn Bacall, Carole Goble, Farah Zaib Khan, Gareth Price, Nigel Ward, Jeff Christiansen (2023):  
 [**Finding workflows in the Galaxy universe**: integrating a global ecosystem using workflow registries](https://doi.org/10.5281/zenodo.8157532).  
@@ -163,6 +178,26 @@ _14th ACM/SPEC International Conference on Performance Engineering_ ([ICPE 23](h
 [[slides](https://doi.org/10.5281/zenodo.7893867)]
 [[abstract](https://doi.org/10.1145/3578245.3586012)]
 
+Juri Hößelbarth, Lennart Hofeditz, Richard Freitag (2023):  
+[**Sciebo RDS - reducing friction of FAIR data handling for researchers**](https://indico.cern.ch/event/1210538/contributions/5207925/).  
+_Cloud Storage Synchronization and Sharing_ (CS3 2023), Barcelona (Catalunya, Spain), 2023-03-06/--08    
+[[abstract](https://indico.cern.ch/event/1210538/contributions/5207925/)]
+[[slides](https://indico.cern.ch/event/1210538/contributions/5207925/attachments/2603775/4500547/CS3_2023_ScieboRDS_final.pdf)]
+[[video](https://cds.cern.ch/record/2855346)]
+
+Simone Leo (2023):  
+[**RO-Crate for workflow run provenance**](https://cwl.discourse.group/t/ro-crate-for-workflow-run-provenance/754).  
+_CWL Conference 2023_, 2023-02-27  
+[[video (YouTube)](https://www.youtube.com/watch?v=JXI3pOPMKrw)]
+[[video (ConfTube)](https://conf.tube/w/jDkRHqp2rjqzqtXih9445J)]
+[[slides](https://docs.google.com/presentation/d/1gqKj5eLacw9CYu8H7BxZ7kFBeC8421DCeL11sWRnIds/edit?usp=sharing)]
+
+Mahnoor Zulfiqar (2023):  
+[**Running Reproducible Metabolomics Workflow with CWL**](https://cwl.discourse.group/t/running-reproducible-metabolomics-workflow-with-cwl/762).  
+_CWL Conference 2023_, 2023-02-27  
+[[video (YouTube)](https://www.youtube.com/watch?v=usr0Kau2ihE)]
+[[video (ConfTube)](https://conf.tube/w/5vd8tkpECJNHjx7mhpLGQd)]
+
 Carole Goble, Stian Soiland-Reyes (2023):  
 [**Sharing research artefacts as FAIR Digital Objects using RO-Crate**](https://doi.org/10.5281/zenodo.7559338).  
 _Brookhaven National Laboratory_, 2023-01-23.  
@@ -170,38 +205,10 @@ _Brookhaven National Laboratory_, 2023-01-23.
 [[slides](https://doi.org/10.5281/zenodo.7559338)]
 [[video](https://youtu.be/0T4FBbpgtQo)]
 
-Rudolf Wittner, Petr Holub, Cecilia Mascia, Francesca Frexia,
-Heimo Müller, Markus Plass, Clare Allocca, Fay Betsou, 
-Tony Burdett, Ibon Cancio, Adriane Chapman, Martin Chapman,
-Mélanie Courtot, Vasa Curcin, Johann Eder, Mark Elliot, 
-Katrina Exter, Carole Goble, Martin Golebiewski,
-Bron Kisler, Andreas Kremer, Simone Leo, Sheng Lin-Gibson,
-Anna Marsano, Marco Mattavelli, Josh Moore, Hiroki Nakae,
-Isabelle Perseil, Ayat Salman, James Sluka, 
-Stian Soiland-Reyes, Caterina Strambio-De-Castillia, 
-Michael Sussman, Jason R. Swedlow, Kurt Zatloukal, Jörg Geiger (2023):  
-[**Towards a common standard for data and specimen provenance in life sciences**](https://doi.org/10.1002/lrh2.10365).  
-_Learning Health Systems_  
-<https://doi.org/10.1002/lrh2.10365>
-
-Simone Leo (2023):  
-[**RO-Crate for workflow run provenance**](https://cwl.discourse.group/t/ro-crate-for-workflow-run-provenance/754).  
-_CWL Conference 2023_, 
-[[video (YouTube)](https://www.youtube.com/watch?v=JXI3pOPMKrw)]
-[[video (ConfTube)](https://conf.tube/w/jDkRHqp2rjqzqtXih9445J)]
-[[slides](https://docs.google.com/presentation/d/1gqKj5eLacw9CYu8H7BxZ7kFBeC8421DCeL11sWRnIds/edit?usp=sharing)]
-
-Mahnoor Zulfiqar (2023):  
-[**Running Reproducible Metabolomics Workflow with CWL**](https://cwl.discourse.group/t/running-reproducible-metabolomics-workflow-with-cwl/762).  
-_CWL Conference 2023_, 
-[[video (YouTube)](https://www.youtube.com/watch?v=usr0Kau2ihE)]
-[[video (ConfTube)](https://conf.tube/w/5vd8tkpECJNHjx7mhpLGQd)]
-
 Romain David, Audrey S. Richard, Claire Connellan, Katharina B. Lauer, Maria Luisa Chiusano, Carole Goble, Martin Houde, Isabel Kemmer, Antje Keppler, Philippe Lieutaud, Christian Ohmann, Maria Panagiotopoulou, Sara Raza Khan, Arina Rybina, Stian Soiland-Reyes, Charlotte Wit, Rudolf Wittner, Rafael Andrade Buono, Sarah Arnaud Marsh, Pauline Audergon, Dylan Bonfils, Jose-Maria Carazo, Remi Charrel, Frederik Coppens, Wolfgang Fecke, Claudia Filippone, Eva Garcia Alvarez, Sheraz Gul, Henning Hermjakob, Katja Herzog, Petr Holub, Lukasz Kozera, Allyson L. Lister, José López-Coronado, Bénédicte Madon, Kurt Majcen, William Martin, Wolfgang Müller, Elli Papadopoulou, Christine M.A. Prat, Paolo Romano, Susanna-Assunta Sansone, Gary Saunders, Niklas Blomberg, Jonathan Ewbank (2023):  
-[**Umbrella Data Management Plans to integrate FAIR data: lessons from the ISIDORe and BY-COVID consortia for pandemic preparedness**](https://doi.org/10.5281/zenodo.7520086).  
-(submitted to Data Science Journal).  
-_Zenodo_  
-<https://doi.org/10.5281/zenodo.7520086>
+[**Umbrella Data Management Plans to Integrate FAIR Data: Lessons From the ISIDORe and BY-COVID Consortia for Pandemic Preparedness**](https://doi.org/10.5334/dsj-2023-035).  
+_Data Science Journal_ **22**:52  
+<https://doi.org/10.5334/dsj-2023-035>
 
 Molly A Bogue, Robyn L Ball, Vivek M Philip, David O Walton, Matthew H Dunn, Georgi Kolishovski, Anna Lamoureux, Matthew Gerring, Hongping Liang, Jake Emerson, Tim Stearns, Hao He, Gaurab Mukherjee, John Bluis, Sejal Desai, Beth Sundberg, Beena Kadakkuzha, Govindarajan Kunde-Ramamoorthy, Elissa J Chesler (2023):  
 [**Mouse Phenome Database: towards a more FAIR-compliant and TRUST-worthy data repository and tool suite for phenotypes and genotypes**]().  
