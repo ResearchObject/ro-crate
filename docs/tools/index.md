@@ -88,6 +88,7 @@ exist for working with RO-Crates:
     according to Workflow RO-Crate profile (~ _alpha_)
 -   [ro-crate-validator-py](https://github.com/ResearchObject/ro-crate-validator-py/) -- a modular
     RO-Crate validator (~ _alpha_)
+-   [ELN validator](https://github.com/TheELNConsortium/TheELNFileFormat/blob/master/tools/eln_validator.py) -- validates [ELN RO-Crates](https://github.com/TheELNConsortium/TheELNFileFormat) for electronic lab notebooks (~ _beta_)
 -   [Sciebo Research Data Services](https://www.research-data-services.org/) -- move research data from OwnCloud to Zenodo or OSF, parsing/creating RO-Crate Metadata file 
 -   [tuw-rocrate-automation/](https://github.com/MoritzRenkin/tuw-rocrate-automation/) -- Convert RO-Crate (Research Object Crate) to reposit into InvenioRDM (~ _alpha_) 
 -   [ro-crates-deposit](https://github.com/beerphilipp/ro-crates-deposit) -- Command line tool to deposit a RO-Crate directory to an InvenioRD (~_alpha_)
