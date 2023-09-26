@@ -118,7 +118,16 @@ The [Data Stewardship Wizard](https://ds-wizard.org/) (DSW) is an interactive pl
 
 ## Sciebo RDS
 
-Sciebo RDS (Research Data Services) is a self-hosted interface between data repositories and file storage solutions, assisting the research data deposition process with annotations made using [Describo Online]() and stored as an RO-Crate, which is then mapped to the chosen repository's metadata scheme. Supported repositories include OSF, InvenioRDM, Dataverse. This is developed as a [CS3MESH4EOSC](https://cs3mesh4eosc.eu/) with cultural heritage studies archive PARADISEC as use case.
+Sciebo RDS (Research Data Services) is a self-hosted interface between data repositories and file storage solutions, assisting the research data deposition process with annotations made using [Describo Online](https://arkisto-platform.github.io/tools/description/describo-online/) and stored as an RO-Crate, which is then mapped to the chosen repository's metadata scheme. Supported repositories include OSF, InvenioRDM, Harvard Dataverse. This is developed as a [CS3MESH4EOSC](https://cs3mesh4eosc.eu/) with cultural heritage studies archive PARADISEC as use case.
 
 * [Conference abstract from CS3](https://indico.cern.ch/event/1210538/contributions/5207925/), [slides](https://indico.cern.ch/event/1210538/contributions/5207925/attachments/2603775/4500547/CS3_2023_ScieboRDS_final.pdf) [video](https://cds.cern.ch/record/2855346)
 * [CS3MESH4EOSC Webinar](https://cs3mesh4eosc.eu/data-services/open-data-systems)
+
+
+## AROMA
+
+AROMA (ARP RO-Crate Manager) is part of Hungarian initiative [ELKH ARP](https://science-research-data.hu/en), extending [Harvard Dataverse](https://dataverse.harvard.edu/) to allow dynamic metadata editing of data deposit metadata using multiple schemas, mapped using  and presented using the [Describo Crate Builder Web](https://github.com/describo/crate-builder-component-react) component. Different [Metadata blocks](https://guides.dataverse.org/en/latest/admin/metadatacustomization.html) in Dataverse are supported.
+
+Work on [Dataverse support for RO-Crate](https://github.com/IQSS/dataverse/issues/8688) continues in collaboration with FAIR-IMPACT collaborators.
+
+* [Developing ELKH ARP AROMA](https://sztaki.hun-ren.hu/en/innovation/news/developing-elkh-arp-aroma-published-describo-newsletter-australia)

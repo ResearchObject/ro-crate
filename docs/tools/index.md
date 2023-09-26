@@ -27,12 +27,12 @@ exist for working with RO-Crates:
 -   [Crate-O](https://github.com/Language-Research-Technology/crate-o) --  browser-based editor for Research Object Crates, inspired by Describo, with vocabulary support for _Schema.org Style schemas_ (SOSSs) (~ _alpha_)
 -   [Describo](https://describo.github.io/#/) - an ecosystem of tools, software components and
     services to create and manage Research Object Crates. (~ _RC_)
-    -   5 minute Describo and RO-Crate tutorial: https://describo.github.io/#/tutorial
     -   Desktop: https://describo.github.io/#/desktop
     -   Browser: https://describo.github.io/#/web
     -   For Developers: https://describo.github.io/#/component
     -   JSON-LD Data Packs: https://describo.github.io/#/datapacks
     -   Profiles (interface definition): https://describo.github.io/#/profile
+    -   [Describo Crate Builder Web](https://github.com/describo/crate-builder-component-react)
 -   [dmbon-assistant](https://github.com/vliz-be-opsci/dmbon-assistant/#readme) -- Data management assistant that publishes RO-Crate (~ _alpha_)
 -   [ro-crate-excel](https://www.npmjs.com/package/ro-crate-excel) -- Command-line tool to help
     create RO-Crates from spreadsheets (~ _beta_)
