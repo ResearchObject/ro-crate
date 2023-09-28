@@ -36,7 +36,8 @@ ROCRATE_VERSION="1.2-DRAFT"
 
 # Update version from http://schema.org/docs/releases.html
 # NOTE: Breaks due to https://github.com/schemaorg/schemaorg/issues/2805
-SCHEMA_VERSION="15.0"
+# https://github.com/schemaorg/schemaorg/issues/3378
+SCHEMA_VERSION="22.0"
 
 # Update from https://bioschemas.org/profiles/Workflow/
 BIOSCHEMA_WORKFLOW_PROFILE = "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
@@ -67,9 +68,9 @@ def main():
     j["version"] = tag
     j["url"] = {"@id": "https://w3id.org/ro/crate/%s" % version}
     
-    j["schemaVersion"] = {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION}    
+    j["schemaVersion"] = {"@id": "https://schema.org/docs/releases.html#v%s" % SCHEMA_VERSION}    
     j["isBasedOn"] = [
-        {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION},
+        {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION},        
         {"@id": "https://pcdm.org/2016/04/18/models"},
         {"@id": BIOSCHEMA_WORKFLOW_PROFILE },
         {"@id": BIOSCHEMA_FORMAL_PARAMETER_PROFILE }
@@ -117,7 +118,7 @@ ADDITIONAL = OrderedDict([
           ("hasMember", "http://pcdm.org/models#hasMember"),
           ("RepositoryCollection", "http://pcdm.org/models#Collection"),
           ("RepositoryObject", "http://pcdm.org/models#Object"),
-          ("RepositoryFile", "http://pcdm.org/models#File")
+          ("RepositoryFile", "http://pcdm.org/models#File"),
 
           # Temporary namespace for properties/types
           # proposed https://bioschemas.org/profiles/Workflow/ 

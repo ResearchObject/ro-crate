@@ -32,7 +32,7 @@ excerpt: List of changes in releases of this specifications
  (see [algorithm](../root-data-entity.html#finding-the-root-data-entity))
   * **Change**: [Files on the web](../data-entities.html#embedded-data-entities-that-are-also-on-the-web) should now use `contentUrl` for direct download [#259](https://github.com/ResearchObject/ro-crate/issues/259)  
   * [Clarify entity terminology](../contextual-entities.md#contextual-vs-data-entities)  [#204](https://github.com/ResearchObject/ro-crate/issues/204)
-  * Update [JSON-LD context](../ro-crate-metadata.json) to [schema.org 15.0](https://github.com/schemaorg/schemaorg/tree/main/data/releases/15.0/). Note that upstream adds ~230 terms, and removed terms `AuthenticContent` `MissingContext`. [#263](https://github.com/ResearchObject/ro-crate/issues/263)
+  * Update [JSON-LD context](../ro-crate-metadata.json) to [schema.org 22.0](https://github.com/schemaorg/schemaorg/tree/main/data/releases/22.0/). Note that upstream adds >230 terms, and removed terms `AuthenticContent` `MissingContext`, `constrainingProperty` (now `constraintProperty`), `measuredValue`, `observedNode` . [#263](https://github.com/ResearchObject/ro-crate/issues/263) [#274](https://github.com/ResearchObject/ro-crate/issues/274)
   * Remove custom mapping of `funding` for Bioschemas (now officially <http://schema.org/funding>)
   * Updated for [ComputationalWorkflow 1.0 profile](../workflows#complying-with-bioschemas-computational-workflow-profile)   [#185](https://github.com/ResearchObject/ro-crate/issues/185)
   * Clarified [Directories on the web format](../data-entities.html#directories-on-the-web-dataset-distributions) is a media type, not extension [#205](https://github.com/ResearchObject/ro-crate/issues/235)  
