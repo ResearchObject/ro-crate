@@ -131,6 +131,8 @@ ADDITIONAL = OrderedDict([
           # Temporary namespace for properties/types
           # proposed https://bioschemas.org/profiles/Workflow/ 
           # Remove if/when added to schema.org release!
+          # See also https://github.com/BioSchemas/specifications/issues/653
+          # on which namespace to use..
           ## BEGIN
           ("ComputationalWorkflow", BIOSCHEMA_WORKFLOW_NS),
           ("input", BIOSCHEMA_WORKFLOW_NS + "#input"),
@@ -165,6 +167,22 @@ ADDITIONAL = OrderedDict([
           ("ResourceDescriptor", "http://www.w3.org/ns/dx/prof/ResourceDescriptor"),
           ("ResourceRole", "http://www.w3.org/ns/dx/prof/ResourceRole"),
           ("Profile", "http://www.w3.org/ns/dx/prof/Profile"),
+
+          # CodeMeta terms v3, but with the newer w3id namespace..
+          # https://github.com/codemeta/codemeta/issues/216
+          ("softwareSuggestions", "https://w3id.org/codemeta#softwareSuggestions"),
+          ("continuousIntegration", "https://w3id.org/codemeta#continuousIntegration"),
+          ("buildInstructions", "https://w3id.org/codemeta#buildInstructions"),
+          ("developmentStatus", "https://w3id.org/codemeta#developmentStatus"),
+          ("embargoEndDate", "https://w3id.org/codemeta#embargoEndDate"),
+          ("funding", "https://w3id.org/codemeta#funding"),
+          ("readme", "https://w3id.org/codemeta#readme"),
+          ("issueTracker", "https://w3id.org/codemeta#issueTracker"),
+          ("referencePublication", "https://w3id.org/codemeta#referencePublication"),
+          ("maintainer", "https://w3id.org/codemeta#maintainer"),
+          ("hasSourceCode", "https://w3id.org/codemeta#hasSourceCode"),
+          ("isSourceCodeOf", "https://w3id.org/codemeta#isSourceCodeOf"),
+
           ## END
 
           ## FIXME: Where is this used from?
