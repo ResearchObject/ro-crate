@@ -53,6 +53,12 @@ BIOSCHEMA_WORKFLOW_NS = "https://bioschemas.org/ComputationalWorkflow"
 BIOSCHEMA_FORMAL_PARAMETER_NS = "https://bioschemas.org/FormalParameter"
 BIOSCHEMA_FORMAL_PARAMETER_PROFILE = "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
 
+# Update from https://github.com/codemeta/codemeta/#codemeta-schema
+CODEMETA="https://w3id.org/codemeta/3.0"
+# and update CodeMeta terms below manually.
+# See also https://github.com/codemeta/codemeta/issues/321 on PID/namespace
+
+
 
 def main():
     #url="http://schema.org/version/%s/schemaorgcontext.jsonld" % SCHEMA_VERSION
@@ -81,7 +87,8 @@ def main():
         {"@id": "https://identifiers.org/%s" % SCHEMA_SWHID},        
         {"@id": "https://pcdm.org/2016/04/18/models"},
         {"@id": BIOSCHEMA_WORKFLOW_PROFILE },
-        {"@id": BIOSCHEMA_FORMAL_PARAMETER_PROFILE }
+        {"@id": BIOSCHEMA_FORMAL_PARAMETER_PROFILE },
+        {"@id": CODEMETA}
     ]
     j["license"] = {"@id": "https://creativecommons.org/publicdomain/zero/1.0/"}
     context = OrderedDict()
@@ -175,14 +182,17 @@ ADDITIONAL = OrderedDict([
           ("buildInstructions", "https://w3id.org/codemeta#buildInstructions"),
           ("developmentStatus", "https://w3id.org/codemeta#developmentStatus"),
           ("embargoEndDate", "https://w3id.org/codemeta#embargoEndDate"),
-          ("funding", "https://w3id.org/codemeta#funding"),
+          # Funding is already in schema.org, see
+          # https://github.com/codemeta/codemeta/issues/160
+          #("funding", "https://w3id.org/codemeta#funding"),
           ("readme", "https://w3id.org/codemeta#readme"),
           ("issueTracker", "https://w3id.org/codemeta#issueTracker"),
           ("referencePublication", "https://w3id.org/codemeta#referencePublication"),
-          ("maintainer", "https://w3id.org/codemeta#maintainer"),
+          # Maintainer is already in schema.org, see
+          # https://github.com/codemeta/codemeta/pull/250
+          #("maintainer", "https://w3id.org/codemeta#maintainer"),
           ("hasSourceCode", "https://w3id.org/codemeta#hasSourceCode"),
           ("isSourceCodeOf", "https://w3id.org/codemeta#isSourceCodeOf"),
-
           ## END
 
           ## FIXME: Where is this used from?

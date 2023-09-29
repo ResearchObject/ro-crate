@@ -22,6 +22,9 @@
           },
           {
                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+          },
+          {
+               "@id": "https://w3id.org/codemeta/3.0"
           }
      ],
      "license": {
@@ -2892,6 +2895,16 @@
           "ResourceDescriptor": "http://www.w3.org/ns/dx/prof/ResourceDescriptor",
           "ResourceRole": "http://www.w3.org/ns/dx/prof/ResourceRole",
           "Profile": "http://www.w3.org/ns/dx/prof/Profile",
+          "softwareSuggestions": "https://w3id.org/codemeta#softwareSuggestions",
+          "continuousIntegration": "https://w3id.org/codemeta#continuousIntegration",
+          "buildInstructions": "https://w3id.org/codemeta#buildInstructions",
+          "developmentStatus": "https://w3id.org/codemeta#developmentStatus",
+          "embargoEndDate": "https://w3id.org/codemeta#embargoEndDate",
+          "readme": "https://w3id.org/codemeta#readme",
+          "issueTracker": "https://w3id.org/codemeta#issueTracker",
+          "referencePublication": "https://w3id.org/codemeta#referencePublication",
+          "hasSourceCode": "https://w3id.org/codemeta#hasSourceCode",
+          "isSourceCodeOf": "https://w3id.org/codemeta#isSourceCodeOf",
           "@label": "http://www.w3.org/2000/01/rdf-schema#label",
           "pcdm": "http://pcdm.org/models#",
           "bibo": "http://purl.org/ontology/bibo/",
