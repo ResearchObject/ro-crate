@@ -35,13 +35,17 @@ import urllib.request
 ROCRATE_VERSION="1.2-DRAFT"
 
 # Update version from http://schema.org/docs/releases.html
-# NOTE: Breaks due to https://github.com/schemaorg/schemaorg/issues/2805
-# https://github.com/schemaorg/schemaorg/issues/3378
 SCHEMA_VERSION="22.0"
+# NOTE: http://schema.org/version/22.0/ type links 
+# frequently breaks, see 
+# https://github.com/schemaorg/schemaorg/issues/2805
+# https://github.com/schemaorg/schemaorg/issues/3378
+# 
 # Navigate to https://archive.softwareheritage.org/browse/origin/directory/?branch=HEAD&origin_url=https://github.com/schemaorg/schemaorg&path=data/releases 
 # Then select the particular version as a folder, e.g. data/releases/22.0,
 # then under Permalinks on the right select the short-form from Directory
 SCHEMA_SWHID="swh:1:dir:60ff33aeead8b6c6b5a82f273a4a905fac5f8cf3"
+## See also https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html
 
 # Update from https://bioschemas.org/profiles/Workflow/
 BIOSCHEMA_WORKFLOW_PROFILE = "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
@@ -74,7 +78,7 @@ def main():
     
     j["schemaVersion"] = {"@id": "https://schema.org/docs/releases.html#v%s" % SCHEMA_VERSION}    
     j["isBasedOn"] = [
-        {"@id": "https://archive.softwareheritage.org/%s" % SCHEMA_SWHID},        
+        {"@id": "https://identifiers.org/%s" % SCHEMA_SWHID},        
         {"@id": "https://pcdm.org/2016/04/18/models"},
         {"@id": BIOSCHEMA_WORKFLOW_PROFILE },
         {"@id": BIOSCHEMA_FORMAL_PARAMETER_PROFILE }

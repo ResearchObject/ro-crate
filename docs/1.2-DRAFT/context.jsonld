@@ -12,7 +12,7 @@
      },
      "isBasedOn": [
           {
-               "@id": "https://archive.softwareheritage.org/swh:1:dir:60ff33aeead8b6c6b5a82f273a4a905fac5f8cf3"
+               "@id": "https://identifiers.org/swh:1:dir:60ff33aeead8b6c6b5a82f273a4a905fac5f8cf3"
           },
           {
                "@id": "https://pcdm.org/2016/04/18/models"
