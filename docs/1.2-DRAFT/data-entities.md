@@ -44,14 +44,20 @@ Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-
 
 _Data Entities_ representing files MUST have `"File"` as a value for `@type`. `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ here is liberal, and includes "downloadable" resources where `@id` is an absolute URI.
 
-_Data Entities_ representing directories MUST be of `"@type": "Dataset"`. The term _directory_ here includes HTTP file listings where `@id` is an absolute URI, however "external" directories SHOULD have a programmatic listing of their content (e.g. another RO-Crate). It follows that the _RO-Crate Root_ is itself a data entity.
+_Data Entities_ representing directories MUST be `Dataset` as a value for `@type`. The term _directory_ here includes HTTP file listings where `@id` is an absolute URI, however "external" directories SHOULD have a programmatic listing of their content (e.g. another RO-Crate). It follows that the _RO-Crate Root_ is itself a data entity.
 
 _Data Entities_ can also be other types, for instance an online database. These SHOULD be a `@type` of [CreativeWork] (or one of its subtypes) and typically have a `@id` which is an absolute URI.
 
 In all cases, `@type` MAY be an array in order to also specify a more specific type, e.g. `"@type": ["File", "ComputationalWorkflow"]`
 
-{: .tip }
-> There is no requirement to represent _every_ file and folder in an RO-Crate as Data Entities in the RO-Crate JSON-LD.
+There is no requirement to represent _every_ file and folder in an RO-Crate as Data Entities in the RO-Crate JSON-LD. Reasons for not describing files would include that the files:
+- are described in some other way, for example a manifest or another package management system,
+- are supporting files for a software application,
+- have metadata embedded in their filenames or paths,
+- have a purpose is unknown to the crate author, but they need to be preserved as part of an archive. 
+
+In any of these cases where files are not described there SHOULD be a directory (`Dataset`) _Data Entity_ that describes the files, and how they should be interpreted.
+
 
 ### Example linking to a file and folders
 
@@ -103,7 +109,7 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
       "@id": "lots_of_little_files/",
       "@type": "Dataset",
       "name": "Too many files",
-      "description": "This directory contains many small files, that we're not going to describe in detail."
+      "description": "This directory contains many small files - the name of the file is a date in YYYY-MM-DD.csv, each file contains daily temperature readings, sampled hourly for the Glop Pot cave."
     }
   ]
 }
@@ -174,7 +180,7 @@ If there is no web-accessible description for a file format it SHOULD be describ
 
 ## Core Metadata for Data Entities
 
-The table below outlines the properties that Data Entities, when present, MUST have to be minimally valid.
+The list below outlines the properties that Data Entities, when present in the _RO-Crate Metadata Document_, SHOULD exist, either in `RO-Crate Root` directory or on the web.
 
 ### Encoding file paths
 
@@ -213,6 +219,11 @@ Additionally, `Dataset` entities SHOULD have:
 * [hasPart] listing directly contained data entities
 
 Any of the properties of schema.org [Dataset] MAY additionally be used (adding contextual entities as needed). [Directories on the web](#directories-on-the-web-dataset-distributions) SHOULD also provide `distribution`.
+
+## Local Data Entities
+
+Where an RO-Crate is used to describe _files_  and _directories_ contained within the _RO-Crate root_ directory these locally referenced _Data Entities_ as described in the _RO-Crate Metadata Document_  SHOULD be present in the _RO-Crate root_.
+
 
 ## Web-based Data Entities
 
