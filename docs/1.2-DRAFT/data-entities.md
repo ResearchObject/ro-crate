@@ -193,7 +193,7 @@ In this document the term _URI_ includes international *IRI*s; the _RO-Crate Met
 A [File] _Data Entity_ MUST have the following properties:
 
 *  `@type`: MUST be `File`, or an array where `File` is one of the values.
-*  `@id` MUST be either a _URI Path_ relative to the _RO Crate root_, or an absolute URI.
+*  `@id` MUST be either a _URI Path_ relative to the _RO Crate root_, or an absolute URI. 
 
 Additionally, `File` entities SHOULD have:
 
@@ -222,7 +222,7 @@ Any of the properties of schema.org [Dataset] MAY additionally be used (adding c
 
 ## Local Data Entities
 
-Where an RO-Crate is used to describe _files_  and _directories_ contained within the _RO-Crate root_ directory these locally referenced _Data Entities_ as described in the _RO-Crate Metadata Document_  SHOULD be present in the _RO-Crate root_.
+Where an RO-Crate is used to describe _files_  and _directories_ contained within the _RO-Crate root_ directory these locally referenced _Data Entities_ as described in the _RO-Crate Metadata Document_  SHOULD resolve to a file within the _RO-Crate Root_.
 
 
 ## Web-based Data Entities
@@ -279,7 +279,7 @@ Additional care SHOULD be taken to improve persistence and long-term preservatio
 in an RO-Crate as they can be more difficult to archive or move along with the _RO-Crate root_, and
 may change intentionally or unintentionally leaving the RO-Crate with incomplete or outdated information.
 
-File Data Entries with an `@id` URI outside the _RO-Crate Root_ SHOULD at the time of RO-Crate creation be directly downloadable by a simple retrieval (e.g. HTTP GET), permitting redirections and HTTP/HTTPS authentication. For instance, in the example above, <https://zenodo.org/record/3541888> and <https://doi.org/10.5281/zenodo.3541888> cannot be used as `@id` above as retrieving these URLs give a HTML landing page rather than the desired PDF as indicated by `encodingFormat`.
+File Data Entries with an `@id` URI outside the _RO-Crate Root_ SHOULD at the time of RO-Crate creation be directly downloadable by a simple non-interactive retrieval (e.g. HTTP GET) of a single data stream, permitting redirections and HTTP/HTTPS authentication. For instance, in the example above, <https://zenodo.org/record/3541888> and <https://doi.org/10.5281/zenodo.3541888> cannot be used as `@id` above as retrieving these URLs give a HTML landing page rather than the desired PDF as indicated by `encodingFormat`. 
 
 As files on the web may change, the timestamp property [sdDatePublished] SHOULD be included to indicate when the absolute URL was accessed, and derived metadata like [encodingFormat] and [contentSize] were considered to be representative:
 
