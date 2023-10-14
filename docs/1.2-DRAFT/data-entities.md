@@ -58,7 +58,9 @@ There is no requirement to represent _every_ file and folder in an RO-Crate as D
 - have metadata embedded in their filenames or paths which can be explained once,
 - have a purpose that is unknown to the crate author, but they need to be preserved as part of an archive. 
 
-In any of the above cases where files are not described, a directory containing a set of files _MAY_ be described using a `Dataset` _Data Entity_ that encapsulates the files with a `description` property that explains the contents. If the RO-Crate file structure is flat, or files are not grouped together a `description` property on the _Root Data Entity_ may be used. This approach is recommended for RO-Crates which are to be deposited in a long-term archive.
+In any of the above cases where files are not described, a directory containing a set of files _MAY_ be described using a `Dataset` _Data Entity_ that encapsulates the files with a `description` property that explains the contents. If the RO-Crate file structure is flat, or files are not grouped together a `description` property on the _Root Data Entity_ may be used, or a `Dataset` with a local reference beginning with `#` (eg to describe certain type of file which occurs throughout the crate). This approach is recommended for RO-Crates which are to be deposited in a long-term archive.
+
+
 
 
 ### Example linking to a file and folders
@@ -115,6 +117,31 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
     }
   ]
 }
+```
+
+If the dataset contained  a large number of `*.ai` files which were spread throughout the crate structure and which did not have `File Data Entities` then a approach to describing them would be:
+
+```
+{
+      "@id": "./",
+      "@type": [
+        "Dataset"
+      ],
+      "hasPart": [
+        {
+          "@id": "#ai-files"
+        }
+      ]
+    },
+
+{
+      "@id": "#ai-files",
+      "@type": "Dataset",
+      "name": ".ai Files",
+      "description": "This dataset contains some files with the extension '.ai' which despite their extension have an encoding format of 'application/pdf'. These have yet to be catalogued."
+}
+
+
 ```
 
 ### Adding detailed descriptions of encodings
@@ -204,7 +231,10 @@ RO-Crate's `File` is an alias for schema.org type [MediaObject], any of its prop
 A [Dataset] (directory) _Data Entity_ MUST have the following properties:
 
 *  `@type` MUST be `Dataset` or an array where `Dataset` is one of the values.
-*  `@id`  MUST be either a _URI Path_ relative to the _RO Crate root_which MUST resolve to a directory that is present in the _RO-Crate Root_, or an absolute URI. The id SHOULD end with `/`.
+*  `@id`  MUST be either:
+  *   a _URI Path_ relative to the _RO Crate root_which MUST resolve to a directory that is present in the _RO-Crate Root_ The id SHOULD end with `/`, or
+  *   an absolute URI, or
+  *   a local reference beginning with `#`
 
 Additionally, `Dataset` entities SHOULD have:
 
