@@ -42,21 +42,23 @@ The data entities can be further described by referencing [contextual entities](
 
 Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the [Root Data Entity](root-data-entity.md) using the [hasPart] property. Directory hierarchies MAY be represented with nested [Dataset] _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
 
-_Data Entities_ representing files MUST have `"File"` as a value for `@type`. `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ here is liberal, and includes "downloadable" resources where `@id` is an absolute URI.
+_Data Entities_ representing files: MUST have `"File"` as a value for `@type`. `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ includes:
+-  _Attached_ resources where `@id` is a URI (path) relative to the _RO-Crate Root_ which MUST resolve to file.
+-  _Detached_ "downloadable" resources where `@id` is an absolute URI which resolves to a single datasteam that can be downloaded and saved as a file. _Detached_ Files SHOULD NOT reference intermediate resources such as splash-pages, search services or web-based viewer applications.
 
-_Data Entities_ representing directories MUST be `Dataset` as a value for `@type`. The term _directory_ here includes HTTP file listings where `@id` is an absolute URI, however "external" directories SHOULD have a programmatic listing of their content (e.g. another RO-Crate). It follows that the _RO-Crate Root_ is itself a data entity.
+_Data Entities_ representing directories MUST have `Dataset` as a value for `@type`. The term _directory_ here includes HTTP file listings where `@id` is an absolute URI, however "external, _Detached_ directories SHOULD have a programmatic listing of their content (e.g. another RO-Crate). It follows that the _RO-Crate Root_ is itself a data entity.
 
 _Data Entities_ can also be other types, for instance an online database. These SHOULD be a `@type` of [CreativeWork] (or one of its subtypes) and typically have a `@id` which is an absolute URI.
 
 In all cases, `@type` MAY be an array in order to also specify a more specific type, e.g. `"@type": ["File", "ComputationalWorkflow"]`
 
-There is no requirement to represent _every_ file and folder in an RO-Crate as Data Entities in the RO-Crate JSON-LD. Reasons for not describing files would include that the files:
+There is no requirement to represent _every_ file and folder in an RO-Crate as Data Entities in the RO-Crate JSON-LD.  Reasons for not describing files would include that the files:
 - are described in some other way, for example a manifest or another package management system,
 - are supporting files for a software application,
-- have metadata embedded in their filenames or paths,
-- have a purpose is unknown to the crate author, but they need to be preserved as part of an archive. 
+- have metadata embedded in their filenames or paths which can be explained once,
+- have a purpose that is unknown to the crate author, but they need to be preserved as part of an archive. 
 
-In any of these cases where files are not described there SHOULD be a directory (`Dataset`) _Data Entity_ that describes the files, and how they should be interpreted.
+In any of the above cases where files are not described, a directory containing a set of files _MAY_ be described using a `Dataset` _Data Entity_ that encapsulates the files with a `description` property that explains the contents. If the RO-Crate file structure is flat, or files are not grouped together a `description` property on the _Root Data Entity_ may be used. This approach is recommended for RO-Crates which are to be deposited in a long-term archive.
 
 
 ### Example linking to a file and folders
@@ -126,7 +128,7 @@ identifier to a _Contextual Entity_ of `@type` [WebPage].
   {
     "@id": "cp7glop.ai",
     "@type": "File",
-    "name": "Diagram showing trend to increase",
+    "name": "Glop Plot map",
     "contentSize": "383766",
     "description": "Illustrator file for Glop Pot",
     "encodingFormat": ["application/pdf", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19"}]
@@ -180,20 +182,12 @@ If there is no web-accessible description for a file format it SHOULD be describ
 
 ## Core Metadata for Data Entities
 
-The list below outlines the properties that Data Entities, when present in the _RO-Crate Metadata Document_, SHOULD exist, either in `RO-Crate Root` directory or on the web.
-
-### Encoding file paths
-
-Note that all `@id` [identifiers must be valid URI references](appendix/jsonld.md#describing-entities-in-json-ld), care must be taken to express any relative paths using `/` separator, correct casing, and escape special characters like space (`%20`) and percent (`%25`), for instance a _File Data Entity_ from the Windows path `Results and Diagrams\almost-50%.png` becomes `"@id": "Results%20and%20Diagrams/almost-50%25.png"` in the _RO-Crate JSON-LD_.
- 
-In this document the term _URI_ includes international *IRI*s; the _RO-Crate Metadata File_ is always UTF-8 and international characters in identifiers SHOULD be written using native UTF-8 characters (*IRI*s), however traditional URL encoding of Unicode characters with `%` MAY appear in `@id` strings. Example: `"@id": "面试.mp4"` is preferred over the equivalent `"@id": "%E9%9D%A2%E8%AF%95.mp4"`
-
 ### File Data Entity
 
 A [File] _Data Entity_ MUST have the following properties:
 
 *  `@type`: MUST be `File`, or an array where `File` is one of the values.
-*  `@id` MUST be either a _URI Path_ relative to the _RO Crate root_, or an absolute URI. 
+*  `@id` MUST be either a _URI Path_ relative to the _RO-Crate root_ which MUST resolve to a file that is present in the _RO-Crate Root_, or an absolute URI. 
 
 Additionally, `File` entities SHOULD have:
 
@@ -210,7 +204,7 @@ RO-Crate's `File` is an alias for schema.org type [MediaObject], any of its prop
 A [Dataset] (directory) _Data Entity_ MUST have the following properties:
 
 *  `@type` MUST be `Dataset` or an array where `Dataset` is one of the values.
-*  `@id`  MUST be either a _URI Path_ relative to the _RO Crate root_, or an absolute URI. The id SHOULD end with `/`
+*  `@id`  MUST be either a _URI Path_ relative to the _RO Crate root_which MUST resolve to a directory that is present in the _RO-Crate Root_, or an absolute URI. The id SHOULD end with `/`.
 
 Additionally, `Dataset` entities SHOULD have:
 
@@ -220,9 +214,6 @@ Additionally, `Dataset` entities SHOULD have:
 
 Any of the properties of schema.org [Dataset] MAY additionally be used (adding contextual entities as needed). [Directories on the web](#directories-on-the-web-dataset-distributions) SHOULD also provide `distribution`.
 
-## Local Data Entities
-
-Where an RO-Crate is used to describe _files_  and _directories_ contained within the _RO-Crate root_ directory these locally referenced _Data Entities_ as described in the _RO-Crate Metadata Document_  SHOULD resolve to a file within the _RO-Crate Root_.
 
 
 ## Web-based Data Entities
@@ -293,6 +284,13 @@ As files on the web may change, the timestamp property [sdDatePublished] SHOULD 
     "sdDatePublished": "2020-04-09T13:09:21+01:00Z"
   }
 ```
+
+### Encoding file paths
+
+Note that all `@id` [identifiers must be valid URI references](appendix/jsonld.md#describing-entities-in-json-ld), care must be taken to express any relative paths using `/` separator, correct casing, and escape special characters like space (`%20`) and percent (`%25`), for instance a _File Data Entity_ from the Windows path `Results and Diagrams\almost-50%.png` becomes `"@id": "Results%20and%20Diagrams/almost-50%25.png"` in the _RO-Crate JSON-LD_.
+ 
+In this document the term _URI_ includes international *IRI*s; the _RO-Crate Metadata File_ is always UTF-8 and international characters in identifiers SHOULD be written using native UTF-8 characters (*IRI*s), however traditional URL encoding of Unicode characters with `%` MAY appear in `@id` strings. Example: `"@id": "面试.mp4"` is preferred over the equivalent `"@id": "%E9%9D%A2%E8%AF%95.mp4"`
+
 
 ### Embedded data entities that are also on the web
 
