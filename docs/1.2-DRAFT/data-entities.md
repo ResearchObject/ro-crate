@@ -44,7 +44,7 @@ Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-
 
 _Data Entities_ representing files: MUST have `"File"` as a value for `@type`. `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ includes:
 -  _Attached_ resources where `@id` is a URI (path) relative to the _RO-Crate Root_ which MUST resolve to file.
--  _Detached_ "downloadable" resources where `@id` is an absolute URI which resolves to a single datasteam that can be downloaded and saved as a file. _Detached_ Files SHOULD NOT reference intermediate resources such as splash-pages, search services or web-based viewer applications.
+-  _Detached_ "downloadable" resources where `@id` is an absolute URI which resolves to a single datastream that can be downloaded and saved as a file. _Detached_ Files SHOULD NOT reference intermediate resources such as splash-pages, search services or web-based viewer applications.
 
 _Data Entities_ representing directories MUST have `Dataset` as a value for `@type`. The term _directory_ here includes HTTP file listings where `@id` is an absolute URI, however "external, _Detached_ directories SHOULD have a programmatic listing of their content (e.g. another RO-Crate). It follows that the _RO-Crate Root_ is itself a data entity.
 
