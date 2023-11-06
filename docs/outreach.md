@@ -51,9 +51,14 @@ _IEEE 19th International Conference on e-Science (e-Science)_
 <https://doi.org/10.1109/e-science58273.2023.10254808> [[preprint](https://zenodo.org/records/10028531)]
 
 Raül Sirvent (2023):  
-[**Workflow Provenance registration with COMPSs**]().  
+[**Workflow Provenance registration with COMPSs**](https://doi.org/10.5281/zenodo.10046567).  
 _Innovative HPC workflows for industry_, 2023-10-25, Munich, Germany   
 <https://doi.org/10.5281/zenodo.10046567>
+
+Maxwell Adam Levinson, Sadnan Al Manir, Christopher Churas, Leah Schaffer, Dexqter Pratt, Trey Ideker, Sarah Ratclliffe, Timothy Clark (2023):  
+[**Leveraging FAIR-compliant standards for data management and provenance towards building an interpretable genomic translator for human cellular architecture maps in the Bridge2AI program**](https://doi.org/10.5281/zenodo.8343021).  
+_Zenodo_  
+<https://doi.org/10.5281/zenodo.8343021>
 
 Casper de Visser, Lennart F. Johansson, Purva Kulkarni, Hailiang Mei, Pieter Neerincx, K. Joeri van der Velde, Péter Horvatovich, Alain J. van Gool, Morris A. Swertz, Peter A. C. ‘t Hoen, Anna Niehues (2023):  
 [**Ten quick tips for building FAIR workflows**](https://doi.org/10.1371/journal.pcbi.1011369).  
