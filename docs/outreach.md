@@ -45,6 +45,16 @@ _Data Science_ **5**(2)
 
 ### 2023
 
+Bogdan Nicolae, Tanzima Z. Islam, Robert Ross, Huub Van Dam, Kevin Assogba, Polina Shpilker, Mikhail Titov, Matteo Turilli, Tianle Wang, Ozgur O. Kilic, Shantenu Jha, Line C. Pouchard (2023):  
+[**Building the I (Interoperability) of FAIR for Performance Reproducibility of Large-Scale Composable Workflows in RECUP**](https://zenodo.org/records/10028531).  
+_IEEE 19th International Conference on e-Science (e-Science)_  
+<https://doi.org/10.1109/e-science58273.2023.10254808> [[preprint](https://zenodo.org/records/10028531)]
+
+Raül Sirvent (2023):  
+[**Workflow Provenance registration with COMPSs**]().  
+_Innovative HPC workflows for industry_, 2023-10-25, Munich, Germany   
+<https://doi.org/10.5281/zenodo.10046567>
+
 Casper de Visser, Lennart F. Johansson, Purva Kulkarni, Hailiang Mei, Pieter Neerincx, K. Joeri van der Velde, Péter Horvatovich, Alain J. van Gool, Morris A. Swertz, Peter A. C. ‘t Hoen, Anna Niehues (2023):  
 [**Ten quick tips for building FAIR workflows**](https://doi.org/10.1371/journal.pcbi.1011369).  
 _PLOS Computational Biology_  **19**(9): e1011369   
