@@ -50,6 +50,11 @@ Bogdan Nicolae, Tanzima Z. Islam, Robert Ross, Huub Van Dam, Kevin Assogba, Poli
 _IEEE 19th International Conference on e-Science (e-Science)_  
 <https://doi.org/10.1109/e-science58273.2023.10254808> [[preprint](https://zenodo.org/records/10028531)]
 
+Augustus Ellerm, Mark Gahegan, Benjamin Adams (2023):  
+**LivePublication: The Science Workflow Creates and Updates the Publication**
+_IEEE 19th International Conference on e-Science (e-Science)_   (preprint not available)
+<https://doi.org/10.1109/e-Science58273.2023.10254857>
+
 Raül Sirvent (2023):  
 [**Workflow Provenance registration with COMPSs**](https://doi.org/10.5281/zenodo.10046567).  
 _Innovative HPC workflows for industry_, 2023-10-25, Munich, Germany   
