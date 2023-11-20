@@ -49,7 +49,7 @@ These applications use or expose RO-Crates to describe Data, Datasets and Workfl
 
 As part of these use-cases they have been developing or enhancing their tooling to facilitate their use of RO-Crate
 
-  * [OCFL-indexer](https://github.com/CoEDL/modpdsc/) is a NodeJS application that walks the [Oxford Common File Layout](https://ocfl.io/) on the file system, validate RO-Crate Metadata Files and parse into objects registered in Elasticsearch. (~ _alpha_) 
+  * [OCFL-indexer](https://github.com/CoEDL/modpdsc/) is a NodeJS application that walks the [Oxford Common File Layout](https://ocfl.io/) on the file system, validate _RO-Crate Metadata Files_ and parse into objects registered in Elasticsearch. (~ _alpha_) 
   * [ocfl-tools](https://github.com/CoEDL/ocfl-tools) contains tools for managing RO-Crates in an OCFL repository .
   * [ocfl-viewer](https://hub.docker.com/r/coedl/ocfl-viewer)
   * [ONI indexer](https://github.com/UTS-eResearch/oni-indexer)
@@ -100,3 +100,34 @@ ROHub imports and exports RO-Crates, using it as an exchange format, particularl
 [DataPlant](https://nfdi4plants.org/) is implementing [Annotated Research Context (ARC)](https://nfdi4plants.org/content/learn-more/annotated-research-context.html), an RO-Crate profile that combines the Investigation Study Assay model ([ISA](https://isa-specs.readthedocs.io/en/latest/isamodel.html)) and the Common Workflow Language ([CWL](https://www.commonwl.org/)) to capture a range from single experimental setups to complex experimental designs. 
 
 In ARC, files are managed in a git repository with a fixed structure following the ISA model, in addition to metadata in an Excel spreadsheet. The [arcCommander](https://github.com/nfdi4plants/arcCommander) tool can help with managing this structure, while the tool [arc--to-roc](https://github.com/nfdi4plants/arc-to-roc) can inspect the structure to generate an RO-Crate metadata file.
+The [ARC specification](https://github.com/nfdi4plants/ARC-specification/blob/main/ARC%20specification.md#appendix-conversion-of-arcs-to-ro-crates) allows augmentation by adding an explicit `ro-crate-metadata.json` to the ARC.
+
+## FAIRSCAPE
+
+[FAIRSCAPE](https://fairscape.github.io/) is a framework for reusable cloud-based computations using [ARK identifiers](https://arks.org/) with rich provenance in an [evidence graph](https://doi.org/10.1007/978-3-030-80960-7_3) and the [Evidence Graph Ontology](https://w3id.org/EVI) (EVI). The command line [fairscape-cli](https://fairscape.github.io/fairscape-cli/) uses RO-Crate and BagIt for data validation and packaging in FAIRSCAPE. This approach is used for [Cell Maps for AI (CM4AI)](https://cm4ai.org/), a part of NIH's [Bridge2AI](https://commonfund.nih.gov/bridge2ai) program.
+
+* Example: <https://doi.org/10.5281/zenodo.8132917>
+* Publication: <https://doi.org/10.1007/978-3-030-80960-7_3>
+
+## Data Stewardship Wizard
+
+The [Data Stewardship Wizard](https://ds-wizard.org/) (DSW) is an interactive platform for making data management plans. By using the [ro-crate-template](https://github.com/ds-wizard/ro-crate-template) it is possible to export RO-Crate from DSW.
+
+* Preprint: <https://doi.org/10.37044/osf.io/24jst>
+   
+
+## Sciebo RDS
+
+Sciebo RDS (Research Data Services) is a self-hosted interface between data repositories and file storage solutions, assisting the research data deposition process with annotations made using [Describo Online](https://arkisto-platform.github.io/tools/description/describo-online/) and stored as an RO-Crate, which is then mapped to the chosen repository's metadata scheme. Supported repositories include OSF, InvenioRDM, Harvard Dataverse. This is developed as a [CS3MESH4EOSC](https://cs3mesh4eosc.eu/) with cultural heritage studies archive PARADISEC as use case.
+
+* [Conference abstract from CS3](https://indico.cern.ch/event/1210538/contributions/5207925/), [slides](https://indico.cern.ch/event/1210538/contributions/5207925/attachments/2603775/4500547/CS3_2023_ScieboRDS_final.pdf) [video](https://cds.cern.ch/record/2855346)
+* [CS3MESH4EOSC Webinar](https://cs3mesh4eosc.eu/data-services/open-data-systems)
+
+
+## AROMA
+
+AROMA (ARP RO-Crate Manager) is part of Hungarian initiative [ELKH ARP](https://science-research-data.hu/en), extending [Harvard Dataverse](https://dataverse.harvard.edu/) to allow dynamic metadata editing of data deposit metadata using multiple schemas, mapped using  and presented using the [Describo Crate Builder Web](https://github.com/describo/crate-builder-component-react) component. Different [Metadata blocks](https://guides.dataverse.org/en/latest/admin/metadatacustomization.html) in Dataverse are supported.
+
+Work on [Dataverse support for RO-Crate](https://github.com/IQSS/dataverse/issues/8688) continues in collaboration with FAIR-IMPACT collaborators. The [ELN archive])https://github.com/gdcc/dataverse-previewers/pull/21()
+
+* [Developing ELKH ARP AROMA](https://sztaki.hun-ren.hu/en/innovation/news/developing-elkh-arp-aroma-published-describo-newsletter-australia)

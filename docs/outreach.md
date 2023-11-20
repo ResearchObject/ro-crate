@@ -15,11 +15,12 @@ title: Outreach and Publications
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
-   limitations under the License.
+   limitations under the License.   
 -->
 
 # RO-Crate Outreach and Publications 
 {: .no_toc }
+
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -44,24 +45,195 @@ _Data Science_ **5**(2)
 
 ### 2023
 
+Bogdan Nicolae, Tanzima Z. Islam, Robert Ross, Huub Van Dam, Kevin Assogba, Polina Shpilker, Mikhail Titov, Matteo Turilli, Tianle Wang, Ozgur O. Kilic, Shantenu Jha, Line C. Pouchard (2023):  
+[**Building the I (Interoperability) of FAIR for Performance Reproducibility of Large-Scale Composable Workflows in RECUP**](https://zenodo.org/records/10028531).  
+_IEEE 19th International Conference on e-Science (e-Science)_  
+<https://doi.org/10.1109/e-science58273.2023.10254808> [[preprint](https://zenodo.org/records/10028531)]
+
+Augustus Ellerm, Mark Gahegan, Benjamin Adams (2023):  
+**LivePublication: The Science Workflow Creates and Updates the Publication**
+_IEEE 19th International Conference on e-Science (e-Science)_   (preprint not available)
+<https://doi.org/10.1109/e-Science58273.2023.10254857>
+
+Raül Sirvent (2023):  
+[**Workflow Provenance registration with COMPSs**](https://doi.org/10.5281/zenodo.10046567).  
+_Innovative HPC workflows for industry_, 2023-10-25, Munich, Germany   
+<https://doi.org/10.5281/zenodo.10046567>
+
+Maxwell Adam Levinson, Sadnan Al Manir, Christopher Churas, Leah Schaffer, Dexqter Pratt, Trey Ideker, Sarah Ratclliffe, Timothy Clark (2023):  
+[**Leveraging FAIR-compliant standards for data management and provenance towards building an interpretable genomic translator for human cellular architecture maps in the Bridge2AI program**](https://doi.org/10.5281/zenodo.8343021).  
+_Zenodo_  
+<https://doi.org/10.5281/zenodo.8343021>
+
+Casper de Visser, Lennart F. Johansson, Purva Kulkarni, Hailiang Mei, Pieter Neerincx, K. Joeri van der Velde, Péter Horvatovich, Alain J. van Gool, Morris A. Swertz, Peter A. C. ‘t Hoen, Anna Niehues (2023):  
+[**Ten quick tips for building FAIR workflows**](https://doi.org/10.1371/journal.pcbi.1011369).  
+_PLOS Computational Biology_  **19**(9): e1011369   
+<https://doi.org/10.1371/journal.pcbi.1011369>
+
+Ignacio Eguinoa, Marek Suchánek, Vojtěch Knaisl, Jan Slifka, Paul De Geest, David López, Bjorn Gruning, Simone Leo, Stian Soiland-Reyes (2023):  
+[**BioHackEU22 Report: Enhancing Research Data Management in Galaxy and Data Stewardship Wizard by utilising RO-Crates**](https://doi.org/10.37044/osf.io/24jst).  
+_BioHackrXiv_  
+<https://doi.org/10.37044/osf.io/24jst>
+
+Sharif Islam, Hanna Koivula, Dag Endresen, Erik Kusch, Dmitry Schigel, Wouter Addink (2023):  
+[**Data Standards and Interoperability Challenges for Biodiversity Digital Twin: A novel and transformative approach to biodiversity research and application**]().  
+_Biodiversity Information Standards_ ([TDWG 2023](https://www.tdwg.org/conferences/2023/)), Hobert, Australia, 2023-10-09/--13.  
+_Biodiversity Information Science and Standards_ **7**:e112373  
+<https://doi.org/10.3897/biss.7.112373>
+
+
+Leyla Jael Castro, Stian Soiland-Reyes, Dietrich Rebholz-Schuhmann (2023):  
+[**RO-Crates Meets FAIR Digital Objects**](https://www.tib-op.org/ojs/index.php/CoRDI/article/view/396/577).  
+1st Conference on Research Data Infrastructure ([CoRDI 2023](https://www.nfdi.de/cordi-2023/)), 2023-09-12/--14, Karlsruhe, Germany.  
+_Proceedings of the Conference on Research Data Infrastructure_ **1**  
+<https://doi.org/10.52825/cordi.v1i.396>
+[[poster](https://doi.org/10.5281/zenodo.8348924)]
+
+Sebastian Schaaf, Anika Erxleben-Eggenhofer, Bjoern Gruening (2023):  
+[**Galaxy and RDM**](https://doi.org/10.52825/cordi.v1i.421).  
+1st Conference on Research Data Infrastructure ([CoRDI 2023](https://www.nfdi.de/cordi-2023/)), 2023-09-12/--14, Karlsruhe, Germany.  
+_Proceedings of the Conference on Research Data Infrastructure_ **1**  
+<https://doi.org/10.52825/cordi.v1i.421>
+
+Peter Wittenburg, Dimitris Koureas (2023):  
+[**FDO to Structure the Domain of Knowledge**](https://doi.org/10.52825/cordi.v1i.374).  
+1st Conference on Research Data Infrastructure ([CoRDI 2023](https://www.nfdi.de/cordi-2023/)), 2023-09-12/--14, Karlsruhe, Germany.  
+_Proceedings of the Conference on Research Data Infrastructure_ **1**  
+<https://doi.org/10.52825/CoRDI.v1i.374>
+
+Carole Goble, Finn Bacall, Stian Soiland-Reyes, Stuart Owen, Ignacio Eguinoa, Bert Droesbeke, Hervé Ménager, Laura Rodriguez-Navas, José M. Fernández, Björn Grüning, Simone Leo, Luca Pireddu, Michael Crusoe, Johan Gustafsson, Salvador Capella-Gutierrez, Frederik Coppens (2023):  
+[**EOSC-Life Workflow Collaboratory for the Life Sciences**](https://doi.org/10.52825/cordi.v1i.352).  
+1st Conference on Research Data Infrastructure ([CoRDI 2023](https://www.nfdi.de/cordi-2023/)), 2023-09-12/--14, Karlsruhe, Germany.  
+_Proceedings of the Conference on Research Data Infrastructure_ **1**  
+<https://doi.org/10.52825/cordi.v1i.352>
+[[slides](https://doi.org/10.5281/zenodo.8348470)]
+
+Rudolf Wittner, Petr Holub, Cecilia Mascia, Francesca Frexia,
+Heimo Müller, Markus Plass, Clare Allocca, Fay Betsou, 
+Tony Burdett, Ibon Cancio, Adriane Chapman, Martin Chapman,
+Mélanie Courtot, Vasa Curcin, Johann Eder, Mark Elliot, 
+Katrina Exter, Carole Goble, Martin Golebiewski,
+Bron Kisler, Andreas Kremer, Simone Leo, Sheng Lin-Gibson,
+Anna Marsano, Marco Mattavelli, Josh Moore, Hiroki Nakae,
+Isabelle Perseil, Ayat Salman, James Sluka, 
+Stian Soiland-Reyes, Caterina Strambio-De-Castillia, 
+Michael Sussman, Jason R. Swedlow, Kurt Zatloukal, Jörg Geiger (2023):  
+[**Towards a common standard for data and specimen provenance in life sciences**](https://doi.org/10.1002/lrh2.10365).  
+_Learning Health Systems_  
+<https://doi.org/10.1002/lrh2.10365>
+
+Ove Johan Ragnar Gustafsson, Nicola Soranzo, Bjoern Gruening, Marius van den Beek, Finn Bacall, Carole Goble, Farah Zaib Khan, Gareth Price, Nigel Ward, Jeff Christiansen (2023):  
+[**Finding workflows in the Galaxy universe**: integrating a global ecosystem using workflow registries](https://doi.org/10.5281/zenodo.8157532).  
+_2023 Galaxy Community Conference_ (GCC2023), 2023-07-10/--16, Brisbane, Australia.   
+<https://doi.org/10.5281/zenodo.8157532>
+
+Anne Fouilloux, Elisa Trasatti, Federica Foglini, Alejandro Coca-Castro, Jean Iaquinta (2023):  
+[**FAIR Research Objects for realising Open Science with the EOSC project RELIANCE**](https://doi.org/10.3897/rio.9.e108765).  
+1st International Conference on FAIR Digital Objects ([FDO 2022](https://www.fdo2022.org/))  
+_Research Ideas and Outcomes_ **9**:e108765  
+<https://doi.org/10.3897/rio.9.e108765>
+
+Alessandro Lotta, Gianmaria Silvello (2023):  
+[**How to Cite a Web Ranking and Make it FAIR**](https://www.dei.unipd.it/~silvello/papers/2023_TPDL_LS.pdf).  
+_Theory and Practice of Digital Libraries_ ([TPDL 2023](https://tpdl2023.dei.unipd.it/)), 2023-09-26/--29, Zadar, Croatia.  
+(awaiting DOI)  
+[[preprint](https://www.dei.unipd.it/~silvello/papers/2023_TPDL_LS.pdf)]
+
+Peter Sefton, Stian Soiland-Reyes (2023):  
+[**Packaging data with detailed metadata using RO-Crate in FAIR open repositories**](https://ptsefton.com/2023/06/13/ro-crate-or-2023/).  
+_Open Repositories 2023_ ([OR2023](https://or2023.openrepositories.org)), 2023-06-12/--15, Stellenbosch University, South Africa.  
+<https://doi.org/10.5281/zenodo.8091505>
+
+Peter Sefton, Moises Sacal Bonequi, Alvin Sebastian, Mark Raadgever (2023):  
+[**Introducing the Oni Repository Stack**](https://ptsefton.com/2023/06/13/oni-dev-track-or-2023/).  
+_Open Repositories 2023_ ([OR2023](https://or2023.openrepositories.org)), 2023-06-12/--15, Stellenbosch University, South Africa.  
+<https://doi.org/10.5281/zenodo.8091519>
+
+Peter Sefton (2023):
+[**Towards a Generic Research Data Commons: A highly scalable standard-based repository framework for Language and other Humanities data**](https://ptsefton.com/2023/06/14/arkisto-stack-or-2023/).  
+_Open Repositories 2023_ ([OR2023](https://or2023.openrepositories.org)), 2023-06-12/--15, Stellenbosch University, South Africa.  
+<https://www.ldaca.edu.au/posts/arkisto-stack-or-2023/>  
+<https://doi.org/10.5281/zenodo.8091653>
+
+Stian Soiland-Reyes, Leyla Jael Garcia (2023):  
+[**Overview of FAIR data publishing with Bioschemas & RO-Crate**](https://doi.org/10.7490/f1000research.1119459.1).  
+_ELIXIR All Hands meeting 2023_, workshop "Building lightweight FAIR data packages with Bioschemas and RO-Crate", Dublin, Ireland, 2023-06-05/--08  
+<https://doi.org/10.7490/f1000research.1119459.1>
+
+Stian Soiland-Reyes, Carole Goble (2023):  
+[**Building diverse collections using RO-Crate**](https://doi.org/10.7490/f1000research.1119466.1).  
+_ELIXIR All Hands meeting 2023_, mini-symposium "Biodiversity, Food Security and Pathogens", Dublin, Ireland, 2023-06-05/--08  
+<https://doi.org/10.7490/f1000research.1119466.1>
+
+Stian Soiland-Reyes, Simone Leo, Leyla Jael Castro, Peter Sefton, Carole Goble (2023):  
+[**Sharing data as machine-actionable objects using RO-Crate, Bioschemas and Signposting**](https://doi.org/10.5281/zenodo.8004796).  
+_ELIXIR All Hands meeting 2023_ (poster), Dublin, Ireland, 2023-06-05/--08  
+_F1000Research_ **12**(ELIXIR):572 (poster)  
+<https://doi.org/10.7490/f1000research.1119431.1>  
+<https://doi.org/10.5281/zenodo.8004796>
+
+Simone Leo, Laura Rodríguez-Navas, José M. Fernández, Paul De Geest, Luca Pireddu, Michael R. Crusoe, Daniel Garijo, Iacopo Colonnelli, Raül Sirvent, Stian Soiland-Reyes (2023):  
+[**Making workflow provenance FAIR across workflow systems with Workflow Run RO-Crate**](https://doi.org/10.5281/zenodo.8004793).  
+_ELIXIR All Hands meeting 2023_ (poster), Dublin, Ireland, 2023-06-05/--08  
+<https://doi.org/10.5281/zenodo.8004793>
+
+José M. Fernández, Laura Rodriguez-Navas, Salvador Capella-Gutiérrez (2023):  
+[**WfExS-backend in the WRROC world?**](https://doi.org/10.7490/f1000research.1119457.1).  
+_ELIXIR All Hands meeting 2023_ (poster), Dublin, Ireland, 2023-06-05/--08  
+_F1000Research_ **12**(ELIXIR):616 (poster)  
+<https://doi.org/10.7490/f1000research.1119457.1>
+
+Aikaterina Mastoraki, Panagiotis Deligiannis, Eleni Adamidi, Thanasis Vergoulis (2023):  
+[**Improving reproducibility of computational analyses performed on the ELIXIR-GR cloud**](https://doi.org/10.7490/f1000research.1119423.1).  
+_ELIXIR All Hands meeting 2023_ (poster), Dublin, Ireland, 2023-06-05/--08  
+_F1000Research_ **12**(ELIXIR):557 (poster)
+<https://doi.org/10.7490/f1000research.1119423.1>
+
+Stian Soiland-Reyes, Carole Goble (2023):  
+[**Building diverse FDO Collections using RO-Crate**](https://doi.org/10.5281/zenodo.7828632).  
+_FAIR Digital Object Forum_, workshop "[Defining FDO Collections](https://drive.google.com/drive/folders/1B59aoM2sPVJaISNLwPdVTnfiRASA-rFP)", 2023-04-14.  
+[[slides](https://doi.org/10.5281/zenodo.7828632)]
+[[video](https://youtu.be/5GYdN5B1tc8)]
+
+Line Pouchard (2023):  
+[**FAIR enabling reuse of data-intensive workflows and scientific reproducibility**](https://doi.org/10.5281/zenodo.7893867).  
+Keynote, _The First Practically FAIR Workshop_ 2023 ([PFAIR 2023](https://sites.google.com/view/pfair23/))  
+_14th ACM/SPEC International Conference on Performance Engineering_ ([ICPE 23](https://icpe2023.spec.org/)), Coimbra, Portugal, 2023-04-15.  
+<https://doi.org/10.5281/zenodo.7893867>
+[[slides](https://doi.org/10.5281/zenodo.7893867)]
+[[abstract](https://doi.org/10.1145/3578245.3586012)]
+
+Juri Hößelbarth, Lennart Hofeditz, Richard Freitag (2023):  
+[**Sciebo RDS - reducing friction of FAIR data handling for researchers**](https://indico.cern.ch/event/1210538/contributions/5207925/).  
+_Cloud Storage Synchronization and Sharing_ (CS3 2023), Barcelona (Catalunya, Spain), 2023-03-06/--08    
+[[abstract](https://indico.cern.ch/event/1210538/contributions/5207925/)]
+[[slides](https://indico.cern.ch/event/1210538/contributions/5207925/attachments/2603775/4500547/CS3_2023_ScieboRDS_final.pdf)]
+[[video](https://cds.cern.ch/record/2855346)]
+
 Simone Leo (2023):  
 [**RO-Crate for workflow run provenance**](https://cwl.discourse.group/t/ro-crate-for-workflow-run-provenance/754).  
-_CWL Conference 2023_, 
+_CWL Conference 2023_, 2023-02-27  
 [[video (YouTube)](https://www.youtube.com/watch?v=JXI3pOPMKrw)]
 [[video (ConfTube)](https://conf.tube/w/jDkRHqp2rjqzqtXih9445J)]
 [[slides](https://docs.google.com/presentation/d/1gqKj5eLacw9CYu8H7BxZ7kFBeC8421DCeL11sWRnIds/edit?usp=sharing)]
 
 Mahnoor Zulfiqar (2023):  
 [**Running Reproducible Metabolomics Workflow with CWL**](https://cwl.discourse.group/t/running-reproducible-metabolomics-workflow-with-cwl/762).  
-_CWL Conference 2023_, 
+_CWL Conference 2023_, 2023-02-27  
 [[video (YouTube)](https://www.youtube.com/watch?v=usr0Kau2ihE)]
 [[video (ConfTube)](https://conf.tube/w/5vd8tkpECJNHjx7mhpLGQd)]
 
+Carole Goble, Stian Soiland-Reyes (2023):  
+[**Sharing research artefacts as FAIR Digital Objects using RO-Crate**](https://doi.org/10.5281/zenodo.7559338).  
+_Brookhaven National Laboratory_, 2023-01-23.  
+<https://doi.org/10.5281/zenodo.7559338>
+[[slides](https://doi.org/10.5281/zenodo.7559338)]
+[[video](https://youtu.be/0T4FBbpgtQo)]
+
 Romain David, Audrey S. Richard, Claire Connellan, Katharina B. Lauer, Maria Luisa Chiusano, Carole Goble, Martin Houde, Isabel Kemmer, Antje Keppler, Philippe Lieutaud, Christian Ohmann, Maria Panagiotopoulou, Sara Raza Khan, Arina Rybina, Stian Soiland-Reyes, Charlotte Wit, Rudolf Wittner, Rafael Andrade Buono, Sarah Arnaud Marsh, Pauline Audergon, Dylan Bonfils, Jose-Maria Carazo, Remi Charrel, Frederik Coppens, Wolfgang Fecke, Claudia Filippone, Eva Garcia Alvarez, Sheraz Gul, Henning Hermjakob, Katja Herzog, Petr Holub, Lukasz Kozera, Allyson L. Lister, José López-Coronado, Bénédicte Madon, Kurt Majcen, William Martin, Wolfgang Müller, Elli Papadopoulou, Christine M.A. Prat, Paolo Romano, Susanna-Assunta Sansone, Gary Saunders, Niklas Blomberg, Jonathan Ewbank (2023):  
-[**Umbrella Data Management Plans to integrate FAIR data: lessons from the ISIDORe and BY-COVID consortia for pandemic preparedness**](https://doi.org/10.5281/zenodo.7520086).  
-(submitted to Data Science Journal).  
-_Zenodo_  
-<https://doi.org/10.5281/zenodo.7520086>
+[**Umbrella Data Management Plans to Integrate FAIR Data: Lessons From the ISIDORe and BY-COVID Consortia for Pandemic Preparedness**](https://doi.org/10.5334/dsj-2023-035).  
+_Data Science Journal_ **22**:52  
+<https://doi.org/10.5334/dsj-2023-035>
 
 Molly A Bogue, Robyn L Ball, Vivek M Philip, David O Walton, Matthew H Dunn, Georgi Kolishovski, Anna Lamoureux, Matthew Gerring, Hongping Liang, Jake Emerson, Tim Stearns, Hao He, Gaurab Mukherjee, John Bluis, Sejal Desai, Beth Sundberg, Beena Kadakkuzha, Govindarajan Kunde-Ramamoorthy, Elissa J Chesler (2023):  
 [**Mouse Phenome Database: towards a more FAIR-compliant and TRUST-worthy data repository and tool suite for phenotypes and genotypes**]().  
@@ -646,17 +818,19 @@ See also [publications about Research Objects](https://www.researchobject.org/pu
 
 _To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 
+[**2nd International Conference on FAIR Digital Objects**](https://fairdo.org/fdo2024-conference/) (FDO 2024), 2024-03-21/--24, Berlin, Germany.
+
 [**International Conference on Knowledge Engineering and Ontology Development**](https://keod.scitevents.org/) (KEOD 2023), 2023-11-13/--15, Rome, Italy. Co-located with [IC3K](https://ic3k.scitevents.org/)/[WEBIST](https://webist.scitevents.org/). Papers due 2023-06-02
 
-[**The 22nd International Semantic Web Conference**](https://iswc2023.semanticweb.org/) (ISWC 2023), 2023-11-06/--10, Athens, Greece. Workshop calls due 2023-03-24, papers due 2023-05-02. 
+[**The 22nd International Semantic Web Conference**](https://iswc2023.semanticweb.org/) (ISWC 2023), 2023-11-06/--10, Athens, Greece.  
 
-**[BioHackathon Europe 2023](https://biohackathon-europe.org/)**, 2023-10-30/-11-03. Barcelona, Spain. Project proposals due 2023-04-10
+**[BioHackathon Europe 2023](https://biohackathon-europe.org/)**, 2023-10-30/-11-03. Barcelona, Spain. 
 
-**[19th IEEE International Conference on eScience](https://www.escience-conference.org/2023/)**, 2023-10-09/--13, Limassol, Cyprus. Papers due 2023-05-26. 
+**[19th IEEE International Conference on eScience](https://www.escience-conference.org/2023/)**, 2023-10-09/--13, Limassol, Cyprus. 
 
 **[Open Science Fair](https://www.opensciencefair.eu/)**, 2023-09-25/--27, Madrid, Spain. Papers due 2023-04-17.
 
-**[Bioinformatics Open Source Conference](https://www.open-bio.org/events/bosc-2023/)** (BOSC2023)+hackfest, 2023-07-24/--28, ISMB/ECCB 2023, Lyon, France. Abstracts due 2023-04-10.
+**[Bioinformatics Open Source Conference](https://www.open-bio.org/events/bosc-2023/)** (BOSC2023)+hackfest, 2023-07-24/--28, ISMB/ECCB 2023, Lyon, France. 
 
 **[Galaxy Community Conference 2023](https://galaxyproject.org/gcc/)** (GCC2023), 2023-07-17/--23, Minneapolis, Minnesota, US.
 
@@ -666,11 +840,11 @@ _To suggest an event, either [edit and raise pull request](https://github.com/Re
 
 **[3rd Workshop on Metadata and Research (objects) Management for Linked Open Science - DaMaLOS 2023](https://zbmed.github.io/damalos/)**, 2023-06-29, Co-located with [ESWC](https://2023.eswc-conferences.org/), Hersonissos, Greece. Call for papers due 2023-03-31.
 
-**[20th IEEE International Conference on Software Architecture](https://icsa-conferences.org/2023/)** (ICSA 2023), L'Aquila, Italy, 2023-03-13/--17.  -08.
+**[20th IEEE International Conference on Software Architecture](https://icsa-conferences.org/2023/)** (ICSA 2023), L'Aquila, Italy, 2023-03-13/--17.
 
 **[ELIXIR All Hands 2023](https://elixir-europe.org/events/elixir-all-hands-2023)**, 2023-06-05/--08, Dublin, Ireland + hybrid. **Workshop**: [Building lightweight FAIR data packages with Bioschemas and RO-Crate](https://docs.google.com/document/d/1Vh9mUBWvNEsvC5YZRITtZxsyE6Wr18rJUgp9KweJFNg)
 
-**[Galaxy Smörgåsbord 2023]()**, 2023-05-22/--26, virtual. Training includes [Module: FAIR data and provenance with RO-Crate and Galaxy](https://gallantries.github.io/video-library/modules/ro-crate).
+**[Galaxy Smörgåsbord 2023](https://gallantries.github.io/video-library/events/smorgasbord3/)**, 2023-05-22/--26, virtual. Training includes [Module: FAIR data and provenance with RO-Crate and Galaxy](https://gallantries.github.io/video-library/modules/ro-crate).
 
 **[2023 Common Workflow Language Conference](https://cwl.discourse.group/c/cwlcon-2023/13)** (CWLCon 2023). 2023-02-27/-03-03, virtual. 
 

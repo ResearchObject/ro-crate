@@ -2,7 +2,7 @@
 title: Metadata of the RO-Crate
 excerpt: |
   RO-Crate aims to capture and describe the Research Object using
-  structured metadata. The RO-Crate Metadata File Descriptor contains the
+  structured metadata. The RO-Crate Metadata Descriptor contains the
   metadata that describes the RO-Crate and its content. This machine-readable
   metadata can also be represented for human consumption in the RO-Crate Website,
   linking to data and Web resources.
@@ -11,8 +11,8 @@ parent: RO-Crate 1.2-DRAFT
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
-   Copyright 2019-2020 The University of Manchester UK 
-   Copyright 2019-2022 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019-2023 The University of Manchester UK 
+   Copyright 2019-2023 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ parent: RO-Crate 1.2-DRAFT
 
 RO-Crate aims to capture and describe the [Research Object][ResearchObject] using structured _metadata_.
 
-The _RO-Crate Metadata File Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:
+The _RO-Crate Metadata Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:
 
 * [Root Data Entity](root-data-entity.md) - the RO-Crate `Dataset` itself, a gathering of data
 * [Data Entities](data-entities.md) - the _data_ payload, in the form of files and folders
@@ -60,11 +60,24 @@ RO-Crate makes use of the [Linked Data principles] for its description. In parti
 
 RO-Crate realizes these principles using a particular set of technologies and best practices:
 
-1. The _RO-Crate Metadata File_ and _RO-Crate Website_ can be directly published on the web together with the RO-Crate payload. In addition, a data package (e.g. BagIt Zip archive) that contain the RO-Crate can also be published on the web.
-2. The _RO-Crate Metadata File_ is based on the structured data format [JSON-LD]. 
+1. The _RO-Crate Metadata Document_ can be stored in an _RO-Crate Metadata File_. The _RO-Crate Metadata File_ and an _RO-Crate Website_ can be directly published on the web together with the RO-Crate payload. In addition, a data package (e.g. BagIt Zip archive) that contain the RO-Crate can also be published on the web.
+2. The _RO-Crate Metadata Document_ is based on the structured data format [JSON-LD]. 
 3. Multiple open source tools/libraries are available [for JSON][JSON] and [for JSON-LD][JSON-LD].
-4. The _RO-Crate Website_ is [HTML 5], and the _RO-Crate Metadata File_ is [JSON-LD], one of the [W3C RDF 1.1 formats].
-5. The _RO-Crate Metadata File_ reuse common vocabularies like [Schema.org], and this specification [recommend identifiers](#recommended-identifiers) it should link to.
+4. The _RO-Crate Website_ is [HTML 5], and the _RO-Crate Metadata Document_ is [JSON-LD], one of the [W3C RDF 1.1 formats].
+5. The _RO-Crate Metadata Document_ reuse common vocabularies like [Schema.org], and this specification [recommend identifiers](#recommended-identifiers) it should link to.
+
+## Common principles for RO-Crate entities
+
+For all entities listed in an _RO-Crate Metadata Document_ the following principles apply:
+
+1. The entity MUST have a `@id` (see [Describing entities in JSON-LD](appendix/jsonld.md#describing-entities-in-json-ld))
+2. The entity MUST have a `@type`, which MAY be an array. 
+3. The `@type` SHOULD include at least one [Schema.org] type that accurately describe the entity. [Thing] or [CreativeWork] are valid fallbacks if no alternative external or ad-hoc term is found (see [Extending RO-Crate](appendix/jsonld.md#extending-ro-crate)).
+5. The entity SHOULD have a human-readable `name`, in particular if its `@id` do not go to a human-readable Web page
+6. The properties used on the entity SHOULD be applicable to the `@type` (or superclass) according to their definitions. For instance, the property [publisher] can be used on a [Dataset] as it applies to its superclass [CreativeWork].
+7. Property references to other entities (e.g. `author` property to a `Person` entity) SHOULD use the `{ "@id": "..."}` object form (see [JSON-LD appendix](appendix/jsonld.md))
+8. The entity SHOULD be ultimately referencable from the root data set (possibly through another reachable data- or [contextual entity](contextual-entities.md))
+
 
 ## Base metadata standard: Schema.org
 
@@ -73,7 +86,11 @@ RO-Crate realizes these principles using a particular set of technologies and be
 {: .note }
 > As far as we know there is no alternative, well-maintained linked-data schema for research data with the coverage needed for this project - i.e. a single standard for expressing all the examples presented in this specification.
 
-RO-Crate relies heavily on [Schema.org], using a constrained subset of [JSON-LD], and this document gives opinionated recommendations on how to represent the metadata using existing [linked data] best practices.
+RO-Crate relies heavily on [Schema.org], using a constrained subset of [JSON-LD], and this specification gives opinionated recommendations on how to represent the metadata using existing [linked data] best practices.
+
+{: .tip }
+> The main principle of RO-Crate is to use a [Schema.org] whenever possible, even if its official definition may seem broad or related to every day objects. For instance, [IndividualProduct] can describe scientific equipment and instruments (see [Provenance of entities](provenance.md)). RO-Crate implementers are free to use additional properties and types beyond this specification (see also appendix [Extending RO-Crate(appendix/jsonld.md#extending-ro-crate)]).
+
 
 ### Differences from Schema.org
 
@@ -102,9 +119,22 @@ RO-Crate also uses the _Portland Common Data Model_ ([PCDM] version <https://pcd
 {: .note }
 > The terms `RepositoryObject` and `RepositoryCollection` are renamed to avoid collision between other vocabularies and the PCDM terms `Collection` and `Object`. The term `RepositoryFile` is renamed to avoid clash with RO-Crate's `File` mapping to <http://schema.org/MediaObject>.
 
+RO-Crate use the [Profiles Vocabulary](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/) to describe [profiles](../profiles) using these terms and definitions:
+
+- `ResourceDescriptor` mapped to <http://www.w3.org/ns/dx/prof/ResourceDescriptor> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Class:ResourceDescriptor))
+- `ResourceRole` mapped to <http://www.w3.org/ns/dx/prof/ResourceRole> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Class:ResourceRole))
+- `Profile` mapped to <http://www.w3.org/ns/dx/prof/Profile>  ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Class:Profile))
+- `hasArtifact` mapped to <http://www.w3.org/ns/dx/prof/hasArtifact>  ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasArtifact))
+- `hasResource` mapped to <http://www.w3.org/ns/dx/prof/hasResource> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasResource))
+- `hasRole` mapped to <http://www.w3.org/ns/dx/prof/hasRole> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasRole))
+
 From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
 
 - `conformsTo` mapped to <http://purl.org/dc/terms/conformsTo>
+- `Standard` mapped to <http://purl.org/dc/terms/Standard>
+
+From the [IANA link relations] registry:
+- `cite-as` mapped to <http://www.iana.org/assignments/relation/cite-as> (defined by [RFC8574])
 
 These terms are being proposed by [Bioschemas profile ComputationalWorkflow 1.0-RELEASE][ComputationalWorkflow profile 1.0] and [FormalParameter 1.0-RELEASE][FormalParameter profile 1.0] to be integrated into Schema.org: 
 
@@ -121,7 +151,7 @@ These terms are being proposed by [Bioschemas profile ComputationalWorkflow 1.0-
 
 RO-Crate is simply a way to make metadata assertions about a set of files and folders that make up a _Dataset_. These assertions can be made at two levels:
 
-* Assertions at the RO-Crate level: for an RO-Crate to be useful, some metadata should be provided about the dataset as a whole (see minimum requirements for different use-cases below). In the _RO-Crate Metadata File_, we distinguish the _Root Data Entity_ which represents the RO-Crate as a whole, from other _Data Entities_ (files and folders contained in the RO-Crate) and _Contextual Entities_, e.g. a person, organisation, place related to an RO-Crate _Data Entity_
+* Assertions at the RO-Crate level: for an RO-Crate to be useful, some metadata should be provided about the dataset as a whole (see minimum requirements for different use-cases below). In the _RO-Crate Metadata Document_, we distinguish the _Root Data Entity_ which represents the RO-Crate as a whole, from other _Data Entities_ (files and folders contained in the RO-Crate) and _Contextual Entities_, e.g. a person, organisation, place related to an RO-Crate _Data Entity_
 * Assertions about files and folders contained in the RO-Crate: in addition to providing metadata about the RO-Crate as a whole, RO-Crate allows metadata assertions to be made about any other _Data Entity_
 
 

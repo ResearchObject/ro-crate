@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-#   Copyright 2019 The University of Manchester UK
+#   Copyright 2019-2023 The University of Manchester UK
 #   Copyright 2019 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,8 +35,17 @@ import urllib.request
 ROCRATE_VERSION="1.2-DRAFT"
 
 # Update version from http://schema.org/docs/releases.html
-# NOTE: Breaks due to https://github.com/schemaorg/schemaorg/issues/2805
-SCHEMA_VERSION="15.0"
+SCHEMA_VERSION="22.0"
+# NOTE: http://schema.org/version/22.0/ type links 
+# frequently breaks, see 
+# https://github.com/schemaorg/schemaorg/issues/2805
+# https://github.com/schemaorg/schemaorg/issues/3378
+# 
+# Navigate to https://archive.softwareheritage.org/browse/origin/directory/?branch=HEAD&origin_url=https://github.com/schemaorg/schemaorg&path=data/releases 
+# Then select the particular version as a folder, e.g. data/releases/22.0,
+# then under Permalinks on the right select the short-form from Directory
+SCHEMA_SWHID="swh:1:dir:60ff33aeead8b6c6b5a82f273a4a905fac5f8cf3"
+## See also https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html
 
 # Update from https://bioschemas.org/profiles/Workflow/
 BIOSCHEMA_WORKFLOW_PROFILE = "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
@@ -67,9 +76,9 @@ def main():
     j["version"] = tag
     j["url"] = {"@id": "https://w3id.org/ro/crate/%s" % version}
     
-    j["schemaVersion"] = {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION}    
+    j["schemaVersion"] = {"@id": "https://schema.org/docs/releases.html#v%s" % SCHEMA_VERSION}    
     j["isBasedOn"] = [
-        {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION},
+        {"@id": "https://identifiers.org/%s" % SCHEMA_SWHID},        
         {"@id": "https://pcdm.org/2016/04/18/models"},
         {"@id": BIOSCHEMA_WORKFLOW_PROFILE },
         {"@id": BIOSCHEMA_FORMAL_PARAMETER_PROFILE }
@@ -105,21 +114,22 @@ def main():
 ADDITIONAL = OrderedDict([
 
     # This list should correspond to listing in
-    # https://researchobject.github.io/ro-crate/0.3-DRAFT/#additional-metadata-standards
+    # metadata.html#additional-metadata-standards
 
 
           ("File", "http://schema.org/MediaObject"),
           ("path", "http://schema.org/contentUrl"),
           ("Journal", "http://schema.org/Periodical"),
 
-          ("cite-as", "https://www.w3.org/ns/iana/link-relations/relation#cite-as"),
+          ("cite-as", "http://www.iana.org/assignments/relation/cite-as"),
           ("hasFile", "http://pcdm.org/models#hasFile"),
           ("hasMember", "http://pcdm.org/models#hasMember"),
           ("RepositoryCollection", "http://pcdm.org/models#Collection"),
-          ("RepositoryObject", "http://pcdm.org/models#object"),
+          ("RepositoryObject", "http://pcdm.org/models#Object"),
+          ("RepositoryFile", "http://pcdm.org/models#File"),
 
           # Temporary namespace for properties/types
-          # proposed https://bioschemas.org/profiles/Workflow/ draft 0.5
+          # proposed https://bioschemas.org/profiles/Workflow/ 
           # Remove if/when added to schema.org release!
           ## BEGIN
           ("ComputationalWorkflow", BIOSCHEMA_WORKFLOW_NS),
@@ -130,8 +140,8 @@ ADDITIONAL = OrderedDict([
 
           ##("sdConformsTo", "https://w3id.org/ro/terms#sdConformsTo"),
 
+          ## PAV terms -- not mentioned in spec!
           ("wasDerivedFrom", "http://www.w3.org/ns/prov#wasDerivedFrom"),
-          
           ("importedFrom", "http://purl.org/pav/importedFrom"),
           ("importedOn", "http://purl.org/pav/importedOn"),
           ("importedBy", "http://purl.org/pav/importedBy"),
@@ -139,16 +149,36 @@ ADDITIONAL = OrderedDict([
           ("retrievedFrom", "http://purl.org/pav/retrievedFrom"),
           ("retrievedOn", "http://purl.org/pav/retrievedOn"),
           ("retrievedBy", "http://purl.org/pav/retrievedBy"),
+          ## END 
 
+          ## from DC Terms, used in profiles and metadata file
           ("conformsTo", "http://purl.org/dc/terms/conformsTo"),
+          ("Standard", "http://purl.org/dc/terms/Standard"),
 
+          ## The Profiles Vocabulary
+          # https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/
+          ("hasArtifact", "http://www.w3.org/ns/dx/prof/hasArtifact"),
+          ("hasResource", "http://www.w3.org/ns/dx/prof/hasResource"),
+          ("hasRole", "http://www.w3.org/ns/dx/prof/hasRole"),
+          ("hasToken", "http://www.w3.org/ns/dx/prof/hasToken"),
+          ("isProfileOf", "http://www.w3.org/ns/dx/prof/isProfileOf"),
+          ("ResourceDescriptor", "http://www.w3.org/ns/dx/prof/ResourceDescriptor"),
+          ("ResourceRole", "http://www.w3.org/ns/dx/prof/ResourceRole"),
+          ("Profile", "http://www.w3.org/ns/dx/prof/Profile"),
+          ## END
+
+          ## FIXME: Where is this used from?
           ("@label", "http://www.w3.org/2000/01/rdf-schema#label"),
+
+          # Some common namespaces
 
           ("pcdm", "http://pcdm.org/models#"),
           ("bibo", "http://purl.org/ontology/bibo/"),
           ("cc", "http://creativecommons.org/ns#"),
           ("dct", "http://purl.org/dc/terms/"),
           ("foaf", "http://xmlns.com/foaf/0.1/"),
+          ("prof", "http://www.w3.org/ns/dx/prof/"),
+          ("profrole", "http://www.w3.org/ns/dx/prof/role/"),
           ("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#"),
           ("rdfa", "http://www.w3.org/ns/rdfa#"),
           ("rdfs", "http://www.w3.org/2000/01/rdf-schema#"),
@@ -160,7 +190,9 @@ ADDITIONAL = OrderedDict([
           ("wfdesc", "http://purl.org/ro/wfdesc#"),
           ("wfprov", "http://purl.org/ro/wfprov#"),
           ("roterms", "http://purl.org/ro/roterms#"),
+          ("relation", "http://www.iana.org/assignments/relation/"),
           ("wf4ever", "http://purl.org/ro/wf4ever#"),
+          ("vann", "http://purl.org/vocab/vann/"),
           # Disabled, see https://github.com/ResearchObject/ro-crate/pull/73
 #          ("@base", None) 
 ])

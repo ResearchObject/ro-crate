@@ -25,6 +25,8 @@ excerpt: List of changes in releases of this specifications
 
 # APPENDIX: Changelog
 
+* [RO-Crate 1.1.3](https://github.com/ResearchObject/ro-crate/releases/tag/1.1.3) 
+  * JSON-LD context https://w3id.org/ro/crate/1.1/context fix typo in mapping from `RepositoryObject` to <http://pcdm.org/2016/04/18/models#Object> [#243](https://github.com/ResearchObject/ro-crate/issues/243)
 * [RO-Crate 1.1.2](https://github.com/ResearchObject/ro-crate/releases/tag/1.1.2) 
   * Typo fixes in [data entity section](../data-entities.md) [#177](https://github.com/ResearchObject/ro-crate/issues/177), [workflow section](../workflows.md) [#180](https://github.com/ResearchObject/ro-crate/issues/180), [metadata section](../metadata.md) [#181](https://github.com/ResearchObject/ro-crate/issues/181) and others.
   * Correct namespace for `rdfs:comment` on [ad-hoc terms](jsonld.md#add-local-definitions-of-ad-hoc-terms) [#164](https://github.com/ResearchObject/ro-crate/issues/164)

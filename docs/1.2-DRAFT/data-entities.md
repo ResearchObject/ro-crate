@@ -149,7 +149,7 @@ If the dataset contained  a large number of `*.ai` files which were spread throu
 The above example provides a media type for the file `cp7glop.ai` - which is
 useful as it may not be apparent that the file is readable as a PDF file from the
 extension alone. To add more detail, encodings SHOULD be linked using a [PRONOM]
-identifier to a _Contextual Entity_ of `@type` [WebPage].
+identifier to a _Contextual Entity_ with `@type` array containing [WebPage] and `Standard`.
 
 ``` json
   {
@@ -163,14 +163,14 @@ identifier to a _Contextual Entity_ of `@type` [WebPage].
   {
     "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19",
     "name": "Acrobat PDF 1.5 - Portable Document Format",
-    "@type": "WebPage"
+    "@type": ["WebPage", "Standard"]
   }
 
 ```
 
-If there is no PRONOM identifier (and typically no media type string), then a contextual entity with a different URL as an `@id` MAY be used, e.g. documentation page of a software's file format. The `@type` SHOULD be [WebPage], or MAY be [WebPageElement] to indicate a section of the page.
+If there is no PRONOM identifier (and typically no media type string), then a contextual entity with a different URL as an `@id` MAY be used, e.g. documentation page of a software's file format. The contextual entity SHOULD NOT include `Standard` in its `@type` if the page do not sufficiently document the format. The `@type` SHOULD include [WebPage], or MAY include [WebPageElement] to indicate a section of the page.
 
-For example:
+For example, `.trr` is a an internal GROMACS file format that is not further documented as a standard, but is referenced from a `WebPageElement` adressable by an `#anchor`:
 
 ```json
  {
@@ -179,7 +179,7 @@ For example:
     "name": "Trajectory",
     "description": "Trajectory of molecular dynamics simulation using GROMACS",
     "contentSize": "45512",
-    "encodingFormat": {"@id": "https://manual.gromacs.org/documentation/2021/reference-manual/file-formats.html#trr"}]
+    "encodingFormat": {"@id": "https://manual.gromacs.org/documentation/2021/reference-manual/file-formats.html#trr"}
   },
   {
     "@id": "https://manual.gromacs.org/documentation/2021/reference-manual/file-formats.html#trr",
@@ -188,7 +188,7 @@ For example:
   }
 ```
 
-If there is no web-accessible description for a file format it SHOULD be described locally in the dataset, for example in a Markdown file:
+If there is no web-accessible description for a file format it SHOULD be described locally in the RO-Crate, for example in a Markdown file:
 
 ```json
  {
@@ -207,7 +207,41 @@ If there is no web-accessible description for a file format it SHOULD be describ
   }
 ```
 
+### File format profiles
+
+Some generic file formats like `application/json` may be specialized using a _profile_ document that define expectations for the file's content as expected by some applications, by using [conformsTo] to a contextual entity with types [CreativeWork] and [Profile]:
+
+```json
+ { 
+  "@id": "attributes.csv",
+  "@type": "File",
+  "encodingFormat": ["text/csv", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/18"}],
+  "conformsTo": {"@id": "https://docs.ropensci.org/dataspice/#create-spice"}
+ },
+ {
+  "@id": "https://docs.ropensci.org/dataspice/#create-spice",
+  "@type": ["CreativeWork", "Profile"],
+  "name": "dataspice CSV profile"
+ }
+```
+
+
+{: .tip }
+Profiles expressed in formal languages (e.g. XML Schema for validation) can have their own `encodingFormat` and `conformsTo` to indicate their file format.
+
+{: .note}
+The [Metadata Descriptor](root-data-entity.md#ro-crate-metadata-file-descriptor) `ro-crate-metadata.json` is not a data entity, but is described with `conformsTo` to an _implicit contextual entity_ for the RO-Crate specification, a profile of [JSON-LD](appendix/jsonld). RO-Crates themselves can be specialized using [Profile Crates](profiles), specified with `conformsTo` on the root data entity.
+
+
 ## Core Metadata for Data Entities
+
+
+### Encoding file paths
+
+Note that all `@id` [identifiers must be valid URI references](appendix/jsonld.md#describing-entities-in-json-ld), care must be taken to express any relative paths using `/` separator, correct casing, and escape special characters like space (`%20`) and percent (`%25`), for instance a _File Data Entity_ from the Windows path `Results and Diagrams\almost-50%.png` becomes `"@id": "Results%20and%20Diagrams/almost-50%25.png"` in the _RO-Crate JSON-LD_.
+ 
+In this document the term _URI_ includes international *IRI*s; the _RO-Crate Metadata Document_ is always UTF-8 and international characters in identifiers SHOULD be written using native UTF-8 characters (*IRI*s), however traditional URL encoding of Unicode characters with `%` MAY appear in `@id` strings. Example: `"@id": "面试.mp4"` is preferred over the equivalent `"@id": "%E9%9D%A2%E8%AF%95.mp4"`
+
 
 ### File Data Entity
 
@@ -274,8 +308,8 @@ Example of an RO-Crate including a _File Data Entity_ external to the _RO-Crate 
       },
       {
         "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf"
-      },
-      ]
+      }
+    ]
   },
   {
     "@id": "survey-responses-2019.csv",
@@ -329,7 +363,8 @@ File Data Entities may already have a corresponding web presence, for instance a
 These can be included for File Data Entities as additional metadata, regardless of whether the File is included in the _RO-Crate Root_ directory or exists on the Web, by using the properties:
 
 * [identifier] for formal identifier strings such as DOIs
-* [url] with a string URL corresponding to a *download* link (if not available, a download landing page) for this file
+* [contentUrl] with a string URL corresponding to a *download* link. Following the link (allowing for HTTP redirects) SHOULD directly download the file.
+* [url] with a string URL for a download/landing page for this particular file (e.g. direct download is not available)
 * [subjectOf] to a [CreativeWork] (or [WebPage]) that mentions this file or its content (but also other resources)
 * [mainEntityOfPage] to a [CreativeWork]  (or [WebPage]) that primarily describes this file (or its content) 
 
@@ -339,7 +374,7 @@ These can be included for File Data Entities as additional metadata, regardless 
     "@type": "File",
     "name": "Survey responses",
     "encodingFormat": "text/csv",
-    "url": "http://example.com/downloads/2019/survey-responses-2019.csv",
+    "contentUrl": "http://example.com/downloads/2019/survey-responses-2019.csv",
     "subjectOf": {"@id": "http://example.com/reports/2019/annual-survey.html"}
   },
   {
@@ -374,7 +409,7 @@ Alternatively, a common mechanism to provide downloads of a reasonably sized dir
   }
 ```
 
-Similarly, the _RO-Crate root_ entity may also provide a [distribution] URL, in which case the download SHOULD be an archive that contains the _RO-Crate Metadata file_.
+Similarly, the _RO-Crate root_ entity may also provide a [distribution] URL, in which case the download SHOULD be an archive that contains the _RO-Crate Metadata Document_.
 
 In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not reflect the current state of the `Dataset` or RO-Crate.
 

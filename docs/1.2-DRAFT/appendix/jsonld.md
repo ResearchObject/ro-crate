@@ -2,6 +2,7 @@
 title: RO-Crate JSON-LD
 parent: Appendix
 grand_parent: RO-Crate 1.2-DRAFT
+nav_order: 22
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -32,11 +33,11 @@ grand_parent: RO-Crate 1.2-DRAFT
 1. TOC
 {:toc}
 
-It is not necessary to use [JSON-LD tooling] to generate or parse the _RO-Crate Metadata File_, although JSON-LD tools may make it easier to conform to this specification, e.g. handling relative URIs. It is however RECOMMENDED to use [JSON tooling][JSON] to handle [JSON][RFC 7159] syntax and escaping rules.
+It is not necessary to use [JSON-LD tooling] to generate or parse the _RO-Crate Metadata Document_, although JSON-LD tools may make it easier to conform to this specification, e.g. handling relative URIs. It is however RECOMMENDED to use [JSON tooling][JSON] to handle [JSON][RFC 7159] syntax and escaping rules.
 
-This appendix shows a brief JSON-LD introduction for complying with the _RO-Crate Metadata File_ requirements.
+This appendix shows a brief JSON-LD introduction for complying with the _RO-Crate Metadata Document_ requirements.
 
-The example below shows the overall structure of a flattened, compacted _RO-Crate Metadata File_ where `@context` refers to the _RO-Crate JSON-LD Context_, while `@graph` is a flat array of the entities that constitute this RO-Crate. 
+The example below shows the overall structure of a flattened, compacted _RO-Crate Metadata Document_ where `@context` refers to the _RO-Crate JSON-LD Context_, while `@graph` is a flat array of the entities that constitute this RO-Crate. 
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
@@ -47,7 +48,7 @@ The example below shows the overall structure of a flattened, compacted _RO-Crat
       "@id": "ro-crate-metadata.json",
       "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
       "about": {"@id": "./"},
-      "description": "RO-Crate Metadata File Descriptor (this file)"
+      "description": "RO-Crate Metadata Descriptor (this file)"
     },
     {
       "@id": "./",
@@ -91,7 +92,7 @@ The example below shows the overall structure of a flattened, compacted _RO-Crat
 **Note**: entities above have been shortened for brevity, see the individual sections for [data entities](../data-entities.md) and [contextual entities](../contextual-entities.md).
 
 
-The order of the `@graph` array is not significant. Above we see that the RO-Crate JSON-LD graph contains the _RO-Crate Metadata File Descriptor_, the _Root Data Entity_, any _Data Entities_ and any _Contextual Entities_.
+The order of the `@graph` array is not significant. Above we see that the RO-Crate JSON-LD graph contains the _RO-Crate Metadata Descriptor_, the _Root Data Entity_, any _Data Entities_ and any _Contextual Entities_.
 
 
 
@@ -105,7 +106,7 @@ Care must be taken to express any relative paths using `/` separator and escape 
 
 Because the _RO-Crate JSON-LD_ is _flattened_, all described entities must be JSON objects as direct children of the `@graph` element rather than being nested under another object or array. Properties referencing entities must use a JSON object with `@id` as the only key, e.g. `"author": {"@id": "https://orcid.org/0000-0002-1825-0097"}`
 
-If no obvious identifier is available for a contextual entity, an identifier local to the _RO-Crate Metadata File_ can be generated, for instance `{"@id": "#alice"}` or `{"@id": "#ac0bd781-7d91-4cdf-b2ad-7305921c7650"}`. Although it is RECOMMENDED to use `#`-based local identifiers, identifiers in `@id` MAY alternatively be a _blank node_ identifier (e.g. `_:alice`).
+If no obvious identifier is available for a contextual entity, an identifier local to the _RO-Crate Metadata Document_ can be generated, for instance `{"@id": "#alice"}` or `{"@id": "#ac0bd781-7d91-4cdf-b2ad-7305921c7650"}`. Although it is RECOMMENDED to use `#`-based local identifiers, identifiers in `@id` MAY alternatively be a _blank node_ identifier (e.g. `_:alice`).
 
 Multiple values and references can be represented using JSON arrays, as exemplified in `hasPart` above; however as the `RO-Crate JSON-LD` is in _compacted form_, any single-element arrays like `"author": [{"@id": "#alice"}]` SHOULD be unpacked to a single value like `"author": {"@id": "#alice"}`.
 
@@ -132,7 +133,7 @@ Consider the below (simplified) example of _by reference_ using a versioned perm
     {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
-      "description": "RO-Crate Metadata File Descriptor (this file)",
+      "description": "RO-Crate Metadata Descriptor (this file)",
       "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
       "about": {"@id": "./"}
     }
@@ -154,7 +155,7 @@ The above is equivalent to the following JSON-LD using an embedded context, by a
     {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
-      "description": "RO-Crate Metadata File Descriptor (this file)",
+      "description": "RO-Crate Metadata Descriptor (this file)",
       "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
       "about": {"@id": "./"}
     }
@@ -166,7 +167,7 @@ Note that `conformsTo` is retained to indicate which version of RO-Crate specifi
 
 While the second form is more verbose, one advantage is that it is "archivable" as it does not require Internet access for retrieving the `@context` permalink. Tools consuming or archiving RO-Crate MAY replace by-reference `@context` URIs with an embedded context by using version-specific hard-coded contexts. See <https://github.com/ResearchObject/ro-crate/releases> to download the JSON-LD contexts corresponding to each version of this specification.
 
-To check which RO-Crate version is used (in terms of properties and types expected), clients SHOULD check the property `conformsTo` on the _RO-Crate Metadata File Descriptor_ rather than the value of `@context`.
+To check which RO-Crate version is used (in terms of properties and types expected), clients SHOULD check the property `conformsTo` on the _RO-Crate Metadata Descriptor_ rather than the value of `@context`.
 
 RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded context, but MAY use the [JSON-LD flattening] algorithm with _compaction_ to a referenced _RO-Crate JSON-LD context_ (see also notes on [handling relative URI references](relative-uris.md) below).
 
@@ -188,7 +189,7 @@ Content-Type: application/ld+json; profile="http://www.w3.org/ns/json-ld#flatten
 
 Note that most web servers will however serve `*.json` as `Content-Type: application/json`. 
 
-Requesting the RO-Crate metadata file from a browser may also need permission through CORS header `Access-Control-Allow-Origin` (however extra care should be taken if the RO-Crates require access control).
+Requesting the _RO-Crate Metadata Document_ from a browser may also need permission through CORS header `Access-Control-Allow-Origin` (however extra care should be taken if the RO-Crates require access control).
 
 To change the configuration of **Apache HTTPD 2**, add the following to `.htaccess` or equivalent config file:
 
@@ -294,7 +295,7 @@ In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in
 
 Following the conventions used by Schema.org, ad-hoc terms SHOULD also include definitions in the RO-Crate with at minimum:
 
-* `@id` is an absolute URI (see [choosing ])
+* `@id` is an absolute URI (see [choosing](#choosing-uris-for-ad-hoc-terms))
 * `@type` of [DefinedTerm], [Property] or [Class]. Use [Property] for terms that can be used as JSON-LD keys (after being mapped by the context), or [Class] for terms that can be used with `@type`. Use [DefinedTerm] for any other defined concepts that will be referenced by `@id`, e.g. from [creativeWorkStatus].
 * `name` with the human readable version of the term, e.g. `http://example.com/vocab#makesFood` has label `"makes food"`
 * `description` documenting and clarifying the meaning of the term. For instance the term `education` meaning _Person's education level, e.g. primary school_ (compared to the meaning _Educational Material_)
@@ -334,5 +335,58 @@ More information about the relationship of this term to other terms MAY be provi
 
 {: .note }
 For compatibility with the official schema.org JSON-LD context, make sure any referenced `@id` to schema.org terms starts with `http://` rather than `https://` as shown in the browser.
+
+## Grouping extensions as an RO-Crate profile
+
+If several RO-Crates are using the same `@context` extension terms, or define the same additional ad-hoc terms, then it may make sense to specify these within an [RO-Crate profile](../profiles.md) that the crates can then explicitly declare conformance to.   
+
+The `@id` of the extension terms should after the move be made absolute URIs that resolve to the profile crate -- if these were made using <https://w3id.org/ro/terms/> then a request to set up such redirects can be made. 
+
+For terms it is RECOMMENDED to change the `@id` of the terms after moving to be based on the profile's permalink, e.g. the profile with `@id` <https://w3id.org/cpm/ro-crate> defines the term <https://w3id.org/cpm/ro-crate#CPMProvenanceFile>. 
+
+See sections on [profile extension terms](../profiles.md#extension-terms) and [Profile JSON-LD context](../profiles.md#json-ld-context).  [Custom file formats](../data-entities.md#adding-detailed-descriptions-of-encodings) and common [contextual entities](../contextual-entities.md) may also be moved to the profile, ensuring their `@id` are absolute URI and resolve to the profile JSON-LD.
+
+This can reduce repetition in their JSON-LD, but means additional measures must be taken to ensure the resulting RO-Crates remain functional over time, e.g. not to remove terms as the profile evolves over time.
+
+Example:
+
+```json
+{ "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    "https://w3id.org/cpm/ro-crate/0.1"
+  ],
+  "@graph": [
+
+ {
+    "@type": "CreativeWork",
+    "@id": "ro-crate-metadata.json",
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"},
+    "about": {"@id": "./"}
+ },
+ {
+    "@id": "./",
+    "@type": "Dataset",
+    "conformsTo": {"@id": "https://w3id.org/cpm/crate/0.1"},
+    "hasPart": [
+        { "@id": "CPM_COMPLIANT_PROVENANCE" }
+    ],
+    "…" : ""
+ },
+ {
+   "@id": "CPM_COMPLIANT_PROVENANCE",
+   "@type": ["File", "CPMProvenanceFile"],
+   "encodingFormat": [
+      "text/provenance-notation",
+      { "@id": "http://www.w3.org/TR/2013/REC-prov-n-20130430/"}
+   ],
+   "name": "Provenance file"
+ }
+]
+}
+```
+
+In the example above, the type `CPMProvenanceFile` is resolved to <https://w3id.org/cpm/ro-crate#CPMProvenanceFile> by the matching key in the second `@context` when content-negotiating for `application/ld+json` (browsers may see the human-readable documentations).
+
+The contextual entity `http://www.w3.org/TR/2013/REC-prov-n-20130430/` for `encodingFormat` is defined within the profile rather than in this specific crate, however in this example that `@id` resolves to the textual specification at W3C rather than back to the Profile Crate. 
 
 {% include references.liquid %}

@@ -1,5 +1,6 @@
 source "https://rubygems.org" # gems.ruby-china.com
 
-gem 'just-the-docs'
+#gem "just-the-docs"
+gem "just-the-docs", "0.5.0", group: :jekyll_plugins
 gem 'jekyll-redirect-from'
 gem 'github-pages', group: :jekyll_plugins

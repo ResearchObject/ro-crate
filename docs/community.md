@@ -99,6 +99,8 @@ The _RO-Crate_ team is:
 * Davide Fucci <https://orcid.org/0000-0002-0679-4361>
 * Bruno P. Kinoshita <https://orcid.org/0000-0001-8250-4074>
 * Maciek Bąk <https://orcid.org/0000-0003-1361-7301>
+* Jens Hollunder <https://orcid.org/0000-0003-3234-6762>
+* Martin Weise <http://orcid.org/0000-0003-4216-302X>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! 
 
