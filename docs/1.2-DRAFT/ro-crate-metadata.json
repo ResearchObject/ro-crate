@@ -1286,7 +1286,7 @@
       "value": "CC0-1.0"
     },
     {
-      "@id": "http://spdx.org/licenses/CC0-1.0",
+      "@id": "http://spdx.org/licenses/CC-BY-4.0",
       "@type": "PropertyValue",
       "propertyID": "http://spdx.org/rdf/terms#licenseId",      
       "name": "spdx",
