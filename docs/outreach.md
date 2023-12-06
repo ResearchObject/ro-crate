@@ -21,6 +21,11 @@ title: Outreach and Publications
 # RO-Crate Outreach and Publications 
 {: .no_toc }
 
+{: .tip}
+> **Upcoming tutorial**: _Improving FAIRability of your research outcomes with RO-Crates, SignPosting and Bioschemas_  
+> At [Semantic Web Applications and Tools for Health Care and Life Sciences](https://www.swat4ls.org/workshops/leiden2024/) (SWAT4HCLS), 2024-02-26/--29, Leiden, The Netherlands.  
+> [[Register](https://www.swat4ls.org/workshops/leiden2024/registration/) (by 12 February 2024)
+
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -820,7 +825,11 @@ _To suggest an event, either [edit and raise pull request](https://github.com/Re
 
 [**2nd International Conference on FAIR Digital Objects**](https://fairdo.org/fdo2024-conference/) (FDO 2024), 2024-03-21/--24, Berlin, Germany.
 
-[**International Conference on Knowledge Engineering and Ontology Development**](https://keod.scitevents.org/) (KEOD 2023), 2023-11-13/--15, Rome, Italy. Co-located with [IC3K](https://ic3k.scitevents.org/)/[WEBIST](https://webist.scitevents.org/). Papers due 2023-06-02
+[**Semantic Web Applications and Tools for Health Care and Life Sciences**](https://www.swat4ls.org/workshops/leiden2024/) (SWAT4HCLS), 2024-02-26/--29, Leiden, The Netherlands. **Tutorial** on RO-Crate, Bioschemas and Signposting.
+
+[**EOSC Winter School**](https://eosc.eu/eosc-focus-project/winter-school-2024/), 2024-01-29 / -02-01, Thessaloniki, Greece.
+
+[**International Conference on Knowledge Engineering and Ontology Development**](https://keod.scitevents.org/) (KEOD 2023), 2023-11-13/--15, Rome, Italy. Co-located with [IC3K](https://ic3k.scitevents.org/)/[WEBIST](https://webist.scitevents.org/).  
 
 [**The 22nd International Semantic Web Conference**](https://iswc2023.semanticweb.org/) (ISWC 2023), 2023-11-06/--10, Athens, Greece.  
 
