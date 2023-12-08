@@ -124,10 +124,19 @@ Sciebo RDS (Research Data Services) is a self-hosted interface between data repo
 * [CS3MESH4EOSC Webinar](https://cs3mesh4eosc.eu/data-services/open-data-systems)
 
 
-## AROMA
+## Dataverse & AROMA
 
 AROMA (ARP RO-Crate Manager) is part of Hungarian initiative [ELKH ARP](https://science-research-data.hu/en), extending [Harvard Dataverse](https://dataverse.harvard.edu/) to allow dynamic metadata editing of data deposit metadata using multiple schemas, mapped using  and presented using the [Describo Crate Builder Web](https://github.com/describo/crate-builder-component-react) component. Different [Metadata blocks](https://guides.dataverse.org/en/latest/admin/metadatacustomization.html) in Dataverse are supported.
 
 Work on [Dataverse support for RO-Crate](https://github.com/IQSS/dataverse/issues/8688) continues in collaboration with FAIR-IMPACT collaborators. The [ELN archive])https://github.com/gdcc/dataverse-previewers/pull/21()
 
 * [Developing ELKH ARP AROMA](https://sztaki.hun-ren.hu/en/innovation/news/developing-elkh-arp-aroma-published-describo-newsletter-australia)
+
+## EGI AppDB
+
+EGI's Application Database ([AppDB](https://appdb.egi.eu/)) has [support for RO-Crate](https://wiki.appdb.egi.eu/docs/integration/ro-crate/) download, either as a JSON-LD metadata file or a ZIP archive.
+
+The AppDB RO-Crates describe the software as `SoftwareApplication` entities, similar to [CodeMeta](https://codemeta.github.io/), including link to virtual machine iamges etc. 
+
+* [RO-Crate integration in AppDB](https://wiki.appdb.egi.eu/docs/integration/ro-crate/)
+* [Example RO-Crate](https://appdb.egi.eu/store/vappliance/egi.ubuntu.20.04#) for appliance [EGI Ubuntu 20.04](https://appdb.egi.eu/store/vappliance/egi.ubuntu.20.04)
