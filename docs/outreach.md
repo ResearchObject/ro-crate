@@ -50,6 +50,11 @@ _Data Science_ **5**(2)
 
 ### 2023
 
+Ana Trisovic (2023):  
+[**Cluster Analysis of Open Research Data: A Case for Replication Metadata**](https://doi.org/10.2218/ijdc.v17i1.833).  
+_International Journal of Digital Curation_ **17**(1)  
+<https://doi.org/10.2218/ijdc.v17i1.833>
+
 Bogdan Nicolae, Tanzima Z. Islam, Robert Ross, Huub Van Dam, Kevin Assogba, Polina Shpilker, Mikhail Titov, Matteo Turilli, Tianle Wang, Ozgur O. Kilic, Shantenu Jha, Line C. Pouchard (2023):  
 [**Building the I (Interoperability) of FAIR for Performance Reproducibility of Large-Scale Composable Workflows in RECUP**](https://zenodo.org/records/10028531).  
 _IEEE 19th International Conference on e-Science (e-Science)_  
