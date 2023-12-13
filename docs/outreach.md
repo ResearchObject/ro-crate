@@ -21,6 +21,11 @@ title: Outreach and Publications
 # RO-Crate Outreach and Publications 
 {: .no_toc }
 
+{: .tip}
+> **Upcoming tutorial**: _Improving FAIRability of your research outcomes with RO-Crates, SignPosting and Bioschemas_  
+> At [Semantic Web Applications and Tools for Health Care and Life Sciences](https://www.swat4ls.org/workshops/leiden2024/) (SWAT4HCLS), 2024-02-26/--29, Leiden, The Netherlands.  
+> [[Register](https://www.swat4ls.org/workshops/leiden2024/registration/) (by 12 February 2024)
+
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -44,6 +49,11 @@ _Data Science_ **5**(2)
 ## Recent publications, presentations, citations
 
 ### 2023
+
+Ana Trisovic (2023):  
+[**Cluster Analysis of Open Research Data: A Case for Replication Metadata**](https://doi.org/10.2218/ijdc.v17i1.833).  
+_International Journal of Digital Curation_ **17**(1)  
+<https://doi.org/10.2218/ijdc.v17i1.833>
 
 Bogdan Nicolae, Tanzima Z. Islam, Robert Ross, Huub Van Dam, Kevin Assogba, Polina Shpilker, Mikhail Titov, Matteo Turilli, Tianle Wang, Ozgur O. Kilic, Shantenu Jha, Line C. Pouchard (2023):  
 [**Building the I (Interoperability) of FAIR for Performance Reproducibility of Large-Scale Composable Workflows in RECUP**](https://zenodo.org/records/10028531).  
@@ -820,7 +830,11 @@ _To suggest an event, either [edit and raise pull request](https://github.com/Re
 
 [**2nd International Conference on FAIR Digital Objects**](https://fairdo.org/fdo2024-conference/) (FDO 2024), 2024-03-21/--24, Berlin, Germany.
 
-[**International Conference on Knowledge Engineering and Ontology Development**](https://keod.scitevents.org/) (KEOD 2023), 2023-11-13/--15, Rome, Italy. Co-located with [IC3K](https://ic3k.scitevents.org/)/[WEBIST](https://webist.scitevents.org/). Papers due 2023-06-02
+[**Semantic Web Applications and Tools for Health Care and Life Sciences**](https://www.swat4ls.org/workshops/leiden2024/) (SWAT4HCLS), 2024-02-26/--29, Leiden, The Netherlands. **Tutorial** on RO-Crate, Bioschemas and Signposting.
+
+[**EOSC Winter School**](https://eosc.eu/eosc-focus-project/winter-school-2024/), 2024-01-29 / -02-01, Thessaloniki, Greece.
+
+[**International Conference on Knowledge Engineering and Ontology Development**](https://keod.scitevents.org/) (KEOD 2023), 2023-11-13/--15, Rome, Italy. Co-located with [IC3K](https://ic3k.scitevents.org/)/[WEBIST](https://webist.scitevents.org/).  
 
 [**The 22nd International Semantic Web Conference**](https://iswc2023.semanticweb.org/) (ISWC 2023), 2023-11-06/--10, Athens, Greece.  
 

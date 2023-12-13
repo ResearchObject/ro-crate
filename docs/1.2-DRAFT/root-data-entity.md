@@ -196,7 +196,7 @@ Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be 
 
 The root data entity's `@id` SHOULD be either `./` (indicating the directory of `ro-crate-metadata.json` is the [RO-Crate Root](structure.md)), or an absolute URI (indicating a [detached RO-Crate](structure.md#detached-ro-crate)). 
 
-If the `@id` of the Root Data Entity is an absolute URI, an _Attached RO-Crate__ MAY contain both [data entities](data-entities.md) using relative URI references (relative to the _RO-Crate Root_, and [Web-based Data Entities](data-entities.html#web-based-data-entities) using absolute URIs but it is RECOMMENDED that data entities are referenced using absolute URIs.
+If the `@id` of the Root Data Entity is an absolute URI, an _Attached RO-Crate_ MAY contain both [data entities](data-entities.md) using relative URI references (relative to the _RO-Crate Root_, and [Web-based Data Entities](data-entities.html#web-based-data-entities) using absolute URIs but it is RECOMMENDED that data entities are referenced using absolute URIs.
 
 RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) SHOULD indicate this using [identifier] on the root data entity using the approach set out in the [Science On Schema.org guides], that is through a `PropertyValue`. 
 
@@ -207,7 +207,7 @@ RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) SHOULD 
 
 It is RECOMMENDED that resolving the `identifier` programmatically return the _RO-Crate Metadata Document_ or an archive (e.g. ZIP) that contain the _RO-Crate Metadata File_, using [content negotiation](profiles.md#how-to-retrieve-a-profile-crate) and/or [Signposting]. With an RO-Crate identifier that is persistant and resolvable in this way from a URI, the root data entity SHOULD indicate this using the `cite-as` property according to [RFC8574]. Likewise, an HTTP/HTTPS server of the resolved RO-Crate Metadata Document or archive (possibly after redirection) SHOULD indicate that persistent identifier in its [Signposting] headers using `Link rel="cite-as"`. 
 
-{: tip}
+{: .tip}
 > The above `cite-as` MAY go to a repository landing page, and MAY require authentication, but MUST ultimately have the RO-Crate as a downloadable item, which SHOULD be programmatically accessible through content negotiation or [Signposting] (`Link rel="describedby"` for a _RO-Crate Metadata Document_, or `Link rel="item"` for an archive). To rather associate a textual scholarly citation for a crate (e.g. journal article), indicate instead a [publication via `citation` property](contextual-entities.md#publications-via-citation-property).
 
 
