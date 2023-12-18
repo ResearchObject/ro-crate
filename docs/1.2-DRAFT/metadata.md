@@ -128,7 +128,7 @@ RO-Crate use the [Profiles Vocabulary](https://www.w3.org/TR/2019/NOTE-dx-prof-2
 - `hasResource` mapped to <http://www.w3.org/ns/dx/prof/hasResource> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasResource))
 - `hasRole` mapped to <http://www.w3.org/ns/dx/prof/hasRole> ([definition](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasRole))
 
-From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate use:
+From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate uses:
 
 - `conformsTo` mapped to <http://purl.org/dc/terms/conformsTo>
 - `Standard` mapped to <http://purl.org/dc/terms/Standard>
@@ -145,6 +145,22 @@ These terms are being proposed by [Bioschemas profile ComputationalWorkflow 1.0-
 
 {: .note }
 > In this specification the proposed Bioschemas terms use the temporary <https://bioschemas.org/> namespace; future releases of RO-Crate may reflect mapping to the <http://schema.org/> namespace.
+
+From [CodeMeta](https://w3id.org/codemeta#):
+
+* `buildInstructions` mapped to <https://w3id.org/codemeta#buildInstructions>
+* `developmentStatus` mapped to <https://w3id.org/codemeta#developmentStatus>
+* `continuousIntegration` mapped to <https://w3id.org/codemeta#continuousIntegration>
+* `embargoEndDate` mapped to <https://w3id.org/codemeta#embargoEndDate>
+* `hasSourceCode` mapped to <https://w3id.org/codemeta#hasSourceCode>
+* `isSourceCodeOf` mapped to <https://w3id.org/codemeta#isSourceCodeOf>
+* `issueTracker` mapped to <https://w3id.org/codemeta#issueTracker>
+* `readme` mapped to <https://w3id.org/codemeta#readme>
+* `referencePublication` mapped to <https://w3id.org/codemeta#referencePublication>
+* `softwareSuggestions` mapped to <https://w3id.org/codemeta#softwareSuggestions>
+
+{: .note }
+> The CodeMeta terms `maintainer` and `funding` are not mapped, as these are already defined by schema.org.
 
 
 ## Summary of Coverage
