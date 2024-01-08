@@ -24,7 +24,7 @@ redirect_from:
 # RO-Crate in use
 {: .no_toc }
 
-These applications use or expose RO-Crates to describe Data, Datasets and Workflows.
+These applications are known use or expose RO-Crates to describe Data, Datasets or Workflows. 
 
 
 
