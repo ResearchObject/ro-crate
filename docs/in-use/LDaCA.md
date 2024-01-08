@@ -40,6 +40,7 @@ The [data portal](https://data.atap.edu.au) for the ATAP platform is the first r
 ## RO-Crate in the LDaCA Program
 
 RO-Crate is the central metadata standard for all data within the LDaCA environment.
+The use of [detached RO-crates](https://www.researchobject.org/ro-crate/1.2-DRAFT/structure.html#detached-ro-crate) has been utilised to navigating centralised API resources, rather than considering RO-Crate only as a standalone publication on the Web. 
 
 ### Archiving
 
