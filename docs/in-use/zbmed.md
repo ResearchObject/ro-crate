@@ -30,11 +30,11 @@ This work was supported by a [FAIR-IMPACT support action](https://fair-impact.eu
 
 ## Resources
 
-* Slides:  https://slides.com/soilandreyes/2023-11-13-bh2023-fdo#/3
-* Biohackathon preprint: https://github.com/ResearchObject/bh2023-enabling-fair-digital-objects/blob/main/paper/paper.md
-* Example page w/ RO-Crate: https://zbmed-semtec.github.io/projects/2022_maSMP/
-* Example RO-Crate: https://zbmed-semtec.github.io/metadata/projects/2022_maSMP/ro-crate-metadata.json
-* Example RO-Crate preview: https://zbmed-semtec.github.io/metadata/projects/2022_maSMP/ro-crate-preview.html
+* Slides: <https://slides.com/soilandreyes/2023-11-13-bh2023-fdo#/3>
+* Biohackathon preprint: <https://github.com/ResearchObject/bh2023-enabling-fair-digital-objects/blob/main/paper/paper.md>
+* Example page w/ RO-Crate: <https://zbmed-semtec.github.io/projects/2022_maSMP/>
+* Example RO-Crate: <https://zbmed-semtec.github.io/metadata/projects/2022_maSMP/ro-crate-metadata.json>
+* Example RO-Crate preview: <https://zbmed-semtec.github.io/metadata/projects/2022_maSMP/ro-crate-preview.html>
 
 <!--
 [![zbmed logo](../assets/img/zbmed.svg)](https://zbmed.org/)

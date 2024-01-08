@@ -31,8 +31,8 @@ This novel approach shows how it is possible to use RO-Crate as an machine-actio
 ## Resources
 
 * Conference paper: https://doi.org/10.1109/e-Science58273.2023.10254857 (not open access)
-* https://livepublication.github.io/LP_Pub_LID/
-* https://livepublication.github.io/LP_Pub_OrchestrationCrate/
+* Example LivePublication: <https://livepublication.github.io/LP_Pub_LID/>
+* Example crate: <https://livepublication.github.io/LP_Pub_OrchestrationCrate/>
 
 <!--
 [![executablepaper logo](../assets/img/executablepaper.svg)](https://executablepaper.org/)
