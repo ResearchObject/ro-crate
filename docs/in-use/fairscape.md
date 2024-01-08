@@ -1,5 +1,5 @@
 ---
-title: fairscape
+title: FAIRSCAPE
 parent: RO-Crate In Use
 ---
 <!--

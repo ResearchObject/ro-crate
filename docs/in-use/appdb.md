@@ -19,7 +19,7 @@ parent: RO-Crate In Use
    limitations under the License.
 -->
 
-## EGI AppDB
+# EGI's Application Database
 
 EGI's Application Database ([AppDB](https://appdb.egi.eu/)) has [support for RO-Crate](https://wiki.appdb.egi.eu/docs/integration/ro-crate/) download, either as a JSON-LD metadata file or a ZIP archive.
 

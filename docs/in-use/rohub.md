@@ -19,7 +19,7 @@ parent: RO-Crate In Use
    limitations under the License.
 -->
 
-## ROHub
+# ROHub
 
 [ROHub](rohub.md) is a solution for the storage, lifecycle management and preservation of scientific work and operational processes via research objects. It makes these resources available to others, allows to publish and release them through a DOI, and allows to discover and reuse pre-existing scientific knowledge.
 

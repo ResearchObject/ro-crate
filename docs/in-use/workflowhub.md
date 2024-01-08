@@ -19,7 +19,7 @@ parent: RO-Crate In Use
    limitations under the License.
 -->
 
-## WorkflowHub
+# WorkflowHub
 
 [WorkflowHub](https://about.workflowhub.eu/) imports and exports [Workflow RO-Crates](https://about.workflowhub.eu/Workflow-RO-Crate/), using it as an exchange format. They are a specialization of RO-Crate for packaging an executable workflow with all necessary documentation. It is aligned with, and intends to strictly extend, the more general [Bioschemas ComputationalWorkflow profile](https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/).
 

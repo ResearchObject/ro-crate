@@ -20,7 +20,7 @@ parent: RO-Crate In Use
 -->
 
 
-## LifeMonitor
+# LifeMonitor
 
 [LifeMonitor](life_monitor) uses RO-Crate as an exchange format for describing test suites associated with workflows. To this end, the LifeMonitor team is developing an extension to the [Workflow RO-Crate specification](https://about.workflowhub.eu/Workflow-RO-Crate/) to support the inclusion of metadata related to the testing of computational workflows stored in the crate.
 
