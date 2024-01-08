@@ -3,7 +3,7 @@ title: Language Data Commons of Australia (LDaCA) Program
 parent: RO-Crate In Use
 ---
 <!--
-   Copyright 2019-2022 RO-Crate contributors
+   Copyright 2019-2024 RO-Crate contributors
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,11 +21,16 @@ parent: RO-Crate In Use
 
 # Language Data Commons of Australia Program
 
-<!-- linking to logo online cos the current one is a placeholder only and should get updated -->
+
+[LDaCA](LDaCA) uses RO-Crate as an interchange and archive format for language data, and is providing data discovery portals and API access to data using RO-Crate-centric APIs.]
+
+
+<!--
+>
 [![LDaCA Logo](https://www.ldaca.edu.au//LDaCA_logo-sm.png)][LDaCA]
 
 [![ATAP LOGO](https://www.atap.edu.au/ATAP_logo-sm.png)][ATAP]
-
+-->
 The LDaCA Program architecture consists of a set of modular services; data preservation/archiving, APIs for delivery, access control and a discovery portal for data and analysis tools as well as automated container-based notebook environments to run analytics via the Australian Text Analytics Platform (which is a component of the broader program). 
 
 The [data portal](https://data.atap.edu.au) for the ATAP platform is the first released product, there will be more data portals which provide access to a broader range of data in 2023.
