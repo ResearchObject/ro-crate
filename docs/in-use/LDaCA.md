@@ -22,7 +22,7 @@ parent: RO-Crate In Use
 # Language Data Commons of Australia Program
 
 
-[LDaCA](LDaCA) uses RO-Crate as an interchange and archive format for language data, and is providing data discovery portals and API access to data using RO-Crate-centric APIs.]
+[LDaCA](https://www.ldaca.edu.au/) uses RO-Crate as an interchange and archive format for language data, and is providing data discovery portals and API access to data using RO-Crate-centric APIs.
 
 
 <!--
@@ -107,8 +107,9 @@ The structural API described above is used to build discovery and access portals
 
 The portal/index system us highly configurable to work with differently structured RO-Crate data.
 
+<!--
 ![Oni Portal Screencast](../assets/img/ldaca-oni-demo.gif)
-
+-->
 
 
 
@@ -120,7 +121,7 @@ The portal/index system us highly configurable to work with differently structur
 * [RO-Crate profile for Ldaca (DRAFT - in development)](https://purl.archive.org/textcommons/profile)
 * [RO-Crate metadata vocabulary (DRAFT - in development)](https://purl.archive.org/textcommons/terms)
 * [Presentation explaining the LDaCA architecture](https://www.ldaca.edu.au/rdc-tech-meeting/)
-
+* [ARDC: LDaCA Funding](https://doi.org/10.47486/HIR001)
 
 [ATAP]: https://atap.edu.au
 [LDaCA]: https://ldaca.edu.au
