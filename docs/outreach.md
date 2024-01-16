@@ -48,7 +48,51 @@ _Data Science_ **5**(2)
 
 ## Recent publications, presentations, citations
 
+### 2024
+
+Stian Soiland-Reyes, Leyla Jael Castro, Rohitha Ravinder, Claus Weiland, Jonas Grieb, Alexander Rogers, Christophe Blanchi, Herbert Van de Sompel (2024):
+[BioHackEU23 report: **Enabling FAIR Digital Objects with RO-Crate, Signposting and Bioschemas**](https://doi.org/10.37044/osf.io/gmk2h).
+*BioHackrXiv*
+<https://doi.org/10.37044/osf.io/gmk2h>
+
+Sebastian Beier, Timo Mühlhaus, Cyril Pommier, Stuart Owen, Dominik Brilhaus, Heinrich Lukas Weil, Florian Wetzels, Gavin Chait, Daniel Arend, Manuel Feser, Gajendra Doniparthi, Jonathan Bauer, Sveinung Gundersen, Pável Vázquez (2024):
+[BioHackEU23 report: **Enabling continuous RDM using Annotated Research Contexts with RO-Crate profiles for ISA**](https://doi.org/10.37044/osf.io/7y2jh).
+*BioHackrXiv*
+<https://doi.org/10.37044/osf.io/7y2jh>
+
+Stian Soiland-Reyes, Peter Sefton, Simone Leo, Leyla Jael Castro, Claus Weiland, RO-Crate community (2024):  
+[**RO-Crate community update 2024**](https://research.manchester.ac.uk/files/291196011/FDO2024_RO-Crate_update.pdf).  
+(submitted)  
+<https://research.manchester.ac.uk/en/publications/ro-crate-community-update-2024>  
+
+Stian Soiland-Reyes, Stuart Wheater, Tom Giles, Carole Goble, Phil Quinlan (2024):  
+[**Five Safes RO-Crate: FAIR Digital Objects for Trusted Research Environments**](https://research.manchester.ac.uk/files/291224791/FDO2024-Goble-Lightningtalk-5scrate.pdf).  
+(submitted)  
+<https://research.manchester.ac.uk/en/publications/five-safes-ro-crate-fair-digital-objects-for-trusted-research-env>  
+
+Herbert Van de Sompel, Stian Soiland-Reyes (2024):  
+[**FAIR Signposting: Exposing the Topology of Digital Objects on the Web**](https://research.manchester.ac.uk/en/publications/fair-signposting-exposing-the-topology-of-digital-objects-on-the-).  
+(submitted)  
+<https://research.manchester.ac.uk/en/publications/fair-signposting-exposing-the-topology-of-digital-objects-on-the->  
+
+Peter Sefton, Stian Soiland-Reyes (2024):  
+[**Five ways RO-Crate data packages are important for repositories**](https://research.manchester.ac.uk/en/publications/five-ways-ro-crate-data-packages-are-important-for-repositories).  
+(submitted)  
+<https://research.manchester.ac.uk/en/publications/five-ways-ro-crate-data-packages-are-important-for-repositories>  
+
+
 ### 2023
+
+
+Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander Kanitz, Paul De Geest, Rudolf Wittner, Luca Pireddu, Daniel Garijo, José M. Fernández, Iacopo Colonnelli, Matej Gallo, Tazro Ohta, Hirotaka Suetake, Salvador Capella-Gutierrez, Renske de Wit, Bruno de Paula Kinoshita, Stian Soiland-Reyes (2023):  
+[**Recording provenance of workflow runs with RO-Crate**](https://doi.org/10.48550/arXiv.2312.07852).  
+_arXiv_  
+<https://doi.org/10.48550/arXiv.2312.07852>
+
+Rudolf Wittner, Matej Gallo, Simone Leo, Cecilia Mascia, Francesca Frexia, Markus Plass, Stian Soiland-Reyes, Heimo Müller, Jörg Geiger, Petr Holub (2023):  
+**Linking provenance and its metadata in multi-organizational environments of life sciences**.  
+(Submitted)  
+<https://research.manchester.ac.uk/en/publications/linking-provenance-and-its-metadata-in-multi-organizational-envir>
 
 Ana Trisovic (2023):  
 [**Cluster Analysis of Open Research Data: A Case for Replication Metadata**](https://doi.org/10.2218/ijdc.v17i1.833).  
