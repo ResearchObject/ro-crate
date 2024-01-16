@@ -380,7 +380,7 @@ The top-level metadata consists of the following types, which represent the `Inv
 
 ## Electronic Lab Notebook (ELN)
 
-The [ELN file format](https://github.com/TheELNConsortium/TheELNFileFormat) has been defined as an archive format to captuire Electronic Laboratory Notebooks (ELN).  An archive is a ZIP file with the `.eln` extension, containing a single root folder which is an RO-Crate. The [ELN specification](https://github.com/TheELNConsortium/TheELNFileFormat/blob/master/SPECIFICATION.md) is based on the RO-Crate specification and is exported by Lab notebook software including [eLabFTW](https://www.elabftw.net/) and ELN archives can be [previewed in Dataverse](https://github.com/gdcc/dataverse-previewers/pull/21) 
+The [ELN file format](https://github.com/TheELNConsortium/TheELNFileFormat) has been defined as an archive format to capture Electronic Laboratory Notebooks (ELN).  An archive is a ZIP file with the `.eln` extension, containing a single root folder which is an RO-Crate. The [ELN specification](https://github.com/TheELNConsortium/TheELNFileFormat/blob/master/SPECIFICATION.md) is based on the RO-Crate specification and is exported by Lab notebook software including [eLabFTW](https://www.elabftw.net/) and ELN archives can be [previewed in Dataverse](https://github.com/gdcc/dataverse-previewers/pull/21) 
 
 * [ELN examples](https://github.com/TheELNConsortium/TheELNFileFormat/tree/master/examples)
 
