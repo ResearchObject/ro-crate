@@ -321,6 +321,11 @@ _Research Ideas and Outcomes_ **8**:e98457
 
 ### 2022
 
+Sonia Natalie Mitchell, Andrew Lahiff, Nathan Cummings, Jonathan Hollocombe, Bram Boskamp, Ryan Field, Dennis Reddyhoff, Kristian Zarebski, Antony Wilson, Bruno Viola, Martin Burke, Blair Archibald, Paul Bessell, Richard Blackwell, Lisa A. Boden, Alys Brett, Sam Brett, Ruth Dundas, Jessica Enright, Alejandra N. Gonzalez-Beltran, Claire Harris, Ian Hinder, Christopher David Hughes, Martin Knight, Vino Mano, Ciaran McMonagle, Dominic Mellor, Sibylle Mohr, Glenn Marion, Louise Matthews, Iain J. McKendrick, Christopher Mark Pooley, Thibaud Porphyre, Aaron Reeves, Edward Townsend, Robert Turner, Jeremy Walton, Richard Reeve (2022):  
+[**FAIR data pipeline: provenance-driven data management for traceable scientific workflows**](https://doi.org/10.1098/rsta.2021.0300).  
+_Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences_ **380**(2232)  
+<https://doi.org/10.1098/rsta.2021.0300>
+
 Leyla Jael Castro, Zeyd Boukhers, Olga Giraldo, Adamantios Koumpis, Oya Beyan, Dietrich Rebholz-Schuhmann (2022):  
 [**NFDI4DataScience registry for reproducible Data Science and Artificial Intelligence**](https://doi.org/10.5281/zenodo.7129715).  
 _Workshop On Open Citations And Open Scholarly Metadata 2022_ ([WOOC2022](https://workshop-oc.github.io/)) 2022-10-05  
@@ -561,7 +566,7 @@ Tobias Kuhn, Hailiang Mei, Hervé Ménager, Steffen Möller, Robin A. Richardson
 Vincent Robert, Stian Soiland-Reyes, Robert Stevens, Szoke Szaniszlo, 
 Suzan Verberne, Aswin Verhoeven, Katherine Wolstencroft (2021):  
 [**Perspectives on automated composition of workflows in the life sciences** [version 1; peer review: 2 approved]](https://doi.org/10.12688/f1000research.54159.1).  
-_F1000Research_ **10**:897  
+_F1000Research_ **10**:897  FAIR data pipeline: provenance-driven data management for traceable scientific workflows
 <https://doi.org/10.12688/f1000research.54159.1>
 
 Thanasis Vergoulis, Konstantinos Zagganas, Loukas Kavouras, Martin Reczko, Stelios Sartzetakis, and Theodore Dalamagas (2021):  
