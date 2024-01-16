@@ -61,13 +61,13 @@ _GigaScience_ **13**:giad115
 <https://doi.org/10.1093/gigascience/giad115>
 
 Stian Soiland-Reyes, Leyla Jael Castro, Rohitha Ravinder, Claus Weiland, Jonas Grieb, Alexander Rogers, Christophe Blanchi, Herbert Van de Sompel (2024):
-[BioHackEU23 report: **Enabling FAIR Digital Objects with RO-Crate, Signposting and Bioschemas**](https://doi.org/10.37044/osf.io/gmk2h).
-*BioHackrXiv*
+[BioHackEU23 report: **Enabling FAIR Digital Objects with RO-Crate, Signposting and Bioschemas**](https://doi.org/10.37044/osf.io/gmk2h).  
+*BioHackrXiv*  
 <https://doi.org/10.37044/osf.io/gmk2h>
 
-Sebastian Beier, Timo Mühlhaus, Cyril Pommier, Stuart Owen, Dominik Brilhaus, Heinrich Lukas Weil, Florian Wetzels, Gavin Chait, Daniel Arend, Manuel Feser, Gajendra Doniparthi, Jonathan Bauer, Sveinung Gundersen, Pável Vázquez (2024):
-[BioHackEU23 report: **Enabling continuous RDM using Annotated Research Contexts with RO-Crate profiles for ISA**](https://doi.org/10.37044/osf.io/7y2jh).
-*BioHackrXiv*
+Sebastian Beier, Timo Mühlhaus, Cyril Pommier, Stuart Owen, Dominik Brilhaus, Heinrich Lukas Weil, Florian Wetzels, Gavin Chait, Daniel Arend, Manuel Feser, Gajendra Doniparthi, Jonathan Bauer, Sveinung Gundersen, Pável Vázquez (2024):  
+[BioHackEU23 report: **Enabling continuous RDM using Annotated Research Contexts with RO-Crate profiles for ISA**](https://doi.org/10.37044/osf.io/7y2jh).  
+*BioHackrXiv*  
 <https://doi.org/10.37044/osf.io/7y2jh>
 
 Stian Soiland-Reyes, Peter Sefton, Simone Leo, Leyla Jael Castro, Claus Weiland, RO-Crate community (2024):  
@@ -119,8 +119,8 @@ _IEEE 19th International Conference on e-Science (e-Science)_
 <https://doi.org/10.1109/e-science58273.2023.10254808> [[preprint](https://zenodo.org/records/10028531)]
 
 Augustus Ellerm, Mark Gahegan, Benjamin Adams (2023):  
-**LivePublication: The Science Workflow Creates and Updates the Publication**
-_IEEE 19th International Conference on e-Science (e-Science)_   (preprint not available)
+**LivePublication: The Science Workflow Creates and Updates the Publication**.  
+_IEEE 19th International Conference on e-Science (e-Science)_   (preprint not available)  
 <https://doi.org/10.1109/e-Science58273.2023.10254857>
 
 Raül Sirvent (2023):  
@@ -204,7 +204,7 @@ _Research Ideas and Outcomes_ **9**:e108765
 Alessandro Lotta, Gianmaria Silvello (2023):  
 [**How to Cite a Web Ranking and Make it FAIR**](https://www.dei.unipd.it/~silvello/papers/2023_TPDL_LS.pdf).  
 _Theory and Practice of Digital Libraries_ ([TPDL 2023](https://tpdl2023.dei.unipd.it/)), 2023-09-26/--29, Zadar, Croatia.  
-(awaiting DOI)  
+<https://doi.org/10.1007/978-3-031-43849-3_6>
 [[preprint](https://www.dei.unipd.it/~silvello/papers/2023_TPDL_LS.pdf)]
 
 Peter Sefton, Stian Soiland-Reyes (2023):  
