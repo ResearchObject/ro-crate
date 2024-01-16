@@ -144,7 +144,7 @@ _BioHackrXiv_
 <https://doi.org/10.37044/osf.io/24jst>
 
 Sharif Islam, Hanna Koivula, Dag Endresen, Erik Kusch, Dmitry Schigel, Wouter Addink (2023):  
-[**Data Standards and Interoperability Challenges for Biodiversity Digital Twin: A novel and transformative approach to biodiversity research and application**]().  
+[**Data Standards and Interoperability Challenges for Biodiversity Digital Twin: A novel and transformative approach to biodiversity research and application**](https://doi.org/10.3897/biss.7.112373).  
 _Biodiversity Information Standards_ ([TDWG 2023](https://www.tdwg.org/conferences/2023/)), Hobert, Australia, 2023-10-09/--13.  
 _Biodiversity Information Science and Standards_ **7**:e112373  
 <https://doi.org/10.3897/biss.7.112373>
@@ -304,7 +304,7 @@ _Data Science Journal_ **22**:52
 <https://doi.org/10.5334/dsj-2023-035>
 
 Molly A Bogue, Robyn L Ball, Vivek M Philip, David O Walton, Matthew H Dunn, Georgi Kolishovski, Anna Lamoureux, Matthew Gerring, Hongping Liang, Jake Emerson, Tim Stearns, Hao He, Gaurab Mukherjee, John Bluis, Sejal Desai, Beth Sundberg, Beena Kadakkuzha, Govindarajan Kunde-Ramamoorthy, Elissa J Chesler (2023):  
-[**Mouse Phenome Database: towards a more FAIR-compliant and TRUST-worthy data repository and tool suite for phenotypes and genotypes**]().  
+[**Mouse Phenome Database: towards a more FAIR-compliant and TRUST-worthy data repository and tool suite for phenotypes and genotypes**](https://doi.org/10.3897/biss.7.112373).  
 _Nucleic Acids Research_ **51**(D1)  
 <https://doi.org/10.1093/nar/gkac1007>
 
