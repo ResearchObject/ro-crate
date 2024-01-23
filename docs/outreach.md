@@ -50,6 +50,11 @@ _Data Science_ **5**(2)
 
 ### 2024
 
+Carole Goble, Stian Soiland-reyes, Herbert Van de Sompel, Mark Wilkinson (2024):  
+[**RO-Crate, Signposting and Bioschemas**](https://doi.org/10.5281/zenodo.10555382).  
+_Lorentz Symposium_: [The Road to FAIR and Equitable Science](https://www.lorentzcenter.nl/the-road-to-fair-and-equitable-science.html). Leiden, The Netherlands, 2024-01-22/--26.  
+<https://doi.org/10.5281/zenodo.10555382>
+
 Scott Edmunds (2024):  
 [**A Decade of FAIR – and what next? Q&A on FAIR workflows with the Netherlands X-omics Initiative**](http://gigasciencejournal.com/blog/fair-workflows/).  
 _GIGAblog_  
