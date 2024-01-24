@@ -27,13 +27,19 @@ The intention is to follow the [Five Safes Framework](https://econpapers.repec.o
 
 In Five Safes, a crate with a workflow run request references a pre-approved workflow and project details for manual and automated assessment according to the TRE’s agreement policy for the sensitive dataset.
 
-The crate goes through multiple phases internal to the TRE, including validation, sign-off, workflow execution and disclosure control.  These checks are recorded as schema.org `Action`s, e.g. a [AssessAction signs off execution](https://trefx.uk/5s-crate/0.4/example-result/data/ro-crate-preview.html#%23signoff-3b741265-cfef-49ea-8138-a2fa149bf2f0).
+The crate goes through [multiple phases](https://trefx.uk/5s-crate/0.4/#review-process) internal to the TRE, including validation, sign-off, workflow execution and disclosure control.  These checks are recorded as schema.org `Action`s, e.g. a [AssessAction signs off execution](https://trefx.uk/5s-crate/0.4/example-result/data/ro-crate-preview.html#%23signoff-3b741265-cfef-49ea-8138-a2fa149bf2f0).
 
 At this stage the crate describes the workflow run and thus conform to the Workflow Run Crate profile.  The final crate is then safe to be made public.  This extension of Workflow Run Crate documents and supports the human review process – important for transparency on TRE data usage. 
 
 The initial implementation of this profile used [WfExS](https://github.com/inab/WfExS-backend) as the workflow execution backend, and this approach will form the basis for further work on implementing [federated workflow execution](https://www.hdruk.ac.uk/research/research-data-infrastructure/federated-analytics/) in the British initiatives DARE UK and HDR UK and in the European [EOSC-ENTRUST](https://esciencelab.org.uk/projects/eosc-entrust/) project for Trusted Research Environments.
 
 _This text has been adapted from <https://doi.org/10.48550/arXiv.2312.07852>_
+
+
+## RO-Crate details
+
+The profile uses the [BagIt](https://www.researchobject.org/ro-crate/1.1/appendix/implementation-notes.html#combining-with-other-packaging-schemes) wrapping of an RO-Crate inside a ZIP file. Internally the TRE is free to , see [TRE-FX implementation reports](https://trefx.uk/implementation)
+
 
 ## Resources
 
