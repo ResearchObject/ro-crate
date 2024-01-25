@@ -43,10 +43,10 @@ The profile uses the [BagIt](https://www.researchobject.org/ro-crate/1.1/appendi
 
 ## Resources
 
-* Profile releases: https://w3id.org/5s-crate
-* TRE-FX report: https://doi.org/10.5281/zenodo.10055354
-* Profile report https://doi.org/10.5281/zenodo.10376350
-* Workflow Run Crate paper: https://doi.org/10.48550/arXiv.2312.07852
-* https://esciencelab.org.uk/projects/federated-analytics/
+* Profile releases: <https://w3id.org/5s-crate>:
+* TRE-FX report: <https://doi.org/10.5281/zenodo.10055354>:
+* Profile report <https://doi.org/10.5281/zenodo.10376350>:
+* Workflow Run Crate paper: <https://doi.org/10.48550/arXiv.2312.07852>:
+* <https://esciencelab.org.uk/projects/federated-analytics/>:
 * Example: [example-result.bagit.zip](https://trefx.uk/5s-crate/0.4/example-result.bagit.zip) [ro-crate-metadata.json](https://trefx.uk/5s-crate/0.4/example-hutch/data/ro-crate-metadata.json) [ro-crate-preview.html](https://trefx.uk/5s-crate/0.4/example-result/data/ro-crate-preview.html)
 
