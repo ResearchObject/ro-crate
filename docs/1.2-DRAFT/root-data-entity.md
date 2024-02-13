@@ -203,13 +203,14 @@ RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) SHOULD 
 {: note}
 > Earlier RO-Crate 1.1 and earlier recommended `identifier` to be plain string URIs. Clients SHOULD be permissive of an RO-Crate `identifier` being a string (which MAY be a URI), or a `@id` reference, which SHOULD be represented as an `PropertyValue` entity which MUST have a human readable `value`, and SHOULD have a `url` if the identifier is Web-resolvable. A citable representation of this persistent identifier MAY be given as a `description` of the `PropertyValue`, but as there are more than 10.000 known [citation styles], no attempt should be made to parse this string.
 
-#### Resolvable persistent identifiers
+#### Resolvable persistent identifiers and citation text
 
 It is RECOMMENDED that resolving the `identifier` programmatically return the _RO-Crate Metadata Document_ or an archive (e.g. ZIP) that contain the _RO-Crate Metadata File_, using [content negotiation](profiles.md#how-to-retrieve-a-profile-crate) and/or [Signposting]. With an RO-Crate identifier that is persistant and resolvable in this way from a URI, the root data entity SHOULD indicate this using the `cite-as` property according to [RFC8574]. Likewise, an HTTP/HTTPS server of the resolved RO-Crate Metadata Document or archive (possibly after redirection) SHOULD indicate that persistent identifier in its [Signposting] headers using `Link rel="cite-as"`. 
 
 {: .tip}
 > The above `cite-as` MAY go to a repository landing page, and MAY require authentication, but MUST ultimately have the RO-Crate as a downloadable item, which SHOULD be programmatically accessible through content negotiation or [Signposting] (`Link rel="describedby"` for a _RO-Crate Metadata Document_, or `Link rel="item"` for an archive). To rather associate a textual scholarly citation for a crate (e.g. journal article), indicate instead a [publication via `citation` property](contextual-entities.md#publications-via-citation-property).
 
+Any entity which is a subclass of CreativeWork, including the _Root Data Entity_ MAY have a `creditText` property which provides a textual citation for the entity.
 
 ## Minimal example of RO-Crate
 
@@ -233,7 +234,8 @@ The following _RO-Crate Metadata Document_ represents a minimal description of a
     "datePublished": "2017",
     "name": "Data files associated with the manuscript:Effects of facilitated family case conferencing for ...",
     "description": "Palliative care planning for nursing home residents with advanced dementia ...",
-    "license": {"@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/"}
+    "license": {"@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/"},
+    "creditText": "Agar, M. et al., 2017. Data supporting \"Effects of facilitated family case conferencing for advanced dementia: A cluster randomised clinical trial\". https://doi.org/10.4225/59/59672c09f4a4b"
  },
  {
     "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
@@ -247,7 +249,6 @@ The following _RO-Crate Metadata Document_ represents a minimal description of a
     "@type": "PropertyValue",
     "propertyID": "https://registry.identifiers.org/registry/doi",
     "value": "doi:10.4225/59/59672c09f4a4b",
-    "description": "Agar, M. et al., 2017. Data supporting \"Effects of facilitated family case conferencing for advanced dementia: A cluster randomised clinical trial\". https://doi.org/10.4225/59/59672c09f4a4b",
     "url": "https://doi.org/10.4225/59/59672c09f4a4b"
   }
  ]
