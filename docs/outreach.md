@@ -50,6 +50,12 @@ _Data Science_ **5**(2)
 
 ### 2024
 
+Mahnoor Zulfiqar, Michael R. Crusoe, Birgitta König-Ries, Christoph Steinbeck,Kristian Peters Luiz Gadelha (2024):
+**Implementation of FAIR Practices in Computational Metabolomics Workflows**—A Case Study.
+_Metabolites_ **14**(2)
+<https://doi.org/10.3390/metabo14020118>
+
+
 Carole Goble, Stian Soiland-reyes, Herbert Van de Sompel, Mark Wilkinson (2024):  
 [**RO-Crate, Signposting and Bioschemas**](https://doi.org/10.5281/zenodo.10555382).  
 _Lorentz Symposium_: [The Road to FAIR and Equitable Science](https://www.lorentzcenter.nl/the-road-to-fair-and-equitable-science.html). Leiden, The Netherlands, 2024-01-22/--26.  
