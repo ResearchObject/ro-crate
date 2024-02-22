@@ -47,7 +47,7 @@ RO-Crate distinguishes between _contextual entities_ and _data entities_.
 
 **[Data entities](data-entities.md)** primarily exist in their own right as a file or directory (which may be in the _RO-Crate Root_ directory or downloadable by URL). 
 
-**Contextual entities** however primarily exist outside the digital sphere (e.g. [People](#people), [Places](#places)) or are  conceptual descriptions that primarily exist as metadata, like [GeoCoordinates] and [ContactPoint](#contact-information).
+**Contextual entities** however primarily exist outside the digital sphere (e.g. [People](#people), [Places](#places)) or are  conceptual descriptions that primarily exist as metadata, like [Geometry] and [ContactPoint](#contact-information).
 
 Some contextual entities can also be considered data entities -- for instance the [license](#licensing-access-control-and-copyright) property refers to a [CreativeWork] that can reasonably be downloaded, however a license document is not usually considered as part of research outputs and would therefore typically not be included in [hasPart] on the [root data entity](root-data-entity.md). 
 
@@ -459,7 +459,10 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
 
 ## Places
 
-To associate a [Data Entity](data-entities.md) with a _Contextual Entity_ representing a _geographical location or region_ the entity SHOULD have a property of [contentLocation] with a value of type [Place].
+To associate a [Data Entity](data-entities.md) with a _Contextual Entity_ representing a geographical location or region the entity SHOULD have a property of [contentLocation] or [spatialCoverage] with a value of type [Place].
+
+
+To express point or shape geometry it is recommended that a `geo` property on a [Place] entity SHOULD link to a [Geometry] entity, with an [asWKT] property that expresses the point or shape in [Well Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) format.  This example is a point, `POINT ($longitude, $latitude)`, but other asWKT primitives, `LINESTRING` & `POLYGON` SHOULD be used as required.
 
 This example shows how to define a place, using a [geonames] ID:
 
@@ -481,11 +484,17 @@ This example shows how to define a place, using a [geonames] ID:
   "@type": "Place",
   "description": "Catalina Park is a disused motor racing venue, located at Katoomba ...",
   "geo": {
-    "@id": "#b4168a98-8534-4c6d-a568-64a55157b656"
+    "@id": "_:Geometry-1"
   },
   "identifier": "http://sws.geonames.org/8152662/",
   "uri": "https://www.geonames.org/8152662/catalina-park.html",
   "name": "Catalina Park"
+},
+{
+  "@id": "_:Geometry-1",
+  "@type": "Geometry",
+  "name": "Geometry-1",
+  "asWKT": "POINT (150.301195 -33.7152)"
 }
 ```
 
@@ -496,33 +505,9 @@ This example shows how to define a place, using a [geonames] ID:
 <!--... -->
 ```
 
-The place has a [geo] property, referencing an _Contextual Entity_ of `@type` [GeoCoordinates]:
+**Tip**: Note the use of a JSON-LD blank node identifier here (starting with `_:`) - this indicates to an RO-Crate presentation application that the entity does not stand in its own right, and may be displayed inline (in this case as a map).
 
-
-```json
-{
-  "@id": "#b4168a98-8534-4c6d-a568-64a55157b656",
-  "@type": "GeoCoordinates",
-  "latitude": "-33.7152",
-  "longitude": "150.30119",
-  "asWKT": 
-  "name": "Latitude: -33.7152 Longitude: 150.30119"
-},
-```
-
-
-[Place] SHOULD use the Well Known Text format (WKT) to describe geometries in preference to the resources in Schema.org as it will more compact than  and well supported
-
-```
-{
-      "@id": "#geo-151.0,-8.6-151.2,-8.4",
-      "@type": "Geometry",
-      "asWKT": "POLYGON((151.0 -8.4, 151.2 -8.4, 151.2 -8.6, 151.0 -8.6, 151.0 -8.4))"
-}
-```
-
-
-
+**NOTE**: Any of the schema.org geographical classes and entities MAY be used on a [Place] element to describe geographical points and shapes, and previous versions of this specification did show examples of using [latitude] and [longitude] properties and entities such as [GeoCoordinates], however this results in very verbose JSON-LD and there is some imprecision in the schema.org specification that makes this approach hard to implement in RO-Crate applications for analysis or presentation of crates. We found that developers were resorting to embedding escaped [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON) as string values in RO-Crate; WKT format is more compact and easier to implement and is recommended for use in RO-Crate as shown above.
 
 ## Subjects & keywords
 
