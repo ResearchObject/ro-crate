@@ -50,6 +50,11 @@ _Data Science_ **5**(2)
 
 ### 2024
 
+Carole Goble Keynote (2024):
+[**Handling Health Data: FAIR Research Objects for Trusted Research Environments**]
+_eResearch New Zealand 2024_: [eResearch New Zealand 2024](https://eresearchnz.co.nz/). Wellington , New Zealand, 2024-02-08
+<https://zenodo.org/records/10648472>
+
 Mahnoor Zulfiqar, Michael R. Crusoe, Birgitta König-Ries, Christoph Steinbeck,Kristian Peters Luiz Gadelha (2024):
 **Implementation of FAIR Practices in Computational Metabolomics Workflows**—A Case Study.
 _Metabolites_ **14**(2)
