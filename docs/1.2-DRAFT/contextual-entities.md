@@ -218,7 +218,8 @@ type [ScholarlyArticle] or [CreativeWork].
   "issn": "2168-2267",
   "name": "Topic Model for Graph Mining",
   "journal": "IEEE Transactions on Cybernetics",
-  "datePublished": "2015"
+  "datePublished": "2015",
+  "creditText": "J. Xuan, J. Lu, G. Zhang and X. Luo, \"Topic Model for Graph Mining,\" in IEEE Transactions on Cybernetics, vol. 45, no. 12, pp. 2792-2803, Dec. 2015, doi: 10.1109/TCYB.2014.2386282. keywords: {Data mining;Chemicals;Hidden Markov models;Inference algorithms;Data models;Vectors;Chemical elements;Graph mining;latent Dirichlet allocation (LDA);topic model;Graph mining;latent Dirichlet allocation (LDA);topic model}"
 }
 ```
 
@@ -234,7 +235,7 @@ type [ScholarlyArticle] or [CreativeWork].
 }
 ```
 
-A [data entity](data-entities.md) MAY provide a published DOI [identifier] that, compared with any related publication in [citation], primarily captures that file or dataset:
+A [data entity](data-entities.md) MAY provide a published DOI [identifier] that primarily captures that file or dataset. A citation MAY also be provided:
 
 ```json
 {
@@ -244,7 +245,23 @@ A [data entity](data-entities.md) MAY provide a published DOI [identifier] that,
   "identifier": "https://doi.org/10.5281/zenodo.3479743",
   "citation": {"@id": "http://ndt.net/?id=19249"},
   "encodingFormat": "image/png"
+},
+{
+    "@id": "https://doi.org/10.5281/zenodo.3479743",
+    "@type": "PropertyValue",
+    "propertyID": "https://registry.identifiers.org/registry/doi",
+    "value": "doi.org/10.5281/zenodo.3479743",
+    "url": "https://doi.org/10.5281/zenodo.3479743"
+},
+{
+  "@id": "http://ndt.net/?id=19249",
+  "@type": "ScholarlyArticle",
+  "url": "http://ndt.net/?id=19249",
+  "name": "An XXL-CT-scan of an XXL Tyrannosaurus rex skull. 19th World Conference on Non-Destructive Testing (WCNDT 2016)",
+  "creditText": "Reims, N., Schulp, A., Böhnel, M., & Larson, P. (2016). An XXL-CT-scan of an XXL Tyrannosaurus rex skull. 19th World Conference on Non-Destructive Testing (WCNDT 2016), 13-17 June 2016 in Munich, Germany. e-Journal of Nondestructive Testing Vol. 21(7). https://www.ndt.net/?id=19249"
 }
+
+
 ```
 
 
