@@ -2913,6 +2913,8 @@
           "roterms": "http://purl.org/ro/roterms#",
           "relation": "http://www.iana.org/assignments/relation/",
           "wf4ever": "http://purl.org/ro/wf4ever#",
-          "vann": "http://purl.org/vocab/vann/"
-     }
+          "vann": "http://purl.org/vocab/vann/",
+          "Geometry": "http://www.opengis.net/ont/geosparql#Geometry",
+      "asWKT": "http://www.opengis.net/ont/geosparql#asWKT"
+   }
 }

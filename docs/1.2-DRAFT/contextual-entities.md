@@ -466,6 +466,17 @@ This example shows how to define a place, using a [geonames] ID:
 
 ```json
 {
+  "@id": "./",
+  "@type": "Dataset",
+  "outputOf": "RO-Crate",
+  "contact": {
+    "@id": "https://orcid.org/0000-0002-3545-944X"
+  },
+  "contentLocation": {
+    "@id": "http://sws.geonames.org/8152662/",
+  }
+},
+{
   "@id": "http://sws.geonames.org/8152662/",
   "@type": "Place",
   "description": "Catalina Park is a disused motor racing venue, located at Katoomba ...",
@@ -475,7 +486,7 @@ This example shows how to define a place, using a [geonames] ID:
   "identifier": "http://sws.geonames.org/8152662/",
   "uri": "https://www.geonames.org/8152662/catalina-park.html",
   "name": "Catalina Park"
-},
+}
 ```
 
 **Tip**: To find the `@id` and `identifier` corresponding to a GeoNames HTML page like <https://www.geonames.org/8152662/catalina-park.html> click its `.rdf` button to find the identifier <http://sws.geonames.org/8152662/> referred from <https://sws.geonames.org/8152662/about.rdf>:
@@ -494,50 +505,24 @@ The place has a [geo] property, referencing an _Contextual Entity_ of `@type` [G
   "@type": "GeoCoordinates",
   "latitude": "-33.7152",
   "longitude": "150.30119",
+  "asWKT": 
   "name": "Latitude: -33.7152 Longitude: 150.30119"
 },
 ```
 
 
-The [GeoCoordinates] contextual entity SHOULD have a human readable [name], which is used in  generating the `ro-crate-preview.html` file.
+[Place] SHOULD use the Well Known Text format (WKT) to describe geometries in preference to the resources in Schema.org as it will more compact than  and well supported
 
-And the place is referenced from the [contentLocation] property of the dataset.
-
-
-```json
+```
 {
-  "@id": "./",
-  "@type": "Dataset",
-  "outputOf": "RO-Crate",
-  "contact": {
-    "@id": "https://orcid.org/0000-0002-3545-944X"
-  },
-  "contentLocation": {
-    "@id": "http://sws.geonames.org/8152662/",
-  }
-}
-{
-  "@id": "http://sws.geonames.org/8152662/",
-  "name": "Catalina Park",
+      "@id": "#geo-151.0,-8.6-151.2,-8.4",
+      "@type": "Geometry",
+      "asWKT": "POLYGON((151.0 -8.4, 151.2 -8.4, 151.2 -8.6, 151.0 -8.6, 151.0 -8.4))"
 }
 ```
 
 
-[Place] MAY use any of the [resources available in Schema.org][geo] to describe places. Future profiles of RO-Crate may mandate the use of a subset of these. Any directory or file or _Contextual Entity_ may be geo-located. For example this file:
 
-
-```json
-{
-  "@id": "pics/19093074_10155469333581584_5707039334816454031_o.jpg",
-  "@type": "File",
-  "contentLocation": {
-    "@id": "http://sws.geonames.org/8152662/"
-  },
-  "contentSize": "132765",
-  "author": {
-    "@id": "https://orcid.org/0000-0002-3545-944X"
-  },
-```
 
 ## Subjects & keywords
 
