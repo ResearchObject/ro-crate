@@ -49,6 +49,10 @@ _Data Science_ **5**(2)
 ## Recent publications, presentations, citations
 
 ### 2024
+Carole Goble (2024):
+[**FAIR Digital Research Objects: Metadata Journeys**](https://doi.org/10.5281/zenodo.10710142).
+_University of Auckland_: [Centre for eResearch](https://www.eresearch.auckland.ac.nz/), Auckland, New Zealand, 2024-02-16 
+<https://doi.org/10.5281/zenodo.10710142>
 
 Carole Goble Keynote (2024):  
 [**Handling Health Data: FAIR Research Objects for Trusted Research Environments**](https://doi.org/10.5281/zenodo.10648472).  
