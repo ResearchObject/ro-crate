@@ -683,7 +683,7 @@
     {
       "@id": "http://www.opengis.net/ont/geosparql#asWKT",
       "@type": "DefinedTerm",
-      "description": "The WKT serialization (ISO13249) of a Geometry.",
+      "description": "The WKT (Well-Known Text) serialization (ISO13249) of a Geometry.",
       "name": "Geometry",
       "termCode": "asWKT",
       "citation": { "@id": "https://portal.ogc.org/files/?artifact_id=25355" },
