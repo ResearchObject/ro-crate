@@ -154,6 +154,7 @@ ADDITIONAL = OrderedDict([
           ## from DC Terms, used in profiles and metadata file
           ("conformsTo", "http://purl.org/dc/terms/conformsTo"),
           ("Standard", "http://purl.org/dc/terms/Standard"),
+          ##
 
           ## The Profiles Vocabulary
           # https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/
@@ -165,6 +166,11 @@ ADDITIONAL = OrderedDict([
           ("ResourceDescriptor", "http://www.w3.org/ns/dx/prof/ResourceDescriptor"),
           ("ResourceRole", "http://www.w3.org/ns/dx/prof/ResourceRole"),
           ("Profile", "http://www.w3.org/ns/dx/prof/Profile"),
+          ## END
+
+          ## GeoSparql terms
+          ("Geometry", "http://www.opengis.net/ont/geosparql#Geometry"),
+          ("asWKT", "http://www.opengis.net/ont/geosparql#asWKT"),
           ## END
 
           ## FIXME: Where is this used from?
@@ -193,6 +199,7 @@ ADDITIONAL = OrderedDict([
           ("relation", "http://www.iana.org/assignments/relation/"),
           ("wf4ever", "http://purl.org/ro/wf4ever#"),
           ("vann", "http://purl.org/vocab/vann/"),
+          ("geosparql", "http://www.opengis.net/ont/geosparql#"),
           # Disabled, see https://github.com/ResearchObject/ro-crate/pull/73
 #          ("@base", None) 
 ])
