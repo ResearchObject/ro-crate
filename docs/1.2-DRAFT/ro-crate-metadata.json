@@ -686,10 +686,18 @@
       "description": "The WKT serialization (ISO13249) of a Geometry.",
       "name": "Geometry",
       "termCode": "asWKT",
+      "citation": { "@id": "https://portal.ogc.org/files/?artifact_id=25355" },
       "sameAs": "https://opengeospatial.github.io/ogc-geosparql/geosparql11/#asWKT",
       "inDefinedTermSet": {
         "@id": "http://www.opengis.net/ont/geosparql#"
       }
+    },
+    {
+      "@id": "https://portal.ogc.org/files/?artifact_id=25355",
+      "@type": "CreativeWork",
+      "name": "OpenGIS Implementation Specification for Geographic information – Simple feature access – Part 1: Common architecture",
+      "version": "1.2.1",
+      "url": "https://www.ogc.org/standard/sfa/"
     },
     {
       "@id": "http://www.opengis.net/ont/geosparql#",

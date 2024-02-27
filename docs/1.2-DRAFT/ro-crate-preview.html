@@ -1106,6 +1106,9 @@
       "description": "The WKT serialization (ISO13249) of a Geometry.",
       "name": "Geometry",
       "termCode": "asWKT",
+      "citation": {
+        "@id": "https://portal.ogc.org/files/?artifact_id=25355"
+      },
       "sameAs": "https://opengeospatial.github.io/ogc-geosparql/geosparql11/#asWKT",
       "inDefinedTermSet": {
         "@id": "http://www.opengis.net/ont/geosparql#"
@@ -1114,6 +1117,20 @@
         "hasPart": [
           {
             "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://portal.ogc.org/files/?artifact_id=25355",
+      "@type": "CreativeWork",
+      "name": "OpenGIS Implementation Specification for Geographic information – Simple feature access – Part 1: Common architecture",
+      "version": "1.2.1",
+      "url": "https://www.ogc.org/standard/sfa/",
+      "@reverse": {
+        "citation": [
+          {
+            "@id": "http://www.opengis.net/ont/geosparql#asWKT"
           }
         ]
       }
@@ -7443,6 +7460,9 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr><tr>
             <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
             <td style='text-align:left'><span>asWKT</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">citation<span>&nbsp;</span><a href="http://schema.org/citation">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//portal.ogc.org/files/%3Fartifact_id%3D25355">OpenGIS Implementation Specification for Geographic information – Simple feature access – Part 1: Common architecture</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">sameAs<span>&nbsp;</span><a href="http://schema.org/sameAs">[?]</a></th>
             <td style='text-align:left'><a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/#asWKT">https://opengeospatial.github.io/ogc-geosparql/geosparql11/#asWKT</a></td>
