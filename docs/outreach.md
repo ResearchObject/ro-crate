@@ -113,6 +113,7 @@ Peter Sefton, Stian Soiland-Reyes (2024):
 
 ### 2023
 
+
 Tom Brown, Nick Juty, Stian Soiland-Reyes, Felix Shaw, Rutger Vos (2023):  
 [**RO-Crates as a practical implementation of FAIR Digital Object to align biodiversity genomics work streams**](https://research.manchester.ac.uk/files/291308873/2023-12-01_RO-Crate_FDO_2024.pdf).  
 (submitted)  
@@ -340,6 +341,11 @@ _Research Ideas and Outcomes_ **8**:e98457
 
 
 ### 2022
+
+Haris Zafeiropoulos, Martin Beracochea, Stelios Ninidakis, Katrina Exter, Antonis Potirakis, Gianluca De Moro, Lorna Richardson, Erwan Corre, João Machado, Evangelos Pafilis, Georgios Kotoulas, Ioulia Santi, Robert D Finn, Cymon J Cox, Christina Pavloudi (2022):  
+**metaGOflow: a workflow for the analysis of marine Genomic Observatories shotgun metagenomics data**.  
+_GigaScience_ **12**:giad078  
+<https://doi.org/10.1093/gigascience/giad078>
 
 Sonia Natalie Mitchell, Andrew Lahiff, Nathan Cummings, Jonathan Hollocombe, Bram Boskamp, Ryan Field, Dennis Reddyhoff, Kristian Zarebski, Antony Wilson, Bruno Viola, Martin Burke, Blair Archibald, Paul Bessell, Richard Blackwell, Lisa A. Boden, Alys Brett, Sam Brett, Ruth Dundas, Jessica Enright, Alejandra N. Gonzalez-Beltran, Claire Harris, Ian Hinder, Christopher David Hughes, Martin Knight, Vino Mano, Ciaran McMonagle, Dominic Mellor, Sibylle Mohr, Glenn Marion, Louise Matthews, Iain J. McKendrick, Christopher Mark Pooley, Thibaud Porphyre, Aaron Reeves, Edward Townsend, Robert Turner, Jeremy Walton, Richard Reeve (2022):  
 [**FAIR data pipeline: provenance-driven data management for traceable scientific workflows**](https://doi.org/10.1098/rsta.2021.0300).  
