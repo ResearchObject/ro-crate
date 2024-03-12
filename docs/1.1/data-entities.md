@@ -301,6 +301,24 @@ These can be included for File Data Entities as additional metadata, regardless 
 
 A _Directory File Entry_ or [Dataset] identifier expressed as an absolute URL on the web can be harder to download than a [File] because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in [hasPart], enabling download traversal.
 
+```json
+  {
+    "@id": "http://example.com/downloads/2020/",
+    "@type": "Dataset",
+    "name": "A directory with manny small files",
+    "description": "This directory contains multiple small files.",
+    "hasPart": [
+      {
+        "@id": "http://example.com/downloads/2020/file1.csv"
+      },
+      {
+        "@id": "http://example.com/downloads/2020/file2.csv"
+      },
+      ...
+    ]
+  }
+```
+
 Alternatively, a common mechanism to provide downloads of a reasonably sized directory is as an archive file in formats such as `.zip` or `.tar.gz`, described as a [DataDownload]. 
 
 ```json
