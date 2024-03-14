@@ -95,7 +95,6 @@ The example below shows the overall structure of a flattened, compacted _RO-Crat
 The order of the `@graph` array is not significant. Above we see that the RO-Crate JSON-LD graph contains the _RO-Crate Metadata Descriptor_, the _Root Data Entity_, any _Data Entities_ and any _Contextual Entities_.
 
 
-
 ## Describing entities in JSON-LD
 
 Properties of an entity can refer to another URI or entity by using the form `{"@id": "uri-reference"}` as in the example above, where the [author] property in the [File] entity refer to the [Person] entity, identified as `#alice`. 
@@ -106,7 +105,11 @@ Care must be taken to express any relative paths using `/` separator and escape 
 
 Because the _RO-Crate JSON-LD_ is _flattened_, all described entities must be JSON objects as direct children of the `@graph` element rather than being nested under another object or array. Properties referencing entities must use a JSON object with `@id` as the only key, e.g. `"author": {"@id": "https://orcid.org/0000-0002-1825-0097"}`
 
-If no obvious identifier is available for a contextual entity, an identifier local to the _RO-Crate Metadata Document_ can be generated, for instance `{"@id": "#alice"}` or `{"@id": "#ac0bd781-7d91-4cdf-b2ad-7305921c7650"}`. Although it is RECOMMENDED to use `#`-based local identifiers, identifiers in `@id` MAY alternatively be a _blank node_ identifier (e.g. `_:alice`).
+If no obvious identifier is available for a contextual entity, an identifier local to the _RO-Crate Metadata Document_ can be generated. 
+
+-  If the entity has a `name` such as a `Person` for instance an `@id` starting with `#` SHOULD be used; `{"@id": "#alice"}` or `{"@id": "#ac0bd781-7d91-4cdf-b2ad-7305921c7650"}`. 
+
+-  For un-named entities, such as a [Geometry] entity a _blank node_ identifier (e.g. `_:alice`) SHOULD be used. The use of a _blank node_ identifier SHOULD be taken as hint by RO-Crate presentation software to display the entity in-line, not as a separate entity with its own view, such as a page.
 
 Multiple values and references can be represented using JSON arrays, as exemplified in `hasPart` above; however as the `RO-Crate JSON-LD` is in _compacted form_, any single-element arrays like `"author": [{"@id": "#alice"}]` SHOULD be unpacked to a single value like `"author": {"@id": "#alice"}`.
 
