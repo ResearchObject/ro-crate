@@ -19,9 +19,11 @@ title: Community
 -->
 
 # RO-Crate Community
+
 {: .no_toc }
 
 ## Table of contents
+
 {: .no_toc .text-delta }
 
 1. TOC
@@ -103,8 +105,9 @@ The _RO-Crate_ team is:
 * Martin Weise <http://orcid.org/0000-0003-4216-302X>
 * Vartika Bisht <https://orcid.org/0000-0002-1880-0597>
 * Toshiyuki Nishiyama Hiraki <https://orcid.org/0000-0001-6712-6335>
+* Eli Chadwick <https://orcid.org/0000-0002-0035-6475>
 
-The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! 
+The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)!
 
 ## Meetings
 
@@ -114,7 +117,7 @@ See also [recent and upcoming events](outreach#upcoming-and-recent-events).
 
 ## Mailing list
 
-The RO-Crate Community has a low-traffic public [RO-Crate mailing list](https://lists.elixir-europe.org/mailman/listinfo/ro-crate_elixir-europe.org), used for announcements and general enquiries. 
+The RO-Crate Community has a low-traffic public [RO-Crate mailing list](https://lists.elixir-europe.org/mailman/listinfo/ro-crate_elixir-europe.org), used for announcements and general enquiries.
 
 Note that most discussion about the [RO-Crate specifications](specification.md) typically happen in [GitHub issues](https://github.com/ResearchObject/ro-crate/issues) and [community meetings](https://s.apache.org/ro-crate-minutes).
 
@@ -126,14 +129,12 @@ We have an informal Slack chat channel [#ro-crate on seek4science.slack.com](htt
 
 Contributors to the RO-Crate community are expected to comply with our [Code of Conduct](https://github.com/ResearchObject/ro-crate/blob/master/CODE_OF_CONDUCT.md) to ensure an open and inclusive environment.
 
-
 ## Contributing
 
 To suggest changes, improvements or issues, use the GitHub repository <https://github.com/ResearchObject/ro-crate> - if you are new to GitHub or Open Source you may appreciate the [GitHub guides](https://guides.github.com/) like [Hello World](https://guides.github.com/activities/hello-world/), [MarkDown](https://guides.github.com/features/mastering-markdown/) and [How to contribute to open source](https://opensource.guide/how-to-contribute/)
 
-You are welcome to [join us](https://github.com/ResearchObject/ro-crate/issues/1)! 
+You are welcome to [join us](https://github.com/ResearchObject/ro-crate/issues/1)!
 
 ## Open Source
 
 This specification and documentation is Open Source and licensed as [Apache License, version 2.0](https://github.com/ResearchObject/ro-crate/blob/master/LICENSE), see <https://www.apache.org/licenses/LICENSE-2.0> for details.
-
