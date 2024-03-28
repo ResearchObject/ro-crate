@@ -298,6 +298,12 @@
         },
         {
           "@id": "http://schema.org/Property"
+        },
+        {
+          "@id": "http://www.opengis.net/ont/geosparql#Geometry"
+        },
+        {
+          "@id": "http://www.opengis.net/ont/geosparql#asWKT"
         }
       ],
       "identifier": {"@id": "https://doi.org/DOI"},      
@@ -344,6 +350,9 @@
         },
         {
           "@id": "#vocabulary-rdfs"
+        },
+        {
+          "@id": "#vocabulary-geosparql"
         },
         {
           "@id": "#specification"
@@ -659,6 +668,44 @@
       "description": "Defines terms used in the profile specification",
       "name": "Vocabulary",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:vocabulary"
+    },
+    {
+      "@id": "http://www.opengis.net/ont/geosparql#Geometry",
+      "@type": "DefinedTerm",
+      "description": "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS).",
+      "name": "Geometry",
+      "termCode": "Geometry",
+      "sameAs": "https://opengeospatial.github.io/ogc-geosparql/geosparql11/#Geometry",
+      "inDefinedTermSet": {
+        "@id": "http://www.opengis.net/ont/geosparql#"
+      }
+    },
+    {
+      "@id": "http://www.opengis.net/ont/geosparql#asWKT",
+      "@type": "DefinedTerm",
+      "description": "The WKT (Well-Known Text) serialization (ISO13249) of a Geometry.",
+      "name": "Geometry",
+      "termCode": "asWKT",
+      "citation": { "@id": "https://portal.ogc.org/files/?artifact_id=25355" },
+      "sameAs": "https://opengeospatial.github.io/ogc-geosparql/geosparql11/#asWKT",
+      "inDefinedTermSet": {
+        "@id": "http://www.opengis.net/ont/geosparql#"
+      }
+    },
+    {
+      "@id": "https://portal.ogc.org/files/?artifact_id=25355",
+      "@type": "CreativeWork",
+      "name": "OpenGIS Implementation Specification for Geographic information – Simple feature access – Part 1: Common architecture",
+      "version": "1.2.1",
+      "url": "https://www.ogc.org/standard/sfa/"
+    },
+    {
+      "@id": "http://www.opengis.net/ont/geosparql#",
+      "@type": "DefinedTermSet",
+      "name": "GeoSPARQL ontology",
+      "version": "1.1",
+      "sameAs": "https://opengeospatial.github.io/ogc-geosparql/geosparql11/",
+      "url": "https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html"
     },
     {
       "@id": "http://www.w3.org/ns/json-ld#Context",
@@ -1873,7 +1920,18 @@
       "hasRole": {
         "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
       }
+    },
+    {
+      "@id": "#vocabulary-geosparql",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "http://www.opengis.net/ont/geosparql#"
+      },
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+      }
     }
+
 
   ]
 }
