@@ -105,7 +105,10 @@ The _RO-Crate_ team is:
 * Martin Weise <http://orcid.org/0000-0003-4216-302X>
 * Vartika Bisht <https://orcid.org/0000-0002-1880-0597>
 * Toshiyuki Nishiyama Hiraki <https://orcid.org/0000-0001-6712-6335>
+* Bram Ulrichts <https://orcid.org/0000-0002-5934-8998>
+* Michael Falk <https://orcid.org/0000-0001-9261-8390>
 * Eli Chadwick <https://orcid.org/0000-0002-0035-6475>
+
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)!
 
