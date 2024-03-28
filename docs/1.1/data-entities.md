@@ -299,13 +299,13 @@ These can be included for File Data Entities as additional metadata, regardless 
 
 ### Directories on the web; dataset distributions
 
-A _Directory File Entry_ or [Dataset] identifier expressed as an absolute URL on the web can be harder to download than a [File] because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in [hasPart], enabling download traversal.
+A _Directory File Entry_ or [Dataset] identifier expressed as an absolute URL on the web can be harder to download than a [File] because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in [hasPart], enabling download traversal:
 
 ```json
   {
     "@id": "http://example.com/downloads/2020/",
     "@type": "Dataset",
-    "name": "A directory with manny small files",
+    "name": "A directory with many small files",
     "description": "This directory contains multiple small files.",
     "hasPart": [
       {
