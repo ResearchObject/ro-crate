@@ -494,7 +494,7 @@ This example shows how to define a place, using a [geonames] ID:
   "@id": "_:Geometry-1",
   "@type": "Geometry",
   "name": "Geometry-1",
-  "asWKT": "POINT (150.301195 -33.7152)"
+  "asWKT": "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT (150.301195 -33.7152)"
 }
 ```
 
@@ -506,6 +506,8 @@ This example shows how to define a place, using a [geonames] ID:
 ```
 
 **Tip**: Note the use of a JSON-LD blank node identifier here (starting with `_:`) - this indicates to an RO-Crate presentation application that the entity does not stand in its own right, and may be displayed inline (in this case as a map).
+
+**Tip**: It is considered best practice to include the explicit mentioning of the CRS (Coordinate Reference System) identified through its opengis URI at the start of the `asWKT` field.  This provides the essential context to have the numbers is the remainder of the string correctly be plotted on te map.  Note however that many GIS related tooling expects that information to be fed in via a seperate config setting or API call. So handling these strings in any app that interacts with such systems might require some extra processing. 
 
 **NOTE**: Any of the schema.org geographical classes and entities MAY be used on a [Place] element to describe geographical points and shapes, and previous versions of this specification did show examples of using [latitude] and [longitude] properties and entities such as [GeoCoordinates], however this results in very verbose JSON-LD and there is some imprecision in the schema.org specification that makes this approach hard to implement in RO-Crate applications for analysis or presentation of crates. We found that developers were resorting to embedding escaped [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON) as string values in RO-Crate; WKT format is more compact and easier to implement and is recommended for use in RO-Crate as shown above.
 
