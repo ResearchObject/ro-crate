@@ -7,7 +7,7 @@
    viewBox="0 0 168.80416 66.939585"
    version="1.1"
    id="svg5"
-   aria-labelledby="lightbulb11 description11"
+   aria-labelledby="title_crate1 description_crate1"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
    sodipodi:docname="crate1-folders.svg"
    inkscape:export-filename="crate1-folders.svg"
@@ -21,8 +21,8 @@
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/">
   <title
-     id="title95238">RO-Crate root</title>
-   <desc>Folder listing of crate1, including data.csv and ro-crate-metadata.json</desc>
+     id="title_crate1">RO-Crate root</title>
+   <desc id="description_crate1">Folder listing of crate1, including data.csv and ro-crate-metadata.json</desc>
   <sodipodi:namedview
      id="namedview7"
      pagecolor="#ffffff"
