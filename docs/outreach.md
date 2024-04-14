@@ -21,11 +21,6 @@ title: Outreach and Publications
 # RO-Crate Outreach and Publications 
 {: .no_toc }
 
-{: .tip}
-> **Upcoming tutorial**: _Improving FAIRability of your research outcomes with RO-Crates, SignPosting and Bioschemas_  
-> At [Semantic Web Applications and Tools for Health Care and Life Sciences](https://www.swat4ls.org/workshops/leiden2024/) (SWAT4HCLS), 2024-02-26/--29, Leiden, The Netherlands.  
-> [[Register](https://www.swat4ls.org/workshops/leiden2024/registration/) (by 12 February 2024)
-
 
 ## Table of contents
 {: .no_toc .text-delta }

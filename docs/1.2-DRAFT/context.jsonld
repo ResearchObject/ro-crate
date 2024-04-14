@@ -2892,6 +2892,8 @@
           "ResourceDescriptor": "http://www.w3.org/ns/dx/prof/ResourceDescriptor",
           "ResourceRole": "http://www.w3.org/ns/dx/prof/ResourceRole",
           "Profile": "http://www.w3.org/ns/dx/prof/Profile",
+          "Geometry": "http://www.opengis.net/ont/geosparql#Geometry",
+          "asWKT": "http://www.opengis.net/ont/geosparql#asWKT",
           "@label": "http://www.w3.org/2000/01/rdf-schema#label",
           "pcdm": "http://pcdm.org/models#",
           "bibo": "http://purl.org/ontology/bibo/",
@@ -2913,6 +2915,7 @@
           "roterms": "http://purl.org/ro/roterms#",
           "relation": "http://www.iana.org/assignments/relation/",
           "wf4ever": "http://purl.org/ro/wf4ever#",
-          "vann": "http://purl.org/vocab/vann/"
+          "vann": "http://purl.org/vocab/vann/",
+          "geosparql": "http://www.opengis.net/ont/geosparql#"
      }
 }
