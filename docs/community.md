@@ -108,7 +108,8 @@ The _RO-Crate_ team is:
 * Bram Ulrichts <https://orcid.org/0000-0002-5934-8998>
 * Michael Falk <https://orcid.org/0000-0001-9261-8390>
 * Eli Chadwick <https://orcid.org/0000-0002-0035-6475>
-
+* Daniel Bauer <https://orcid.org/0000-0001-9447-460X>
+* James Love <https://github.com/JLoveUOA>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)!
 
