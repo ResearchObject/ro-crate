@@ -266,9 +266,9 @@ A [Dataset] (directory) _Data Entity_ MUST have the following properties:
 
 *  `@type` MUST be `Dataset` or an array where `Dataset` is one of the values.
 *  `@id`  MUST be either:
-  *   a _URI Path_ relative to the _RO Crate root_ which MUST resolve to a directory that is present in the _RO-Crate Root_ The id SHOULD end with `/`, or
-  *   an absolute URI, or
-  *   a local reference beginning with `#`
+  -   a _URI Path_ relative to the _RO Crate root_ which MUST resolve to a directory that is present in the _RO-Crate Root_. The id SHOULD end with `/`.
+  -   an absolute URI
+  -   a local reference beginning with `#`
 
 Additionally, `Dataset` entities SHOULD have:
 
