@@ -35,8 +35,17 @@ import urllib.request
 ROCRATE_VERSION="1.2-DRAFT"
 
 # Update version from http://schema.org/docs/releases.html
-# NOTE: Breaks due to https://github.com/schemaorg/schemaorg/issues/2805
-SCHEMA_VERSION="15.0"
+SCHEMA_VERSION="22.0"
+# NOTE: http://schema.org/version/22.0/ type links 
+# frequently breaks, see 
+# https://github.com/schemaorg/schemaorg/issues/2805
+# https://github.com/schemaorg/schemaorg/issues/3378
+# 
+# Navigate to https://archive.softwareheritage.org/browse/origin/directory/?branch=HEAD&origin_url=https://github.com/schemaorg/schemaorg&path=data/releases 
+# Then select the particular version as a folder, e.g. data/releases/22.0,
+# then under Permalinks on the right select the short-form from Directory
+SCHEMA_SWHID="swh:1:dir:60ff33aeead8b6c6b5a82f273a4a905fac5f8cf3"
+## See also https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html
 
 # Update from https://bioschemas.org/profiles/Workflow/
 BIOSCHEMA_WORKFLOW_PROFILE = "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
@@ -67,9 +76,9 @@ def main():
     j["version"] = tag
     j["url"] = {"@id": "https://w3id.org/ro/crate/%s" % version}
     
-    j["schemaVersion"] = {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION}    
+    j["schemaVersion"] = {"@id": "https://schema.org/docs/releases.html#v%s" % SCHEMA_VERSION}    
     j["isBasedOn"] = [
-        {"@id": "http://schema.org/version/%s/" % SCHEMA_VERSION},
+        {"@id": "https://identifiers.org/%s" % SCHEMA_SWHID},        
         {"@id": "https://pcdm.org/2016/04/18/models"},
         {"@id": BIOSCHEMA_WORKFLOW_PROFILE },
         {"@id": BIOSCHEMA_FORMAL_PARAMETER_PROFILE }
@@ -117,7 +126,7 @@ ADDITIONAL = OrderedDict([
           ("hasMember", "http://pcdm.org/models#hasMember"),
           ("RepositoryCollection", "http://pcdm.org/models#Collection"),
           ("RepositoryObject", "http://pcdm.org/models#Object"),
-          ("RepositoryFile", "http://pcdm.org/models#File")
+          ("RepositoryFile", "http://pcdm.org/models#File"),
 
           # Temporary namespace for properties/types
           # proposed https://bioschemas.org/profiles/Workflow/ 
@@ -145,6 +154,7 @@ ADDITIONAL = OrderedDict([
           ## from DC Terms, used in profiles and metadata file
           ("conformsTo", "http://purl.org/dc/terms/conformsTo"),
           ("Standard", "http://purl.org/dc/terms/Standard"),
+          ##
 
           ## The Profiles Vocabulary
           # https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/
@@ -156,6 +166,11 @@ ADDITIONAL = OrderedDict([
           ("ResourceDescriptor", "http://www.w3.org/ns/dx/prof/ResourceDescriptor"),
           ("ResourceRole", "http://www.w3.org/ns/dx/prof/ResourceRole"),
           ("Profile", "http://www.w3.org/ns/dx/prof/Profile"),
+          ## END
+
+          ## GeoSparql terms
+          ("Geometry", "http://www.opengis.net/ont/geosparql#Geometry"),
+          ("asWKT", "http://www.opengis.net/ont/geosparql#asWKT"),
           ## END
 
           ## FIXME: Where is this used from?
@@ -184,6 +199,7 @@ ADDITIONAL = OrderedDict([
           ("relation", "http://www.iana.org/assignments/relation/"),
           ("wf4ever", "http://purl.org/ro/wf4ever#"),
           ("vann", "http://purl.org/vocab/vann/"),
+          ("geosparql", "http://www.opengis.net/ont/geosparql#"),
           # Disabled, see https://github.com/ResearchObject/ro-crate/pull/73
 #          ("@base", None) 
 ])

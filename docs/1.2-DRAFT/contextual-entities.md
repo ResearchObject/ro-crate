@@ -47,7 +47,7 @@ RO-Crate distinguishes between _contextual entities_ and _data entities_.
 
 **[Data entities](data-entities.md)** primarily exist in their own right as a file or directory (which may be in the _RO-Crate Root_ directory or downloadable by URL). 
 
-**Contextual entities** however primarily exist outside the digital sphere (e.g. [People](#people), [Places](#places)) or are  conceptual descriptions that primarily exist as metadata, like [GeoCoordinates] and [ContactPoint](#contact-information).
+**Contextual entities** however primarily exist outside the digital sphere (e.g. [People](#people), [Places](#places)) or are  conceptual descriptions that primarily exist as metadata, like [Geometry] and [ContactPoint](#contact-information).
 
 Some contextual entities can also be considered data entities -- for instance the [license](#licensing-access-control-and-copyright) property refers to a [CreativeWork] that can reasonably be downloaded, however a license document is not usually considered as part of research outputs and would therefore typically not be included in [hasPart] on the [root data entity](root-data-entity.md). 
 
@@ -218,7 +218,8 @@ type [ScholarlyArticle] or [CreativeWork].
   "issn": "2168-2267",
   "name": "Topic Model for Graph Mining",
   "journal": "IEEE Transactions on Cybernetics",
-  "datePublished": "2015"
+  "datePublished": "2015",
+  "creditText": "J. Xuan, J. Lu, G. Zhang and X. Luo, \"Topic Model for Graph Mining,\" in IEEE Transactions on Cybernetics, vol. 45, no. 12, pp. 2792-2803, Dec. 2015, doi: 10.1109/TCYB.2014.2386282. keywords: {Data mining;Chemicals;Hidden Markov models;Inference algorithms;Data models;Vectors;Chemical elements;Graph mining;latent Dirichlet allocation (LDA);topic model;Graph mining;latent Dirichlet allocation (LDA);topic model}"
 }
 ```
 
@@ -234,7 +235,7 @@ type [ScholarlyArticle] or [CreativeWork].
 }
 ```
 
-A [data entity](data-entities.md) MAY provide a published DOI [identifier] that, compared with any related publication in [citation], primarily captures that file or dataset:
+A [data entity](data-entities.md) MAY provide a published DOI [identifier] that primarily captures that file or dataset. A citation MAY also be provided:
 
 ```json
 {
@@ -244,7 +245,23 @@ A [data entity](data-entities.md) MAY provide a published DOI [identifier] that,
   "identifier": "https://doi.org/10.5281/zenodo.3479743",
   "citation": {"@id": "http://ndt.net/?id=19249"},
   "encodingFormat": "image/png"
+},
+{
+    "@id": "https://doi.org/10.5281/zenodo.3479743",
+    "@type": "PropertyValue",
+    "propertyID": "https://registry.identifiers.org/registry/doi",
+    "value": "doi.org/10.5281/zenodo.3479743",
+    "url": "https://doi.org/10.5281/zenodo.3479743"
+},
+{
+  "@id": "http://ndt.net/?id=19249",
+  "@type": "ScholarlyArticle",
+  "url": "http://ndt.net/?id=19249",
+  "name": "An XXL-CT-scan of an XXL Tyrannosaurus rex skull. 19th World Conference on Non-Destructive Testing (WCNDT 2016)",
+  "creditText": "Reims, N., Schulp, A., Böhnel, M., & Larson, P. (2016). An XXL-CT-scan of an XXL Tyrannosaurus rex skull. 19th World Conference on Non-Destructive Testing (WCNDT 2016), 13-17 June 2016 in Munich, Germany. e-Journal of Nondestructive Testing Vol. 21(7). https://www.ndt.net/?id=19249"
 }
+
+
 ```
 
 
@@ -442,49 +459,12 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
 
 ## Places
 
-To associate a [Data Entity](data-entities.md) with a _Contextual Entity_ representing a _geographical location or region_ the entity SHOULD have a property of [contentLocation] with a value of type [Place].
+To associate a [Data Entity](data-entities.md) with a _Contextual Entity_ representing a geographical location or region the entity SHOULD have a property of [contentLocation] or [spatialCoverage] with a value of type [Place].
+
+
+To express point or shape geometry it is recommended that a `geo` property on a [Place] entity SHOULD link to a [Geometry] entity, with an [asWKT] property that expresses the point or shape in [Well Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) format.  This example is a point, `POINT ($longitude, $latitude)`, but other asWKT primitives, `LINESTRING` & `POLYGON` SHOULD be used as required.
 
 This example shows how to define a place, using a [geonames] ID:
-
-
-```json
-{
-  "@id": "http://sws.geonames.org/8152662/",
-  "@type": "Place",
-  "description": "Catalina Park is a disused motor racing venue, located at Katoomba ...",
-  "geo": {
-    "@id": "#b4168a98-8534-4c6d-a568-64a55157b656"
-  },
-  "identifier": "http://sws.geonames.org/8152662/",
-  "uri": "https://www.geonames.org/8152662/catalina-park.html",
-  "name": "Catalina Park"
-},
-```
-
-**Tip**: To find the `@id` and `identifier` corresponding to a GeoNames HTML page like <https://www.geonames.org/8152662/catalina-park.html> click its `.rdf` button to find the identifier <http://sws.geonames.org/8152662/> referred from <https://sws.geonames.org/8152662/about.rdf>:
-
-```xml
-<gn:Feature rdf:about="http://sws.geonames.org/8152662/">
-<!--... -->
-```
-
-The place has a [geo] property, referencing an _Contextual Entity_ of `@type` [GeoCoordinates]:
-
-
-```json
-{
-  "@id": "#b4168a98-8534-4c6d-a568-64a55157b656",
-  "@type": "GeoCoordinates",
-  "latitude": "-33.7152",
-  "longitude": "150.30119",
-  "name": "Latitude: -33.7152 Longitude: 150.30119"
-},
-```
-
-
-The [GeoCoordinates] contextual entity SHOULD have a human readable [name], which is used in  generating the `ro-crate-preview.html` file.
-
-And the place is referenced from the [contentLocation] property of the dataset.
 
 
 ```json
@@ -498,29 +478,38 @@ And the place is referenced from the [contentLocation] property of the dataset.
   "contentLocation": {
     "@id": "http://sws.geonames.org/8152662/",
   }
-}
+},
 {
   "@id": "http://sws.geonames.org/8152662/",
-  "name": "Catalina Park",
+  "@type": "Place",
+  "description": "Catalina Park is a disused motor racing venue, located at Katoomba ...",
+  "geo": {
+    "@id": "_:Geometry-1"
+  },
+  "identifier": "http://sws.geonames.org/8152662/",
+  "uri": "https://www.geonames.org/8152662/catalina-park.html",
+  "name": "Catalina Park"
+},
+{
+  "@id": "_:Geometry-1",
+  "@type": "Geometry",
+  "name": "Geometry-1",
+  "asWKT": "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT (150.301195 -33.7152)"
 }
 ```
 
+**Tip**: To find the `@id` and `identifier` corresponding to a GeoNames HTML page like <https://www.geonames.org/8152662/catalina-park.html> click its `.rdf` button to find the identifier <http://sws.geonames.org/8152662/> referred from <https://sws.geonames.org/8152662/about.rdf>:
 
-[Place] MAY use any of the [resources available in Schema.org][geo] to describe places. Future profiles of RO-Crate may mandate the use of a subset of these. Any directory or file or _Contextual Entity_ may be geo-located. For example this file:
-
-
-```json
-{
-  "@id": "pics/19093074_10155469333581584_5707039334816454031_o.jpg",
-  "@type": "File",
-  "contentLocation": {
-    "@id": "http://sws.geonames.org/8152662/"
-  },
-  "contentSize": "132765",
-  "author": {
-    "@id": "https://orcid.org/0000-0002-3545-944X"
-  },
+```xml
+<gn:Feature rdf:about="http://sws.geonames.org/8152662/">
+<!--... -->
 ```
+
+**Tip**: Note the use of a JSON-LD blank node identifier here (starting with `_:`) - this indicates to an RO-Crate presentation application that the entity does not stand in its own right, and may be displayed inline (in this case as a map).
+
+**Tip**: It is considered best practice to include the explicit mentioning of the CRS (Coordinate Reference System) identified through its opengis URI at the start of the `asWKT` field.  This provides the essential context to have the numbers is the remainder of the string correctly be plotted on te map.  Note however that many GIS related tooling expects that information to be fed in via a seperate config setting or API call. So handling these strings in any app that interacts with such systems might require some extra processing. 
+
+**NOTE**: Any of the schema.org geographical classes and entities MAY be used on a [Place] element to describe geographical points and shapes, and previous versions of this specification did show examples of using [latitude] and [longitude] properties and entities such as [GeoCoordinates], however this results in very verbose JSON-LD and there is some imprecision in the schema.org specification that makes this approach hard to implement in RO-Crate applications for analysis or presentation of crates. We found that developers were resorting to embedding escaped [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON) as string values in RO-Crate; WKT format is more compact and easier to implement and is recommended for use in RO-Crate as shown above.
 
 ## Subjects & keywords
 

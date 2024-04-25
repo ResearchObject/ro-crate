@@ -3,7 +3,7 @@ title: Language Data Commons of Australia (LDaCA) Program
 parent: RO-Crate In Use
 ---
 <!--
-   Copyright 2019-2022 RO-Crate contributors
+   Copyright 2019-2024 RO-Crate contributors
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,11 +21,16 @@ parent: RO-Crate In Use
 
 # Language Data Commons of Australia Program
 
-<!-- linking to logo online cos the current one is a placeholder only and should get updated -->
+
+[LDaCA](https://www.ldaca.edu.au/) uses RO-Crate as an interchange and archive format for language data, and is providing data discovery portals and API access to data using RO-Crate-centric APIs.
+
+
+<!--
+>
 [![LDaCA Logo](https://www.ldaca.edu.au//LDaCA_logo-sm.png)][LDaCA]
 
 [![ATAP LOGO](https://www.atap.edu.au/ATAP_logo-sm.png)][ATAP]
-
+-->
 The LDaCA Program architecture consists of a set of modular services; data preservation/archiving, APIs for delivery, access control and a discovery portal for data and analysis tools as well as automated container-based notebook environments to run analytics via the Australian Text Analytics Platform (which is a component of the broader program). 
 
 The [data portal](https://data.atap.edu.au) for the ATAP platform is the first released product, there will be more data portals which provide access to a broader range of data in 2023.
@@ -35,6 +40,7 @@ The [data portal](https://data.atap.edu.au) for the ATAP platform is the first r
 ## RO-Crate in the LDaCA Program
 
 RO-Crate is the central metadata standard for all data within the LDaCA environment.
+The use of [detached RO-crates](https://www.researchobject.org/ro-crate/1.2-DRAFT/structure.html#detached-ro-crate) has been utilised to navigating centralised API resources, rather than considering RO-Crate only as a standalone publication on the Web. 
 
 ### Archiving
 
@@ -101,8 +107,9 @@ The structural API described above is used to build discovery and access portals
 
 The portal/index system us highly configurable to work with differently structured RO-Crate data.
 
+<!--
 ![Oni Portal Screencast](../assets/img/ldaca-oni-demo.gif)
-
+-->
 
 
 
@@ -114,7 +121,7 @@ The portal/index system us highly configurable to work with differently structur
 * [RO-Crate profile for Ldaca (DRAFT - in development)](https://purl.archive.org/textcommons/profile)
 * [RO-Crate metadata vocabulary (DRAFT - in development)](https://purl.archive.org/textcommons/terms)
 * [Presentation explaining the LDaCA architecture](https://www.ldaca.edu.au/rdc-tech-meeting/)
-
+* [ARDC: LDaCA Funding](https://doi.org/10.47486/HIR001)
 
 [ATAP]: https://atap.edu.au
 [LDaCA]: https://ldaca.edu.au
