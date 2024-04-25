@@ -118,21 +118,10 @@ The rest of the requirements for being referenced as a contextual entity also ap
 
 ### How to retrieve a Profile Crate
 
-To resolve a Profile URI to a machine-readable _Profile Crate_, two approaches are recommended to retrieve its [RO-Crate Metadata Document](root-data-entity.md#ro-crate-metadata-file-descriptor):
+To resolve a Profile URI to a machine-readable _Profile Crate_, follow the approaches of [retrieving an RO-Crate](data-entities.md#retrieving-an-ro-crate).
 
-1. [HTTP Content-negotiation] for the [RO-Crate media type](appendix/jsonld.md#ro-crate-json-ld-media-type), for example:  
+If none of these approaches worked, then this profile probably does not have a corresponding Profile Crate. For human display of conformed profiles, display a hyperlink to its `@id` Web page, described by its `name`.
 
-Requesting `https://w3id.org/workflowhub/workflow-ro-crate/1.0` with HTTP header
-
-  `Accept: application/ld+json;profile=https://w3id.org/ro/crate` redirects to the _RO-Crate Metadata file_
-  `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`
-
-2. The above approach may fail (or returns a HTML page), e.g. for content-delivery networks that do not support content-negotiation. The fallback is to try resolving the path `./ro-crate-metadata.json` from the _resolved_ URI (after permalink redirects). For example:  
-If permalink `https://w3id.org/workflowhub/workflow-ro-crate/1.0` redirects to `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/index.html` (a HTML page), then
-try retrieving `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`
-3. If none of these approaches worked, then this profile probably does not have a corresponding Profile Crate. For humans, display a hyperlink to its `@id` described by its `name`.
-
-<!-- TODO Make both examples above actually work! -->
 
 ### What is included in the Profile Crate? 
 
