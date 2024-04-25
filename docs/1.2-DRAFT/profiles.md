@@ -98,13 +98,13 @@ A **Profile Crate** is a type of RO-Crate that gathers resources which further d
 
 The Profile Crate `@id` declared within its own RO-Crate Metadata Document SHOULD be an absolute URI, and the corresponding reference from its RO-Crate Metadata Descriptor updated accordingly. 
 
-The [Root Data entity](root-data-entity) of a Profile Crate MUST declare `Profile` as an additional `@type`:
+Within the Profile Crate, its [Root Data entity](root-data-entity) MUST declare `Profile` as an additional `@type`:
 
 ```json
 {
-      "@id": "ro-crate-preview.html",
-      "@type": "CreativeWork",
-      "about": {"@id": "https://w3id.org/ro/wfrun/process/0.1"}
+    "@id": "ro-crate-preview.html",
+    "@type": "CreativeWork",
+    "about": {"@id": "https://w3id.org/ro/wfrun/process/0.1"}
 }
 {
     "@id": "https://w3id.org/ro/wfrun/process/0.1",
@@ -160,10 +160,31 @@ For instance, if a Profile Crate adds a `DefinedTerm` entity according to the [a
 
 It is RECOMMENDED that `@id` of such shared entities are absolute URIs on both sides to avoid resolving relative paths, and that the profile's recommended [JSON-LD Context](#json-ld-context) used by conforming crates SHOULD have a mapping to the URIs, see section [Extending RO-Crate](appendix/jsonld.md#extending-ro-crate).
 
+#### Archiving Profile Crates
+
+For archival purposes, a crate declaring profile conformance MAY choose to include a snapshot copy of the Profile Crate, indicated using `distribution`, as detailed for [dataset distributions](data-entities.md#directories-on-the-web-dataset-distributions):
+
+```json
+{
+    "@id": "https://w3id.org/ro/wfrun/process/0.1",
+    "@type": ["CreativeWork", "Profile"],
+    "name": "Process Run crate profile",
+    "version": "0.1.0",
+    "distribution": { "@id": "process-profile-0.1.zip" }
+},
+{ 
+    "@id": "process-profile-0.1.zip",
+    "@type": "DataDownload",
+    "encodingFormat": ["application/zip", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263"}],
+    "conformsTo": { "@id": "https://w3id.org/ro/crate" }
+}
+```
+
+This is mainly beneficial if the crate relies heavily on the profile, e.g. for definitions of terms.
 
 ### What is included in the Profile Crate? 
 
-Below follows the suggested [data entities](data-entities.md) to include in a Profile Crate using `hasPart`. 
+This section defines the type of resources that should or may be included in the Profile Crate for different purposes (roles).
 
 #### Declaring the role within the crate
 
@@ -190,7 +211,7 @@ In order for programmatic use of the Profile Crate to consume particular subreso
 }
 ```
 
-The [`ResourceDescriptor`](https://www.w3.org/TR/dx-prof/#Class:ResourceDescriptor) entity MAY also declare `dct:format` or `dct:conformsTo`, however the data entity referenced with `hasArtifact` SHOULD declare `encodingFormat` (with OPTIONAL `conformsTo`) to specify its [encoding format](data-entities#adding-detailed-descriptions-of-encodings), e.g.:
+The [`ResourceDescriptor`](https://www.w3.org/TR/dx-prof/#Class:ResourceDescriptor) entity MAY also declare `dct:format` or `dct:conformsTo`, however the data entity referenced with `hasArtifact` SHOULD always declare `encodingFormat` (with OPTIONAL `conformsTo`) to specify its [encoding format](data-entities#adding-detailed-descriptions-of-encodings), e.g.:
 
 ```json
 {
@@ -203,7 +224,7 @@ The [`ResourceDescriptor`](https://www.w3.org/TR/dx-prof/#Class:ResourceDescript
 }
 ```
 
-The referenced role do not need to be declared as a `DefinedTerm` contextual entity unless it differs from the recommended [predefined roles](https://www.w3.org/TR/dx-prof/#resource-roles-vocab):
+The referenced role do not need to be declared as a `DefinedTerm` contextual entity unless it differs from these recommended [predefined roles](https://www.w3.org/TR/dx-prof/#resource-roles-vocab):
 
 ```json
 {
@@ -253,12 +274,18 @@ The referenced role do not need to be declared as a `DefinedTerm` contextual ent
     "@type": ["DefinedTerm", "ResourceRole"],
     "name": "Vocabulary", 
     "description": "Defines terms used in the profile specification"
+},
+{
+    "@id": "http://purl.org/dc/terms/conformsTo",
+    "@type": ["DefinedTerm", "ResourceRole"],
+    "name": "Conforms to", 
+    "description": "Suggestion of additional profile to conform to"
 }
 ```
 
-The examples in the rest of this document will list the data entities with a corresponding `ResourceDescriptor` entity, but for brevity not repeating the required `hasPart` `hasArtifact` and `DefinedTerm` declarations.
+The examples in the rest of this document will list the data entities with a corresponding `ResourceDescriptor` entity, but for brevity not repeating the required `hasPart` and `hasResource` references from the root dataset.
 
-Below follows the suggested [data entities](data-entities.md) to include in a Profile Crate using `hasPart`:
+Below follows the suggested [data entities](data-entities.md) to include in a Profile Crate using `hasPart` and, if applicable, a corresponding `hasResource` to a `ResourceDescriptor`:
 
 #### Profile description entity
 
@@ -296,7 +323,6 @@ The _profile description_ MAY be equivalent to the
 
 
 #### Profile Schema entity
-
 
 An optional machine-readable _schema_ of the profile, for instance a [Describo JSON profile]:
 
@@ -336,6 +362,7 @@ Below are known schema types in their recommended media type, with suggested ide
 | Name           | `encodingFormat` Media Type   | `encodingFormat` URI   | `conformsTo` URI |  role  | 
 | -------------- | ------------------------- | -------------------------- | ---------- |
 | JSON Schema    | `application/schema+json` | <https://json-schema.org/draft/2020-12/schema> |  |  `schema` | 
+| Crate-O        | `application/json`        | <https://www.nationalarchives.gov.uk/PRONOM/fmt/817> |  <https://github.com/Language-Research-Technology/ro-crate-editor-profiles>  | `schema` |
 | Describo       | `application/json`        | <https://www.nationalarchives.gov.uk/PRONOM/fmt/817> | <https://github.com/describo/profiles> | `schema` |
 | CheckMyCrate   | `application/json`        | <https://www.nationalarchives.gov.uk/PRONOM/fmt/817> | <https://github.com/KockataEPich/CheckMyCrate#profiles> | `validation` |
 | SHACL          | `text/turtle`             | <https://www.nationalarchives.gov.uk/PRONOM/fmt/874> |  <https://www.w3.org/TR/shacl/> | `validation` |
@@ -344,6 +371,7 @@ Below are known schema types in their recommended media type, with suggested ide
 | BagIt Profile  | `application/json`        | <https://www.nationalarchives.gov.uk/PRONOM/fmt/817>  | <https://bagit-profiles.github.io/bagit-profiles-specification/> | `schema`
 | SKOS           | `text/turtle`             | <https://www.nationalarchives.gov.uk/PRONOM/fmt/874> | <http://www.w3.org/TR/skos-reference> | `vocabulary`
 | OWL 2 (in RDF) | `text/turtle`             | <https://www.nationalarchives.gov.uk/PRONOM/fmt/874> | <http://www.w3.org/TR/owl2-mapping-to-rdf/>  | `vocabulary` |
+ 
 
 {: .tip }
 Some of the above schema languages are based on general data structure syntaxes 
@@ -387,7 +415,7 @@ If conforming RO-Crates should be [packaged](appendix/implementation-notes.md#ad
 ```json
 {
    "@id": "https://w3id.org/ro/bagit/profile/0.3",
-   "@type": "WebPage",
+   "@type": "Profile",
    "name":  "BagIt profile for RO-Crate in ZIP",
    "encodingFormat": [
         "application/json", 
@@ -409,6 +437,12 @@ which vocabulary/ontology it uses as a [DefinedTermSet]:
     "@type": "DefinedTermSet",
     "name": "Namespace for workflow testing metadata",
     "url": "https://github.com/ResearchObject/ro-terms/tree/master/test",
+},
+{ 
+    "@id": "#hasTestVocabulary",
+    "@type": "ResourceDescriptor",
+    "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary" },
+    "hasArtifact": {"@id": "https://w3id.org/ro/terms/test#"}
 }
 ```
 
@@ -425,8 +459,17 @@ A profile that defines many extensions term MAY define its own `DefinedTermSet` 
     "name": "Common Provenance Model RO-Crate profiles and vocabulary",
     "hasPart": [
       { "@id": "https://w3id.org/cpm/ro-crate#" }
+    ],
+    "hasResource": [
+        { "@id": "#hasCPMVocabulary" }
     ]
   },
+  { 
+    "@id": "#hasCPMVocabulary",
+    "@type": "ResourceDescriptor",
+    "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary" },
+    "hasArtifact": {"@id": "https://w3id.org/cpm/ro-crate#"}
+  },  
   {
     "@id": "https://w3id.org/cpm/ro-crate#",
     "@type": "DefinedTermSet",
@@ -447,7 +490,7 @@ A profile that defines many extensions term MAY define its own `DefinedTermSet` 
 #### Extension terms
 
 A profile that [extends RO-Crate](appendix/jsonld.md#extending-ro-crate) MAY indicate particular terms
-directly as [DefinedTerm], [Class] and/or [Property] instances:
+directly as [DefinedTerm], `rdfs:Class` and/or `rdf:Property` instances:
 
 ```json
 {
@@ -507,7 +550,7 @@ The JSON-LD Context entity:
 Note that the referenced context URI does _not_ have to match the `@context` of the Profile Crate itself.
 
 {: .tip }
-The `@context` MAY be the Profile Crate's Metadata JSON-LD file if 
+The `@context` MAY be the Profile Crate's Metadata JSON-LD file itself if 
 it is [resolvable](appendix/jsonld.md#ro-crate-json-ld-media-type)
 as media type `application/ld+json` over HTTP. Make sure the crate includes the 
 defined terms both within its `@context` and ideally as entities in its `@graph`.
@@ -537,6 +580,9 @@ A Profile Crate can _suggest_ interoperable profiles under `hasPart`, and recomm
 }
 ```
 
-Note that this does not enforce any particular hierarchy of profiles, thus listed profiles can be both more general or more specific than the given Profile Crate.
+Note that this does not enforce any particular hierarchy of profiles, thus listed profiles can be both more general or more specific than the given Profile Crate. A given profile MAY provide further recommendations or requirements for how the related profiles are to be used in its human-readable documentation.
+
+It is NOT RECOMMENDED to include further elements of the referenced profiles, e.g. their `ResourceDescriptor`s, see [How to retrieve a Profile Crate](#how-to-retrieve-a-profile-crate). 
+
 
 {% include references.liquid %}
