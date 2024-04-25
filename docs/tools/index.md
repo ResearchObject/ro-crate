@@ -93,7 +93,8 @@ exist for working with RO-Crates:
 -   [tuw-rocrate-automation/](https://github.com/MoritzRenkin/tuw-rocrate-automation/) -- Convert RO-Crate (Research Object Crate) to reposit into InvenioRDM (~ _alpha_) 
 -   [ro-crates-deposit](https://github.com/beerphilipp/ro-crates-deposit) -- Command line tool to deposit a RO-Crate directory to an InvenioRD (~_alpha_)
 -   [rocrate-to-sembench](https://github.com/vliz-be-opsci/rocrate-to-sembench) -- github action to prepare a rocrate for pysembench (~ _alpha_)
--   [profile-repository-to-pages](https://github.com/vliz-be-opsci/profile-repository-to-pages) -- an RO-Crate profile registry that extracts metadata from Profile Crates (~ _prototype_) 
+-   [profile-repository-to-pages](https://github.com/vliz-be-opsci/profile-repository-to-pages) -- an RO-Crate profile registry that extracts metadata from Profile Crates (~ _prototype_)
+-   [Common Data Model Builder (cdmb)](https://github.com/cienciadedatosysalud/cdmb) -- from a data model expressed in Python, generate a reproducible folder structure of the research project as a Research Object (RO).
 
 
 See also [applications using RO-Crate](../in-use/).
