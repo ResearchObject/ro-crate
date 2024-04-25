@@ -501,11 +501,12 @@ Requesting `https://w3id.org/workflowhub/workflow-ro-crate/1.0` with HTTP header
 
   `Accept: application/ld+json;profile=https://w3id.org/ro/crate` redirects to the _RO-Crate Metadata file_
   `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`
-3. The above approach may fail or returns a HTML page, e.g. for content-delivery networks that do not support content-negotiation. 
+3. The above approaches may fail or returns a HTML page, e.g. for content-delivery networks that do not support content-negotiation. 
 4. An optional heuristic fallback is to try resolving the path `./ro-crate-metadata.json` from the _resolved_ URI (after permalink redirects). For example:  
 If permalink `https://w3id.org/workflowhub/workflow-ro-crate/1.0` redirects to `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/index.html` (a HTML page), then
 try retrieving `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`. 
-5. If the returned document (possibly extracted from an archive) is valid JSON and have a [root data entity](root-data-entity.md#finding-the-root-data-entity), this is the RO-Crate Metadata File.
+5. If the retrieved resource is a ZIP file (`Content-Type: application/zip`), then extract `ro-crate-metadata.json`, or, if the archive root only contains a single folder (e.g. `folder1/`), extract `folder1/ro-crate-metadata.json`
+6. If the returned/extracted document is valid JSON and have a [root data entity](root-data-entity.md#finding-the-root-data-entity), this is the RO-Crate Metadata File.
 
 {.tip }
 Some PID providers such as DataCite may respond to content-negotiation and provide their own JSON-LD, which do not describe an RO-Crate (the `profile=` was ignored). The use of Signposting allows the repository to explicitly provide the RO-Crate.
