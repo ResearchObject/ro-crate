@@ -389,7 +389,31 @@ These can be included for File Data Entities as additional metadata, regardless 
 
 ### Directories on the web; dataset distributions
 
-A _Directory File Entry_ or [Dataset] identifier expressed as an absolute URL on the web can be harder to download than a [File] because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in [hasPart], enabling download traversal.
+A _Directory File Entry_ or [Dataset] identifier expressed as an absolute URL on the web can be harder to download than a [File] because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in [hasPart], enabling download traversal, or are themselves RO-Crates.
+
+#### Referencing other RO-Crates
+
+A referenced RO-Crate is also a [Dataset], but where its [hasPart] do not need to be listed. Instead, its content and further metadata is available from its own RO-Crate Metadata File:
+
+```json
+{
+  "@id": "http://example.com/another-crate/",
+  "@type": "Dataset",
+  "conformsTo": { "@id": "https://w3id.org/ro/crate" },
+  "subjectOf": { "@id": "http://example.com/another-crate/ro-crate-metadata.json" }
+},
+{
+  "@id": "http://example.com/another-crate/ro-crate-metadata.json",
+  "@type": "CreativeWork"
+}
+```
+
+{.tip }
+> The referenced RO-Crate metadata descriptor MUST NOT include its own `conformsTo` or be referenced with `about`, this is to avoid confusion with the referencing RO-Crate's own 
+[metadata descriptor](root-data-entity.md#ro-crate-metadata-descriptor). Likewise, the `conformsTo` on the referenced `Dataset` entity is version-less, as the referenced crate is free to use a different version of the RO-Crate specification.
+
+#### Downloadable dataset
+
 
 Alternatively, a common mechanism to provide downloads of a reasonably sized directory is as an archive file in formats such as [`application/zip`](https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263) or [`application/gzip`](https://www.nationalarchives.gov.uk/PRONOM/x-fmt/266), described as a [DataDownload]. 
 
@@ -409,7 +433,25 @@ Alternatively, a common mechanism to provide downloads of a reasonably sized dir
   }
 ```
 
-Similarly, the _RO-Crate root_ entity may also provide a [distribution] URL, in which case the download SHOULD be an archive that contains the _RO-Crate Metadata Document_.
+Similarly, the _RO-Crate root_ entity (or a reference to another RO-Crate as a `Dataset`) may provide a [distribution] URL, in which case the download SHOULD be an archive that contains the _RO-Crate Metadata Document_ (either directly in the archive's root, or within a single folder in the archive), indicated by a version-less `conformsTo`:
+
+```json
+  {
+    "@id": "./",
+    "@type": "Dataset",
+    "identifier": "https://doi.org/10.48546/workflowhub.workflow.775.1",
+    "url": "https://workflowhub.eu/workflows/775/ro_crate?version=1",
+    "name": "Research Object Crate for Jupyter Notebook Molecular Structure Checking",
+    "distribution": {"@id": "https://workflowhub.eu/workflows/775/ro_crate?version=1"},
+    "…": ""
+  },
+  {
+    "@id": "https://workflowhub.eu/workflows/775/ro_crate?version=1",
+    "@type": "DataDownload",
+    "encodingFormat": ["application/zip", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263"}],
+    "conformsTo": { "@id": "https://w3id.org/ro/crate" }
+  }
+```
 
 In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not reflect the current state of the `Dataset` or RO-Crate.
 
