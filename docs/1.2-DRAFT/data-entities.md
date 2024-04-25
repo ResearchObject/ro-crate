@@ -404,13 +404,13 @@ A referenced RO-Crate is also a [Dataset], but where its [hasPart] do not need t
 },
 {
   "@id": "http://example.com/another-crate/ro-crate-metadata.json",
-  "@type": "CreativeWork"
+  "@type": "CreativeWork",
+  "encodingFormat": "application/ld+json"
 }
 ```
 
 {.tip }
-> The referenced RO-Crate metadata descriptor MUST NOT include its own `conformsTo` or be referenced with `about`, this is to avoid confusion with the referencing RO-Crate's own 
-[metadata descriptor](root-data-entity.md#ro-crate-metadata-descriptor). Likewise, the `conformsTo` on the referenced `Dataset` entity is version-less, as the referenced crate is free to use a different version of the RO-Crate specification.
+> The referenced RO-Crate metadata descriptor SHOULD NOT include its own `conformsTo` or reference the dataset with `about`; this is to avoid confusion with the referencing RO-Crate's own [metadata descriptor](root-data-entity.md#ro-crate-metadata-descriptor). Likewise, the `conformsTo` on the referenced `Dataset` entity is version-less, as the referenced crate is free to self-declare a different version of the RO-Crate specification.
 
 #### Downloadable dataset
 
