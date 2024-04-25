@@ -21,11 +21,6 @@ title: Outreach and Publications
 # RO-Crate Outreach and Publications 
 {: .no_toc }
 
-{: .tip}
-> **Upcoming tutorial**: _Improving FAIRability of your research outcomes with RO-Crates, SignPosting and Bioschemas_  
-> At [Semantic Web Applications and Tools for Health Care and Life Sciences](https://www.swat4ls.org/workshops/leiden2024/) (SWAT4HCLS), 2024-02-26/--29, Leiden, The Netherlands.  
-> [[Register](https://www.swat4ls.org/workshops/leiden2024/registration/) (by 12 February 2024)
-
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -49,6 +44,15 @@ _Data Science_ **5**(2)
 ## Recent publications, presentations, citations
 
 ### 2024
+Carole Goble (2024):
+[**FAIR Digital Research Objects: Metadata Journeys**](https://doi.org/10.5281/zenodo.10710142).
+_University of Auckland_: [Centre for eResearch](https://www.eresearch.auckland.ac.nz/), Auckland, New Zealand, 2024-02-16 
+<https://doi.org/10.5281/zenodo.10710142>
+
+Carole Goble Keynote (2024):  
+[**Handling Health Data: FAIR Research Objects for Trusted Research Environments**](https://doi.org/10.5281/zenodo.10648472).  
+_eResearch New Zealand 2024_: [eResearch New Zealand 2024](https://eresearchnz.co.nz/). Wellington , New Zealand, 2024-02-08
+<https://doi.org/10.5281/zenodo.10648472>
 
 Mahnoor Zulfiqar, Michael R. Crusoe, Birgitta König-Ries, Christoph Steinbeck,Kristian Peters Luiz Gadelha (2024):
 **Implementation of FAIR Practices in Computational Metabolomics Workflows**—A Case Study.
@@ -103,6 +107,7 @@ Peter Sefton, Stian Soiland-Reyes (2024):
 
 
 ### 2023
+
 
 Tom Brown, Nick Juty, Stian Soiland-Reyes, Felix Shaw, Rutger Vos (2023):  
 [**RO-Crates as a practical implementation of FAIR Digital Object to align biodiversity genomics work streams**](https://research.manchester.ac.uk/files/291308873/2023-12-01_RO-Crate_FDO_2024.pdf).  
@@ -331,6 +336,11 @@ _Research Ideas and Outcomes_ **8**:e98457
 
 
 ### 2022
+
+Haris Zafeiropoulos, Martin Beracochea, Stelios Ninidakis, Katrina Exter, Antonis Potirakis, Gianluca De Moro, Lorna Richardson, Erwan Corre, João Machado, Evangelos Pafilis, Georgios Kotoulas, Ioulia Santi, Robert D Finn, Cymon J Cox, Christina Pavloudi (2022):  
+**metaGOflow: a workflow for the analysis of marine Genomic Observatories shotgun metagenomics data**.  
+_GigaScience_ **12**:giad078  
+<https://doi.org/10.1093/gigascience/giad078>
 
 Sonia Natalie Mitchell, Andrew Lahiff, Nathan Cummings, Jonathan Hollocombe, Bram Boskamp, Ryan Field, Dennis Reddyhoff, Kristian Zarebski, Antony Wilson, Bruno Viola, Martin Burke, Blair Archibald, Paul Bessell, Richard Blackwell, Lisa A. Boden, Alys Brett, Sam Brett, Ruth Dundas, Jessica Enright, Alejandra N. Gonzalez-Beltran, Claire Harris, Ian Hinder, Christopher David Hughes, Martin Knight, Vino Mano, Ciaran McMonagle, Dominic Mellor, Sibylle Mohr, Glenn Marion, Louise Matthews, Iain J. McKendrick, Christopher Mark Pooley, Thibaud Porphyre, Aaron Reeves, Edward Townsend, Robert Turner, Jeremy Walton, Richard Reeve (2022):  
 [**FAIR data pipeline: provenance-driven data management for traceable scientific workflows**](https://doi.org/10.1098/rsta.2021.0300).  
@@ -824,7 +834,7 @@ Gavin Kennedy (2020):
 
 Peter Sefton, Eoghan Ó Carragáin, Carole Goble, Stian Soiland-Reyes (2019):  
 [**Introducing RO-Crate: research object data packaging**](http://ptsefton.com/2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm).  
-_eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. [[slides](https://docs.google.com/presentation/d/10faXX13opY0DAVVVeX5lG83F4MA_woLHkeIcUOko2IU/)] [[abstract](https://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019-eResearch_103_-Introducing-RO-Crate-research-object-data-packaging.pdf)]
+_eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. [[slides](https://doi.org/10.5281/zenodo.10969977)] [[abstract](https://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019-eResearch_103_-Introducing-RO-Crate-research-object-data-packaging.pdf)]
 
 Nick Thieberger, Amanda Harris (2019):  
 [**Be Not Like the Wind: Access to Language and Music Records, Next Steps**](https://lt4all.elra.info/proceedings/lt4all2019/pdf/2019.lt4all-1.26.pdf).  
