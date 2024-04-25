@@ -506,7 +506,8 @@ Requesting `https://w3id.org/workflowhub/workflow-ro-crate/1.0` with HTTP header
 If permalink `https://w3id.org/workflowhub/workflow-ro-crate/1.0` redirects to `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/index.html` (a HTML page), then
 try retrieving `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`. 
 5. If the retrieved resource is a ZIP file (`Content-Type: application/zip`), then extract `ro-crate-metadata.json`, or, if the archive root only contains a single folder (e.g. `folder1/`), extract `folder1/ro-crate-metadata.json`
-6. If the returned/extracted document is valid JSON and have a [root data entity](root-data-entity.md#finding-the-root-data-entity), this is the RO-Crate Metadata File.
+6. If the retrieved resource is a [BagIt archive](appendix/implementation-notes.md#combining-with-other-packaging-schemes), e.g. containing a single folder `folder1` with `folder1/bagit.txt`, then extract and verify BagIt checksums before returning the bag's `data/ro-crate-metadata.json`
+7. If the returned/extracted document is valid JSON and have a [root data entity](root-data-entity.md#finding-the-root-data-entity), this is the RO-Crate Metadata File.
 
 {.tip }
 Some PID providers such as DataCite may respond to content-negotiation and provide their own JSON-LD, which do not describe an RO-Crate (the `profile=` was ignored). The use of Signposting allows the repository to explicitly provide the RO-Crate.
