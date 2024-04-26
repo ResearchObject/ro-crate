@@ -94,7 +94,7 @@ Note that as profile conformance is declared on the RO-Crate Root (`./` in this 
 
 While the Profile URI `@id` must resolve to a human-readable _profile description_, it MAY additionally be made to [resolve](#how-to-retrieve-a-profile-crate) to a _Profile Crate_.
 
-A **Profile Crate** is a type of RO-Crate that gathers resources which further define the profile. This allows formalizing alternative profile description for machine-readability, for instance for validation, but also additional resources like examples. The rest of this subsection declares the content of this Profile Crate.
+A **Profile Crate** is a type of RO-Crate that gathers resources which further define the profile in addition to the _profile description_. This allows formalizing alternative profile description for machine-readability, for instance for validation, but also additional resources like examples. The rest of this subsection declares the content of this Profile Crate.
 
 The Profile Crate `@id` declared within its own RO-Crate Metadata Document SHOULD be an absolute URI, and the corresponding reference from its RO-Crate Metadata Descriptor updated accordingly. 
 
@@ -104,7 +104,7 @@ Within the Profile Crate, its [Root Data entity](root-data-entity) MUST declare 
 {
     "@id": "ro-crate-preview.html",
     "@type": "CreativeWork",
-    "about": {"@id": "https://w3id.org/ro/wfrun/process/0.1"}
+    "about": { "@id": "https://w3id.org/ro/wfrun/process/0.1" }
 }
 {
     "@id": "https://w3id.org/ro/wfrun/process/0.1",
@@ -114,14 +114,32 @@ Within the Profile Crate, its [Root Data entity](root-data-entity) MUST declare 
     "isProfileOf": [
         {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
     ],
-    "hasPart": [ ],
-    "hasResource": [ ],
+    "hasPart": [ 
+        { "@id": "index.html" }
+    ],
+    "hasResource": [ 
+        { "@id": "#hasSpecification" }
+    ],
     "…": ""
+},
+{
+    "@id": "index.html",
+    "@type": "File",
+    "name": "Process Run crate profile description",
+    "encodingFormat": "text/html",
+    "about": "https://w3id.org/ro/wfrun/process/0.1",
+},
+{ 
+    "@id": "#hasSpecification",
+    "@type": "ResourceDescriptor",
+    "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/specification" },
+    "hasArtifact": {"@id": "index.html"}
 }
 ```
 
 The rest of the [earlier requirements](#declaring-conformance-of-an-ro-crate-profile) for a Profile entity also apply here, adding:
 
+* MUST reference the human readable _profile description_ as a data entity
 * SHOULD have an absolute URI as `@id`
 * SHOULD have a descriptive [name]
 * MAY declare [version], preferably according to [Semantic Versioning][semver] (e.g. `0.4.0`)
@@ -297,7 +315,7 @@ A Profile Crate MUST declare a human-readable _profile description_, which is [a
     "@type": "File",
     "name": "Workflow RO-Crate profile description",
     "encodingFormat": "text/html",
-    "about": "./",
+    "about": "https://w3id.org/ro/wfrun/process/0.1",
 },
 { 
     "@id": "#hasSpecification",
@@ -317,7 +335,7 @@ The _profile description_ MAY be equivalent to the
     "@type": "CreativeWork",
     "name": "RO-Crate preview of the Process Run Crate",
     "encodingFormat": "text/html",
-    "about": "./"
+    "about": "https://w3id.org/ro/wfrun/process/0.1"
 }
 ```
 
