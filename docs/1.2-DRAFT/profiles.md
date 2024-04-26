@@ -58,7 +58,7 @@ RO-Crate can describe a profile by adding it as an [contextual entity](contextua
 
 ```json
 {
-    "@id": "https://w3id.org/ro/wfrun/process/0.1",
+    "@id": "https://w3id.org/ro/wfrun/process/0.4",
     "@type": ["CreativeWork", "Profile"],
     "name": "Process Run crate profile",
     "version": "0.1.0"
@@ -80,7 +80,7 @@ RO-Crates that are _conforming to_ (or intending to conform to) such a profile S
     "@id": "./",
     "@type": "Dataset",
     "conformsTo":
-        {"@id": "https://w3id.org/ro/wfrun/process/0.1"}       
+        {"@id": "https://w3id.org/ro/wfrun/process/0.4"}       
 }
 ```
 
@@ -104,10 +104,10 @@ Within the Profile Crate, its [Root Data entity](root-data-entity) MUST declare 
 {
     "@id": "ro-crate-preview.html",
     "@type": "CreativeWork",
-    "about": { "@id": "https://w3id.org/ro/wfrun/process/0.1" }
+    "about": { "@id": "https://w3id.org/ro/wfrun/process/0.4" }
 }
 {
-    "@id": "https://w3id.org/ro/wfrun/process/0.1",
+    "@id": "https://w3id.org/ro/wfrun/process/0.4",
     "@type": ["Dataset", "Profile"],
     "name": "Process Run crate profile",
     "version": "0.1.0",
@@ -127,7 +127,7 @@ Within the Profile Crate, its [Root Data entity](root-data-entity) MUST declare 
     "@type": "File",
     "name": "Process Run crate profile description",
     "encodingFormat": "text/html",
-    "about": "https://w3id.org/ro/wfrun/process/0.1",
+    "about": "https://w3id.org/ro/wfrun/process/0.4",
 },
 { 
     "@id": "#hasSpecification",
@@ -184,7 +184,7 @@ For archival purposes, a crate declaring profile conformance MAY choose to inclu
 
 ```json
 {
-    "@id": "https://w3id.org/ro/wfrun/process/0.1",
+    "@id": "https://w3id.org/ro/wfrun/process/0.4",
     "@type": ["CreativeWork", "Profile"],
     "name": "Process Run crate profile",
     "version": "0.1.0",
@@ -313,9 +313,9 @@ A Profile Crate MUST declare a human-readable _profile description_, which is [a
 {
     "@id": "index.html",
     "@type": "File",
-    "name": "Workflow RO-Crate profile description",
+    "name": "Process Run Crate profile description",
     "encodingFormat": "text/html",
-    "about": "https://w3id.org/ro/wfrun/process/0.1",
+    "about": "https://w3id.org/ro/wfrun/process/0.4",
 },
 { 
     "@id": "#hasSpecification",
@@ -335,7 +335,7 @@ The _profile description_ MAY be equivalent to the
     "@type": "CreativeWork",
     "name": "RO-Crate preview of the Process Run Crate",
     "encodingFormat": "text/html",
-    "about": "https://w3id.org/ro/wfrun/process/0.1"
+    "about": "https://w3id.org/ro/wfrun/process/0.4"
 }
 ```
 
@@ -580,25 +580,57 @@ RO-Crate profiles sometimes build on each other. Note that unlike traditional ob
 
 A crate conforming to multiple RO-Crate profiles SHOULD explicitly declare `conformsTo` for each profile. Each profile MUST have a corresponding contextual entity for each.
 
-A Profile Crate can _suggest_ interoperable profiles under `hasPart`, and recommend it by using the role `http://purl.org/dc/terms/conformsTo` in a resource descriptor:
+A Profile Crate can _suggest_ interoperable profiles under `hasPart`, and recommend it by using the role `http://purl.org/dc/terms/conformsTo` in a resource descriptor. For example, the specializing [Workflow Run Crate profile](https://w3id.org/ro/wfrun/workflow/0.4) recommends two other profiles, the "parent" Process Run Crate and a "mix-in" Workflow RO-Crate:
 
 ```json
-
 {
-    "@id": "https://w3id.org/ro/wfrun/process/0.1",
+    "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+    "@type": ["Dataset", "Profile"],
+    "name": "Workflow Run crate profile",
+    "description": "Profile for recording a workflow run. It is recommended to also conform to profiles Process Run Crate and Workflow RO-Crate",
+    "version": "0.1.0",
+    "isProfileOf": [
+        {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
+    ],
+    "hasPart": [ 
+        { "@id": "https://w3id.org/ro/wfrun/process/0.4" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" },
+        { "…": "" }
+    ],
+    "hasResource": [ 
+        { "@id": "#shouldConformToWorkflowROCrate" },
+        { "@id": "#shouldConformToProcess" }
+        { "…": "" }
+    ],
+    "…": ""
+},
+{
+    "@id": "https://w3id.org/ro/wfrun/process/0.4",
     "@type": ["CreativeWork", "Profile"],
-    "name": "Process Run crate profile",
-    "version": "0.1.0"
+    "name": "Process Run Crate profile",
+    "version": "0.4"
+},
+{
+    "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+    "@type": ["CreativeWork", "Profile"],
+    "name": "Workflow RO-Crate profile",
+    "version": "1.0"
 },
 { 
-    "@id": "#shouldConformTo",
+    "@id": "#shouldConformToWorkflowROCrate",
     "@type": "ResourceDescriptor",
     "hasRole": { "@id": "http://purl.org/dc/terms/conformsTo" },
-    "hasArtifact": {"@id": "https://w3id.org/ro/wfrun/process/0.1"}
+    "hasArtifact": {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+}
+{ 
+    "@id": "#shouldConformToProcess",
+    "@type": "ResourceDescriptor",
+    "hasRole": { "@id": "http://purl.org/dc/terms/conformsTo" },
+    "hasArtifact": {"@id": "https://w3id.org/ro/wfrun/process/0.4"}
 }
 ```
 
-Note that this does not enforce any particular hierarchy of profiles, thus listed profiles can be both more general or more specific than the given Profile Crate. A given profile MAY provide further recommendations or requirements for how the related profiles are to be used in its human-readable documentation.
+Note that this does not enforce any particular hierarchy of profiles, thus listed profiles can be both more general or more specific than the given Profile Crate. A given profile MAY provide further recommendations or requirements for how the related profiles are to be used in its human-readable documentation, e.g. by elaborating on the `ResourceDescriptor`.
 
 It is NOT RECOMMENDED to include further elements of the referenced profiles, e.g. their `ResourceDescriptor`s, see [How to retrieve a Profile Crate](#how-to-retrieve-a-profile-crate). 
 
