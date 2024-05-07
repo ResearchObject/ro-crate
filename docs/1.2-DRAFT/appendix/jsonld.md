@@ -149,7 +149,6 @@ The above is equivalent to the following JSON-LD using an embedded context, by a
 ```json
 { "@context": {
       "CreativeWork": "http://schema.org/CreativeWork",
-      "about": "http://schema.org/about",
       "description": "http://schema.org/description",
       "conformsTo": "http://purl.org/dc/terms/conformsTo",
       "about": "http://schema.org/about"
@@ -287,8 +286,8 @@ In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in
 {
   "@context": [ 
     "https://w3id.org/ro/crate/1.2-DRAFT/context",
-    {"education": "https://example.com/some-project/terms#myProperty",
-     "interests": "https://w3id.org/ro/terms/some-project#education"},
+    {"education": "https://example.com/some-project/terms#education",
+     "interests": "https://w3id.org/ro/terms/some-project#interests"},
   ],
   "@graph": [ ... ]
 }
@@ -337,7 +336,7 @@ More information about the relationship of this term to other terms MAY be provi
 ```
 
 {: .note }
-> Schema.org also provides the types [Class] and [Property]. These MAY be used as a additional `@type` corresponding to `rdfs:Class` and `rdf:Property`, but as these are (for some reason) not used in Schema.org style schemas, they are also not required by RO-Crate. Likewise, an ontology defining such terms externally may be declaring properties there with more specific types like `owl:ObjectProperty` which do not need to be reflected in the RO-Crate reference.
+> Schema.org also provides the types [Class] and [Property]. These MAY be used as an additional `@type` corresponding to `rdfs:Class` and `rdf:Property`, but as these are (for some reason) not used in Schema.org style schemas, they are also not required by RO-Crate. Likewise, an ontology defining such terms externally may be declaring properties there with more specific types like `owl:ObjectProperty` which do not need to be reflected in the RO-Crate reference.
 
 {: .tip }
 > For compatibility with the official schema.org JSON-LD context, make sure any referenced `@id` to schema.org terms starts with `http://` rather than `https://` as shown in the browser.
