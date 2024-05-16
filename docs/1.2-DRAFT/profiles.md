@@ -94,7 +94,7 @@ Note that as profile conformance is declared on the RO-Crate Root (`./` in this 
 
 While the Profile URI `@id` must resolve to a human-readable _profile description_, it MAY additionally be made to [resolve](#how-to-retrieve-a-profile-crate) to a _Profile Crate_.
 
-A **Profile Crate** is a type of RO-Crate that gathers resources which further define the profile in addition to the _profile description_. This allows formalizing alternative profile description for machine-readability, for instance for validation, but also additional resources like examples. The rest of this subsection declares the content of this Profile Crate.
+A **Profile Crate** is a type of RO-Crate that gathers resources which further define the profile in addition to the _profile description_. This allows formalizing an alternative profile description for machine-readability, for instance for validation, but also additional resources like examples. The rest of this subsection declares the content of this Profile Crate.
 
 The Profile Crate `@id` declared within its own RO-Crate Metadata Document SHOULD be an absolute URI, and the corresponding reference from its RO-Crate Metadata Descriptor updated accordingly. 
 
@@ -182,7 +182,7 @@ If an RO-Crate declares conformance to a given profile crate with `conformsTo` o
 
 For instance, if a Profile Crate adds a `DefinedTerm` entity according to the [ad-hoc definitions](appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms), the term MAY be referenced in the conforming crate without making a contextual entity there. For archival purposes it MAY however still be preferrable to copy such entities across to each conforming crate.
 
-{.note }
+{: .note }
 > In the conforming crate, any terms defined in the profile using `DefinedTerm`, `rdfs:Class` and `rdf:Property` must be either be used as full URIs matching the `@id`, or mapped to these URIs from the conforming crate's JSON-LD `@context`. Note that JSON-LD only expands keys from `@id` and `@type`.
 
 It is RECOMMENDED that `@id` of such shared entities are absolute URIs on both sides to avoid resolving relative paths, and that the profile's recommended [JSON-LD Context](#json-ld-context) used by conforming crates SHOULD have a mapping to the URIs, see section [Extending RO-Crate](appendix/jsonld.md#extending-ro-crate).
@@ -600,7 +600,7 @@ RO-Crate profiles sometimes build on each other. Note that unlike traditional ob
 
 A crate conforming to multiple RO-Crate profiles SHOULD explicitly declare `conformsTo` for each profile. Each profile MUST have a corresponding contextual entity for each.
 
-A Profile Crate can _suggest_ interoperable profiles under `hasPart`, and recommend it by using the role `http://purl.org/dc/terms/conformsTo` in a resource descriptor. For example, the specializing [Workflow Run Crate profile](https://w3id.org/ro/wfrun/workflow/0.4) recommends two other profiles, the "parent" Process Run Crate and a "mix-in" Workflow RO-Crate:
+A Profile Crate can _suggest_ interoperable profiles under `hasPart`, and recommend them by using the role `http://purl.org/dc/terms/conformsTo` in a resource descriptor. For example, the specializing [Workflow Run Crate profile](https://w3id.org/ro/wfrun/workflow/0.4) recommends two other profiles, the "parent" Process Run Crate and a "mix-in" Workflow RO-Crate:
 
 ```json
 {
