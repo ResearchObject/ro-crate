@@ -61,14 +61,14 @@ RO-Crate can describe a profile by adding it as an [contextual entity](contextua
     "@id": "https://w3id.org/ro/wfrun/process/0.4",
     "@type": ["CreativeWork", "Profile"],
     "name": "Process Run crate profile",
-    "version": "0.1.0"
+    "version": "0.4.0"
 }
 ```
 
 The contextual entity for a profile:
 
 * The `@type` SHOULD be an array. The `@type` MUST include [Profile].
-* The `'@type` SHOULD include `CreativeWork` (indicating a Web Page) or `Dataset` (indicating a Profile Crate).
+* The `@type` SHOULD include `CreativeWork` (indicating a Web Page) or `Dataset` (indicating a Profile Crate).
 * SHOULD have an absolute URI as `@id`
 * SHOULD have a descriptive [name]
 * MAY declare [version], preferably according to [Semantic Versioning][semver]
@@ -102,15 +102,21 @@ Within the Profile Crate, its [Root Data entity](root-data-entity) MUST declare 
 
 ```json
 {
-    "@id": "ro-crate-preview.html",
+    "@id": "ro-crate-metadata.json",
     "@type": "CreativeWork",
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
+    "about": {"@id": "https://w3id.org/ro/wfrun/process/0.4"}
+},  
+{
+    "@id": "ro-crate-preview.html",
+    "@type": "CreativeWork",    
     "about": { "@id": "https://w3id.org/ro/wfrun/process/0.4" }
-}
+},
 {
     "@id": "https://w3id.org/ro/wfrun/process/0.4",
     "@type": ["Dataset", "Profile"],
     "name": "Process Run crate profile",
-    "version": "0.1.0",
+    "version": "0.4.0",
     "isProfileOf": [
         {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
     ],
@@ -190,7 +196,7 @@ For archival purposes, a crate declaring profile conformance MAY choose to inclu
     "@id": "https://w3id.org/ro/wfrun/process/0.4",
     "@type": ["CreativeWork", "Profile"],
     "name": "Process Run crate profile",
-    "version": "0.1.0",
+    "version": "0.4.0",
     "distribution": { "@id": "process-profile-0.1.zip" }
 },
 { 
@@ -213,6 +219,12 @@ In order for programmatic use of the Profile Crate to consume particular subreso
 
 ```json
 {
+    "@id": "ro-crate-metadata.json",
+    "@type": "CreativeWork",
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
+    "about": {"@id": "http://example.com/my-crate-profile/0.1/"},
+},
+{
     "@id": "http://example.com/my-crate-profile/0.1/",
     "@type": ["Dataset", "Profile"],
     "name": "My Crate Profile",
@@ -223,7 +235,7 @@ In order for programmatic use of the Profile Crate to consume particular subreso
     "hasResource": [
         {"@id": "#hasShape"}
     ]
-}
+},
 { 
     "@id": "#hasShape",
     "@type": "ResourceDescriptor",
@@ -328,15 +340,21 @@ A Profile Crate MUST declare a human-readable _profile description_, which is [a
 }
 ```
 
-The _profile description_ MAY be equivalent to the
+The _profile description_ MAY (instead of say a dedicated `index.html` as above) be equivalent to the
 [RO-Crate Website](structure.md#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files) entity
-`ro-crate-preview.html` (becoming a data entity by listing it under `hasPart`):
+`ro-crate-preview.html` (promoting it to a data entity by listing it under `hasPart`):
 
 ```json
+{ 
+    "@id": "#hasSpecification",
+    "@type": "ResourceDescriptor",
+    "hasRole": { "@id": "http://www.w3.org/ns/dx/prof/role/specification" },
+    "hasArtifact": {"@id": "ro-crate-preview.html"}
+},
 {
     "@id": "ro-crate-preview.html",
     "@type": "CreativeWork",
-    "name": "RO-Crate preview of the Process Run Crate",
+    "name": "RO-Crate preview of the Process Run Crate profile",
     "encodingFormat": "text/html",
     "about": "https://w3id.org/ro/wfrun/process/0.4"
 }
@@ -557,11 +575,10 @@ The JSON-LD Context entity:
 * MUST have an absolute URI as `@id`, which MUST be retrievable as JSON-LD directly or with content-negotiation and/or HTTP redirects.
 * SHOULD have a _permalink_ (persistent identifier) as `@id`
   - e.g. starting with <https://w3id.org/> <http://purl.org/>
-  - MAY embed major.minor version in the PID, e.g. <https://w3id.org/ro/crate/1.2/context>
 * SHOULD use `https` rather than `http` with a certificate commonly accepted by browsers
 * SHOULD have a `@id` URI that is _versioned_ with [`MAJOR.MINOR`][semver], e.g. `https://example.com/image-profile-2.4`
 * SHOULD have a descriptive [name]
-* SHOULD have a `encodingFormat` to the contextual entity `http://www.w3.org/ns/json-ld#Context`
+* SHOULD have a `conformsTo` to the contextual entity `http://www.w3.org/ns/json-ld#Context`
 * MAY declare [version] according to [Semantic Versioning][semver]
 - Updates MAY add new terms or patch fixes (with corresponding `version` change)
 * Updates SHOULD NOT remove terms already published and potentially used by consumers of the profile
@@ -587,11 +604,11 @@ A Profile Crate can _suggest_ interoperable profiles under `hasPart`, and recomm
 
 ```json
 {
-    "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+    "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
     "@type": ["Dataset", "Profile"],
     "name": "Workflow Run crate profile",
     "description": "Profile for recording a workflow run. It is recommended to also conform to profiles Process Run Crate and Workflow RO-Crate",
-    "version": "0.1.0",
+    "version": "0.4.0",
     "isProfileOf": [
         {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
     ],
@@ -611,7 +628,7 @@ A Profile Crate can _suggest_ interoperable profiles under `hasPart`, and recomm
     "@id": "https://w3id.org/ro/wfrun/process/0.4",
     "@type": ["CreativeWork", "Profile"],
     "name": "Process Run Crate profile",
-    "version": "0.4"
+    "version": "0.4.0"
 },
 {
     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
