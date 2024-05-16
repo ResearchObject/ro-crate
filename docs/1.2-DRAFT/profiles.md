@@ -183,7 +183,7 @@ If an RO-Crate declares conformance to a given profile crate with `conformsTo` o
 For instance, if a Profile Crate adds a `DefinedTerm` entity according to the [ad-hoc definitions](appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms), the term MAY be referenced in the conforming crate without making a contextual entity there. For archival purposes it MAY however still be preferrable to copy such entities across to each conforming crate.
 
 {: .note }
-> In the conforming crate, any terms defined in the profile using `DefinedTerm`, `rdfs:Class` and `rdf:Property` must be either be used as full URIs matching the `@id`, or mapped to these URIs from the conforming crate's JSON-LD `@context`. Note that JSON-LD only expands keys from `@id` and `@type`.
+> In the conforming crate, any terms defined in the profile using `DefinedTerm`, `rdfs:Class` and `rdf:Property` MUST either be used as full URIs matching the `@id`, or mapped to these URIs from the conforming crate's JSON-LD `@context`. Note that JSON-LD only expands keys from `@id` and `@type`.
 
 It is RECOMMENDED that `@id` of such shared entities are absolute URIs on both sides to avoid resolving relative paths, and that the profile's recommended [JSON-LD Context](#json-ld-context) used by conforming crates SHOULD have a mapping to the URIs, see section [Extending RO-Crate](appendix/jsonld.md#extending-ro-crate).
 
@@ -488,7 +488,7 @@ which vocabulary/ontology it uses as a [DefinedTermSet]:
 The `@id` of the vocabulary SHOULD be the _namespace_, 
 while `url` SHOULD go to a human-readable description of the vocabulary.
 
-A profile that defines many extensions term MAY define its own `DefinedTermSet` and relate the terms using `hasDefinedTerm`:
+A profile that defines many extensions terms MAY define its own `DefinedTermSet` and relate the terms using `hasDefinedTerm`:
 
 ```json
  {
@@ -641,7 +641,7 @@ A Profile Crate can _suggest_ interoperable profiles under `hasPart`, and recomm
     "@type": "ResourceDescriptor",
     "hasRole": { "@id": "http://purl.org/dc/terms/conformsTo" },
     "hasArtifact": {"@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
-}
+},
 { 
     "@id": "#shouldConformToProcess",
     "@type": "ResourceDescriptor",
