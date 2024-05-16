@@ -112,7 +112,7 @@ Within the Profile Crate, its [Root Data entity](root-data-entity) MUST declare 
     "name": "Process Run crate profile",
     "version": "0.1.0",
     "isProfileOf": [
-        {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
+        {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
     ],
     "hasPart": [ 
         { "@id": "index.html" }
