@@ -383,7 +383,13 @@ Note that if a local file is intended to be packaged within an Attached RO-Crate
     "encodingFormat": "text/csv",
     "contentUrl": "http://example.com/downloads/2019/survey-responses-2019.csv",
     "subjectOf": {"@id": "http://example.com/reports/2019/annual-survey.html"}
-  } ````
+  },
+  {
+    "@id": "http://example.com/reports/2019/annual-survey.html",
+    "@type": "WebPage",
+    "name": "Survey responses (landing page)"
+  }
+```
 
 
 ### Directories on the web; dataset distributions
