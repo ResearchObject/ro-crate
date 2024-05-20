@@ -309,17 +309,21 @@ As files on the web may change, the timestamp property [sdDatePublished] SHOULD 
   }
 ```
 
+NOTE: Do not use web based URIs for files which _are_ present in the crate.
+
 ### Embedded data entities that are also on the web
 
-File Data Entities may already have a corresponding web presence, for instance a landing page that describes the file, including persistent identifiers (e.g. DOI) resolving to an intermediate HTML page instead of the downloadable file directly. 
+File Data Entities that are present as local files may already have a corresponding web presence, for instance a landing page that describes the file, including persistent identifiers (e.g. DOI) resolving to an intermediate HTML page instead of the downloadable file directly. 
 
-These can be included for File Data Entities as additional metadata, regardless of whether the File is included in the _RO-Crate Root_ directory or exists on the Web, by using the properties:
+These MAY be included for File Data Entities as additional metadata, regardless of whether the File is included in the _RO-Crate Root_ directory or exists on the Web, by using the properties:
 
 * [identifier] for formal identifier strings such as DOIs
 * [contentUrl] with a string URL corresponding to a *download* link. Following the link (allowing for HTTP redirects) SHOULD directly download the file.
 * [url] with a string URL for a download/landing page for this particular file (e.g. direct download is not available)
 * [subjectOf] to a [CreativeWork] (or [WebPage]) that mentions this file or its content (but also other resources)
 * [mainEntityOfPage] to a [CreativeWork]  (or [WebPage]) that primarily describes this file (or its content) 
+
+Note that if a local file is intended to be packaged the `@id` property MUST  a _URI Path_ relative to the _RO Crate root_, for example `survey-responses-2019.csv` in this example, in this case the content URL points to a download endpoint as a string.
 
 ```json
   {
@@ -329,16 +333,8 @@ These can be included for File Data Entities as additional metadata, regardless 
     "encodingFormat": "text/csv",
     "contentUrl": "http://example.com/downloads/2019/survey-responses-2019.csv",
     "subjectOf": {"@id": "http://example.com/reports/2019/annual-survey.html"}
-  },
-  {
-    "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf",
-    "@type": "File",
-    "name": "RO-Crate specification",
-    "encodingFormat": "application/pdf",
-    "identifier": "https://doi.org/10.5281/zenodo.3541888",
-    "url": "https://zenodo.org/record/3541888"
-  }
-```
+  } ````
+
 
 ### Directories on the web; dataset distributions
 
