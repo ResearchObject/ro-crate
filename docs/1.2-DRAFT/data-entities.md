@@ -373,7 +373,7 @@ These MAY be included for File Data Entities as additional metadata, regardless 
 * [subjectOf] to a [CreativeWork] (or [WebPage]) that mentions this file or its content (but also other resources)
 * [mainEntityOfPage] to a [CreativeWork]  (or [WebPage]) that primarily describes this file (or its content) 
 
-Note that if a local file is intended to be packaged the `@id` property MUST  a _URI Path_ relative to the _RO Crate root_, for example `survey-responses-2019.csv` in this example, in this case the content URL points to a download endpoint as a string.
+Note that if a local file is intended to be packaged within an Attached RO-Crate, the `@id` property MUST be a _URI Path_ relative to the _RO Crate root_, for example `survey-responses-2019.csv` as in the example below, where the content URL points to a download endpoint as a string.
 
 ```json
   {
