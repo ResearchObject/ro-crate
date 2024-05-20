@@ -7,7 +7,7 @@ parent: RO-Crate 1.2-DRAFT
    Copyright 2019-2020 University of Technology Sydney
    Copyright 2019-2023 The University of Manchester UK 
    Copyright 2019-2023 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
-
+f
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
@@ -373,7 +373,7 @@ These MAY be included for File Data Entities as additional metadata, regardless 
 * [subjectOf] to a [CreativeWork] (or [WebPage]) that mentions this file or its content (but also other resources)
 * [mainEntityOfPage] to a [CreativeWork]  (or [WebPage]) that primarily describes this file (or its content) 
 
-Note that if a local file is intended to be packaged within an Attached RO-Crate, the `@id` property MUST be a _URI Path_ relative to the _RO Crate root_, for example `survey-responses-2019.csv` as in the example below, where the content URL points to a download endpoint as a string.
+Note that if a local file is intended to be packaged within an _Attached RO-Crate_, the `@id` property MUST be a _URI Path_ relative to the _RO Crate root_, for example `survey-responses-2019.csv` as in the example below, where the content URL points to a download endpoint as a string.
 
 ```json
   {
