@@ -5,8 +5,8 @@ parent: RO-Crate 1.2-DRAFT
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
-   Copyright 2019-2023 The University of Manchester UK 
-   Copyright 2019-2023 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019-2024 The University of Manchester UK 
+   Copyright 2019-2024 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -349,6 +349,11 @@ As files on the web may change, the timestamp property [sdDatePublished] SHOULD 
   }
 ```
 
+
+{: .note}
+Do not use web based URI identifiers for files which _are_ present in the crate root, see [below](#embedded-data-entities-that-are-also-on-the-web).
+
+
 ### Encoding file paths
 
 Note that all `@id` [identifiers must be valid URI references](appendix/jsonld.md#describing-entities-in-json-ld), care must be taken to express any relative paths using `/` separator, correct casing, and escape special characters like space (`%20`) and percent (`%25`), for instance a _File Data Entity_ from the Windows path `Results and Diagrams\almost-50%.png` becomes `"@id": "Results%20and%20Diagrams/almost-50%25.png"` in the _RO-Crate JSON-LD_.
@@ -358,15 +363,17 @@ In this document the term _URI_ includes international *IRI*s; the _RO-Crate Met
 
 ### Embedded data entities that are also on the web
 
-File Data Entities may already have a corresponding web presence, for instance a landing page that describes the file, including persistent identifiers (e.g. DOI) resolving to an intermediate HTML page instead of the downloadable file directly. 
+File Data Entities that are present as local files may already have a corresponding web presence, for instance a landing page that describes the file, including persistent identifiers (e.g. DOI) resolving to an intermediate HTML page instead of the downloadable file directly. 
 
-These can be included for File Data Entities as additional metadata, regardless of whether the File is included in the _RO-Crate Root_ directory or exists on the Web, by using the properties:
+These MAY be included for File Data Entities as additional metadata, regardless of whether the File is included in the _RO-Crate Root_ directory or exists on the Web, by using the properties:
 
 * [identifier] for formal identifier strings such as DOIs
 * [contentUrl] with a string URL corresponding to a *download* link. Following the link (allowing for HTTP redirects) SHOULD directly download the file.
 * [url] with a string URL for a download/landing page for this particular file (e.g. direct download is not available)
 * [subjectOf] to a [CreativeWork] (or [WebPage]) that mentions this file or its content (but also other resources)
 * [mainEntityOfPage] to a [CreativeWork]  (or [WebPage]) that primarily describes this file (or its content) 
+
+Note that if a local file is intended to be packaged within an _Attached RO-Crate_, the `@id` property MUST be a _URI Path_ relative to the _RO Crate root_, for example `survey-responses-2019.csv` as in the example below, where the content URL points to a download endpoint as a string.
 
 ```json
   {
@@ -378,14 +385,12 @@ These can be included for File Data Entities as additional metadata, regardless 
     "subjectOf": {"@id": "http://example.com/reports/2019/annual-survey.html"}
   },
   {
-    "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf",
-    "@type": "File",
-    "name": "RO-Crate specification",
-    "encodingFormat": "application/pdf",
-    "identifier": "https://doi.org/10.5281/zenodo.3541888",
-    "url": "https://zenodo.org/record/3541888"
+    "@id": "http://example.com/reports/2019/annual-survey.html",
+    "@type": "WebPage",
+    "name": "Survey responses (landing page)"
   }
 ```
+
 
 ### Directories on the web; dataset distributions
 
