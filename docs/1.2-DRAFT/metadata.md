@@ -11,8 +11,8 @@ parent: RO-Crate 1.2-DRAFT
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
-   Copyright 2019-2023 The University of Manchester UK 
-   Copyright 2019-2023 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019-2024 The University of Manchester UK 
+   Copyright 2019-2024 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -151,20 +151,21 @@ To support geometry in [Places](contextual-entities.md#places), these terms from
 {: .note }
 > In this specification the proposed Bioschemas terms use the temporary <https://bioschemas.org/> namespace; future releases of RO-Crate may reflect mapping to the <http://schema.org/> namespace.
 
-From [CodeMeta](https://w3id.org/codemeta#):
+From [CodeMeta 3.0](https://w3id.org/codemeta/3.0):
 
-* `buildInstructions` mapped to <https://w3id.org/codemeta#buildInstructions>
-* `developmentStatus` mapped to <https://w3id.org/codemeta#developmentStatus>
-* `continuousIntegration` mapped to <https://w3id.org/codemeta#continuousIntegration>
-* `embargoEndDate` mapped to <https://w3id.org/codemeta#embargoEndDate>
-* `hasSourceCode` mapped to <https://w3id.org/codemeta#hasSourceCode>
-* `isSourceCodeOf` mapped to <https://w3id.org/codemeta#isSourceCodeOf>
-* `issueTracker` mapped to <https://w3id.org/codemeta#issueTracker>
-* `readme` mapped to <https://w3id.org/codemeta#readme>
-* `referencePublication` mapped to <https://w3id.org/codemeta#referencePublication>
-* `softwareSuggestions` mapped to <https://w3id.org/codemeta#softwareSuggestions>
+* `buildInstructions` mapped to <https://codemeta.github.io/terms/buildInstructions>
+* `developmentStatus` mapped to <https://codemeta.github.io/terms/developmentStatus>
+* `continuousIntegration` mapped to <https://codemeta.github.io/terms/continuousIntegration>
+* `embargoEndDate` mapped to <https://codemeta.github.io/terms/embargoEndDate>
+* `hasSourceCode` mapped to <https://codemeta.github.io/terms/hasSourceCode>
+* `isSourceCodeOf` mapped to <https://codemeta.github.io/terms/isSourceCodeOf>
+* `issueTracker` mapped to <https://codemeta.github.io/terms/issueTracker>
+* `readme` mapped to <https://codemeta.github.io/terms/readme>
+* `referencePublication` mapped to <https://codemeta.github.io/terms/referencePublication>
+* `softwareSuggestions` mapped to <https://codemeta.github.io/terms/softwareSuggestions>
 
-{: .note }
+{: .warning }
+> As of 2024-05-23, these URIs do not resolve correctly, but are chosen to match the Codemeta JSON-LD context <https://w3id.org/codemeta/3.0> (issue [#275](https://github.com/ResearchObject/ro-crate/issues/275)).
 > The CodeMeta terms `maintainer` and `funding` are not mapped, as these are already defined by schema.org.
 
 
