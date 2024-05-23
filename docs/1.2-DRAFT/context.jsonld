@@ -2673,7 +2673,7 @@
           "starRating": "http://schema.org/starRating",
           "startDate": "http://schema.org/startDate",
           "startOffset": "http://schema.org/startOffset",
-          "startTime": "http://schema.org/startTime",
+          "startTime": "http://schema.org/startTime",embargoEndDate
           "statType": "http://schema.org/statType",
           "status": "http://schema.org/status",
           "steeringPosition": "http://schema.org/steeringPosition",
@@ -2905,6 +2905,8 @@
           "referencePublication": "https://w3id.org/codemeta#referencePublication",
           "hasSourceCode": "https://w3id.org/codemeta#hasSourceCode",
           "isSourceCodeOf": "https://w3id.org/codemeta#isSourceCodeOf",
+          "Geometry": "http://www.opengis.net/ont/geosparql#Geometry",
+          "asWKT": "http://www.opengis.net/ont/geosparql#asWKT",
           "@label": "http://www.w3.org/2000/01/rdf-schema#label",
           "pcdm": "http://pcdm.org/models#",
           "bibo": "http://purl.org/ontology/bibo/",
@@ -2926,6 +2928,7 @@
           "roterms": "http://purl.org/ro/roterms#",
           "relation": "http://www.iana.org/assignments/relation/",
           "wf4ever": "http://purl.org/ro/wf4ever#",
-          "vann": "http://purl.org/vocab/vann/"
+          "vann": "http://purl.org/vocab/vann/",
+          "geosparql": "http://www.opengis.net/ont/geosparql#"
      }
 }

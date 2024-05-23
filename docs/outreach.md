@@ -43,7 +43,116 @@ _Data Science_ **5**(2)
 
 ## Recent publications, presentations, citations
 
+### 2024
+Carole Goble (2024):
+[**FAIR Digital Research Objects: Metadata Journeys**](https://doi.org/10.5281/zenodo.10710142).
+_University of Auckland_: [Centre for eResearch](https://www.eresearch.auckland.ac.nz/), Auckland, New Zealand, 2024-02-16 
+<https://doi.org/10.5281/zenodo.10710142>
+
+Carole Goble Keynote (2024):  
+[**Handling Health Data: FAIR Research Objects for Trusted Research Environments**](https://doi.org/10.5281/zenodo.10648472).  
+_eResearch New Zealand 2024_: [eResearch New Zealand 2024](https://eresearchnz.co.nz/). Wellington , New Zealand, 2024-02-08
+<https://doi.org/10.5281/zenodo.10648472>
+
+Mahnoor Zulfiqar, Michael R. Crusoe, Birgitta König-Ries, Christoph Steinbeck,Kristian Peters Luiz Gadelha (2024):
+**Implementation of FAIR Practices in Computational Metabolomics Workflows**—A Case Study.
+_Metabolites_ **14**(2)
+<https://doi.org/10.3390/metabo14020118>
+
+
+Carole Goble, Stian Soiland-reyes, Herbert Van de Sompel, Mark Wilkinson (2024):  
+[**RO-Crate, Signposting and Bioschemas**](https://doi.org/10.5281/zenodo.10555382).  
+_Lorentz Symposium_: [The Road to FAIR and Equitable Science](https://www.lorentzcenter.nl/the-road-to-fair-and-equitable-science.html). Leiden, The Netherlands, 2024-01-22/--26.  
+<https://doi.org/10.5281/zenodo.10555382>
+
+Scott Edmunds (2024):  
+[**A Decade of FAIR – and what next? Q&A on FAIR workflows with the Netherlands X-omics Initiative**](http://gigasciencejournal.com/blog/fair-workflows/).  
+_GIGAblog_  
+<http://gigasciencejournal.com/blog/fair-workflows/>
+
+Anna Niehues, Casper de Visser, Fiona A Hagenbeek, Purva Kulkarni, René Pool, Naama Karu, Alida S D Kindt, Gurnoor Singh, Robert R J M Vermeiren, Dorret I Boomsma, Jenny van Dongen, Peter A C ’t Hoen, Alain J van Gool (2024):  
+[**A multi-omics data analysis workflow packaged as a FAIR Digital Object**](https://doi.org/10.1093/gigascience/giad115).  
+_GigaScience_ **13**:giad115  
+<https://doi.org/10.1093/gigascience/giad115>
+
+Stian Soiland-Reyes, Leyla Jael Castro, Rohitha Ravinder, Claus Weiland, Jonas Grieb, Alexander Rogers, Christophe Blanchi, Herbert Van de Sompel (2024):
+[BioHackEU23 report: **Enabling FAIR Digital Objects with RO-Crate, Signposting and Bioschemas**](https://doi.org/10.37044/osf.io/gmk2h).  
+*BioHackrXiv*  
+<https://doi.org/10.37044/osf.io/gmk2h>
+
+Sebastian Beier, Timo Mühlhaus, Cyril Pommier, Stuart Owen, Dominik Brilhaus, Heinrich Lukas Weil, Florian Wetzels, Gavin Chait, Daniel Arend, Manuel Feser, Gajendra Doniparthi, Jonathan Bauer, Sveinung Gundersen, Pável Vázquez (2024):  
+[BioHackEU23 report: **Enabling continuous RDM using Annotated Research Contexts with RO-Crate profiles for ISA**](https://doi.org/10.37044/osf.io/7y2jh).  
+*BioHackrXiv*  
+<https://doi.org/10.37044/osf.io/7y2jh>
+
+Stian Soiland-Reyes, Peter Sefton, Simone Leo, Leyla Jael Castro, Claus Weiland, RO-Crate community (2024):  
+[**RO-Crate community update 2024**](https://research.manchester.ac.uk/files/291196011/FDO2024_RO-Crate_update.pdf).  
+(submitted)  
+<https://research.manchester.ac.uk/en/publications/ro-crate-community-update-2024>  
+
+Stian Soiland-Reyes, Stuart Wheater, Tom Giles, Carole Goble, Phil Quinlan (2024):  
+[**Five Safes RO-Crate: FAIR Digital Objects for Trusted Research Environments**](https://research.manchester.ac.uk/files/291224791/FDO2024-Goble-Lightningtalk-5scrate.pdf).  
+(submitted)  
+<https://research.manchester.ac.uk/en/publications/five-safes-ro-crate-fair-digital-objects-for-trusted-research-env>  
+
+Herbert Van de Sompel, Stian Soiland-Reyes (2024):  
+[**FAIR Signposting: Exposing the Topology of Digital Objects on the Web**](https://research.manchester.ac.uk/en/publications/fair-signposting-exposing-the-topology-of-digital-objects-on-the-).  
+(submitted)  
+<https://research.manchester.ac.uk/en/publications/fair-signposting-exposing-the-topology-of-digital-objects-on-the->  
+
+Peter Sefton, Stian Soiland-Reyes (2024):  
+[**Five ways RO-Crate data packages are important for repositories**](https://research.manchester.ac.uk/en/publications/five-ways-ro-crate-data-packages-are-important-for-repositories).  
+(submitted)  
+<https://research.manchester.ac.uk/en/publications/five-ways-ro-crate-data-packages-are-important-for-repositories>  
+
+
 ### 2023
+
+
+Tom Brown, Nick Juty, Stian Soiland-Reyes, Felix Shaw, Rutger Vos (2023):  
+[**RO-Crates as a practical implementation of FAIR Digital Object to align biodiversity genomics work streams**](https://research.manchester.ac.uk/files/291308873/2023-12-01_RO-Crate_FDO_2024.pdf).  
+(submitted)  
+<https://research.manchester.ac.uk/en/publications/ro-crates-as-a-practical-implementation-of-fair-digital-object-to>
+
+Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander Kanitz, Paul De Geest, Rudolf Wittner, Luca Pireddu, Daniel Garijo, José M. Fernández, Iacopo Colonnelli, Matej Gallo, Tazro Ohta, Hirotaka Suetake, Salvador Capella-Gutierrez, Renske de Wit, Bruno de Paula Kinoshita, Stian Soiland-Reyes (2023):  
+[**Recording provenance of workflow runs with RO-Crate**](https://doi.org/10.48550/arXiv.2312.07852).  
+_arXiv_  
+<https://doi.org/10.48550/arXiv.2312.07852>
+
+Rudolf Wittner, Matej Gallo, Simone Leo, Cecilia Mascia, Francesca Frexia, Markus Plass, Stian Soiland-Reyes, Heimo Müller, Jörg Geiger, Petr Holub (2023):  
+**Linking provenance and its metadata in multi-organizational environments of life sciences**.  
+(Submitted)  
+<https://research.manchester.ac.uk/en/publications/linking-provenance-and-its-metadata-in-multi-organizational-envir>
+
+Ana Trisovic (2023):  
+[**Cluster Analysis of Open Research Data: A Case for Replication Metadata**](https://doi.org/10.2218/ijdc.v17i1.833).  
+_International Journal of Digital Curation_ **17**(1)  
+<https://doi.org/10.2218/ijdc.v17i1.833>
+
+Bogdan Nicolae, Tanzima Z. Islam, Robert Ross, Huub Van Dam, Kevin Assogba, Polina Shpilker, Mikhail Titov, Matteo Turilli, Tianle Wang, Ozgur O. Kilic, Shantenu Jha, Line C. Pouchard (2023):  
+[**Building the I (Interoperability) of FAIR for Performance Reproducibility of Large-Scale Composable Workflows in RECUP**](https://zenodo.org/records/10028531).  
+_IEEE 19th International Conference on e-Science (e-Science)_  
+<https://doi.org/10.1109/e-science58273.2023.10254808> [[preprint](https://zenodo.org/records/10028531)]
+
+Augustus Ellerm, Mark Gahegan, Benjamin Adams (2023):  
+**LivePublication: The Science Workflow Creates and Updates the Publication**.  
+_IEEE 19th International Conference on e-Science (e-Science)_   (preprint not available)  
+<https://doi.org/10.1109/e-Science58273.2023.10254857>
+
+Raül Sirvent (2023):  
+[**Workflow Provenance registration with COMPSs**](https://doi.org/10.5281/zenodo.10046567).  
+_Innovative HPC workflows for industry_, 2023-10-25, Munich, Germany   
+<https://doi.org/10.5281/zenodo.10046567>
+
+Maxwell Adam Levinson, Sadnan Al Manir, Christopher Churas, Leah Schaffer, Dexqter Pratt, Trey Ideker, Sarah Ratclliffe, Timothy Clark (2023):  
+[**Leveraging FAIR-compliant standards for data management and provenance towards building an interpretable genomic translator for human cellular architecture maps in the Bridge2AI program**](https://doi.org/10.5281/zenodo.8343021).  
+_Zenodo_  
+<https://doi.org/10.5281/zenodo.8343021>
+
+Casper de Visser, Lennart F. Johansson, Purva Kulkarni, Hailiang Mei, Pieter Neerincx, K. Joeri van der Velde, Péter Horvatovich, Alain J. van Gool, Morris A. Swertz, Peter A. C. ‘t Hoen, Anna Niehues (2023):  
+[**Ten quick tips for building FAIR workflows**](https://doi.org/10.1371/journal.pcbi.1011369).  
+_PLOS Computational Biology_  **19**(9): e1011369   
+<https://doi.org/10.1371/journal.pcbi.1011369>
 
 Ignacio Eguinoa, Marek Suchánek, Vojtěch Knaisl, Jan Slifka, Paul De Geest, David López, Bjorn Gruning, Simone Leo, Stian Soiland-Reyes (2023):  
 [**BioHackEU22 Report: Enhancing Research Data Management in Galaxy and Data Stewardship Wizard by utilising RO-Crates**](https://doi.org/10.37044/osf.io/24jst).  
@@ -51,7 +160,7 @@ _BioHackrXiv_
 <https://doi.org/10.37044/osf.io/24jst>
 
 Sharif Islam, Hanna Koivula, Dag Endresen, Erik Kusch, Dmitry Schigel, Wouter Addink (2023):  
-[**Data Standards and Interoperability Challenges for Biodiversity Digital Twin: A novel and transformative approach to biodiversity research and application**]().  
+[**Data Standards and Interoperability Challenges for Biodiversity Digital Twin: A novel and transformative approach to biodiversity research and application**](https://doi.org/10.3897/biss.7.112373).  
 _Biodiversity Information Standards_ ([TDWG 2023](https://www.tdwg.org/conferences/2023/)), Hobert, Australia, 2023-10-09/--13.  
 _Biodiversity Information Science and Standards_ **7**:e112373  
 <https://doi.org/10.3897/biss.7.112373>
@@ -111,7 +220,7 @@ _Research Ideas and Outcomes_ **9**:e108765
 Alessandro Lotta, Gianmaria Silvello (2023):  
 [**How to Cite a Web Ranking and Make it FAIR**](https://www.dei.unipd.it/~silvello/papers/2023_TPDL_LS.pdf).  
 _Theory and Practice of Digital Libraries_ ([TPDL 2023](https://tpdl2023.dei.unipd.it/)), 2023-09-26/--29, Zadar, Croatia.  
-(awaiting DOI)  
+<https://doi.org/10.1007/978-3-031-43849-3_6>
 [[preprint](https://www.dei.unipd.it/~silvello/papers/2023_TPDL_LS.pdf)]
 
 Peter Sefton, Stian Soiland-Reyes (2023):  
@@ -211,7 +320,7 @@ _Data Science Journal_ **22**:52
 <https://doi.org/10.5334/dsj-2023-035>
 
 Molly A Bogue, Robyn L Ball, Vivek M Philip, David O Walton, Matthew H Dunn, Georgi Kolishovski, Anna Lamoureux, Matthew Gerring, Hongping Liang, Jake Emerson, Tim Stearns, Hao He, Gaurab Mukherjee, John Bluis, Sejal Desai, Beth Sundberg, Beena Kadakkuzha, Govindarajan Kunde-Ramamoorthy, Elissa J Chesler (2023):  
-[**Mouse Phenome Database: towards a more FAIR-compliant and TRUST-worthy data repository and tool suite for phenotypes and genotypes**]().  
+[**Mouse Phenome Database: towards a more FAIR-compliant and TRUST-worthy data repository and tool suite for phenotypes and genotypes**](https://doi.org/10.3897/biss.7.112373).  
 _Nucleic Acids Research_ **51**(D1)  
 <https://doi.org/10.1093/nar/gkac1007>
 
@@ -227,6 +336,16 @@ _Research Ideas and Outcomes_ **8**:e98457
 
 
 ### 2022
+
+Haris Zafeiropoulos, Martin Beracochea, Stelios Ninidakis, Katrina Exter, Antonis Potirakis, Gianluca De Moro, Lorna Richardson, Erwan Corre, João Machado, Evangelos Pafilis, Georgios Kotoulas, Ioulia Santi, Robert D Finn, Cymon J Cox, Christina Pavloudi (2022):  
+**metaGOflow: a workflow for the analysis of marine Genomic Observatories shotgun metagenomics data**.  
+_GigaScience_ **12**:giad078  
+<https://doi.org/10.1093/gigascience/giad078>
+
+Sonia Natalie Mitchell, Andrew Lahiff, Nathan Cummings, Jonathan Hollocombe, Bram Boskamp, Ryan Field, Dennis Reddyhoff, Kristian Zarebski, Antony Wilson, Bruno Viola, Martin Burke, Blair Archibald, Paul Bessell, Richard Blackwell, Lisa A. Boden, Alys Brett, Sam Brett, Ruth Dundas, Jessica Enright, Alejandra N. Gonzalez-Beltran, Claire Harris, Ian Hinder, Christopher David Hughes, Martin Knight, Vino Mano, Ciaran McMonagle, Dominic Mellor, Sibylle Mohr, Glenn Marion, Louise Matthews, Iain J. McKendrick, Christopher Mark Pooley, Thibaud Porphyre, Aaron Reeves, Edward Townsend, Robert Turner, Jeremy Walton, Richard Reeve (2022):  
+[**FAIR data pipeline: provenance-driven data management for traceable scientific workflows**](https://doi.org/10.1098/rsta.2021.0300).  
+_Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences_ **380**(2232)  
+<https://doi.org/10.1098/rsta.2021.0300>
 
 Leyla Jael Castro, Zeyd Boukhers, Olga Giraldo, Adamantios Koumpis, Oya Beyan, Dietrich Rebholz-Schuhmann (2022):  
 [**NFDI4DataScience registry for reproducible Data Science and Artificial Intelligence**](https://doi.org/10.5281/zenodo.7129715).  
@@ -468,7 +587,7 @@ Tobias Kuhn, Hailiang Mei, Hervé Ménager, Steffen Möller, Robin A. Richardson
 Vincent Robert, Stian Soiland-Reyes, Robert Stevens, Szoke Szaniszlo, 
 Suzan Verberne, Aswin Verhoeven, Katherine Wolstencroft (2021):  
 [**Perspectives on automated composition of workflows in the life sciences** [version 1; peer review: 2 approved]](https://doi.org/10.12688/f1000research.54159.1).  
-_F1000Research_ **10**:897  
+_F1000Research_ **10**:897  FAIR data pipeline: provenance-driven data management for traceable scientific workflows
 <https://doi.org/10.12688/f1000research.54159.1>
 
 Thanasis Vergoulis, Konstantinos Zagganas, Loukas Kavouras, Martin Reczko, Stelios Sartzetakis, and Theodore Dalamagas (2021):  
@@ -715,7 +834,7 @@ Gavin Kennedy (2020):
 
 Peter Sefton, Eoghan Ó Carragáin, Carole Goble, Stian Soiland-Reyes (2019):  
 [**Introducing RO-Crate: research object data packaging**](http://ptsefton.com/2019/11/05/RO-Crate%20eResearch%20Australasia%202019.htm).  
-_eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. [[slides](https://docs.google.com/presentation/d/10faXX13opY0DAVVVeX5lG83F4MA_woLHkeIcUOko2IU/)] [[abstract](https://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019-eResearch_103_-Introducing-RO-Crate-research-object-data-packaging.pdf)]
+_eResearch Australasia 2019_, 2019-10-21/2019-10-25, Brisbane, Australia. [[slides](https://doi.org/10.5281/zenodo.10969977)] [[abstract](https://conference.eresearch.edu.au/wp-content/uploads/2019/08/2019-eResearch_103_-Introducing-RO-Crate-research-object-data-packaging.pdf)]
 
 Nick Thieberger, Amanda Harris (2019):  
 [**Be Not Like the Wind: Access to Language and Music Records, Next Steps**](https://lt4all.elra.info/proceedings/lt4all2019/pdf/2019.lt4all-1.26.pdf).  
@@ -795,7 +914,11 @@ _To suggest an event, either [edit and raise pull request](https://github.com/Re
 
 [**2nd International Conference on FAIR Digital Objects**](https://fairdo.org/fdo2024-conference/) (FDO 2024), 2024-03-21/--24, Berlin, Germany.
 
-[**International Conference on Knowledge Engineering and Ontology Development**](https://keod.scitevents.org/) (KEOD 2023), 2023-11-13/--15, Rome, Italy. Co-located with [IC3K](https://ic3k.scitevents.org/)/[WEBIST](https://webist.scitevents.org/). Papers due 2023-06-02
+[**Semantic Web Applications and Tools for Health Care and Life Sciences**](https://www.swat4ls.org/workshops/leiden2024/) (SWAT4HCLS), 2024-02-26/--29, Leiden, The Netherlands. **Tutorial** on RO-Crate, Bioschemas and Signposting.
+
+[**EOSC Winter School**](https://eosc.eu/eosc-focus-project/winter-school-2024/), 2024-01-29 / -02-01, Thessaloniki, Greece.
+
+[**International Conference on Knowledge Engineering and Ontology Development**](https://keod.scitevents.org/) (KEOD 2023), 2023-11-13/--15, Rome, Italy. Co-located with [IC3K](https://ic3k.scitevents.org/)/[WEBIST](https://webist.scitevents.org/).  
 
 [**The 22nd International Semantic Web Conference**](https://iswc2023.semanticweb.org/) (ISWC 2023), 2023-11-06/--10, Athens, Greece.  
 
