@@ -53,6 +53,13 @@ BIOSCHEMA_WORKFLOW_NS = "https://bioschemas.org/ComputationalWorkflow"
 BIOSCHEMA_FORMAL_PARAMETER_NS = "https://bioschemas.org/FormalParameter"
 BIOSCHEMA_FORMAL_PARAMETER_PROFILE = "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
 
+# Update from https://github.com/codemeta/codemeta/#codemeta-schema
+CODEMETA="https://w3id.org/codemeta/3.0"
+# and update CodeMeta terms below manually.
+# See also https://github.com/codemeta/codemeta/issues/321 on PID/namespace
+# https://github.com/ResearchObject/ro-crate/issues/275
+
+
 
 def main():
     #url="http://schema.org/version/%s/schemaorgcontext.jsonld" % SCHEMA_VERSION
@@ -81,7 +88,8 @@ def main():
         {"@id": "https://identifiers.org/%s" % SCHEMA_SWHID},        
         {"@id": "https://pcdm.org/2016/04/18/models"},
         {"@id": BIOSCHEMA_WORKFLOW_PROFILE },
-        {"@id": BIOSCHEMA_FORMAL_PARAMETER_PROFILE }
+        {"@id": BIOSCHEMA_FORMAL_PARAMETER_PROFILE },
+        {"@id": CODEMETA}
     ]
     j["license"] = {"@id": "https://creativecommons.org/publicdomain/zero/1.0/"}
     context = OrderedDict()
@@ -131,6 +139,8 @@ ADDITIONAL = OrderedDict([
           # Temporary namespace for properties/types
           # proposed https://bioschemas.org/profiles/Workflow/ 
           # Remove if/when added to schema.org release!
+          # See also https://github.com/BioSchemas/specifications/issues/653
+          # on which namespace to use..
           ## BEGIN
           ("ComputationalWorkflow", BIOSCHEMA_WORKFLOW_NS),
           ("input", BIOSCHEMA_WORKFLOW_NS + "#input"),
@@ -166,6 +176,26 @@ ADDITIONAL = OrderedDict([
           ("ResourceDescriptor", "http://www.w3.org/ns/dx/prof/ResourceDescriptor"),
           ("ResourceRole", "http://www.w3.org/ns/dx/prof/ResourceRole"),
           ("Profile", "http://www.w3.org/ns/dx/prof/Profile"),
+
+          # CodeMeta terms v3
+          # https://github.com/ResearchObject/ro-crate/issues/275
+          # https://github.com/codemeta/codemeta/issues/216
+          ("softwareSuggestions", "https://codemeta.github.io/terms/softwareSuggestions"),
+          ("continuousIntegration", "https://codemeta.github.io/terms/continuousIntegration"),
+          ("buildInstructions", "https://codemeta.github.io/terms/buildInstructions"),
+          ("developmentStatus", "https://codemeta.github.io/terms/developmentStatus"),
+          ("embargoEndDate", "https://codemeta.github.io/terms/embargoEndDate"),
+          # Funding is already in schema.org, see
+          # https://github.com/codemeta/codemeta/issues/160
+          #("funding", "https://codemeta.github.io/terms/funding"),
+          ("readme", "https://codemeta.github.io/terms/readme"),
+          ("issueTracker", "https://codemeta.github.io/terms/issueTracker"),
+          ("referencePublication", "https://codemeta.github.io/terms/referencePublication"),
+          # Maintainer is already in schema.org, see
+          # https://github.com/codemeta/codemeta/pull/250
+          #("maintainer", "https://codemeta.github.io/terms/maintainer"),
+          ("hasSourceCode", "https://codemeta.github.io/terms/hasSourceCode"),
+          ("isSourceCodeOf", "https://codemeta.github.io/terms/isSourceCodeOf"),
           ## END
 
           ## GeoSparql terms
@@ -174,7 +204,8 @@ ADDITIONAL = OrderedDict([
           ## END
 
           ## FIXME: Where is this used from?
-          ("@label", "http://www.w3.org/2000/01/rdf-schema#label"),
+          #("@label", "http://www.w3.org/2000/01/rdf-schema#label"),
+          ## REMOVED 2024-05-23
 
           # Some common namespaces
 
