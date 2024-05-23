@@ -394,7 +394,52 @@ Note that if a local file is intended to be packaged within an _Attached RO-Crat
 
 ### Directories on the web; dataset distributions
 
-A _Directory File Entry_ or [Dataset] identifier expressed as an absolute URL on the web can be harder to download than a [File] because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in [hasPart], enabling download traversal.
+A _Directory File Entry_ or [Dataset] identifier expressed as an absolute URL on the web can be harder to download than a [File] because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in [hasPart], enabling download traversal, or are themselves RO-Crates.
+
+#### Referencing other RO-Crates
+
+A referenced RO-Crate is also a [Dataset], but where its [hasPart] do not need to be listed. Instead, its content and further metadata is available from its own RO-Crate Metadata File:
+
+```json
+{
+  "@id": "http://example.com/another-crate/",
+  "@type": "Dataset",
+  "conformsTo": { "@id": "https://w3id.org/ro/crate" },
+  "subjectOf": { "@id": "http://example.com/another-crate/ro-crate-metadata.json" }
+},
+{
+  "@id": "http://example.com/another-crate/ro-crate-metadata.json",
+  "@type": "CreativeWork",
+  "encodingFormat": "application/ld+json"
+}
+```
+
+{.tip }
+> The referenced RO-Crate metadata descriptor SHOULD NOT include its own `conformsTo` or reference the dataset with `about`; this is to avoid confusion with the referencing RO-Crate's own [metadata descriptor](root-data-entity.md#ro-crate-metadata-descriptor). Likewise, the `conformsTo` on the referenced `Dataset` entity is version-less, as the referenced crate is free to self-declare a different version of the RO-Crate specification.
+
+If the referenced crate conforms to a given [RO-Crate profile](profiles.md), this MAY be indicated by expanding `conformsTo` to an array:
+
+```json
+{
+  "@id": "https://doi.org/10.48546/workflowhub.workflow.26.1",
+  "@type": "Dataset",
+  "conformsTo": [
+    { "@id": "https://w3id.org/ro/crate" },
+    { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+  ],
+  "subjectOf": { "@id": "https://workflowhub.eu/ga4gh/trs/v2/tools/26/versions/1/PLAIN_CWL/descriptor/ro-crate-metadata.json" }
+},
+{ "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+  "@type": ["CreativeWork", "Profile"],
+  "name": "Workflow RO-Crate Profile",
+  "version": "1.0"
+}
+```
+
+
+
+#### Downloadable dataset
+
 
 Alternatively, a common mechanism to provide downloads of a reasonably sized directory is as an archive file in formats such as [`application/zip`](https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263) or [`application/gzip`](https://www.nationalarchives.gov.uk/PRONOM/x-fmt/266), described as a [DataDownload]. 
 
@@ -414,9 +459,62 @@ Alternatively, a common mechanism to provide downloads of a reasonably sized dir
   }
 ```
 
-Similarly, the _RO-Crate root_ entity may also provide a [distribution] URL, in which case the download SHOULD be an archive that contains the _RO-Crate Metadata Document_.
+Similarly, the _RO-Crate root_ entity (or a reference to another RO-Crate as a `Dataset`) may provide a [distribution] URL, in which case the download SHOULD be an archive that contains the _RO-Crate Metadata Document_ (either directly in the archive's root, or within a single folder in the archive), indicated by a version-less `conformsTo`:
 
+```json
+  {
+    "@id": "./",
+    "@type": "Dataset",
+    "identifier": "https://doi.org/10.48546/workflowhub.workflow.775.1",
+    "name": "Research Object Crate for Jupyter Notebook Molecular Structure Checking",
+    "distribution": {"@id": "https://workflowhub.eu/workflows/775/ro_crate?version=1"},
+    "…": ""
+  },
+  {
+    "@id": "https://workflowhub.eu/workflows/775/ro_crate?version=1",
+    "@type": "DataDownload",
+    "encodingFormat": ["application/zip", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263"}],
+    "conformsTo": { "@id": "https://w3id.org/ro/crate" }
+  }
+```
+profile="https://w3id.org/ro/crate"
 In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not reflect the current state of the `Dataset` or RO-Crate.
 
+
+#### Retrieving an RO-Crate
+
+To resolve a reference to an RO-Crate, but where `subjectOf` or `distribution` is unknown (e.g. an RO-Crate is cited from a journal article), the below approach is recommended to retrieve its [RO-Crate Metadata Document](root-data-entity.md#ro-crate-metadata-file-descriptor):
+
+1. Try [Signposting] after permalink redirects, looking for `Link` headers that reference `Link rel="describedby` for a _RO-Crate Metadata Document_, or `Link rel="item"` for a distribution archive -- in either case looking for a link with `profile="https://w3id.org/ro/crate"` for example:
+
+```
+curl --location --head https://doi.org/10.48546/workflowhub.workflow.120.5
+
+HTTP/2 302
+Location: https://workflowhub.eu/workflows/120?version=5
+
+HTTP/2 200
+Content-Type: text/html; charset=UTF-8
+Link: <https://workflowhub.eu/workflows/120/ro_crate?version=5> ;
+      rel="item" ; type="application/zip" ;
+      profile="https://w3id.org/ro/crate"
+```
+
+2. [HTTP Content-negotiation] for the [RO-Crate media type](appendix/jsonld.md#ro-crate-json-ld-media-type), for example:  
+
+Requesting `https://w3id.org/workflowhub/workflow-ro-crate/1.0` with HTTP header
+
+  `Accept: application/ld+json;profile=https://w3id.org/ro/crate` redirects to the _RO-Crate Metadata file_
+  `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`
+3. The above approaches may fail or returns a HTML page, e.g. for content-delivery networks that do not support content-negotiation. 
+4. An optional heuristic fallback is to try resolving the path `./ro-crate-metadata.json` from the _resolved_ URI (after permalink redirects). For example:  
+If permalink `https://w3id.org/workflowhub/workflow-ro-crate/1.0` redirects to `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/index.html` (a HTML page), then
+try retrieving `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`. 
+5. If the retrieved resource is a ZIP file (`Content-Type: application/zip`), then extract `ro-crate-metadata.json`, or, if the archive root only contains a single folder (e.g. `folder1/`), extract `folder1/ro-crate-metadata.json`
+6. If the retrieved resource is a [BagIt archive](appendix/implementation-notes.md#combining-with-other-packaging-schemes), e.g. containing a single folder `folder1` with `folder1/bagit.txt`, then extract and verify BagIt checksums before returning the bag's `data/ro-crate-metadata.json`
+7. If the returned/extracted document is valid JSON and have a [root data entity](root-data-entity.md#finding-the-root-data-entity), this is the RO-Crate Metadata File.
+
+{.tip }
+Some PID providers such as DataCite may respond to content-negotiation and provide their own JSON-LD, which do not describe an RO-Crate (the `profile=` was ignored). The use of Signposting allows the repository to explicitly provide the RO-Crate.
 
 {% include references.liquid %}
