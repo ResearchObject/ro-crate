@@ -738,7 +738,7 @@
       "name": "softwareSuggestions",
       "termCode": "softwareSuggestions",
       "description": "Optional dependencies , e.g. for optional features, code development, etc. ",
-      "domainIncludes": {"@id": "http://schema.org/SoftwareApplication"},
+      "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
       "rangeIncludes": {"@id": "http://schema.org/SoftwareSourceCode"}
     },
     {
@@ -747,7 +747,7 @@
       "name": "continuousIntegration",
       "termCode": "continuousIntegration",
       "description": "Link to continuous integration service ",
-      "domainIncludes": {"@id": "http://schema.org/SoftwareApplication"},
+      "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
       "rangeIncludes": {"@id": "http://schema.org/URL"}
     },
     {
@@ -756,7 +756,7 @@
     "name": "buildInstructions",
     "termCode": "buildInstructions",
     "description": "Link to installation instructions/documentation",
-    "domainIncludes": {"@id": "http://schema.org/SoftwareApplication"},
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
     "rangeIncludes": {"@id": "http://schema.org/URL"}
 },
     {
@@ -765,7 +765,7 @@
     "name": "developmentStatus",
     "termCode": "developmentStatus",
     "description": "Description of development status, e.g. Active, inactive, suspended. See repostatus.org",
-    "domainIncludes": {"@id": "http://schema.org/SoftwareApplication"},
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
     "rangeIncludes": {"@id": "http://schema.org/Text"}
     },
     {
@@ -774,7 +774,7 @@
     "name": "embargoEndDate",
     "termCode": "embargoEndDate",
     "description": "Software may be embargoed from public access until a specified date (e.g. pending publication, 1 year from publication)",
-    "domainIncludes": {"@id": "http://schema.org/SoftwareApplication"},
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
     "rangeIncludes": {"@id": "http://schema.org/Date"}
     },
     {
@@ -783,7 +783,7 @@
     "name": "readme",
     "termCode": "readme",
     "description": "Link to software Readme file",
-    "domainIncludes": {"@id": "http://schema.org/SoftwareApplication"},
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
     "rangeIncludes": {"@id": "http://schema.org/URL"}
     },
     {
@@ -792,7 +792,7 @@
     "name": "issueTracker",
     "termCode": "issueTracker",
     "description": "Link to software bug reporting or issue tracking system",
-    "domainIncludes": {"@id": "http://schema.org/SoftwareApplication"},
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
     "rangeIncludes": {"@id": "http://schema.org/URL"}
     },
     {
@@ -801,7 +801,7 @@
     "name": "referencePublication",
     "termCode": "referencePublication",
     "description": "An academic publication related to the software",
-    "domainIncludes": {"@id": "http://schema.org/SoftwareApplication"},
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
     "rangeIncludes": {"@id": "http://schema.org/ScholarlyArticle"}
     },
     {
