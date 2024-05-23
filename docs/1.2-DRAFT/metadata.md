@@ -165,7 +165,7 @@ From [CodeMeta 3.0](https://w3id.org/codemeta/3.0):
 * `softwareSuggestions` mapped to <https://codemeta.github.io/terms/softwareSuggestions>
 
 {: .warning }
-> As of 2024-05-23, these URIs do not resolve correctly, but are chosen to match the Codemeta JSON-LD context <https://w3id.org/codemeta/3.0> (issue [#275](https://github.com/ResearchObject/ro-crate/issues/275)).
+> As of 2024-05-23, the CodeMeta URIs do not resolve correctly, but are used here to match the Codemeta JSON-LD context <https://w3id.org/codemeta/3.0> (issue [#275](https://github.com/ResearchObject/ro-crate/issues/275)).
 > The CodeMeta terms `maintainer` and `funding` are not mapped, as these are already defined by schema.org.
 
 
