@@ -304,6 +304,27 @@
         },
         {
           "@id": "http://www.opengis.net/ont/geosparql#asWKT"
+        },
+        { 
+          "@id": "https://bioschemas.org/FormalParameter"
+        },
+        { 
+          "@id": "https://bioschemas.org/ComputationalWorkflow"
+        },
+        { 
+          "@id": "http://schema.org/defaultValue"
+        },  
+        { 
+          "@id": "http://schema.org/valueRequired"
+        },
+        { 
+          "@id": "https://bioschemas.org/ComputationalWorkflow#input"
+        },
+        { 
+          "@id": "https://bioschemas.org/ComputationalWorkflow#output"
+        },  
+        {
+          "@id": "http://purl.org/dc/terms/conformsTo"
         }
       ],
       "identifier": {"@id": "https://doi.org/DOI"},      
@@ -477,22 +498,22 @@
     },
     {
       "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class",
-      "@type": ["DefinedTerm","Class"],
+      "@type": ["DefinedTerm","rdfs:Class"],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       },
       "name": "Class (rdfs)",
-      "description": "Class definition as part of a Profile Crate",
+      "description": "Class definition",
       "url": "https://www.w3.org/TR/rdf-schema/#ch_class"
     },
     {
       "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "@type": ["DefinedTerm","Class"],
+      "@type": ["DefinedTerm","rdfs:Class"],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       },
       "name": "Property (rdfs)",
-      "description": "Property definition as part of a Profile Crate",
+      "description": "Property definition, typically with domainIncludes and rangeIncludes",
       "url": "https://www.w3.org/TR/rdf-schema/#ch_property"
     },
     {
@@ -502,7 +523,7 @@
         "@id": "http://schema.org/version/15.0/"
       },
       "name": "Class (schema.org)",
-      "description": "Class reference, defined outside the Profile Crate as indicated by @id url or inDefinedTermSet"
+      "description": "Class reference, as indicated by @id url or inDefinedTermSet"
     },
     {
       "@id": "http://schema.org/Property",
@@ -511,7 +532,17 @@
         "@id": "http://schema.org/version/15.0/"
       },
       "name": "Property (schema.org)",
-      "description": "Property reference, defined outside the Profile Crate as indicated by @id url or inDefinedTermSet"      
+      "description": "Property reference, as indicated by @id url or inDefinedTermSet"      
+    },
+    { 
+      "@id": "http://schema.org/MediaObject",
+      "@type": "DefinedTerm",
+      "inDefinedTermSet": {
+        "@id": "http://schema.org/version/15.0/"
+      },
+      "name": "MediaObject",
+      "termCode": "File",
+      "description": "In RO-Crate, the type File is an alias for MediaObject in schema.org"
     },
     {
       "@id": "http://www.w3.org/ns/dx/prof",
@@ -736,14 +767,83 @@
       "@type": "Profile",
       "description": "Bioschemas specification for describing a Computational Workflow",
       "name": "ComputationalWorkflow profile",
-      "version": "1.0-RELEASE"
+      "version": "1.0-RELEASE",
+      "about": { "@id": "https://bioschemas.org/ComputationalWorkflow" }
     },
     {
       "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE",
+      "@type": "Profile",
       "description": "Bioschemas specification for describing a formal parameter in the Life Sciences",
       "name": "FormalParameter Profile",
-      "version": "1.0-RELEASE"
+      "version": "1.0-RELEASE",
+      "about": { "@id": "https://bioschemas.org/FormalParameter" }
     },
+    { 
+      "@id": "https://bioschemas.org/FormalParameter", 
+      "@type": ["DefinedTerm", "rdfs:Class"],
+      "name": "FormalParameter"
+    },
+    { 
+      "@id": "https://bioschemas.org/ComputationalWorkflow", 
+      "@type": ["DefinedTerm", "rdfs:Class"],
+      "name": "ComputationalWorkflow"
+    },
+    { 
+      "@id": "http://schema.org/defaultValue",
+      "@type": ["DefinedTerm", "rdf:Property"],
+      "name": "defaultValue",
+      "domainIncludes": [
+        {"@id": "https://bioschemas.org/ComputationalWorkflow"}
+      ],
+      "rangeIncludes": [
+        {"@id": "http://schema.org/Text"},
+        {"@id": "http://schema.org/Thing"}
+      ]
+    },  
+    { 
+      "@id": "http://schema.org/valueRequired",
+      "@type": ["DefinedTerm", "rdf:Property"],
+      "name": "valueRequired",
+      "domainIncludes": [
+        {"@id": "https://bioschemas.org/ComputationalWorkflow"}
+      ],
+      "rangeIncludes": [
+        {"@id": "http://schema.org/Text"},
+        {"@id": "http://schema.org/Thing"}
+      ]
+    },
+    { 
+      "@id": "https://bioschemas.org/ComputationalWorkflow#input",
+      "@type": ["DefinedTerm", "rdf:Property"],
+      "termCode": "input",
+      "name": "input",
+      "description": "Definition of an input parameter required to use the computational workflow",
+      "domainIncludes": [
+        {"@id": "https://bioschemas.org/ComputationalWorkflow"}
+      ],
+      "rangeIncludes": [
+        {"@id": "https://bioschemas.org/FormalParameter"}
+      ]
+    },
+    { 
+      "@id": "https://bioschemas.org/ComputationalWorkflow#output",
+      "@type": ["DefinedTerm", "rdf:Property"],
+      "termCode": "output",
+      "name": "output",
+      "description": "Definition of an output produced by the workflow",
+      "domainIncludes": [
+        {"@id": "https://bioschemas.org/ComputationalWorkflow"}
+      ],
+      "rangeIncludes": [
+        {"@id": "https://bioschemas.org/FormalParameter"}
+      ]
+    },  
+    {
+      "@id": "http://purl.org/dc/terms/conformsTo",
+      "@type": "DefinedTerm",
+      "name": "conformsTo",
+      "termCode": "conformsTo"
+    },        
     {
       "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
       "@type": "CreativeWork",

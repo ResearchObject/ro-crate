@@ -6,8 +6,8 @@ nav_order: 22
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
-   Copyright 2019-2022 The University of Manchester UK 
-   Copyright 2019-2022 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019-2024 The University of Manchester UK 
+   Copyright 2019-2024 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -149,7 +149,6 @@ The above is equivalent to the following JSON-LD using an embedded context, by a
 ```json
 { "@context": {
       "CreativeWork": "http://schema.org/CreativeWork",
-      "about": "http://schema.org/about",
       "description": "http://schema.org/description",
       "conformsTo": "http://purl.org/dc/terms/conformsTo",
       "about": "http://schema.org/about"
@@ -259,7 +258,7 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 
 Context terms must ultimately map to HTTP(s) URIs which poses challenges for crate-authors wishing to use their own vocabularies.
 
-RO-Crate provides some strategies to add a new term ([DefinedTerm], [Class] or [Property]) that is not in Schema.org or another published vocabulary, so that there is a stable URI that can be added to the `@context`. 
+RO-Crate provides some strategies to add a new term ([DefinedTerm], `rdfs:Class` or `rdf:Property`) that is not in Schema.org or another published vocabulary, so that there is a stable URI that can be added to the `@context`. 
 
 ### Choosing URIs for ad hoc terms
 
@@ -287,8 +286,8 @@ In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in
 {
   "@context": [ 
     "https://w3id.org/ro/crate/1.2-DRAFT/context",
-    {"education": "https://example.com/some-project/terms#myProperty",
-     "interests": "https://w3id.org/ro/terms/some-project#education"},
+    {"education": "https://example.com/some-project/terms#education",
+     "interests": "https://w3id.org/ro/terms/some-project#interests"},
   ],
   "@graph": [ ... ]
 }
@@ -299,7 +298,7 @@ In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in
 Following the conventions used by Schema.org, ad-hoc terms SHOULD also include definitions in the RO-Crate with at minimum:
 
 * `@id` is an absolute URI (see [choosing](#choosing-uris-for-ad-hoc-terms))
-* `@type` of [DefinedTerm], [Property] or [Class]. Use [Property] for terms that can be used as JSON-LD keys (after being mapped by the context), or [Class] for terms that can be used with `@type`. Use [DefinedTerm] for any other defined concepts that will be referenced by `@id`, e.g. from [creativeWorkStatus].
+* `@type` of [DefinedTerm], `rdf:Property` or `rdfs:Class`. Use `rdf:Property` for terms that can be used as JSON-LD keys (after being mapped by the context), or `rdfs:Class` for terms that can be used with `@type`. Use [DefinedTerm] for any other defined concepts that will be referenced by `@id`, e.g. from [creativeWorkStatus].
 * `name` with the human readable version of the term, e.g. `http://example.com/vocab#makesFood` has label `"makes food"`
 * `description` documenting and clarifying the meaning of the term. For instance the term `education` meaning _Person's education level, e.g. primary school_ (compared to the meaning _Educational Material_)
 
@@ -316,12 +315,12 @@ Following the conventions used by Schema.org, ad-hoc terms SHOULD also include d
 {: .tip }
 > It is **not** a requirement to use English for the terms, labels or comments.
 
-More information about the relationship of this term to other terms MAY be provided using [domainIncludes], [rangeIncludes], [rdfs:subClassOf], [rdfs:subPropertyOf], [sameAs] following the conventions used in the [Schema.org schema]. For compatibility with RDFS/OWL tools, the equivalent of [Property] (`rdf:Property`) or of [Class] (`rdfs:Class`) MAY be added, together with duplication of `name` and `description` using the RDFS properties `rdfs:label` and `rdfs:comment`:
+More information about the relationship of this term to other terms MAY be provided using [domainIncludes], [rangeIncludes], [rdfs:subClassOf], [rdfs:subPropertyOf], [sameAs] following the conventions used in the [Schema.org schema] -- *"Schema.org style schemas"*. For compatibility with RDFS/OWL tools, `name` and `description` SHOULD be duplicated using the RDFS properties `rdfs:label` and `rdfs:comment`:
 
 ```json
  {
       "@id": "http://purl.archive.org/textcommons/terms#participant",
-      "@type": ["Property", "rdf:Property"],
+      "@type": "rdf:Property",
       "name":       "participant",
       "rdfs:label": "participant",
       "description":  "This role is intended for minor participants such as audience members or other peripherally-involved participants in the event…",
@@ -337,7 +336,10 @@ More information about the relationship of this term to other terms MAY be provi
 ```
 
 {: .note }
-For compatibility with the official schema.org JSON-LD context, make sure any referenced `@id` to schema.org terms starts with `http://` rather than `https://` as shown in the browser.
+> Schema.org also provides the types [Class] and [Property]. These MAY be used as an additional `@type` corresponding to `rdfs:Class` and `rdf:Property`, but as these are (for some reason) not used in Schema.org style schemas, they are also not required by RO-Crate. Likewise, an ontology defining such terms externally may be declaring properties there with more specific types like `owl:ObjectProperty` which do not need to be reflected in the RO-Crate reference.
+
+{: .tip }
+> For compatibility with the official schema.org JSON-LD context, make sure any referenced `@id` to schema.org terms starts with `http://` rather than `https://` as shown in the browser.
 
 ## Grouping extensions as an RO-Crate profile
 
