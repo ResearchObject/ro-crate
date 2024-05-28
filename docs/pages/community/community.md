@@ -123,7 +123,7 @@ See also [recent and upcoming events](outreach#upcoming-and-recent-events).
 
 The RO-Crate Community has a low-traffic public [RO-Crate mailing list](https://lists.elixir-europe.org/mailman/listinfo/ro-crate_elixir-europe.org), used for announcements and general enquiries.
 
-Note that most discussion about the [RO-Crate specifications](specification.md) typically happen in [GitHub issues](https://github.com/ResearchObject/ro-crate/issues) and [community meetings](https://s.apache.org/ro-crate-minutes).
+Note that most discussion about the [RO-Crate specifications](specification) typically happen in [GitHub issues](https://github.com/ResearchObject/ro-crate/issues) and [community meetings](https://s.apache.org/ro-crate-minutes).
 
 ## Slack Chat
 

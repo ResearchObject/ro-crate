@@ -988,16 +988,16 @@ _To suggest an event, either [edit and raise pull request](https://github.com/Re
 
 ## RO-Crate logo
 
-The below RO-Crate logos can be used by for application, websites, posters, slides etc. for work that use, implement or support RO-Crate according to the [specification](specification.md), ideally linking to <https://w3id.org/ro/crate>. To ask permission for any other use, raise an [issue](https://github.com/ResearchObject/ro-crate/issues).
+The below RO-Crate logos can be used by for application, websites, posters, slides etc. for work that use, implement or support RO-Crate according to the [specification](specification), ideally linking to <https://w3id.org/ro/crate>. To ask permission for any other use, raise an [issue](https://github.com/ResearchObject/ro-crate/issues).
 
 <p style="vertical-align: bottom">
-  <img src="assets/img/ro-crate-w-text.svg" style="max-width: 30%; max-height: 5em; vertical-align: middle" /> 
+  <img src="assets/img/ro-crate-w-text.svg" alt="Logo with RO-Crate in small text below, aspect ratio 1:1." style="max-width: 30%; max-height: 5em; vertical-align: middle" /> 
     [<a href="assets/img/ro-crate-w-text.svg">svg</a>]
     [<a href="assets/img/ro-crate-w-text.png">png</a>]
-  <img src="assets/img/ro-crate.svg" style="margin-left: 1em; max-width: 30%; max-height: 5em; vertical-align: middle" />
+  <img src="assets/img/ro-crate.svg" alt="Logo without text, aspect ratio 1:1" style="margin-left: 1em; max-width: 30%; max-height: 5em; vertical-align: middle" />
     [<a href="assets/img/ro-crate.svg">svg</a>]
     [<a href="assets/img/ro-crate.png">png</a>]
-  <img src="assets/img/ro-crate-wide.svg" style="margin-left: 1em; max-width: 30%; max-height: 5em; vertical-align: middle" />
+  <img src="assets/img/ro-crate-wide.svg" alt="Logo next to RO-Crate in large text, aspect ratio 3.3:1" style="margin-left: 1em; max-width: 30%; max-height: 5em; vertical-align: middle" />
     [<a href="assets/img/ro-crate-wide.svg">svg</a>]
     [<a href="assets/img/ro-crate-wide.png">png</a>]
 </p>
