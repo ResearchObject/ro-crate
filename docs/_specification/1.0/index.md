@@ -1,5 +1,7 @@
 ---
 title: RO-Crate 1.0
+redirect_from: 
+  - /1.0/
 nav_exclude: true
 ---
 <!--
@@ -154,7 +156,7 @@ A valid _RO-Crate JSON-LD_ graph MUST describe:
 
 It is RECOMMENDED that any referenced _contextual entities_ are also described in the _RO-Crate Metadata File_ with the same identifier. Similarly it is RECOMMENDED that any _contextual entity_ in the _RO-Crate Metadata file_ is linked to from at least one of the other entities using the same identifier. 
 
-The appendix [RO-Crate JSON-LD](#ro-crate-json-ld) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata File_. In short, the rest of this specification describe the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` below:
+The appendix [RO-Crate JSON-LD](#appendix-ro-crate-json-ld) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata File_. In short, the rest of this specification describe the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` below:
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.0/context",
@@ -259,7 +261,7 @@ Note that JSON-LD examples given on <http://schema.org/> website may not be in _
 
 To simplify processing and avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even where [schema.org] for some properties otherwise permit shorter forms like `"author": "http://example.com/alice"`.
 
-See the appendix [RO-Crate JSON-LD](#ro-crate-json-ld) for details.
+See the appendix [RO-Crate JSON-LD](#appendix-ro-crate-json-ld) for details.
 
 ### Additional metadata standards
 
@@ -1125,7 +1127,7 @@ To record curation actions which modify a [File] within a DataSet - for example,
 
 Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an the RO-Crate MAY be embedded in an RO-Crate. Workflows and scripts SHOULD be described using the data entities of type [SoftwareSourceCode].
 
-The distinction between [SoftwareSourceCode] and [SoftwareApplication] for [software](#software) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.  
+The distinction between [SoftwareSourceCode] and [SoftwareApplication] for [software](#provenance-software-used-to-create-files) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand further and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.  
 
 A workflow is a _Data Entity_ which MUST have the following properties:
 * `@type` is an array with at least `File` and `Workflow` as values.
