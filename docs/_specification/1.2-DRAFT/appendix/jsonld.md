@@ -89,7 +89,7 @@ The example below shows the overall structure of a flattened, compacted _RO-Crat
 }
 ```
 
-**Note**: entities above have been shortened for brevity, see the individual sections for [data entities](../data-entities.md) and [contextual entities](../contextual-entities.md).
+**Note**: entities above have been shortened for brevity, see the individual sections for [data entities](../data-entities) and [contextual entities](../contextual-entities).
 
 
 The order of the `@graph` array is not significant. Above we see that the RO-Crate JSON-LD graph contains the _RO-Crate Metadata Descriptor_, the _Root Data Entity_, any _Data Entities_ and any _Contextual Entities_.
@@ -99,7 +99,7 @@ The order of the `@graph` array is not significant. Above we see that the RO-Cra
 
 Properties of an entity can refer to another URI or entity by using the form `{"@id": "uri-reference"}` as in the example above, where the [author] property in the [File] entity refer to the [Person] entity, identified as `#alice`. 
 
-Identifiers in `@id` SHOULD be either a valid _absolute URI_ like <http://example.com/>, or a _URI path_ relative to the RO-Crate root directory. Although legal in JSON-LD, `@id` paths in RO-Crate SHOULD NOT use `../` to climb out of the _RO-Crate Root_, rather such references SHOULD be translated to absolute URIs. See also section [Core Metadata for Data Entities](../data-entities.md#core-metadata-for-data-entities).
+Identifiers in `@id` SHOULD be either a valid _absolute URI_ like <http://example.com/>, or a _URI path_ relative to the RO-Crate root directory. Although legal in JSON-LD, `@id` paths in RO-Crate SHOULD NOT use `../` to climb out of the _RO-Crate Root_, rather such references SHOULD be translated to absolute URIs. See also section [Core Metadata for Data Entities](../data-entities#core-metadata-for-data-entities).
 
 Care must be taken to express any relative paths using `/` separator and escape special characters like space (`%20`). As JSON-LD supports _IRIs_, international characters in identifiers SHOULD be encoded in UTF-8 rather than `%`-escaped.
 
@@ -165,13 +165,13 @@ The above is equivalent to the following JSON-LD using an embedded context, by a
 }
 ```
 
-Note that `conformsTo` is retained to indicate which version of RO-Crate specification the [root data entity](../root-data-entity.md) conforms to.
+Note that `conformsTo` is retained to indicate which version of RO-Crate specification the [root data entity](../root-data-entity) conforms to.
 
 While the second form is more verbose, one advantage is that it is "archivable" as it does not require Internet access for retrieving the `@context` permalink. Tools consuming or archiving RO-Crate MAY replace by-reference `@context` URIs with an embedded context by using version-specific hard-coded contexts. See <https://github.com/ResearchObject/ro-crate/releases> to download the JSON-LD contexts corresponding to each version of this specification.
 
 To check which RO-Crate version is used (in terms of properties and types expected), clients SHOULD check the property `conformsTo` on the _RO-Crate Metadata Descriptor_ rather than the value of `@context`.
 
-RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded context, but MAY use the [JSON-LD flattening] algorithm with _compaction_ to a referenced _RO-Crate JSON-LD context_ (see also notes on [handling relative URI references](relative-uris.md) below).
+RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded context, but MAY use the [JSON-LD flattening] algorithm with _compaction_ to a referenced _RO-Crate JSON-LD context_ (see also notes on [handling relative URI references](relative-uris) below).
 
 {: .tip }
 > The [JSON-LD flattening & compaction](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) algorithms can be used to rewrite to a different `@context`, e.g. to `https://schema.org/docs/jsonldcontext.jsonld` or a different version of the _RO-Crate JSON-LD Context_.
@@ -343,13 +343,13 @@ More information about the relationship of this term to other terms MAY be provi
 
 ## Grouping extensions as an RO-Crate profile
 
-If several RO-Crates are using the same `@context` extension terms, or define the same additional ad-hoc terms, then it may make sense to specify these within an [RO-Crate profile](../profiles.md) that the crates can then explicitly declare conformance to.   
+If several RO-Crates are using the same `@context` extension terms, or define the same additional ad-hoc terms, then it may make sense to specify these within an [RO-Crate profile](../profiles) that the crates can then explicitly declare conformance to.   
 
 The `@id` of the extension terms should after the move be made absolute URIs that resolve to the profile crate -- if these were made using <https://w3id.org/ro/terms/> then a request to set up such redirects can be made. 
 
 For terms it is RECOMMENDED to change the `@id` of the terms after moving to be based on the profile's permalink, e.g. the profile with `@id` <https://w3id.org/cpm/ro-crate> defines the term <https://w3id.org/cpm/ro-crate#CPMProvenanceFile>. 
 
-See sections on [profile extension terms](../profiles.md#extension-terms) and [Profile JSON-LD context](../profiles.md#json-ld-context).  [Custom file formats](../data-entities.md#adding-detailed-descriptions-of-encodings) and common [contextual entities](../contextual-entities.md) may also be moved to the profile, ensuring their `@id` are absolute URI and resolve to the profile JSON-LD.
+See sections on [profile extension terms](../profiles#extension-terms) and [Profile JSON-LD context](../profiles#json-ld-context).  [Custom file formats](../data-entities#adding-detailed-descriptions-of-encodings) and common [contextual entities](../contextual-entities) may also be moved to the profile, ensuring their `@id` are absolute URI and resolve to the profile JSON-LD.
 
 This can reduce repetition in their JSON-LD, but means additional measures must be taken to ensure the resulting RO-Crates remain functional over time, e.g. not to remove terms as the profile evolves over time.
 

@@ -23,6 +23,3 @@ has_children: true
 -->
 
 # Appendixes
-
-
-

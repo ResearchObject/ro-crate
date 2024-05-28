@@ -36,19 +36,19 @@ nav_order: 23
 In an _Attached RO-Crate_, the _RO-Crate Metadata File_ use _relative URI references_ 
 to identify files and directories
 contained within the _RO-Crate Root_ and its children.  As described in section
-[Describing entities in JSON-LD](jsonld.md#describing-entities-in-json-ld), 
+[Describing entities in JSON-LD](jsonld#describing-entities-in-json-ld), 
 relative URI references are also frequently used for 
 identifying _Contextual entities_.
 
 ## Converting from Attached to Detached RO-Crate
 
-An [Attached RO-Crate](../structure.md#attached-ro-crate) can be published on the Web by placing its _RO-Crate Root_ directory on a static file-based Web server (e.g. Nginx, Apache HTTPd, GitHub Pages). The use of relative URI references in the _RO-Crate Metadata File_ ensures identifiers of [data entities](../data-entities.md) work as they should.
+An [Attached RO-Crate](../structure#attached-ro-crate) can be published on the Web by placing its _RO-Crate Root_ directory on a static file-based Web server (e.g. Nginx, Apache HTTPd, GitHub Pages). The use of relative URI references in the _RO-Crate Metadata File_ ensures identifiers of [data entities](../data-entities) work as they should.
 
-Sometimes it is desired to make a [Detached RO-Crate](../structure.md#detached-ro-crate), e.g. for depositing or integrating the RO-Crate Metadata File into a knowledge graph or repository that is unable to preserve data files using their existing pathnames. In this case one needs to:
+Sometimes it is desired to make a [Detached RO-Crate](../structure#detached-ro-crate), e.g. for depositing or integrating the RO-Crate Metadata File into a knowledge graph or repository that is unable to preserve data files using their existing pathnames. In this case one needs to:
 
 1. Decide on new Web locations for individual data files and update their absolute URI in `@id`
-2. Observe the preservation considerations for [Web-based Data Entities](data-entities.md#web-based-data-entities)
-3. Ensure all nested directories not browsable on the Web are represented as `Dataset` with its content listed with `hasPart` or `distribution` (see section [Directories on the web](../data-entities.md#Directories on the web; dataset distributions)). Change their relative `@id` to become absolute, e.g. using [ARCP](#establishing-a-base-uri-inside-a-zip-file).
+2. Observe the preservation considerations for [Web-based Data Entities](../data-entities#web-based-data-entities)
+3. Ensure all nested directories not browsable on the Web are represented as `Dataset` with its content listed with `hasPart` or `distribution` (see section [Directories on the web](../data-entities#directories-on-the-web-dataset-distributions)). Change their relative `@id` to become absolute, e.g. using [ARCP](#establishing-a-base-uri-inside-a-zip-file).
 4. Rewrite the JSON-LD with absolute URIs for data entities
 
 If the RO-Crate is already published on the Web, with directory browsing enabled for nested directories, then these steps can be achieved using JSON-LD tooling.
@@ -129,38 +129,38 @@ If the new Detached RO-Crate is not meant as a snapshot of the corresponding Att
 
 Converting a Detached Crate to an Attached Crate can mean multiple things depending on intentions, and may imply an elaborate process.
 
-First, check if the Root Dataset already have a [distribution download](../data-entities.md#directories-on-the-web-dataset-distributions) listed, in which case that can be retrieved as the corresponding Attached Crate.
+First, check if the Root Dataset already have a [distribution download](../data-entities#directories-on-the-web-dataset-distributions) listed, in which case that can be retrieved as the corresponding Attached Crate.
 
-To archive a snapshot of an Detached Crate's metadata, keeping all data entities [web-based](../data-entities.md#web-based-data-entities):
-* Crate a new folder as the _RO-Crate Root_, save the _RO-Crate Metadata Document_ as the _RO-Crate Metadata File_ according to [Attached RO-Crate](../structure.md#attached-ro-crate) structure
-* Copy the absolute `@id` to become an `identifier` according to recommendations for [Root Data Entity identifier](../root-data-entity.md#root-data-entity-identifier)
-* Change the `@id` of the root dataset to `./` and update all references to it, including from the [Metadata Descriptor](../root-data-entity.md#ro-crate-metadata-descriptor)  
+To archive a snapshot of an Detached Crate's metadata, keeping all data entities [web-based](../data-entities#web-based-data-entities):
+* Crate a new folder as the _RO-Crate Root_, save the _RO-Crate Metadata Document_ as the _RO-Crate Metadata File_ according to [Attached RO-Crate](../structure#attached-ro-crate) structure
+* Copy the absolute `@id` to become an `identifier` according to recommendations for [Root Data Entity identifier](../root-data-entity#root-data-entity-identifier)
+* Change the `@id` of the root dataset to `./` and update all references to it, including from the [Metadata Descriptor](../root-data-entity#ro-crate-metadata-descriptor)  
 
 If the new Attached Crate is intended as a _fork_ that will evolve independently of the Detached Crate, then:
 * Delete the `identifier`, add the previous `@id` as `isBasedOn`
 * Delete/update `datePublished` and `publisher`
 * Add yourself as `author` or `contributor` to the Root Dataset
-* Add records of [changes to the Crate](../provenance.md#recording-changes-to-ro-crates)
+* Add records of [changes to the Crate](../provenance#recording-changes-to-ro-crates)
 
 
 To additionally save Web-based Data entities to become part of the Detached Crate, a possible algorithm is:
 
 * For each data entity which `@type` include `Dataset`:
-  + If it has a [distribution download](../data-entities.md#directories-on-the-web-dataset-distributions), retrieve and unpack that according to its `encodingFormat`, using its new folder name as the new local path name.
+  + If it has a [distribution download](../data-entities#directories-on-the-web-dataset-distributions), retrieve and unpack that according to its `encodingFormat`, using its new folder name as the new local path name.
   + If not, create a corresponding folder in the _RO-Crate Root_, possibly generating the local path name based on `name` or path elements of `@id`  URI
-  + Replace the `@id` of the dataset and all its references with the _relative URI_ based on the path from the RO-Crate Root, [encoding file paths](../data-entities.md#encoding-file-paths) as necessary.
+  + Replace the `@id` of the dataset and all its references with the _relative URI_ based on the path from the RO-Crate Root, [encoding file paths](../data-entities#encoding-file-paths) as necessary.
   + Recurse this algorithm to process each data entity from this dataset's `hasPart`
 * For each data entity which `@type` include `File`:
   + Decide based on `@id` URI elements, `contentSize` `encodingFormat` and (possibly implied) `licence` if this file is acceptable to archive
   + Retrieve the file and check the `contentSize` matches, if specified
   + Store the file with a file path generated in a way consistent with the `Dataset`s, ideally added to the folder of the first `Dataset` that directly has this data entity as its `hasPart`
-  + Add the previous `@id` downloaded from as `contentUrl` according to [Embedded data entnties that are also on the Web](../data-entities.md#embedded-data-entities-that-are-also-on-the-web)
-  + Replace the `@id` of the `File` with the _relative URI_ based on the path from the RO-Crate Root, [encoding file paths](../data-entities.md#encoding-file-paths) as necessary.
+  + Add the previous `@id` downloaded from as `contentUrl` according to [Embedded data entnties that are also on the Web](../data-entities#embedded-data-entities-that-are-also-on-the-web)
+  + Replace the `@id` of the `File` with the _relative URI_ based on the path from the RO-Crate Root, [encoding file paths](../data-entities#encoding-file-paths) as necessary.
   
 As this procedure can be error-prone (e.g. a Web-based entity may not be accessible or may require authentication), the implementation should consider the new Attached Crate as a _fork_ and update `identifier` and `isDefinedBy` as specified above.
 
 {: .tip }
-> If you are archiving an [attached RO-Crate](../structure.md#attached-ro-crate) that is already on the Web, then first [establish the absolute URI](#establishing-absolute-uri-for-ro-crate-root) for the root, and retrieve all [payload](../structure.md#payload-files-and-directories-attached-ro-crates) files that are considered URI path-wise to be part the RO-Crate Root, creating corresponding local paths. In this scenario the above algorithm can be simplified and the rewriting of identifiers can be avoided if they are already relative URIs. 
+> If you are archiving an [attached RO-Crate](../structure#attached-ro-crate) that is already on the Web, then first [establish the absolute URI](#establishing-absolute-uri-for-ro-crate-root) for the root, and retrieve all [payload](../structure#payload-files-and-directories-attached-ro-crates) files that are considered URI path-wise to be part the RO-Crate Root, creating corresponding local paths. In this scenario the above algorithm can be simplified and the rewriting of identifiers can be avoided if they are already relative URIs. 
 
 
 ## Handling relative URI references when using JSON-LD/RDF tools
@@ -263,7 +263,7 @@ Results in a valid _RO-Crate JSON-LD_ (actual order in `@graph` may differ):
 ## Expanding/parsing JSON-LD keeping relative referencing
 
 [JSON-LD Expansion] can be used to 
-resolve terms from the `@context` to absolute URIs, e.g. `http://schema.org/description`. This may be needed to parse [extended properties](#extending-ro-crate) or for combinations with other Linked Data.
+resolve terms from the `@context` to absolute URIs, e.g. `http://schema.org/description`. This may be needed to parse [extended properties](jsonld#extending-ro-crate) or for combinations with other Linked Data.
 
 This algorithm would normally also expand `@id` fields based on the current [base URI][JSON-LD base URI] of the _RO-Crate Metadata File_, but this may be a temporary location like `file:///tmp/rocrate54/ro-crate-metadata.json`, meaning `@id`: `subfolder/` becomes `file:///tmp/rocrate54/subfolder/` after JSON-LD expansion.
 
@@ -424,14 +424,14 @@ Following redirection we see that:
   - ..rather than `https://w3id.org/ro/crate/1.0/index.html` which would not redirect correctly
 
 This example also use RO-Crate 1.0, where the _RO-Crate Metadata File_ is called `ro-crate-metadata.jsonld` instead of `ro-crate-metadata.json`. Note that the recommended
-[algorithm to find the Root Data Entity](../root-data-entity.md#finding-the-root-data-entity)
+[algorithm to find the Root Data Entity](../root-data-entity#finding-the-root-data-entity)
 is agnostic to the actual filename.
 
 ## Finding RO-Crate Root in RDF triple stores
 
 When parsing _RO-Crate JSON-LD_ as RDF, where the RDF framework performs resolution to absolute URIs, it may be difficult to find the _RO-Crate Root_ in the parsed triples.
 
-The algoritm proposed in section [Root Data Entity](../root-data-entity.md#finding-the-root-data-entity) allows finding the RDF resource describing `ro-crate-metadata.json`, independent of its parsed base URI. We can adopt this for RDF triples, thus finding crates conforming to this specification can be queried with [SPARQL]:
+The algorithm proposed in section [Root Data Entity](../root-data-entity#finding-the-root-data-entity) allows finding the RDF resource describing `ro-crate-metadata.json`, independent of its parsed base URI. We can adopt this for RDF triples, thus finding crates conforming to this specification can be queried with [SPARQL]:
 
 ```sparql
 PREFIX schema:  <http://schema.org/>
@@ -453,7 +453,7 @@ When parsing a _RO-Crate Metadata File_ into [RDF triples], for instance uploadi
 * The _RO-Crate Root_ may depend on where the _RO-Crate Metadata File_ was parsed from, e.g. `<file:///tmp/ro-crate-metadata.json>` (file) or `<http://localhost:3030/test/ro-crate-metadata.json>` (web upload)
 * Parsing multiple RO-Crates into the same RDF graph, using same base URI, may merge them into the same RO-Crate
 * `ro-crate-metadata.json` may not be recognized as JSON-LD and must be renamed to `ro-crate-metadata.jsonld`
-* Web servers hosting `ro-crate-metadata.json` may not send the [JSON-LD _Content-Type_](#ro-crate-json-ld-media-type)
+* Web servers hosting `ro-crate-metadata.json` may not send the [JSON-LD _Content-Type_](jsonld#ro-crate-json-ld-media-type)
 * If base URI is not correct it may be difficult to find the corresponding file and directory paths from an RDF query returning absolute URIs
 
 {: .tip }
@@ -597,7 +597,7 @@ Parsing this as RDF will generate triples including:
 Here consumers can assume `/` is the _RO-Crate Root_ and generating relative URIs can safely be achieved by  search-replace as the arcp URI is unique. Saving _RO-Crate JSON-LD_ from the triples can be done by using the arcp URI to [relativize absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root).
 
 {: .tip }
-> **Bagit**: The arcp specification suggests how [BagIt identifiers][ARCP BagIt] can be used to calculate the base URI. See also section [Combining with other packaging schemes](#combining-with-other-packaging-schemes) - note that in this approach the _RO-Crate Root_ will be the payload folder `/data/` under the calculated arcp base URI.
+> **Bagit**: The arcp specification suggests how [BagIt identifiers][ARCP BagIt] can be used to calculate the base URI. See also section [Combining with other packaging schemes](implementation-notes#combining-with-other-packaging-schemes) - note that in this approach the _RO-Crate Root_ will be the payload folder `/data/` under the calculated arcp base URI.
 
 ## Relativizing absolute URIs within RO-Crate Root
 
