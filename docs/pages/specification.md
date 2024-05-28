@@ -1,5 +1,6 @@
 ---
 title: Specification
+sidebar: spec
 ---
 <!--
    Copyright 2019-2020 The University of Manchester and RO Crate contributors 
@@ -26,8 +27,7 @@ The RO-Crate 1.1 specification has been **released**.
 * [RO-Crate 1.2-DRAFT](1.2-DRAFT) (draft for next release)
 * [RO-Crate 1.0](1.0) 
 * [RO-Crate 0.2](0.2)
-* [DataCrate 1.0 review](https://docs.google.com/document/d/150SzIG8Zs3wecPTUue7wxKn6V26oi7rYucS5lxnmWZU/edit) 
-  (imported from [datacrate](https://github.com/UTS-eResearch/datacrate/blob/master/spec/1.0/data_crate_specification_v1.0.md))
+* [DataCrate 1.0](https://github.com/UTS-eResearch/datacrate/blob/ba37cc707d48d3569663ab04f9d4f5c25dac6e34/spec/1.0/data_crate_specification_v1.0.md)
 * [ROLite Draft 0.1.0](0.1.0) 
 
 _Historical note_: After the initial draft, the community decided to base the specification on [DataCrate](https://github.com/UTS-eResearch/datacrate/), and changed the name from _ROLite_ to **RO-Crate**.
