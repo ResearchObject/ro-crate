@@ -1,5 +1,7 @@
 ---
 title: RO-Crate 0.2
+redirect_from: 
+  - /0.2/
 nav_exclude: true
 ---
 <!--
@@ -557,7 +559,7 @@ A core principle of Linked data is to use URIs to identify things such as people
 }
 ```
 
-This uses an [ORCID](https://orcid.org/) to unambiguously identify an author, with a _Contextual Entity_ of type [Person]((http://schema.org/Person)).
+This uses an [ORCID](https://orcid.org/) to unambiguously identify an author, with a _Contextual Entity_ of type [Person](http://schema.org/Person).
 
 Note the string-value of the organizational affiliation. This SHOULD be improved by also providing a _Context Entity_ for the organization (see example below).
 
@@ -1611,7 +1613,7 @@ Where there is no RDF ontology available, then implementors SHOULD attempt to pr
 [actionStatus]: http://schema.org/actionStatus
 [ActionStatusType]: http://schema.org/ActionStatusType
 
-[DataCrate BagIt Profile]: https://raw.githubusercontent.com/UTS-eResearch/datacrate/master/spec/1.0/profile-datacrate-v1.0.json
+[DataCrate BagIt Profile]: https://raw.githubusercontent.com/UTS-eResearch/datacrate/ba37cc707d48d3569663ab04f9d4f5c25dac6e34/spec/1.0/profile-datacrate-v1.0.json
 [DataCrate JSON-LD Context]: ./context.json
 [JSON-LD Framing 1.1]: https://json-ld.org/spec/latest/json-ld-framing/
 [DataCrate JSON-LD frame]: ./frame.json

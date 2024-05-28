@@ -1,5 +1,7 @@
 ---
 title: ROLite 0.1.0
+redirect_from:
+    /0.1.0/
 nav_exclude: true
 ---
 <!--
@@ -22,7 +24,7 @@ nav_exclude: true
 # ROLite 0.1.0
 {: .no_toc }
 
-This first draft of ~~ROLite~~ [RO-Crate](../) is more of an example playground to initiate discussion.
+This first draft of ~~ROLite~~ [RO-Crate](../../) is more of an example playground to initiate discussion.
 
 This example is based on [DataCrate](https://github.com/UTS-eResearch/datacrate) and [BioSchemas](http://bioschemas.org/specifications/), bringing in Research Object vocabularies where appropriate.
 
@@ -36,11 +38,11 @@ This example is based on [DataCrate](https://github.com/UTS-eResearch/datacrate)
 
 [simple-dataset-0.1.0](https://github.com/ResearchObject/ro-lite/tree/master/examples/simple-dataset-0.1.0) shows an example of a fairly minimal dataset, which can live in GitHub, be distributed as a ZIP archive, posted to Zenodo etc.
 
-![Root folder of RO](../assets/img/simple-dataset-0.1.0/root.png)
+![Root folder of RO](../../assets/img/simple-dataset-0.1.0/root.png)
 
 The files of the dataset are under [`data/`](https://github.com/ResearchObject/ro-lite/tree/master/examples/simple-dataset-0.1.0/data), which mean this folder structure could later be upgraded to be a BagIt archive ([RFC8493](https://www.rfc-editor.org/rfc/rfc8493.txt)).
 
-![data/ folder](../assets/img/simple-dataset-0.1.0/data-folder.png)
+![data/ folder](../../assets/img/simple-dataset-0.1.0/data-folder.png)
 
 Here are our files described in this ROLite example:
 
@@ -219,4 +221,3 @@ In addition the `workflow/` folder, the KNIME workspace that captures the intern
             "description": "KNIME workspace after executing RetroPath2.0 workflow"
         }
 ```
-
