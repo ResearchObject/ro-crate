@@ -1,5 +1,7 @@
 ---
 title: RO-Crate Structure
+redirect_from:
+  - /1.2-DRAFT/structure
 nav_order: 3
 parent: RO-Crate 1.2-DRAFT
 ---
@@ -37,12 +39,12 @@ parent: RO-Crate 1.2-DRAFT
 There are two classes of RO-Crate detailed below:
 
 **Attached RO-Crate**
-: A crate that is present in a file-system context which has an _RO-Crate Root directory_ and can carry an **explicit payload** of local [data entities](data-entities.md) as regular files (combined with [Web-based Data Entities](data-entities.html#web-based-data-entities) where needed). This type of RO-Crate can be suitable for packaging a data payload for long-term preservation, transfer and publishing, as the _RO-Crate Metadata Document_ is stored in an _RO-Crate Metadata File_ alongside the crate's payload. See further definition of [attached RO-Crate](#attached-ro-crate) below.
+: A crate that is present in a file-system context which has an _RO-Crate Root directory_ and can carry an **explicit payload** of local [data entities](data-entities) as regular files (combined with [Web-based Data Entities](data-entities.html#web-based-data-entities) where needed). This type of RO-Crate can be suitable for packaging a data payload for long-term preservation, transfer and publishing, as the _RO-Crate Metadata Document_ is stored in an _RO-Crate Metadata File_ alongside the crate's payload. See further definition of [attached RO-Crate](#attached-ro-crate) below.
 
 **Detached RO-Crate**
 : A crate without a defined payload directory. In this kind of crate, all data references are absolute. This approach may be suitable for use with dynamic web service APIs and repositories that can't preserve file paths. As the data of these crates can only be [Web-based Data Entities](data-entities.html#web-based-data-entities), the **payload is implicit** and must be preserved/transferred/archived independent of the _RO-Crate Metadata Document_. See further definition of [detached RO-Crate](#detached-ro-crate) below.
 
-In both types of crates the metadata is completed with [contextual entities](contextual-entities.md) that further describe the relationships and context of the data to form a _Research Object_. 
+In both types of crates the metadata is completed with [contextual entities](contextual-entities) that further describe the relationships and context of the data to form a _Research Object_. 
 
 
 ## Attached RO-Crate
@@ -52,7 +54,7 @@ An **Attached RO-Crate** is used to contain and describe a _payload_ of files an
 An _Attached RO-Crate_ can be stored and published in multiple ways depending on its use:
 * On a typical hierarchical _file system_ (e.g. `/files/shared/crates/my-crate-01/`)
 * Exposed as a _Web resource_ within a folder structure (e.g. <https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/>)
-* [_Packaged_](appendix/implementation-notes.md#combining-with-other-packaging-schemes) within a ZIP file, BagIt archive or OCFL structure
+* [_Packaged_](appendix/implementation-notes#combining-with-other-packaging-schemes) within a ZIP file, BagIt archive or OCFL structure
 * _Archived_ as a set of named files in other ways (e.g. Zenodo deposit)
 
 A valuable feature of the _Attached RO-Crate_ approach is that the metadata is preserved when a crate is transferred between these types of storage/publication systems.
@@ -69,26 +71,26 @@ The file path structure a _Attached RO-Crate_ MUST follow is:
 ```
 The name of the _RO-Crate root_ directory is not defined, but a root directory is identifiable by the presence of the _RO-Crate Metadata File_, `ro-crate-metadata.json`. For instance, if an _RO-Crate_ is archived in a ZIP-file, the ZIP root directory is an _RO-Crate root_ directory if it contains `ro-crate-metadata.json`.
 
-The payload directory (and its child directory) contains files and directories that SHOULD be described within the _RO-Crate Metadata File_ as [Data Entities](data-entities.md). Additional [Web-based Data Entities](data-entities.html#web-based-data-entities) MAY also be described, but are not considered part of the payload.
+The payload directory (and its child directory) contains files and directories that SHOULD be described within the _RO-Crate Metadata File_ as [Data Entities](data-entities). Additional [Web-based Data Entities](data-entities.html#web-based-data-entities) MAY also be described, but are not considered part of the payload.
 
 
 ## Detached RO-Crate
 
 A _Detached RO-Crate_ is an RO-Crate without a defined root directory, where the _RO-Crate Metadata Document_ and/or _RO-Crate Website_ content is accessed independently (e.g. as part of a programmatic API).
 
-These crates cannot carry their own data _payload_, but may reference data deposited separately, or purely reference [contextual entities](contextual-entities.md). 
+These crates cannot carry their own data _payload_, but may reference data deposited separately, or purely reference [contextual entities](contextual-entities). 
 
-Any [data entities](data-entities.md) in a _Detached RO-Crate_ MUST be [Web-based Data Entities](data-entities.html#web-based-data-entities). 
+Any [data entities](data-entities) in a _Detached RO-Crate_ MUST be [Web-based Data Entities](data-entities.html#web-based-data-entities). 
 
 {: .warning }
 > Using relative URI references like `example/data.txt` in a _Detached RO-Crate_ is NOT RECOMMENDED as this is considered ambigious and fragile. 
 
-A _Detached RO-Crate_ can be identified by the [root data entity](root-data-entity.md) having an `@id` different from `./` in the JSON.
+A _Detached RO-Crate_ can be identified by the [root data entity](root-data-entity) having an `@id` different from `./` in the JSON.
 
 {: .note }
-> [Finding the Root Data Entity](root-data-entity.md#finding-the-root-data-entity) can be harder for consumers of detached crates, particularly if the platform serving the _RO-Crate Metadata Document_ is unable to ensure the URI path ends with `…/ro-crate-metadata.json`. 
+> [Finding the Root Data Entity](root-data-entity#finding-the-root-data-entity) can be harder for consumers of detached crates, particularly if the platform serving the _RO-Crate Metadata Document_ is unable to ensure the URI path ends with `…/ro-crate-metadata.json`. 
 
-Note that a detached RO-Crate may still use `#`-based local identifiers for [contextual entities](contextual-entities.md).
+Note that a detached RO-Crate may still use `#`-based local identifiers for [contextual entities](contextual-entities).
 
 
 ## RO-Crate Metadata Document (`ro-crate-metadata.json`)
@@ -104,14 +106,14 @@ Note that a detached RO-Crate may still use `#`-based local identifiers for [con
 
 A valid _RO-Crate JSON-LD_ graph MUST describe:
 
-1. The [RO-Crate Metadata Descriptor](root-data-entity.md#ro-crate-metadata-file-descriptor)
-2. The [Root Data Entity](root-data-entity.md#direct-properties-of-the-root-data-entity)
-3. Zero or more [Data Entities](data-entities.md)
-4. Zero or more [Contextual Entities](contextual-entities.md)
+1. The [RO-Crate Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor)
+2. The [Root Data Entity](root-data-entity#direct-properties-of-the-root-data-entity)
+3. Zero or more [Data Entities](data-entities)
+4. Zero or more [Contextual Entities](contextual-entities)
 
 It is RECOMMENDED that any referenced _contextual entities_ are also described in the _RO-Crate Metadata Document_ with the same identifier. Similarly it is RECOMMENDED that any _contextual entity_ in the _RO-Crate Metadata Document_ is linked to from at least one of the other entities using the same identifier. 
 
-The appendix [RO-Crate JSON-LD](appendix/jsonld.md) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata Document_. In short, the rest of this specification describe the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` array below:
+The appendix [RO-Crate JSON-LD](appendix/jsonld) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata Document_. In short, the rest of this specification describe the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` array below:
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
@@ -197,19 +199,19 @@ These are the actual files and directories that make up the **payload** of the d
 
 The base RO-Crate specification makes no assumptions about the presence of any specific files or folders beyond the reserved RO-Crate files described above. 
 
-Payload files may appear directly in the _RO-Crate Root_ alongside the _RO-Crate Metadata File_, and/or appear in sub-directories of the _RO-Crate Root_. Each file and directory MAY be represented as [Data Entities](data-entities.md) in the _RO-Crate Metadata File_.
+Payload files may appear directly in the _RO-Crate Root_ alongside the _RO-Crate Metadata File_, and/or appear in sub-directories of the _RO-Crate Root_. Each file and directory MAY be represented as [Data Entities](data-entities) in the _RO-Crate Metadata File_.
 
 A RO-Crate may also contain [Web-based Data Entities](data-entities.html#web-based-data-entities) that are not present as part of the payload and referenced using absolute URIs. These may require additional preservation measures.
 
 {: .tip }
-> A RO-Crate [packaged with BagIt](appendix/implementation-notes.md#adding-ro-crate-to-bagit) may be [referencing external files](appendix/implementation-notes.md#referencing-external-files) which are not present in the _RO-Crate Root_ hierarchy until the BagIt has been _completed_. This method can be used for files that are large, require authentication or otherwise inconvenient to transfer with the RO-Crate, but which should nevertheless still be considered part of the _payload_.
+> A RO-Crate [packaged with BagIt](appendix/implementation-notes#adding-ro-crate-to-bagit) may be [referencing external files](appendix/implementation-notes#referencing-external-files) which are not present in the _RO-Crate Root_ hierarchy until the BagIt has been _completed_. This method can be used for files that are large, require authentication or otherwise inconvenient to transfer with the RO-Crate, but which should nevertheless still be considered part of the _payload_.
 
 
 ## Self-describing and self-contained (_Attached RO-Crates_)
 
 RO-Crates SHOULD be self-describing and self-contained.
 
-A minimal Attached RO-Crate is a directory containing a single _RO-Crate Metadata Document_ stored as an [RO-Crate Metadata File](root-data-entity.md) `ro-crate-metadata.json`. 
+A minimal Attached RO-Crate is a directory containing a single _RO-Crate Metadata Document_ stored as an [RO-Crate Metadata File](root-data-entity) `ro-crate-metadata.json`. 
 
 At the basic level, an Attached RO-Crate is a collection of files and resources represented as a Schema.org [Dataset], that together form a meaningful unit for the purposes of communication, citation, distribution, preservation, etc.  The _RO-Crate Metadata Document_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. 
 
@@ -217,6 +219,6 @@ While RO-Crate is well catered for describing a _Dataset_ as files and relevant 
 
 It is important to note that the _RO-Crate Metadata Document_ is **not an exhaustive manifest** or inventory, that is, it does not necessarily list or describe all files in the package.  Rather it is focused on providing sufficient amount of metadata to understand and use the content, and is designed to be compatible with existing and future approaches that _do_ have full inventories / manifest and integrity checks, e.g. by using checksums, such as [BagIt] and Oxford Common File Layout [OCFL Objects][OCFL Object].
 
-The intention is that RO-Crates can work well with a variety of archive file formats, e.g. tar, zip, etc., and approaches to capturing file manifests and file fixity, such as [BagIt], [OCFL] and [git] (see also appendix [Combining with other packaging schemes](appendix/implementation-notes.md#combining-with-other-packaging-schemes)). An RO-Crate can also be hosted on the web or mainly refer to web resources, although extra care to ensure persistence and consistency should be taken for archiving such RO-Crates.
+The intention is that RO-Crates can work well with a variety of archive file formats, e.g. tar, zip, etc., and approaches to capturing file manifests and file fixity, such as [BagIt], [OCFL] and [git] (see also appendix [Combining with other packaging schemes](appendix/implementation-notes#combining-with-other-packaging-schemes)). An RO-Crate can also be hosted on the web or mainly refer to web resources, although extra care to ensure persistence and consistency should be taken for archiving such RO-Crates.
 
 {% include references.liquid %}

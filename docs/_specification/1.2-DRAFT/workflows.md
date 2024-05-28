@@ -1,5 +1,7 @@
 ---
 title: Workflows and scripts
+redirect_from:
+  - /1.2-DRAFT/workflows
 excerpt: |
   Scientific workflows and Scripts that were used (or can be used) to 
   analyze or generate files contained in an RO-Crate can be embedded
@@ -36,11 +38,11 @@ parent: RO-Crate 1.2-DRAFT
 1. TOC
 {:toc}
 
-Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an RO-Crate MAY be embedded in an RO-Crate. See also the Provenance section on [Software Used to Create Files](provenance.md#software-used-to-create-files).
+Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an RO-Crate MAY be embedded in an RO-Crate. See also the Provenance section on [Software Used to Create Files](provenance#software-used-to-create-files).
 
-_Workflows_ and _scripts_ SHOULD be described using [data entities](data-entities.md) of type [SoftwareSourceCode].
+_Workflows_ and _scripts_ SHOULD be described using [data entities](data-entities) of type [SoftwareSourceCode].
 
-The distinction between [SoftwareSourceCode] and [SoftwareApplication] for [software](provenance.md#software-used-to-create-files) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand deeper and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.
+The distinction between [SoftwareSourceCode] and [SoftwareApplication] for [software](provenance#software-used-to-create-files) is fluid, and comes down to availability and understandability. For instance, office spreadsheet applications are generally available and do not need further explanation (`SoftwareApplication`); while a Python script that is customized for a particular data analysis might be important to understand deeper and should therefore be included as `SoftwareSourceCode` in the RO-Crate dataset.
 
 ## Describing scripts and workflows
 
@@ -170,7 +172,7 @@ The image file format SHOULD be indicated with [encodingFormat] using an IANA re
 
 ```
 
-A workflow diagram may still be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the workflow was done by hand). In this case the sketch itself is a proxy for the workflow and SHOULD have an `about` property referring to the _RO-Crate dataset_ as a whole (assuming the RO-Crate represents the outcome of a single workflow), or to other [Data Entities](data-entities.md) otherwise:
+A workflow diagram may still be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the workflow was done by hand). In this case the sketch itself is a proxy for the workflow and SHOULD have an `about` property referring to the _RO-Crate dataset_ as a whole (assuming the RO-Crate represents the outcome of a single workflow), or to other [Data Entities](data-entities) otherwise:
 
 ```json
 {
@@ -364,4 +366,3 @@ The below is an example of an RO-Crate complying with the Bioschemas [Computatio
 ```
 
 {% include references.liquid %}
-

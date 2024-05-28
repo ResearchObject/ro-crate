@@ -1,5 +1,7 @@
 ---
 title: The focus of an RO-Crate
+redirect_from:
+  - /1.2-DRAFT/crate-focus
 excerpt: |
   In addition to simple data packaging, Crates may have a "main" entry point or topic (referenced with a singleton `mainEntity` property), or function as a bundle of one or more Contextual Entities referenced via the `mentions` property.
 nav_order: 7
@@ -89,7 +91,7 @@ The focus of the RO-Crate may be a description of a _Contextual Entity_, for exa
 
 ## Crates which describe _Contextual Entities_
 
-RO-Crates may describe _Contextual Entities_ which are linked to the [Root Dataset](root-data-entity.md) via `mentions` relationships.
+RO-Crates may describe _Contextual Entities_ which are linked to the [Root Dataset](root-data-entity) via `mentions` relationships.
 
 For example, RO-Crates can be used as containers for schema.org-style vocabularies (here also extending the [RO-Crate JSON-LD context](appendix/jsonld.html#ro-crate-json-ld-context) to define the namespace for `txc:`):
 
