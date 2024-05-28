@@ -1,0 +1,89 @@
+---
+search_exclude: true
+layout: none
+---
+
+<!doctype html>
+<html lang="en">
+{% include head.html %}
+
+<body>
+  {% include topnav.html search=true %}
+  <div class="landingpage" id="content">
+    <section class="container mb-5">
+      <div>
+        <h1>Research Object Crate (RO-Crate)</h1>
+        <p class="text-center lead">RO-Crate is a community effort to establish a lightweight approach to packaging
+          research data with their metadata.
+        </p>
+      </div>
+    </section>
+    <section class="featured-content">
+      <div class="featured-content-header mb-3">
+        <h2>Explore RO-Crate in Use</h2>
+      </div>
+      <div class="mx-5">
+        {% assign featured_use_cases = site.data.featured | map: 'page_id' | join: ", " %}
+        {% include section-navigation-tiles.html type="use_cases" custom=featured_use_cases %}
+      </div>      
+      <p class="text-center pb-3">
+        <a class="fs-3 fw-bold" href="use_cases">See all use cases</a>
+      </p>
+    </section>
+    <section class="bg-light pb-5">
+      <div class="container pt-3">
+        <h2 class="no-anchor text-center mb-3">Explore RO-Crate by</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <div class="card bg-white h-100">
+              <div class="card-body text-center">
+                <a href="domains">
+                  <i class="fa fa-3x fa-flask mt-3 mb-4"></i>                
+                  <h3 class="card-title no-anchor text-dark">Domain</h3>
+                </a>
+                <p class="card-text">Learn about data management tasks that affect your domain or research community,
+                  and the solutions adopted to address them.</p>
+              </div>
+            </div>
+            </a>
+          </div>
+          <div class="col">
+            <div class="card bg-white h-100">
+              <div class="card-body text-center">
+                <a href="tasks">
+                  <i class="fa fa-3x fa-pencil mt-3 mb-4"></i>                
+                  <h3 class="card-title no-anchor text-dark">Task</h3>
+                </a>
+                <p class="card-text">Find guidelines and solutions for tackling common data management tasks.</p>
+              </div>
+            </div>
+            </a>
+          </div>
+          <div class="col">
+            <div class="card bg-white h-100">
+              <div class="card-body text-center">
+                <a href="roles">
+                  <i class="fa fa-3x fa-user mt-3 mb-4"></i>                
+                  <h3 class="card-title no-anchor text-dark">Role</h3>
+                </a>
+                <p class="card-text">Identify your role in research data management, find data management resources
+                  relevant for you, and information to help you progress in your career path.
+                </p>
+              </div>
+            </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  {%- if site.theme_variables.back_to_top or site.theme_variables.back_to_top == nil %}
+  <button id="back-to-top" class="btn btn-primary" type="button" aria-hidden="true" onclick="topFunction()">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  {%- endif %}
+  {% include footer.html %}
+  {% include cookie-popup.html %}
+</body>
+
+</html>
