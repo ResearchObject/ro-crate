@@ -1,23 +1,13 @@
 ---
+page_id: autosubmit
 title: Autosubmit
-parent: RO-Crate In Use
+description: Autosubmit is an open source Python experiment and workflow manager used to manage complex workflows on Cloud and HPC platforms. Autosubmit uses RO-Crate to package the configuration, traces (logs, metrics, databases, etc.), and data of experiments and workflows.
+url: https://autosubmit.readthedocs.io/
+image: autosubmit.svg
+domains: [climate_science]
+tasks: [conduct_research, data_handling]
+roles: [data_analyst, information_architect, managerial, researcher]
 ---
-<!--
-   Copyright 2023-2024 RO-Crate contributors
-   <https://github.com/ResearchObject/ro-crate/graphs/contributors>
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
--->
 
 ## Autosubmit
 

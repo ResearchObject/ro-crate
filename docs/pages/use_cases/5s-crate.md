@@ -1,23 +1,12 @@
 ---
+page_id: 5s-crate
 title: Five Safes Crate
-parent: RO-Crate In Use
+description: The Five Safes RO-Crate profile extend the Workflow Run RO-Crate profile for use in Trusted Research Environments (TRE).
+url: https://trefx.uk/5s-crate/
+domains: [medicine]
+tasks: [compliance, data_handling, manage_data]
+roles: [compliance_officer, data_steward, information_architect]
 ---
-<!--
-   Copyright 2019-2024 RO-Crate contributors
-   <https://github.com/ResearchObject/ro-crate/graphs/contributors>
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
--->
 
 # Five Safes Crate
 
@@ -48,4 +37,3 @@ The profile uses the [BagIt](https://www.researchobject.org/ro-crate/1.1/appendi
 * Profile report <https://doi.org/10.5281/zenodo.10376350>:
 * Workflow Run Crate paper: <https://doi.org/10.48550/arXiv.2312.07852>:
 * Example: [example-result.bagit.zip](https://trefx.uk/5s-crate/0.4/example-result.bagit.zip) [ro-crate-metadata.json](https://trefx.uk/5s-crate/0.4/example-hutch/data/ro-crate-metadata.json) [ro-crate-preview.html](https://trefx.uk/5s-crate/0.4/example-result/data/ro-crate-preview.html)
-

@@ -1,26 +1,14 @@
 ---
+page_id: survey-ontology
 title: Survey Ontology
-parent: RO-Crate In Use
+description: The Survey Ontology is an open vocabulary that allows representing, annotating and sharing a representation of the survey structure and the gathered responses.
+url: https://w3id.org/survey-ontology
+image: 
+domains: [informatics, social_science]
+tasks: [conduct_research, manage_data]
+roles: [data_analyst, researcher]
 ---
-<!--
-   Copyright 2019-2022 RO-Crate contributors
-   <https://github.com/ResearchObject/ro-crate/graphs/contributors>
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
--->
-
-# Survey Ontology
-
+## Survey Ontology
 The [Survey Ontology](https://w3id.org/survey-ontology) is an open vocabulary that allows representing, annotating and sharing a representation of the survey structure and the gathered responses ([Scrocca et al., 2021](https://doi.org/10.4126/FRL01-006429412)).
 
 The Survey Ontology leverages and extends the _Research Object Suite of Ontologies_ ([Belhajjame et al., 2015](https://doi.org/10.1016/j.websem.2015.01.003)) to address the research object principles of identity, aggregation and provenance. 
@@ -44,7 +32,7 @@ Considering a _survey procedure_, all the questions can be annotated with the re
 
 This section describes the research objects defined and published to share a survey study of motivation for citizen scientists performed within the [ACTION project](https://actionproject.eu/). The research objects leverage the RO-Crate specification and the Survey Ontology to describe the relevant resources and their relations.
 
-[![RO-Crate preview of Survey Ontology](survey-ontology-example.png)](https://doi.org/10.5281/zenodo.5753092)
+{% include image.html src="assets/img/survey-ontology-example.png" alt="RO-Crate preview of Survey Ontology." caption="RO-Crate preview of Survey Ontology. Link to dataset: https://doi.org/10.5281/zenodo.5753092" %}
 
 Survey data exported from Coney and modelled using the Survey Ontology, are packaged in comprehensive RO-Crate research objects including:
 
@@ -112,4 +100,3 @@ Esteban Gonzalez, Oscar Corcho. (2022):
 **D4.5 - Open Data Portal v2**.  
 Project Deliverable, ACTION, _Zenodo_  
 <https://doi.org/10.5281/zenodo.6346406>
-

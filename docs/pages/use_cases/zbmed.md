@@ -1,23 +1,13 @@
 ---
+page_id: zbmed
 title: ZBMed SemTec web pages
-parent: RO-Crate In Use
+description: The Semantic Technologies (SemTec) team in ZB MED uses GitHub pages to share research projects and corresponding research artefacts/outcomes.
+url: https://www.zbmed.de/en/
+image: ZBMED.svg
+domains: [biomedical_science, medicine, informatics]
+tasks: [conduct_research, manage_data]
+roles: [data_steward, researcher]
 ---
-<!--
-   Copyright 2019-2024 RO-Crate contributors
-   <https://github.com/ResearchObject/ro-crate/graphs/contributors>
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
--->
 
 # ZBMed
 
@@ -35,59 +25,3 @@ This work was supported by a [FAIR-IMPACT support action](https://fair-impact.eu
 * Example page w/ RO-Crate: <https://zbmed-semtec.github.io/projects/2022_maSMP/>
 * Example RO-Crate: <https://zbmed-semtec.github.io/metadata/projects/2022_maSMP/ro-crate-metadata.json>
 * Example RO-Crate preview: <https://zbmed-semtec.github.io/metadata/projects/2022_maSMP/ro-crate-preview.html>
-
-<!--
-[![zbmed logo](../assets/img/zbmed.svg)](https://zbmed.org/)
-
-[zbmed](https://reliance.rohub.org/) (EXAMPLE-ACRONYM), is a...
-
-zbmed uses RO-Crate for ... as ....
-
-zbmed works with Project X, .....
-
-![zbmed screenshot with RO-Crate(../assets/img/zbmed-screenshot.png)
-
-
-## RO-Crate in zbmed
-
-(Show practically how RO-Crate is used, link to profile of RO-Crate, etc.)
-
-The zbmed API supports [RO-Crate export](http://zbmed.org/docs/ro-crate) as...
-
-zbmed also plans to do...
-
-zbmed:
-```
-curl -H "Accept: application/ld+json" https://zbmed.com/ro-crate/a72f314d
-
-{
-  "@context": { … },
-  "@graph": [
-   …
-    {
-      "@id": "./",
-      "hasPart": […],
-      "@type": "Dataset",
-    }
-   …
-}
-```
-
-
-## Resources
-
-* [zbmed Homepage](https://zbmed.org/)
-* [zbmed documentation](https://zbmed.org/docs/)
-* [RO-Crate profile for zbmed](https://zbmed.org/crate-profile)
-* [zbmed Tutorials](https://zbmed.org/docs/tutorial)
-* [zbmed presentation](http://zbmed.org/)
-
-## Publications
-
-Alice Land, Bob Bunny (2020):  
-**zbmed and RO-Crate**.  
-_zbmed Journal_ **0**(1)
-<https://doi.org/10.1234/zbmed>  
-[[preprint](http://zbmed.com/preprint.pdf)]
-
--->

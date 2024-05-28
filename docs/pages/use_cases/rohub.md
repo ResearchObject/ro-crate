@@ -1,27 +1,15 @@
 ---
+page_id: rohub
 title: ROHub
-parent: RO-Crate In Use
+description: ROHub is a solution for the storage, lifecycle management and preservation of scientific work and operational processes via research objects. It makes these resources available to others, allows to publish and release them through a DOI, and allows to discover and reuse pre-existing scientific knowledge.
+url: https://www.rohub.org/
+image: ro_hub.svg
+domains: [climate_science, ecology]
+tasks: [conduct_research, manage_data]
+roles: [information_architect, managerial, researcher, repository_manager]
 ---
-<!--
-   Copyright 2019-2022 The University of Manchester and RO Crate contributors
-   <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
--->
-
-# ROHub
-
-[![ROHub logo](../assets/img/rohub.svg)](https://reliance.rohub.org/)
+[![ROHub logo](assets/img/ro_hub.svg)](https://reliance.rohub.org/)
 
 [ROHub](https://reliance.rohub.org/) (Research Object Hub), one of [EOSC](https://eosc.eu/) research enabling services, is a holistic solution for the storage, lifecycle management and preservation of scientific work and operational processes via research objects. It makes these resources available to others, allows to publish and release them through a DOI, and allows to discover and reuse pre-existing scientific knowledge. 
 
@@ -33,14 +21,14 @@ Additionally, as part of [RELIANCE project](https://www.reliance-project.eu/), R
 
 ROHub functionalities can be used via the [Web portal](https://reliance.rohub.org/) and via the provided [Python library](https://reliance-eosc.github.io/ROHUB-API_documentation/html/).
 
-![ROHub screenshot, export to publication service B2SHare with DOI](../assets/img/rohub-screenshot.png)
+{% include image.html src="assets/img/rohub-screenshot.png" caption="ROHub screenshot, export to publication service B2SHare with DOI" alt="The ROHub interface, showing steps for research object quality at the top with 'Basic information' step selected. A form shows the research object title, description, and choices for which publication service to use and whether to create a DOI" %}
 
 
 ## RO-Crate in ROHub API
 
 The [ROHub API](https://api.rohub.org/api/) provides support for [upload](https://api.rohub.org/api/redoc/#operation/ros_upload), [export](https://api.rohub.org/api/redoc/#operation/ros_crate_export_to_crate) and [customized download](https://api.rohub.org/api/redoc/#operation/ros_crate_download_read). 
 
-In addition, publication of an RO to Zenodo/B2Share ([evolution](https://api.rohub.org/api/redoc/#operation/ros_evolution) to `ARCHIVE`) uses RO-Crate  for archival purposes.
+In addition, publication of an RO to Zenodo/B2Share ([evolution](https://api.rohub.org/api/redoc/#operation/ros_evolution) to `ARCHIVE`) uses RO-Crate for archival purposes.
 
 The API uses [content-negotiation](https://datatracker.ietf.org/doc/html/rfc7231#section-3.4) for different content types.
 

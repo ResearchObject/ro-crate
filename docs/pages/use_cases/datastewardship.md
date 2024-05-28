@@ -1,6 +1,12 @@
 ---
+page_id: datastewardship
 title: Data Stewardship Wizard
-parent: RO-Crate In Use
+description: The Data Stewardship Wizard (DSW) is an interactive platform for making data management plans
+url: https://ds-wizard.org/
+image: dsw-logo.svg
+domains: []
+tasks: [conduct_research, manage_data]
+roles: [data_steward, researcher]
 ---
 <!--
    Copyright 2019-2024 RO-Crate contributors
@@ -28,58 +34,3 @@ The [Data Stewardship Wizard](https://ds-wizard.org/) (DSW) is an interactive pl
 
 * Preprint: <https://doi.org/10.37044/osf.io/24jst>
    
-<!--
-[![datastewardship logo](../assets/img/datastewardship.svg)](https://datastewardship.org/)
-
-[datastewardship](https://reliance.rohub.org/) (EXAMPLE-ACRONYM), is a...
-
-datastewardship uses RO-Crate for ... as ....
-
-datastewardship works with Project X, .....
-
-![datastewardship screenshot with RO-Crate(../assets/img/datastewardship-screenshot.png)
-
-
-## RO-Crate in datastewardship
-
-(Show practically how RO-Crate is used, link to profile of RO-Crate, etc.)
-
-The datastewardship API supports [RO-Crate export](http://datastewardship.org/docs/ro-crate) as...
-
-datastewardship also plans to do...
-
-datastewardship:
-```
-curl -H "Accept: application/ld+json" https://datastewardship.com/ro-crate/a72f314d
-
-{
-  "@context": { … },
-  "@graph": [
-   …
-    {
-      "@id": "./",
-      "hasPart": […],
-      "@type": "Dataset",
-    }
-   …
-}
-```
-
-
-## Resources
-
-* [datastewardship Homepage](https://datastewardship.org/)
-* [datastewardship documentation](https://datastewardship.org/docs/)
-* [RO-Crate profile for datastewardship](https://datastewardship.org/crate-profile)
-* [datastewardship Tutorials](https://datastewardship.org/docs/tutorial)
-* [datastewardship presentation](http://datastewardship.org/)
-
-## Publications
-
-Alice Land, Bob Bunny (2020):  
-**datastewardship and RO-Crate**.  
-_datastewardship Journal_ **0**(1)
-<https://doi.org/10.1234/datastewardship>  
-[[preprint](http://datastewardship.com/preprint.pdf)]
-
--->
