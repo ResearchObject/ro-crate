@@ -1,5 +1,6 @@
 ---
 title: Tutorials
+sidebar: resources
 ---
 <!--
    Copyright 2023 The University of Manchester and RO Crate contributors 
@@ -18,8 +19,7 @@ title: Tutorials
    limitations under the License.
 -->
 
-# RO-Crate tutorials
-
+# RO-Crate Tutorials
 {: .no_toc }
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5GYdN5B1tc8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

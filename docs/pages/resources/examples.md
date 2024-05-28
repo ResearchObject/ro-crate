@@ -27,28 +27,28 @@ title: Examples
 1. TOC
 {:toc}
 
-The [RO-Crate structure](1.1/structure.html) is that a _RO-Crate root_ directory has a _RO-Crate Metadata File_ named `ro-crate-metadata.json` that describe the other files, directories and URLs; as well as relating them to things in the world (e.g. people, instruments).
+The [RO-Crate structure](specification/1.1/structure) is that a _RO-Crate root_ directory has a _RO-Crate Metadata File_ named `ro-crate-metadata.json` that describe the other files, directories and URLs; as well as relating them to things in the world (e.g. people, instruments).
 
 {: .note }
 > From RO-Crate 1.1 `ro-crate-metadata.jsonld` was renamed `ro-crate-metadata.json`.
 
-The [specification](specification.md) has several inline examples:
- * [Skeleton ro-crate-metadata.json](1.1/root-data-entity.html#ro-crate-metadata-file-descriptor)
- * [Minimal example](1.1/root-data-entity.html#minimal-example-of-ro-crate)
- * [Example with files](1.1/data-entities.html#example-linking-to-a-file-and-folders)
- * [Example with web resources](1.1/data-entities.html#web-based-data-entities)
- * [Example with file, author, location](1.1/appendix/jsonld.html)
- * [Example with computational workflow](1.1/workflows.html#complete-workflow-example)
- * [RO-Crate specification](1.1/ro-crate-preview.html) ([ro-crate-metadata.jsonld](1.1/ro-crate-metadata.jsonld)) – the specification itself and its publication
+The [specification](specification) has several inline examples:
+ * [Skeleton ro-crate-metadata.json](specification/1.1/root-data-entity#ro-crate-metadata-file-descriptor)
+ * [Minimal example](specification/1.1/root-data-entity#minimal-example-of-ro-crate)
+ * [Example with files](specification/1.1/data-entities#example-linking-to-a-file-and-folders)
+ * [Example with web resources](specification/1.1/data-entities#web-based-data-entities)
+ * [Example with file, author, location](specification/1.1/appendix/jsonld)
+ * [Example with computational workflow](specification/1.1/workflows#complete-workflow-example)
+ * [RO-Crate specification](specification/1.1/ro-crate-preview) ([ro-crate-metadata.jsonld](specification/1.1/ro-crate-metadata.jsonld)) – the specification itself and its publication
 
-The [RO-Crate 1.1](https://w3id.org/ro/crate/1.1/) specification is largely **explained by examples** by showing additional fragments:
- * [Data entities](1.1/data-entities.html) (files, folders)
- * [Web resources](1.1/data-entities.html#web-based-data-entities)
- * [Contextual entities](1.1/contextual-entities.html) such as [people](1.1/contextual-entities.html#people), [organizations](1.1/contextual-entities.html#organizations-as-values), [citations](1.1/contextual-entities.html#publications-via-citation-property), [licensing](1.1/contextual-entities.html#licensing-access-control-and-copyright), [places](1.1/contextual-entities.html#places)
- * Section on [provenance](1.1/provenance.html) details how the creation of resources can be recorded
- * [Computational workflows and scripts](1.1/workflows.html) can be further described showing programming language, inputs, outputs, etc.
- * The RO-Crate [JSON-LD can be extended](1.1/appendix/jsonld.html#extending-ro-crate) for additional vocabularies, including [ad-hoc](1.1/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms) terms
- * Section on [combining with other packaging schemas](1.1/appendix/implementation-notes.html#combining-with-other-packaging-schemes) explain how an RO-Crate can be packaged in a single archive using BagIt
+The [RO-Crate 1.1](specification/1.1/) specification is largely **explained by examples** by showing additional fragments:
+ * [Data entities](specification/1.1/data-entities) (files, folders)
+ * [Web resources](specification/1.1/data-entities#web-based-data-entities)
+ * [Contextual entities](specification/1.1/contextual-entities) such as [people](specification/1.1/contextual-entities#people), [organizations](specification/1.1/contextual-entities#organizations-as-values), [citations](specification/1.1/contextual-entities#publications-via-citation-property), [licensing](specification/1.1/contextual-entities#licensing-access-control-and-copyright), [places](specification/1.1/contextual-entities#places)
+ * Section on [provenance](specification/1.1/provenance) details how the creation of resources can be recorded
+ * [Computational workflows and scripts](specification/1.1/workflows) can be further described showing programming language, inputs, outputs, etc.
+ * The RO-Crate [JSON-LD can be extended](specification/1.1/appendix/jsonld#extending-ro-crate) for additional vocabularies, including [ad-hoc](specification/1.1/appendix/jsonld#adding-new-or-ad-hoc-vocabulary-terms) terms
+ * Section on [combining with other packaging schemas](specification/1.1/appendix/implementation-notes#combining-with-other-packaging-schemes) explain how an RO-Crate can be packaged in a single archive using BagIt
  
 <!-- TODO: Find a golden exemplar we can showcase here -->
 
@@ -65,17 +65,17 @@ The [UTS Research Data Portal](https://data.research.uts.edu.au/) includes sever
 
 ## WorkflowHub examples
 
-The <https://workflowhub.eu/> accepts upload by RO-Crate and generates RO-Crate to improve reproducability of computational workflow that follow the [Workflow RO-Crate profile](https://about.workflowhub.eu/Workflow-RO-Crate/), see also [RO-Crate section on workflows](1.1/workflows.html).
+The <https://workflowhub.eu/> accepts upload by RO-Crate and generates RO-Crate to improve reproducability of computational workflow that follow the [Workflow RO-Crate profile](https://about.workflowhub.eu/Workflow-RO-Crate/), see also [RO-Crate section on workflows](specification/1.1/workflows).
 
 Workflows can be exported from Workflow Hub as RO-Crates, e.g. [a Galaxy workflow](https://workflowhub.eu/workflows/22/ro_crate?version=1). Workflows can also be navigated programmatically using the [TRS API](https://about.workflowhub.eu/TRS/), e.g. <https://workflowhub.eu/ga4gh/trs/v2/tools/26/versions/1/PLAIN_CWL/descriptor/ro-crate-metadata.json>
 
 ## Biocompute Object
 
-<https://github.com/biocompute-objects/bco-ro-example-chipseq> hosts an example RO-Crate ([ro-crate-metadata.json](https://rawcdn.githack.com/biocompute-objects/bco-ro-example-chipseq/76cb84c8d6a17a3fd7ae3102f68de3f780458601/data/ro-crate-metadata.json), [ro-crate-preview.html](https://rawcdn.githack.com/biocompute-objects/bco-ro-example-chipseq/76cb84c8d6a17a3fd7ae3102f68de3f780458601/data/ro-crate-preview.html)) that capture a [BioCompute Object](https://www.biocomputeobject.org/) (IEEE 2791) using [BagIt](https://www.researchobject.org/ro-crate/1.1/appendix/implementation-notes.html#adding-ro-crate-to-bagit).  See the tutorial [Create an BCO RO-Crate](https://biocompute-objects.github.io/bco-ro-crate/tutorial/) for step-by-step details.
+<https://github.com/biocompute-objects/bco-ro-example-chipseq> hosts an example RO-Crate ([ro-crate-metadata.json](https://rawcdn.githack.com/biocompute-objects/bco-ro-example-chipseq/76cb84c8d6a17a3fd7ae3102f68de3f780458601/data/ro-crate-metadata.json), [ro-crate-preview.html](https://rawcdn.githack.com/biocompute-objects/bco-ro-example-chipseq/76cb84c8d6a17a3fd7ae3102f68de3f780458601/data/ro-crate-preview.html)) that capture a [BioCompute Object](https://www.biocomputeobject.org/) (IEEE 2791) using [BagIt](https://www.researchobject.org/ro-crate/specification/1.1/appendix/implementation-notes.html#adding-ro-crate-to-bagit).  See the tutorial [Create an BCO RO-Crate](https://biocompute-objects.github.io/bco-ro-crate/tutorial/) for step-by-step details.
 
 ## ACTION: Survey Ontology
 
-The [ACTION project](https://actionproject.eu/) have published RO-Crates [using Survey Ontology](/in-use/survey-ontology/) to describe citizen science:
+The [ACTION project](https://actionproject.eu/) have published RO-Crates [using Survey Ontology](survey-ontology) to describe citizen science:
 
 * Survey Study about Motivation for Participants in Citizen Science Projects <https://doi.org/10.5281/zenodo.5753092> [[ro-crate-metadata.json](https://zenodo.org/record/5753092/files/ro-crate-metadata.json)]
 * Walk Up Aniene Motivation Survey <https://doi.org/10.5281/zenodo.5753229>
