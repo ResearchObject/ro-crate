@@ -2,6 +2,7 @@
 title: Data Entities
 redirect_from:
   - /1.1-DRAFT/data-entities
+  - /1.1/data-entities
 nav_order: 6
 parent: RO-Crate 1.1
 ---
@@ -38,11 +39,11 @@ The primary purpose for RO-Crate is to gather and describe a set of _Data entiti
 * Directories
 * Web resources
 
-The data entities can be further described by referencing [contextual entities](contextual-entities.md) such as persons, organizations and publications.
+The data entities can be further described by referencing [contextual entities](contextual-entities) such as persons, organizations and publications.
 
 ## Referencing files and folders from the Root Data Entity
 
-Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the [Root Data Entity](root-data-entity.md) using the [hasPart] property. Directory hierarchies MAY be represented with nested [Dataset] _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
+Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the [Root Data Entity](root-data-entity) using the [hasPart] property. Directory hierarchies MAY be represented with nested [Dataset] _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
 
 _Data Entities_ representing files MUST have `"File"` as a value for `@type`. `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ here is liberal, and includes "downloadable" resources where `@id` is an absolute URI.
 

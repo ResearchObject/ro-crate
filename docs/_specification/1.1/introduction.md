@@ -2,6 +2,7 @@
 title: Introduction
 redirect_from:
   - /1.1-DRAFT/introduction
+  - /1.1/introduction
 nav_order: 1
 parent: RO-Crate 1.1
 ---

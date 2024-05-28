@@ -4,6 +4,7 @@ parent: Appendix
 grand_parent: RO-Crate 1.1
 redirect_from:
   - /1.1-DRAFT/appendix/implementation-notes
+  - /1.1/appendix/implementation-notes
 excerpt: 
 ---
 <!--
@@ -88,7 +89,7 @@ The _BagIt base directory_ containing `bagit.txt` can have any name, and can be 
 
 The manifest file contains file checksums; the BagIt specifications [recommends SHA-512](https://www.rfc-editor.org/rfc/rfc8493.html#section-2.4) as default algorithm, that is `manifest-sha512.txt` SHOULD be present. 
 
-The BagIt manifest file MUST list the checksum of _all_ payload files in `data/` and its subdirectories. Where `data/` is also the [RO-Crate Root](../structure.md) the manifest therefore MUST include `ro-crate-metadata.json`:
+The BagIt manifest file MUST list the checksum of _all_ payload files in `data/` and its subdirectories. Where `data/` is also the [RO-Crate Root](../structure) the manifest therefore MUST include `ro-crate-metadata.json`:
 
 ```
 41846747…ee71  data/ro-crate-metadata.json
@@ -114,7 +115,7 @@ data/ro-crate-metadata.json: FAILED
 sha512sum: WARNING: 2 computed checksums did NOT match
 ```
 
-The BagIt manifest complements the [RO-Crate structure](../structure.md) as 
+The BagIt manifest complements the [RO-Crate structure](../structure) as 
 it provide a complete listing of all payload files with
 cryptographically strong checksums, ensuring the crate has been fully 
 archived/transferred, which the weak CRC-32 checksum (TCP/IP,
@@ -141,7 +142,7 @@ in combination with a secure PGP key exchange or equivalent trust network.
 
 #### Base URI in BagIt
 
-The arcp specification suggests how [BagIt UUID identifiers] can be used to calculate the base URI of a bag, see section [Establishing a base URI inside a ZIP file](relative-uris.md#establishing-a-base-uri-inside-a-zip-file).  For this purpose it is RECOMMENDED that `bag-info.txt` includes a fresh UUID like:
+The arcp specification suggests how [BagIt UUID identifiers] can be used to calculate the base URI of a bag, see section [Establishing a base URI inside a ZIP file](relative-uris#establishing-a-base-uri-inside-a-zip-file).  For this purpose it is RECOMMENDED that `bag-info.txt` includes a fresh UUID like:
 
     External-Identifier: urn:uuid:24e51ca2-5067-4598-935a-dac4e327d05a
 
@@ -163,7 +164,7 @@ BagIt tools can help complete the bag and verify the checksum of the downloaded
 files according to the manifest.
 
 The RO-Crate contained in `data/` MAY describe the bag with 
-[data entities](../data-entities.md#embedded-data-entities-that-are-also-on-the-web)
+[data entities](../data-entities#embedded-data-entities-that-are-also-on-the-web)
 as if the bag was _complete_, even if the large file is not (yet) present:
 
 ```json
@@ -187,7 +188,7 @@ this file is not itself described in the RO-Crate metadata.
 
 #### Snapshots of external files
 
-As an alternative to the above, [web-based data entities](../data-entities.md#web-based-data-entities)
+As an alternative to the above, [web-based data entities](../data-entities#web-based-data-entities)
 can be used in the RO-Crate:
 
 ```json
@@ -232,7 +233,7 @@ is outside of the bag directory and can be changed without changing the payload'
   |         example.txt 
 ```
 
-A [Data Entity](../data-entities.md) describing `example.txt` in this scenario would have an `@id` of `bag1/data/example.txt`:
+A [Data Entity](../data-entities) describing `example.txt` in this scenario would have an `@id` of `bag1/data/example.txt`:
 
 ```json
 {
@@ -244,7 +245,7 @@ A [Data Entity](../data-entities.md) describing `example.txt` in this scenario w
 
 ## Repository-specific identifiers
 
-_Root Data Entities_ MAY include repository-specific identifiers, described using [Contextual Entities](../contextual-entities.md) using a [PropertyValue], with a [name] that identifies the repository and the [identifier] as a value. The _same_ identifier MAY be used in multiple different repositories and effectively namespaced using the `name` of the `ProperyValue`.
+_Root Data Entities_ MAY include repository-specific identifiers, described using [Contextual Entities](../contextual-entities) using a [PropertyValue], with a [name] that identifies the repository and the [identifier] as a value. The _same_ identifier MAY be used in multiple different repositories and effectively namespaced using the `name` of the `ProperyValue`.
 
 ```json
 {

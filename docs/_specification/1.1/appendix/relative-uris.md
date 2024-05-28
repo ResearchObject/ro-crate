@@ -4,6 +4,7 @@ parent: Appendix
 grand_parent: RO-Crate 1.1
 redirect_from:
   - /1.1-DRAFT/appendix/relative-uris
+  - /1.1/appendix/relative-uris
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -36,7 +37,7 @@ redirect_from:
 
 The _RO-Crate Metadata File_ use _relative URI references_ to identify files and directories
 contained within the _RO-Crate Root_ and its children.  As described in section
-[Describing entities in JSON-LD](#describing-entities-in-json-ld) above, 
+[Describing entities in JSON-LD](jsonld#describing-entities-in-json-ld) above, 
 relative URI references are also frequently used for 
 identifying _Contextual entities_.
 
@@ -140,7 +141,7 @@ Results in a valid _RO-Crate JSON-LD_ (actual order in `@graph` may differ):
 ## Expanding/parsing JSON-LD keeping relative referencing
 
 [JSON-LD Expansion] can be used to 
-resolve terms from the `@context` to absolute URIs, e.g. `http://schema.org/description`. This may be needed to parse [extended properties](#extending-ro-crate) or for combinations with other Linked Data.
+resolve terms from the `@context` to absolute URIs, e.g. `http://schema.org/description`. This may be needed to parse [extended properties](jsonld#extending-ro-crate) or for combinations with other Linked Data.
 
 This algorithm would normally also expand `@id` fields based on the current [base URI][JSON-LD base URI] of the _RO-Crate Metadata File_, but this may be a temporary location like `file:///tmp/rocrate54/ro-crate-metadata.json`, meaning `@id`: `subfolder/` becomes `file:///tmp/rocrate54/subfolder/` after JSON-LD expansion.
 
@@ -301,14 +302,14 @@ Following redirection we see that:
   - ..rather than `https://w3id.org/ro/crate/1.0/index.html` which would not redirect correctly
 
 This example also use RO-Crate 1.0, where the _RO-Crate Metadata File_ is called `ro-crate-metadata.jsonld` instead of `ro-crate-metadata.json`. Note that the recommended
-[algorithm to find the Root Data Entity](../root-data-entity.md#finding-the-root-data-entity)
+[algorithm to find the Root Data Entity](../root-data-entity#finding-the-root-data-entity)
 is agnostic to the actual filename.
 
 ## Finding RO-Crate Root in RDF triple stores
 
 When parsing _RO-Crate JSON-LD_ as RDF, where the RDF framework performs resolution to absolute URIs, it may be difficult to find the _RO-Crate Root_ in the parsed triples.
 
-The algoritm proposed in section [Root Data Entity](../root-data-entity.md#finding-the-root-data-entity) allows finding the RDF resource describing `ro-crate-metadata.json`, independent of its parsed base URI. We can adopt this for RDF triples, thus finding crates conforming to this specification can be queried with [SPARQL]:
+The algoritm proposed in section [Root Data Entity](../root-data-entity#finding-the-root-data-entity) allows finding the RDF resource describing `ro-crate-metadata.json`, independent of its parsed base URI. We can adopt this for RDF triples, thus finding crates conforming to this specification can be queried with [SPARQL]:
 
 ```sparql
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -347,7 +348,7 @@ When parsing a _RO-Crate Metadata File_ into [RDF triples], for instance uploadi
 * The _RO-Crate Root_ may depend on where the _RO-Crate Metadata File_ was parsed from, e.g. `<file:///tmp/ro-crate-metadata.json>` (file) or `<http://localhost:3030/test/ro-crate-metadata.json>` (web upload)
 * Parsing multiple RO-Crates into the same RDF graph, using same base URI, may merge them into the same RO-Crate
 * `ro-crate-metadata.json` may not be recognized as JSON-LD and must be renamed to `ro-crate-metadata.jsonld`
-* Web servers hosting `ro-crate-metadata.json` may not send the [JSON-LD _Content-Type_](#ro-crate-json-ld-media-type)
+* Web servers hosting `ro-crate-metadata.json` may not send the [JSON-LD _Content-Type_](jsonld#ro-crate-json-ld-media-type)
 * If base URI is not correct it may be difficult to find the corresponding file and directory paths from an RDF query returning absolute URIs
 
 {: .tip }
@@ -491,7 +492,7 @@ Parsing this as RDF will generate triples including:
 Here consumers can assume `/` is the _RO-Crate Root_ and generating relative URIs can safely be achieved by  search-replace as the arcp URI is unique. Saving _RO-Crate JSON-LD_ from the triples can be done by using the arcp URI to [relativize absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root).
 
 {: .tip }
-> **Bagit**: The arcp specification suggests how [BagIt identifiers][ARCP BagIt] can be used to calculate the base URI. See also section [Combining with other packaging schemes](#combining-with-other-packaging-schemes) - note that in this approach the _RO-Crate Root_ will be the payload folder `/data/` under the calculated arcp base URI.
+> **Bagit**: The arcp specification suggests how [BagIt identifiers][ARCP BagIt] can be used to calculate the base URI. See also section [Combining with other packaging schemes](./implementation-notes#combining-with-other-packaging-schemes) - note that in this approach the _RO-Crate Root_ will be the payload folder `/data/` under the calculated arcp base URI.
 
 ## Relativizing absolute URIs within RO-Crate Root
 

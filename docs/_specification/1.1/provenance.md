@@ -2,6 +2,7 @@
 title: Provenance of entities
 redirect_from:
   - /1.1-DRAFT/provenance
+  - /1.1/provenance
 nav_order: 8
 parent: RO-Crate 1.1
 ---
@@ -36,7 +37,7 @@ parent: RO-Crate 1.1
 
 ## Equipment used to create files
 
-To specify which **equipment** was used to create or update a [Data Entity](data-entities.md), the _RO-Crate JSON-LD_ SHOULD have a _Context Entity_ for each item of equipment which SHOULD be of `@type` [IndividualProduct]. The entity SHOULD have a serial number, manufacturer that identifies it as completely as possible. In this case the equipment is a bespoke machine. The equipment SHOULD be described on a web page, and the address of the description SHOULD be used as its `@id`.
+To specify which **equipment** was used to create or update a [Data Entity](data-entities), the _RO-Crate JSON-LD_ SHOULD have a _Context Entity_ for each item of equipment which SHOULD be of `@type` [IndividualProduct]. The entity SHOULD have a serial number, manufacturer that identifies it as completely as possible. In this case the equipment is a bespoke machine. The equipment SHOULD be described on a web page, and the address of the description SHOULD be used as its `@id`.
 
 
 ```json
@@ -104,7 +105,7 @@ For example:
 }
 ```
 
-The software SHOULD be associated with the [File](s) (or other [data entities](data-entities.md)) it created as an [instrument] of a [CreateAction], with the [File] referenced by a [result] property. Any input files SHOULD be referenced by the [object] property.
+The software SHOULD be associated with the [File]\(s) (or other [data entities](data-entities)) it created as an [instrument] of a [CreateAction], with the [File] referenced by a [result] property. Any input files SHOULD be referenced by the [object] property.
 
 In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg` was transformed into an new image `pics/sepia_fence.jpg` using the _ImageMagick_ software application as "instrument". Actions MAY have human-readable names, which MAY be machine generated for use at scale.
 
@@ -150,11 +151,11 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
 {: .tip }
 > If representing command lines, double escape `\\` so that JSON preserves the `\` character.
 
-If multiple [SoftwareApplication]s have been used in composition, such as from a script or workflow, then the `CreateAction`'s [instrument] SHOULD rather reference a [SoftwareSourceCode] which can be further described as explained in the [Workflows and scripts](workflows.md) section.
+If multiple [SoftwareApplication]s have been used in composition, such as from a script or workflow, then the `CreateAction`'s [instrument] SHOULD rather reference a [SoftwareSourceCode] which can be further described as explained in the [Workflows and scripts](workflows) section.
 
 ## Recording changes to RO-Crates
 
-To record an action which changes an entity's metadata, or changes its state in a publication or other workflow, a [CreateAction] or [UpdateAction] SHOULD be associated with a [Data Entity](data-entities.md) or, for the RO-Crate itself, with the [root data entity](root-data-entity.md).
+To record an action which changes an entity's metadata, or changes its state in a publication or other workflow, a [CreateAction] or [UpdateAction] SHOULD be associated with a [Data Entity](data-entities) or, for the RO-Crate itself, with the [root data entity](root-data-entity).
 
 A curation Action MUST have at least one [object] which associates it with either the root data entity `Dataset` or one of its components.
 
@@ -238,7 +239,7 @@ To record curation actions which modify a [File] within a Dataset - for example,
 
 To describe an export from a Digital Library or repository system, RO-Crate uses the _Portland Common Data Model_ ([PCDM]). 
 
-A [Contextual Entity](contextual-entities.md) from a repository, representing an abstract entity such as a person, or a work, or a place SHOULD have a `@type` of [RepositoryObject], in addition to any other types. 
+A [Contextual Entity](contextual-entities) from a repository, representing an abstract entity such as a person, or a work, or a place SHOULD have a `@type` of [RepositoryObject], in addition to any other types. 
 
 Objects MAY be grouped together in [RepositoryCollection]s with [hasMember] pointing to the [RepositoryObject]. 
 

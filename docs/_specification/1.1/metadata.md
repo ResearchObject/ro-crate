@@ -2,6 +2,7 @@
 title: Metadata of the RO-Crate
 redirect_from:
   - /1.1-DRAFT/metadata
+  - /1.1/metadata
 excerpt: |
   RO-Crate aims to capture and describe the Research Object using
   structured metadata. The RO-Crate Metadata File Descriptor contains the
@@ -45,9 +46,9 @@ RO-Crate aims to capture and describe the [Research Object][ResearchObject] usin
 
 The _RO-Crate Metadata File Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:
 
-* [Root Data Entity](root-data-entity.md) - the RO-Crate `Dataset` itself, a gathering of data
-* [Data Entities](data-entities.md) - the _data_ payload, in the form of files and folders
-* [Contextual Entities](contextual-entities.md) - related things in the world (e.g. people, organizations, places), providing provenance for the data entities and the RO-Crate.
+* [Root Data Entity](root-data-entity) - the RO-Crate `Dataset` itself, a gathering of data
+* [Data Entities](data-entities) - the _data_ payload, in the form of files and folders
+* [Contextual Entities](contextual-entities) - related things in the world (e.g. people, organizations, places), providing provenance for the data entities and the RO-Crate.
 
 This machine-readable metadata can also be represented for human consumption in the _RO-Crate Website_, linking to data and Web resources.
 
@@ -90,7 +91,7 @@ Generally, the standard _type_ and _property_ names (_terms_) from [Schema.org] 
 
 To simplify processing and avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even where [Schema.org] for some properties otherwise permit shorter forms like `"author": "http://example.com/alice"`.
 
-See the appendix [RO-Crate JSON-LD](appendix/jsonld.md) for details.
+See the appendix [RO-Crate JSON-LD](appendix/jsonld) for details.
 
 ## Additional metadata standards
 
