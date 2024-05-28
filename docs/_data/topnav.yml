@@ -1,0 +1,13 @@
+subitems:
+  - title: "Home"
+    url: /
+  - title: "About"
+    url: /about_ro_crate
+  - title: "Use Cases"
+    url: /use_cases
+  - title: "Community"
+    url: /community
+  - title: "Resources"
+    url: /tutorials
+  - title: "Specification"
+    url: /specification

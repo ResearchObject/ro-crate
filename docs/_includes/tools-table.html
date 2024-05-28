@@ -1,0 +1,44 @@
+{%- assign tools = site.data.tools_list | sort_natural: "name" %}
+<div class="table-responsive mt-3">
+  <table class="tooltable table display">
+    <colgroup>
+      <col width="25%">
+      <col width="65%">
+      <col width="10%">
+    </colgroup>
+    <thead>
+      <tr class="text-nowrap">
+        <th>Tool</th>
+        <th>Description</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for tool in tools %}
+      <tr>
+        {% if tool.url %}
+        <td><a href="{{tool.url}}">{{tool.name}}</a></td>
+        {%- else %}
+        <td>{{tool.name}}</td>
+        {%- endif %}
+        <td>
+          {{tool.description}}
+          {%- if tool.subitems %}
+          <ul>
+            {%- for item in tool.subitems %}
+            <li>
+              {{item.name}}
+              {%- if item.url %}
+              : <a href="{{ item.url }}">{{ item.url }}</a>
+              {%- endif %}
+            </li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
+        </td>
+        <td>{{tool.status}}</td>
+      </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+</div>
