@@ -4,6 +4,11 @@ $card-slide-transition:
     border-width 0.15s ease-in,
     margin-right 0.15s ease-in;
 
+figcaption {
+    font-style: italic;
+    font-size: smaller;
+}
+
 /*-----Sidebar-----*/
 #side-nav {
     .btn.sidebar-title {
