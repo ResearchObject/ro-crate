@@ -2,7 +2,7 @@ name: "Build and Lint Site"
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "new-website-2"]
   pull_request:
     branches: [ "main" ]
     
@@ -22,6 +22,7 @@ jobs:
         with:
           node-version: '19'
       - name: Install dependencies
+        working-directory: ./docs
         run: |
           sudo apt-get install -y build-essential zlib1g-dev
           gem install bundler
@@ -29,9 +30,11 @@ jobs:
           bundle install
 
       - name: Build the site
+        working-directory: ./docs
         run: bundle exec jekyll build --strict_front_matter
 
       - name: Validate all links, enforce alt text
+        working-directory: ./docs
         run: |
           bundle exec htmlproofer \
           --ignore-files "/.*\/ro-crate-preview\.html/" \
@@ -40,9 +43,11 @@ jobs:
           ./_site
 
       - name: Ensure no unexpected encoded HTML in output
+        working-directory: ./docs
         run: |
           ! fgrep -R 'lt;blockquote' _site
 
       - name: Ensure no unexpected jekyll in output
+        working-directory: ./docs
         run: |
           ! fgrep -R 'site.pages' _site
