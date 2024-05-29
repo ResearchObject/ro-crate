@@ -145,7 +145,7 @@ These terms are being proposed by [Bioschemas profile ComputationalWorkflow 1.0-
 * `input` mapped to <https://bioschemas.org/ComputationalWorkflow#input>
 * `output` mapped to <https://bioschemas.org/ComputationalWorkflow#output>
 
-To support geometry in [Places](contextual-entities.md#places), these terms from the [GeoSPARQL ontology]:
+To support geometry in [Places](contextual-entities#places), these terms from the [GeoSPARQL ontology]:
 
 * `Geometry` mapped to <http://www.opengis.net/ont/geosparql#Geometry>
 * `asWKT` mapped to <http://www.opengis.net/ont/geosparql#asWKT>

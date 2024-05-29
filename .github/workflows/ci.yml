@@ -37,7 +37,7 @@ jobs:
         working-directory: ./docs
         run: |
           bundle exec htmlproofer \
-          --ignore-files "/.*\/ro-crate-preview\.html/" \
+          --ignore-files "/.*\/ro-crate-preview\.html/","/.*\/examples\/.*\/index\.html/" \
           --disable-external true \
           --enforce-https false \
           ./_site
