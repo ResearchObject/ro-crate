@@ -2,7 +2,7 @@ name: "Build and Lint Site"
 
 on:
   push:
-    branches: [ "main", "new-website-2"]
+    branches: [ "main"]
   pull_request:
     branches: [ "main" ]
     
