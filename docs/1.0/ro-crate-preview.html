@@ -1,1 +1,746 @@
-../_specification/1.0/ro-crate-preview.html
+
+
+<html>
+<head>
+
+
+<script type="application/ld+json"> 
+  {
+  "@context": "https://w3id.org/ro/crate/1.0/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.jsonld",
+      "identifier": "ro-crate-metadata.jsonld",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.0"
+      },
+      "about": {
+        "@id": "./"
+      },
+      "license": {
+        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0001-8131-2150"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-3545-944X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9842-9718"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-9260-0753"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0454-7145"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4289-4922"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6565-5145"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1219-2137"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4806-5140"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-7370-4805"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5491-6431"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2961-9670"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-6190-122X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2036-8350"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8420-5254"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-3588-6257"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0309-604X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5711-4872"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-2130-0865"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3156-2105"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1130-2154"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0048-3300"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-1756-2128"
+        }
+      ],
+      "citation": {
+        "@id": "https://doi.org/10.5281/zenodo.3250687"
+      },
+      "datePublished": "2019-11-15",
+      "description": "This specification defines a method, known as RO-Crate (Research Object Crate), of organizing file-based data with associated metadata, using linked data principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata. \n\nThe core of RO-Crate is a JSON-LD file, the RO-Crate Metadata File, named ro-crate-metadata.jsonld. This file contains structured metadata about the dataset as a whole (the Root Data Entity) and, optionally, about some or all of its files. This provides a simple way to, for example, assert the authors (e.g. people, organizations) of the RO-Crate or one its files, or to capture more complex provenance for files, such as how they were created using software and equipment. \n\nWhile providing the formal specification for RO-Crate, this document also aims to be a practical guide for software authors to create tools for generating and consuming research data packages, with explanation by examples.",
+      "hasPart": [
+        {
+          "@id": "index.html"
+        },
+        {
+          "@id": "context.jsonld"
+        },
+        {
+          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.0.0/ro-crate-1.0.0.pdf"
+        }
+      ],
+      "identifier": {
+        "@id": "https://doi.org/10.5281/zenodo.3541888"
+      },
+      "license": {
+        "@id": "https://www.apache.org/licenses/LICENSE-2.0"
+      },
+      "name": "RO-Crate specification",
+      "version": "1.0.0",
+      "@reverse": {
+        "about": [
+          {
+            "@id": "ro-crate-metadata.jsonld"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "index.html",
+      "@type": [
+        "CreativeWork",
+        "File"
+      ],
+      "encoding": {
+        "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.0.0/ro-crate-1.0.0.pdf"
+      },
+      "encodingFormat": [
+        "text/html",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/471"
+        }
+      ],
+      "identifier": {
+        "@id": "https://w3id.org/ro/crate/1.0"
+      },
+      "name": "RO-Crate Metadata Specification 1.0",
+      "sameAs": {
+        "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.html"
+      },
+      "version": "1.0.0",
+      "isPartOf": [
+        {
+          "@id": "./"
+        }
+      ]
+    },
+    {
+      "@id": "context.jsonld",
+      "@type": "File",
+      "encodingFormat": "application/ld+json",
+      "identifier": {
+        "@id": "https://w3id.org/ro/crate/1.0/context"
+      },
+      "license": {
+        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "name": "RO-Crate JSON-LD Context",
+      "sameAs": {
+        "@id": "https://zenodo.org/record/3541888/files/ro-crate-context-1.0.0.jsonld"
+      },
+      "version": "1.0.0",
+      "isPartOf": [
+        {
+          "@id": "./"
+        }
+      ]
+    },
+    {
+      "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.0.0/ro-crate-1.0.0.pdf",
+      "@type": "CreativeWork",
+      "encodingFormat": [
+        "application/pdf",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/18"
+        }
+      ],
+      "name": "RO-Crate Metadata Specification 1.0",
+      "sameAs": {
+        "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf"
+      },
+      "version": "1.0.0",
+      "isPartOf": [
+        {
+          "@id": "./"
+        }
+      ],
+      "@reverse": {
+        "encoding": [
+          {
+            "@id": "index.html"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8131-2150",
+      "@type": "Person",
+      "name": "Eoghan Ó Carragáin",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          },
+          {
+            "@id": "https://doi.org/10.5281/zenodo.3250687"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3545-944X",
+      "@type": "Person",
+      "name": "Peter Sefton",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          },
+          {
+            "@id": "https://doi.org/10.5281/zenodo.3250687"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9842-9718",
+      "@type": "Person",
+      "name": "Stian Soiland-Reyes",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          },
+          {
+            "@id": "https://doi.org/10.5281/zenodo.3250687"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9260-0753",
+      "@type": "Person",
+      "name": "Oscar Corcho",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0454-7145",
+      "@type": "Person",
+      "name": "Daniel Garijo",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4289-4922",
+      "@type": "Person",
+      "name": "Raul Palma",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6565-5145",
+      "@type": "Person",
+      "name": "Frederik Coppens",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-1219-2137",
+      "@type": "Person",
+      "name": "Carole Goble",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          },
+          {
+            "@id": "https://doi.org/10.5281/zenodo.3250687"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-4806-5140",
+      "@type": "Person",
+      "name": "José María Fernández",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-7370-4805",
+      "@type": "Person",
+      "name": "Kyle Chard",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5491-6431",
+      "@type": "Person",
+      "name": "Jose Manuel Gomez-Perez",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-2961-9670",
+      "@type": "Person",
+      "name": "Michael R Crusoe",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-6190-122X",
+      "@type": "Person",
+      "name": "Ignacio Eguinoa",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-2036-8350",
+      "@type": "Person",
+      "name": "Nick Juty",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8420-5254",
+      "@type": "Person",
+      "name": "Kristi Holmes",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3588-6257",
+      "@type": "Person",
+      "name": "Jason A. Clark",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0309-604X",
+      "@type": "Person",
+      "name": "Salvador Capella-Gutierrez",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5711-4872",
+      "@type": "Person",
+      "name": "Alasdair J. G. Gray",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2130-0865",
+      "@type": "Person",
+      "name": "Stuart Owen",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3156-2105",
+      "@type": "Person",
+      "name": "Alan R Williams",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-1130-2154",
+      "@type": "Person",
+      "name": "Giacomo Tartari",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0048-3300",
+      "@type": "Person",
+      "name": "Finn Bacall",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1756-2128",
+      "@type": "Person",
+      "name": "Thomas Thelen",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "@type": "CreativeWork",
+      "identifier": "CC0-1.0",
+      "name": "Creative Commons Zero v1.0 Universal",
+      "version": "1.0",
+      "@reverse": {
+        "license": [
+          {
+            "@id": "ro-crate-metadata.jsonld"
+          },
+          {
+            "@id": "context.jsonld"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://www.apache.org/licenses/LICENSE-2.0",
+      "@type": "CreativeWork",
+      "identifier": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "version": "2.0",
+      "@reverse": {
+        "license": [
+          {
+            "@id": "./"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://doi.org/10.5281/zenodo.3250687",
+      "@type": "ScholarlyArticle",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0001-8131-2150"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1219-2137"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-3545-944X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9842-9718"
+        }
+      ],
+      "datePublished": "2019",
+      "isPartOf": {
+        "@id": "https://drive.google.com/uc?id=16jt37tmTXG4z6JqBKJ0TYGDPrdzcyyND&export=download"
+      },
+      "name": "A lightweight approach to research object data packaging",
+      "releasedEvent": {
+        "@id": "https://www.open-bio.org/events/bosc-2019/bosc-2019-schedule/"
+      },
+      "subjectOf": {
+        "@id": "https://www.youtube.com/watch?v=AociW94muLM"
+      },
+      "@reverse": {
+        "citation": [
+          {
+            "@id": "./"
+          }
+        ],
+        "isBasedOn": [
+          {
+            "@id": "https://www.youtube.com/watch?v=AociW94muLM"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://www.youtube.com/watch?v=AociW94muLM",
+      "@type": "VideoObject",
+      "datePublished": "2019-08-29",
+      "isBasedOn": {
+        "@id": "https://doi.org/10.5281/zenodo.3250687"
+      },
+      "name": "A lightweight approach to research object... - Stian Soiland-Reyes - OBF: BOSC - ISMB ECCB 2019",
+      "releasedEvent": {
+        "@id": "https://www.iscb.org/ismbeccb2019"
+      },
+      "@reverse": {
+        "subjectOf": [
+          {
+            "@id": "https://doi.org/10.5281/zenodo.3250687"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://www.open-bio.org/events/bosc-2019/bosc-2019-schedule/",
+      "@type": "PublicationEvent",
+      "alternateName": "BOSC2019",
+      "endDate": "2019-06-25",
+      "location": {
+        "@id": "http://sws.geonames.org/2661604/"
+      },
+      "name": "Bioinformatics Open Source Conference 2019",
+      "startDate": "2019-06-24",
+      "superEvent": {
+        "@id": "https://www.iscb.org/ismbeccb2019"
+      },
+      "@reverse": {
+        "releasedEvent": [
+          {
+            "@id": "https://doi.org/10.5281/zenodo.3250687"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://www.iscb.org/ismbeccb2019",
+      "@type": "PublicationEvent",
+      "endDate": "2019-06-25",
+      "location": {
+        "@id": "http://sws.geonames.org/2661604/"
+      },
+      "name": "ISMB ECCB 2019",
+      "startDate": "2019-06-21",
+      "@reverse": {
+        "releasedEvent": [
+          {
+            "@id": "https://www.youtube.com/watch?v=AociW94muLM"
+          }
+        ],
+        "superEvent": [
+          {
+            "@id": "https://www.open-bio.org/events/bosc-2019/bosc-2019-schedule/"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "http://sws.geonames.org/2661604/",
+      "@type": "Place",
+      "name": "Basel",
+      "sameAs": {
+        "@id": "https://www.geonames.org/2661604/basel.html"
+      },
+      "@reverse": {
+        "location": [
+          {
+            "@id": "https://www.open-bio.org/events/bosc-2019/bosc-2019-schedule/"
+          },
+          {
+            "@id": "https://www.iscb.org/ismbeccb2019"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/471",
+      "@type": "Thing",
+      "name": "Hypertext Markup Language 5",
+      "alternateName": "HTML5",
+      "@reverse": {
+        "encodingFormat": [
+          {
+            "@id": "index.html"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/18",
+      "@type": "Thing",
+      "name": "Acrobat PDF 1.4 - Portable Document Format",
+      "alternateName": "PDF 1.4",
+      "@reverse": {
+        "encodingFormat": [
+          {
+            "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.0.0/ro-crate-1.0.0.pdf"
+          }
+        ]
+      }
+    }
+  ]
+}
+</script>
+
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+<script src="https://code.research.uts.edu.au/eresearch/CalcyteJS/raw/feature/or-crate/lib/render.js"></script>
+
+
+
+
+
+<link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"/>
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta charset='utf-8'/>
+<style>
+
+table.table {
+  padding-bottom: 300px;
+}
+</style>
+</head>
+
+
+<body>
+
+  <nav class="navbar">
+
+    <ul class="nav navbar-nav" >
+        <li ><a href="#"><span class="glyphicon glyphicon-home dataset_name">&nbsp;RO-Crate specification</span></a></li>
+    </ul>
+
+  </nav>
+<div class="container">
+<div class="jumbotron">
+<h4 class="citation"></h3>
+<h3 class="item_name">RO-Crate specification</h4>
+
+<h4></h4>
+
+<a href="./ro-crate-metadata.jsonld">Download all the metadata for <span class='name'>RO-Crate specification</span> in JSON-LD format</a>
+<div class="check"></div>
+</div>
+
+
+
+<div id="summary">
+<div><table class="table metadata" id="./"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="./">./</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>RO-Crate specification</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Dataset</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">description</th><td style="text-align:left"> <span>This specification defines a method, known as RO-Crate (Research Object Crate), of organizing file-based data with associated metadata, using linked data principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata. 
+
+The core of RO-Crate is a JSON-LD file, the RO-Crate Metadata File, named ro-crate-metadata.jsonld. This file contains structured metadata about the dataset as a whole (the Root Data Entity) and, optionally, about some or all of its files. This provides a simple way to, for example, assert the authors (e.g. people, organizations) of the RO-Crate or one its files, or to capture more complex provenance for files, such as how they were created using software and equipment. 
+
+While providing the formal specification for RO-Crate, this document also aims to be a practical guide for software authors to create tools for generating and consuming research data packages, with explanation by examples.</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">datePublished</th><td style="text-align:left"> <span>2019-11-15</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <div><details><summary><a href="#https://orcid.org/0000-0001-8131-2150">Eoghan &#xD3; Carrag&#xE1;in</a><span>--to--</span><a href="#https://orcid.org/0000-0003-3156-2105">Alan R Williams</a></summary><ul><li><a href="#https://orcid.org/0000-0001-8131-2150">Eoghan &#xD3; Carrag&#xE1;in</a></li><li><a href="#https://orcid.org/0000-0002-3545-944X">Peter Sefton</a></li><li><a href="#https://orcid.org/0000-0001-9842-9718">Stian Soiland-Reyes</a></li><li><a href="#https://orcid.org/0000-0002-9260-0753">Oscar Corcho</a></li><li><a href="#https://orcid.org/0000-0003-0454-7145">Daniel Garijo</a></li><li><a href="#https://orcid.org/0000-0003-4289-4922">Raul Palma</a></li><li><a href="#https://orcid.org/0000-0001-6565-5145">Frederik Coppens</a></li><li><a href="#https://orcid.org/0000-0003-1219-2137">Carole Goble</a></li><li><a href="#https://orcid.org/0000-0002-4806-5140">Jos&#xE9; Mar&#xED;a Fern&#xE1;ndez</a></li><li><a href="#https://orcid.org/0000-0002-7370-4805">Kyle Chard</a></li><li><a href="#https://orcid.org/0000-0002-5491-6431">Jose Manuel Gomez-Perez</a></li><li><a href="#https://orcid.org/0000-0002-2961-9670">Michael R Crusoe</a></li><li><a href="#https://orcid.org/0000-0002-6190-122X">Ignacio Eguinoa</a></li><li><a href="#https://orcid.org/0000-0002-2036-8350">Nick Juty</a></li><li><a href="#https://orcid.org/0000-0001-8420-5254">Kristi Holmes</a></li><li><a href="#https://orcid.org/0000-0002-3588-6257">Jason A. Clark</a></li><li><a href="#https://orcid.org/0000-0002-0309-604X">Salvador Capella-Gutierrez</a></li><li><a href="#https://orcid.org/0000-0002-5711-4872">Alasdair J. G. Gray</a></li><li><a href="#https://orcid.org/0000-0003-2130-0865">Stuart Owen</a></li><li><a href="#https://orcid.org/0000-0003-3156-2105">Alan R Williams</a></li></ul></details><details><summary><a href="#https://orcid.org/0000-0003-1130-2154">Giacomo Tartari</a><span>--to--</span><a href="#https://orcid.org/0000-0002-1756-2128">Thomas Thelen</a></summary><ul><li><a href="#https://orcid.org/0000-0003-1130-2154">Giacomo Tartari</a></li><li><a href="#https://orcid.org/0000-0002-0048-3300">Finn Bacall</a></li><li><a href="#https://orcid.org/0000-0002-1756-2128">Thomas Thelen</a></li></ul></details></div></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">about</th><td style="text-align:left"> <a href="#ro-crate-metadata.jsonld">ro-crate-metadata.jsonld</a></td></tr></tbody></td></tr><tr><th style="white-space: nowrap; width: 1%;">citation</th><td style="text-align:left"> <a href="#https://doi.org/10.5281/zenodo.3250687">A lightweight approach to research object data packaging</a></td></tr><tr><th style="white-space: nowrap; width: 1%;">hasPart</th><td style="text-align:left"> <ul><li><a href="#index.html">RO-Crate Metadata Specification 1.0</a></li><li><a href="#context.jsonld">RO-Crate JSON-LD Context</a></li><li><a href="#https://github.com/ResearchObject/ro-crate/releases/download/1.0.0/ro-crate-1.0.0.pdf">RO-Crate Metadata Specification 1.0</a></li></ul></td></tr><tr><th style="white-space: nowrap; width: 1%;">identifier</th><td style="text-align:left"> </td></tr><tr><th style="white-space: nowrap; width: 1%;">license</th><td style="text-align:left"> <a href="#https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></td></tr><tr><th style="white-space: nowrap; width: 1%;">version</th><td style="text-align:left"> <span>1.0.0</span></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0001-8131-2150"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0001-8131-2150">https://orcid.org/0000-0001-8131-2150</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Eoghan &#xD3; Carrag&#xE1;in</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <ul><li><a href="#./">RO-Crate specification</a></li><li><a href="#https://doi.org/10.5281/zenodo.3250687">A lightweight approach to research object data packaging</a></li></ul></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0002-3545-944X"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0002-3545-944X">https://orcid.org/0000-0002-3545-944X</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Peter Sefton</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <ul><li><a href="#./">RO-Crate specification</a></li><li><a href="#https://doi.org/10.5281/zenodo.3250687">A lightweight approach to research object data packaging</a></li></ul></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0001-9842-9718"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0001-9842-9718">https://orcid.org/0000-0001-9842-9718</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Stian Soiland-Reyes</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <ul><li><a href="#./">RO-Crate specification</a></li><li><a href="#https://doi.org/10.5281/zenodo.3250687">A lightweight approach to research object data packaging</a></li></ul></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0002-9260-0753"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0002-9260-0753">https://orcid.org/0000-0002-9260-0753</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Oscar Corcho</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0003-0454-7145"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0003-0454-7145">https://orcid.org/0000-0003-0454-7145</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Daniel Garijo</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0003-4289-4922"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0003-4289-4922">https://orcid.org/0000-0003-4289-4922</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Raul Palma</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0001-6565-5145"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0001-6565-5145">https://orcid.org/0000-0001-6565-5145</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Frederik Coppens</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0003-1219-2137"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0003-1219-2137">https://orcid.org/0000-0003-1219-2137</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Carole Goble</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <ul><li><a href="#./">RO-Crate specification</a></li><li><a href="#https://doi.org/10.5281/zenodo.3250687">A lightweight approach to research object data packaging</a></li></ul></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0002-4806-5140"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0002-4806-5140">https://orcid.org/0000-0002-4806-5140</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Jos&#xE9; Mar&#xED;a Fern&#xE1;ndez</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0002-7370-4805"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0002-7370-4805">https://orcid.org/0000-0002-7370-4805</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Kyle Chard</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0002-5491-6431"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0002-5491-6431">https://orcid.org/0000-0002-5491-6431</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Jose Manuel Gomez-Perez</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0002-2961-9670"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0002-2961-9670">https://orcid.org/0000-0002-2961-9670</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Michael R Crusoe</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0002-6190-122X"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0002-6190-122X">https://orcid.org/0000-0002-6190-122X</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Ignacio Eguinoa</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0002-2036-8350"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0002-2036-8350">https://orcid.org/0000-0002-2036-8350</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Nick Juty</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0001-8420-5254"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0001-8420-5254">https://orcid.org/0000-0001-8420-5254</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Kristi Holmes</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0002-3588-6257"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0002-3588-6257">https://orcid.org/0000-0002-3588-6257</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Jason A. Clark</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0002-0309-604X"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0002-0309-604X">https://orcid.org/0000-0002-0309-604X</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Salvador Capella-Gutierrez</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0002-5711-4872"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0002-5711-4872">https://orcid.org/0000-0002-5711-4872</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Alasdair J. G. Gray</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0003-2130-0865"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0003-2130-0865">https://orcid.org/0000-0003-2130-0865</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Stuart Owen</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0003-3156-2105"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0003-3156-2105">https://orcid.org/0000-0003-3156-2105</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Alan R Williams</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0003-1130-2154"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0003-1130-2154">https://orcid.org/0000-0003-1130-2154</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Giacomo Tartari</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0002-0048-3300"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0002-0048-3300">https://orcid.org/0000-0002-0048-3300</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Finn Bacall</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://orcid.org/0000-0002-1756-2128"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://orcid.org/0000-0002-1756-2128">https://orcid.org/0000-0002-1756-2128</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Thomas Thelen</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>Person</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr></tbody></table></div><div><table class="table metadata" id="https://doi.org/10.5281/zenodo.3250687"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://doi.org/10.5281/zenodo.3250687">https://doi.org/10.5281/zenodo.3250687</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>A lightweight approach to research object data packaging</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>ScholarlyArticle</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">isPartOf</th><td style="text-align:left"> </td></tr><tr><th style="white-space: nowrap; width: 1%;">datePublished</th><td style="text-align:left"> <span>2019</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">author</th><td style="text-align:left"> <ul><li><a href="#https://orcid.org/0000-0001-8131-2150">Eoghan &#xD3; Carrag&#xE1;in</a></li><li><a href="#https://orcid.org/0000-0003-1219-2137">Carole Goble</a></li><li><a href="#https://orcid.org/0000-0002-3545-944X">Peter Sefton</a></li><li><a href="#https://orcid.org/0000-0001-9842-9718">Stian Soiland-Reyes</a></li></ul></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">citation</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr><tr><th style="white-space: nowrap; width: 1%;">isBasedOn</th><td style="text-align:left"> <a href="#https://www.youtube.com/watch?v=AociW94muLM">A lightweight approach to research object... - Stian Soiland-Reyes - OBF: BOSC - ISMB ECCB 2019</a></td></tr></tbody></td></tr><tr><th style="white-space: nowrap; width: 1%;">releasedEvent</th><td style="text-align:left"> <a href="#https://www.open-bio.org/events/bosc-2019/bosc-2019-schedule/">Bioinformatics Open Source Conference 2019</a></td></tr><tr><th style="white-space: nowrap; width: 1%;">subjectOf</th><td style="text-align:left"> <a href="#https://www.youtube.com/watch?v=AociW94muLM">A lightweight approach to research object... - Stian Soiland-Reyes - OBF: BOSC - ISMB ECCB 2019</a></td></tr></tbody></table></div><div><table class="table metadata" id="index.html"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="index.html">index.html</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>RO-Crate Metadata Specification 1.0</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <ul><li><span>CreativeWork</span></li><li><span>File</span></li></ul></td></tr><tr><th style="white-space: nowrap; width: 1%;">isPartOf</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr><tr><th style="white-space: nowrap; width: 1%;">encodingFormat</th><td style="text-align:left"> <ul><li><span>text/html</span></li><li><a href="#https://www.nationalarchives.gov.uk/PRONOM/fmt/471">Hypertext Markup Language 5</a></li></ul></td></tr><tr><th style="white-space: nowrap; width: 1%;">encoding</th><td style="text-align:left"> <a href="#https://github.com/ResearchObject/ro-crate/releases/download/1.0.0/ro-crate-1.0.0.pdf">RO-Crate Metadata Specification 1.0</a></td></tr><tr><th style="white-space: nowrap; width: 1%;">identifier</th><td style="text-align:left"> </td></tr><tr><th style="white-space: nowrap; width: 1%;">sameAs</th><td style="text-align:left"> </td></tr><tr><th style="white-space: nowrap; width: 1%;">version</th><td style="text-align:left"> <span>1.0.0</span></td></tr></tbody></table><iframe src="index.html" width="100%" height="500"></iframe></div><div><table class="table metadata" id="context.jsonld"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="context.jsonld">context.jsonld</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>RO-Crate JSON-LD Context</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>File</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">isPartOf</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr><tr><th style="white-space: nowrap; width: 1%;">encodingFormat</th><td style="text-align:left"> <span>application/ld+json</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">identifier</th><td style="text-align:left"> </td></tr><tr><th style="white-space: nowrap; width: 1%;">license</th><td style="text-align:left"> <a href="#https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons Zero v1.0 Universal</a></td></tr><tr><th style="white-space: nowrap; width: 1%;">sameAs</th><td style="text-align:left"> </td></tr><tr><th style="white-space: nowrap; width: 1%;">version</th><td style="text-align:left"> <span>1.0.0</span></td></tr></tbody></table></div><div><table class="table metadata" id="https://github.com/ResearchObject/ro-crate/releases/download/1.0.0/ro-crate-1.0.0.pdf"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://github.com/ResearchObject/ro-crate/releases/download/1.0.0/ro-crate-1.0.0.pdf">https://github.com/ResearchObject/ro-crate/releases/download/1.0.0/ro-crate-1.0.0.pdf</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>RO-Crate Metadata Specification 1.0</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>CreativeWork</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">isPartOf</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr><tr><th style="white-space: nowrap; width: 1%;">encodingFormat</th><td style="text-align:left"> <ul><li><span>application/pdf</span></li><li><a href="#https://www.nationalarchives.gov.uk/PRONOM/fmt/18">Acrobat PDF 1.4 - Portable Document Format</a></li></ul></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">encoding</th><td style="text-align:left"> <a href="#index.html">RO-Crate Metadata Specification 1.0</a></td></tr></tbody></td></tr><tr><th style="white-space: nowrap; width: 1%;">sameAs</th><td style="text-align:left"> </td></tr><tr><th style="white-space: nowrap; width: 1%;">version</th><td style="text-align:left"> <span>1.0.0</span></td></tr></tbody></table></div><div><table class="table metadata" id="https://www.apache.org/licenses/LICENSE-2.0"><tbody><tr><th style="white-space: nowrap; width: 1%;">@id</th><td style="text-align:left"> <span><a href="https://www.apache.org/licenses/LICENSE-2.0">https://www.apache.org/licenses/LICENSE-2.0</a></span></td></tr><tr><th style="white-space: nowrap; width: 1%;">name</th><td style="text-align:left"> <span>Apache License 2.0</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">@type</th><td style="text-align:left"> <span>CreativeWork</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">Referenced by</th><td style="text-align:left"> <tbody><tr><th style="white-space: nowrap; width: 1%;">license</th><td style="text-align:left"> <a href="#./">RO-Crate specification</a></td></tr></tbody></td></tr><tr><th style="white-space: nowrap; width: 1%;">identifier</th><td style="text-align:left"> <span>Apache-2.0</span></td></tr><tr><th style="white-space: nowrap; width: 1%;">version</th><td style="text-align:left"> <span>2.0</span></td></tr></tbody></table></div>
+</div>
+
+
+<p>This file was created at 1573754283385 by
+<a href='https://code.research.uts.edu.au/eresearch/calcytejs'>
+Calcyte</a> which implements the <a href=''>
+Draft RO-Crate format</a>, version 0.2
+ </p>
+
+
+</body>
+</html>
