@@ -1,5 +1,7 @@
 ---
 title: Handling relative URI references
+redirect_from:
+  - /1.2-DRAFT/appendix/relative-uris
 parent: Appendix
 grand_parent: RO-Crate 1.2-DRAFT
 nav_order: 23

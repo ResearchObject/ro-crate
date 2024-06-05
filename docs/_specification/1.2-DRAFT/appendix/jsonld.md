@@ -1,5 +1,7 @@
 ---
 title: RO-Crate JSON-LD
+redirect_from:
+  - /1.2-DRAFT/appendix/jsonld
 parent: Appendix
 grand_parent: RO-Crate 1.2-DRAFT
 nav_order: 22

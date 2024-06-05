@@ -1,5 +1,8 @@
 ---
 title: Changelog
+redirect_from:
+  - /1.1-DRAFT/appendix/changelog
+  - /1.1/appendix/changelog
 parent: Appendix
 grand_parent: RO-Crate 1.1
 excerpt: List of changes in releases of this specifications
