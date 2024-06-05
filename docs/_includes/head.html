@@ -1,0 +1,126 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  {%- capture keywords %}
+  {%- if page.related_pages %}
+  {%- for section in page.related_pages %}
+  {%- unless section[1].size == 0 %}
+  {%- for keywordstr in section[1] %}
+  {%- assign keywordpage = site.pages | where: "page_id", keywordstr | first  %}
+  {%- if allkeywords %}
+  {%- assign allkeywords = allkeywords | append: ", " | append: keywordstr | append: ", " | append: keywordpage.title %}
+  {%- else %}
+  {%- assign allkeywords = allkeywords | append: keywordstr | append: ", " | append: keywordpage.title %}
+  {%- endif %}
+  {%- endfor %}
+  {%- endunless %}
+  {%- endfor %}{{allkeywords}}
+  {%- endif %}
+  {%- endcapture %}
+  <meta name="keywords" content="{{keywords}}">
+  <meta property="og:title" content="{{ site.title }}" />
+  <meta property="og:description" content="{{ site.description }}" />
+  <meta property="og:image" content="//{{site.github.url | remove: 'https://' | remove: 'http://'}}/assets/img/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="{{site.title}}">
+  <meta name="msapplication-TileColor" content="#{{site.theme_variables.theme_color | default: 0d6efd }}">
+  <meta name="theme-color" content="#{{site.theme_variables.theme_color | default: 0d6efd }}">
+  {%- if page.no_robots %}
+  <meta name="robots" content="noindex" />
+  {%- endif %}
+  {%- if page.type %}
+  {%- assign subtitle = page.type | replace: "_", " " | capitalize %}
+  {%- endif %}
+  <title>{% if page.title %}{% if subtitle %}{{subtitle}}: {% endif %}{{ page.title }} | {{ site.title }}{%- else %}{{ site.title }}{% endif %}</title>
+  <!-- Syntax highlighting  -->
+  <link rel="stylesheet" href="{{ 'assets/css/syntax.css' | relative_url }}">
+  <!-- Country flags  -->
+  <link rel="stylesheet" href="{{ 'assets/css/flag-icon.min.css' | relative_url }}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" type="text/css" href="{{ 'assets/css/all.min.css' | relative_url }}">
+  <!-- Main css file -->
+  <link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url }}?{{site.time | date: '%s'}}">
+  {%- if site.theme_variables.fonts.size != 0 %}
+  <!-- Main font(s) -->
+  {%- for font in site.theme_variables.fonts %}
+  <link href="{{font}}" rel="stylesheet">
+  {%- endfor %}
+  {%- endif %}
+  <!-- JavaScript  -->
+  <script src="{{ 'assets/js/jquery.min.js' | relative_url }}"></script>
+  <script src="{{ 'assets/js/lunr.min.js' | relative_url }}"></script>
+  <script src="{{ 'assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
+  <script src="{{ 'assets/js/anchor.min.js' | relative_url }}"></script>
+  {% unless page.toc == false %}<script src="{{ 'assets/js/toc.js' | relative_url }}"></script>{% endunless %}
+  <script src="{{ 'assets/js/jquery.navgoco.js' | relative_url }}"></script>
+  <script src="{{ 'assets/js/main.js' | relative_url }}"></script>
+  <script src="{{ 'assets/js/search.js' | relative_url }}"></script>
+  <script src="{{ 'assets/js/clipboard.min.js' | relative_url }}"></script>
+  {%- if page.datatable == true %}
+  <!-- Include the standard DataTables bits -->
+  <link rel="stylesheet" type="text/css" href="{{ 'assets/css/dataTables.bootstrap5.min.css' | relative_url }}">
+  <script type="text/javascript" charset="utf8" src="{{ 'assets/js/jquery.dataTables.min.js' | relative_url }}"></script>
+  <script type="text/javascript" charset="utf8" src="{{ 'assets/js/dataTables.bootstrap5.min.js' | relative_url }}"></script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+          $('table.display').each(function() {
+              $(this).DataTable({
+                  lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+                  stateSave: true,
+                  searching: true,
+                  info: true,
+                  pageLength: 10,
+                  language: {
+                      searchPlaceholder: "Type here..."
+                  },
+                  "fnDrawCallback": function ( oSettings ){
+                      var tableId = oSettings.nTable.id;
+                      if(oSettings.fnRecordsTotal() < 10){     
+                          $('#'+tableId+'_length').hide();
+                          $('#'+tableId+'_paginate').hide();
+                          $('#'+tableId+'_filter').hide();
+                          $('#'+tableId+'_info').hide();
+                      }
+                  }
+              });
+          })
+      });
+  </script>
+  {%- endif %}
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ 'assets/img/apple-touch-icon.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/img/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/img/favicon-16x16.png' | relative_url }}">
+  <link rel="manifest" href="{{ 'assets/img/site.webmanifest' | relative_url }}">
+  <link rel="mask-icon" href="{{ 'assets/img/safari-pinned-tab.svg' | relative_url }}" color="#{{site.theme_variables.theme_color | default: 0d6efd }}">
+  <link rel="shortcut icon" href="{{ 'assets/img/favicon.ico' | relative_url }}">
+  <!-- Schema.org metadata -->
+  {% include schemasorg.html %}
+  {%- if site.gtag and jekyll.environment == "production"%}
+  <!-- Google analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gtag }}"></script>
+  <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', '{{ site.gtag }}');</script>
+  {%- endif %}
+  {%- if site.plausible and jekyll.environment == "production"%}
+  <!-- Plausible -->
+  <script defer data-domain="{{site.plausible}}" src="{{site.plausible_src | default: 'https://plausible.io/js/plausible.js'}}"></script>
+  {%- endif %}
+  {%- if site.matomo and jekyll.environment == "production"%}
+  <!-- Matomo -->
+  <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+      var u="{{site.matomo}}";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '{{site.matomo_id}}']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+  </script>
+  <!-- End Matomo Code -->
+  {%- endif %}
+</head>

@@ -1,0 +1,24 @@
+<h2>Related use cases</h2>
+
+<!-- find use cases that match this entry -->
+{% assign all_use_cases = site.pages | where:"type", "use_cases" %}
+{% assign matched_cases = "" | split: "," %} <!-- hack to initialise an empty array -->
+{% for case in all_use_cases %}
+    {% if page.type == "domains" %}
+        {% assign metadata = case.domains %}
+    {% elsif page.type == "tasks" %}
+        {% assign metadata = case.tasks %}
+    {% elsif page.type == "roles" %}
+        {% assign metadata = case.roles %}
+    {% endif %}
+    {% if metadata contains page.page_id %}
+        {% assign matched_cases = matched_cases | push: case.page_id %}
+    {% endif %}
+{% endfor %}
+
+{% if matched_cases.size == 0 %}
+<p>No use cases found.</p>
+{% else %}
+{% assign matched_cases_joined = matched_cases | join: ", " %}
+{% include section-navigation-tiles.html type="use_cases" custom=matched_cases_joined %}
+{% endif %}

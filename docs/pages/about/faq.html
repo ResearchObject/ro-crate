@@ -1,0 +1,18 @@
+---
+title: Frequently Asked Questions
+
+---
+{%- assign allfaqs = site.data.faqs %}
+<h1>Frequently Asked Questions</h1>
+
+<ol>
+{%- for faq in allfaqs %}
+  <li><a href="#{{ faq.question | slugify }}">{{ faq.question }}</a></li>
+{% endfor %}
+</ol>
+
+{%- for faq in allfaqs %}
+  <h2 id="{{ faq.question | slugify }}">{{ faq.question }}</h2>
+
+  {{ faq.answer | markdownify }}
+{% endfor %}

@@ -1,0 +1,64 @@
+- title: Sofware Developer
+  description: >
+    Software developers develop software systems, and this is their day-to-day work. 
+    They may not necessarily be involved in the design, nor in ongoing maintenance. 
+    Software engineers will also be involved in the design, and possibly less in the implementation. 
+    Research software engineers would be involved in all stages, and likely subsequent maintenance. 
+    RO-crates may provide a solution for integration/archiving/distribution in various development steps.
+  Icon: fa-code
+  Background: Sofware Developer background
+
+- title: Data Analyst
+  description: >
+    A data analyst will, on a routine basis, be charged with data wrangling, 
+    checking consistency of data, and for the analytic process by which is it appraised or evaluated, 
+    including using the data with various tools, applying specific algorithms, etc. 
+    In this context, an analyst may consider packing inputs or outputs from their routine work as RO-crates, 
+    perhaps for archiving or for sharing.
+  Icon: fa-chart-column
+  Background: Data Analyst background
+
+- title: Researcher
+  description: >
+    A researcher is concerned with their own research interests, which may use a wide variety of tools, 
+    software, data, etc. In this context, a researcher may also partly have a developer role, 
+    and may be looking into whether RO-crates can fill any need in their work.
+  Icon: fa-microscope
+  Background: Researcher background
+
+- title: Compliance Officer
+  description: >
+    A compliance officer ensures that various research outputs conform to either policy or legal requirements in research, 
+    and here may either be judging the suitability of RO-crates for use in their research/development context, 
+    or else ensuring outputs conform to those regulations. And profiles or schemas for consistency.
+  Icon: fa-list-check
+  Background: Compliance Officer background
+
+- title: Data Steward
+  description: >
+    A data steward is responsible for all data in the various data life cycle stages. 
+    In this context, RO-crate may be a solution at various stages of the data life cycle.
+  Icon: fa-file-shield
+  Background: Data Steward background
+
+- title: Managerial
+  description: >
+    A manager will operate at a higher strategic level, and may not necessarily want the deep technical / implementation details around RO-crates. 
+    A higher level view of RO-crates in a wider context is required.
+  Icon: fa-paperclip
+  Background: Managerial background
+
+- title: Repository Manager
+  description: >
+    Besides managing a repository and associated services, systems and support, 
+    a repository manager will promote the discoverability, visibility and accessibility of the repository content, 
+    and ensure they are accurate, up-to-date and comply with institutional/community standards.
+  Icon: fa-database
+  Background: Managerial background
+
+- title: Information Architect
+  description: >
+    An information architect is responsible for designing and possibly implementing new infrastructure and information solutions 
+    that fit with existing infrastructure and initiatives.
+  Icon: fa-file-contract
+  Background: Managerial background
