@@ -1,8 +1,6 @@
 ---
-page_id: workflow-hub
+page_id: workflowhub
 redirect_from:
-    - workflowhub
-    - /in-use/workflow-hub
     - /in-use/workflowhub
 title: WorkflowHub
 description: WorkflowHub imports and exports Workflow RO-Crates, using it as an exchange format. They are a specialization of RO-Crate for packaging an executable workflow with all necessary documentation. It is aligned with, and intends to strictly extend, the more general Bioschemas ComputationalWorkflow profile.
