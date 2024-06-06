@@ -1,5 +1,7 @@
 ---
 page_id: arkisto
+redirect_from:
+    - /in-use/arkisto
 title: Arkisto
 description: Arkisto uses RO-Crate for packaging data objects in the 3 uses cases described below, Modern PARADISEC, UTS Research Data Repository and UTS Cultural Datasets. As part of these use-cases they have been developing or enhancing their tooling to facilitate their use of RO-Crate
 url: https://arkisto-platform.github.io/

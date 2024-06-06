@@ -1,5 +1,7 @@
 ---
 page_id: wildlive
+redirect_from:
+    - /in-use/wildlive
 title: Wildlive portal
 description: Senckenberg’s Wildlive data portal, is a repository and analysis platform for biodiversity monitoring.
 url: "https://wildlive.senckenberg.de/"

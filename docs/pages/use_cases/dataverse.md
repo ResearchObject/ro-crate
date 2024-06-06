@@ -1,5 +1,7 @@
 ---
 page_id: dataverse
+redirect_from:
+    - /in-use/dataverse
 title: Dataverse & AROMA
 description: AROMA (ARP RO-Crate Manager) is part of Hungarian initiative ELKH ARP, extending Harvard Dataverse to allow dynamic metadata editing of data deposit metadata.
 url: https://sztaki.hun-ren.hu/en/innovation/news/developing-elkh-arp-aroma-published-describo-newsletter-australia

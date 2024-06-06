@@ -1,5 +1,7 @@
 ---
 page_id: madmp
+redirect_from:
+    - /in-use/madmp
 title: Machine-actionable data management plans
 description: RDA maDMP Mapper and Ro-Crate_2ma-DMP can convert between machine-actionable data management plans (maDMP) and RO-Crate.
 url: https://github.com/GhaithArf/ro-crate-rda-madmp-mapper

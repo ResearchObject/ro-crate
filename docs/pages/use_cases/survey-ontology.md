@@ -1,5 +1,7 @@
 ---
 page_id: survey-ontology
+redirect_from:
+    - /in-use/survey-ontology
 title: Survey Ontology
 description: The Survey Ontology is an open vocabulary that allows representing, annotating and sharing a representation of the survey structure and the gathered responses.
 url: https://w3id.org/survey-ontology

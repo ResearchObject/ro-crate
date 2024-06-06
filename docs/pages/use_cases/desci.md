@@ -1,5 +1,7 @@
 ---
 page_id: desci
+redirect_from:
+    - /in-use/desci
 title: DeSci Nodes
 description: The DeSci Nodes system has been developed by the DeSci foundation, where dPID (distibuted Persistent Identifier) act as an overlay of the Interplanetary File System (IPFS)
 url: https://docs.desci.com/
