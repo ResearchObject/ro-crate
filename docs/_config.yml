@@ -16,6 +16,7 @@ include:
 
 exclude:
   - README.md
+  - _compatibility/README.md
   - pages/use_cases/README.md
   - .gitignore
   - var/
@@ -79,6 +80,9 @@ defaults:
 
 collections:
   specification:
+    output: true
+  compatibility:
+    permalink: /:path
     output: true
 
 theme_variables:

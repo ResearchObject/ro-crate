@@ -1,5 +1,7 @@
 ---
 page_id: livepublication
+redirect_from:
+    - /in-use/livepublication
 title: LivePublication
 description: LivePublication is a proof of concept of an executable paper, which interactive visualization and statistical calculations can be regenerated on the fly taking into consideration data sources updated after the paper’s publication date.
 url: https://livepublication.github.io/LP_Pub_LID/

@@ -1,5 +1,8 @@
 ---
 title: RO-Crate JSON-LD
+redirect_from:
+  - /1.1-DRAFT/appendix/jsonld
+  - /1.1/appendix/jsonld
 parent: Appendix
 grand_parent: RO-Crate 1.1
 ---

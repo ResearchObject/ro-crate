@@ -4,6 +4,8 @@ layout: default
 sidebar: main
 redirect_from:
     - /implementations
+    - /in-use
+    - /in-use/index.html
 ---
 # RO-Crate in use
 

@@ -1,11 +1,13 @@
 ---
 page_id: bioconnect
+redirect_from:
+    - /in-use/bioconnect
 title: BioConnect
 description: JAX BioConnect is an index of research data that supports data sharing, high-quality curation, and consistent data description.
 image: bioconnect.png
 domains: [biomedical_science, omics]
 tasks: [conduct_research, data_handling]
-roles: [data_analyst, data_steward, researcher, repository_manager]
+roles: [data_analyst, data_steward, researcher, repository_manager] 
 ---
 <!--
    Copyright 2019-2022 RO-Crate contributors

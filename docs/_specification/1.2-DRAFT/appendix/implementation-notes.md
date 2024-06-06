@@ -1,5 +1,7 @@
 ---
 title: Implementation notes
+redirect_from:
+  - /1.2-DRAFT/appendix/implementation-notes
 parent: Appendix
 grand_parent: RO-Crate 1.2-DRAFT
 nav_order: 21

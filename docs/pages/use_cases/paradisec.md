@@ -1,5 +1,7 @@
 ---
 page_id: paradisec
+redirect_from:
+    - /in-use/paradisec
 title: PARADISEC
 description: Modern PARADISEC demonstrates the use of RO-Crate to describe the collections and items
 url: https://arkisto-platform.github.io/case-studies/paradisec/

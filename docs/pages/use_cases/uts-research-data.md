@@ -1,5 +1,7 @@
 ---
 page_id: uts-research-data
+redirect_from:
+    - /in-use/uts-research-data
 title: UTS Research Data Repository
 description: The UTS Research Data Repository is a searchable portal for discovering and accessing public datasets by UTS researchers.
 url: https://arkisto-platform.github.io/case-studies/uts-repo/

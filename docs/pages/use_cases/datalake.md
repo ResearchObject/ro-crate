@@ -1,5 +1,7 @@
 ---
 page_id: datalake
+redirect_from:
+    - /in-use/datalake
 title: KEDO Data Lake
 description: Knowledge Enhanced Digital Objects (KEDO) is an experimental approach of building a data lake using a combination of knowledge graphs, RO-Crate and PID records.
 url: https://github.com/luoyu357/KEDODataLake

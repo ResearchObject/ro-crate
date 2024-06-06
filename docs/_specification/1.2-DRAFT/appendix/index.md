@@ -1,5 +1,7 @@
 ---
 title: Appendix
+redirect_from:
+  - /1.2-DRAFT/appendix
 nav_order: 20
 parent: RO-Crate 1.2-DRAFT
 has_children: true
