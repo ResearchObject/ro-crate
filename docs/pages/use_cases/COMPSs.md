@@ -1,6 +1,6 @@
 ---
 page_id: COMPSs
-title: COMPSs Workflow Provenance
+title: COMPSs
 description: COMPSs recording of Workflow Provenance for governance and reproducibility of computational experiments
 url: https://compss.bsc.es/
 image: COMPSs.png
@@ -33,7 +33,7 @@ roles: [information_architect, researcher, software_developer] # should match it
 
 COMPSs provides a programming interface for the development of the applications in Python/Java/C/C++, a runtime system that exploits the inherent parallelism of applications at execution time, and a rich ecosystem for the operation monitoring, performance evaluation and integration with Jupyter/Jupyterlab.
 
-The COMPSs runtime includes the capacity of automatically recording details of the application’s execution as metadata, also known as [Workflow Provenance](https://compss-doc.readthedocs.io/en/stable/Sections/05_Tools/04_Workflow_Provenance.html). The metadata is recorded in RO-Crate format, following [Workflow](https://w3id.org/workflowhub/workflow-ro-crate/1.0) and [Workflow Run Crate](https://w3id.org/ro/wfrun/workflow/0.4) profiles. With workflow provenance, you are able to share not only your workflow application (i.e. the source code) but also your workflow run (i.e. the datasets used as inputs, and the outputs generated as results). 
+The COMPSs runtime includes the capacity of automatically recording details of the application’s execution as metadata, also known as [Workflow Provenance](https://compss-doc.readthedocs.io/en/stable/Sections/05_Tools/04_Workflow_Provenance.html). The metadata is recorded in RO-Crate format, following [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/1.0) and [Workflow Run Crate](https://w3id.org/ro/wfrun/workflow/0.4) profiles. With workflow provenance, you are able to share not only your workflow application (i.e. the source code) but also your workflow run (i.e. the datasets used as inputs, and the outputs generated as results). 
 
 Provenance information can be useful for a number of things, including Governance, Reproducibility, Replicability, Traceability, or Knowledge Extraction, among others. In our case, we have initially targeted workflow provenance recording to enable users to publish research results obtained with COMPSs as artifacts that can be cited in scientific publications with their corresponding DOI, by using [WorkflowHub](https://workflowhub.eu/).
 
