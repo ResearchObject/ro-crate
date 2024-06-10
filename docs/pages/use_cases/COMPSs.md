@@ -27,7 +27,7 @@ roles: [information_architect, researcher, software_developer] # should match it
 
 # COMPSs
 
-[![COMPSs logo](/assets/img/COMPSs.png)](https://compss.bsc.es/)
+[![COMPSs logo](assets/img/COMPSs.png)](https://compss.bsc.es/)
 
 [COMPSs](https://compss.bsc.es/) COMP Superscalar (COMPSs) is a task-based programming model which aims to ease the development of applications for distributed infrastructures, such as large High-Performance Clusters (HPC), Clouds and Container managed clusters. PyCOMPSs is the Python binding of COMPSs.
 
@@ -37,7 +37,7 @@ The COMPSs runtime includes the capacity of automatically recording details of t
 
 Provenance information can be useful for a number of things, including Governance, Reproducibility, Replicability, Traceability, or Knowledge Extraction, among others. In our case, we have initially targeted workflow provenance recording to enable users to publish research results obtained with COMPSs as artifacts that can be cited in scientific publications with their corresponding DOI, by using [WorkflowHub](https://workflowhub.eu/).
 
-![COMPSs with RO-Crate](/assets/img/COMPSs-screenshot.png)
+![COMPSs with RO-Crate](assets/img/COMPSs-screenshot.png)
 
 ## Examples of COMPSs RO-Crates
 
@@ -59,4 +59,3 @@ Raül Sirvent, Javier Conejero, Francesc Lordan, Jorge Ejarque, Laura Rodríguez
 _IEEE/ACM Workshop on Workflows in Support of Large-Scale Science (WORKS)_ (1-9)
 <https://doi.org/10.1109/WORKS56498.2022.00006>  
 [[preprint](https://upcommons.upc.edu/handle/2117/384589)]
-
