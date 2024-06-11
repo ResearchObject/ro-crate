@@ -1,228 +1,220 @@
 - name: Crate-O
   description: Browser-based editor for Research Object Crates, inspired by Describo, with vocabulary support for Schema.org Style schemas (SOSSs)
   status: alpha
-  level: 
+  level:
   url: https://github.com/Language-Research-Technology/crate-o
 
 - name: Describo
-  description: An ecosystem of tools, software components and services to create and manage Research Object Crates    
-  status: RC
-  level: 
-  url: https://describo.github.io/#/
+  description: An intuitive and extensible tool for working with RO-Crates. Transform, Discover, Explore, Describe.
+  status: production
+  level:
+  url: https://describo.github.io
   subitems:
-      - name: Desktop
-        url: https://describo.github.io/#/desktop
-      - name: Browser
-        url: https://describo.github.io/#/web
-      - name: For Developers
-        url: https://describo.github.io/#/component
-      - name: JSON-LD Data Packs
-        url: https://describo.github.io/#/datapacks
-      - name: Profiles (interface definition)
-        url: https://describo.github.io/#/profile
-      - name: Describo Crate Builder Web
-        url: https://github.com/describo/crate-builder-component-react
+      - name: Component - embed the Describo RO-Crate engine in your application
+        url: https://describo.github.io/docs/component/introduction.html
+      - name: Profiles - adapt describo to your needs
+        url: https://describo.github.io/docs/profiles/introduction.html
 
 - name: dmbon-assistant
   description: Data management assistant that publishes RO-Crate
   status: alpha
-  level: 
+  level:
   url: https://github.com/vliz-be-opsci/dmbon-assistant/#readme
 
 - name: ro-crate-excel
   description: Command-line tool to help create RO-Crates from spreadsheets
   status: beta
-  level: 
+  level:
   url: https://www.npmjs.com/package/ro-crate-excel
 
 - name: ro-crate-html
   description: HTML rendering of RO-Crate
   status: beta
-  level: 
+  level:
   url: https://www.npmjs.com/package/ro-crate-html
 
 - name: ro-crate-preview
   description: GitHub Action for ro-crate-html, e.g. publishing crates on GitHub Pages
   status: alpha
-  level: 
+  level:
   url: https://github.com/marketplace/actions/ro-crate-preview
 
 - name: rocrate-to-pages
   description: GitHub action to generate a GitHub Pages web site from a RO-Crate git repository
   status: alpha
-  level: 
+  level:
   url: https://github.com/vliz-be-opsci/rocrate-to-pages
 
 - name: rocrate-preview-widget
   description: React web application to dynamically preview an RO-Crate
   status: prototype
-  level: 
+  level:
   url: https://github.com/vliz-be-opsci/rocrate-preview-widget
 
 - name: ro-crate-js
   description: JavaScript/NodeJS library for RO-Crate rendering as HTML.
   status: beta
-  level: 
+  level:
   url: https://www.npmjs.com/package/ro-crate
 
 - name: ro-crate-ruby
   description: Ruby library to consume/produce RO-Crates
   status: beta
-  level: 
+  level:
   url: https://github.com/fbacall/ro-crate-ruby
 
 - name: ro-crate-py
   description: Python library to consume/produce RO-Crates
   status: beta
-  level: 
+  level:
   url: https://github.com/researchobject/ro-crate-py
 
 - name: ro-crate-java
   description: Java API for creating and modifying RO-Crate using builder pattern
-  status: 
-  level: 
+  status:
+  level:
   url: https://github.com/kit-data-manager/ro-crate-java
 
 - name: ROCrates.Net
   description: Programmatically create and manipulate RO-Crates in C# and .NET
   status: alpha
-  level: 
+  level:
   url: https://uon-drs.github.io/ROCrates.Net/
 
 - name: galaxy2cwl
   description: Wraps Galaxy workflow as Workflow RO-Crate
   status: alpha
-  level: 
+  level:
   url: https://github.com/workflowhub-eu/galaxy2cwl
 
 - name: ya2ro
   description: Generate RO-Crate and HTML page from YAML template with look-up of DOI/ORCID/GitHub metadata
   status: prototype
-  level: 
+  level:
   url: https://github.com/oeg-upm/ya2ro
 
 - name: arc-to-roc
   description: Generate RO-Crate from an Annotated Research Context (ARC), see DataPlant
-  status: 
-  level: 
+  status:
+  level:
   url: https://github.com/nfdi4plants/arc-to-roc
 
 - name: ROCrate_enrichment_service
   description: API-based metadata enrichment service for RO-Crates
   status: prototype
-  level: 
+  level:
   url: https://github.com/oeg-upm/ROCrate_enrichment_service
 
 - name: FAIR-Research-Object
   description: Evaluate FAIRness of Research Objects through an API
   status: prototype
-  level: 
+  level:
   url: https://github.com/oeg-upm/FAIR-Research-Object
 
 - name: repo2crate
   description: Generate a Workflow Testing RO-Crate from a "best-practices" workflow repository
-  status: 
-  level: 
+  status:
+  level:
   url: https://github.com/crs4/repo2crate
 
 - name: ro-crate-benchmarks
   description: Benchmarks for performance testing RO-Crate libraries
-  status: 
-  level: 
+  status:
+  level:
   url: https://github.com/kit-data-manager/ro-crate-benchmarks
 
 - name: tonkaz
   description: Tool to verify workflow reproducibility, compares RO-Crates of workflow execution results.
-  status: 
-  level: 
+  status:
+  level:
   url: https://github.com/sapporo-wes/tonkaz
 
 - name: signposting
   description: Python library & CLI tool for resolving PIDs as FAIR Signposting, e.g. DOIs from WorkflowHub to RO-Crate
   status: beta
-  level: 
+  level:
   url: https://pypi.org/project/signposting/
 
 - name: RO-Crates-and-Excel
   description: Generate RO-Crate from Excel file, following the RO-Crates-and-Excel profile.
-  status: 
-  level: 
+  status:
+  level:
   url: https://github.com/e11938258/RO-Crates-and-Excel
 
 - name: rocrate-lang-py
   description: RO Crate Python library to help you load language data from ro-crates
   status: prototype
-  level: 
+  level:
   url: https://github.com/Language-Research-Technology/rocrate-lang-py
 
 - name: ROCrate-interface
   description: Initial development in creating an interface between workflow languages and a LivePublication RO-crate specification
   status: prototype
-  level: 
+  level:
   url: https://github.com/GusEllerm/ROcrate-interface
 
 - name: aiida-rocrate
   description: AiiDA plugin that allows exporting (parts) of the provenance graph as Research Object Crates.
   status: planning
-  level: 
+  level:
   url: https://github.com/sphuber/aiida-rocrate
 
 - name: RO-Crate-Registry
   description: Web-based registry of RO-Crates (assumes ZIP on http/https)
   status: prototype
-  level: 
+  level:
   url: https://github.com/XiaotianWang0918/RO-Crate-Registry
 
 - name: CheckMyCrate
   description: Validation according to Workflow RO-Crate profile
   status: alpha
-  level: 
+  level:
   url: https://github.com/KockataEPich/CheckMyCrate/tree/Version
 
 - name: ro-crate-validator-py
   description: Modular RO-Crate validator
   status: alpha
-  level: 
+  level:
   url: https://github.com/ResearchObject/ro-crate-validator-py/
 
 - name: ELN validator
   description: Validates ELN RO-Crates for electronic lab notebooks (~ beta)
   status: beta
-  level: 
+  level:
   url: https://github.com/TheELNConsortium/TheELNFileFormat/blob/master/tools/eln_validator.py
 
 - name: Sciebo Research Data Services
   description: Move research data from OwnCloud to Zenodo or OSF, parsing/creating RO-Crate Metadata file
-  status: 
-  level: 
+  status:
+  level:
   url: https://www.research-data-services.org/
 
 - name: tuw-rocrate-automation/
   description: Convert RO-Crate (Research Object Crate) to reposit into InvenioRDM
   status: alpha
-  level: 
+  level:
   url: https://github.com/MoritzRenkin/tuw-rocrate-automation/
 
 - name: ro-crates-deposit
   description: Command line tool to deposit a RO-Crate directory to an InvenioRD
   status: alpha
-  level: 
+  level:
   url: https://github.com/beerphilipp/ro-crates-deposit
 
 - name: rocrate-to-sembench
   description: GitHub action to prepare a rocrate for pysembench
   status: alpha
-  level: 
+  level:
   url: https://github.com/vliz-be-opsci/rocrate-to-sembench
 
 - name: profile-repository-to-pages
   description: RO-Crate profile registry that extracts metadata from Profile Crates
   status: prototype
-  level: 
+  level:
   url: https://github.com/vliz-be-opsci/profile-repository-to-pages
 
 - name: Common Data Model Builder (cdmb)
   description: From a data model expressed in Python, generate a reproducible folder structure of the research project as a Research Object (RO).
-  status: 
-  level: 
+  status:
+  level:
   url: https://github.com/cienciadedatosysalud/cdmb
