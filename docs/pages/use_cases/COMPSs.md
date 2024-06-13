@@ -1,7 +1,7 @@
 ---
 page_id: COMPSs
 title: COMPSs
-description: COMPSs recording of Workflow Provenance for governance and reproducibility of computational experiments
+description: The COMPSs programming model is able to record Workflow Provenance in RO-Crate format, for governance and reproducibility of computational experiments
 url: https://compss.bsc.es/
 image: COMPSs.png
 domains: [informatics] # should match item(s) in pages/domains
@@ -27,9 +27,9 @@ roles: [information_architect, researcher, software_developer] # should match it
 
 # COMPSs
 
-[![COMPSs logo](/assets/img/COMPSs.png)](https://compss.bsc.es/)
+[![COMPSs logo](../../assets/img/COMPSs.png)](https://compss.bsc.es/)
 
-[COMPSs](https://compss.bsc.es/) COMP Superscalar (COMPSs) is a task-based programming model which aims to ease the development of applications for distributed infrastructures, such as large High-Performance Clusters (HPC), Clouds and Container managed clusters. PyCOMPSs is the Python binding of COMPSs.
+COMP Superscalar ([COMPSs](https://compss.bsc.es/)) is a task-based programming model which aims to ease the development of applications for distributed infrastructures, such as large High-Performance Clusters (HPC), Clouds and Container managed clusters. PyCOMPSs is the Python binding of COMPSs.
 
 COMPSs provides a programming interface for the development of the applications in Python/Java/C/C++, a runtime system that exploits the inherent parallelism of applications at execution time, and a rich ecosystem for the operation monitoring, performance evaluation and integration with Jupyter/Jupyterlab.
 
@@ -37,7 +37,7 @@ The COMPSs runtime includes the capacity of automatically recording details of t
 
 Provenance information can be useful for a number of things, including Governance, Reproducibility, Replicability, Traceability, or Knowledge Extraction, among others. In our case, we have initially targeted workflow provenance recording to enable users to publish research results obtained with COMPSs as artifacts that can be cited in scientific publications with their corresponding DOI, by using [WorkflowHub](https://workflowhub.eu/).
 
-![COMPSs with RO-Crate](/assets/img/COMPSs-screenshot.png)
+![COMPSs with RO-Crate](../../assets/img/COMPSs-screenshot.png)
 
 ## Examples of COMPSs RO-Crates
 
@@ -59,4 +59,10 @@ Raül Sirvent, Javier Conejero, Francesc Lordan, Jorge Ejarque, Laura Rodríguez
 _IEEE/ACM Workshop on Workflows in Support of Large-Scale Science (WORKS)_ (1-9)
 <https://doi.org/10.1109/WORKS56498.2022.00006>  
 [[preprint](https://upcommons.upc.edu/handle/2117/384589)]
+
+Leo, S., Crusoe, M. R., Rodríguez-Navas, L., Sirvent, R., Kanitz, A., De Geest, P., ... & Soiland-Reyes, S. (2023):
+** Recording provenance of workflow runs with RO-Crate**.
+_arXiv preprint arXiv:2312.07852._
+<https://doi.org/10.48550/arXiv.2312.07852>  
+
 
