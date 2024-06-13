@@ -92,8 +92,6 @@ theme_variables:
     github: true
     twitter: false
   theme_color: 39989F
-  fonts:
-    - https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap
 
 plugins:
   - elixir-toolkit-theme-plugins

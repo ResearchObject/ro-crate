@@ -124,7 +124,7 @@ The descriptor also indicates via the `about` property which entity in the `@gra
 We can visualise how the above entity references the **RO-Crate Root** as:
 
 <figure>
-  <img src="../../assets/img/introduction-figure-1.svg" alt="JSON block with id `ro-crate-metadata.json` has some attributes, `conformsTo` RO-Crate 1.2, and `about` referencing id `./`. An arrow points from the `about` attribute to a second JSON block with id `./`, which contains additional attributes such as name and description." />
+  <img src="../../assets/img/introduction-figure-1.png" alt="JSON block with id `ro-crate-metadata.json` has some attributes, `conformsTo` RO-Crate 1.2, and `about` referencing id `./`. An arrow points from the `about` attribute to a second JSON block with id `./`, which contains additional attributes such as name and description." />
   <figcaption>Figure 2: showing RO-Crate Metadata descriptor's <code>about</code> property pointing at the RO-Crate Root entity with matching <code>@id</code></figcaption>
 </figure>
 
@@ -157,7 +157,7 @@ A main type of resources collected are _data_ -- simplifying, we can consider da
 RO-Crates can also contain data entities that are folders and Web resources, as well as non-File-like data like online databases -- see section on [data entities](data-entities).
 
 <figure id="figure2">
-<object type="image/svg+xml" data="../../assets/img/introduction-figure-2.svg">
+<object type="image/svg+xml" data="../../assets/img/introduction-figure-2.png">
 JSON block with id <code>./</code> has an array under  <code>hasPart</code> listing id <code>data.csv</code>. In second JSON block with id <code>data.csv</code> we see it is typed <code>File</code> and have other properties.
 </object>
 <figcaption>Figure 3: RO-Crate Root entity referencing the data entity with <code>@id</code> identifier <code>data.csv</code></figcaption>
