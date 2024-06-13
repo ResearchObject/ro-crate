@@ -37,7 +37,7 @@ The COMPSs runtime includes the capacity of automatically recording details of t
 
 Provenance information can be useful for a number of things, including Governance, Reproducibility, Replicability, Traceability, or Knowledge Extraction, among others. In our case, we have initially targeted workflow provenance recording to enable users to publish research results obtained with COMPSs as artifacts that can be cited in scientific publications with their corresponding DOI, by using [WorkflowHub](https://workflowhub.eu/).
 
-![COMPSs with RO-Crate](..//assets/img/COMPSs-screenshot.png)
+![COMPSs with RO-Crate](../../assets/img/COMPSs-screenshot.png)
 
 ## Examples of COMPSs RO-Crates
 
