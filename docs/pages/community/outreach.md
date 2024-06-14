@@ -2,7 +2,7 @@
 title: Outreach and Publications
 ---
 <!--
-   Copyright 2019-2023 The University of Manchester and RO Crate contributors 
+   Copyright 2019-2024 The University of Manchester and RO Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -44,6 +44,17 @@ _Data Science_ **5**(2)
 ## Recent publications, presentations, citations
 
 ### 2024
+
+Stian Soiland-Reyes, Carole Goble (2024):  
+[**WorkflowHub cloud integration in ELIXIR**](https://doi.org/10.5281/zenodo.11654943).  
+_ELIXIR All Hands Meeting 2024_ ([AHM2024](https://elixir-events.eventscase.com/EN/ahm2024/Agenda)), Uppsala, Sweden, 2024-06-12  
+<https://doi.org/10.5281/zenodo.11654943>
+
+Tim Beck, Stian Soiland-Reyes (2024):  
+[**Potential of ELIXIR cloud methods in EOSC-ENTRUST and HDR UK**](https://doi.org/10.5281/zenodo.11654733).  
+_ELIXIR All Hands Meeting 2024_ ([AHM2024](https://elixir-events.eventscase.com/EN/ahm2024/Agenda)), Uppsala, Sweden, 2024-06-12  
+<https://doi.org/10.5281/zenodo.11654733>
+
 Carole Goble (2024):
 [**FAIR Digital Research Objects: Metadata Journeys**](https://doi.org/10.5281/zenodo.10710142).
 _University of Auckland_: [Centre for eResearch](https://www.eresearch.auckland.ac.nz/), Auckland, New Zealand, 2024-02-16 
