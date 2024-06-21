@@ -347,7 +347,7 @@ It SHOULD contain further datasets that follow the `Study` profile.
   - [`identifier`](http://schema.org/identifier): [`Text`](https://schema.org/Text) or [`URL`](https://schema.org/URL) (required)
   - [`headline`](http://schema.org/headline): [`Text`](https://schema.org/Text) (required)
   - [`description`](http://schema.org/description): [`Text`](https://schema.org/Text) (required)
-  - [`alternateName`](https://schema.org/alternateName): [`Text`](https://schema.org/Text) (required)
+  - [`additionalType`](https://schema.org/alternateName): [`Text`](https://schema.org/Text) (required)
 
   - [`creator`](http://schema.org/creator): [`Person`](https://schema.org/Person) (recommended)
   - [`mentions`](http://schema.org/mentions): [`DefinedTermSet`](https://schema.org/DefinedTermSet) (recommended)
@@ -366,7 +366,7 @@ It contexualizes further datasets that follow the `Assay` profile.
 - [`Dataset`](http://schema.org/dataset)
   - [`identifier`](http://schema.org/identifier): [`Text`](https://schema.org/Text) or [`URL`](https://schema.org/URL) (required)
   - [`headline`](http://schema.org/headline): [`Text`](https://schema.org/Text) (required)
-  - [`alternateType`](https://schema.org/alternateName): [`Text`](https://schema.org/Text) (required)
+  - [`additionalType`](https://schema.org/alternateName): [`Text`](https://schema.org/Text) (required)
   - [`creator`](http://schema.org/creator): [`Person`](https://schema.org/Person) (required)
 
   - [`hasPart`](https://schema.org/hasPart): [`Dataset`](https://schema.org/Dataset) or [`File`](https://schema.org/MediaObject) (recommended)
