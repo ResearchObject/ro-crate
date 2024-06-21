@@ -15,35 +15,35 @@ body {
 
 @font-face {
     font-family: PTSans;
-    src: url('/assets/fonts/PTSans-Regular.ttf') format('truetype'),
-        url('/assets/fonts/PTSans-Regular.woff') format('woff'),
-        url('/assets/fonts/PTSans-Regular.woff2') format('woff2');
+    src: url('../fonts/PTSans-Regular.ttf') format('truetype'),
+        url('../fonts/PTSans-Regular.woff') format('woff'),
+        url('../fonts/PTSans-Regular.woff2') format('woff2');
     font-display: swap;
 }
 
 @font-face {
     font-family: PTSans;
-    src: url('/assets/fonts/PTSans-Bold.ttf') format('truetype'),
-        url('/assets/fonts/PTSans-Bold.woff') format('woff'),
-        url('/assets/fonts/PTSans-Bold.woff2') format('woff2');
+    src: url('../fonts/PTSans-Bold.ttf') format('truetype'),
+        url('../fonts/PTSans-Bold.woff') format('woff'),
+        url('../fonts/PTSans-Bold.woff2') format('woff2');
     font-weight: 700;
     font-display: swap;
 }
 
 @font-face {
     font-family: PTSans;
-    src: url('/assets/fonts/PTSans-Italic.ttf') format('truetype'),
-        url('/assets/fonts/PTSans-Italic.woff') format('woff'),
-        url('/assets/fonts/PTSans-Italic.woff2') format('woff2');
+    src: url('../fonts/PTSans-Italic.ttf') format('truetype'),
+        url('../fonts/PTSans-Italic.woff') format('woff'),
+        url('../fonts/PTSans-Italic.woff2') format('woff2');
     font-style: italic;
     font-display: swap;
 }
 
 @font-face {
     font-family: PTSans;
-    src: url('/assets/fonts/PTSans-BoldItalic.ttf') format('truetype'),
-        url('/assets/fonts/PTSans-BoldItalic.woff') format('woff'),
-        url('/assets/fonts/PTSans-BoldItalic.woff2') format('woff2');
+    src: url('../fonts/PTSans-BoldItalic.ttf') format('truetype'),
+        url('../fonts/PTSans-BoldItalic.woff') format('woff'),
+        url('../fonts/PTSans-BoldItalic.woff2') format('woff2');
     font-weight: 700;
     font-style: italic;
     font-display: swap;
