@@ -435,12 +435,18 @@ If the referenced crate conforms to a given [RO-Crate profile](profiles), this M
   "@type": ["CreativeWork", "Profile"],
   "name": "Workflow RO-Crate Profile",
   "version": "1.0"
+},
+{
+  "@id": "https://workflowhub.eu/ga4gh/trs/v2/tools/26/versions/1/PLAIN_CWL/descriptor/ro-crate-metadata.json",
+  "@type": "CreativeWork",
+  "encodingFormat": "application/ld+json"
 }
 ```
 
 {.note}
 > The profile declaration of a referenced crate is a hint. Consumers should check `conformsTo` of the retrieved RO-Crate as it may have been updated after this RO-Crate.
 
+If the RO-Crate metadata file is not available as a web resource, but only within an archive (e.g. ZIP), then instead reference it as a _Downloadable dataset_ (see below).
 
 #### Downloadable dataset
 
@@ -481,7 +487,7 @@ Similarly, the _RO-Crate root_ entity (or a reference to another RO-Crate as a `
     "conformsTo": { "@id": "https://w3id.org/ro/crate" }
   }
 ```
-profile="https://w3id.org/ro/crate"
+
 In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not reflect the current state of the `Dataset` or RO-Crate.
 
 
