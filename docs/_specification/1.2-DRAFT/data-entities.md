@@ -446,7 +446,10 @@ If the referenced crate conforms to a given [RO-Crate profile](profiles), this M
 {.note}
 > The profile declaration of a referenced crate is a hint. Consumers should check `conformsTo` of the retrieved RO-Crate as it may have been updated after this RO-Crate.
 
-If the RO-Crate metadata file is not available as a web resource, but only within an archive (e.g. ZIP), then instead reference it as a _Downloadable dataset_ (see below).
+{.tip}
+> The `@id` of the referenced RO-Crate entity SHOULD be equal to the persistent identifier within its own metadata file (as `identifier` on its root entity), see [Root Data Entity identifier](root-data-entity#root-data-entity-identifier). See [Retrieving an RO-Crate](#retrieving-an-ro-crate) for how to retrieve from a persistent identifier if the `subjectOf` RO-Crate Metadata file is not retrievable.
+
+If the RO-Crate metadata file is not available as a web resource, but only within an archive (e.g. ZIP), then instead reference it as a [Downloadable dataset](#downloadable-dataset).
 
 #### Downloadable dataset
 
