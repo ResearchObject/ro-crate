@@ -400,7 +400,7 @@ A _Directory File Entry_ or [Dataset] identifier expressed as an absolute URL on
 
 #### Referencing other RO-Crates
 
-A referenced RO-Crate is also a [Dataset], but where its [hasPart] do not need to be listed. Instead, its content and further metadata is available from its own RO-Crate Metadata File:
+A referenced RO-Crate is also a [Dataset], but where its [hasPart] do not need to be listed. Instead, its content and further metadata is available from its own RO-Crate Metadata File. An RO-Crate that is referencing another crate `http://example.com/another-crate/` and metadata file `http://example.com/another-crate/ro-crate-metadata.json` will declare it as:
 
 ```json
 {
@@ -438,6 +438,8 @@ If the referenced crate conforms to a given [RO-Crate profile](profiles), this M
 }
 ```
 
+{.note}
+> The profile declaration of a referenced crate is a hint. Consumers should check `conformsTo` of the retrieved RO-Crate as it may have been updated after this RO-Crate.
 
 
 #### Downloadable dataset
