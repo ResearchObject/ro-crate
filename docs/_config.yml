@@ -1,10 +1,6 @@
-# theme through gem is not supported by default GitHub build
-#theme: just-the-docs
-remote_theme: just-the-docs/just-the-docs@v0.5.0
-logo: assets/img/ro-crate-wide.svg
-
 title: Research Object Crate (RO-Crate)
-description: |
+topnav_title: RO-Crate
+description:
   RO-Crate is a community effort to establish a lightweight approach to
   packaging research data with their metadata. It is based on schema.org
   annotations in JSON-LD, and aims to make best-practice in formal metadata
@@ -12,47 +8,96 @@ description: |
   from an individual researcher working with a folder of data, to large
   data-intensive computational research environments.
 
-color_scheme: rocrate
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@2.4.0
 
-footer_content:  "&#169; Copyright 2021-2023. University of Technology Sydney, The University of Manchester UK and RO-Crate contributors"
-gh_edit_link: true
-gh_edit_link_text: "Edit this page on GitHub."
-gh_edit_repository: "https://github.com/ResearchObject/ro-crate"
-gh_edit_view_mode: "edit"
-gh_edit_source: "docs" 
-gh_edit_branch: "master" 
+include:
+  - pages
+  - pages/specification/*
 
-embed: |
-  Distributed under the
-  <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, version 2.0</a>; except 
-  JSON-LD examples and context where creators have waived all copyrights according to
-  <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal (CC0 1.0) Public Domain Dedication</a>.
-
-aux_links:
-  "RO-Crate on GitHub":
-    - "https://github.com/ResearchObject/ro-crate"
-
-callouts:
-  warning:
-    title: Warning
-    color: red
-  note:
-    title: Note
-    color: blue
-  tip:
-    title: Tip
-    color: green
-
-plugins:
-  - jekyll-redirect-from
-
-back_to_top: true
-back_to_top_text: "Back to top"
+exclude:
+  - README.md
+  - _compatibility/README.md
+  - pages/use_cases/README.md
+  - .gitignore
+  - var/
+  - vendor
+  - Gemfile*
+  - LICENSE
 
 defaults:
   - scope:
-      path: 1.2-DRAFT
-      type: pages
+      path: ""
+      type: "pages"
     values:
-      nav_exclude: true
-      search_exclude: true
+      permalink: /:basename
+      layout: "default"
+      sidebar: main
+  - scope:
+      path: "pages/domains/*.md"
+    values:
+      layout: "default"
+      type: domains
+  - scope:
+      path: "pages/tasks/*.md"
+    values:
+      layout: "default"
+      type: tasks
+  - scope:
+      path: "pages/roles/*.md"
+    values:
+      layout: "default"
+      type: roles
+
+  - scope:
+      path: "pages/use_cases/*.md"
+    values:
+      layout: "default"
+      type: use_cases
+
+  - scope:
+      path: "_specification"
+    values:
+      layout: "default"
+      sidebar: spec
+
+  - scope:
+      path: "pages/about"
+    values:
+      layout: "default"
+      sidebar: about
+
+  - scope:
+      path: "pages/community"
+    values:
+      layout: "default"
+      sidebar: community
+
+  - scope:
+      path: "pages/resources"
+    values:
+      layout: "default"
+      sidebar: resources
+
+collections:
+  specification:
+    output: true
+  compatibility:
+    permalink: /:path
+    output: true
+
+theme_variables:
+  topnav:
+    theme: light
+    brand_logo: assets/img/ro-crate-wide.svg
+    github: true
+    twitter: false
+  theme_color: 39989F
+
+plugins:
+  - elixir-toolkit-theme-plugins
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-github-metadata
+  - jemoji
+  - webrick

@@ -1,0 +1,99 @@
+{%- assign sidebar = site.data.sidebars[page.sidebar] %}
+<aside id="sidebar">
+  <button class="btn text-start d-lg-none hover-primary collapsed sidebar-collapse w-100 mb-3" type="button"
+    data-bs-toggle="collapse" data-bs-target="#side-nav" aria-controls="side-nav" aria-expanded="true">
+    {{ sidebar.title | capitalize | replace: "_", " " }}  menu <i title="navbar-toggler" class="fa-solid fa-bars ms-2"></i>
+  </button>
+
+<!-- SPEC MENUS -->
+{%- if page.sidebar == 'spec' %}
+<nav id="side-nav" aria-label="Side navigation">
+  <a class="btn hover-primary text-start d-block mb-1 sidebar-title" href="{{ sidebar.title_url | relative_url }}">Specification</a>
+  <ul class="list-unstyled mb-4">
+    {%- for version in sidebar.versions %}
+    {%- if page.url == version.url %}
+    <li class="active">
+      {%- else %}
+    <li>
+      {%- endif %}
+      <a class="btn hover-primary text-start d-block mb-1" href="{{ version.url | relative_url }}">
+        {{ version.title}}
+      </a>
+      {%- if version.subitems %}
+      <ul class="list-unstyled mb-4">
+        {%- for folder in version.subitems %}
+        {%- if page.url == folder.url %}
+        <li class="active">
+          {%- else %}
+        <li>
+          {%- endif %}
+          <a class="btn hover-primary text-start d-block mb-1" href="{{ folder.url | relative_url }}">
+            {{ folder.title}}
+          </a>
+          {%- if folder.subitems %}
+          <ul class="list-unstyled">
+            {%- for subsubfolder in folder.subitems %}
+            {%- if page.url == subsubfolder.url %}
+            <li class="active">
+              {%- else %}
+            <li>
+              {%- endif %}
+              <a class="btn hover-primary text-start d-block mb-1" href="{{ subsubfolder.url | relative_url }}">{{
+                subsubfolder.title }}</a>
+            </li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+    </li>
+  </ul>
+  
+  {%- endif %}
+  </li>
+  {%- endfor %}
+  </ul>
+</nav>
+<!-- END SPEC MENUS -->
+
+<!-- OTHER MENUS -->
+{%- else %}
+<nav id="side-nav" aria-label="Side navigation">
+  <a class="btn hover-primary text-start d-block mb-1 sidebar-title" href="{{ sidebar.title_url | relative_url }}">{{ sidebar.title }}</a>
+  <ul class="list-unstyled mb-4">
+    {%- for folder in sidebar.subitems %}
+    {%- if page.url == folder.url %}
+    <li class="active">
+      {%- else %}
+    <li>
+      {%- endif %}
+      <a class="btn hover-primary text-start d-block mb-1" href="{{ folder.url | relative_url }}">
+        {{ folder.title}}
+      </a>
+      {%- if folder.submenu_type | size > 0 %}
+      <ul class="list-unstyled">
+        {% assign linked_pages = site.pages | sort: 'title' %}
+        {%- for linked_page in linked_pages %}
+        {%- if linked_page.type == folder.submenu_type %}
+        {%- if page.url == linked_page.url %}
+        <li class="active">
+          {%- else %}
+        <li>
+          {%- endif %}
+          <a class="btn hover-primary text-start d-block mb-1" href="{{ linked_page.url | relative_url }}">
+            {{ linked_page.title }}
+          </a>
+        </li>
+        {%- endif %}
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</nav>
+{%- endif %}
+<!-- END OTHER MENUS -->
+
+</aside>
+<script>$("li.active").parents('li').toggleClass("active parent");</script>

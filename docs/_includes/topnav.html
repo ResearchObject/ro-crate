@@ -1,0 +1,89 @@
+<!-- Navigation -->
+<header>
+  <a class="visually-hidden-focusable" href='#content'>Skip to content</a>
+  <a class="visually-hidden-focusable" href='#footer'>Skip to footer</a>
+  <nav class="navbar navbar-{{ site.theme_variables.topnav.theme | default: 'light' }} navbar-expand-lg mb-3 mb-lg-5">
+      <div class="container">
+          <a class="navbar-brand" href="{{ '/' | relative_url }}"><img class="{% if site.topnav_title %}me-3 {% endif %}img-fluid" alt="{{site.title}} logo" src="{{ site.theme_variables.topnav.brand_logo | default: 'assets/img/main_logo.svg' | relative_url }}">{% if site.topnav_title %}<span class="me-0 me-lg-3"></span>{% endif %}</a>
+          <button class="navbar-toggler text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <i title="navbar-toggler" class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+              <ul class="navbar-nav gap-2">
+                  <!-- navigation entries -->
+                  {%- assign topnav = site.data.topnav %}
+                  {%- for item in topnav.subitems %}
+                  <li class="nav-item {% if item.subitems %}dropdown {% endif %}">
+                      {%- assign page_sidebar = page.sidebar | downcase | replace: "-", "_" | replace: " ", "_" %}
+                      {%- assign nav_title = item.title | downcase | replace: "-", "_" | replace: " ", "_" %}
+                      {%- if item.external_url %}
+                      <a class="nav-link ps-2" href="{{item.external_url}}" target="_blank" rel="noopener">{{item.title}}</a>
+                      {%- elsif page.url == item.url or page_sidebar == nav_title %}
+                      <a class="nav-link ps-2 active" aria-current="page" href="{{item.url | relative_url }}">{{item.title}}</a>
+                      {%- elsif item.subitems %}
+                      <a class="nav-link ps-2 dropdown-toggle" href="#" id="Dropdown{{item.title | jsonify }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{item.title}}</a>
+                      <ul class="dropdown-menu" aria-labelledby="Dropdown{{item.title | jsonify }}">
+                          {%- for subitem in item.subitems %}
+                          <li>
+                              {%- if subitem.hr == true %}
+                              <hr class="dropdown-divider">
+                              {%- elsif page.url == subitem.url %}
+                              <a class="dropdown-item active" href="{{subitem.url | relative_url }}">{{ subitem.title }}</a>
+                              {%- elsif subitem.external_url %}
+                              <a class="dropdown-item" href="{{subitem.external_url}}" target="_blank" rel="noopener">{{subitem.title}}</a>
+                              {%- else %}
+                              <a class="dropdown-item" href="{{subitem.url | relative_url }}">{{ subitem.title }}</a>
+                              {%- endif %}
+                          </li>
+                          {%- endfor %}
+                      </ul>
+                      {%- else %}
+                      <a class="nav-link ps-2" href="{{item.url | relative_url }}">{{item.title}}</a>
+                      {%- endif %}
+                  </li>
+                  {%- endfor %}
+                  {%- if topnav.subitems.size > 1 %}
+                  {%- assign topnav_theme = site.theme_variables.topnav.theme | default: "light" %}
+                  {%- if topnav_theme == "light" %}
+                  {%- assign break_color = "dark" %}
+                  {%- else %}
+                  {%- assign break_color = "light" %}
+                  {%- endif -%}
+                  <li class="nav-item nav-break bg-{{break_color}} opacity-25"></li>
+                  {%- endif %}
+                  {%- if site.theme_variables.topnav.twitter %}
+                  <li class="nav-item">
+                      <a class="nav-link ps-2 d-flex align-items-center" href="{{site.theme_variables.topnav.twitter}}"><i class="fa-brands fa-twitter me-2"></i>Twitter</a>
+                  </li>
+                  {%- endif %}
+                  {%- if site.theme_variables.topnav.github or site.theme_variables.topnav.github == nil %}
+                  <li class="nav-item">
+                      <a class="nav-link ps-2 d-flex align-items-center" href="{{site.github.repository_url}}">
+                          {%- assign git_host = site.theme_variables.git_host | downcase %}
+                          {%- if git_host == 'gitlab' %}
+                          <i class="fa-brands fa-gitlab me-2"></i>
+                          {%- else %}
+                          <i class="fa-brands fa-github me-2"></i>
+                          {%- endif %}
+                          {{site.theme_variables.git_host | default: 'GitHub' }}
+                      </a>
+                  </li>
+                  {%- endif %}
+                  {%- unless include.search == false %}
+                  <!--start search-->
+                  <li class="nav-item">
+                      <div class="position-relative">
+                          <form role="search" class="input-group">
+                              <span class="input-group-text" id="search-label"><i class="fa-solid fa-magnifying-glass"></i></span><input type="search" id="search-input" class="search-input form-control" tabindex="0" placeholder="Search" aria-label="Search" autocomplete="off">
+                          </form>
+                          <div id="search-results" class="search-results"></div>
+                      </div>
+                  </li>
+                  <!--end search-->
+                  {%- endunless %}
+              </ul>
+          </div>
+      </div>
+      <!-- /.container -->
+  </nav>
+</header>

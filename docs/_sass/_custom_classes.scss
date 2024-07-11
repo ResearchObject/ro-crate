@@ -1,0 +1,262 @@
+/*-----General styling-----*/
+
+$card-slide-transition:
+    border-width 0.15s ease-in,
+    margin-right 0.15s ease-in;
+
+figcaption {
+    font-style: italic;
+    font-size: smaller;
+}
+
+body {
+    font-family: PTSans, sans-serif;
+}
+
+@font-face {
+    font-family: PTSans;
+    src: url('../fonts/PTSans-Regular.ttf') format('truetype'),
+        url('../fonts/PTSans-Regular.woff') format('woff'),
+        url('../fonts/PTSans-Regular.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: PTSans;
+    src: url('../fonts/PTSans-Bold.ttf') format('truetype'),
+        url('../fonts/PTSans-Bold.woff') format('woff'),
+        url('../fonts/PTSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: PTSans;
+    src: url('../fonts/PTSans-Italic.ttf') format('truetype'),
+        url('../fonts/PTSans-Italic.woff') format('woff'),
+        url('../fonts/PTSans-Italic.woff2') format('woff2');
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: PTSans;
+    src: url('../fonts/PTSans-BoldItalic.ttf') format('truetype'),
+        url('../fonts/PTSans-BoldItalic.woff') format('woff'),
+        url('../fonts/PTSans-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/*-----Sidebar-----*/
+#side-nav {
+    .btn.sidebar-title {
+        background-color: $blue-x;
+        // font-weight: bold;
+        font-size: 1.3rem;
+        &.active {
+            border-left: 4px solid $primary;
+        }
+    }
+    > ul {
+        margin-top: $spacer;
+        li {
+            margin-top: 5px;
+            a {
+                margin-bottom: 0 !important;
+                border-left: 4px solid $sidebar-bg;
+                &:hover {
+                    border-left-color: $primary !important;
+                    background-color: $primary;
+                }
+            }
+            &.active {
+                &.parent > a {
+                    background-color: $light;
+                    border-left-color: $light;
+                }
+                &:not(.parent) > a {
+                    border-left-color: $primary;
+                }
+            }
+        }
+    }
+}
+
+.sidebar-collapse {
+    background-color: $light;
+}
+
+/*-----Selection color-----*/
+::-moz-selection {
+    -moz-text-fill-color: $white;
+}
+
+::selection {
+    -webkit-text-fill-color: $white;
+}
+
+/*-----Section navigation tiles-----*/
+.navigation-tiles {
+    .btn.py-4.hover-primary {
+        border-left: 0px solid $primary;
+        transition: $card-slide-transition;
+        &:hover {
+            color: $dark !important;
+            border-left-width: 6px;
+            margin-right: -6px;
+            i {
+                color: $dark !important;
+            }
+        }
+        &.bg-light:hover {
+            background-color: $light !important;
+        }
+    }
+    .card {
+        border-left: 0px solid $primary;
+        transition: $card-slide-transition;
+        &:hover {
+            border-left-width: 6px;
+            margin-right: -6px;
+        }
+
+        .card-header {
+            padding-top: 15px;
+            padding-bottom: 0;
+            a:hover {
+                text-decoration: none;
+            }
+            h3 {
+                font-size: 1.2rem;
+                font-weight: bold;
+                display: inline;
+                vertical-align: super;
+            }
+        }
+        button {
+            background-color: $white;
+        }
+        .card-footer {
+            padding-top: 0;
+        }
+    }
+}
+
+
+/*-----Top navigation-----*/
+.navbar {
+  background-color: #f5f5f5 !important;
+  padding: 20px 0 20px 0;
+}
+
+.navbar-nav .nav-item > a.active {
+    background-color: $blue-x;
+    border-radius: $border-radius;
+}
+
+@include media-breakpoint-down(sm) {
+    header .navbar .navbar-brand img {
+        height: 37px;
+    }
+}
+
+/* -----Homepage----- */
+.landingpage {
+
+    h1 {
+        font-size: 2.2rem;
+        font-weight: 200;
+        text-align: center;
+    }
+    
+    h2 {
+        font-weight: 700;
+    }
+
+    h3 {
+        font-weight: 700;
+    }
+    
+    .featured-content {
+      position: relative;  
+      border-top: 1px solid $primary;
+      border-bottom: 1px solid $primary;
+      background-color: $blue-x;
+    }
+
+    .featured-content p {
+      color: #4A5251;
+      font-size: 0.95em;
+      line-height: 1.5em;
+      margin-bottom: 1em;
+    }
+
+    .featured-content-header {
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      padding-top: 30px;
+      position: relative; 
+    }
+
+    .featured-content a { 
+      color: $dark !important;
+    }
+
+    .card-body .fa {
+      color: #4a5251;
+      border: 2px solid $primary;
+      border-radius: 50%;
+      width: 85px;
+      height: 85px;
+      background: white;
+      padding-top: 15px;
+      display: inline-block;
+    }
+
+    .card a {
+        text-decoration: none;
+    }
+    
+}
+
+/*-----Search box-----*/
+section#search-section {
+    form {
+        max-width: 600px;
+    }
+
+    #search-results {
+        right: unset;
+    }
+    .input-group-text {
+        font-size: 1.5rem;
+    }
+}
+
+#search-input {      
+  background-color: white;
+}
+
+/*-----Sidebar-----*/
+@include media-breakpoint-up(lg) {
+    #sidebar {
+        top: 3rem;
+        z-index: 2;
+        height: calc(100vh - 7rem);
+        overflow-y: auto;
+        position: sticky;
+    }
+}
+
+/*------Tile Image-------*/
+.tile-img-sm {
+  height: 50px;
+}
+
+/*-----Footer------*/
+#back-to-top.visible {
+  bottom: 7px;
+}

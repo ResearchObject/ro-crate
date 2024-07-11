@@ -1,0 +1,19 @@
+{%- if page.related_pages %}
+<h2>Related pages</h2>
+
+{%- for section in page.related_pages %}
+      
+<h3> {{ section[0] | replace: "_", " " | capitalize }} </h3>
+
+<ul>
+  {%- for page_id in section[1] %}
+    {%- assign section_pages = site.pages | where:"type", section[0] %}
+    {%- assign metadata = section_pages | where:"page_id", page_id %}
+    {%- for page_hit in metadata %}
+    <li><a href="{{ page_hit.url | relative_url }}">{{page_hit.title }}</a></li>
+    {%- endfor %}
+  {%- endfor %}
+</ul>
+  
+{%- endfor %}
+{% endif %}

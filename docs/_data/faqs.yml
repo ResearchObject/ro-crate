@@ -1,0 +1,51 @@
+- question: "What is metadata?"
+  answer: |
+    Metadata is "data about data." It is information that describes other data, but does not include the content of the data itself. Metadata helps the people and machines that process data to understand the origins of the data and how it can be used. For example, for a digital photograph, the image itself is the data, and its metadata may include the image size, photographer, copyright, date created, and so on. 
+
+    For research data, common metadata includes: creators; institutional affiliations; date of creation; source of data; standards and data formats used; license; versions; persistent identifiers (e.g. DOI); and the relationship between different pieces of data that have been packaged together.
+
+- question: "What is RO-Crate?"
+  answer: |
+    RO-Crate is an approach to packaging research data with its associated metadata and identifiers. This enables reproducibility and re-use. Each individual RO-Crate is formed of a collection of data, which can be included in its native format, and a special `ro-crate-metadata.json` file, which describes the collection. 
+
+    The RO-Crate project is open and community-driven, and anyone can contribute to developing it.
+
+    For more information, see [About RO-Crate](about_ro_crate).
+
+- question: "Why was RO-Crate created and what is its purpose?"
+  answer: |
+    RO-Crate was created to help researchers easily package and share their research data and metadata in a standardized way. Its purpose is to make it easier for others to discover, access, and reuse research data. RO-Crate achieves this by providing a common format for packaging and describing data.
+
+    For more information, see [Background](background).
+
+- question: "How does RO-Crate work?"
+  answer: |
+    RO-Crate works by defining a structured way to package research data and its associated metadata, such as its description, its creators, and its context. Any folder can be turned into an RO-Crate by adding an `ro-crate-metadata.json` file that follows the structure described in the [specification](specification).
+
+    [Many platforms and projects](use_cases) have built in support for RO-Crates, allowing for better organization, discovery, and reuse of research data.
+
+    For more information, see [About RO-Crate](about_ro_crate).
+
+- question: "Who is RO-Crate for?"
+  answer: |
+    RO-Crate is for everyone! The RO-Crate effort brings together practitioners from very different backgrounds, and with different motivations and use-cases. Among our core target users are: 
+
+    * researchers engaged with computation and data-intensive, workflow-driven analysis
+    * individual researchers looking for a straight-forward tool or how-to guide to “FAIRify” their data 
+    * digital repository managers and infrastructure providers 
+    * data stewards supporting research projects in creating and curating datasets.
+
+- question: "What are the benefits of using RO-Crate?"
+  answer: |
+    For individual researchers, using RO-Crate allows them to easily share and preserve their research data, as well as ensure that all necessary metadata is included for automated processing and reproducibility. This can be achieved without making any changes to how their data is currently organised. The RO-Crate format is human-readable, and there are numerous [tools](tools) which can help with creating them.
+
+    For projects, RO-Crate is a lightweight and general system which can be used with any type of data. It can also be customised for particular domains or applications using community-developed [profiles](profiles). RO-Crate can be adopted and integrated into other platforms (see [use cases](use_cases)) thanks to its well-defined [specification](specification). RO-Crate is community-driven, and anyone can join the [community](community).
+
+- question: "How can I create an RO-Crate?"
+  answer: "There are [tutorials](tutorials) which can guide you through creating your first RO-Crate. There are also several [tools](tools) available for creating RO-Crates automatically, including the RO-Crate Python library, the RO-Crate CLI, and the RO-Crate Extension for Google Sheets."
+
+- question: "How is RO-Crate different from other data packaging formats?"
+  answer: "RO-Crate is unique in its use of [schema.org](https://schema.org) annotations, which allow for rich metadata descriptions of the data, making it more discoverable and reusable. It also provides a lightweight and flexible approach, making it easier for researchers to adopt and use."
+
+- question: "How can I cite RO-Crate?"
+  answer: "See [Cite RO-Crate](about_ro_crate#cite-ro-crate)."

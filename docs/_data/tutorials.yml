@@ -1,0 +1,44 @@
+- Name: FAIR data and provenance with RO-Crate and Galaxy
+  Description: ""
+  URL: https://gallantries.github.io/video-library/modules/ro-crate
+  Tags: 
+    - Biomedical Science
+    - Chemistry
+    - Software Development
+    - Sofware Developer
+
+- Name: An overview of the RO-Crate concept and its implementations
+  Description: ""
+  URL: https://gallantries.github.io/video-library/videos/ro-crates/intro/slides/
+  Tags: 
+    - Biomedical Science
+    - Chemistry
+    - Software Development
+    - Sofware Developer
+
+- Name: RO-Crate - Introduction
+  Description: ""
+  URL: https://training.galaxyproject.org/topics/fair/tutorials/ro-crate-intro/tutorial.html
+  Tags: 
+    - Biomedical Science
+    - Chemistry
+    - Software Development
+    - Sofware Developer
+
+- Name: RO-Crate in Python
+  Description: ""
+  URL: https://training.galaxyproject.org/topics/fair/tutorials/ro-crate-in-python/tutorial.html
+  Tags: 
+    - Biomedical Science
+    - Chemistry
+    - Software Development
+    - Sofware Developer
+
+- Name: Workflow Run RO-Crate Introduction
+  Description: ""
+  URL: https://training.galaxyproject.org/topics/fair/tutorials/ro-crate-workflow-run-ro-crate/tutorial.html
+  Tags: 
+    - Biomedical Science
+    - Chemistry
+    - Software Development
+    - Sofware Developer
