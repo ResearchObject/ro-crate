@@ -314,6 +314,27 @@
         },
         {
           "@id": "https://codemeta.github.io/terms/"
+        },
+        {
+          "@id": "https://bioschemas.org/FormalParameter"
+        },
+        {
+          "@id": "https://bioschemas.org/ComputationalWorkflow"
+        },
+        {
+          "@id": "http://schema.org/defaultValue"
+        },
+        {
+          "@id": "http://schema.org/valueRequired"
+        },
+        {
+          "@id": "https://bioschemas.org/ComputationalWorkflow#input"
+        },
+        {
+          "@id": "https://bioschemas.org/ComputationalWorkflow#output"
+        },
+        {
+          "@id": "http://purl.org/dc/terms/conformsTo"
         }
       ],
       "identifier": {
@@ -1227,26 +1248,26 @@
       "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class",
       "@type": [
         "DefinedTerm",
-        "Class"
+        "rdfs:Class"
       ],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       },
       "name": "Class (rdfs)",
-      "description": "Class definition as part of a Profile Crate",
+      "description": "Class definition",
       "url": "https://www.w3.org/TR/rdf-schema/#ch_class"
     },
     {
       "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
       "@type": [
         "DefinedTerm",
-        "Class"
+        "rdfs:Class"
       ],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       },
       "name": "Property (rdfs)",
-      "description": "Property definition as part of a Profile Crate",
+      "description": "Property definition, typically with domainIncludes and rangeIncludes",
       "url": "https://www.w3.org/TR/rdf-schema/#ch_property"
     },
     {
@@ -1259,7 +1280,7 @@
         "@id": "https://schema.org/docs/releases.html#v22.0"
       },
       "name": "Class (schema.org)",
-      "description": "Class reference, defined outside the Profile Crate as indicated by @id url or inDefinedTermSet"
+      "description": "Class reference, as indicated by @id url or inDefinedTermSet"
     },
     {
       "@id": "http://schema.org/Property",
@@ -1271,7 +1292,7 @@
         "@id": "https://schema.org/docs/releases.html#v22.0"
       },
       "name": "Property (schema.org)",
-      "description": "Property reference, defined outside the Profile Crate as indicated by @id url or inDefinedTermSet"
+      "description": "Property reference, as indicated by @id url or inDefinedTermSet"
     },
     {
       "@id": "http://www.opengis.net/ont/geosparql#Geometry",
@@ -1342,6 +1363,98 @@
           "@id": "https://codemeta.github.io/terms/isSourceCodeOf"
         }
       ]
+    },
+    {
+      "@id": "https://bioschemas.org/FormalParameter",
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Class"
+      ],
+      "name": "FormalParameter"
+    },
+    {
+      "@id": "https://bioschemas.org/ComputationalWorkflow",
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Class"
+      ],
+      "name": "ComputationalWorkflow"
+    },
+    {
+      "@id": "http://schema.org/defaultValue",
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
+      "name": "defaultValue",
+      "domainIncludes": {
+        "@id": "https://bioschemas.org/ComputationalWorkflow"
+      },
+      "rangeIncludes": [
+        {
+          "@id": "http://schema.org/Text"
+        },
+        {
+          "@id": "http://schema.org/Thing"
+        }
+      ]
+    },
+    {
+      "@id": "http://schema.org/valueRequired",
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
+      "name": "valueRequired",
+      "domainIncludes": {
+        "@id": "https://bioschemas.org/ComputationalWorkflow"
+      },
+      "rangeIncludes": [
+        {
+          "@id": "http://schema.org/Text"
+        },
+        {
+          "@id": "http://schema.org/Thing"
+        }
+      ]
+    },
+    {
+      "@id": "https://bioschemas.org/ComputationalWorkflow#input",
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
+      "termCode": "input",
+      "name": "input",
+      "description": "Definition of an input parameter required to use the computational workflow",
+      "domainIncludes": {
+        "@id": "https://bioschemas.org/ComputationalWorkflow"
+      },
+      "rangeIncludes": {
+        "@id": "https://bioschemas.org/FormalParameter"
+      }
+    },
+    {
+      "@id": "https://bioschemas.org/ComputationalWorkflow#output",
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
+      "termCode": "output",
+      "name": "output",
+      "description": "Definition of an output produced by the workflow",
+      "domainIncludes": {
+        "@id": "https://bioschemas.org/ComputationalWorkflow"
+      },
+      "rangeIncludes": {
+        "@id": "https://bioschemas.org/FormalParameter"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/conformsTo",
+      "@type": "DefinedTerm",
+      "name": "conformsTo",
+      "termCode": "conformsTo"
     },
     {
       "@id": "https://doi.org/DOI",
@@ -1772,6 +1885,16 @@
       "vann:preferredNamespaceUri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     },
     {
+      "@id": "http://schema.org/MediaObject",
+      "@type": "DefinedTerm",
+      "inDefinedTermSet": {
+        "@id": "http://schema.org/version/15.0/"
+      },
+      "name": "MediaObject",
+      "termCode": "File",
+      "description": "In RO-Crate, the type File is an alias for MediaObject in schema.org"
+    },
+    {
       "@id": "http://www.w3.org/ns/dx/prof",
       "@type": "DefinedTermSet",
       "name": "Profiles Vocabulary",
@@ -2095,13 +2218,20 @@
       "@type": "Profile",
       "description": "Bioschemas specification for describing a Computational Workflow",
       "name": "ComputationalWorkflow profile",
-      "version": "1.0-RELEASE"
+      "version": "1.0-RELEASE",
+      "about": {
+        "@id": "https://bioschemas.org/ComputationalWorkflow"
+      }
     },
     {
       "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE",
+      "@type": "Profile",
       "description": "Bioschemas specification for describing a formal parameter in the Life Sciences",
       "name": "FormalParameter Profile",
-      "version": "1.0-RELEASE"
+      "version": "1.0-RELEASE",
+      "about": {
+        "@id": "https://bioschemas.org/FormalParameter"
+      }
     },
     {
       "@id": "http://spdx.org/licenses/CC0-1.0",
@@ -2545,6 +2675,20 @@ While providing the formal specification for RO-Crate, this document also aims t
                         <li><a href="#http%3A//www.opengis.net/ont/geosparql%23asWKT">Geometry</a></li>
                         
                         <li><a href="#https%3A//codemeta.github.io/terms/">Codemeta Terms</a></li>
+                        
+                        <li><a href="#https%3A//bioschemas.org/FormalParameter">FormalParameter</a></li>
+                        
+                        <li><a href="#https%3A//bioschemas.org/ComputationalWorkflow">ComputationalWorkflow</a></li>
+                        
+                        <li><a href="#http%3A//schema.org/defaultValue">defaultValue</a></li>
+                        
+                        <li><a href="#http%3A//schema.org/valueRequired">valueRequired</a></li>
+                        
+                        <li><a href="#https%3A//bioschemas.org/ComputationalWorkflow%23input">input</a></li>
+                        
+                        <li><a href="#https%3A//bioschemas.org/ComputationalWorkflow%23output">output</a></li>
+                        
+                        <li><a href="#http%3A//purl.org/dc/terms/conformsTo">conformsTo</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">identifier<span>&nbsp;</span><a href="http://schema.org/identifier">[?]</a></th>
@@ -5692,11 +5836,11 @@ While providing the formal specification for RO-Crate, this document also aims t
             <td style='text-align:left'><ul>
                         <li><span>DefinedTerm</span></li>
                         
-                        <li><span>Class</span></li>
+                        <li><span>rdfs:Class</span></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
-            <td style='text-align:left'><span>Class definition as part of a Profile Crate</span></td>
+            <td style='text-align:left'><span>Class definition</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
             <td style='text-align:left'><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a></td>
@@ -5732,11 +5876,11 @@ While providing the formal specification for RO-Crate, this document also aims t
             <td style='text-align:left'><ul>
                         <li><span>DefinedTerm</span></li>
                         
-                        <li><span>Class</span></li>
+                        <li><span>rdfs:Class</span></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
-            <td style='text-align:left'><span>Property definition as part of a Profile Crate</span></td>
+            <td style='text-align:left'><span>Property definition, typically with domainIncludes and rangeIncludes</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
             <td style='text-align:left'><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a></td>
@@ -5776,7 +5920,7 @@ While providing the formal specification for RO-Crate, this document also aims t
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
-            <td style='text-align:left'><span>Class reference, defined outside the Profile Crate as indicated by @id url or inDefinedTermSet</span></td>
+            <td style='text-align:left'><span>Class reference, as indicated by @id url or inDefinedTermSet</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//schema.org/docs/releases.html%23v22.0">Schema.org vocabulary (http prefix)</a></td>
@@ -5813,7 +5957,7 @@ While providing the formal specification for RO-Crate, this document also aims t
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
-            <td style='text-align:left'><span>Property reference, defined outside the Profile Crate as indicated by @id url or inDefinedTermSet</span></td>
+            <td style='text-align:left'><span>Property reference, as indicated by @id url or inDefinedTermSet</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//schema.org/docs/releases.html%23v22.0">Schema.org vocabulary (http prefix)</a></td>
@@ -5967,6 +6111,290 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr><tr>
             <th style="text-align:left;" class="prop">hasArtifact<span>&nbsp;</span><a href="http://www.w3.org/ns/dx/prof/hasArtifact">[?]</a></th>
             <td style='text-align:left'><a href="#%23vocabulary-codemeta">#vocabulary-codemeta</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3><a href="https://bioschemas.org/FormalParameter">Go to: </a> FormalParameter</h3>
+            
+            
+            
+            
+        <div id="https://bioschemas.org/FormalParameter">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://bioschemas.org/FormalParameter">https://bioschemas.org/FormalParameter</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>FormalParameter</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>rdfs:Class</span></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/crate/1.2-DRAFT">RO-Crate specification 1.2</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//bioschemas.org/profiles/FormalParameter/1.0-RELEASE">FormalParameter Profile</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#https%3A//bioschemas.org/ComputationalWorkflow%23input">input</a></li>
+                        
+                        <li><a href="#https%3A//bioschemas.org/ComputationalWorkflow%23output">output</a></li>
+                        </ul></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3><a href="https://bioschemas.org/ComputationalWorkflow">Go to: </a> ComputationalWorkflow</h3>
+            
+            
+            
+            
+        <div id="https://bioschemas.org/ComputationalWorkflow">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://bioschemas.org/ComputationalWorkflow">https://bioschemas.org/ComputationalWorkflow</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>ComputationalWorkflow</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>rdfs:Class</span></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/crate/1.2-DRAFT">RO-Crate specification 1.2</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE">ComputationalWorkflow profile</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#http%3A//schema.org/defaultValue">defaultValue</a></li>
+                        
+                        <li><a href="#http%3A//schema.org/valueRequired">valueRequired</a></li>
+                        
+                        <li><a href="#https%3A//bioschemas.org/ComputationalWorkflow%23input">input</a></li>
+                        
+                        <li><a href="#https%3A//bioschemas.org/ComputationalWorkflow%23output">output</a></li>
+                        </ul></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3><a href="http://schema.org/defaultValue">Go to: </a> defaultValue</h3>
+            
+            
+            
+            
+        <div id="http://schema.org/defaultValue">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="http://schema.org/defaultValue">http://schema.org/defaultValue</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>defaultValue</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>rdf:Property</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//bioschemas.org/ComputationalWorkflow">ComputationalWorkflow</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="http://schema.org/Text">http://schema.org/Text</a></li>
+                        
+                        <li><a href="http://schema.org/Thing">http://schema.org/Thing</a></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/crate/1.2-DRAFT">RO-Crate specification 1.2</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3><a href="http://schema.org/valueRequired">Go to: </a> valueRequired</h3>
+            
+            
+            
+            
+        <div id="http://schema.org/valueRequired">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="http://schema.org/valueRequired">http://schema.org/valueRequired</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>valueRequired</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>rdf:Property</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//bioschemas.org/ComputationalWorkflow">ComputationalWorkflow</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="http://schema.org/Text">http://schema.org/Text</a></li>
+                        
+                        <li><a href="http://schema.org/Thing">http://schema.org/Thing</a></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/crate/1.2-DRAFT">RO-Crate specification 1.2</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3><a href="https://bioschemas.org/ComputationalWorkflow#input">Go to: </a> input</h3>
+            
+            
+            
+            
+        <div id="https://bioschemas.org/ComputationalWorkflow#input">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://bioschemas.org/ComputationalWorkflow#input">https://bioschemas.org/ComputationalWorkflow#input</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>input</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>rdf:Property</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>Definition of an input parameter required to use the computational workflow</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
+            <td style='text-align:left'><span>input</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//bioschemas.org/ComputationalWorkflow">ComputationalWorkflow</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//bioschemas.org/FormalParameter">FormalParameter</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/crate/1.2-DRAFT">RO-Crate specification 1.2</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3><a href="https://bioschemas.org/ComputationalWorkflow#output">Go to: </a> output</h3>
+            
+            
+            
+            
+        <div id="https://bioschemas.org/ComputationalWorkflow#output">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://bioschemas.org/ComputationalWorkflow#output">https://bioschemas.org/ComputationalWorkflow#output</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>output</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>rdf:Property</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>Definition of an output produced by the workflow</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
+            <td style='text-align:left'><span>output</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//bioschemas.org/ComputationalWorkflow">ComputationalWorkflow</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//bioschemas.org/FormalParameter">FormalParameter</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/crate/1.2-DRAFT">RO-Crate specification 1.2</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/>
+           <div>
+            <h3><a href="http://purl.org/dc/terms/conformsTo">Go to: </a> conformsTo</h3>
+            
+            
+            
+            
+        <div id="http://purl.org/dc/terms/conformsTo">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="http://purl.org/dc/terms/conformsTo">http://purl.org/dc/terms/conformsTo</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>conformsTo</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>DefinedTerm</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
+            <td style='text-align:left'><span>conformsTo</span></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/crate/1.2-DRAFT">RO-Crate specification 1.2</a></td>
             </tr></tbody>
             </table>
         </div>
