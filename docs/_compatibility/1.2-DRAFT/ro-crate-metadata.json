@@ -770,7 +770,8 @@
       "termCode": "softwareSuggestions",
       "description": "Optional dependencies , e.g. for optional features, code development, etc. ",
       "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-      "rangeIncludes": {"@id": "http://schema.org/SoftwareSourceCode"}
+      "rangeIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+      "sameAs": "https://w3id.org/codemeta/terms/softwareSuggestions"
     },
     {
       "@id": "https://codemeta.github.io/terms/continuousIntegration",
@@ -779,7 +780,9 @@
       "termCode": "continuousIntegration",
       "description": "Link to continuous integration service ",
       "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-      "rangeIncludes": {"@id": "http://schema.org/URL"}
+      "rangeIncludes": {"@id": "http://schema.org/URL"},
+      "sameAs": "https://w3id.org/codemeta/terms/continuousIntegration"
+
     },
     {
     "@id": "https://codemeta.github.io/terms/buildInstructions",
@@ -788,7 +791,8 @@
     "termCode": "buildInstructions",
     "description": "Link to installation instructions/documentation",
     "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-    "rangeIncludes": {"@id": "http://schema.org/URL"}
+    "rangeIncludes": {"@id": "http://schema.org/URL"},
+    "sameAs": "https://w3id.org/codemeta/terms/buildInstructions"
 },
     {
     "@id": "https://codemeta.github.io/terms/developmentStatus",
@@ -797,7 +801,8 @@
     "termCode": "developmentStatus",
     "description": "Description of development status, e.g. Active, inactive, suspended. See repostatus.org",
     "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-    "rangeIncludes": {"@id": "http://schema.org/Text"}
+    "rangeIncludes": {"@id": "http://schema.org/Text"},
+    "sameAs": "https://w3id.org/codemeta/terms/developmentStatus"
     },
     {
     "@id": "https://codemeta.github.io/terms/embargoEndDate",
@@ -806,7 +811,8 @@
     "termCode": "embargoEndDate",
     "description": "Software may be embargoed from public access until a specified date (e.g. pending publication, 1 year from publication)",
     "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-    "rangeIncludes": {"@id": "http://schema.org/Date"}
+    "rangeIncludes": {"@id": "http://schema.org/Date"},
+    "sameAs": "https://w3id.org/codemeta/terms/embargoEndDate"
     },
     {
     "@id": "https://codemeta.github.io/terms/readme",
@@ -815,7 +821,8 @@
     "termCode": "readme",
     "description": "Link to software Readme file",
     "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-    "rangeIncludes": {"@id": "http://schema.org/URL"}
+    "rangeIncludes": {"@id": "http://schema.org/URL"},
+    "sameAs": "https://w3id.org/codemeta/terms/readme"
     },
     {
     "@id": "https://codemeta.github.io/terms/issueTracker",
@@ -824,7 +831,8 @@
     "termCode": "issueTracker",
     "description": "Link to software bug reporting or issue tracking system",
     "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-    "rangeIncludes": {"@id": "http://schema.org/URL"}
+    "rangeIncludes": {"@id": "http://schema.org/URL"},
+    "sameAs": "https://w3id.org/codemeta/terms/issueTracker"
     },
     {
     "@id": "https://codemeta.github.io/terms/referencePublication",
@@ -833,7 +841,8 @@
     "termCode": "referencePublication",
     "description": "An academic publication related to the software",
     "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-    "rangeIncludes": {"@id": "http://schema.org/ScholarlyArticle"}
+    "rangeIncludes": {"@id": "http://schema.org/ScholarlyArticle"},
+    "sameAs": "https://w3id.org/codemeta/terms/referencePublication"
     },
     {
     "@id": "https://codemeta.github.io/terms/hasSourceCode",
@@ -842,7 +851,8 @@
     "termCode": "hasSourceCode",
     "description": "Link that states where the software code is for a given software. For example a software registry may indicate that one of its software entries hasSourceCode in a GitHub repository. ",
     "domainIncludes": {"@id": "http://schema.org/SoftwareApplication"},
-    "rangeIncludes": {"@id": "http://schema.org/SoftwareSourceCode"}
+    "rangeIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "sameAs": "https://w3id.org/codemeta/terms/hasSourceCode"
     },
     {
     "@id": "https://codemeta.github.io/terms/isSourceCodeOf",
@@ -851,7 +861,8 @@
     "termCode": "isSourceCodeOf",
     "description": "Link that states where software application is built from a given source code. This is the reverse property of 'hasSourceCode'. ",
     "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-    "rangeIncludes": {"@id": "http://schema.org/SoftwareApplication"}
+    "rangeIncludes": {"@id": "http://schema.org/SoftwareApplication"},
+    "sameAs": "https://w3id.org/codemeta/terms/isSourceCodeOf"
     },
     {
       "@id": "https://w3id.org/codemeta/3.0",
