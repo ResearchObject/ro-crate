@@ -1,0 +1,18 @@
+title: Use Cases
+title_url: use_cases
+subitems:
+  - title: Use Cases
+    url: /use_cases
+    submenu_type: use_cases
+
+  - title: Your Domain
+    url: /domains
+    submenu_type: domains
+
+  - title: Your Task
+    url: /tasks
+    submenu_type: tasks
+
+  - title: Your Role
+    url: /roles
+    submenu_type: roles

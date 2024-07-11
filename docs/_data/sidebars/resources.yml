@@ -1,0 +1,11 @@
+title: Resources
+title_url: tutorials
+subitems:
+  - title: Tutorials
+    url: /tutorials
+  - title: Tools
+    url: /tools
+  - title: Profiles
+    url: /profiles
+  - title: Examples
+    url: /examples

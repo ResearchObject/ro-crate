@@ -1,0 +1,29 @@
+- Name: Software Development
+  Description: Develop code
+  Icon: fa-code
+  Background: Software Development background
+
+- Name: Data Handling
+  Description: Archive data, data wrangling, data packaging, moving data from one service to another
+  Icon: fa-laptop-file
+  Background: Data Handling background
+
+- Name: Managing Research Data
+  Description: Procedural compliance depending on data/source and intent, archive data
+  Icon: fa-database
+  Background: Manging Research Data background
+
+- Name: Compliance
+  Description: Ensure compliance to standards or SOPs
+  Icon: fa-list-check
+  Background: Compliance background
+
+- Name: Conduct Research
+  Description: Reproducibility, generate novel information
+  Icon: fa-microscope
+  Background: IT Operations background
+
+- Name: Data Curation
+  Description: Reproducibility, data examination in depth, data QC
+  Icon: fa-file-circle-check
+  Background: Data Curation background

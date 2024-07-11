@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body class="d-flex flex-column min-vh-100">
+    {% include topnav.html %}
+    <!-- Page Content -->    
+    <div class="container flex-grow-1">
+      <!-- Content Row -->
+      <div class="row gx-0 gx-lg-5">
+        {%- assign content_col_size = "col-lg-12" %}{% unless page.hide_sidebar
+        %}
+        <!-- Sidebar Column -->
+        <div class="col-lg-3">{% include sidebar.html %}</div>
+        {%- assign content_col_size = "col-lg-9" %}{% endunless %}
+        <!-- Content Column -->
+        <div class="{{content_col_size}}" id="content">          
+          {{content}}</div>
+      </div>
+    </div>
+    <div class="d-flex flex-column"></div>
+    {%- if site.theme_variables.back_to_top or site.theme_variables.back_to_top
+    == nil %}
+    <button
+      id="back-to-top"
+      class="btn btn-primary"
+      type="button"
+      aria-hidden="true"
+      onclick="topFunction()"
+    >
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    {%- endif %} {% include footer.html %} {% include cookie-popup.html %}
+  </body>
+</html>

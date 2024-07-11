@@ -1,0 +1,28 @@
+- Name: Biomedical Science
+  Description: Topic concerning biological science that is (typically) performed in the context of medicine.
+  Icon: fa-flask-vial
+  Background: Topic concerning biological science that is (typically) performed in the context of medicine.
+
+- Name: Chemistry
+  Description: The composition and properties of matter, reactions, and the use of reactions to create new substances.
+  Icon: fa-flask
+  Background: The composition and properties of matter, reactions, and the use of reactions to create new substances.
+
+- Name: Informatics
+  Description: The study and practice of information processing and use of computer information systems.
+  Icon: fa-lightbulb
+  Background: The study and practice of information processing and use of computer information systems.
+
+- Name: Medicine
+  Description: Research in support of healing by diagnosis, treatment, and prevention of disease.
+  Icon: fa-stethoscope
+  Background: Research in support of healing by diagnosis, treatment, and prevention of disease.
+
+- Name: Omics
+  Description: The collective characterisation and quantification of pools of biological molecules that translate into the structure, function, and dynamics of an organism or organisms.
+  Icon: fa-dna
+  Background: The collective characterisation and quantification of pools of biological molecules that translate into the structure, function, and dynamics of an organism or organisms.
+
+- Name: Language and Text Analytics
+  Description: The scientific literature, language processing, reference information, and documentation.
+  Icon: fa-

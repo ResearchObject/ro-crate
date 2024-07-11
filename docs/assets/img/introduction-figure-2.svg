@@ -7,17 +7,12 @@
    viewBox="0 0 133.70386 100.87734"
    version="1.1"
    id="svg135"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
    sodipodi:docname="introduction-figure-2.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-<defs>
-<style type="text/css"><![CDATA[
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Roboto+Slab:wght@400;700&amp;display=swap');
-]]></style>
-</defs>
   <sodipodi:namedview
      id="namedview137"
      pagecolor="#ffffff"
@@ -29,15 +24,15 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.6819304"
-     inkscape:cx="163.79988"
-     inkscape:cy="225.93087"
-     inkscape:window-width="2560"
-     inkscape:window-height="1369"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="169.35207"
+     inkscape:cy="170.05918"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="1911"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g3496"
+     inkscape:current-layer="layer1"
      showguides="true">
     <sodipodi:guide
        position="4.1156761,61.277864"
@@ -45,6 +40,14 @@
        id="guide5807"
        inkscape:locked="false" />
   </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <style
+       type="text/css"
+       id="style1"><![CDATA[
+   font-family: monospace;
+]]></style>
+  </defs>
   <defs
      id="defs132">
     <rect
@@ -63,7 +66,7 @@
        xml:space="preserve"
        transform="scale(0.26458333)"
        id="text672"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';white-space:pre;shape-inside:url(#rect674);display:inline;fill:#000000;fill-opacity:1;stroke:none" />
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;white-space:pre;shape-inside:url(#rect674);display:inline;fill:#000000;fill-opacity:1;stroke:none" />
     <g
        id="g3496">
       <g
@@ -78,60 +81,60 @@
            y="90.099937" />
         <text
            xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;fill:#ffdd55;fill-opacity:1;stroke:none;stroke-width:0.264583"
+           style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:Lucida Console;fill:#ffdd55;fill-opacity:1;stroke:none;stroke-width:0.264583"
            x="37.819729"
            y="95.769684"
            id="text838"><tspan
              sodipodi:role="line"
              id="tspan836"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#ffdd55;stroke-width:0.264583"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#ffdd55;stroke-width:0.264583"
              x="37.819729"
              y="95.769684">{</tspan><tspan
              sodipodi:role="line"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#ffdd55;stroke-width:0.264583"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#ffdd55;stroke-width:0.264583"
              x="37.819729"
-             y="100.30244"
+             y="100.22489"
              id="tspan995">    &quot;<tspan
-   style="fill:#87cdde"
+   style="font-weight:normal;fill:#87cdde;fill-opacity:1"
    id="tspan1005">@id</tspan>&quot;: &quot;<tspan
-   style="fill:#8787de"
+   style="font-weight:normal;fill:#8787de"
    id="tspan11093">data.csv</tspan>&quot;,</tspan><tspan
              sodipodi:role="line"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#ffdd55;stroke-width:0.264583"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#ffdd55;stroke-width:0.264583"
              x="37.819729"
-             y="104.8352"
+             y="104.68011"
              id="tspan993">    &quot;<tspan
-   style="fill:#87cdde"
+   style="font-weight:normal;fill:#87cdde"
    id="tspan1003">@type</tspan>&quot;: &quot;File&quot;,</tspan><tspan
              sodipodi:role="line"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#ffdd55;stroke-width:0.264583"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#ffdd55;stroke-width:0.264583"
              x="37.819729"
-             y="109.36796"
+             y="109.13531"
              id="tspan461">    &quot;<tspan
-   style="fill:#87cdde"
+   style="font-weight:normal;fill:#87cdde"
    id="tspan1559">name</tspan>&quot;: &quot;Rainfall data for Katoomba, NSW…&quot;,</tspan><tspan
              sodipodi:role="line"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#ffdd55;stroke-width:0.264583"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#ffdd55;stroke-width:0.264583"
              x="37.819729"
-             y="113.90071"
+             y="113.59052"
              id="tspan463">    &quot;<tspan
-   style="fill:#87cdde"
+   style="font-weight:normal;fill:#87cdde"
    id="tspan1563">encodingFormat</tspan>&quot;: &quot;text/csv&quot;,</tspan><tspan
              sodipodi:role="line"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#ffdd55;stroke-width:0.264583"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#ffdd55;stroke-width:0.264583"
              x="37.819729"
-             y="118.43347"
+             y="118.04574"
              id="tspan465">    &quot;<tspan
-   style="fill:#87cdde"
+   style="font-weight:normal;fill:#87cdde"
    id="tspan1565">license</tspan>&quot;: { &quot;<tspan
-   style="fill:#87cdde"
+   style="font-weight:normal;fill:#87cdde"
    id="tspan1567">@id</tspan>&quot;: &quot;<tspan
-   style="fill:#93ac93"
+   style="font-weight:normal;fill:#93ac93"
    id="tspan1571">https://creativecommons…</tspan>&quot; }</tspan><tspan
              sodipodi:role="line"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#ffdd55;stroke-width:0.264583"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#ffdd55;stroke-width:0.264583"
              x="37.819729"
-             y="122.96622"
+             y="122.50095"
              id="tspan467">}</tspan></text>
       </g>
       <g
@@ -146,67 +149,67 @@
            y="147.8183" />
         <text
            xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;fill:#ffdd55;fill-opacity:1;stroke:none;stroke-width:0.264583"
+           style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:Lucida Console;fill:#ffdd55;fill-opacity:1;stroke:none;stroke-width:0.264583"
            x="37.943871"
            y="155.38222"
            id="text838-3"><tspan
              sodipodi:role="line"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#ffdd55;stroke-width:0.264583"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#ffdd55;stroke-width:0.264583"
              x="37.943871"
              y="155.38222"
              id="tspan850-8">{</tspan><tspan
              sodipodi:role="line"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#ffdd55;stroke-width:0.264583"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#ffdd55;stroke-width:0.264583"
              x="37.943871"
-             y="159.91498"
+             y="159.83743"
              id="tspan966">  &quot;<tspan
-   style="fill:#87cdde"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#87cdde"
    id="tspan1009">@id</tspan>&quot;: &quot;<tspan
-   style="fill:#e580ff"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#e580ff"
    id="tspan1057">./</tspan>&quot;,</tspan><tspan
              sodipodi:role="line"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#ffdd55;stroke-width:0.264583"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#ffdd55;stroke-width:0.264583"
              x="37.943871"
-             y="164.44774"
+             y="164.29263"
              id="tspan968">  &quot;<tspan
-   style="fill:#87cdde"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#87cdde"
    id="tspan1011">@type</tspan>&quot;: &quot;Dataset&quot;,</tspan><tspan
              sodipodi:role="line"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#ffdd55;stroke-width:0.264583"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#ffdd55;stroke-width:0.264583"
              x="37.943871"
-             y="168.98048"
+             y="168.74785"
              id="tspan972">  &quot;<tspan
-   style="fill:#87cdde"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#87cdde"
    id="tspan1021">name</tspan>&quot;: &quot;Example dataset for RO-Crate specification&quot;,</tspan><tspan
              sodipodi:role="line"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#ffdd55;stroke-width:0.264583"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#ffdd55;stroke-width:0.264583"
              x="37.943871"
-             y="173.51324"
+             y="173.20306"
              id="tspan974">  &quot;<tspan
-   style="fill:#87cdde"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#87cdde"
    id="tspan1023">description</tspan>&quot;: &quot;Official rainfall readings…</tspan><tspan
              sodipodi:role="line"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#ffdd55;stroke-width:0.264583"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#ffdd55;stroke-width:0.264583"
              x="37.943871"
-             y="178.04601"
+             y="177.65826"
              id="tspan1017">  &quot;<tspan
-   style="fill:#87cdde"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#87cdde"
    id="tspan1025">datePublished</tspan>&quot;: &quot;2022-12-01&quot;,</tspan><tspan
              sodipodi:role="line"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#ffdd55;stroke-width:0.264583"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#ffdd55;stroke-width:0.264583"
              x="37.943871"
-             y="182.57877"
+             y="182.11348"
              id="tspan1015">  &quot;<tspan
-   style="fill:#87cdde"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#87cdde"
    id="tspan1027">hasPart</tspan>&quot;: [ {&quot;<tspan
-   style="fill:#87cdde"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#87cdde"
    id="tspan1031">@id</tspan>&quot;: &quot;<tspan
-   style="fill:#8787de"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#8787de"
    id="tspan1067">data.csv</tspan>&quot;} ]</tspan><tspan
              sodipodi:role="line"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#ffdd55;stroke-width:0.264583"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Lucida Console;-inkscape-font-specification:Lucida Console;fill:#ffdd55;stroke-width:0.264583"
              x="37.943871"
-             y="187.11151"
+             y="186.5687"
              id="tspan978">}</tspan></text>
       </g>
       <g

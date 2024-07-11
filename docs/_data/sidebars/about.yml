@@ -1,0 +1,11 @@
+title: About
+title_url: about_ro_crate
+subitems:
+  - title: About RO-Crate
+    url: /about_ro_crate
+
+  - title: Background
+    url: /background
+
+  - title: FAQ
+    url: /faq

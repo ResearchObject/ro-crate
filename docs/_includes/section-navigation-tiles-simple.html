@@ -1,0 +1,10 @@
+{%- assign except = include.except | split: ", " %}
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 my-4 navigation-tiles">
+    {%- for current_page in site.pages | sorted %}
+    {%- if current_page.type == include.type %}
+    <div class="col d-grid">
+        <a role="button" class="btn bg-light py-4 fs-3 hover-primary z-3" href="{{ current_page.url | relative_url }}">{{current_page.title}}</a>
+    </div>
+    {%- endif %}
+    {%- endfor %}
+</div>
