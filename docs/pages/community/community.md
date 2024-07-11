@@ -115,9 +115,36 @@ The RO-Crate Community is open for anyone to [join us](https://github.com/Resear
 
 ## Meetings
 
+See the [RO-Crate community calendar](https://calendar.google.com/calendar/embed?src=b53932af95f34472d7253e3f54e7e11ab1bbe3bf4477c5c60e94db75e08d151e%40group.calendar.google.com) to import events to your own calendar.
+
 The RO-Crate team try to meet at least monthly in a telcon, see the [rolling agenda](https://s.apache.org/ro-crate-minutes) for schedule, call-in details and minutes.
 
 See also [recent and upcoming events](outreach#upcoming-and-recent-events).
+
+## Drop in sessions -- ask questions, learn about RO-Crate
+
+
+### Europe every two weeks:
+
+-   1st Thursday of the month at 9:00-10:00 UTC (10:00 BST, 11:00 CEST)
+
+-   3rd Wednesday of the month at 14:00-15:00 UTC (15:00 BST, 16:00 CEST)
+
+Zoom link: <https://zoom.us/j/98544526364?pwd=tkfDTx4kFlGFxfJTAsEMu3W3PtbCd4.1>
+
+Contact: Eli Chadwick <eli.chadwick@manchester.ac.uk> 
+
+### Australia every week:
+
+-   Thursday at 04:00 UTC -- 14:00 AEST (Brisbane) -- will change to 15:00 for some states with daylight saving.
+
+Zoom link: <https://uqz.zoom.us/j/86281717601>
+
+Contact: Peter Sefton <p.sefton@uq.edu.au> 
+
+### USA TBC
+
+Contact: Abigail Miller <abigail.miller@jax.org>
 
 ## Mailing list
 

@@ -1,8 +1,13 @@
 - name: Crate-O
-  description: Browser-based editor for Research Object Crates, inspired by Describo, with vocabulary support for Schema.org Style schemas (SOSSs)
-  status: alpha
+  description: Browser-based editor for Research Object Crates with vocabulary support for Schema.org Style schemas (SOSSs)
+  status: functional
   level:
   url: https://github.com/Language-Research-Technology/crate-o
+  subitems:
+    - name: Editor Modes (to add RO-Crate Profiles to Crate-O -- these files can be also be used to validate profile conformance)
+      url: https://github.com/Language-Research-Technology/ro-crate-modes
+    - name: Profiles - adapt describo to your needs
+      url: https://describo.github.io/docs/profiles/introduction.html
 
 - name: Describo
   description: An intuitive and extensible tool for working with RO-Crates. Transform, Discover, Explore, Describe.
@@ -22,14 +27,14 @@
   url: https://github.com/vliz-be-opsci/dmbon-assistant/#readme
 
 - name: ro-crate-excel
-  description: Command-line tool to help create RO-Crates from spreadsheets
+  description: Command-line tool to help create RO-Crates from metadata spreadsheets (used in Crate-O)
   status: beta
   level:
   url: https://www.npmjs.com/package/ro-crate-excel
 
 - name: ro-crate-html
   description: HTML rendering of RO-Crate
-  status: beta
+  status: production
   level:
   url: https://www.npmjs.com/package/ro-crate-html
 
@@ -53,7 +58,7 @@
 
 - name: ro-crate-js
   description: JavaScript/NodeJS library for RO-Crate rendering as HTML.
-  status: beta
+  status: production
   level:
   url: https://www.npmjs.com/package/ro-crate
 
@@ -137,7 +142,7 @@
 
 - name: RO-Crates-and-Excel
   description: Generate RO-Crate from Excel file, following the RO-Crates-and-Excel profile.
-  status:
+  status: prototype
   level:
   url: https://github.com/e11938258/RO-Crates-and-Excel
 
