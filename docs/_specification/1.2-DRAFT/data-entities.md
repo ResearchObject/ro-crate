@@ -496,7 +496,7 @@ In all cases, consumers should be aware that a `DataDownload` is a snapshot that
 
 #### Retrieving an RO-Crate
 
-To resolve a reference to an RO-Crate, but where `subjectOf` or `distribution` is unknown (e.g. an RO-Crate is cited from a journal article), the below approach is recommended to retrieve its [RO-Crate Metadata Document](root-data-entity#ro-crate-metadata-file-descriptor):
+To resolve a reference to an RO-Crate, but where `subjectOf` or `distribution` is unknown (e.g. an RO-Crate is cited from a journal article), the below approach is recommended to retrieve its [RO-Crate Metadata Document](structure#ro-crate-metadata-document-ro-crate-metadatajson):
 
 1. Try [Signposting] after permalink redirects, looking for `Link` headers that reference `Link rel="describedby` for a _RO-Crate Metadata Document_, or `Link rel="item"` for a distribution archive -- in either case looking for a link with `profile="https://w3id.org/ro/crate"` for example:
 
