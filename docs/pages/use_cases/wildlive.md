@@ -12,7 +12,7 @@ roles: [data_analyst, repository_manager, researcher]
 
 # Senckenberg Wildlive data portal
 
-Senckenberg's [Wildlive data portal](https://wildlive.senckenberg.de/), is a repository and analysis platform for biodiversity monitoring. 
+Senckenberg's [Wildlive data portal](https://wildlive.senckenberg.de/) is a repository and analysis platform for biodiversity monitoring. 
 
 Using [FAIR Signposting](https://signposting.org/FAIR/), the images from cameras monitoring wildlife are also navigatable as FAIR Digital Objects using RO-Crate to expose the  metadata. 
 
@@ -27,6 +27,7 @@ _HTML preview of Wildlive RO-Crate (from [the event's crate](https://wildlive.se
 ## Resources
 
 * Slides: <https://slides.com/soilandreyes/2023-11-13-bh2023-fdo#/3>
-* Biohackathon preprint: <https://github.com/ResearchObject/bh2023-enabling-fair-digital-objects/blob/main/paper/paper.md>
+* Biohackathon preprint: <https://doi.org/10.37044/osf.io/gmk2h>
+* Wildlive oublication: <https://doi.org/10.5334/cstp.665>
 * Example handle: <https://hdl.handle.net/21.T11998/wildlive.7df91e6d148a386cc674>
 * Example detached RO-Crate: <https://wildlive.senckenberg.de/api/call?objectId=wildlive/7df91e6d148a386cc674&method=getAsROCrate>
