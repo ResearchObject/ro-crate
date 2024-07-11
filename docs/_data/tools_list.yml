@@ -1,6 +1,6 @@
 - name: Crate-O
   description: Browser-based editor for Research Object Crates with vocabulary support for Schema.org Style schemas (SOSSs)
-  status: functional
+  status: beta
   level:
   url: https://github.com/Language-Research-Technology/crate-o
   subitems:
