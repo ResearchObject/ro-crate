@@ -42,7 +42,7 @@ enable increased accessibility to historical and cultural data through visualisa
 
 TLCMap uses RO-Crate for exporting geographical search results and map layers via the Gazeteer of Historical Australian Places (GHAP) service.
 
- ![Screenshot of GHAP showing a bounding box on a map](../assets/img/ghap-screenshot.png)
+ ![Screenshot of GHAP showing a bounding box on a map](assets/img/ghap-screenshot.png)
 
 
 
@@ -151,4 +151,4 @@ curl "https://ghap.tlcmap.org/places?containsname=katoomba&searchausgaz=on&searc
 
 
 
-![TLC Map](../assets/img/tlcmap.png)
+![TLC Map](assets/img/tlcmap.png)
