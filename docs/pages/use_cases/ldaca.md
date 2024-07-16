@@ -52,7 +52,7 @@ RO-Crate provides a consistent metadata model for long term archiving and preser
 The LDaCA project provide access-controlled API access to data using the [Oni](https://github.com/Arkisto-Platform/oni) tool. Access control is important for language data as it is created by and collected from humans who have intellectual property rights over the data and some of he content may be confidential
 
 
-For example, this query looks for RO-Crates which package objects, with a conformsTo property from the Language Data Commons RO-Crate profile: <https://w3id.org/ldac/profile#Collection>. This demonstration this returns 10 results from a total of 27 collections on the service as of 2024-07-09 (truncated here), which can then be fetched using the url property.
+For example, this query looks for RO-Crates which package objects, with a `conformsTo` property from the Language Data Commons RO-Crate profile: <https://w3id.org/ldac/profile#Collection>. This demonstration returns 10 results from a total of 27 collections on the service as of 2024-07-09 (truncated here), which can then be fetched using the `url` property.
 
 
 
@@ -468,8 +468,6 @@ RO-Crate metadata for a collection can be fetched using the url property returne
 
 The structural API described above is used to build discovery and access portals which use the metadata from RO-Crate objects to generate an Elasticsearch index and a web site to search and browse the RO-Crate-packaged data.
 
-
-
 The portal/index system us highly configurable to work with differently structured RO-Crate data.
 
 <!--
@@ -478,7 +476,7 @@ The portal/index system us highly configurable to work with differently structur
 
 ![Screenshot of LDaCA data portal showing that it contains 38786 Index entries (Collections, Objects, Files and Notebooks)](assets/img/ldaca-screenshot.png)
 
-** Screenshot of LDaCA data portal showing that it contains 38786 Index entries (Collections, Objects, Files and Notebooks)]  **
+*Screenshot of LDaCA data portal showing that it contains 38786 Index entries (Collections, Objects, Files and Notebooks)*
 
 ## Resources
 

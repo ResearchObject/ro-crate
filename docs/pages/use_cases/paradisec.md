@@ -20,9 +20,11 @@ From 2022 - 2028 PARADISEC is working with the national project the [Language Da
 
 PARADISEC has an architecture which ensures that all data is stored in commodity storage with metadata adjacent to the files. This way of working has proved to be a low-cost and robust way to maintain an archive and this has been an inspiration for the [PILARS: Protocols for Implementing Long-term Archival Repository Services]. PARADISEC is currently undergoing an update where metadata is being migrated to RO-Crate which will be stored alongside materials.
 
-PARADISEC uses the same API as the [Language Data Commons of Australia (LDACA)] which can serve RO-Crate 
+PARADISEC uses the same API as the [Language Data Commons of Australia (LDACA)] which can serve RO-Crate.
 
 [Language Data Commons of Australia  (LDACA)]: ldaca
+[PILARS: Protocols for Implementing Long-term Archival Repository Services]: pilars
+
 
 ## Example Crate
 
@@ -254,6 +256,3 @@ PARADISEC uses the same API as the [Language Data Commons of Australia (LDACA)] 
 }
 
 ```
-
-
-

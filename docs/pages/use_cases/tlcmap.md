@@ -4,7 +4,7 @@ title: Time Layered Cultural Map (TLCMap)
 description: TLCMap is a set of tools that work together for mapping Australian history and culture which includes downloads of geographical data packaged in RO-Crate
 url: https://example.org/
 image: tlcmap.png
-domains: [humanities, ecology, climate-science, language_text] # should match item(s) in pages/domains
+domains: [humanities, ecology, climate_science, language_text] # should match item(s) in pages/domains
 tasks: [conduct_research] # should match item(s) in pages/tasks
 roles: [researcher, software_developer] # should match item(s) in pages/roles
 ---
@@ -28,17 +28,17 @@ roles: [researcher, software_developer] # should match item(s) in pages/roles
 # Time Layered Cultural Map (TLCMap)
 
 > The Time-layered Cultural Map of Australia (TLCMap) is an online research platform
-funded by the Australian Research Council Linkage Infrastructure, Equipment and Fa-
-cilities (LIEF) grant scheme in 2019 and currently under development. When com-
-pleted, it will deliver researcher-driven national-scale infrastructure for the humanities,
+funded by the Australian Research Council Linkage Infrastructure, Equipment and 
+Facilities (LIEF) grant scheme in 2019 and currently under development. When completed, 
+it will deliver researcher-driven national-scale infrastructure for the humanities,
 focused on mapping, time series, and data integration, and will expand the use of Australian cultural and historical data for research through sharply defined and powerful
 discovery mechanisms. 
 >
 > The main function of TLCMap is to generate web-based digital time-maps from spatiotemporal data for humanities’ needs, including time, layering, data, text, media, and
-virtual reality applications. Linking geo-spatial maps of Australian cultural and historical information, adapted to time series, represents a significant contribution to human ities research in Australia. For researchers, including those without extensive technical
+virtual reality applications. Linking geo-spatial maps of Australian cultural and historical information, adapted to time series, represents a significant contribution to humanities research in Australia. For researchers, including those without extensive technical
 backgrounds, it has the potential to transform access to data and to visualisation tools
 and open new perspectives on Australian culture and history. For the public, it will
-enable increased accessibility to historical and cultural data through visualisations created by researchers and made available online and in print [1]
+enable increased accessibility to historical and cultural data through visualisations created by researchers and made available online and in print. [[1]](#tlcmap-paper)
 
 TLCMap uses RO-Crate for exporting geographical search results and map layers via the Gazeteer of Historical Australian Places (GHAP) service.
 
@@ -49,7 +49,7 @@ TLCMap uses RO-Crate for exporting geographical search results and map layers vi
 ## RO-Crate Export
 
 
-Below is an example of a search for "Katoomba" (the name of a town in New South Wales), returns a zip file containing csv, kml and geojson files.
+Below is an example of a search for "Katoomba" (the name of a town in New South Wales), which returns a zip file containing csv, kml, and geojson files.
 
 ```
 curl "https://ghap.tlcmap.org/places?containsname=katoomba&searchausgaz=on&searchncg=on&searchpublicdatasets=on&format=rocrate&download=on"
@@ -146,7 +146,7 @@ curl "https://ghap.tlcmap.org/places?containsname=katoomba&searchausgaz=on&searc
 
 ## Publications
 
-1. Arthur P, Champion E, Craig H, Gu N, Harvey M, Haskins V, et al. Time-layered cultural map of Australia. In: Digital Humanities in the Nordic Countries Conference [Internet]. 2020 [cited 2024 Jul 4]. Available from: <https://opus.lib.uts.edu.au/bitstream/10453/141441/2/Time%20Layered%20Cultural%20Map%20of%20Australia.pdf>
+1. <span id="tlcmap-paper"></span>Arthur P, Champion E, Craig H, Gu N, Harvey M, Haskins V, et al. Time-layered cultural map of Australia. In: Digital Humanities in the Nordic Countries Conference [Internet]. 2020 [cited 2024 Jul 4]. Available from: <https://opus.lib.uts.edu.au/bitstream/10453/141441/2/Time%20Layered%20Cultural%20Map%20of%20Australia.pdf>
 
 
 
