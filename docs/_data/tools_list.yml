@@ -196,10 +196,22 @@
   url: https://github.com/MoritzRenkin/tuw-rocrate-automation/
 
 - name: ro-crates-deposit
-  description: Command line tool to deposit a RO-Crate directory to an InvenioRD
-  status: alpha
+  description: Command line tool to deposit a RO-Crate directory to an InvenioRDM. No longer maintained; see ro-crate-inveniordm
+  status: inactive
   level:
   url: https://github.com/beerphilipp/ro-crates-deposit
+
+- name: ro-crate-inveniordm
+  description: Command line tool to deposit a RO-Crate directory to an InvenioRDM and populate the InvenioRDM metadata using the RO-Crate metadata. Forked from ro-crates-deposit.
+  status: alpha
+  level:
+  url: https://github.com/ResearchObject/ro-crate-inveniordm
+
+- name: ro-crate-zenodo
+  description: Command line tool to upload RO-Crates to Zenodo and populate the Zenodo metadata using the RO-Crate metadata.
+  status: alpha
+  level:
+  url: https://github.com/ResearchObject/ro-crate-zenodo
 
 - name: rocrate-to-sembench
   description: GitHub action to prepare a rocrate for pysembench
