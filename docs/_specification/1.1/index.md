@@ -35,5 +35,25 @@ excerpt: |
 
 {% include_relative _metadata.liquid  %}
 
+## Contents
+
+{%- assign sidebar = site.data.sidebars[page.sidebar] %}
+<ul>
+{% for version in sidebar.versions %}
+{%- if page.url == version.url %}
+  {% for item in version.subitems %}
+  <li><a href="{{item.url | relative_url}}">{{item.title}}</a>
+  {% if item contains "subitems" %}
+    <ul>
+    {% for subitem in item.subitems %}
+    <li><a href="{{subitem.url | relative_url}}">{{subitem.title}}</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  </li>
+  {% endfor %}
+{% endif %}
+{% endfor %}
+</ul>
 
 {% include references.liquid %}
