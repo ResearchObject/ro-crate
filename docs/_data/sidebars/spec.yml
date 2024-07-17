@@ -2,7 +2,7 @@ title: Specification
 title_url: specification
 versions:
 - title: RO-Crate 1.1 (newest release)
-  url: /specification/1.1/
+  url: /specification/1.1/index.html
   subitems:
   - title: Introduction
     url: /specification/1.1/introduction.html
@@ -34,7 +34,7 @@ versions:
       - title: RO-Crate JSON-LD
         url: /specification/1.1/appendix/jsonld.html
 - title: RO-Crate 1.2-DRAFT (draft for next release)
-  url: /specification/1.2-DRAFT
+  url: /specification/1.2-DRAFT/index.html
   subitems:
   - title: Introduction
     url: /specification/1.2-DRAFT/introduction.html
@@ -70,6 +70,6 @@ versions:
       - title: RO-Crate JSON-LD
         url: /specification/1.2-DRAFT/appendix/jsonld.html
 - title: RO-Crate 1.0
-  url: /specification/1.0
+  url: /specification/1.0/index.html
 - title: RO-Crate 0.2
-  url: /specification/0.2
+  url: /specification/0.2/index.html
