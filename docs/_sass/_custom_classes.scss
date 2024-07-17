@@ -260,3 +260,8 @@ section#search-section {
 #back-to-top.visible {
   bottom: 7px;
 }
+
+// hide the link container, as we have no links to display
+footer .container {
+    display: none;
+}

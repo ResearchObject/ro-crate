@@ -1,1 +1,3 @@
 copyright: © Copyright 2021-2024. University of Technology Sydney, The University of Manchester UK and RO-Crate contributors
+columns: [] # if anything is added to this list later, unhide the link container in the CSS (footer .container)
+extra_line: 
