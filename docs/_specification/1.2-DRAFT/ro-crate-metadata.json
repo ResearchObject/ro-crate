@@ -305,6 +305,9 @@
         {
           "@id": "http://www.opengis.net/ont/geosparql#asWKT"
         },
+        {
+          "@id": "https://codemeta.github.io/terms/"
+        },
         { 
           "@id": "https://bioschemas.org/FormalParameter"
         },
@@ -342,7 +345,7 @@
           "@id": "http://www.w3.org/ns/json-ld#flattened"
         },
         {
-          "@id": "http://schema.org/version/15.0/"
+          "@id": "https://schema.org/docs/releases.html#v22.0"
         }
       ],
       "license": {
@@ -374,6 +377,9 @@
         },
         {
           "@id": "#vocabulary-geosparql"
+        },
+        {
+          "@id": "#vocabulary-codemeta"
         },
         {
           "@id": "#specification"
@@ -457,21 +463,12 @@
       "url": "https://vocab.org/vann/#preferredNamespaceUri"
     },
     {
-      "@id": "http://schema.org/version/15.0/",
+      "@id": "https://schema.org/docs/releases.html#v22.0",
       "@type": ["DefinedTermSet", "Standard"],
       "name": "Schema.org vocabulary (http prefix)",
-      "encoding": {
-        "@id": "https://schema.org/version/15.0/schemaorg-current-http.jsonld"
-      },
       "vann:preferredNamespaceUri": "http://schema.org/",
-      "version": "15.0",
+      "version": "22.0",
       "url": "https://schema.org/docs/developers.html"
-    },
-    {
-      "@id": "https://schema.org/version/15.0/schemaorg-current-http.jsonld",
-      "@type": "CreativeWork",
-      "encodingFormat": "application/ld+json",
-      "conformsTo": {"@id": "https://www.w3.org/TR/rdf-schema/"}
     },
     {
       "@id": "http://www.iana.org/assignments/relation/cite-as",
@@ -520,7 +517,7 @@
       "@id": "http://schema.org/Class",
       "@type": ["DefinedTerm","Class"],
       "inDefinedTermSet": {
-        "@id": "http://schema.org/version/15.0/"
+        "@id": "https://schema.org/docs/releases.html#v22.0"
       },
       "name": "Class (schema.org)",
       "description": "Class reference, as indicated by @id url or inDefinedTermSet"
@@ -529,7 +526,7 @@
       "@id": "http://schema.org/Property",
       "@type": ["DefinedTerm","Class"],
       "inDefinedTermSet": {
-        "@id": "http://schema.org/version/15.0/"
+        "@id": "https://schema.org/docs/releases.html#v22.0"
       },
       "name": "Property (schema.org)",
       "description": "Property reference, as indicated by @id url or inDefinedTermSet"      
@@ -743,6 +740,136 @@
       "@type": "DefinedTerm",
       "name": "JSON-LD Context",
       "url": "https://www.w3.org/TR/json-ld/"
+    },
+    {
+      "@id": "https://codemeta.github.io/terms/",
+      "@type": ["DefinedTermSet", "Profile"],
+      "name": "Codemeta Terms",
+      "isPartOf": {
+        "@id": "https://w3id.org/codemeta/3.0"
+      },
+      "url": "https://codemeta.github.io/terms/",
+      "version": "3.0",
+      "hasDefinedTerm": [
+        { "@id": "https://codemeta.github.io/terms/softwareSuggestions" },
+        { "@id": "https://codemeta.github.io/terms/continuousIntegration" },
+        { "@id": "https://codemeta.github.io/terms/buildInstructions" },
+        { "@id": "https://codemeta.github.io/terms/developmentStatus" },
+        { "@id": "https://codemeta.github.io/terms/embargoEndDate" },
+        { "@id": "https://codemeta.github.io/terms/readme" },
+        { "@id": "https://codemeta.github.io/terms/issueTracker" },
+        { "@id": "https://codemeta.github.io/terms/referencePublication" },
+        { "@id": "https://codemeta.github.io/terms/hasSourceCode" },
+        { "@id": "https://codemeta.github.io/terms/isSourceCodeOf" }
+      ]
+    },
+    {
+      "@id": "https://codemeta.github.io/terms/softwareSuggestions",
+      "@type": ["DefinedTerm", "rdf:Property"],
+      "name": "softwareSuggestions",
+      "termCode": "softwareSuggestions",
+      "description": "Optional dependencies , e.g. for optional features, code development, etc. ",
+      "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+      "rangeIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+      "sameAs": "https://w3id.org/codemeta/terms/softwareSuggestions"
+    },
+    {
+      "@id": "https://codemeta.github.io/terms/continuousIntegration",
+      "@type": ["DefinedTerm", "rdf:Property"],
+      "name": "continuousIntegration",
+      "termCode": "continuousIntegration",
+      "description": "Link to continuous integration service ",
+      "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+      "rangeIncludes": {"@id": "http://schema.org/URL"},
+      "sameAs": "https://w3id.org/codemeta/terms/continuousIntegration"
+
+    },
+    {
+    "@id": "https://codemeta.github.io/terms/buildInstructions",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "name": "buildInstructions",
+    "termCode": "buildInstructions",
+    "description": "Link to installation instructions/documentation",
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "rangeIncludes": {"@id": "http://schema.org/URL"},
+    "sameAs": "https://w3id.org/codemeta/terms/buildInstructions"
+},
+    {
+    "@id": "https://codemeta.github.io/terms/developmentStatus",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "name": "developmentStatus",
+    "termCode": "developmentStatus",
+    "description": "Description of development status, e.g. Active, inactive, suspended. See repostatus.org",
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "rangeIncludes": {"@id": "http://schema.org/Text"},
+    "sameAs": "https://w3id.org/codemeta/terms/developmentStatus"
+    },
+    {
+    "@id": "https://codemeta.github.io/terms/embargoEndDate",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "name": "embargoEndDate",
+    "termCode": "embargoEndDate",
+    "description": "Software may be embargoed from public access until a specified date (e.g. pending publication, 1 year from publication)",
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "rangeIncludes": {"@id": "http://schema.org/Date"},
+    "sameAs": "https://w3id.org/codemeta/terms/embargoEndDate"
+    },
+    {
+    "@id": "https://codemeta.github.io/terms/readme",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "name": "readme",
+    "termCode": "readme",
+    "description": "Link to software Readme file",
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "rangeIncludes": {"@id": "http://schema.org/URL"},
+    "sameAs": "https://w3id.org/codemeta/terms/readme"
+    },
+    {
+    "@id": "https://codemeta.github.io/terms/issueTracker",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "name": "issueTracker",
+    "termCode": "issueTracker",
+    "description": "Link to software bug reporting or issue tracking system",
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "rangeIncludes": {"@id": "http://schema.org/URL"},
+    "sameAs": "https://w3id.org/codemeta/terms/issueTracker"
+    },
+    {
+    "@id": "https://codemeta.github.io/terms/referencePublication",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "name": "referencePublication",
+    "termCode": "referencePublication",
+    "description": "An academic publication related to the software",
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "rangeIncludes": {"@id": "http://schema.org/ScholarlyArticle"},
+    "sameAs": "https://w3id.org/codemeta/terms/referencePublication"
+    },
+    {
+    "@id": "https://codemeta.github.io/terms/hasSourceCode",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "name": "hasSourceCode",
+    "termCode": "hasSourceCode",
+    "description": "Link that states where the software code is for a given software. For example a software registry may indicate that one of its software entries hasSourceCode in a GitHub repository. ",
+    "domainIncludes": {"@id": "http://schema.org/SoftwareApplication"},
+    "rangeIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "sameAs": "https://w3id.org/codemeta/terms/hasSourceCode"
+    },
+    {
+    "@id": "https://codemeta.github.io/terms/isSourceCodeOf",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "name": "isSourceCodeOf",
+    "termCode": "isSourceCodeOf",
+    "description": "Link that states where software application is built from a given source code. This is the reverse property of 'hasSourceCode'. ",
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "rangeIncludes": {"@id": "http://schema.org/SoftwareApplication"},
+    "sameAs": "https://w3id.org/codemeta/terms/isSourceCodeOf"
+    },
+    {
+      "@id": "https://w3id.org/codemeta/3.0",
+      "@type": "Profile",
+      "name": "CodeMeta Terms profile",
+      "version": "3.0",
+      "license": { "@id": "https://creativecommons.org/licenses/by/4.0/" }      
     },
     {
       "@id": "http://www.w3.org/ns/json-ld#flattened",
@@ -1473,7 +1600,7 @@
       "encodingFormat": "application/ld+json",
       "isBasedOn": [
         {
-          "@id": "http://schema.org/version/15.0/"
+          "@id": "https://schema.org/docs/releases.html#v22.0"
         },
         {
           "@id": "https://pcdm.org/2016/04/18/models"
@@ -2005,7 +2132,7 @@
       "@id": "#vocabulary-schema",
       "@type": "ResourceDescriptor",
       "hasArtifact": {
-        "@id": "http://schema.org/version/15.0/"
+        "@id": "https://schema.org/docs/releases.html#v22.0"
       },
       "hasRole": {
         "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
@@ -2030,8 +2157,17 @@
       "hasRole": {
         "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
       }
+    },
+    {
+      "@id": "#vocabulary-codemeta",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "https://codemeta.github.io/terms/"
+      },
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+      }
     }
-
 
   ]
 }
