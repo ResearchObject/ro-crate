@@ -400,11 +400,40 @@ A _Directory File Entry_ or [Dataset] identifier expressed as an absolute URL on
 
 #### Referencing other RO-Crates
 
-A referenced RO-Crate is also a [Dataset], but where its [hasPart] do not need to be listed. Instead, its content and further metadata is available from its own RO-Crate Metadata Document. An RO-Crate that is referencing another crate `http://example.com/another-crate/` and metadata document `http://example.com/another-crate/ro-crate-metadata.json` will declare it as:
+A referenced RO-Crate is also a [Dataset] data entity, but where its [hasPart] do not need to be listed. Instead, its content and further metadata is available from its own RO-Crate Metadata Document, which may be retrieved or packaged within an archive. The referenced RO-Crate entity SHOULD have `conformsTo` pointing to the generic RO-Crate profile using the fixed URI `https://w3id.org/ro/crate`.
+
+This section defines how a _referencing_ RO-Crate ("A") can declare data entities within A's RO-Crate Metadata Document, in order to indicate a _referenced_ RO-Crate ("B"). There are different options on how to find the identifier to assign the referenced crate in A, and how a consumer of A finding such a reference can find the corresponding RO-Crate Metadata Document for B.
+
+If the referenced RO-Crate B has a `identifier` declared as B's [Root Data Entity identifier](root-data-entity#root-data-entity-identifier), then this is a _persistent identifier_ which SHOULD be used as the URI in the `@id` of the corresponding entity in RO-Crate A.  For instance, if crate B had declared the identifier `http://example.com/another-crate/` then crate A can reference B as an entity:
 
 ```json
 {
   "@id": "http://example.com/another-crate/",
+  "@type": "Dataset",
+  "conformsTo": { "@id": "https://w3id.org/ro/crate" }
+}
+```
+
+{.tip }
+> The `conformsTo` generic RO-Crate profile on a `Dataset` entity MUST be version-less. The referenced crate B is NOT required to conform to the same version of the RO-Crate specification as A's RO-Crate Metadata Document.
+
+{.warning }
+> It is NOT RECOMMENDED to declare the generic profile `https://w3id.org/ro/crate` on a referencing crate A's own [root data entity](root-data-entity.html#direct-properties-of-the-root-data-entity), see [metadata descriptor](root-data-entity.html#ro-crate-metadata-descriptor). 
+
+Consumers that find a reference to a `Dataset` with the generic RO-Crate profile indicated MAY attempt to resolve the persistent identifier, but SHOULD NOT assume that the `@id` directly resolves to an RO-Crate Metadata Document. See section [Retrieving an RO-Crate](#retrieving-an-ro-crate) below for the recommended algorithm. 
+
+In some cases, if the referenced RO-Crate B has not got a resolvable `identifier` declared, additional steps are needed to find the correct crate URI:
+
+1. If RO-Crate A is an [attached](structure.html#attached-ro-crate) crate, and RO-Crate B is a nested folder (e.g. `another-crate/`), then B SHOULD be treated as an attached crate (e.g. it has `another-crate/ro-crate-metadata.json`) and the relative path (`another-crate/`) used directly as `@id` as a [Directory File Entity](#directory-file-entity) within crate A, adding the `conformsTo` as above.
+2. If B's root data entity has an `@id` that is an absolute URI indicating a [detached crate](structure.html#detached-ro-crate)), and that URI resolves according to [Retrieving an RO-Crate](#retrieving-an-ro-crate), then that can be used as the `@id` of the `Dataset` entity in A, equivalent to the `identifier` case above. However, as that URI was not declared as a persistent identifier, the timestamp property [sdDatePublished] SHOULD be included to indicate when the absolute URL was accessed.
+2. If B's RO-Crate Metadata Document was located on the Web, but uses a relative URI reference for its root data entity (`./`), then its absolute URI can be determined from the [RFC3986] algorithm for [establishing a base URI](https://datatracker.ietf.org/doc/html/rfc3986#section-5). For example, if root `{"@id": "./" }` is in metadata document `http://example.com/another-crate/ro-crate-metadata.json`, then the absolute URI for the `Dataset` entity is `http://example.com/another-crate/` (with the trailing `/`). If that URI is resolvable as in point 1, it can be used as equivalent `@id`. It is NOT RECOMMENDED to resolve a relative root identifier if the metadata document was retrieved from a URI that does not end with `/ro-crate-metadata.json` or `/ro-crate-metadata.jsonld` -- these are not part of a valid [attached](structure.html#attached-ro-crate) or [detached](structure.html#detached-ro-crate) RO-Crate.
+4. If the RO-Crate is not on the Web, and does not have a persistent identifier, e.g. is within a ZIP file or local file system, then a non-resolvable identifier could be established. See appendix [Establishing a base URI inside a ZIP file](appendix/relative-uris.html#establishing-a-base-uri-inside-a-zip-file), e.g. `arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/` if using a randomly generated UUID. This method may also be used if the above steps fail for an RO-Crate Metadata Document that is on the Web.
+
+If a RO-Crate Metadata Document is known at a given URI, but its corresponding RO-Crate identifier can't be determined as above (e.g. [Retrieving an RO-Crate](#retrieving-an-ro-crate) fails), for instance because , then its RO-Crate Metadata Document SHOULD
+
+```json
+{
+  "@id": "arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/",
   "@type": "Dataset",
   "conformsTo": { "@id": "https://w3id.org/ro/crate" },
   "subjectOf": { "@id": "http://example.com/another-crate/ro-crate-metadata.json" }
@@ -415,9 +444,9 @@ A referenced RO-Crate is also a [Dataset], but where its [hasPart] do not need t
   "encodingFormat": "application/ld+json"
 }
 ```
-
 {.tip }
-> The referenced RO-Crate metadata descriptor SHOULD NOT include its own `conformsTo` or reference the dataset with `about`; this is to avoid confusion with the referencing RO-Crate's own [metadata descriptor](root-data-entity#ro-crate-metadata-descriptor). Likewise, the `conformsTo` on the referenced `Dataset` entity is version-less, as the referenced crate is free to self-declare a different version of the RO-Crate specification.
+> The referenced RO-Crate metadata descriptor SHOULD NOT include its own `conformsTo` or reference the dataset with `about`; this is to avoid confusion with the referencing RO-Crate's own [metadata descriptor](root-data-entity#ro-crate-metadata-descriptor). 
+
 
 If the referenced crate conforms to a given [RO-Crate profile](profiles), this MAY be indicated by expanding `conformsTo` to an array:
 
@@ -446,10 +475,9 @@ If the referenced crate conforms to a given [RO-Crate profile](profiles), this M
 {.note}
 > The profile declaration of a referenced crate is a hint. Consumers should check `conformsTo` of the retrieved RO-Crate as it may have been updated after this RO-Crate.
 
-{.tip}
-> The `@id` of the referenced RO-Crate entity SHOULD be equal to the persistent identifier within its own metadata file (as `identifier` on its root entity), see [Root Data Entity identifier](root-data-entity#root-data-entity-identifier). See [Retrieving an RO-Crate](#retrieving-an-ro-crate) for how to retrieve from a persistent identifier if the `subjectOf` RO-Crate Metadata Document is not retrievable.
 
-If the RO-Crate Mtadata Document is not available as a web resource, but only within an archive (e.g. ZIP), then instead reference it as a [Downloadable dataset](#downloadable-dataset).
+
+If the RO-Crate Metadata Document is not available as a web resource, but only within an archive (e.g. ZIP), then instead reference it as a [Downloadable dataset](#downloadable-dataset).
 
 #### Downloadable dataset
 
