@@ -400,7 +400,7 @@ A _Directory File Entry_ or [Dataset] identifier expressed as an absolute URL on
 
 #### Referencing other RO-Crates
 
-A referenced RO-Crate is also a [Dataset], but where its [hasPart] do not need to be listed. Instead, its content and further metadata is available from its own RO-Crate Metadata File. An RO-Crate that is referencing another crate `http://example.com/another-crate/` and metadata file `http://example.com/another-crate/ro-crate-metadata.json` will declare it as:
+A referenced RO-Crate is also a [Dataset], but where its [hasPart] do not need to be listed. Instead, its content and further metadata is available from its own RO-Crate Metadata Document. An RO-Crate that is referencing another crate `http://example.com/another-crate/` and metadata document `http://example.com/another-crate/ro-crate-metadata.json` will declare it as:
 
 ```json
 {
@@ -447,9 +447,9 @@ If the referenced crate conforms to a given [RO-Crate profile](profiles), this M
 > The profile declaration of a referenced crate is a hint. Consumers should check `conformsTo` of the retrieved RO-Crate as it may have been updated after this RO-Crate.
 
 {.tip}
-> The `@id` of the referenced RO-Crate entity SHOULD be equal to the persistent identifier within its own metadata file (as `identifier` on its root entity), see [Root Data Entity identifier](root-data-entity#root-data-entity-identifier). See [Retrieving an RO-Crate](#retrieving-an-ro-crate) for how to retrieve from a persistent identifier if the `subjectOf` RO-Crate Metadata file is not retrievable.
+> The `@id` of the referenced RO-Crate entity SHOULD be equal to the persistent identifier within its own metadata file (as `identifier` on its root entity), see [Root Data Entity identifier](root-data-entity#root-data-entity-identifier). See [Retrieving an RO-Crate](#retrieving-an-ro-crate) for how to retrieve from a persistent identifier if the `subjectOf` RO-Crate Metadata Document is not retrievable.
 
-If the RO-Crate metadata file is not available as a web resource, but only within an archive (e.g. ZIP), then instead reference it as a [Downloadable dataset](#downloadable-dataset).
+If the RO-Crate Mtadata Document is not available as a web resource, but only within an archive (e.g. ZIP), then instead reference it as a [Downloadable dataset](#downloadable-dataset).
 
 #### Downloadable dataset
 
