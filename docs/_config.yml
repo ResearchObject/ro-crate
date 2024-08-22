@@ -59,6 +59,13 @@ defaults:
     values:
       layout: "default"
       sidebar: spec
+      search_exclude: true
+
+  # include only the current spec in the search
+  - scope:
+      path: "_specification/1.1"
+    values:
+      search_exclude: false
 
   - scope:
       path: "pages/about"
