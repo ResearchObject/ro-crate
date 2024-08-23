@@ -117,7 +117,9 @@ The RO-Crate Community is open for anyone to [join us](https://github.com/Resear
 
 The RO-Crate team try to meet at least monthly in a telcon, see the [rolling agenda](https://s.apache.org/ro-crate-minutes) for schedule, call-in details and minutes.
 
-See also [recent and upcoming events](outreach#upcoming-and-recent-events).
+There are also regular [regional drop-in calls](https://docs.google.com/document/d/1l0EmDVE4k6oEZSoMGjes8mMNrJboRlmZW-kvjaeVqvE/edit#heading=h.twg8huxfni6c) aimed at those newer to the RO-Crate community. These sessions are suitable for beginner questions, as well as discussing ideas for new tools/integrations.
+
+Members of the RO-Crate team can often be found presenting at open science conferences and events: see the list of [recent and upcoming events](outreach#upcoming-and-recent-events) for details.
 
 ## Mailing list
 
