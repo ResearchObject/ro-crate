@@ -427,7 +427,7 @@ Consumers that find a reference to a `Dataset` with the generic RO-Crate profile
 If an `identifier` is not declared in a referenced RO-Crate B, but the determined absolute URI has [Signposting] declared for a `Link:` with `rel=cite-as`, then that link MAY be considered as an equivalent permalink for B.
 
 
-##### Determening entity identifier for a referenced RO-Crate
+##### Determining entity identifier for a referenced RO-Crate
 
 In some cases, if the referenced RO-Crate B has not got a resolvable `identifier` declared, additional steps are needed to find the correct `@id` to use:
 
