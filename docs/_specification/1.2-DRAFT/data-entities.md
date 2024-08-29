@@ -440,7 +440,7 @@ If the RO-Crate Metadata Document is not available as a web resource, but only w
 
 ##### Referencing another metadata document
 
-If a referenced RO-Crate Metadata Document is known at a given URI or path, but its corresponding RO-Crate identifier can't be determined as above (e.g. [Retrieving an RO-Crate](#retrieving-an-ro-crate) fails or requires heuristics), then an referenced metadata descriptor entity SHOULD be added. For instance, if `http://example.com/another-crate/ro-crate-metadata.json` resolves to an RO-Crate Metadata Document describing root `./`, but `http://example.com/another-crate/` always return a HTML page without [Signposting] to the metadata document, then `subjectOf` SHOULD be added to an explicit metadata descriptor entity, which has `encodingFormat` declared for JSON-LD:
+If a referenced RO-Crate Metadata Document is known at a given URI or path, but its corresponding RO-Crate identifier can't be determined as above (e.g. [Retrieving an RO-Crate](#retrieving-an-ro-crate) fails or requires heuristics), then a referenced metadata descriptor entity SHOULD be added. For instance, if `http://example.com/another-crate/ro-crate-metadata.json` resolves to an RO-Crate Metadata Document describing root `./`, but `http://example.com/another-crate/` always return a HTML page without [Signposting] to the metadata document, then `subjectOf` SHOULD be added to an explicit metadata descriptor entity, which has `encodingFormat` declared for JSON-LD:
 
 ```json
 {
