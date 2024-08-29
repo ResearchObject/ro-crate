@@ -406,7 +406,7 @@ This section defines how a _referencing_ RO-Crate ("A") can declare data entitie
 
 ##### Referencing RO-Crates that have a persistent identifier
 
-If the referenced RO-Crate B has a `identifier` declared as B's [Root Data Entity identifier](root-data-entity#root-data-entity-identifier), then this is a _persistent identifier_ which SHOULD be used as the URI in the `@id` of the corresponding entity in RO-Crate A.  For instance, if crate B had declared the identifier `https://pid.example.com/another-crate/` then crate A can reference B as an entity:
+If the referenced RO-Crate B has an `identifier` declared as B's [Root Data Entity identifier](root-data-entity#root-data-entity-identifier), then this is a _persistent identifier_ which SHOULD be used as the URI in the `@id` of the corresponding entity in RO-Crate A.  For instance, if crate B had declared the identifier `https://pid.example.com/another-crate/` then crate A can reference B as an entity:
 
 ```json
 {
