@@ -26,7 +26,6 @@ Run as:
 
 import sys
 import json
-import requests
 from collections import OrderedDict
 import urllib.request
 
