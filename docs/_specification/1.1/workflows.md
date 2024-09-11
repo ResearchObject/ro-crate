@@ -308,7 +308,7 @@ The below is an example of an RO-Crate complying with the Bioschemas [Computatio
     },
     {
       "@id": "#knime",
-      "@type": "ProgrammingLanguage",
+      "@type": "ComputerLanguage",
       "name": "KNIME Analytics Platform",
       "alternateName": "KNIME",
       "url": "https://www.knime.com/whats-new-in-knime-41",
