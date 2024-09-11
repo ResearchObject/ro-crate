@@ -16,7 +16,8 @@ all: dependencies release
 # Check dependencies before we do the rest
 dependencies: node_modules/.bin/rochtml
 	scripts/schema-context.py --version
-	node_modules/.bin/rochtml --version
+	node_modules/.bin/rochtml --help
+	pip --exists-action=s install 'panflute<2'
 	pandoc --version
 	xelatex --version
 
@@ -28,8 +29,7 @@ release: release/ro-crate-${TAG}.html release/ro-crate-${TAG}.pdf release/ro-cra
 
 # Install dependencies for node
 node_modules/.bin/rochtml:
-	npm install lodash
-	npm install ro-crate-html-js
+	npm install ro-crate-html
 
 docs/_specification/${RELEASE}/:
 	mkdir -p docs/_specification/${RELEASE}/
@@ -44,10 +44,10 @@ docs/_specification/${RELEASE}/_metadata.liquid: docs/_specification/${RELEASE}/
 	sed -i "s,^* Cite as:.*,* Cite as: <https://doi.org/${DOI}> (this version)," docs/_specification/${RELEASE}/_metadata.liquid
 	
 
-docs/_specification/${RELEASE}/.references.md: docs/_specification/${RELEASE}/ docs/_specification/_includes/references.liquid
+docs/_specification/${RELEASE}/.references.md: docs/_specification/${RELEASE}/ docs/_includes/references.liquid
 	echo "---\ntitle: References\n---\n\n" > docs/_specification/${RELEASE}/.references.md
 	echo "# References" >> docs/_specification/${RELEASE}/.references.md
-	sed 's,^\[,* \\[,' < docs/_specification/_includes/references.liquid | \
+	sed 's,^\[,* \\[,' < docs/_includes/references.liquid | \
 		sed 's,\]: ,\\]: <,' |\
 		sed 's,^\*.*$$,\0>,' \
 		>> docs/_specification/${RELEASE}/.references.md
@@ -84,12 +84,12 @@ docs/_specification/${RELEASE}/context.jsonld: dependencies docs/_specification/
 release/:
 	mkdir -p release
 
-release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}/_metadata.liquid docs/_specification/${RELEASE}/.references.md docs/_specification/${RELEASE}/*.md docs/_specification/${RELEASE}/appendix/*.md docs/_specification/_includes/references.liquid
+release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}/_metadata.liquid docs/_specification/${RELEASE}/.references.md docs/_specification/${RELEASE}/*.md docs/_specification/${RELEASE}/appendix/*.md docs/_includes/references.liquid
 	cp docs/_specification/${RELEASE}/_metadata.liquid docs/_specification/${RELEASE}/.metadata.md
 	pandoc --from=markdown+gfm_auto_identifiers --to=markdown+gfm_auto_identifiers \
 	   docs/_specification/${RELEASE}/.metadata.md \
 	   `grep ^nav_order: docs/_specification/${RELEASE}/*.md | sort -n -k 2 | grep -v index.md| grep -v about.md | sed s/:.*//` \
-	   docs/_specification/${RELEASE}/appendix/*.md docs/_specification/_includes/references.liquid docs/_specification/${RELEASE}/.references.md |\
+	   docs/_specification/${RELEASE}/appendix/*.md docs/_includes/references.liquid docs/_specification/${RELEASE}/.references.md |\
 	   grep -v '{%' > release/ro-crate-${TAG}.md
 	# Our own rendering of Note/Warning/Tip
 	sed -i -E 's/\{: ?\.note ?\} \\>/**Note**:/g' release/ro-crate-${TAG}.md
