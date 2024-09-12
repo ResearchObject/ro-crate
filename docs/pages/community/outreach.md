@@ -50,13 +50,83 @@ Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander 
 _PLOS One_ **19**(9):e0309210  
 <https://doi.org/10.1371/journal.pone.0309210>
 
+Ben Foley, Peter Sefton, Simon Musgrave, Moises Sacal Bonequi (2024):  
+[**Access Control Framework for Language Collections**](https://aclanthology.org/2024.lrec-main.10.pdf).  
+_Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation_ (LREC-COLING 2024), Torino, Italia, 2024-05.
+<https://aclanthology.org/2024.lrec-main.10>
+
+Barbara Magagna, Erik Schultes, Anne Fouilloux, Gerhard Burger, Dirk Devriendt, Robin Bramley, Tobias Kuhn, Joao Moreira, Luiz Olavo Bonino Da Silva Santos, Luís Ferreira Pires (2024):  
+[**Ontological analysis of FAIR Supporting Resources**](https://www.utwente.nl/en/eemcs/fois2024/resources/papers/magagna-et-al-ontological-analysis-of-fair-implementation-profiles.pdf).   
+_FOAM 2024: FAIR principles for Ontologies and Metadata in Knowledge Management_, Formal Ontology in Information Systems Conference 2024 ([FOIS 2024](https://www.utwente.nl/en/eemcs/fois2024/accepted-papers/)), 15-19 July 2024, Enschede, Netherlands  
+
+Otso Ovaskainen, Patrik Lauha, Julian Lopez Gordillo, Ossi Nokelainen, Anis U. Rahman, Allan T. Souza, Jussi Talaskivi, Gleb Tikhonov, Aurélie Vancraeyenest, Ari Lehtiö (2024):  
+[**Prototype Biodiversity Digital Twin: Real-time bird monitoring with citizen-science data**](https://doi.org/10.3897/rio.10.e125523).  
+_Research Ideas and Outcomes_ **10**:e125523  
+<https://doi.org/10.3897/rio.10.e125523>
+
+Desalegn Chala, Erik Kusch, Claus Weiland, Carrie Andrew, Jonas Grieb, Tuomas Rossi, Tomas Martinovic, Dag Endresen (2024):  
+[**Prototype biodiversity digital twin: crop wild relatives genetic resources for food security**](https://doi.org/10.3897/rio.10.e125192).  
+_Research Ideas and Outcomes_ **10**:e125192  
+<https://doi.org/10.3897/rio.10.e125192>
+
+The Galaxy Community (2024):  
+[**The Galaxy platform for accessible, reproducible, and collaborative data analyses: 2024 update**](https://doi.org/10.1093/nar/gkae410).  
+_Nucleic Acids Research_ **52**(W1)  
+<https://doi.org/10.1093/nar/gkae410>
+
+Martin Starman, Fabian Kirchner, Martin Held, Catriona Eschke, Sayed-Ahmad Sahim, Regine Willumeit-Römer, Nicole Jung, Stefan Bräse  (2024):  
+[**ELNdataBridge**: Facilitating Data Exchange and Collaboration by Linking Electronic Lab Notebooks via API](https://doi.org/10.26434/chemrxiv-2024-41gh4).  
+_ChemRxiv_  
+<https://doi.org/10.26434/chemrxiv-2024-41gh4>
+
+Jonas Grieb, Claus Weiland, Alexander Wolodkin, Leyla e0306100Jael Castro, Stian Soiland-Reyes, Maya Beukes, Martin Jansen (2024):  
+[**Using Webby FDOs to Integrate AI Taxon Identification and Citizen Science**](https://doi.org/10.3897/biss.8.134757).  
+_Biodiversity Information Science and Standards_ **8**:e134757  
+<https://doi.org/10.3897/biss.8.134757>
+
+Claus Weiland, Jonas Grieb, Daniel Bauer, Desalegn Chala, Erik Kusch, Carrie Andrew, Dag Endresen (2024):  
+[**Dataspace Integration for Agrobiodiversity Digital Twins with RO-Crate**](https://doi.org/10.3897/biss.8.134479).  
+_Biodiversity Information Science and Standards_ **8**:e134479  
+<https://doi.org/10.3897/biss.8.134479>
+
+Tomáš Martinovič, Kata Sara-aho, Ondrej Salamon, Simon Rolph, Allan T Souza (2024):  
+[**Graphical User Interface for Biodiversity Digital Twins: Data Challenges**](https://doi.org/10.3897/biss.8.135092).  
+_Biodiversity Information Science and Standards_ **8**:e135092  
+<https://doi.org/10.3897/biss.8.135092> 
+
+Sharif Islam, Julian Lopez Gordillo, Dag Endresen, Carrie Andrew (2024):  
+[**Bridging Data Standards and FAIR Principles in Biodiversity Digital Twinning**: Prototyping, Challenges, Lessons Learned, and Future Plans](https://doi.org/10.3897/biss.8.133089).  
+_Biodiversity Information Science and Standards_ **8**:133089  
+<https://doi.org/10.3897/biss.8.133089>
+
+George Marchment, Bryan Brancotte, Marie Schmit, Frédéric Lemoine, Sarah Cohen-Boulakia (2024):  
+[**BioFlow-Insight**: facilitating reuse of Nextflow workflows with structure reconstruction and visualization](https://doi.org/10.1093/nargab/lqae092).  
+_NAR Genomics and Bioinformatics_ **6**(3):lqae092  
+<https://doi.org/10.1093/nargab/lqae092>
+
+Daniel J.B. Clarke, John Erol Evangelista, Zhuorui Xie, Giacomo B. Marino, Mano R. Maurya, Sumana Srinivasan, Keyang Yu, Varduhi Petrosyan, Matthew E. Roth, Miroslav Milinkov, Charles Hadley King, Jeet Kiran Vora, Jonathon Keeney, Christopher Nemarich, William Khan, Alexander Lachmann, Nasheath Ahmed, Sherry L. Jenkins, Alexandra Agris, Juncheng Pan, Srinivasan Ramachandran, Eoin Fahy, Emmanuel Esquivel, Aleksandar Mihajlovic, Bosko Jevtic, Vuk Milinovic, Sean Kim, Patrick McNeely, Tianyi Wang, Eric Wenger, Miguel A. Brown, Alexander Sickler, Yuankun Zhu, Philip D. Blood, Deanne M. Taylor, Adam C. Resnick, Raja Mazumder, Aleksandar Milosavljevic, Shankar Subramaniam, Avi Ma’ayan (2024):  
+[**Playbook Workflow Builder**: Interactive Construction of Bioinformatics Workflows from a Network of Microservices](https://doi.org/10.1101/2024.06.08.598037).  
+_bioRxiv_  
+<https://doi.org/10.1101/2024.06.08.598037>
+
+Timothy Clark, Jillian Mohan, Leah Schaffer, Kirsten Obernier, Sadnan Al Manir, Christopher P Churas, Amir Dailamy, Yesh Doctor, Antoine Forget, Jan Niklas Hansen, Mengzhou Hu, Joanna Lenkiewicz, Maxwell Adam Levinson, Charlotte Marquez, Sami Nourreddine, Justin Niestroy, Dexter Pratt, Gege Qian, Swathi Thaker, Jean-Christophe Bélisle-Pipon, Cynthia Brandt, Jake Chen, Ying Ding, Samah Fodeh, Nevan Krogan, Emma Lundberg, Prashant Mali, Pamela Payne-Foster, Sarah Ratcliffe, Vardit Ravitsky, Andrej Sali, Wade Schulz, Trey Ideker (2024):  
+[**Cell Maps for Artificial Intelligence**: AI-Ready Maps of Human Cell Architecture from Disease-Relevant Cell Lines](https://doi.org/10.1101/2024.05.21.589311).  
+_bioRxiv_  
+<https://doi.org/10.1101/2024.05.21.589311>
+
+Davide Fucci (2024):  
+[**FAIR enough**: a Vision for Research Objects in Empirical Software Engineering Studies](https://doi.org/10.1145/3643664.3648201).  
+_Proceedings of the 1st IEEE/ACM International Workshop on Methodological Issues with Empirical Studies in Software Engineering_ (WSESE '24)  
+_2024 IEEE/ACM International Workshop on Methodological Issues with Empirical Studies in Software Engineering_ (WSESE)  
+<https://doi.org/10.1145/3643664.3648201>
+
 Eric Hauser, Sebastian Gallenmüller, Georg Carle (2024):  
-**RO-Crate for Testbeds**: Automated Packaging of Experimental Results.  
+[**RO-Crate for Testbeds**: Automated Packaging of Experimental Results](https://www.net.in.tum.de/fileadmin/bibtex/publications/papers/hauser_slices2024.pdf).  
 _2024 IFIP Networking Conference (IFIP Networking)_  
-<https://doi.org/10.23919/IFIPNetworking62109.2024.10619057> **No OA preprint available?**  [[dataset](https://doi.org/10.5281/zenodo.10966199)]
+<https://doi.org/10.23919/IFIPNetworking62109.2024.10619057> [[preprint](https://www.net.in.tum.de/fileadmin/bibtex/publications/papers/hauser_slices2024.pdf)] [[dataset](https://doi.org/10.5281/zenodo.10966199)]
 
 George Marchment, Marie Schmit, Clémence Sebe, Frédéric Lemoine, Hervé Ménager, Sarah Cohen-Boulakia (2024):  
-**Representing bioinformatics Nextflow workflows in RO-Crate**: challenges and opportunities.  
+[**Representing bioinformatics Nextflow workflows in RO-Crate**: challenges and opportunities](https://doi.org/10.5281/zenodo.10822156).  
 _Semantic Web Applications and Tools for Health Care and Life Sciences_ (SWAT4HCLS), Leiden, Netherlands. 2024-02-26/--29. 
 <https://doi.org/10.5281/zenodo.10822156>
 
@@ -84,7 +154,6 @@ Mahnoor Zulfiqar, Michael R. Crusoe, Birgitta König-Ries, Christoph Steinbeck, 
 **Implementation of FAIR Practices in Computational Metabolomics Workflows**—A Case Study.  
 _Metabolites_ **14**(2)  
 <https://doi.org/10.3390/metabo14020118>
-
 
 Carole Goble, Stian Soiland-reyes, Herbert Van de Sompel, Mark Wilkinson (2024):  
 [**RO-Crate, Signposting and Bioschemas**](https://doi.org/10.5281/zenodo.10555382).  
@@ -131,9 +200,18 @@ Peter Sefton, Stian Soiland-Reyes (2024):
 (submitted)  
 <https://research.manchester.ac.uk/en/publications/five-ways-ro-crate-data-packages-are-important-for-repositories>  
 
+Johannes L. Hörmann, Luis Yanes, Ashwin Vazhappilly, Antoine Sanner, Hannes Holey, Lars Pastewka, Matthew Hartley, Tjelvar S. G. Olsson (2024):  
+[**dtool and dserver**: A flexible ecosystem for findable data](https://doi.org/10.1371/journal.pone.0306100).  
+_PLOS One_ **19**(6):e0306100  
+<https://doi.org/10.1371/journal.pone.0306100>
+
+Andrey Vukolov, Erik van Winkle, Vyacheslav Tykhonov, Roberto Pugliese (2024):  
+**Decentralised Persistent Identification** - an Emerging Technology for Sustainability Maintenance and Knowledge-driven Processes.  
+_IFAC-PapersOnLine_  **58**(8)  
+<https://doi.org/10.1016/j.ifacol.2024.08.149>
+
 
 ### 2023
-
 
 Tom Brown, Nick Juty, Stian Soiland-Reyes, Felix Shaw, Rutger Vos (2023):  
 [**RO-Crates as a practical implementation of FAIR Digital Object to align biodiversity genomics work streams**](https://research.manchester.ac.uk/files/291308873/2023-12-01_RO-Crate_FDO_2024.pdf).  
