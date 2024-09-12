@@ -60,19 +60,19 @@ Tim Beck, Stian Soiland-Reyes (2024):
 _ELIXIR All Hands Meeting 2024_ ([AHM2024](https://elixir-events.eventscase.com/EN/ahm2024/Agenda)), Uppsala, Sweden, 2024-06-12  
 <https://doi.org/10.5281/zenodo.11654733>
 
-Carole Goble (2024):
-[**FAIR Digital Research Objects: Metadata Journeys**](https://doi.org/10.5281/zenodo.10710142).
-_University of Auckland_: [Centre for eResearch](https://www.eresearch.auckland.ac.nz/), Auckland, New Zealand, 2024-02-16 
+Carole Goble (2024):  
+[**FAIR Digital Research Objects: Metadata Journeys**](https://doi.org/10.5281/zenodo.10710142).  
+_University of Auckland_: [Centre for eResearch](https://www.eresearch.auckland.ac.nz/), Auckland, New Zealand, 2024-02-16  
 <https://doi.org/10.5281/zenodo.10710142>
 
-Carole Goble Keynote (2024):  
+Carole Goble (2024):  
 [**Handling Health Data: FAIR Research Objects for Trusted Research Environments**](https://doi.org/10.5281/zenodo.10648472).  
-_eResearch New Zealand 2024_: [eResearch New Zealand 2024](https://eresearchnz.co.nz/). Wellington , New Zealand, 2024-02-08
+_eResearch New Zealand 2024_: [eResearch New Zealand 2024](https://eresearchnz.co.nz/) (Keynote). Wellington , New Zealand, 2024-02-08  
 <https://doi.org/10.5281/zenodo.10648472>
 
-Mahnoor Zulfiqar, Michael R. Crusoe, Birgitta König-Ries, Christoph Steinbeck,Kristian Peters Luiz Gadelha (2024):
-**Implementation of FAIR Practices in Computational Metabolomics Workflows**—A Case Study.
-_Metabolites_ **14**(2)
+Mahnoor Zulfiqar, Michael R. Crusoe, Birgitta König-Ries, Christoph Steinbeck, Kristian Peters, Luiz Gadelha (2024):  
+**Implementation of FAIR Practices in Computational Metabolomics Workflows**—A Case Study.  
+_Metabolites_ **14**(2)  
 <https://doi.org/10.3390/metabo14020118>
 
 
