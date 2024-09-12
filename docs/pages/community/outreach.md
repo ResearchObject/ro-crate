@@ -64,6 +64,11 @@ Otso Ovaskainen, Patrik Lauha, Julian Lopez Gordillo, Ossi Nokelainen, Anis U. R
 _Research Ideas and Outcomes_ **10**:e125523  
 <https://doi.org/10.3897/rio.10.e125523>
 
+Simon Rolph, Chris Andrews, Dylan Carbone, Julian Lopez Lopez Gordillo, Tomáš Martinovič, Nick Oostervink, Dirk Pleiter, Kata Sara-aho, John Watkins, Christoph Wohner, Will Bolton, Jan Dick (2024):  
+[**Prototype Digital Twin: Recreation and biodiversity cultural ecosystem services**](https://doi.org/10.3897/rio.10.e125450). 
+_Research Ideas and Outcomes_ **10**:e125450  
+<https://doi.org/10.3897/rio.10.e125450>
+
 Desalegn Chala, Erik Kusch, Claus Weiland, Carrie Andrew, Jonas Grieb, Tuomas Rossi, Tomas Martinovic, Dag Endresen (2024):  
 [**Prototype biodiversity digital twin: crop wild relatives genetic resources for food security**](https://doi.org/10.3897/rio.10.e125192).  
 _Research Ideas and Outcomes_ **10**:e125192  
@@ -124,6 +129,11 @@ Eric Hauser, Sebastian Gallenmüller, Georg Carle (2024):
 [**RO-Crate for Testbeds**: Automated Packaging of Experimental Results](https://www.net.in.tum.de/fileadmin/bibtex/publications/papers/hauser_slices2024.pdf).  
 _2024 IFIP Networking Conference (IFIP Networking)_  
 <https://doi.org/10.23919/IFIPNetworking62109.2024.10619057> [[preprint](https://www.net.in.tum.de/fileadmin/bibtex/publications/papers/hauser_slices2024.pdf)] [[dataset](https://doi.org/10.5281/zenodo.10966199)]
+
+Robert D. Finn, Bachir Balech, Josephine Burgin, Physilia Chua, Erwan Corre, Cymon J. Cox, Claudio Donati, Vitor Martins dos Santos, Bruno Fosso, John Hancock, Katharina F. Heil, Naveed Ishaque, Varsha Kale, Benoit J. Kunath, Claudine Médigue, Evangelos Pafilis, Graziano Pesole, Lorna Richardson, Monica Santamaria, Tim Van Den Bossche, Juan Antonio Vizcaíno, Haris Zafeiropoulos, Nils P. Willassen, Eric Pelletier, Bérénice Batut (2024):  
+**Establishing the ELIXIR Microbiome Community**  [version 1; peer review: 1 approved, 1 approved with reservations]  
+_F1000Research_ **13**(ELIXIR):50  
+<https://doi.org/10.12688/f1000research.144515.1>
 
 George Marchment, Marie Schmit, Clémence Sebe, Frédéric Lemoine, Hervé Ménager, Sarah Cohen-Boulakia (2024):  
 [**Representing bioinformatics Nextflow workflows in RO-Crate**: challenges and opportunities](https://doi.org/10.5281/zenodo.10822156).  
