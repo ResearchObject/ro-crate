@@ -50,6 +50,16 @@ Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander 
 _PLOS One_ **19**(9):e0309210  
 <https://doi.org/10.1371/journal.pone.0309210>
 
+Eric Hauser, Sebastian Gallenmüller, Georg Carle (2024):  
+**RO-Crate for Testbeds**: Automated Packaging of Experimental Results.  
+_2024 IFIP Networking Conference (IFIP Networking)_  
+<https://doi.org/10.23919/IFIPNetworking62109.2024.10619057> **No OA preprint available?**  [[dataset](https://doi.org/10.5281/zenodo.10966199)]
+
+George Marchment, Marie Schmit, Clémence Sebe, Frédéric Lemoine, Hervé Ménager, Sarah Cohen-Boulakia (2024):  
+**Representing bioinformatics Nextflow workflows in RO-Crate**: challenges and opportunities.  
+_Semantic Web Applications and Tools for Health Care and Life Sciences_ (SWAT4HCLS), Leiden, Netherlands. 2024-02-26/--29. 
+<https://doi.org/10.5281/zenodo.10822156>
+
 Stian Soiland-Reyes, Carole Goble (2024):  
 [**WorkflowHub cloud integration in ELIXIR**](https://doi.org/10.5281/zenodo.11654943).  
 _ELIXIR All Hands Meeting 2024_ ([AHM2024](https://elixir-events.eventscase.com/EN/ahm2024/Agenda)), Uppsala, Sweden, 2024-06-12  
@@ -110,7 +120,7 @@ Stian Soiland-Reyes, Stuart Wheater, Tom Giles, Carole Goble, Phil Quinlan (2024
 [**Five Safes RO-Crate: FAIR Digital Objects for Trusted Research Environments**](https://research.manchester.ac.uk/files/291224791/FDO2024-Goble-Lightningtalk-5scrate.pdf).  
 (submitted)  
 <https://research.manchester.ac.uk/en/publications/five-safes-ro-crate-fair-digital-objects-for-trusted-research-env>  
-PLoS ONE
+
 Herbert Van de Sompel, Stian Soiland-Reyes (2024):  
 [**FAIR Signposting: Exposing the Topology of Digital Objects on the Web**](https://research.manchester.ac.uk/en/publications/fair-signposting-exposing-the-topology-of-digital-objects-on-the-).  
 (submitted)  
