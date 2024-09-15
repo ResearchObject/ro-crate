@@ -28,7 +28,7 @@ title: Outreach and Publications
 1. TOC
 {:toc}
 
-_Feel free to add to this page, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
+_Feel free to add to this page, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/main/docs/pages/community/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 
 ## Zenodo community
 
@@ -84,7 +84,7 @@ Martin Starman, Fabian Kirchner, Martin Held, Catriona Eschke, Sayed-Ahmad Sahim
 _ChemRxiv_  
 <https://doi.org/10.26434/chemrxiv-2024-41gh4>
 
-Jonas Grieb, Claus Weiland, Alexander Wolodkin, Leyla e0306100Jael Castro, Stian Soiland-Reyes, Maya Beukes, Martin Jansen (2024):  
+Jonas Grieb, Claus Weiland, Alexander Wolodkin, Leyla Jael Castro, Stian Soiland-Reyes, Maya Beukes, Martin Jansen (2024):  
 [**Using Webby FDOs to Integrate AI Taxon Identification and Citizen Science**](https://doi.org/10.3897/biss.8.134757).  
 _Biodiversity Information Science and Standards_ **8**:e134757  
 <https://doi.org/10.3897/biss.8.134757>
