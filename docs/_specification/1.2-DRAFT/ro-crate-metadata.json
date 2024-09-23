@@ -321,10 +321,10 @@
           "@id": "http://schema.org/valueRequired"
         },
         { 
-          "@id": "https://bioschemas.org/ComputationalWorkflow#input"
+          "@id": "https://bioschemas.org/properties/input"
         },
         { 
-          "@id": "https://bioschemas.org/ComputationalWorkflow#output"
+          "@id": "https://bioschemas.org/properties/output"
         },  
         {
           "@id": "http://purl.org/dc/terms/conformsTo"
@@ -940,7 +940,7 @@
       ]
     },
     { 
-      "@id": "https://bioschemas.org/ComputationalWorkflow#input",
+      "@id": "https://bioschemas.org/properties/input",
       "@type": ["DefinedTerm", "rdf:Property"],
       "termCode": "input",
       "name": "input",
@@ -953,7 +953,7 @@
       ]
     },
     { 
-      "@id": "https://bioschemas.org/ComputationalWorkflow#output",
+      "@id": "https://bioschemas.org/properties/output",
       "@type": ["DefinedTerm", "rdf:Property"],
       "termCode": "output",
       "name": "output",

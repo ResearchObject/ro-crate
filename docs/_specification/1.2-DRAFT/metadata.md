@@ -142,8 +142,8 @@ These terms are being proposed by [Bioschemas profile ComputationalWorkflow 1.0-
 
 * `ComputationalWorkflow` mapped to <https://bioschemas.org/ComputationalWorkflow>
 * `FormalParameter` mapped to <https://bioschemas.org/FormalParameter>
-* `input` mapped to <https://bioschemas.org/ComputationalWorkflow#input>
-* `output` mapped to <https://bioschemas.org/ComputationalWorkflow#output>
+* `input` mapped to <https://bioschemas.org/properties/input>
+* `output` mapped to <https://bioschemas.org/properties/output>
 
 To support geometry in [Places](contextual-entities#places), these terms from the [GeoSPARQL ontology]:
 

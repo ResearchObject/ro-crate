@@ -50,6 +50,7 @@ SCHEMA_SWHID="swh:1:dir:60ff33aeead8b6c6b5a82f273a4a905fac5f8cf3"
 # Update from https://bioschemas.org/profiles/Workflow/
 BIOSCHEMA_WORKFLOW_PROFILE = "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
 BIOSCHEMA_WORKFLOW_NS = "https://bioschemas.org/ComputationalWorkflow"
+BIOSCHEMA_PROPERTIES_NS = "https://bioschemas.org/properties/"
 BIOSCHEMA_FORMAL_PARAMETER_NS = "https://bioschemas.org/FormalParameter"
 BIOSCHEMA_FORMAL_PARAMETER_PROFILE = "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
 
@@ -136,15 +137,14 @@ ADDITIONAL = OrderedDict([
           ("RepositoryObject", "http://pcdm.org/models#Object"),
           ("RepositoryFile", "http://pcdm.org/models#File"),
 
-          # Temporary namespace for properties/types
-          # proposed https://bioschemas.org/profiles/Workflow/ 
+          # Temporary namespace for Bioschemas properties/types
           # Remove if/when added to schema.org release!
           # See also https://github.com/BioSchemas/specifications/issues/653
           # on which namespace to use..
           ## BEGIN
           ("ComputationalWorkflow", BIOSCHEMA_WORKFLOW_NS),
-          ("input", BIOSCHEMA_WORKFLOW_NS + "#input"),
-          ("output", BIOSCHEMA_WORKFLOW_NS + "#output"),
+          ("input", BIOSCHEMA_PROPERTIES_NS + "input"),
+          ("output", BIOSCHEMA_PROPERTIES_NS + "output"),
           ("FormalParameter", BIOSCHEMA_FORMAL_PARAMETER_NS),
           ## END 
 
