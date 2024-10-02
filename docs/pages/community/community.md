@@ -135,6 +135,8 @@ Members of the RO-Crate team can often be found presenting at open science confe
 
 The RO-Crate Community has a low-traffic public [RO-Crate mailing list](https://lists.elixir-europe.org/mailman/listinfo/ro-crate_elixir-europe.org), used for announcements and general enquiries.
 
+**Note**: Do not attempt to sign up to the mailing list, as we get about 1000 spammer subscriptions a day. Sign up in [GitHub issue #1](https://github.com/ResearchObject/ro-crate/issues/1) and we will add you manually.
+
 Note that most discussion about the [RO-Crate specifications](specification) typically happen in [GitHub issues](https://github.com/ResearchObject/ro-crate/issues) and [community meetings](https://s.apache.org/ro-crate-minutes).
 
 ## Slack Chat
