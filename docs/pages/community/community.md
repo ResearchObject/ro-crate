@@ -113,6 +113,16 @@ The _RO-Crate_ team is:
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)!
 
+## Steering Committee
+
+We are in the process of adapting the [Minimal Viable Governance](model) and are establishing a Steering Committee:
+
+* Carole Goble  
+* Peter Sefton
+* Stian Soiland-Reyes  
+
+You may contact the steering committe at `contact()researchobject.org` for any confidential matter.
+
 ## Meetings
 
 The RO-Crate team try to meet at least monthly in a telcon, see the [rolling agenda](https://s.apache.org/ro-crate-minutes) for schedule, call-in details and minutes.
@@ -131,9 +141,19 @@ Note that most discussion about the [RO-Crate specifications](specification) typ
 
 We have an informal Slack chat channel [#ro-crate on seek4science.slack.com](https://seek4science.slack.com/archives/C01LQQAAAS1) ([join](https://join.slack.com/t/seek4science/shared_invite/zt-csqh94qb-kf~kFbZxuHl1Hpxhbc8avw)).
 
+## Contact us
+
+For general technical questions, please feel free to use the Slack chat or contribute a [GitHub discussion](https://github.com/ResearchObject/ro-crate/discussions). The members of the RO-Crate community will collaboratively try to assist.
+
+If you have a technical request that you are not comfortable posting in a public forum like Slack or GitHub (e.g. use in commercial software), you may email `ro-crate()researchobject.org` -- note that this list goes to a couple of volunteers and we cannot provide any support guarantees.
+
+For organisational or confidential requests, e.g. letter of support for a funding proposal, email `contact()researchobject.org` which goes to the Steering Committee.
+
+_Remember to replace `()` with `@` in the above email addresses_
+
 ## Code of Conduct
 
-Contributors to the RO-Crate community are expected to comply with our [Code of Conduct](https://github.com/ResearchObject/ro-crate/blob/master/CODE_OF_CONDUCT.md) to ensure an open and inclusive environment.
+Contributors to the RO-Crate community are expected to comply with our [Code of Conduct](https://github.com/ResearchObject/ro-crate/blob/master/CODE_OF_CONDUCT.md) to ensure an open and inclusive environment. You may email `conduct()researchobject.org` to report any Code of Conduct concerns.
 
 ## Contributing
 
