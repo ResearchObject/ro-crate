@@ -4,8 +4,8 @@ title: AROMA ARP RO-Crate Manager
 description: AROMA (ARP RO-Crate Manager) is part of Hungarian initiative ELKH ARP, extending Harvard Dataverse to allow dynamic metadata editing of data deposit metadata.
 url: https://researchdata.hu/en/service-map
 domains: []
-tasks: [data_handling, software_development]
-roles: [data_steward, repository_manager,software_developer]
+tasks: [data_handling, software_development, data_curation]
+roles: [data_steward, repository_manager,software_developer, information_architect]
 ---
 
 # AROMA ARP RO-Crate Manager

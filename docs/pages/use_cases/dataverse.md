@@ -6,7 +6,7 @@ title: Dataverse
 description: 
 url: https://guides.dataverse.org/en/6.4/installation/advanced.html#inventory-of-external-exporters
 domains: []
-tasks: [data_handling]
+tasks: [data_handling, manage_data]
 roles: [data_steward, repository_manager]
 ---
 
@@ -24,7 +24,7 @@ There are two export methods developed, both return a [detached RO-Crate](ro-cra
 * The [Transformer exporter](https://github.com/gdcc/exporter-transformer) supports RO-Crate Metadata JSON export as `arp-ro-crate`, which adds `@context` mapping of typical dataverse metadata fields, e.g. `geographicBoundingBox` or `grantNumberAgency`. A more basic form `basic-ro-crate` mainly describes the dataset. 
 
 Contact the operator of your Dataverse installation to enable RO-Crate export.
-
+e
 ## RO-Crate previewer 
 
 To render Dataverse deposits containing a RO-Crate Metadata document (`ro-crate-metadata.json`), a [RO-Crate previewer](https://github.com/gdcc/dataverse-previewers/blob/1.4/5.2curlcommands.md#ro-crate-previewer-beta) can be enabled by the operator of the Dataverse instance. 
@@ -32,6 +32,12 @@ To render Dataverse deposits containing a RO-Crate Metadata document (`ro-crate-
 ## RO-Crate manager
 
 The [AROMA ARP RO-Crate Manager](aroma) customises Dataverse to allow detailed RO-Crate metadata editing and dynamic schema creation as an alternative to the more tabular metadata blocks.
+
+
+## ELN format
+
+Dataverse renders [ELN Electronic Lab Notebooks](eln), a file format based on RO-Crate, however currently only a ZIP file listing is provided. This can in theory be combined with the RO-Crate previewer.
+
 
 ## Resources
 
