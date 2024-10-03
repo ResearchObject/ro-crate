@@ -50,6 +50,21 @@ Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander 
 _PLOS One_ **19**(9):e0309210  
 <https://doi.org/10.1371/journal.pone.0309210>
 
+Eli Chadwick, Stian Soiland-Reyes (2024):  
+[**RO-Crate: package your research outputs with their metadata**](https://research.manchester.ac.uk/en/publications/ro-crate-package-your-research-outputs-with-their-metadata).  
+_Research Software Engineering Conference_ ([RSECon 2024](https://rsecon24.society-rse.org/)), Newcastle, UK, 2024-09-03/--05.  
+<https://research.manchester.ac.uk/en/publications/ro-crate-package-your-research-outputs-with-their-metadata>
+
+Sebastian Beier, Daniel Arend, Cyril Pommier, Kristina Gruden, Patrick König, Stian Soiland-Reyes, Philippe Rocca-Serra, Peter Selby, Leyla Jael Castro, Klaus F. X. Mayer, Uwe Scholtz, Björn Usadel (2024):  
+[**Facilitating Interoperability in Agricultural Research through ELIXIR-supported Metadata Standards**](https://doi.org/10.5281/zenodo.12527784).  
+[_FAIRagro Community Summit_](https://fairagro.net/en/1st-fairagro-community-summit/), Berlin, Germany, 2024-06-17/--18.  
+<https://doi.org/10.5281/zenodo.12527784>
+
+Eleni Adamidi, Panagiotis Deligiannis, Aikaterina Mastoraki, Thanasis Vergoulis (2024):  
+[**Proposing a New RO-Crate Profile for Enhanced Reproducibility in Computational Experiments**](https://doi.org/10.5281/zenodo.11200097).  
+_8th World Conference on Research Integrity_ ([WCRI 2024](https://wcri2024.org/)), Athens, Greece, 2024-06-02/--05.  
+<https://doi.org/10.5281/zenodo.11200097>
+
 Ben Foley, Peter Sefton, Simon Musgrave, Moises Sacal Bonequi (2024):  
 [**Access Control Framework for Language Collections**](https://aclanthology.org/2024.lrec-main.10.pdf).  
 _Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation_ (LREC-COLING 2024), Torino, Italia, 2024-05.
