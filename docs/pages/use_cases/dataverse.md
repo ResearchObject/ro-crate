@@ -49,3 +49,4 @@ _Open Repositories Conference_ ([OR 2024](https://or2024.openrepositories.org/))
 * <https://github.com/gdcc/exporter-ro-crate>
 * <https://github.com/gdcc/exporter-transformer/tree/1.0.10/examples/arp-ro-crate>
 * <https://github.com/gdcc/exporter-transformer/tree/1.0.10/examples/basic-ro-crate>
+* <https://github.com/IQSS/dataverse/pull/10796>
