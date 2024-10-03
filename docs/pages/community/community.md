@@ -115,7 +115,7 @@ The RO-Crate Community is open for anyone to [join us](https://github.com/Resear
 
 ## Steering Committee
 
-We are in the process of adapting the [Minimal Viable Governance](model) and are establishing a Steering Committee:
+We are in the process of adapting the [Minimal Viable Governance](https://github.com/github/MVG) and are establishing a Steering Committee:
 
 * Carole Goble  
 * Peter Sefton
