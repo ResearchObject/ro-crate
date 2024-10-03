@@ -45,6 +45,12 @@ _Data Science_ **5**(2)
 
 ### 2024
 
+Rob Carrillo, Stian Soiland-Reyes, Esteban Gonzalez, Marie Josse, Marc Portier, Gael Lymer (2024):  
+[**Webinar: Unlocking the Power of RO-Crate for FAIR Research Data**](https://fairease.eu/events/fair-ease-webinar-RO-crate).  
+_FAIR-EASE webinar_  
+[[video](https://youtu.be/fxF6AJDXxGc)]
+[[slides](https://docs.google.com/presentation/d/1W9LEUkJipDsLtxkrRwq3jUvhEg6gty_T)]
+
 Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander Kanitz, Paul De Geest, Rudolf Wittner, Luca Pireddu, Daniel Garijo, José M. Fernández, Iacopo Colonnelli, Matej Gallo, Tazro Ohta, Hirotaka Suetake, Salvador Capella-Gutierrez, Renske de Wit, Bruno P. Kinoshita, Stian Soiland-Reyes (2024):  
 [**Recording provenance of workflow runs with RO-Crate**](https://doi.org/10.1371/journal.pone.0309210).  
 _PLOS One_ **19**(9):e0309210  
@@ -59,6 +65,22 @@ Sebastian Beier, Daniel Arend, Cyril Pommier, Kristina Gruden, Patrick König, S
 [**Facilitating Interoperability in Agricultural Research through ELIXIR-supported Metadata Standards**](https://doi.org/10.5281/zenodo.12527784).  
 [_FAIRagro Community Summit_](https://fairagro.net/en/1st-fairagro-community-summit/), Berlin, Germany, 2024-06-17/--18.  
 <https://doi.org/10.5281/zenodo.12527784>
+
+Peter Sefton, Alvin Sebastian, Moises Sacal Bonequi, Rosanna Smith (2024):  
+[**Crate-O** - a drop-in linked data metadata editor for RO-Crate (and other) linked data in repositories and beyond](https://www.ldaca.edu.au/news/posts/open-repositories-2024-crate-o/).  
+_Open Repositories Conference_ ([OR 2024](https://or2024.openrepositories.org/)), Göteborg, Sweden, 2024-06-03/--06  
+<https://doi.org/10.5281/zenodo.12542586>
+[[slides](https://doi.org/10.5281/zenodo.12542586)] [[notes](https://www.ldaca.edu.au/news/posts/open-repositories-2024-crate-o/)]
+
+Dieuwertje Bloemen, Özgür Karadeniz (2024):  
+[**Creating a Dataverse RO-Crate exporter with FAIR-IMPACT support**](https://doi.org/10.5281/zenodo.12548334).  
+_Open Repositories Conference_ ([OR 2024](https://or2024.openrepositories.org/)), Göteborg, Sweden, 2024-06-03/--06  
+<https://doi.org/10.5281/zenodo.12548334>
+
+Peter Sefton, Stian Soiland-Reyes (2024):  
+[**Five ways RO-Crate data packages are important for repositories**](https://www.ldaca.edu.au/news/posts/open-repositories-2024-ro-crate/).  
+_Open Repositories Conference_ ([OR 2024](https://or2024.openrepositories.org/)), Göteborg, Sweden, 2024-06-03/--06  
+<https://doi.org/10.5281/zenodo.12579432>
 
 Eleni Adamidi, Panagiotis Deligiannis, Aikaterina Mastoraki, Thanasis Vergoulis (2024):  
 [**Proposing a New RO-Crate Profile for Enhanced Reproducibility in Computational Experiments**](https://doi.org/10.5281/zenodo.11200097).  
@@ -220,10 +242,6 @@ Herbert Van de Sompel, Stian Soiland-Reyes (2024):
 (submitted)  
 <https://research.manchester.ac.uk/en/publications/fair-signposting-exposing-the-topology-of-digital-objects-on-the->  
 
-Peter Sefton, Stian Soiland-Reyes (2024):  
-[**Five ways RO-Crate data packages are important for repositories**](https://research.manchester.ac.uk/en/publications/five-ways-ro-crate-data-packages-are-important-for-repositories).  
-(submitted)  
-<https://research.manchester.ac.uk/en/publications/five-ways-ro-crate-data-packages-are-important-for-repositories>  
 
 Johannes L. Hörmann, Luis Yanes, Ashwin Vazhappilly, Antoine Sanner, Hannes Holey, Lars Pastewka, Matthew Hartley, Tjelvar S. G. Olsson (2024):  
 [**dtool and dserver**: A flexible ecosystem for findable data](https://doi.org/10.1371/journal.pone.0306100).  
@@ -999,8 +1017,8 @@ Talk at _Bioinformatics Open Source Conference (BOSC2019)_. _F1000Research_ 2019
 
 Peter Sefton (2019):  
 [**DataCrate - a progress report on packaging research data for distribution via your repository**](https://eresearch.uts.edu.au/2019/07/01/DataCrate-OR2019.htm).  
-<https://eresearch.uts.edu.au/2019/07/01/DataCrate-OR2019.htm>  
-Talk at _Open Repositories (OR2019)_, Hamburg, 2019-06-11 
+Talk at _Open Repositories (OR2019)_, Hamburg, 2019-06-11  
+<https://doi.org/10.5281/zenodo.3554281>
 
 Peter Sefton (2019):  
 **What's in a package? Data packaging overview**.  
@@ -1035,6 +1053,18 @@ See also [publications about Research Objects](https://www.researchobject.org/pu
 ## Upcoming and recent events
 
 _To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
+
+[**Joint Hackathon of HD UK & ELIXIR-UK**](https://elixiruknode.org/event/2025-hdr-uk-elixir-uk-hackathon/), Birmingham, UK, 2025-02-12/--14.
+
+[**3rd Biohackathon Germany**](https://www.denbi.de/de-nbi-events/1678-biohackathon-germany-3), Kassel, Germany, 2024-12-09/--13.
+
+[**BioHackathon Europe**](https://biohackathon-europe.org/), Barcelona, Spain, 2024-11-04/--08.
+
+[**Webby FDOs with RO-Crates and FAIR Signposting**](https://zbmed.github.io/nfdi4ds-hackathons/docs/2024.html), NFDI4DS hackathon, ZB Med, Cologne, Germany, 2024-11-20/--20.
+
+[**Webinar: Unlocking the Power of RO-Crate for FAIR Research Data**](https://fairease.eu/events/fair-ease-webinar-RO-crate). 2024-08-29, FAIR-EASE Webinar.
+
+[**Open Repositories 2024**](https://or2024.openrepositories.org/) (OR2024), Gothenburg, Sweden, 2024-06-03/--06.
 
 [**2nd International Conference on FAIR Digital Objects**](https://fairdo.org/fdo2024-conference/) (FDO 2024), 2024-03-21/--24, Berlin, Germany.
 
