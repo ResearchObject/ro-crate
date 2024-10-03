@@ -57,7 +57,7 @@ _PLOS One_ **19**(9):e0309210
 <https://doi.org/10.1371/journal.pone.0309210>
 
 Eli Chadwick, Stian Soiland-Reyes (2024):  
-[**RO-Crate: package your research outputs with their metadata**](https://research.manchester.ac.uk/en/publications/ro-crate-package-your-research-outputs-with-their-metadata).  
+[**RO-Crate: package your research outputs with their metadata**](https://research.manchester.ac.uk/files/345951826/RO-Crate_-_package_your_research_outputs_with_their_metadata.pdf).  
 _Research Software Engineering Conference_ ([RSECon 2024](https://rsecon24.society-rse.org/)), Newcastle, UK, 2024-09-03/--05.  
 <https://research.manchester.ac.uk/en/publications/ro-crate-package-your-research-outputs-with-their-metadata>
 
@@ -89,7 +89,7 @@ _8th World Conference on Research Integrity_ ([WCRI 2024](https://wcri2024.org/)
 
 Ben Foley, Peter Sefton, Simon Musgrave, Moises Sacal Bonequi (2024):  
 [**Access Control Framework for Language Collections**](https://aclanthology.org/2024.lrec-main.10.pdf).  
-_Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation_ (LREC-COLING 2024), Torino, Italia, 2024-05.
+_Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation_ (LREC-COLING 2024), Torino, Italia, 2024-05.  
 <https://aclanthology.org/2024.lrec-main.10>
 
 Barbara Magagna, Erik Schultes, Anne Fouilloux, Gerhard Burger, Dirk Devriendt, Robin Bramley, Tobias Kuhn, Joao Moreira, Luiz Olavo Bonino Da Silva Santos, Luís Ferreira Pires (2024):  
@@ -1055,6 +1055,8 @@ See also [publications about Research Objects](https://www.researchobject.org/pu
 _To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 
 [**Joint Hackathon of HD UK & ELIXIR-UK**](https://elixiruknode.org/event/2025-hdr-uk-elixir-uk-hackathon/), Birmingham, UK, 2025-02-12/--14.
+
+[**EOSC Winter School 2025**](https://eosc.eu/events/eosc-winter-school-2025/), Sevilla, Spain, 2024-01-20/--25.
 
 [**3rd Biohackathon Germany**](https://www.denbi.de/de-nbi-events/1678-biohackathon-germany-3), Kassel, Germany, 2024-12-09/--13.
 
