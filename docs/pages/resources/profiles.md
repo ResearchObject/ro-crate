@@ -427,7 +427,7 @@ An `Assay` contains information about a test performed either on material taken 
 
 ## Electronic Lab Notebook (ELN)
 
-The [ELN file format](use_cases/eln) has been defined as an archive format to capture Electronic Laboratory Notebooks (ELN).  The file format is a ZIP file with an embedded `ro-crate-metadata.json`. ELN is implemented by [eLabFTW](https://www.elabftw.net/), [Rspace](https://www.researchspace.com/) and other lab note book tools.
+The [ELN file format](eln) has been defined as an archive format to capture Electronic Laboratory Notebooks (ELN).  The file format is a ZIP file with an embedded `ro-crate-metadata.json`. ELN is implemented by [eLabFTW](https://www.elabftw.net/), [Rspace](https://www.researchspace.com/) and other lab note book tools.
 
 
 ## RO-Crates-and-Excel
