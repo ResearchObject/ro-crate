@@ -2,7 +2,7 @@
 title: Community
 ---
 <!--
-   Copyright 2019-2022 The University of Manchester and RO-Crate contributors 
+   Copyright 2019-2024 The University of Manchester and RO-Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
