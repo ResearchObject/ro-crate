@@ -56,6 +56,11 @@ Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander 
 _PLOS One_ **19**(9):e0309210  
 <https://doi.org/10.1371/journal.pone.0309210>
 
+José M. Fernández, Paula Iborra, Sébastien Moretti, Arun Isaac, Paul De Geest, Stian Soiland-Reyes (2024):  
+[**BioHackEU23: FAIR Workflow Execution with WfExS and Workflow Run Crate**](https://doi.org/10.37044/osf.io/7f94w).  
+_BioHackrXiv_  
+<https://doi.org/10.37044/osf.io/7f94w>
+
 Eli Chadwick, Stian Soiland-Reyes (2024):  
 [**RO-Crate: package your research outputs with their metadata**](https://research.manchester.ac.uk/files/345951826/RO-Crate_-_package_your_research_outputs_with_their_metadata.pdf).  
 _Research Software Engineering Conference_ ([RSECon 2024](https://rsecon24.society-rse.org/)), Newcastle, UK, 2024-09-03/--05.  
