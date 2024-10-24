@@ -7,8 +7,8 @@ parent: RO-Crate 1.2-DRAFT
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
-   Copyright 2019-2020 The University of Manchester UK 
-   Copyright 2019-2020 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019-2024 The University of Manchester UK 
+   Copyright 2019-2024 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -44,7 +44,7 @@ An RO-Crate is described using _JSON-LD_ by an _RO-Crate Metadata Document_. As 
 The _RO-Crate Metadata Document_ MUST contain a self-describing
 **RO-Crate Metadata Descriptor** with
 the `@id` value `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` in legacy
-crates) and `@type` [CreativeWork]. This descriptor MUST have an [about]
+crates for RO-Crate 1.0 or older) and `@type` [CreativeWork]. This descriptor MUST have an [about]
 property referencing the _Root Data Entity_'s `@id`.
 
 ```json
@@ -92,12 +92,18 @@ reliably find the _Root Data Entity_ by following this algorithm:
 1. For each entity in `@graph` array
 2. .. if the `@id` is `ro-crate-metadata.json`
 3. .... from this entity's `about` object, keep the `@id` URI as variable _root_
-4. For each entity in `@graph` array
-5. .. if the entity has an `@id` URI that matches _root_ return it
+4. .. if the `@id` is `ro-crate-metadata.jsonld`
+5. .... from this entity's `about` object, keep the `@id` URI as variable _legacyroot_
+6. For each entity in `@graph` array
+7. .. if the entity has an `@id` URI that matches a non-null _root_ return it
+8. For each entity in `@graph` array
+9. .. if the entity has an `@id` URI that matches a non-null _legacyroot_ return it
+10. Fail with unknown root data entity.
 
-Note that the above can be implemented efficiently by first building a map of
+Note that the above can be implemented efficiently by first building a map `entity_map` of
 all entities using their `@id` as keys (which is typically also helpful for
-further processing) and then performing a series of lookups:
+further processing) and then performing a series of lookups. 
+Ignoring the legacy-case for now this lookup code could be:
 
 ```javascript
 metadata_entity = entity_map["ro-crate-metadata.json"]
@@ -105,8 +111,11 @@ root_entity = entity_map[metadata_entity["about"]["@id"]]
 ```
 
 More generally, the metadata id can be a URI whose last path segment is
-`ro-crate-metadata.json`, so the above lookup can fail. In this case we can
-find the root entity by executing an algorithm similar to the one shown above,
+`ro-crate-metadata.json`, so the above lookup can fail in non-conforming crates, 
+e.g. a JSON-LD file that has imported an RO-Crate using Linked Data mechanisms.
+
+In this case we can look for the root entity by executing a 
+heuristic algorithm similar to the one shown above,
 with the only difference that step 2 must be replaced by:
 
 2. .. if the `@id`'s last path segment is `ro-crate-metadata.json`
