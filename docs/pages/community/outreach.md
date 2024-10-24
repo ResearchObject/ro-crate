@@ -45,6 +45,16 @@ _Data Science_ **5**(2)
 
 ### 2024
 
+Ove Johan Ragnar Gustafsson, Sean R. Wilkinson, Finn Bacall, Stian Soiland-Reyes, Simone Leo, Luca Pireddu, Stuart Owen, Nick Juty, José Mª Fernández, Tom Brown, Hervé Ménager, Björn Grüning, Salvador Capella-Gutierrez, Frederik Coppens, Carole Goble (2024):  
+[**WorkflowHub: a registry for computational workflows**](https://doi.org/10.48550/arXiv.2410.06941).  
+_arXiv_:2410.06941 [cs.DL]  
+<https://doi.org/10.48550/arXiv.2410.06941>
+
+Sean Wilkinson, Meznah Aloqalaa, Khalid Belhajjame, Michael R. Crusoe, Bruno de Paula Kinoshita, Luiz Gadelha, Daniel Garijo, Ove Johan Ragnar Gustafsson, Nick Juty, Sehrish Kanwal, Farah Zaib Khan, Johannes Köster, Karsten Peters-von Gehlen, Line Pouchard, Randy K. Rannow, Stian Soiland-Reyes, Nicola Soranzo, Shoaib Sufi, Ziheng Sun, Baiba Vilne, Merridee A. Wouters, Denis Yuen, Carole Goble (2024):  
+[**Applying the FAIR Principles to Computational Workflows**](https://doi.org/10.48550/arXiv.2410.03490).  
+_arXiv_ 2410.03490 [cs.DL]  
+<https://doi.org/10.48550/arXiv.2410.03490>
+
 Rob Carrillo, Stian Soiland-Reyes, Esteban Gonzalez, Marie Josse, Marc Portier, Gael Lymer (2024):  
 [**Webinar: Unlocking the Power of RO-Crate for FAIR Research Data**](https://fairease.eu/events/fair-ease-webinar-RO-crate).  
 _FAIR-EASE webinar_  
@@ -55,6 +65,12 @@ Simone Leo, Michael R. Crusoe, Laura Rodríguez-Navas, Raül Sirvent, Alexander 
 [**Recording provenance of workflow runs with RO-Crate**](https://doi.org/10.1371/journal.pone.0309210).  
 _PLOS One_ **19**(9):e0309210  
 <https://doi.org/10.1371/journal.pone.0309210>
+[[RO-Crate](https://w3id.org/ro/doi/10.5281/zenodo.10368989)]
+
+José M. Fernández, Paula Iborra, Sébastien Moretti, Arun Isaac, Paul De Geest, Stian Soiland-Reyes (2024):  
+[**BioHackEU23: FAIR Workflow Execution with WfExS and Workflow Run Crate**](https://doi.org/10.37044/osf.io/7f94w).  
+_BioHackrXiv_  
+<https://doi.org/10.37044/osf.io/7f94w>
 
 Eli Chadwick, Stian Soiland-Reyes (2024):  
 [**RO-Crate: package your research outputs with their metadata**](https://research.manchester.ac.uk/files/345951826/RO-Crate_-_package_your_research_outputs_with_their_metadata.pdf).  

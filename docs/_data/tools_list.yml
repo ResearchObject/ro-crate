@@ -171,9 +171,15 @@
   level:
   url: https://github.com/KockataEPich/CheckMyCrate/tree/Version
 
+- name: roc-validator
+  description: RO-Crate validator with support for profiles and SHACL
+  status: beta
+  level:
+  url: https://pypi.org/project/roc-validator/
+
 - name: ro-crate-validator-py
   description: Modular RO-Crate validator
-  status: alpha
+  status: deprecated
   level:
   url: https://github.com/ResearchObject/ro-crate-validator-py/
 
