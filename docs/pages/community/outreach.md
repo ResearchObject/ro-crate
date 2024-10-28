@@ -45,6 +45,11 @@ _Data Science_ **5**(2)
 
 ### 2024
 
+Dmitry Schigel, Kate Ingenloff, Sharif Islam, Tomas Martinovic, Claus Weiland (2024):   
+**SYM06 Biodiversity Data Standards and FAIR in Prototyping Biodiversity Digital Twins**.  
+_Biodiversity Information Standards_ ([SPNHC-TDWG](https://baskaufs.github.io/website/conferences/2024/sessions/)) 2024, 2024-09-02/--06, Okinawa, Japan.  
+<https://www.youtube.com/watch?v=2IJKRQF8H-4>
+
 Ove Johan Ragnar Gustafsson, Sean R. Wilkinson, Finn Bacall, Stian Soiland-Reyes, Simone Leo, Luca Pireddu, Stuart Owen, Nick Juty, José Mª Fernández, Tom Brown, Hervé Ménager, Björn Grüning, Salvador Capella-Gutierrez, Frederik Coppens, Carole Goble (2024):  
 [**WorkflowHub: a registry for computational workflows**](https://doi.org/10.48550/arXiv.2410.06941).  
 _arXiv_:2410.06941 [cs.DL]  
