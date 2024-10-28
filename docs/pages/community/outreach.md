@@ -685,7 +685,7 @@ Marc Portier, Cedric Decruw, Katrina Exter, Rory Meyer, Lennert Tyberghein, Laur
 [**Contemporary Data Management for Biodiversity Observation Networks leading to Linked Open Data Publishing through Distributed Techniques applying RO-Crate and GitHub Actions**](https://doi.org/10.3897/biss.6.94630).  
 _Biodiversity Information Standards_ ([TDWG 2022](https://www.tdwg.org/conferences/2022/)), Sofia, Bulgaria.  
 _Biodiversity Information Science and Standards_ **6**:e94630  
-<https://doi.org/10.3897/biss.6.94630>
+<https://doi.org/10.3897/biss.6.94630> [[video](https://www.youtube.com/watch?v=wLyg14NJwbY&t=2563s)]
 
 Amirpasha Mozaffari, Michael Langguth, Bing Gong, Jessica Ahring, Adrian Rojas Campos, Pascal Nieters, Otoniel José Campos Escobar, Martin Wittenbrink,
 Peter Baumann, Martin G. Schultz (2022):  
