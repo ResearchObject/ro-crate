@@ -336,7 +336,7 @@ How such an RO-Crate can be generated from an ARC is described in the [arc-to-ro
 The [ISA RO-Crate profile](https://github.com/nfdi4plants/arc-to-rocrate/blob/main/profiles/investigation.md) describes experimental data in plant sciences that is annotated by metadata following the [ISA model](https://isa-specs.readthedocs.io/en/latest/isamodel.html).
 Such datasets consist of three types of data entities: `Investigation`, `Study` and `Assay`.
 The profile adds requirements of the crate such that the data folders match the Investigation, Study and Assay objects of the [ISA model](https://isa-specs.readthedocs.io/en/latest/isamodel.html).
-The description of experimental processes that produce the data uses the [bioschmeas](https://bioschemas.org/) type `LabProcess` as its core entity.
+The description of experimental processes that produce the data uses the [Bioschemas](https://bioschemas.org/) type `LabProcess` as its core entity.
 It describes how data and samples are derived from each other in a graph model based on formalized parameters as key-value pairs.
 Profiles for all included types can be found in the [full version](https://github.com/nfdi4plants/isa-ro-crate-profile).
 
