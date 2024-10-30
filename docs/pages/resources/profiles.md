@@ -342,7 +342,7 @@ Profiles for all included types can be found in the [full version](https://githu
 
 ## ARC CWL RO-Crate Profile
 
-A [ARC CWL RO-Crate profile](https://github.com/nfdi4plants/arc-cwl-ro-crate-profile) extends the existing Worflow Run Crate in an ARC-specific context.
+The [ARC CWL RO-Crate profile](https://github.com/nfdi4plants/arc-cwl-ro-crate-profile) extends the existing [Workflow Run Crate profile](https://w3id.org/ro/wfrun/workflow/) in an ARC-specific context.
 It uses the same process graph types (`LabProtocol`,`LabProcess`) as the ISA profile to further annotate parameters of workflows (equivalent to protocols in ISA) and runs (equivalent to processes in ISA).  
 
 ## Electronic Lab Notebook (ELN)
