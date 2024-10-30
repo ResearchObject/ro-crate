@@ -327,7 +327,7 @@ An ARC consists of [ISA](https://isa-specs.readthedocs.io/en/latest/isamodel.htm
 The current profile is a combination of the [ISA RO-Crate profile](https://github.com/nfdi4plants/isa-ro-crate-profile) and the [ARC CWL RO-Crate profile](https://github.com/nfdi4plants/arc-cwl-ro-crate-profile), see details below.
 It requires the crate to follow the ISA Investigation profile on the top level.
 The investigation object contains studies and assays from the ISA model, as well as computational workflows.
-The core entity of both sub-profiles is the type `LabProcess` defined by [bioschmeas](https://bioschemas.org/) and used to describe processes leading to data files in a parametrized way.
+The core entity of both sub-profiles is the type `LabProcess` defined by [Bioschemas](https://bioschemas.org/), which is used to describe processes leading to data files in a parametrized way.
 
 How such an RO-Crate can be generated from an ARC is described in the [arc-to-rocrate](https://github.com/nfdi4plants/arc-to-rocrate) repository, which also contains scripts to perform the conversion.
 
