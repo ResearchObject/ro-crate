@@ -150,17 +150,17 @@ _Biodiversity Information Science and Standards_ **8**:e134757
 Claus Weiland, Jonas Grieb, Daniel Bauer, Desalegn Chala, Erik Kusch, Carrie Andrew, Dag Endresen (2024):  
 [**Dataspace Integration for Agrobiodiversity Digital Twins with RO-Crate**](https://doi.org/10.3897/biss.8.134479).  
 _Biodiversity Information Science and Standards_ **8**:e134479  
-<https://doi.org/10.3897/biss.8.134479>
+<https://doi.org/10.3897/biss.8.134479> [[video](https://www.youtube.com/watch?v=2IJKRQF8H-4&t=1996s)]
 
 Tomáš Martinovič, Kata Sara-aho, Ondrej Salamon, Simon Rolph, Allan T Souza (2024):  
 [**Graphical User Interface for Biodiversity Digital Twins: Data Challenges**](https://doi.org/10.3897/biss.8.135092).  
 _Biodiversity Information Science and Standards_ **8**:e135092  
-<https://doi.org/10.3897/biss.8.135092> 
+<https://doi.org/10.3897/biss.8.135092>  [[video](https://www.youtube.com/watch?v=2IJKRQF8H-4&t=959s)]
 
 Sharif Islam, Julian Lopez Gordillo, Dag Endresen, Carrie Andrew (2024):  
 [**Bridging Data Standards and FAIR Principles in Biodiversity Digital Twinning**: Prototyping, Challenges, Lessons Learned, and Future Plans](https://doi.org/10.3897/biss.8.133089).  
 _Biodiversity Information Science and Standards_ **8**:133089  
-<https://doi.org/10.3897/biss.8.133089>
+<https://doi.org/10.3897/biss.8.133089> [[video](https://www.youtube.com/watch?v=2IJKRQF8H-4&t=2675s)]
 
 George Marchment, Bryan Brancotte, Marie Schmit, Frédéric Lemoine, Sarah Cohen-Boulakia (2024):  
 [**BioFlow-Insight**: facilitating reuse of Nextflow workflows with structure reconstruction and visualization](https://doi.org/10.1093/nargab/lqae092).  
@@ -326,7 +326,7 @@ Sharif Islam, Hanna Koivula, Dag Endresen, Erik Kusch, Dmitry Schigel, Wouter Ad
 [**Data Standards and Interoperability Challenges for Biodiversity Digital Twin: A novel and transformative approach to biodiversity research and application**](https://doi.org/10.3897/biss.7.112373).  
 _Biodiversity Information Standards_ ([TDWG 2023](https://www.tdwg.org/conferences/2023/)), Hobert, Australia, 2023-10-09/--13.  
 _Biodiversity Information Science and Standards_ **7**:e112373  
-<https://doi.org/10.3897/biss.7.112373>
+<https://doi.org/10.3897/biss.7.112373> [[video](https://www.youtube.com/watch?v=ZtuNBJmi3QQ)]
 
 
 Leyla Jael Castro, Stian Soiland-Reyes, Dietrich Rebholz-Schuhmann (2023):  
@@ -690,7 +690,7 @@ Marc Portier, Cedric Decruw, Katrina Exter, Rory Meyer, Lennert Tyberghein, Laur
 [**Contemporary Data Management for Biodiversity Observation Networks leading to Linked Open Data Publishing through Distributed Techniques applying RO-Crate and GitHub Actions**](https://doi.org/10.3897/biss.6.94630).  
 _Biodiversity Information Standards_ ([TDWG 2022](https://www.tdwg.org/conferences/2022/)), Sofia, Bulgaria.  
 _Biodiversity Information Science and Standards_ **6**:e94630  
-<https://doi.org/10.3897/biss.6.94630>
+<https://doi.org/10.3897/biss.6.94630> [[video](https://www.youtube.com/watch?v=wLyg14NJwbY&t=2563s)]
 
 Amirpasha Mozaffari, Michael Langguth, Bing Gong, Jessica Ahring, Adrian Rojas Campos, Pascal Nieters, Otoniel José Campos Escobar, Martin Wittenbrink,
 Peter Baumann, Martin G. Schultz (2022):  
