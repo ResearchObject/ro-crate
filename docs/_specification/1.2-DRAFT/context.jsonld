@@ -22,6 +22,9 @@
           },
           {
                "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+          },
+          {
+               "@id": "https://w3id.org/codemeta/3.0"
           }
      ],
      "license": {
@@ -2872,8 +2875,8 @@
           "RepositoryObject": "http://pcdm.org/models#Object",
           "RepositoryFile": "http://pcdm.org/models#File",
           "ComputationalWorkflow": "https://bioschemas.org/ComputationalWorkflow",
-          "input": "https://bioschemas.org/properties/input",
-          "output": "https://bioschemas.org/properties/output",
+          "input": "https://bioschemas.org/ComputationalWorkflow#input",
+          "output": "https://bioschemas.org/ComputationalWorkflow#output",
           "FormalParameter": "https://bioschemas.org/FormalParameter",
           "wasDerivedFrom": "http://www.w3.org/ns/prov#wasDerivedFrom",
           "importedFrom": "http://purl.org/pav/importedFrom",
@@ -2892,9 +2895,18 @@
           "ResourceDescriptor": "http://www.w3.org/ns/dx/prof/ResourceDescriptor",
           "ResourceRole": "http://www.w3.org/ns/dx/prof/ResourceRole",
           "Profile": "http://www.w3.org/ns/dx/prof/Profile",
+          "softwareSuggestions": "https://codemeta.github.io/terms/softwareSuggestions",
+          "continuousIntegration": "https://codemeta.github.io/terms/continuousIntegration",
+          "buildInstructions": "https://codemeta.github.io/terms/buildInstructions",
+          "developmentStatus": "https://codemeta.github.io/terms/developmentStatus",
+          "embargoEndDate": "https://codemeta.github.io/terms/embargoEndDate",
+          "readme": "https://codemeta.github.io/terms/readme",
+          "issueTracker": "https://codemeta.github.io/terms/issueTracker",
+          "referencePublication": "https://codemeta.github.io/terms/referencePublication",
+          "hasSourceCode": "https://codemeta.github.io/terms/hasSourceCode",
+          "isSourceCodeOf": "https://codemeta.github.io/terms/isSourceCodeOf",
           "Geometry": "http://www.opengis.net/ont/geosparql#Geometry",
           "asWKT": "http://www.opengis.net/ont/geosparql#asWKT",
-          "@label": "http://www.w3.org/2000/01/rdf-schema#label",
           "pcdm": "http://pcdm.org/models#",
           "bibo": "http://purl.org/ontology/bibo/",
           "cc": "http://creativecommons.org/ns#",
