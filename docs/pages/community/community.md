@@ -112,6 +112,8 @@ The _RO-Crate_ team is:
 * James Love <https://orcid.org/0000-0001-7760-1240>
 * Eleni Adamidi <https://orcid.org/0000-0001-9925-1560>
 * Josh Moore <https://orcid.org/0000-0003-4028-811X>
+* Multiple contributors from Scientific IT Services, ETH Zürich <https://sis.id.ethz.ch/>
+* Lars Schöbitz <https://orcid.org/0000-0003-2196-5015>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)!
 
