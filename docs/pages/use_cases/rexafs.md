@@ -27,7 +27,7 @@ roles: [researcher, data_steward, data_analyst, software_developer, repository_m
 
 # Reproducible XAFS Analyses
 
-![ReXAFS logo](../assets/img/ReXAFS.png)
+![ReXAFS logo](../../assets/img/ReXAFS.png)
 
 The [Reproducible XAFS Analyses Zenodo community](https://zenodo.org/communities/rexas/records) groups Galaxy RO-Crates containing workflows and data for the reproduction of published papers which contain X-ray absorption fine structure (XAFS) analyses.
 
