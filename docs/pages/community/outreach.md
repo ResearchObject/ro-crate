@@ -78,9 +78,11 @@ _BioHackrXiv_
 <https://doi.org/10.37044/osf.io/7f94w>
 
 Eli Chadwick, Stian Soiland-Reyes (2024):  
-[**RO-Crate: package your research outputs with their metadata**](https://research.manchester.ac.uk/files/345951826/RO-Crate_-_package_your_research_outputs_with_their_metadata.pdf).  
-_Research Software Engineering Conference_ ([RSECon 2024](https://rsecon24.society-rse.org/)), Newcastle, UK, 2024-09-03/--05.  
-<https://research.manchester.ac.uk/en/publications/ro-crate-package-your-research-outputs-with-their-metadata>
+[**RO-Crate: package your research outputs with their metadata**](https://doi.org/10.5281/zenodo.14007026).  
+Version 1: _Research Software Engineering Conference_ ([RSECon 2024](https://rsecon24.society-rse.org/)), Newcastle, UK, 2024-09-03/--05.  
+<https://doi.org/10.5281/zenodo.14007027>  
+Version 2: [_ELIXIR-UK All Hands 2024_](https://elixiruknode.org/event/elixir-uk-all-hands-2024/), Cardiff, UK, 2024-11-19/--20. 
+<https://doi.org/10.5281/zenodo.14228958>
 
 Sebastian Beier, Daniel Arend, Cyril Pommier, Kristina Gruden, Patrick König, Stian Soiland-Reyes, Philippe Rocca-Serra, Peter Selby, Leyla Jael Castro, Klaus F. X. Mayer, Uwe Scholtz, Björn Usadel (2024):  
 [**Facilitating Interoperability in Agricultural Research through ELIXIR-supported Metadata Standards**](https://doi.org/10.5281/zenodo.12527784).  
