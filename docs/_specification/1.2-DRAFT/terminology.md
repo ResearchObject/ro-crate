@@ -44,17 +44,19 @@ _RO-Crate Website_: Human-readable HTML pages which describe the RO-Crate (i.e. 
 
 _Type_: A classification of objects or their descriptions. The type (or "class") is given as a short-hand _key_, mapped by the _RO-Crate JSON-LD Context_ to a _URI_ that has the type definition. See appendix [RO-Crate JSON-LD](appendix/jsonld).
 
-_Data Entity_: A JSON-LD representation (in the _RO-Crate Metadata Document_) of a directory, file, or other Web resource which is considered _contained_ by the _RO-Crate_. See section [Data entities](data-entities).
-
 _Property_: A relationship from one _entity_ to another entity, or to a _value_. The type of relationship is identified by a _URI_, mapped to a _key_ by _JSON-LD_. See appendix [RO-Crate JSON-LD](appendix/jsonld).
+
+_Entity_: A JSON-LD representation of an object, which has a _type_ and may be described using a set of _properties_. There are two categories of entity: _data entities_ and _contextual entities_.
+
+_Data Entity_: A JSON-LD representation (in the _RO-Crate Metadata Document_) of a directory, file, or other Web resource which is considered _contained_ by the _RO-Crate_. See section [Data entities](data-entities).
 
 _Root Data Entity_: A _Data Entity_ of _type_ [Dataset], representing the RO-Crate as a whole.  See section [Root Data Entity](root-data-entity).
 
-_JSON-LD_: A JSON-based file format for storing _Linked Data_. This document assumes [JSON-LD 1.0]. JSON-LD use a _context_ to map from JSON keys to _URIs_. See appendix [RO-Crate JSON-LD](appendix/jsonld).
+_Contextual Entity_: A JSON-LD representation of an entity associated with another _Entity_, in order to adequately describe it. For example, a [Person], [Organization] (including research projects), item of equipment ([IndividualProduct]), [license] or any other _thing_ or _event_ that forms part of the metadata for a _Data Entity_. _Properties_ of contextual entities may refer to further entities. See section [Contextual Entities](contextual-entities).
+
+_JSON-LD_: A JSON-based file format for storing _Linked Data_. This document assumes [JSON-LD 1.0]. JSON-LD uses a _context_ to map from JSON keys to _URIs_. See appendix [RO-Crate JSON-LD](appendix/jsonld).
 
 _JSON_: The _JavaScript Object Notation (JSON) Data Interchange Format_ as defined by [RFC 7159]; a structured text file format that can be programmatically consumed and generated in a wide range of programming languages. The main JSON structures are _objects_ (`{}`) indexed by _keys_, sequential _arrays_ (`[]`) and literal _values_ (`""`).
-
-_Contextual Entity_: A JSON-LD representation of an entity associated with another _Entity_, in order to adequately describe it. For example, a [Person], [Organization] (including research projects), item of equipment ([IndividualProduct]), [license] or any other _thing_ or _event_ that forms part of the metadata for a _Data Entity_. _Properties_ of contextual entities may refer to further entities. See section [Contextual Entities](contextual-entities).
 
 _Linked Data_: A data structure where properties, types and resources are identified with _URIs_, which if retrieved over the Web, further describe or provide the identified property/type/resource.
 
@@ -64,7 +66,7 @@ _URI Path_: The relative _path_ element of an _URI_ as defined in [RFC3986 secti
 
 _RO-Crate JSON-LD Context_: A JSON-LD [context][JSON-LD context] that provides Linked Data mapping for RO-Crate metadata to vocabularies like [Schema.org]. This mapping assigns meaning to the JSON keys, see appendix [RO-Crate JSON-LD](appendix/jsonld).
 
-_RO-Crate JSON-LD_: JSON-LD that use the _RO-Crate JSON-LD Context_ and contain RO-Crate metadata, written as if [flattened] and then [compacted] according to the rules in JSON-LD 1.0. The _RO-Crate JSON-LD_ for an _RO-Crate_ is stored or transmitted in the _RO-Crate Metadata Document.
+_RO-Crate JSON-LD_: JSON-LD that use the _RO-Crate JSON-LD Context_ and contain RO-Crate metadata, written as if [flattened] and then [compacted] according to the rules in JSON-LD 1.0. The _RO-Crate JSON-LD_ for an _RO-Crate_ is stored or transmitted in the _RO-Crate Metadata Document_.
 
 
 
@@ -74,6 +76,6 @@ Throughout this specification, RDF terms (_properties_, _types_) are referred to
 
 Following [Schema.org] practice, `property` names start with lowercase letters and `Type` names start with uppercase letters.
 
-In the _RO-Crate Metadata Document_ the RDF terms use their RO-Crate JSON-LD names as defined in the _RO-Crate JSON-LD Context_, which is available at <https://w3id.org/ro/crate/1.2-DRAFT/context>
+In the _RO-Crate Metadata Document_ the RDF terms use their RO-Crate JSON-LD names as defined in the _RO-Crate JSON-LD Context_, which is available at <https://w3id.org/ro/crate/1.2-DRAFT/context>.
 
 {% include references.liquid %}
