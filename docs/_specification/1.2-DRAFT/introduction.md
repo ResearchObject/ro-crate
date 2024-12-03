@@ -29,13 +29,13 @@ This document specifies a method, known as _RO-Crate_ (Research Object Crate), o
 
 The core of RO-Crate is a machine-readable linked-data document in JSON-LD format known as an **RO-Crate Metadata Document**. RO-Crate metadata documents can to a large extent be created and processed just like any other JSON: knowledge of JSON-LD is not needed, unless extending RO-Crate with additional concepts or combining RO-Crate with other Linked Data technologies.
 
-This page introduces the general RO-Crate concepts through a running example, while the normative pages in the rest of the RO-Crate specification define in more detail these and other concepts using separate examples and recommendations.
+This section introduces the general RO-Crate concepts through a running example, while the normative sections in the rest of the RO-Crate specification define in more detail these and other concepts using separate examples and recommendations.
 
 ## Walkthrough: An initial RO-Crate
 
 In the simplest form, to describe some data on disk, an _RO-Crate Metadata Document_ named `ro-crate-metadata.json` is placed in a directory alongside a set of files or directories (this file is known as the _RO-Crate Metadata File_).
 
-In the example below, a single file `data.csv` is placed with the RO-Crate Metadata Document in a directory named `crate1`:
+In the example below, a single file `data.csv` is placed with the _RO-Crate Metadata Document_ in a directory named `crate1`:
 
 <figure>
   <img src="../../assets/img/crate1-folders.svg" alt="Folder listing of crate1, including data.csv and ro-crate-metadata.json" style="max-height: 5em;" />
@@ -229,6 +229,6 @@ The rest of this specification is structured as follows:
 * [Profiles](profiles) formalises how a set of RO-Crates can indicate they are conforming to a specific profile, which may add additional requirements beyond this general RO-Crate specification. Profiles may add additional terms from `schema.org` and other vocabularies, or require a certain type of data entity used in a particular research domain.  Profiles can themselves be expressed as an RO-Crate, explored in this section.
 * [Appendixes](appendix) contain more technical references and suggestions for developers, e.g. for deciding on `@id` [in JSON-LD](appendix/jsonld#describing-entities-in-json-ld) or [extending RO-Crate terms](appendix/jsonld#extending-ro-crate). The appendix also explores how an RO-Crate can be [packaged with BagIt](appendix/implementation-notes#combining-with-other-packaging-schemes) or used as part of a repository.
 
-Throughout the specifications you will find references to the keys and types reused from `schema.org` through the JSON-LD context, for instance [Dataset], which define many more properties than the ones highlighted by pages like [Root Data Entity](root-data-entity). The intention is that the RO-Crate specification gives a common minimum of metadata, and that producers of RO-Crate can use additional `schema.org` types and properties as needed. When some patterns emerge from such extensions they can be formalized in a published [profile](profiles) to ensure they are also used consistently.
+Throughout the specification you will find references to the keys and types reused from `schema.org` through the JSON-LD context, for instance [Dataset], which define many more properties than the ones highlighted by sections like [Root Data Entity](root-data-entity). The intention is that the RO-Crate specification gives a common minimum of metadata, and that producers of RO-Crates can use additional `schema.org` types and properties as needed. When some patterns emerge from such extensions they can be formalized in a published [profile](profiles) to ensure they are also used consistently.
 
 {% include references.liquid %}
