@@ -152,8 +152,7 @@ The root is always typed `Dataset`, though it may have more than one type. It ha
 
 A main type of resources collected are _data_ -- simplifying, we can consider data as any kind of file that can be opened in other programs. These are aggregated by the Root Dataset with the `hasPart` property. In this example we have an array with a single value, a reference to the entity describing the file `data.csv`. 
 
-{: .tip}
-RO-Crates can also contain data entities that are folders and Web resources, as well as non-File-like data like online databases -- see section on [data entities](data-entities).
+{% include callout.html type="tip" content="RO-Crates can also contain data entities that are folders and Web resources, as well as non-File-like data like online databases -- see section on [data entities](data-entities)." %}
 
 <figure id="figure2">
 <object type="image/svg+xml" data="../../assets/img/introduction-figure-2.png">
