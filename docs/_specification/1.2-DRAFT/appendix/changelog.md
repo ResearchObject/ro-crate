@@ -30,7 +30,7 @@ excerpt: List of changes in releases of this specifications
 
 * RO-Crate 1.2.0
   * Updated the Bioschemas namespace for properties from `https://bioschemas.org/ComputationalWorkflow#` to `https://bioschemas.org/properties/`. This change affects only the `input` and `output` properties in the [JSON-LD context](../ro-crate-metadata.json).
-  * **Change**: Replaced [name-based algorithm for finding root](../root-data-entity#finding-the-root-data-entity)  [#198](https://github.com/ResearchObject/ro-crate/issues/198)
+  * **Change**: Replaced [name-based algorithm for finding root](../root-data-entity#finding-the-root-data-entity)  [#198](https://github.com/ResearchObject/ro-crate/issues/198) [#365](https://github.com/ResearchObject/ro-crate/pull/365)
   * Updated [algorithm to always use string filter to find root](../appendix/relative-uris#finding-ro-crate-root-in-rdf-triple-stores)  [#189](https://github.com/ResearchObject/ro-crate/issues/189)
  (see [algorithm](../root-data-entity#finding-the-root-data-entity))
   * **Change**: [Files on the web](../data-entities#embedded-data-entities-that-are-also-on-the-web) should now use `contentUrl` for direct download [#259](https://github.com/ResearchObject/ro-crate/issues/259)  
