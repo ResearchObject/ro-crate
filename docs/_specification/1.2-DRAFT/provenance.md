@@ -145,8 +145,7 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
     },
 ```
 
-{: .tip }
-> If representing command lines, double escape `\\` so that JSON preserves the `\` character.
+{% include callout.html type="tip" content="If representing command lines, double escape `\\` so that JSON preserves the `\` character." %}
 
 If multiple [SoftwareApplication]s have been used in composition, such as from a script or workflow, then the `CreateAction`'s [instrument] SHOULD rather reference a [SoftwareSourceCode] which can be further described as explained in the [Workflows and scripts](workflows) section.
 
@@ -240,11 +239,9 @@ A [Contextual Entity](contextual-entities) from a repository, representing an ab
 
 Objects MAY be grouped together in [RepositoryCollection]s with [hasMember] pointing to the [RepositoryObject]. 
 
-{: .note }
-> The terms `RepositoryObject` and `RepositoryCollection` are renamed in RO-Crate to avoid collision between other vocabularies and the PCDM terms `Collection` and `Object`. The term `RepositoryFile` is renamed to avoid clash with RO-Crate's `File` mapping to <http://schema.org/MediaObject>.
+{% include callout.html type="note" content="The terms `RepositoryObject` and `RepositoryCollection` are renamed in RO-Crate to avoid collision between other vocabularies and the PCDM terms `Collection` and `Object`. The term `RepositoryFile` is renamed to avoid clash with RO-Crate's `File` mapping to <http://schema.org/MediaObject>." %}
 
-{: .warning }
-> PCDM specifies that files should have only technical metadata, not descriptive metadata, which is _not_ a restriction in RO-Crate. If the RO-Crate is to be imported into a strict PCDM repository, modeling of object/file relationships will be necessary.
+{% include callout.html type="warning" content="PCDM specifies that files should have only technical metadata, not descriptive metadata, which is _not_ a restriction in RO-Crate. If the RO-Crate is to be imported into a strict PCDM repository, modeling of object/file relationships will be necessary." %}
 
 For example, this data is exported from an [Omeka] repository:
 

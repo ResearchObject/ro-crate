@@ -232,8 +232,7 @@ A contextual entity conforming to the [FormalParameter profile][FormalParameter 
 }
 ```
 
-{: .note }
-> `input`, `output` and `FormalParameter` are at time of writing proposed by Bioschemas and not yet integrated in Schema.org
+{% include callout.html type="note" content="`input`, `output` and `FormalParameter` are at time of writing proposed by Bioschemas and not yet integrated in Schema.org" %}
 
 ## Complete Workflow Example
 

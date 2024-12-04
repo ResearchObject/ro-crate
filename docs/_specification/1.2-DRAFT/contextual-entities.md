@@ -51,8 +51,7 @@ RO-Crate distinguishes between _contextual entities_ and _data entities_.
 
 Some contextual entities can also be considered data entities -- for instance the [license](#licensing-access-control-and-copyright) property refers to a [CreativeWork] that can reasonably be downloaded, however a license document is not usually considered as part of research outputs and would therefore typically not be included in [hasPart] on the [root data entity](root-data-entity). 
 
-{: .tip }
-> Files in the _RO-Crate Root_ are not necessarily data entities -- the [RO-Crate Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor) is a file in the _RO-Crate Root_, but is considered a _Contextual Entity_ as it is describing the RO-Crate, rather than being part of it. On the other hand, the [Root Data Entity](root-data-entity#root-data-entity) is a data entity within its own metadata file.
+{% include callout.html type="tip" content="Files in the _RO-Crate Root_ are not necessarily data entities -- the [RO-Crate Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor) is a file in the _RO-Crate Root_, but is considered a _Contextual Entity_ as it is describing the RO-Crate, rather than being part of it. On the other hand, the [Root Data Entity](root-data-entity#root-data-entity) is a data entity within its own metadata file." %}
 
 Likewise, some data entities may also be described as contextual entities, for instance a `File` that is also a [ScholarlyArticle]. In such cases the _contextual data entity_ MUST be described as a single JSON object in the RO-Crate Metadata JSON `@graph` and SHOULD list both relevant data and contextual types in a `@type` array. 
 
@@ -297,8 +296,7 @@ The [Root Data Entity](root-data-entity) SHOULD have a [publisher] property. Thi
 
 To associate a research project with a [Dataset], the _RO-Crate JSON-LD_ SHOULD contain an entity for the project using type [Organization], referenced by a [funder] property. The project `Organization` SHOULD in turn reference any external [funder], either by using its URL as an `@id` or via a _Contextual Entity_ describing the funder.
 
-{: .tip }
-> To make it very clear where funding is coming from, the _Root Data Entity_ SHOULD also reference funders directly, as well as via a chain of references.
+{% include callout.html type="tip" content="To make it very clear where funding is coming from, the _Root Data Entity_ SHOULD also reference funders directly, as well as via a chain of references." %}
 
 
 ```json
