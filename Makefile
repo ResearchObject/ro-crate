@@ -105,8 +105,8 @@ release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}
 	sed -i -E 's/## Table of contents//g' release/ro-crate-${TAG}.md
 	sed -i -E 's/\{:[^}]*\}//g' release/ro-crate-${TAG}.md
 	# Fix internal links to work in single-page
-	sed -i -E 's,]\(([^:)]*/)*([^:)]*)\.md\),](#\2),g' release/ro-crate-${TAG}.md
-	sed -i -E 's,]\([^):]*\.md#([^)]*)\),](#\1),g' release/ro-crate-${TAG}.md
+	sed -r -i -E 's,]\(([^:)]*/)*([^:)]*)(\.md)?\),](#\2),g' release/ro-crate-${TAG}.md
+	sed -r -i -E 's,]\([^):]*(\.md)?#([^)]*)\),](#\2),g' release/ro-crate-${TAG}.md
 
 
 release/ro-crate-${TAG}.html: dependencies release/ release/ro-crate-${TAG}.md
