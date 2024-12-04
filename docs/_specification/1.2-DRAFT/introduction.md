@@ -101,7 +101,7 @@ The preamble of `@context` and `@graph` are JSON-LD structures that help provide
 
 However, in the general case it should be sufficient to follow the RO-Crate JSON examples directly without deeper JSON-LD understanding. In short, an _RO-Crate Metadata Document_ contains a flat list of _entities_ as objects in the `@graph` array. These entities are cross-referenced using `@id` identifiers rather than being deeply nested.
 
-### RO-Crate Metadata Descriptor 
+### RO-Crate Metadata Descriptor {#intro-ro-crate-metadata-descriptor}
 
 The first JSON-LD _entity_ in our example above has the `@id` `ro-crate-metadata.json`:
 
@@ -130,7 +130,7 @@ We can visualise how the above entity references the **RO-Crate Root** as:
 
 By convention, in RO-Crate the `@id` value of  `./` means that this document describes the directory of content in which the _RO-Crate Metadata Document_ is located, as in the example above. This reference from `ro-crate-metadata.json` is therefore marking the `crate1` directory as being the _RO-Crate Root_. The entity whose `@id` is the _RO-Crate Root_ is called the _Root Data Entity_.
 
-{% include callout.html type="note" content="This example is a directory-based RO-Crate stored on disk. If the crate is being served from a Web service, such as a data repository or database where files are not organized in directories, then the `@id` might be an absolute URI instead of `\"./\"` -- see section [Root Data Entity](root-data-entity) for details." %}
+{% include callout.html type="note" content="This example is a directory-based RO-Crate stored on disk. If the crate is being served from a Web service, such as a data repository or database where files are not organized in directories, then the `@id` might be an absolute URI instead of `./` -- see section [Root Data Entity](root-data-entity) for details." %}
 
 ### About cross-references
 
@@ -148,7 +148,7 @@ In an _RO-Crate Metadata Document_, entities are cross-referenced using `@id` re
 
 The _Root Data Entity_ always has `@type` `Dataset`, though it may have more than one type. It has several metadata properties that describe the RO-Crate as a whole, as a collection of resources. The section on the [Root Data Entity](root-data-entity) explores further the required and recommended properties of this entity.
 
-### Data entities
+### Data entities {#intro-data-entities}
 
 A main type of resources collected are _data_ -- simplifying, we can consider data as any kind of file that can be opened in other programs. These are aggregated by the _Root Data Entity_ with the `hasPart` property. In this example we have an array with a single value, a reference to the entity describing the file `data.csv`. 
 
@@ -175,7 +175,7 @@ If we now follow the `@id` reference for the corresponding _data entity_ JSON bl
 For more information on describing files and directories, including their recommended and required attributes, see the section on [data entities](data-entities).
 
 
-### Contextual entities
+### Contextual entities {#intro-contextual-entities}
 
 Moving back to the RO-Crate _Root Data Entity_ (with `@id` `./`), the publisher of this Dataset should be indicated using the property `publisher` and using a URI to identify the publishing `Organization`, linking to what is known as a _Contextual Entity_ that provides some information about the Organization such as its name and web address.
 
