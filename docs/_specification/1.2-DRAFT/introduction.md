@@ -101,7 +101,7 @@ The preamble of `@context` and `@graph` are JSON-LD structures that help provide
 
 However, in the general case it should be sufficient to follow the RO-Crate JSON examples directly without deeper JSON-LD understanding. In short, an _RO-Crate metadata Document_ contains a flat list of _entities_ as objects in the `@graph` array. These entities are cross-referenced using `@id` identifiers rather than being deeply nested.
 
-### RO-Crate Metadata descriptor 
+### RO-Crate Metadata Descriptor 
 
 The first JSON-LD _entity_ in our example above has the `@id` `ro-crate-metadata.json`:
 
@@ -130,8 +130,7 @@ We can visualise how the above entity references the **RO-Crate Root** as:
 
 By convention, in RO-Crate the `@id` value of  `./` means that this document describes the directory of content in which the RO-Crate metadata is located as in the example above. This reference from `ro-crate-metadata.json` is therefore marking the `crate1` directory as being the RO-Crate root.
 
-{: .note }
-This example is a directory-based RO-Crate stored on disk. If the crate is being served from a Web service, such as a data repository or database where files are not organized in directories, then the `@id` might be an absolute URI instead of `"./"` -- see section [Root Data Entity](root-data-entity) for details
+{% include callout.html type="note" content="This example is a directory-based RO-Crate stored on disk. If the crate is being served from a Web service, such as a data repository or database where files are not organized in directories, then the `@id` might be an absolute URI instead of `./` -- see section [Root Data Entity](root-data-entity) for details." %}
 
 ### About cross-references
 
@@ -149,12 +148,11 @@ In _RO-Crate Metadata Documents_, entities are cross-referenced using `@id` refe
 
 The root is always typed `Dataset`, though it may have more than one type. It has several metadata properties that describe the RO-Crate as a whole, as a collection of resources. The section on [root data entity](root-data-entity) explores further the required and recommended properties of the root `./`.
 
-### Data entities
+### Data entities {#intro-data-entities}
 
 A main type of resources collected are _data_ -- simplifying, we can consider data as any kind of file that can be opened in other programs. These are aggregated by the Root Dataset with the `hasPart` property. In this example we have an array with a single value, a reference to the entity describing the file `data.csv`. 
 
-{: .tip}
-RO-Crates can also contain data entities that are folders and Web resources, as well as non-File-like data like online databases -- see section on [data entities](data-entities).
+{% include callout.html type="tip" content="RO-Crates can also contain data entities that are folders and Web resources, as well as non-File-like data like online databases -- see section on [data entities](data-entities)." %}
 
 <figure id="figure2">
 <object type="image/svg+xml" data="../../assets/img/introduction-figure-2.png">
@@ -179,7 +177,7 @@ If we now follow the `@id` reference for the corresponding _data entity_ JSON bl
 For more information on describing files and directories, including their recommended and required attributes, see section on [data entities](data-entities).
 
 
-### Contextual entities
+### Contextual entities {#intro-contextual-entities}
 
 Moving back to the RO-Crate root `./`, the publisher of this Dataset should be indicated using the property `publisher` using a URI to identify the `Organization`, linking to what is known as a _Contextual Entity_ that provides some information about the Organization such as its name and web address.
 
@@ -229,7 +227,7 @@ The rest of this specification is structured as follows:
 * Subsection [Digital Library and Repository content](provenance#digital-library-and-repository-content) details how records in an existing repository (which may  reference files, but also physical objects) can be described and published using RO-Crate.
 * [Workflows and Scripts](workflows) explains how computional software and code can be added to an RO-Crate, possibly as part of explaining provenance, but also for providing potential usage and further processing of the data. 
 * [Profiles](profiles) formalises how a set of RO-Crates can indicate they are conforming to a specific profile, which may add additional requirements beyond this general RO-Crate specification. Profiles may add additional terms from `schema.org` and other vocabularies, or require a certain type of data entity used in a particular research domain.  Profiles can themselves be expressed as an RO-Crate, explored in this section.
-* [Appendixes](appendix/) contain more technical references and suggestions for developers, e.g. for deciding on `@id` [in JSON-LD](appendix/jsonld#describing-entities-in-json-ld) or [extending RO-Crate terms](appendix/jsonld#extending-ro-crate). The appendix also explores how an RO-Crate can be [packaged with BagIt](appendix/implementation-notes#combining-with-other-packaging-schemes) or used as part of a repository.
+* [Appendixes](appendix) contain more technical references and suggestions for developers, e.g. for deciding on `@id` [in JSON-LD](appendix/jsonld#describing-entities-in-json-ld) or [extending RO-Crate terms](appendix/jsonld#extending-ro-crate). The appendix also explores how an RO-Crate can be [packaged with BagIt](appendix/implementation-notes#combining-with-other-packaging-schemes) or used as part of a repository.
 
 Throughout the specifications you will find references to the keys and types reused from `schema.org` through the JSON-LD context, for instance [Dataset], which define many more properties than the ones highlighted by pages like [Root Data Entity](root-data-entity). The intention is that the RO-Crate specification gives a common minimum of metadata, and that producers of RO-Crate can use additional `schema.org` types and properties as needed. When some patterns emerge from such extensions they can be formalized in a published [profile](profiles) to ensure they are also used consistently.
 

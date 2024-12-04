@@ -29,9 +29,7 @@ parent: RO-Crate 1.2-DRAFT
    limitations under the License.
 -->
 
-<div id="metadata"></div>
-
-# RO-Crate Metadata
+# RO-Crate Metadata {#metadata}
 {: .no_toc }
 
 ## Table of contents
@@ -85,13 +83,11 @@ For all entities listed in an _RO-Crate Metadata Document_ the following princip
 
 [Schema.org] is the base metadata standard for RO-Crate. Schema.org was chosen because it is widely used on the World Wide Web and supported by search engines, on the assumption that discovery is likely to be maximized if search engines index the content. 
 
-{: .note }
-> As far as we know there is no alternative, well-maintained linked-data schema for research data with the coverage needed for this project - i.e. a single standard for expressing all the examples presented in this specification.
+{% include callout.html type="note" content="As far as we know there is no alternative, well-maintained linked-data schema for research data with the coverage needed for this project - i.e. a single standard for expressing all the examples presented in this specification." %}
 
 RO-Crate relies heavily on [Schema.org], using a constrained subset of [JSON-LD], and this specification gives opinionated recommendations on how to represent the metadata using existing [linked data] best practices.
 
-{: .tip }
-> The main principle of RO-Crate is to use a [Schema.org] whenever possible, even if its official definition may seem broad or related to every day objects. For instance, [IndividualProduct] can describe scientific equipment and instruments (see [Provenance of entities](provenance)). RO-Crate implementers are free to use additional properties and types beyond this specification (see also appendix [Extending RO-Crate(appendix/jsonld#extending-ro-crate)]).
+{% include callout.html type="tip" content="The main principle of RO-Crate is to use a [Schema.org] whenever possible, even if its official definition may seem broad or related to every day objects. For instance, [IndividualProduct] can describe scientific equipment and instruments (see [Provenance of entities](provenance)). RO-Crate implementers are free to use additional properties and types beyond this specification (see also appendix [Extending RO-Crate(appendix/jsonld#extending-ro-crate)])." %}
 
 
 ### Differences from Schema.org
@@ -101,8 +97,7 @@ Generally, the standard _type_ and _property_ names (_terms_) from [Schema.org] 
 * `File` is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of Schema.org or a research data extension may re-define `File`.
 * `Journal` is mapped to <http://schema.org/Periodical>.
 
-{: .warning }
-> JSON-LD examples given on the [Schema.org] website may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. 
+{% include callout.html type="warning" content="JSON-LD examples given on the [Schema.org] website may not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. " %}
 
 To simplify processing and avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even where [Schema.org] for some properties otherwise permit shorter forms like `"author": "http://example.com/alice"`.
 
@@ -118,8 +113,7 @@ RO-Crate also uses the _Portland Common Data Model_ ([PCDM] version <https://pcd
 - `hasMember` mapped to <http://pcdm.org/models#hasMember>
 - `hasFile` mapped to <http://pcdm.org/models#hasFile>
 
-{: .note }
-> The terms `RepositoryObject` and `RepositoryCollection` are renamed to avoid collision between other vocabularies and the PCDM terms `Collection` and `Object`. The term `RepositoryFile` is renamed to avoid clash with RO-Crate's `File` mapping to <http://schema.org/MediaObject>.
+{% include callout.html type="note" content="The terms `RepositoryObject` and `RepositoryCollection` are renamed to avoid collision between other vocabularies and the PCDM terms `Collection` and `Object`. The term `RepositoryFile` is renamed to avoid clash with RO-Crate's `File` mapping to <http://schema.org/MediaObject>." %}
 
 RO-Crate use the [Profiles Vocabulary](https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/) to describe [profiles](profiles) using these terms and definitions:
 
@@ -150,8 +144,7 @@ To support geometry in [Places](contextual-entities#places), these terms from th
 * `Geometry` mapped to <http://www.opengis.net/ont/geosparql#Geometry>
 * `asWKT` mapped to <http://www.opengis.net/ont/geosparql#asWKT>
 
-{: .note }
-> In this specification the proposed Bioschemas terms use the temporary <https://bioschemas.org/> namespace; future releases of RO-Crate may reflect mapping to the <http://schema.org/> namespace.
+{% include callout.html type="note" content="In this specification the proposed Bioschemas terms use the temporary <https://bioschemas.org/> namespace; future releases of RO-Crate may reflect mapping to the <http://schema.org/> namespace." %}
 
 From [CodeMeta 3.0](https://w3id.org/codemeta/3.0):
 
@@ -166,9 +159,8 @@ From [CodeMeta 3.0](https://w3id.org/codemeta/3.0):
 * `referencePublication` mapped to <https://codemeta.github.io/terms/referencePublication>
 * `softwareSuggestions` mapped to <https://codemeta.github.io/terms/softwareSuggestions>
 
-{: .warning }
-> As of 2024-05-23, the CodeMeta URIs do not resolve correctly, but are used here to match the Codemeta JSON-LD context <https://w3id.org/codemeta/3.0> (issue [#275](https://github.com/ResearchObject/ro-crate/issues/275)).
-> The CodeMeta terms `maintainer` and `funding` are not mapped, as these are already defined by schema.org.
+{% include callout.html type="warning" content="As of 2024-05-23, the CodeMeta URIs do not resolve correctly, but are used here to match the Codemeta JSON-LD context <https://w3id.org/codemeta/3.0> (issue [#275](https://github.com/ResearchObject/ro-crate/issues/275)).
+The CodeMeta terms `maintainer` and `funding` are not mapped, as these are already defined by schema.org." %}
 
 
 ## Summary of Coverage

@@ -24,9 +24,7 @@ nav_order: 22
    limitations under the License.
 -->
 
-<div id="jsonld"></div>
-
-# APPENDIX: RO-Crate JSON-LD
+# APPENDIX: RO-Crate JSON-LD {#jsonld}
 {: .no_toc }
 
 ## Table of contents
@@ -175,8 +173,7 @@ To check which RO-Crate version is used (in terms of properties and types expect
 
 RO-Crate consumers SHOULD NOT do the opposite substitution from an embedded context, but MAY use the [JSON-LD flattening] algorithm with _compaction_ to a referenced _RO-Crate JSON-LD context_ (see also notes on [handling relative URI references](relative-uris) below).
 
-{: .tip }
-> The [JSON-LD flattening & compaction](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) algorithms can be used to rewrite to a different `@context`, e.g. to `https://schema.org/docs/jsonldcontext.jsonld` or a different version of the _RO-Crate JSON-LD Context_.
+{% include callout.html type="tip" content="The [JSON-LD flattening & compaction](https://www.w3.org/TR/json-ld-api/#flattening-algorithm) algorithms can be used to rewrite to a different `@context`, e.g. to `https://schema.org/docs/jsonldcontext.jsonld` or a different version of the _RO-Crate JSON-LD Context_." %}
 
 ## RO-Crate JSON-LD Media type
 
@@ -277,8 +274,7 @@ For projects that have their own web-presence, URIs MAY be defined there and SHO
 </section>
 ```
 
-{: .tip }
-> Ensure you have a consistent use of `http` or `https` (preferring https) as well as consistent path `/vocab` vs `/vocab/` vs `/vocab/index.html` (preferring the shortest that is also visible in browser).
+{% include callout.html type="tip" content="Ensure you have a consistent use of `http` or `https` (preferring https) as well as consistent path `/vocab` vs `/vocab/` vs `/vocab/index.html` (preferring the shortest that is also visible in browser)." %}
 
 For ad hoc terms where the crate author does not have the resources to create and maintain an HTML page, authors may use the RO-Crate public namespace (`https://w3id.org/ro/terms/`) to reserve their terms. For example, an ad-hoc URI MAY be used in the form `https://w3id.org/ro/terms/some-project#myProperty` where `some-project` is acting as a _namespace_ for one or more related terms like `education`. Ad-hoc namespaces under `https://w3id.org/ro/terms/` are available on first-come-first-serve basis; to avoid clashes, namespaces SHOULD be registered by [submitting terms and definitions][ro-terms] to the RO-Crate terms project. 
 
@@ -314,8 +310,7 @@ Following the conventions used by Schema.org, ad-hoc terms SHOULD also include d
 ```
 
 
-{: .tip }
-> It is **not** a requirement to use English for the terms, labels or comments.
+{% include callout.html type="tip" content="It is **not** a requirement to use English for the terms, labels or comments." %}
 
 More information about the relationship of this term to other terms MAY be provided using [domainIncludes], [rangeIncludes], [rdfs:subClassOf], [rdfs:subPropertyOf], [sameAs] following the conventions used in the [Schema.org schema] -- *"Schema.org style schemas"*. For compatibility with RDFS/OWL tools, `name` and `description` SHOULD be duplicated using the RDFS properties `rdfs:label` and `rdfs:comment`:
 
@@ -337,11 +332,9 @@ More information about the relationship of this term to other terms MAY be provi
     }
 ```
 
-{: .note }
-> Schema.org also provides the types [Class] and [Property]. These MAY be used as an additional `@type` corresponding to `rdfs:Class` and `rdf:Property`, but as these are (for some reason) not used in Schema.org style schemas, they are also not required by RO-Crate. Likewise, an ontology defining such terms externally may be declaring properties there with more specific types like `owl:ObjectProperty` which do not need to be reflected in the RO-Crate reference.
+{% include callout.html type="note" content="Schema.org also provides the types [Class] and [Property]. These MAY be used as an additional `@type` corresponding to `rdfs:Class` and `rdf:Property`, but as these are (for some reason) not used in Schema.org style schemas, they are also not required by RO-Crate. Likewise, an ontology defining such terms externally may be declaring properties there with more specific types like `owl:ObjectProperty` which do not need to be reflected in the RO-Crate reference." %}
 
-{: .tip }
-> For compatibility with the official schema.org JSON-LD context, make sure any referenced `@id` to schema.org terms starts with `http://` rather than `https://` as shown in the browser.
+{% include callout.html type="tip" content="For compatibility with the official schema.org JSON-LD context, make sure any referenced `@id` to schema.org terms starts with `http://` rather than `https://` as shown in the browser." %}
 
 ## Grouping extensions as an RO-Crate profile
 

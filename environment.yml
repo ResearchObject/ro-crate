@@ -11,10 +11,10 @@ dependencies:
   - sed=4.8
   - python=3.8
   - requests=2.24
-  - panflute=1.12
+  - panflute=2.1.3
   - rb-jekyll=4.0 # for binary deps, use "bundle exec jekyll serve" for jekyll 5
   - pandoc=2.11
-  - nodejs=8.12 # for makehtml
+  - nodejs=14.8 # for makehtml
   #  - gxx_linux-64=12.2
   # - weasyprint=v51
   # - xelatex 3.14159265-2.6-0.999991
