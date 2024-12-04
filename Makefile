@@ -89,12 +89,17 @@ release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}
 	pandoc --from=markdown+gfm_auto_identifiers --to=markdown+gfm_auto_identifiers \
 	   docs/_specification/${RELEASE}/.metadata.md \
 	   `grep ^nav_order: docs/_specification/${RELEASE}/*.md | sort -n -k 2 | grep -v index.md| grep -v about.md | sed s/:.*//` \
-	   docs/_specification/${RELEASE}/appendix/*.md docs/_includes/references.liquid docs/_specification/${RELEASE}/.references.md |\
-	   grep -v '{%' > release/ro-crate-${TAG}.md
+	   docs/_specification/${RELEASE}/appendix/*.md docs/_includes/references.liquid docs/_specification/${RELEASE}/.references.md \
+	   > release/ro-crate-${TAG}.md
 	# Our own rendering of Note/Warning/Tip
-	sed -i -E 's/\{: ?\.note ?\} \\>/**Note**:/g' release/ro-crate-${TAG}.md
-	sed -i -E 's/\{: ?\.warning ?\} \\>/**Warning**:/g' release/ro-crate-${TAG}.md
-	sed -i -E 's/\{: ?\.tip ?\} \\>/**Tip**:/g' release/ro-crate-${TAG}.md
+	sed -i -E 's/\{% include callout.html //g' release/ro-crate-${TAG}.md
+	sed -i -E 's/\" %}//g' release/ro-crate-${TAG}.md
+	sed -i -E 's/type=\"note\" content=\"/**Note**: /g' release/ro-crate-${TAG}.md
+	sed -i -E 's/type=\"warning\" content=\"/**Warning** :/g' release/ro-crate-${TAG}.md
+	sed -i -E 's/type=\"tip\" content=\"/**Tip**: /g' release/ro-crate-${TAG}.md
+	sed -i -E 's/type=\"important\" content=\"/**Important**: /g' release/ro-crate-${TAG}.md
+	# remove any remaining lines beginning with {%
+	sed -i -E 's/\{%.*//g' release/ro-crate-${TAG}.md
 	# Skip intermediate table-of-contents
 	sed -i -E 's/1..*\{:toc\}//g' release/ro-crate-${TAG}.md
 	sed -i -E 's/## Table of contents//g' release/ro-crate-${TAG}.md
