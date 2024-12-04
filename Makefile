@@ -17,7 +17,7 @@ all: dependencies release
 dependencies: node_modules/.bin/rochtml
 	scripts/schema-context.py --version
 	node_modules/.bin/rochtml --help
-	pip --exists-action=s install 'panflute<2'
+	pip --exists-action=s install 'panflute==2.1.3'
 	pandoc --version
 	xelatex --version
 
