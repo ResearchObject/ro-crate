@@ -23,9 +23,7 @@ parent: RO-Crate 1.2-DRAFT
    limitations under the License.
 -->
 
-<div id="structure"></div>
-
-# RO-Crate Structure
+# RO-Crate Structure {#structure}
 {: .no_toc }
 
 ## Table of contents

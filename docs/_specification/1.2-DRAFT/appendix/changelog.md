@@ -26,7 +26,7 @@ excerpt: List of changes in releases of this specifications
 -->
 
 
-# APPENDIX: Changelog
+# APPENDIX: Changelog {#changelog}
 
 * RO-Crate 1.2.0
   * Updated the Bioschemas namespace for properties from `https://bioschemas.org/ComputationalWorkflow#` to `https://bioschemas.org/properties/`. This change affects only the `input` and `output` properties in the [JSON-LD context](../ro-crate-metadata.json).

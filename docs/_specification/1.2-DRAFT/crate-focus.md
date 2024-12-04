@@ -26,8 +26,7 @@ parent: RO-Crate 1.2-DRAFT
    limitations under the License.
 -->
 
-# The focus of an RO-Crate
-<div id="crate-focus"></div>
+# The focus of an RO-Crate {#crate-focus}
 
 In addition to simple data packaging, Crates may have a "main" entry point or topic (referenced with a singleton `mainEntity` property), or function as a bundle of one or more Contextual Entities referenced via the `mentions` property.
 

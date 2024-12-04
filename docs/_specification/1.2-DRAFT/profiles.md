@@ -25,7 +25,7 @@ parent: RO-Crate 1.2-DRAFT
    limitations under the License.
 -->
 
-# RO-Crate profiles
+# RO-Crate profiles {#profiles}
     
 While RO-Crates can be considered general-purpose containers of arbitrary data and open-ended metadata, in practical use within a particular domain, application or framework, it will be beneficial to further constrain RO-Crate to a specific **profile**: a set of conventions, types and properties that one minimally can require and expect to be present in that subset of RO-Crates.
 

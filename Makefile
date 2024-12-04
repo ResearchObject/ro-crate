@@ -89,7 +89,8 @@ release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}
 	pandoc --from=markdown+gfm_auto_identifiers --to=markdown+gfm_auto_identifiers \
 	   docs/_specification/${RELEASE}/.metadata.md \
 	   `grep ^nav_order: docs/_specification/${RELEASE}/*.md | sort -n -k 2 | grep -v index.md| grep -v about.md | sed s/:.*//` \
-	   docs/_specification/${RELEASE}/appendix/*.md docs/_includes/references.liquid docs/_specification/${RELEASE}/.references.md \
+	   `grep ^nav_order: docs/_specification/${RELEASE}/appendix/*.md | sort -n -k 2 | sed s/:.*//` \
+	   docs/_includes/references.liquid docs/_specification/${RELEASE}/.references.md \
 	   > release/ro-crate-${TAG}.md
 	# Our own rendering of Note/Warning/Tip
 	sed -i -E 's/\{% include callout.html //g' release/ro-crate-${TAG}.md
@@ -106,7 +107,7 @@ release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}
 	sed -i -E 's/\{:[^}]*\}//g' release/ro-crate-${TAG}.md
 	# Fix internal links to work in single-page
 	# first change links to non-spec website pages, e.g. ../../tools -> https://www.researchobject.org/ro-crate/tools
-	sed -r -i -E 's,]\(\\.\./\.\./([^:)]*)\),](https://www.researchobject.org/ro-crate/\1),g' release/ro-crate-${TAG}.md
+	sed -r -i -E 's,]\(\.\./\.\./([^:)]*)\),](https://www.researchobject.org/ro-crate/\1),g' release/ro-crate-${TAG}.md
 	sed -r -i -E 's,]\(([^:/)]*\.(json|html))\),](https://www.researchobject.org/ro-crate/specification/${RELEASE}/\1),g' release/ro-crate-${TAG}.md
 	# change links without a #, e.g. appendix/jsonld to #jsonld
 	sed -r -i -E 's,]\(([^:)]*/)*([^:)]*)(\.md)?\),](#\2),g' release/ro-crate-${TAG}.md

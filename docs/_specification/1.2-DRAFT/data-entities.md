@@ -23,7 +23,7 @@ parent: RO-Crate 1.2-DRAFT
    limitations under the License.
 -->
 
-# Data Entities
+# Data Entities {#data-entities}
 {: .no_toc }
 
 ## Table of contents

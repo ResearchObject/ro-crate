@@ -23,7 +23,7 @@ parent: RO-Crate 1.2-DRAFT
    limitations under the License.
 -->
 
-# Root Data Entity
+# Root Data Entity {#root-data-entity}
 {: .no_toc }
 
 ## Table of contents
@@ -118,7 +118,7 @@ In this case we can look for the root entity by executing a
 heuristic algorithm similar to the one shown above,
 with the only difference that step 2 must be replaced by:
 
-2. .. if the `@id`'s last path segment is `ro-crate-metadata.json`
+2\. .. if the `@id`'s last path segment is `ro-crate-metadata.json`
 
 It is possible to build an RO-Crate having more than one entity whose `@id`
 has `ro-crate-metadata.json` as its last path segment. For instance, the crate

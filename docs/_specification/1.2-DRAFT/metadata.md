@@ -29,9 +29,7 @@ parent: RO-Crate 1.2-DRAFT
    limitations under the License.
 -->
 
-<div id="metadata"></div>
-
-# RO-Crate Metadata
+# RO-Crate Metadata {#metadata}
 {: .no_toc }
 
 ## Table of contents

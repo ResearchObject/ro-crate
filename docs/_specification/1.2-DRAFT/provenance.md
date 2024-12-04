@@ -23,9 +23,7 @@ parent: RO-Crate 1.2-DRAFT
    limitations under the License.
 -->
 
-<div id="provenance"></div>
-
-# Detailing provenance of entities
+# Detailing provenance of entities {#provenance}
 {: .no_toc }
 
 ## Table of contents

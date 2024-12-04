@@ -24,9 +24,7 @@ nav_order: 22
    limitations under the License.
 -->
 
-<div id="jsonld"></div>
-
-# APPENDIX: RO-Crate JSON-LD
+# APPENDIX: RO-Crate JSON-LD {#jsonld}
 {: .no_toc }
 
 ## Table of contents
