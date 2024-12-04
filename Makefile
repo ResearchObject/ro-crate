@@ -106,9 +106,9 @@ release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}
 	sed -i -E 's/## Table of contents//g' release/ro-crate-${TAG}.md
 	sed -i -E 's/\{:[^}]*\}//g' release/ro-crate-${TAG}.md
 	# Fix internal links to work in single-page
-	# first change links to non-spec website pages, e.g. ../../tools -> https://www.researchobject.org/ro-crate/tools
+	# first change links to website pages outside the spec, e.g. ../../tools -> https://www.researchobject.org/ro-crate/tools
 	sed -r -i -E 's,]\(\.\./\.\./([^:)]*)\),](https://www.researchobject.org/ro-crate/\1),g' release/ro-crate-${TAG}.md
-	sed -r -i -E 's,]\(([^:/)]*\.(json|html))\),](https://www.researchobject.org/ro-crate/specification/${RELEASE}/\1),g' release/ro-crate-${TAG}.md
+	sed -r -i -E 's,]\((\.\./)?([^:)]*\.(json|html))\),](https://www.researchobject.org/ro-crate/specification/${RELEASE}/\2),g' release/ro-crate-${TAG}.md
 	# change links without a #, e.g. appendix/jsonld to #jsonld
 	sed -r -i -E 's,]\(([^:)]*/)*([^:)]*)(\.md)?\),](#\2),g' release/ro-crate-${TAG}.md
 	# change links with a #, e.g. contextual-entities#people to #people
