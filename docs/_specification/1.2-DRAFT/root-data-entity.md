@@ -79,11 +79,6 @@ start with `https://w3id.org/ro/crate/`.
 > The `conformsTo` property MAY be an array, to additionally indicate 
 specializing [RO-Crate profiles](profiles).
 
-If the root data entity `@id` is an absolute URI, the RO-Crate is considered
-web-based: in this case, the metadata descriptor SHOULD also have an absolute
-URI as its `@id`, which MUST have `ro-crate-metadata.json` (or
-`ro-crate-metadata.jsonld` in legacy crates) as its last path segment.
-
 ### Finding the Root Data Entity
 
 In most cases, consumers processing the RO-Crate as a JSON-LD graph can thus
