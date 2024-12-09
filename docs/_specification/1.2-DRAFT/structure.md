@@ -23,9 +23,7 @@ parent: RO-Crate 1.2-DRAFT
    limitations under the License.
 -->
 
-<div id="structure"></div>
-
-# RO-Crate Structure
+# RO-Crate Structure {#structure}
 {: .no_toc }
 
 ## Table of contents
@@ -82,13 +80,11 @@ These crates cannot carry their own data _payload_, but may reference data depos
 
 Any [data entities](data-entities) in a _Detached RO-Crate_ MUST be [Web-based Data Entities](data-entities.html#web-based-data-entities). 
 
-{: .warning }
-> Using relative URI references like `example/data.txt` in a _Detached RO-Crate_ is NOT RECOMMENDED as this is considered ambigious and fragile. 
+{% include callout.html type="warning" content="Using relative URI references like `example/data.txt` in a _Detached RO-Crate_ is NOT RECOMMENDED as this is considered ambigious and fragile. " %}
 
 A _Detached RO-Crate_ can be identified by the [root data entity](root-data-entity) having an `@id` different from `./` in the JSON.
 
-{: .note }
-> [Finding the Root Data Entity](root-data-entity#finding-the-root-data-entity) can be harder for consumers of detached crates, particularly if the platform serving the _RO-Crate Metadata Document_ is unable to ensure the URI path ends with `…/ro-crate-metadata.json`. 
+{% include callout.html type="note" content="[Finding the Root Data Entity](root-data-entity#finding-the-root-data-entity) can be harder for consumers of detached crates, particularly if the platform serving the _RO-Crate Metadata Document_ is unable to ensure the URI path ends with `…/ro-crate-metadata.json`. " %}
 
 Note that a detached RO-Crate may still use `#`-based local identifiers for [contextual entities](contextual-entities).
 
@@ -188,8 +184,7 @@ Metadata about parts of the _RO-Crate Website_ MAY be included in an RO-Crate as
 }
 ```
 
-{: .warning }
-> In a _Detached RO-Crate_ it is **undefined** how to find the _RO-Crate Website_ from the _RO-Crate Metadata Document_ or vice versa; it is RECOMMENDED to describe both as contextual entities.
+{% include callout.html type="warning" content="In a _Detached RO-Crate_ it is **undefined** how to find the _RO-Crate Website_ from the _RO-Crate Metadata Document_ or vice versa; it is RECOMMENDED to describe both as contextual entities." %}
 
 
 
@@ -203,8 +198,7 @@ Payload files may appear directly in the _RO-Crate Root_ alongside the _RO-Crate
 
 A RO-Crate may also contain [Web-based Data Entities](data-entities.html#web-based-data-entities) that are not present as part of the payload and referenced using absolute URIs. These may require additional preservation measures.
 
-{: .tip }
-> A RO-Crate [packaged with BagIt](appendix/implementation-notes#adding-ro-crate-to-bagit) may be [referencing external files](appendix/implementation-notes#referencing-external-files) which are not present in the _RO-Crate Root_ hierarchy until the BagIt has been _completed_. This method can be used for files that are large, require authentication or otherwise inconvenient to transfer with the RO-Crate, but which should nevertheless still be considered part of the _payload_.
+{% include callout.html type="tip" content="A RO-Crate [packaged with BagIt](appendix/implementation-notes#adding-ro-crate-to-bagit) may be [referencing external files](appendix/implementation-notes#referencing-external-files) which are not present in the _RO-Crate Root_ hierarchy until the BagIt has been _completed_. This method can be used for files that are large, require authentication or otherwise inconvenient to transfer with the RO-Crate, but which should nevertheless still be considered part of the _payload_." %}
 
 
 ## Self-describing and self-contained (_Attached RO-Crates_)

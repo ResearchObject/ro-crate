@@ -25,7 +25,7 @@ parent: RO-Crate 1.2-DRAFT
    limitations under the License.
 -->
 
-# RO-Crate profiles
+# RO-Crate profiles {#profiles}
     
 While RO-Crates can be considered general-purpose containers of arbitrary data and open-ended metadata, in practical use within a particular domain, application or framework, it will be beneficial to further constrain RO-Crate to a specific **profile**: a set of conventions, types and properties that one minimally can require and expect to be present in that subset of RO-Crates.
 
@@ -155,8 +155,7 @@ The rest of the [earlier requirements](#declaring-conformance-of-an-ro-crate-pro
 * SHOULD list related data entities using `hasPart` (see [below](#what-is-included-in-the-profile-crate))
 * MAY list profile descriptors using `hasResource` (see [below](#declaring-the-role-within-the-crate))
 
-{: .tip}
-> The base RO-Crate specification referenced by `isProfileOf` is a Profile Crate itself, see [ro-crate-metadata.json](ro-crate-metadata.json) or [ro-crate-preview.html](ro-crate-preview.html). 
+{% include callout.html type="tip" content="The base RO-Crate specification referenced by `isProfileOf` is a Profile Crate itself, see [ro-crate-metadata.json](ro-crate-metadata.json) or [ro-crate-preview.html](ro-crate-preview.html). " %}
 
 
 ### How to retrieve a Profile Crate
@@ -173,8 +172,7 @@ If an RO-Crate declares conformance to a given profile crate with `conformsTo` o
 
 For instance, if a Profile Crate adds a `DefinedTerm` entity according to the [ad-hoc definitions](appendix/jsonld#adding-new-or-ad-hoc-vocabulary-terms), the term MAY be referenced in the conforming crate without making a contextual entity there. For archival purposes it MAY however still be preferrable to copy such entities across to each conforming crate.
 
-{: .note }
-> In the conforming crate, any terms defined in the profile using `DefinedTerm`, `rdfs:Class` and `rdf:Property` MUST either be used as full URIs matching the `@id`, or mapped to these URIs from the conforming crate's JSON-LD `@context`. Note that JSON-LD only expands keys from `@id` and `@type`.
+{% include callout.html type="note" content="In the conforming crate, any terms defined in the profile using `DefinedTerm`, `rdfs:Class` and `rdf:Property` MUST either be used as full URIs matching the `@id`, or mapped to these URIs from the conforming crate's JSON-LD `@context`. Note that JSON-LD only expands keys from `@id` and `@type`." %}
 
 It is RECOMMENDED that `@id` of such shared entities are absolute URIs on both sides to avoid resolving relative paths, and that the profile's recommended [JSON-LD Context](#json-ld-context) used by conforming crates SHOULD have a mapping to the URIs, see section [Extending RO-Crate](appendix/jsonld#extending-ro-crate).
 
@@ -403,10 +401,9 @@ Below are known schema types in their recommended media type, with suggested ide
 | OWL 2 (in RDF) | `text/turtle`             | <https://www.nationalarchives.gov.uk/PRONOM/fmt/874> | <http://www.w3.org/TR/owl2-mapping-to-rdf/>  | `vocabulary` |
  
 
-{: .tip }
-Some of the above schema languages are based on general data structure syntaxes 
+{% include callout.html type="tip" content="Some of the above schema languages are based on general data structure syntaxes 
 like `application/json` and `text/turtle`, and therefore have a 
-generic  `encodingFormat` with a specialized `conformsTo` _URI_, which itself is declared as a `Profile`.
+generic  `encodingFormat` with a specialized `conformsTo` _URI_, which itself is declared as a `Profile`." %}
 
 
 
@@ -578,11 +575,10 @@ The JSON-LD Context entity:
 
 Note that the referenced context URI does _not_ have to match the `@context` of the Profile Crate itself.
 
-{: .tip }
-The `@context` MAY be the Profile Crate's Metadata JSON-LD file itself if 
+{% include callout.html type="tip" content="The `@context` MAY be the Profile Crate's Metadata JSON-LD file itself if 
 it is [resolvable](appendix/jsonld#ro-crate-json-ld-media-type)
 as media type `application/ld+json` over HTTP. Make sure the crate includes the 
-defined terms both within its `@context` and ideally as entities in its `@graph`.
+defined terms both within its `@context` and ideally as entities in its `@graph`." %}
 
 
 #### Multiple profiles

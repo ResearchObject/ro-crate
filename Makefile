@@ -17,7 +17,7 @@ all: dependencies release
 dependencies: node_modules/.bin/rochtml
 	scripts/schema-context.py --version
 	node_modules/.bin/rochtml --help
-	pip --exists-action=s install 'panflute<2'
+	pip --exists-action=s install 'panflute==2.1.3'
 	pandoc --version
 	xelatex --version
 
@@ -89,32 +89,41 @@ release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}
 	pandoc --from=markdown+gfm_auto_identifiers --to=markdown+gfm_auto_identifiers \
 	   docs/_specification/${RELEASE}/.metadata.md \
 	   `grep ^nav_order: docs/_specification/${RELEASE}/*.md | sort -n -k 2 | grep -v index.md| grep -v about.md | sed s/:.*//` \
-	   docs/_specification/${RELEASE}/appendix/*.md docs/_includes/references.liquid docs/_specification/${RELEASE}/.references.md |\
-	   grep -v '{%' > release/ro-crate-${TAG}.md
+	   `grep ^nav_order: docs/_specification/${RELEASE}/appendix/*.md | sort -n -k 2 | sed s/:.*//` \
+	   docs/_includes/references.liquid docs/_specification/${RELEASE}/.references.md \
+	   > release/ro-crate-${TAG}.md
 	# Our own rendering of Note/Warning/Tip
-	sed -i -E 's/\{: ?\.note ?\} \\>/**Note**:/g' release/ro-crate-${TAG}.md
-	sed -i -E 's/\{: ?\.warning ?\} \\>/**Warning**:/g' release/ro-crate-${TAG}.md
-	sed -i -E 's/\{: ?\.tip ?\} \\>/**Tip**:/g' release/ro-crate-${TAG}.md
+	sed -i -E 's/\{% include callout.html //g' release/ro-crate-${TAG}.md
+	sed -i -E 's/\" %}//g' release/ro-crate-${TAG}.md
+	sed -i -E 's/type=\"note\" content=\"/**Note**: /g' release/ro-crate-${TAG}.md
+	sed -i -E 's/type=\"warning\" content=\"/**Warning** :/g' release/ro-crate-${TAG}.md
+	sed -i -E 's/type=\"tip\" content=\"/**Tip**: /g' release/ro-crate-${TAG}.md
+	sed -i -E 's/type=\"important\" content=\"/**Important**: /g' release/ro-crate-${TAG}.md
+	# remove any remaining lines beginning with {%
+	sed -i -E 's/\{%.*//g' release/ro-crate-${TAG}.md
 	# Skip intermediate table-of-contents
 	sed -i -E 's/1..*\{:toc\}//g' release/ro-crate-${TAG}.md
 	sed -i -E 's/## Table of contents//g' release/ro-crate-${TAG}.md
 	sed -i -E 's/\{:[^}]*\}//g' release/ro-crate-${TAG}.md
 	# Fix internal links to work in single-page
-	sed -i -E 's,]\(([^:)]*/)*([^:)]*)\.md\),](#\2),g' release/ro-crate-${TAG}.md
-	sed -i -E 's,]\([^):]*\.md#([^)]*)\),](#\1),g' release/ro-crate-${TAG}.md
-
+	# first change links to website pages outside the spec, e.g. ../../tools -> https://www.researchobject.org/ro-crate/tools
+	sed -r -i -E 's,]\(\.\./\.\./([^:)]*)\),](https://www.researchobject.org/ro-crate/\1),g' release/ro-crate-${TAG}.md
+	sed -r -i -E 's,]\((\.\./)?([^:)]*\.(json|html))\),](https://www.researchobject.org/ro-crate/specification/${RELEASE}/\2),g' release/ro-crate-${TAG}.md
+	# change links without a #, e.g. appendix/jsonld to #jsonld
+	sed -r -i -E 's,]\(([^:)]*/)*([^:)]*)(\.md)?\),](#\2),g' release/ro-crate-${TAG}.md
+	# change links with a #, e.g. contextual-entities#people to #people
+	sed -r -i -E 's,]\([^):]*(\.md)?#([^)]*)\),](#\2),g' release/ro-crate-${TAG}.md
 
 release/ro-crate-${TAG}.html: dependencies release/ release/ro-crate-${TAG}.md
 	egrep -v '^{:(\.no_)?toc}' release/ro-crate-${TAG}.md | \
 	pandoc --standalone --number-sections --toc --section-divs \
-	  --filter scripts/pandoc-admonition.py \
 	  --metadata pagetitle="RO-Crate Metadata Specification ${RELEASE}" \
 	  --from=markdown+gfm_auto_identifiers -o release/ro-crate-${TAG}.html
 
 release/ro-crate-${TAG}.pdf: dependencies release/ release/ro-crate-${TAG}.md
 	egrep -v '^{:(\.no_)?toc}' release/ro-crate-${TAG}.md | \
 	pandoc --pdf-engine xelatex --variable=hyperrefoptions:colorlinks=true,allcolors=blue \
-	  --variable papersize=a4 --filter scripts/pandoc-admonition.py \
+	  --variable papersize=a4 \
 	  --number-sections --toc  --metadata pagetitle="RO-Crate Metadata Specification ${RELEASE}" \
 	  --from=markdown+gfm_auto_identifiers -o release/ro-crate-${TAG}.pdf
 

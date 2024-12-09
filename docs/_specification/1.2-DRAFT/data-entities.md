@@ -23,7 +23,7 @@ parent: RO-Crate 1.2-DRAFT
    limitations under the License.
 -->
 
-# Data Entities
+# Data Entities {#data-entities}
 {: .no_toc }
 
 ## Table of contents
@@ -228,8 +228,7 @@ Some generic file formats like `application/json` may be specialized using a _pr
 ```
 
 
-{: .tip }
-Profiles expressed in formal languages (e.g. XML Schema for validation) can have their own `encodingFormat` and `conformsTo` to indicate their file format.
+{% include callout.html type="tip" content="Profiles expressed in formal languages (e.g. XML Schema for validation) can have their own `encodingFormat` and `conformsTo` to indicate their file format." %}
 
 {: .note}
 The [Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor) `ro-crate-metadata.json` is not a data entity, but is described with `conformsTo` to an _implicit contextual entity_ for the RO-Crate specification, a profile of [JSON-LD](appendix/jsonld). RO-Crates themselves can be specialized using [Profile Crates](profiles), specified with `conformsTo` on the root data entity.
@@ -416,11 +415,9 @@ If the referenced RO-Crate B has an `identifier` declared as B's [Root Data Enti
 }
 ```
 
-{.tip }
-> The `conformsTo` generic RO-Crate profile on a `Dataset` entity MUST be version-less. The referenced crate B is NOT required to conform to the same version of the RO-Crate specification as A's RO-Crate Metadata Document.
+{% include callout.html type="tip" content="The `conformsTo` generic RO-Crate profile on a `Dataset` entity MUST be version-less. The referenced crate B is NOT required to conform to the same version of the RO-Crate specification as A's RO-Crate Metadata Document." %}
 
-{.warning }
-> It is NOT RECOMMENDED to declare the generic profile `https://w3id.org/ro/crate` on a referencing crate A's own [root data entity](root-data-entity.html#direct-properties-of-the-root-data-entity), see [metadata descriptor](root-data-entity.html#ro-crate-metadata-descriptor). 
+{% include callout.html type="warning" content="It is NOT RECOMMENDED to declare the generic profile `https://w3id.org/ro/crate` on a referencing crate A's own [root data entity](root-data-entity.html#direct-properties-of-the-root-data-entity), see [metadata descriptor](root-data-entity.html#ro-crate-metadata-descriptor). " %}
 
 Consumers that find a reference to a `Dataset` with the generic RO-Crate profile indicated MAY attempt to resolve the persistent identifier, but SHOULD NOT assume that the `@id` directly resolves to an RO-Crate Metadata Document. See section [Retrieving an RO-Crate](#retrieving-an-ro-crate) below for the recommended algorithm. 
 
@@ -457,8 +454,7 @@ If a referenced RO-Crate Metadata Document is known at a given URI or path, but 
 }
 ```
 
-{.tip }
-> Counter to [file format profile](data-entities.html#file-format-profiles) recommendations, the referenced RO-Crate metadata descriptor SHOULD NOT include its own `conformsTo` declarations to `https://w3id.org/ro/crate` or reference the dataset with `about`; this is to avoid confusion with the referencing RO-Crate's own [metadata descriptor](root-data-entity#ro-crate-metadata-descriptor). 
+{% include callout.html type="tip" content="Counter to [file format profile](data-entities.html#file-format-profiles) recommendations, the referenced RO-Crate metadata descriptor SHOULD NOT include its own `conformsTo` declarations to `https://w3id.org/ro/crate` or reference the dataset with `about`; this is to avoid confusion with the referencing RO-Crate's own [metadata descriptor](root-data-entity#ro-crate-metadata-descriptor). " %}
 
 
 ##### Profiles of referenced crates
@@ -481,8 +477,7 @@ If the referenced crate conforms to a given [RO-Crate profile](profiles), this M
 }
 ```
 
-{.note}
-> The profile declaration of a referenced crate is a hint. Consumers should check `conformsTo` as declared in the retrieved RO-Crate, as it may have been updated after this RO-Crate.
+{% include callout.html type="note" content="The profile declaration of a referenced crate is a hint. Consumers should check `conformsTo` as declared in the retrieved RO-Crate, as it may have been updated after this RO-Crate." %}
 
 
 
