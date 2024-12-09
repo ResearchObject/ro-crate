@@ -79,11 +79,6 @@ start with `https://w3id.org/ro/crate/`.
 > The `conformsTo` property MAY be an array, to additionally indicate 
 specializing [RO-Crate profiles](profiles).
 
-If the root data entity `@id` is an absolute URI, the RO-Crate is considered
-web-based: in this case, the metadata descriptor SHOULD also have an absolute
-URI as its `@id`, which MUST have `ro-crate-metadata.json` (or
-`ro-crate-metadata.jsonld` in legacy crates) as its last path segment.
-
 ### Finding the Root Data Entity
 
 In most cases, consumers processing the RO-Crate as a JSON-LD graph can thus
@@ -108,54 +103,6 @@ Ignoring the legacy-case for now this lookup code could be:
 ```javascript
 metadata_entity = entity_map["ro-crate-metadata.json"]
 root_entity = entity_map[metadata_entity["about"]["@id"]]
-```
-
-More generally, the metadata id can be a URI whose last path segment is
-`ro-crate-metadata.json`, so the above lookup can fail in non-conforming crates, 
-e.g. a JSON-LD file that has imported an RO-Crate using Linked Data mechanisms.
-
-In this case we can look for the root entity by executing a 
-heuristic algorithm similar to the one shown above,
-with the only difference that step 2 must be replaced by:
-
-2. .. if the `@id`'s last path segment is `ro-crate-metadata.json`
-
-It is possible to build an RO-Crate having more than one entity whose `@id`
-has `ro-crate-metadata.json` as its last path segment. For instance, the crate
-could reference a collection of sample _RO-Crate metadata file_s available from
-different web sites, or from the same web site but at different locations. In
-order to facilitate consumption, data entities representing such files SHOULD
-NOT have an `about` property pointing to a [Dataset] in the crate, so they can
-be told apart from the actual Metadata Descriptor. A scenario that can
-potentially lead to confusion is when a dataset in the crate is itself an
-RO-Crate (_nested_ RO-Crate): again, the crate could be a collection of
-RO-Crate examples. In this case, the top-level crate SHOULD NOT list any files
-or directories belonging to the nested crates, but only the nested crates
-themselves as [Dataset] entries. For instance:
-
-```json
-{
-  "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
-  "@graph": [
-    {
-      "@id": "http://example.org/crate/ro-crate-metadata.json",
-      "@type": "CreativeWork",
-      "about": {"@id": "http://example.org/crate/"},
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
-    },
-    {
-      "@id": "http://example.org/crate/",
-      "@type": "Dataset",
-      "hasPart": [
-        {"@id": "http://example.org/crate/nested/"}
-      ]
-    },
-    {
-      "@id": "http://example.org/crate/nested/",
-      "@type": "Dataset"
-    }
-  ]
-}
 ```
 
 See also the appendix on
