@@ -29,6 +29,7 @@ excerpt: List of changes in releases of this specifications
 # APPENDIX: Changelog {#changelog}
 
 * RO-Crate 1.2.0
+  * Clarified that the [RO-Crate Metadata Descriptor MUST have `@id` of `ro-crate-metadata.json`](../root-data-entity#ro-crate-metadata-descriptor) by removing conflicting statements elsewhere in the specification [#365](https://github.com/ResearchObject/ro-crate/pull/365)
   * Updated the Bioschemas namespace for properties from `https://bioschemas.org/ComputationalWorkflow#` to `https://bioschemas.org/properties/`. This change affects only the `input` and `output` properties in the [JSON-LD context](../ro-crate-metadata.json).
   * **Change**: Replaced [name-based algorithm for finding root](../root-data-entity#finding-the-root-data-entity)  [#198](https://github.com/ResearchObject/ro-crate/issues/198) [#365](https://github.com/ResearchObject/ro-crate/pull/365)
   * Updated [algorithm to always use string filter to find root](../appendix/relative-uris#finding-ro-crate-root-in-rdf-triple-stores)  [#189](https://github.com/ResearchObject/ro-crate/issues/189)
