@@ -117,14 +117,13 @@ release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}
 release/ro-crate-${TAG}.html: dependencies release/ release/ro-crate-${TAG}.md
 	egrep -v '^{:(\.no_)?toc}' release/ro-crate-${TAG}.md | \
 	pandoc --standalone --number-sections --toc --section-divs \
-	  --filter scripts/pandoc-admonition.py \
 	  --metadata pagetitle="RO-Crate Metadata Specification ${RELEASE}" \
 	  --from=markdown+gfm_auto_identifiers -o release/ro-crate-${TAG}.html
 
 release/ro-crate-${TAG}.pdf: dependencies release/ release/ro-crate-${TAG}.md
 	egrep -v '^{:(\.no_)?toc}' release/ro-crate-${TAG}.md | \
 	pandoc --pdf-engine xelatex --variable=hyperrefoptions:colorlinks=true,allcolors=blue \
-	  --variable papersize=a4 --filter scripts/pandoc-admonition.py \
+	  --variable papersize=a4 \
 	  --number-sections --toc  --metadata pagetitle="RO-Crate Metadata Specification ${RELEASE}" \
 	  --from=markdown+gfm_auto_identifiers -o release/ro-crate-${TAG}.pdf
 
