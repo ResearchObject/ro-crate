@@ -74,7 +74,7 @@ See the [appendix on JSON-LD identifiers](appendix/jsonld#describing-entities-in
 
 ## People
 
-A core principle of Linked data is to use URIs to identify important entities such as people. The following is the minimum recommended way of representing a [author] of a RO-Crate. The [author] property MAY also be applied to a directory ([Dataset]), a [File] or other [CreativeWork] entities.
+A core principle of Linked data is to use URIs to identify important entities such as people. The following is the minimum recommended way of representing an [author] of an RO-Crate. The [author] property MAY also be applied to a directory ([Dataset]), a [File] or other [CreativeWork] entities.
 
 ```json
 {
@@ -143,7 +143,7 @@ An [Organization] SHOULD also be used for a [Person]'s [affiliation] property.
 
 ## Contact information
 
-A RO-Crate SHOULD have contact information, using a contextual entity of type [ContactPoint]. Note that in Schema.org [Dataset] does not currently have the corresponding [contactPoint] property, so the contact point would need to be given through a [Person] or [Organization] contextual entity which are related to the Dataset via a [author] or [publisher] property.
+An RO-Crate SHOULD have contact information, using a contextual entity of type [ContactPoint]. Note that in Schema.org [Dataset] does not currently have the corresponding [contactPoint] property, so the contact point would need to be given through a [Person] or [Organization] contextual entity which are related to the Dataset via a [author] or [publisher] property.
 
 
 ```json
@@ -524,7 +524,7 @@ Keyword properties MUST use [keywords]. Note that by Schema.org convention, keyw
 
 ## Time
 
-To describe the _time period_ which a RO-Crate [Data Entity](data-entities) (or the [root data entity](root-data-entity)) is _about_, use [temporalCoverage]:
+To describe the _time period_ which an RO-Crate [Data Entity](data-entities) (or the [root data entity](root-data-entity)) is _about_, use [temporalCoverage]:
 
 ```json
 {
