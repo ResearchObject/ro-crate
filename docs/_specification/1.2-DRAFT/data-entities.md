@@ -44,23 +44,23 @@ The data entities can be further described by referencing [contextual entities](
 
 Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the [Root Data Entity](root-data-entity) using the [hasPart] property. Directory hierarchies MAY be represented with nested [Dataset] _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
 
-_Data Entities_ representing files: MUST have `"File"` as a value for `@type`. `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ includes:
--  _Attached_ resources where `@id` is a URI (path) relative to the _RO-Crate Root_ which MUST resolve to file.
+_Data Entities_ representing files MUST have `"File"` as a value for `@type`. `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ includes:
+-  _Attached_ resources where `@id` is a URI (path) relative to the _RO-Crate Root_ which MUST resolve to a file.
 -  _Detached_ "downloadable" resources where `@id` is an absolute URI which resolves to a single datastream that can be downloaded and saved as a file. _Detached_ Files SHOULD NOT reference intermediate resources such as splash-pages, search services or web-based viewer applications.
 
-_Data Entities_ representing directories MUST have `Dataset` as a value for `@type`. The term _directory_ here includes HTTP file listings where `@id` is an absolute URI, however "external, _Detached_ directories SHOULD have a programmatic listing of their content (e.g. another RO-Crate). It follows that the _RO-Crate Root_ is itself a data entity.
+_Data Entities_ representing directories MUST have `Dataset` as a value for `@type`. The term _directory_ here includes HTTP file listings where `@id` is an absolute URI, however "external," _Detached_ directories SHOULD have a programmatic listing of their content (e.g. another RO-Crate). It follows that the _RO-Crate Root_ is itself a data entity.
 
-_Data Entities_ can also be other types, for instance an online database. These SHOULD be a `@type` of [CreativeWork] (or one of its subtypes) and typically have a `@id` which is an absolute URI.
+_Data Entities_ can also be other types, for instance an online database. These SHOULD have a `@type` of [CreativeWork] (or one of its subtypes) and typically have a `@id` which is an absolute URI.
 
 In all cases, `@type` MAY be an array in order to also specify a more specific type, e.g. `"@type": ["File", "ComputationalWorkflow"]`
 
-There is no requirement to represent _every_ file and folder in an RO-Crate as Data Entities in the RO-Crate JSON-LD.  Reasons for not describing files would include that the files:
+There is no requirement to represent _every_ file and folder in an RO-Crate as _Data Entities_ in the _RO-Crate JSON-LD_.  Reasons for not describing files would include that the files:
 - are described in some other way, for example a manifest or another package management system,
 - are supporting files for a software application,
 - have metadata embedded in their filenames or paths which can be explained once,
 - have a purpose that is unknown to the crate author, but they need to be preserved as part of an archive. 
 
-In any of the above cases where files are not described, a directory containing a set of files _MAY_ be described using a `Dataset` _Data Entity_ that encapsulates the files with a `description` property that explains the contents. If the RO-Crate file structure is flat, or files are not grouped together a `description` property on the _Root Data Entity_ may be used, or a `Dataset` with a local reference beginning with `#` (eg to describe certain type of file which occurs throughout the crate). This approach is recommended for RO-Crates which are to be deposited in a long-term archive.
+In any of the above cases where files are not described, a directory containing a set of files _MAY_ be described using a `Dataset` _Data Entity_ that encapsulates the files with a `description` property that explains the contents. If the RO-Crate file structure is flat, or files are not grouped together, a `description` property on the _Root Data Entity_ may be used, or a `Dataset` with a local reference beginning with `#` (e.g. to describe a certain type of file which occurs throughout the crate). This approach is recommended for RO-Crates which are to be deposited in a long-term archive.
 
 
 
