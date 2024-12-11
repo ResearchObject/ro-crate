@@ -221,7 +221,7 @@ The rest of this specification is structured as follows:
 * [Root Data Entity](root-data-entity) defines the entities _RO-Crate Metadata Descriptor_ (`ro-crate-metadata.json`) and _Root Data Entity_ (`./`) including their required and recommended properties.
 * [Data Entities](data-entities) explores further how to describe data, including files, directories and Web references. Metadata such as file formats help inform RO-Crate consumers on which tools may be able to process the data. 
 * [Contextual Entities](contextual-entities) shows how to describe entities used to annotate other entities, adding `People` and `Organization` referenced from `author`, `publication`, `affiliation` etc. Metadata like licensing, funding, locations and subjects can be described using contextual entities.
-* [The focus of an RO-Crate](crate-focus) !!add description!!
+* [The focus of an RO-Crate](crate-focus) describes how an RO-Crate can indicate the most important or central entities within it.
 * [Provenance of Entities](provenance) explores how the history of making an entity can be added to the RO-Crate using a series of _actions_ -- this may include real-world activities and instruments, as well as software executions and modifications to the RO-Crate metadata itself. 
   * Subsection [Digital Library and Repository content](provenance#digital-library-and-repository-content) details how records in an existing repository (which may  reference files, but also physical objects) can be described and published using RO-Crate.
 * [Workflows and Scripts](workflows) explains how computional software and code can be added to an RO-Crate, possibly as part of explaining provenance, but also for providing potential usage and further processing of the data. 
