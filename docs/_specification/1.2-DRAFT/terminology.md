@@ -34,7 +34,7 @@ _RO-Crate Metadata File_: An _RO-Crate Metadata Document_ stored in a file named
 
 _Attached RO-Crate_: An RO-Crate that contains a payload of one or more files, stored/published on a typical file system with an _RO-Crate Metadata File_:.  See section [Types of RO-Crate](structure#types-of-ro-crate).
 
-_Detached RO-Crate_: A RO-Crate described by an _RO-Crate Metadata Document_ without a payload of files, not having its own _RO-Crate Root_. See section [Types of RO-Crate](structure#types-of-ro-crate).
+_Detached RO-Crate_: An RO-Crate described by an _RO-Crate Metadata Document_ without a payload of files, not having its own _RO-Crate Root_. See section [Types of RO-Crate](structure#types-of-ro-crate).
 
 _RO-Crate Root_: The top-level directory of a _Attached RO-Crate_, indicated by the presence of the _RO-Crate Metadata File_ `ro-crate-metadata.json`. See section [RO-Crate structure](structure)
 
