@@ -34,7 +34,7 @@ parent: RO-Crate 1.2-DRAFT
 
 ## Equipment used to create files
 
-To specify which **equipment** was used to create or update a [Data Entity](data-entities), the _RO-Crate JSON-LD_ SHOULD have a _Context Entity_ for each item of equipment which SHOULD be of `@type` [IndividualProduct]. The entity SHOULD have a serial number, manufacturer that identifies it as completely as possible. In this case the equipment is a bespoke machine. The equipment SHOULD be described on a web page, and the address of the description SHOULD be used as its `@id`.
+To specify which **equipment** was used to create or update a [Data Entity](data-entities), the _RO-Crate JSON-LD_ SHOULD have a _Contextual Entity_ for each item of equipment which SHOULD be of `@type` [IndividualProduct]. The entity SHOULD have a serial number and manufacturer that identify the equipment as completely as possible. In the following case the equipment is a bespoke machine. The equipment SHOULD be described on a web page, and the address of the description SHOULD be used as its `@id`.
 
 
 ```json
@@ -48,39 +48,39 @@ To specify which **equipment** was used to create or update a [Data Entity](data
 ```
 
 
-Uses [CreateAction] and [UpdateAction] type to model the contributions of _Context Entities_ of type [Person] or [Organization] in the creation of files.
+Use the [CreateAction] and [UpdateAction] types to model the contributions of _Contextual Entities_ of type [Person] or [Organization] in the creation of files.
 
-In this example the CreateAction has a human [agent], the object is a Place (a cave) and the Hovermap drone is the [instrument] used in the file creation event.
+In the example below, the [CreateAction] has a human [agent], the [object] is a [Place] (a cave) and the Hovermap drone is the [instrument] used in the file creation event.
 
 
 ```json
 {
-      "@id": "#DataCapture_wcc02",
-      "@type": "CreateAction",
-      "agent": {
-        "@id": "https://orcid.org/0000-0002-1672-552X"
-      },
-      "instrument": {
-        "@id": "https://confluence.csiro.au/display/ASL/Hovermap"
-      },
-      "object": {
-        "@id": "#victoria_arch"
-      },
-      "result": [
-        {
-          "@id": "wcc02_arch.laz"
-        },
-        {
-          "@id": "wcc02_arch_traj.txt"
-        }
-      ]
+  "@id": "#DataCapture_wcc02",
+  "@type": "CreateAction",
+  "agent": {
+    "@id": "https://orcid.org/0000-0002-1672-552X"
+  },
+  "instrument": {
+    "@id": "https://confluence.csiro.au/display/ASL/Hovermap"
+  },
+  "object": {
+    "@id": "#victoria_arch"
+  },
+  "result": [
+    {
+      "@id": "wcc02_arch.laz"
     },
-  {
-      "@id": "#victoria_arch",
-      "@type": "Place",
-      "address": "Wombeyan Caves, NSW 2580",
-      "name": "Victoria Arch"
-  }
+    {
+      "@id": "wcc02_arch_traj.txt"
+    }
+  ]
+},
+{
+    "@id": "#victoria_arch",
+    "@type": "Place",
+    "address": "Wombeyan Caves, NSW 2580",
+    "name": "Victoria Arch"
+}
 ```
 
 
@@ -108,41 +108,41 @@ In the below example, an image with the `@id` of `pics/2017-06-11%2012.56.14.jpg
 
 ```json
 {
-      "@id": "#Photo_Capture_1",
-      "@type": "CreateAction",
-      "agent": {
-        "@id": "https://orcid.org/0000-0002-3545-944X"
-      },
-      "description": "Photo snapped on a photo walk on a misty day",
-      "endTime": "2017-06-11T12:56:14+10:00",
-      "instrument": [
-        {
-          "@id": "#EPL1"
-        },
-        {
-          "@id": "#Panny20mm"
-        }
-      ],
-      "result": {
-        "@id": "pics/2017-06-11%2012.56.14.jpg"
-      }
+  "@id": "#Photo_Capture_1",
+  "@type": "CreateAction",
+  "agent": {
+    "@id": "https://orcid.org/0000-0002-3545-944X"
+  },
+  "description": "Photo snapped on a photo walk on a misty day",
+  "endTime": "2017-06-11T12:56:14+10:00",
+  "instrument": [
+    {
+      "@id": "#EPL1"
     },
     {
-      "@id": "#SepiaConversion_1",
-      "@type": "CreateAction",
-      "name": "Convert dog image to sepia",
-      "description": "convert -sepia-tone 80% test_data/sample/pics/2017-06-11\\ 12.56.14.jpg test_data/sample/pics/sepia_fence.jpg",
-      "endTime": "2018-09-19T17:01:07+10:00",
-      "instrument": {
-        "@id": "https://www.imagemagick.org/"
-      },
-      "object": {
-        "@id": "pics/2017-06-11%2012.56.14.jpg"
-      },
-      "result": {
-        "@id": "pics/sepia_fence.jpg"
-      }
-    },
+      "@id": "#Panny20mm"
+    }
+  ],
+  "result": {
+    "@id": "pics/2017-06-11%2012.56.14.jpg"
+  }
+},
+{
+  "@id": "#Sepia_Conversion_1",
+  "@type": "CreateAction",
+  "name": "Convert dog image to sepia",
+  "description": "convert -sepia-tone 80% test_data/sample/pics/2017-06-11\\ 12.56.14.jpg test_data/sample/pics/sepia_fence.jpg",
+  "endTime": "2018-09-19T17:01:07+10:00",
+  "instrument": {
+    "@id": "https://www.imagemagick.org/"
+  },
+  "object": {
+    "@id": "pics/2017-06-11%2012.56.14.jpg"
+  },
+  "result": {
+    "@id": "pics/sepia_fence.jpg"
+  }
+}
 ```
 
 {% include callout.html type="tip" content="If representing command lines, double escape `\\` so that JSON preserves the `\` character." %}
