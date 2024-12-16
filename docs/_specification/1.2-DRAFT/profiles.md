@@ -27,27 +27,27 @@ parent: RO-Crate 1.2-DRAFT
 
 # RO-Crate profiles {#profiles}
     
-While RO-Crates can be considered general-purpose containers of arbitrary data and open-ended metadata, in practical use within a particular domain, application or framework, it will be beneficial to further constrain RO-Crate to a specific **profile**: a set of conventions, types and properties that one minimally can require and expect to be present in that subset of RO-Crates.
+While RO-Crates can be considered general-purpose containers of arbitrary data and open-ended metadata, in practical use within a particular domain, application or framework, it will be beneficial to further constrain RO-Crate to a specific **profile**: a set of conventions, types and properties that one can minimally require and expect to be present in that subset of RO-Crates.
 
-Defining and conforming to such a profile enables reliable programmatic consumption of an RO-Crate’s content, as well as consistent creation, e.g. a form in a user interface containing the required types and properties, and likewise a rendering of an RO-Crate can easier make rich UI components if it can reliably assume for instance that the [`Person`](contextual-entities#people) always has an `affiliation` to a [`Organization`](contextual-entities#organizations-as-values) which has a `url` - a restriction that may not be appropriate for all types of RO-Crates.
+Defining and conforming to such a profile enables reliable programmatic consumption of an RO-Crate’s content, as well as consistent creation, e.g. via a form in a user interface containing the required types and properties. Likewise, a rendering of an RO-Crate can more easily make rich UI components if it can reliably assume, for instance, that a [`Person`](contextual-entities#people) always has an `affiliation` to a [`Organization`](contextual-entities#organizations-as-values) which has a `url` - a restriction that may not be appropriate for all types of RO-Crates.
 
-As such RO-Crate Profiles can be considered a _duck typing_ mechanism for RO-Crates, but also as a classifier to indicate the crate's purpose, expectations and focus.
+As such, RO-Crate profiles can be considered a _duck typing_ mechanism for RO-Crates, but also as a classifier to indicate the crate's purpose, expectations, and focus.
 
 ## Publishing an RO-Crate profile
 
-An _RO-Crate profile_ is identified with a **Profile URI**.
+An _RO-Crate profile_ is identified with a **profile URI** with the following constraints:
 
-Recommendations:
 * The profile URI MUST resolve to a human-readable _profile description_ (e.g. a HTML web page)
   - The profile URI MAY have a corresponding machine-readable [_Profile Crate_](#profile-crate)
 * The profile URI SHOULD be a _permalink_ (persistent identifier)
   - e.g. starting with <https://w3id.org/> <http://purl.org/> or <https://doi.org/> 
 * The profile URI SHOULD be _versioned_ with [`MAJOR.MINOR`][semver], e.g. `http://example.com/image-profile-2.4`
-* The profile description SHOULD use key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL as described in [RFC 2119].
 
-Suggestions:
+The profile description declares the set of conventions to be used.
+
+* The profile description SHOULD use key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL as described in [RFC 2119].
 * The profile MAY require/suggest which `@type` of [data entities](data-entities) and/or [contextual entities](contextual-entities) are expected.
-* The profile MAY require/suggest _properties_ expected per type of entity (e.g. _"Each [CreativeWork] must declare a [license]"_)
+* The profile MAY require/suggest _properties_ expected per type of entity (e.g. _"Each [CreativeWork] MUST declare a [license]"_)
 * The profile MAY require/suggest a particular [version of RO-Crate](https://www.researchobject.org/ro-crate/specification.html).
 * The profile MAY recommend [RO-Crate extensions](appendix/jsonld#extending-ro-crate) with domain-specific terms and vocabularies.
 * The profile MAY require/suggest a particular [JSON-LD context](appendix/jsonld?highlight=@context#ro-crate-json-ld-context).
@@ -56,7 +56,7 @@ Suggestions:
 
 ## Declaring conformance of an RO-Crate profile
 
-RO-Crate can describe a profile by adding it as an [contextual entity](contextual-entities):
+An RO-Crate can describe a profile by adding it as an [contextual entity](contextual-entities):
 
 ```json
 {
@@ -67,13 +67,14 @@ RO-Crate can describe a profile by adding it as an [contextual entity](contextua
 }
 ```
 
-The contextual entity for a profile:
+In the contextual entity for a profile:
 
-* The `@type` SHOULD be an array. The `@type` MUST include [Profile].
-* The `@type` SHOULD include `CreativeWork` (indicating a Web Page) or `Dataset` (indicating a Profile Crate).
-* SHOULD have an absolute URI as `@id`
-* SHOULD have a descriptive [name]
-* MAY declare [version], preferably according to [Semantic Versioning][semver]
+* The `@type` SHOULD be an array. 
+* The `@type` MUST include [Profile].
+* The `@type` SHOULD include `CreativeWork` (indicating a Web Page) or `Dataset` (indicating a [Profile Crate](#profile-crate)).
+* The entity SHOULD have an absolute URI as `@id`
+* The entity SHOULD have a descriptive [name]
+* The entity MAY declare [version], preferably according to [Semantic Versioning][semver]
 
 RO-Crates that are _conforming to_ (or intending to conform to) such a profile SHOULD declare this using `conformsTo` on the [root data entity](root-data-entity):
 
@@ -88,19 +89,19 @@ RO-Crates that are _conforming to_ (or intending to conform to) such a profile S
 
 It is valid for a crate to conform to multiple profiles, in which case `conformsTo` is an unordered array.
 
-Note that as profile conformance is declared on the RO-Crate Root (`./` in this example), the profile applies to the whole RO-Crate, and may cover aspects beyond the crate's metadata file (e.g. identifiers, packaging, purpose).
+{% include callout.html type="note" content="Profile conformance is declared on the _Root Data Entity_ (`./` in this example), rather than on the _RO-Crate Metadata Descriptor_ (`ro-crate-metadata.json`) where conformance to the base RO-Crate specification is declared. This is because the profile applies to the whole RO-Crate, and may cover aspects beyond the crate's metadata file (e.g. identifiers, packaging, purpose)." %}
 
 
 
 ## Profile Crate
 
-While the Profile URI `@id` must resolve to a human-readable _profile description_, it MAY additionally be made to [resolve](#how-to-retrieve-a-profile-crate) to a _Profile Crate_.
+While the Profile URI `@id` MUST resolve to a human-readable _profile description_, it MAY additionally be made to [resolve](#how-to-retrieve-a-profile-crate) to a _Profile Crate_.
 
-A **Profile Crate** is a type of RO-Crate that gathers resources which further define the profile in addition to the _profile description_. This allows formalizing an alternative profile description for machine-readability, for instance for validation, but also additional resources like examples. The rest of this subsection declares the content of this Profile Crate.
+A **Profile Crate** is a type of RO-Crate that represents an RO-Crate profile. It gathers resources which further define the profile in addition to the _profile description_. This allows formalizing an alternative profile description for machine-readability (for instance for validation), and also additional resources like examples. The rest of this subsection declares the content of this Profile Crate.
 
 The Profile Crate `@id` declared within its own RO-Crate Metadata Document SHOULD be an absolute URI, and the corresponding reference from its RO-Crate Metadata Descriptor updated accordingly. 
 
-Within the Profile Crate, its [Root Data entity](root-data-entity) MUST declare `Profile` as an additional `@type`:
+Within the Profile Crate, its [Root Data Entity](root-data-entity) MUST declare `Profile` as an additional `@type`:
 
 ```json
 {
@@ -145,9 +146,10 @@ Within the Profile Crate, its [Root Data entity](root-data-entity) MUST declare 
 }
 ```
 
-The rest of the [earlier requirements](#declaring-conformance-of-an-ro-crate-profile) for a Profile entity also apply here, adding:
+The [earlier requirements](#declaring-conformance-of-an-ro-crate-profile) for a [Profile] entity also apply here. 
+In addition, in a Profile Crate the _Root Data Entity_:
 
-* MUST reference the human readable _profile description_ as a data entity
+* MUST reference the human-readable _profile description_ as a data entity using `hasPart`
 * SHOULD have an absolute URI as `@id`
 * SHOULD have a descriptive [name]
 * MAY declare [version], preferably according to [Semantic Versioning][semver] (e.g. `0.4.0`)
@@ -160,21 +162,20 @@ The rest of the [earlier requirements](#declaring-conformance-of-an-ro-crate-pro
 
 ### How to retrieve a Profile Crate
 
-To resolve a Profile URI to a machine-readable _Profile Crate_, follow the approaches of [retrieving an RO-Crate](data-entities#retrieving-an-ro-crate).
+To resolve a profile URI to a machine-readable _Profile Crate_, follow the approaches of [retrieving an RO-Crate](data-entities#retrieving-an-ro-crate).
 
-If none of these approaches worked, then this profile probably does not have a corresponding Profile Crate. For human display of conformed profiles, display a hyperlink to its `@id` Web page, described by its `name`.
-
+If none of these approaches worked, then this profile probably does not have a corresponding Profile Crate. For human display of the profile (e.g. when listing profiles another RO-Crate conforms to), display a hyperlink to its `@id` Web page, described by its `name`.
 
 
 #### Shared contextual entities from a Profile Crate
 
-If an RO-Crate declares conformance to a given profile crate with `conformsTo` on its root data entity, contextual entities declared in the corresponding Profile Crate do _not_ need to be repeated in the conforming crate. 
+If an RO-Crate declares conformance to a given Profile Crate with `conformsTo` on its root data entity, contextual entities declared in the corresponding Profile Crate do _not_ need to be repeated in the conforming crate. 
 
-For instance, if a Profile Crate adds a `DefinedTerm` entity according to the [ad-hoc definitions](appendix/jsonld#adding-new-or-ad-hoc-vocabulary-terms), the term MAY be referenced in the conforming crate without making a contextual entity there. For archival purposes it MAY however still be preferrable to copy such entities across to each conforming crate.
+For instance, if a Profile Crate adds a `DefinedTerm` entity according to the [ad-hoc definitions](appendix/jsonld#adding-new-or-ad-hoc-vocabulary-terms), the term MAY be referenced in the conforming crate without making a contextual entity there. For archival purposes it MAY however still be preferable to copy such entities across to each conforming crate.
+
+It is RECOMMENDED that `@id` of such shared entities are absolute URIs on both sides to avoid resolving relative paths, and the profile's recommended [JSON-LD Context](#json-ld-context) used by conforming crates SHOULD have a mapping to the URIs, see section [Extending RO-Crate](appendix/jsonld#extending-ro-crate).
 
 {% include callout.html type="note" content="In the conforming crate, any terms defined in the profile using `DefinedTerm`, `rdfs:Class` and `rdf:Property` MUST either be used as full URIs matching the `@id`, or mapped to these URIs from the conforming crate's JSON-LD `@context`. Note that JSON-LD only expands keys from `@id` and `@type`." %}
-
-It is RECOMMENDED that `@id` of such shared entities are absolute URIs on both sides to avoid resolving relative paths, and that the profile's recommended [JSON-LD Context](#json-ld-context) used by conforming crates SHOULD have a mapping to the URIs, see section [Extending RO-Crate](appendix/jsonld#extending-ro-crate).
 
 #### Archiving Profile Crates
 
@@ -204,7 +205,7 @@ This section defines the type of resources that should or may be included in the
 
 #### Declaring the role within the crate
 
-In order for programmatic use of the Profile Crate to consume particular subresources, e.g. for validation, the _role_ of each entity SHOULD be declared by including them using `hasResource` to a `ResourceDescriptor` contextual entity that references the subresource using `hasResource`, as defined by the [Profiles Vocabulary]:
+In order for programmatic use of the Profile Crate to consume particular subresources, e.g. for validation, the _role_ of each entity SHOULD be declared by including them using `hasResource` to a `ResourceDescriptor` contextual entity that references the subresource using `hasArtifact`, as defined by the [Profiles Vocabulary]:
 
 ```json
 {
@@ -246,7 +247,7 @@ The [`ResourceDescriptor`](https://www.w3.org/TR/dx-prof/#Class:ResourceDescript
 }
 ```
 
-The referenced role do not need to be declared as a `DefinedTerm` contextual entity unless it differs from these recommended [predefined roles](https://www.w3.org/TR/dx-prof/#resource-roles-vocab):
+The referenced role does not need to be declared as a `DefinedTerm` contextual entity unless it differs from these recommended [predefined roles](https://www.w3.org/TR/dx-prof/#resource-roles-vocab):
 
 ```json
 {
@@ -305,9 +306,9 @@ The referenced role do not need to be declared as a `DefinedTerm` contextual ent
 }
 ```
 
-The examples in the rest of this document will list the data entities with a corresponding `ResourceDescriptor` entity, but for brevity not repeating the required `hasPart` and `hasResource` references from the root dataset.
+The examples in the rest of this section will list the data entities with a corresponding `ResourceDescriptor` entity, but for brevity the required `hasPart` and `hasResource` references from the _Root Data Entity_ will not be repeated.
 
-Below follows the suggested [data entities](data-entities) to include in a Profile Crate using `hasPart` and, if applicable, a corresponding `hasResource` to a `ResourceDescriptor`:
+Below follows the suggested [data entities](data-entities) to include in a Profile Crate using `hasPart`  and, if applicable, a corresponding `hasResource` to a `ResourceDescriptor`:
 
 #### Profile description entity
 
@@ -380,12 +381,12 @@ A schema may formalize restrictions on the
 a graph-level (e.g. what types/properties) as well as serialization level
 (e.g. use of JSON arrays). 
 
-This interpretation of _schema_ assumes the resource somewhat describes the data structure, e.g. expected types and attributes the RO-Crate's JSON-LD. Use alternatively the role `http://www.w3.org/ns/dx/prof/role/validation` if the schema is primarily a set of constraint for validation purposes, or `http://www.w3.org/ns/dx/prof/role/vocabulary` for ontologies and term listings.
+This interpretation of _schema_ assumes the resource somewhat describes the data structure, e.g. expected types and attributes in the RO-Crate's JSON-LD. Use alternatively the role `http://www.w3.org/ns/dx/prof/role/validation` if the schema is primarily a set of constraints for validation purposes, or `http://www.w3.org/ns/dx/prof/role/vocabulary` for ontologies and term listings.
 
 
 
-Below are known schema types in their recommended media type, with suggested identifiers for the contextual entities of
-[encodingFormat](data-entities#adding-detailed-descriptions-of-encodings) with type `Standard` and `conformsTo` with type `Profile`:
+Below are known schema types and their recommended media type, with suggested identifiers for the contextual entities of
+[encodingFormat](data-entities#adding-detailed-descriptions-of-encodings) with type `Standard` and [conformsTo] with type `Profile`:
 
 | Name           | `encodingFormat` Media Type   | `encodingFormat` URI   | `conformsTo` URI |  role  | 
 | -------------- | ------------------------- | -------------------------- | ---------- |
@@ -547,7 +548,7 @@ context in the Profile Crate:
     "name": "RO-Crate JSON-LD Context",
     "encodingFormat": "application/ld+json",
     "conformsTo": {"@id": "http://www.w3.org/ns/json-ld#Context"},
-    "version": "1.1.1"
+    "version": "1.2.0"
 },
 {
     "@id": "http://www.w3.org/ns/json-ld#Context",
@@ -557,7 +558,7 @@ context in the Profile Crate:
 }
 ```
 
-The JSON-LD Context entity:
+An entity representing a JSON-LD context:
 
 * MUST have an `encodingFormat` of `application/ld+json`
 * MUST have an absolute URI as `@id`, which MUST be retrievable as JSON-LD directly or with content-negotiation and/or HTTP redirects.
@@ -568,14 +569,17 @@ The JSON-LD Context entity:
 * SHOULD have a descriptive [name]
 * SHOULD have a `conformsTo` to the contextual entity `http://www.w3.org/ns/json-ld#Context`
 * MAY declare [version] according to [Semantic Versioning][semver]
-- Updates MAY add new terms or patch fixes (with corresponding `version` change)
+* Including the `DefinedTerm` for JSON-LD is optional.
+
+When updating a JSON-LD context in a Profile Crate:
+
+* Updates MAY add new terms or patch fixes (with corresponding `version` change in the RO-Crate metadata)
 * Updates SHOULD NOT remove terms already published and potentially used by consumers of the profile
 * Updates SHOULD NOT replace URIs terms map to -- except for typos.
-* Including the `DefinedTerm` for JSON-LD is optional.
 
 Note that the referenced context URI does _not_ have to match the `@context` of the Profile Crate itself.
 
-{% include callout.html type="tip" content="The `@context` MAY be the Profile Crate's Metadata JSON-LD file itself if 
+{% include callout.html type="tip" content="The `@context` MAY be the Profile Crate's Metadata JSON-LD file itself, if 
 it is [resolvable](appendix/jsonld#ro-crate-json-ld-media-type)
 as media type `application/ld+json` over HTTP. Make sure the crate includes the 
 defined terms both within its `@context` and ideally as entities in its `@graph`." %}
@@ -583,11 +587,11 @@ defined terms both within its `@context` and ideally as entities in its `@graph`
 
 #### Multiple profiles
 
-RO-Crate profiles sometimes build on each other. Note that unlike traditional object-oriented programming with strict class hierarchies, profiles are a looser construct of conventions rather than absolute rules. RO-Crate therefore do not enforce any particular "inheritance" across profiles.
+RO-Crate profiles sometimes build on each other. Note that unlike traditional object-oriented programming with strict class hierarchies, profiles are a looser construct of conventions rather than absolute rules. RO-Crate therefore does not enforce any particular "inheritance" across profiles.
 
-A crate conforming to multiple RO-Crate profiles SHOULD explicitly declare `conformsTo` for each profile. Each profile MUST have a corresponding contextual entity for each.
+An RO-Crate conforming to multiple RO-Crate profiles SHOULD explicitly declare `conformsTo` for each profile. Each profile listed MUST have a corresponding contextual entity.
 
-A Profile Crate can _suggest_ interoperable profiles under `hasPart`, and recommend them by using the role `http://purl.org/dc/terms/conformsTo` in a resource descriptor. For example, the specializing [Workflow Run Crate profile](https://w3id.org/ro/wfrun/workflow/0.4) recommends two other profiles, the "parent" Process Run Crate and a "mix-in" Workflow RO-Crate:
+A Profile Crate can _suggest_ interoperable profiles under `hasPart`, and recommend them by using the role `http://purl.org/dc/terms/conformsTo` in a resource descriptor. For example, the [Workflow Run Crate profile](https://w3id.org/ro/wfrun/workflow/0.4) recommends two other profiles, the "parent" Process Run Crate and a "mix-in" Workflow RO-Crate:
 
 ```json
 {
