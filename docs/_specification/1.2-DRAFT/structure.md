@@ -148,7 +148,7 @@ If present in the root directory of a _Attached RO-Crate_ as `ro-crate-preview.h
 * For keys that resolve in the `RO-Crate JSON-LD Context` to a URI, indicate this (the simplest way is to link the key to its definition).
 * If there are additional resources necessary to render the preview (e.g. CSS, JSON, HTML), link to them in a subdirectory `ro-crate-preview_files/`
 
-The _RO-Crate Website_ is not considered a part of the RO-Crate, but serves as a way to make metadata available in a user-appropriate format. The `ro-crate-preview.html` file and the `ro-crate-preview_files/` directory and any contents SHOULD NOT be included in the `hasPart` property of the _Root Dataset_ or any other `Dataset` entity within an RO-Crate.
+The _RO-Crate Website_ is not considered a part of the RO-Crate, but serves as a way to make metadata available in a user-appropriate format. The `ro-crate-preview.html` file and the `ro-crate-preview_files/` directory and any contents SHOULD NOT be included in the `hasPart` property of the _Root Data Entity_ or any other `Dataset` entity within an RO-Crate.
 
 Metadata about parts of the _RO-Crate Website_ MAY be included in an RO-Crate as in the following example. Metadata such as an `author` property, `dateCreated` or other provenance can be included, including details about the software that created them, as described in [Software used to create files](./provenance.html#software-used-to-create-files)).
 
