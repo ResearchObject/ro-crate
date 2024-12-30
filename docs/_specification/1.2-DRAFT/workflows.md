@@ -94,7 +94,7 @@ Here are some indicators for when a script should be considered a _workflow_:
 Here are some counter-indicators for when a script might **not** be a workflow:
 
 * The script contains mainly algorithms or logic
-* Data is exchanged out of bands, e.g. a SQL database
+* Data is exchanged with services outside of the system, e.g. a SQL database
 * The script relies on a particular state of the system (e.g. appends existing files)
 * An interactive user interface that controls the actions
 
@@ -163,14 +163,19 @@ The image file format SHOULD be indicated with [encodingFormat] using an IANA re
 {
   "@id": "workflow/workflow.svg",
   "@type": ["File", "ImageObject"],
-  "encodingFormat":  ["image/svg+xml"],
+  "encodingFormat":  ["image/svg+xml", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92"}],
   "name": "Diagram of RetroPath2.0 workflow",
   "about": {"@id": "workflow/workflow.knime"}
 },
-
+,
+{
+  "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/92",
+  "name": "Scalable Vector Graphics",
+  "@type": ["WebPage", "Standard"]
+}
 ```
 
-A workflow diagram may still be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the workflow was done by hand). In this case the sketch itself is a proxy for the workflow and SHOULD have an `about` property referring to the _RO-Crate dataset_ as a whole (assuming the RO-Crate represents the outcome of a single workflow), or to other [Data Entities](data-entities) otherwise:
+A workflow diagram may still be provided even if there is no programmatic `SoftwareSourceCode` that can be executed (e.g. because the workflow was done by hand). In this case the sketch itself is a proxy for the workflow and SHOULD have an `about` property referring to the _Root Data Entity_ as a whole (assuming the RO-Crate represents the outcome of a single workflow), or to other [Data Entities](data-entities) otherwise:
 
 ```json
 {
@@ -192,7 +197,7 @@ When complying with this profile, the workflow data entities
 MUST describe these properties and their related contextual entities:
 [name], [programmingLanguage], [creator], [dateCreated], [license], [sdPublisher], [url], [version].
 
-The [ComputationalWorkflow profile][ComputationalWorkflow profile 1.0] explains the above and list additional properties that a compliant [ComputationalWorkflow][ComputationalWorkflow 1.0] data entity SHOULD include: [citation], [contributor], [creativeWorkStatus], [description], [funding], [hasPart], [isBasedOn], [keywords], [maintainer], [producer], [publisher], [runtimePlatform], [softwareRequirements], [targetProduct]
+The [ComputationalWorkflow profile][ComputationalWorkflow profile 1.0] explains the above and lists additional properties that a compliant [ComputationalWorkflow][ComputationalWorkflow 1.0] data entity SHOULD include: [citation], [contributor], [creativeWorkStatus], [description], [funding], [hasPart], [isBasedOn], [keywords], [maintainer], [producer], [publisher], [runtimePlatform], [softwareRequirements], [targetProduct]
 
 A data entity conforming to the [ComputationalWorkflow profile][ComputationalWorkflow profile 1.0] SHOULD declare the versioned profile URI using the [conformsTo] property [^18]:
 
@@ -212,7 +217,7 @@ A data entity conforming to the [ComputationalWorkflow profile][ComputationalWor
 ### Describing inputs and outputs
 
 The input and output _parameters_ for a workflow or script can be given with `input` and `output` to [FormalParameter][FormalParameter 1.0]
-contextual entities. Note that this entity usually represent a _potential_ input/output value in a reusable
+contextual entities. Note that this entity type usually represents a _potential_ input/output value in a reusable
 workflow, much like [function parameter definitions] in general programming.
 
 If complying with the Bioschemas [FormalParameter profile][FormalParameter profile 1.0],
@@ -232,7 +237,7 @@ A contextual entity conforming to the [FormalParameter profile][FormalParameter 
 }
 ```
 
-{% include callout.html type="note" content="`input`, `output` and `FormalParameter` are at time of writing proposed by Bioschemas and not yet integrated in Schema.org" %}
+{% include callout.html type="note" content="`input`, `output` and `FormalParameter` are at time of writing proposed by Bioschemas and not yet integrated in Schema.org." %}
 
 ## Complete Workflow Example
 
