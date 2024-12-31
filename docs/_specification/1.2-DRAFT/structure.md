@@ -34,7 +34,7 @@ parent: RO-Crate 1.2-DRAFT
 
 ## Types of RO-Crate
 
-RO-Crate metadata can be interpreted in  two main contexts, as Packages (either Local or Detached) , if described in the _RO-Crate Metadata Document_.
+RO-Crate metadata can be interpreted in two main contexts, as data  Packages (of which there are two types) or as an abstract  _RO-Crate Metadata Document_.
 
 **Local RO-Crate Packages**
 : A crate that is present in a file-system context which has an _RO-Crate Root directory_ and can carry an **explicit payload** of local [data entities](data-entities) as regular files (combined with [Web-based Data Entities](data-entities.html#web-based-data-entities) where needed). This use of RO-Crate can be suitable for packaging a data payload for long-term preservation, transfer and publishing, as the _RO-Crate Metadata Document_ is stored in an _RO-Crate Metadata File_ alongside the crate's payload. See further definition of [Local RO-Crate Package](#ro-crate-package) below.
