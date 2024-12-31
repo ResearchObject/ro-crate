@@ -68,7 +68,7 @@ property referencing the _Root Data Entity_'s `@id`.
 ```
 
 {: .note}
-> Even in [Detached RO-Crates](structure#detached-ro-crate) which do not have an _RO-Crate Metadata File_ present, the identifier `ro-crate-metadata.json` MUST be used.
+> Even in [Detached RO-Crates](structure#detached-ro-crate-packages) which do not have an _RO-Crate Metadata File_ present, the identifier `ro-crate-metadata.json` MUST be used.
 
 The [conformsTo] of the _RO-Crate Metadata Descriptor_ 
 SHOULD be a versioned permalink URI of the RO-Crate specification
@@ -95,7 +95,7 @@ reliably find the _Root Data Entity_ by following this algorithm:
 4. For each entity in `@graph` array
 5. .. if the entity has an `@id` URI that matches _root_ return it
 
-Note that the above can be implemented efficiently by first building a map of
+Note that the above can be implemented efficiently by first building a map (`entity_map`) of
 all entities using their `@id` as keys (which is typically also helpful for
 further processing) and then performing a series of lookups:
 
@@ -103,6 +103,11 @@ further processing) and then performing a series of lookups:
 metadata_entity = entity_map["ro-crate-metadata.json"]
 root_entity = entity_map[metadata_entity["about"]["@id"]]
 ```
+
+<!-- 
+
+EDITORS NOTE (PTSEFTON) THIS SHOULD BE REMOVED PENDING IMPLEMENTATION (I think we agreed this at the final meeting for 2024) -- can be considered for RO-Crate 2. 
+
 
 More generally, the metadata id can be a URI whose last path segment is
 `ro-crate-metadata.json`, so the above lookup can fail. In this case we can
@@ -148,6 +153,7 @@ themselves as [Dataset] entries. For instance:
   ]
 }
 ```
+-->
 
 See also the appendix on
 [finding RO-Crate Root in RDF triple stores](appendix/relative-uris#finding-ro-crate-root-in-rdf-triple-stores).
@@ -156,7 +162,7 @@ See also the appendix on
 
 To ensure a base-line interoperability between RO-Crates, and for an RO-Crate to
 be considered a _Valid RO-Crate_, a minimum set of metadata is required for the
-_Root Data Entity_. As [stated earlier](structure#self-describing-and-self-contained-attached-ro-crates)
+_Root Data Entity_. As [stated earlier](structure#self-describing-and-self-contained-local-ro-crate-packages)
 the _RO-Crate Metadata Document_ is not an
 exhaustive manifest or inventory, that is, it does not necessarily list or
 describe all files in the package. For this reason, there are no minimum
@@ -196,13 +202,16 @@ Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be 
 
 ### Root Data Entity identifier
 
-The root data entity's `@id` SHOULD be either `./` (indicating the directory of `ro-crate-metadata.json` is the [RO-Crate Root](structure)), or an absolute URI (indicating a [detached RO-Crate](structure#detached-ro-crate)). 
+The root data entity's `@id` SHOULD be either `./` (indicating the directory of `ro-crate-metadata.json` is the [RO-Crate Root](structure)), or an absolute URI.
 
+<!-- NOT NEEDED
 If the `@id` of the Root Data Entity is an absolute URI, an _Attached RO-Crate_ MAY contain both [data entities](data-entities) using relative URI references (relative to the _RO-Crate Root_, and [Web-based Data Entities](data-entities.html#web-based-data-entities) using absolute URIs but it is RECOMMENDED that data entities are referenced using absolute URIs.
+-->
 
-RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) SHOULD indicate this using [identifier] on the root data entity using the approach set out in the [Science On Schema.org guides], that is through a `PropertyValue`. 
 
 {: note}
+> RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) MAY indicate this using [identifier] on the root data entity using the approach set out in the [Science On Schema.org guides], that is through a `PropertyValue` or MAY use a full persistent URL as the `@id` for the _Root Data Entity_.
+>
 > Earlier RO-Crate 1.1 and earlier recommended `identifier` to be plain string URIs. Clients SHOULD be permissive of an RO-Crate `identifier` being a string (which MAY be a URI), or a `@id` reference, which SHOULD be represented as an `PropertyValue` entity which MUST have a human readable `value`, and SHOULD have a `url` if the identifier is Web-resolvable. A citable representation of this persistent identifier MAY be given as a `description` of the `PropertyValue`, but as there are more than 10.000 known [citation styles], no attempt should be made to parse this string.
 
 #### Resolvable persistent identifiers and citation text
@@ -216,7 +225,7 @@ Any entity which is a subclass of CreativeWork, including the _Root Data Entity_
 
 ## Minimal example of RO-Crate
 
-The following _RO-Crate Metadata Document_ represents a minimal description of an _RO-Crate_ that also follows the identifier recommendations above. 
+The following _RO-Crate Metadata Document_ represents a minimal description of an _RO-Crate_ that also follows the identifier recommendations above for use in a _Local RO-Crate Package_. 
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context", 
@@ -257,4 +266,24 @@ The following _RO-Crate Metadata Document_ represents a minimal description of a
 }
 ```
 
+Alternatively the following is also valid:
+
+```json
+ {
+    "@id": "ro-crate-metadata.json",
+    "@type": "CreativeWork",
+    "about": {"@id": "https://doi.org/10.4225/59/59672c09f4a4b"},
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
+ },  
+{
+    "@id": "https://doi.org/10.4225/59/59672c09f4a4b",
+    "@type": "Dataset",
+    "cite-as": "https://doi.org/10.4225/59/59672c09f4a4b",
+    "datePublished": "2017",
+    "name": "Data files associated with the manuscript:Effects of facilitated family case conferencing for ...",
+    "description": "Palliative care planning for nursing home residents with advanced dementia ...",
+    "license": {"@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/"},
+    "creditText": "Agar, M. et al., 2017. Data supporting \"Effects of facilitated family case conferencing for advanced dementia: A cluster randomised clinical trial\". https://doi.org/10.4225/59/59672c09f4a4b"
+ }
+```
 {% include references.liquid %}

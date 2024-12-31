@@ -45,12 +45,11 @@ The data entities can be further described by referencing [contextual entities](
 Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the [Root Data Entity](root-data-entity) using the [hasPart] property. Directory hierarchies MAY be represented with nested [Dataset] _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
 
 _Data Entities_ representing files: MUST have `"File"` as a value for `@type`. `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ includes:
--  _Attached_ resources where `@id` is a URI (path) relative to the _RO-Crate Root_ which MUST resolve to file.
+-  _Local_ resources where `@id` is a URI (path) relative to the _RO-Crate Root_ which MUST resolve to file.
 -  _Detached_ "downloadable" resources where `@id` is an absolute URI which resolves to a single datastream that can be downloaded and saved as a file. _Detached_ Files SHOULD NOT reference intermediate resources such as splash-pages, search services or web-based viewer applications.
 
 _Data Entities_ representing directories MUST have `Dataset` as a value for `@type`. The term _directory_ here includes HTTP file listings where `@id` is an absolute URI, however "external, _Detached_ directories SHOULD have a programmatic listing of their content (e.g. another RO-Crate). It follows that the _RO-Crate Root_ is itself a data entity.
 
-_Data Entities_ can also be other types, for instance an online database. These SHOULD be a `@type` of [CreativeWork] (or one of its subtypes) and typically have a `@id` which is an absolute URI.
 
 In all cases, `@type` MAY be an array in order to also specify a more specific type, e.g. `"@type": ["File", "ComputationalWorkflow"]`
 
@@ -250,7 +249,24 @@ In this document the term _URI_ includes international *IRI*s; the _RO-Crate Met
 A [File] _Data Entity_ MUST have the following properties:
 
 *  `@type`: MUST be `File`, or an array where `File` is one of the values.
-*  `@id` MUST be either a _URI Path_ relative to the _RO-Crate root_ which MUST resolve to a file that is present in the _RO-Crate Root_, or an absolute URI. 
+*  `@id` a relative path or a URI
+
+
+Rules for interpreting the `@id` of a [File] _Data Entity_ differ in the context of use.
+
+1. For a _Local RO-Crate Package_:
+  a. IF `@id` is a relative path (`$path`), test whether a payload file exists in the local file system at `$path` relative to the _RO-Crate Root_.
+      * IF TRUE, then that data entity is compliant - EXIT
+      * ELSE:
+        * IF there is a `contentUrl`:  FOR EACH `$URL` check IF the URL can return data (optionally save the data from the first viable URL to `$path`) EXIT (Entity is compliant)
+        * ELSE produce an error EXIT
+  b. If `@id` is a URL then it is up to an implementation whether to verify that URL. EXIT
+2. For a _Detached RO-Crate Package_:
+   a.  IF there is a `contentUrl`:  FOR EACH `$URL` value, check that at least one `$URL` can return data if one is found the the crate is compliant. EXIT
+   b.  IF `@id` is a relative URL (`$path`) and the `@id` of the _Root Data Entity_ is a URL check whether a payload can be retrieved _RO-Crate Root_.
+   d.  ELSE if `@id` is an absolute URL optionally fetch the data.
+  
+
 
 Additionally, `File` entities SHOULD have:
 
@@ -284,7 +300,7 @@ Any of the properties of schema.org [Dataset] MAY additionally be used (adding c
 
 ## Web-based Data Entities
 
-While one use-case of RO-Crates is to describe _files_ contained within the _RO-Crate root_ directory, RO-Crates can also gather resources from the web identified by _absolute URIs_ instead of relative _URI paths_, i.e. Web-based data entities.
+While one use-case of RO-Crates is to define _Local RO-Crate Packages_  where _files_ contained within the _RO-Crate root_ directory, RO-Crates can also gather resources from the web identified by _absolute URIs_ instead of relative _URI paths_, i.e. Web-based data entities.
 
 Using Web-based data entities can be important particularly where a file can't be included in the _RO-Crate root_ because of licensing concerns, large data sizes, privacy, or where it is desirable to link to the latest online version.
 
@@ -375,7 +391,7 @@ These MAY be included for File Data Entities as additional metadata, regardless 
 * [subjectOf] to a [CreativeWork] (or [WebPage]) that mentions this file or its content (but also other resources)
 * [mainEntityOfPage] to a [CreativeWork]  (or [WebPage]) that primarily describes this file (or its content) 
 
-Note that if a local file is intended to be packaged within an _Attached RO-Crate_, the `@id` property MUST be a _URI Path_ relative to the _RO Crate root_, for example `survey-responses-2019.csv` as in the example below, where the content URL points to a download endpoint as a string.
+Note that if a local file is intended to be packaged within an _Local  RO-Crate Package_, the `@id` property MUST be a _URI Path_ relative to the _RO Crate root_, for example `survey-responses-2019.csv` as in the example below, where the content URL points to a download endpoint as a string.
 
 ```json
   {
@@ -420,5 +436,11 @@ Similarly, the _RO-Crate root_ entity may also provide a [distribution] URL, in 
 
 In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not reflect the current state of the `Dataset` or RO-Crate.
 
+
+# Downloading _Detached RO-Crate Packages_ 
+
+To download an_Detached RO-Crate Package_ to make it a _Local RO-Crate Package_ the _RO-Crate Metadata Document_ may be saved in a directory, thus creating an _RO-Crate Root_ in which relative `@id`s of File data entities may be used as paths to save downloaded data (either from `contentURL` or the `@id` of the File if it is a URL) 
+
+(TODO -- EXPAND THIS)
 
 {% include references.liquid %}
