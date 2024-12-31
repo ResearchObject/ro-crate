@@ -263,20 +263,19 @@ A [File] _Data Entity_ MUST have the following properties:
 Rules for interpreting the `@id` of a [File] _Data Entity_ differ in the context of use.
 
 1. For a _Local RO-Crate Package_:
-  *  IF `@id` is a relative path URI (`$path`), test whether a payload file exists in the local file system at `$path` relative to the _RO-Crate Root_.
-       *  IF TRUE, (entity is compliant) - EXIT
-       *  ELSE:
-         *  IF there is a `contentUrl`:  FOR EACH `$URL` check IF the URL can return data (optionally save the data from the first viable URL to `$path`) (entity is compliant) EXIT 
-        *  ELSE produce an error EXIT
-  *  ELSE IF `@id` is a URL then it is up to an implementation whether to verify that URL. (entity is compliant) EXIT
+  *  IF `@id` is a relative path URI (`$path`), test whether a payload file exists in the local file system at `$path` relative to the _RO-Crate Root_:
+       *  IF TRUE, (entity is compliant) EXIT
+       *  ELSE IF there is a `contentUrl`:  FOR EACH `$URL` IF the URL can return data (optionally save the data to `$path`) (entity is compliant) EXIT 
+       *  ELSE produce an error EXIT
+  *  ELSE IF `@id` is a URL then it is up to an implementation whether to verify that URL (entity is compliant) EXIT
   *  ELSE entity is not compliant
 2. For a _Detached RO-Crate Package_:
-   *  IF there is a `contentUrl`:  FOR EACH `$URL` value, check that at least one `$URL` can return data. If one is found the the crate is compliant. EXIT
-   *  ELSE IF `@id` is a relative URL (`$path`) and the `@id` of the _Root Data Entity_ is a URL check whether a payload can be retrieved relative to the _RO-Crate Root_.
-   *  ELSE IF `@id` is an absolute URL optionally fetch the data.
+   *  IF there is a `contentUrl`:  FOR EACH `$URL` value check that the `$URL` can return data. If one is found the the crate is compliant (entity is compliant) EXIT
+   *  ELSE IF `@id` is a relative URL (`$path`) and the `@id` of the _Root Data Entity_ is a URL  and a payload can be retrieved relative to the _RO-Crate Root_ (entity is compliant) EXIT
+   *  ELSE IF `@id` is an absolute URL optionally fetch the data (entity is compliant) EXIT
    *  ELSE entity is not compliant
 
-  
+  NOTE: Above algorithm needs work -- mainly on whether to do link checking on URLS
 
 
 Additionally, `File` entities SHOULD have:
