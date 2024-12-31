@@ -263,16 +263,19 @@ A [File] _Data Entity_ MUST have the following properties:
 Rules for interpreting the `@id` of a [File] _Data Entity_ differ in the context of use.
 
 1. For a _Local RO-Crate Package_:
-  a. IF `@id` is a relative path (`$path`), test whether a payload file exists in the local file system at `$path` relative to the _RO-Crate Root_.
-      * IF TRUE, then that data entity is compliant - EXIT
-      * ELSE:
-        * IF there is a `contentUrl`:  FOR EACH `$URL` check IF the URL can return data (optionally save the data from the first viable URL to `$path`) EXIT (Entity is compliant)
-        * ELSE produce an error EXIT
-  b. If `@id` is a URL then it is up to an implementation whether to verify that URL. EXIT
+  *  IF `@id` is a relative path URI (`$path`), test whether a payload file exists in the local file system at `$path` relative to the _RO-Crate Root_.
+       *  IF TRUE, (entity is compliant) - EXIT
+       *  ELSE:
+         *  IF there is a `contentUrl`:  FOR EACH `$URL` check IF the URL can return data (optionally save the data from the first viable URL to `$path`) (entity is compliant) EXIT 
+        *  ELSE produce an error EXIT
+  *  ELSE IF `@id` is a URL then it is up to an implementation whether to verify that URL. (entity is compliant) EXIT
+  *  ELSE entity is not compliant
 2. For a _Detached RO-Crate Package_:
-   a.  IF there is a `contentUrl`:  FOR EACH `$URL` value, check that at least one `$URL` can return data if one is found the the crate is compliant. EXIT
-   b.  IF `@id` is a relative URL (`$path`) and the `@id` of the _Root Data Entity_ is a URL check whether a payload can be retrieved _RO-Crate Root_.
-   d.  ELSE if `@id` is an absolute URL optionally fetch the data.
+   *  IF there is a `contentUrl`:  FOR EACH `$URL` value, check that at least one `$URL` can return data. If one is found the the crate is compliant. EXIT
+   *  ELSE IF `@id` is a relative URL (`$path`) and the `@id` of the _Root Data Entity_ is a URL check whether a payload can be retrieved relative to the _RO-Crate Root_.
+   *  ELSE IF `@id` is an absolute URL optionally fetch the data.
+   *  ELSE entity is not compliant
+
   
 
 
@@ -295,6 +298,8 @@ A [Dataset] (directory) _Data Entity_ MUST have the following properties:
     *   a _URI Path_ relative to the _RO Crate root_ which MUST resolve to a directory that is present in the _RO-Crate Root_. The id SHOULD end with `/`.
     *   an absolute URI
     *   a local reference beginning with `#`
+
+TODO: Should we regard Directory entities in Detached RO-Crate Packages as a merely a HINT for how to download data?
 
 Additionally, `Dataset` entities SHOULD have:
 
