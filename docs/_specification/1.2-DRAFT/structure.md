@@ -34,7 +34,7 @@ parent: RO-Crate 1.2-DRAFT
 1. TOC
 {:toc}
 
-## Processing RO-Crates as Packages or abstract metadata
+## Types of RO-Crate
 
 RO-Crate metadata can be interpreted in  two main contexts, as Packages (either Local or Detached) , if described in the _RO-Crate Metadata Document_.
 
@@ -66,7 +66,8 @@ Software producing _Detached RO-Crate Packages_ may use a file name of the form 
 - RO-Crate metadata made available over an API for purposes other than packaging data.
 
 
-In both types of crates the metadata is completed with [contextual entities](contextual-entities) that further describe the relationships and context of the data to form a _Research Object_. 
+In all three types of crates the metadata is completed with [contextual entities](contextual-entities) that further describe the relationships and context of the data to form a _Research Object_. 
+
 
 
 ## Local RO-Crate Package
