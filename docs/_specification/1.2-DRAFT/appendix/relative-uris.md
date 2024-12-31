@@ -24,9 +24,7 @@ nav_order: 23
    limitations under the License.
 -->
 
-<div id="relative-uris"></div>
-
-# APPENDIX: Handling relative URI references
+# APPENDIX: Handling relative URI references {#relative-uris}
 {: .no_toc }
 
 ## Table of contents
@@ -131,17 +129,17 @@ If the new Detached RO-Crate is not meant as a snapshot of the corresponding Att
 
 Converting a Detached Crate to an Attached Crate can mean multiple things depending on intentions, and may imply an elaborate process.
 
-First, check if the Root Dataset already have a [distribution download](../data-entities#directories-on-the-web-dataset-distributions) listed, in which case that can be retrieved as the corresponding Attached Crate.
+First, check if the Root Data Entity already have a [distribution download](../data-entities#directories-on-the-web-dataset-distributions) listed, in which case that can be retrieved as the corresponding Attached Crate.
 
 To archive a snapshot of an Detached Crate's metadata, keeping all data entities [web-based](../data-entities#web-based-data-entities):
 * Crate a new folder as the _RO-Crate Root_, save the _RO-Crate Metadata Document_ as the _RO-Crate Metadata File_ according to [Attached RO-Crate](../structure#attached-ro-crate) structure
 * Copy the absolute `@id` to become an `identifier` according to recommendations for [Root Data Entity identifier](../root-data-entity#root-data-entity-identifier)
-* Change the `@id` of the root dataset to `./` and update all references to it, including from the [Metadata Descriptor](../root-data-entity#ro-crate-metadata-descriptor)  
+* Change the `@id` of the Root Data Entity to `./` and update all references to it, including from the [Metadata Descriptor](../root-data-entity#ro-crate-metadata-descriptor)  
 
 If the new Attached Crate is intended as a _fork_ that will evolve independently of the Detached Crate, then:
 * Delete the `identifier`, add the previous `@id` as `isBasedOn`
 * Delete/update `datePublished` and `publisher`
-* Add yourself as `author` or `contributor` to the Root Dataset
+* Add yourself as `author` or `contributor` to the Root Data Entity
 * Add records of [changes to the Crate](../provenance#recording-changes-to-ro-crates)
 
 
@@ -161,8 +159,7 @@ To additionally save Web-based Data entities to become part of the Detached Crat
   
 As this procedure can be error-prone (e.g. a Web-based entity may not be accessible or may require authentication), the implementation should consider the new Attached Crate as a _fork_ and update `identifier` and `isDefinedBy` as specified above.
 
-{: .tip }
-> If you are archiving an [attached RO-Crate](../structure#attached-ro-crate) that is already on the Web, then first [establish the absolute URI](#establishing-absolute-uri-for-ro-crate-root) for the root, and retrieve all [payload](../structure#payload-files-and-directories-attached-ro-crates) files that are considered URI path-wise to be part the RO-Crate Root, creating corresponding local paths. In this scenario the above algorithm can be simplified and the rewriting of identifiers can be avoided if they are already relative URIs. 
+{% include callout.html type="tip" content="If you are archiving an [attached RO-Crate](../structure#attached-ro-crate) that is already on the Web, then first [establish the absolute URI](#establishing-absolute-uri-for-ro-crate-root) for the root, and retrieve all [payload](../structure#payload-files-and-directories-attached-ro-crates) files that are considered URI path-wise to be part the RO-Crate Root, creating corresponding local paths. In this scenario the above algorithm can be simplified and the rewriting of identifiers can be avoided if they are already relative URIs. " %}
 
 
 ## Handling relative URI references when using JSON-LD/RDF tools
@@ -258,8 +255,7 @@ Results in a valid _RO-Crate JSON-LD_ (actual order in `@graph` may differ):
 }
 ```
 
-{: .note }
-> The saved _RO-Crate JSON-LD_ SHOULD NOT include `{@base: null}` in its `@context`.
+{% include callout.html type="note" content="The saved _RO-Crate JSON-LD_ SHOULD NOT include `{@base: null}` in its `@context`." %}
 
 
 ## Expanding/parsing JSON-LD keeping relative referencing
@@ -361,11 +357,9 @@ Results in a [expanded form][JSON-LD expanded form] without `@context`, using ab
 ]
 ```
 
-{: .note }
-> `@base: null` will not relativize existing absolute URIs that happen to be contained by the _RO-Crate Root_ (see section [Relativizing absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root)).
+{% include callout.html type="note" content="`@base: null` will not relativize existing absolute URIs that happen to be contained by the _RO-Crate Root_ (see section [Relativizing absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root))." %}
 
-{: .tip }
-> Most RDF parsers supporting JSON-LD will perform this kind of expansion before generating triples, but not all RDF stores or serializations support relative URI references. Consider using an alternative `@base` as detailed in sections below.
+{% include callout.html type="tip" content="Most RDF parsers supporting JSON-LD will perform this kind of expansion before generating triples, but not all RDF stores or serializations support relative URI references. Consider using an alternative `@base` as detailed in sections below." %}
 
 ## Establishing absolute URI for RO-Crate Root
 
@@ -373,8 +367,7 @@ When loading _RO-Crate JSON-LD_ as RDF, or combining the crate's Linked Data int
 [base URI][JSON-LD base URI]
 to resolve URI references that are relative to the _RO-Crate Root_.
 
-{: .note }
-> When retrieving an RO-Crate over the web, servers might have performed HTTP redirections so that the base URI is different from what was requested. It is RECOMMENDED to follow section [Establishing a Base URI of RFC3986](http://tools.ietf.org/html/rfc3986#section-5.1) before resolving relative links from the _RO-Crate Metadata File_.
+{% include callout.html type="note" content="When retrieving an RO-Crate over the web, servers might have performed HTTP redirections so that the base URI is different from what was requested. It is RECOMMENDED to follow section [Establishing a Base URI of RFC3986](http://tools.ietf.org/html/rfc3986#section-5.1) before resolving relative links from the _RO-Crate Metadata File_." %}
 
 For instance, consider this HTTP redirection from a permalink (simplified):
 
@@ -458,8 +451,7 @@ When parsing a _RO-Crate Metadata File_ into [RDF triples], for instance uploadi
 * Web servers hosting `ro-crate-metadata.json` may not send the [JSON-LD _Content-Type_](jsonld#ro-crate-json-ld-media-type)
 * If base URI is not correct it may be difficult to find the corresponding file and directory paths from an RDF query returning absolute URIs
 
-{: .tip }
-> If the RDF library can parse the _RO-Crate JSON-LD_ directly by retrieving from a `http`/`https` URI of the _RO-Crate Metadata File_ it should calculate the correct base URI as detailed in section [Establishing absolute URI for RO-Crate Root](#establishing-absolute-uri-for-ro-crate-root) and you should **not** need to override the base URI as detailed here.
+{% include callout.html type="tip" content="If the RDF library can parse the _RO-Crate JSON-LD_ directly by retrieving from a `http`/`https` URI of the _RO-Crate Metadata File_ it should calculate the correct base URI as detailed in section [Establishing absolute URI for RO-Crate Root](#establishing-absolute-uri-for-ro-crate-root) and you should **not** need to override the base URI as detailed here." %}
 
 If a web-based URI for the _RO-Crate root_ is known, then this can be supplied as a _base URI_. Most RDF tools support a `--base` option or similar. If this is not possible, then the `@context` of the `RO-Crate JSON-LD` can be modified by ensuring the `@context` is an array that sets the desired `@base`:
 
@@ -598,8 +590,7 @@ Parsing this as RDF will generate triples including:
 
 Here consumers can assume `/` is the _RO-Crate Root_ and generating relative URIs can safely be achieved by  search-replace as the arcp URI is unique. Saving _RO-Crate JSON-LD_ from the triples can be done by using the arcp URI to [relativize absolute URIs within RO-Crate Root](#relativizing-absolute-uris-within-ro-crate-root).
 
-{: .tip }
-> **Bagit**: The arcp specification suggests how [BagIt identifiers][ARCP BagIt] can be used to calculate the base URI. See also section [Combining with other packaging schemes](implementation-notes#combining-with-other-packaging-schemes) - note that in this approach the _RO-Crate Root_ will be the payload folder `/data/` under the calculated arcp base URI.
+{% include callout.html type="tip" content="**Bagit**: The arcp specification suggests how [BagIt identifiers][ARCP BagIt] can be used to calculate the base URI. See also section [Combining with other packaging schemes](implementation-notes#combining-with-other-packaging-schemes) - note that in this approach the _RO-Crate Root_ will be the payload folder `/data/` under the calculated arcp base URI." %}
 
 ## Relativizing absolute URIs within RO-Crate Root
 
@@ -688,7 +679,6 @@ Will output _RO-Crate JSON-LD_ with relative URIs:
 }
 ```
 
-{: .warning }
-> This method would also relativize URIs outside the _RO-Crate Root_ that are on the same host, e.g. `http://example.com/crate255/other.txt` would become `../create255/other.txt` - this can particularly be a challenge with local `file:///` URIs. `
+{% include callout.html type="warning" content="This method would also relativize URIs outside the _RO-Crate Root_ that are on the same host, e.g. `http://example.com/crate255/other.txt` would become `../create255/other.txt` - this can particularly be a challenge with local `file:///` URIs. `" %}
 
 {% include references.liquid %}

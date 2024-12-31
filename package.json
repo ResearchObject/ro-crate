@@ -1,8 +1,5 @@
 {
-  "requires": true,
   "dependencies": {
-    "lodash": "^4.17.21",
-    "ro-crate": "^2.0.7",
-    "ro-crate-html-js": "^1.4.19"
+    "ro-crate-html": "^0.1.4"
   }
 }

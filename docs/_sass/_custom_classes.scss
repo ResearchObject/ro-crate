@@ -178,7 +178,15 @@ body {
     h3 {
         font-weight: 700;
     }
-    
+
+    .homepage-link {
+        border: 2px solid $dark;
+        color: $white;
+        background-color: $dark;
+        padding: 0.75rem;
+        margin: 0 0.5rem 0 0.5rem;
+    }
+
     .featured-content {
       position: relative;  
       border-top: 1px solid $primary;
@@ -259,4 +267,9 @@ section#search-section {
 /*-----Footer------*/
 #back-to-top.visible {
   bottom: 7px;
+}
+
+// hide the link container, as we have no links to display
+footer .container {
+    display: none;
 }

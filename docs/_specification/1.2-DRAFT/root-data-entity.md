@@ -7,8 +7,8 @@ parent: RO-Crate 1.2-DRAFT
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
-   Copyright 2019-2020 The University of Manchester UK 
-   Copyright 2019-2020 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
+   Copyright 2019-2024 The University of Manchester UK 
+   Copyright 2019-2024 RO-Crate contributors <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ parent: RO-Crate 1.2-DRAFT
    limitations under the License.
 -->
 
-# Root Data Entity
+# Root Data Entity {#root-data-entity}
 {: .no_toc }
 
 ## Table of contents
@@ -32,11 +32,11 @@ parent: RO-Crate 1.2-DRAFT
 1. TOC
 {:toc}
 
-The **Root Data Entity** is a [Dataset] that represent the RO-Crate as a whole;
+The **Root Data Entity** is a [Dataset] that represents the RO-Crate as a whole;
 a _Research Object_ that includes the _Data Entities_ and the related
 _Contextual Entities_.
 
-An RO-Crate is described using _JSON-LD_ by an _RO-Crate Metadata Document_. As explained in section [RO-Crate structure](structure) this may be stored in an _RO-Crate Metadata File_. In this section we describe the format of the JSON-LD document.
+An RO-Crate is described using _JSON-LD_ by an _RO-Crate Metadata Document_. As explained in section [RO-Crate Structure](structure) this may be stored in an _RO-Crate Metadata File_. In this section we describe the format of the JSON-LD document.
 
 
 ## RO-Crate Metadata Descriptor
@@ -44,7 +44,7 @@ An RO-Crate is described using _JSON-LD_ by an _RO-Crate Metadata Document_. As 
 The _RO-Crate Metadata Document_ MUST contain a self-describing
 **RO-Crate Metadata Descriptor** with
 the `@id` value `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` in legacy
-crates) and `@type` [CreativeWork]. This descriptor MUST have an [about]
+crates for RO-Crate 1.0 or older) and `@type` [CreativeWork]. This descriptor MUST have an [about]
 property referencing the _Root Data Entity_'s `@id`.
 
 ```json
@@ -75,14 +75,8 @@ SHOULD be a versioned permalink URI of the RO-Crate specification
 that the _RO-Crate JSON-LD_ conforms to. The URI SHOULD 
 start with `https://w3id.org/ro/crate/`. 
 
-{: .tip }
-> The `conformsTo` property MAY be an array, to additionally indicate 
-specializing [RO-Crate profiles](profiles).
-
-If the root data entity `@id` is an absolute URI, the RO-Crate is considered
-web-based: in this case, the metadata descriptor SHOULD also have an absolute
-URI as its `@id`, which MUST have `ro-crate-metadata.json` (or
-`ro-crate-metadata.jsonld` in legacy crates) as its last path segment.
+{% include callout.html type="tip" content="The `conformsTo` property MAY be an array, to additionally indicate 
+specializing [RO-Crate profiles](profiles)." %}
 
 ### Finding the Root Data Entity
 
@@ -92,12 +86,18 @@ reliably find the _Root Data Entity_ by following this algorithm:
 1. For each entity in `@graph` array
 2. .. if the `@id` is `ro-crate-metadata.json`
 3. .... from this entity's `about` object, keep the `@id` URI as variable _root_
-4. For each entity in `@graph` array
-5. .. if the entity has an `@id` URI that matches _root_ return it
+4. .. if the `@id` is `ro-crate-metadata.jsonld`
+5. .... from this entity's `about` object, keep the `@id` URI as variable _legacyroot_
+6. For each entity in `@graph` array
+7. .. if the entity has an `@id` URI that matches a non-null _root_ return it
+8. For each entity in `@graph` array
+9. .. if the entity has an `@id` URI that matches a non-null _legacyroot_ return it
+10. Fail with unknown root data entity.
 
 Note that the above can be implemented efficiently by first building a map (`entity_map`) of
 all entities using their `@id` as keys (which is typically also helpful for
-further processing) and then performing a series of lookups:
+further processing) and then performing a series of lookups. 
+Ignoring the legacy case for now, this lookup code could be:
 
 ```javascript
 metadata_entity = entity_map["ro-crate-metadata.json"]
@@ -117,7 +117,7 @@ exhaustive manifest or inventory, that is, it does not necessarily list or
 describe all files in the package. For this reason, there are no minimum
 metadata requirements in terms of describing [Data Entities](data-entities) (files and folders)
 other than the _Root Data Entity_. Extensions of RO-Crate dealing with specific
-types of dataset may put further constraints or requirements of metadata beyond
+types of dataset may apply further constraints or requirements of metadata beyond
 the Root Data Entity (see the appendix [Extending RO-Crate](appendix/jsonld#extending-ro-crate)).
 
 The _RO-Crate Metadata Descriptor_ MAY contain information such as
@@ -131,20 +131,18 @@ be minimally valid.
 
 The _Root Data Entity_ MUST have the following properties:
 
-*  `@type`: MUST be [Dataset] or an array that contain `Dataset`
+*  `@type`: MUST be [Dataset] or an array that contains `Dataset`
 *  `@id`:  SHOULD be the string `./` or an absolute URI (see [below](#root-data-entity-identifier))
 *  `name`: SHOULD identify the dataset to humans well enough to disambiguate it from other RO-Crates
 *  `description`: SHOULD further elaborate on the name to provide a summary of the context in which the dataset is important.
-*  `datePublished`: MUST be a single string value in [ISO 8601 date format][DateTime] and SHOULD be specified to at least the precision of a day, MAY be a timestamp down to the millisecond. 
-*  `license`: SHOULD link to a _Contextual Entity_ or _Data Entity_ in the _RO-Crate Metadata Document_ with a name and description (see section on [licensing](contextual-entities#licensing-access-control-and-copyright)). MAY, if necessary be a textual description of how the RO-Crate may be used. 
+*  `datePublished`: MUST be a single string value in [ISO 8601 date format][DateTime], SHOULD be specified to at least the precision of a day, and MAY be a timestamp down to the millisecond. 
+*  `license`: SHOULD link to a _Contextual Entity_ or _Data Entity_ in the _RO-Crate Metadata Document_ with a name and description (see section on [licensing](contextual-entities#licensing-access-control-and-copyright)). MAY, if necessary, be a textual description of how the RO-Crate may be used. 
 
-{: .note }
-> These requirements are stricter than those published 
-> for [Google Dataset Search](https://developers.google.com/search/docs/data-types/dataset) which 
-> requires a `Dataset` to have a `name` and `description`,
+{% include callout.html type="note" content="These requirements are stricter than those published 
+for [Google Dataset Search](https://developers.google.com/search/docs/data-types/dataset) which 
+requires a `Dataset` to have a `name` and `description`." %}
 
-{: .warning }
-> The properties above are not sufficient to generate a [DataCite][DataCite Schema] citation. Advice on integrating with [DataCite] will be provided in a future version of this specification, or as an implementation guide.
+{% include callout.html type="warning" content="The properties above are not sufficient to generate a [DataCite] citation. Advice on integrating with [DataCite] will be provided in a future version of this specification, or as an implementation guide." %}
 
 Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be added to further describe the RO-Crate as a whole, e.g. [author], [abstract], [publisher]. See sections [contextual entities](contextual-entities) and [provenance](provenance) for further details.
 
@@ -165,12 +163,11 @@ If the `@id` of the Root Data Entity is an absolute URI, an _Attached RO-Crate_ 
 
 #### Resolvable persistent identifiers and citation text
 
-It is RECOMMENDED that resolving the `identifier` programmatically return the _RO-Crate Metadata Document_ or an archive (e.g. ZIP) that contain the _RO-Crate Metadata File_, using [content negotiation](profiles#how-to-retrieve-a-profile-crate) and/or [Signposting]. With an RO-Crate identifier that is persistant and resolvable in this way from a URI, the root data entity SHOULD indicate this using the `cite-as` property according to [RFC8574]. Likewise, an HTTP/HTTPS server of the resolved RO-Crate Metadata Document or archive (possibly after redirection) SHOULD indicate that persistent identifier in its [Signposting] headers using `Link rel="cite-as"`. 
+It is RECOMMENDED that resolving the `identifier` programmatically returns the _RO-Crate Metadata Document_ or an archive (e.g. ZIP) that contains the _RO-Crate Metadata File_, using [content negotiation](data-entities#retrieving-an-ro-crate) and/or [Signposting]. With an RO-Crate identifier that is persistent and resolvable in this way from a URI, the root data entity SHOULD indicate this using the `cite-as` property according to [RFC8574]. Likewise, an HTTP/HTTPS server of the resolved RO-Crate Metadata Document or archive (possibly after redirection) SHOULD indicate that persistent identifier in its [Signposting] headers using `Link rel="cite-as"`. 
 
-{: .tip}
-> The above `cite-as` MAY go to a repository landing page, and MAY require authentication, but MUST ultimately have the RO-Crate as a downloadable item, which SHOULD be programmatically accessible through content negotiation or [Signposting] (`Link rel="describedby"` for a _RO-Crate Metadata Document_, or `Link rel="item"` for an archive). To rather associate a textual scholarly citation for a crate (e.g. journal article), indicate instead a [publication via `citation` property](contextual-entities#publications-via-citation-property).
+{% include callout.html type="tip" content='The above `cite-as` MAY go to a repository landing page, and MAY require authentication, but MUST ultimately have the RO-Crate as a downloadable item, which SHOULD be programmatically accessible through content negotiation or [Signposting] (`Link rel="describedby"` for a _RO-Crate Metadata Document_, or `Link rel="item"` for an archive). To rather associate a textual scholarly citation for a crate (e.g. journal article), indicate instead a [publication via `citation` property](contextual-entities#publications-via-citation-property).' %}
 
-Any entity which is a subclass of CreativeWork, including the _Root Data Entity_ MAY have a `creditText` property which provides a textual citation for the entity.
+Any entity which is a subclass of [CreativeWork], including [Dataset]s like the _Root Data Entity_, MAY have a `creditText` property which provides a textual citation for the entity.
 
 ## Minimal example of RO-Crate
 
@@ -203,7 +200,7 @@ The following _RO-Crate Metadata Document_ represents a minimal description of a
     "description": "This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/au/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.",
     "identifier": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
     "name": "Attribution-NonCommercial-ShareAlike 3.0 Australia (CC BY-NC-SA 3.0 AU)"
- }
+ },
  {
     "@id": "https://doi.org/10.4225/59/59672c09f4a4b",
     "@type": "PropertyValue",

@@ -30,9 +30,7 @@ parent: RO-Crate 1.2-DRAFT
    limitations under the License.
 -->
 
-<div id="contextual-entities"></div>
-
-# Representing Contextual Entities
+# Representing Contextual Entities {#contextual-entities}
 {: .no_toc }
 
 ## Table of contents
@@ -53,12 +51,11 @@ RO-Crate distinguishes between _contextual entities_ and _data entities_.
 
 Some contextual entities can also be considered data entities -- for instance the [license](#licensing-access-control-and-copyright) property refers to a [CreativeWork] that can reasonably be downloaded, however a license document is not usually considered as part of research outputs and would therefore typically not be included in [hasPart] on the [root data entity](root-data-entity). 
 
-{: .tip }
-> Files in the _RO-Crate Root_ are not necessarily data entities -- the [RO-Crate Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor) is a file in the _RO-Crate Root_, but is considered a _Contextual Entity_ as it is describing the RO-Crate, rather than being part of it. On the other hand, the [Root Data Entity](root-data-entity#root-data-entity) is a data entity within its own metadata file.
+Likewise, some data entities may also be described as contextual entities, for instance a `File` that is also a [ScholarlyArticle]. In such cases the _contextual data entity_ MUST be described as a single JSON-LD object in the RO-Crate Metadata JSON-LD `@graph` and SHOULD list both relevant data and contextual types in a `@type` array. 
 
-Likewise, some data entities may also be described as contextual entities, for instance a `File` that is also a [ScholarlyArticle]. In such cases the _contextual data entity_ MUST be described as a single JSON object in the RO-Crate Metadata JSON `@graph` and SHOULD list both relevant data and contextual types in a `@type` array. 
+{% include callout.html type="tip" content="Files in the _RO-Crate Root_ are not necessarily data entities -- the [RO-Crate Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor) is a file in the _RO-Crate Root_, but is considered a _Contextual Entity_ as it is describing the RO-Crate, rather than being part of it. On the other hand, the [Root Data Entity](root-data-entity#root-data-entity) is a data entity within its own metadata file." %}
 
-The RO-Crate Metadata JSON `@graph` MUST NOT list multiple entities with the same `@id`; behaviour of consumers of an RO-Crate encountering multiple entities with the same `@id` is undefined.
+The RO-Crate Metadata JSON-LD `@graph` MUST NOT list multiple entities with the same `@id`; behaviour of consumers of an RO-Crate encountering multiple entities with the same `@id` is undefined.
 
 
 ## Identifiers for contextual entities
@@ -77,14 +74,15 @@ See the [appendix on JSON-LD identifiers](appendix/jsonld#describing-entities-in
 
 ## People
 
-A core principle of Linked data is to use URIs to identify important entities such as people. The following is the minimum recommended way of representing a [author] of a RO-Crate. The [author] property MAY also be applied to a directory ([Dataset]), a [File] or other [CreativeWork] entities.
+A core principle of Linked Data is to use URIs to identify important entities such as people. The following is the minimum recommended way of representing an [author] of an RO-Crate. The [author] property MAY also be applied to a directory ([Dataset]), a [File] or other [CreativeWork] entities.
 
 ```json
 {
     "@type": "Dataset",
     "@id": "./",
+    "...": "...",
     "author": {"@id": "https://orcid.org/0000-0002-8367-6908"}
-}
+},
 {
     "@id": "https://orcid.org/0000-0002-8367-6908",
     "@type": "Person",
@@ -100,13 +98,14 @@ Note the string _value_ for the organizational affiliation. This SHOULD be impro
 
 ## Organizations as values
 
-An [Organization] SHOULD be the value for the [publisher] property of a [Dataset] or [ScholarlyArticle] or [affiliation] property of a [Person].
+An [Organization] SHOULD be the value for the [publisher] property of a [Dataset] or [ScholarlyArticle].
 
 
 ```json
 {
   "@type": "Dataset",
   "@id": "./",
+  "...": "...",
   "publisher": {"@id": "https://ror.org/03f0f6041"}
 }
 
@@ -124,6 +123,7 @@ An [Organization] SHOULD also be used for a [Person]'s [affiliation] property.
 {
   "@type": "Dataset",
   "@id": "./",
+  "...": "...",
   "publisher": {"@id": "https://ror.org/03f0f6041"},
   "author": {"@id": "https://orcid.org/0000-0002-3545-944X"}
 },
@@ -142,17 +142,16 @@ An [Organization] SHOULD also be used for a [Person]'s [affiliation] property.
 ```
 
 
-
-
 ## Contact information
 
-A RO-Crate SHOULD have contact information, using a contextual entity of type [ContactPoint]. Note that in Schema.org [Dataset] does not currently have the corresponding [contactPoint] property, so the contact point would need to be given through a [Person] or [Organization] contextual entity which are related to the Dataset via a [author] or [publisher] property.
+An RO-Crate SHOULD have contact information, using a contextual entity of type [ContactPoint]. Note that in Schema.org [Dataset] does not currently have the corresponding [contactPoint] property, so the contact point would need to be given through a [Person] or [Organization] contextual entity which are related to the Dataset via a [author] or [publisher] property.
 
 
 ```json
 {
       "@id": "./",
       "@type": "Dataset",
+      "...": "...",
       "author": {"@id": "https://orcid.org/0000-0001-6121-5409"}
 },
 {
@@ -189,6 +188,7 @@ For example:
 {
     "@id": "./",
     "@type": "Dataset",
+    "...": "...",
     "citation": {"@id": "https://doi.org/10.1109/TCYB.2014.2386282"}
 }
 ```
@@ -299,8 +299,7 @@ The [Root Data Entity](root-data-entity) SHOULD have a [publisher] property. Thi
 
 To associate a research project with a [Dataset], the _RO-Crate JSON-LD_ SHOULD contain an entity for the project using type [Organization], referenced by a [funder] property. The project `Organization` SHOULD in turn reference any external [funder], either by using its URL as an `@id` or via a _Contextual Entity_ describing the funder.
 
-{: .tip }
-> To make it very clear where funding is coming from, the _Root Data Entity_ SHOULD also reference funders directly, as well as via a chain of references.
+{% include callout.html type="tip" content="To make it very clear where funding is coming from, the _Root Data Entity_ SHOULD also reference funders directly, as well as via a chain of references." %}
 
 
 ```json
@@ -328,7 +327,7 @@ To associate a research project with a [Dataset], the _RO-Crate JSON-LD_ SHOULD 
 },
 {
   "@id": "https://ror.org/03f0f6041",
-  "@type": "Organisation",
+  "@type": "Organization",
   "identifier": "https://ror.org/03f0f6041",
   "name": "University of Technology Sydney"
 },
@@ -415,6 +414,7 @@ To express the metadata license is different from the _Root Data Entity_, expand
 {
   "@id": "./",
   "@type": "Dataset",
+  "...": "...",
   "license": {
     "@id": "https://creativecommons.org/licenses/by/4.0/"
   }
@@ -422,7 +422,7 @@ To express the metadata license is different from the _Root Data Entity_, expand
 
 ```
 
-If no explicit `license` is expressed on the _RO-Crate Metadata Descriptor_, the `license` expressed on the _Root Data Entity_ apply also on the RO-Crate metadata.
+If no explicit `license` is expressed on the _RO-Crate Metadata Descriptor_, the `license` expressed on the _Root Data Entity_ applies also on the RO-Crate metadata.
 
 
 ## Extra metadata such as Exif
@@ -461,8 +461,7 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
 
 ## Places
 
-To associate a [Data Entity](data-entities) with a _Contextual Entity_ representing a geographical location or region the entity SHOULD have a property of [contentLocation] or [spatialCoverage] with a value of type [Place].
-
+To associate a [Data Entity](data-entities) with a _Contextual Entity_ representing a geographical location or region, the entity SHOULD have a property of [contentLocation] or [spatialCoverage] with a value of type [Place].
 
 To express point or shape geometry it is recommended that a `geo` property on a [Place] entity SHOULD link to a [Geometry] entity, with an [asWKT] property that expresses the point or shape in [Well Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) format.  This example is a point, `POINT ($longitude, $latitude)`, but other asWKT primitives, `LINESTRING` & `POLYGON` SHOULD be used as required.
 
@@ -473,6 +472,7 @@ This example shows how to define a place, using a [geonames] ID:
 {
   "@id": "./",
   "@type": "Dataset",
+  "...": "...",
   "outputOf": "RO-Crate",
   "contact": {
     "@id": "https://orcid.org/0000-0002-3545-944X"
@@ -500,22 +500,19 @@ This example shows how to define a place, using a [geonames] ID:
 }
 ```
 
-**Tip**: To find the `@id` and `identifier` corresponding to a GeoNames HTML page like <https://www.geonames.org/8152662/catalina-park.html> click its `.rdf` button to find the identifier <http://sws.geonames.org/8152662/> referred from <https://sws.geonames.org/8152662/about.rdf>:
+{% include callout.html type="tip" content='To find the `@id` and `identifier` corresponding to a GeoNames HTML page like <https://www.geonames.org/8152662/catalina-park.html>, click its `.rdf` button to download the RDF metadata (<https://sws.geonames.org/8152662/about.rdf>). In the RDF metadata, find the line that looks like the following: 
+`<gn:Feature rdf:about="http://sws.geonames.org/8152662/">`. The part in the quotes is the identifier (in this case, <http://sws.geonames.org/8152662/>) .
+' %}
 
-```xml
-<gn:Feature rdf:about="http://sws.geonames.org/8152662/">
-<!--... -->
-```
+{% include callout.html type="tip" content="Note the use of a JSON-LD [blank node](https://www.w3.org/TR/rdf11-concepts/#dfn-blank-node) identifier here (starting with `_:`) - this indicates to an RO-Crate presentation application that the entity does not stand in its own right, and may be displayed inline (in this case as a map)." %}
 
-**Tip**: Note the use of a JSON-LD blank node identifier here (starting with `_:`) - this indicates to an RO-Crate presentation application that the entity does not stand in its own right, and may be displayed inline (in this case as a map).
+{% include callout.html type="tip" content="It is considered best practice to include the explicit mentioning of the CRS (Coordinate Reference System) identified through its opengis URI at the start of the `asWKT` field.  This provides the essential context to have the numbers in the remainder of the string correctly be plotted on the map.  Note, however, that many GIS related tools expect that information to be fed in via a separate configuration setting or API call. Handling these strings in any app that interacts with such systems might therefore require some extra processing." %}
 
-**Tip**: It is considered best practice to include the explicit mentioning of the CRS (Coordinate Reference System) identified through its opengis URI at the start of the `asWKT` field.  This provides the essential context to have the numbers is the remainder of the string correctly be plotted on te map.  Note however that many GIS related tooling expects that information to be fed in via a seperate config setting or API call. So handling these strings in any app that interacts with such systems might require some extra processing. 
-
-**NOTE**: Any of the schema.org geographical classes and entities MAY be used on a [Place] element to describe geographical points and shapes, and previous versions of this specification did show examples of using [latitude] and [longitude] properties and entities such as [GeoCoordinates], however this results in very verbose JSON-LD and there is some imprecision in the schema.org specification that makes this approach hard to implement in RO-Crate applications for analysis or presentation of crates. We found that developers were resorting to embedding escaped [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON) as string values in RO-Crate; WKT format is more compact and easier to implement and is recommended for use in RO-Crate as shown above.
-
+{% include callout.html type="note" content="Any of the schema.org geographical classes and entities MAY be used on a [Place] element to describe geographical points and shapes, and previous versions of this specification did show examples of using [latitude] and [longitude] properties and entities such as [GeoCoordinates]. However, this results in very verbose JSON-LD, and there is some imprecision in the Schema.org specification that makes this approach hard to implement in applications for analysis or presentation of RO-Crates. We found that developers were resorting to embedding escaped [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON) as string values in RO-Crate; instead of this, WKT format is more compact and easier to implement and is recommended for use in RO-Crate as shown above." %}
+ 
 ## Subjects & keywords
 
-Subject properties (equivalent to a Dublin Core Subject) on the [root data entity](root-data-entity) or a [data entity](data-entities) MUST use the [about] property.
+Subject properties (equivalent to a [Dublin Core Subject](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/subject/)) on the [root data entity](root-data-entity) or a [data entity](data-entities) MUST use the [about] property.
 
 Keyword properties MUST use [keywords]. Note that by Schema.org convention, keywords are given as a single JSON string, with individual keywords separated by commas.
 
@@ -528,7 +525,7 @@ Keyword properties MUST use [keywords]. Note that by Schema.org convention, keyw
 
 ## Time
 
-To describe the _time period_ which a RO-Crate [Data Entity](data-entities) (or the [root data entity](root-data-entity)) is _about_, use [temporalCoverage]:
+To describe the _time period_ which an RO-Crate [Data Entity](data-entities) (or the [root data entity](root-data-entity)) is _about_, use [temporalCoverage]:
 
 ```json
 {
@@ -545,9 +542,9 @@ To describe the _time period_ which a RO-Crate [Data Entity](data-entities) (or 
 
 A [File] or any other entity MAY have a [thumbnail] property which references another file.
 
-For example, the below [RepositoryObject] is related to four files which are all versions of the same image (via [hasFile]) one of which is a thumbnail. The thumbnail MUST be included in the RO-Crate.
+For example, the below [RepositoryObject] is related to four files which are all versions of the same image (via [hasFile]), one of which is a thumbnail. The thumbnail MUST be included in the RO-Crate.
 
-If [thumbnail]s are incidental to the data set, they need not be referenced by [hasPart]  or [hasFile] relationships. but must be in the BagIt manifest if in a _Bagged RO-Crate_.
+If [thumbnail]s are incidental to the data set, they need not be referenced by [hasPart]  or [hasFile] relationships, but they must be in the BagIt manifest if in a [_Bagged RO-Crate_](appendix/implementation-notes#adding-ro-crate-to-bagit).
 
 
 ```json

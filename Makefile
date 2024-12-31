@@ -9,123 +9,132 @@ TAG=1.2.0
 NEXT=1.3-DRAFT
 # Prepare (but do not Publish!) the next version of https://zenodo.org/record/3541888
 # then copy its DOI here so it can be included in generated HTML/PDF
-DOI=10.5281/zenodo.5841615
+DOI=10.5281/zenodo.13751027
 
 all: dependencies release
 
 # Check dependencies before we do the rest
 dependencies: node_modules/.bin/rochtml
 	scripts/schema-context.py --version
-	node_modules/.bin/rochtml --version
+	node_modules/.bin/rochtml --help
+	pip --exists-action=s install 'panflute==2.1.3'
 	pandoc --version
 	xelatex --version
 
 
 clean:
-	rm -rf release "docs/${RELEASE}/"
+	rm -rf release "docs/_specification/${RELEASE}/"
 
 release: release/ro-crate-${TAG}.html release/ro-crate-${TAG}.pdf release/ro-crate-context-${TAG}.jsonld release/ro-crate-metadata.json release/ro-crate-preview.html
 
 # Install dependencies for node
 node_modules/.bin/rochtml:
-	npm install lodash
-	npm install ro-crate-html-js
+	npm install ro-crate-html
 
-docs/${RELEASE}/:
-	mkdir -p docs/${RELEASE}/
+docs/_specification/${RELEASE}/:
+	mkdir -p docs/_specification/${RELEASE}/
 
-docs/${RELEASE}/_metadata.liquid: docs/${RELEASE}/ docs/${DRAFT}/_metadata.liquid
-	sed s/${DRAFT}/${RELEASE}/g < docs/${DRAFT}/_metadata.liquid > docs/${RELEASE}/_metadata.liquid
-	sed -i s/TAG/${TAG}/g docs/${RELEASE}/_metadata.liquid
-	sed -i "/^<!-- NOTE: Before release.*/ d" docs/${RELEASE}/_metadata.liquid
-	sed -i "/^END NOTE -->/ d" docs/${RELEASE}/_metadata.liquid
-	sed -i "s/^* Status:.*/* Status: Recommendation/" docs/${RELEASE}/_metadata.liquid
-	sed -i "s/^* Published:.*/* Published: `date -I`/" docs/${RELEASE}/_metadata.liquid
-	sed -i "s,^* Cite as:.*,* Cite as: <https://doi.org/${DOI}> (this version)," docs/${RELEASE}/_metadata.liquid
+docs/_specification/${RELEASE}/_metadata.liquid: docs/_specification/${RELEASE}/ docs/_specification/${DRAFT}/_metadata.liquid
+	sed s/${DRAFT}/${RELEASE}/g < docs/_specification/${DRAFT}/_metadata.liquid > docs/_specification/${RELEASE}/_metadata.liquid
+	sed -i s/TAG/${TAG}/g docs/_specification/${RELEASE}/_metadata.liquid
+	sed -i "/^<!-- NOTE: Before release.*/ d" docs/_specification/${RELEASE}/_metadata.liquid
+	sed -i "/^END NOTE -->/ d" docs/_specification/${RELEASE}/_metadata.liquid
+	sed -i "s/^* Status:.*/* Status: Recommendation/" docs/_specification/${RELEASE}/_metadata.liquid
+	sed -i "s/^* Published:.*/* Published: `date -I`/" docs/_specification/${RELEASE}/_metadata.liquid
+	sed -i "s,^* Cite as:.*,* Cite as: <https://doi.org/${DOI}> (this version)," docs/_specification/${RELEASE}/_metadata.liquid
 	
 
-docs/${RELEASE}/.references.md: docs/${RELEASE}/ docs/_includes/references.liquid
-	echo "---\ntitle: References\n---\n\n" > docs/${RELEASE}/.references.md
-	echo "# References" >> docs/${RELEASE}/.references.md
+docs/_specification/${RELEASE}/.references.md: docs/_specification/${RELEASE}/ docs/_includes/references.liquid
+	echo "---\ntitle: References\n---\n\n" > docs/_specification/${RELEASE}/.references.md
+	echo "# References" >> docs/_specification/${RELEASE}/.references.md
 	sed 's,^\[,* \\[,' < docs/_includes/references.liquid | \
 		sed 's,\]: ,\\]: <,' |\
 		sed 's,^\*.*$$,\0>,' \
-		>> docs/${RELEASE}/.references.md
+		>> docs/_specification/${RELEASE}/.references.md
 
 
-docs/${RELEASE}/*.md: docs/${RELEASE}/ docs/${DRAFT}/*.md docs/${DRAFT}/_metadata.liquid docs/${RELEASE}/.references.md
-	for f in docs/${DRAFT}/*.md ; do \
-		sed s/${DRAFT}/${RELEASE}/g < $$f > docs/${RELEASE}/`basename $$f`;\
+docs/_specification/${RELEASE}/*.md: docs/_specification/${RELEASE}/ docs/_specification/${DRAFT}/*.md docs/_specification/${DRAFT}/_metadata.liquid docs/_specification/${RELEASE}/.references.md
+	for f in docs/_specification/${DRAFT}/*.md ; do \
+		sed s/${DRAFT}/${RELEASE}/g < $$f > docs/_specification/${RELEASE}/`basename $$f`;\
     done	
 
-docs/${RELEASE}/appendix/:
-	mkdir -p docs/${RELEASE}/appendix/
+docs/_specification/${RELEASE}/appendix/:
+	mkdir -p docs/_specification/${RELEASE}/appendix/
 
-docs/${RELEASE}/appendix/*.md: docs/${RELEASE}/appendix/ docs/${DRAFT}/appendix/*.md
-	for f in docs/${DRAFT}/appendix/*.md ; do \
-		sed s/${DRAFT}/${RELEASE}/g < $$f > docs/${RELEASE}/appendix/`basename $$f` ;\
+docs/_specification/${RELEASE}/appendix/*.md: docs/_specification/${RELEASE}/appendix/ docs/_specification/${DRAFT}/appendix/*.md
+	for f in docs/_specification/${DRAFT}/appendix/*.md ; do \
+		sed s/${DRAFT}/${RELEASE}/g < $$f > docs/_specification/${RELEASE}/appendix/`basename $$f` ;\
 	done
 
-docs/${RELEASE}/ro-crate-metadata.json: docs/${DRAFT}/ro-crate-metadata.json
-	sed s/${DRAFT}/${RELEASE}/g < docs/${DRAFT}/ro-crate-metadata.json > docs/${RELEASE}/ro-crate-metadata.json
-	sed -i "s/UNPUBLISHED/`date -I`/g" docs/${RELEASE}/ro-crate-metadata.json
-	sed -i "s/TAG/${TAG}/g" docs/${RELEASE}/ro-crate-metadata.json
-	sed -i "s,DOI,${DOI},g" docs/${RELEASE}/ro-crate-metadata.json
-	sed -i "s;ZENODO;`echo ${DOI}|sed s,10.5281/zenodo.,,`;g" docs/${RELEASE}/ro-crate-metadata.json
-	rm -f docs/${RELEASE}/ro-crate-metadata.jsonld
-	ln -s ro-crate-metadata.json docs/${RELEASE}/ro-crate-metadata.jsonld
+docs/_specification/${RELEASE}/ro-crate-metadata.json: docs/_specification/${DRAFT}/ro-crate-metadata.json
+	sed s/${DRAFT}/${RELEASE}/g < docs/_specification/${DRAFT}/ro-crate-metadata.json > docs/_specification/${RELEASE}/ro-crate-metadata.json
+	sed -i "s/UNPUBLISHED/`date -I`/g" docs/_specification/${RELEASE}/ro-crate-metadata.json
+	sed -i "s/TAG/${TAG}/g" docs/_specification/${RELEASE}/ro-crate-metadata.json
+	sed -i "s,DOI,${DOI},g" docs/_specification/${RELEASE}/ro-crate-metadata.json
+	sed -i "s;ZENODO;`echo ${DOI}|sed s,10.5281/zenodo.,,`;g" docs/_specification/${RELEASE}/ro-crate-metadata.json
+	rm -f docs/_specification/${RELEASE}/ro-crate-metadata.jsonld
+	ln -s ro-crate-metadata.json docs/_specification/${RELEASE}/ro-crate-metadata.jsonld
 
-docs/${RELEASE}/ro-crate-preview.html: dependencies docs/${RELEASE}/ro-crate-metadata.json
-	node_modules/.bin/rochtml docs/${RELEASE}/ro-crate-metadata.json
+docs/_specification/${RELEASE}/ro-crate-preview.html: dependencies docs/_specification/${RELEASE}/ro-crate-metadata.json
+	node_modules/.bin/rochtml docs/_specification/${RELEASE}/ro-crate-metadata.json
 
-docs/${RELEASE}/context.jsonld: dependencies docs/${RELEASE}/ scripts/schema-context.py
-	scripts/schema-context.py ${RELEASE} ${TAG} > docs/${RELEASE}/context.jsonld
+docs/_specification/${RELEASE}/context.jsonld: dependencies docs/_specification/${RELEASE}/ scripts/schema-context.py
+	scripts/schema-context.py ${RELEASE} ${TAG} > docs/_specification/${RELEASE}/context.jsonld
 
 release/:
 	mkdir -p release
 
-release/ro-crate-${TAG}.md: dependencies release/ docs/${RELEASE}/_metadata.liquid docs/${RELEASE}/.references.md docs/${RELEASE}/*.md docs/${RELEASE}/appendix/*.md docs/_includes/references.liquid
-	cp docs/${RELEASE}/_metadata.liquid docs/${RELEASE}/.metadata.md
+release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}/_metadata.liquid docs/_specification/${RELEASE}/.references.md docs/_specification/${RELEASE}/*.md docs/_specification/${RELEASE}/appendix/*.md docs/_includes/references.liquid
+	cp docs/_specification/${RELEASE}/_metadata.liquid docs/_specification/${RELEASE}/.metadata.md
 	pandoc --from=markdown+gfm_auto_identifiers --to=markdown+gfm_auto_identifiers \
-	   docs/${RELEASE}/.metadata.md \
-	   `grep ^nav_order: docs/${RELEASE}/*.md | sort -n -k 2 | grep -v index.md| grep -v about.md | sed s/:.*//` \
-	   docs/${RELEASE}/appendix/*.md docs/_includes/references.liquid docs/${RELEASE}/.references.md |\
-	   grep -v '{%' > release/ro-crate-${TAG}.md
+	   docs/_specification/${RELEASE}/.metadata.md \
+	   `grep ^nav_order: docs/_specification/${RELEASE}/*.md | sort -n -k 2 | grep -v index.md| grep -v about.md | sed s/:.*//` \
+	   `grep ^nav_order: docs/_specification/${RELEASE}/appendix/*.md | sort -n -k 2 | sed s/:.*//` \
+	   docs/_includes/references.liquid docs/_specification/${RELEASE}/.references.md \
+	   > release/ro-crate-${TAG}.md
 	# Our own rendering of Note/Warning/Tip
-	sed -i -E 's/\{: ?\.note ?\} \\>/**Note**:/g' release/ro-crate-${TAG}.md
-	sed -i -E 's/\{: ?\.warning ?\} \\>/**Warning**:/g' release/ro-crate-${TAG}.md
-	sed -i -E 's/\{: ?\.tip ?\} \\>/**Tip**:/g' release/ro-crate-${TAG}.md
+	sed -i -E 's/\{% include callout.html //g' release/ro-crate-${TAG}.md
+	sed -i -E 's/\" %}//g' release/ro-crate-${TAG}.md
+	sed -i -E 's/type=\"note\" content=\"/**Note**: /g' release/ro-crate-${TAG}.md
+	sed -i -E 's/type=\"warning\" content=\"/**Warning** :/g' release/ro-crate-${TAG}.md
+	sed -i -E 's/type=\"tip\" content=\"/**Tip**: /g' release/ro-crate-${TAG}.md
+	sed -i -E 's/type=\"important\" content=\"/**Important**: /g' release/ro-crate-${TAG}.md
+	# remove any remaining lines beginning with {%
+	sed -i -E 's/\{%.*//g' release/ro-crate-${TAG}.md
 	# Skip intermediate table-of-contents
 	sed -i -E 's/1..*\{:toc\}//g' release/ro-crate-${TAG}.md
 	sed -i -E 's/## Table of contents//g' release/ro-crate-${TAG}.md
 	sed -i -E 's/\{:[^}]*\}//g' release/ro-crate-${TAG}.md
 	# Fix internal links to work in single-page
-	sed -i -E 's,]\(([^:)]*/)*([^:)]*)\.md\),](#\2),g' release/ro-crate-${TAG}.md
-	sed -i -E 's,]\([^):]*\.md#([^)]*)\),](#\1),g' release/ro-crate-${TAG}.md
-
+	# first change links to website pages outside the spec, e.g. ../../tools -> https://www.researchobject.org/ro-crate/tools
+	sed -r -i -E 's,]\(\.\./\.\./([^:)]*)\),](https://www.researchobject.org/ro-crate/\1),g' release/ro-crate-${TAG}.md
+	sed -r -i -E 's,]\((\.\./)?([^:)]*\.(json|html))\),](https://www.researchobject.org/ro-crate/specification/${RELEASE}/\2),g' release/ro-crate-${TAG}.md
+	# change links without a #, e.g. appendix/jsonld to #jsonld
+	sed -r -i -E 's,]\(([^:)]*/)*([^:)]*)(\.md)?\),](#\2),g' release/ro-crate-${TAG}.md
+	# change links with a #, e.g. contextual-entities#people to #people
+	sed -r -i -E 's,]\([^):]*(\.md)?#([^)]*)\),](#\2),g' release/ro-crate-${TAG}.md
 
 release/ro-crate-${TAG}.html: dependencies release/ release/ro-crate-${TAG}.md
 	egrep -v '^{:(\.no_)?toc}' release/ro-crate-${TAG}.md | \
 	pandoc --standalone --number-sections --toc --section-divs \
-	  --filter scripts/pandoc-admonition.py \
 	  --metadata pagetitle="RO-Crate Metadata Specification ${RELEASE}" \
 	  --from=markdown+gfm_auto_identifiers -o release/ro-crate-${TAG}.html
 
 release/ro-crate-${TAG}.pdf: dependencies release/ release/ro-crate-${TAG}.md
 	egrep -v '^{:(\.no_)?toc}' release/ro-crate-${TAG}.md | \
 	pandoc --pdf-engine xelatex --variable=hyperrefoptions:colorlinks=true,allcolors=blue \
-	  --variable papersize=a4 --filter scripts/pandoc-admonition.py \
+	  --variable papersize=a4 \
 	  --number-sections --toc  --metadata pagetitle="RO-Crate Metadata Specification ${RELEASE}" \
 	  --from=markdown+gfm_auto_identifiers -o release/ro-crate-${TAG}.pdf
 
-release/ro-crate-context-${TAG}.jsonld: dependencies release/ docs/${RELEASE}/context.jsonld
-	cp docs/${RELEASE}/context.jsonld release/ro-crate-context-${TAG}.jsonld
+release/ro-crate-context-${TAG}.jsonld: dependencies release/ docs/_specification/${RELEASE}/context.jsonld
+	cp docs/_specification/${RELEASE}/context.jsonld release/ro-crate-context-${TAG}.jsonld
 
-release/ro-crate-metadata.json: dependencies release/ docs/${RELEASE}/ro-crate-metadata.json
-	cp docs/${RELEASE}/ro-crate-metadata.json release/ro-crate-metadata.json
+release/ro-crate-metadata.json: dependencies release/ docs/_specification/${RELEASE}/ro-crate-metadata.json
+	cp docs/_specification/${RELEASE}/ro-crate-metadata.json release/ro-crate-metadata.json
 
-release/ro-crate-preview.html: dependencies release/ docs/${RELEASE}/ro-crate-preview.html
-	cp docs/${RELEASE}/ro-crate-preview.html release/ro-crate-preview.html
+release/ro-crate-preview.html: dependencies release/ docs/_specification/${RELEASE}/ro-crate-preview.html
+	cp docs/_specification/${RELEASE}/ro-crate-preview.html release/ro-crate-preview.html
 
 # From https://stackoverflow.com/a/18137056
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))

@@ -322,114 +322,32 @@ evolved from this profile to conform with RO-Crate 1.1's
 
 ## ARC RO-Crate profile
 
-A profile of RO-Crate for [Annotated Research Contexts](https://nfdi4plants.org/content/learn-more/annotated-research-context.html) (ARC), developed by [DataPLANT](https://nfdi4plants.org/).
+The [ARC RO-Crate profile](https://github.com/nfdi4plants/arc-ro-crate-profile) describes [Annotated Research Contexts](https://arc-rdm.org/) (ARC), developed by [DataPLANT](https://nfdi4plants.org/).
 An ARC consists of [ISA](https://isa-specs.readthedocs.io/en/latest/isamodel.html) metadata describing the experimental setup and computational workflows given in CWL.
-The current [profile](https://github.com/nfdi4plants/ARC-specification/blob/main/ARC%20specification.md#appendix-conversion-of-arcs-to-ro-crates) requires the crate to follow the ISA Investigation profile on the top level.
-In the future, the ARC profile will be extended to not only cover the ISA part of an ARC, but also computational workflows, following the existing profiles for this kind of data.
+The current profile is a combination of the [ISA RO-Crate profile](https://github.com/nfdi4plants/isa-ro-crate-profile) and the [ARC CWL RO-Crate profile](https://github.com/nfdi4plants/arc-cwl-ro-crate-profile), see details below.
+It requires the crate to follow the ISA Investigation profile on the top level.
+The investigation object contains studies and assays from the ISA model, as well as computational workflows.
+The core entity of both sub-profiles is the type `LabProcess` defined by [Bioschemas](https://bioschemas.org/), which is used to describe processes leading to data files in a parametrized way.
 
 How such an RO-Crate can be generated from an ARC is described in the [arc-to-rocrate](https://github.com/nfdi4plants/arc-to-rocrate) repository, which also contains scripts to perform the conversion.
 
-## ISA Profile
+## ISA RO-Crate Profile
 
-A profile of RO-Crate for experimental data in plant sciences that is described by metadata following the [ISA model](https://isa-specs.readthedocs.io/en/latest/isamodel.html).
+The [ISA RO-Crate profile](https://github.com/nfdi4plants/arc-to-rocrate/blob/main/profiles/investigation.md) describes experimental data in plant sciences that is annotated by metadata following the [ISA model](https://isa-specs.readthedocs.io/en/latest/isamodel.html).
 Such datasets consist of three types of data entities: `Investigation`, `Study` and `Assay`.
-The [profile](https://github.com/nfdi4plants/arc-to-rocrate/blob/main/profiles/investigation.md) adds requirements of the crate such that the data folders match the Investigation, Study and Assay objects of the [ISA model](https://isa-specs.readthedocs.io/en/latest/isamodel.html).
+The profile adds requirements of the crate such that the data folders match the Investigation, Study and Assay objects of the [ISA model](https://isa-specs.readthedocs.io/en/latest/isamodel.html).
+The description of experimental processes that produce the data uses the [Bioschemas](https://bioschemas.org/) type `LabProcess` as its core entity.
+It describes how data and samples are derived from each other in a graph model based on formalized parameters as key-value pairs.
+Profiles for all included types can be found in the [full version](https://github.com/nfdi4plants/isa-ro-crate-profile).
 
-The profile here describes the top-level `Investigation` object (a dataset) and contained datasets following the `Study` and `Assay` profiles.
-Profiles for other included types can be found in the [full version](https://github.com/nfdi4plants/isa-ro-crate-profile).
+## ARC CWL RO-Crate Profile
 
-### ISA Investigation Profile
-
-An `Investigation` object describes the top-level meatadata of a scientific investigation, e.g. descriptions of the context, the title, authors and publications (see [ISA model](https://isa-specs.readthedocs.io/en/latest/isamodel.html) for details).
-It SHOULD contain further datasets that follow the `Study` profile.
-
-- [`Dataset`](http://schema.org/dataset)
-  - [`identifier`](http://schema.org/identifier): [`Text`](https://schema.org/Text) or [`URL`](https://schema.org/URL) (required)
-  - [`headline`](http://schema.org/headline): [`Text`](https://schema.org/Text) (required)
-  - [`description`](http://schema.org/description): [`Text`](https://schema.org/Text) (required)
-  - [`additionalType`](https://schema.org/additionalType): [`Text`](https://schema.org/Text) (required)
-
-  - [`creator`](http://schema.org/creator): [`Person`](https://schema.org/Person) (recommended)
-  - [`mentions`](http://schema.org/mentions): [`DefinedTermSet`](https://schema.org/DefinedTermSet) (recommended)
-
-  - [`dateCreated`](http://schema.org/dateCreated): [`Date`](https://schema.org/Date) or [`DateTime`](https://schema.org/DateTime) (optional)
-  - [`datePublished`](http://schema.org/datePublished): [`Date`](https://schema.org/Date) or [`DateTime`](https://schema.org/DateTime) (optional)
-  - [`citation`](http://schema.org/citation): [`ScholarlyArticle`](https://schema.org/ScholarlyArticle) (optional)
-  - [`disambiguatingDescription`](http://schema.org/disambiguatingDescription): [`Text`](https://schema.org/Text) (optional)
-  - [`hasPart`](http://schema.org/hasPart): [`Dataset`](http://schema.org/dataset) (optional)
-
-### ISA Study Profile
-
-A `Study` contains information on the subject under study, its characteristics and any treatments applied(see [ISA model](https://isa-specs.readthedocs.io/en/latest/isamodel.html) for details).
-It contexualizes further datasets that follow the `Assay` profile.
-
-- [`Dataset`](http://schema.org/dataset)
-  - [`identifier`](http://schema.org/identifier): [`Text`](https://schema.org/Text) or [`URL`](https://schema.org/URL) (required)
-  - [`headline`](http://schema.org/headline): [`Text`](https://schema.org/Text) (required)
-  - [`additionalType`](https://schema.org/additionalType): [`Text`](https://schema.org/Text) (required)
-  - [`creator`](http://schema.org/creator): [`Person`](https://schema.org/Person) (required)
-
-  - [`hasPart`](https://schema.org/hasPart): [`Dataset`](https://schema.org/Dataset) or [`File`](https://schema.org/MediaObject) (recommended)
-  - [`about`](https://schema.org/about): [`LabProcess`](https://bioschemas.org/LabProcess) (recommended)
-  - [`description`](https://schema.org/description): [`Text`](https://schema.org/Text) (recommended)
-  - [`dateCreated`](https://schema.org/dateCreated): [`Date`](https://schema.org/Date) or [`DateTime`](https://schema.org/DateTime) (recommended)
-  - [`dateModified`](https://schema.org/dateModified): [`Date`](https://schema.org/Date) or [`DateTime`](https://schema.org/DateTime) (recommended)
-
-  - [`datePublished`](https://schema.org/datePublished): [`Date`](https://schema.org/Date) or [`DateTime`](https://schema.org/DateTime) (optional)
-  - [`citation`](https://schema.org/citation): [`ScholarlyArticle`](https://schema.org/ScholarlyArticle) (optional)
-  - [`comment`](https://schema.org/comment): [`Comment`](https://schema.org/Comment) (optional)
-
-### ISA Assay Profile
-
-An `Assay` contains information about a test performed either on material taken from a subject or on a whole initial subject(see [ISA model](https://isa-specs.readthedocs.io/en/latest/isamodel.html) for details).
-
-- [`Dataset`](http://schema.org/dataset)
-  - [`additionalType`](https://schema.org/additionalType): [`Text`](https://schema.org/Text) or [`URL`](https://schema.org/URL) (required)
-  - [`creator`](https://schema.org/creator): [`Person`](https://schema.org/Person) (required)
-  - [`identifier`](https://schema.org/identifier): [`Text`](https://schema.org/Text) or [`URL`](https://schema.org/URL) (required)
-  - [`headline`](https://schema.org/headline): [`Text`](https://schema.org/Text) (required)
-  - [`about`](https://schema.org/about): [`LabProcess`](https://bioschemas.org/LabProcess) (required)
-  - [`measurementMethod`](https://schema.org/measurementMethod): [`URL`](https://schema.org/URL) or [`DefinedTerm`](https://schema.org/DefinedTerm) (required)
-  - [`measurementTechnique`](https://schema.org/measurementTechnique): [`URL`](https://schema.org/URL) or [`DefinedTerm`](https://schema.org/DefinedTerm) (required)
-
-  - [`hasPart`](https://schema.org/hasPart): [`File`](https://schema.org/MediaObject) (recommended)
-  - [`description`](https://schema.org/description): [`Text`](https://schema.org/Text) (recommended)
-  - [`variableMeasured`](https://schema.org/variableMeasured): [`Text`](https://schema.org/Text) or [`PropertyValue`](https://schema.org/PropertyValue) (recommended)
-  - [`dateModified`](https://schema.org/dateModified): [`Date`](https://schema.org/Date) or [`DateTime`](https://schema.org/DateTime) (recommended)
-
-  - [`dateCreated`](https://schema.org/dateCreated): [`Date`](https://schema.org/Date) or [`DateTime`](https://schema.org/DateTime) (optional)
-  - [`citation`](https://schema.org/citation): [`ScholarlyArticle`](https://schema.org/ScholarlyArticle) (optional)
-  - [`comment`](https://schema.org/comment): [`Comment`](https://schema.org/Comment) (optional)
-
-<!-- - [`Person`](http://schema.org/Person)
-  - [`givenName`](http://schema.org/givenName): [`Text`](https://schema.org/Text) (required)
-  - [`familyName`](http://schema.org/familyName): [`Text`](https://schema.org/Text) (required)
-  
-  - [`email`](http://schema.org/email): [`Text`](https://schema.org/Text) (recommended)
-  - [`affiliation`](http://schema.org/affiliation): [`Organization`](https://schema.org/Organization) (recommended) 
-  - [`jobTitle`](http://schema.org/jobTitle): [`DefinedTerm`](https://schema.org/DefinedTerm) (recommended)
-   
-  - [`additionalName`](http://schema.org/additionalName): [`Text`](https://schema.org/Text) (optional)
-  - [`address`](http://schema.org/address): [`PostalAddress`](https://schema.org/PostalAddress) or [`Text`](https://schema.org/Text) (optional)
-  - [`telephone`](http://schema.org/telephone): [`Text`](https://schema.org/Text) (optional)
-  - [`faxNumber`](http://schema.org/faxNumber): [`Text`](https://schema.org/Text) (optional)
-  - [`disambiguatingDescription`](http://schema.org/disambiguatingDescription): [`Text`](https://schema.org/Text) (optional)
-  
-- [`ScholarlyArticle`](http://schema.org/ScholarlyArticle)
-  - [`sameAs`](http://schema.org/sameAs): [`URL`](https://schema.org/URL) (required)
-  - [`headline`](http://schema.org/headline): [`Text`](https://schema.org/Text) (required)
-  - [`author`](http://schema.org/author): [`Person`](https://schema.org/Person) (required)
-   
-  - [`url`](http://schema.org/url): [`URL`](https://schema.org/URL) (recommended)
-   
-  - [`creativeWorkStatus`](http://schema.org/creativeWorkStatus): [`DefinedTerm`](https://schema.org/DefinedTerm) (optional)
-  - [`disambiguatingDescription`](http://schema.org/disambiguatingDescription): [`Text`](https://schema.org/Text) (optional) -->
+The [ARC CWL RO-Crate profile](https://github.com/nfdi4plants/arc-cwl-ro-crate-profile) extends the existing [Workflow Run Crate profile](https://w3id.org/ro/wfrun/workflow/) in an ARC-specific context.
+It uses the same process graph types (`LabProtocol`,`LabProcess`) as the [ISA profile](#isa-ro-crate-profile) to further annotate parameters of workflows (equivalent to protocols in ISA) and runs (equivalent to processes in ISA).  
 
 ## Electronic Lab Notebook (ELN)
 
-The [ELN file format](https://github.com/TheELNConsortium/TheELNFileFormat) has been defined as an archive format to capture Electronic Laboratory Notebooks (ELN).  An archive is a ZIP file with the `.eln` extension, containing a single root folder which is an RO-Crate. The [ELN specification](https://github.com/TheELNConsortium/TheELNFileFormat/blob/master/SPECIFICATION.md) is based on the RO-Crate specification and is exported by Lab notebook software including [eLabFTW](https://www.elabftw.net/) and ELN archives can be [previewed in Dataverse](https://github.com/gdcc/dataverse-previewers/pull/21) 
-
-* [ELN examples](https://github.com/TheELNConsortium/TheELNFileFormat/tree/master/examples)
+The [ELN file format](eln) has been defined as an archive format to capture Electronic Laboratory Notebooks (ELN).  The file format is a ZIP file with an embedded `ro-crate-metadata.json`. ELN is implemented by [eLabFTW](https://www.elabftw.net/), [Rspace](https://www.researchspace.com/) and other lab note book tools.
 
 
 ## RO-Crates-and-Excel

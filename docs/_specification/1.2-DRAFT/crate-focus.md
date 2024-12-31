@@ -3,7 +3,7 @@ title: The focus of an RO-Crate
 redirect_from:
   - /1.2-DRAFT/crate-focus
 excerpt: |
-  In addition to simple data packaging, Crates may have a "main" entry point or topic (referenced with a singleton `mainEntity` property), or function as a bundle of one or more Contextual Entities referenced via the `mentions` property.
+  In addition to simple data packaging, RO-Crates may have a "main" entry point or topic (referenced with a singleton `mainEntity` property), or function as a bundle of one or more Contextual Entities referenced via the `mentions` property.
 nav_order: 7
 jekyll-mentions: false
 parent: RO-Crate 1.2-DRAFT
@@ -26,18 +26,19 @@ parent: RO-Crate 1.2-DRAFT
    limitations under the License.
 -->
 
-# The focus of an RO-Crate
-<div id="crate-focus"></div>
+# The focus of an RO-Crate {#crate-focus}
 
-In addition to simple data packaging, Crates may have a "main" entry point or topic (referenced with a singleton `mainEntity` property), or function as a bundle of one or more Contextual Entities referenced via the `mentions` property.
+In addition to simple data packaging, RO-Crates may have a "main" entry point or topic (referenced with a singleton `mainEntity` property), or function as a bundle of one or more Contextual Entities referenced via the `mentions` property.
 
-## Crates with a "main entity"
+## RO-Crates with a "main entity"
 
-An RO-Crate may have a single main entity that is considered the point, or focus of the crate.
+An RO-Crate may have a single main entity that is considered the point, or focus of the RO-Crate. This may be referenced from the _Root Data Entity_ using the [mainEntity] property.
 
-### Crates with a data entity as mainEntity
+### RO-Crates with a data entity as `mainEntity`
 
-In the [Workflow RO-Crate profile](https://www.researchobject.org/ro-crate/profiles.html#workflow-ro-crate-profile), where the `mainEntity` has a compound type `["File", "SoftwareSourceCode", "ComputationalWorkflow"]`, the use of `mainEntity` singles-out the workflow file from supporting files.
+The focus of an RO-Crate may be a single _Data Entity_ supplemented by other data and/or contextual entities.
+
+For example, in the [Workflow RO-Crate profile](https://www.researchobject.org/ro-crate/profiles.html#workflow-ro-crate-profile), the use of `mainEntity` singles-out the workflow file from supporting files.
 
 ```json
 {
@@ -46,6 +47,7 @@ In the [Workflow RO-Crate profile](https://www.researchobject.org/ro-crate/profi
     "name": "Example Workflow",
     "description": "An example workflow RO Crate",
     "license": "Apache-2.0",
+    "datePublished": "2023-01-01",
     "mainEntity": {
       "@id": "example_workflow.cwl"
     },
@@ -63,18 +65,19 @@ In the [Workflow RO-Crate profile](https://www.researchobject.org/ro-crate/profi
 }
 ```
 
-### Crates with a contextual entity as mainEntity
+### RO-Crates with a contextual entity as `mainEntity`
 
-The focus of the RO-Crate may be a description of a _Contextual Entity_, for example in an RO-Crate used in a repository or encyclopedia where a RepositoryObject bundles together images and other files, but the main focus of the RO-Crate is on describing a person.
+The focus of the RO-Crate may be a description of a _Contextual Entity_, for example in an RO-Crate used in a repository or encyclopedia where a `RepositoryObject` bundles together images and other files, but the main focus of the RO-Crate is on describing a person.
 
 ```json
 {
     "@id": "./",
     "@type": ["Dataset", "RepositoryObject"],
     "name": "Reibey, Mary (1777 - 1855)",
+    "...": "...",
     "mainEntity": {
         "@id": "https://en.wikipedia.org/wiki/Mary_Reibey"
-    }
+    },
     "hasPart" : [
         {"@id": "photo1.jpg"},
         {"@id": "photo2.jpg"}
@@ -89,11 +92,11 @@ The focus of the RO-Crate may be a description of a _Contextual Entity_, for exa
 }
 ```
 
-## Crates which describe _Contextual Entities_
+## RO-Crates which focus on multiple _Contextual Entities_
 
-RO-Crates may describe _Contextual Entities_ which are linked to the [Root Dataset](root-data-entity) via `mentions` relationships.
+RO-Crates may describe _Contextual Entities_ which are linked to the [Root Data Entity](root-data-entity) via `mentions` relationships.
 
-For example, RO-Crates can be used as containers for schema.org-style vocabularies (here also extending the [RO-Crate JSON-LD context](appendix/jsonld.html#ro-crate-json-ld-context) to define the namespace for `txc:`):
+For example, RO-Crates can be used as containers for Schema.org-style vocabularies (here also [extending the RO-Crate JSON-LD context](appendix/jsonld.html#ro-crate-json-ld-context) to define the namespace for `txc:`):
 
 ```json
 { "@context": [
@@ -147,66 +150,68 @@ For example, RO-Crates can be used as containers for schema.org-style vocabulari
 ```
 
 
-The following example shows both a `mainEntity` which is a _Data Entity_ and a _Contextual Entity_ which is a test suite (`#test1`).
+The following example shows how both `mainEntity` and `mentions` can be used together, in this case to describe a workflow with a test suite:
+  * the `mainEntity` is the workflow file, a _Data Entity_
+  * the test suite `#test1` is a _Contextual Entity_ highlighted using `mentions`.
 
 ```json
+{
+    "@id": "./",
+    "@type": "Dataset",
+    "name": "sort-and-change-case",
+    "description": "sort lines and change text to upper case",
+    "license": "Apache-2.0",
+    "mainEntity": {
+        "@id": "sort-and-change-case.ga"
+    },
+    "mentions": [ {"@id": "#test1"} ],
+    "hasPart": [
         {
-            "@id": "./",
-            "@type": "Dataset",
-            "name": "sort-and-change-case",
-            "description": "sort lines and change text to upper case",
-            "license": "Apache-2.0",
-            "mainEntity": {
-                "@id": "sort-and-change-case.ga"
-            },
-            "mentions": [ {"@id": "#test1"} ],
-            "hasPart": [
-                {
-                    "@id": "sort-and-change-case.ga"
-                },
-                {
-                    "@id": "test/test1/sort-and-change-case-test.yml"
-                }
-            ]
-        },
-		    {
-            "@id": "#test1",
-            "name": "test1",
-            "@type": "TestSuite",
-            "instance": [
-                {"@id": "#test1_1"}
-            ],
-            "definition": {"@id": "test/test1/sort-and-change-case-test.yml"}
+            "@id": "sort-and-change-case.ga"
         },
         {
-            "@id": "#test1_1",
-            "name": "test1_1",
-            "@type": "TestInstance",
-            "runsOn": {"@id": "#jenkins"},
-            "url": "http://example.org/jenkins",
-            "resource": "job/tests/"
-        },
-        {
-            "@id": "test/test1/sort-and-change-case-test.yml",
-            "@type": [
-                "File",
-                "TestDefinition"
-            ],
-            "conformsTo": {"@id": "#planemo"}
-        },
-        {
-            "@id": "#jenkins",
-            "@type": "TestService",
-            "name": "Jenkins",
-            "url": {"@id": "https://www.jenkins.io"}
-        },
-        {
-            "@id": "#planemo",
-            "@type": "SoftwareApplication",
-            "name": "Planemo",
-            "url": {"@id": "https://github.com/galaxyproject/planemo"},
-            "version": ">=0.70"
+            "@id": "test/test1/sort-and-change-case-test.yml"
         }
+    ]
+},
+{
+    "@id": "#test1",
+    "name": "test1",
+    "@type": "TestSuite",
+    "instance": [
+        {"@id": "#test1_1"}
+    ],
+    "definition": {"@id": "test/test1/sort-and-change-case-test.yml"}
+},
+{
+    "@id": "#test1_1",
+    "name": "test1_1",
+    "@type": "TestInstance",
+    "runsOn": {"@id": "#jenkins"},
+    "url": "http://example.org/jenkins",
+    "resource": "job/tests/"
+},
+{
+    "@id": "test/test1/sort-and-change-case-test.yml",
+    "@type": [
+        "File",
+        "TestDefinition"
+    ],
+    "conformsTo": {"@id": "#planemo"}
+},
+{
+    "@id": "#jenkins",
+    "@type": "TestService",
+    "name": "Jenkins",
+    "url": {"@id": "https://www.jenkins.io"}
+},
+{
+    "@id": "#planemo",
+    "@type": "SoftwareApplication",
+    "name": "Planemo",
+    "url": {"@id": "https://github.com/galaxyproject/planemo"},
+    "version": ">=0.70"
+}
 ```
 
 {% include references.liquid %}

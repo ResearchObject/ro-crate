@@ -33,7 +33,7 @@ COMP Superscalar ([COMPSs](https://compss.bsc.es/)) is a task-based programming 
 
 COMPSs provides a programming interface for the development of applications in Python/Java/C/C++, a runtime system that exploits the inherent parallelism of applications at execution time, and a rich ecosystem for the operation, monitoring, performance evaluation and integration with Jupyter/Jupyterlab.
 
-The COMPSs runtime includes the capacity of automatically recording details of the application’s execution as metadata, also known as [Workflow Provenance](https://compss-doc.readthedocs.io/en/stable/Sections/05_Tools/04_Workflow_Provenance.html). The metadata is recorded in RO-Crate format, following [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/1.0) and [Workflow Run Crate](https://w3id.org/ro/wfrun/workflow/0.4) profiles. With workflow provenance, you are able to share not only your workflow application (i.e. the source code) but also your workflow run (i.e. the datasets used as inputs, and the outputs generated as results). 
+The COMPSs runtime includes the capacity of automatically recording details of the application’s execution as metadata, also known as [Workflow Provenance](https://compss-doc.readthedocs.io/en/stable/Sections/05_Tools/04_Workflow_Provenance.html). The metadata is recorded in RO-Crate format, following [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/1.0) and [Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/) profiles. With workflow provenance, you are able to share not only your workflow application (i.e. the source code) but also your workflow run (i.e. the datasets used as inputs, and the outputs generated as results). 
 
 Provenance information can be useful for a number of things, including Governance, Reproducibility, Replicability, Traceability, or Knowledge Extraction, among others. In our case, we have initially targeted workflow provenance recording to enable users to publish research results obtained with COMPSs as artifacts that can be cited in scientific publications with their corresponding DOI, by using [WorkflowHub](https://workflowhub.eu/). Both workflow provenance metadata and its publication in WorkflowHub enable the reproducibility of the workflows.
 
@@ -60,9 +60,9 @@ _IEEE/ACM Workshop on Workflows in Support of Large-Scale Science (WORKS)_ (1-9)
 <https://doi.org/10.1109/WORKS56498.2022.00006>  
 [[preprint](https://upcommons.upc.edu/handle/2117/384589)]
 
-Leo, S., Crusoe, M. R., Rodríguez-Navas, L., Sirvent, R., Kanitz, A., De Geest, P., ... & Soiland-Reyes, S. (2023):
+Leo, S., Crusoe, M. R., Rodríguez-Navas, L., Sirvent, R., Kanitz, A., De Geest, P., ... & Soiland-Reyes, S. (2024):
 **Recording provenance of workflow runs with RO-Crate**.
-_arXiv preprint arXiv:2312.07852._
-<https://doi.org/10.48550/arXiv.2312.07852>  
+_PLoS ONE 19(9): e0309210._
+<https://doi.org/10.1371/journal.pone.0309210>  
 
 

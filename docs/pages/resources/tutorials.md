@@ -22,7 +22,11 @@ sidebar: resources
 # RO-Crate Tutorials
 {: .no_toc }
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5GYdN5B1tc8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/tAR-JNN3EbA" title="YouTube: What is an RO-Crate?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/fxF6AJDXxGc?start=231" title="YouTube: Unlocking the Power of RO-Crate for FAIR Research Data " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5GYdN5B1tc8" title="YouTube: Building diverse FDO Collections using RO-Crate" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 * The Carpentries-style tutorial [Packaging Data with RO-Crate](https://www.researchobject.org/packaging_data_with_ro-crate/) guides you through constructing a simple RO-Crate.
 * The [Galaxy Smörgåsbord 2023](https://gallantries.github.io/video-library/events/smorgasbord3/) module [FAIR data and provenance with RO-Crate and Galaxy](https://gallantries.github.io/video-library/modules/ro-crate) has further learning material:

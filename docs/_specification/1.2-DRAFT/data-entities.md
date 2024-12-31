@@ -23,7 +23,7 @@ parent: RO-Crate 1.2-DRAFT
    limitations under the License.
 -->
 
-# Data Entities
+# Data Entities {#data-entities}
 {: .no_toc }
 
 ## Table of contents
@@ -42,24 +42,33 @@ The data entities can be further described by referencing [contextual entities](
 
 ## Referencing files and folders from the Root Data Entity
 
-Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the [Root Data Entity](root-data-entity) using the [hasPart] property. Directory hierarchies MAY be represented with nested [Dataset] _Data Entities_, or the Root Dataset MAY refer to files anywhere in the hierarchy using [hasPart].
+Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the [Root Data Entity](root-data-entity) using the [hasPart] property. Directory hierarchies MAY be represented with nested [Dataset] _Data Entities_, or the Root Data Entity MAY refer to files anywhere in the hierarchy using [hasPart].
 
+<<<<<<< HEAD
 _Data Entities_ representing files: MUST have `"File"` as a value for `@type`. `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ includes:
 -  _Local_ resources where `@id` is a URI (path) relative to the _RO-Crate Root_ which MUST resolve to file.
+=======
+_Data Entities_ representing files MUST have `"File"` as a value for `@type`. `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ includes:
+-  _Attached_ resources where `@id` is a URI (path) relative to the _RO-Crate Root_ which MUST resolve to a file.
+>>>>>>> b568b83aa59c709d14adf836e5229482b8c4a71f
 -  _Detached_ "downloadable" resources where `@id` is an absolute URI which resolves to a single datastream that can be downloaded and saved as a file. _Detached_ Files SHOULD NOT reference intermediate resources such as splash-pages, search services or web-based viewer applications.
 
-_Data Entities_ representing directories MUST have `Dataset` as a value for `@type`. The term _directory_ here includes HTTP file listings where `@id` is an absolute URI, however "external, _Detached_ directories SHOULD have a programmatic listing of their content (e.g. another RO-Crate). It follows that the _RO-Crate Root_ is itself a data entity.
+_Data Entities_ representing directories MUST have `Dataset` as a value for `@type`. The term _directory_ here includes HTTP file listings where `@id` is an absolute URI, however "external," _Detached_ directories SHOULD have a programmatic listing of their content (e.g. another RO-Crate). It follows that the _RO-Crate Root_ is itself a data entity.
 
+<<<<<<< HEAD
+=======
+_Data Entities_ can also be other types, for instance an online database. These SHOULD have a `@type` of [CreativeWork] (or one of its subtypes) and typically have a `@id` which is an absolute URI.
+>>>>>>> b568b83aa59c709d14adf836e5229482b8c4a71f
 
 In all cases, `@type` MAY be an array in order to also specify a more specific type, e.g. `"@type": ["File", "ComputationalWorkflow"]`
 
-There is no requirement to represent _every_ file and folder in an RO-Crate as Data Entities in the RO-Crate JSON-LD.  Reasons for not describing files would include that the files:
+There is no requirement to represent _every_ file and folder in an RO-Crate as _Data Entities_ in the _RO-Crate JSON-LD_.  Reasons for not describing files would include that the files:
 - are described in some other way, for example a manifest or another package management system,
 - are supporting files for a software application,
 - have metadata embedded in their filenames or paths which can be explained once,
 - have a purpose that is unknown to the crate author, but they need to be preserved as part of an archive. 
 
-In any of the above cases where files are not described, a directory containing a set of files _MAY_ be described using a `Dataset` _Data Entity_ that encapsulates the files with a `description` property that explains the contents. If the RO-Crate file structure is flat, or files are not grouped together a `description` property on the _Root Data Entity_ may be used, or a `Dataset` with a local reference beginning with `#` (eg to describe certain type of file which occurs throughout the crate). This approach is recommended for RO-Crates which are to be deposited in a long-term archive.
+In any of the above cases where files are not described, a directory containing a set of files _MAY_ be described using a `Dataset` _Data Entity_ that encapsulates the files with a `description` property that explains the contents. If the RO-Crate file structure is flat, or files are not grouped together, a `description` property on the _Root Data Entity_ may be used, or a `Dataset` with a local reference beginning with `#` (e.g. to describe a certain type of file which occurs throughout the crate). This approach is recommended for RO-Crates which are to be deposited in a long-term archive.
 
 
 
@@ -227,8 +236,7 @@ Some generic file formats like `application/json` may be specialized using a _pr
 ```
 
 
-{: .tip }
-Profiles expressed in formal languages (e.g. XML Schema for validation) can have their own `encodingFormat` and `conformsTo` to indicate their file format.
+{% include callout.html type="tip" content="Profiles expressed in formal languages (e.g. XML Schema for validation) can have their own `encodingFormat` and `conformsTo` to indicate their file format." %}
 
 {: .note}
 The [Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor) `ro-crate-metadata.json` is not a data entity, but is described with `conformsTo` to an _implicit contextual entity_ for the RO-Crate specification, a profile of [JSON-LD](appendix/jsonld). RO-Crates themselves can be specialized using [Profile Crates](profiles), specified with `conformsTo` on the root data entity.
@@ -273,7 +281,7 @@ Additionally, `File` entities SHOULD have:
 * [name] giving a human readable name (not necessarily the filename)
 * [description] giving a longer description, e.g. the role of this file within this crate
 * [encodingFormat] indicating the the IANA [media type] as a string (e.g. `"text/plain") and/or a reference to [file format](#adding-detailed-descriptions-of-encodings) contextual entity.
-* [conformsTo] to a contextual entity of type [Profile], that indicate a [profile](profiles) of the encoding format
+* [conformsTo] to a contextual entity of type [Profile], that indicate a [profile](profiles) of the encoding format, if applicable
 * [contentSize] with the size of the file in bytes
 
 RO-Crate's `File` is an alias for schema.org type [MediaObject], any of its properties MAY also be used (adding contextual entities as needed).  [Files on the web](#embedded-data-entities-that-are-also-on-the-web) SHOULD also use `identifier`, `url`, `subjectOf`, and/or `mainEntityOfPage`.
@@ -284,9 +292,9 @@ A [Dataset] (directory) _Data Entity_ MUST have the following properties:
 
 *  `@type` MUST be `Dataset` or an array where `Dataset` is one of the values.
 *  `@id`  MUST be either:
-  -   a _URI Path_ relative to the _RO Crate root_ which MUST resolve to a directory that is present in the _RO-Crate Root_. The id SHOULD end with `/`.
-  -   an absolute URI
-  -   a local reference beginning with `#`
+    *   a _URI Path_ relative to the _RO Crate root_ which MUST resolve to a directory that is present in the _RO-Crate Root_. The id SHOULD end with `/`.
+    *   an absolute URI
+    *   a local reference beginning with `#`
 
 Additionally, `Dataset` entities SHOULD have:
 
@@ -302,9 +310,9 @@ Any of the properties of schema.org [Dataset] MAY additionally be used (adding c
 
 While one use-case of RO-Crates is to define _Local RO-Crate Packages_  where _files_ contained within the _RO-Crate root_ directory, RO-Crates can also gather resources from the web identified by _absolute URIs_ instead of relative _URI paths_, i.e. Web-based data entities.
 
-Using Web-based data entities can be important particularly where a file can't be included in the _RO-Crate root_ because of licensing concerns, large data sizes, privacy, or where it is desirable to link to the latest online version.
+Using Web-based data entities can be important particularly where a file can't be included in the _RO-Crate Root_ because of licensing concerns, large data sizes, privacy, or where it is desirable to link to the latest online version.
 
-Example of an RO-Crate including a _File Data Entity_ external to the _RO-Crate root_ (file entity <https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf>):
+Example of an RO-Crate including a _File Data Entity_ external to the _RO-Crate Root_ (file entity <https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf>):
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
@@ -349,8 +357,8 @@ Example of an RO-Crate including a _File Data Entity_ external to the _RO-Crate 
 ```
 
 Additional care SHOULD be taken to improve persistence and long-term preservation of web resources included 
-in an RO-Crate as they can be more difficult to archive or move along with the _RO-Crate root_, and
-may change intentionally or unintentionally leaving the RO-Crate with incomplete or outdated information.
+in an RO-Crate, as they can be more difficult to archive or move along with the _RO-Crate Root_, and
+may change intentionally or unintentionally, leaving the RO-Crate with incomplete or outdated information.
 
 File Data Entries with an `@id` URI outside the _RO-Crate Root_ SHOULD at the time of RO-Crate creation be directly downloadable by a simple non-interactive retrieval (e.g. HTTP GET) of a single data stream, permitting redirections and HTTP/HTTPS authentication. For instance, in the example above, <https://zenodo.org/record/3541888> and <https://doi.org/10.5281/zenodo.3541888> cannot be used as `@id` above as retrieving these URLs give a HTML landing page rather than the desired PDF as indicated by `encodingFormat`. 
 
@@ -368,8 +376,7 @@ As files on the web may change, the timestamp property [sdDatePublished] SHOULD 
 ```
 
 
-{: .note}
-Do not use web based URI identifiers for files which _are_ present in the crate root, see [below](#embedded-data-entities-that-are-also-on-the-web).
+{% include callout.html type="note" content="Do not use web based URI identifiers for files which _are_ present in the crate root, see [below](#embedded-data-entities-that-are-also-on-the-web)." %}
 
 
 ### Encoding file paths
@@ -412,7 +419,94 @@ Note that if a local file is intended to be packaged within an _Local  RO-Crate 
 
 ### Directories on the web; dataset distributions
 
-A _Directory File Entry_ or [Dataset] identifier expressed as an absolute URL on the web can be harder to download than a [File] because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in [hasPart], enabling download traversal.
+A _Directory File Entry_ or [Dataset] identifier expressed as an absolute URL on the web can be harder to download than a [File] because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in [hasPart], enabling download traversal, or are themselves RO-Crates.
+
+#### Referencing other RO-Crates
+
+A referenced RO-Crate is also a [Dataset] data entity, but where its [hasPart] do not need to be listed. Instead, its content and further metadata is available from its own RO-Crate Metadata Document, which may be retrieved or packaged within an archive. An entity representing a referenced RO-Crate SHOULD have `conformsTo` pointing to the generic RO-Crate profile using the fixed URI `https://w3id.org/ro/crate`.
+
+This section defines how a _referencing_ RO-Crate ("A") can declare data entities within A's RO-Crate Metadata Document, in order to indicate a _referenced_ RO-Crate ("B"). There are different options on how to find the identifier to assign the referenced RO-Crate in A, and how a consumer of A finding such a reference can find the corresponding RO-Crate Metadata Document for B.
+
+##### Referencing RO-Crates that have a persistent identifier
+
+If the referenced RO-Crate B has an `identifier` declared as B's [Root Data Entity identifier](root-data-entity#root-data-entity-identifier), then this is a _persistent identifier_ which SHOULD be used as the URI in the `@id` of the corresponding entity in RO-Crate A.  For instance, if RO-Crate B had declared the identifier `https://pid.example.com/another-crate/` then RO-Crate A can reference B as an entity:
+
+```json
+{
+  "@id": "https://pid.example.com/another-crate/",
+  "@type": "Dataset",
+  "conformsTo": { "@id": "https://w3id.org/ro/crate" }
+}
+```
+
+{% include callout.html type="tip" content="The `conformsTo` generic RO-Crate profile on a `Dataset` entity MUST be version-less. The referenced RO-Crate B is NOT required to conform to the same version of the RO-Crate specification as A's RO-Crate Metadata Document." %}
+
+{% include callout.html type="warning" content="It is NOT RECOMMENDED to declare the generic profile `https://w3id.org/ro/crate` on the referencing RO-Crate A's own [root data entity](root-data-entity.html#direct-properties-of-the-root-data-entity), see [metadata descriptor](root-data-entity.html#ro-crate-metadata-descriptor). " %}
+
+Consumers that find a reference to a `Dataset` with the generic RO-Crate profile indicated MAY attempt to resolve the persistent identifier, but SHOULD NOT assume that the `@id` directly resolves to an RO-Crate Metadata Document. See section [Retrieving an RO-Crate](#retrieving-an-ro-crate) below for the recommended algorithm. 
+
+If an `identifier` is not declared in a referenced RO-Crate B, but the determined absolute URI has [Signposting] declared for a `Link:` with `rel=cite-as`, then that link MAY be considered as an equivalent permalink for B.
+
+
+##### Determining entity identifier for a referenced RO-Crate
+
+In some cases, if the referenced RO-Crate B has not got a resolvable `identifier` declared, additional steps are needed to find the correct `@id` to use:
+
+1. If RO-Crate A is an [attached](structure.html#attached-ro-crate) RO-Crate, and RO-Crate B is a nested folder (e.g. `another-crate/`), then B SHOULD be treated as an attached RO-Crate (e.g. it has `another-crate/ro-crate-metadata.json`) and the relative path (`another-crate/`) used directly as `@id` as a [Directory File Entity](#directory-file-entity) within crate A.
+2. If B's _Root Data Entity_ has an `@id` that is an absolute URI indicating a [detached RO-Crate](structure.html#detached-ro-crate), and that URI resolves according to [Retrieving an RO-Crate](#retrieving-an-ro-crate), then that can be used as the `@id` of the `Dataset` entity in A, equivalent to the `identifier` case above. However, as that URI was not declared as a persistent identifier, the timestamp property [sdDatePublished] SHOULD be included to indicate when the absolute URL was accessed.
+2. If B's _RO-Crate Metadata Document_ was located on the Web, but uses a relative URI reference for its root data entity (`./`), then its absolute URI can be determined from the [RFC 3986] algorithm for [establishing a base URI](https://datatracker.ietf.org/doc/html/rfc3986#section-5). For example, if root `{"@id": "./" }` is in metadata document `http://example.com/another-crate/ro-crate-metadata.json`, then the absolute URI for the `Dataset` entity is `http://example.com/another-crate/` (with the trailing `/`). If that URI is resolvable as in point 1, it can be used as equivalent `@id`. It is NOT RECOMMENDED to resolve a relative root identifier if the metadata document was retrieved from a URI that does not end with `/ro-crate-metadata.json` or `/ro-crate-metadata.jsonld` -- these are not part of a valid [attached](structure.html#attached-ro-crate) or [detached](structure.html#detached-ro-crate) RO-Crate.
+4. If RO-Crate B is not on the Web, and does not have a persistent identifier, e.g. is within a ZIP file or local file system, then a non-resolvable identifier could be established. See appendix [Establishing a base URI inside a ZIP file](appendix/relative-uris.html#establishing-a-base-uri-inside-a-zip-file), e.g. `arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/` if using a randomly generated UUID. This method may also be used if the above steps fail for an RO-Crate Metadata Document that is on the Web. In this case, the referenced RO-Crate entity MUST either declare a [referenced metadata document](#referencing-another-metadata-document) or [distribution](#downloadable-dataset).
+
+If the RO-Crate Metadata Document is not available as a web resource, but only within an archive (e.g. ZIP), then instead reference it as a [Downloadable dataset](#downloadable-dataset).
+
+##### Referencing another metadata document
+
+If a referenced RO-Crate Metadata Document is known at a given URI or path, but its corresponding RO-Crate identifier can't be determined as above (e.g. [Retrieving an RO-Crate](#retrieving-an-ro-crate) fails or requires heuristics), then a referenced metadata descriptor entity SHOULD be added. For instance, if `http://example.com/another-crate/ro-crate-metadata.json` resolves to an RO-Crate Metadata Document describing root `./`, but `http://example.com/another-crate/` always returns a HTML page without [Signposting] to the metadata document, then `subjectOf` SHOULD be added to an explicit metadata descriptor entity, which has `encodingFormat` declared for JSON-LD:
+
+```json
+{
+  "@id": "http://example.com/another-crate/",
+  "@type": "Dataset",
+  "conformsTo": { "@id": "https://w3id.org/ro/crate" },
+  "subjectOf": { "@id": "http://example.com/another-crate/ro-crate-metadata.json" }
+},
+{
+  "@id": "http://example.com/another-crate/ro-crate-metadata.json",
+  "@type": "CreativeWork",
+  "encodingFormat": "application/ld+json",
+  "sdDatePublished": "2024-08-22T23:57:03+01:00"
+}
+```
+
+{% include callout.html type="tip" content="Counter to [file format profile](data-entities.html#file-format-profiles) recommendations, the referenced RO-Crate metadata descriptor SHOULD NOT include its own `conformsTo` declarations to `https://w3id.org/ro/crate` or reference the dataset with `about`; this is to avoid confusion with the referencing RO-Crate's own [metadata descriptor](root-data-entity#ro-crate-metadata-descriptor). " %}
+
+
+##### Profiles of referenced crates
+
+If the referenced crate conforms to a given [RO-Crate profile](profiles), this MAY be indicated by expanding `conformsTo` on the `Dataset` to an array to reference the profile as an contextual entity:
+
+```json
+{
+  "@id": "https://doi.org/10.48546/workflowhub.workflow.26.1",
+  "@type": "Dataset",
+  "conformsTo": [
+    { "@id": "https://w3id.org/ro/crate" },
+    { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"}
+  ]
+},
+{ "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+  "@type": ["CreativeWork", "Profile"],
+  "name": "Workflow RO-Crate Profile",
+  "version": "1.0"
+}
+```
+
+{% include callout.html type="note" content="The profile declaration of a referenced crate is a hint. Consumers should check `conformsTo` as declared in the retrieved RO-Crate, as it may have been updated after this RO-Crate." %}
+
+
+
+#### Downloadable dataset
+
 
 Alternatively, a common mechanism to provide downloads of a reasonably sized directory is as an archive file in formats such as [`application/zip`](https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263) or [`application/gzip`](https://www.nationalarchives.gov.uk/PRONOM/x-fmt/266), described as a [DataDownload]. 
 
@@ -432,7 +526,24 @@ Alternatively, a common mechanism to provide downloads of a reasonably sized dir
   }
 ```
 
-Similarly, the _RO-Crate root_ entity may also provide a [distribution] URL, in which case the download SHOULD be an archive that contains the _RO-Crate Metadata Document_.
+Similarly, the _RO-Crate Root_ entity (or a reference to another RO-Crate as a `Dataset`) may provide a [distribution] URL, in which case the download SHOULD be an archive that contains the _RO-Crate Metadata Document_ (either directly in the archive's root, or within a single folder in the archive), indicated by a version-less `conformsTo`:
+
+```json
+  {
+    "@id": "./",
+    "@type": "Dataset",
+    "identifier": "https://doi.org/10.48546/workflowhub.workflow.775.1",
+    "name": "Research Object Crate for Jupyter Notebook Molecular Structure Checking",
+    "distribution": {"@id": "https://workflowhub.eu/workflows/775/ro_crate?version=1"},
+    "…": ""
+  },
+  {
+    "@id": "https://workflowhub.eu/workflows/775/ro_crate?version=1",
+    "@type": "DataDownload",
+    "encodingFormat": ["application/zip", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263"}],
+    "conformsTo": { "@id": "https://w3id.org/ro/crate" }
+  }
+```
 
 In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not reflect the current state of the `Dataset` or RO-Crate.
 

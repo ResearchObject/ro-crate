@@ -2,7 +2,7 @@
 title: Community
 ---
 <!--
-   Copyright 2019-2022 The University of Manchester and RO-Crate contributors 
+   Copyright 2019-2024 The University of Manchester and RO-Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -109,19 +109,36 @@ The _RO-Crate_ team is:
 * Michael Falk <https://orcid.org/0000-0001-9261-8390>
 * Eli Chadwick <https://orcid.org/0000-0002-0035-6475>
 * Daniel Bauer <https://orcid.org/0000-0001-9447-460X>
-* James Love <https://github.com/JLoveUOA>
+* James Love <https://orcid.org/0000-0001-7760-1240>
+* Eleni Adamidi <https://orcid.org/0000-0001-9925-1560>
+* Josh Moore <https://orcid.org/0000-0003-4028-811X>
+* Lars Schöbitz <https://orcid.org/0000-0003-2196-5015>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)!
+
+## Steering Committee
+
+We are in the process of adapting the [Minimal Viable Governance](https://github.com/github/MVG) and are establishing a Steering Committee:
+
+* Carole Goble  
+* Peter Sefton
+* Stian Soiland-Reyes  
+
+You may contact the steering committe at `contact()researchobject.org` for any confidential matter.
 
 ## Meetings
 
 The RO-Crate team try to meet at least monthly in a telcon, see the [rolling agenda](https://s.apache.org/ro-crate-minutes) for schedule, call-in details and minutes.
 
-See also [recent and upcoming events](outreach#upcoming-and-recent-events).
+There are also regular [regional drop-in calls](https://s.apache.org/ro-crate-regional) aimed at those newer to the RO-Crate community. These sessions are suitable for beginner questions, as well as discussing ideas for new tools/integrations.
+
+Members of the RO-Crate team can often be found presenting at open science conferences and events: see the list of [recent and upcoming events](outreach#upcoming-and-recent-events) for details.
 
 ## Mailing list
 
 The RO-Crate Community has a low-traffic public [RO-Crate mailing list](https://lists.elixir-europe.org/mailman/listinfo/ro-crate_elixir-europe.org), used for announcements and general enquiries.
+
+**Note**: Do not attempt to sign up to the mailing list, as we get about 1000 spammer subscriptions a day. Sign up in [GitHub issue #1](https://github.com/ResearchObject/ro-crate/issues/1) and we will add you manually.
 
 Note that most discussion about the [RO-Crate specifications](specification) typically happen in [GitHub issues](https://github.com/ResearchObject/ro-crate/issues) and [community meetings](https://s.apache.org/ro-crate-minutes).
 
@@ -129,9 +146,19 @@ Note that most discussion about the [RO-Crate specifications](specification) typ
 
 We have an informal Slack chat channel [#ro-crate on seek4science.slack.com](https://seek4science.slack.com/archives/C01LQQAAAS1) ([join](https://join.slack.com/t/seek4science/shared_invite/zt-csqh94qb-kf~kFbZxuHl1Hpxhbc8avw)).
 
+## Contact us
+
+For general technical questions, please feel free to use the Slack chat or contribute a [GitHub discussion](https://github.com/ResearchObject/ro-crate/discussions). The members of the RO-Crate community will collaboratively try to assist.
+
+If you have a technical request that you are not comfortable posting in a public forum like Slack or GitHub (e.g. use in commercial software), you may email `ro-crate()researchobject.org` -- note that this list goes to a couple of volunteers and we cannot provide any support guarantees.
+
+For organisational or confidential requests, e.g. letter of support for a funding proposal, email `contact()researchobject.org` which goes to the Steering Committee.
+
+_Remember to replace `()` with `@` in the above email addresses_
+
 ## Code of Conduct
 
-Contributors to the RO-Crate community are expected to comply with our [Code of Conduct](https://github.com/ResearchObject/ro-crate/blob/master/CODE_OF_CONDUCT.md) to ensure an open and inclusive environment.
+Contributors to the RO-Crate community are expected to comply with our [Code of Conduct](https://github.com/ResearchObject/ro-crate/blob/master/CODE_OF_CONDUCT.md) to ensure an open and inclusive environment. You may email `conduct()researchobject.org` to report any Code of Conduct concerns.
 
 ## Contributing
 
