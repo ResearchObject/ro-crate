@@ -1,0 +1,651 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+
+# Make data base, printed on Wed Feb 14 07:49:26 2024
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/pt/working/ro-crate
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-gb","osLocale":"en-au","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# makefile (from `Makefile', line 9)
+NEXT = 1.3-DRAFT
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# environment
+INFOPATH = /opt/homebrew/share/info:
+# environment
+VSCODE_CWD = /
+# makefile (from `Makefile', line 6)
+RELEASE = 1.2
+# environment
+PATH = /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin
+# makefile (from `Makefile', line 133)
+current_dir := ro-crate
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# makefile (from `Makefile', line 8)
+TAG = 1.2.0
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.Gr5ARgC2RQ/Listeners
+# automatic
+%F = $(notdir $%)
+# environment
+PWD = /Users/pt/working/ro-crate
+# environment
+HOMEBREW_CELLAR = /opt/homebrew/Cellar
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+MANPATH = /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man:/Library/Developer/CommandLineTools/usr/share/man:/Library/Developer/CommandLineTools/Toolchains/XcodeDefault.xctoolchain/usr/share/man:/opt/homebrew/share/man::
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/pt
+# default
+MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/pt/Library/Application Support/Code/CachedData/af28b32d7e553898b2a91af498b1fb666fdebe0c
+# environment
+LOGNAME = pt
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# makefile (from `Makefile', line 12)
+DOI = 10.5281/zenodo.5841615
+# environment
+SHLVL = 1
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = pt
+# makefile
+.DEFAULT_GOAL := all
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# makefile (from `Makefile', line 4)
+DRAFT = 1.2-DRAFT
+# default
+MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/dr/plhr3vgj1dqf_dq_2fbgnfy00000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/pt/Library/Application Support/Code/1.85-main.sock
+# environment
+MallocNanoZone = 0
+# makefile (from `Makefile', line 132)
+mkfile_absdir := /Users/pt/working/ro-crate/
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.89182918.89182924
+# environment
+HOMEBREW_PREFIX = /opt/homebrew
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+VSCODE_L10N_BUNDLE_LOCATION = 
+# automatic
++F = $(notdir $+)
+# environment
+HOMEBREW_REPOSITORY = /opt/homebrew
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0:15
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+VSCODE_PID = 12058
+# makefile (from `Makefile', line 131)
+mkfile_path := /Users/pt/working/ro-crate/Makefile
+# variable set hash-table stats:
+# Load=73/1024=7%, Rehash=0, Collisions=1/139=1%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# docs/1.2-DRAFT (device 16777230, inode 867653): 21 files, no impossibilities.
+# docs/1.2/appendix: could not be stat'd.
+# . (device 16777230, inode 867533): 19 files, no impossibilities.
+# docs/1.2-DRAFT/appendix (device 16777230, inode 867655): 7 files, no impossibilities.
+# docs/1.2: could not be stat'd.
+
+# 47 files, no impossibilities in 5 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+docs/_includes/references.liquid:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+jekyll-podman-serve: podman-pre
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 146):
+	podman run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate -e JEKYLL_ENV=docker --volume="${mkfile_absdir}/docs:/srv/jekyll" -p 4000:4000 jekyll/jekyll jekyll serve --incremental --config  _config.yml,_config.docker.yml
+	
+
+# Not a target:
+docs/1.2-DRAFT/ro-crate-metadata.json:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+podman-pre:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 136):
+	chmod go+w "${mkfile_absdir}/docs" "${mkfile_absdir}/docs/Gemfile.lock"
+	
+
+all: dependencies release
+#  Command-line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/2=0%
+
+dependencies: node_modules/.bin/rochtml
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/2=0%
+#  commands to execute (from `Makefile', line 18):
+	scripts/schema-context.py --version
+	node_modules/.bin/rochtml --version
+	pandoc --version
+	xelatex --version
+	
+
+# Not a target:
+docs/1.2-DRAFT/appendix/relative-uris.md:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+release/ro-crate-1.2.0.pdf: dependencies release release/ro-crate-1.2.0.md
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 115):
+	egrep -v '^{:(\.no_)?toc}' release/ro-crate-${TAG}.md | \
+	pandoc --pdf-engine xelatex --variable=hyperrefoptions:colorlinks=true,allcolors=blue \
+	--variable papersize=a4 --filter scripts/pandoc-admonition.py \
+	--number-sections --toc  --metadata pagetitle="RO-Crate Metadata Specification ${RELEASE}" \
+	--from=markdown+gfm_auto_identifiers -o release/ro-crate-${TAG}.pdf
+	
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+release/ro-crate-preview.html: dependencies release docs/1.2/ro-crate-preview.html
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 128):
+	cp docs/${RELEASE}/ro-crate-preview.html release/ro-crate-preview.html
+	
+
+# Not a target:
+docs/1.2-DRAFT/provenance.md:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+docs/1.2-DRAFT/appendix/jsonld.md:
+ 
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-14 08:41:09
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+docs/1.2-DRAFT/structure.md:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+docker-fix-permissions:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 139):
+	docker run -it --volume="${mkfile_absdir}/docs:/srv/jekyll" alpine:3.15 chown -R $(shell id -u):$(shell id -g) /srv/jekyll
+	
+
+release/ro-crate-1.2.0.html: dependencies release release/ro-crate-1.2.0.md
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 108):
+	egrep -v '^{:(\.no_)?toc}' release/ro-crate-${TAG}.md | \
+	pandoc --standalone --number-sections --toc --section-divs \
+	--filter scripts/pandoc-admonition.py \
+	--metadata pagetitle="RO-Crate Metadata Specification ${RELEASE}" \
+	--from=markdown+gfm_auto_identifiers -o release/ro-crate-${TAG}.html
+	
+
+# Not a target:
+docs/1.2-DRAFT/root-data-entity.md:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+docs/1.2-DRAFT/appendix/index.md:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+docs/1.2/context.jsonld: dependencies docs/1.2 scripts/schema-context.py
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 82):
+	scripts/schema-context.py ${RELEASE} ${TAG} > docs/${RELEASE}/context.jsonld
+	
+
+release/ro-crate-metadata.json: dependencies release docs/1.2/ro-crate-metadata.json
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 125):
+	cp docs/${RELEASE}/ro-crate-metadata.json release/ro-crate-metadata.json
+	
+
+jekyll-docker-serve: jekyll-docker-dependencies
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 158):
+	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate -e JEKYLL_ENV=docker --volume ro-crate-jekyll:/usr/local/bundle --volume="${mkfile_absdir}/docs:/srv/jekyll" -p 4000:4000 jekyll/jekyll jekyll serve --incremental --config  _config.yml,_config.docker.yml
+	# Next one fixes permissions
+	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume ro-crate-jekyll:/usr/local/bundle --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll chown -R $(shell id -u):$(shell id -g) /srv/jekyll
+	
+
+# Not a target:
+docs/1.2-DRAFT/data-entities.md:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+docs/1.2/appendix/*.md: docs/1.2/appendix docs/1.2-DRAFT/appendix/changelog.md docs/1.2-DRAFT/appendix/implementation-notes.md docs/1.2-DRAFT/appendix/index.md docs/1.2-DRAFT/appendix/jsonld.md docs/1.2-DRAFT/appendix/relative-uris.md
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 65):
+	for f in docs/${DRAFT}/appendix/*.md ; do \
+	sed s/${DRAFT}/${RELEASE}/g < $$f > docs/${RELEASE}/appendix/`basename $$f` ;\
+	done
+	
+
+# Not a target:
+scripts/schema-context.py:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+release/ro-crate-context-1.2.0.jsonld: dependencies release docs/1.2/context.jsonld
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 122):
+	cp docs/${RELEASE}/context.jsonld release/ro-crate-context-${TAG}.jsonld
+	
+
+# Not a target:
+docs/1.2-DRAFT/contextual-entities.md:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+docs/1.2/_metadata.liquid: docs/1.2 docs/1.2-DRAFT/_metadata.liquid
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 38):
+	sed s/${DRAFT}/${RELEASE}/g < docs/${DRAFT}/_metadata.liquid > docs/${RELEASE}/_metadata.liquid
+	sed -i s/TAG/${TAG}/g docs/${RELEASE}/_metadata.liquid
+	sed -i "/^<!-- NOTE: Before release.*/ d" docs/${RELEASE}/_metadata.liquid
+	sed -i "/^END NOTE -->/ d" docs/${RELEASE}/_metadata.liquid
+	sed -i "s/^* Status:.*/* Status: Recommendation/" docs/${RELEASE}/_metadata.liquid
+	sed -i "s/^* Published:.*/* Published: `date -I`/" docs/${RELEASE}/_metadata.liquid
+	sed -i "s,^* Cite as:.*,* Cite as: <https://doi.org/${DOI}> (this version)," docs/${RELEASE}/_metadata.liquid
+	
+
+# Not a target:
+docs/1.2-DRAFT/profiles.md:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+release: release/ro-crate-1.2.0.html release/ro-crate-1.2.0.pdf release/ro-crate-context-1.2.0.jsonld release/ro-crate-metadata.json release/ro-crate-preview.html
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 85):
+	mkdir -p release
+	
+
+# Not a target:
+docs/1.2-DRAFT/index.md:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+docs/1.2-DRAFT/terminology.md:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+jekyll-podman-oneshot: podman-pre
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 149):
+	podman run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll jekyll build
+	
+
+docker-clean: docker-fix-permissions
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 142):
+	docker volume inspect ro-crate-jekyll >/dev/null && docker volume rm ro-crate-jekyll
+	docker rm jekyll-ro-crate
+	
+
+docs/1.2/.references.md: docs/1.2 docs/_includes/references.liquid
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 48):
+	echo "---\ntitle: References\n---\n\n" > docs/${RELEASE}/.references.md
+	echo "# References" >> docs/${RELEASE}/.references.md
+	sed 's,^\[,* \\[,' < docs/_includes/references.liquid | \
+	sed 's,\]: ,\\]: <,' |\
+	sed 's,^\*.*$$,\0>,' \
+	>> docs/${RELEASE}/.references.md
+	
+
+# Not a target:
+docs/1.2-DRAFT/metadata.md:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 25):
+	rm -rf release "docs/${RELEASE}/"
+	
+
+docs/1.2/ro-crate-preview.html: dependencies docs/1.2/ro-crate-metadata.json
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 79):
+	node_modules/.bin/rochtml docs/${RELEASE}/ro-crate-metadata.json
+	
+
+ 
+docs/1.2/*.md: docs/1.2 docs/1.2-DRAFT/contextual-entities.md docs/1.2-DRAFT/crate-focus.md docs/1.2-DRAFT/data-entities.md docs/1.2-DRAFT/index.md docs/1.2-DRAFT/introduction.md docs/1.2-DRAFT/metadata.md docs/1.2-DRAFT/profiles.md docs/1.2-DRAFT/provenance.md docs/1.2-DRAFT/root-data-entity.md docs/1.2-DRAFT/structure.md docs/1.2-DRAFT/terminology.md docs/1.2-DRAFT/workflows.md docs/1.2-DRAFT/_metadata.liquid docs/1.2/.references.md
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 57):
+	for f in docs/${DRAFT}/*.md ; do \
+	sed s/${DRAFT}/${RELEASE}/g < $$f > docs/${RELEASE}/`basename $$f`;\
+	done	
+	
+
+node_modules/.bin/rochtml:
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := node_modules/.bin/rochtml
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/10=10%
+#  commands to execute (from `Makefile', line 31):
+	npm install lodash
+	npm install ro-crate-html-js
+	
+
+# Not a target:
+docs/1.2-DRAFT/appendix/implementation-notes.md:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+docs/1.2/appendix:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 62):
+	mkdir -p docs/${RELEASE}/appendix/
+	
+
+docs/1.2/ro-crate-metadata.json: docs/1.2-DRAFT/ro-crate-metadata.json
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 70):
+	sed s/${DRAFT}/${RELEASE}/g < docs/${DRAFT}/ro-crate-metadata.json > docs/${RELEASE}/ro-crate-metadata.json
+	sed -i "s/UNPUBLISHED/`date -I`/g" docs/${RELEASE}/ro-crate-metadata.json
+	sed -i "s/TAG/${TAG}/g" docs/${RELEASE}/ro-crate-metadata.json
+	sed -i "s,DOI,${DOI},g" docs/${RELEASE}/ro-crate-metadata.json
+	sed -i "s;ZENODO;`echo ${DOI}|sed s,10.5281/zenodo.,,`;g" docs/${RELEASE}/ro-crate-metadata.json
+	rm -f docs/${RELEASE}/ro-crate-metadata.jsonld
+	ln -s ro-crate-metadata.json docs/${RELEASE}/ro-crate-metadata.jsonld
+	
+
+# Not a target:
+docs/1.2-DRAFT/workflows.md:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+docs/1.2-DRAFT/crate-focus.md:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+docs/1.2-DRAFT/_metadata.liquid:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+release/ro-crate-1.2.0.md: dependencies release docs/1.2/_metadata.liquid docs/1.2/.references.md docs/1.2/*.md docs/1.2/appendix/*.md docs/_includes/references.liquid
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 88):
+	cp docs/${RELEASE}/_metadata.liquid docs/${RELEASE}/.metadata.md
+	pandoc --from=markdown+gfm_auto_identifiers --to=markdown+gfm_auto_identifiers \
+	docs/${RELEASE}/.metadata.md \
+	`grep ^nav_order: docs/${RELEASE}/*.md | sort -n -k 2 | grep -v index.md| grep -v about.md | sed s/:.*//` \
+	docs/${RELEASE}/appendix/*.md docs/_includes/references.liquid docs/${RELEASE}/.references.md |\
+	grep -v '{%' > release/ro-crate-${TAG}.md
+	# Our own rendering of Note/Warning/Tip
+	sed -i -E 's/\{: ?\.note ?\} \\>/**Note**:/g' release/ro-crate-${TAG}.md
+	sed -i -E 's/\{: ?\.warning ?\} \\>/**Warning**:/g' release/ro-crate-${TAG}.md
+	sed -i -E 's/\{: ?\.tip ?\} \\>/**Tip**:/g' release/ro-crate-${TAG}.md
+	# Skip intermediate table-of-contents
+	sed -i -E 's/1..*\{:toc\}//g' release/ro-crate-${TAG}.md
+	sed -i -E 's/## Table of contents//g' release/ro-crate-${TAG}.md
+	sed -i -E 's/\{:[^}]*\}//g' release/ro-crate-${TAG}.md
+	# Fix internal links to work in single-page
+	sed -i -E 's,]\(([^:)]*/)*([^:)]*)\.md\),](#\2),g' release/ro-crate-${TAG}.md
+	sed -i -E 's,]\([^):]*\.md#([^)]*)\),](#\1),g' release/ro-crate-${TAG}.md
+	
+
+# Not a target:
+docs/1.2-DRAFT/appendix/changelog.md:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+jekyll-docker-dependencies:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 152):
+	docker volume inspect ro-crate-jekyll 2>/dev/null >/dev/null || \
+	(docker volume create ro-crate-jekyll && \
+	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume ro-crate-jekyll:/usr/local/bundle --volume="${mkfile_absdir}/docs:/srv/jekyll" -p 4000:4000 jekyll/jekyll jekyll clean)
+	
+
+jekyll-docker-oneshot: jekyll-docker-dependencies
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 163):
+	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume ro-crate-jekyll:/usr/local/bundle --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll jekyll build
+	# Next one fixes permissions
+	docker run -it --rm --name jekyll-ro-crate -e PAGES_REPO_NWO=researchobject/ro-crate --volume ro-crate-jekyll:/usr/local/bundle --volume="${mkfile_absdir}/docs:/srv/jekyll" jekyll/jekyll chown -R $(shell id -u):$(shell id -g) /srv/jekyll
+	
+
+docs/1.2:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 35):
+	mkdir -p docs/${RELEASE}/
+	
+
+# Not a target:
+docs/1.2-DRAFT/introduction.md:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=52/1024=5%, Rehash=0, Collisions=4/133=3%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Wed Feb 14 07:49:26 2024
+
+ 
