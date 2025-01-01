@@ -44,21 +44,12 @@ The data entities can be further described by referencing [contextual entities](
 
 Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the [Root Data Entity](root-data-entity) using the [hasPart] property. Directory hierarchies MAY be represented with nested [Dataset] _Data Entities_, or the Root Data Entity MAY refer to files anywhere in the hierarchy using [hasPart].
 
-<<<<<<< HEAD
 _Data Entities_ representing files: MUST have `"File"` as a value for `@type`. `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ includes:
 -  _Local_ resources where `@id` is a URI (path) relative to the _RO-Crate Root_ which MUST resolve to file.
-=======
-_Data Entities_ representing files MUST have `"File"` as a value for `@type`. `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ includes:
--  _Attached_ resources where `@id` is a URI (path) relative to the _RO-Crate Root_ which MUST resolve to a file.
->>>>>>> b568b83aa59c709d14adf836e5229482b8c4a71f
 -  _Detached_ "downloadable" resources where `@id` is an absolute URI which resolves to a single datastream that can be downloaded and saved as a file. _Detached_ Files SHOULD NOT reference intermediate resources such as splash-pages, search services or web-based viewer applications.
 
 _Data Entities_ representing directories MUST have `Dataset` as a value for `@type`. The term _directory_ here includes HTTP file listings where `@id` is an absolute URI, however "external," _Detached_ directories SHOULD have a programmatic listing of their content (e.g. another RO-Crate). It follows that the _RO-Crate Root_ is itself a data entity.
 
-<<<<<<< HEAD
-=======
-_Data Entities_ can also be other types, for instance an online database. These SHOULD have a `@type` of [CreativeWork] (or one of its subtypes) and typically have a `@id` which is an absolute URI.
->>>>>>> b568b83aa59c709d14adf836e5229482b8c4a71f
 
 In all cases, `@type` MAY be an array in order to also specify a more specific type, e.g. `"@type": ["File", "ComputationalWorkflow"]`
 
