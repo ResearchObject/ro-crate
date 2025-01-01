@@ -48,7 +48,7 @@ RO-Crate metadata can be interpreted in two main contexts, as data  Packages (of
 {.note}
 > Software to process Detached RO-Crate Packages would typically be invoked by passing an _RO-Crate Metadata Document_ as a file or in memory. Software MAY check the integrity of Local RO-Crate Packages by ensuing that _Data Entities_ described in the _RO-Crate Metadata Document_ are present.
 
-Software producing _Detached RO-Crate Packages_ may use a file name of the form `${suffix}-ro-crate-metadata.json` so files downloaded from an API where `$suffix` is a some version of the RO-Crate's identifier or name using file-system safe characters. 
+Software producing _Detached RO-Crate Packages_ may use a file name of the form `${prefix}-ro-crate-metadata.json` so files downloaded from an API where `$prefix` is a some version of the RO-Crate's identifier or name using file-system safe characters. 
 
 {.note}
 > The algorithm for downloading a _Detached RO-Crate Pacakge_ to a _Local RO-Crate Package_ is described in the section on [Data Entities](data-entities.html#data-entities)
