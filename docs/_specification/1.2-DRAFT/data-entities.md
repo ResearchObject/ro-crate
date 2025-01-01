@@ -248,26 +248,26 @@ In this document the term _URI_ includes international *IRI*s; the _RO-Crate Met
 A [File] _Data Entity_ MUST have the following properties:
 
 *  `@type`: MUST be `File`, or an array where `File` is one of the values.
-*  `@id` a relative path or a URI
+*  `@id`: MUST be a relative path or a URI
 
 
 Rules for interpreting the `@id` of a [File] _Data Entity_ differ in the context of use.
-
 1. For a _Local RO-Crate Package_:
   *  IF `@id` is a relative path URI (`$path`), test whether a payload file exists in the local file system at `$path` relative to the _RO-Crate Root_:
        *  IF TRUE, (entity is compliant) EXIT
-       *  ELSE IF there is a `contentUrl`:  FOR EACH `$URL` IF the URL can return data (optionally save the data to `$path`) (entity is compliant) EXIT 
+       *  ELSE IF there is a `contentUrl`:  FOR EACH `$URL` IF the URL is valid (entity is considered to be a [Web-based Data Entity](#web-based-data-entity)) EXIT 
        *  ELSE produce an error EXIT
-  *  ELSE IF `@id` is a URL then it is up to an implementation whether to verify that URL (entity is compliant) EXIT
+  *  ELSE IF `@id` is a URL (entity is considered to a Web based Data Entity) EXIT
   *  ELSE entity is not compliant
 2. For a _Detached RO-Crate Package_:
-   *  IF there is a `contentUrl`:  FOR EACH `$URL` value check that the `$URL` can return data. If one is found the the crate is compliant (entity is compliant) EXIT
-   *  ELSE IF `@id` is a relative URL (`$path`) and the `@id` of the _Root Data Entity_ is a URL  and a payload can be retrieved relative to the _RO-Crate Root_ (entity is compliant) EXIT
-   *  ELSE IF `@id` is an absolute URL optionally fetch the data (entity is compliant) EXIT
+   *  IF there is a `contentUrl`: 
+      * FOR EACH `$URL` IF the URL is valid (entity is considered to a Web based Data Entity) EXIT
+   *  ELSE IF `@id` is a relative URL (`$path`) and the `@id` of the _Root Data Entity_ is a valid URL (entity is considered to a Web based Data Entity) EXIT
+   *  ELSE IF `@id` is an absolute URL optionally fetch the data (entity is considered to a Web based Data Entity) EXIT
    *  ELSE entity is not compliant
 
-  NOTE: Above algorithm needs work -- mainly on whether to do link checking on URLS
-
+{.note}
+> It is up to implementers to decide whether to offer some form of URL "link checker" service [Web-based Data Entities](#web-based-data-entity) for both Local and Detached RO-Crate Packages.
 
 Additionally, `File` entities SHOULD have:
 
@@ -285,11 +285,18 @@ A [Dataset] (directory) _Data Entity_ MUST have the following properties:
 
 *  `@type` MUST be `Dataset` or an array where `Dataset` is one of the values.
 *  `@id`  MUST be either:
-    *   a _URI Path_ relative to the _RO Crate root_ which MUST resolve to a directory that is present in the _RO-Crate Root_. The id SHOULD end with `/`.
+    *   a _URI Path_ The id SHOULD end with `/`.
     *   an absolute URI
+<!-- This does not make sense for a data entity 
     *   a local reference beginning with `#`
+-->
 
-TODO: Should we regard Directory entities in Detached RO-Crate Packages as a merely a HINT for how to download data?
+For a _Local RO-Crate Package_:
+* The `@id` MUST be a relative path that resolves to a directory that is present in the _RO-Crate Root_. 
+
+For a _Detached RO-Crate Package_:
+* If the `@id` is a _URI Path it MAY be used to create a directory and MAY resolve to a service which returns a list of files
+* If the `@id` is a URL then it SHOULD resolve to a service which returns a list of files
 
 Additionally, `Dataset` entities SHOULD have:
 
