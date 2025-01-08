@@ -261,8 +261,8 @@ Rules for interpreting the `@id` of a [File] _Data Entity_ differ in the context
   *  ELSE entity is not compliant
 2. For a _Detached RO-Crate Package_:
    *  IF there is a `contentUrl`: 
-      * FOR EACH `$URL` IF the URL is valid (entity is considered to a Web based Data Entity) EXIT
-   *  ELSE IF `@id` is a relative URL (`$path`) and the `@id` of the _Root Data Entity_ is a valid URL (entity is considered to a Web based Data Entity) EXIT
+      * FOR EACH `$URL` IF the URL is valid:
+        * IF `@id` is a relative URL (`$path`) then this @id is taken to be a hint about when to store the contents of `contentUrl` if the crate is converted from Detatched to Attached
    *  ELSE IF `@id` is an absolute URL optionally fetch the data (entity is considered to a Web based Data Entity) EXIT
    *  ELSE entity is not compliant
 
