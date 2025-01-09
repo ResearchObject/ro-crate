@@ -69,7 +69,7 @@ The file path structure a _Attached RO-Crate_ MUST follow is:
 ```
 The name of the _RO-Crate root_ directory is not defined, but a root directory is identifiable by the presence of the _RO-Crate Metadata File_, `ro-crate-metadata.json`. For instance, if an _RO-Crate_ is archived in a ZIP-file, the ZIP root directory is an _RO-Crate root_ directory if it contains `ro-crate-metadata.json`.
 
-The payload directory (and its child directory) contains files and directories that SHOULD be described within the _RO-Crate Metadata File_ as [Data Entities](data-entities). Additional [Web-based Data Entities](data-entities.html#web-based-data-entities) MAY also be described, but are not considered part of the payload.
+The payload directory (and its child directory) contains files and directories that MAY be described within the _RO-Crate Metadata File_ as [Data Entities](data-entities). Additional [Web-based Data Entities](data-entities.html#web-based-data-entities) MAY also be described, but are not considered part of the payload.
 
 
 ## Detached RO-Crate

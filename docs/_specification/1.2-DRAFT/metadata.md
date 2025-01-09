@@ -75,7 +75,7 @@ For all entities listed in an _RO-Crate Metadata Document_ the following princip
 3. The `@type` SHOULD include at least one [Schema.org] type that accurately describe the entity. [Thing] or [CreativeWork] are valid fallbacks if no alternative external or ad-hoc term is found (see [Extending RO-Crate](appendix/jsonld#extending-ro-crate)).
 5. The entity SHOULD have a human-readable `name`, in particular if its `@id` does not go to a human-readable Web page.
 6. The properties used on the entity SHOULD be applicable to the `@type` (or superclass) according to their definitions. For instance, the property [publisher] can be used on a [Dataset] as it applies to its superclass [CreativeWork].
-7. Property references to other entities (e.g. `author` property to a `Person` entity) SHOULD use the `{ "@id": "..."}` object form (see [JSON-LD appendix](appendix/jsonld)).
+7. Property references to other entities (e.g. `author` property to a `Person` entity) MUST use the `{ "@id": "..."}` object form (see [JSON-LD appendix](appendix/jsonld)).
 8. The entity SHOULD be ultimately referenceable from the root data entity (possibly through another reachable [data entity](data-entities) or [contextual entity](contextual-entities)).
 
 
@@ -97,7 +97,7 @@ Generally, the standard _type_ and _property_ names (_terms_) from [Schema.org] 
 * `File` is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of Schema.org or a research data extension may re-define `File`.
 * `Journal` is mapped to <http://schema.org/Periodical>.
 
-{% include callout.html type="warning" content="JSON-LD examples given on the [Schema.org] website might not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. " %}
+{% include callout.html type="warning" content="JSON-LD examples given on the [Schema.org] website might not be in _flattened_ form, but _RO-Crate JSON-LD_ is flattened; any nested entities in _RO-Crate JSON-LD_ MUST be described as separate contextual entities in the flat `@graph` list. " %}
 
 To simplify processing and avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even where [Schema.org] for some properties otherwise permit shorter forms like `"author": "http://example.com/alice"`.
 
