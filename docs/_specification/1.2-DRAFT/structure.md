@@ -36,12 +36,12 @@ parent: RO-Crate 1.2-DRAFT
 
 An _RO-Crate Metadata Document_ is typically used or processed in one of three main ways:
 
-1.  An _Attached  RO-Crate Package_ that defines an on-disk collection of data,
+1.  An _Attached  RO-Crate Package_ that defines an on-disk collection of data:
   - It is defined within a file-system-like service as a directory (known as the _RO-Crate Root_) with the RO-Crate Metadata Document saved in a file-like entity with a file name of `ro-crate-metadata.json`.
   - References to files and directories in the RO-Crate Metadata Document are present in the RO-Crate or available online.
 2.  A _Detached RO-Crate Package_:
     - Is defined by a stand alone RO-Crate metadata document which may be stored in a file or distributed via an API.
-    - If stored in a file, the filename SHOULD be `${slug}-ro-crate-metadata.json` where the variable `$slug` is a human readable version of the dataset's ID or name, to signal that this data package.
+    - If stored in a file, the filename SHOULD be `${slug}-ro-crate-metadata.json` where the variable `$slug` is a human readable version of the dataset's ID or name, to signal that the document should be interpreted as part of an _Attached RO-Crate Data Package_.
 3. As a stand-alone document as part of a tool, such as a website generator where data entities are not processed.
 
 
@@ -215,10 +215,9 @@ Any [data entities](data-entities) in a _Detached RO-Crate Package Package_ are 
 
 A Detached RO-Crate Package may still use `#`-based local identifiers for [contextual entities](contextual-entities).
 
-To distribute a _Detached RO-Crate Package_ and optionally to provide an RO-Crate Website, any _Detached RO-Crate Package_ can be saved in a directory and will function as an _Attached RO-Crate Package_ provided all the [File Data Entities](data-entities#file-data-entity-file-data-entity) are properly identified.
+The concept of an _RO-Crate Website_ is undefined for a _Detached RO-Crate Package_.
 
-
-
+To distribute a _Detached RO-Crate Package_ and optionally to provide an RO-Crate Website, any _Detached RO-Crate Package_ can be saved in a directory (and zipped or otherwise bundled) and will function as an _Attached RO-Crate Package_ with no payload data.
 
 
 {% include references.liquid %}
