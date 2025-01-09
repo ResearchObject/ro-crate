@@ -34,9 +34,11 @@ parent: RO-Crate 1.2-DRAFT
 
 ## Note on Version 1.2 of the RO-Crate Specification
 
-This version of the RO-Crate comes after a significant amount of implementation experience has been gathered from users of previous versions, dealing with use cases which were not anticipated or well catered for in the original specification. The result is that the specification has had multiple patches applied and is starting to become unwieldy. Work has commenced as of the beginning of 2025 on a backwards-compatible new modularized version of the RO-Crate Specification and related documents where we anticipate the hard syntactic requirements (the things an RO-Crate parser needs) will be separated from metadata profiles (the things RO-Crate Validators need) and other guidance about implementation (which implementers need) will be separated from each other, instead of interleaved as in the current document.
+This version of the RO-Crate comes after a significant amount of implementation experience has been gathered from users of previous versions, dealing with use cases which were not anticipated or well catered for in the original specification. The specification aimed to mix requirements (MUST statements) with background an advice, with the result that it is very hard now to answer basic questions of compliance. Added to which, the specification has had multiple patches applied and is starting to become even more unwieldy. We acknowledge these issues, but have decided that it is important to release version 1.2 in order to give implementers a path forwards.
 
-Version 1.2 is anticipating some of these coming changes, by introducing a clear specification of RO-Crate compliance at a series of levels contrasting with previous versions where compliance was open to interpretation.
+Work has commenced as of the beginning of 2025 on a backwards-compatible new modularized version of the RO-Crate Specification and related documents where we anticipate the hard syntactic requirements (the things an RO-Crate parser needs) will be separated from metadata profiles (the things RO-Crate Validators need) and other guidance about implementation (which implementers need) will be separated from each other, instead of interleaved as in the current document.
+
+Version 1.2 is anticipating some of these coming changes, by introducing a clearer specification of RO-Crate compliance at a series of levels contrasting with previous versions where compliance was open to interpretation.
 
 ## Types of RO-Crate
 
