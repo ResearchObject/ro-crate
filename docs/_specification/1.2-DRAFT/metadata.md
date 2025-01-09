@@ -4,7 +4,7 @@ redirect_from:
   - /1.2-DRAFT/metadata
 excerpt: |
   RO-Crate aims to capture and describe the Research Object using
-  structured metadata. The RO-Crate Metadata Descriptor contains the
+  structured metadata. The RO-Crate Metadata Document contains the
   metadata that describes the RO-Crate and its content. This machine-readable
   metadata can also be represented for human consumption in the RO-Crate Website,
   linking to data and Web resources.
@@ -38,9 +38,9 @@ parent: RO-Crate 1.2-DRAFT
 1. TOC
 {:toc}
 
-RO-Crate aims to capture and describe the [Research Object][ResearchObject] using structured _metadata_.
+RO-Crate aims to capture and describe the [Research Object][ResearchObject] using structured _metadata_. Specifically, an RO-Crate is described using _JSON-LD_ by an _RO-Crate Metadata Document_. As explained in section [RO-Crate Structure](structure) this may be stored in an _RO-Crate Metadata File_.
 
-The _RO-Crate Metadata Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:
+The _RO-Crate Metadata Document_ contains the metadata that describes the RO-Crate and its content, in particular:
 
 * [Root Data Entity](root-data-entity) - the RO-Crate `Dataset` itself, a gathering of data
 * [Data Entities](data-entities) - the _data_ payload, in the form of files and folders
@@ -159,7 +159,7 @@ From [CodeMeta 3.0](https://w3id.org/codemeta/3.0):
 * `referencePublication` mapped to <https://codemeta.github.io/terms/referencePublication>
 * `softwareSuggestions` mapped to <https://codemeta.github.io/terms/softwareSuggestions>
 
-{% include callout.html type="warning" content="As of 2024-05-23, the CodeMeta URIs do not resolve correctly, but are used here to match the Codemeta JSON-LD context <https://w3id.org/codemeta/3.0> (issue [#275](https://github.com/ResearchObject/ro-crate/issues/275)).
+{% include callout.html type="warning" content="As of 2025-01-09, the CodeMeta URIs do not resolve correctly, but are used here to match the Codemeta JSON-LD context <https://w3id.org/codemeta/3.0> (issue [#275](https://github.com/ResearchObject/ro-crate/issues/275)).
 The CodeMeta terms `maintainer` and `funding` are not mapped, as these are already defined by schema.org." %}
 
 
