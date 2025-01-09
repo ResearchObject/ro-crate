@@ -34,9 +34,9 @@ parent: RO-Crate 1.2-DRAFT
 
 ## Note on Version 1.2 of the RO-Crate Specification
 
-This version of the RO-Crate comes after a significant amount of implementation experience has been gathered from users of previous versions, dealing with use cases which were not anticipate or well catered for in the original specification. The result is that the specification has had multiple patches applied and is starting to become unwieldy. Work has commenced as of the beginning of 2025 on a backwards-compatible new modularized version of the RO-Crate Specification and related documents where we anticipate the hard syntactic requirements (the things an RO-Crate parser needs) will be separated from metadata profiles (the things RO-Crate Validators need) and other guidance about implementation (which implementers need) will be separated from each other, instead of interleaved as in the current document.
+This version of the RO-Crate comes after a significant amount of implementation experience has been gathered from users of previous versions, dealing with use cases which were not anticipated or well catered for in the original specification. The result is that the specification has had multiple patches applied and is starting to become unwieldy. Work has commenced as of the beginning of 2025 on a backwards-compatible new modularized version of the RO-Crate Specification and related documents where we anticipate the hard syntactic requirements (the things an RO-Crate parser needs) will be separated from metadata profiles (the things RO-Crate Validators need) and other guidance about implementation (which implementers need) will be separated from each other, instead of interleaved as in the current document.
 
-Version 1.2 is anticipating some of these coming changes, by introducing a clearer specification of RO-Crate compliance at a series of levels than in previous versions, where compliance was open to interpretation.
+Version 1.2 is anticipating some of these coming changes, by introducing a clear specification of RO-Crate compliance at a series of levels contrasting with previous versions where compliance was open to interpretation.
 
 ## Types of RO-Crate
 
@@ -59,7 +59,7 @@ RO-Crate specifies two broad levels of conformance for a text-string, known as t
           - Has a "conformsTo" property with a value of  `{"@id": "https://w3id.org/ro/crate/1.2-DRAFT#ro-crate-dataset"}`
        
        NOTE: When processing RO-Crates of versions <= 1.1 conformance with the requirements in [Root Data Entity](./root-data-entity.html) is assumed. In RO-Crate version >= 1.2 conformance with these requirements needs to be explicitly stated, which allows for RO-Crate conventions to be used in non-packaging contexts.
-     - There are two types of _RO-Crate Package_:
+     - A _Valid RO-Crate Dataset_ may also be one two types of _RO-Crate Package_ :
        -  An _Attached  RO-Crate Package_ has the following constraints:
           - It is defined within a file-system-like service as a directory (known as the _RO-Crate Root_) with the RO-Crate Metadata Document saved in a file-like entity with a file name of `ro-crate-metadata.json`.
           - References to files and directories in the RO-Crate Metadata Document are present in the RO-Crate.
@@ -68,13 +68,13 @@ RO-Crate specifies two broad levels of conformance for a text-string, known as t
             - Is defined by a stand alone RO-Crate metadata document which may be stored in a file or distributed via an API.
             - If stored in a file, the filename SHOULD be `${slug}-ro-crate-metadata.json` where the variable `$slug` is a human readable version of the dataset's ID or name.
             - The _Root Entity_ MUST have a conformsTo property which has a value of {"@id": "https://w3id.org/ro/crate/1.2-DRAFT#DetatchedPackage"}, 
-      
-    NOTE that for backwards compatibility with RO-Crate 1.1 -- client software may provide modes which force a particular packaging mode to be assumed - for example if the software is passed a directory then it would assume that is processing an _Attached  RO-Crate Package_, while being passed a path to a file, or a string or pre-parsed JSON object the package would be considered a _Detached RO-Crate Package_.
 
+{.note}   
+ >For backwards compatibility with RO-Crate 1.1 -- client software may provide modes which force a particular packaging mode to be assumed - for example if the software is passed a directory then it would assume that is processing an _Attached  RO-Crate Package_, while being passed a path to a file, or a string or pre-parsed JSON object the package could be treated as one of:
+>1.  A valid _Valid RO-Crate Metadata Object_ for some purpose such as generating an HTML website
+>2.  A _Valid RO-Crate Dataset_ with no data entities.
+>3.  A _Detached RO-Crate_. 
 
-
-{.note}
-> The algorithm for downloading a _Detached RO-Crate Pacakge_ to an _Attached  RO-Crate Package_ is described in the section on [Data Entities](data-entities.html#data-entities)
 
 
 
