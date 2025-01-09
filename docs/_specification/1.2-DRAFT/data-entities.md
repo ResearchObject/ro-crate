@@ -73,16 +73,16 @@ Note that all `@id` [identifiers must be valid URI references](appendix/jsonld#d
 In this document the term _URI_ includes international *IRI*s; the _RO-Crate Metadata Document_ is always UTF-8 and international characters in identifiers SHOULD be written using native UTF-8 characters (*IRI*s), however traditional URL encoding of Unicode characters with `%` MAY appear in `@id` strings. Example: `"@id": "面试.mp4"` is preferred over the equivalent `"@id": "%E9%9D%A2%E8%AF%95.mp4"`
 
 
-### File Data Entity
+### File Data Entity {#file-data-entity}
 
 A [File] _Data Entity_ MUST have the following properties:
 
 *  `@type`: MUST be `File`, or an array where `File` is one of the values.
-*  `@id`: MUST be a relative or absolute URI
+*  `@id`: MUST be a relative or absolute URI.
+
+A [File] MAY have also a `contentURL` property which links to an online copy of the file.
 
 Further constraints on the `@id` are dependent on whether the [File] entity is being considered as part of an _Attached RO-Crate Package_ or _Detached RO-Crate Package_.
-
-A [File] MAY  have a `contentURL` property which links to an online copy of the file.
 
 If an `@id` is a relative URI then it is treated as a `filePath`, which is calculated by appending the `@id` to the `RO-Crate Root`.
 
@@ -90,14 +90,14 @@ Both `@id` and and `contentURL` may be used in a variety of combinations:
 
 1. For a _Attached RO-Crate Package_:
   * `@id`, no `contentURL`. `@id` MUST one of either:
-    a. A valid relative URI reference indicating that an file MUST be present at `filePath` when validating a package.
+    a. A relative URI indicating that an file MUST be present at `filePath` when validating a package.
     b. An Absolute URI indicating that the entity is a [Web-based Data Entity](#web-based-data-entity).
 
   * `@id` AND `contentUrl` are both present. `@id` MUST be a A valid relative URI reference and `contentURL` must be an absolute URI. In this case a file may or may not be present at `filePath`. If it is not present then the presence of the `contentUrl` property is an indication that the File content may be sourced from that URL.
 
-2. For a _Detached RO-Crate Package_:
-   *  `@id`, no `contentURL`: `@id` MUST be be an absolute URI.
-    * `@id` AND `contentUrl` are both present. `@id` MUST be a A valid relative URI reference and `contentURL` must be an absolute URI. The presence of the `contentUrl` property is an indication that the File content may be sourced from that URL and if the _Detached RO-Crate Package_ were to be converted to an _Attached RO-Crate Package_ the `@id` indicates the path to use for the File.
+2. For a _Detached RO-Crate Package_ all [File] Data Entities are [Web-based Data Enties](#web-based-data-entity)
+   * `@id`, no `contentURL`,  the `@id` MUST be an Absolute URI
+   * `@id` AND `contentUrl` are both present. `@id` MUST be a A valid relative URI reference and `contentURL` must be an absolute URI. The presence of the `contentUrl` property is an indication that the File content may be sourced from that URL and if the _Detached RO-Crate Package_ were to be converted to an _Attached RO-Crate Package_ the `@id` indicates the `filePath` to use for saving a local copy the [File].
 
 {.note}
 > It is up to implementers to decide whether to offer some form of URL "link checker" service [Web-based Data Entities](#web-based-data-entity) for both attached and Detached RO-Crate Packages.
