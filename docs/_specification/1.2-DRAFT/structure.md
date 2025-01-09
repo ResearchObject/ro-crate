@@ -34,91 +34,46 @@ parent: RO-Crate 1.2-DRAFT
 
 ## Types of RO-Crate
 
-RO-Crate metadata can be interpreted in two main contexts, as data  Packages (of which there are two types) or as an abstract  _RO-Crate Metadata Document_.
+RO-Crate specifies two broad levels of conformance for a text-string, known as the _RO-Crate Metadata Document_.
 
-**Local RO-Crate Packages**
-: A crate that is present in a file-system context which has an _RO-Crate Root directory_ and can carry an **explicit payload** of local [data entities](data-entities) as regular files (combined with [Web-based Data Entities](data-entities.html#web-based-data-entities) where needed). This use of RO-Crate can be suitable for packaging a data payload for long-term preservation, transfer and publishing, as the _RO-Crate Metadata Document_ is stored in an _RO-Crate Metadata File_ alongside the crate's payload. See further definition of [Local RO-Crate Package](#ro-crate-package) below.
+- _Valid RO-Crate Metadata Object_: The _RO-Crate Metadata Document_ string can be parsed into an object which has structural conformance with this specification. (It is JSON, it is valid JSON-LD with a `@graph` and `@context` key which meet certain constraints).
+  
+  _Valid RO-Crate Metadata Objects_ are the basis of RO-Crate packaging, but can be used for non-packaging purposes as well.
+
+  An RO-Crate Metadata Document (whether or not is is a valid package) may have rich contextual information about the data, how it was collected  and by whom, with details of funding, related information, equipment and facilities, or about abstract entities.  
+  
+  The details of this contextual information are the domain of _RO-Crate Profiles_ which are concerned with semantics. Profiles are guides with optional validation services that describe how to use RO Crate Metadata for a particular purpose, such as; interchanging workflow software, describing vocabularies/schemas, or structuring archival repositories.
+
+- _RO-Crate Package_: The _Syntactically Valid RO-Crate Metadata Document_ also meets the semantic constraints to need to be an _RO-Crate Package_:
+
+    - The _Root Entity_ conformsTo the requirements set out in [Root Data Entity)(./root-data-entity.html)
+
+    - There are two types of _RO-Crate Package_:
+      -  An _Attached  RO-Crate Package_ has the following constraints:
+        - It is defined within a file-system-like service as a directory (known as the _RO-Crate Root_) with the RO-Crate Metadata Document saved in a file-like entity with a file name of `ro-crate-metadata.json`.
+        - References to files and directories in the RO-Crate Metadata Document are present in the RO-Crate.
+        - The _Root Entity_ MUST have a conformsTo property which has a value of {"@id": "https://w3id.org/ro/crate/1.2-DRAFT#LocalPackage"} 
+
+      -  A _Detached RO-Crate Package_:
+          - Is defined by a stand alone RO-Crate metadata document which may be stored in a file or distributed via an API.
+          - If stored in a file, the filename SHOULD be `${slug}-ro-crate-metadata.json` where the variable `$slug` is a human readable version of the dataset's ID or name.
+          - The _Root Entity_ MUST have a conformsTo property which has a value of {"@id": "https://w3id.org/ro/crate/1.2-DRAFT#DetatchedPackage"}, 
+      
+    NOTE that for backwards compatibility with RO-Crate 1.1 -- client software may provide modes which force a particular packaing mode to be assumed - for example if the software is passed a directory then it would assume that is processing an _Attached  RO-Crate Package_, while being passed a path to a file, or a string or pre-parsed JSON object the package would be considered a _Detached RO-Crate Package_.
+
+
 
 {.note}
-> Software to process Local RO-Crate Packages would typically be invoked by passing it a directory-path as an argument. Software MAY check the integrity of Local RO-Crate Packages by ensuing that _Data Entities_ described in the _RO-Crate Metadata Document_ are present.
+> The algorithm for downloading a _Detached RO-Crate Pacakge_ to an _Attached  RO-Crate Package_ is described in the section on [Data Entities](data-entities.html#data-entities)
 
-**Detached RO-Crate Packages**
-: An virtual package of metadata and data that is described in an _RO-Crate Metadata Document_ which is not processed in the context of a local file system. Typically this would be obtained via a URL from a repository. . See further definition of [Detached RO-Crate Package](#ro-crate-package) below
 
-{.note}
-> Software to process Detached RO-Crate Packages would typically be invoked by passing an _RO-Crate Metadata Document_ as a file or in memory. Software MAY check the integrity of Local RO-Crate Packages by ensuing that _Data Entities_ described in the _RO-Crate Metadata Document_ are present.
-
-Software producing _Detached RO-Crate Packages_ may use a file name of the form `${prefix}-ro-crate-metadata.json` so files downloaded from an API where `$prefix` is a some version of the RO-Crate's identifier or name using file-system safe characters. 
-
-{.note}
-> The algorithm for downloading a _Detached RO-Crate Pacakge_ to a _Local RO-Crate Package_ is described in the section on [Data Entities](data-entities.html#data-entities)
-
-**Abstract RO-Crate**
-
-: RO-Crate metadata which is processed by agents in a non-packaging context including RO-Crate libraries and other software. Such as:
-
-- Loading an RO-Crate Metadata Document into a software library to:
-  - Check its structural and syntactic conformance with this specification
-  - Generate outputs from the RO-Crate metadata such as an _RO-Crate Website_, draw a workflow diagram, or produce an index for a repository.
-- Online services where a user uploads an _RO-Crate Metadata Document_ without its payload, see above point.
-- RO-Crate metadata made available over an API for purposes other than packaging data.
 
 
 In all three types of crates the metadata is completed with [contextual entities](contextual-entities) that further describe the relationships and context of the data to form a _Research Object_. 
 
-
-
-## Local RO-Crate Package
-
-An **Local RO-Crate Package** is used to contain and describe a _payload_ of files and directories, among with their contextual information.
-
-An _Local RO-Crate Package_ can be stored and published in multiple ways depending on its use:
-* On a typical hierarchical _file system_ (e.g. `/files/shared/crates/my-crate-01/`)
-* Exposed as a _Web resource_ within a folder structure (e.g. <https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/>)
-* [_Packaged_](appendix/implementation-notes#combining-with-other-packaging-schemes) within a ZIP file, BagIt archive or OCFL structure
-* _Archived_ as a set of named files in other ways (e.g. Zenodo deposit)
-
-A valuable feature of the _Local RO-Crate Package_ approach is that the metadata is preserved when a crate is transferred between these types of storage/publication systems.
-
-The file path structure a _Local RO-Crate Package_ MUST follow is:
-
-```
-<RO-Crate root directory>/
-|   ro-crate-metadata.json    # RO-Crate Metadata File containing the RO-Crate Metadata Document MUST be present 
-|   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
-|   ro-crate-preview_files/   # MAY be present
-|    | [other RO-Crate Website files]
-|   [payload files and directories]  # 0 or more
-```
-The name of the _RO-Crate root_ directory is not defined, but a root directory is identifiable by the presence of the _RO-Crate Metadata File_, `ro-crate-metadata.json`. For instance, if an _RO-Crate_ is archived in a ZIP-file, the ZIP root directory is an _RO-Crate root_ directory if it contains `ro-crate-metadata.json`.
-
-The payload directory (and its child directory) contains files and directories that SHOULD be described within the _RO-Crate Metadata File_ as [Data Entities](data-entities). Additional [Web-based Data Entities](data-entities.html#web-based-data-entities) MAY also be described, but are not considered part of the payload.
-
-The `@id` of a an _Local RO-Crate Package_ MUST be either `./` or be a URI, such as a DOI URL or other persistent URL which is considered to be the main identifier of the Local RO-Crate Package.
-
-{: .note }
-> Earlier versions of RO-Crate mandated an `@id` of `./` as a convention for identifying the _Root Data Entity_, but the use of the _RO-Crate Metadata Descriptor_ means that this is no longer required, freeing-up the _Root Data Entity_ `@id` to be used to indicate what should be considered the canonical URI for an RO_Crate Package. Other mechanisms for specifying the 'main identifier' involve multiple JSON-LD entities and may be ambiguous.
-
-## Detached RO-Crate Package
-
-A _Detached RO-Crate Package_ is an RO-Crate without a defined root directory, where the _RO-Crate Metadata Document_ and/or _RO-Crate Website_ content is accessed independently (e.g. as part of a programmatic API).
-
-Unlike an  _Local RO-Crate Package_ a _Detached RO-Crate Package_ is not processed in a file-system context and thus does not carry a data _payload_ in the same sense, but may reference data deposited separately, or purely reference [contextual entities](contextual-entities). 
-
-In a _Detached RO-Crate Package_ the [root data entity](root-data-entity) SHOULD have an `@id` which is a URL that resolves to the _RO-Crate Metadata Document_.
-
-Any [data entities](data-entities) in a _Detached RO-Crate Package Package_ MUST be [Web-based Data Entities](data-entities.html#web-based-data-entities). 
-
-_Data Entities_ MAY use relative URI references like `example/data.txt` but these MUST be resolve relative to the `@id` of the _Root Data Entity_. If the service, for example an archival repository, cannot support this kind of resolution, then the the `@id` must be an URI. 
-
-Note that a Detached RO-Crate Package may still use `#`-based local identifiers for [contextual entities](contextual-entities).
-
-
 ## RO-Crate Metadata Document (`ro-crate-metadata.json`)
 
-* In an _Local RO-Crate Package_ the _RO-Crate Metadata Document_ MUST be present, named `ro-crate-metadata.json` and appear in the _RO-Crate Root_
-  - If an RO-Crate conforming to version 1.0 or earlier contains a file named `ro-crate-metadata.jsonld` but not `ro-crate-metadata.json`, then processing software should treat this as the _RO-Crate Metadata File_. If the crate is updated, the file SHOULD be renamed to `ro-crate-metadata.json` and the _RO-Crate Metadata Descriptor_ SHOULD be updated to reference it, with an up to date [conformsTo] property naming an appropriate version of this specification. 
-* In a _Detached RO-Crate Package_ the _RO-Crate Metadata Document_ is a JSON-LD document served over an API or loaded via other means.
+
 * The _RO-Crate Metadata Document_ MUST contain _RO-Crate JSON-LD_; a valid [JSON-LD 1.0] document in [flattened]  and [compacted] form
 * The _RO-Crate JSON-LD_ SHOULD use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.2-DRAFT/context> by reference.
 
@@ -145,11 +100,65 @@ The appendix [RO-Crate JSON-LD](appendix/jsonld) details the general structure o
 ```
 
 
+## Attached  RO-Crate Package
+
+An **Attached  RO-Crate Package** is used to contain and describe a _payload_ of files and directories, among with their contextual information.
+
+* In an _Attached  RO-Crate Package_ the _RO-Crate Metadata Document_ MUST be present, named `ro-crate-metadata.json` and appear in the _RO-Crate Root_
+  - If an RO-Crate conforming to version 1.0 or earlier contains a file named `ro-crate-metadata.jsonld` but not `ro-crate-metadata.json`, then processing software should treat this as the _RO-Crate Metadata File_. If the crate is updated, the file SHOULD be renamed to `ro-crate-metadata.json` and the _RO-Crate Metadata Descriptor_ SHOULD be updated to reference it, with an up to date [conformsTo] property naming an appropriate version of this specification. 
+
+An _Attached  RO-Crate Package_ can be stored and published in multiple ways depending on its use:
+* On a typical hierarchical _file system_ (e.g. `/files/shared/crates/my-crate-01/`)
+* Exposed as a _Web resource_ within a folder structure (e.g. <https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/>)
+* [_Packaged_](appendix/implementation-notes#combining-with-other-packaging-schemes) within a ZIP file, BagIt archive or OCFL structure
+* _Archived_ as a set of named files in other ways (e.g. Zenodo deposit)
+
+A valuable feature of the _Attached  RO-Crate Package_ approach is that the metadata is preserved when a crate is transferred between these types of storage/publication systems.
+
+The file path structure an _Attached  RO-Crate Package_ MUST follow is:
+
+```
+<RO-Crate root directory>/
+|   ro-crate-metadata.json    # RO-Crate Metadata File containing the RO-Crate Metadata Document MUST be present 
+|   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
+|   ro-crate-preview_files/   # MAY be present
+|    | [other RO-Crate Website files]
+|   [payload files and directories]  # 0 or more
+```
+The name of the _RO-Crate root_ directory is not defined, but a root directory is identifiable by the presence of the _RO-Crate Metadata File_, `ro-crate-metadata.json`. For instance, if an _RO-Crate_ is archived in a ZIP-file, the ZIP root directory is an _RO-Crate root_ directory if it contains `ro-crate-metadata.json`.
+
+The payload directory (and its child directory) contains files and directories that SHOULD be described within the _RO-Crate Metadata File_ as [Data Entities](data-entities). Additional [Web-based Data Entities](data-entities.html#web-based-data-entities) MAY also be described, but are not considered part of the payload.
+
+The `@id` of a an _Attached  RO-Crate Package_ MUST be either `./` or be a URI, such as a DOI URL or other persistent URL which is considered to be the main identifier of the Attached  RO-Crate Package.
+
+{: .note }
+> Earlier versions of RO-Crate mandated an `@id` of `./` as a convention for identifying the _Root Data Entity_, but the use of the _RO-Crate Metadata Descriptor_ means that this is no longer required, freeing-up the _Root Data Entity_ `@id` to be used to indicate what should be considered the canonical URI for an RO_Crate Package. Other mechanisms for specifying the 'main identifier' involve multiple JSON-LD entities and may be ambiguous.
+
+## Detached RO-Crate Package
+
+A _Detached RO-Crate Package_ is an RO-Crate without a defined root directory, where the _RO-Crate Metadata Document_ and/or _RO-Crate Website_ content is accessed independently (e.g. as part of a programmatic API).
+
+* In a _Detached RO-Crate Package_ the _RO-Crate Metadata Document_ is a JSON-LD document served over an API or loaded via other means.
+
+
+Unlike an  _Attached  RO-Crate Package_ a _Detached RO-Crate Package_ is not processed in a file-system context and thus does not carry a data _payload_ in the same sense, but may reference data deposited separately, or purely reference [contextual entities](contextual-entities). 
+
+In a _Detached RO-Crate Package_ the [root data entity](root-data-entity) SHOULD have an `@id` which is a URL that resolves to the _RO-Crate Metadata Document_.
+
+Any [data entities](data-entities) in a _Detached RO-Crate Package Package_ MUST be [Web-based Data Entities](data-entities.html#web-based-data-entities). 
+
+
+Note that a Detached RO-Crate Package may still use `#`-based local identifiers for [contextual entities](contextual-entities).
+
+
+
+
+
 ## RO-Crate Website (`ro-crate-preview.html` and `ro-crate-preview_files/`) for Packages
 
-In addition to the machine-oriented _RO-Crate Metadata Document_ _Local RO-Crate Packages_ and _Detached RO-Crate Packages_ MAY include a human-readable HTML rendering of the same information, known as the _RO-Crate Website_. If present, the _RO-Crate Website_ MUST be a file named `ro-crate-preview.html` in the root directory, which MAY serve as the entry point to other web-resources, which MUST be in `ro-crate-preview_files/` in the root directory.
+In addition to the machine-oriented _RO-Crate Metadata Document_ _Attached  RO-Crate Packages_ and _Detached RO-Crate Packages_ MAY include a human-readable HTML rendering of the same information, known as the _RO-Crate Website_. If present, the _RO-Crate Website_ MUST be a file named `ro-crate-preview.html` in the root directory, which MAY serve as the entry point to other web-resources, which MUST be in `ro-crate-preview_files/` in the root directory.
 
-If present in the root directory of a _Local RO-Crate Package_ as `ro-crate-preview.html`, (or otherwise served in a _Detached RO-Crate Package_), the RO-Crate Website MUST:
+If present in the root directory of an _Attached  RO-Crate Package_ as `ro-crate-preview.html`, (or otherwise served in a _Detached RO-Crate Package_), the RO-Crate Website MUST:
 
 * Be a valid [HTML 5] document
 * Be useful to users of the RO-Crate - this will vary by community and intended use, but in general the aim to assist users in reusing data by explaining what it is, how it was created how it can be used and how to cite it. One simple approach to this is to expose *all* the metadata in the _RO-Crate Metadata Document_.
@@ -207,9 +216,9 @@ Metadata about parts of the _RO-Crate Website_ MAY be included in an RO-Crate as
 
 
 
-## Payload files and directories (_Local RO-Crate Packages_)
+## Payload files and directories (_Attached  RO-Crate Packages_)
 
-These are the actual files and directories that make up the **payload** of the dataset being described in a _Local RO-Crate Package_.
+These are the actual files and directories that make up the **payload** of the dataset being described in an _Attached  RO-Crate Package_.
 
 The base RO-Crate specification makes no assumptions about the presence of any specific files or folders beyond the reserved RO-Crate files described above. 
 
@@ -220,13 +229,13 @@ An RO-Crate may also contain [Web-based Data Entities](data-entities.html#web-ba
 {% include callout.html type="tip" content="An RO-Crate [packaged with BagIt](appendix/implementation-notes#adding-ro-crate-to-bagit) may be [referencing external files](appendix/implementation-notes#referencing-external-files) which are not present in the _RO-Crate Root_ hierarchy until the BagIt has been _completed_. This method can be used for files that are large, require authentication or otherwise inconvenient to transfer with the RO-Crate, but which should nevertheless still be considered part of the _payload_." %}
 
 
-## Self-describing and self-contained Local RO-Crate Packages
+## Self-describing and self-contained Attached  RO-Crate Packages
 
 _RO-Crates Packages_ SHOULD be self-describing and self-contained.
 
-A minimal _Local RO-Crate Package_ is a directory containing a single _RO-Crate Metadata Document_ stored as an [RO-Crate Metadata File](root-data-entity) `ro-crate-metadata.json`. 
+A minimal _Attached  RO-Crate Package_ is a directory containing a single _RO-Crate Metadata Document_ stored as an [RO-Crate Metadata File](root-data-entity) `ro-crate-metadata.json`. 
 
-At the basic level, an Local RO-Crate Package is a collection of files and resources represented as a Schema.org [Dataset], that together form a meaningful unit for the purposes of communication, citation, distribution, preservation, etc.  The _RO-Crate Metadata Document_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. 
+At the basic level, an Attached  RO-Crate Package is a collection of files and resources represented as a Schema.org [Dataset], that together form a meaningful unit for the purposes of communication, citation, distribution, preservation, etc.  The _RO-Crate Metadata Document_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. 
 
 While RO-Crate is well catered for describing a _Dataset_ as files and relevant metadata that are _contained_ by the RO-Crate in the sense of living within the same root directory, RO-Crates can also reference external resources which are stored or accessed separately, via absolute URIs. This is particularly recommended where some resources cannot be co-hosted for practical or legal reasons, or if the RO-Crate itself is primarily web-based.
 
