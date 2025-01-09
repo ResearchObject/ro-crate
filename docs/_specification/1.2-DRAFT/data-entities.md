@@ -78,11 +78,11 @@ In this document the term _URI_ includes international *IRI*s; the _RO-Crate Met
 A [File] _Data Entity_ MUST have the following properties:
 
 *  `@type`: MUST be `File`, or an array where `File` is one of the values.
-*  `@id`: MUST be a relative or absoulte URI
+*  `@id`: MUST be a relative or absolute URI
 
 Further constraints on the `@id` are dependent on whether the [File] entity is being considered as part of an _Attached RO-Crate Package_ or _Detached RO-Crate Package_.
 
-A [File] MAY:  have a `contentURL` property which links to an online copy of the file.
+A [File] MAY  have a `contentURL` property which links to an online copy of the file.
 
 If an `@id` is a relative URI then it is treated as a `filePath`, which is calculated by appending the `@id` to the `RO-Crate Root`.
 

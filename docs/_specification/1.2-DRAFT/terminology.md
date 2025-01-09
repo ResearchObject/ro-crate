@@ -34,6 +34,8 @@ _RO-Crate Metadata File_: An _RO-Crate Metadata Document_ stored in a file named
 
 _Valid RO-Crate Metadata Object_: A stand alone _RO-Crate Metadata Document_ which has been successfully parsed and meets the structural requirements for RO-Crate, in that it has a `@context`, a `@graph` and at least a `Root Data Entity`. See section [Types of RO-Crate](structure#types-of-ro-crate).
 
+_Valid RO-Crate Dataset_: An _RO-Crate Metadata Object_ where the metadata of the _Root Data Entity_ and associated entities have been met, meaning it has enough information to be considered a _Research Object_ than may be distributed, whether or not it contains or references any data.
+
 _Attached RO-Crate Package_: A file system directory, indicated by the presence of the _RO-Crate Metadata File_. A _Local RO-Crate Package_ carries a payload of zero or more files. See section [Types of RO-Crate](structure#types-of-ro-crate).
 
 _Detached RO-Crate Package_: A stand alone _RO-Crate Metadata Document_ which defines a virtual data package. See section [Types of RO-Crate](structure#types-of-ro-crate).

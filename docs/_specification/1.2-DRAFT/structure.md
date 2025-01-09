@@ -32,34 +32,44 @@ parent: RO-Crate 1.2-DRAFT
 1. TOC
 {:toc}
 
+## Note on Version 1.2 of the RO-Crate Specification
+
+This version of the RO-Crate comes after a significant amount of implementation experience has been gathered from users of previous versions, dealing with use cases which were not anticipate or well catered for in the original specification. The result is that the specification has had multiple patches applied and is starting to become unwieldy. Work has commenced as of the beginning of 2025 on a backwards-compatible new modularized version of the RO-Crate Specification and related documents where we anticipate the hard syntactic requirements (the things an RO-Crate parser needs) will be separated from metadata profiles (the things RO-Crate Validators need) and other guidance about implementation (which implementers need) will be separated from each other, instead of interleaved as in the current document.
+
+Version 1.2 is anticipating some of these coming changes, by introducing a clearer specification of RO-Crate compliance at a series of levels than in previous versions, where compliance was open to interpretation.
+
 ## Types of RO-Crate
 
-RO-Crate specifies two broad levels of conformance for a text-string, known as the _RO-Crate Metadata Document_.
+RO-Crate specifies two broad levels of conformance for a text-string, known as the _RO-Crate Metadata Document_. Level one is structural and syntactic compliance - can it be parsed and does it have the right type of linked data? Level 2 is  conformance with the core metadata standard that makes an RO-Crate a useful, distributable dataset, which may be completely abstract, such as a a collection of Class and Property definitions. Within level 2, a distinction is made between data collections where the data is available via a file system (which was the default assumption when the RO-Crate specification was first conceived) and data collections which are aggregations of web resources and there is a mechanism specified for RO-Crates to indicate conformances with these types of packaging, and advice about how software should handle earlier versions of RO-Crate where packaging was an implicit assumption.
 
-- _Valid RO-Crate Metadata Object_: The _RO-Crate Metadata Document_ string can be parsed into an object which has structural conformance with this specification. (It is JSON, it is valid JSON-LD with a `@graph` and `@context` key which meet certain constraints).
+1. _Valid RO-Crate Metadata Object_: The _RO-Crate Metadata Document_ string can be parsed into an object which has structural conformance with this specification. (It is JSON, it is valid JSON-LD with a `@graph` and `@context` key which meet certain constraints).
   
-  _Valid RO-Crate Metadata Objects_ are the basis of RO-Crate packaging, but can be used for non-packaging purposes as well.
+   _Valid RO-Crate Metadata Objects_ are the basis of RO-Crate packaging, but can be used for non-packaging purposes as well.
 
-  An RO-Crate Metadata Document (whether or not is is a valid package) may have rich contextual information about the data, how it was collected  and by whom, with details of funding, related information, equipment and facilities, or about abstract entities.  
+   An RO-Crate Metadata Document (whether or not is is a valid package) may have rich contextual information about the data, how it was collected  and by whom, with details of funding, related information, equipment and facilities, or about abstract entities.  
   
-  The details of this contextual information are the domain of _RO-Crate Profiles_ which are concerned with semantics. Profiles are guides with optional validation services that describe how to use RO Crate Metadata for a particular purpose, such as; interchanging workflow software, describing vocabularies/schemas, or structuring archival repositories.
+   The details of this contextual information are the domain of _RO-Crate Profiles_ which are concerned with semantics. Profiles are guides with optional validation services that describe how to use RO Crate Metadata for a particular purpose, such as; interchanging workflow software, describing vocabularies/schemas, or structuring archival repositories.
 
-- _RO-Crate Package_: The _Syntactically Valid RO-Crate Metadata Document_ also meets the semantic constraints to need to be an _RO-Crate Package_:
+2. _Valid RO-Crate Dataset_: The _Valid RO-Crate Metadata Object_ has sufficient metadata to be considered a _Research Object_ which can be distributed
 
-    - The _Root Entity_ conformsTo the requirements set out in [Root Data Entity)(./root-data-entity.html)
-
-    - There are two types of _RO-Crate Package_:
-      -  An _Attached  RO-Crate Package_ has the following constraints:
-        - It is defined within a file-system-like service as a directory (known as the _RO-Crate Root_) with the RO-Crate Metadata Document saved in a file-like entity with a file name of `ro-crate-metadata.json`.
-        - References to files and directories in the RO-Crate Metadata Document are present in the RO-Crate.
-        - The _Root Entity_ MUST have a conformsTo property which has a value of {"@id": "https://w3id.org/ro/crate/1.2-DRAFT#LocalPackage"} 
-
-      -  A _Detached RO-Crate Package_:
-          - Is defined by a stand alone RO-Crate metadata document which may be stored in a file or distributed via an API.
-          - If stored in a file, the filename SHOULD be `${slug}-ro-crate-metadata.json` where the variable `$slug` is a human readable version of the dataset's ID or name.
-          - The _Root Entity_ MUST have a conformsTo property which has a value of {"@id": "https://w3id.org/ro/crate/1.2-DRAFT#DetatchedPackage"}, 
+    - The _Root Entity_:
       
-    NOTE that for backwards compatibility with RO-Crate 1.1 -- client software may provide modes which force a particular packaing mode to be assumed - for example if the software is passed a directory then it would assume that is processing an _Attached  RO-Crate Package_, while being passed a path to a file, or a string or pre-parsed JSON object the package would be considered a _Detached RO-Crate Package_.
+       - Meets all the metadata requirements set out in [Root Data Entity](./root-data-entity.html) incuding:
+          - Has [Dataset] as one of its `@type` values
+          - Has a "conformsTo" property with a value of  `{"@id": "https://w3id.org/ro/crate/1.2-DRAFT#ro-crate-dataset"}`
+       
+       NOTE: When processing RO-Crates of versions <= 1.1 conformance with the requirements in [Root Data Entity](./root-data-entity.html) is assumed. In RO-Crate version >= 1.2 conformance with these requirements needs to be explicitly stated, which allows for RO-Crate conventions to be used in non-packaging contexts.
+     - There are two types of _RO-Crate Package_:
+       -  An _Attached  RO-Crate Package_ has the following constraints:
+          - It is defined within a file-system-like service as a directory (known as the _RO-Crate Root_) with the RO-Crate Metadata Document saved in a file-like entity with a file name of `ro-crate-metadata.json`.
+          - References to files and directories in the RO-Crate Metadata Document are present in the RO-Crate.
+          - The _Root Entity_ MUST have a conformsTo property which has a value of {"@id": "https://w3id.org/ro/crate/1.2-DRAFT#LocalPackage"} 
+       -  A _Detached RO-Crate Package_:
+            - Is defined by a stand alone RO-Crate metadata document which may be stored in a file or distributed via an API.
+            - If stored in a file, the filename SHOULD be `${slug}-ro-crate-metadata.json` where the variable `$slug` is a human readable version of the dataset's ID or name.
+            - The _Root Entity_ MUST have a conformsTo property which has a value of {"@id": "https://w3id.org/ro/crate/1.2-DRAFT#DetatchedPackage"}, 
+      
+    NOTE that for backwards compatibility with RO-Crate 1.1 -- client software may provide modes which force a particular packaging mode to be assumed - for example if the software is passed a directory then it would assume that is processing an _Attached  RO-Crate Package_, while being passed a path to a file, or a string or pre-parsed JSON object the package would be considered a _Detached RO-Crate Package_.
 
 
 
@@ -68,26 +78,25 @@ RO-Crate specifies two broad levels of conformance for a text-string, known as t
 
 
 
-
 In all three types of crates the metadata is completed with [contextual entities](contextual-entities) that further describe the relationships and context of the data to form a _Research Object_. 
 
 ## RO-Crate Metadata Document (`ro-crate-metadata.json`)
 
-
-* The _RO-Crate Metadata Document_ MUST contain _RO-Crate JSON-LD_; a valid [JSON-LD 1.0] document in [flattened]  and [compacted] form
-* The _RO-Crate JSON-LD_ SHOULD use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.2-DRAFT/context> by reference.
-
-
 [JSON-LD](https://json-ld.org/) is a structured form of [JSON] that can represent a _Linked Data_ graph. 
 
-A valid _RO-Crate JSON-LD_ graph MUST describe:
+
+* The _RO-Crate Metadata Document_ MUST contain _RO-Crate JSON-LD_; a valid [JSON-LD 1.0] document in [flattened]  and [compacted] form
+* The _RO-Crate JSON-LD_ MUST use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.2-DRAFT/context> by reference.
+
+
+The graph in a _Valid RO-Crate Object_ MUST describe:
 
 1. The [RO-Crate Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor)
 2. The [Root Data Entity](root-data-entity#direct-properties-of-the-root-data-entity)
 3. Zero or more [Data Entities](data-entities)
 4. Zero or more [Contextual Entities](contextual-entities)
 
-It is RECOMMENDED that any referenced _contextual entities_ are also described in the _RO-Crate Metadata Document_ with the same identifier. Similarly it is RECOMMENDED that any _contextual entity_ in the _RO-Crate Metadata Document_ is linked to from at least one of the other entities using the same identifier. 
+Any referenced _contextual entities_ SHOULD also described in the _RO-Crate Metadata Document_ with the same identifier. Similarly any _contextual entity_ in the _RO-Crate Metadata Document_ SHOULD be linked to from at least one of the other entities using the same identifier. 
 
 The appendix [RO-Crate JSON-LD](appendix/jsonld) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata Document_. In short, the rest of this specification describe the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` array below:
 
@@ -174,10 +183,10 @@ If present in the root directory of an _Attached  RO-Crate Package_ as `ro-crate
 * If there are additional resources necessary to render the preview (e.g. CSS, JSON, HTML), link to them in a subdirectory `ro-crate-preview_files/`
 
 {.note}
-> Previous versions of the Specification recommended that the _RO-Crate Website_ should contain a redundant copy of the 
+> Previous versions of the Specification recommended that the _RO-Crate Website_ should contain a redundant copy of the RO-Crate Metadata Document but there is no evidence that this has been useful and is no longer recommended.
 
 
-The _RO-Crate Website_ is not considered a part of the RO-Crate payload, but serves as a way to make metadata available in a user-appropriate format. The `ro-crate-preview.html` file and the `ro-crate-preview-files/` directory and any contents SHOULD NOT be included in the `hasPart` property of the _Root Dataset_ or any other `Dataset` entity within an RO-Crate.
+The _RO-Crate Website_ is not considered a part of the RO-Crate payload in an _Attached RO-Crate Package_, but serves as a way to make metadata available in a user-appropriate format. The `ro-crate-preview.html` file and the `ro-crate-preview-files/` directory and any contents SHOULD NOT be included in the `hasPart` property of the _Root Dataset_ or any other `Dataset` entity within an RO-Crate.
 
 Metadata about parts of the _RO-Crate Website_ MAY be included in an RO-Crate as in the following example. Metadata such as an `author` property, `dateCreated` or other provenance can be included, including details about the software that created them, as described in [Software used to create files](./provenance.html#software-used-to-create-files)).
 
@@ -239,7 +248,7 @@ At the basic level, an Attached  RO-Crate Package is a collection of files and r
 
 While RO-Crate is well catered for describing a _Dataset_ as files and relevant metadata that are _contained_ by the RO-Crate in the sense of living within the same root directory, RO-Crates can also reference external resources which are stored or accessed separately, via absolute URIs. This is particularly recommended where some resources cannot be co-hosted for practical or legal reasons, or if the RO-Crate itself is primarily web-based.
 
-It is important to note that the _RO-Crate Metadata Document_ is **not an exhaustive manifest** or inventory, that is, it does not necessarily list or describe all files in the package.  Rather it is focused on providing sufficient amount of metadata to understand and use the content, and is designed to be compatible with existing and future approaches that _do_ have full inventories / manifest and integrity checks, e.g. by using checksums, such as [BagIt] and Oxford Common File Layout [OCFL Objects][OCFL Object].
+It is important to note that the _RO-Crate Metadata Document_ is **not necessarily an exhaustive manifest** or inventory, that is, it is not required to list or describe all files in the package.  Rather it is focused on providing sufficient amount of metadata to understand and use the content, and is designed to be compatible with existing and future approaches that _do_ have full inventories / manifest and integrity checks, e.g. by using checksums, such as [BagIt] and Oxford Common File Layout [OCFL Objects][OCFL Object].
 
 The intention is that RO-Crates can work well with a variety of archive file formats, e.g. tar, zip, etc., and approaches to capturing file manifests and file fixity, such as [BagIt], [OCFL] and [git] (see also appendix [Combining with other packaging schemes](appendix/implementation-notes#combining-with-other-packaging-schemes)). An RO-Crate can also be hosted on the web or mainly refer to web resources, although extra care to ensure persistence and consistency should be taken for archiving such RO-Crates.
 
