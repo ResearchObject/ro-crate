@@ -89,18 +89,17 @@ If an `@id` is a relative URI then it is treated as a `filePath`, which is calcu
 Both `@id` and and `contentURL` may be used in a variety of combinations:
 
 1. For a _Attached RO-Crate Package_:
-  * `@id`, no `contentURL`. `@id` MUST one of either:
+  * If a `contentUrl` is present `@id` MUST be a A valid relative URI reference and `contentURL` must be an absolute URI. In this case a file may or may not be present at `filePath`. If it is not present then the presence of the `contentUrl` property is an indication that the File content may be sourced from that URL.
+  * If  no `contentURL` is present `@id` MUST one of either:
     a. A relative URI indicating that an file MUST be present at `filePath` when validating a package.
     b. An Absolute URI indicating that the entity is a [Web-based Data Entity](#web-based-data-entity).
 
-  * `@id` AND `contentUrl` are both present. `@id` MUST be a A valid relative URI reference and `contentURL` must be an absolute URI. In this case a file may or may not be present at `filePath`. If it is not present then the presence of the `contentUrl` property is an indication that the File content may be sourced from that URL.
-
 2. For a _Detached RO-Crate Package_ all [File] Data Entities are [Web-based Data Enties](#web-based-data-entity)
-   * `@id`, no `contentURL`,  the `@id` MUST be an Absolute URI
-   * `@id` AND `contentUrl` are both present. `@id` MUST be a A valid relative URI reference and `contentURL` must be an absolute URI. The presence of the `contentUrl` property is an indication that the File content may be sourced from that URL and if the _Detached RO-Crate Package_ were to be converted to an _Attached RO-Crate Package_ the `@id` indicates the `filePath` to use for saving a local copy the [File].
+   * If a `contentUrl`is present: `@id` MUST be a A valid relative URI reference and `contentURL` must be an absolute URI. The presence of the `contentUrl` property is an indication that the File content may be sourced from that URL and if the _Detached RO-Crate Package_ were to be converted to an _Attached RO-Crate Package_ the `@id` indicates the `filePath` to use for saving a local copy the [File].
+  * If there is no `contentUrl`: `@id` MUST be an Absolute URI
 
-{.note}
-> It is up to implementers to decide whether to offer some form of URL "link checker" service [Web-based Data Entities](#web-based-data-entity) for both attached and Detached RO-Crate Packages.
+
+
 
 Additionally, `File` entities SHOULD have:
 
@@ -113,7 +112,8 @@ Additionally, `File` entities SHOULD have:
 RO-Crate's `File` is an alias for schema.org type [MediaObject], any of its properties MAY also be used (adding contextual entities as needed).  [Files on the web](#embedded-data-entities-that-are-also-on-the-web) SHOULD also use `identifier`, `url`, `subjectOf`, and/or `mainEntityOfPage`.
 
 
-
+{.note}
+> It is up to implementers to decide whether to offer some form of URL "link checker" service [Web-based Data Entities](#web-based-data-entity) for both attached and Detached RO-Crate Packages. If `contentUrl` has more than one value then a checker service SHOULD try each provided value until one resolves, and returns a correct [contentSize].
 
 
 
@@ -178,7 +178,7 @@ An example _RO-Crate JSON-LD_ for the above would be as follows:
 
 If the dataset contained  a large number of `*.ai` files which were spread throughout the crate structure and which did not have `File Data Entities` then a approach to describing them would be:
 
-```
+```json
 {
       "@id": "./",
       "@type": [
