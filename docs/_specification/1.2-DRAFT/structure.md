@@ -82,7 +82,7 @@ The appendix [RO-Crate JSON-LD](appendix/jsonld) details the general structure o
 
 ## Attached  RO-Crate Package
 
-An **Attached  RO-Crate Package** is used to contain and describe an option _payload_ of files and directories as well as web-based data entities among with their contextual information.
+An **Attached  RO-Crate Package** is used to contain and describe an optional _payload_ of files and directories as well as web-based data entities among with their contextual information.
 
 When processing an _Attached  RO-Crate Package_ the _RO-Crate Metadata Document_ MUST be present, named `ro-crate-metadata.json` and appear in the _RO-Crate Root_.
 
