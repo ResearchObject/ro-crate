@@ -95,7 +95,7 @@ Both `@id` and and `contentURL` may be used in a variety of combinations:
     b. An Absolute URI indicating that the entity is a [Web-based Data Entity](#web-based-data-entity).
 
 2. For a _Detached RO-Crate Package_ all [File] Data Entities are [Web-based Data Enties](#web-based-data-entity)
-   * If a `contentUrl`is present: `@id` MUST be a A valid relative URI reference and `contentURL` must be an absolute URI. The presence of the `contentUrl` property is an indication that the File content may be sourced from that URL and if the _Detached RO-Crate Package_ were to be converted to an _Attached RO-Crate Package_ the `@id` indicates the `filePath` to use for saving a local copy the [File].
+   * If a `contentUrl`is present: `@id` MUST be a A valid relative URI reference and `contentURL` must be an absolute URI. The presence of the `contentUrl` property is an indication that the File content may be sourced from that URL and if the _Detached RO-Crate Package_ were to be converted to an _Attached RO-Crate Package_ the `@id` indicates the `filePath` to use for saving a local copy of the [File].
   * If there is no `contentUrl`: `@id` MUST be an Absolute URI
 
 
