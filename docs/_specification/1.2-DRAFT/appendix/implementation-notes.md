@@ -46,7 +46,15 @@ When implementing tools to work with RO-Crate it is not necessary to use JSON-LD
 
 ## Combining with other packaging schemes
 
-RO-Crates may co-exist with other packaging schemes, such as [BagIt] using two general approaches; either (a) _adding_ RO-Crate into a package as part of the payload or (b) _wrapping_ another kind of package. Examples using BagIt follow.
+RO-Crates may co-exist with other packaging schemes, such as [BagIt] or [ELN] (Electronic Lab Notebook) using two general approaches; either (a) _adding_ RO-Crate into a package as part of the payload or (b) _wrapping_ another kind of package.
+
+### ELN examples
+
+An "ELN" archive (with file extension `.eln`, see [IANA assignment](https://www.iana.org/assignments/media-types/application/vnd.eln+zip) and [specification](https://github.com/TheELNConsortium/TheELNFileFormat/blob/master/SPECIFICATION.md)), is a valid RO-Crate packaged in a certain way. It is a ZIP file that contains a folder, and this folder is the _RO-Crate Root_ containing the `ro-crate-metadata.json` file. See [Structure of the archive](https://github.com/TheELNConsortium/TheELNFileFormat/blob/master/SPECIFICATION.md#structure-of-the-archive) from the specification.
+
+As such, when processing a `.eln` file, one needs to extract the ZIP archive, look for the only folder present at root directory of the ZIP archive, and process its content as a normal RO-Crate.
+
+### BagIt examples
 
 BagIt is described in [RFC 8493]:
 
@@ -59,7 +67,7 @@ BagIt is described in [RFC 8493]:
 BagIt and RO-Crate have largely separate concerns - RO-Crate is focussed on rich
 metadata, the semantics of data, while BagIt is about reliable transfer.
 
-### Adding RO-Crate to Bagit
+#### Adding RO-Crate to Bagit
 
 RO-Crate can be combined with BagIt simply by placing the RO-Crate files 
 within the BagIt payload (`data/`) directory.
@@ -136,14 +144,14 @@ measures, e.g.
 `gpg --detach-sign --armor --output tagmanifest-sha512.txt.asc tagmanifest-sha512.txt`
 in combination with a secure PGP key exchange or equivalent trust network.
 
-#### Base URI in BagIt
+##### Base URI in BagIt
 
 The arcp specification suggests how [BagIt UUID identifiers] can be used to calculate the base URI of a bag, see section [Establishing a base URI inside a ZIP file](relative-uris#establishing-a-base-uri-inside-a-zip-file).  For this purpose it is RECOMMENDED that `bag-info.txt` includes a fresh UUID like:
 
     External-Identifier: urn:uuid:24e51ca2-5067-4598-935a-dac4e327d05a
 
 
-#### Referencing external files
+##### Referencing external files
 
 The [BagIt fetch file](https://www.rfc-editor.org/rfc/rfc8493.html#section-2.2.3) MAY
 be used to reference files to be downloaded into particular `data/` paths
@@ -182,7 +190,7 @@ reference a downloadable file by relative paths within `data/`, even if
 this file is not itself described in the RO-Crate metadata.
 
 
-#### Snapshots of external files
+##### Snapshots of external files
 
 As an alternative to the above, [web-based data entities](../data-entities#web-based-data-entities)
 can be used in the RO-Crate:
@@ -209,7 +217,7 @@ primarily pointing at a web resource which is allowed to change
 without causing a BagIt checksum error.
 
 
-### Example of wrapping a BagIt bag in an RO-Crate
+#### Example of wrapping a BagIt bag in an RO-Crate
 
 Alternatively, an RO-Crate can _wrap_ a BagIt bag, so that the RO-Crate metadata
 is outside of the bag directory and can be changed without changing the payload's checksums. 
