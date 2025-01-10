@@ -297,7 +297,7 @@ A [Dataset] (directory) _Data Entity_ MUST have the following properties:
 
 *  `@type` MUST be `Dataset` or an array where `Dataset` is one of the values.
 *  `@id`  MUST be either:
-    *   a _URI Path_ The id SHOULD end with `/`.
+    *   a _URI Path_ that SHOULD end with `/`.
     *   an absolute URI
     *   a local reference beginning with `#`
 
