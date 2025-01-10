@@ -67,7 +67,7 @@ The graph in a _Valid RO-Crate Object_ MUST describe:
 3. Zero or more [Data Entities](data-entities)
 4. Zero or more [Contextual Entities](contextual-entities)
 
-Any referenced _contextual entities_ SHOULD also described in the _RO-Crate Metadata Document_ with the same identifier. Similarly any _contextual entity_ in the _RO-Crate Metadata Document_ SHOULD be linked to from at least one of the other entities using the same identifier. 
+Any referenced _contextual entities_ SHOULD also be described in the _RO-Crate Metadata Document_ with the same identifier. Similarly any _contextual entity_ in the _RO-Crate Metadata Document_ SHOULD be linked to from at least one of the other entities using the same identifier. 
 
 The appendix [RO-Crate JSON-LD](appendix/jsonld) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata Document_. In short, the rest of this specification describe the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` array below:
 
