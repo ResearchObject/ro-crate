@@ -291,7 +291,7 @@ The [Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor) `ro-cra
 
 
 
-### Directory File Entity
+### Directory Data Entity
 
 A [Dataset] (directory) _Data Entity_ MUST have the following properties:
 
