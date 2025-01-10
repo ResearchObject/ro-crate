@@ -90,7 +90,7 @@ Both `@id` and and `contentURL` may be used in a variety of combinations:
 
 1. For a _Attached RO-Crate Package_:
   * If a `contentUrl` is present `@id` MUST be a A valid relative URI reference and `contentURL` must be an absolute URI. In this case a file may or may not be present at `filePath`. If it is not present then the presence of the `contentUrl` property is an indication that the File content may be sourced from that URL.
-  * If  no `contentURL` is present `@id` MUST one of either:
+  * If  no `contentURL` is present `@id` MUST be one of either:
     a. A relative URI indicating that an file MUST be present at `filePath` when validating a package.
     b. An Absolute URI indicating that the entity is a [Web-based Data Entity](#web-based-data-entity).
 
