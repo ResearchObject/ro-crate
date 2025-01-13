@@ -209,7 +209,7 @@ A _Detached RO-Crate Package_ is an RO-Crate, defined in an _RO-Crate Metadata D
 
 Unlike an  _Attached  RO-Crate Package_ a _Detached RO-Crate Package_ is not processed in a file-system context and thus does not carry a data _payload_ in the same sense, but may reference data deposited separately, or purely reference [contextual entities](contextual-entities). 
 
-In a _Detached RO-Crate Package_ the [root data entity](root-data-entity) SHOULD have an `@id` which is a URL that resolves to the _RO-Crate Metadata Document_.
+In a _Detached RO-Crate Package_ the [root data entity](root-data-entity) SHOULD have an @id which is an absolute URL.
 
 Any [data entities](data-entities) in a _Detached RO-Crate Package Package_ are assumed to be [Web-based Data Entities](data-entities.html#web-based-data-entities). 
 
