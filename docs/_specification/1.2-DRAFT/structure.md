@@ -60,7 +60,7 @@ In all crates the metadata is completed with [contextual entities](contextual-en
 * The _RO-Crate JSON-LD_ MUST use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.2-DRAFT/context> by reference.
 
 
-The graph in a _Valid RO-Crate Object_ MUST describe:
+The graph MUST describe:
 
 1. The [RO-Crate Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor)
 2. The [Root Data Entity](root-data-entity#direct-properties-of-the-root-data-entity)
