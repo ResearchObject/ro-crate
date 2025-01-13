@@ -108,7 +108,7 @@ See also the appendix on
 ### Purpose of Metadata Document
 
 To ensure a base-line interoperability between RO-Crates, and for an RO-Crate to
-be considered a _Valid RO-Crate Dataset_, a minimum set of metadata is required for the
+be considered a _ RO-Crate Dataset_, a minimum set of metadata is required for the
 _Root Data Entity_. As [stated earlier](structure#self-describing-and-self-contained-local-ro-crate-packages)
 the _RO-Crate Metadata Document_ is not an
 exhaustive manifest or inventory, that is, it does not necessarily list or
@@ -123,11 +123,11 @@ licensing for the _RO-Crate Metadata Document_ if metadata is licensed
 separately from the crate's Data entities.
 
 The section below outlines the properties that the _Root Data Entity_ MUST have to
-be minimally valid.
+be minimally .
 
 ## Direct properties of the Root Data Entity
 
-The _Root Data Entity_ of a _Valid RO-Crate Dataset_  MUST have the following properties:
+The _Root Data Entity_ MUST have the following properties:
 
 *  `@type`: MUST be [Dataset] or an array that contains `Dataset`
 *  `@id`:  SHOULD be the string `./` or an absolute URI (see [below](#root-data-entity-identifier))
