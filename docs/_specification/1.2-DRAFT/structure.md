@@ -41,7 +41,7 @@ An _RO-Crate Metadata Document_ is typically used or processed in one of three m
   - References to files and directories in the RO-Crate Metadata Document are present in the RO-Crate or available online as [Web-based Data Entities](data-entities.html#web-based-data-entities).
 2.  A _Detached RO-Crate Package_:
     - Is defined by a stand alone RO-Crate metadata document which may be stored in a file or distributed via an API.
-    - If stored in a file, known as a _Detached RO-Crate Metadata File_, the filename SHOULD be `${slug}-ro-crate-metadata.json` where the variable `$slug` is a human readable version of the dataset's ID or name, to signal that the document should be interpreted as part of an _Attached RO-Crate Data Package_.
+    - If stored in a file, known as a _Detached RO-Crate Metadata File_, the filename SHOULD be `${slug}-ro-crate-metadata.json` rather than `ro-crate-metadata.json` where the variable `$slug` is a human readable version of the dataset's ID or name, to signal that on disk, the presence of the file does not indicate an _Attached RO-Crate Data Package_.
 3. As a stand-alone document as part of a tool such as a website generator or crate vizualizer, where data entities are not processed.
 
 
