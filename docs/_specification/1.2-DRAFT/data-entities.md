@@ -80,23 +80,19 @@ A [File] _Data Entity_ MUST have the following properties:
 *  `@type`: MUST be `File`, or an array where `File` is one of the values.
 *  `@id`: MUST be a relative or absolute URI.
 
-A [File] MAY have also a `contentURL` property which links to an online copy of the file.
 
 Further constraints on the `@id` are dependent on whether the [File] entity is being considered as part of an _Attached RO-Crate Package_ or _Detached RO-Crate Package_.
 
-If an `@id` is a relative URI then it is treated as a `filePath`, which is calculated by appending the `@id` to the `RO-Crate Root`.
-
-Both `@id` and and `contentURL` may be used in a variety of combinations:
-
 1. For a _Attached RO-Crate Package_:
-  * If a `contentUrl` is present `@id` MUST be a A valid relative URI reference and `contentURL` must be an absolute URI. In this case a file may or may not be present at `filePath`. If it is not present then the presence of the `contentUrl` property is an indication that the File content may be sourced from that URL.
-  * If  no `contentURL` is present `@id` MUST be one of either:
-    a. A relative URI indicating that an file MUST be present at `filePath` when validating a package.
+  *  `@id` MUST be one of either:
+    a. A relative URI indicating that an file MUST be present at the path `@id` relative to the _RO-Crate Root_.
     b. An Absolute URI indicating that the entity is a [Web-based Data Entity](#web-based-data-entity).
+   
+   A [File] in an _Attached RO-Crate Package_ MAY have also a `contentURL` property which links to an online copy of the file.
 
-2. For a _Detached RO-Crate Package_ all [File] Data Entities are [Web-based Data Enties](#web-based-data-entity)
-   * If a `contentUrl`is present: `@id` MUST be a A valid relative URI reference and `contentURL` must be an absolute URI. The presence of the `contentUrl` property is an indication that the File content may be sourced from that URL and if the _Detached RO-Crate Package_ were to be converted to an _Attached RO-Crate Package_ the `@id` indicates the `filePath` to use for saving a local copy of the [File].
-  * If there is no `contentUrl`: `@id` MUST be an Absolute URI
+
+2. For a _Detached RO-Crate Package_   `@id` MUST be an Absolute URI; all [File] Data Entities are [Web-based Data Enties](#web-based-data-entity).
+
 
 
 
@@ -110,6 +106,7 @@ Additionally, `File` entities SHOULD have:
 * [contentSize] with the size of the file in bytes
 
 RO-Crate's `File` is an alias for schema.org type [MediaObject], any of its properties MAY also be used (adding contextual entities as needed).  [Files on the web](#embedded-data-entities-that-are-also-on-the-web) SHOULD also use `identifier`, `url`, `subjectOf`, and/or `mainEntityOfPage`.
+
 
 
 {.note}
@@ -368,7 +365,6 @@ Example of an RO-Crate including a _File Data Entity_ external to the _RO-Crate 
 }
 ```
 
-
 Additional care SHOULD be taken to improve persistence and long-term preservation of web resources included 
 in an RO-Crate, as they can be more difficult to archive or move along with the _RO-Crate Root_, and
 may change intentionally or unintentionally, leaving the RO-Crate with incomplete or outdated information.
@@ -387,6 +383,21 @@ As files on the web may change, the timestamp property [sdDatePublished] SHOULD 
     "sdDatePublished": "2020-04-09T13:09:21+01:00Z"
   }
 ```
+
+Web based entities MAY use the property [localPath] to indicate a path that can be used to when downloading the data in an _Attached RO-Crate Package_ context. This may be used to instantiate local copies of web-based resources in an _Attached RO-Crate Package_ or as part of a process to download a local resources from a _Detached RO-Crate Package_ relative to a new root directory.
+
+```json
+  {
+    "@id": "https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf",
+    "localPath": "docs/ro-crate-1.0.0.pdf",
+    "@type": "File",
+    "name": "RO-Crate specification",
+    "contentSize": "310691",
+    "encodingFormat": "application/pdf",
+    "sdDatePublished": "2020-04-09T13:09:21+01:00Z"
+  }
+```
+
 
 
 {% include callout.html type="note" content="Do not use web based URI identifiers for files which _are_ present in the crate root, see [below](#embedded-data-entities-that-are-also-on-the-web)." %}
@@ -411,7 +422,6 @@ These MAY be included for File Data Entities as additional metadata, regardless 
 * [subjectOf] to a [CreativeWork] (or [WebPage]) that mentions this file or its content (but also other resources)
 * [mainEntityOfPage] to a [CreativeWork]  (or [WebPage]) that primarily describes this file (or its content) 
 
-If a [contentUrl] is present, then in an _Attached RO-Crate Package_ the file MAY be omitted from the packages, for example if it is very large or if of peripheral interest. Core files should NOT be omitted.
 
 Note that if a local file is intended to be packaged within an _Attached  RO-Crate Package_, the `@id` property MUST be a _URI Path_ relative to the _RO Crate root_, for example `survey-responses-2019.csv` as in the example below, where the content URL points to a download endpoint as a string.
 

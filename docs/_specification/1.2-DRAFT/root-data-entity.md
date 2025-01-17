@@ -67,14 +67,15 @@ property with a single value referencing the _Root Data Entity_'s `@id`.
 }
 ```
 
-{: .note}
-> Even in [Detached RO-Crates](structure#detached-ro-crate-packages) which do not have an _RO-Crate Metadata File_ present, the identifier `ro-crate-metadata.json` MUST be used.
+{% include callout.html type="note" content="Even in [Detached RO-Crate Packages](structure#detached-ro-crate-package) which do not have an _RO-Crate Metadata File_ present, the identifier `ro-crate-metadata.json` MUST be used." %}
 
-The [conformsTo] property of the _RO-Crate Metadata Descriptor_ 
-MUST have a single value which is a reference to a versioned permalink URI of the RO-Crate specification starting with `https://w3id.org/ro/crate/`. 
+The [conformsTo] of the _RO-Crate Metadata Descriptor_ 
+SHOULD be a versioned permalink URI of the RO-Crate specification
+that the _RO-Crate JSON-LD_ conforms to. The URI SHOULD 
+start with `https://w3id.org/ro/crate/`. 
 
-{% include callout.html type="tip" content="In RO-Crate 1,2 The `conformsTo` property MAY not have more than one value, to additionally indicate 
-specializing [RO-Crate profiles](profiles) - these SHOULD be referenced from the _Root Data Entity_." %}
+{% include callout.html type="tip" content="The `conformsTo` property MAY be an array, to additionally indicate 
+specializing [RO-Crate profiles](profiles)." %}
 
 ### Finding the Root Data Entity
 
@@ -134,7 +135,7 @@ The _Root Data Entity_ MUST have the following properties:
 *  `description`: SHOULD further elaborate on the name to provide a summary of the context in which the dataset is important.
 *  `datePublished`: MUST be a single string value in [ISO 8601 date format][DateTime], SHOULD be specified to at least the precision of a day, and MAY be a timestamp down to the millisecond. 
 *  `license`: SHOULD link to a _Contextual Entity_ or _Data Entity_ in the _RO-Crate Metadata Document_ with a name and description (see section on [licensing](contextual-entities#licensing-access-control-and-copyright)). MAY, if necessary, be a textual description of how the RO-Crate may be used. 
-* `conformsTo` with a value of {"@id": "https://w3id.org/ro/crate/1.2-DRAFT#ro-crate-dataset"} (may be an array with multiple values)
+
 
 {% include callout.html type="note" content="These requirements are stricter than those published 
 for [Google Dataset Search](https://developers.google.com/search/docs/data-types/dataset) which 
@@ -145,6 +146,8 @@ requires a `Dataset` to have a `name` and `description`." %}
 Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be added to further describe the RO-Crate as a whole, e.g. [author], [abstract], [publisher]. See sections [contextual entities](contextual-entities) and [provenance](provenance) for further details.
 
 
+
+
 ### Root Data Entity identifier
 
 The root data entity's `@id` SHOULD be either `./` (indicating the directory of `ro-crate-metadata.json` is the [RO-Crate Root](structure)), or an absolute URI.
@@ -153,7 +156,7 @@ The root data entity's `@id` SHOULD be either `./` (indicating the directory of 
 {: note}
 > RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) MAY indicate this using [identifier] on the root data entity using the approach set out in the [Science On Schema.org guides], that is through a `PropertyValue` or MAY use a full persistent URL as the `@id` for the _Root Data Entity_.
 >
-> Earlier RO-Crate 1.1 and earlier recommended `identifier` to be plain string URIs. Clients SHOULD be permissive of an RO-Crate `identifier` being a string (which MAY be a URI), or a `@id` reference, which SHOULD be represented as an `PropertyValue` entity which MUST have a human readable `value`, and SHOULD have a `url` if the identifier is Web-resolvable. A citable representation of this persistent identifier MAY be given as a `description` of the `PropertyValue`, but as there are more than 10.000 known [citation styles], no attempt should be made to parse this string.
+> RO-Crate 1.1 and earlier recommended `identifier` to be plain string URIs. Clients SHOULD be permissive of an RO-Crate `identifier` being a string (which MAY be a URI), or a `@id` reference, which SHOULD be represented as an `PropertyValue` entity which MUST have a human readable `value`, and SHOULD have a `url` if the identifier is Web-resolvable. A citable representation of this persistent identifier MAY be given as a `description` of the `PropertyValue`, but as there are more than 10.000 known [citation styles], no attempt should be made to parse this string.
 
 #### Resolvable persistent identifiers and citation text
 
