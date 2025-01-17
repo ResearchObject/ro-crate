@@ -299,7 +299,7 @@ A [Dataset] (directory) _Data Entity_ MUST have the following properties:
     *   a local reference beginning with `#`
 
 For an _Attached RO-Crate Package_:
-* The `@id` MUST be a relative path that resolves to a directory that is present in the _RO-Crate Root_. 
+* If the @id is a relative path, then it MUST that resolve to a directory which must be present in the RO-Crate Root along with its parent directories. 
 
 For a _Detached RO-Crate Package_:
 * If the `@id` is a _URI Path it MAY be used to create a directory and MAY resolve to a service which returns a list of files
@@ -572,7 +572,39 @@ Similarly, the _RO-Crate Root_ entity (or a reference to another RO-Crate as a `
 
 In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not reflect the current state of the `Dataset` or RO-Crate.
 
+#### Retrieving an RO-Crate
 
+To resolve a reference to an RO-Crate, but where `subjectOf` or `distribution` is unknown (e.g. an RO-Crate is cited from a journal article), the below approach is recommended to retrieve its [RO-Crate Metadata Document](structure#ro-crate-metadata-document-ro-crate-metadatajson):
+
+1. Assuming the URI is a permalink,  after following HTTP redirects without content negotiation, try [Signposting] to look for `Link` headers that reference `Link rel="describedby"` for an _RO-Crate Metadata Document_, or `Link rel="item"` for a distribution archive -- in either case prefer a link with `profile="https://w3id.org/ro/crate"` declared. For example, signposting for `https://doi.org/10.48546/workflowhub.workflow.120.5` leads to the archive `https://workflowhub.eu/workflows/120/ro_crate?version=5` as:
+  
+    ```
+    curl --location --head https://doi.org/10.48546/workflowhub.workflow.120.5
+
+    HTTP/2 302
+    Location: https://workflowhub.eu/workflows/120?version=5
+
+    HTTP/2 200
+    Content-Type: text/html; charset=UTF-8
+    Link: <https://workflowhub.eu/workflows/120/ro_crate?version=5> ;
+          rel="item" ; type="application/zip" ;
+          profile="https://w3id.org/ro/crate"
+    ```
+2. [HTTP Content-negotiation] for the [RO-Crate media type](appendix/jsonld#ro-crate-json-ld-media-type), for example:  
+
+    Requesting `https://w3id.org/workflowhub/workflow-ro-crate/1.0` with HTTP header
+    `Accept: application/ld+json;profile=https://w3id.org/ro/crate` redirects to the _RO-Crate Metadata file_
+    `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`
+
+3. The above approaches may fail or return a HTML page, e.g. for content-delivery networks that do not support content-negotiation. 
+4. An optional heuristic fallback is to try resolving the path `./ro-crate-metadata.json` from the _resolved_ URI (after permalink redirects). For example:  
+If permalink `https://w3id.org/workflowhub/workflow-ro-crate/1.0` redirects to `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/index.html` (a HTML page), then
+try retrieving `https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json`. 
+5. If the retrieved resource is a ZIP file (`Content-Type: application/zip`), then extract `ro-crate-metadata.json`, or, if the archive root only contains a single folder (e.g. `folder1/`), extract `folder1/ro-crate-metadata.json`
+6. If the retrieved resource is a [BagIt archive](appendix/implementation-notes#combining-with-other-packaging-schemes), e.g. containing a single folder `folder1` with `folder1/bagit.txt`, then extract and verify BagIt checksums before returning the bag's `data/ro-crate-metadata.json`
+7. If the returned/extracted document is valid JSON-LD and has a [root data entity](root-data-entity#finding-the-root-data-entity), this is the RO-Crate Metadata File.
+
+{% include callout.html type="tip" content="Some PID providers such as DataCite may respond to content-negotiation and provide their own JSON-LD, which do not describe an RO-Crate (the `profile=` was ignored). The use of Signposting allows the repository to explicitly provide the RO-Crate." %}
 
 
 {% include references.liquid %}
