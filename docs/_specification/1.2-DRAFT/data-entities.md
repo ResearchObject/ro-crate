@@ -88,7 +88,7 @@ Further constraints on the `@id` are dependent on whether the [File] entity is b
     a. A relative URI indicating that an file MUST be present at the path `@id` relative to the _RO-Crate Root_.
     b. An Absolute URI indicating that the entity is a [Web-based Data Entity](#web-based-data-entity).
    
-   A [File] in an _Attached RO-Crate Package_ MAY have also a `contentURL` property which links to an online copy of the file.
+   A [File] in an _Attached RO-Crate Package_ MAY have also a `contentURL` property which corresponds to a download link for the file. Following the link (allowing for HTTP redirects) SHOULD directly download the file.
 
 
 2. For a _Detached RO-Crate Package_   `@id` MUST be an Absolute URI; all [File] Data Entities are [Web-based Data Enties](#web-based-data-entity).
