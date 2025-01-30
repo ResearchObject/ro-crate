@@ -42,9 +42,9 @@ identifying _Contextual entities_.
 
 ## Converting from Attached to Detached RO-Crate Package
 
-An [Attached RO-Crate Package](../structure#attached-ro-crate) can be published on the Web by placing its _RO-Crate Root_ directory on a static file-based Web server (e.g. Nginx, Apache HTTPd, GitHub Pages). The use of relative URI references in the _RO-Crate Metadata File_ ensures identifiers of [data entities](../data-entities) work as they should.
+An [Attached RO-Crate Package](../structure#attached-ro-crate-package) can be published on the Web by placing its _RO-Crate Root_ directory on a static file-based Web server (e.g. Nginx, Apache HTTPd, GitHub Pages). The use of relative URI references in the _RO-Crate Metadata File_ ensures identifiers of [data entities](../data-entities) work as they should.
 
-Sometimes it is desired to make a [Detached RO-Crate Package](../structure#detached-ro-crate), e.g. for depositing or integrating the RO-Crate Metadata File into a knowledge graph or repository that is unable to preserve data files using their existing pathnames. In this case one needs to:
+Sometimes it is desired to make a [Detached RO-Crate Package](../structure#detached-ro-crate-package), e.g. for depositing or integrating the RO-Crate Metadata File into a knowledge graph or repository that is unable to preserve data files using their existing pathnames. In this case one needs to:
 
 1. Decide on new Web locations for individual data files and update their absolute URI in `@id`
 2. Observe the preservation considerations for [Web-based Data Entities](../data-entities#web-based-data-entities)
@@ -132,7 +132,7 @@ Converting a Detached Crate to an Attached Crate can mean multiple things depend
 First, check if the Root Data Entity already have a [distribution download](../data-entities#directories-on-the-web-dataset-distributions) listed, in which case that can be retrieved as the corresponding Attached Crate.
 
 To archive a snapshot of an Detached Crate's metadata, keeping all data entities [web-based](../data-entities#web-based-data-entities):
-* Crate a new folder as the _RO-Crate Root_, save the _RO-Crate Metadata Document_ as the _RO-Crate Metadata File_ according to [Attached RO-Crate Package](../structure#attached-ro-crate) structure
+* Crate a new folder as the _RO-Crate Root_, save the _RO-Crate Metadata Document_ as the _RO-Crate Metadata File_ according to [Attached RO-Crate Package](../structure#attached-ro-crate-package) structure
 * Copy the absolute `@id` to become an `identifier` according to recommendations for [Root Data Entity identifier](../root-data-entity#root-data-entity-identifier)
 * Change the `@id` of the Root Data Entity to `./` and update all references to it, including from the [Metadata Descriptor](../root-data-entity#ro-crate-metadata-descriptor)  
 
