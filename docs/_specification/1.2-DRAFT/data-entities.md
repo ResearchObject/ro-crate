@@ -46,7 +46,7 @@ Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-
 
 _Data Entities_ representing files: MUST have `"File"` as a value for `@type`. `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ includes:
 -  Resources which are available locally (applicable only in the context of _Attached RO-Crate Packages_) and
--  [Web-based Data Entities](#web-based-data-entity) which can be downloaded and saved as a file. 
+-  [Web-based Data Entities](#web-based-data-entities) which can be downloaded and saved as a file. 
 
 The rules for the `@id` property of Files are set out below.
 
@@ -86,12 +86,12 @@ Further constraints on the `@id` are dependent on whether the [File] entity is b
 1. For a _Attached RO-Crate Package_:
   *  `@id` MUST be one of either:
     a. A relative URI indicating that an file MUST be present at the path `@id` relative to the _RO-Crate Root_.
-    b. An Absolute URI indicating that the entity is a [Web-based Data Entity](#web-based-data-entity).
+    b. An Absolute URI indicating that the entity is a [Web-based Data Entity](#web-based-data-entities).
    
    A [File] in an _Attached RO-Crate Package_ MAY have also a `contentURL` property which corresponds to a download link for the file. Following the link (allowing for HTTP redirects) SHOULD directly download the file.
 
 
-2. For a _Detached RO-Crate Package_   `@id` MUST be an Absolute URI; all [File] Data Entities are [Web-based Data Enties](#web-based-data-entity).
+2. For a _Detached RO-Crate Package_   `@id` MUST be an Absolute URI; all [File] Data Entities are [Web-based Data Enties](#web-based-data-entities).
 
 
 
@@ -107,7 +107,7 @@ RO-Crate's `File` is an alias for schema.org type [MediaObject], any of its prop
 
 
 
-{% include callout.html type="note" content="It is up to implementers to decide whether to offer some form of URL "link checker" service [Web-based Data Entities](#web-based-data-entity) for both attached and Detached RO-Crate Packages. If `contentUrl` has more than one value then a checker service SHOULD try each provided value until one resolves, and returns a correct [contentSize]. %}
+{% include callout.html type="note" content="It is up to implementers to decide whether to offer some form of URL "link checker" service [Web-based Data Entities](#web-based-data-entities) for both attached and Detached RO-Crate Packages. If `contentUrl` has more than one value then a checker service SHOULD try each provided value until one resolves, and returns a correct [contentSize]. %}
 
 
 
