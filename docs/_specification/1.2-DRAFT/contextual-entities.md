@@ -117,7 +117,7 @@ An [Organization] SHOULD be the value for the [publisher] property of a [Dataset
 }
 ```
 
-An [Organization] SHOULD also be used for a [Person]'s [affiliation] property.
+An [Organization] SHOULD also be used for a [Person]'s [affiliation] property. 
 
 ```json
 {
@@ -244,7 +244,7 @@ A [data entity](data-entities) MAY provide a published DOI [identifier] that pri
   "@id": "figure.png",
   "@type": ["File", "ImageObject"],
   "name": "XXL-CT-scan of an XXL Tyrannosaurus rex skull",
-  "identifier": "https://doi.org/10.5281/zenodo.3479743",
+  "identifier": {"@id": "https://doi.org/10.5281/zenodo.3479743"},
   "citation": {"@id": "http://ndt.net/?id=19249"},
   "encodingFormat": "image/png"
 },
