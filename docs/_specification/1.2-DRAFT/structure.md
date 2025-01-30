@@ -56,7 +56,7 @@ In all crates the metadata is completed with [contextual entities](contextual-en
 [JSON-LD](https://json-ld.org/) is a structured form of [JSON] that can represent a _Linked Data_ graph. 
 
 
-* The _RO-Crate Metadata Document_ MUST contain _RO-Crate JSON-LD_; a valid [JSON-LD 1.0] document in [flattened]  and [compacted] form
+* The _RO-Crate Metadata Document_ MUST be a document which is valid [JSON-LD 1.0] in [flattened]  and [compacted] form.
 * The _RO-Crate JSON-LD_ MUST use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.2-DRAFT/context> by reference.
 
 
@@ -209,9 +209,9 @@ A _Detached RO-Crate Package_ is an RO-Crate, defined in an _RO-Crate Metadata D
 
 Unlike an  _Attached  RO-Crate Package_ a _Detached RO-Crate Package_ is not processed in a file-system context and thus does not carry a data _payload_ in the same sense, but may reference data deposited separately, or purely reference [contextual entities](contextual-entities). 
 
-In a _Detached RO-Crate Package_ the [root data entity](root-data-entity) SHOULD have an @id which is an absolute URL.
+In a _Detached RO-Crate Package_ the [root data entity](root-data-entity) SHOULD have an @id which is an absolute URL if it is available online. If it is not yet, or will never be available online then @id may be any valid URI - including `./`.
 
-Any [data entities](data-entities) in a _Detached RO-Crate Package Package_ are assumed to be [Web-based Data Entities](data-entities.html#web-based-data-entities). 
+Any [data entities](data-entities) in a _Detached RO-Crate Package Package_  MUST be [Web-based Data Entities](data-entities.html#web-based-data-entities). 
 
 A Detached RO-Crate Package may still use `#`-based local identifiers for [contextual entities](contextual-entities).
 

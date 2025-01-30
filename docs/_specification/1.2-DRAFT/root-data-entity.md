@@ -153,10 +153,9 @@ Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be 
 The root data entity's `@id` SHOULD be either `./` (indicating the directory of `ro-crate-metadata.json` is the [RO-Crate Root](structure)), or an absolute URI.
 
 
-{: note}
-> RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) MAY indicate this using [identifier] on the root data entity using the approach set out in the [Science On Schema.org guides], that is through a `PropertyValue` or MAY use a full persistent URL as the `@id` for the _Root Data Entity_.
->
-> RO-Crate 1.1 and earlier recommended `identifier` to be plain string URIs. Clients SHOULD be permissive of an RO-Crate `identifier` being a string (which MAY be a URI), or a `@id` reference, which SHOULD be represented as an `PropertyValue` entity which MUST have a human readable `value`, and SHOULD have a `url` if the identifier is Web-resolvable. A citable representation of this persistent identifier MAY be given as a `description` of the `PropertyValue`, but as there are more than 10.000 known [citation styles], no attempt should be made to parse this string.
+{% include callout.html type="note" content="RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) MAY indicate this using [identifier] on the root data entity using the approach set out in the [Science On Schema.org guides], that is through a `PropertyValue` or MAY use a full persistent URL as the `@id` for the _Root Data Entity_." %}
+
+{% include callout.html type="note" content="RO-Crate 1.1 and earlier recommended `identifier` to be plain string URIs. Clients SHOULD be permissive of an RO-Crate `identifier` being a string (which MAY be a URI), or a `@id` reference, which SHOULD be represented as an `PropertyValue` entity which MUST have a human readable `value`, and SHOULD have a `url` if the identifier is Web-resolvable. A citable representation of this persistent identifier MAY be given as a `description` of the `PropertyValue`, but as there are more than 10.000 known [citation styles], no attempt should be made to parse this string."%}
 
 #### Resolvable persistent identifiers and citation text
 
