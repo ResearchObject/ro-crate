@@ -107,8 +107,7 @@ RO-Crate's `File` is an alias for schema.org type [MediaObject], any of its prop
 
 
 
-{.note}
-> It is up to implementers to decide whether to offer some form of URL "link checker" service [Web-based Data Entities](#web-based-data-entity) for both attached and Detached RO-Crate Packages. If `contentUrl` has more than one value then a checker service SHOULD try each provided value until one resolves, and returns a correct [contentSize].
+{% include callout.html type="note" content="It is up to implementers to decide whether to offer some form of URL "link checker" service [Web-based Data Entities](#web-based-data-entity) for both attached and Detached RO-Crate Packages. If `contentUrl` has more than one value then a checker service SHOULD try each provided value until one resolves, and returns a correct [contentSize]. %}
 
 
 
@@ -443,8 +442,7 @@ Some generic file formats like `application/json` may be specialized using a _pr
 
 {% include callout.html type="tip" content="Profiles expressed in formal languages (e.g. XML Schema for validation) can have their own `encodingFormat` and `conformsTo` to indicate their file format." %}
 
-{: .note}
-The [Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor) `ro-crate-metadata.json` is not a data entity, but is described with `conformsTo` to an _implicit contextual entity_ for the RO-Crate specification, a profile of [JSON-LD](appendix/jsonld). RO-Crates themselves can be specialized using [Profile Crates](profiles), specified with `conformsTo` on the root data entity.
+{% include callout.html type="note" content="The [Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor) `ro-crate-metadata.json` is not a data entity, but is described with `conformsTo` to an _implicit contextual entity_ for the RO-Crate specification, a profile of [JSON-LD](appendix/jsonld). RO-Crates themselves can be specialized using [Profile Crates](profiles), specified with `conformsTo` on the root data entity." %}
 
 
 

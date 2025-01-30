@@ -45,8 +45,7 @@ An _RO-Crate Metadata Document_ is typically used or processed in one of three m
 3. As a stand-alone document as part of a tool such as a website generator or crate vizualizer, where data entities are not processed.
 
 
-{.note}   
- >Client software may provide modes which force a particular packaging mode to be assumed - for example if the software is passed a directory then it would assume that is processing an _Attached  RO-Crate Package_, while being passed a path to a file it could work in _Detached RO-Crate Package_ mode, and attempt to resolve _Web Based Data Entities_ OR provide a mode to simply parse the document and process it without referencing or validating Data entities in any special way.
+{% include callout.html type="note" content="Client software may provide modes which force a particular packaging mode to be assumed - for example if the software is passed a directory then it would assume that is processing an _Attached  RO-Crate Package_, while being passed a path to a file it could work in _Detached RO-Crate Package_ mode, and attempt to resolve _Web Based Data Entities_ OR provide a mode to simply parse the document and process it without referencing or validating Data entities in any special way." %}
 
 
 In all crates the metadata is completed with [contextual entities](contextual-entities) that further describe the relationships and context of the data to form a _Research Object_. 
@@ -111,8 +110,7 @@ The payload directory (and its child directory) contains files and directories t
 
 The `@id` of a an _Attached  RO-Crate Package_ MUST be either `./` or be a URI, such as a DOI URL or other persistent URL which is considered to be the main identifier of the Attached  RO-Crate Package.
 
-{: .note }
-> Earlier versions of RO-Crate mandated an `@id` of `./` as a convention for identifying the _Root Data Entity_, but the use of the _RO-Crate Metadata Descriptor_ means that this is no longer required, freeing-up the _Root Data Entity_ `@id` to be used to indicate what should be considered the canonical URI for an RO_Crate Package. Other mechanisms for specifying the 'main identifier' involve multiple JSON-LD entities and may be ambiguous.
+{% include callout.html type="note" content="Earlier versions of RO-Crate mandated an `@id` of `./` as a convention for identifying the _Root Data Entity_, but the use of the _RO-Crate Metadata Descriptor_ means that this is no longer required, freeing-up the _Root Data Entity_ `@id` to be used to indicate what should be considered the canonical URI for an RO_Crate Package. Other mechanisms for specifying the 'main identifier' involve multiple JSON-LD entities and may be ambiguous." %}
 
 ### Payload files and directories 
 
@@ -146,8 +144,7 @@ If present in the root directory of an _Attached  RO-Crate Package_ as `ro-crate
 * For keys that resolve in the `RO-Crate JSON-LD Context` to a URI, indicate this (the simplest way is to link the key to its definition).
 * If there are additional resources necessary to render the preview (e.g. CSS, JSON, HTML), link to them in a subdirectory `ro-crate-preview_files/`
 
-{.note}
-> Previous versions of the Specification recommended that the _RO-Crate Website_ should contain a redundant copy of the RO-Crate Metadata Document but there is no evidence that this has been useful and is no longer recommended.
+{% include callout.html type="note" content="Previous versions of the Specification recommended that the _RO-Crate Website_ should contain a redundant copy of the RO-Crate Metadata Document but there is no evidence that this has been useful and is no longer recommended." %}
 
 
 The _RO-Crate Website_ is not considered a part of the RO-Crate payload in an _Attached RO-Crate Package_, but serves as a way to make metadata available in a user-appropriate format. The `ro-crate-preview.html` file and the `ro-crate-preview-files/` directory and any contents SHOULD NOT be included in the `hasPart` property of the _Root Dataset_ or any other `Dataset` entity within an RO-Crate.
