@@ -236,3 +236,8 @@
   status:
   level:
   url: https://github.com/cienciadedatosysalud/cdmb
+
+- name: RdfCrate
+  description: RO-Crate builder that uses RDF concepts.
+  status: beta
+  url: https://github.com/WEHI-SODA-Hub/RdfCrate
