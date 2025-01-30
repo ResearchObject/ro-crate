@@ -150,6 +150,9 @@ Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be 
 | [cite-as] | MAY | May go to a repository landing page
 | [cite-as] | MAY | May require authentication
 | HTTP/HTTPS server of the resolved RO-Crate Metadata Document or archive | SHOULD | Should indicate the persistent identifier in its [Signposting] headers using `Link rel="cite-as"`  | this segment is quite tangential...
+| `publisher` | SHOULD | Should be present | [source](contextual-entities#publisher)
+| `publisher` | SHOULD | Should reference an [Organization] | [source](contextual-entities#publisher)
+| `publisher` | MAY | May reference a [Person] | [source](contextual-entities#publisher)
 
 ### Identifier entity
 
@@ -172,7 +175,7 @@ Used to indicate a _persistent identifier_ (e.g. a DOI). Should use the approach
 
 The RO-Crate SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`).
 
-### Contextual Entities 
+### Contextual Entities 2
 
 If an existing permalink or other absolute URI is reasonably unique for that entity, that URI SHOULD be used as identifier for the contextual entity in preference of an identifier local to the RO-Crate (e.g. `#josiah` or `#0fa587c6-4580-4ece-a5df-69af3c5590e3`).
 
@@ -271,10 +274,6 @@ Type of entity | Property/Target | Severity | Description | Eli attention |
 The RO-Crate SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`).
 
 #### Misc
-
-A [data entity](data-entities) MAY provide a published DOI [identifier] that primarily captures that file or dataset. A citation MAY also be provided:
-
-The [Root Data Entity](root-data-entity) SHOULD have a [publisher] property. This SHOULD be an [Organization] though it MAY be a [Person].
 
 To associate a research project with a [Dataset], the _RO-Crate JSON-LD_ SHOULD contain an entity for the project using type [Organization], referenced by a [funder] property. The project `Organization` SHOULD in turn reference any external [funder], either by using its URL as an `@id` or via a _Contextual Entity_ describing the funder.
 
