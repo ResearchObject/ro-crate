@@ -1,10 +1,10 @@
 # RO-Crate Specification Quick Reference
 
-This document collates all the explicit requirements of the specification, while omitting all of the guidance, examples and notes. It is primarily intended for developers of tools which ingest/export/validate RO-Crates, though it may also be useful as a general resource. 
+This document collates all the explicit requirements of the specification, while omitting all of the guidance, examples and notes. It is primarily intended for developers of tools which ingest/export/validate RO-Crates, though it may also be useful as a general resource. It should NOT be treated as a replacement for the spec itself!
 
 If you have questions, your first port of call should be the full specification page for the item you have questions about.
 
-In rare cases, requirements are listed in a different section from their original source, to be closer to related requirements. In those cases, the original source section is linked from the requirement.
+Requirements are grouped according to the part(s) of RO-Crate structure or the type(s) of entity they apply to. This means they are not necessarily in order in which they appear in the specification. Each table has a "primary source" listed at the top which links to the specification section containing the bulk of the requirements and guidance about that subject. Requirements which come from other sections have their source listed in the table itself.
 
 ## RO-Crate Structure
 
@@ -54,7 +54,8 @@ Unless otherwise specified, all entities MAY have additional properties not incl
 | the entity itself | SHOULD | Should be ultimately referenceable from the root data entity (possibly through another reachable [data entity](data-entities) or [contextual entity](contextual-entities)) |
 | nested entities | SHOULD | Should not be present - instead describe these as separate contextual entities in the flat `@graph` list | MUST? |
 | `citation` | SHOULD | Should reference a [ScholarlyArticle] or [CreativeWork] entity | [source](contextual-entities#publications-via-citation-property) - CHECK THESE REQS they're weird
-
+| `thumbnail` | MAY | May be present | applies mainly to [File] entities. [source](contextual-entities#thumbnails)
+| `thumbnail` | MUST | If present, must reference a [File] data entity within the RO-Crate | [source](contextual-entities#thumbnails)
 
 ### CreativeWork entities
 
@@ -153,6 +154,7 @@ Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be 
 | `publisher` | SHOULD | Should be present | [source](contextual-entities#publisher)
 | `publisher` | SHOULD | Should reference an [Organization] | [source](contextual-entities#publisher)
 | `publisher` | MAY | May reference a [Person] | [source](contextual-entities#publisher)
+| `funder` | SHOULD | Should reference all funders directly, including those that are also referenced by entities included in `hasPart`. | [source](contextual-entities#funding-and-grants)
 
 ### Identifier entity
 
@@ -169,6 +171,22 @@ Used to indicate a _persistent identifier_ (e.g. a DOI). Should use the approach
 ## Data Entities
 
 (skip for now...)
+
+##### All (data entities)
+
+Type of data entity | Property/Target | Severity | Description | Eli attention |
+| ------- | ------| ------ | ------- | ------- |
+| All | `citation` | MUST | If associating a publication with a dataset, `citation` must include a URL (for example a DOI URL) as the `@id` of a publication | this feels a weird requirement... [source](contextual-entities#publications-via-citation-property)
+| All | `identifier` | MAY | May be a published DOI that primarily captures that file or dataset | [source](contextual-entities#publications-via-citation-property)
+| Dataset | `funder` | SHOULD | Should be present if a research project is associated with the dataset | [source](contextual-entities#funding-and-grants)
+| Dataset | `funder` | SHOULD | Should reference an [Organization] entity | [source](contextual-entities#funding-and-grants)
+| All | `license` | SHOULD | If different to the `license` on the _Root Data Entity_, should reference a [CreativeWork] entity | [source](contextual-entities#licensing-access-control-and-copyright)
+| All | `contentLocation` / `spatialCoverage` | SHOULD | One of these properties should be present if the entity is associated with a geographical location or region | [source](contextual-entities#places)
+| All | `contentLocation` / `spatialCoverage` | SHOULD | Should reference a [Place] entity | [source](contextual-entities#places)
+| All | `about` | MUST | Subject properties (equivalent to a [Dublin Core Subject](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/subject/)) must use the [about] property | I don't understand this one... [source](contextual-entities#subjects--keywords)
+| All | `keywords` | MUST | Keyword properties must use the [keywords] property | [source](contextual-entities#subjects--keywords)
+| All | `temporalCoverage` | SHOULD | Should be present if the entity is associated with a time period | implicit!! [source](contextual-entities#time)
+| Thumbnail (File) | usage | MUST | Must be present in the BagIt manifest if in a [_Bagged RO-Crate_](appendix/implementation-notes#adding-ro-crate-to-bagit) | this is a weird one too... actually more structural. [source](contextual-entities#thumbnails)
 
 
 ## Contextual Entities
@@ -239,64 +257,73 @@ For example, the below [RepositoryObject] is related to four files which are all
 
 If [thumbnail]s are incidental to the data set, they need not be referenced by [hasPart]  or [hasFile] relationships, but they must be in the BagIt manifest if in a [_Bagged RO-Crate_](appendix/implementation-notes#adding-ro-crate-to-bagit).
 
+### Table
+
+The RO-Crate SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`).
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-### All...
-
-Type of entity | Property/Target | Severity | Description | Eli attention |
+Type of contextual entity | Property/Target | Severity | Description | Eli attention |
 | ------- | ------| ------ | ------- | ------- |
-| Any | `@id` | SHOULD | If an existing permalink or other absolute URI is reasonably unique for that entity, that URI should be used as `@id`. |
+| Any | `@id` | SHOULD | If an existing permalink or other absolute URI is reasonably unique for that entity, that URI should be used as `@id` |
+| Any | `@type` | SHOULD | If the entity is from a repository, should include [RepositoryObject] in addition to any other types | [source](provenance#recording-changes-to-ro-crates)
 | Person | `name` | SHOULD | Should be present | implicit!
 | Person | `affiliation` | SHOULD | Should be present | implicit!
 | Person | `affiliation` | SHOULD | Should reference an [Organization] entity | [source](contextual-entities#organizations-as-values)
 | Person / Organization | `contactPoint` | SHOULD | Should be present in at least one of the entities that is referenced as [author] or [publisher] from the _Root Data Entity_
 | Person / Organization | `contactPoint` | SHOULD | Should reference a [ContactPoint] entity
+| Organization | `funder` | SHOULD | If relevant, should reference any external [funder], either by using its URL as an `@id` or via a _Contextual Entity_ describing the funder.
+| License | `@id` | SHOULD | Should be the URL of the license
+| License | `@type` | SHOULD | Should be [CreativeWork]
+| License | `name` | SHOULD | Should be present | [source](root-data-entity#direct-properties-of-the-root-data-entity)
+| License | `description` | SHOULD | Should be present | [source](root-data-entity#direct-properties-of-the-root-data-entity)
+| License | `description` | SHOULD | Should contain a summary of the license |
+| Place | `geo` | SHOULD | Should reference a [Geometry] entity
+| Geometry | `asWKT` | SHOULD | Should express the point or shape in [Well Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) format
+| Item of physical equipment | `@id` | SHOULD | Should be a URL to a web page describing the equipment | [source](provenance#equipment-used-to-create-files)
+| Item of physical equipment | `@type` | SHOULD | Should be [IndividualProduct] | [source](provenance#equipment-used-to-create-files)
+| Item of physical equipment | `description` | SHOULD | Should include serial number and manufacturer that identify the equipment as completely as possible | implicit - the SHOULD is present but doesn't say which property to use. [source](provenance#equipment-used-to-create-files)
+| Software application | `@type` | SHOULD | Should be [SoftwareApplication] | [source](provenance#software-used-to-create-files)
+| Software application | `version` | SHOULD | Should be present | [source](provenance#software-used-to-create-files)
+| RepositoryCollection | usage | MAY | May be used to group [RepositoryObject] entities | [source](provenance#recording-changes-to-ro-crates)
+| RepositoryCollection | `hasMember` | MAY | May reference [RepositoryObject] entities | [source](provenance#recording-changes-to-ro-crates)
 
-##### All (data entities)
+
+## Focus of an RO-Crate
+
+Whole page seems to be guidelines, not requirements
+
+## Provenance of entities
+
+A software application or item of equipment SHOULD be associated with the [File]\(s) (or other [data entities](data-entities)) it created as an [instrument] of a [CreateAction], with the [File] referenced by a [result] property. Any input files SHOULD be referenced by the [object] property.
 
 Type of entity | Property/Target | Severity | Description | Eli attention |
 | ------- | ------| ------ | ------- | ------- |
-| All | `citation` | MUST | If associating a publication with a dataset, `citation` must include a URL (for example a DOI URL) as the `@id` of a publication | this feels a weird requirement... [source](contextual-entities#publications-via-citation-property)
-| All | `identifier` | MAY | May be a published DOI that primarily captures that file or dataset
+| All Actions | `instrument` | MAY be present
+| All Actions | `instrument` | SHOULD reference an entity of type [IndividualProduct] (equipment) or [SoftwareApplication] (software), except if multiple [SoftwareApplication]s were used together | singleton? implicit in the writing
+| CreateAction | `instrument` | If multiple [SoftwareApplication]s were used together, SHOULD reference a [SoftwareSourceCode] entity representing the whole [workflow](workflows)
+| CreateAction | `result` | SHOULD reference one or more entities representing the outputs of the action | implicit, actually only stated for [File]s
+| CreateAction | `object` | SHOULD reference one or more entities representing the inputs of the action | implicit, actually only stated for [File]s
+| CreateAction | `name` | MAY | May be human-readable
+| CreateAction | `name` | MAY | May be machine-generated
+| CreateAction / UpdateAction | usage | SHOULD | To record an action which changes an entity's metadata, or changes its state in a publication or other workflow, a [CreateAction] or [UpdateAction] SHOULD be associated with a [Data Entity](data-entities) or, for the RO-Crate itself, with the [root data entity](root-data-entity). | can't tell if this is its own req, or if it is elaborated on by successive reqs
+| Curation action | `object` | MUST | Must be present
+| Curation action | `object` | MUST | Must reference the _Root Data Entity_ or one of the entities in its `hasPart` | what is a curation action...?
+| Action which creates data entities | `result` | SHOULD | Should reference the data entities that were created
+| All Actions | `name` | SHOULD | Should be present
+| All Actions | `description` | MAY | May be present
+| All Actions | `endTime` | SHOULD | Should be present
+| All Actions | `endTime` | MUST | Must be in [ISO 8601 date format][DateTime]
+| All Actions | `endTime` | SHOULD | Should be specified to at least the precision of a day
+| All Actions | `startTime` | MAY | MAY be present
+| All Actions | `startTime` | MUST | Must be in [ISO 8601 date format][DateTime]
+| All Actions | `startTime` | SHOULD | Should be specified to at least the precision of a day
+| All Actions | `agent` | SHOULD | Should be present
+| All Actions | `agent` | SHOULD | Should reference a [Person] entity who was responsible for authorizing the action | implicit... just says a "human [agent]
+| All Actions | `actionStatus` | MAY | May be present
+| All Actions | `actionStatus` | MUST | MUST be must be one of the values enumerated by [ActionStatusType]: [ActiveActionStatus], [CompletedActionStatus], [FailedActionStatus] or [PotentialActionStatus]
+| All Actions | `error` | MAY | If the Action failed, may include error information
+| UpdateAction | usage | SHOULD | Should only be used for actions which affect the Dataset as a whole, such as movement through a workflow | Crate as a whole?
+| CreateAction | usage | SHOULD | Should be used for actions which modify a [File] within a Dataset |
+| File | usage | SHOULD | If a [CreateAction] modifies a file within a dataset, the old version should be retained and a [CreateAction] added which has the original version as its [object] and the new version as its [result] |
 
-The RO-Crate SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`).
-
-#### Misc
-
-To associate a research project with a [Dataset], the _RO-Crate JSON-LD_ SHOULD contain an entity for the project using type [Organization], referenced by a [funder] property. The project `Organization` SHOULD in turn reference any external [funder], either by using its URL as an `@id` or via a _Contextual Entity_ describing the funder.
-
-{% include callout.html type="tip" content="To make it very clear where funding is coming from, the _Root Data Entity_ SHOULD also reference funders directly, as well as via a chain of references." %}
-
-If a [Data Entity](data-entities) has a [license] that is different from the license on the _Root Data Entity_, the entity SHOULD have a [license] property referencing a _Contextual Entity_ with a type [CreativeWork] to describe the license. The `@id` of the license SHOULD be its URL (e.g. a Creative Commons License URL) and, when possible, a summary of the license included using the [description] property.
-
-#### Places
-
-To associate a [Data Entity](data-entities) with a _Contextual Entity_ representing a geographical location or region, the entity SHOULD have a property of [contentLocation] or [spatialCoverage] with a value of type [Place].
-
-To express point or shape geometry it is recommended that a `geo` property on a [Place] entity SHOULD link to a [Geometry] entity, with an [asWKT] property that expresses the point or shape in [Well Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) format.  This example is a point, `POINT ($longitude, $latitude)`, but other asWKT primitives, `LINESTRING` & `POLYGON` SHOULD be used as required.
-
-#### Misc more
-
-Subject properties (equivalent to a [Dublin Core Subject](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/subject/)) on the [root data entity](root-data-entity) or a [data entity](data-entities) MUST use the [about] property.
-
-Keyword properties MUST use [keywords]. Note that by Schema.org convention, keywords are given as a single JSON string, with individual keywords separated by commas.
-
-To describe the _time period_ which an RO-Crate [Data Entity](data-entities) (or the [root data entity](root-data-entity)) is _about_, use [temporalCoverage]:
-
-A [File] or any other entity MAY have a [thumbnail] property which references another file.
-
-For example, the below [RepositoryObject] is related to four files which are all versions of the same image (via [hasFile]), one of which is a thumbnail. The thumbnail MUST be included in the RO-Crate.
-
-If [thumbnail]s are incidental to the data set, they need not be referenced by [hasPart]  or [hasFile] relationships, but they must be in the BagIt manifest if in a [_Bagged RO-Crate_](appendix/implementation-notes#adding-ro-crate-to-bagit).
+so far: 120 reqs...
