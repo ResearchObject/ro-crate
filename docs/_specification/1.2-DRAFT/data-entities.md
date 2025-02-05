@@ -106,7 +106,7 @@ RO-Crate's `File` is an alias for schema.org type [MediaObject], any of its prop
 
 
 
-{% include callout.html type="note" content="It is up to implementers to decide whether to offer some form of URL "link checker" service [Web-based Data Entities](#web-based-data-entities) for both attached and Detached RO-Crate Packages. If `contentUrl` has more than one value then a checker service SHOULD try each provided value until one resolves, and returns a correct [contentSize]. %}
+{% include callout.html type="note" content='It is up to implementers to decide whether to offer some form of URL "link checker" service for [Web-based Data Entities](#web-based-data-entities) for both attached and Detached RO-Crate Packages. If `contentUrl` has more than one value then a checker service SHOULD try each provided value until one resolves, and returns a correct [contentSize].' %}
 
 
 
