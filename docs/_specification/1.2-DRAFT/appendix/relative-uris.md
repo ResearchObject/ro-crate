@@ -134,7 +134,7 @@ First, check if the Root Data Entity already have a [distribution download](../d
 To archive a snapshot of an Detached Crate's metadata, keeping all data entities [web-based](../data-entities#web-based-data-entities):
 * Crate a new folder as the _RO-Crate Root_, save the _RO-Crate Metadata Document_ as the _RO-Crate Metadata File_ according to [Attached RO-Crate Package](../structure#attached-ro-crate-package) structure
 * Copy the absolute `@id` to become an `identifier` according to recommendations for [Root Data Entity identifier](../root-data-entity#root-data-entity-identifier)
-* Change the `@id` of the Root Data Entity to `./` and update all references to it, including from the [Metadata Descriptor](../root-data-entity#ro-crate-metadata-descriptor)  
+* Optional: Change the `@id` of the Root Data Entity to `./` and update all references to it, including from the [Metadata Descriptor](../root-data-entity#ro-crate-metadata-descriptor)
 
 If the new Attached Crate is intended as a _fork_ that will evolve independently of the Detached Crate, then:
 * Delete the `identifier`, add the previous `@id` as `isBasedOn`
