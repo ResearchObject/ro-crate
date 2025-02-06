@@ -44,8 +44,7 @@ An RO-Crate is described using _JSON-LD_ by an _RO-Crate Metadata Document_. As 
 The _RO-Crate Metadata Document_ MUST contain a self-describing
 **RO-Crate Metadata Descriptor** with
 the `@id` value `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` in legacy
-crates for RO-Crate 1.0 or older) and `@type` [CreativeWork]. This descriptor MUST have an [about]
-property with a single value referencing the _Root Data Entity_'s `@id`.
+crates for RO-Crate 1.0 or older) and `@type` [CreativeWork]. This descriptor MUST have an [about] property referencing the _Root Data Entity_'s `@id`.
 
 ```json
 
