@@ -102,6 +102,7 @@ Example output (abbreviated):
       ],
       "name": "Workflow RO-Crate profile"
     }
+}
 ```
 
 Notice how identifiers like `ro-crate-metadata.json`, `./`, `index.html` and `example/` have been translated to absolute URIs.
