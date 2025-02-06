@@ -206,7 +206,7 @@ The following _RO-Crate Metadata Document_ represents a minimal description of a
 }
 ```
 
-Alternatively the following is also valid:
+Alternatively the following is also valid, this time using the DOI as the `@id` of the _Root Data Entity_:
 
 ```json
  {
