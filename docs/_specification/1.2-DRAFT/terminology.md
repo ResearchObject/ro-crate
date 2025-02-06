@@ -32,7 +32,7 @@ _RO-Crate Metadata Document_: A JSON-LD document that describes the _RO-Crate_ w
 
 _RO-Crate Metadata File_: An _RO-Crate Metadata Document_ stored in a file named  `ro-crate-metadata.json` in the _RO-Crate Root_ of an _Attached RO-Crate Package_. See section [RO-Crate Metadata Document](structure#ro-crate-metadata-document-ro-crate-metadatajson). 
 
-_Attached RO-Crate Package_: A file system directory, indicated by the presence of the _RO-Crate Metadata File_ which functions as a packaged dataset. A _Local RO-Crate Package_ carries a payload of zero or more files. See section [Types of RO-Crate](structure#types-of-ro-crate).
+_Attached RO-Crate Package_: A file system directory, indicated by the presence of the _RO-Crate Metadata File_ which functions as a packaged dataset. An _Attached RO-Crate Package_ carries a payload of zero or more files. See section [Types of RO-Crate](structure#types-of-ro-crate).
 
 _Detached RO-Crate Package_: A stand alone _RO-Crate Metadata Document_ which defines a virtual data package by referencing online materials. A  _Detached RO-Crate Package_ does not have a payload See section [Types of RO-Crate](structure#types-of-ro-crate).
 
