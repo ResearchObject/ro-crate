@@ -165,7 +165,7 @@ Any entity which is a subclass of [CreativeWork], including [Dataset]s like the 
 
 ## Minimal example of RO-Crate
 
-The following _RO-Crate Metadata Document_ represents a minimal description of an _RO-Crate_ that also follows the identifier recommendations above for use in a _Local RO-Crate Package_. 
+The following _RO-Crate Metadata Document_ represents a minimal description of an _RO-Crate_ that also follows the identifier recommendations above for use in an _Attached RO-Crate Package_. 
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context", 
