@@ -121,8 +121,7 @@ The _RO-Crate Metadata Descriptor_ MAY contain information such as
 licensing for the _RO-Crate Metadata Document_ if metadata is licensed
 separately from the crate's Data entities.
 
-The section below outlines the properties that the _Root Data Entity_ MUST have to
-be minimally .
+The section below outlines the properties that the _Root Data Entity_ MUST have.
 
 ## Direct properties of the Root Data Entity
 
