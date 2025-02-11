@@ -28,15 +28,19 @@ parent: RO-Crate 1.2-DRAFT
 
 _RO-Crate_: A dataset, which is described in a JSON-LD _RO-Crate Metadata Document_. 
 
-_RO-Crate Metadata Document_: A JSON-LD document that describes the _RO-Crate_ with structured data in form of _RO-Crate JSON-LD_. This may be stored in a file-system as an _RO-Crate Metadata File_ or served via an API. 
+_RO-Crate Metadata Document_: A JSON-LD document that describes the _RO-Crate_ with structured data in form of _RO-Crate JSON-LD_. This may be stored in a file-system as an _RO-Crate Metadata File_, served via web site or via an API. 
 
-_RO-Crate Metadata File_: An _RO-Crate Metadata Document_ stored in a file named  `ro-crate-metadata.json` in the _RO-Crate Root_. See section [RO-Crate Metadata Document](structure#ro-crate-metadata-document-ro-crate-metadatajson). 
+_RO-Crate Metadata File_: An _RO-Crate Metadata Document_ stored in a file named  `ro-crate-metadata.json` in the _RO-Crate Root_ of an _Attached RO-Crate Package_. See section [RO-Crate Metadata Document](structure#ro-crate-metadata-document-ro-crate-metadatajson). 
 
-_Attached RO-Crate_: An RO-Crate that contains a payload of one or more files, stored/published on a typical file system with an _RO-Crate Metadata File_:.  See section [Types of RO-Crate](structure#types-of-ro-crate).
+_Attached RO-Crate Package_: A file system directory, indicated by the presence of the _RO-Crate Metadata File_ which functions as a packaged dataset. An _Attached RO-Crate Package_ carries a payload of zero or more files. See section [Types of RO-Crate](structure#types-of-ro-crate).
 
-_Detached RO-Crate_: An RO-Crate described by an _RO-Crate Metadata Document_ without a payload of files, not having its own _RO-Crate Root_. See section [Types of RO-Crate](structure#types-of-ro-crate).
+_Detached RO-Crate Package_: A stand alone _RO-Crate Metadata Document_ which defines a virtual data package by referencing online materials. A  _Detached RO-Crate Package_ does not have a payload See section [Types of RO-Crate](structure#types-of-ro-crate).
 
-_RO-Crate Root_: The top-level directory of a _Attached RO-Crate_, indicated by the presence of the _RO-Crate Metadata File_ `ro-crate-metadata.json`. See section [RO-Crate structure](structure)
+
+_Detached RO-Crate Metadata File_: An _RO-Crate Metadata Document_ stored in a file named  `${prefix}-ro-crate-metadata.json` or `ro-crate-metadata.json` where  `$prefix`, if present is a file-system safe version identifier or name for the RO-Crate.
+
+
+_RO-Crate Root_: The top-level directory of an _RO-Crate Package_. See section [RO-Crate structure](structure)
 
 _RO-Crate Metadata Descriptor_: A _Contextual Entity_ of type [CreativeWork], which describes the _RO-Crate Metadata Document_ and links it to the _Root Data Entity_. See section [RO-Crate Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor)
 

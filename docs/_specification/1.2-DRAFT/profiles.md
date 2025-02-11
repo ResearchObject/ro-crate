@@ -76,7 +76,7 @@ In the contextual entity for a profile:
 * The entity SHOULD have a descriptive [name]
 * The entity MAY declare [version], preferably according to [Semantic Versioning][semver]
 
-RO-Crates that are _conforming to_ (or intending to conform to) such a profile SHOULD declare this using `conformsTo` on the [root data entity](root-data-entity):
+RO-Crates that are _conforming to_ (or intending to conform to) such a profile SHOULD declare this using `conformsTo` on the [Root Data Entity](root-data-entity):
 
 ```json
 {
