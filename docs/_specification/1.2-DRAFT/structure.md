@@ -34,16 +34,19 @@ parent: RO-Crate 1.2-DRAFT
 
 ## Types of RO-Crate
 
-An _RO-Crate Metadata Document_ is typically used or processed in one of three main ways:
+An _RO-Crate Metadata Document_ is used to package data in one of two ways:
 
 1.  An _Attached  RO-Crate Package_ that defines an on-disk collection of data:
-  - It is defined within a file-system-like service as a directory (known as the _RO-Crate Root_) with the RO-Crate Metadata Document saved in a file-like entity with a file name of `ro-crate-metadata.json`.
+  - It is defined within a file-system-like service as a directory (known as the _RO-Crate Root_) with the RO-Crate Metadata Document saved in a file-like entity with a file name of `ro-crate-metadata.json`. 
   - References to files and directories in the RO-Crate Metadata Document are present in the RO-Crate or available online as [Web-based Data Entities](data-entities.html#web-based-data-entities).
+  - Typically, software processing an _Attached  RO-Crate Package would be passed a path to directory or a zip file.
 2.  A _Detached RO-Crate Package_:
     - Is defined by a stand alone RO-Crate metadata document which may be stored in a file or distributed via an API.
     - References to files and directories in the RO-Crate Metadata Document are all [Web-based Data Entities](data-entities.html#web-based-data-entities).
     - If stored in a file, known as a _Detached RO-Crate Metadata File_, the filename SHOULD be `${slug}-ro-crate-metadata.json` rather than `ro-crate-metadata.json` where the variable `$slug` is a human readable version of the dataset's ID or name, to signal that on disk, the presence of the file does not indicate an _Attached RO-Crate Data Package_.
-3. As a stand-alone document as part of a tool such as a website generator or crate vizualizer, where data entities are not processed.
+    - Typically, software processing a _Detached RO-Crate Package_ would be passed a path to a file, an absolute URI or a JSON string or object, without a directory context.  
+
+RO-Crate Metadata Documents MAY also be processed in non-packaging contexts by tools such as website generators or crate vizualizer, where data entities are not processed, or in applications which use RO-Crate conventions for representing context (such as a schema definition using Schema.org conventions).
 
 
 {% include callout.html type="note" content="Client software may provide modes which force a particular packaging mode to be assumed - for example if the software is passed a directory then it would assume that is processing an _Attached  RO-Crate Package_, while being passed a path to a file it could work in _Detached RO-Crate Package_ mode, and attempt to resolve _Web Based Data Entities_ OR provide a mode to simply parse the document and process it without referencing or validating Data entities in any special way." %}
