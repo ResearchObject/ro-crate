@@ -351,6 +351,49 @@ Note that if a local file is intended to be packaged within an _Attached RO-Crat
 
 A _Directory File Entry_ or [Dataset] identifier expressed as an absolute URL on the web can be harder to download than a [File] because it consists of multiple resources. It is RECOMMENDED that such directories have a complete listing of their content in [hasPart], enabling download traversal, or are themselves RO-Crates (see [Referencing other RO-Crates](#referencing-other-ro-crates)).
 
+#### Downloadable dataset
+
+Alternatively, a common mechanism to provide downloads of a reasonably sized directory is as an archive file in formats such as [`application/zip`](https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263) or [`application/gzip`](https://www.nationalarchives.gov.uk/PRONOM/x-fmt/266), described as a [DataDownload]. 
+
+```json
+  {
+    "@id": "lots_of_little_files/",
+    "@type": "Dataset",
+    "name": "Too many files",
+    "description": "This directory contains many small files, that we're not going to describe in detail.",
+    "distribution": {"@id": "http://example.com/downloads/2020/lots_of_little_files.zip"}
+  },
+  {
+    "@id": "http://example.com/downloads/2020/lots_of_little_files.zip",
+    "@type": "DataDownload",
+    "encodingFormat": ["application/zip", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263"}],
+    "contentSize": "82818928"
+  }
+```
+
+Similarly, the _RO-Crate Root_ entity (or a reference to another RO-Crate as a `Dataset`) may provide a [distribution] URL, in which case the download SHOULD be an archive that contains the _RO-Crate Metadata Document_ (either directly in the archive's root, or within a single folder in the archive), indicated by a version-less `conformsTo`:
+
+```json
+  {
+    "@id": "./",
+    "@type": "Dataset",
+    "identifier": "https://doi.org/10.48546/workflowhub.workflow.775.1",
+    "name": "Research Object Crate for Jupyter Notebook Molecular Structure Checking",
+    "distribution": {"@id": "https://workflowhub.eu/workflows/775/ro_crate?version=1"},
+    "…": ""
+  },
+  {
+    "@id": "https://workflowhub.eu/workflows/775/ro_crate?version=1",
+    "@type": "DataDownload",
+    "encodingFormat": ["application/zip", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263"}],
+    "conformsTo": { "@id": "https://w3id.org/ro/crate" }
+  }
+```
+
+In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not reflect the current state of the `Dataset` or RO-Crate.
+
+
+
 
 ## Adding detailed descriptions of File encodings
 
@@ -520,49 +563,6 @@ If the referenced crate conforms to a given [RO-Crate profile](profiles), this M
 ```
 
 {% include callout.html type="note" content="The profile declaration of a referenced crate is a hint. Consumers should check `conformsTo` as declared in the retrieved RO-Crate, as it may have been updated after this RO-Crate." %}
-
-
-
-### Downloadable dataset
-
-Alternatively, a common mechanism to provide downloads of a reasonably sized directory is as an archive file in formats such as [`application/zip`](https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263) or [`application/gzip`](https://www.nationalarchives.gov.uk/PRONOM/x-fmt/266), described as a [DataDownload]. 
-
-```json
-  {
-    "@id": "lots_of_little_files/",
-    "@type": "Dataset",
-    "name": "Too many files",
-    "description": "This directory contains many small files, that we're not going to describe in detail.",
-    "distribution": {"@id": "http://example.com/downloads/2020/lots_of_little_files.zip"}
-  },
-  {
-    "@id": "http://example.com/downloads/2020/lots_of_little_files.zip",
-    "@type": "DataDownload",
-    "encodingFormat": ["application/zip", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263"}],
-    "contentSize": "82818928"
-  }
-```
-
-Similarly, the _RO-Crate Root_ entity (or a reference to another RO-Crate as a `Dataset`) may provide a [distribution] URL, in which case the download SHOULD be an archive that contains the _RO-Crate Metadata Document_ (either directly in the archive's root, or within a single folder in the archive), indicated by a version-less `conformsTo`:
-
-```json
-  {
-    "@id": "./",
-    "@type": "Dataset",
-    "identifier": "https://doi.org/10.48546/workflowhub.workflow.775.1",
-    "name": "Research Object Crate for Jupyter Notebook Molecular Structure Checking",
-    "distribution": {"@id": "https://workflowhub.eu/workflows/775/ro_crate?version=1"},
-    "…": ""
-  },
-  {
-    "@id": "https://workflowhub.eu/workflows/775/ro_crate?version=1",
-    "@type": "DataDownload",
-    "encodingFormat": ["application/zip", {"@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263"}],
-    "conformsTo": { "@id": "https://w3id.org/ro/crate" }
-  }
-```
-
-In all cases, consumers should be aware that a `DataDownload` is a snapshot that may not reflect the current state of the `Dataset` or RO-Crate.
 
 ### Retrieving an RO-Crate
 
