@@ -151,7 +151,7 @@ To additionally save Web-based Data entities to become part of the Detached Crat
 * For each data entity which `@type` include `Dataset`:
   + If it has a [distribution download](../data-entities#directories-on-the-web-dataset-distributions), retrieve and unpack that according to its `encodingFormat`, using its new folder name as the new local path name.
   + If not, create a corresponding folder in the _RO-Crate Root_, possibly generating the local path name based on `name` or path elements of `@id`  URI
-  + Replace the `@id` of the dataset and all its references with the _relative URI_ based on the path from the RO-Crate Root, [encoding file paths](../data-entities#encoding-file-paths) as necessary.
+  + Replace the `@id` of the dataset and all its references with the _relative URI_ based on the path from the RO-Crate Root, [encoding file paths](../data-entities#adding-detailed-descriptions-of-file-encodings) as necessary.
   + Recurse this algorithm to process each data entity from this dataset's `hasPart`
 * For each data entity which `@type` include `File`:
   + Decide based on `@id` URI elements, `contentSize` `encodingFormat` and (possibly implied) `licence` if this file is acceptable to archive
@@ -159,8 +159,8 @@ To additionally save Web-based Data entities to become part of the Detached Crat
   + Store the file. 
     - If the file has a `localPath` property, use that relative to the _RO-Crate Root_.
     - If not, calculate a path from the folder of the first `Dataset` that directly has this data entity as its `hasPart`.
-  + Add the previous `@id` downloaded from as `contentUrl` according to [Embedded data entities that are also on the Web](../data-entities#embedded-data-entities-that-are-also-on-the-web)
-  + Replace the `@id` of the `File` with the _relative URI_ based on the path from the RO-Crate Root, [encoding file paths](../data-entities#encoding-file-paths) as necessary.
+  + Add the previous `@id` downloaded from as `contentUrl` according to [Data entities in an Attached RO-Crate that are also on the Web](../data-entities#data-entities-in-an-attached-ro-crate-that-are-also-on-the-web)
+  + Replace the `@id` of the `File` with the _relative URI_ based on the path from the RO-Crate Root, [encoding file paths](../data-entities#encoding-file-paths-in-ids) as necessary.
   
 As this procedure can be error-prone (e.g. a Web-based entity may not be accessible or may require authentication), the implementation should consider the new _Attached RO-Crate Pacakge_ as a _fork_ and update `identifier` and `isDefinedBy` as specified above.
 

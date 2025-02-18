@@ -234,7 +234,7 @@ In order for programmatic use of the Profile Crate to consume particular subreso
 }
 ```
 
-The [`ResourceDescriptor`](https://www.w3.org/TR/dx-prof/#Class:ResourceDescriptor) entity MAY also declare `dct:format` or `dct:conformsTo`, however the data entity referenced with `hasArtifact` SHOULD always declare `encodingFormat` (with OPTIONAL `conformsTo`) to specify its [encoding format](data-entities#adding-detailed-descriptions-of-encodings), e.g.:
+The [`ResourceDescriptor`](https://www.w3.org/TR/dx-prof/#Class:ResourceDescriptor) entity MAY also declare `dct:format` or `dct:conformsTo`, however the data entity referenced with `hasArtifact` SHOULD always declare `encodingFormat` (with OPTIONAL `conformsTo`) to specify its [encoding format](data-entities#adding-detailed-descriptions-of-file-encodings), e.g.:
 
 ```json
 {
@@ -331,7 +331,7 @@ A Profile Crate MUST declare a human-readable _profile description_, which is [a
 ```
 
 The _profile description_ MAY (instead of say a dedicated `index.html` as above) be equivalent to the
-[RO-Crate Website](structure#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files) entity
+[RO-Crate Website](structure#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files-for-packages) entity
 `ro-crate-preview.html` (promoting it to a data entity by listing it under `hasPart`):
 
 ```json
@@ -386,7 +386,7 @@ This interpretation of _schema_ assumes the resource somewhat describes the data
 
 
 Below are known schema types and their recommended media type, with suggested identifiers for the contextual entities of
-[encodingFormat](data-entities#adding-detailed-descriptions-of-encodings) with type `Standard` and [conformsTo] with type `Profile`:
+[encodingFormat](data-entities#adding-detailed-descriptions-of-file-encodings) with type `Standard` and [conformsTo] with type `Profile`:
 
 | Name           | `encodingFormat` Media Type   | `encodingFormat` URI   | `conformsTo` URI |  role  | 
 | -------------- | ------------------------- | -------------------------- | ---------- |

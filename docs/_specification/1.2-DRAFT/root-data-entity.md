@@ -108,7 +108,7 @@ See also the appendix on
 ### Purpose of Metadata Document
 
 To ensure a base-line interoperability between RO-Crates, a minimum set of metadata is required for the
-_Root Data Entity_. As [stated earlier](structure#self-describing-and-self-contained-local-ro-crate-packages)
+_Root Data Entity_. As [stated earlier](structure#self-describing-and-self-contained)
 the _RO-Crate Metadata Document_ is not an
 exhaustive manifest or inventory, that is, it does not necessarily list or
 describe all files in the package. For this reason, there are no minimum

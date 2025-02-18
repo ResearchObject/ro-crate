@@ -43,7 +43,7 @@ _RO-Crate Root_: The top-level directory of an _RO-Crate Package_. See section [
 
 _RO-Crate Metadata Descriptor_: A _Contextual Entity_ of type [CreativeWork], which describes the _RO-Crate Metadata Document_ and links it to the _Root Data Entity_. See section [RO-Crate Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor)
 
-_RO-Crate Website_: Human-readable HTML pages which describe the RO-Crate (i.e. the _Root Data Entity_, its _Data Entities_ and _Context Entities_), with a home-page at `ro-crate-preview.html`. See section [RO-Crate Website](structure#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files).
+_RO-Crate Website_: Human-readable HTML pages which describe the RO-Crate (i.e. the _Root Data Entity_, its _Data Entities_ and _Context Entities_), with a home-page at `ro-crate-preview.html`. See section [RO-Crate Website](structure#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files-for-packages).
 
 _Type_: A classification of objects or their descriptions. The type (or "class") is given as a short-hand _key_, mapped by the _RO-Crate JSON-LD Context_ to a _URI_ that has the type definition. See appendix [RO-Crate JSON-LD](appendix/jsonld).
 

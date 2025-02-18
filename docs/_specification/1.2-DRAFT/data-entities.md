@@ -164,11 +164,11 @@ Additionally, `File` entities SHOULD have:
 
 * [name] giving a human readable name (not necessarily the filename)
 * [description] giving a longer description, e.g. the role of this file within this crate
-* [encodingFormat] indicating the the IANA [media type] as a string (e.g. `"text/plain") and/or a reference to [file format](#adding-detailed-descriptions-of-encodings) contextual entity.
+* [encodingFormat] indicating the the IANA [media type] as a string (e.g. `"text/plain") and/or a reference to [file format](#adding-detailed-descriptions-of-file-encodings) contextual entity.
 * [conformsTo] to a contextual entity of type [Profile], that indicate a [profile](profiles) of the encoding format, if applicable
 * [contentSize] with the size of the file in bytes
 
-RO-Crate's `File` is an alias for schema.org type [MediaObject], any of its properties MAY also be used (adding contextual entities as needed).  [Files on the web](#embedded-data-entities-that-are-also-on-the-web) SHOULD also use `identifier`, `url`, `subjectOf`, and/or `mainEntityOfPage`.
+RO-Crate's `File` is an alias for schema.org type [MediaObject], any of its properties MAY also be used (adding contextual entities as needed).  [Files on the web](#data-entities-in-an-attached-ro-crate-that-are-also-on-the-web) SHOULD also use `identifier`, `url`, `subjectOf`, and/or `mainEntityOfPage`.
 
 
 
@@ -313,7 +313,7 @@ Web-based entities MAY use the property [localPath] to indicate a path that can 
 
 
 
-{% include callout.html type="note" content="Do not use web-based URI identifiers for files which _are_ present in the crate root, see [below](#embedded-data-entities-that-are-also-on-the-web)." %}
+{% include callout.html type="note" content="Do not use web-based URI identifiers for files which _are_ present in the crate root, see [below](#data-entities-in-an-attached-ro-crate-that-are-also-on-the-web)." %}
 
 ### Data entities in an _Attached RO-Crate_ that are also on the web
 
@@ -470,7 +470,7 @@ If an `identifier` is not declared in a referenced RO-Crate B, but the determine
 
 In some cases, if the referenced RO-Crate B has not got a resolvable `identifier` declared, additional steps are needed to find the correct `@id` to use:
 
-1. If RO-Crate A is an [Attached Ro-Crate Package](structure.html#attached-ro-crate-package) and RO-Crate B is a nested folder (e.g. `another-crate/`), then B SHOULD be treated as an _Attached RO-Crate Package_ (e.g. it has `another-crate/ro-crate-metadata.json`) and the relative path (`another-crate/`) used directly as `@id` as a [Directory File Entity](#directory-file-entity) within crate A.
+1. If RO-Crate A is an [Attached Ro-Crate Package](structure.html#attached-ro-crate-package) and RO-Crate B is a nested folder (e.g. `another-crate/`), then B SHOULD be treated as an _Attached RO-Crate Package_ (e.g. it has `another-crate/ro-crate-metadata.json`) and the relative path (`another-crate/`) used directly as `@id` as a [Directory Data Entity](#directory-data-entity) within crate A.
 2. If B's _Root Data Entity_ has an `@id` that is an absolute URI indicating a [Detached RO-Crate Package](structure.html#detached-ro-crate-package), and that URI resolves according to [Retrieving an RO-Crate](#retrieving-an-ro-crate), then that can be used as the `@id` of the `Dataset` entity in A, equivalent to the `identifier` case above. However, as that URI was not declared as a persistent identifier, the timestamp property [sdDatePublished] SHOULD be included to indicate when the absolute URL was accessed.
 2. If B's _RO-Crate Metadata Document_ was located on the Web, but uses a relative URI reference for its root data entity (`./`), then its absolute URI can be determined from the [RFC 3986] algorithm for [establishing a base URI](https://datatracker.ietf.org/doc/html/rfc3986#section-5). For example, if root `{"@id": "./" }` is in metadata document `http://example.com/another-crate/ro-crate-metadata.json`, then the absolute URI for the `Dataset` entity is `http://example.com/another-crate/` (with the trailing `/`). If that URI is resolvable as in point 1, it can be used as equivalent `@id`. It is NOT RECOMMENDED to resolve a relative root identifier if the metadata document was retrieved from a URI that does not end with `/ro-crate-metadata.json` or `/ro-crate-metadata.jsonld` -- these are not part of a valid [attached](structure.html#attached-ro-crate-package) or [Detached RO-Crate Pacakge](structure.html#detached-ro-crate-package).
 4. If RO-Crate B is not on the Web, and does not have a persistent identifier, e.g. is within a ZIP file or local file system, then a non-resolvable identifier could be established. See appendix [Establishing a base URI inside a ZIP file](appendix/relative-uris.html#establishing-a-base-uri-inside-a-zip-file), e.g. `arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/` if using a randomly generated UUID. This method may also be used if the above steps fail for an RO-Crate Metadata Document that is on the Web. In this case, the referenced RO-Crate entity MUST either declare a [referenced metadata document](#referencing-another-metadata-document) or [distribution](#downloadable-dataset).

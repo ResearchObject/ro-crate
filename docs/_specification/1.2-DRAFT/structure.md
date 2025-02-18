@@ -82,9 +82,9 @@ The appendix [RO-Crate JSON-LD](appendix/jsonld) details the general structure o
 ```
 
 
-## Attached  RO-Crate Package
+## Attached RO-Crate Package
 
-An **Attached  RO-Crate Package** is used to contain and describe an optional _payload_ of files and directories as well as web-based data entities among with their contextual information.
+An **Attached RO-Crate Package** is used to contain and describe an optional _payload_ of files and directories as well as web-based data entities among with their contextual information.
 
 When processing an _Attached RO-Crate Package_ the _RO-Crate Metadata Document_ MUST be present in the _RO-Crate Root_ and it MUST be named `ro-crate-metadata.json`.
 
@@ -217,7 +217,7 @@ A Detached RO-Crate Package may still use `#`-based local identifiers for [conte
 
 The concept of an _RO-Crate Website_ is undefined for a _Detached RO-Crate Package_.
 
-To distribute a _Detached RO-Crate Package_ and optionally to provide an RO-Crate Website, any _Detached RO-Crate Package_ can be saved in a directory (and zipped or otherwise bundled) and will function as an _Attached RO-Crate Package_ with no payload data. See the [appendix on converting from Detached to Attached RO-Crate Package](appendix/relative-uris.md#converting-from-detached-to-attached-ro-crate-package) for further guidance on this.
+To distribute a _Detached RO-Crate Package_ and optionally to provide an RO-Crate Website, any _Detached RO-Crate Package_ can be saved in a directory (and zipped or otherwise bundled) and will function as an _Attached RO-Crate Package_ with no payload data. See the [appendix on converting from Detached to Attached RO-Crate Package](appendix/relative-uris#converting-from-detached-to-attached-ro-crate-package) for further guidance on this.
 
 
 {% include references.liquid %}
