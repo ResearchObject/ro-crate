@@ -107,7 +107,7 @@ See also the appendix on
 
 ### Purpose of Metadata Document
 
-To ensure a base-line interoperability between RO-Crates a minimum set of metadata is required for the
+To ensure a base-line interoperability between RO-Crates, a minimum set of metadata is required for the
 _Root Data Entity_. As [stated earlier](structure#self-describing-and-self-contained-local-ro-crate-packages)
 the _RO-Crate Metadata Document_ is not an
 exhaustive manifest or inventory, that is, it does not necessarily list or
@@ -148,16 +148,16 @@ Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be 
 
 ### Root Data Entity identifier
 
-The root data entity's `@id` SHOULD be either `./` (indicating the directory of `ro-crate-metadata.json` is the [RO-Crate Root](structure)), or an absolute URI.
+The _Root Data Entity_'s `@id` SHOULD be either `./` (indicating the directory of `ro-crate-metadata.json` is the [RO-Crate Root](structure)), or an absolute URI.
 
 
-{% include callout.html type="note" content="RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) MAY indicate this using [identifier] on the root data entity using the approach set out in the [Science On Schema.org guides], that is through a `PropertyValue` or MAY use a full persistent URL as the `@id` for the _Root Data Entity_." %}
+{% include callout.html type="note" content="RO-Crates that have been assigned a _persistent identifier_ (e.g. a DOI) MAY indicate this using [identifier] on the _Root Data Entity_ using the approach set out in the [Science On Schema.org guides], that is through a `PropertyValue` or MAY use a full persistent URL as the `@id` for the _Root Data Entity_." %}
 
 {% include callout.html type="note" content="RO-Crate 1.1 and earlier recommended `identifier` to be plain string URIs. Clients SHOULD be permissive of an RO-Crate `identifier` being a string (which MAY be a URI), or a `@id` reference, which SHOULD be represented as an `PropertyValue` entity which MUST have a human readable `value`, and SHOULD have a `url` if the identifier is Web-resolvable. A citable representation of this persistent identifier MAY be given as a `description` of the `PropertyValue`, but as there are more than 10.000 known [citation styles], no attempt should be made to parse this string."%}
 
 #### Resolvable persistent identifiers and citation text
 
-It is RECOMMENDED that resolving the `identifier` programmatically returns the _RO-Crate Metadata Document_ or an archive (e.g. ZIP) that contains the _RO-Crate Metadata File_, using [content negotiation](data-entities#retrieving-an-ro-crate) and/or [Signposting]. With an RO-Crate identifier that is persistent and resolvable in this way from a URI, the root data entity SHOULD indicate this using the `cite-as` property according to [RFC8574]. Likewise, an HTTP/HTTPS server of the resolved RO-Crate Metadata Document or archive (possibly after redirection) SHOULD indicate that persistent identifier in its [Signposting] headers using `Link rel="cite-as"`. 
+It is RECOMMENDED that resolving the `identifier` programmatically returns the _RO-Crate Metadata Document_ or an archive (e.g. ZIP) that contains the _RO-Crate Metadata File_, using [content negotiation](data-entities#retrieving-an-ro-crate) and/or [Signposting]. With an RO-Crate identifier that is persistent and resolvable in this way from a URI, the _Root Data Entity_ SHOULD indicate this using the `cite-as` property according to [RFC8574]. Likewise, an HTTP/HTTPS server of the resolved RO-Crate Metadata Document or archive (possibly after redirection) SHOULD indicate that persistent identifier in its [Signposting] headers using `Link rel="cite-as"`. 
 
 {% include callout.html type="tip" content='The above `cite-as` MAY go to a repository landing page, and MAY require authentication, but MUST ultimately have the RO-Crate as a downloadable item, which SHOULD be programmatically accessible through content negotiation or [Signposting] (`Link rel="describedby"` for a _RO-Crate Metadata Document_, or `Link rel="item"` for an archive). To rather associate a textual scholarly citation for a crate (e.g. journal article), indicate instead a [publication via `citation` property](contextual-entities#publications-via-citation-property).' %}
 

@@ -101,7 +101,9 @@ Example output (abbreviated):
         { "@id": "https://about.workflowhub.eu/Workflow-RO-Crate/1.0/example/"},
       ],
       "name": "Workflow RO-Crate profile"
-    }
+    },
+    ...
+  ]
 }
 ```
 
@@ -155,7 +157,7 @@ To additionally save Web-based Data entities to become part of the Detached Crat
   + Decide based on `@id` URI elements, `contentSize` `encodingFormat` and (possibly implied) `licence` if this file is acceptable to archive
   + Retrieve the file and check the `contentSize` matches, if specified
   + Store the file. 
-    - If the file has a `localPath` property use that relative to the _RO-Crate Root_.
+    - If the file has a `localPath` property, use that relative to the _RO-Crate Root_.
     - If not, calculate a path from the folder of the first `Dataset` that directly has this data entity as its `hasPart`.
   + Add the previous `@id` downloaded from as `contentUrl` according to [Embedded data entities that are also on the Web](../data-entities#embedded-data-entities-that-are-also-on-the-web)
   + Replace the `@id` of the `File` with the _relative URI_ based on the path from the RO-Crate Root, [encoding file paths](../data-entities#encoding-file-paths) as necessary.
