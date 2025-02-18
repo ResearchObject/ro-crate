@@ -344,7 +344,7 @@ The `@id` of the extension terms should after the move be made absolute URIs tha
 
 For terms it is RECOMMENDED to change the `@id` of the terms after moving to be based on the profile's permalink, e.g. the profile with `@id` <https://w3id.org/cpm/ro-crate> defines the term <https://w3id.org/cpm/ro-crate#CPMProvenanceFile>. 
 
-See sections on [profile extension terms](../profiles#extension-terms) and [Profile JSON-LD context](../profiles#json-ld-context).  [Custom file formats](../data-entities#adding-detailed-descriptions-of-encodings) and common [contextual entities](../contextual-entities) may also be moved to the profile, ensuring their `@id` are absolute URI and resolve to the profile JSON-LD.
+See sections on [profile extension terms](../profiles#extension-terms) and [Profile JSON-LD context](../profiles#json-ld-context).  [Custom file formats](../data-entities#adding-detailed-descriptions-of-file-encodings) and common [contextual entities](../contextual-entities) may also be moved to the profile, ensuring their `@id` are absolute URI and resolve to the profile JSON-LD.
 
 This can reduce repetition in their JSON-LD, but means additional measures must be taken to ensure the resulting RO-Crates remain functional over time, e.g. not to remove terms as the profile evolves over time.
 
