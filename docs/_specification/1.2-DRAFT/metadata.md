@@ -4,7 +4,7 @@ redirect_from:
   - /1.2-DRAFT/metadata
 excerpt: |
   RO-Crate aims to capture and describe the Research Object using
-  structured metadata. The RO-Crate Metadata Descriptor contains the
+  structured metadata. The RO-Crate Metadata Document contains the
   metadata that describes the RO-Crate and its content. This machine-readable
   metadata can also be represented for human consumption in the RO-Crate Website,
   linking to data and Web resources.
@@ -38,9 +38,9 @@ parent: RO-Crate 1.2-DRAFT
 1. TOC
 {:toc}
 
-RO-Crate aims to capture and describe the [Research Object][ResearchObject] using structured _metadata_.
+RO-Crate aims to capture and describe the [Research Object][ResearchObject] using structured _metadata_. Specifically, an RO-Crate is described using _JSON-LD_ by an _RO-Crate Metadata Document_. As explained in section [RO-Crate Structure](structure) this may be stored in an _RO-Crate Metadata File_.
 
-The _RO-Crate Metadata Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:
+The _RO-Crate Metadata Document_ contains the metadata that describes the RO-Crate and its content, in particular:
 
 * [Root Data Entity](root-data-entity) - the RO-Crate `Dataset` itself, a gathering of data
 * [Data Entities](data-entities) - the _data_ payload, in the form of files and folders
@@ -75,7 +75,7 @@ For all entities listed in an _RO-Crate Metadata Document_ the following princip
 3. The `@type` SHOULD include at least one [Schema.org] type that accurately describe the entity. [Thing] or [CreativeWork] are valid fallbacks if no alternative external or ad-hoc term is found (see [Extending RO-Crate](appendix/jsonld#extending-ro-crate)).
 5. The entity SHOULD have a human-readable `name`, in particular if its `@id` does not go to a human-readable Web page.
 6. The properties used on the entity SHOULD be applicable to the `@type` (or superclass) according to their definitions. For instance, the property [publisher] can be used on a [Dataset] as it applies to its superclass [CreativeWork].
-7. Property references to other entities (e.g. `author` property to a `Person` entity) SHOULD use the `{ "@id": "..."}` object form (see [JSON-LD appendix](appendix/jsonld)).
+7. Property references to other entities (e.g. `author` property to a `Person` entity) MUST use the `{ "@id": "..."}` object form (see [JSON-LD appendix](appendix/jsonld)).
 8. The entity SHOULD be ultimately referenceable from the root data entity (possibly through another reachable [data entity](data-entities) or [contextual entity](contextual-entities)).
 
 
@@ -97,7 +97,7 @@ Generally, the standard _type_ and _property_ names (_terms_) from [Schema.org] 
 * `File` is mapped to <http://schema.org/MediaObject> which was chosen as a compromise as it has many of the properties that are needed to describe a generic file. Future versions of Schema.org or a research data extension may re-define `File`.
 * `Journal` is mapped to <http://schema.org/Periodical>.
 
-{% include callout.html type="warning" content="JSON-LD examples given on the [Schema.org] website might not be in _flattened_ form; any nested entities in _RO-Crate JSON-LD_ SHOULD be described as separate contextual entities in the flat `@graph` list. " %}
+{% include callout.html type="warning" content="JSON-LD examples given on the [Schema.org] website might not be in _flattened_ form, but _RO-Crate JSON-LD_ is flattened; any nested entities in _RO-Crate JSON-LD_ MUST be described as separate contextual entities in the flat `@graph` list. " %}
 
 To simplify processing and avoid confusion with string values, the _RO-Crate JSON-LD Context_ requires URIs and entity references to be given in the form `"author": {"@id": "http://example.com/alice"}`, even where [Schema.org] for some properties otherwise permit shorter forms like `"author": "http://example.com/alice"`.
 
@@ -159,7 +159,7 @@ From [CodeMeta 3.0](https://w3id.org/codemeta/3.0):
 * `referencePublication` mapped to <https://codemeta.github.io/terms/referencePublication>
 * `softwareSuggestions` mapped to <https://codemeta.github.io/terms/softwareSuggestions>
 
-{% include callout.html type="warning" content="As of 2024-05-23, the CodeMeta URIs do not resolve correctly, but are used here to match the Codemeta JSON-LD context <https://w3id.org/codemeta/3.0> (issue [#275](https://github.com/ResearchObject/ro-crate/issues/275)).
+{% include callout.html type="warning" content="As of 2025-01-09, the CodeMeta URIs do not resolve correctly, but are used here to match the Codemeta JSON-LD context <https://w3id.org/codemeta/3.0> (issue [#275](https://github.com/ResearchObject/ro-crate/issues/275)).
 The CodeMeta terms `maintainer` and `funding` are not mapped, as these are already defined by schema.org." %}
 
 
