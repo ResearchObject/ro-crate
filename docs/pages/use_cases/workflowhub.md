@@ -10,7 +10,7 @@ domains: [biomedical_science, omics]
 tasks: [conduct_research, data_handling, manage_data]
 roles: [information_architect, managerial, repository_manager, researcher]
 ---
-## WorkflowHub
+# WorkflowHub
 [WorkflowHub](https://about.workflowhub.eu/) is a registry for describing, sharing and publishing scientific computational workflows.
 
 WorkflowHub aims to facilitate discovery and re-use of workflows in an accessible and interoperable way. This is achieved through extensive use of open standards and tools, including CWL, RO-Crate, Bioschemas and GA4GH's TRS API, in accordance with the FAIR principles.

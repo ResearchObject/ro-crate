@@ -10,7 +10,7 @@ domains: [informatics, social_science]
 tasks: [conduct_research, manage_data]
 roles: [data_analyst, researcher]
 ---
-## Survey Ontology
+# Survey Ontology
 The [Survey Ontology](https://w3id.org/survey-ontology) is an open vocabulary that allows representing, annotating and sharing a representation of the survey structure and the gathered responses ([Scrocca et al., 2021](https://doi.org/10.4126/FRL01-006429412)).
 
 The Survey Ontology leverages and extends the _Research Object Suite of Ontologies_ ([Belhajjame et al., 2015](https://doi.org/10.1016/j.websem.2015.01.003)) to address the research object principles of identity, aggregation and provenance. 
