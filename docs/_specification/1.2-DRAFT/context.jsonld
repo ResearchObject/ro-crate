@@ -2875,8 +2875,8 @@
           "RepositoryObject": "http://pcdm.org/models#Object",
           "RepositoryFile": "http://pcdm.org/models#File",
           "ComputationalWorkflow": "https://bioschemas.org/ComputationalWorkflow",
-          "input": "https://bioschemas.org/ComputationalWorkflow#input",
-          "output": "https://bioschemas.org/ComputationalWorkflow#output",
+          "input": "https://bioschemas.org/properties/input",
+          "output": "https://bioschemas.org/properties/output",
           "FormalParameter": "https://bioschemas.org/FormalParameter",
           "wasDerivedFrom": "http://www.w3.org/ns/prov#wasDerivedFrom",
           "importedFrom": "http://purl.org/pav/importedFrom",
@@ -2929,6 +2929,6 @@
           "relation": "http://www.iana.org/assignments/relation/",
           "wf4ever": "http://purl.org/ro/wf4ever#",
           "vann": "http://purl.org/vocab/vann/",
-          "geosparql": "http://www.opengis.net/ont/geosparql#",
+          "geosparql": "http://www.opengis.net/ont/geosparql#"
      }
 }
