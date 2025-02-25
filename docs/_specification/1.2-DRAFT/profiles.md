@@ -56,7 +56,22 @@ The profile description declares the set of conventions to be used.
 
 ## Declaring conformance of an RO-Crate profile
 
-An RO-Crate can describe a profile by adding it as an [contextual entity](contextual-entities):
+RO-Crates that are _conforming to_ (or intending to conform to) such a profile SHOULD declare this using `conformsTo` on the [Root Data Entity](root-data-entity):
+
+```json
+{
+    "@id": "./",
+    "@type": "Dataset",
+    "conformsTo":
+        {"@id": "https://w3id.org/ro/wfrun/process/0.4"}       
+}
+```
+
+It is valid for a crate to conform to multiple profiles, in which case `conformsTo` is an unordered array.
+
+{% include callout.html type="note" content="Profile conformance is declared on the _Root Data Entity_ (`./` in this example), rather than on the _RO-Crate Metadata Descriptor_ (`ro-crate-metadata.json`) where conformance to the base RO-Crate specification is declared. This is because the profile applies to the whole RO-Crate, and may cover aspects beyond the crate's metadata file (e.g. identifiers, packaging, purpose)." %}
+
+Each profile listed in `conformsTo` on the _Root Data Entity_ MUST link to a corresponding [contextual entity](contextual-entities) for the profile, for example:
 
 ```json
 {
@@ -75,22 +90,6 @@ In the contextual entity for a profile:
 * The entity SHOULD have an absolute URI as `@id`
 * The entity SHOULD have a descriptive [name]
 * The entity MAY declare [version], preferably according to [Semantic Versioning][semver]
-
-RO-Crates that are _conforming to_ (or intending to conform to) such a profile SHOULD declare this using `conformsTo` on the [Root Data Entity](root-data-entity):
-
-```json
-{
-    "@id": "./",
-    "@type": "Dataset",
-    "conformsTo":
-        {"@id": "https://w3id.org/ro/wfrun/process/0.4"}       
-}
-```
-
-It is valid for a crate to conform to multiple profiles, in which case `conformsTo` is an unordered array.
-
-{% include callout.html type="note" content="Profile conformance is declared on the _Root Data Entity_ (`./` in this example), rather than on the _RO-Crate Metadata Descriptor_ (`ro-crate-metadata.json`) where conformance to the base RO-Crate specification is declared. This is because the profile applies to the whole RO-Crate, and may cover aspects beyond the crate's metadata file (e.g. identifiers, packaging, purpose)." %}
-
 
 
 ## Profile Crate
