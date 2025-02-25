@@ -203,7 +203,7 @@ ADDITIONAL = OrderedDict([
           ## END
 
           ## Custom RO-Crate terms
-          ("localPath", "https://w3id.org/ro/terms#localPath")
+          ("localPath", "https://w3id.org/ro/terms#localPath"),
           ## END
 
           # Some common namespaces
