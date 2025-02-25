@@ -162,6 +162,11 @@ From [CodeMeta 3.0](https://w3id.org/codemeta/3.0):
 {% include callout.html type="warning" content="As of 2024-05-23, the CodeMeta URIs do not resolve correctly, but are used here to match the Codemeta JSON-LD context <https://w3id.org/codemeta/3.0> (issue [#275](https://github.com/ResearchObject/ro-crate/issues/275)).
 The CodeMeta terms `maintainer` and `funding` are not mapped, as these are already defined by schema.org." %}
 
+## Custom RO-Crate terms
+
+The RO-Crate community maintains a [common namespace](https://github.com/ResearchObject/ro-terms/tree/master) for terms not covered by other vocabularies. This is mainly used by [RO-Crate profiles](profiles), but the following term is included in the core RO-Crate context:
+
+* `localPath` mapped to <https://w3id.org/ro/terms#localPath>
 
 ## Summary of Coverage
 
