@@ -68,13 +68,12 @@ crates for RO-Crate 1.0 or older) and `@type` [CreativeWork]. This descriptor MU
 
 {% include callout.html type="note" content="Even in [Detached RO-Crate Packages](structure#detached-ro-crate-package) which do not have an _RO-Crate Metadata File_ present, the identifier `ro-crate-metadata.json` MUST be used." %}
 
-The [conformsTo] of the _RO-Crate Metadata Descriptor_ 
-SHOULD be a versioned permalink URI of the RO-Crate specification
+The [conformsTo] of the _RO-Crate Metadata Descriptor_ SHOULD have a single value which 
+is a versioned permalink URI of the RO-Crate specification
 that the _RO-Crate JSON-LD_ conforms to. The URI SHOULD 
 start with `https://w3id.org/ro/crate/`. 
 
-{% include callout.html type="tip" content="The `conformsTo` property MAY be an array, to additionally indicate 
-specializing [RO-Crate profiles](profiles)." %}
+{% include callout.html type="note" content="In RO-Crates conforming to version 1.1 and earlier, `conformsTo` MAY be an array and can include [RO-Crate profiles](profiles) in addition to the base specification. In version 1.2, it is now recommended that profile declarations are included on the _Root Data Entity_ instead (see [Direct Properties of the Root Data Entity](#direct-properties-of-the-root-data-entity))." %}
 
 ### Finding the Root Data Entity
 
@@ -143,8 +142,7 @@ requires a `Dataset` to have a `name` and `description`." %}
 
 Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be added to further describe the RO-Crate as a whole, e.g. [author], [abstract], [publisher]. See sections [contextual entities](contextual-entities) and [provenance](provenance) for further details.
 
-
-
+If the RO-Crate conforms to one or more [profiles](profiles), this should be described following the guidance in the section [Declaring conformance of an RO-Crate profile](profiles#declaring-conformance-of-an-ro-crate-profile).
 
 ### Root Data Entity identifier
 
