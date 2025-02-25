@@ -99,7 +99,7 @@ While the Profile URI `@id` MUST resolve to a human-readable _profile descriptio
 
 A **Profile Crate** is a type of RO-Crate that represents an RO-Crate profile. It gathers resources which further define the profile in addition to the _profile description_. This allows formalizing an alternative profile description for machine-readability (for instance for validation), and also additional resources like examples. The rest of this subsection declares the content of this Profile Crate.
 
-The Profile Crate `@id` declared within its own RO-Crate Metadata Document SHOULD be an absolute URI, and the corresponding reference from its RO-Crate Metadata Descriptor updated accordingly. 
+The Profile Crate `@id` declared within its own RO-Crate Metadata Document SHOULD be an absolute URI, and the corresponding reference from its RO-Crate Metadata Descriptor updated accordingly. If the URI is a permanent URI, it SHOULD also be set as the `identifier`.
 
 Within the Profile Crate, its [Root Data Entity](root-data-entity) MUST declare `Profile` as an additional `@type`:
 
