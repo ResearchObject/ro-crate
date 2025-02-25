@@ -202,9 +202,9 @@ ADDITIONAL = OrderedDict([
           ("asWKT", "http://www.opengis.net/ont/geosparql#asWKT"),
           ## END
 
-          ## FIXME: Where is this used from?
-          #("@label", "http://www.w3.org/2000/01/rdf-schema#label"),
-          ## REMOVED 2024-05-23
+          ## Custom RO-Crate terms
+          ("localPath", "https://w3id.org/ro/terms#localPath")
+          ## END
 
           # Some common namespaces
 

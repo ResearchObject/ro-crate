@@ -2907,6 +2907,7 @@
           "isSourceCodeOf": "https://codemeta.github.io/terms/isSourceCodeOf",
           "Geometry": "http://www.opengis.net/ont/geosparql#Geometry",
           "asWKT": "http://www.opengis.net/ont/geosparql#asWKT",
+          "localPath": "https://w3id.org/ro/terms#localPath",
           "pcdm": "http://pcdm.org/models#",
           "bibo": "http://purl.org/ontology/bibo/",
           "cc": "http://creativecommons.org/ns#",
