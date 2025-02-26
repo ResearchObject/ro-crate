@@ -10,7 +10,105 @@ Requirements are grouped according to the part(s) of RO-Crate structure or the t
 
 [Structure - Full specification](structure)
 
-(wait as this is changing...)
+| Property/Target | Severity | Description | Eli attention |
+| ------ | ------ | ------- | ------ |
+| RO-Crate Metadata Document | MUST | Must be valid [JSON-LD 1.0] |  |
+| RO-Crate Metadata Document | MUST | The JSON-LD must be [flattened] |  |
+| RO-Crate Metadata Document | MUST | The JSON-LD must be [compacted] |  |
+| RO-Crate Metadata Document | MUST | The JSON-LD must use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.2-DRAFT/context> by reference |  |
+| `@graph` | MUST | Must describe the [RO-Crate Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor) | |
+| `@graph` | MUST | Must describe the [Root Data Entity](root-data-entity#direct-properties-of-the-root-data-entity) | |
+| `@graph` | MUST | Must describe zero or more [Data Entities](data-entities) | |
+| `@graph` | MUST | Must describe zero or more [Contextual Entities](contextual-entities) | |
+| `@graph` | SHOULD | Any contextual entity in the `@graph` SHOULD be linked to from at least one of the other entities using its `@id`. 
+| `@graph` | SHOULD | Any contextual entity referenced by entities in the `@graph` SHOULD be described in the same `@graph`.
+
+* RO-Crate Metadata Documents MAY also be processed in non-packaging contexts by tools such as website generators or crate visualizers, where data entities are not processed, or in applications which use RO-Crate conventions for representing context (such as a schema definition using Schema.org conventions).
+
+* The _RO-Crate Metadata Document_ MUST be a document which is valid [JSON-LD 1.0] in [flattened]  and [compacted] form.
+* The _RO-Crate JSON-LD_ MUST use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.2-DRAFT/context> by reference.
+* The graph MUST describe:
+    1. The [RO-Crate Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor)
+    2. The [Root Data Entity](root-data-entity#direct-properties-of-the-root-data-entity)
+    3. Zero or more [Data Entities](data-entities)
+    4. Zero or more [Contextual Entities](contextual-entities)
+* Any referenced _contextual entities_ SHOULD also be described in the _RO-Crate Metadata Document_ with the same identifier. 
+* Any _contextual entity_ in the _RO-Crate Metadata Document_ SHOULD be linked to from at least one of the other entities using the same identifier. 
+
+## Attached RO-Crate
+
+| Property/Target | Severity | Description | Eli attention |
+| ------ | ------ | ------- | ------ |
+| Whole RO-Crate | SHOULD | Should be self-describing and self-contained | |
+| RO-Crate Metadata Document | MUST | Must be present as a file in the RO-Crate Root |  |
+| RO-Crate Metadata Document | MUST | Must be named `ro-crate-metadata.json` |  |
+| RO-Crate Root | MUST | Must contain `ro-crate-metadata.json` | |
+| RO-Crate Root | MAY | May contain `ro-crate-preview.html`, a human-readable HTML rendering of the same information contained in the RO-Crate Metadata Document (see [RO-Crate Website requirements](#ro-crate-website)) | |
+| RO-Crate Root | MAY | May contain subdirectory `ro-crate-preview_files/` with other RO-Crate website files | |
+| RO-Crate Root | MUST | Must contain 0 or more payload files and directories | |
+| `@graph` | MAY | Each payload file and directory in the RO-Crate Root MAY be represented as a [Data Entity](data-entities) in the `@graph`.
+| `@graph` | MAY | May include [Web-based Data Entities](data-entities.html#web-based-data-entities) which are not part of the payload | | 
+| Root Data Entity `@id` | MUST | Must be either `./` or be a URI which is considered to be the main identifier of the RO-Crate | |
+
+* The _RO-Crate Metadata Document_ MUST be present in the _RO-Crate Root_ and 
+* it MUST be named `ro-crate-metadata.json`.
+* The file path structure an _Attached RO-Crate Package_ MUST follow is:
+    ```
+    <RO-Crate root directory>/
+    |   ro-crate-metadata.json    # RO-Crate Metadata File containing the RO-Crate Metadata Document MUST be present 
+    |   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
+    |   ro-crate-preview_files/   # MAY be present
+    |    | [other RO-Crate Website files]
+    |   [payload files and directories]  # 0 or more
+    ```
+* The payload directory (and its child directory) contains files and directories that MAY be described within the _RO-Crate Metadata File_ as [Data Entities](data-entities). / Each file and directory MAY be represented as [Data Entities](data-entities) in the _RO-Crate Metadata File_.
+* Additional [Web-based Data Entities](data-entities.html#web-based-data-entities) MAY also be described, but are not considered part of the payload.
+
+* The `@id` of the _Root Data Entity_ in an _Attached RO-Crate Package_ MUST be either `./` or be a URI, such as a DOI URL or other persistent URL which is considered to be the main identifier of the _Attached RO-Crate Package_.
+* MAY include a human-readable HTML rendering of the same information, known as the _RO-Crate Website_.
+* _Attached RO-Crates Packages_ SHOULD be self-describing and self-contained.
+* The _RO-Crate Metadata Document_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. 
+
+## Detached RO-Crate
+
+* Detached RO-Crate: If stored in a file, known as a _Detached RO-Crate Metadata File_, the filename SHOULD be `${slug}-ro-crate-metadata.json` rather than `ro-crate-metadata.json` where the variable `$slug` is a human readable version of the dataset's ID or name, to signal that on disk, the presence of the file does not indicate an _Attached RO-Crate Data Package_.
+* the [root data entity](root-data-entity) SHOULD have an @id which is an absolute URL if the crate is available online. 
+* If it is not yet, or will never be available online then @id MAY be any valid URI - including `./`.
+* Any [data entities](data-entities) in a _Detached RO-Crate Package Package_  MUST be [Web-based Data Entities](data-entities.html#web-based-data-entities). 
+
+| Property/Target | Severity | Description | Eli attention |
+| ------ | ------ | ------- | ------ |
+| Whole RO-Crate | SHOULD | Should be self-describing and self-contained | |
+| RO-Crate Metadata Document | MUST | Must be present as a file in the RO-Crate Root |  |
+| RO-Crate Metadata Document | SHOULD | If stored in a file, SHOULD be named `${prefix}-ro-crate-metadata.json`, where the variable `${prefix}` is a human readable version of the dataset's ID or name |  |
+| Root Data Entity `@id` | SHOULD | If the crate is available online, should be an absolute URL | |
+| Root Data Entity `@id` | MAY | If the crate is not yet or will never be available online, may be any valid URI, including `./` | |
+| `@graph` | MUST | Any [data entities](data-entities) in `@graph` must be [Web-based Data Entities](data-entities.html#web-based-data-entities) | |
+
+
+## RO-Crate Website
+
+* If present, the _RO-Crate Website_ MUST be a file named `ro-crate-preview.html` in the root directory
+* The _RO-Crate Website_ MAY serve as the entry point to other web-resources
+* Other web resources MUST be in `ro-crate-preview_files/` in the root directory.
+
+* The RO-Crate Website MUST:
+    * Be a valid [HTML 5] document
+    * Be useful to users of the RO-Crate - this will vary by community and intended use, but in general the aim to assist users in reusing data by explaining what it is, how it was created how it can be used and how to cite it. One simple approach to this is to expose *all* the metadata in
+* and it SHOULD:
+    * Display at least the metadata relating to the _Root Data Entity_ as static HTML without the need for scripting. It MAY contain extra features enabled by JavaScript.
+    * When a _Data Entity_ or _Contextual Entity_ is referenced by its ID:
+        - If it has a [name] property, provide a link to its HTML version.
+        - If it does not have a name (e.g. a [GeoCoordinates] location), show it embedded in the HTML for the entity.
+        - For external URI values, provide a link.
+    * For keys that resolve in the `RO-Crate JSON-LD Context` to a URI, indicate this (the simplest way is to link the key to its definition).
+    * If there are additional resources necessary to render the preview (e.g. CSS, JSON, HTML), link to them in a subdirectory `ro-crate-preview_files/`
+* The `ro-crate-preview.html` file and the `ro-crate-preview-files/` directory and any contents SHOULD NOT be included in the `hasPart` property of the _Root Dataset_ or any other `Dataset` entity within an RO-Crate.
+* Metadata about parts of the _RO-Crate Website_ MAY be included in an RO-Crate, such as `author`, `dateCreated` or other provenance can be included (see [source](structure#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files-for-packages))
+
+
+
+
 
 ## Metadata
 

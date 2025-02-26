@@ -36,3 +36,9 @@ property with a single value referencing the _Root Data Entity_'s `@id`.
 ## Other sections
 
 Removed requirement for the RO-Crate JSON-LD to be included in the HTML header of the RO-Crate Website - as "there is no evidence that this has been useful".
+
+### Structure
+
+Earlier versions of RO-Crate mandated an `@id` of `./` as a convention for identifying the _Root Data Entity_, but the use of the _RO-Crate Metadata Descriptor_ means that this is no longer required, freeing-up the _Root Data Entity_ `@id` to be used to indicate what should be considered the canonical URI for an RO-Crate Package. Other mechanisms for specifying the 'main identifier' involve multiple JSON-LD entities and may be ambiguous.
+
+Previous versions of the Specification recommended that the _RO-Crate Website_ should contain a redundant copy of the RO-Crate Metadata Document, but there is no evidence that this has been useful and it is no longer recommended.
