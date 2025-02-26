@@ -36,7 +36,7 @@ _Attached RO-Crate Package_: A file system directory which functions as a packag
 
 _Detached RO-Crate Package_: A stand-alone _RO-Crate Metadata Document_ which defines a virtual data package by referencing online materials. A  _Detached RO-Crate Package_ does not have a payload. See section [Types of RO-Crate](structure#types-of-ro-crate).
 
-_Detached RO-Crate Metadata File_: An _RO-Crate Metadata Document_ stored in a file named  `${prefix}-ro-crate-metadata.json` or `ro-crate-metadata.json` where  `$prefix`, if present, is a file-system safe version identifier or name for the RO-Crate.
+_Detached RO-Crate Metadata File_: An _RO-Crate Metadata Document_ stored in a file named  `${prefix}-ro-crate-metadata.json` or `ro-crate-metadata.json` where  `${prefix}`, if present, is a file-system safe version identifier or name for the RO-Crate.
 
 
 _RO-Crate Root_: The top-level directory of an _RO-Crate Package_. See section [RO-Crate structure](structure).
