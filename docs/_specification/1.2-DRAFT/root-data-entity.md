@@ -63,7 +63,7 @@ crates for RO-Crate 1.0 or older) and `@type` [CreativeWork]. This descriptor MU
 }
 ```
 
-{% include callout.html type="note" content="Even in [Detached RO-Crate Packages](structure#detached-ro-crate-package) which do not have an _RO-Crate Metadata File_ present, the identifier `ro-crate-metadata.json` MUST be used." %}
+{% include callout.html type="note" content="Even in [Detached RO-Crate Packages](structure#detached-ro-crate-package), where the _RO-Crate Metadata File_ may be absent or named with a [prefix](structure#types-of-ro-crate), the identifier `ro-crate-metadata.json` MUST be used within the _RO-Crate JSON-LD_." %}
 
 The [conformsTo] of the _RO-Crate Metadata Descriptor_ 
 SHOULD be a versioned permalink URI of the RO-Crate specification

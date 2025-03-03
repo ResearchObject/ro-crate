@@ -486,7 +486,7 @@ Some generic file formats like `application/json` may be specialized using a _pr
 
 A referenced RO-Crate is also a [Dataset] data entity, but where its [hasPart] do not need to be listed. Instead, its content and further metadata is available from its own RO-Crate Metadata Document, which may be retrieved or packaged within an archive. An entity representing a referenced RO-Crate SHOULD have `conformsTo` pointing to the generic RO-Crate profile using the fixed URI `https://w3id.org/ro/crate`.
 
-This section defines how a _referencing_ RO-Crate ("A") can declare data entities within A's RO-Crate Metadata Document, in order to indicate a _referenced_ RO-Crate ("B"). There are different options on how to find the identifier to assign the referenced RO-Crate in A, and how a consumer of A finding such a reference can find the corresponding RO-Crate Metadata Document for B.
+This section defines how a _referencing_ RO-Crate ("A") can declare data entities within A's RO-Crate Metadata Document, in order to indicate a _referenced_ RO-Crate ("B"). There are different options on how to find the identifier to assign to B in A, and how a consumer of A finding such a reference can find the corresponding RO-Crate Metadata Document for B.
 
 ### Referencing RO-Crates that have a persistent identifier
 
@@ -500,25 +500,25 @@ If the referenced RO-Crate B has an `identifier` declared as B's [Root Data Enti
 }
 ```
 
-{% include callout.html type="tip" content="The `conformsTo` generic RO-Crate profile on a `Dataset` entity MUST be version-less. The referenced RO-Crate B is NOT required to conform to the same version of the RO-Crate specification as A's RO-Crate Metadata Document." %}
+{% include callout.html type="tip" content="The `conformsTo` generic RO-Crate profile on the `Dataset` entity that represents B MUST be version-less. The referenced RO-Crate B is NOT required to conform to the same version of the RO-Crate specification as A's RO-Crate Metadata Document." %}
 
 {% include callout.html type="warning" content="It is NOT RECOMMENDED to declare the generic profile `https://w3id.org/ro/crate` on the referencing RO-Crate A's own [root data entity](root-data-entity.html#direct-properties-of-the-root-data-entity), see [metadata descriptor](root-data-entity.html#ro-crate-metadata-descriptor). " %}
 
 Consumers that find a reference to a `Dataset` with the generic RO-Crate profile indicated MAY attempt to resolve the persistent identifier, but SHOULD NOT assume that the `@id` directly resolves to an RO-Crate Metadata Document. See section [Retrieving an RO-Crate](#retrieving-an-ro-crate) below for the recommended algorithm. 
 
-If an `identifier` is not declared in a referenced RO-Crate B, but the determined absolute URI has [Signposting] declared for a `Link:` with `rel=cite-as`, then that link MAY be considered as an equivalent permalink for B.
-
+If an `identifier` is not declared in a referenced RO-Crate B, follow the steps in [Determining entity identifier for a referenced RO-Crate](#determining-entity-identifier-for-a-referenced-ro-crate) instead.
 
 ### Determining entity identifier for a referenced RO-Crate
 
 In some cases, if the referenced RO-Crate B has not got a resolvable `identifier` declared, additional steps are needed to find the correct `@id` to use:
 
-1. If RO-Crate A is an [Attached Ro-Crate Package](structure.html#attached-ro-crate-package) and RO-Crate B is a nested folder (e.g. `another-crate/`), then B SHOULD be treated as an _Attached RO-Crate Package_ (e.g. it has `another-crate/ro-crate-metadata.json`) and the relative path (`another-crate/`) used directly as `@id` as a [Directory Data Entity](#directory-data-entity) within crate A.
-2. If B's _Root Data Entity_ has an `@id` that is an absolute URI indicating a [Detached RO-Crate Package](structure.html#detached-ro-crate-package), and that URI resolves according to [Retrieving an RO-Crate](#retrieving-an-ro-crate), then that can be used as the `@id` of the `Dataset` entity in A, equivalent to the `identifier` case above. However, as that URI was not declared as a persistent identifier, the timestamp property [sdDatePublished] SHOULD be included to indicate when the absolute URL was accessed.
-2. If B's _RO-Crate Metadata Document_ was located on the Web, but uses a relative URI reference for its root data entity (`./`), then its absolute URI can be determined from the [RFC 3986] algorithm for [establishing a base URI](https://datatracker.ietf.org/doc/html/rfc3986#section-5). For example, if root `{"@id": "./" }` is in metadata document `http://example.com/another-crate/ro-crate-metadata.json`, then the absolute URI for the `Dataset` entity is `http://example.com/another-crate/` (with the trailing `/`). If that URI is resolvable as in point 1, it can be used as equivalent `@id`. It is NOT RECOMMENDED to resolve a relative root identifier if the metadata document was retrieved from a URI that does not end with `/ro-crate-metadata.json` or `/ro-crate-metadata.jsonld` -- these are not part of a valid [attached](structure.html#attached-ro-crate-package) or [Detached RO-Crate Pacakge](structure.html#detached-ro-crate-package).
+1. If RO-Crate A is an [Attached RO-Crate Package](structure.html#attached-ro-crate-package) and RO-Crate B is a nested folder within A (e.g. `another-crate/`), then B SHOULD be treated as an _Attached RO-Crate Package_ (e.g. it has `another-crate/ro-crate-metadata.json`) and the relative path (`another-crate/`) SHOULD be used directly as `@id` as a [Directory Data Entity](#directory-data-entity) within RO-Crate A.
+2. If B's _Root Data Entity_ has an `@id` that is an absolute URI, and that URI resolves according to [Retrieving an RO-Crate](#retrieving-an-ro-crate), then that can be used as the `@id` of the `Dataset` entity in A, equivalent to the `identifier` case above.
+    1. If the absolute URI has [Signposting] declared for a `Link:` with `rel=cite-as`, then that link MAY be considered as an equivalent permalink for B and no further properties are needed.
+    1. Otherwise, as the URI was not declared as a persistent identifier, the timestamp property [sdDatePublished] SHOULD be included to indicate when the absolute URI was accessed.
+2. If B's _RO-Crate Metadata Document_ was located on the Web, but uses a relative URI reference for its root data entity (`./`), then its absolute URI can be determined from the [RFC 3986] algorithm for [establishing a base URI](https://datatracker.ietf.org/doc/html/rfc3986#section-5). For example, if root `{"@id": "./" }` is in metadata document `http://example.com/another-crate/ro-crate-metadata.json`, then the absolute URI for the `Dataset` entity is `http://example.com/another-crate/` (with the trailing `/`). If that URI is resolvable as in point 2, it can be used as equivalent `@id` (with [sdDatePublished] declared if necessary).
+  It is NOT RECOMMENDED to resolve a relative root identifier if the metadata document was retrieved from a URI that does not end with `/ro-crate-metadata.json`, `/*-ro-crate-metadata.json` or `/ro-crate-metadata.jsonld` -- these are not part of a valid [Attached](structure.html#attached-ro-crate-package) or [Detached](structure.html#detached-ro-crate-package) RO-Crate Package.
 4. If RO-Crate B is not on the Web, and does not have a persistent identifier, e.g. is within a ZIP file or local file system, then a non-resolvable identifier could be established. See appendix [Establishing a base URI inside a ZIP file](appendix/relative-uris.html#establishing-a-base-uri-inside-a-zip-file), e.g. `arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/` if using a randomly generated UUID. This method may also be used if the above steps fail for an RO-Crate Metadata Document that is on the Web. In this case, the referenced RO-Crate entity MUST either declare a [referenced metadata document](#referencing-another-metadata-document) or [distribution](#downloadable-dataset).
-
-If the RO-Crate Metadata Document is not available as a web resource, but only within an archive (e.g. ZIP), then instead reference it as a [Downloadable dataset](#downloadable-dataset).
 
 ### Referencing another metadata document
 
