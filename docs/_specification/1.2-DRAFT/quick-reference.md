@@ -10,6 +10,10 @@ Requirements are grouped according to the part(s) of RO-Crate structure or the t
 
 [Structure - Full specification](structure)
 
+### Metadata Document
+
+[RO-Crate Metadata Document - full reference](structure#ro-crate-metadata-document-ro-crate-metadatajson)
+
 | Property/Target | Severity | Description | Eli attention |
 | ------ | ------ | ------- | ------ |
 | RO-Crate Metadata Document | MUST | Must be valid [JSON-LD 1.0] |  |
@@ -23,19 +27,9 @@ Requirements are grouped according to the part(s) of RO-Crate structure or the t
 | `@graph` | SHOULD | Any contextual entity in the `@graph` SHOULD be linked to from at least one of the other entities using its `@id`. 
 | `@graph` | SHOULD | Any contextual entity referenced by entities in the `@graph` SHOULD be described in the same `@graph`.
 
-* RO-Crate Metadata Documents MAY also be processed in non-packaging contexts by tools such as website generators or crate visualizers, where data entities are not processed, or in applications which use RO-Crate conventions for representing context (such as a schema definition using Schema.org conventions).
+### Attached RO-Crate
 
-* The _RO-Crate Metadata Document_ MUST be a document which is valid [JSON-LD 1.0] in [flattened]  and [compacted] form.
-* The _RO-Crate JSON-LD_ MUST use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.2-DRAFT/context> by reference.
-* The graph MUST describe:
-    1. The [RO-Crate Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor)
-    2. The [Root Data Entity](root-data-entity#direct-properties-of-the-root-data-entity)
-    3. Zero or more [Data Entities](data-entities)
-    4. Zero or more [Contextual Entities](contextual-entities)
-* Any referenced _contextual entities_ SHOULD also be described in the _RO-Crate Metadata Document_ with the same identifier. 
-* Any _contextual entity_ in the _RO-Crate Metadata Document_ SHOULD be linked to from at least one of the other entities using the same identifier. 
-
-## Attached RO-Crate
+[Attached RO-Crate - full reference](structure#attached-ro-crate-package)
 
 | Property/Target | Severity | Description | Eli attention |
 | ------ | ------ | ------- | ------ |
@@ -48,66 +42,39 @@ Requirements are grouped according to the part(s) of RO-Crate structure or the t
 | RO-Crate Root | MUST | Must contain 0 or more payload files and directories | |
 | `@graph` | MAY | Each payload file and directory in the RO-Crate Root MAY be represented as a [Data Entity](data-entities) in the `@graph`.
 | `@graph` | MAY | May include [Web-based Data Entities](data-entities.html#web-based-data-entities) which are not part of the payload | | 
+| `@graph` | SHOULD NOT | Should NOT include `ro-crate-preview.html` or `ro-crate-preview-files/` in the `hasPart` property of the _Root Data Entity_ or any other `Dataset` entity, even if they are present in the _RO-Crate Root_ | |
+| `@graph` | MAY | May include metadata about parts of the _RO-Crate Website_, such as `author`, `dateCreated` or other provenance | |
 | Root Data Entity `@id` | MUST | Must be either `./` or be a URI which is considered to be the main identifier of the RO-Crate | |
 
-* The _RO-Crate Metadata Document_ MUST be present in the _RO-Crate Root_ and 
-* it MUST be named `ro-crate-metadata.json`.
-* The file path structure an _Attached RO-Crate Package_ MUST follow is:
-    ```
-    <RO-Crate root directory>/
-    |   ro-crate-metadata.json    # RO-Crate Metadata File containing the RO-Crate Metadata Document MUST be present 
-    |   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
-    |   ro-crate-preview_files/   # MAY be present
-    |    | [other RO-Crate Website files]
-    |   [payload files and directories]  # 0 or more
-    ```
-* The payload directory (and its child directory) contains files and directories that MAY be described within the _RO-Crate Metadata File_ as [Data Entities](data-entities). / Each file and directory MAY be represented as [Data Entities](data-entities) in the _RO-Crate Metadata File_.
-* Additional [Web-based Data Entities](data-entities.html#web-based-data-entities) MAY also be described, but are not considered part of the payload.
+### Detached RO-Crate
 
-* The `@id` of the _Root Data Entity_ in an _Attached RO-Crate Package_ MUST be either `./` or be a URI, such as a DOI URL or other persistent URL which is considered to be the main identifier of the _Attached RO-Crate Package_.
-* MAY include a human-readable HTML rendering of the same information, known as the _RO-Crate Website_.
-* _Attached RO-Crates Packages_ SHOULD be self-describing and self-contained.
-* The _RO-Crate Metadata Document_ describes the RO-Crate, and MUST be stored in the _RO-Crate Root_. 
-
-## Detached RO-Crate
-
-* Detached RO-Crate: If stored in a file, known as a _Detached RO-Crate Metadata File_, the filename SHOULD be `${slug}-ro-crate-metadata.json` rather than `ro-crate-metadata.json` where the variable `$slug` is a human readable version of the dataset's ID or name, to signal that on disk, the presence of the file does not indicate an _Attached RO-Crate Data Package_.
-* the [root data entity](root-data-entity) SHOULD have an @id which is an absolute URL if the crate is available online. 
-* If it is not yet, or will never be available online then @id MAY be any valid URI - including `./`.
-* Any [data entities](data-entities) in a _Detached RO-Crate Package Package_  MUST be [Web-based Data Entities](data-entities.html#web-based-data-entities). 
+[Detached RO-Crate - full reference](structure#detached-ro-crate-package)
 
 | Property/Target | Severity | Description | Eli attention |
 | ------ | ------ | ------- | ------ |
-| Whole RO-Crate | SHOULD | Should be self-describing and self-contained | |
-| RO-Crate Metadata Document | MUST | Must be present as a file in the RO-Crate Root |  |
-| RO-Crate Metadata Document | SHOULD | If stored in a file, SHOULD be named `${prefix}-ro-crate-metadata.json`, where the variable `${prefix}` is a human readable version of the dataset's ID or name |  |
+| RO-Crate Metadata Document | SHOULD | If stored in a file, SHOULD be named `${prefix}-ro-crate-metadata.json`, where the variable `${prefix}` is a human readable version of the dataset's ID or name | [source](structure#types-of-ro-crate) |
 | Root Data Entity `@id` | SHOULD | If the crate is available online, should be an absolute URL | |
 | Root Data Entity `@id` | MAY | If the crate is not yet or will never be available online, may be any valid URI, including `./` | |
-| `@graph` | MUST | Any [data entities](data-entities) in `@graph` must be [Web-based Data Entities](data-entities.html#web-based-data-entities) | |
+| `@graph` | MUST | All [data entities](data-entities) in `@graph` must be [Web-based Data Entities](data-entities.html#web-based-data-entities) | |
 
 
-## RO-Crate Website
+### RO-Crate Website
 
-* If present, the _RO-Crate Website_ MUST be a file named `ro-crate-preview.html` in the root directory
-* The _RO-Crate Website_ MAY serve as the entry point to other web-resources
-* Other web resources MUST be in `ro-crate-preview_files/` in the root directory.
+[RO-Crate Website - full reference](structure#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files-for-packages)
 
-* The RO-Crate Website MUST:
-    * Be a valid [HTML 5] document
-    * Be useful to users of the RO-Crate - this will vary by community and intended use, but in general the aim to assist users in reusing data by explaining what it is, how it was created how it can be used and how to cite it. One simple approach to this is to expose *all* the metadata in
-* and it SHOULD:
-    * Display at least the metadata relating to the _Root Data Entity_ as static HTML without the need for scripting. It MAY contain extra features enabled by JavaScript.
-    * When a _Data Entity_ or _Contextual Entity_ is referenced by its ID:
-        - If it has a [name] property, provide a link to its HTML version.
-        - If it does not have a name (e.g. a [GeoCoordinates] location), show it embedded in the HTML for the entity.
-        - For external URI values, provide a link.
-    * For keys that resolve in the `RO-Crate JSON-LD Context` to a URI, indicate this (the simplest way is to link the key to its definition).
-    * If there are additional resources necessary to render the preview (e.g. CSS, JSON, HTML), link to them in a subdirectory `ro-crate-preview_files/`
-* The `ro-crate-preview.html` file and the `ro-crate-preview-files/` directory and any contents SHOULD NOT be included in the `hasPart` property of the _Root Dataset_ or any other `Dataset` entity within an RO-Crate.
-* Metadata about parts of the _RO-Crate Website_ MAY be included in an RO-Crate, such as `author`, `dateCreated` or other provenance can be included (see [source](structure#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files-for-packages))
-
-
-
+| Property/Target | Severity | Description | Eli attention |
+| ------ | ------ | ------- | ------ |
+| RO-Crate Website | MUST | If website is present, it must be a file named `ro-crate-preview.html` in the root directory | |
+| RO-Crate Website | MAY | May serve as the entry point to additional web resources | |
+| RO-Crate Website Additional Resources | MUST | Must be in `ro-crate-preview_files/` in the root directory | |
+| `ro-crate-preview.html` | MUST | Must be a valid [HTML 5] document | |
+| RO-Crate Website | MUST | Must be useful to users of the RO-Crate | |
+| RO-Crate Website | SHOULD | Should display at least the metadata relating to the _Root Data Entity_ as static HTML without the need for scripting | |
+| RO-Crate Website | MAY | May contain extra features enabled by JavaScript. | |
+| RO-Crate Website - Entity | SHOULD | When entity A references entity B, if B's `@id` is an external URI, A should provide a link to that URI | |
+| RO-Crate Website - Entity | SHOULD | When entity A references entity B, if B's `@id` is not an external URI, and B has a [name] property, A should provide a link to B's HTML version | |
+| RO-Crate Website - Entity | SHOULD | When entity A references entity B, if B's `@id` is not an external URI, and B does not have a [name] property, A should show B embedded in A's HTML | |
+| RO-Crate Website - Key | SHOULD | For keys that resolve in the `RO-Crate JSON-LD Context` to a URI, website should indicate this | |
 
 
 ## Metadata
@@ -253,6 +220,8 @@ Additional properties of _schema.org_ types [Dataset] and [CreativeWork] MAY be 
 | `publisher` | SHOULD | Should reference an [Organization] | [source](contextual-entities#publisher)
 | `publisher` | MAY | May reference a [Person] | [source](contextual-entities#publisher)
 | `funder` | SHOULD | Should reference all funders directly, including those that are also referenced by entities included in `hasPart`. | [source](contextual-entities#funding-and-grants)
+| `hasPart` | MUST | Must directly or indirectly (via nested `hasPart`) reference all _Data Entities_ in the RO-Crate JSON-LD | [source](data-entities#referencing-files-and-folders-from-the-root-data-entity) | 
+| `hasPart` | MAY | May refer to files anywhere within the folder hierarchy within the _RO-Crate Root_ | |
 
 ### Identifier entity
 
@@ -268,7 +237,64 @@ Used to indicate a _persistent identifier_ (e.g. a DOI). Should use the approach
 
 ## Data Entities
 
-(skip for now...)
+Type of data entity | Property/Target | Severity | Description | Eli attention |
+| ------- | ------| ------ | ------- | ------- |
+| All | `@id` | MUST | If the entity represents a file or directory present in the _RO-Crate Root_, `@id` must be a relative URI | |
+| All | `@id` | MUST | If `@id` is a relative URI, the file or directory represented by the entity must be present in the _RO-Crate Root_ at that relative path | |
+| All | `@id` | MUST | If in a [Detached RO-Crate](structure#detached-ro-crate-package), `@id` must be an absolute URI | |
+| All | `@id` | SHOULD | International characters in identifiers should be written using native UTF-8 characters | |
+| All | `@id` | MAY | May include traditional URL encoding of Unicode characters with `%`  | |
+| All | `@type` | MAY | May be an array | |
+| All | `name` | SHOULD | Should be present | |
+| All | `description` | SHOULD | Should be present | |
+| File | `@id` | MUST | Must be a relative or absolute URI | |
+| File | `@type` | MUST | Must be `File`, or an array where `File` is one of the values | |
+| File | `contentURL` | MAY | May be present | |
+| File | `contentURL` | SHOULD | If present, following the link (allowing for HTTP redirects) should directly download the file represented by the entity | |
+| File | `encodingFormat` | SHOULD | Should be present | |
+| File | `encodingFormat` | SHOULD | Should be an IANA [media type] as a string and/or a reference to a [file format](data-entities#adding-detailed-descriptions-of-file-encodings) contextual entity | |
+| File | `conformsTo` | SHOULD | Should be present if the file follows a particular profile of the encoding format | |
+| File | `conformsTo` | SHOULD | If present, should reference a contextual entity of type [Profile] | |
+| File | `contentSize` | SHOULD | Should be present | |
+| File | `contentSize` | SHOULD | Should be the size of the file in bytes | |
+| File | `identifier`, `url`, `subjectOf`, `mainEntityOfPage` | MAY | May link to a relevant web presence for the entity | see [source](data-entities#web-based-data-entities) for further guidance |
+| File | `identifier`, `url`, `subjectOf`, `mainEntityOfPage` | SHOULD | If the entity is both in the _RO-Crate Root_ and on the web, one of these properties should be used to link to the relevant web presence | see [source](data-entities#web-based-data-entities) for further guidance |
+| Dataset | `@id` | MUST | Must be a relative URI, an absolute URI, or a local identifier beginning with `#` | |
+| Dataset | `@type` | MUST | Must be `Dataset` or an array where `Dataset` is one of the values | |
+| Dataset | `@id` | SHOULD | If `@id` is a relative URI, it should end with `/` | |
+| Dataset | `@id` | SHOULD | If `@id` is an absolute URI, it should resolve to a programmatic listing of the content of the "directory" | |
+| Dataset | `hasPart` | SHOULD | Should be present | is this needed? |
+| Dataset | `hasPart` | SHOULD | Should list any directly contained data entities | can it be empty? | 
+| Dataset | `distribution` | SHOULD | Should be present if the `@id` is a web URI |  |
+| Dataset | `hasPart` | SHOULD | If the `@id` is a web URI, either `hasPart` should contain a complete listing of the dataset's content, or the dataset should be an RO-Crate | |
+| Dataset | `distribution` | MAY | If the dataset represented by the entity is an RO-Crate, `distribution` may be present | |
+| Dataset | `distribution` | MAY | If the dataset represented by the entity is an RO-Crate, `distribution` should be the URI of an archive that contains the _RO-Crate Metadata Document_ | |
+| Web-based File or Dataset | `@id` | SHOULD NOT | Should not reference intermediate resources such as splash-pages, search services or web-based viewer applications
+| Web-based File or Dataset | `sdDatePublished` | SHOULD | Should be present
+| Web-based File or Dataset | `sdDatePublished` | SHOULD | Should indicate when the `@id` was accessed
+| Web-based File or Dataset | `localPath` | MAY | May indicate a destination path that can be used when downloading the data | |
+| Web-based File or Dataset | `encodingFormat` | SHOULD | Should link to a _Contextual Entity_ representing the format | see [contextual entities for encoding formats](TODO) | 
+| Web-based File or Dataset | `encodingFormat` | MAY | May be a local description of the format if there is no web-accessible description | | 
+
+### Referenced RO-Crates
+
+* An entity representing a referenced RO-Crate SHOULD have `conformsTo` pointing to the generic RO-Crate profile using the fixed URI `https://w3id.org/ro/crate`.
+
+* If the referenced RO-Crate B has an `identifier` declared as B's [Root Data Entity identifier](root-data-entity#root-data-entity-identifier), then this is a _persistent identifier_ which SHOULD be used as the URI in the `@id` of the corresponding entity in RO-Crate A. 
+* The `conformsTo` generic RO-Crate profile on a `Dataset` entity MUST be version-less
+* It is NOT RECOMMENDED to declare the generic profile `https://w3id.org/ro/crate` on the referencing RO-Crate A's own [root data entity](root-data-entity.html#direct-properties-of-the-root-data-entity), see [metadata descriptor](root-data-entity.html#ro-crate-metadata-descriptor).
+* Consumers that find a reference to a `Dataset` with the generic RO-Crate profile indicated MAY attempt to resolve the persistent identifier, but SHOULD NOT assume that the `@id` directly resolves to an RO-Crate Metadata Document. 
+* If an `identifier` is not declared in a referenced RO-Crate B, but the determined absolute URI has [Signposting] declared for a `Link:` with `rel=cite-as`, then that link MAY be considered as an equivalent permalink for B.
+
+1. If RO-Crate A is an [Attached Ro-Crate Package](structure.html#attached-ro-crate-package) and RO-Crate B is a nested folder (e.g. `another-crate/`), then B SHOULD be treated as an _Attached RO-Crate Package_ (e.g. it has `another-crate/ro-crate-metadata.json`) and the relative path (`another-crate/`) used directly as `@id` as a [Directory Data Entity](#directory-data-entity) within crate A.
+2. If B's _Root Data Entity_ has an `@id` that is an absolute URI indicating a [Detached RO-Crate Package](structure.html#detached-ro-crate-package), and that URI resolves according to [Retrieving an RO-Crate](#retrieving-an-ro-crate), then that can be used as the `@id` of the `Dataset` entity in A, equivalent to the `identifier` case above. However, as that URI was not declared as a persistent identifier, the timestamp property [sdDatePublished] SHOULD be included to indicate when the absolute URL was accessed.
+2. If B's _RO-Crate Metadata Document_ was located on the Web, but uses a relative URI reference for its root data entity (`./`), then its absolute URI can be determined from the [RFC 3986] algorithm for [establishing a base URI](https://datatracker.ietf.org/doc/html/rfc3986#section-5). For example, if root `{"@id": "./" }` is in metadata document `http://example.com/another-crate/ro-crate-metadata.json`, then the absolute URI for the `Dataset` entity is `http://example.com/another-crate/` (with the trailing `/`). If that URI is resolvable as in point 1, it can be used as equivalent `@id`. It is NOT RECOMMENDED to resolve a relative root identifier if the metadata document was retrieved from a URI that does not end with `/ro-crate-metadata.json` or `/ro-crate-metadata.jsonld` -- these are not part of a valid [attached](structure.html#attached-ro-crate-package) or [Detached RO-Crate Pacakge](structure.html#detached-ro-crate-package).
+4. If RO-Crate B is not on the Web, and does not have a persistent identifier, e.g. is within a ZIP file or local file system, then a non-resolvable identifier could be established. See appendix [Establishing a base URI inside a ZIP file](appendix/relative-uris.html#establishing-a-base-uri-inside-a-zip-file), e.g. `arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/` if using a randomly generated UUID. This method may also be used if the above steps fail for an RO-Crate Metadata Document that is on the Web. In this case, the referenced RO-Crate entity MUST either declare a [referenced metadata document](#referencing-another-metadata-document) or [distribution](#downloadable-dataset).
+* If a referenced RO-Crate Metadata Document is known at a given URI or path, but its corresponding RO-Crate identifier can't be determined as above (e.g. [Retrieving an RO-Crate](#retrieving-an-ro-crate) fails or requires heuristics), then a referenced metadata descriptor entity SHOULD be added.
+* the referenced RO-Crate metadata descriptor SHOULD NOT include its own `conformsTo` declarations to `https://w3id.org/ro/crate` 
+* the referenced RO-Crate metadata descriptor SHOULD NOT reference the dataset with `about`; 
+
+* If the referenced crate conforms to a given [RO-Crate profile](profiles), this MAY be indicated by expanding `conformsTo` on the `Dataset` to an array to reference the profile as an contextual entity:
 
 ##### All (data entities)
 
@@ -285,6 +311,16 @@ Type of data entity | Property/Target | Severity | Description | Eli attention |
 | All | `keywords` | MUST | Keyword properties must use the [keywords] property | [source](contextual-entities#subjects--keywords)
 | All | `temporalCoverage` | SHOULD | Should be present if the entity is associated with a time period | implicit!! [source](contextual-entities#time)
 | Thumbnail (File) | usage | MUST | Must be present in the BagIt manifest if in a [_Bagged RO-Crate_](appendix/implementation-notes#adding-ro-crate-to-bagit) | this is a weird one too... actually more structural. [source](contextual-entities#thumbnails)
+
+* Directory hierarchies MAY be represented with nested [Dataset] _Data Entities_
+* a directory containing a set of files _MAY_ be described using a `Dataset` _Data Entity_ that encapsulates the files with a `description` property that explains the contents.
+* care must be taken to express any relative paths using `/` separator, correct casing, and escape special characters like space (`%20`) and percent (`%25`)
+* the _RO-Crate Metadata Document_ is always UTF-8
+* If `contentUrl` has more than one value, then a checker service SHOULD try each provided value until one resolves and returns a correct [contentSize].
+* Additional care SHOULD be taken to improve persistence and long-term preservation of web resources included 
+in an RO-Crate, as they can be more difficult to archive or move along with the _RO-Crate Root_, and
+may change intentionally or unintentionally, leaving the RO-Crate with incomplete or outdated information.
+* File Data Entries with an `@id` URI outside the _RO-Crate Root_ SHOULD at the time of RO-Crate creation be directly downloadable by a simple non-interactive retrieval (e.g. HTTP GET) of a single data stream, permitting redirections and HTTP/HTTPS authentication
 
 
 ## Contextual Entities
@@ -363,27 +399,33 @@ The RO-Crate SHOULD contain additional information about _Contextual Entities_ f
 Type of contextual entity | Property/Target | Severity | Description | Eli attention |
 | ------- | ------| ------ | ------- | ------- |
 | Any | `@id` | SHOULD | If an existing permalink or other absolute URI is reasonably unique for that entity, that URI should be used as `@id` |
-| Any | `@type` | SHOULD | If the entity is from a repository, should include [RepositoryObject] in addition to any other types | [source](provenance#recording-changes-to-ro-crates)
-| Person | `name` | SHOULD | Should be present | implicit!
-| Person | `affiliation` | SHOULD | Should be present | implicit!
-| Person | `affiliation` | SHOULD | Should reference an [Organization] entity | [source](contextual-entities#organizations-as-values)
-| Person / Organization | `contactPoint` | SHOULD | Should be present in at least one of the entities that is referenced as [author] or [publisher] from the _Root Data Entity_
-| Person / Organization | `contactPoint` | SHOULD | Should reference a [ContactPoint] entity
-| Organization | `funder` | SHOULD | If relevant, should reference any external [funder], either by using its URL as an `@id` or via a _Contextual Entity_ describing the funder.
-| License | `@id` | SHOULD | Should be the URL of the license
-| License | `@type` | SHOULD | Should be [CreativeWork]
-| License | `name` | SHOULD | Should be present | [source](root-data-entity#direct-properties-of-the-root-data-entity)
-| License | `description` | SHOULD | Should be present | [source](root-data-entity#direct-properties-of-the-root-data-entity)
+| Any | `@type` | SHOULD | If the entity is from a repository, should include [RepositoryObject] in addition to any other types | [source](provenance#recording-changes-to-ro-crates) |
+| Person | `name` | SHOULD | Should be present | implicit! |
+| Person | `affiliation` | SHOULD | Should be present | implicit! |
+| Person | `affiliation` | SHOULD | Should reference an [Organization] entity | [source](contextual-entities#organizations-as-values) |
+| Person / Organization | `contactPoint` | SHOULD | Should be present in at least one of the entities that is referenced as [author] or [publisher] from the _Root Data Entity_ |
+| Person / Organization | `contactPoint` | SHOULD | Should reference a [ContactPoint] entity |
+| Organization | `funder` | SHOULD | If relevant, should reference any external [funder], either by using its URL as an `@id` or via a _Contextual Entity_ describing the funder. |
+| License | `@id` | SHOULD | Should be the URL of the license |
+| License | `@type` | SHOULD | Should be [CreativeWork] |
+| License | `name` | SHOULD | Should be present | [source](root-data-entity#direct-properties-of-the-root-data-entity) |
+| License | `description` | SHOULD | Should be present | [source](root-data-entity#direct-properties-of-the-root-data-entity) |
 | License | `description` | SHOULD | Should contain a summary of the license |
-| Place | `geo` | SHOULD | Should reference a [Geometry] entity
-| Geometry | `asWKT` | SHOULD | Should express the point or shape in [Well Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) format
-| Item of physical equipment | `@id` | SHOULD | Should be a URL to a web page describing the equipment | [source](provenance#equipment-used-to-create-files)
-| Item of physical equipment | `@type` | SHOULD | Should be [IndividualProduct] | [source](provenance#equipment-used-to-create-files)
-| Item of physical equipment | `description` | SHOULD | Should include serial number and manufacturer that identify the equipment as completely as possible | implicit - the SHOULD is present but doesn't say which property to use. [source](provenance#equipment-used-to-create-files)
+| Place | `geo` | SHOULD | Should reference a [Geometry] entity |
+| Geometry | `asWKT` | SHOULD | Should express the point or shape in [Well Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) format |
+| Item of physical equipment | `@id` | SHOULD | Should be a URL to a web page describing the equipment | [source](provenance#equipment-used-to-create-files) |
+| Item of physical equipment | `@type` | SHOULD | Should be [IndividualProduct] | [source](provenance#equipment-used-to-create-files) |
+| Item of physical equipment | `description` | SHOULD | Should include serial number and manufacturer that identify the equipment as completely as possible | implicit - the SHOULD is present but doesn't say which property to use. [source](provenance#equipment-used-to-create-files) |
 | Software application | `@type` | SHOULD | Should be [SoftwareApplication] | [source](provenance#software-used-to-create-files)
 | Software application | `version` | SHOULD | Should be present | [source](provenance#software-used-to-create-files)
-| RepositoryCollection | usage | MAY | May be used to group [RepositoryObject] entities | [source](provenance#recording-changes-to-ro-crates)
-| RepositoryCollection | `hasMember` | MAY | May reference [RepositoryObject] entities | [source](provenance#recording-changes-to-ro-crates)
+| RepositoryCollection | usage | MAY | May be used to group [RepositoryObject] entities | [source](provenance#recording-changes-to-ro-crates) |
+| RepositoryCollection | `hasMember` | MAY | May reference [RepositoryObject] entities | [source](provenance#recording-changes-to-ro-crates) |
+| Encoding format | `@id` | SHOULD | Should be a [PRONOM] identifier if one exists for the format | [source](data-entities#adding-detailed-descriptions-of-file-encodings) |
+| Encoding format | `@id` | MAY | May be a URL that is not a PRONOM identifier | [source](data-entities#adding-detailed-descriptions-of-file-encodings) |
+| Encoding format | `@type` | SHOULD | Should contain [WebPage] | [source](data-entities#adding-detailed-descriptions-of-file-encodings) |
+| Encoding format | `@type` | SHOULD | Should contain `Standard` if the `@id` link sufficiently documents the format | [source](data-entities#adding-detailed-descriptions-of-file-encodings) |
+| Encoding format | `@type` | SHOULD NOT | Should NOT contain `Standard` if the `@id` link does not sufficiently document the format | [source](data-entities#adding-detailed-descriptions-of-file-encodings) |
+| Encoding format | `@type` | MAY | May include [WebPageElement] if the `@id` links to a section of a webpage | [source](data-entities#adding-detailed-descriptions-of-file-encodings) |
 
 
 ## Focus of an RO-Crate
@@ -396,32 +438,32 @@ A software application or item of equipment SHOULD be associated with the [File]
 
 Type of entity | Property/Target | Severity | Description | Eli attention |
 | ------- | ------| ------ | ------- | ------- |
-| All Actions | `instrument` | MAY be present
-| All Actions | `instrument` | SHOULD reference an entity of type [IndividualProduct] (equipment) or [SoftwareApplication] (software), except if multiple [SoftwareApplication]s were used together | singleton? implicit in the writing
-| CreateAction | `instrument` | If multiple [SoftwareApplication]s were used together, SHOULD reference a [SoftwareSourceCode] entity representing the whole [workflow](workflows)
-| CreateAction | `result` | SHOULD reference one or more entities representing the outputs of the action | implicit, actually only stated for [File]s
-| CreateAction | `object` | SHOULD reference one or more entities representing the inputs of the action | implicit, actually only stated for [File]s
-| CreateAction | `name` | MAY | May be human-readable
-| CreateAction | `name` | MAY | May be machine-generated
-| CreateAction / UpdateAction | usage | SHOULD | To record an action which changes an entity's metadata, or changes its state in a publication or other workflow, a [CreateAction] or [UpdateAction] SHOULD be associated with a [Data Entity](data-entities) or, for the RO-Crate itself, with the [root data entity](root-data-entity). | can't tell if this is its own req, or if it is elaborated on by successive reqs
-| Curation action | `object` | MUST | Must be present
-| Curation action | `object` | MUST | Must reference the _Root Data Entity_ or one of the entities in its `hasPart` | what is a curation action...?
-| Action which creates data entities | `result` | SHOULD | Should reference the data entities that were created
-| All Actions | `name` | SHOULD | Should be present
-| All Actions | `description` | MAY | May be present
-| All Actions | `endTime` | SHOULD | Should be present
-| All Actions | `endTime` | MUST | Must be in [ISO 8601 date format][DateTime]
-| All Actions | `endTime` | SHOULD | Should be specified to at least the precision of a day
-| All Actions | `startTime` | MAY | MAY be present
-| All Actions | `startTime` | MUST | Must be in [ISO 8601 date format][DateTime]
-| All Actions | `startTime` | SHOULD | Should be specified to at least the precision of a day
-| All Actions | `agent` | SHOULD | Should be present
-| All Actions | `agent` | SHOULD | Should reference a [Person] entity who was responsible for authorizing the action | implicit... just says a "human [agent]
-| All Actions | `actionStatus` | MAY | May be present
-| All Actions | `actionStatus` | MUST | MUST be must be one of the values enumerated by [ActionStatusType]: [ActiveActionStatus], [CompletedActionStatus], [FailedActionStatus] or [PotentialActionStatus]
-| All Actions | `error` | MAY | If the Action failed, may include error information
+| All Actions | `instrument` | MAY be present |
+| All Actions | `instrument` | SHOULD reference an entity of type [IndividualProduct] (equipment) or [SoftwareApplication] (software), except if multiple [SoftwareApplication]s were used together | singleton? implicit in the writing |
+| CreateAction | `instrument` | If multiple [SoftwareApplication]s were used together, SHOULD reference a [SoftwareSourceCode] entity representing the whole [workflow](workflows) |
+| CreateAction | `result` | SHOULD reference one or more entities representing the outputs of the action | implicit, actually only stated for [File]s |
+| CreateAction | `object` | SHOULD reference one or more entities representing the inputs of the action | implicit, actually only stated for [File]s |
+| CreateAction | `name` | MAY | May be human-readable |
+| CreateAction | `name` | MAY | May be machine-generated |
+| CreateAction / UpdateAction | usage | SHOULD | To record an action which changes an entity's metadata, or changes its state in a publication or other workflow, a [CreateAction] or [UpdateAction] SHOULD be associated with a [Data Entity](data-entities) or, for the RO-Crate itself, with the [root data entity](root-data-entity). | can't tell if this is its own req, or if it is elaborated on by successive reqs |
+| Curation action | `object` | MUST | Must be present |
+| Curation action | `object` | MUST | Must reference the _Root Data Entity_ or one of the entities in its `hasPart` | what is a curation action...? |
+| Action which creates data entities | `result` | SHOULD | Should reference the data entities that were created |
+| All Actions | `name` | SHOULD | Should be present |
+| All Actions | `description` | MAY | May be present |
+| All Actions | `endTime` | SHOULD | Should be present |
+| All Actions | `endTime` | MUST | Must be in [ISO 8601 date format][DateTime] |
+| All Actions | `endTime` | SHOULD | Should be specified to at least the precision of a day |
+| All Actions | `startTime` | MAY | MAY be present |
+| All Actions | `startTime` | MUST | Must be in [ISO 8601 date format][DateTime] |
+| All Actions | `startTime` | SHOULD | Should be specified to at least the precision of a day |
+| All Actions | `agent` | SHOULD | Should be present |
+| All Actions | `agent` | SHOULD | Should reference a [Person] entity who was responsible for authorizing the action | implicit... just says a "human [agent] |
+| All Actions | `actionStatus` | MAY | May be present |
+| All Actions | `actionStatus` | MUST | MUST be must be one of the values enumerated by [ActionStatusType]: [ActiveActionStatus], [CompletedActionStatus], [FailedActionStatus] or [PotentialActionStatus] |
+| All Actions | `error` | MAY | If the Action failed, may include error information |
 | UpdateAction | usage | SHOULD | Should only be used for actions which affect the Dataset as a whole, such as movement through a workflow | Crate as a whole?
 | CreateAction | usage | SHOULD | Should be used for actions which modify a [File] within a Dataset |
 | File | usage | SHOULD | If a [CreateAction] modifies a file within a dataset, the old version should be retained and a [CreateAction] added which has the original version as its [object] and the new version as its [result] |
 
-so far: 120 reqs...
+so far: 211 reqs...
