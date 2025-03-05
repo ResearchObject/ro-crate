@@ -247,6 +247,14 @@ Type of data entity | Property/Target | Severity | Description | Eli attention |
 | All | `@type` | MAY | May be an array | |
 | All | `name` | SHOULD | Should be present | |
 | All | `description` | SHOULD | Should be present | |
+| All | `license` | SHOULD | If different to the `license` on the _Root Data Entity_, should reference a [CreativeWork] entity | [source](contextual-entities#licensing-access-control-and-copyright)
+| All | `contentLocation` / `spatialCoverage` | SHOULD | One of these properties should be present if the entity is associated with a geographical location or region | [source](contextual-entities#places)
+| All | `contentLocation` / `spatialCoverage` | SHOULD | If present, should reference a [Place] entity | [source](contextual-entities#places)
+| All | `about` | MUST | Subject properties (equivalent to a [Dublin Core Subject](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/subject/)) must use the [about] property | I don't understand this one... [source](contextual-entities#subjects--keywords)
+| All | `keywords` | MUST | Keyword properties must use the [keywords] property | [source](contextual-entities#subjects--keywords)
+| All | `temporalCoverage` | SHOULD | Should be present if the entity is associated with a time period | implicit!! [source](contextual-entities#time)
+| All | `citation` | MUST | If associating a publication with a dataset, `citation` must include a URL (for example a DOI URL) as the `@id` of a publication | this feels a weird requirement... [source](contextual-entities#publications-via-citation-property)
+| All | `identifier` | MAY | May be a published DOI that primarily captures that file or dataset | [source](contextual-entities#publications-via-citation-property)
 | File | `@id` | MUST | Must be a relative or absolute URI | |
 | File | `@type` | MUST | Must be `File`, or an array where `File` is one of the values | |
 | File | `contentURL` | MAY | May be present | |
@@ -259,16 +267,20 @@ Type of data entity | Property/Target | Severity | Description | Eli attention |
 | File | `contentSize` | SHOULD | Should be the size of the file in bytes | |
 | File | `identifier`, `url`, `subjectOf`, `mainEntityOfPage` | MAY | May link to a relevant web presence for the entity | see [source](data-entities#web-based-data-entities) for further guidance |
 | File | `identifier`, `url`, `subjectOf`, `mainEntityOfPage` | SHOULD | If the entity is both in the _RO-Crate Root_ and on the web, one of these properties should be used to link to the relevant web presence | see [source](data-entities#web-based-data-entities) for further guidance |
+| Thumbnail (File) | (usage) | MUST | Must be present in the BagIt manifest if in a [_Bagged RO-Crate_](appendix/implementation-notes#adding-ro-crate-to-bagit) | this is a weird one too... actually more structural. [source](contextual-entities#thumbnails)
 | Dataset | `@id` | MUST | Must be a relative URI, an absolute URI, or a local identifier beginning with `#` | |
 | Dataset | `@type` | MUST | Must be `Dataset` or an array where `Dataset` is one of the values | |
 | Dataset | `@id` | SHOULD | If `@id` is a relative URI, it should end with `/` | |
 | Dataset | `@id` | SHOULD | If `@id` is an absolute URI, it should resolve to a programmatic listing of the content of the "directory" | |
 | Dataset | `hasPart` | SHOULD | Should be present | is this needed? |
 | Dataset | `hasPart` | SHOULD | Should list any directly contained data entities | can it be empty? | 
+| Dataset | `hasPart` | MAY | May include other Datasets to represent a nested folder hierarchy | 
 | Dataset | `distribution` | SHOULD | Should be present if the `@id` is a web URI |  |
 | Dataset | `hasPart` | SHOULD | If the `@id` is a web URI, either `hasPart` should contain a complete listing of the dataset's content, or the dataset should be an RO-Crate | |
 | Dataset | `distribution` | MAY | If the dataset represented by the entity is an RO-Crate, `distribution` may be present | |
 | Dataset | `distribution` | MAY | If the dataset represented by the entity is an RO-Crate, `distribution` should be the URI of an archive that contains the _RO-Crate Metadata Document_ | |
+| Dataset | `funder` | SHOULD | Should be present if a research project is associated with the dataset | [source](contextual-entities#funding-and-grants)
+| Dataset | `funder` | SHOULD | Should reference an [Organization] entity | [source](contextual-entities#funding-and-grants)
 | Web-based File or Dataset | `@id` | SHOULD NOT | Should not reference intermediate resources such as splash-pages, search services or web-based viewer applications
 | Web-based File or Dataset | `sdDatePublished` | SHOULD | Should be present
 | Web-based File or Dataset | `sdDatePublished` | SHOULD | Should indicate when the `@id` was accessed
@@ -276,43 +288,32 @@ Type of data entity | Property/Target | Severity | Description | Eli attention |
 | Web-based File or Dataset | `encodingFormat` | SHOULD | Should link to a _Contextual Entity_ representing the format | see [contextual entities for encoding formats](TODO) | 
 | Web-based File or Dataset | `encodingFormat` | MAY | May be a local description of the format if there is no web-accessible description | | 
 
+
 ### Referenced RO-Crates
 
-* An entity representing a referenced RO-Crate SHOULD have `conformsTo` pointing to the generic RO-Crate profile using the fixed URI `https://w3id.org/ro/crate`.
+This section describes how an RO-Crate A may reference another RO-Crate B. Properties in the "Property/Target" column are properties of the data entity within A that represents B.
 
-* If the referenced RO-Crate B has an `identifier` declared as B's [Root Data Entity identifier](root-data-entity#root-data-entity-identifier), then this is a _persistent identifier_ which SHOULD be used as the URI in the `@id` of the corresponding entity in RO-Crate A. 
-* The `conformsTo` generic RO-Crate profile on a `Dataset` entity MUST be version-less
-* It is NOT RECOMMENDED to declare the generic profile `https://w3id.org/ro/crate` on the referencing RO-Crate A's own [root data entity](root-data-entity.html#direct-properties-of-the-root-data-entity), see [metadata descriptor](root-data-entity.html#ro-crate-metadata-descriptor).
+| Property/Target | Severity | Description | Eli attention |
+| ------- | ------| ------ | ------- |
+| All | MUST | Must follow all requirements for [Directory Data Entities](#data-entities)  | |
+| `@id` | SHOULD | If B's RDE has an `identifier` declared, `@id` should be that identifier | |
+| `@id` | SHOULD | If A is [attached](structure#attached-ro-crate-package) and B is a nested folder within A, `@id` should be the relative path to B from A's _RO-Crate Root_. | |
+| `@id` | SHOULD | If the conditions above do not apply, and B's RDE `@id` is an absolute URI or can be converted to one (see [source](data-entities#determining-entity-identifier-for-a-referenced-ro-crate) for guidance), and that URI resolves according to [Retrieving an RO-Crate](data-entities#retrieving-an-ro-crate), `@id` should be that absolute URI | |
+| `sdDatePublished` | SHOULD | If the condition above applies, but the absolute URI does not have [Signposting] declared for a `Link:` with `rel=cite-as`, `sdDatePublished` should be present | |
+| `sdDatePublished` | SHOULD | If present, should indicate when the URI in the `@id` was accessed | |
+| `@id` | MAY | If B is not on the Web, and does not have a persistent identifier, then a non-resolvable identifier may be used. | |
+| `@id` | MAY | If B's metadata document is on the Web, but the above conditions fail to determine `@id`, then a non-resolvable identifier may be used. | |
+| `subjectOf` | SHOULD | If the condition above applies, should be present | |
+| `subjectOf` | SHOULD | If present, should reference a contextual entity representing B's metadata descriptor | See [contextual entity for referenced RO-Crate metadata descriptor](#TODO) |
+| `conformsTo` | SHOULD | Should include the versionless RO-Crate base profile `https://w3id.org/ro/crate` | |
+| `conformsTo` | MUST NOT | Must NOT include a specific version of the RO-Crate base profile (such as `https://w3id.org/ro/crate/1.1`) | |
+| `conformsTo` | MAY | May reference contextual entities representing [RO-Crate profiles](profiles) (specific versions are permitted) | |
+
+
 * Consumers that find a reference to a `Dataset` with the generic RO-Crate profile indicated MAY attempt to resolve the persistent identifier, but SHOULD NOT assume that the `@id` directly resolves to an RO-Crate Metadata Document. 
-* If an `identifier` is not declared in a referenced RO-Crate B, but the determined absolute URI has [Signposting] declared for a `Link:` with `rel=cite-as`, then that link MAY be considered as an equivalent permalink for B.
-
-1. If RO-Crate A is an [Attached Ro-Crate Package](structure.html#attached-ro-crate-package) and RO-Crate B is a nested folder (e.g. `another-crate/`), then B SHOULD be treated as an _Attached RO-Crate Package_ (e.g. it has `another-crate/ro-crate-metadata.json`) and the relative path (`another-crate/`) used directly as `@id` as a [Directory Data Entity](#directory-data-entity) within crate A.
-2. If B's _Root Data Entity_ has an `@id` that is an absolute URI indicating a [Detached RO-Crate Package](structure.html#detached-ro-crate-package), and that URI resolves according to [Retrieving an RO-Crate](#retrieving-an-ro-crate), then that can be used as the `@id` of the `Dataset` entity in A, equivalent to the `identifier` case above. However, as that URI was not declared as a persistent identifier, the timestamp property [sdDatePublished] SHOULD be included to indicate when the absolute URL was accessed.
-2. If B's _RO-Crate Metadata Document_ was located on the Web, but uses a relative URI reference for its root data entity (`./`), then its absolute URI can be determined from the [RFC 3986] algorithm for [establishing a base URI](https://datatracker.ietf.org/doc/html/rfc3986#section-5). For example, if root `{"@id": "./" }` is in metadata document `http://example.com/another-crate/ro-crate-metadata.json`, then the absolute URI for the `Dataset` entity is `http://example.com/another-crate/` (with the trailing `/`). If that URI is resolvable as in point 1, it can be used as equivalent `@id`. It is NOT RECOMMENDED to resolve a relative root identifier if the metadata document was retrieved from a URI that does not end with `/ro-crate-metadata.json` or `/ro-crate-metadata.jsonld` -- these are not part of a valid [attached](structure.html#attached-ro-crate-package) or [Detached RO-Crate Pacakge](structure.html#detached-ro-crate-package).
-4. If RO-Crate B is not on the Web, and does not have a persistent identifier, e.g. is within a ZIP file or local file system, then a non-resolvable identifier could be established. See appendix [Establishing a base URI inside a ZIP file](appendix/relative-uris.html#establishing-a-base-uri-inside-a-zip-file), e.g. `arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/` if using a randomly generated UUID. This method may also be used if the above steps fail for an RO-Crate Metadata Document that is on the Web. In this case, the referenced RO-Crate entity MUST either declare a [referenced metadata document](#referencing-another-metadata-document) or [distribution](#downloadable-dataset).
-* If a referenced RO-Crate Metadata Document is known at a given URI or path, but its corresponding RO-Crate identifier can't be determined as above (e.g. [Retrieving an RO-Crate](#retrieving-an-ro-crate) fails or requires heuristics), then a referenced metadata descriptor entity SHOULD be added.
-* the referenced RO-Crate metadata descriptor SHOULD NOT include its own `conformsTo` declarations to `https://w3id.org/ro/crate` 
-* the referenced RO-Crate metadata descriptor SHOULD NOT reference the dataset with `about`; 
-
-* If the referenced crate conforms to a given [RO-Crate profile](profiles), this MAY be indicated by expanding `conformsTo` on the `Dataset` to an array to reference the profile as an contextual entity:
 
 ##### All (data entities)
 
-Type of data entity | Property/Target | Severity | Description | Eli attention |
-| ------- | ------| ------ | ------- | ------- |
-| All | `citation` | MUST | If associating a publication with a dataset, `citation` must include a URL (for example a DOI URL) as the `@id` of a publication | this feels a weird requirement... [source](contextual-entities#publications-via-citation-property)
-| All | `identifier` | MAY | May be a published DOI that primarily captures that file or dataset | [source](contextual-entities#publications-via-citation-property)
-| Dataset | `funder` | SHOULD | Should be present if a research project is associated with the dataset | [source](contextual-entities#funding-and-grants)
-| Dataset | `funder` | SHOULD | Should reference an [Organization] entity | [source](contextual-entities#funding-and-grants)
-| All | `license` | SHOULD | If different to the `license` on the _Root Data Entity_, should reference a [CreativeWork] entity | [source](contextual-entities#licensing-access-control-and-copyright)
-| All | `contentLocation` / `spatialCoverage` | SHOULD | One of these properties should be present if the entity is associated with a geographical location or region | [source](contextual-entities#places)
-| All | `contentLocation` / `spatialCoverage` | SHOULD | Should reference a [Place] entity | [source](contextual-entities#places)
-| All | `about` | MUST | Subject properties (equivalent to a [Dublin Core Subject](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/subject/)) must use the [about] property | I don't understand this one... [source](contextual-entities#subjects--keywords)
-| All | `keywords` | MUST | Keyword properties must use the [keywords] property | [source](contextual-entities#subjects--keywords)
-| All | `temporalCoverage` | SHOULD | Should be present if the entity is associated with a time period | implicit!! [source](contextual-entities#time)
-| Thumbnail (File) | usage | MUST | Must be present in the BagIt manifest if in a [_Bagged RO-Crate_](appendix/implementation-notes#adding-ro-crate-to-bagit) | this is a weird one too... actually more structural. [source](contextual-entities#thumbnails)
-
-* Directory hierarchies MAY be represented with nested [Dataset] _Data Entities_
 * a directory containing a set of files _MAY_ be described using a `Dataset` _Data Entity_ that encapsulates the files with a `description` property that explains the contents.
 * care must be taken to express any relative paths using `/` separator, correct casing, and escape special characters like space (`%20`) and percent (`%25`)
 * the _RO-Crate Metadata Document_ is always UTF-8
@@ -426,6 +427,9 @@ Type of contextual entity | Property/Target | Severity | Description | Eli atten
 | Encoding format | `@type` | SHOULD | Should contain `Standard` if the `@id` link sufficiently documents the format | [source](data-entities#adding-detailed-descriptions-of-file-encodings) |
 | Encoding format | `@type` | SHOULD NOT | Should NOT contain `Standard` if the `@id` link does not sufficiently document the format | [source](data-entities#adding-detailed-descriptions-of-file-encodings) |
 | Encoding format | `@type` | MAY | May include [WebPageElement] if the `@id` links to a section of a webpage | [source](data-entities#adding-detailed-descriptions-of-file-encodings) |
+| Metadata descriptor for a referenced RO-Crate | `encodingFormat` | SHOULD | Should be `"application/ld+json"` or an equivalent representation of JSON-LD | [source](data-entities#referencing-another-metadata-document) |
+| Metadata descriptor for a referenced RO-Crate | `conformsTo` | SHOULD NOT | Should NOT be present | [source](data-entities#referencing-another-metadata-document) |
+| Metadata descriptor for a referenced RO-Crate | `about` | SHOULD NOT | Should NOT be present | [source](data-entities#referencing-another-metadata-document) |
 
 
 ## Focus of an RO-Crate
