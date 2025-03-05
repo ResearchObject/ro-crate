@@ -31,3 +31,5 @@ has_children: true
 * [Handling relative URI references](relative-uris)
 * [Implementation Notes](implementation-notes)
 * [RO-Crate JSON-LD](jsonld)
+* [Quick reference](quick-reference)
+* [Human changelog](human-changelog)
