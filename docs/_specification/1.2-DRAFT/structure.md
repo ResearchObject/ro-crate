@@ -71,7 +71,7 @@ The graph MUST describe:
 
 Any referenced _contextual entities_ SHOULD also be described in the _RO-Crate Metadata Document_ with the same identifier. Similarly any _contextual entity_ in the _RO-Crate Metadata Document_ SHOULD be linked to from at least one of the other entities using the same identifier. 
 
-The appendix [RO-Crate JSON-LD](appendix/jsonld) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata Document_. In short, the rest of this specification describe the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` array below:
+The appendix [RO-Crate JSON-LD](appendix/jsonld) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata Document_. In short, the rest of this specification describes the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` array below:
 
 ```json
 { "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
@@ -84,7 +84,7 @@ The appendix [RO-Crate JSON-LD](appendix/jsonld) details the general structure o
 
 ## Attached RO-Crate Package
 
-An **Attached RO-Crate Package** is used to contain and describe an optional _payload_ of files and directories as well as web-based data entities among with their contextual information.
+An **Attached RO-Crate Package** is used to contain and describe an optional _payload_ of files and directories as well as web-based data entities along with their contextual information.
 
 When processing an _Attached RO-Crate Package_ the _RO-Crate Metadata Document_ MUST be present in the _RO-Crate Root_ and it MUST be named `ro-crate-metadata.json`.
 
@@ -135,7 +135,7 @@ In addition to the machine-oriented _RO-Crate Metadata Document_, an _Attached R
 If present in the root directory of an _Attached RO-Crate Package_ as `ro-crate-preview.html` (or otherwise served in a _Detached RO-Crate Package_), the RO-Crate Website MUST:
 
 * Be a valid [HTML 5] document
-* Be useful to users of the RO-Crate - this will vary by community and intended use, but in general the aim to assist users in reusing data by explaining what it is, how it was created how it can be used and how to cite it. One simple approach to this is to expose *all* the metadata in the _RO-Crate Metadata Document_.
+* Be useful to users of the RO-Crate - this will vary by community and intended use, but in general the aim is to assist users in reusing data by explaining what it is, how it was created, how it can be used and how to cite it. One simple approach to this is to expose *all* the metadata in the _RO-Crate Metadata Document_.
 
 `ro-crate-preview.html` SHOULD:
 
