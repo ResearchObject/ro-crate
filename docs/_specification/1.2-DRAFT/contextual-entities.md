@@ -466,10 +466,6 @@ This example shows how to define a place, using a [geonames] ID:
   "@id": "./",
   "@type": "Dataset",
   "...": "...",
-  "outputOf": "RO-Crate",
-  "contact": {
-    "@id": "https://orcid.org/0000-0002-3545-944X"
-  },
   "contentLocation": {
     "@id": "http://sws.geonames.org/8152662/",
   }
