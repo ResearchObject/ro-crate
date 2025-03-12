@@ -391,9 +391,9 @@ The below _Data Entity_ has a [copyrightHolder] which is different from its [aut
 
 In some cases the license of the [RO-Crate metadata](root-data-entity) (the JSON-LD statements in the _RO-Crate Metadata Descriptor_) is different from the license on the [Root Data Entity](root-data-entity) and its content (_data entities_ indicated by [hasPart]). 
 
-For instance, a common pattern for repositories is to license metadata as [CC0 Public Domain Dedication][CC0], while data is licensed as [CC-BY] or similar.  This pattern allow metadata to be combined freely (e.g. the [DataCite] knowledge graph), while redistribution of data files would require explicit attribution and statement of their license.
+For instance, a common pattern for repositories is to license metadata as [CC0 Public Domain Dedication][CC0], while data is licensed as [CC-BY] or similar.  This pattern allows metadata to be combined freely (e.g. the [DataCite] knowledge graph), while redistribution of data files would require explicit attribution and statement of their license.
 
-To express the metadata license is different from the _Root Data Entity_, expand the _RO-Crate Metadata Descriptor_  to include `license`:
+To express that the metadata license is different from the one of the _Root Data Entity_, expand the _RO-Crate Metadata Descriptor_  to include `license`:
 
 ```json
 {
@@ -405,7 +405,6 @@ To express the metadata license is different from the _Root Data Entity_, expand
     "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 },
-
 {
   "@id": "./",
   "@type": "Dataset",
@@ -414,10 +413,9 @@ To express the metadata license is different from the _Root Data Entity_, expand
     "@id": "https://creativecommons.org/licenses/by/4.0/"
   }
 }
-
 ```
 
-If no explicit `license` is expressed on the _RO-Crate Metadata Descriptor_, the `license` expressed on the _Root Data Entity_ applies also on the RO-Crate metadata.
+If no explicit `license` is expressed on the _RO-Crate Metadata Descriptor_, the `license` expressed on the _Root Data Entity_ applies also to the RO-Crate metadata.
 
 
 ## Extra metadata such as Exif
