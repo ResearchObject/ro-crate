@@ -274,15 +274,13 @@ The [Root Data Entity](root-data-entity) SHOULD have a [publisher] property. Thi
 
 ```json
 {
-  "@id": "https://doi.org/10.5281/zenodo.1009240",
+  "@id": "./",
   "@type": "Dataset",
-  "name": "Sample dataset for RO-Crate v0.2",
+  "...": "...",
   "publisher": {
     "@id": "https://ror.org/03f0f6041"
-  },
-  "temporalCoverage": "2017"
+  }
 },
-
 {
   "@id": "https://ror.org/03f0f6041",
   "@type": "Organization",
@@ -290,9 +288,6 @@ The [Root Data Entity](root-data-entity) SHOULD have a [publisher] property. Thi
   "name": "University of Technology Sydney"
 },
 ```
-
-
-
 
 
 ## Funding and grants
