@@ -546,11 +546,6 @@ If [thumbnail]s are incidental to the data set, they need not be referenced by [
   "identifier": [
     "ftf_photo_stapleton1"
   ],
-  "interviewee": [
-    {
-      "@id": "https://omeka.uws.edu.au/farmstofreeways/api/items/595",
-    }
-  ],
   "description": [
     "Photo of Eugenie Stapleton inside her home"
   ],
@@ -585,9 +580,6 @@ If [thumbnail]s are incidental to the data set, they need not be referenced by [
   "copyrightHolder": [
     { "@id": "https://westernsydney.edu.au"}
   ],
-  "copyright": [
-    "Copyright University of Western Sydney 2015"
-  ]
 },
 {
   "@type": "File",
