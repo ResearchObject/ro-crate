@@ -54,7 +54,7 @@ In all cases, `@type` MAY be an array to also specify a more specific type, e.g.
 There is no requirement to represent _every_ file and folder in an RO-Crate as _Data Entities_ in the _RO-Crate JSON-LD_.  Reasons for not describing files would include that the files:
 - are described in some other way, for example a manifest or another package management system,
 - are supporting files for a software application,
-- have metadata embedded in their filenames or paths which can be explained once,
+- have metadata embedded in their filenames or paths which can be documented whithout having to describe every file,
 - have a purpose that is unknown to the crate author, but they need to be preserved as part of an archive. 
 
 In any of the above cases where files are not described, a directory containing a set of files MAY be described using a `Dataset` _Data Entity_ that encapsulates the files with a `description` property that explains the contents. If the RO-Crate file structure is flat, or files are not grouped together, a `description` property on the _Root Data Entity_ may be used, or a `Dataset` with a local reference beginning with `#` (e.g. to describe a certain type of file which occurs throughout the crate). This approach is recommended for RO-Crates which are to be deposited in a long-term archive.
