@@ -69,6 +69,8 @@ versions:
         url: /specification/1.2-DRAFT/appendix/implementation-notes.html
       - title: RO-Crate JSON-LD
         url: /specification/1.2-DRAFT/appendix/jsonld.html
+      - title: Quick reference
+        url: /specification/1.2-DRAFT/appendix/quick-reference.html
 - title: RO-Crate 1.0
   url: /specification/1.0/index.html
 - title: RO-Crate 0.2
