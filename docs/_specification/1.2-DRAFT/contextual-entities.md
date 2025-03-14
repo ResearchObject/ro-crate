@@ -274,15 +274,13 @@ The [Root Data Entity](root-data-entity) SHOULD have a [publisher] property. Thi
 
 ```json
 {
-  "@id": "https://doi.org/10.5281/zenodo.1009240",
+  "@id": "./",
   "@type": "Dataset",
-  "name": "Sample dataset for RO-Crate v0.2",
+  "...": "...",
   "publisher": {
     "@id": "https://ror.org/03f0f6041"
-  },
-  "temporalCoverage": "2017"
+  }
 },
-
 {
   "@id": "https://ror.org/03f0f6041",
   "@type": "Organization",
@@ -290,9 +288,6 @@ The [Root Data Entity](root-data-entity) SHOULD have a [publisher] property. Thi
   "name": "University of Technology Sydney"
 },
 ```
-
-
-
 
 
 ## Funding and grants
@@ -396,9 +391,9 @@ The below _Data Entity_ has a [copyrightHolder] which is different from its [aut
 
 In some cases the license of the [RO-Crate metadata](root-data-entity) (the JSON-LD statements in the _RO-Crate Metadata Descriptor_) is different from the license on the [Root Data Entity](root-data-entity) and its content (_data entities_ indicated by [hasPart]). 
 
-For instance, a common pattern for repositories is to license metadata as [CC0 Public Domain Dedication][CC0], while data is licensed as [CC-BY] or similar.  This pattern allow metadata to be combined freely (e.g. the [DataCite] knowledge graph), while redistribution of data files would require explicit attribution and statement of their license.
+For instance, a common pattern for repositories is to license metadata as [CC0 Public Domain Dedication][CC0], while data is licensed as [CC-BY] or similar.  This pattern allows metadata to be combined freely (e.g. the [DataCite] knowledge graph), while redistribution of data files would require explicit attribution and statement of their license.
 
-To express the metadata license is different from the _Root Data Entity_, expand the _RO-Crate Metadata Descriptor_  to include `license`:
+To express that the metadata license is different from the one of the _Root Data Entity_, expand the _RO-Crate Metadata Descriptor_  to include `license`:
 
 ```json
 {
@@ -410,7 +405,6 @@ To express the metadata license is different from the _Root Data Entity_, expand
     "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 },
-
 {
   "@id": "./",
   "@type": "Dataset",
@@ -419,10 +413,9 @@ To express the metadata license is different from the _Root Data Entity_, expand
     "@id": "https://creativecommons.org/licenses/by/4.0/"
   }
 }
-
 ```
 
-If no explicit `license` is expressed on the _RO-Crate Metadata Descriptor_, the `license` expressed on the _Root Data Entity_ applies also on the RO-Crate metadata.
+If no explicit `license` is expressed on the _RO-Crate Metadata Descriptor_, the `license` expressed on the _Root Data Entity_ applies also to the RO-Crate metadata.
 
 
 ## Extra metadata such as Exif
@@ -473,10 +466,6 @@ This example shows how to define a place, using a [geonames] ID:
   "@id": "./",
   "@type": "Dataset",
   "...": "...",
-  "outputOf": "RO-Crate",
-  "contact": {
-    "@id": "https://orcid.org/0000-0002-3545-944X"
-  },
   "contentLocation": {
     "@id": "http://sws.geonames.org/8152662/",
   }
@@ -557,11 +546,6 @@ If [thumbnail]s are incidental to the data set, they need not be referenced by [
   "identifier": [
     "ftf_photo_stapleton1"
   ],
-  "interviewee": [
-    {
-      "@id": "https://omeka.uws.edu.au/farmstofreeways/api/items/595",
-    }
-  ],
   "description": [
     "Photo of Eugenie Stapleton inside her home"
   ],
@@ -596,9 +580,6 @@ If [thumbnail]s are incidental to the data set, they need not be referenced by [
   "copyrightHolder": [
     { "@id": "https://westernsydney.edu.au"}
   ],
-  "copyright": [
-    "Copyright University of Western Sydney 2015"
-  ]
 },
 {
   "@type": "File",
