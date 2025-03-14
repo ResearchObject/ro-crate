@@ -214,13 +214,14 @@ If the dataset contained a large number of `*.ai` files which were spread throug
             "@id": "#ai-files"
         }
     ],
-    {
-        "@id": "#ai-files",
-        "@type": "Dataset",
-        "name": ".ai Files",
-        "description": "This dataset contains some files with the extension '.ai' which despite their extension have an encoding format of 'application/pdf'. These have yet to be catalogued."
-    }
+},
+{
+    "@id": "#ai-files",
+    "@type": "Dataset",
+    "name": ".ai Files",
+    "description": "This dataset contains some files with the extension '.ai' which despite their extension have an encoding format of 'application/pdf'. These have yet to be catalogued."
 }
+
 ```
 
 
