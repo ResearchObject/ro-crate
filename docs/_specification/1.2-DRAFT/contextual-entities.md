@@ -78,16 +78,18 @@ A core principle of Linked Data is to use URIs to identify important entities su
 
 ```json
 {
-    "@type": "Dataset",
-    "@id": "./",
-    "...": "...",
-    "author": {"@id": "https://orcid.org/0000-0002-8367-6908"}
+  "@type": "Dataset",
+  "@id": "./",
+  "...": "...",
+  "author": {
+    "@id": "https://orcid.org/0000-0002-8367-6908"
+  }
 },
 {
-    "@id": "https://orcid.org/0000-0002-8367-6908",
-    "@type": "Person",
-    "affiliation": "University of Technology Sydney",
-    "name": "J. Xuan"
+  "@id": "https://orcid.org/0000-0002-8367-6908",
+  "@type": "Person",
+  "affiliation": "University of Technology Sydney",
+  "name": "J. Xuan"
 }
 ```
 
@@ -106,9 +108,10 @@ An [Organization] SHOULD be the value for the [publisher] property of a [Dataset
   "@type": "Dataset",
   "@id": "./",
   "...": "...",
-  "publisher": {"@id": "https://ror.org/03f0f6041"}
-}
-
+  "publisher": {
+    "@id": "https://ror.org/03f0f6041"
+  }
+},
 {
   "@id": "https://ror.org/03f0f6041",
   "@type": "Organization",
@@ -124,8 +127,12 @@ An [Organization] SHOULD also be used for a [Person]'s [affiliation] property.
   "@type": "Dataset",
   "@id": "./",
   "...": "...",
-  "publisher": {"@id": "https://ror.org/03f0f6041"},
-  "author": {"@id": "https://orcid.org/0000-0002-3545-944X"}
+  "publisher": {
+    "@id": "https://ror.org/03f0f6041"
+  },
+  "author": {
+    "@id": "https://orcid.org/0000-0002-3545-944X"
+  }
 },
 {
   "@id": "https://ror.org/03f0f6041",
@@ -135,7 +142,9 @@ An [Organization] SHOULD also be used for a [Person]'s [affiliation] property.
 {
   "@id": "https://orcid.org/0000-0002-3545-944X",
   "@type": "Person",
-  "affiliation": {"@id": "https://ror.org/03f0f6041"},
+  "affiliation": {
+    "@id": "https://ror.org/03f0f6041"
+  },
   "email": "peter.sefton@uts.edu.au",
   "name": "Peter Sefton"
 }
@@ -149,29 +158,31 @@ An RO-Crate SHOULD have contact information, using a contextual entity of type [
 
 ```json
 {
-      "@id": "./",
-      "@type": "Dataset",
-      "...": "...",
-      "author": {"@id": "https://orcid.org/0000-0001-6121-5409"}
+  "@id": "./",
+  "@type": "Dataset",
+  "...": "...",
+  "author": {
+    "@id": "https://orcid.org/0000-0001-6121-5409"
+  }
 },
 {
-      "@id": "https://orcid.org/0000-0001-6121-5409",
-      "@type": "Person",
-      "contactPoint": {
-        "@id": "mailto:tim.luckett@uts.edu.au"
-      },
-      "familyName": "Luckett",
-      "givenName": "Tim",
-      "identifier": "https://orcid.org/0000-0001-6121-5409",
-      "name": "Tim Luckett"
+  "@id": "https://orcid.org/0000-0001-6121-5409",
+  "@type": "Person",
+  "contactPoint": {
+    "@id": "mailto:tim.luckett@uts.edu.au"
+  },
+  "familyName": "Luckett",
+  "givenName": "Tim",
+  "identifier": "https://orcid.org/0000-0001-6121-5409",
+  "name": "Tim Luckett"
 },
 {
-      "@id": "mailto:tim.luckett@uts.edu.au",
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "tim.luckett@uts.edu.au",
-      "identifier": "tim.luckett@uts.edu.au",
-      "url": "https://orcid.org/0000-0001-6121-5409"
+  "@id": "mailto:tim.luckett@uts.edu.au",
+  "@type": "ContactPoint",
+  "contactType": "customer service",
+  "email": "tim.luckett@uts.edu.au",
+  "identifier": "tim.luckett@uts.edu.au",
+  "url": "https://orcid.org/0000-0001-6121-5409"
 }
 ```
 
@@ -186,10 +197,12 @@ For example:
 
 ```json
 {
-    "@id": "./",
-    "@type": "Dataset",
-    "...": "...",
-    "citation": {"@id": "https://doi.org/10.1109/TCYB.2014.2386282"}
+  "@id": "./",
+  "@type": "Dataset",
+  "...": "...",
+  "citation": {
+    "@id": "https://doi.org/10.1109/TCYB.2014.2386282"
+  }
 }
 ```
 
@@ -232,7 +245,9 @@ type [ScholarlyArticle] or [CreativeWork].
   "@id": "communities-2018.csv",
   "@type": "File",
   "name": "Snapshot of RO Community efforts",
-  "citation": {"@id": "https://doi.org/10.5281/zenodo.1313066"},
+  "citation": {
+    "@id": "https://doi.org/10.5281/zenodo.1313066"
+  },
   "encodingFormat": "text/csv"
 }
 ```
@@ -244,8 +259,12 @@ A [data entity](data-entities) MAY provide a published DOI [identifier] that pri
   "@id": "figure.png",
   "@type": ["File", "ImageObject"],
   "name": "XXL-CT-scan of an XXL Tyrannosaurus rex skull",
-  "identifier": {"@id": "https://doi.org/10.5281/zenodo.3479743"},
-  "citation": {"@id": "http://ndt.net/?id=19249"},
+  "identifier": {
+    "@id": "https://doi.org/10.5281/zenodo.3479743"
+  },
+  "citation": {
+    "@id": "http://ndt.net/?id=19249"
+  },
   "encodingFormat": "image/png"
 },
 {
@@ -262,8 +281,6 @@ A [data entity](data-entities) MAY provide a published DOI [identifier] that pri
   "name": "An XXL-CT-scan of an XXL Tyrannosaurus rex skull. 19th World Conference on Non-Destructive Testing (WCNDT 2016)",
   "creditText": "Reims, N., Schulp, A., Böhnel, M., & Larson, P. (2016). An XXL-CT-scan of an XXL Tyrannosaurus rex skull. 19th World Conference on Non-Destructive Testing (WCNDT 2016), 13-17 June 2016 in Munich, Germany. e-Journal of Nondestructive Testing Vol. 21(7). https://www.ndt.net/?id=19249"
 }
-
-
 ```
 
 
@@ -286,7 +303,7 @@ The [Root Data Entity](root-data-entity) SHOULD have a [publisher] property. Thi
   "@type": "Organization",
   "identifier": "https://ror.org/03f0f6041",
   "name": "University of Technology Sydney"
-},
+}
 ```
 
 
@@ -303,7 +320,7 @@ To associate a research project with a [Dataset], the _RO-Crate JSON-LD_ SHOULD 
   "@type": "Dataset",
   "funder": {
     "@id": "https://ror.org/038sjwq14"
-  },
+  }
 },
 {
   "@id": "https://eresearch.uts.edu.au/projects/provisioner",
@@ -332,7 +349,7 @@ To associate a research project with a [Dataset], the _RO-Crate JSON-LD_ SHOULD 
   "description": "The core purpose of the Australian National Data Service (ANDS) is ...",
   "identifier": "https://ands.org.au",
   "name": "Australian National Data Service"
-},
+}
 ```
 
 
@@ -362,21 +379,18 @@ The below _Data Entity_ has a [copyrightHolder] which is different from its [aut
   },
   "sameAs": "https://www.scidatacon.org/2016/sessions/56/paper/265/"
 },
-
 {
   "@id": "https://creativecommons.org/licenses/by/4.0/",
   "@type": "CreativeWork",
   "name": "CC BY 4.0",
   "description": "Creative Commons Attribution 4.0 International License"
 },
-
 {
   "@id": "https://orcid.org/0000-0002-0068-716X",
   "@type": "Person",
   "identifier": "https://orcid.org/0000-0002-0068-716X",
   "name": "Cameron Neylon"
 },
-
 {
   "@id": "https://www.idrc.ca/",
   "@type": "Organization",
@@ -400,7 +414,9 @@ To express that the metadata license is different from the one of the _Root Data
   "@type": "CreativeWork",
   "@id": "ro-crate-metadata.json",
   "identifier": "ro-crate-metadata.json",
-  "about": {"@id": "./"},
+  "about": {
+    "@id": "./"
+  },
   "license": {
     "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
   }
@@ -426,29 +442,29 @@ To include EXIF, or other data which can be encoded as property/value pairs, add
 
 ```json
 {
-      "@id": "pics/2017-06-11%2012.56.14.jpg",
-      "@type": ["File", "ImageObject"],
-      "contentSize": "5114778",
-      "author": {
-        "@id": "https://orcid.org/0000-0002-3545-944X"
-      },
-      "description": "Depicts a fence at a disused motor racing venue with the front part of a slightly out of focus black dog in the foreground.",
-      "encodingFormat": "image/jpeg",
-      "exifData": [
-        {
-          "@id": "#2eb90b09-a8b8-4946-805b-8cba077a7137"
-        },
-        {
-          "@id": "#c2521494-9b94-4b23-a713-6b281f540823"
-        },
-      ]
+  "@id": "pics/2017-06-11%2012.56.14.jpg",
+  "@type": ["File", "ImageObject"],
+  "contentSize": "5114778",
+  "author": {
+    "@id": "https://orcid.org/0000-0002-3545-944X"
+  },
+  "description": "Depicts a fence at a disused motor racing venue with the front part of a slightly out of focus black dog in the foreground.",
+  "encodingFormat": "image/jpeg",
+  "exifData": [
+    {
+      "@id": "#2eb90b09-a8b8-4946-805b-8cba077a7137"
+    },
+    {
+      "@id": "#c2521494-9b94-4b23-a713-6b281f540823"
+    }
+  ]
 },
 {
-      "@id": "#c2521494-9b94-4b23-a713-6b281f540823",
-      "@type": "PropertyValue",
-      "name": "InternalSerialNumber",
-      "value": "4102011002108002"
-},
+  "@id": "#c2521494-9b94-4b23-a713-6b281f540823",
+  "@type": "PropertyValue",
+  "name": "InternalSerialNumber",
+  "value": "4102011002108002"
+}
 ```
 
 
@@ -467,7 +483,7 @@ This example shows how to define a place, using a [geonames] ID:
   "@type": "Dataset",
   "...": "...",
   "contentLocation": {
-    "@id": "http://sws.geonames.org/8152662/",
+    "@id": "http://sws.geonames.org/8152662/"
   }
 },
 {
@@ -508,7 +524,7 @@ Keyword properties MUST use [keywords]. Note that by Schema.org convention, keyw
 ```json
 {
   "keywords": "Gibraltar, Spain, British Overseas Territory, city, map",
-  "about": { "@id": "http://dbpedia.org/resource/Gibraltar" },
+  "about": { "@id": "http://dbpedia.org/resource/Gibraltar" }
 }
 ```
 
