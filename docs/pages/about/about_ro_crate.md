@@ -89,7 +89,7 @@ or find relevant information for your [domain](domains), [project role](roles), 
 
 #### RO-Crate Developers
 
-For a technical introduction to RO-Crates see [Technical RO-Crate](technical_ro_crate).
+For a technical introduction to RO-Crates see [RO-Crate Technical](technical).
 
 Read the [Background](background) page to learn about the history of RO-Crate and its predecessors.
 
