@@ -60,11 +60,11 @@ RO-Crate makes use of the [Linked Data principles] for its description. In parti
 
 RO-Crate realizes these principles using a particular set of technologies and best practices:
 
-1. The _RO-Crate Metadata Document_ can be stored in an _RO-Crate Metadata File_. The _RO-Crate Metadata File_ and an _RO-Crate Website_ can be directly published on the web together with the RO-Crate payload. In addition, a data package (e.g. BagIt Zip archive) that contain the RO-Crate can also be published on the web.
+1. The _RO-Crate Metadata Document_ can be stored in an _RO-Crate Metadata File_. The _RO-Crate Metadata File_ and an _RO-Crate Website_ can be directly published on the web together with the RO-Crate payload. In addition, a data package (e.g. BagIt Zip archive) that contains the RO-Crate can also be published on the web.
 2. The _RO-Crate Metadata Document_ is based on the structured data format [JSON-LD]. 
 3. Multiple open source tools/libraries are available [for JSON][JSON] and [for JSON-LD][JSON-LD].
 4. The _RO-Crate Website_ is [HTML 5], and the _RO-Crate Metadata Document_ is [JSON-LD], one of the [W3C RDF 1.1 formats].
-5. The _RO-Crate Metadata Document_ reuse common vocabularies like [Schema.org], and this specification [recommends identifiers](#recommended-identifiers) it should link to.
+5. The _RO-Crate Metadata Document_ reuses common vocabularies like [Schema.org], and this specification [recommends identifiers](#recommended-identifiers) it should link to.
 
 ## Common principles for RO-Crate entities
 
@@ -72,7 +72,7 @@ For all entities listed in an _RO-Crate Metadata Document_ the following princip
 
 1. The entity MUST have an `@id` (see [Describing entities in JSON-LD](appendix/jsonld#describing-entities-in-json-ld)).
 2. The entity MUST have a `@type`, which MAY be an array. 
-3. The `@type` SHOULD include at least one [Schema.org] type that accurately describe the entity. [Thing] or [CreativeWork] are valid fallbacks if no alternative external or ad-hoc term is found (see [Extending RO-Crate](appendix/jsonld#extending-ro-crate)).
+3. The `@type` SHOULD include at least one [Schema.org] type that accurately describes the entity. [Thing] or [CreativeWork] are valid fallbacks if no alternative external or ad-hoc term is found (see [Extending RO-Crate](appendix/jsonld#extending-ro-crate)).
 5. The entity SHOULD have a human-readable `name`, in particular if its `@id` does not go to a human-readable Web page.
 6. The properties used on the entity SHOULD be applicable to the `@type` (or superclass) according to their definitions. For instance, the property [publisher] can be used on a [Dataset] as it applies to its superclass [CreativeWork].
 7. Property references to other entities (e.g. `author` property to a `Person` entity) MUST use the `{ "@id": "..."}` object form (see [JSON-LD appendix](appendix/jsonld)).
