@@ -4,6 +4,9 @@ subitems:
   - title: About RO-Crate
     url: /about_ro_crate
 
+  - title: Technical
+    url: /technical
+
   - title: Background
     url: /background
 
