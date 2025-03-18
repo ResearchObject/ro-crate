@@ -105,7 +105,7 @@ See the appendix [RO-Crate JSON-LD](appendix/jsonld) for details.
 
 ## Additional metadata standards
 
-RO-Crate also uses the _Portland Common Data Model_ ([PCDM]) to describe repositories or collections of digital objects and imports these terms:
+RO-Crate also uses the _Portland Common Data Model_ ([PCDM] version <https://pcdm.org/2016/04/18/models>) to describe repositories or collections of digital objects and imports these terms:
  
 - `RepositoryObject` mapped to <http://pcdm.org/models#Object>
 - `RepositoryCollection` mapped to <http://pcdm.org/models#Collection>
