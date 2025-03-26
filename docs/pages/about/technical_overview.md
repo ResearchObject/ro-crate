@@ -2,7 +2,7 @@
 title: RO-Crate Technical Overview
 ---
 
-# RO-Crate Technical
+# RO-Crate Technical Overview
 {: .no_toc }
 
 ## Table of contents
