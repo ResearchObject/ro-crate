@@ -1,5 +1,5 @@
 ---
-title: RO-Crate Technical
+title: RO-Crate Technical Overview
 ---
 
 # RO-Crate Technical
