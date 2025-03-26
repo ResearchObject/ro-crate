@@ -80,7 +80,7 @@ is a practical implementation of the [FAIR Digital Object Framework](https://fai
 
 ## Where do I start?
 
-#### RO-Crate Users
+#### Learn by example
 
 To learn more about RO-Crate there are some [tutorials and resources here](tutorials).
 
