@@ -227,7 +227,22 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-3234-6762"
-        }
+        },
+        { "@id": "https://orcid.org/0000-0003-4216-302X"},
+        { "@id": "https://orcid.org/0000-0002-1880-0597"},
+        { "@id": "https://orcid.org/0000-0001-6712-6335"},
+        { "@id": "https://orcid.org/0000-0002-5934-8998"},
+        { "@id": "https://orcid.org/0000-0001-9261-8390"},
+        { "@id": "https://orcid.org/0000-0002-0035-6475"},
+        { "@id": "https://orcid.org/0000-0001-9447-460X"},
+        { "@id": "https://orcid.org/0000-0001-7760-1240"},
+        { "@id": "https://orcid.org/0000-0001-9925-1560"},
+        { "@id": "https://orcid.org/0000-0003-4028-811X"},
+        { "@id": "https://orcid.org/0000-0003-2196-5015"},
+        { "@id": "https://orcid.org/0009-0002-6541-4637"},
+        { "@id": "https://orcid.org/0009-0002-8209-1999"},
+        { "@id": "https://orcid.org/0000-0001-7218-0176"},
+        { "@id": "https://orcid.org/0000-0003-3482-0325"}        
       ],
       "cite-as": "https://doi.org/DOI",
       "citation": {
@@ -328,6 +343,9 @@
         },  
         {
           "@id": "http://purl.org/dc/terms/conformsTo"
+        },
+        {
+          "@id": "https://w3id.org/ro/terms#localPath"
         }
       ],
       "identifier": {"@id": "https://doi.org/DOI"},      
@@ -970,7 +988,14 @@
       "@type": "DefinedTerm",
       "name": "conformsTo",
       "termCode": "conformsTo"
-    },        
+    },
+    {
+      "@id": "https://w3id.org/ro/terms#localPath",
+      "@type": "DefinedTerm",
+      "name": "localPath",
+      "termCode": "localPath",
+      "description": "A recommended URI path to download this work to. Intended to be used on web-based data entities within RO-Crates."
+    },
     {
       "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
       "@type": "CreativeWork",
@@ -1585,6 +1610,34 @@
       "@type": "Person",
       "name": "James Love"
     },
+    { "@id": "https://orcid.org/0000-0001-9925-1560",
+      "@type": "Person",
+      "name": "Eleni Adamidi"
+    },
+    { "@id": "https://orcid.org/0000-0003-4028-811X",
+      "@type": "Person",
+      "name": "Josh Moore"
+    },
+    { "@id": "https://orcid.org/0000-0003-2196-5015",
+      "@type": "Person",
+      "name": "Lars Schöbitz"
+    },
+    { "@id": "https://orcid.org/0009-0002-6541-4637",
+      "@type": "Person",
+      "name": "Andreas Meier"
+    },
+    { "@id": "https://orcid.org/0009-0002-8209-1999",
+      "@type": "Person",
+      "name": "Juan Fuentes"
+    },
+    { "@id": "https://orcid.org/0000-0001-7218-0176",
+      "@type": "Person",
+      "name": "Edan Bainglass"
+    },
+    { "@id": "https://orcid.org/0000-0003-3482-0325",
+      "@type": "Person",
+      "name": "Balazs E. Pataki"
+    },
     {
       "@id": "http://spdx.org/licenses/CC0-1.0",
       "@type": "PropertyValue",
@@ -2110,7 +2163,15 @@
         { "@id": "https://orcid.org/0000-0001-9261-8390"},
         { "@id": "https://orcid.org/0000-0002-0035-6475"},
         { "@id": "https://orcid.org/0000-0001-9447-460X"},
-        { "@id": "https://orcid.org/0000-0001-7760-1240"}
+        { "@id": "https://orcid.org/0000-0001-7760-1240"},
+        { "@id": "https://orcid.org/0000-0001-9925-1560"},
+        { "@id": "https://orcid.org/0000-0003-4028-811X"},
+        { "@id": "https://orcid.org/0000-0003-2196-5015"},
+        { "@id": "https://orcid.org/0009-0002-6541-4637"},
+        { "@id": "https://orcid.org/0009-0002-8209-1999"},
+        { "@id": "https://orcid.org/0000-0001-7218-0176"},
+        { "@id": "https://orcid.org/0000-0003-3482-0325"}
+
 
 
       ],
