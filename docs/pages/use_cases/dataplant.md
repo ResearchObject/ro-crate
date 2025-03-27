@@ -18,3 +18,10 @@ In ARC, files are managed in a git repository with a fixed structure following t
 The [ARC specification](https://github.com/nfdi4plants/ARC-specification/blob/main/ARC%20specification.md#appendix-conversion-of-arcs-to-ro-crates) allows augmentation by adding an explicit `ro-crate-metadata.json` to the ARC.
 
 DataPlant has provided [detailed guides to creating ARCs](https://www.nfdi4plants.de/nfdi4plants.knowledgebase/docs/guides/index.html) and introduce further tooling.
+
+## Publications
+
+Sebastian Beier, Daniel Arend, Daniel Bauer, Marco Brandizi, Dominik Brilhaus, Eli Chadwick, Vera Clemens, Michael R. Crusoe, Manuel Feser, Jonas Grieb, Xiaoming Hu, Abigail Miller, Timo Mühlhaus, Stuart Owen, Maja Rey, Gabriel Schneider, Julian Schneider, Kevin Schneider, Heinrich Lukas Weil, Florian Wetzels (2025):  
+**BioHackEU24 report: Creating user benefit from ARC-ISA RO-Crate machine-actionability & Increasing FAIRness of digital agrosystem resources by extending Bioschemas**  
+_BioHackrXiv_  
+<https://doi.org/10.37044/osf.io/x9d6b_v1>

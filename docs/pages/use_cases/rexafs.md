@@ -48,6 +48,9 @@ XAFS reproducibility, Galaxy RO-Crates, Catalyst Characterisation
 
 ## Publications
 
-**Use of scientific workflows to support the processing and analysis of catalysis research data from XAFS experiments** (under review, not yet public)
+Abraham Nieva de la Hidalga, Leandro Liborio, Patrick Austin, Subindev Devadasan, Tom Underwood, Alexander Belozerov, Martin Wilding, Nitya Ramanan, C. Richard A. Catlow (2025):  
+**Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study**  
+_ChemCatChem_:e202401676  
+<https://doi.org/10.1002/cctc.202401676>
 
 ![ReXAFS logo](../../assets/img/ReXAFS.png)
