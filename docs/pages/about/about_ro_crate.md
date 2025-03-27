@@ -38,7 +38,10 @@ For example, an RO Crate won't just contain an author's name.
 It would also contain their ORCID, which in turn is connected to their affiliations,
 their funding, and their other publications.
 
-![RO-Crate packaging](../assets/img/ro-crate_packaging.jpg)
+<figure>
+  <img src="../assets/img/ro-crate_packaging.png" alt="Diagram representing RO-Crate connections. An open cardboard box labelled 'Describe package and parts' contains people with ORCIDs, and lab equipment with RRIDs. The box is linked through a DOI to a bubble labelled 'Integrated view', which contains other types of research object. Each type of object has an arrow pointing to an example repository or registry for that data, such as workflows to WorkflowHub, presentations to PubMed, and data to databases." />
+  <figcaption>RO-Crates can link and be linked to research objects from many different sources using persistent identifiers like ORCIDs and DOIs. <br/>Image credit: Goble, C. (2024, February 16). FAIR Digital Research Objects: Metadata Journeys. University of Auckland Seminar, Auckland. Zenodo. <a href="https://doi.org/10.5281/zenodo.10710142">https://doi.org/10.5281/zenodo.10710142</a> </figcaption>
+</figure>
 
 ## Applications of RO-Crate
 
@@ -125,4 +128,3 @@ For citing a particular [version of RO-Crate specification](specification) see i
 #### Other citations
 
 See also [recent publications, presentations and citations](outreach).
-
