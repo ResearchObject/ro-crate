@@ -87,7 +87,7 @@ To learn more about RO-Crate there are some [tutorials and resources here](tutor
 You can also visit the [Use Cases](use_cases) page to browse projects using RO-Crate,
 or find relevant information for your [domain](domains), [project role](roles), or [task](tasks).
 
-#### RO-Crate Developers
+#### Quick technical overview
 
 For a technical introduction to RO-Crates see [RO-Crate Technical Overview](technical).
 
