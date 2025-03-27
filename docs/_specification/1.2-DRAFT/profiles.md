@@ -56,7 +56,22 @@ The profile description declares the set of conventions to be used.
 
 ## Declaring conformance of an RO-Crate profile
 
-An RO-Crate can describe a profile by adding it as an [contextual entity](contextual-entities):
+RO-Crates that are _conforming to_ (or intending to conform to) such a profile SHOULD declare this using `conformsTo` on the [Root Data Entity](root-data-entity):
+
+```json
+{
+    "@id": "./",
+    "@type": "Dataset",
+    "conformsTo":
+        {"@id": "https://w3id.org/ro/wfrun/process/0.4"}       
+}
+```
+
+It is valid for a crate to conform to multiple profiles, in which case `conformsTo` is an unordered array.
+
+{% include callout.html type="note" content="Profile conformance is declared on the _Root Data Entity_ (`./` in this example), rather than on the _RO-Crate Metadata Descriptor_ (`ro-crate-metadata.json`) where conformance to the base RO-Crate specification is declared. This is because the profile applies to the whole RO-Crate, and may cover aspects beyond the crate's metadata file (e.g. identifiers, packaging, purpose)." %}
+
+Each profile listed in `conformsTo` on the _Root Data Entity_ MUST link to a corresponding [contextual entity](contextual-entities) for the profile, for example:
 
 ```json
 {
@@ -76,22 +91,6 @@ In the contextual entity for a profile:
 * The entity SHOULD have a descriptive [name]
 * The entity MAY declare [version], preferably according to [Semantic Versioning][semver]
 
-RO-Crates that are _conforming to_ (or intending to conform to) such a profile SHOULD declare this using `conformsTo` on the [Root Data Entity](root-data-entity):
-
-```json
-{
-    "@id": "./",
-    "@type": "Dataset",
-    "conformsTo":
-        {"@id": "https://w3id.org/ro/wfrun/process/0.4"}       
-}
-```
-
-It is valid for a crate to conform to multiple profiles, in which case `conformsTo` is an unordered array.
-
-{% include callout.html type="note" content="Profile conformance is declared on the _Root Data Entity_ (`./` in this example), rather than on the _RO-Crate Metadata Descriptor_ (`ro-crate-metadata.json`) where conformance to the base RO-Crate specification is declared. This is because the profile applies to the whole RO-Crate, and may cover aspects beyond the crate's metadata file (e.g. identifiers, packaging, purpose)." %}
-
-
 
 ## Profile Crate
 
@@ -99,7 +98,7 @@ While the Profile URI `@id` MUST resolve to a human-readable _profile descriptio
 
 A **Profile Crate** is a type of RO-Crate that represents an RO-Crate profile. It gathers resources which further define the profile in addition to the _profile description_. This allows formalizing an alternative profile description for machine-readability (for instance for validation), and also additional resources like examples. The rest of this subsection declares the content of this Profile Crate.
 
-The Profile Crate `@id` declared within its own RO-Crate Metadata Document SHOULD be an absolute URI, and the corresponding reference from its RO-Crate Metadata Descriptor updated accordingly. 
+The Profile Crate `@id` declared within its own RO-Crate Metadata Document SHOULD be an absolute URI, and the corresponding reference from its RO-Crate Metadata Descriptor updated accordingly. If the URI is a permanent URI, it SHOULD also be set as the `identifier`.
 
 Within the Profile Crate, its [Root Data Entity](root-data-entity) MUST declare `Profile` as an additional `@type`:
 
