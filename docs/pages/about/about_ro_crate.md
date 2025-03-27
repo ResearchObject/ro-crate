@@ -92,7 +92,7 @@ or find relevant information for your [domain](domains), [project role](roles), 
 
 #### Quick technical overview
 
-For a technical introduction to RO-Crates see [RO-Crate Technical Overview](technical).
+For a technical introduction to RO-Crates see [RO-Crate Technical Overview](technical_overview).
 
 Read the [Background](background) page to learn about the history of RO-Crate and its predecessors.
 
