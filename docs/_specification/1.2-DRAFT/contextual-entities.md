@@ -53,10 +53,9 @@ Some contextual entities can also be considered data entities -- for instance th
 
 Likewise, some data entities may also be described as contextual entities, for instance a `File` that is also a [ScholarlyArticle]. In such cases the _contextual data entity_ MUST be described as a single JSON-LD object in the RO-Crate Metadata JSON-LD `@graph` and SHOULD list both relevant data and contextual types in a `@type` array. 
 
-{% include callout.html type="tip" content="Files in the _RO-Crate Root_ are not necessarily data entities -- the [RO-Crate Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor) is a file in the _RO-Crate Root_, but is considered a _Contextual Entity_ as it is describing the RO-Crate, rather than being part of it. On the other hand, the [Root Data Entity](root-data-entity#root-data-entity) is a data entity within its own metadata file." %}
+{% include callout.html type="tip" content="Not all files that are present in the _RO-Crate Root_ directory are necessarily data entities -- the [RO-Crate Metadata Descriptor](root-data-entity#ro-crate-metadata-descriptor) is a file in the _RO-Crate Root_, but is considered a _Contextual Entity_ as it is describing the RO-Crate, rather than being part of it. On the other hand, the [Root Data Entity](root-data-entity#root-data-entity) is a data entity within its own metadata file." %}
 
 The RO-Crate Metadata JSON-LD `@graph` MUST NOT list multiple entities with the same `@id`; behaviour of consumers of an RO-Crate encountering multiple entities with the same `@id` is undefined.
-
 
 ## Identifiers for contextual entities
 
