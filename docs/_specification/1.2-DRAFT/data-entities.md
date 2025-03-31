@@ -59,6 +59,7 @@ There is no requirement to represent _every_ file and folder in an RO-Crate as _
 
 In any of the above cases where files are not described, a directory containing a set of files MAY be described using a `Dataset` _Data Entity_ that encapsulates the files with a `description` property that explains the contents. If the RO-Crate file structure is flat, or files are not grouped together, a `description` property on the _Root Data Entity_ may be used, or a `Dataset` with a local reference beginning with `#` (e.g. to describe a certain type of file which occurs throughout the crate). This approach is recommended for RO-Crates which are to be deposited in a long-term archive.
 
+{% include callout.html type="tip" content='While the types `File` and `Dataset` are most frequently used in _Data Entities_, not all entities with these types are necessarily _Data Entities_. `File` or `Dataset` entities that are not _Data Entities_ do not need to be included in [hasPart] on the _Root Data Entity_.' %}
 
 ## Encoding file paths in `@id`s
 
