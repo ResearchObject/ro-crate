@@ -482,7 +482,15 @@ If a web-based URI for the _RO-Crate root_ is known, then this can be supplied a
     {
       "@id": "./",
       "@type": "Dataset",
-      "name": "Example RO-Crate"
+      "name": "Example RO-Crate",
+      "hasPart": [
+        {
+          "@id": "data1.txt"
+        },
+        {
+          "@id": "subfolder/"
+        }
+      ]
     },
     {
       "@id": "data1.txt",
