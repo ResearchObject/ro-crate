@@ -34,8 +34,14 @@ parent: RO-Crate 1.2-DRAFT
 
 The primary purpose for RO-Crate is to gather and describe a set of _Data Entities_ in the form of:
 
-* Files which are datastreams available on the local file system or over the web
-* Directories
+* Actual files which are datastreams available on the local file system or over the web - when represented in the RO-Crate Metadata Document these have the type `File`. 
+* Folders, or directories, of files represented using the type `Dataset`.
+
+An entity which has `File` or `Dataset` as one of its `@type` values:
+*  is considered to be a _Data Entity_ if its `@id` is an absolute URI or a relative URI.
+* MAY have an `@id` which is a local identifier beginning with a `#`, in which case it is **not** considered to be a `Data Entity`.
+
+The requirements for `File` and `Dataset` are set out below.
 
 The Data Entities can be further described by referencing [contextual entities](contextual-entities) such as persons, organizations and publications.
 
@@ -141,6 +147,7 @@ This example contains both a [File Data Entity](#file-data-entity) and a [Direct
 
 ### File Data Entity {#file-data-entity}
 
+
 A [File] _Data Entity_ MUST have the following properties:
 
 *  `@type`: MUST be `File`, or an array where `File` is one of the values.
@@ -159,7 +166,6 @@ Further constraints on the `@id` are dependent on whether the [File] entity is b
 
 2. For a _Detached RO-Crate Package_   `@id` MUST be an Absolute URI; all [File] Data Entities are [Web-based Data Entities](#web-based-data-entities).
 
-
 Additionally, `File` entities SHOULD have:
 
 * [name] giving a human readable name (not necessarily the filename)
@@ -170,7 +176,7 @@ Additionally, `File` entities SHOULD have:
 
 RO-Crate's `File` is an alias for schema.org type [MediaObject], any of its properties MAY also be used (adding contextual entities as needed).  [Files on the web](#data-entities-in-an-attached-ro-crate-that-are-also-on-the-web) SHOULD also use `identifier`, `url`, `subjectOf`, and/or `mainEntityOfPage`.
 
-
+A `File` entity MAY have an `@id` that is a local identifier beginning with `#`, in which case it is **not** considered to be a Data Entity. This is useful for describing physical files which may not be present, for example if they are expected to be created by running a process. In this case the `localPath` property SHOULD be used to indicate that a `File` may be found at that path in some circumstances.
 
 {% include callout.html type="note" content='It is up to implementers to decide whether to offer some form of URL "link checker" service for [Web-based Data Entities](#web-based-data-entities) for both attached and detached RO-Crate Packages. If `contentUrl` has more than one value, then a checker service SHOULD try each provided value until one resolves and returns a correct [contentSize].' %}
 
@@ -185,12 +191,10 @@ A [Dataset] (directory) _Data Entity_ MUST have the following properties:
 *  `@id`  MUST be either:
     *   In an _Attached RO-Crate Package_ ONLY - a _URI Path_ that SHOULD end with `/`.  This MUST resolve to a directory which is present in the RO-Crate Root along with its parent directories. 
     *   An absolute URI which SHOULD resolve to a programmatic listing of the content of the "directory" (e.g. another RO-Crate). 
-    *   A local reference beginning with `#`
-
-
 
 For a _Detached RO-Crate Package_:
 * The `localPath` property MAY be used to indicate the directory path to use when converting from a _Detached_ to an _Attached RO-Crate Package_. 
+
 
 
 Additionally, `Dataset` entities SHOULD have:
@@ -201,9 +205,9 @@ Additionally, `Dataset` entities SHOULD have:
 
 Any of the properties of schema.org [Dataset] MAY additionally be used (adding contextual entities as needed). [Directories on the web](#directories-on-the-web-dataset-distributions) SHOULD also provide `distribution`.
 
-If the dataset contained a large number of `*.ai` files which were spread throughout the crate structure and which did not have File Data Entities then a approach to describing them would be:
+A [Dataset] which has an `@id` that is a local identifier beginning with `#` is **not** considered a Data Entity - but MAY be used to describe a set of files or other resources. For example, if the dataset contained a large number of `*.ai` files which were spread throughout the crate structure and which did not have File Data Entities then a approach to describing them would be:
 
-```JSON
+```json
 {
     "@id": "./",
     "@type": [
@@ -499,7 +503,7 @@ If the referenced RO-Crate B has an `identifier` declared as B's [Root Data Enti
 }
 ```
 
-{% include callout.html type="tip" content="The `conformsTo` generic RO-Crate profile on the `Dataset` entity that represents B MUST be version-less. The referenced RO-Crate B is NOT required to conform to the same version of the RO-Crate specification as A's RO-Crate Metadata Document." %}
+{% include callout.html type="tip" content="The `conformsTo` generic RO-Crate profile on the `Dataset` entity that represents B MUST be version-less. The referenced RO-Crate B is **not** required to conform to the same version of the RO-Crate specification as A's RO-Crate Metadata Document." %}
 
 {% include callout.html type="warning" content="It is NOT RECOMMENDED to declare the generic profile `https://w3id.org/ro/crate` on the referencing RO-Crate A's own [Root Data Entity](root-data-entity.html#direct-properties-of-the-root-data-entity), see [metadata descriptor](root-data-entity.html#ro-crate-metadata-descriptor). " %}
 
