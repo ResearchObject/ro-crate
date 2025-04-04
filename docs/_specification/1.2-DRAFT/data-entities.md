@@ -164,7 +164,7 @@ Further constraints on the `@id` are dependent on whether the [File] entity is b
 
 2. For a _Detached RO-Crate Package_   `@id` MUST be an Absolute URI; all [File] Data Entities are [Web-based Data Entities](#web-based-data-entities).
 
-A `File` entity MAY have an `@id` beginning with `#` in which case it is not considered to be a Data Entity. This is useful for describing physical files which may not be present, for example if they are expected to be created by running a process. In this case the `localPath` property SHOULD be used to indicate that a `File` MAY be found at that path.
+A `File` entity MAY have an `@id` beginning with `#` in which case it is not considered to be a Data Entity. This is useful for describing physical files which may not be present, for example if they are expected to be created by running a process. In this case the `localPath` property SHOULD be used to indicate that a `File` may be found at that path in some circumstances.
 
 Additionally, `File` entities SHOULD have:
 
