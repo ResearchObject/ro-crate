@@ -37,9 +37,11 @@ The primary purpose for RO-Crate is to gather and describe a set of _Data Entiti
 * Actual files which are datastreams available on the local file system or over the web - when represented in the RO-Crate Metadata Document these have the type `File`. 
 * Folders, or directories, of files represented using the type `Dataset`.
 
-An entity which has `File` or `Dataset` as one of its `@type` values is considered to be a Data Entity if its @id is a fully qualified URI, or in the case of an Attached RO-Crate Package it is a path. 
+An entity which has `File` or `Dataset` as one of its `@type` values:
+*  is considered to be a _Data Entity_ if its `@id` is an absolute URI or a relative URI.
+* MAY have an `@id` which is a local identifier beginning with a `#`, in which case it is NOT considered to be a `Data Entity`.
 
-Such an entity MAY have an `@id` which begins with a `#` in which case it is NOT considered to be a `Data Entity`. The requirements for `File` and `Dataset` are set out below.
+The requirements for `File` and `Dataset` are set out below.
 
 The Data Entities can be further described by referencing [contextual entities](contextual-entities) such as persons, organizations and publications.
 
@@ -164,8 +166,6 @@ Further constraints on the `@id` are dependent on whether the [File] entity is b
 
 2. For a _Detached RO-Crate Package_   `@id` MUST be an Absolute URI; all [File] Data Entities are [Web-based Data Entities](#web-based-data-entities).
 
-A `File` entity MAY have an `@id` beginning with `#` in which case it is not considered to be a Data Entity. This is useful for describing physical files which may not be present, for example if they are expected to be created by running a process. In this case the `localPath` property SHOULD be used to indicate that a `File` may be found at that path in some circumstances.
-
 Additionally, `File` entities SHOULD have:
 
 * [name] giving a human readable name (not necessarily the filename)
@@ -176,7 +176,7 @@ Additionally, `File` entities SHOULD have:
 
 RO-Crate's `File` is an alias for schema.org type [MediaObject], any of its properties MAY also be used (adding contextual entities as needed).  [Files on the web](#data-entities-in-an-attached-ro-crate-that-are-also-on-the-web) SHOULD also use `identifier`, `url`, `subjectOf`, and/or `mainEntityOfPage`.
 
-
+A `File` entity MAY have an `@id` beginning with `#` in which case it is not considered to be a Data Entity. This is useful for describing physical files which may not be present, for example if they are expected to be created by running a process. In this case the `localPath` property SHOULD be used to indicate that a `File` may be found at that path in some circumstances.
 
 {% include callout.html type="note" content='It is up to implementers to decide whether to offer some form of URL "link checker" service for [Web-based Data Entities](#web-based-data-entities) for both attached and detached RO-Crate Packages. If `contentUrl` has more than one value, then a checker service SHOULD try each provided value until one resolves and returns a correct [contentSize].' %}
 
@@ -205,9 +205,9 @@ Additionally, `Dataset` entities SHOULD have:
 
 Any of the properties of schema.org [Dataset] MAY additionally be used (adding contextual entities as needed). [Directories on the web](#directories-on-the-web-dataset-distributions) SHOULD also provide `distribution`.
 
-A [Dataset] which has an `@id` beginning with `#` is not considered a Data Entity - but MAY be used to describe a set of files or other resources. For example, if the dataset contained a large number of `*.ai` files which were spread throughout the crate structure and which did not have File Data Entities then a approach to describing them would be:
+A [Dataset] which has an `@id` beginning with `#` is NOT considered a Data Entity - but MAY be used to describe a set of files or other resources. For example, if the dataset contained a large number of `*.ai` files which were spread throughout the crate structure and which did not have File Data Entities then a approach to describing them would be:
 
-```JSON
+```json
 {
     "@id": "./",
     "@type": [
