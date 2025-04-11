@@ -205,7 +205,7 @@ Additionally, `Dataset` entities SHOULD have:
 
 Any of the properties of schema.org [Dataset] MAY additionally be used (adding contextual entities as needed). [Directories on the web](#directories-on-the-web-dataset-distributions) SHOULD also provide `distribution`.
 
-A [Dataset] which has an `@id` that is a local identifier beginning with `#` is **not** considered a Data Entity -- but MAY be used to describe a set of files or other resources, and MAY still be linked to the _Root Data Entity_ via [hasPart]. For -example, if the dataset contained a large number of `*.ai` files which were spread throughout the crate structure and which did not have File Data Entities then a approach to describing them would be:
+A [Dataset] which has an `@id` that is a local identifier beginning with `#` is **not** considered a Data Entity -- but MAY be used to describe a set of files or other resources, and MAY still be linked to the _Root Data Entity_ via [hasPart]. For example, if the dataset contained a large number of `*.ai` files which were spread throughout the crate structure and which did not have corresponding File Data Entities, then a approach to describing these files would be:
 
 ```json
 {
@@ -225,7 +225,6 @@ A [Dataset] which has an `@id` that is a local identifier beginning with `#` is 
     "name": ".ai Files",
     "description": "This dataset contains some files with the extension '.ai' which despite their extension have an encoding format of 'application/pdf'. These have yet to be catalogued."
 }
-
 ```
 
 
