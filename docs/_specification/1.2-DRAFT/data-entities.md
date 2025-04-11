@@ -34,11 +34,11 @@ parent: RO-Crate 1.2-DRAFT
 
 The primary purpose for RO-Crate is to gather and describe a set of _Data Entities_ in the form of:
 
-* Actual files which are datastreams available on the local file system or over the web - when represented in the RO-Crate Metadata Document these have the type `File`. 
-* Folders, or directories, of files represented using the type `Dataset`.
+* Actual files which are datastreams available on the local file system or over the web -- when represented in the RO-Crate Metadata Document, these have the type `File`. 
+* Folders (or directories) of files -- represented using the type `Dataset`.
 
 An entity which has `File` or `Dataset` as one of its `@type` values:
-*  is considered to be a _Data Entity_ if its `@id` is an absolute URI or a relative URI.
+* Is considered to be a _Data Entity_ if its `@id` is an absolute URI or a relative URI.
 * MAY have an `@id` which is a local identifier beginning with a `#`, in which case it is **not** considered to be a `Data Entity`.
 
 The requirements for `File` and `Dataset` are set out below.
