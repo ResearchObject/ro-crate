@@ -176,7 +176,7 @@ Additionally, `File` entities SHOULD have:
 
 RO-Crate's `File` is an alias for schema.org type [MediaObject], any of its properties MAY also be used (adding contextual entities as needed).  [Files on the web](#data-entities-in-an-attached-ro-crate-that-are-also-on-the-web) SHOULD also use `identifier`, `url`, `subjectOf`, and/or `mainEntityOfPage`.
 
-A `File` entity MAY have an `@id` that is a local identifier beginning with `#`, in which case it is **not** considered to be a Data Entity, though it MAY still be linked to the _Root Data Entity_ via [hasPart]. This is useful for describing physical files which may not be present, for example if they are expected to be created by running a process. In this case the `localPath` property SHOULD be used to indicate that a `File` may be found at that path in some circumstances.
+A `File` entity MAY have an `@id` that is a local identifier beginning with `#`, in which case it is **not** considered to be a Data Entity, though it MAY still be linked to the _Root Data Entity_ via [hasPart]. This is useful for describing physical files which are deliberately not present, for example if they are expected to be created by running a process. In this case, the `localPath` property SHOULD be used to indicate that a `File` could be found at that path in some circumstances.
 
 {% include callout.html type="note" content='It is up to implementers to decide whether to offer some form of URL "link checker" service for [Web-based Data Entities](#web-based-data-entities) for both attached and detached RO-Crate Packages. If `contentUrl` has more than one value, then a checker service SHOULD try each provided value until one resolves and returns a correct [contentSize].' %}
 
