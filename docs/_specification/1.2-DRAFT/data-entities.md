@@ -1,7 +1,7 @@
 ---
 title: Data Entities
 redirect_from:
-  - /1.2-DRAFT/data-entities
+  -- /1.2-DRAFT/data-entities
 nav_order: 6
 parent: RO-Crate 1.2-DRAFT
 ---
@@ -132,7 +132,7 @@ This example contains both a [File Data Entity](#file-data-entity) and a [Direct
       "@id": "lots_of_little_files/",
       "@type": "Dataset",
       "name": "Too many files",
-      "description": "This directory contains many small files - the name of the file is a date in YYYY-MM-DD.csv, each file contains daily temperature readings, sampled hourly for the Glop Pot cave."
+      "description": "This directory contains many small files -- the name of the file is a date in YYYY-MM-DD.csv, each file contains daily temperature readings, sampled hourly for the Glop Pot cave."
     },
     {
       "@id": "https://orcid.org/0000-0003-4953-0830",
@@ -189,7 +189,7 @@ A [Dataset] (directory) _Data Entity_ MUST have the following properties:
 
 *  `@type` MUST be `Dataset` or an array where `Dataset` is one of the values.
 *  `@id`  MUST be either:
-    *   In an _Attached RO-Crate Package_ ONLY - a _URI Path_ that SHOULD end with `/`.  This MUST resolve to a directory which is present in the RO-Crate Root along with its parent directories. 
+    *   In an _Attached RO-Crate Package_ ONLY -- a _URI Path_ that SHOULD end with `/`.  This MUST resolve to a directory which is present in the RO-Crate Root along with its parent directories. 
     *   An absolute URI which SHOULD resolve to a programmatic listing of the content of the "directory" (e.g. another RO-Crate). 
 
 For a _Detached RO-Crate Package_:
@@ -205,7 +205,7 @@ Additionally, `Dataset` entities SHOULD have:
 
 Any of the properties of schema.org [Dataset] MAY additionally be used (adding contextual entities as needed). [Directories on the web](#directories-on-the-web-dataset-distributions) SHOULD also provide `distribution`.
 
-A [Dataset] which has an `@id` that is a local identifier beginning with `#` is **not** considered a Data Entity - but MAY be used to describe a set of files or other resources, and MAY still be linked to the _Root Data Entity_ via [hasPart]. For example, if the dataset contained a large number of `*.ai` files which were spread throughout the crate structure and which did not have File Data Entities then a approach to describing them would be:
+A [Dataset] which has an `@id` that is a local identifier beginning with `#` is **not** considered a Data Entity -- but MAY be used to describe a set of files or other resources, and MAY still be linked to the _Root Data Entity_ via [hasPart]. For -example, if the dataset contained a large number of `*.ai` files which were spread throughout the crate structure and which did not have File Data Entities then a approach to describing them would be:
 
 ```json
 {
@@ -400,7 +400,7 @@ In all cases, consumers should be aware that a `DataDownload` is a snapshot that
 
 ## Adding detailed descriptions of File encodings
 
-The [above example](#example-attached-ro-crate-package) provides a media type for the file `cp7glop.ai` - which is
+The [above example](#example-attached-ro-crate-package) provides a media type for the file `cp7glop.ai` -- which is
 useful as it may not be apparent that the file is readable as a PDF file from the
 extension alone. To add more detail, encodings SHOULD be linked using a [PRONOM]
 identifier to a _Contextual Entity_ with `@type` array containing [WebPage] and `Standard`.
@@ -416,7 +416,7 @@ identifier to a _Contextual Entity_ with `@type` array containing [WebPage] and 
   },
   {
     "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19",
-    "name": "Acrobat PDF 1.5 - Portable Document Format",
+    "name": "Acrobat PDF 1.5 -- Portable Document Format",
     "@type": ["WebPage", "Standard"]
   }
 
