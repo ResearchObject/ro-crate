@@ -148,7 +148,7 @@ Most of the "new" requirements here are not truly new, but were implied in 1.1 a
 | [conformsTo] | SHOULD | Should have a single value | In 1.2+, any additional profile declarations should be included on the Root Data Entity instead of the Metadata Descriptor | New |
 | [conformsTo] | SHOULD | Should be a versioned permalink URI of the RO-Crate specification that the _RO-Crate JSON-LD_ conforms to | | |
 | [conformsTo] | SHOULD | URI should start with `https://w3id.org/ro/crate/` if referencing the base RO-Crate specification | | |
-| [conformsTo] | MAY | In RO-Crates conforming to version 1.1 and earlier, [conformsTo] may be an array, to additionally indicate [RO-Crate profiles](../profiles) |  | New? Updated?? |
+| [conformsTo] | MAY | In RO-Crates conforming to version 1.1 and earlier, [conformsTo] may be an array, to additionally indicate [RO-Crate profiles](../profiles) | Introduced to support existing community usage of `conformsTo` which wasn't in the 1.1 spec | New |
 
 ### Root Data Entity
 
@@ -188,8 +188,8 @@ Most of the "new" requirements here are not truly new, but were implied in 1.1 a
 | `hasPart` | MAY | May refer to files anywhere within the folder hierarchy within the _RO-Crate Root_ | [source](../data-entities#referencing-files-and-folders-from-the-root-data-entity) | |
 | `distribution` | MAY | May be present | [source](../data-entities.md#downloadable-dataset) |
 | `distribution` | MAY | If present, should be the URI of an archive that contains the _RO-Crate Metadata Document_ | [source](../data-entities.md#downloadable-dataset) |
-| `conformsTo` | SHOULD | Should be present if the RO-Crate conforms to additional [RO-Crate profiles](../profiles.md) beyond the base specification | [source](../profiles.md#declaring-conformance-of-an-ro-crate-profile) | New? Updated? |
-| `conformsTo` | MUST | If present, each value must link to a contextual entity of type [Profile] representing a profile the RO-Crate conforms to | [source](../profiles.md#declaring-conformance-of-an-ro-crate-profile) | New? Updated? |
+| `conformsTo` | SHOULD | Should be present if the RO-Crate conforms to additional [RO-Crate profiles](../profiles.md) beyond the base specification | [source](../profiles.md#declaring-conformance-of-an-ro-crate-profile) | New |
+| `conformsTo` | MUST | If present, each value must link to a contextual entity of type [Profile] representing a profile the RO-Crate conforms to | [source](../profiles.md#declaring-conformance-of-an-ro-crate-profile) | New |
 
 
 Removed 1.1 -> 1.2:
@@ -401,19 +401,19 @@ These requirements apply to all profiles, regardless of where or how they are pu
 
 | Property/Target | Severity | Description | Notes | Changed in 1.2 |
 | ------ | ------ | ------- | ------ | --- |
-| URI | MUST | Must resolve to a human-readable _profile description_ (e.g. a HTML web page) | | |
-| URI | SHOULD | Should be a permalink/persistent identifier | | |
-| URI | SHOULD | Should be versioned with [`MAJOR.MINOR`][semver] | | |
-| URI | MAY | May have a corresponding machine-readable [_Profile Crate_](#profile-crate) | | |
-| URI | MAY | May resolve to a [_Profile Crate_](#profile-crate) **in addition to** the human-readable profile description | | |
-| Profile description | SHOULD | Should use key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL as described in [RFC 2119] | | |
-| Profile description | MAY | May require/suggest which `@type` of [data entities](data-entities) and/or [contextual entities](contextual-entities) are expected | | |
-| Profile description | MAY | May require/suggest _properties_ expected per type of entity | e.g. _"Each [CreativeWork] MUST declare a [license]"_ | |
-| Profile description | MAY | May require/suggest a particular [version of RO-Crate](https://www.researchobject.org/ro-crate/specification.html) | | |
-| Profile description | MAY | May recommend [RO-Crate extensions](appendix/jsonld#extending-ro-crate) with domain-specific terms and vocabularies | | |
-| Profile description | MAY | May require/suggest a particular [JSON-LD context](appendix/jsonld?highlight=@context#ro-crate-json-ld-context) | | |
-| Profile description | MAY | May require/suggest a particular RO-Crate publishing method or [packaging](appendix/implementation-notes#combining-with-other-packaging-schemes) like .zip or BagIt | | |
-| Profile description | MAY | May provide further recommendations or requirements for how any related RO-Crate profiles are to be used | [source](../profiles#multiple-profiles) | |
+| URI | MUST | Must resolve to a human-readable _profile description_ (e.g. a HTML web page) | | New |
+| URI | SHOULD | Should be a permalink/persistent identifier | | New |
+| URI | SHOULD | Should be versioned with [`MAJOR.MINOR`][semver] | | New |
+| URI | MAY | May have a corresponding machine-readable [_Profile Crate_](#profile-crate) | | New |
+| URI | MAY | May resolve to a [_Profile Crate_](#profile-crate) **in addition to** the human-readable profile description | | New |
+| Profile description | SHOULD | Should use key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL as described in [RFC 2119] | | New |
+| Profile description | MAY | May require/suggest which `@type` of [data entities](data-entities) and/or [contextual entities](contextual-entities) are expected | | New |
+| Profile description | MAY | May require/suggest _properties_ expected per type of entity | e.g. _"Each [CreativeWork] MUST declare a [license]"_ | New |
+| Profile description | MAY | May require/suggest a particular [version of RO-Crate](https://www.researchobject.org/ro-crate/specification.html) | | New |
+| Profile description | MAY | May recommend [RO-Crate extensions](appendix/jsonld#extending-ro-crate) with domain-specific terms and vocabularies | | New |
+| Profile description | MAY | May require/suggest a particular [JSON-LD context](appendix/jsonld?highlight=@context#ro-crate-json-ld-context) | | New |
+| Profile description | MAY | May require/suggest a particular RO-Crate publishing method or [packaging](appendix/implementation-notes#combining-with-other-packaging-schemes) like .zip or BagIt | | New |
+| Profile description | MAY | May provide further recommendations or requirements for how any related RO-Crate profiles are to be used | [source](../profiles#multiple-profiles) | New |
 
 
 ### Profile Crate 
@@ -424,57 +424,57 @@ Entities with a (D) are data entities; entities with a (C) are contextual entiti
 
 | Type of Entity | Property/Target | Severity | Description | Notes | Changed in 1.2 |
 | ------ | ------ | ------ | ------- | ------ | --- |
-| Whole crate | `@context` / recommended context | SHOULD | Should include a mapping to any absolute URIs used to define [custom properties or classes](../appendix/jsonld#adding-new-or-ad-hoc-vocabulary-terms) | See [Extending RO-Crate](appendix/jsonld#extending-ro-crate), Eli double check this one pls | |
-| Root Data Entity (D) | `@id` | SHOULD | Should be an absolute URI | | |
-| Root Data Entity (D) | `@type` | MUST | Must include [Profile] | | |
-| Root Data Entity (D) | `identifier` | SHOULD | If the `@id` is a permanent URI, `identifier` should be the same URI | | |
-| Root Data Entity (D) | `name` | SHOULD | Should be descriptive | | |
-| Root Data Entity (D) | `hasPart` | MUST | Must reference the human-readable _profile description_ as a data entity | | |
-| Root Data Entity (D) | `hasPart` | SHOULD | Should list related data entities | | |
-| Root Data Entity (D) | `hasPart` | MAY | If the _profile description_ is equivalent to the _RO-Crate website_ entity, that entity may be listed in `hasPart` (contrary to the [usual recommendations](#ro-crate-website)) | | |
-| Root Data Entity (D) | `hasPart` | MAY | May _suggest_ other RO-Crate profiles which are interoperable with this one | implicit, [source](../profiles#multiple-profiles| |
-| Root Data Entity (D) | `hasResource` | MAY | May list descriptors of profile resources | | |
-| Root Data Entity (D) | `hasResource` | SHOULD | If the profile [extends RO-Crate](../appendix/jsonld#extending-ro-crate), should reference a `ResourceDescriptor` for the vocabulary/ontology used | | |
-| Root Data Entity (D) | `version` | MAY | May be present | [Semantic Versioning][semver] preferred | |
-| Root Data Entity (D) | `isProfileOf` | SHOULD | Should be present | | |
-| Root Data Entity (D) | `isProfileOf` | SHOULD | Should reference the minimally expected RO-Crate specification | | |
-| Root Data Entity (D) | `isProfileOf` | MAY | May link to a contextual entity for the specification | | |
-| Any resource (D) | `encodingFormat` | SHOULD | If the resource is referenced from `hasArtifact` on a `ResourceDescriptor`, `encodingFormat` should be present | | |
-| Profile description resource (D) | `about` | MUST | Must reference the _Root Data Entity_ | | |
-| Profile description resource (D) | `encodingFormat` | SHOULD | Should be `text/html`
-| Profile description resource (D) | entity | MAY | May be equivalent to the [_RO-Crate Website_ entity](#ro-crate-website) |
-| Resource descriptor (C) | `@type` | SHOULD | Should include `ResourceDescriptor` | [source](../profiles#what-is-included-in-the-profile-crate) | New |
-| Resource descriptor (C) | `hasRole` | SHOULD | Should reference the role of the resource | See [common roles in the Profiles Vocabulary](Profiles Vocabulary). Implicit from the example in the [source](../profiles#what-is-included-in-the-profile-crate) | New |
-| Resource descriptor (C) | `hasRole` | SHOULD | If describing the _profile description_ resource, should be `http://www.w3.org/ns/dx/prof/role/specification` or `http://www.w3.org/ns/dx/prof/role/guidance` | New |
-| Resource descriptor (C) | `hasRole` | SHOULD | If describing an external vocabulary, should be `http://www.w3.org/ns/dx/prof/role/vocabulary` | Implicit from example | New |
-| Resource descriptor (C) | `hasRole` | MAY | If describing another RO-Crate profile that is interoperable with this one, may be `http://purl.org/dc/terms/conformsTo` | Guideline, not requirement [source](../profiles#multiple-profiles) | New |
-| Resource descriptor (C) | `hasArtifact` | SHOULD | Should reference a data entity representing the subresource itself | [source](../profiles#what-is-included-in-the-profile-crate) | New |
-| Resource descriptor (C) | `dct:format` | MAY | May be present | [source](../profiles#what-is-included-in-the-profile-crate) | New |
-| Resource descriptor (C) | `dct:conformsTo` | MAY | May be present | [source](../profiles#what-is-included-in-the-profile-crate) | New |
-| External vocabulary (D) | `@id` | SHOULD | Should be the namespace of the vocabulary | | |
-| External vocabulary (D) | `@type` | SHOULD | Should be [DefinedTermSet]` | | |
-| External vocabulary (D) | `url` | SHOULD | Should link to a human-readable description of the vocabulary | | |
-| Custom vocabulary (D) | entity | MAY | May be present | | |
-| Custom vocabulary (D) | `@type` | MAY | May include `DefinedTermSet` | | |
-| Custom vocabulary (D) | `hasDefinedTerm` | MAY | May list custom terms defined by the profile | | |
-| Custom term (D) | entity | MAY | May be present with or without a parent `DefinedTermSet` | | |
-| Custom term (D) | `@type` | MAY | May include `DefinedTerm`, `rdfs:Class` and/or `rdf:Property` | | |
-| Custom term (D) | `termCode` | SHOULD | Should be valid as a key in JSON-LD `@context` of conforming RO-Crates | | |
-| JSON-LD context (C) | entity | SHOULD | Should be present if the profile has a corresponding JSON-LD `@context` | | |
-| JSON-LD context (C) | `@id` | MUST | Must be an absolute URI | | |
-| JSON-LD context (C) | `@id` | MUST | Must be retrievable as JSON-LD directly or with content-negotiation and/or HTTP redirects | | |
-| JSON-LD context (C) | `@id` | SHOULD | Should be a permalink / persistent identifier | | |
-| JSON-LD context (C) | `@id` | SHOULD | Should be versioned with [`MAJOR.MINOR`][semver] | | |
-| JSON-LD context (C) | `encodingFormat` | MUST | Must be `application/ld+json` | | |
-| JSON-LD context (C) | `encodingFormat` | MUST | Must be `application/ld+json` | | |
-| JSON-LD context (C) | `name` | SHOULD | Should be present | | |
-| JSON-LD context (C) | `name` | SHOULD | Should be descriptive | | |
-| JSON-LD context (C) | `conformsTo` | SHOULD | Should be present | | |
-| JSON-LD context (C) | `conformsTo` | SHOULD | Should link to the contextual entity `http://www.w3.org/ns/json-ld#Context` | | |
-| JSON-LD context (C) | `version` | MAY | May declare [version] according to [Semantic Versioning][semver] | | |
-| JSON-LD context (C) | terms | SHOULD | Should use `https` rather than `http` with a certificate commonly accepted by browsers | is this right? | |
-| Interoperable RO-Crate profile (C) | entity | MAY | May be present | | |
-| Interoperable RO-Crate profile sub-elements (C) | entity | SHOULD NOT | Should not be present | | |
+| Whole crate | `@context` / recommended context | SHOULD | Should include a mapping to any absolute URIs used to define [custom properties or classes](../appendix/jsonld#adding-new-or-ad-hoc-vocabulary-terms) | See [Extending RO-Crate](appendix/jsonld#extending-ro-crate), Eli double check this one pls | New |
+| Root Data Entity (D) | `@id` | SHOULD | Should be an absolute URI | | New |
+| Root Data Entity (D) | `@type` | MUST | Must include [Profile] | | New |
+| Root Data Entity (D) | `identifier` | SHOULD | If the `@id` is a permanent URI, `identifier` should be the same URI | | New |
+| Root Data Entity (D) | `name` | SHOULD | Should be descriptive | | New |
+| Root Data Entity (D) | `hasPart` | MUST | Must reference the human-readable _profile description_ as a data entity | | New |
+| Root Data Entity (D) | `hasPart` | SHOULD | Should list related data entities | | New |
+| Root Data Entity (D) | `hasPart` | MAY | If the _profile description_ is equivalent to the _RO-Crate website_ entity, that entity may be listed in `hasPart` (contrary to the [usual recommendations](#ro-crate-website)) | | New |
+| Root Data Entity (D) | `hasPart` | MAY | May _suggest_ other RO-Crate profiles which are interoperable with this one | implicit, [source](../profiles#multiple-profiles| New |
+| Root Data Entity (D) | `hasResource` | MAY | May list descriptors of profile resources | | New |
+| Root Data Entity (D) | `hasResource` | SHOULD | If the profile [extends RO-Crate](../appendix/jsonld#extending-ro-crate), should reference a `ResourceDescriptor` for the vocabulary/ontology used | | New |
+| Root Data Entity (D) | `version` | MAY | May be present | [Semantic Versioning][semver] preferred | New |
+| Root Data Entity (D) | `isProfileOf` | SHOULD | Should be present | | New |
+| Root Data Entity (D) | `isProfileOf` | SHOULD | Should reference the minimally expected RO-Crate specification | | New |
+| Root Data Entity (D) | `isProfileOf` | MAY | May link to a contextual entity for the specification | | New |
+| Any resource (D) | `encodingFormat` | SHOULD | If the resource is referenced from `hasArtifact` on a `ResourceDescriptor`, `encodingFormat` should be present | | New |
+| Profile description resource (D) | `about` | MUST | Must reference the _Root Data Entity_ | | New |
+| Profile description resource (D) | `encodingFormat` | SHOULD | Should be `text/htmlNew `
+| Profile description resource (D) | entity | MAY | May be equivalent to the [_RO-Crate Website_ entity](#ro-crate-website) New |
+| Resource descriptor (C) | `@type` | SHOULD | Should include `ResourceDescriptor` | [source](../profiles#what-is-included-in-the-profile-crate) | New New |
+| Resource descriptor (C) | `hasRole` | SHOULD | Should reference the role of the resource | See [common roles in the Profiles Vocabulary](Profiles Vocabulary). Implicit from the example in the [source](../profiles#what-is-included-in-the-profile-crate) | New New |
+| Resource descriptor (C) | `hasRole` | SHOULD | If describing the _profile description_ resource, should be `http://www.w3.org/ns/dx/prof/role/specification` or `http://www.w3.org/ns/dx/prof/role/guidance` | New New |
+| Resource descriptor (C) | `hasRole` | SHOULD | If describing an external vocabulary, should be `http://www.w3.org/ns/dx/prof/role/vocabulary` | Implicit from example | New New |
+| Resource descriptor (C) | `hasRole` | MAY | If describing another RO-Crate profile that is interoperable with this one, may be `http://purl.org/dc/terms/conformsTo` | Guideline, not requirement [source](../profiles#multiple-profiles) | New New |
+| Resource descriptor (C) | `hasArtifact` | SHOULD | Should reference a data entity representing the subresource itself | [source](../profiles#what-is-included-in-the-profile-crate) | New New |
+| Resource descriptor (C) | `dct:format` | MAY | May be present | [source](../profiles#what-is-included-in-the-profile-crate) | New New |
+| Resource descriptor (C) | `dct:conformsTo` | MAY | May be present | [source](../profiles#what-is-included-in-the-profile-crate) | New New |
+| External vocabulary (D) | `@id` | SHOULD | Should be the namespace of the vocabulary | | New |
+| External vocabulary (D) | `@type` | SHOULD | Should be [DefinedTermSet]` | | New |
+| External vocabulary (D) | `url` | SHOULD | Should link to a human-readable description of the vocabulary | | New |
+| Custom vocabulary (D) | entity | MAY | May be present | | New |
+| Custom vocabulary (D) | `@type` | MAY | May include `DefinedTermSet` | | New |
+| Custom vocabulary (D) | `hasDefinedTerm` | MAY | May list custom terms defined by the profile | | New |
+| Custom term (D) | entity | MAY | May be present with or without a parent `DefinedTermSet` | | New |
+| Custom term (D) | `@type` | MAY | May include `DefinedTerm`, `rdfs:Class` and/or `rdf:Property` | | New |
+| Custom term (D) | `termCode` | SHOULD | Should be valid as a key in JSON-LD `@context` of conforming RO-Crates | | New |
+| JSON-LD context (C) | entity | SHOULD | Should be present if the profile has a corresponding JSON-LD `@context` | | New |
+| JSON-LD context (C) | `@id` | MUST | Must be an absolute URI | | New |
+| JSON-LD context (C) | `@id` | MUST | Must be retrievable as JSON-LD directly or with content-negotiation and/or HTTP redirects | | New |
+| JSON-LD context (C) | `@id` | SHOULD | Should be a permalink / persistent identifier | | New |
+| JSON-LD context (C) | `@id` | SHOULD | Should be versioned with [`MAJOR.MINOR`][semver] | | New |
+| JSON-LD context (C) | `encodingFormat` | MUST | Must be `application/ld+json` | | New |
+| JSON-LD context (C) | `encodingFormat` | MUST | Must be `application/ld+json` | | New |
+| JSON-LD context (C) | `name` | SHOULD | Should be present | | New |
+| JSON-LD context (C) | `name` | SHOULD | Should be descriptive | | New |
+| JSON-LD context (C) | `conformsTo` | SHOULD | Should be present | | New |
+| JSON-LD context (C) | `conformsTo` | SHOULD | Should link to the contextual entity `http://www.w3.org/ns/json-ld#Context` | | New |
+| JSON-LD context (C) | `version` | MAY | May declare [version] according to [Semantic Versioning][semver] | | New |
+| JSON-LD context (C) | terms | SHOULD | Should use `https` rather than `http` with a certificate commonly accepted by browsers | is this right? | New |
+| Interoperable RO-Crate profile (C) | entity | MAY | May be present | | New |
+| Interoperable RO-Crate profile sub-elements (C) | entity | SHOULD NOT | Should not be present | | New |
 
 
 A profile that have a corresponding JSON-LD `@context` (e.g. to map its extensions terms,
@@ -507,7 +507,7 @@ defined terms both within its `@context` and ideally as entities in its `@graph`
 | Workflow | `@id` | MUST | Must be a URI linking to the workflow entry-point | | |
 | Workflow | `name` | MUST | Must be present | | |
 | Workflow | `name` | MUST | Must be human-readable | | |
-| Workflow | entity | SHOULD | Should conform to the Bioschemas [ComputationalWorkflow][ComputationalWorkflow profile 1.0] profile | To conform, properties listed under "Marginality: Minimum" MUST be present, and properties listed under "Marginality: Recommended" SHOULD be present | |
+| Workflow | entity | SHOULD | Should conform to the Bioschemas [ComputationalWorkflow][ComputationalWorkflow profile 1.0] profile | To conform, properties listed under "Marginality: Minimum" MUST be present, and properties listed under "Marginality: Recommended" SHOULD be present | Updated suggested target version from 0.5-DRAFT to 1.0 |
 | Workflow | `conformsTo` | SHOULD | If conforming to the Bioschemas [ComputationalWorkflow][ComputationalWorkflow profile 1.0] profile, `conformsTo` should include the versioned URI for that profile | | |
 | Script or Workflow | `programmingLanguage` | SHOULD | Should be present | | |
 | Script or Workflow | `programmingLanguage` | SHOULD | Should link to a `ComputerLanguage` representing the language and/or runtime of the workflow | Often the language and runtime are the essentially the same | eli to check this over... |
@@ -521,7 +521,7 @@ defined terms both within its `@context` and ideally as entities in its `@graph`
 | Script or Workflow related `ImageObject` | `about` | SHOULD | Should reference the script/workflow that the image explains | implicit | |
 | Script or Workflow related `ImageObject` | `about` | SHOULD | Should reference the script/workflow that the image explains | | |
 | Script or Workflow related `ImageObject` | `about` | SHOULD | If there is no programmatic `SoftwareSourceCode` that can be executed, `about` should reference the datasets that the workflow created | | |
-| `FormalParameter` | entity | MAY | May conform to the Bioschemas [FormalParameter][FormalParameter profile 1.0] profile | To conform, properties listed under "Marginality: Minimum" MUST be present, abnd properties listed under "Marginality: Recommended" SHOULD be present. Implicit | |
+| `FormalParameter` | entity | MAY | May conform to the Bioschemas [FormalParameter][FormalParameter profile 1.0] profile | To conform, properties listed under "Marginality: Minimum" MUST be present, abnd properties listed under "Marginality: Recommended" SHOULD be present. Implicit | Updated suggested target version from 0.1-DRAFT to 1.0 |
 | `FormalParameter` | `conformsTo` | SHOULD | If conforming to the Bioschemas [FormalParameter][FormalParameter profile 1.0] profile, `conformsTo` should include the versioned URI for that profile | | |
 
 
