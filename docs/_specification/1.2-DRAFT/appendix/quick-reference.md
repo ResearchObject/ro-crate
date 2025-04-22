@@ -119,10 +119,10 @@ Most of the "new" requirements here are not truly new, but were implied in 1.1 a
 | [name] | SHOULD | Should be human-readable | hard to machine-test | New |
 | additional properties | SHOULD | Should be applicable to the `@type` (or superclass) according to their definitions | | New |
 | additional properties | MAY | May be present, including [custom properties](https://www.researchobject.org/ro-crate/specification/1.2-DRAFT/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms) | non-closed shapes | |
-| additional properties | MAY | If the RO-Crate conforms to a profile, it may use [custom properties](https://www.researchobject.org/ro-crate/specification/1.2-DRAFT/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms) defined in that profile's [Profile Crate](../profiles#profile-crate) without making any additional contextual entities | using and copying terms are both valid, see below, CHECK NEWNESS. [source](../profiles#how-to-retrieve-a-profile-crate) | |
-| additional properties | MUST | If the RO-Crate uses a [custom property or class](https://www.researchobject.org/ro-crate/specification/1.2-DRAFT/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms) from a [Profile Crate](../profiles#profile-crate) without making additional contextual entities, it must use the full URI corresponding to the `@id` of that property/class within the Profile Crate, or be mapped to that URIs from the RO-Crate's JSON-LD `@context` | This can usually be achieved by importing whatever additional `@context` the profile recommends, CHECK NEWNESS. [source](../profiles#how-to-retrieve-a-profile-crate) | |
-| additional properties | MAY | If the RO-Crate conforms to a profile, it may copy across entities from that profile's [Profile Crate](../profiles#profile-crate) that define [custom properties](https://www.researchobject.org/ro-crate/specification/1.2-DRAFT/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms) | using and copying terms are both valid, see line above. This way is useful for archiving, CHECK NEWNESS. [source](../profiles#how-to-retrieve-a-profile-crate) | |
-| additional properties `@id` | SHOULD | If the RO-Crate conforms to a profile and copies entities from that profile's [Profile Crate](../profiles#profile-crate) which define [custom properties](https://www.researchobject.org/ro-crate/specification/1.2-DRAFT/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms), the shared entities should have absolute URIs as `@id` | CHECK NEWNESS. [source](../profiles#how-to-retrieve-a-profile-crate) | |
+| additional properties | MAY | If the RO-Crate conforms to a profile, it may use [custom properties](https://www.researchobject.org/ro-crate/specification/1.2-DRAFT/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms) defined in that profile's [Profile Crate](../profiles#profile-crate) without making any additional contextual entities | using and copying terms are both valid, see below. [source](../profiles#how-to-retrieve-a-profile-crate) | New |
+| additional properties | MUST | If the RO-Crate uses a [custom property or class](https://www.researchobject.org/ro-crate/specification/1.2-DRAFT/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms) from a [Profile Crate](../profiles#profile-crate) without making additional contextual entities, it must use the full URI corresponding to the `@id` of that property/class within the Profile Crate, or be mapped to that URIs from the RO-Crate's JSON-LD `@context` | This can usually be achieved by importing whatever additional `@context` the profile recommends. [source](../profiles#how-to-retrieve-a-profile-crate) | New |
+| additional properties | MAY | If the RO-Crate conforms to a profile, it may copy across entities from that profile's [Profile Crate](../profiles#profile-crate) that define [custom properties](https://www.researchobject.org/ro-crate/specification/1.2-DRAFT/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms) | using and copying terms are both valid, see line above. This way is useful for archiving. [source](../profiles#how-to-retrieve-a-profile-crate) | New |
+| additional properties `@id` | SHOULD | If the RO-Crate conforms to a profile and copies entities from that profile's [Profile Crate](../profiles#profile-crate) which define [custom properties](https://www.researchobject.org/ro-crate/specification/1.2-DRAFT/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms), the shared entities should have absolute URIs as `@id` |  [source](../profiles#how-to-retrieve-a-profile-crate) | New |
 | property references to other entities | MUST | Must use the `{ "@id": "..."}` object form |  | New |
 | the entity itself | SHOULD | Should be ultimately referenceable from the root data entity (possibly through another reachable [data entity](../data-entities) or [contextual entity](../contextual-entities)) | | New |
 | nested entities | MUST NOT | Must NOT be present - instead describe these as separate contextual entities in the flat `@graph` list | as the JSON-LD must be [flattened] | |
@@ -167,7 +167,7 @@ Most of the "new" requirements here are not truly new, but were implied in 1.1 a
 | [datePublished] | SHOULD | Should be specified to at least the precision of a day | | |
 | [datePublished] | MAY | May be a timestamp down to the millisecond | | |
 | [license] | MUST| Must be present | | |
-| [license] | SHOULD | Should link to a _Contextual Entity_ or _Data Entity_ in the _RO-Crate Metadata Document_ | see [contextual entities for licenses](#TODO) | Updated - added "or _Data Entity_" |
+| [license] | SHOULD | Should reference a _Contextual Entity_ or _Data Entity_ in the _RO-Crate Metadata Document_ | see [contextual entities for licenses](#TODO) | Updated - added "or _Data Entity_" |
 | [license] | MAY | May be a textual description of how the RO-Crate may be used | | |
 | [identifier] | SHOULD | If the RO-Crate has a persistent identifier, should be present | | |
 | [identifier] | SHOULD | If present, should use the approach set out in the [Science On Schema.org guides] to reference a contextual entity for the identifier | see [contextual entities for identifiers](#TODO) | New |
@@ -189,7 +189,7 @@ Most of the "new" requirements here are not truly new, but were implied in 1.1 a
 | `distribution` | MAY | May be present | [source](../data-entities.md#downloadable-dataset) |
 | `distribution` | MAY | If present, should be the URI of an archive that contains the _RO-Crate Metadata Document_ | [source](../data-entities.md#downloadable-dataset) |
 | `conformsTo` | SHOULD | Should be present if the RO-Crate conforms to additional [RO-Crate profiles](../profiles.md) beyond the base specification | [source](../profiles.md#declaring-conformance-of-an-ro-crate-profile) | New |
-| `conformsTo` | MUST | If present, each value must link to a contextual entity of type [Profile] representing a profile the RO-Crate conforms to | [source](../profiles.md#declaring-conformance-of-an-ro-crate-profile) | New |
+| `conformsTo` | MUST | If present, each value must reference a contextual entity of type [Profile] representing a profile the RO-Crate conforms to | [source](../profiles.md#declaring-conformance-of-an-ro-crate-profile) | New |
 
 
 Removed 1.1 -> 1.2:
@@ -199,8 +199,8 @@ Removed 1.1 -> 1.2:
 
 [Data Entities - full specification](../data-entities)
 
-| Type of data entity | Property/Target | Severity | Description | Notes |
-| ------- | ------| ------ | ------- | ------ |
+| Type of data entity | Property/Target | Severity | Description | Notes | Changed in 1.2 |
+| ------- | ------| ------ | ------- | ------ | ----- |
 | Any | `@id` | MUST | Must be a valid URI reference. This includes using `/` separator for relative paths, and escaping special characters | | |
 | Any | `@id` | MUST | If the entity represents a file or directory present in the _RO-Crate Root_, `@id` must be a relative URI | | New |
 | Any | `@id` | MUST | If `@id` is a relative URI, the file or directory represented by the entity must be present in the _RO-Crate Root_ at that relative path | | New |
@@ -227,7 +227,7 @@ Removed 1.1 -> 1.2:
 | File | `@id` | MUST | If `@id` is a URI outside the _RO-Crate Root_, then at the time of the RO-Crate's creation, the data should be directly downloadable from that URI by a simple non-interactive retrieval of a single data stream, permitting redirections and HTTP/HTTPS authentication | see examples in [source](../data-entities.md#web-based-data-entities) |
 | File | `@type` | MUST | Must be `File`, or an array where `File` is one of the values | |
 | File | `contentURL` | MAY | May be present | |
-| File | `contentURL` | SHOULD | If present, following the link (allowing for HTTP redirects) should directly download the file represented by the entity | New |
+| File | `contentURL` | SHOULD | If present, following the link (allowing for HTTP redirects) should directly download the file represented by the entity | | New |
 | File | `encodingFormat` | SHOULD | Should be present | | New |
 | File | `encodingFormat` | SHOULD | Should be an IANA [media type] as a string and/or a reference to a [file format](../data-entities#adding-detailed-descriptions-of-file-encodings) contextual entity | see [contextual entities for file formats](#TODO) | Updated - added string option |
 | File | `encodingFormat` | MAY | May be a local description of the format if there is no web-accessible description | | |
@@ -235,7 +235,7 @@ Removed 1.1 -> 1.2:
 | File | `conformsTo` | SHOULD | If present, should reference a contextual entity of type [Profile] | | New |
 | File | `contentSize` | SHOULD | Should be present | | New |
 | File | `contentSize` | SHOULD | Should be the size of the file in bytes | | New |
-| File | `identifier`, `url`, `subjectOf`, `mainEntityOfPage` | MAY | May link to a relevant web presence for the entity | see [source](../data-entities#data-entities-in-an-attached-ro-crate-that-are-also-on-the-web) for further guidance |
+| File | `identifier`, `url`, `subjectOf`, `mainEntityOfPage` | MAY | May reference a relevant web presence for the entity | see [source](../data-entities#data-entities-in-an-attached-ro-crate-that-are-also-on-the-web) for further guidance |
 | File | `identifier`, `url`, `subjectOf`, `mainEntityOfPage` | SHOULD | If the entity is both in the _RO-Crate Root_ and on the web, one of these properties should be used to link to the relevant web presence | see [source](../data-entities#data-entities-in-an-attached-ro-crate-that-are-also-on-the-web) for further guidance |
 | Thumbnail (File) | usage | MUST | Must be present in the BagIt manifest if in a [_Bagged RO-Crate_](appendix/implementation-notes#adding-ro-crate-to-bagit) | this is a weird one too... actually more structural. [source](../contextual-entities#thumbnails)
 | Dataset | usage | MAY | May encapsulate a set of files without describing them individually as File data entities | | New |
@@ -247,7 +247,7 @@ Removed 1.1 -> 1.2:
 | Dataset | `hasPart` | SHOULD | Should list any directly contained data entities | can it be empty? | New |
 | Dataset | `hasPart` | MAY | May include other Datasets to represent a nested folder hierarchy | 
 | Dataset | `hasPart` | SHOULD | If the `@id` is a web URI, either `hasPart` should contain a complete listing of the dataset's content, or the dataset should be an RO-Crate | | Updated - added RO-Crate option |
-| Dataset | `distribution` | SHOULD | Should be present if the `@id` is a web URI | New |
+| Dataset | `distribution` | SHOULD | Should be present if the `@id` is a web URI | | New |
 | Dataset | `distribution` | MAY | If the dataset represented by the entity is an RO-Crate, `distribution` may be present | | New |
 | Dataset | `distribution` | MAY | If the dataset represented by the entity is an RO-Crate, `distribution` should be the URI of an archive that contains the _RO-Crate Metadata Document_ | | New |
 | Dataset | `funder` | SHOULD | Should be present if a research project is associated with the dataset | [source](../contextual-entities#funding-and-grants)
@@ -292,8 +292,8 @@ This section describes how an RO-Crate A may reference another RO-Crate B. Prope
 
 The RO-Crate SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`).
 
-| Type of contextual entity | Property/Target | Severity | Description | Notes |
-| ------- | ------| ------ | ------- | ------- |
+| Type of contextual entity | Property/Target | Severity | Description | Notes | Changed in 1.2 |
+| ------- | ------| ------ | ------- | ------- | ----- |
 | Any | `@id` | SHOULD | If an existing permalink or other absolute URI is reasonably unique for that entity, that URI should be used as `@id` |
 | Any | `@type` | SHOULD | If the entity is from a repository, should include [RepositoryObject] in addition to any other types | [source](../provenance#recording-changes-to-ro-crates) |
 | Person | `@id` | SHOULD | Should be an ORCID identifier, if possible | implicit! [source](../metadata#recommended-identifiers) | 
@@ -395,6 +395,8 @@ A software application or item of equipment SHOULD be associated with the [File]
 
 ## RO-Crate Profiles
 
+[RO-Crate profiles - full specification](../profiles)
+
 ### All Profiles
 
 These requirements apply to all profiles, regardless of where or how they are published.
@@ -418,6 +420,8 @@ These requirements apply to all profiles, regardless of where or how they are pu
 
 ### Profile Crate 
 
+[Profile Crate - full specification](../profiles#profile-crate)
+
 These requirements apply **in addition to** the requirements in [All Profiles](#all-profiles) above.
 
 Entities with a (D) are data entities; entities with a (C) are contextual entities.
@@ -438,7 +442,7 @@ Entities with a (D) are data entities; entities with a (C) are contextual entiti
 | Root Data Entity (D) | `version` | MAY | May be present | [Semantic Versioning][semver] preferred | New |
 | Root Data Entity (D) | `isProfileOf` | SHOULD | Should be present | | New |
 | Root Data Entity (D) | `isProfileOf` | SHOULD | Should reference the minimally expected RO-Crate specification | | New |
-| Root Data Entity (D) | `isProfileOf` | MAY | May link to a contextual entity for the specification | | New |
+| Root Data Entity (D) | `isProfileOf` | MAY | May reference a contextual entity for the specification | | New |
 | Any resource (D) | `encodingFormat` | SHOULD | If the resource is referenced from `hasArtifact` on a `ResourceDescriptor`, `encodingFormat` should be present | | New |
 | Profile description resource (D) | `about` | MUST | Must reference the _Root Data Entity_ | | New |
 | Profile description resource (D) | `encodingFormat` | SHOULD | Should be `text/htmlNew `
@@ -470,7 +474,7 @@ Entities with a (D) are data entities; entities with a (C) are contextual entiti
 | JSON-LD context (C) | `name` | SHOULD | Should be present | | New |
 | JSON-LD context (C) | `name` | SHOULD | Should be descriptive | | New |
 | JSON-LD context (C) | `conformsTo` | SHOULD | Should be present | | New |
-| JSON-LD context (C) | `conformsTo` | SHOULD | Should link to the contextual entity `http://www.w3.org/ns/json-ld#Context` | | New |
+| JSON-LD context (C) | `conformsTo` | SHOULD | Should reference the contextual entity `http://www.w3.org/ns/json-ld#Context` | | New |
 | JSON-LD context (C) | `version` | MAY | May declare [version] according to [Semantic Versioning][semver] | | New |
 | JSON-LD context (C) | terms | SHOULD | Should use `https` rather than `http` with a certificate commonly accepted by browsers | is this right? | New |
 | Interoperable RO-Crate profile (C) | entity | MAY | May be present | | New |
@@ -497,6 +501,8 @@ defined terms both within its `@context` and ideally as entities in its `@graph`
 
 ## Workflows and Scripts
 
+[Workflows and scripts - full specification](../workflows)
+
 | Type of Entity | Property/Target | Severity | Description | Notes | Changed in 1.2 |
 | ------ | ------ | ------ | ------- | ------ | --- |
 | Script | `@type` | MUST | Must include both `File` and `SoftwareSourceCode` | | |
@@ -510,9 +516,9 @@ defined terms both within its `@context` and ideally as entities in its `@graph`
 | Workflow | entity | SHOULD | Should conform to the Bioschemas [ComputationalWorkflow][ComputationalWorkflow profile 1.0] profile | To conform, properties listed under "Marginality: Minimum" MUST be present, and properties listed under "Marginality: Recommended" SHOULD be present | Updated suggested target version from 0.5-DRAFT to 1.0 |
 | Workflow | `conformsTo` | SHOULD | If conforming to the Bioschemas [ComputationalWorkflow][ComputationalWorkflow profile 1.0] profile, `conformsTo` should include the versioned URI for that profile | | |
 | Script or Workflow | `programmingLanguage` | SHOULD | Should be present | | |
-| Script or Workflow | `programmingLanguage` | SHOULD | Should link to a `ComputerLanguage` representing the language and/or runtime of the workflow | Often the language and runtime are the essentially the same | eli to check this over... |
-| Script or Workflow | `hasPart` | MAY | May link to `SoftwareApplication` or `SoftwareSourceCode` entities representing steps of the script/workflow | implicit/soft/guideline ? | |
-| Script or Workflow | `image` | MAY | May link to an `ImageObject` data entity representing a diagram/sketch which explains the script/workflow | implicit/soft/guideline ? | |
+| Script or Workflow | `programmingLanguage` | SHOULD | Should reference a `ComputerLanguage` representing the language and/or runtime of the workflow | Often the language and runtime are the essentially the same - but what if they aren't? | |
+| Script or Workflow | `hasPart` | MAY | May reference `SoftwareApplication` or `SoftwareSourceCode` entities representing steps of the script/workflow | implicit/soft/guideline ? | |
+| Script or Workflow | `image` | MAY | May reference an `ImageObject` data entity representing a diagram/sketch which explains the script/workflow | implicit/soft/guideline ? | |
 | Script or Workflow | `input` | MAY | May reference `FormalParameter` contextual entities representing inputs | implicit? | |
 | Script or Workflow | `output` | MAY | May reference `FormalParameter` contextual entities representing outputs | implicit? | |
 | Script or Workflow related `ImageObject` | `encodingFormat` | SHOULD | Should be present | |
