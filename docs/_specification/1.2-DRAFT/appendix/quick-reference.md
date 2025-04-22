@@ -58,6 +58,7 @@ Though the concept of attached RO-Crates is new in version 1.2, most of the requ
 | `@graph` | MAY | May include [Web-based Data Entities](../data-entities.html#web-based-data-entities) which are not part of the payload | |  |
 | `@graph` | SHOULD NOT | Should NOT include `ro-crate-preview.html` or `ro-crate-preview_files/` in the `hasPart` property of the _Root Data Entity_ or any other `Dataset` entity, even if they are present in the _RO-Crate Root_ | Exception: `ro-crate-preview.html` may be included in `hasPart` if it is **also** the profile description within a Profile Crate (see [Profile Crate](#profile-crate) section) | New |
 | `@graph` | MAY | May include metadata about parts of the _RO-Crate Website_, such as `author`, `dateCreated` or other provenance | | New |
+| `@graph` | MAY | May include scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in the RO-Crate | [source](../workflows) | |
 | Root Data Entity `@id` | MUST | Must be either `./` or be a URI which is considered to be the main identifier of the RO-Crate | | Updated - previously SHOULD be `./` but now both options are equally acceptable |
 
 ### Detached RO-Crate
@@ -428,7 +429,11 @@ Entities with a (D) are data entities; entities with a (C) are contextual entiti
 
 | Type of Entity | Property/Target | Severity | Description | Notes | Changed in 1.2 |
 | ------ | ------ | ------ | ------- | ------ | --- |
-| Whole crate | `@context` / recommended context | SHOULD | Should include a mapping to any absolute URIs used to define [custom properties or classes](../appendix/jsonld#adding-new-or-ad-hoc-vocabulary-terms) | See [Extending RO-Crate](appendix/jsonld#extending-ro-crate), Eli double check this one pls | New |
+| Whole crate | `@context` / recommended context | SHOULD | Should include a mapping to any absolute URIs used to define [custom properties or classes](../appendix/jsonld#adding-new-or-ad-hoc-vocabulary-terms) | See [Extending RO-Crate](appendix/jsonld#extending-ro-crate) | New |
+| Whole crate | `@context` / recommended context | SHOULD | Updates to the context should NOT remove terms already published and potentially used by consumers of the profile | | New |
+| Whole crate | `@context` / recommended context | SHOULD | Updates to the context should NOT replace URIs terms map to -- except for typos. | | New |
+| Whole crate | `@context` / recommended context | MAY | Updates MAY add new terms or patch fixes (with corresponding `version` change in the RO-Crate metadata) | | New |
+| Whole crate | `@context` | MAY | May be the crate's metadata JSON-LD file itself, if the file is resolvable as media type `application/ld+json` over HTTP | | New |
 | Root Data Entity (D) | `@id` | SHOULD | Should be an absolute URI | | New |
 | Root Data Entity (D) | `@type` | MUST | Must include [Profile] | | New |
 | Root Data Entity (D) | `identifier` | SHOULD | If the `@id` is a permanent URI, `identifier` should be the same URI | | New |
@@ -469,6 +474,7 @@ Entities with a (D) are data entities; entities with a (C) are contextual entiti
 | JSON-LD context (C) | `@id` | MUST | Must be retrievable as JSON-LD directly or with content-negotiation and/or HTTP redirects | | New |
 | JSON-LD context (C) | `@id` | SHOULD | Should be a permalink / persistent identifier | | New |
 | JSON-LD context (C) | `@id` | SHOULD | Should be versioned with [`MAJOR.MINOR`][semver] | | New |
+| JSON-LD context (C) | `@id` | SHOULD | Should use `https` rather than `http` with a certificate commonly accepted by browsers | | New |
 | JSON-LD context (C) | `encodingFormat` | MUST | Must be `application/ld+json` | | New |
 | JSON-LD context (C) | `encodingFormat` | MUST | Must be `application/ld+json` | | New |
 | JSON-LD context (C) | `name` | SHOULD | Should be present | | New |
@@ -476,27 +482,10 @@ Entities with a (D) are data entities; entities with a (C) are contextual entiti
 | JSON-LD context (C) | `conformsTo` | SHOULD | Should be present | | New |
 | JSON-LD context (C) | `conformsTo` | SHOULD | Should reference the contextual entity `http://www.w3.org/ns/json-ld#Context` | | New |
 | JSON-LD context (C) | `version` | MAY | May declare [version] according to [Semantic Versioning][semver] | | New |
-| JSON-LD context (C) | terms | SHOULD | Should use `https` rather than `http` with a certificate commonly accepted by browsers | is this right? | New |
+| `http://www.w3.org/ns/json-ld#Context` (C) | entity | MAY | May be present | Not required, even if the JSON-LD context `conformsTo` references it | New |
+| `http://www.w3.org/ns/json-ld#Context` (C) | `@type` | MAY | Should be `DefinedTerm` | implicit | New |
 | Interoperable RO-Crate profile (C) | entity | MAY | May be present | | New |
 | Interoperable RO-Crate profile sub-elements (C) | entity | SHOULD NOT | Should not be present | | New |
-
-
-A profile that have a corresponding JSON-LD `@context` (e.g. to map its extensions terms,
-or to suggest a version of RO-Crate's official context) SHOULD indicate the 
-context in the Profile Crate:
-* ...
-* Including the `DefinedTerm` for JSON-LD is optional.
-
-When updating a JSON-LD context in a Profile Crate:
-
-* Updates MAY add new terms or patch fixes (with corresponding `version` change in the RO-Crate metadata)
-* Updates SHOULD NOT remove terms already published and potentially used by consumers of the profile
-* Updates SHOULD NOT replace URIs terms map to -- except for typos.
-
-The `@context` MAY be the Profile Crate's Metadata JSON-LD file itself, if 
-it is [resolvable](appendix/jsonld#ro-crate-json-ld-media-type)
-as media type `application/ld+json` over HTTP. Make sure the crate includes the 
-defined terms both within its `@context` and ideally as entities in its `@graph`.
 
 
 ## Workflows and Scripts
@@ -516,7 +505,7 @@ defined terms both within its `@context` and ideally as entities in its `@graph`
 | Workflow | entity | SHOULD | Should conform to the Bioschemas [ComputationalWorkflow][ComputationalWorkflow profile 1.0] profile | To conform, properties listed under "Marginality: Minimum" MUST be present, and properties listed under "Marginality: Recommended" SHOULD be present | Updated suggested target version from 0.5-DRAFT to 1.0 |
 | Workflow | `conformsTo` | SHOULD | If conforming to the Bioschemas [ComputationalWorkflow][ComputationalWorkflow profile 1.0] profile, `conformsTo` should include the versioned URI for that profile | | |
 | Script or Workflow | `programmingLanguage` | SHOULD | Should be present | | |
-| Script or Workflow | `programmingLanguage` | SHOULD | Should reference a `ComputerLanguage` representing the language and/or runtime of the workflow | Often the language and runtime are the essentially the same - but what if they aren't? | |
+| Script or Workflow | `programmingLanguage` | SHOULD | Should reference a `ComputerLanguage` representing the runtime of the workflow | Often the language and runtime are the essentially the same, but they may differ | |
 | Script or Workflow | `hasPart` | MAY | May reference `SoftwareApplication` or `SoftwareSourceCode` entities representing steps of the script/workflow | implicit/soft/guideline ? | |
 | Script or Workflow | `image` | MAY | May reference an `ImageObject` data entity representing a diagram/sketch which explains the script/workflow | implicit/soft/guideline ? | |
 | Script or Workflow | `input` | MAY | May reference `FormalParameter` contextual entities representing inputs | implicit? | |
@@ -530,15 +519,7 @@ defined terms both within its `@context` and ideally as entities in its `@graph`
 | `FormalParameter` | entity | MAY | May conform to the Bioschemas [FormalParameter][FormalParameter profile 1.0] profile | To conform, properties listed under "Marginality: Minimum" MUST be present, abnd properties listed under "Marginality: Recommended" SHOULD be present. Implicit | Updated suggested target version from 0.1-DRAFT to 1.0 |
 | `FormalParameter` | `conformsTo` | SHOULD | If conforming to the Bioschemas [FormalParameter][FormalParameter profile 1.0] profile, `conformsTo` should include the versioned URI for that profile | | |
 
-
-
-Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an RO-Crate MAY be embedded in an RO-Crate.
-
-Scripts written in a _programming language_, as well as workflows, generally need a _runtime_; in RO-Crate the runtime SHOULD be indicated using a liberal interpretation of [programmingLanguage].
-
-Note that the language and its runtime MAY differ (e.g. different C++ compilers), 
-
-so far: 308 reqs...
+so far: 312 reqs...
 
 
 {% include references.liquid %}
