@@ -428,7 +428,7 @@ These requirements apply **in addition to** the requirements in [All Profiles](#
 Entities with a (D) are data entities; entities with a (C) are contextual entities.
 
 | Type of Entity | Property/Target | Severity | Description | Notes | Changed in 1.2 |
-| ------ | ------ | ------ | ------- | ------ | --- |
+| ------ | ------ | ------ | ------- | ------ | ----- |
 | Whole crate | `@context` / recommended context | SHOULD | Should include a mapping to any absolute URIs used to define [custom properties or classes](../appendix/jsonld#adding-new-or-ad-hoc-vocabulary-terms) | See [Extending RO-Crate](appendix/jsonld#extending-ro-crate) | New |
 | Whole crate | `@context` / recommended context | SHOULD | Updates to the context should NOT remove terms already published and potentially used by consumers of the profile | | New |
 | Whole crate | `@context` / recommended context | SHOULD | Updates to the context should NOT replace URIs terms map to -- except for typos. | | New |
@@ -461,7 +461,7 @@ Entities with a (D) are data entities; entities with a (C) are contextual entiti
 | Resource descriptor (C) | `dct:format` | MAY | May be present | [source](../profiles#what-is-included-in-the-profile-crate) | New New |
 | Resource descriptor (C) | `dct:conformsTo` | MAY | May be present | [source](../profiles#what-is-included-in-the-profile-crate) | New New |
 | External vocabulary (D) | `@id` | SHOULD | Should be the namespace of the vocabulary | | New |
-| External vocabulary (D) | `@type` | SHOULD | Should be [DefinedTermSet]` | | New |
+| External vocabulary (D) | `@type` | SHOULD | Should be [DefinedTermSet] | | New |
 | External vocabulary (D) | `url` | SHOULD | Should link to a human-readable description of the vocabulary | | New |
 | Custom vocabulary (D) | entity | MAY | May be present | | New |
 | Custom vocabulary (D) | `@type` | MAY | May include `DefinedTermSet` | | New |
