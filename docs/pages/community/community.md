@@ -118,6 +118,9 @@ The _RO-Crate_ team is:
 * Edan Bainglass <https://orcid.org/0000-0001-7218-0176>
 * Balazs E. Pataki <https://orcid.org/0000-0003-3482-0325>
 * Joe Heffer <https://orcid.org/0000-0001-8733-1117>
+* Pascal Su <https://orcid.org/0000-0001-5614-962X>
+* Andrea Davanzo <https://orcid.org/0009-0000-5170-1737>
+* Meznah Aloqalaa <https://orcid.org/0000-0002-1382-3896>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)!
 
