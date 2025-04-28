@@ -117,6 +117,7 @@ The _RO-Crate_ team is:
 * Juan Fuentes <https://orcid.org/0009-0002-8209-1999>
 * Edan Bainglass <https://orcid.org/0000-0001-7218-0176>
 * Balazs E. Pataki <https://orcid.org/0000-0003-3482-0325>
+* Joe Heffer <https://orcid.org/0000-0001-8733-1117>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)!
 
