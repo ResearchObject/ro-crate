@@ -71,6 +71,12 @@ defaults:
       search_exclude: false
 
   - scope:
+      path: "_posts"
+    values:
+      layout: "post"
+      sidebar: community
+
+  - scope:
       path: "pages/about"
     values:
       layout: "default"
