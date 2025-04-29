@@ -40,7 +40,7 @@ jobs:
           --ignore-files "/.*\/ro-crate-preview\.html/","/.*\/examples\/.*\/index\.html/" \
           --disable-external true \
           --enforce-https false \
-          --swap-urls '^/ro-crate/:/'
+          --swap-urls '^/ro-crate/:/' \
           ./_site
 
       - name: Ensure no unexpected encoded HTML in output
