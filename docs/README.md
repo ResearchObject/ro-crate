@@ -16,6 +16,7 @@ Follow the instructions at [Testing your GitHub Pages site locally with Jekyll](
 
 * Ruby 3.0.0 or newer is needed
 * The "publishing source" is not the root folder of the repository, but the `docs/` directory, so you should be running your `bundle` commands in the `docs/` directory (the same location as the `Gemfile` which `bundle` reads from)
+* The site preview will become available at `http://localhost:4000/ro-crate`
 
 ### Option 2: Run the site in a container using Docker or Podman
 
@@ -23,7 +24,7 @@ If you have [Docker] you can avoid the Ruby/Bundler/Jekyll install dance and run
 
     make jekyll-docker-serve
 
-Then visit http://0.0.0.0:4000/ to browse a local rendering. 
+Then visit http://0.0.0.0:4000/ro-crate to browse a local rendering. 
 
 Alternatively, to render HTML files into `site/` folder, run:
 
