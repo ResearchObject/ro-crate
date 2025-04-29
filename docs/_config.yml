@@ -27,6 +27,8 @@ exclude:
   - Gemfile*
   - LICENSE
 
+date_format: "%-d %B %Y"
+
 defaults:
   - scope:
       path: ""
