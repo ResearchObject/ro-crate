@@ -5,7 +5,7 @@ name: Deploy site
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["upgrade-gems-2"] # TODO change to "main"
+    branches: ["main"] # TODO change to "main"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -45,14 +45,13 @@ jobs:
           bundle config path vendor/bundle
           bundle install
       - name: Build with Jekyll
-        # Outputs to the './_site' directory by default
+        # Outputs to the './_site' directory within the working directory
         working-directory: ./docs
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
           PAGES_REPO_NWO: ${{ github.repository }}
       - name: Upload artifact
-        # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./docs/_site
