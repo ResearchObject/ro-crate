@@ -33,7 +33,7 @@ jobs:
         # https://github.com/ruby/setup-ruby/releases/tag/v1.207.0
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.1" # Not needed with a .ruby-version file
+          ruby-version: "3.3" # Not needed with a .ruby-version file
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
