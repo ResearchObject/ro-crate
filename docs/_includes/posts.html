@@ -1,7 +1,7 @@
 <ul class="list-unstyled">
   {% for post in site.posts %}
     <li class="pb-3">
-      <h2><a href="{{ post.url }}">{{ post.title }}</a><br/></h2>
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a><br/></h2>
       <span>        
         <time datetime="{{ post.date | date_to_xmlschema }}">
            {{ post.date | date: site.date_format }}</time> | 
