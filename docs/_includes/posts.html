@@ -1,0 +1,14 @@
+<a href="{{ site.baseurl }}/feed.xml"><i class="fa fa-rss me-2"></i>Subscribe to the RSS feed</a>
+
+<ul class="list-unstyled">
+  {% for post in site.posts %}
+    <li class="pb-3">
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a><br/></h2>
+      <span>        
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+           {{ post.date | date: site.date_format }}</time> | 
+           {{ post.author | join: ", " }}
+    </span>
+    </li>
+  {% endfor %}
+</ul>
