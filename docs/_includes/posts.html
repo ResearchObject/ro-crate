@@ -5,7 +5,7 @@
       <span>        
         <time datetime="{{ post.date | date_to_xmlschema }}">
            {{ post.date | date: site.date_format }}</time> | 
-           {{ post.authors | join: ", " }}
+           {{ post.author | join: ", " }}
     </span>
     </li>
   {% endfor %}
