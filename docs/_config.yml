@@ -117,5 +117,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-github-metadata
+  - jekyll-feed
   - jemoji
   - webrick
