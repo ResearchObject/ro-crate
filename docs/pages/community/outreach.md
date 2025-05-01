@@ -93,7 +93,6 @@ _International FAIR Digital Objects Implementation Summit 2024_, Berlin, Germany
 _Open Conference Proceedings_ **5**  
 <https://doi.org/10.52825/ocp.v5i.1273>
 
-
 Abraham Nieva de la Hidalga, Leandro Liborio, Patrick Austin, Subindev Devadasan, Tom Underwood, Alexander Belozerov, Martin Wilding, Nitya Ramanan, C. Richard A. Catlow (2025):  
 **Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study**  
 _ChemCatChem_:e202401676  
