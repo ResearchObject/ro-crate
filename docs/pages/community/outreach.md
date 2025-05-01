@@ -45,29 +45,54 @@ _Data Science_ **5**(2)
 
 ### 2025
 
-Jonas Grieb, Claus Weiland, Alexander Wolodkin, Julian Lopez Gordillo, and Sharif Islam (2025):  
+Jonas Grieb, Claus Weiland, Alexander Wolodkin, Julian Lopez Gordillo, Sharif Islam (2025):  
 **Implementing FAIR Semantic Mappings Leveraging on RO-Crate**  
 [_International FAIR Digital Objects Implementation Summit 2024_](https://fairdo.org/fdof-summit-2024/), Berlin, Germany, 2024-03-20/--21.  
 _Open Conference Proceedings_ **5**  
 <https://doi.org/10.52825/ocp.v5i.1179>
 
-Rohitha Ravinder, Nelson Quiñones, Dietrich Rebholz-Schuhmann, and Leyla Jael Castro (2025):  
+Julian Lopez Gordillo, Sharif Islam (2025):  
+**FDO As an Interoperability Framework for the Biodiversity Digital Twin Project**  
+Proceedings of [_International FAIR Digital Objects Implementation Summit 2024_](https://fairdo.org/fdof-summit-2024/), Berlin, Germany, 2024-03-20/--21.  
+_Open Conference Proceedings_ **5**  
+<https://doi.org/10.52825/ocp.v5i.1190>
+
+Rory Macneil, Tilo Mathes (2025):  
+**Implementation of PIDs and Plans for FDOs in the RSpace Digital Research Platform**  
+Proceedings of [_International FAIR Digital Objects Implementation Summit 2024_](https://fairdo.org/fdof-summit-2024/), Berlin, Germany, 2024-03-20/--21.  
+_Open Conference Proceedings_ **5**  
+<https://doi.org/10.52825/ocp.v5i.1098>
+
+Rohitha Ravinder, Nelson Quiñones, Dietrich Rebholz-Schuhmann, Leyla Jael Castro (2025):  
 **A Lightweight Approach to FDOs via Bioschemas, RO-Crate and Signposting on GitHub Pages**  
 Proceedings of [_International FAIR Digital Objects Implementation Summit 2024_](https://fairdo.org/fdof-summit-2024/), Berlin, Germany, 2024-03-20/--21.  
 _Open Conference Proceedings_ **5**  
 <https://doi.org/10.52825/ocp.v5i.1188>
 
-Stian Soiland-Reyes, Stuart Wheater, Thomas Giles, Jonathan Couldridge, Philip Quinlan, and Carole Goble (2025):  
+Markus Stocker, Björn Grüning, Tomasz Miksa, Claudia Biniossek, Dirk Betz (2025):
+**FAIR Digital Objects for Seamless Research Data Management for Researchers and Higher Education Institutions**  
+Proceedings of [_International FAIR Digital Objects Implementation Summit 2024_](https://fairdo.org/fdof-summit-2024/), Berlin, Germany, 2024-03-20/--21.  
+_Open Conference Proceedings_ **5**  
+<https://doi.org/10.52825/ocp.v5i.1045>
+
+Bruno de Paula Kinoshita, Edgar Garriga Nogales, Manuel Giménez de Castro Marciani, Miguel Castrillo Melguizo (2025):  
+**FAIR Digital Objects in Autosubmit Workflows**  
+Proceedings of [_International FAIR Digital Objects Implementation Summit 2024_](https://fairdo.org/fdof-summit-2024/), Berlin, Germany, 2024-03-20/--21.  
+_Open Conference Proceedings_ **5**  
+<https://doi.org/10.52825/ocp.v5i.1416>
+
+Stian Soiland-Reyes, Stuart Wheater, Thomas Giles, Jonathan Couldridge, Philip Quinlan, Carole Goble (2025):  
 **The Five Safes RO-Crate: FAIR Digital Objects for Trusted Research Environments for Health Data Research**  
 Proceedings of [_International FAIR Digital Objects Implementation Summit 2024_](https://fairdo.org/fdof-summit-2024/), Berlin, Germany, 2024-03-20/--21.  
 _Open Conference Proceedings_ **5**  
 <https://doi.org/10.52825/ocp.v5i.1419>
 
-Stian Soiland-Reyes, Peter Sefton, Simone Leo, Leyla Jael Castro, Claus Weiland, and Herbert Van de Sompel (2025):  
+Stian Soiland-Reyes, Peter Sefton, Simone Leo, Leyla Jael Castro, Claus Weiland, Herbert Van de Sompel (2025):  
 **Practical Webby FDOs With RO-Crate and FAIR Signposting: Experiences and Lessons Learned**  
 Proceedings of [_International FAIR Digital Objects Implementation Summit 2024_](https://fairdo.org/fdof-summit-2024/), Berlin, Germany, 2024-03-20/--21.  
 _Open Conference Proceedings_ **5**  
 <https://doi.org/10.52825/ocp.v5i.1273>
+
 
 Abraham Nieva de la Hidalga, Leandro Liborio, Patrick Austin, Subindev Devadasan, Tom Underwood, Alexander Belozerov, Martin Wilding, Nitya Ramanan, C. Richard A. Catlow (2025):  
 **Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study**  
