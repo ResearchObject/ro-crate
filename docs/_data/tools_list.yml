@@ -10,10 +10,10 @@
   level:
   url: https://describo.github.io
   subitems:
-      - name: Component - embed the Describo RO-Crate engine in your application
-        url: https://describo.github.io/docs/component/introduction.html
-      - name: Profiles - adapt describo to your needs
-        url: https://describo.github.io/docs/profiles/introduction.html
+    - name: Component - embed the Describo RO-Crate engine in your application
+      url: https://describo.github.io/docs/component/introduction.html
+    - name: Profiles - adapt describo to your needs
+      url: https://describo.github.io/docs/profiles/introduction.html
 
 - name: dmbon-assistant
   description: Data management assistant that publishes RO-Crate
@@ -241,3 +241,13 @@
   description: RO-Crate builder that uses RDF concepts.
   status: beta
   url: https://github.com/WEHI-SODA-Hub/RdfCrate
+
+- name: ro-crate-rs
+  description: A Rust library for defining RO-Crates. It can also be used in Python via the rocraters package.
+  status: alpha
+  url: https://github.com/intbio-ncl/ro-crate-rs
+  subitems:
+    - name: Rust library
+      url: https://github.com/intbio-ncl/ro-crate-rs
+    - name: Python wrapper
+      url: https://pypi.org/project/rocraters/
