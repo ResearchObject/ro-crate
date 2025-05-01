@@ -185,6 +185,13 @@ body {
         background-color: $dark;
         padding: 0.75rem;
         margin: 0 0.5rem 0 0.5rem;
+
+        &:hover {
+            background-color: $primary;
+            border: 2px solid $primary;
+            color: $black;
+
+        }
     }
 
     .featured-content {
