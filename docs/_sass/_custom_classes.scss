@@ -114,35 +114,42 @@ body {
             background-color: $light !important;
         }
     }
-    .card {
-        border-left: 0px solid $primary;
-        transition: $card-slide-transition;
-        &:hover {
-            border-left-width: 6px;
-            margin-right: -6px;
-        }
+}
 
-        .card-header {
-            padding-top: 15px;
-            padding-bottom: 0;
-            a:hover {
-                text-decoration: none;
-            }
-            h3 {
-                font-size: 1.2rem;
-                font-weight: bold;
-                display: inline;
-                vertical-align: super;
-            }
-        }
-        button {
-            background-color: $white;
-        }
-        .card-footer {
-            padding-top: 0;
+.card {
+    border-left: 0px solid $primary;
+    transition: $card-slide-transition;
+
+    a {
+        text-decoration: none;
+    }
+
+    &:hover {
+        border-left-width: 6px;
+        margin-right: -6px;
+    }
+
+    .card-header {
+        padding-top: 15px;
+        padding-bottom: 0;
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: inline;
+            vertical-align: super;
         }
     }
+
+    button {
+        background-color: $white;
+    }
+
+    .card-footer {
+        padding-top: 0;
+    }
 }
+
 
 
 /*-----Top navigation-----*/
