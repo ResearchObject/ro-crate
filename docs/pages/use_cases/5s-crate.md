@@ -39,3 +39,11 @@ The profile uses the [BagIt](https://www.researchobject.org/ro-crate/1.1/appendi
 * Profile report <https://doi.org/10.5281/zenodo.10376350>:
 * Workflow Run Crate paper: <https://doi.org/10.48550/arXiv.2312.07852>:
 * Example: [example-result.bagit.zip](https://trefx.uk/5s-crate/0.4/example-result.bagit.zip) [ro-crate-metadata.json](https://trefx.uk/5s-crate/0.4/example-hutch/data/ro-crate-metadata.json) [ro-crate-preview.html](https://trefx.uk/5s-crate/0.4/example-result/data/ro-crate-preview.html)
+
+## Publications
+
+Stian Soiland-Reyes, Stuart Wheater, Thomas Giles, Jonathan Couldridge, Philip Quinlan, Carole Goble (2025):  
+**The Five Safes RO-Crate: FAIR Digital Objects for Trusted Research Environments for Health Data Research**  
+_International FAIR Digital Objects Implementation Summit 2024_, Berlin, Germany, 2024-03-20/--21.  
+_Open Conference Proceedings_ **5**  
+<https://doi.org/10.52825/ocp.v5i.1419>
