@@ -46,66 +46,66 @@ _Data Science_ **5**(2)
 ### 2025
 
 Jonas Grieb, Claus Weiland, Alexander Wolodkin, Julian Lopez Gordillo, Sharif Islam (2025):  
-**Implementing FAIR Semantic Mappings Leveraging on RO-Crate**  
+[**Implementing FAIR Semantic Mappings Leveraging on RO-Crate**](https://doi.org/10.52825/ocp.v5i.1179)  
 _International FAIR Digital Objects Implementation Summit 2024_ ([FDO2024](https://fairdo.org/fdof-summit-2024/)), Berlin, Germany, 2024-03-20/--21.  
 _Open Conference Proceedings_ **5**  
 <https://doi.org/10.52825/ocp.v5i.1179>
 
 Julian Lopez Gordillo, Sharif Islam (2025):  
-**FDO As an Interoperability Framework for the Biodiversity Digital Twin Project**  
+[**FDO As an Interoperability Framework for the Biodiversity Digital Twin Project**](https://doi.org/10.52825/ocp.v5i.1190)  
 _International FAIR Digital Objects Implementation Summit 2024_ ([FDO2024](https://fairdo.org/fdof-summit-2024/)), Berlin, Germany, 2024-03-20/--21.  
 _Open Conference Proceedings_ **5**  
 <https://doi.org/10.52825/ocp.v5i.1190>
 
 Rory Macneil, Tilo Mathes (2025):  
-**Implementation of PIDs and Plans for FDOs in the RSpace Digital Research Platform**  
+[**Implementation of PIDs and Plans for FDOs in the RSpace Digital Research Platform**](https://doi.org/10.52825/ocp.v5i.1098)  
 _International FAIR Digital Objects Implementation Summit 2024_ ([FDO2024](https://fairdo.org/fdof-summit-2024/)), Berlin, Germany, 2024-03-20/--21.  
 _Open Conference Proceedings_ **5**  
 <https://doi.org/10.52825/ocp.v5i.1098>
 
 Rohitha Ravinder, Nelson Quiñones, Dietrich Rebholz-Schuhmann, Leyla Jael Castro (2025):  
-**A Lightweight Approach to FDOs via Bioschemas, RO-Crate and Signposting on GitHub Pages**  
+[**A Lightweight Approach to FDOs via Bioschemas, RO-Crate and Signposting on GitHub Pages**](https://doi.org/10.52825/ocp.v5i.1188)  
 _International FAIR Digital Objects Implementation Summit 2024_ ([FDO2024](https://fairdo.org/fdof-summit-2024/)), Berlin, Germany, 2024-03-20/--21.  
 _Open Conference Proceedings_ **5**  
 <https://doi.org/10.52825/ocp.v5i.1188>
 
-Markus Stocker, Björn Grüning, Tomasz Miksa, Claudia Biniossek, Dirk Betz (2025):
-**FAIR Digital Objects for Seamless Research Data Management for Researchers and Higher Education Institutions**  
+Markus Stocker, Björn Grüning, Tomasz Miksa, Claudia Biniossek, Dirk Betz (2025):  
+[**FAIR Digital Objects for Seamless Research Data Management for Researchers and Higher Education Institutions**](https://doi.org/10.52825/ocp.v5i.1045)  
 _International FAIR Digital Objects Implementation Summit 2024_ ([FDO2024](https://fairdo.org/fdof-summit-2024/)), Berlin, Germany, 2024-03-20/--21.  
 _Open Conference Proceedings_ **5**  
 <https://doi.org/10.52825/ocp.v5i.1045>
 
 Bruno de Paula Kinoshita, Edgar Garriga Nogales, Manuel Giménez de Castro Marciani, Miguel Castrillo Melguizo (2025):  
-**FAIR Digital Objects in Autosubmit Workflows**  
+[**FAIR Digital Objects in Autosubmit Workflows**](https://doi.org/10.52825/ocp.v5i.1416)  
 _International FAIR Digital Objects Implementation Summit 2024_ ([FDO2024](https://fairdo.org/fdof-summit-2024/)), Berlin, Germany, 2024-03-20/--21.  
 _Open Conference Proceedings_ **5**  
 <https://doi.org/10.52825/ocp.v5i.1416>
 
 Stian Soiland-Reyes, Stuart Wheater, Thomas Giles, Jonathan Couldridge, Philip Quinlan, Carole Goble (2025):  
-**The Five Safes RO-Crate: FAIR Digital Objects for Trusted Research Environments for Health Data Research**  
+[**The Five Safes RO-Crate: FAIR Digital Objects for Trusted Research Environments for Health Data Research**](https://doi.org/10.52825/ocp.v5i.1419)  
 _International FAIR Digital Objects Implementation Summit 2024_ ([FDO2024](https://fairdo.org/fdof-summit-2024/)), Berlin, Germany, 2024-03-20/--21.  
 _Open Conference Proceedings_ **5**  
 <https://doi.org/10.52825/ocp.v5i.1419>
 
 Stian Soiland-Reyes, Peter Sefton, Simone Leo, Leyla Jael Castro, Claus Weiland, Herbert Van de Sompel (2025):  
-**Practical Webby FDOs With RO-Crate and FAIR Signposting: Experiences and Lessons Learned**  
+[**Practical Webby FDOs With RO-Crate and FAIR Signposting: Experiences and Lessons Learned**](https://doi.org/10.52825/ocp.v5i.1273)  
 _International FAIR Digital Objects Implementation Summit 2024_ ([FDO2024](https://fairdo.org/fdof-summit-2024/)), Berlin, Germany, 2024-03-20/--21.  
 _Open Conference Proceedings_ **5**  
 <https://doi.org/10.52825/ocp.v5i.1273>
 
 Abraham Nieva de la Hidalga, Leandro Liborio, Patrick Austin, Subindev Devadasan, Tom Underwood, Alexander Belozerov, Martin Wilding, Nitya Ramanan, C. Richard A. Catlow (2025):  
-**Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study**  
+[**Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study**](https://doi.org/10.1002/cctc.202401676)  
 _ChemCatChem_:e202401676  
 <https://doi.org/10.1002/cctc.202401676>
 
 Sebastian Beier, Daniel Arend, Daniel Bauer, Marco Brandizi, Dominik Brilhaus, Eli Chadwick, Vera Clemens, Michael R. Crusoe, Manuel Feser, Jonas Grieb, Xiaoming Hu, Abigail Miller, Timo Mühlhaus, Stuart Owen, Maja Rey, Gabriel Schneider, Julian Schneider, Kevin Schneider, Heinrich Lukas Weil, Florian Wetzels (2025):  
-**BioHackEU24 report: Creating user benefit from ARC-ISA RO-Crate machine-actionability & Increasing FAIRness of digital agrosystem resources by extending Bioschemas**  
+[**BioHackEU24 report: Creating user benefit from ARC-ISA RO-Crate machine-actionability & Increasing FAIRness of digital agrosystem resources by extending Bioschemas**](https://doi.org/10.37044/osf.io/x9d6b_v1)  
 _BioHackrXiv_  
 <https://doi.org/10.37044/osf.io/x9d6b_v1>
 
-Alexander Rogers, Famke Bäuerle, Martin Beracochea, Alireza Heidari, Matt Burridge, Benedikt Osterholz, Alexander Sczyrba, Mahfouz Shehu, Tom Tubbesing, and Anil Wipat (2025):
-**Enhancing multi-omic analyses through a federated microbiome analysis service**
-_BioHackrXiv_
+Alexander Rogers, Famke Bäuerle, Martin Beracochea, Alireza Heidari, Matt Burridge, Benedikt Osterholz, Alexander Sczyrba, Mahfouz Shehu, Tom Tubbesing, and Anil Wipat (2025):  
+[**Enhancing multi-omic analyses through a federated microbiome analysis service**](https://doi.org/10.37044/osf.io/3x274)  
+_BioHackrXiv_  
 <https://doi.org/10.37044/osf.io/3x274>
 
 ### 2024
