@@ -58,7 +58,7 @@ RO-Crate is used in BioDT to create FAIR exports of workflow executions, as well
 ### Resources
 
 * [BioDT WorkflowHub space](https://workflowhub.eu/programmes/22)
-* [Example Workflow Run Crate for Crop Wild Relatives pDT](https://workflow.earth/dataset/cwr/0eef2088c6001ec2d2ac)
+* [Example Workflow Run Crate for Crop Wild Relatives pDT](https://workflow.earth/dataset/cwr/10b84c65d5ca549fe00f) (and corresponding [workflow](https://workflowhub.eu/workflows/1261?version=1))
 * [Practical web-based FDOs with RO-Crate and FAIR Signposting](https://zenodo.org/records/10892090):  Training material featuring a demonstration of RO-Crate and FAIR Signposting in biodiversity
 * [BioDT - FAIR](https://github.com/BioDT/biodt-fair): Examples, resources, and other materials related to FAIR in BioDT
 * [Bridging Data Standards and FAIR Principles in biodiversity digital twinning: Prototyping, Challenges, Lessons Learned, and Future Plans](https://youtu.be/2IJKRQF8H-4?t=2806): talk recording by Sharif Islam
