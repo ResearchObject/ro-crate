@@ -121,6 +121,7 @@ The _RO-Crate_ team is:
 * Pascal Su <https://orcid.org/0000-0001-5614-962X>
 * Andrea Davanzo <https://orcid.org/0009-0000-5170-1737>
 * Meznah Aloqalaa <https://orcid.org/0000-0002-1382-3896>
+* Pierre-Marie Allard <https://orcid.org/0000-0003-3389-2191>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)!
 
