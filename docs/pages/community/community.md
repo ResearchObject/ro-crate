@@ -143,6 +143,10 @@ There are also regular [regional drop-in calls](https://s.apache.org/ro-crate-re
 
 Members of the RO-Crate team can often be found presenting at open science conferences and events: see the list of [recent and upcoming events](outreach#upcoming-and-recent-events) for details.
 
+See the [RO-Crate Community Calendar](https://calendar.google.com/calendar/embed?src=b53932af95f34472d7253e3f54e7e11ab1bbe3bf4477c5c60e94db75e08d151e%40group.calendar.google.com&ctz=Europe%2FLondon) embedded below to import events to your own calendar (or [download the whole calendar as .ics](https://calendar.google.com/calendar/ical/b53932af95f34472d7253e3f54e7e11ab1bbe3bf4477c5c60e94db75e08d151e%40group.calendar.google.com/public/basic.ics)).
+
+<iframe src="https://calendar.google.com/calendar/embed?src=b53932af95f34472d7253e3f54e7e11ab1bbe3bf4477c5c60e94db75e08d151e%40group.calendar.google.com&ctz=Europe%2FLondon" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
 ## Mailing list
 
 The RO-Crate Community has a low-traffic public [RO-Crate mailing list](https://lists.elixir-europe.org/mailman/listinfo/ro-crate_elixir-europe.org), used for announcements and general enquiries.
