@@ -33,7 +33,7 @@ versions:
         url: /specification/1.1/appendix/implementation-notes.html
       - title: RO-Crate JSON-LD
         url: /specification/1.1/appendix/jsonld.html
-- title: RO-Crate 1.2 RC1 (release canidate)
+- title: RO-Crate 1.2 RC1 (release candidate)
   url: /specification/1.2-RC1/index.html
   subitems:
   - title: Introduction
