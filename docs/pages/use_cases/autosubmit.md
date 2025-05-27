@@ -31,3 +31,11 @@ workflows executed in HPC environments, like
 [BSC's MareNostrum](https://www.bsc.es/marenostrum/marenostrum).
 The execution logs include metrics from models, Slurm jobs, energy usage,
 dependency versions, and more. Now more accessible through RO-Crate.
+
+## Publications
+
+Bruno de Paula Kinoshita, Edgar Garriga Nogales, Manuel Giménez de Castro Marciani, Miguel Castrillo Melguizo (2025):  
+**FAIR Digital Objects in Autosubmit Workflows**  
+_International FAIR Digital Objects Implementation Summit 2024_, Berlin, Germany, 2024-03-20/--21.  
+_Open Conference Proceedings_ **5**  
+<https://doi.org/10.52825/ocp.v5i.1416>
