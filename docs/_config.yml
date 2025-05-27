@@ -24,6 +24,8 @@ exclude:
   - Gemfile*
   - LICENSE
 
+date_format: "%-d %B %Y"
+
 defaults:
   - scope:
       path: ""
@@ -68,6 +70,12 @@ defaults:
       search_exclude: false
 
   - scope:
+      path: "_posts"
+    values:
+      layout: "post"
+      sidebar: community
+
+  - scope:
       path: "pages/about"
     values:
       layout: "default"
@@ -106,5 +114,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-github-metadata
+  - jekyll-feed
   - jemoji
   - webrick
