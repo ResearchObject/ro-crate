@@ -10,6 +10,9 @@ description:
 
 remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@2.4.0
 
+url: https://www.researchobject.org # if building on a fork, change this to your own GH pages url
+baseurl: /ro-crate
+
 include:
   - pages
   - pages/specification/*
