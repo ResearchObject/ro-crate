@@ -135,9 +135,9 @@ b0556450…8802  bag-info.txt
 000b27e3…c52e  manifest-sha512.txt
 ```
 
-{% include callout.html type="warning" content='The BagIt manifest is intended to detect "bit rot" and accidental damage,
-it does not provide proof the RO-Crate has not been deliberately
-tampered with, as a malicious actor can also update the checksums.' %}
+{% include callout.html type="warning" content="The BagIt manifest is intended to detect \"bit rot\" and accidental damage,
+it does not provide proof the RO-Crate has not been deliberately tampered with, as a malicious actor can also update the checksums."
+%}
 
 Guarding against such scenarious would require additional cryptographic
 measures, e.g.  

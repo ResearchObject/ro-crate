@@ -180,7 +180,7 @@ RO-Crate's `File` is an alias for schema.org type [MediaObject], any of its prop
 
 A `File` entity MAY have an `@id` that is a local identifier beginning with `#`, in which case it is **not** considered to be a Data Entity, though it MAY still be linked to the _Root Data Entity_ via [hasPart]. This is useful for describing physical files which are deliberately not present, for example if they are expected to be created by running a process. In this case, the `localPath` property SHOULD be used to indicate that a `File` could be found at that path in some circumstances.
 
-{% include callout.html type="note" content='It is up to implementers to decide whether to offer some form of URL "link checker" service for [Web-based Data Entities](#web-based-data-entities) for both attached and detached RO-Crate Packages. If `contentUrl` has more than one value, then a checker service SHOULD try each provided value until one resolves and returns a correct [contentSize].' %}
+{% include callout.html type="note" content="It is up to implementers to decide whether to offer some form of URL \"link checker\" service for [Web-based Data Entities](#web-based-data-entities) for both attached and detached RO-Crate Packages. If `contentUrl` has more than one value, then a checker service SHOULD try each provided value until one resolves and returns a correct [contentSize]." %}
 
 
 
@@ -317,7 +317,8 @@ Web-based entities MAY use the property [localPath] to indicate a path that can 
 
 
 
-{% include callout.html type="note" content="Do not use web-based URI identifiers for files which _are_ present in the crate root, see [below](#data-entities-in-an-attached-ro-crate-that-are-also-on-the-web)." %}
+{% include callout.html type="note" content="Do not use web-based URI identifiers for files which _are_ present in the crate root, see [below](#data-entities-in-an-attached-ro-crate-that-are-also-on-the-web)."
+%}
 
 ### Data entities in an _Attached RO-Crate_ that are also on the web
 
