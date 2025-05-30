@@ -51,6 +51,7 @@ The Data Entities can be further described by referencing [contextual entities](
 Where files and folders are represented as _Data Entities_ in the RO-Crate JSON-LD, these MUST be linked to, either directly or indirectly, from the [Root Data Entity](root-data-entity) using the [hasPart] property. Directory hierarchies MAY be represented with nested [Dataset] _Data Entities_, or the Root Data Entity MAY refer to files anywhere in the hierarchy using [hasPart].
 
 _Data Entities_ representing files MUST have `"File"` as a value for `@type`. `File` is an RO-Crate alias for <http://schema.org/MediaObject>. The term _File_ includes:
+
 -  Resources which are available locally (applicable only in the context of _Attached RO-Crate Packages_) and
 -  [Web-based Data Entities](#web-based-data-entities) which can be downloaded and saved as a file. 
 
