@@ -38,6 +38,7 @@ The primary purpose for RO-Crate is to gather and describe a set of _Data Entiti
 * Folders (or directories) of files -- represented using the type `Dataset`.
 
 An entity which has `File` or `Dataset` as one of its `@type` values:
+
 * Is considered to be a _Data Entity_ if its `@id` is an absolute URI or a relative URI.
 * MAY have an `@id` which is a local identifier beginning with a `#`, in which case it is **not** considered to be a `Data Entity`.
 
