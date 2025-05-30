@@ -382,7 +382,8 @@ Similarly, the _RO-Crate Root_ entity (or a reference to another RO-Crate as a `
   {
     "@id": "./",
     "@type": "Dataset",
-    "identifier": "https://doi.org/10.48546/workflowhub.workflow.775.1",
+    "identifier": {"@id": "https://doi.org/10.48546/workflowhub.workflow.775.1"},
+    "cite-as": "https://doi.org/10.48546/workflowhub.workflow.775.1",
     "name": "Research Object Crate for Jupyter Notebook Molecular Structure Checking",
     "distribution": {"@id": "https://workflowhub.eu/workflows/775/ro_crate?version=1"},
     "…": ""
