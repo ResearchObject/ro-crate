@@ -151,6 +151,7 @@ For example, RO-Crates can be used as containers for Schema.org-style vocabulari
 
 
 The following example shows how both `mainEntity` and `mentions` can be used together, in this case to describe a workflow with a test suite:
+
   * the `mainEntity` is the workflow file, a _Data Entity_
   * the test suite `#test1` is a _Contextual Entity_ highlighted using `mentions`.
 

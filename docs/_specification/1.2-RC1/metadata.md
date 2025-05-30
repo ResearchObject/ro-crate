@@ -130,6 +130,7 @@ From [Dublin Core Terms](http://purl.org/dc/terms/) RO-Crate uses:
 - `Standard` mapped to <http://purl.org/dc/terms/Standard>
 
 From the [IANA link relations] registry:
+
 - `cite-as` mapped to <http://www.iana.org/assignments/relation/cite-as> (defined by [RFC8574])
 
 These terms are being proposed by [Bioschemas profile ComputationalWorkflow 1.0-RELEASE][ComputationalWorkflow profile 1.0] and [FormalParameter 1.0-RELEASE][FormalParameter profile 1.0] to be integrated into Schema.org: 

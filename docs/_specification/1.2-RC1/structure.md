@@ -90,6 +90,7 @@ When processing an _Attached RO-Crate Package_ the _RO-Crate Metadata Document_ 
 
 
 An _Attached RO-Crate Package_ can be stored and published in multiple ways depending on its use:
+
 * On a typical hierarchical _file system_ (e.g. `/files/shared/crates/my-crate-01/`)
 * Exposed as a _Web resource_ within a folder structure (e.g. <https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/>)
 * [_Packaged_](appendix/implementation-notes#combining-with-other-packaging-schemes) within a ZIP file, [BagIt] archive or [OCFL] structure
