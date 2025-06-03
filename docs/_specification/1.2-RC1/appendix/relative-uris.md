@@ -446,8 +446,9 @@ WHERE {
 }
 ```
 
-{% include callout.html type="note" content="The query above will find _all_ Root Data Entities in the RDF graph. This is useful when querying RDF triple stores which contain many RO-Crates, but it also means that multiple results could be returned when the query is used on single RO-Crates which contain other [nested or referenced RO-Crates](https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html#referencing-other-ro-crates)."
-%}
+{% include callout.html type="note" content='The query above will find _all_ Root Data Entities in the RDF graph. 
+This is useful when querying RDF triple stores which contain many RO-Crates, but it also means that multiple results could be returned when the query is used on single RO-Crates which contain other [nested or referenced RO-Crates](https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html#referencing-other-ro-crates).
+&nbsp;' %}
 
 
 ## Parsing as RDF with a different RO-Crate Root

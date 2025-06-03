@@ -94,11 +94,11 @@ release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}
 	   > release/ro-crate-${TAG}.md
 	# Our own rendering of Note/Warning/Tip
 	sed -i -E 's/\{% include callout.html //g' release/ro-crate-${TAG}.md
-	sed -i -E 's/\" %}//g' release/ro-crate-${TAG}.md
-	sed -i -E 's/type=\"note\" content=\"/**Note**: /g' release/ro-crate-${TAG}.md
-	sed -i -E 's/type=\"warning\" content=\"/**Warning** :/g' release/ro-crate-${TAG}.md
-	sed -i -E 's/type=\"tip\" content=\"/**Tip**: /g' release/ro-crate-${TAG}.md
-	sed -i -E 's/type=\"important\" content=\"/**Important**: /g' release/ro-crate-${TAG}.md
+	sed -i -E "s/[\"'] %}//g" release/ro-crate-${TAG}.md  # note that this assumes the closing string-quote to be followed by «space»%} on the same line !
+	sed -i -E "s/type=[\"']note[\"'] content=[\"']/**Note**: /g" release/ro-crate-${TAG}.md
+	sed -i -E "s/type=[\"']warning[\"'] content=[\"']/**Warning** :/g" release/ro-crate-${TAG}.md
+	sed -i -E "s/type=[\"']tip[\"'] content=[\"']/**Tip**: /g" release/ro-crate-${TAG}.md
+	sed -i -E "s/type=[\"']important[\"'] content=[\"']/**Important**: /g" release/ro-crate-${TAG}.md
 	# remove any remaining lines beginning with {%
 	sed -i -E 's/\{%.*//g' release/ro-crate-${TAG}.md
 	# Skip intermediate table-of-contents
