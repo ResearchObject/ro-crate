@@ -2,10 +2,10 @@ name: "Build and Lint Site"
 
 on:
   push:
-    branches: [ "main"]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
-    
+    branches: ["main"]
+
 jobs:
   build-site:
     runs-on: ubuntu-latest
@@ -17,10 +17,10 @@ jobs:
       # dependencies
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.0"
+          ruby-version: "3.3"
       - uses: actions/setup-node@v4
         with:
-          node-version: '19'
+          node-version: "19"
       - name: Install dependencies
         working-directory: ./docs
         run: |
@@ -40,6 +40,7 @@ jobs:
           --ignore-files "/.*\/ro-crate-preview\.html/","/.*\/examples\/.*\/index\.html/" \
           --disable-external true \
           --enforce-https false \
+          --swap-urls '^/ro-crate/:/' \
           ./_site
 
       - name: Ensure no unexpected encoded HTML in output
