@@ -23,12 +23,12 @@ sidebar: spec
 
 The RO-Crate 1.2 specification has been **released**.
 
-* **[RO-Crate 1.2](1.2)** (current long term release)
-* [RO-Crate 1.1](1.1)
-* [RO-Crate 1.0](1.0) 
-* [RO-Crate 0.2](0.2)
+* **[RO-Crate 1.2](/specification/1.2/)** (current long term release)
+* [RO-Crate 1.1](/specification/1.1/)
+* [RO-Crate 1.0](/specification/1.0/) 
+* [RO-Crate 0.2](/specification/0.2/)
 * [DataCrate 1.0](https://github.com/UTS-eResearch/datacrate/blob/ba37cc707d48d3569663ab04f9d4f5c25dac6e34/spec/1.0/data_crate_specification_v1.0.md)
-* [ROLite Draft 0.1.0](0.1.0)  
+* [ROLite Draft 0.1.0](/specification/0.1.0/)  
  _Historical note_: After the initial draft, the community decided to base the specification on [DataCrate](https://github.com/UTS-eResearch/datacrate/), and changed the name from _ROLite_ to **RO-Crate**.
 
 [Feedback](https://github.com/researchobject/ro-crate/issues) and improvements are welcome! RO-Crate 1.2 is considered a _stable release_ with only minor fixes expected, current community work is towards RO-Crate 2, focusing on modularisation of the specification.
