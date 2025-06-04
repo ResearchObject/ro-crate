@@ -33,42 +33,42 @@ versions:
         url: /specification/1.1/appendix/implementation-notes.html
       - title: RO-Crate JSON-LD
         url: /specification/1.1/appendix/jsonld.html
-- title: RO-Crate 1.2 RC1 (release candidate)
-  url: /specification/1.2-RC1/index.html
+- title: RO-Crate 1.2
+  url: /specification/1.2/index.html
   subitems:
   - title: Introduction
-    url: /specification/1.2-RC1/introduction.html
+    url: /specification/1.2/introduction.html
   - title: Terminology
-    url: /specification/1.2-RC1/terminology.html
+    url: /specification/1.2/terminology.html
   - title: RO-Crate Structure
-    url: /specification/1.2-RC1/structure.html
+    url: /specification/1.2/structure.html
   - title: Metadata of the RO-Crate
-    url: /specification/1.2-RC1/metadata.html
+    url: /specification/1.2/metadata.html
   - title: Root Data Entity
-    url: /specification/1.2-RC1/root-data-entity.html
+    url: /specification/1.2/root-data-entity.html
   - title: Data Entities
-    url: /specification/1.2-RC1/data-entities.html
+    url: /specification/1.2/data-entities.html
   - title: Contextual Entities
-    url: /specification/1.2-RC1/contextual-entities.html
+    url: /specification/1.2/contextual-entities.html
   - title: The focus of an RO-Crate
-    url: /specification/1.2-RC1/crate-focus.html
+    url: /specification/1.2/crate-focus.html
   - title: Provenance of entities
-    url: /specification/1.2-RC1/provenance.html
+    url: /specification/1.2/provenance.html
   - title: Profiles
-    url: /specification/1.2-RC1/profiles.html
+    url: /specification/1.2/profiles.html
   - title: Workflows and scripts
-    url: /specification/1.2-RC1/workflows.html
+    url: /specification/1.2/workflows.html
   - title: Appendix
-    url: /specification/1.2-RC1/appendix/index.html
+    url: /specification/1.2/appendix/index.html
     subitems:
       - title: Changelog
-        url: /specification/1.2-RC1/appendix/changelog.html
+        url: /specification/1.2/appendix/changelog.html
       - title: Handling relative URI references
-        url: /specification/1.2-RC1/appendix/relative-uris.html
+        url: /specification/1.2/appendix/relative-uris.html
       - title: Implementation notes
-        url: /specification/1.2-RC1/appendix/implementation-notes.html
+        url: /specification/1.2/appendix/implementation-notes.html
       - title: RO-Crate JSON-LD
-        url: /specification/1.2-RC1/appendix/jsonld.html
+        url: /specification/1.2/appendix/jsonld.html
 - title: RO-Crate 1.2-DRAFT (draft for next release)
   url: /specification/1.2-DRAFT/index.html
   subitems:
