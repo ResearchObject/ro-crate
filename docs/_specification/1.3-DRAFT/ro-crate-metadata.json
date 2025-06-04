@@ -1,0 +1,2277 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.3-DRAFT/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.3-DRAFT"
+      },
+      "about": {
+        "@id": "https://w3id.org/ro/crate/1.3-DRAFT"
+      },
+      "license": {
+        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/crate/1.3-DRAFT",
+      "@type": [
+        "Dataset",
+        "Profile"
+      ],
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0001-8131-2150"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-3545-944X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9842-9718"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-9260-0753"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0454-7145"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4289-4922"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6565-5145"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1219-2137"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4806-5140"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-7370-4805"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5491-6431"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2961-9670"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-6190-122X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2036-8350"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8420-5254"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-3588-6257"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0309-604X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5711-4872"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-2130-0865"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3156-2105"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1130-2154"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0048-3300"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-1756-2128"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-7552-1009"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4929-1219"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1541-5631"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0337-8610"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6960-357X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0183-6910"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0223-1059"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3986-0510"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6022-9825"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-3468-0652"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1991-0533"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3910-0474"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3486-8193"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8172-8981"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8271-5429"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-9648-6484"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5432-2748"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1743-8300"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0522-5674"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2142-1731"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-9986-7223"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4929-7875"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-5383-6993"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6387-5988"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3883-4169"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5761-7533"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0792-8157"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8772-7904"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4196-3658"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2318-4477"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-1248-3594"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1498-6205"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9888-7954"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9156-9478"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0003-2024"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4565-9760"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-8940-4946"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2257-9127"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5526-7138"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0606-2512"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9228-2882"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0617-9219"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0679-4361"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8250-4074"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1361-7301"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3234-6762"
+        },
+        { "@id": "https://orcid.org/0000-0003-4216-302X"},
+        { "@id": "https://orcid.org/0000-0002-1880-0597"},
+        { "@id": "https://orcid.org/0000-0001-6712-6335"},
+        { "@id": "https://orcid.org/0000-0002-5934-8998"},
+        { "@id": "https://orcid.org/0000-0001-9261-8390"},
+        { "@id": "https://orcid.org/0000-0002-0035-6475"},
+        { "@id": "https://orcid.org/0000-0001-9447-460X"},
+        { "@id": "https://orcid.org/0000-0001-7760-1240"},
+        { "@id": "https://orcid.org/0000-0001-9925-1560"},
+        { "@id": "https://orcid.org/0000-0003-4028-811X"},
+        { "@id": "https://orcid.org/0000-0003-2196-5015"},
+        { "@id": "https://orcid.org/0009-0002-6541-4637"},
+        { "@id": "https://orcid.org/0009-0002-8209-1999"},
+        { "@id": "https://orcid.org/0000-0001-7218-0176"},
+        { "@id": "https://orcid.org/0000-0003-3482-0325"}        
+      ],
+      "cite-as": "https://doi.org/DOI",
+      "citation": {
+        "@id": "https://doi.org/10.3233/DS-210053"
+      },
+      "datePublished": "UNPUBLISHED",
+      "description": "Profile Crate for RO-Crate specification. This specification defines a method, known as RO-Crate (Research Object Crate), of organizing file-based data with associated metadata, using linked data principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata. \n\nThe core of RO-Crate is a JSON-LD file, the RO-Crate Metadata File, named ro-crate-metadata.json. This file contains structured metadata about the dataset as a whole (the Root Data Entity) and, optionally, about some or all of its files. This provides a simple way to, for example, assert the authors (e.g. people, organizations) of the RO-Crate or one its files, or to capture more complex provenance for files, such as how they were created using software and equipment. \n\nWhile providing the formal specification for RO-Crate, this document also aims to be a practical guide for software authors to create tools for generating and consuming research data packages, with explanation by examples.",
+      "hasPart": [
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/"
+        },
+        {
+          "@id": "https://w3id.org/ro/crate/1.3-DRAFT/context"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.2.0/"
+        },
+        {
+          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html"
+        },
+        {
+          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf"
+        },
+        {
+          "@id": "http://www.w3.org/ns/dx/prof#ResourceDescriptor"
+        },
+        {
+          "@id": "http://www.w3.org/ns/dx/prof#ResourceRole"
+        },
+        {
+          "@id": "http://www.w3.org/ns/dx/prof#Profile"
+        },
+        {
+          "@id": "http://www.w3.org/ns/dx/prof#hasArtifact"
+        },
+        {
+          "@id": "http://www.w3.org/ns/dx/prof#hasResource"
+        },
+        {
+          "@id": "http://www.w3.org/ns/dx/prof#hasRole"
+        },
+        {
+          "@id": "http://www.iana.org/assignments/relation/cite-as"
+        },
+        {
+          "@id": "http://pcdm.org/models#Object"
+        },
+        {
+          "@id": "http://pcdm.org/models#Collection"
+        },
+        {
+          "@id": "http://pcdm.org/models#File"
+        },
+        {
+          "@id": "http://pcdm.org/models#hasMember"
+        },
+        {
+          "@id": "http://pcdm.org/models#hasFile"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        },
+        {
+          "@id": "http://schema.org/Class"
+        },
+        {
+          "@id": "http://schema.org/Property"
+        },
+        {
+          "@id": "http://www.opengis.net/ont/geosparql#Geometry"
+        },
+        {
+          "@id": "http://www.opengis.net/ont/geosparql#asWKT"
+        },
+        {
+          "@id": "https://codemeta.github.io/terms/"
+        },
+        { 
+          "@id": "https://bioschemas.org/FormalParameter"
+        },
+        { 
+          "@id": "https://bioschemas.org/ComputationalWorkflow"
+        },
+        { 
+          "@id": "http://schema.org/defaultValue"
+        },  
+        { 
+          "@id": "http://schema.org/valueRequired"
+        },
+        { 
+          "@id": "https://bioschemas.org/properties/input"
+        },
+        { 
+          "@id": "https://bioschemas.org/properties/output"
+        },  
+        {
+          "@id": "http://purl.org/dc/terms/conformsTo"
+        },
+        {
+          "@id": "https://w3id.org/ro/terms#localPath"
+        }
+      ],
+      "identifier": {"@id": "https://doi.org/DOI"},      
+      "isBasedOn": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      },
+      "isPartOf": {
+        "@id": "https://w3id.org/ro/crate/"
+      },
+      "isProfileOf": [
+        {
+          "@id": "http://www.w3.org/TR/2014/REC-json-ld-20140116/"
+        },
+        {
+          "@id": "http://www.w3.org/ns/json-ld#flattened"
+        },
+        {
+          "@id": "https://schema.org/docs/releases.html#v22.0"
+        }
+      ],
+      "license": {
+        "@id": "https://www.apache.org/licenses/LICENSE-2.0"
+      },
+      "maintainer": {
+        "@id": "https://www.researchobject.org/ro-crate/community"
+      },
+      "name": "RO-Crate specification 1.2",
+      "publisher": {
+        "@id": "https://www.researchobject.org/"
+      },
+      "version": "TAG",
+      "hasResource": [
+        {
+          "@id": "#vocabulary-schema"
+        },
+        {
+          "@id": "#vocabulary-pcdm"
+        },
+        {
+          "@id": "#vocabulary-prof"
+        },
+        {
+          "@id": "#vocabulary-prof-roles"
+        },
+        {
+          "@id": "#vocabulary-rdfs"
+        },
+        {
+          "@id": "#vocabulary-geosparql"
+        },
+        {
+          "@id": "#vocabulary-codemeta"
+        },
+        {
+          "@id": "#specification"
+        },
+        {
+          "@id": "#example-rainfall"
+        }
+      ]
+    },
+    {
+      "@id": "http://datasciencehub.net/",
+      "@type": "Journal",
+      "issn": "2451-8492",
+      "name": "Data Science",
+      "url": "http://datasciencehub.net/"
+    },
+    {
+      "@id": "http://pcdm.org/models#",
+      "@type": "DefinedTermSet",
+      "name": "Portland Common Data Model",
+      "sameAs": "https://pcdm.org/2016/04/18/models",
+      "version": "2016/04/18"
+    },
+    {
+      "@id": "http://pcdm.org/models#Collection",
+      "@type": ["DefinedTerm", "Class"],
+      "inDefinedTermSet": {
+        "@id": "http://pcdm.org/models#"
+      },
+      "name": "Repository collection",
+      "termCode": "RepositoryCollection"
+    },
+    {
+      "@id": "http://pcdm.org/models#File",
+      "@type": ["DefinedTerm", "Class"],
+      "inDefinedTermSet": {
+        "@id": "http://pcdm.org/models#"
+      },
+      "name": "Repository file",
+      "termCode": "RepositoryFile"
+    },
+    {
+      "@id": "http://pcdm.org/models#Object",
+      "@type": ["DefinedTerm", "Class"],
+      "inDefinedTermSet": {
+        "@id": "http://pcdm.org/models#"
+      },
+      "name": "Repository object",
+      "termCode": "RepositoryObject"
+    },
+    {
+      "@id": "http://pcdm.org/models#hasFile",
+      "@type": ["DefinedTerm", "Property"],
+      "inDefinedTermSet": {
+        "@id": "http://pcdm.org/models#"
+      },
+      "name": "has file",
+      "termCode": "hasFile"
+    },
+    {
+      "@id": "http://pcdm.org/models#hasMember",
+      "@type": ["DefinedTerm", "Property"],
+      "inDefinedTermSet": {
+        "@id": "http://pcdm.org/models#"
+      },
+      "name": "has member",
+      "termCode": "hasMember"
+    },
+    {      
+      "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
+      "@type": "DefinedTerm",
+      "name": "preferred namespace prefix",
+      "description": "The preferred namespace prefix to use when using terms from this vocabulary in an document.",
+      "url": "https://vocab.org/vann/#preferredNamespacePrefix"
+    },
+    {
+      "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
+      "@type": "DefinedTerm",
+      "name": "preferred namespace URI",
+      "description": "The preferred namespace URI to use when using terms from this vocabulary in an document",
+      "url": "https://vocab.org/vann/#preferredNamespaceUri"
+    },
+    {
+      "@id": "https://schema.org/docs/releases.html#v22.0",
+      "@type": ["DefinedTermSet", "Standard"],
+      "name": "Schema.org vocabulary (http prefix)",
+      "vann:preferredNamespaceUri": "http://schema.org/",
+      "version": "22.0",
+      "url": "https://schema.org/docs/developers.html"
+    },
+    {
+      "@id": "http://www.iana.org/assignments/relation/cite-as",
+      "@type": ["DefinedTerm","Property"],
+      "inDefinedTermSet": {
+        "@id": "https://www.iana.org/assignments/link-relations/"
+      },
+      "name": "Cite as",
+      "termCode": "cite-as",
+      "url": "https://doi.org/10.17487/RFC8574"
+    },
+    {
+      "@id": "https://www.w3.org/TR/rdf-schema/",
+      "@type": "Standard",
+      "name": "RDF Schema (rdfs)",
+      "hasPart": {"@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"}
+    },
+    {
+      "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "@type": "DefinedTermSet",
+      "url": "https://www.w3.org/TR/rdf-schema/",
+      "vann:preferredNamespacePrefix": "rdfs",
+      "vann:preferredNamespaceUri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    },
+    {
+      "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class",
+      "@type": ["DefinedTerm","rdfs:Class"],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      },
+      "name": "Class (rdfs)",
+      "description": "Class definition",
+      "url": "https://www.w3.org/TR/rdf-schema/#ch_class"
+    },
+    {
+      "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": ["DefinedTerm","rdfs:Class"],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      },
+      "name": "Property (rdfs)",
+      "description": "Property definition, typically with domainIncludes and rangeIncludes",
+      "url": "https://www.w3.org/TR/rdf-schema/#ch_property"
+    },
+    {
+      "@id": "http://schema.org/Class",
+      "@type": ["DefinedTerm","Class"],
+      "inDefinedTermSet": {
+        "@id": "https://schema.org/docs/releases.html#v22.0"
+      },
+      "name": "Class (schema.org)",
+      "description": "Class reference, as indicated by @id url or inDefinedTermSet"
+    },
+    {
+      "@id": "http://schema.org/Property",
+      "@type": ["DefinedTerm","Class"],
+      "inDefinedTermSet": {
+        "@id": "https://schema.org/docs/releases.html#v22.0"
+      },
+      "name": "Property (schema.org)",
+      "description": "Property reference, as indicated by @id url or inDefinedTermSet"      
+    },
+    { 
+      "@id": "http://schema.org/MediaObject",
+      "@type": "DefinedTerm",
+      "inDefinedTermSet": {
+        "@id": "http://schema.org/version/15.0/"
+      },
+      "name": "MediaObject",
+      "termCode": "File",
+      "description": "In RO-Crate, the type File is an alias for MediaObject in schema.org"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof",
+      "@type": "DefinedTermSet",
+      "name": "Profiles Vocabulary",
+      "sameAs": "http://www.w3.org/ns/dx/prof/1.0",
+      "url": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/",
+      "version": "1.0"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof#Profile",
+      "@type": ["DefinedTerm","Class"],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/ns/dx/prof"
+      },
+      "name": "Profile",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Class:Profile",
+      "termCode": "Profile"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof#ResourceDescriptor",
+      "@type": ["DefinedTerm","Class"],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/ns/dx/prof"
+      },
+      "name": "Resource descriptor",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Class:ResourceDescriptor",
+      "termCode": "ResourceDescriptor"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof#ResourceRole",
+      "@type": ["DefinedTerm","Class"],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/ns/dx/prof"
+      },
+      "name": "Resource role",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Class:ResourceRole",
+      "termCode": "ResourceRole"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof#hasArtifact",
+      "@type": ["DefinedTerm","Property"],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/ns/dx/prof"
+      },
+      "name": "has artifact",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasArtifact",
+      "termCode": "hasArtifact"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof#hasResource",
+      "@type": ["DefinedTerm","Property"],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/ns/dx/prof"
+      },
+      "name": "has resource",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasResource",
+      "termCode": "hasResource"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof#hasRole",
+      "@type": ["DefinedTerm","Property"],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/ns/dx/prof"
+      },
+      "name": "has role",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Property:hasRole",
+      "termCode": "hasRole"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof#role/",
+      "@type": "DefinedTermSet",
+      "hasDefinedTerm": [
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/constraints"
+        },
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/example"
+        },
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/guidance"
+        },
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/mapping"
+        },
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/schema"
+        },
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/specification"
+        },
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/validation"
+        },
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+        }
+      ],
+      "name": "Resource Roles vocabulary",
+      "url": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#resource-roles-vocab"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof/role/constraints",
+      "@type": ["DefinedTerm","ResourceRole"],
+      "description": "Descriptions of obligations, limitations or extensions that the profile defines",
+      "name": "Constraints",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:constraints"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof/role/example",
+      "@type": ["DefinedTerm","ResourceRole"],
+      "description": "Sample instance data conforming to the profile",
+      "name": "Example",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:example"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof/role/guidance",
+      "@type": ["DefinedTerm","ResourceRole"],
+      "description": "Documents, in human-readable form, how to use the profile",
+      "name": "Guidance",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:guidance"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof/role/mapping",
+      "@type": ["DefinedTerm","ResourceRole"],
+      "description": "Describes conversions between two specifications",
+      "name": "Mapping",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:mapping"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof/role/schema",
+      "@type": ["DefinedTerm","ResourceRole"],
+      "description": "Machine-readable structural descriptions of data defined by the profile",
+      "name": "Schema",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:schema"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof/role/specification",
+      "@type": ["DefinedTerm","ResourceRole"],
+      "description": "Defining the profile in human-readable form",
+      "name": "Specification",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:specification"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof/role/validation",
+      "@type": ["DefinedTerm","ResourceRole"],
+      "description": "Supplies instructions about how to verify conformance of data to the profile",
+      "name": "Validation",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:validation"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary",
+      "@type": ["DefinedTerm","ResourceRole"],
+      "description": "Defines terms used in the profile specification",
+      "name": "Vocabulary",
+      "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:vocabulary"
+    },
+    {
+      "@id": "http://www.opengis.net/ont/geosparql#Geometry",
+      "@type": "DefinedTerm",
+      "description": "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS).",
+      "name": "Geometry",
+      "termCode": "Geometry",
+      "sameAs": "https://opengeospatial.github.io/ogc-geosparql/geosparql11/#Geometry",
+      "inDefinedTermSet": {
+        "@id": "http://www.opengis.net/ont/geosparql#"
+      }
+    },
+    {
+      "@id": "http://www.opengis.net/ont/geosparql#asWKT",
+      "@type": "DefinedTerm",
+      "description": "The WKT (Well-Known Text) serialization (ISO13249) of a Geometry.",
+      "name": "Geometry",
+      "termCode": "asWKT",
+      "citation": { "@id": "https://portal.ogc.org/files/?artifact_id=25355" },
+      "sameAs": "https://opengeospatial.github.io/ogc-geosparql/geosparql11/#asWKT",
+      "inDefinedTermSet": {
+        "@id": "http://www.opengis.net/ont/geosparql#"
+      }
+    },
+    {
+      "@id": "https://portal.ogc.org/files/?artifact_id=25355",
+      "@type": "CreativeWork",
+      "name": "OpenGIS Implementation Specification for Geographic information – Simple feature access – Part 1: Common architecture",
+      "version": "1.2.1",
+      "url": "https://www.ogc.org/standard/sfa/"
+    },
+    {
+      "@id": "http://www.opengis.net/ont/geosparql#",
+      "@type": "DefinedTermSet",
+      "name": "GeoSPARQL ontology",
+      "version": "1.1",
+      "sameAs": "https://opengeospatial.github.io/ogc-geosparql/geosparql11/",
+      "url": "https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html"
+    },
+    {
+      "@id": "http://www.w3.org/ns/json-ld#Context",
+      "@type": "DefinedTerm",
+      "name": "JSON-LD Context",
+      "url": "https://www.w3.org/TR/json-ld/"
+    },
+    {
+      "@id": "https://codemeta.github.io/terms/",
+      "@type": ["DefinedTermSet", "Profile"],
+      "name": "Codemeta Terms",
+      "isPartOf": {
+        "@id": "https://w3id.org/codemeta/3.0"
+      },
+      "url": "https://codemeta.github.io/terms/",
+      "version": "3.0",
+      "hasDefinedTerm": [
+        { "@id": "https://codemeta.github.io/terms/softwareSuggestions" },
+        { "@id": "https://codemeta.github.io/terms/continuousIntegration" },
+        { "@id": "https://codemeta.github.io/terms/buildInstructions" },
+        { "@id": "https://codemeta.github.io/terms/developmentStatus" },
+        { "@id": "https://codemeta.github.io/terms/embargoEndDate" },
+        { "@id": "https://codemeta.github.io/terms/readme" },
+        { "@id": "https://codemeta.github.io/terms/issueTracker" },
+        { "@id": "https://codemeta.github.io/terms/referencePublication" },
+        { "@id": "https://codemeta.github.io/terms/hasSourceCode" },
+        { "@id": "https://codemeta.github.io/terms/isSourceCodeOf" }
+      ]
+    },
+    {
+      "@id": "https://codemeta.github.io/terms/softwareSuggestions",
+      "@type": ["DefinedTerm", "rdf:Property"],
+      "name": "softwareSuggestions",
+      "termCode": "softwareSuggestions",
+      "description": "Optional dependencies , e.g. for optional features, code development, etc. ",
+      "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+      "rangeIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+      "sameAs": "https://w3id.org/codemeta/terms/softwareSuggestions"
+    },
+    {
+      "@id": "https://codemeta.github.io/terms/continuousIntegration",
+      "@type": ["DefinedTerm", "rdf:Property"],
+      "name": "continuousIntegration",
+      "termCode": "continuousIntegration",
+      "description": "Link to continuous integration service ",
+      "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+      "rangeIncludes": {"@id": "http://schema.org/URL"},
+      "sameAs": "https://w3id.org/codemeta/terms/continuousIntegration"
+
+    },
+    {
+    "@id": "https://codemeta.github.io/terms/buildInstructions",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "name": "buildInstructions",
+    "termCode": "buildInstructions",
+    "description": "Link to installation instructions/documentation",
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "rangeIncludes": {"@id": "http://schema.org/URL"},
+    "sameAs": "https://w3id.org/codemeta/terms/buildInstructions"
+},
+    {
+    "@id": "https://codemeta.github.io/terms/developmentStatus",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "name": "developmentStatus",
+    "termCode": "developmentStatus",
+    "description": "Description of development status, e.g. Active, inactive, suspended. See repostatus.org",
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "rangeIncludes": {"@id": "http://schema.org/Text"},
+    "sameAs": "https://w3id.org/codemeta/terms/developmentStatus"
+    },
+    {
+    "@id": "https://codemeta.github.io/terms/embargoEndDate",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "name": "embargoEndDate",
+    "termCode": "embargoEndDate",
+    "description": "Software may be embargoed from public access until a specified date (e.g. pending publication, 1 year from publication)",
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "rangeIncludes": {"@id": "http://schema.org/Date"},
+    "sameAs": "https://w3id.org/codemeta/terms/embargoEndDate"
+    },
+    {
+    "@id": "https://codemeta.github.io/terms/readme",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "name": "readme",
+    "termCode": "readme",
+    "description": "Link to software Readme file",
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "rangeIncludes": {"@id": "http://schema.org/URL"},
+    "sameAs": "https://w3id.org/codemeta/terms/readme"
+    },
+    {
+    "@id": "https://codemeta.github.io/terms/issueTracker",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "name": "issueTracker",
+    "termCode": "issueTracker",
+    "description": "Link to software bug reporting or issue tracking system",
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "rangeIncludes": {"@id": "http://schema.org/URL"},
+    "sameAs": "https://w3id.org/codemeta/terms/issueTracker"
+    },
+    {
+    "@id": "https://codemeta.github.io/terms/referencePublication",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "name": "referencePublication",
+    "termCode": "referencePublication",
+    "description": "An academic publication related to the software",
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "rangeIncludes": {"@id": "http://schema.org/ScholarlyArticle"},
+    "sameAs": "https://w3id.org/codemeta/terms/referencePublication"
+    },
+    {
+    "@id": "https://codemeta.github.io/terms/hasSourceCode",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "name": "hasSourceCode",
+    "termCode": "hasSourceCode",
+    "description": "Link that states where the software code is for a given software. For example a software registry may indicate that one of its software entries hasSourceCode in a GitHub repository. ",
+    "domainIncludes": {"@id": "http://schema.org/SoftwareApplication"},
+    "rangeIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "sameAs": "https://w3id.org/codemeta/terms/hasSourceCode"
+    },
+    {
+    "@id": "https://codemeta.github.io/terms/isSourceCodeOf",
+    "@type": ["DefinedTerm", "rdf:Property"],
+    "name": "isSourceCodeOf",
+    "termCode": "isSourceCodeOf",
+    "description": "Link that states where software application is built from a given source code. This is the reverse property of 'hasSourceCode'. ",
+    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "rangeIncludes": {"@id": "http://schema.org/SoftwareApplication"},
+    "sameAs": "https://w3id.org/codemeta/terms/isSourceCodeOf"
+    },
+    {
+      "@id": "https://w3id.org/codemeta/3.0",
+      "@type": "Profile",
+      "name": "CodeMeta Terms profile",
+      "version": "3.0",
+      "license": { "@id": "https://creativecommons.org/licenses/by/4.0/" }      
+    },
+    {
+      "@id": "http://www.w3.org/ns/json-ld#flattened",
+      "@type": "Profile",
+      "name": "Flattened JSON-LD",
+      "isProfileOf": {
+        "@id": "http://www.w3.org/TR/2014/REC-json-ld-20140116/"
+      },
+      "version": "1.0",
+      "url": "https://www.w3.org/TR/json-ld1/#flattened-document-form"
+    },
+    {
+      "@id": "http://www.w3.org/TR/2014/REC-json-ld-20140116/",
+      "@type": "Standard",
+      "name": "JSON-LD 1.0",
+      "description": "A JSON-based Serialization for Linked Data",
+      "version": "1.0",
+      "sameAs": {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/880"}
+    },
+    {
+      "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE",
+      "@type": "Profile",
+      "description": "Bioschemas specification for describing a Computational Workflow",
+      "name": "ComputationalWorkflow profile",
+      "version": "1.0-RELEASE",
+      "about": { "@id": "https://bioschemas.org/ComputationalWorkflow" }
+    },
+    {
+      "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE",
+      "@type": "Profile",
+      "description": "Bioschemas specification for describing a formal parameter in the Life Sciences",
+      "name": "FormalParameter Profile",
+      "version": "1.0-RELEASE",
+      "about": { "@id": "https://bioschemas.org/FormalParameter" }
+    },
+    { 
+      "@id": "https://bioschemas.org/FormalParameter", 
+      "@type": ["DefinedTerm", "rdfs:Class"],
+      "name": "FormalParameter"
+    },
+    { 
+      "@id": "https://bioschemas.org/ComputationalWorkflow", 
+      "@type": ["DefinedTerm", "rdfs:Class"],
+      "name": "ComputationalWorkflow"
+    },
+    { 
+      "@id": "http://schema.org/defaultValue",
+      "@type": ["DefinedTerm", "rdf:Property"],
+      "name": "defaultValue",
+      "domainIncludes": [
+        {"@id": "https://bioschemas.org/ComputationalWorkflow"}
+      ],
+      "rangeIncludes": [
+        {"@id": "http://schema.org/Text"},
+        {"@id": "http://schema.org/Thing"}
+      ]
+    },  
+    { 
+      "@id": "http://schema.org/valueRequired",
+      "@type": ["DefinedTerm", "rdf:Property"],
+      "name": "valueRequired",
+      "domainIncludes": [
+        {"@id": "https://bioschemas.org/ComputationalWorkflow"}
+      ],
+      "rangeIncludes": [
+        {"@id": "http://schema.org/Text"},
+        {"@id": "http://schema.org/Thing"}
+      ]
+    },
+    { 
+      "@id": "https://bioschemas.org/properties/input",
+      "@type": ["DefinedTerm", "rdf:Property"],
+      "termCode": "input",
+      "name": "input",
+      "description": "Definition of an input parameter required to use the computational workflow",
+      "domainIncludes": [
+        {"@id": "https://bioschemas.org/ComputationalWorkflow"}
+      ],
+      "rangeIncludes": [
+        {"@id": "https://bioschemas.org/FormalParameter"}
+      ]
+    },
+    { 
+      "@id": "https://bioschemas.org/properties/output",
+      "@type": ["DefinedTerm", "rdf:Property"],
+      "termCode": "output",
+      "name": "output",
+      "description": "Definition of an output produced by the workflow",
+      "domainIncludes": [
+        {"@id": "https://bioschemas.org/ComputationalWorkflow"}
+      ],
+      "rangeIncludes": [
+        {"@id": "https://bioschemas.org/FormalParameter"}
+      ]
+    },  
+    {
+      "@id": "http://purl.org/dc/terms/conformsTo",
+      "@type": "DefinedTerm",
+      "name": "conformsTo",
+      "termCode": "conformsTo"
+    },
+    {
+      "@id": "https://w3id.org/ro/terms#localPath",
+      "@type": "DefinedTerm",
+      "name": "localPath",
+      "termCode": "localPath",
+      "description": "A recommended URI path to download this work to. Intended to be used on web-based data entities within RO-Crates."
+    },
+    {
+      "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "@type": "CreativeWork",
+      "identifier": { "@id": "http://spdx.org/licenses/CC0-1.0"},
+      "name": "Creative Commons Zero v1.0 Universal",
+      "version": "1.0"
+    },
+    {
+      "@id": "https://creativecommons.org/licenses/by/4.0/",
+      "@type": "CreativeWork",
+      "identifier": { "@id": "http://spdx.org/licenses/CC-BY-4.0"},
+      "name": "Creative Commons Attribution 4.0 International",
+      "version": "4.0"
+    },
+    {
+      "@id": "https://doi.org/DOI",
+      "@type": "PropertyValue", 
+      "propertyID": "https://registry.identifiers.org/registry/doi",
+      "value": "doi:DOI",
+      "url": "https://doi.org/DOI"
+    },
+    {
+      "@id": "https://doi.org/10.3233/DS-210053",
+      "@type": "ScholarlyArticle",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0001-9842-9718"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-3545-944X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1304-1939"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3986-0510"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6565-5145"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4806-5140"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0454-7145"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-3079-6586"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-5383-6993"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8271-5429"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8131-2150"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-9648-6484"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1991-0533"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/community"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0183-6910"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1219-2137"
+        }
+      ],
+      "datePublished": "2022-01-04T13:00:00Z",
+      "isPartOf": {
+        "@id": "http://datasciencehub.net/"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://w3id.org/ro/doi/10.5281/zenodo.5146227"
+      },
+      "name": "Packaging research artefacts with RO-Crate"
+    },
+    {
+      "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html",
+      "@type": "CreativeWork",
+      "encodingFormat": [
+        "text/html",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/471"
+        }
+      ],
+      "isBasedOn": [
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/about.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/introduction.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/terminology.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/structure.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/metadata.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/root-data-entity.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/data-entities.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/crate-focus.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/contextual-entities.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/provenance.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/profiles.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/workflows.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/changelog.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/implementation-notes.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/jsonld.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/relative-uris.html"
+        }
+      ],
+      "name": "RO-Crate Metadata Specification 1.3-DRAFT (single-page HTML)",
+      "sameAs": {
+        "@id": "https://zenodo.org/record/ZENODO/files/ro-crate-TAG.html"
+      },
+      "version": "TAG"
+    },
+    {
+      "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf",
+      "@type": "CreativeWork",
+      "encodingFormat": [
+        "application/pdf",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/18"
+        }
+      ],
+      "isBasedOn": [
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/about.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/introduction.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/terminology.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/structure.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/metadata.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/root-data-entity.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/data-entities.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/crate-focus.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/contextual-entities.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/provenance.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/profiles.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/workflows.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/changelog.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/implementation-notes.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/jsonld.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/relative-uris.html"
+        }
+      ],
+      "name": "RO-Crate Metadata Specification 1.3-DRAFT (PDF)",
+      "sameAs": {
+        "@id": "https://zenodo.org/record/ZENODO/files/ro-crate-1.3-DRAFT.pdf"
+      },
+      "version": "TAG"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-5383-6993",
+      "@type": "Person",
+      "name": "Marco La Rosa"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6022-9825",
+      "@type": "Person",
+      "name": "Karl Sebby"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6387-5988",
+      "@type": "Person",
+      "name": "Cedric Decruw"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6565-5145",
+      "@type": "Person",
+      "name": "Frederik Coppens"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6960-357X",
+      "@type": "Person",
+      "name": "Mark Wilkinson"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8131-2150",
+      "@type": "Person",
+      "name": "Eoghan Ó Carragáin"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8172-8981",
+      "@type": "Person",
+      "name": "Jasper Koehorst"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8250-4074",
+      "@type": "Person",
+      "name": "Bruno P. Kinoshita"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8271-5429",
+      "@type": "Person",
+      "name": "Simone Leo"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8420-5254",
+      "@type": "Person",
+      "name": "Kristi Holmes"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8772-7904",
+      "@type": "Person",
+      "name": "Ronald Siebes"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9156-9478",
+      "@type": "Person",
+      "name": "Muhammad Radifar"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9228-2882",
+      "@type": "Person",
+      "name": "Abigail Miller"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9842-9718",
+      "@type": "Person",
+      "name": "Stian Soiland-Reyes"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9888-7954",
+      "@type": "Person",
+      "name": "Sveinung Gundersen"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0003-2024",
+      "@type": "Person",
+      "name": "Rudolf Wittner"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0048-3300",
+      "@type": "Person",
+      "name": "Finn Bacall"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0309-604X",
+      "@type": "Person",
+      "name": "Salvador Capella-Gutierrez"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0337-8610",
+      "@type": "Person",
+      "name": "brandon whitehead"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0679-4361",
+      "@type": "Person",
+      "name": "Davide Fucci"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0792-8157",
+      "@type": "Person",
+      "name": "Sergio Serra"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1248-3594",
+      "@type": "Person",
+      "name": "Douglas Lowe"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1756-2128",
+      "@type": "Person",
+      "name": "Thomas Thelen"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-2036-8350",
+      "@type": "Person",
+      "name": "Nick Juty"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-2142-1731",
+      "@type": "Person",
+      "name": "Chenxu Niu"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-2257-9127",
+      "@type": "Person",
+      "name": "Douglas Fils"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-2318-4477",
+      "@type": "Person",
+      "name": "Shady El Damaty"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-2961-9670",
+      "@type": "Person",
+      "name": "Michael R Crusoe"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3079-6586",
+      "@type": "Person",
+      "name": "Björn Grüning"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3468-0652",
+      "@type": "Person",
+      "name": "Alexander Kanitz"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3545-944X",
+      "@type": "Person",
+      "name": "Peter Sefton"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3588-6257",
+      "@type": "Person",
+      "name": "Jason A. Clark"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-4565-9760",
+      "@type": "Person",
+      "name": "Oliver Woolland"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-4806-5140",
+      "@type": "Person",
+      "name": "José María Fernández"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-4929-7875",
+      "@type": "Person",
+      "name": "Tomasz Miksa"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5432-2748",
+      "@type": "Person",
+      "name": "Paul Brack"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5491-6431",
+      "@type": "Person",
+      "name": "Jose Manuel Gomez-Perez"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5526-7138",
+      "@type": "Person",
+      "name": "Florian Wetzels"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5711-4872",
+      "@type": "Person",
+      "name": "Alasdair J. G. Gray"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5761-7533",
+      "@type": "Person",
+      "name": "Jeremy Jay"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-6190-122X",
+      "@type": "Person",
+      "name": "Ignacio Eguinoa"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-7370-4805",
+      "@type": "Person",
+      "name": "Kyle Chard"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-7552-1009",
+      "@type": "Person",
+      "name": "Hervé Ménager"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8940-4946",
+      "@type": "Person",
+      "name": "Paul De Geest"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9260-0753",
+      "@type": "Person",
+      "name": "Oscar Corcho"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9648-6484",
+      "@type": "Person",
+      "name": "Marc Portier"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9986-7223",
+      "@type": "Person",
+      "name": "Kosuke Tanabe"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0183-6910",
+      "@type": "Person",
+      "name": "Paul Groth"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0223-1059",
+      "@type": "Person",
+      "name": "Erich Bremer"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0454-7145",
+      "@type": "Person",
+      "name": "Daniel Garijo"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0522-5674",
+      "@type": "Person",
+      "name": "Bert Droesbeke"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0606-2512",
+      "@type": "Person",
+      "name": "Raül Sirvent"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0617-9219",
+      "@type": "Person",
+      "name": "Jake Emerson"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-1130-2154",
+      "@type": "Person",
+      "name": "Giacomo Tartari"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-1219-2137",
+      "@type": "Person",
+      "name": "Carole Goble"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-1304-1939",
+      "@type": "Person",
+      "name": "Mercè Crosas"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-1361-7301",
+      "@type": "Person",
+      "name": "Maciek Bąk"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-1498-6205",
+      "@type": "Person",
+      "name": "Xuanqi Li"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-1541-5631",
+      "@type": "Person",
+      "name": "Paul Walk"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-1743-8300",
+      "@type": "Person",
+      "name": "Milan Ojsteršek"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-1991-0533",
+      "@type": "Person",
+      "name": "Ana Trisovic"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2130-0865",
+      "@type": "Person",
+      "name": "Stuart Owen"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3156-2105",
+      "@type": "Person",
+      "name": "Alan R Williams"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3234-6762",
+      "@type": "Person",
+      "name": "Jens Hollunder"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3486-8193",
+      "@type": "Person",
+      "name": "Mark Graves"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3883-4169",
+      "@type": "Person",
+      "name": "Andreas Czerniak"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3910-0474",
+      "@type": "Person",
+      "name": "Gavin Kennedy"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3986-0510",
+      "@type": "Person",
+      "alternateName": "LJ Garcia Castro",
+      "name": "Leyla Jael Castro"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4196-3658",
+      "@type": "Person",
+      "name": "Shaun de Witt"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4289-4922",
+      "@type": "Person",
+      "name": "Raul Palma"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4929-1219",
+      "@type": "Person",
+      "name": "Laura Rodríguez-Navas"
+    },
+    { 
+      "@id": "https://orcid.org/0000-0003-4216-302X",
+      "@type": "Person",
+      "name": "Martin Weise"
+    },
+    { "@id": "https://orcid.org/0000-0002-1880-0597",
+      "@type": "Person",
+      "name": "Vartika Bisht"
+    },
+    { "@id": "https://orcid.org/0000-0001-6712-6335",
+      "@type": "Person",
+      "name": "Toshiyuki Nishiyama Hiraki"
+    },
+    { "@id": "https://orcid.org/0000-0002-5934-8998",
+      "@type": "Person",
+      "name": "Bram Ulrichts"
+    },
+    { "@id": "https://orcid.org/0000-0001-9261-8390",
+      "@type": "Person",
+      "name": "Michael Falk"
+    },
+    { "@id": "https://orcid.org/0000-0002-0035-6475",
+      "@type": "Person",
+      "name": "Eli Chadwick"
+    },
+    { "@id": "https://orcid.org/0000-0001-9447-460X",
+      "@type": "Person",
+      "name": "Daniel Bauer"
+    },
+    { "@id": "https://orcid.org/0000-0001-7760-1240",
+      "@type": "Person",
+      "name": "James Love"
+    },
+    { "@id": "https://orcid.org/0000-0001-9925-1560",
+      "@type": "Person",
+      "name": "Eleni Adamidi"
+    },
+    { "@id": "https://orcid.org/0000-0003-4028-811X",
+      "@type": "Person",
+      "name": "Josh Moore"
+    },
+    { "@id": "https://orcid.org/0000-0003-2196-5015",
+      "@type": "Person",
+      "name": "Lars Schöbitz"
+    },
+    { "@id": "https://orcid.org/0009-0002-6541-4637",
+      "@type": "Person",
+      "name": "Andreas Meier"
+    },
+    { "@id": "https://orcid.org/0009-0002-8209-1999",
+      "@type": "Person",
+      "name": "Juan Fuentes"
+    },
+    { "@id": "https://orcid.org/0000-0001-7218-0176",
+      "@type": "Person",
+      "name": "Edan Bainglass"
+    },
+    { "@id": "https://orcid.org/0000-0003-3482-0325",
+      "@type": "Person",
+      "name": "Balazs E. Pataki"
+    },
+    {
+      "@id": "http://spdx.org/licenses/CC0-1.0",
+      "@type": "PropertyValue",
+      "propertyID": "http://spdx.org/rdf/terms#licenseId",
+      "name": "spdx",
+      "value": "CC0-1.0"
+    },
+    {
+      "@id": "http://spdx.org/licenses/CC-BY-4.0",
+      "@type": "PropertyValue",
+      "propertyID": "http://spdx.org/rdf/terms#licenseId",      
+      "name": "spdx",
+      "value": "CC-BY-4.0"
+    },
+    { 
+      "@id": "http://spdx.org/licenses/Apache-2.0",
+      "@type": "PropertyValue",
+      "propertyID": "http://spdx.org/rdf/terms#licenseId",
+      "name": "spdx",
+      "value": "Apache-2.0"
+    },
+    {
+      "@id": "https://w3id.org/ro/crate/",
+      "@type": "WebSite",
+      "maintainer": {
+        "@id": "https://www.researchobject.org/ro-crate/community"
+      },
+      "name": "Research Object Crate (RO-Crate) website",
+      "publisher": {
+        "@id": "https://www.researchobject.org/"
+      },
+      "url": "https://www.researchobject.org/ro-crate/"
+    },
+    {
+      "@id": "https://w3id.org/ro/crate/1.1",
+      "@type": "Dataset",      
+      "name": "RO-Crate specification 1.1",
+      "version": "1.1.2"      
+    },    
+    {
+      "@id": "https://w3id.org/ro/crate/1.3-DRAFT/context",
+      "@type": "File",
+      "conformsTo": {
+        "@id": "http://www.w3.org/ns/json-ld#Context"
+      },
+      "encodingFormat": "application/ld+json",
+      "isBasedOn": [
+        {
+          "@id": "https://schema.org/docs/releases.html#v22.0"
+        },
+        {
+          "@id": "https://pcdm.org/2016/04/18/models"
+        },
+        {
+          "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
+        },
+        {
+          "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+        }
+      ],
+      "license": {
+        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "name": "RO-Crate JSON-LD Context",
+      "sameAs": [
+        {
+          "@id": "https://zenodo.org/record/ZENODO/files/ro-crate-context-TAG.jsonld"
+        },
+        {
+          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-context-TAG.jsonld"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/context.jsonld"
+        }
+      ],
+      "version": "TAG"
+    },
+    {
+      "@id": "https://w3id.org/ro/doi/10.5281/zenodo.5146227",
+      "@type": "Dataset",
+      "name": "Packaging research artefacts with RO-Crate (RO-Crate)"
+    },
+    {
+      "@id": "https://www.apache.org/licenses/LICENSE-2.0",
+      "@type": "CreativeWork",
+      "name": "Apache License 2.0",
+      "version": "2.0",
+      "identifier": { "@id": "http://spdx.org/licenses/Apache-2.0"}
+    },
+    {
+      "@id": "https://www.iana.org/assignments/link-relations/",
+      "@type": "DefinedTermSet",
+      "name": "IANA Link Relations"
+    },
+    {
+      "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/18",
+      "@type": "WebPage",
+      "alternateName": "PDF 1.4",
+      "name": "Acrobat PDF 1.4 - Portable Document Format"
+    },
+    {
+      "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/471",
+      "@type": "WebPage",
+      "alternateName": "HTML5",
+      "name": "Hypertext Markup Language 5"
+    },
+    {
+      "@id": "https://www.researchobject.org/",
+      "@type": "Organization",
+      "name": "ResearchObject.org",
+      "url": "https://www.researchobject.org/"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/about.html",
+      "@type": "WebPage",
+      "name": "About this document"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/changelog.html",
+      "@type": "WebPage",
+      "name": "Changelog"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/implementation-notes.html",
+      "@type": "WebPage",
+      "name": "Implementation notes"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/",
+      "@type": "WebPage",
+      "name": "Appendix",
+      "hasPart": [
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/changelog.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/implementation-notes.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/jsonld.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/relative-uris.html"
+        }        
+      ]
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/jsonld.html",
+      "@type": "WebPage",
+      "name": "RO-Crate JSON-LD"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/relative-uris.html",
+      "@type": "WebPage",
+      "name": "Handling relative URI references"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/contextual-entities.html",
+      "@type": "WebPage",
+      "name": "Contextual Entities"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/crate-focus.html",
+      "@type": "WebPage",
+      "name": "The focus of an RO-Crate"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/data-entities.html",
+      "@type": "WebPage",
+      "name": "Data Entities"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.2.0/",
+      "@type": "Dataset",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.3-DRAFT"
+      },
+      "name": "Example dataset for RO-Crate specification",
+      "license": {
+        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "subjectOf": [
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.2.0/ro-crate-metadata.json"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.2.0/ro-crate-preview.html"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/",
+      "@type": [
+        "WebSite",
+        "File"
+      ],
+      "encodingFormat": [
+        "text/html",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/471"
+        }
+      ],
+      "encoding": [
+        {
+          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html"
+        },
+        {
+          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf"
+        }
+      ],      
+      "identifier": {"@id": "https://doi.org/DOI"},
+      "name": "RO-Crate Metadata Specification 1.3-DRAFT",
+      "sameAs": {
+        "@id": "https://zenodo.org/record/ZENODO/files/ro-crate-TAG.html"
+      },
+      "version": "TAG",
+      "hasPart": [
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/introduction.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/terminology.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/structure.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/metadata.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/root-data-entity.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/data-entities.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/crate-focus.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/contextual-entities.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/provenance.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/profiles.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/workflows.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/changelog.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/implementation-notes.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/jsonld.html"
+        },
+        {
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/relative-uris.html"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/introduction.html",
+      "@type": "WebPage",
+      "name": "Introduction"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/metadata.html",
+      "@type": "WebPage",
+      "name": "Metadata of the RO-Crate"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/profiles.html",
+      "@type": "WebPage",
+      "name": "Profiles"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/provenance.html",
+      "@type": "WebPage",
+      "name": "Provenance of entities"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/root-data-entity.html",
+      "@type": "WebPage",
+      "name": "Root Data Entity"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/structure.html",
+      "@type": "WebPage",
+      "name": "RO-Crate Structure"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/terminology.html",
+      "@type": "WebPage",
+      "name": "Terminology"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/workflows.html",
+      "@type": "WebPage",
+      "name": "Workflows and scripts"
+    },
+    {
+      "@id": "https://www.researchobject.org/ro-crate/community",
+      "@type": "Project",
+      "member": [
+        {
+          "@id": "https://orcid.org/0000-0001-8131-2150"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-3545-944X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9842-9718"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-9260-0753"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0454-7145"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4289-4922"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6565-5145"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1219-2137"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4806-5140"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-7370-4805"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5491-6431"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2961-9670"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-6190-122X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2036-8350"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8420-5254"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-3588-6257"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0309-604X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5711-4872"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-2130-0865"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3156-2105"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1130-2154"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0048-3300"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-1756-2128"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-7552-1009"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4929-1219"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1541-5631"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0337-8610"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6960-357X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0183-6910"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0223-1059"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3986-0510"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6022-9825"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-3468-0652"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1991-0533"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3910-0474"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3486-8193"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8172-8981"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8271-5429"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-9648-6484"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5432-2748"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1743-8300"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0522-5674"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2142-1731"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-9986-7223"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4929-7875"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-5383-6993"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6387-5988"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3883-4169"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5761-7533"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0792-8157"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8772-7904"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4196-3658"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2318-4477"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-1248-3594"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1498-6205"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9888-7954"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9156-9478"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0003-2024"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4565-9760"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-8940-4946"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2257-9127"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5526-7138"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0606-2512"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9228-2882"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0617-9219"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0679-4361"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8250-4074"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-1361-7301"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3234-6762"
+        },
+        { "@id": "https://orcid.org/0000-0003-4216-302X"},
+        { "@id": "https://orcid.org/0000-0002-1880-0597"},
+        { "@id": "https://orcid.org/0000-0001-6712-6335"},
+        { "@id": "https://orcid.org/0000-0002-5934-8998"},
+        { "@id": "https://orcid.org/0000-0001-9261-8390"},
+        { "@id": "https://orcid.org/0000-0002-0035-6475"},
+        { "@id": "https://orcid.org/0000-0001-9447-460X"},
+        { "@id": "https://orcid.org/0000-0001-7760-1240"},
+        { "@id": "https://orcid.org/0000-0001-9925-1560"},
+        { "@id": "https://orcid.org/0000-0003-4028-811X"},
+        { "@id": "https://orcid.org/0000-0003-2196-5015"},
+        { "@id": "https://orcid.org/0009-0002-6541-4637"},
+        { "@id": "https://orcid.org/0009-0002-8209-1999"},
+        { "@id": "https://orcid.org/0000-0001-7218-0176"},
+        { "@id": "https://orcid.org/0000-0003-3482-0325"}
+
+
+
+      ],
+      "name": "RO-Crate Community",
+      "parentOrganization": {
+        "@id": "https://www.researchobject.org/"
+      },
+      "sdDatePublished": "2022-01-19T10:54:41Z",
+      "url": "https://www.researchobject.org/ro-crate/community"
+    },
+    {
+      "@id": "#example-rainfall",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.2.0/"
+      },
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/example"
+      }
+    },
+    {
+      "@id": "#specification",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html"
+      },
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/specification"
+      }
+    },
+    {
+      "@id": "#vocabulary-pcdm",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "http://pcdm.org/models"
+      },
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+      }
+    },
+    {
+      "@id": "#vocabulary-prof",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "http://www.w3.org/ns/dx/prof"
+      },
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+      }
+    },
+    {
+      "@id": "#vocabulary-prof-roles",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "http://pcdm.org/models"
+      },
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+      }
+    },
+    {
+      "@id": "#vocabulary-schema",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "https://schema.org/docs/releases.html#v22.0"
+      },
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+      }
+    },
+    {
+      "@id": "#vocabulary-rdfs",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      },
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+      }
+    },
+    {
+      "@id": "#vocabulary-geosparql",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "http://www.opengis.net/ont/geosparql#"
+      },
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+      }
+    },
+    {
+      "@id": "#vocabulary-codemeta",
+      "@type": "ResourceDescriptor",
+      "hasArtifact": {
+        "@id": "https://codemeta.github.io/terms/"
+      },
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+      }
+    }
+
+  ]
+}
