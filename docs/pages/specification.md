@@ -37,9 +37,11 @@ Other pages are fine and can use the simpler `specification/<version>` path.
 * [ROLite Draft 0.1.0]({{ baseurl }}{% link _specification/0.1.0/index.md %})  
    _Historical note_: After the initial draft, the community decided to base the specification on [DataCrate](https://github.com/UTS-eResearch/datacrate/), and changed the name from _ROLite_ to **RO-Crate**.
 
+{% include callout.html type="tip" content="RO-Crate [tutorials](https://www.researchobject.org/ro-crate/tutorials) provide step-by step introduction to RO-Crate. The [Crate-O](https://language-research-technology.github.io/crate-o/) and [RO-Crate playground](https://ro-crate.ldaca.edu.au/) provide graphical ways to create and explore RO-Crate." %}
+
 [Feedback](https://github.com/researchobject/ro-crate/issues) and improvements are welcome! RO-Crate 1.2 is considered a _stable release_ with only minor fixes expected, current community work is towards RO-Crate 2, focusing on modularisation of the specification.
 
-{% include callout.html type="tip" content="RO-Crate specifications follow backwards compatibility according to [semantic versioning](https://semver.org/spec/v2.0.0.html), e.g. allowing for typo fixes in patch versions, new/deprecated terms in minor versions, and removal of terms in major versions. The JSON-LD context may change term bindings to URIs in minor versions to remain compatible with third-party vocabularies, e.g. to integrate new schema.org terms.
+{% include callout.html type="note" content="RO-Crate specifications follow backwards compatibility according to [semantic versioning](https://semver.org/spec/v2.0.0.html), e.g. allowing for typo fixes in patch versions, new/deprecated terms in minor versions, and removal of terms in major versions. The JSON-LD context may change term bindings to URIs in minor versions to remain compatible with third-party vocabularies, e.g. to integrate new schema.org terms.
 " %}
 
 This specification and documentation is Open Source and licensed as [Apache License, version 2.0](https://github.com/ResearchObject/ro-crate/blob/master/LICENSE), see <https://www.apache.org/licenses/LICENSE-2.0> for details. 
