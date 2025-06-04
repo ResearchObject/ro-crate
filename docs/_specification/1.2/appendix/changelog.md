@@ -30,7 +30,7 @@ excerpt: List of changes in releases of this specifications
 
 # APPENDIX: Changelog {#changelog}
 
-* RO-Crate 1.2.0
+* [RO-Crate 1.2.0](https://github.com/ResearchObject/ro-crate/releases/tag/1.2.0) <https://w3id.org/ro/crate/1.2>
   * Clarified that the [RO-Crate Metadata Descriptor MUST have `@id` of `ro-crate-metadata.json`](../root-data-entity#ro-crate-metadata-descriptor) by removing conflicting statements elsewhere in the specification [#365](https://github.com/ResearchObject/ro-crate/pull/365)
   * Updated the Bioschemas namespace for properties from `https://bioschemas.org/ComputationalWorkflow#` to `https://bioschemas.org/properties/`. This change affects only the `input` and `output` properties in the [JSON-LD context](../ro-crate-metadata.json).
   * **Change**: Replaced [name-based algorithm for finding root](../root-data-entity#finding-the-root-data-entity)  [#198](https://github.com/ResearchObject/ro-crate/issues/198) [#365](https://github.com/ResearchObject/ro-crate/pull/365)
@@ -60,9 +60,6 @@ excerpt: List of changes in releases of this specifications
   * Clarified mandatory metadata for the Root Data Entity [#404](https://github.com/ResearchObject/ro-crate/pull/404)
   * Many sections reviewed to improve language and examples [#378](https://github.com/ResearchObject/ro-crate/pull/378) [#382](https://github.com/ResearchObject/ro-crate/pull/382) [#404](https://github.com/ResearchObject/ro-crate/pull/404) [#410](https://github.com/ResearchObject/ro-crate/pull/410) [#411](https://github.com/ResearchObject/ro-crate/pull/411) [#412](https://github.com/ResearchObject/ro-crate/pull/412) [#413](https://github.com/ResearchObject/ro-crate/pull/413) [#414](https://github.com/ResearchObject/ro-crate/pull/414) [#415](https://github.com/ResearchObject/ro-crate/pull/415) [#418](https://github.com/ResearchObject/ro-crate/pull/418) [#425](https://github.com/ResearchObject/ro-crate/pull/425)
   
-
-
-
 * [RO-Crate 1.1.2](https://github.com/ResearchObject/ro-crate/releases/tag/1.1.2) 
   * Typo fixes in [data entity section](../data-entities) [#177](https://github.com/ResearchObject/ro-crate/issues/177), [workflow section](../workflows) [#180](https://github.com/ResearchObject/ro-crate/issues/180), [metadata section](../metadata) [#181](https://github.com/ResearchObject/ro-crate/issues/181) 
   * Correct namespace for `rdfs:comment` on [ad-hoc terms](jsonld#add-local-definitions-of-ad-hoc-terms) [#164](https://github.com/ResearchObject/ro-crate/issues/164)
