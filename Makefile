@@ -86,7 +86,7 @@ release/:
 
 release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}/_metadata.liquid docs/_specification/${RELEASE}/.references.md docs/_specification/${RELEASE}/*.md docs/_specification/${RELEASE}/appendix/*.md docs/_includes/references.liquid
 	cp docs/_specification/${RELEASE}/_metadata.liquid docs/_specification/${RELEASE}/.metadata.md
-	pandoc --from=markdown+gfm_auto_identifiers --to=markdown+gfm_auto_identifiers \
+	pandoc --wrap=none --from=markdown+gfm_auto_identifiers --to=markdown+gfm_auto_identifiers \
 	   docs/_specification/${RELEASE}/.metadata.md \
 	   `grep ^nav_order: docs/_specification/${RELEASE}/*.md | sort -n -k 2 | grep -v index.md| grep -v about.md | sed s/:.*//` \
 	   `grep ^nav_order: docs/_specification/${RELEASE}/appendix/*.md | sort -n -k 2 | sed s/:.*//` \
@@ -94,7 +94,7 @@ release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}
 	   > release/ro-crate-${TAG}.md
 	# Our own rendering of Note/Warning/Tip
 	sed -i -E 's/\{% include callout.html //g' release/ro-crate-${TAG}.md
-	sed -i -E "s/[\"'] %}//g" release/ro-crate-${TAG}.md  # note that this assumes the closing string-quote to be followed by «space»%} on the same line !
+	sed -i -E "s/[\"'] ?\n?%}//g" release/ro-crate-${TAG}.md  # note that this assumes the closing string-quote to be followed by «space»%} on the same line !
 	sed -i -E "s/type=[\"']note[\"'] content=[\"']/**Note**: /g" release/ro-crate-${TAG}.md
 	sed -i -E "s/type=[\"']warning[\"'] content=[\"']/**Warning** :/g" release/ro-crate-${TAG}.md
 	sed -i -E "s/type=[\"']tip[\"'] content=[\"']/**Tip**: /g" release/ro-crate-${TAG}.md
