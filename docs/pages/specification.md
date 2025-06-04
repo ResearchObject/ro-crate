@@ -31,7 +31,6 @@ Other pages are fine and can use the simpler `specification/<version>` path.
 
 * **[RO-Crate 1.2]({{ baseurl }}{% link _specification/1.2/index.md %})** (current long term release)  
 * [RO-Crate 1.1]({{ baseurl }}{% link _specification/1.1/index.md %})
-* [RO-Crate 1.2-DRAFT]({{ baseurl }}{% link _specification/1.2-DRAFT/index.md %}) (draft for next release)
 * [RO-Crate 1.0]({{ baseurl }}{% link _specification/1.0/index.md %}) 
 * [RO-Crate 0.2]({{ baseurl }}{% link _specification/0.2/index.md %})
 * [DataCrate 1.0](https://github.com/UTS-eResearch/datacrate/blob/ba37cc707d48d3569663ab04f9d4f5c25dac6e34/spec/1.0/data_crate_specification_v1.0.md)
