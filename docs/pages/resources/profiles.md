@@ -120,8 +120,7 @@ In summary the _Workflow RO-Crate profile_ covers as of 2021-03-09:
 An experimental
 [Profile Crate](https://about.workflowhub.eu/Workflow-RO-Crate/ro-crate-preview) has been
 created in preparation for
-[formalized RO-Crate profiles](specification/1.2-DRAFT/profiles) (draft for next
-release of specification).
+[formalized RO-Crate profiles](specification/1.2/profiles) in RO-Crate 1.2.
 
 ### Workflow Testing RO-Crate profile
 
@@ -408,8 +407,9 @@ item in detail.
 Currently an RO-Crate profile is in the form of an informal documentation for humans rather than
 machine-readable.
 
-Next version of the RO-Crate specification 1.2 will
-[formalize RO-Crate profiles](1.2-DRAFT/profiles) as a **Profile Crate** - an RO-Crate that defines
+Version 1.2 of the RO-Crate specification
+[formalizes RO-Crate profiles](specification/1.2/profiles) as a **Profile Crate** - an RO-Crate that defines
 the profile. See the
 [Workflow Profile Crate](https://about.workflowhub.eu/Workflow-RO-Crate/ro-crate-preview.html) as
 example.
+

@@ -31,7 +31,7 @@ PARADISEC uses the same API as the [Language Data Commons of Australia (LDACA)] 
 ``` 
 {
   "@context": [
-    "https://w3id.org/ro/crate/1.2-DRAFT/context",
+    "https://w3id.org/ro/crate/1.2/context",
     {
       "@vocab": "http://schema.org/"
     },
@@ -130,7 +130,7 @@ PARADISEC uses the same API as the [Language Data Commons of Australia (LDACA)] 
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.2"
       },
       "about": {
         "@id": "https://catalog.paradisec.org.au/repository/RL1/011"

@@ -121,6 +121,7 @@ The _RO-Crate_ team is:
 * Pascal Su <https://orcid.org/0000-0001-5614-962X>
 * Andrea Davanzo <https://orcid.org/0009-0000-5170-1737>
 * Meznah Aloqalaa <https://orcid.org/0000-0002-1382-3896>
+* Pierre-Marie Allard <https://orcid.org/0000-0003-3389-2191>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)!
 
@@ -141,6 +142,10 @@ The RO-Crate team try to meet at least monthly in a telcon, see the [rolling age
 There are also regular [regional drop-in calls](https://s.apache.org/ro-crate-regional) aimed at those newer to the RO-Crate community. These sessions are suitable for beginner questions, as well as discussing ideas for new tools/integrations.
 
 Members of the RO-Crate team can often be found presenting at open science conferences and events: see the list of [recent and upcoming events](outreach#upcoming-and-recent-events) for details.
+
+See the [RO-Crate Community Calendar](https://calendar.google.com/calendar/embed?src=b53932af95f34472d7253e3f54e7e11ab1bbe3bf4477c5c60e94db75e08d151e%40group.calendar.google.com&ctz=Europe%2FLondon) embedded below to import events to your own calendar (or [download the whole calendar as .ics](https://calendar.google.com/calendar/ical/b53932af95f34472d7253e3f54e7e11ab1bbe3bf4477c5c60e94db75e08d151e%40group.calendar.google.com/public/basic.ics)).
+
+<iframe src="https://calendar.google.com/calendar/embed?src=b53932af95f34472d7253e3f54e7e11ab1bbe3bf4477c5c60e94db75e08d151e%40group.calendar.google.com&ctz=Europe%2FLondon" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
 ## Mailing list
 

@@ -27,12 +27,12 @@ Below is an example of an `ro-crate-metadata.json` file, which describes rainfal
 
 ```
 {
-  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@context": "https://w3id.org/ro/crate/1.2/context",
   "@graph": [
     {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2"},
       "about": {"@id": "./"}
     },
     {
@@ -71,7 +71,7 @@ Below is an example of an `ro-crate-metadata.json` file, which describes rainfal
 }
 ```
 
-See [Walkthrough of an RO-Crate](specification/1.2-DRAFT/introduction#walkthrough-an-initial-ro-crate) for an explanation of each element of the file, or [Tutorials](tutorials) for a hands-on introduction.
+See [Walkthrough of an RO-Crate](specification/1.2/introduction#walkthrough-an-initial-ro-crate) for an explanation of each element of the file, or [Tutorials](tutorials) for a hands-on introduction.
 
 
 ## About the RO-Crate Community
