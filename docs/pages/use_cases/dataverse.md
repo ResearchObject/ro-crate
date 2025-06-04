@@ -18,7 +18,7 @@ roles: [data_steward, repository_manager]
 
 Dataverse has optional support for **export** as RO-Crate, this must currently be enabled as an [external exporter](https://guides.dataverse.org/en/6.4/installation/advanced.html#external-metadata-exporters). 
 
-There are two export methods developed, both return a [detached RO-Crate](/specification/1.2/structure.html#detached-ro-crate-package) as JSON-LD output:
+There are two export methods developed, both return a [detached RO-Crate](specification/1.2/structure#detached-ro-crate-package) as JSON-LD output:
 
 * [KU Leuven](https://www.kuleuven.be/) developed [exporter-ro-crate](https://github.com/gdcc/exporter-ro-crate), with support from [EOSC FAIR-IMPACT](https://fair-impact.eu/support-offer-2-enabling-fair-signposting-and-ro-crate-contentmetadata-discovery-and-consumption). This is a customizable exporter that can be adjusted based on Dataverse's configurable metadata blocks.
 * The [Transformer exporter](https://github.com/gdcc/exporter-transformer) supports RO-Crate Metadata JSON export as `arp-ro-crate`, which adds `@context` mapping of typical dataverse metadata fields, e.g. `geographicBoundingBox` or `grantNumberAgency`. A more basic form `basic-ro-crate` mainly describes the dataset. 
