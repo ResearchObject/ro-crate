@@ -37,7 +37,7 @@ nav_order: 21
 
 When implementing tools to work with RO-Crate it is not necessary to use JSON-LD software libraries, however, programmers should keep in mind the following:
 
-- **_RO-Crate JSON-lD_ has a flat structure**; every entity is a JSON object directly within the `@graph` array in the _RO-Crate Metadata Document_. A useful strategy when processing a crate is to build a look-up table and/or function so that entities can be found via their ID, for example provide a method such as `getEntity(id)` which returns an entity by its id or a `null` value if it's not there.
+- **_RO-Crate JSON-LD_ has a flat structure**; every entity is a JSON object directly within the `@graph` array in the _RO-Crate Metadata Document_. A useful strategy when processing a crate is to build a look-up table and/or function so that entities can be found via their ID, for example provide a method such as `getEntity(id)` which returns an entity by its id or a `null` value if it's not there.
 
 - **Code defensively**. Code should not assume that values will always be a String; values for properties may be single scalar values such as strings or integers (`"2"` or 2), or references to other entities such as `{"@id", "_:1"}` (where the referenced entity may or may not be described in the crate, see the point above about having a `getEntity()` method).
 
@@ -135,9 +135,9 @@ b0556450…8802  bag-info.txt
 000b27e3…c52e  manifest-sha512.txt
 ```
 
-{% include callout.html type="warning" content='The BagIt manifest is intended to detect "bit rot" and accidental damage,
-it does not provide proof the RO-Crate has not been deliberately
-tampered with, as a malicious actor can also update the checksums.' %}
+{% include callout.html type="warning" content="The BagIt manifest is intended to detect \"bit rot\" and accidental damage,
+it does not provide proof the RO-Crate has not been deliberately tampered with, as a malicious actor can also update the checksums."
+%}
 
 Guarding against such scenarious would require additional cryptographic
 measures, e.g.  

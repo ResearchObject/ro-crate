@@ -505,9 +505,9 @@ This example shows how to define a place, using a [geonames] ID:
 }
 ```
 
-{% include callout.html type="tip" content='To find the `@id` and `identifier` corresponding to a GeoNames HTML page like <https://www.geonames.org/8152662/catalina-park.html>, click its `.rdf` button to download the RDF metadata (<https://sws.geonames.org/8152662/about.rdf>). In the RDF metadata, find the line that looks like the following: 
-`<gn:Feature rdf:about="http://sws.geonames.org/8152662/">`. The part in the quotes is the identifier (in this case, <http://sws.geonames.org/8152662/>) .
-' %}
+{% include callout.html type="tip" content="To find the `@id` and `identifier` corresponding to a GeoNames HTML page like <https://www.geonames.org/8152662/catalina-park.html>, click its `.rdf` button to download the RDF metadata (<https://sws.geonames.org/8152662/about.rdf>). In the RDF metadata, find the line that looks like the following: 
+`<gn:Feature rdf:about=\"http://sws.geonames.org/8152662/\">`. The part in the quotes is the identifier (in this case, <http://sws.geonames.org/8152662/>)."
+%}
 
 {% include callout.html type="tip" content="Note the use of a JSON-LD [blank node](https://www.w3.org/TR/rdf11-concepts/#dfn-blank-node) identifier here (starting with `_:`) - this indicates to an RO-Crate presentation application that the entity does not stand in its own right, and may be displayed inline (in this case as a map)." %}
 
