@@ -68,8 +68,7 @@ The primary update to this chapter is to formally support declarating conformanc
 
 The Metadata Descriptor `conformsTo` should be a single value referencing a version of RO-Crate. Additional profiles should be listed on the Root Data Entity.
 
-{% include callout.html type="note" content="As the RO-Crate profile concept was developed, community usage of `conformsTo` expanded to include an array of profiles. Over time, it was agreed to move profile declarations to the Root Data Entity and away from the Metadata Descriptor. This is because the profile applies to the whole RO-Crate, and may cover aspects beyond 
-the crate's metadata file (e.g. identifiers, packaging, purpose). For compatibility reasons, 1.2 supports both options, but discourages including profiles in the Metadata Descriptor in new crates." %}
+{% include callout.html type="note" content="As the RO-Crate profile concept was developed, community usage of `conformsTo` expanded to include an array of profiles. Over time, it was agreed to move profile declarations to the Root Data Entity and away from the Metadata Descriptor. This is because the profile applies to the whole RO-Crate, and may cover aspects beyond the crate's metadata file (e.g. identifiers, packaging, purpose). For compatibility reasons, 1.2 supports both options, but discourages including profiles in the Metadata Descriptor in new crates." %}
 
 #### Root Data Entity
 
