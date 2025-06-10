@@ -10,19 +10,21 @@ nav_order: 30
 
 # RO-Crate Specification Quick Reference
 
-This document collates all the explicit requirements of the specification, while omitting all of the guidance, examples and notes. It is primarily intended for developers of tools which ingest/export/validate RO-Crates, though it may also be useful as a general resource. It should NOT be treated as a replacement for the spec itself!
+## How to use this document
 
-If you have questions, your first port of call should be the full specification page for the item you have questions about.
+This document collates all the explicit requirements of the specification, while omitting all of the guidance, examples and notes. It is primarily intended for developers of tools which ingest/export/validate RO-Crates, though it may also be useful as a general resource. It should NOT be treated as a replacement for the spec itself!.
 
 Requirements are grouped according to the part(s) of RO-Crate structure or the type(s) of entity they apply to. This means they are not necessarily in order in which they appear in the specification. Each table has a "primary source" listed at the top which links to the specification section containing the bulk of the requirements and guidance about that subject. Requirements which come from other sections have their source listed in the table itself.
 
+If you have a question about a requirement, it may already be answered on the full specification page for that requirement, so check there first.
+
 ## RO-Crate Structure
 
-[Structure - Full specification](../structure)
+[Structure - full specification](../structure)
 
 ### Metadata Document
 
-[RO-Crate Metadata Document - full reference](../structure#ro-crate-metadata-document-ro-crate-metadatajson)
+[RO-Crate Metadata Document - full specification](../structure#ro-crate-metadata-document-ro-crate-metadatajson)
 
 | Property/Target | Severity | Description | Notes | Changed in 1.2 |
 | ------ | ------ | ------- | ------ | --- |
@@ -42,7 +44,7 @@ Requirements are grouped according to the part(s) of RO-Crate structure or the t
 
 Though the concept of attached RO-Crates is new in version 1.2, most of the requirements in this section were present in the 1.1 specification. The difference is that there is now a second type of RO-Crate - the [Detached RO-Crate](#detached-ro-crate) - to which these requirements do not apply. Put another way, the requirements listed in this section that applied to all RO-Crates in version 1.1 now only apply to Attached RO-Crates.
 
-[Attached RO-Crate - full reference](../structure#attached-ro-crate-package)
+[Attached RO-Crate - full specification](../structure#attached-ro-crate-package)
 
 | Property/Target | Severity | Description | Notes | Changed in 1.2 |
 | ------ | ------ | ------- | ------ | --- |
@@ -63,7 +65,7 @@ Though the concept of attached RO-Crates is new in version 1.2, most of the requ
 
 ### Detached RO-Crate
 
-[Detached RO-Crate - full reference](../structure#detached-ro-crate-package)
+[Detached RO-Crate - full specification](../structure#detached-ro-crate-package)
 
 | Property/Target | Severity | Description | Notes | Changed in 1.2 |
 | ------ | ------ | ------- | ------ | --- |
@@ -75,7 +77,7 @@ Though the concept of attached RO-Crates is new in version 1.2, most of the requ
 
 ### RO-Crate Website
 
-[RO-Crate Website - full reference](../structure#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files-for-packages)
+[RO-Crate Website - full specification](../structure#ro-crate-website-ro-crate-previewhtml-and-ro-crate-preview_files-for-packages)
 
 | Property/Target | Severity | Description | Notes | Changed in 1.2 |
 | ------ | ------ | ------- | ------ | --- |
@@ -101,7 +103,7 @@ Removed 1.1 -> 1.2:
 
 ### All Entities
 
-[All entities - full reference](../metadata#common-principles-for-ro-crate-entities)
+[All entities - full specification](../metadata#common-principles-for-ro-crate-entities)
 
 Unless otherwise specified, all properties are optional. Constraints on properties apply only if the property is present.
 
@@ -335,14 +337,14 @@ The RO-Crate SHOULD contain additional information about _Contextual Entities_ f
 | Persistent identifier | `value` | MUST | Must be human-readable | [source](../root-data-entity#root-data-entity-identifier) | New |
 | Persistent identifier | `url` | SHOULD | Should be present if the identifier is Web-resolvable | [source](../root-data-entity#root-data-entity-identifier) | New |
 | Persistent identifier | `description` | MAY | May include a citable representation of this persistent identifier | [source](../root-data-entity#root-data-entity-identifier) | New |
-| RO-Crate profile | `@id` | SHOULD | Should be an absolute URI | [source](../profiles#profile-crate) | New |
-| RO-Crate profile | `@type` | MUST | Must include [Profile] | [source](../profiles#profile-crate) | New |
-| RO-Crate profile | `@type` | SHOULD | Should be an array | [source](../profiles#profile-crate) | New |
-| RO-Crate profile | `@type` | SHOULD | Should include [CreativeWork] if the profile is a web page | [source](../profiles#profile-crate) | New |
-| RO-Crate profile | `@type` | SHOULD | Should include [Dataset] if the profile is a Profile Crate | [source](../profiles#profile-crate) | New |
-| RO-Crate profile | `name` | SHOULD | Should be present | [source](../profiles#profile-crate) | New |
-| RO-Crate profile | `name` | SHOULD | Should be descriptive | [source](../profiles#profile-crate) | New |
-| RO-Crate profile | `version` | MAY | May be present | [Semantic Versioning][semver] preferred. [source](../profiles#profile-crate) | New |
+| RO-Crate profile | `@id` | SHOULD | Should be an absolute URI | [source](../profiles#declaring-conformance-of-an-ro-crate-profile) | New |
+| RO-Crate profile | `@type` | MUST | Must include [Profile] | [source](../profiles#declaring-conformance-of-an-ro-crate-profile) | New |
+| RO-Crate profile | `@type` | SHOULD | Should be an array | [source](../profiles#declaring-conformance-of-an-ro-crate-profile) | New |
+| RO-Crate profile | `@type` | SHOULD | Should include [CreativeWork] if the profile is a web page | [source](../profiles#declaring-conformance-of-an-ro-crate-profile) | New |
+| RO-Crate profile | `@type` | SHOULD | Should include [Dataset] if the profile is a Profile Crate | [source](../profiles#declaring-conformance-of-an-ro-crate-profile) | New |
+| RO-Crate profile | `name` | SHOULD | Should be present | [source](../profiles#declaring-conformance-of-an-ro-crate-profile) | New |
+| RO-Crate profile | `name` | SHOULD | Should be descriptive | [source](../profiles#declaring-conformance-of-an-ro-crate-profile) | New |
+| RO-Crate profile | `version` | MAY | May be present | [Semantic Versioning][semver] preferred. [source](../profiles#declaring-conformance-of-an-ro-crate-profile) | New |
 | RO-Crate profile | `distribution` | MAY | May link to a snapshot copy of the Profile Crate | Follow guidance for [dataset distributions](data-entities#directories-on-the-web-dataset-distributions). Useful for archiving. [source](../profiles#archiving-profile-crates) | New |
 | Programming language | `@type` | SHOULD | Should include `ComputerLanguage` | implicit? [source](../workflows#workflow-runtime-and-programming-language) | |
 | Programming language | `@type` | MAY | May include `SoftwareApplication` if the runtime of the language is essentially the same as the language itself | e.g. for Python and R [source](../workflows#workflow-runtime-and-programming-language) | |
@@ -361,6 +363,8 @@ Whole page seems to be guidelines, not requirements
 ## Provenance of entities
 
 [Provenance of entities - full specification](../provenance)
+
+This section is unchanged from version 1.1 to version 1.2.
 
 A software application or item of equipment SHOULD be associated with the [File]\(s) (or other [data entities](../data-entities)) it created as an [instrument] of a [CreateAction], with the [File] referenced by a [result] property. Any input files SHOULD be referenced by the [object] property.
 
