@@ -9,3 +9,7 @@ subitems:
     url: /profiles
   - title: Examples
     url: /examples
+  - title: Specification quick reference (1.2)
+    url: /quick-reference
+  - title: Human changelog (1.2)
+    url: /human-changelog
