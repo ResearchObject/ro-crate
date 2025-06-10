@@ -1,10 +1,6 @@
 ---
 title: Quick reference
-redirect_from:
-  - /1.2-DRAFT/appendix/quick-reference
-parent: Appendix
-grand_parent: RO-Crate 1.2-DRAFT
-nav_order: 30
+sidebar: resources
 ---
 
 

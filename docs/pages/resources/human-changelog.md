@@ -1,10 +1,6 @@
 ---
 title: Human changelog
-redirect_from:
-  - /1.2-DRAFT/appendix/human-changelog
-parent: Appendix
-grand_parent: RO-Crate 1.2-DRAFT
-nav_order: 35
+sidebar: resources
 ---
 
 # Human changelog 1.2
@@ -13,11 +9,15 @@ This document is designed to be a widely understandable summary of the changes i
 
 Not every change is described in detail. For developers and implementers that require further detail, you can see the exact changes to requirements by searching for "New" in the [specification quick reference](quick-reference). 
 
-## New chapter: [Introduction](introduction)
+## Introduction
 
-An introduction has been added with an overview of RO-Crate and an example. It is aimed at new users and can safely be ignored by experienced users, as it does not contain any requirements that are not represented elsewhere in the specification.
+The introduction has been greatly expanded with a walkthrough of an example RO-Crate. It is aimed at new users and can safely be ignored by experienced users, as it does not contain any requirements that are not represented elsewhere in the specification.
 
 ## RO-Crate Structure
+
+This section has the most significant changes for RO-Crate implementers.
+
+#### JSON-LD context
 
 The JSON-LD must (upgraded from should) use the RO-Crate JSON-LD Context https://w3id.org/ro/crate/1.2/context (updated version) by reference. Most (if not all) RO-Crates conforming to 1.1 already include the context by reference, so we do not expect this to be a disruptive change.
 
@@ -135,19 +135,19 @@ Numerous minor changes to properties:
 
 ### Contextual Entities
 
-Updated guidance on describing [places](../contextual-entities#places). 
+Updated rules for describing [places](../contextual-entities#places). 
 
-Other sections added new guidance on describing [encoding formats](../data-entities#adding-detailed-descriptions-of-file-encodings), [referenced RO-Crate metadata documents](../data-entities.md#referencing-another-metadata-document), [persistent identifiers](../root-data-entity#root-data-entity-identifier), and [RO-Crate profiles](../profiles.md#declaring-conformance-of-an-ro-crate-profile)
+Other chapters added new rules for describing [encoding formats](../data-entities#adding-detailed-descriptions-of-file-encodings), [referenced RO-Crate metadata documents](../data-entities.md#referencing-another-metadata-document), [persistent identifiers](../root-data-entity#root-data-entity-identifier), and [RO-Crate profiles](../profiles.md#declaring-conformance-of-an-ro-crate-profile).
 
 #### To update crates from 1.1
 
-* (optional) ensure descriptions of [places](../contextual-entities#places), [encoding formats](../data-entities#adding-detailed-descriptions-of-file-encodings), and [persistent identifiers](../root-data-entity#root-data-entity-identifier) follow updated guidance
+* (optional) ensure descriptions of [places](../contextual-entities#places), [encoding formats](../data-entities#adding-detailed-descriptions-of-file-encodings), and [persistent identifiers](../root-data-entity#root-data-entity-identifier) follow updated rules
 
 ## New chapter: [The focus of an RO-Crate](crate-focus)
 
-This section includes _guidance_ (no hard requirements) on how to indicate the main entity or entities within an RO-Crate. This is useful in the case of crates which contain many entities but have a few entities which are the most important or provide context for the rest.
+This chapter includes guidance (no hard requirements) on how to indicate the main entity or entities within an RO-Crate. This is useful in the case of crates which contain many entities but have a few entities which are the most important or provide context for the rest.
 
-This section formalizes existing community conventions around declaration of main entities, including the convention used in the [Workflow RO-Crate](https://about.workflowhub.eu/Workflow-RO-Crate/) profile.
+This chapter formalizes existing community conventions around declaration of main entities, including the convention used in the [Workflow RO-Crate](https://about.workflowhub.eu/Workflow-RO-Crate/) profile.
 
 ### Provenance of entities
 
