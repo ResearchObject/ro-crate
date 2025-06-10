@@ -34,3 +34,6 @@ sidebar: resources
   * [RO-Crate - Introduction](https://training.galaxyproject.org/topics/fair/tutorials/ro-crate-intro/tutorial.html): guides you through constructing a simple RO-Crate, similar to the Carpentries-style tutorial above
   * [RO-Crate in Python](https://training.galaxyproject.org/topics/fair/tutorials/ro-crate-in-python/tutorial.html): introduces the [`rocrate`](https://github.com/ResearchObject/ro-crate-py) Python package which can be used to construct, edit, and read RO-Crates
   * [Workflow Run RO-Crate introduction](https://training.galaxyproject.org/topics/fair/tutorials/ro-crate-workflow-run-ro-crate/tutorial.html): guides you through constructing an RO-Crate which captures an execution of a computational workflow.
+
+{% include callout.html type="tip" content="The [Crate-O](https://language-research-technology.github.io/crate-o/) and [RO-Crate playground](https://ro-crate.ldaca.edu.au/) provide graphical ways to create and explore RO-Crate." %}
+
