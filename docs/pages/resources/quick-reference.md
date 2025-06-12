@@ -199,6 +199,12 @@ Removed 1.1 -> 1.2:
 
 [Data Entities - full specification](../data-entities)
 
+A data entity is an entity which fulfils both of the following criteria:
+* its `@type` includes `File` or `Dataset`.
+* its `@id` is an absolute URI or a relative URI.
+
+A `File` or `Dataset` entity may have an `@id` which is a local identifier beginning with a `#`, in which case it is **not** considered to be a `Data Entity` and the rules below do not apply (though they can be used as best practices).
+
 | Type of data entity | Property/Target | Severity | Description | Notes | Changed in 1.2 |
 | ------- | ------| ------ | ------- | ------ | ----- |
 | Any | `@id` | MUST | Must be a valid URI reference. This includes using `/` separator for relative paths, and escaping special characters | | |
