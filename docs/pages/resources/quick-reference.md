@@ -527,7 +527,4 @@ Entities with a (D) are data entities; entities with a (C) are contextual entiti
 | `FormalParameter` | entity | MAY | May conform to the Bioschemas [FormalParameter][FormalParameter profile 1.0] profile | To conform, properties listed under "Marginality: Minimum" MUST be present, abnd properties listed under "Marginality: Recommended" SHOULD be present. Implicit | Updated suggested target version from 0.1-DRAFT to 1.0 |
 | `FormalParameter` | `conformsTo` | SHOULD | If conforming to the Bioschemas [FormalParameter][FormalParameter profile 1.0] profile, `conformsTo` should include the versioned URI for that profile | | |
 
-so far: 312 reqs...
-
-
 {% include references.liquid %}
