@@ -19,7 +19,7 @@ This section has significant changes and introduces a new type of RO-Crate, expa
 
 ### JSON-LD context
 
-The JSON-LD must (upgraded from should) use the RO-Crate JSON-LD Context https://w3id.org/ro/crate/1.2/context (updated version) by reference. Most (if not all) RO-Crates conforming to 1.1 already include the context by reference, so we do not expect this to be a disruptive change.
+The JSON-LD must (upgraded from should) use the RO-Crate JSON-LD Context <https://w3id.org/ro/crate/1.2/context> (updated version) by reference. Most (if not all) RO-Crates conforming to 1.1 already include the context by reference, so we do not expect this to be a disruptive change.
 
 ### Attached and Detached RO-Crate Packages
 
