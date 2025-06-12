@@ -1,6 +1,6 @@
 ---
 title: Blog
-permalink: /posts
+permalink: /blog
 ---
 
 # Blog

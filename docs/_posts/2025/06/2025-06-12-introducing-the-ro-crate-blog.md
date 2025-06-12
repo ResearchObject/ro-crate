@@ -1,6 +1,7 @@
 ---
 title:  "Introducing the RO-Crate blog"
 author: ["Eli Chadwick"]
+date: 2025-06-12
 ---
 
 # Introducing the RO-Crate blog
