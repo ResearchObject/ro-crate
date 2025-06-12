@@ -115,9 +115,9 @@ Most of the "new" requirements here are not truly new, but were implied in 1.1 a
 | `@type` | MAY | May be an array | | |
 | `@type` | SHOULD | If the entity is both a data entity and a contextual entity, should list both relevant data and contextual types | [source](../contextual-entities#contextual-vs-data-entities) | |
 | [name] | SHOULD | Should be present | | New |
-| [name] | SHOULD | Should be human-readable | hard to machine-test | New |
+| [name] | SHOULD | Should be human-readable | | New |
 | additional properties | SHOULD | Should be applicable to the `@type` (or superclass) according to their definitions | | New |
-| additional properties | MAY | May be present, including [custom properties](https://www.researchobject.org/ro-crate/specification/1.2-DRAFT/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms) | non-closed shapes | |
+| additional properties | MAY | May be present, including [custom properties](https://www.researchobject.org/ro-crate/specification/1.2-DRAFT/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms) | If validating RO-Crates with RDF shape constraints, this means you must not use closed shapes | |
 | additional properties | MAY | If the RO-Crate conforms to a profile, it may use [custom properties](https://www.researchobject.org/ro-crate/specification/1.2-DRAFT/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms) defined in that profile's [Profile Crate](../profiles#profile-crate) without making any additional contextual entities | using and copying terms are both valid, see below. [source](../profiles#how-to-retrieve-a-profile-crate) | New |
 | additional properties | MUST | If the RO-Crate uses a [custom property or class](https://www.researchobject.org/ro-crate/specification/1.2-DRAFT/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms) from a [Profile Crate](../profiles#profile-crate) without making additional contextual entities, it must use the full URI corresponding to the `@id` of that property/class within the Profile Crate, or be mapped to that URIs from the RO-Crate's JSON-LD `@context` | This can usually be achieved by importing whatever additional `@context` the profile recommends. [source](../profiles#how-to-retrieve-a-profile-crate) | New |
 | additional properties | MAY | If the RO-Crate conforms to a profile, it may copy across entities from that profile's [Profile Crate](../profiles#profile-crate) that define [custom properties](https://www.researchobject.org/ro-crate/specification/1.2-DRAFT/appendix/jsonld.html#adding-new-or-ad-hoc-vocabulary-terms) | using and copying terms are both valid, see line above. This way is useful for archiving. [source](../profiles#how-to-retrieve-a-profile-crate) | New |
@@ -125,7 +125,7 @@ Most of the "new" requirements here are not truly new, but were implied in 1.1 a
 | property references to other entities | MUST | Must use the `{ "@id": "..."}` object form |  | New |
 | the entity itself | SHOULD | Should be ultimately referenceable from the root data entity (possibly through another reachable [data entity](../data-entities) or [contextual entity](../contextual-entities)) | | New |
 | nested entities | MUST NOT | Must NOT be present - instead describe these as separate contextual entities in the flat `@graph` list | as the JSON-LD must be [flattened] | |
-| `citation` | SHOULD | If present, should reference a [ScholarlyArticle] or [CreativeWork] entity | [source](../contextual-entities#publications-via-citation-property) - CHECK THESE REQS they're weird | |
+| `citation` | SHOULD | If present, should reference a [ScholarlyArticle] or [CreativeWork] entity | [source](../contextual-entities#publications-via-citation-property) | |
 | `thumbnail` | MAY | May be present | applies mainly to [File] entities. [source](../contextual-entities#thumbnails) | |
 | `thumbnail` | MUST | If present, must reference a [File] data entity within the RO-Crate | [source](../contextual-entities#thumbnails) | |
 
@@ -158,9 +158,9 @@ Most of the "new" requirements here are not truly new, but were implied in 1.1 a
 | `@id` | SHOULD | Should be the string `./` or an absolute URI | | Updated - no longer needs to end with `/` and absolute URIs are now acceptable |
 | `@type` | MUST | Must be [Dataset] or an array that contains `Dataset` | | | |
 | [name] | MUST | Must be present | | |
-| [name] | SHOULD | Should identify the dataset to humans well enough to disambiguate it from other RO-Crates | not MA | |
+| [name] | SHOULD | Should identify the dataset to humans well enough to disambiguate it from other RO-Crates | | |
 | [description] | MUST | Must be present | | |
-| [description] | SHOULD | Should elaborate on the name to provide a summary of the context in which the dataset is important | not MA | |
+| [description] | SHOULD | Should elaborate on the name to provide a summary of the context in which the dataset is important | | |
 | [datePublished] | MUST | Must be present | | |
 | [datePublished] | MUST | Must be a single string value in [ISO 8601 date format][DateTime] | | Updated - added "single" |
 | [datePublished] | SHOULD | Should be specified to at least the precision of a day | | |
@@ -178,7 +178,7 @@ Most of the "new" requirements here are not truly new, but were implied in 1.1 a
 | `cite-as` | SHOULD | The RO-Crate download should be programmatically accessible through content negotiation or [Signposting] | | New |
 | `cite-as` | MAY | May go to a repository landing page | | New |
 | `cite-as` | MAY | May require authentication | | New |
-| HTTP/HTTPS server of the resolved RO-Crate Metadata Document or archive | SHOULD | Should indicate the persistent identifier in its [Signposting] headers using `Link rel="cite-as"`  | this segment is quite tangential... | New |
+| HTTP/HTTPS server of the resolved RO-Crate Metadata Document or archive | SHOULD | Should indicate the persistent identifier in its [Signposting] headers using `Link rel="cite-as"`  | | New |
 | `publisher` | SHOULD | Should be present | [source](../contextual-entities#publisher) | |
 | `publisher` | SHOULD | Should reference an [Organization] | [source](../contextual-entities#publisher) | |
 | `publisher` | MAY | May reference a [Person] | [source](../contextual-entities#publisher) | |
@@ -220,11 +220,11 @@ A `File` or `Dataset` entity may have an `@id` which is a local identifier begin
 | Any | `license` | SHOULD | Should reference a [CreativeWork] entity | [source](../contextual-entities#licensing-access-control-and-copyright) | |
 | Any | `contentLocation` / `spatialCoverage` | SHOULD | One of these properties should be present if the entity is associated with a geographical location or region | [source](../contextual-entities#places) | Updated - now allows `spatialCoverage` to be used |
 | Any | `contentLocation` / `spatialCoverage` | SHOULD | If present, should reference a [Place] entity | [source](../contextual-entities#places) | |
-| Any | `about` | MUST | Subject properties (equivalent to a [Dublin Core Subject](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/subject/)) must use the [about] property | I don't understand this one... [source](../contextual-entities#subjects--keywords) | |
+| Any | `about` | MUST | Subject properties (equivalent to a [Dublin Core Subject](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/subject/)) must use the [about] property | [source](../contextual-entities#subjects--keywords) | |
 | Any | `keywords` | MUST | Keyword properties must use the [keywords] property | [source](../contextual-entities#subjects--keywords) | |
-| Any | `temporalCoverage` | SHOULD | Should be present if the entity is associated with a time period | implicit!! [source](../contextual-entities#time) | |
+| Any | `temporalCoverage` | implicit | Should be present if the entity is associated with a time period | implicit due to phrasing, treated as a recommendation. [source](../contextual-entities#time) | |
 | Any | `citation` | MUST | If associating a publication with a dataset, `citation` must include a URL (for example a DOI URL) as the `@id` of a publication | See example in [source](../contextual-entities#publications-via-citation-property) | |
-| Any | `citation` | SHOULD | If present, should reference a [ScholarlyArticle] or [CreativeWork] entity | [source](../contextual-entities#publications-via-citation-property) - CHECK THESE REQS they're weird | |
+| Any | `citation` | SHOULD | If present, should reference a [ScholarlyArticle] or [CreativeWork] entity | [source](../contextual-entities#publications-via-citation-property) | |
 | Any | `identifier` | MAY | May be a published DOI that primarily captures that file or dataset | [source](../contextual-entities#publications-via-citation-property) | |
 | Any | `encodingFormat` | SHOULD | If the data entity is a subresource of an RO-Crate Profile Crate, `encodingFormat` should be present | [source](../profiles#what-is-included-in-the-profile-crate) | New |
 | CreativeWork (including File and Dataset) | `author` | SHOULD | If present, should reference one or more [Person] entities | [source](../contextual-entities#people) | |
@@ -243,14 +243,14 @@ A `File` or `Dataset` entity may have an `@id` which is a local identifier begin
 | File | `contentSize` | SHOULD | Should be the size of the file in bytes | | New |
 | File | `identifier`, `url`, `subjectOf`, `mainEntityOfPage` | MAY | May reference a relevant web presence for the entity | see [source](../data-entities#data-entities-in-an-attached-ro-crate-that-are-also-on-the-web) for further guidance |
 | File | `identifier`, `url`, `subjectOf`, `mainEntityOfPage` | SHOULD | If the entity is both in the _RO-Crate Root_ and on the web, one of these properties should be used to link to the relevant web presence | see [source](../data-entities#data-entities-in-an-attached-ro-crate-that-are-also-on-the-web) for further guidance |
-| Thumbnail (File) | usage | MUST | Must be present in the BagIt manifest if in a [_Bagged RO-Crate_](appendix/implementation-notes#adding-ro-crate-to-bagit) | this is a weird one too... actually more structural. [source](../contextual-entities#thumbnails)
+| Thumbnail (File) | usage | MUST | Must be present in the BagIt manifest if in a [_Bagged RO-Crate_](appendix/implementation-notes#adding-ro-crate-to-bagit) | [source](../contextual-entities#thumbnails)
 | Dataset | usage | MAY | May encapsulate a set of files without describing them individually as File data entities | | New |
 | Dataset | `@id` | MUST | Must be a relative URI, an absolute URI, or a local identifier beginning with `#` | |
 | Dataset | `@id` | SHOULD | If `@id` is a relative URI, it should end with `/` | | Updated - added "If `@id` is a relative URI" |
 | Dataset | `@id` | SHOULD | If `@id` is an absolute URI, it should resolve to a programmatic listing of the content of the "directory" | | |
 | Dataset | `@type` | MUST | Must be `Dataset` or an array where `Dataset` is one of the values | |
-| Dataset | `hasPart` | SHOULD | Should be present | is this needed? | New |
-| Dataset | `hasPart` | SHOULD | Should list any directly contained data entities | can it be empty? | New |
+| Dataset | `hasPart` | SHOULD | Should be present | | New |
+| Dataset | `hasPart` | SHOULD | Should list any directly contained data entities | | New |
 | Dataset | `hasPart` | MAY | May include other Datasets to represent a nested folder hierarchy | 
 | Dataset | `hasPart` | SHOULD | If the `@id` is a web URI, either `hasPart` should contain a complete listing of the dataset's content, or the dataset should be an RO-Crate | | Updated - added RO-Crate option |
 | Dataset | `distribution` | SHOULD | Should be present if the `@id` is a web URI | | New |
@@ -304,9 +304,9 @@ The RO-Crate SHOULD contain additional information about _Contextual Entities_ f
 | ------- | ------| ------ | ------- | ------- | ----- |
 | Any | `@id` | SHOULD | If an existing permalink or other absolute URI is reasonably unique for that entity, that URI should be used as `@id` |
 | Any | `@type` | SHOULD | If the entity is from a repository, should include [RepositoryObject] in addition to any other types | [source](../provenance#recording-changes-to-ro-crates) |
-| Person | `@id` | SHOULD | Should be an ORCID identifier, if possible | implicit! [source](../metadata#recommended-identifiers) | 
-| Person | `name` | SHOULD | Should be present | implicit! |
-| Person | `affiliation` | SHOULD | Should be present | implicit! |
+| Person | `@id` | SHOULD | Should be an ORCID identifier, if possible | [source](../metadata#recommended-identifiers) | 
+| Person | `name` | implicit | Should be present | Shown in a best practice example |
+| Person | `affiliation` | implicit | Should be present | Shown in a best practice example |
 | Person | `affiliation` | SHOULD | Should reference an [Organization] entity | [source](../contextual-entities#organizations-as-values) |
 | Person / Organization | `contactPoint` | SHOULD | Should be present in at least one of the entities that is referenced as [author] or [publisher] from the _Root Data Entity_ |
 | Person / Organization | `contactPoint` | SHOULD | Should reference a [ContactPoint] contextual entity |
@@ -323,7 +323,7 @@ The RO-Crate SHOULD contain additional information about _Contextual Entities_ f
 | Geometry | `asWKT` | SHOULD | Should express the point or shape in [Well Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) format |
 | Item of physical equipment | `@id` | SHOULD | Should be a URL to a web page describing the equipment | [source](../provenance#equipment-used-to-create-files) |
 | Item of physical equipment | `@type` | SHOULD | Should be [IndividualProduct] | [source](../provenance#equipment-used-to-create-files) |
-| Item of physical equipment | `description` | SHOULD | Should include serial number and manufacturer that identify the equipment as completely as possible | implicit - the SHOULD is present but doesn't say which property to use. [source](../provenance#equipment-used-to-create-files) |
+| Item of physical equipment | `description` | implicit | Should include serial number and manufacturer that identify the equipment as completely as possible | the SHOULD is present but doesn't say which property to use, so `description` is assumed. [source](../provenance#equipment-used-to-create-files) |
 | Software application | `@type` | SHOULD | Should be [SoftwareApplication] | [source](../provenance#software-used-to-create-files)
 | Software application | `version` | SHOULD | Should be present | [source](../provenance#software-used-to-create-files)
 | RepositoryCollection | usage | MAY | May be used to group [RepositoryObject] entities | [source](../provenance#recording-changes-to-ro-crates) |
@@ -351,7 +351,7 @@ The RO-Crate SHOULD contain additional information about _Contextual Entities_ f
 | RO-Crate profile | `name` | SHOULD | Should be descriptive | [source](../profiles#declaring-conformance-of-an-ro-crate-profile) | New |
 | RO-Crate profile | `version` | MAY | May be present | [Semantic Versioning][semver] preferred. [source](../profiles#declaring-conformance-of-an-ro-crate-profile) | New |
 | RO-Crate profile | `distribution` | MAY | May link to a snapshot copy of the Profile Crate | Follow guidance for [dataset distributions](data-entities#directories-on-the-web-dataset-distributions). Useful for archiving. [source](../profiles#archiving-profile-crates) | New |
-| Programming language | `@type` | SHOULD | Should include `ComputerLanguage` | implicit? [source](../workflows#workflow-runtime-and-programming-language) | |
+| Programming language | `@type` | implicit | Should include `ComputerLanguage` | "`programmingLanguage`, implied to be a `ComputerLanguage`". [source](../workflows#workflow-runtime-and-programming-language) | |
 | Programming language | `@type` | MAY | May include `SoftwareApplication` if the runtime of the language is essentially the same as the language itself | e.g. for Python and R [source](../workflows#workflow-runtime-and-programming-language) | |
 | `ComputerLanguage` or `SoftwareApplication` | `name` | MUST | Must be present |[source](../workflows#workflow-runtime-and-programming-language) | |
 | `ComputerLanguage` or `SoftwareApplication` | `url` | MUST | Must be present |[source](../workflows#workflow-runtime-and-programming-language) | |
@@ -376,7 +376,7 @@ A software application or item of equipment SHOULD be associated with the [File]
 | Type of entity | Property/Target | Severity | Description | Notes |
 | ------- | ------| ------ | ------- | ------- |
 | All Actions | `instrument` | MAY | May be present |
-| All Actions | `instrument` | SHOULD | Should reference an entity of type [IndividualProduct] (equipment) or [SoftwareApplication] (software), except if multiple [SoftwareApplication]s were used together | singleton? implicit in the writing |
+| All Actions | `instrument` | SHOULD | Should reference an entity of type [IndividualProduct] (equipment) or [SoftwareApplication] (software), except if multiple [SoftwareApplication]s were used together | phrasing implies that this might be expected to be a single value |
 | All Actions | `name` | SHOULD | Should be present |
 | All Actions | `description` | MAY | May be present |
 | All Actions | `endTime` | SHOULD | Should be present |
@@ -386,21 +386,21 @@ A software application or item of equipment SHOULD be associated with the [File]
 | All Actions | `startTime` | MUST | Must be in [ISO 8601 date format][DateTime] |
 | All Actions | `startTime` | SHOULD | Should be specified to at least the precision of a day |
 | All Actions | `agent` | SHOULD | Should be present |
-| All Actions | `agent` | SHOULD | Should reference a [Person] entity who was responsible for authorizing the action | implicit... just says a "human [agent] |
+| All Actions | `agent` | implicit | Should reference a [Person] entity who was responsible for authorizing the action | says a "human [agent]" should be referenced |
 | All Actions | `actionStatus` | MAY | May be present |
 | All Actions | `actionStatus` | MUST | MUST be must be one of the values enumerated by [ActionStatusType]: [ActiveActionStatus], [CompletedActionStatus], [FailedActionStatus] or [PotentialActionStatus] |
 | All Actions | `error` | MAY | If the Action failed, may include error information |
 | CreateAction | `instrument` | SHOULD | If multiple [SoftwareApplication]s were used together, should reference a [SoftwareSourceCode] entity representing the whole [workflow](../workflows) |
-| CreateAction | `result` | SHOULD | Should reference one or more entities representing the outputs of the action | implicit, actually only stated for [File]s |
-| CreateAction | `object` | SHOULD | Should reference one or more entities representing the inputs of the action | implicit, actually only stated for [File]s |
+| CreateAction | `result` | implicit | Should reference one or more entities representing the outputs of the action | only formally stated for [File]s |
+| CreateAction | `object` | implicit | Should reference one or more entities representing the inputs of the action | only formally stated for [File]s |
 | CreateAction | `name` | MAY | May be human-readable |
 | CreateAction | `name` | MAY | May be machine-generated |
-| CreateAction / UpdateAction | usage | SHOULD | To record an action which changes an entity's metadata, or changes its state in a publication or other workflow, a [CreateAction] or [UpdateAction] SHOULD be associated with a [Data Entity](../data-entities) or, for the RO-Crate itself, with the [root data entity](../root-data-entity). | can't tell if this is its own req, or if it is elaborated on by successive reqs |
-| CreateAction | usage | SHOULD | Should be used for actions which modify a [File] within a Dataset | within a crate?
+| CreateAction / UpdateAction | usage | SHOULD | To record an action which changes an entity's metadata, or changes its state in a publication or other workflow, a [CreateAction] or [UpdateAction] SHOULD be associated with a [Data Entity](../data-entities) or, for the RO-Crate itself, with the [root data entity](../root-data-entity). | not clear if this requirement stands alone or if the following requirements elaborate upon it |
+| CreateAction | usage | SHOULD | Should be used for actions which modify a [File] within a Dataset |
 | Action which creates data entities | `result` | SHOULD | Should reference the data entities that were created |
-| UpdateAction | usage | SHOULD | Should only be used for actions which affect the Dataset as a whole, such as movement through a workflow | Crate as a whole?
+| UpdateAction | usage | SHOULD | Should only be used for actions which affect the Dataset as a whole, such as movement through a workflow | |
 | Curation action | `object` | MUST | Must be present |
-| Curation action | `object` | MUST | Must reference the _Root Data Entity_ or one of the entities in its `hasPart` | what is a curation action...? |
+| Curation action | `object` | MUST | Must reference the _Root Data Entity_ or one of the entities in its `hasPart` |
 | File | usage | SHOULD | If a [CreateAction] modifies a file within a dataset, the old version should be retained and a [CreateAction] added which has the original version as its [object] and the new version as its [result] |
 
 ## RO-Crate Profiles
@@ -450,7 +450,7 @@ Entities with a (D) are data entities; entities with a (C) are contextual entiti
 | Root Data Entity (D) | `hasPart` | MUST | Must reference the human-readable _profile description_ as a data entity | | New |
 | Root Data Entity (D) | `hasPart` | SHOULD | Should list related data entities | | New |
 | Root Data Entity (D) | `hasPart` | MAY | If the _profile description_ is equivalent to the _RO-Crate website_ entity, that entity may be listed in `hasPart` (contrary to the [usual recommendations](#ro-crate-website)) | | New |
-| Root Data Entity (D) | `hasPart` | MAY | May _suggest_ other RO-Crate profiles which are interoperable with this one | implicit, [source](../profiles#multiple-profiles| New |
+| Root Data Entity (D) | `hasPart` | implicit | May _suggest_ other RO-Crate profiles which are interoperable with this one | text uses "can" rather than "may". [source](../profiles#multiple-profiles) |  |
 | Root Data Entity (D) | `hasResource` | MAY | May list descriptors of profile resources | | New |
 | Root Data Entity (D) | `hasResource` | SHOULD | If the profile [extends RO-Crate](../appendix/jsonld#extending-ro-crate), should reference a `ResourceDescriptor` for the vocabulary/ontology used | | New |
 | Root Data Entity (D) | `version` | MAY | May be present | [Semantic Versioning][semver] preferred | New |
@@ -461,14 +461,14 @@ Entities with a (D) are data entities; entities with a (C) are contextual entiti
 | Profile description resource (D) | `about` | MUST | Must reference the _Root Data Entity_ | | New |
 | Profile description resource (D) | `encodingFormat` | SHOULD | Should be `text/htmlNew `
 | Profile description resource (D) | entity | MAY | May be equivalent to the [_RO-Crate Website_ entity](#ro-crate-website) New |
-| Resource descriptor (C) | `@type` | SHOULD | Should include `ResourceDescriptor` | [source](../profiles#what-is-included-in-the-profile-crate) | New New |
-| Resource descriptor (C) | `hasRole` | SHOULD | Should reference the role of the resource | See [common roles in the Profiles Vocabulary](Profiles Vocabulary). Implicit from the example in the [source](../profiles#what-is-included-in-the-profile-crate) | New New |
-| Resource descriptor (C) | `hasRole` | SHOULD | If describing the _profile description_ resource, should be `http://www.w3.org/ns/dx/prof/role/specification` or `http://www.w3.org/ns/dx/prof/role/guidance` | New New |
-| Resource descriptor (C) | `hasRole` | SHOULD | If describing an external vocabulary, should be `http://www.w3.org/ns/dx/prof/role/vocabulary` | Implicit from example | New New |
-| Resource descriptor (C) | `hasRole` | MAY | If describing another RO-Crate profile that is interoperable with this one, may be `http://purl.org/dc/terms/conformsTo` | Guideline, not requirement [source](../profiles#multiple-profiles) | New New |
-| Resource descriptor (C) | `hasArtifact` | SHOULD | Should reference a data entity representing the subresource itself | [source](../profiles#what-is-included-in-the-profile-crate) | New New |
-| Resource descriptor (C) | `dct:format` | MAY | May be present | [source](../profiles#what-is-included-in-the-profile-crate) | New New |
-| Resource descriptor (C) | `dct:conformsTo` | MAY | May be present | [source](../profiles#what-is-included-in-the-profile-crate) | New New |
+| Resource descriptor (C) | `@type` | SHOULD | Should include `ResourceDescriptor` | [source](../profiles#what-is-included-in-the-profile-crate) | New |
+| Resource descriptor (C) | `hasRole` | implicit | Should reference the role of the resource | See [common roles in the Profiles Vocabulary](Profiles Vocabulary). Implicit from the example in the [source](../profiles#what-is-included-in-the-profile-crate) | New |
+| Resource descriptor (C) | `hasRole` | SHOULD | If describing the _profile description_ resource, should be `http://www.w3.org/ns/dx/prof/role/specification` or `http://www.w3.org/ns/dx/prof/role/guidance` | New |
+| Resource descriptor (C) | `hasRole` | implicit | If describing an external vocabulary, should be `http://www.w3.org/ns/dx/prof/role/vocabulary` | Implicit from example | New |
+| Resource descriptor (C) | `hasRole` | MAY | If describing another RO-Crate profile that is interoperable with this one, may be `http://purl.org/dc/terms/conformsTo` | text uses "can" rather than "may". [source](../profiles#multiple-profiles) | New |
+| Resource descriptor (C) | `hasArtifact` | SHOULD | Should reference a data entity representing the subresource itself | [source](../profiles#what-is-included-in-the-profile-crate) | New |
+| Resource descriptor (C) | `dct:format` | MAY | May be present | [source](../profiles#what-is-included-in-the-profile-crate) | New |
+| Resource descriptor (C) | `dct:conformsTo` | MAY | May be present | [source](../profiles#what-is-included-in-the-profile-crate) | New |
 | External vocabulary (D) | `@id` | SHOULD | Should be the namespace of the vocabulary | | New |
 | External vocabulary (D) | `@type` | SHOULD | Should be [DefinedTermSet] | | New |
 | External vocabulary (D) | `url` | SHOULD | Should link to a human-readable description of the vocabulary | | New |
@@ -492,7 +492,7 @@ Entities with a (D) are data entities; entities with a (C) are contextual entiti
 | JSON-LD context (C) | `conformsTo` | SHOULD | Should reference the contextual entity `http://www.w3.org/ns/json-ld#Context` | | New |
 | JSON-LD context (C) | `version` | MAY | May declare [version] according to [Semantic Versioning][semver] | | New |
 | `http://www.w3.org/ns/json-ld#Context` (C) | entity | MAY | May be present | Not required, even if the JSON-LD context `conformsTo` references it | New |
-| `http://www.w3.org/ns/json-ld#Context` (C) | `@type` | MAY | Should be `DefinedTerm` | implicit | New |
+| `http://www.w3.org/ns/json-ld#Context` (C) | `@type` | implicit | Should be `DefinedTerm` | Implicit from example and phrasing | New |
 | Interoperable RO-Crate profile (C) | entity | MAY | May be present | | New |
 | Interoperable RO-Crate profile sub-elements (C) | entity | SHOULD NOT | Should not be present | | New |
 
@@ -515,15 +515,14 @@ Entities with a (D) are data entities; entities with a (C) are contextual entiti
 | Workflow | `conformsTo` | SHOULD | If conforming to the Bioschemas [ComputationalWorkflow][ComputationalWorkflow profile 1.0] profile, `conformsTo` should include the versioned URI for that profile | | |
 | Script or Workflow | `programmingLanguage` | SHOULD | Should be present | | |
 | Script or Workflow | `programmingLanguage` | SHOULD | Should reference a `ComputerLanguage` representing the runtime of the workflow | Often the language and runtime are the essentially the same, but they may differ | |
-| Script or Workflow | `hasPart` | MAY | May reference `SoftwareApplication` or `SoftwareSourceCode` entities representing steps of the script/workflow | implicit/soft/guideline ? | |
-| Script or Workflow | `image` | MAY | May reference an `ImageObject` data entity representing a diagram/sketch which explains the script/workflow | implicit/soft/guideline ? | |
-| Script or Workflow | `input` | MAY | May reference `FormalParameter` contextual entities representing inputs | implicit? | |
-| Script or Workflow | `output` | MAY | May reference `FormalParameter` contextual entities representing outputs | implicit? | |
+| Script or Workflow | `hasPart` | implicit | May reference `SoftwareApplication` or `SoftwareSourceCode` entities representing steps of the script/workflow | text uses "it is possible to" rather than "may" | |
+| Script or Workflow | `image` | implicit | Should reference an `ImageObject` data entity representing a diagram/sketch which explains the script/workflow | Implicit in phrasing | |
+| Script or Workflow | `input` | implicit | May reference `FormalParameter` contextual entities representing inputs | text uses "can" rather than "may" | |
+| Script or Workflow | `output` | implicit | May reference `FormalParameter` contextual entities representing outputs | text uses "can" rather than "may" | |
 | Script or Workflow related `ImageObject` | `encodingFormat` | SHOULD | Should be present | |
 | Script or Workflow related `ImageObject` | `encodingFormat` | SHOULD | Should include an IANA [media type] as a string | see [contextual entities for file formats](#TODO) | | |
 | Script or Workflow related `ImageObject` | `encodingFormat` | SHOULD | Should include the [Pronom] identifier for the format, which may be a reference to a [file format](../data-entities#adding-detailed-descriptions-of-file-encodings) contextual entity | see [contextual entities for file formats](#TODO) | | |
-| Script or Workflow related `ImageObject` | `about` | SHOULD | Should reference the script/workflow that the image explains | implicit | |
-| Script or Workflow related `ImageObject` | `about` | SHOULD | Should reference the script/workflow that the image explains | | |
+| Script or Workflow related `ImageObject` | `about` | SHOULD | Should reference the script/workflow that the image explains | Implicit in phrasing | |
 | Script or Workflow related `ImageObject` | `about` | SHOULD | If there is no programmatic `SoftwareSourceCode` that can be executed, `about` should reference the datasets that the workflow created | | |
 | `FormalParameter` | entity | MAY | May conform to the Bioschemas [FormalParameter][FormalParameter profile 1.0] profile | To conform, properties listed under "Marginality: Minimum" MUST be present, abnd properties listed under "Marginality: Recommended" SHOULD be present. Implicit | Updated suggested target version from 0.1-DRAFT to 1.0 |
 | `FormalParameter` | `conformsTo` | SHOULD | If conforming to the Bioschemas [FormalParameter][FormalParameter profile 1.0] profile, `conformsTo` should include the versioned URI for that profile | | |
