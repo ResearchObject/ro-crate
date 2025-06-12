@@ -1,5 +1,5 @@
 ---
-title: Human changelog
+title: What's changed in RO-Crate 1.2
 sidebar: resources
 ---
 
