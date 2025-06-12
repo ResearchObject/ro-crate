@@ -11,5 +11,5 @@ subitems:
     url: /examples
   - title: Specification quick reference (1.2)
     url: /quick-reference
-  - title: Human changelog (1.2)
-    url: /human-changelog
+  - title: What's changed in 1.2
+    url: /whats-changed-in-1-2
