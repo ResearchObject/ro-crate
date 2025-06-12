@@ -90,7 +90,23 @@ Minor updates to some properties:
 
 ### Data Entities
 
-This release includes some clarifications about what and is and is not a data entity, and more carefully ensures that relative URIs correspond to files in the _RO-Crate Root_ (and vice versa).
+This release includes some clarifications about what and is and is not a data entity, and more carefully ensures that relative URIs correspond to files in the _RO-Crate Root_ (and vice versa). Quoting the [Data Entities](specification/data-entities) page:
+
+> The primary purpose for RO-Crate is to gather and describe a set of _Data Entities_ in the form of:
+> 
+> * Actual files which are datastreams available on the local file system or over the web -- when represented in the RO-Crate Metadata > Document, these have the type `File`. 
+> * Folders (or directories) of files -- represented using the type `Dataset`.
+> 
+> An entity which has `File` or `Dataset` as one of its `@type` values:
+> * Is considered to be a _Data Entity_ if its `@id` is an absolute URI or a relative URI.
+> * MAY have an `@id` which is a local identifier beginning with a `#`, in which case it is **not** considered to be a `Data Entity`.
+> 
+> . . .
+>
+> A `File` entity MAY have an `@id` that is a local identifier beginning with `#`, in which case it is **not** considered to be a Data Entity, though it MAY still be linked to the _Root Data Entity_ via [hasPart]. This is useful for describing physical files which are deliberately not present, for example if they are expected to be created by running a process. In this case, the `localPath` property SHOULD be used to indicate that a `File` could be found at that path in some circumstances.
+> 
+> . . .
+> A [Dataset] which has an `@id` that is a local identifier beginning with `#` is **not** considered a Data Entity -- but MAY be used to describe a set of files or other resources, and MAY still be linked to the _Root Data Entity_ via [hasPart].
 
 Detailed guidance was also added on [how an RO-Crate can reference other RO-Crates](../data-entities#referencing-other-ro-crates). Referenced RO-Crates may be nested, web-based, Attached or Detached, and so on - the specification aims to account for all common scenarios.
 
@@ -173,3 +189,7 @@ The only change in this chapter is an update to the suggested versions of the Bi
 ## Appendix
 
 Not checked thoroughly.
+
+A note was added on combining RO-Crate with the [ELN file format](https://github.com/TheELNConsortium/TheELNFileFormat) for Electronic Lab Notebooks.
+
+A note was added on the limitations of the existing SPARQL query for finding the Root Data Entity when a crate contains other nested or referenced crates.

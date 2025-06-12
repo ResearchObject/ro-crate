@@ -185,6 +185,7 @@ Most of the "new" requirements here are not truly new, but were implied in 1.1 a
 | `funder` | SHOULD | Should reference all funders directly, including those that are also referenced by entities included in `hasPart`. | [source](../contextual-entities#funding-and-grants) | |
 | `hasPart` | MUST | Must directly or indirectly (via nested `hasPart`) reference all _Data Entities_ in the RO-Crate JSON-LD | [source](../data-entities#referencing-files-and-folders-from-the-root-data-entity) | |
 | `hasPart` | MAY | May refer to files anywhere within the folder hierarchy within the _RO-Crate Root_ | [source](../data-entities#referencing-files-and-folders-from-the-root-data-entity) | |
+| `hasPart` | MAY | May reference additional entities, such as `File`s and `Dataset`s with local identifiers | i.e. does not need to exclusively reference the data entities. [source](../data-entities#referencing-files-and-folders-from-the-root-data-entity) | |
 | `distribution` | MAY | May be present | [source](../data-entities.md#downloadable-dataset) |
 | `distribution` | MAY | If present, should be the URI of an archive that contains the _RO-Crate Metadata Document_ | [source](../data-entities.md#downloadable-dataset) |
 | `conformsTo` | SHOULD | Should be present if the RO-Crate conforms to additional [RO-Crate profiles](../profiles.md) beyond the base specification | [source](../profiles.md#declaring-conformance-of-an-ro-crate-profile) | New |
@@ -258,13 +259,15 @@ Removed 1.1 -> 1.2:
 | Web-based File or Dataset | `sdDatePublished` | SHOULD | Should indicate when the `@id` was accessed
 | Web-based File or Dataset | `localPath` | MAY | May indicate a destination path that can be used when downloading the data | | New |
 
+* A `File` entity MAY have an `@id` that is a local identifier beginning with `#`, in which case it is **not** considered to be a Data Entity.
+    * though it MAY still be linked to the _Root Data Entity_ via [hasPart].
 * If `contentUrl` has more than one value, then a checker service SHOULD try each provided value until one resolves and returns a correct [contentSize].
 
 ### Referenced RO-Crates
 
 [Referenced RO-Crates – full specification](../data-entities#referencing-other-ro-crates)
 
-This section describes how an RO-Crate A may reference another RO-Crate B. Properties in the "Property/Target" column are properties of the data entity within A that represents B.
+This section describes how an RO-Crate A may reference another RO-Crate B. Properties in the "Property/Target" column are properties of **the data entity within A that represents B**.
 
 | Property/Target | Severity | Description | Notes | Changed in 1.2 |
 | ------- | ------| ------ | ------- | --- |
@@ -283,7 +286,7 @@ This section describes how an RO-Crate A may reference another RO-Crate B. Prope
 | `conformsTo` | MAY | May reference contextual entities representing [RO-Crate profiles](../profiles) (specific versions are permitted) | | New |
 
 * Consumers that find a reference to a `Dataset` with the generic RO-Crate profile indicated MAY attempt to resolve the persistent identifier, but SHOULD NOT assume that the `@id` directly resolves to an RO-Crate Metadata Document. 
-
+* It is NOT RECOMMENDED to resolve a relative root identifier if the metadata document was retrieved from a URI that does not end with `/ro-crate-metadata.json`, `/*-ro-crate-metadata.json` or `/ro-crate-metadata.jsonld` -- these are not part of a valid [Attached](structure.html#attached-ro-crate-package) or [Detached](structure.html#detached-ro-crate-package) RO-Crate Package.
 
 ## Contextual Entities
 
