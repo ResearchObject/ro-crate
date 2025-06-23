@@ -1,21 +1,21 @@
 {
-  "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
+  "@context": "https://w3id.org/ro/crate/1.2/context",
   "@graph": [
     {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.2"
       },
       "about": {
-        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.2"
       },
       "license": {
         "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
       }
     },
     {
-      "@id": "https://w3id.org/ro/crate/1.2-DRAFT",
+      "@id": "https://w3id.org/ro/crate/1.2",
       "@type": [
         "Dataset",
         "Profile"
@@ -227,29 +227,44 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-3234-6762"
-        }
+        },
+        { "@id": "https://orcid.org/0000-0003-4216-302X"},
+        { "@id": "https://orcid.org/0000-0002-1880-0597"},
+        { "@id": "https://orcid.org/0000-0001-6712-6335"},
+        { "@id": "https://orcid.org/0000-0002-5934-8998"},
+        { "@id": "https://orcid.org/0000-0001-9261-8390"},
+        { "@id": "https://orcid.org/0000-0002-0035-6475"},
+        { "@id": "https://orcid.org/0000-0001-9447-460X"},
+        { "@id": "https://orcid.org/0000-0001-7760-1240"},
+        { "@id": "https://orcid.org/0000-0001-9925-1560"},
+        { "@id": "https://orcid.org/0000-0003-4028-811X"},
+        { "@id": "https://orcid.org/0000-0003-2196-5015"},
+        { "@id": "https://orcid.org/0009-0002-6541-4637"},
+        { "@id": "https://orcid.org/0009-0002-8209-1999"},
+        { "@id": "https://orcid.org/0000-0001-7218-0176"},
+        { "@id": "https://orcid.org/0000-0003-3482-0325"}        
       ],
-      "cite-as": "https://doi.org/DOI",
+      "cite-as": "https://doi.org/10.5281/zenodo.13751027",
       "citation": {
         "@id": "https://doi.org/10.3233/DS-210053"
       },
-      "datePublished": "UNPUBLISHED",
+      "datePublished": "2025-06-04",
       "description": "Profile Crate for RO-Crate specification. This specification defines a method, known as RO-Crate (Research Object Crate), of organizing file-based data with associated metadata, using linked data principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata. \n\nThe core of RO-Crate is a JSON-LD file, the RO-Crate Metadata File, named ro-crate-metadata.json. This file contains structured metadata about the dataset as a whole (the Root Data Entity) and, optionally, about some or all of its files. This provides a simple way to, for example, assert the authors (e.g. people, organizations) of the RO-Crate or one its files, or to capture more complex provenance for files, such as how they were created using software and equipment. \n\nWhile providing the formal specification for RO-Crate, this document also aims to be a practical guide for software authors to create tools for generating and consuming research data packages, with explanation by examples.",
       "hasPart": [
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/"
         },
         {
-          "@id": "https://w3id.org/ro/crate/1.2-DRAFT/context"
+          "@id": "https://w3id.org/ro/crate/1.2/context"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/examples/rainfall-1.2.0/"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/examples/rainfall-1.2.0/"
         },
         {
-          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html"
+          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.2.0/ro-crate-1.2.0.html"
         },
         {
-          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf"
+          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.2.0/ro-crate-1.2.0.pdf"
         },
         {
           "@id": "http://www.w3.org/ns/dx/prof#ResourceDescriptor"
@@ -321,16 +336,19 @@
           "@id": "http://schema.org/valueRequired"
         },
         { 
-          "@id": "https://bioschemas.org/ComputationalWorkflow#input"
+          "@id": "https://bioschemas.org/properties/input"
         },
         { 
-          "@id": "https://bioschemas.org/ComputationalWorkflow#output"
+          "@id": "https://bioschemas.org/properties/output"
         },  
         {
           "@id": "http://purl.org/dc/terms/conformsTo"
+        },
+        {
+          "@id": "https://w3id.org/ro/terms#localPath"
         }
       ],
-      "identifier": {"@id": "https://doi.org/DOI"},      
+      "identifier": {"@id": "https://doi.org/10.5281/zenodo.13751027"},      
       "isBasedOn": {
         "@id": "https://w3id.org/ro/crate/1.1"
       },
@@ -358,7 +376,7 @@
       "publisher": {
         "@id": "https://www.researchobject.org/"
       },
-      "version": "TAG",
+      "version": "1.2.0",
       "hasResource": [
         {
           "@id": "#vocabulary-schema"
@@ -940,7 +958,7 @@
       ]
     },
     { 
-      "@id": "https://bioschemas.org/ComputationalWorkflow#input",
+      "@id": "https://bioschemas.org/properties/input",
       "@type": ["DefinedTerm", "rdf:Property"],
       "termCode": "input",
       "name": "input",
@@ -953,7 +971,7 @@
       ]
     },
     { 
-      "@id": "https://bioschemas.org/ComputationalWorkflow#output",
+      "@id": "https://bioschemas.org/properties/output",
       "@type": ["DefinedTerm", "rdf:Property"],
       "termCode": "output",
       "name": "output",
@@ -970,7 +988,14 @@
       "@type": "DefinedTerm",
       "name": "conformsTo",
       "termCode": "conformsTo"
-    },        
+    },
+    {
+      "@id": "https://w3id.org/ro/terms#localPath",
+      "@type": "DefinedTerm",
+      "name": "localPath",
+      "termCode": "localPath",
+      "description": "A recommended URI path to download this work to. Intended to be used on web-based data entities within RO-Crates."
+    },
     {
       "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
       "@type": "CreativeWork",
@@ -986,11 +1011,11 @@
       "version": "4.0"
     },
     {
-      "@id": "https://doi.org/DOI",
+      "@id": "https://doi.org/10.5281/zenodo.13751027",
       "@type": "PropertyValue", 
       "propertyID": "https://registry.identifiers.org/registry/doi",
-      "value": "doi:DOI",
-      "url": "https://doi.org/DOI"
+      "value": "doi:10.5281/zenodo.13751027",
+      "url": "https://doi.org/10.5281/zenodo.13751027"
     },
     {
       "@id": "https://doi.org/10.3233/DS-210053",
@@ -1055,7 +1080,7 @@
       "name": "Packaging research artefacts with RO-Crate"
     },
     {
-      "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html",
+      "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.2.0/ro-crate-1.2.0.html",
       "@type": "CreativeWork",
       "encodingFormat": [
         "text/html",
@@ -1065,68 +1090,68 @@
       ],
       "isBasedOn": [
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/about.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/about.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/introduction.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/introduction.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/terminology.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/terminology.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/structure.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/structure.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/metadata.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/metadata.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/root-data-entity.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/root-data-entity.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/data-entities.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/data-entities.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/crate-focus.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/crate-focus.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/contextual-entities.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/contextual-entities.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/provenance.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/provenance.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/profiles.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/workflows.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/workflows.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/changelog.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/changelog.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/implementation-notes.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/implementation-notes.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/jsonld.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/jsonld.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/relative-uris.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/relative-uris.html"
         }
       ],
-      "name": "RO-Crate Metadata Specification 1.2-DRAFT (single-page HTML)",
+      "name": "RO-Crate Metadata Specification 1.2 (single-page HTML)",
       "sameAs": {
-        "@id": "https://zenodo.org/record/ZENODO/files/ro-crate-TAG.html"
+        "@id": "https://zenodo.org/record/13751027/files/ro-crate-1.2.0.html"
       },
-      "version": "TAG"
+      "version": "1.2.0"
     },
     {
-      "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf",
+      "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.2.0/ro-crate-1.2.0.pdf",
       "@type": "CreativeWork",
       "encodingFormat": [
         "application/pdf",
@@ -1136,65 +1161,65 @@
       ],
       "isBasedOn": [
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/about.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/about.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/introduction.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/introduction.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/terminology.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/terminology.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/structure.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/structure.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/metadata.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/metadata.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/root-data-entity.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/root-data-entity.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/data-entities.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/data-entities.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/crate-focus.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/crate-focus.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/contextual-entities.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/contextual-entities.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/provenance.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/provenance.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/profiles.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/workflows.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/workflows.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/changelog.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/changelog.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/implementation-notes.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/implementation-notes.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/jsonld.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/jsonld.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/relative-uris.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/relative-uris.html"
         }
       ],
-      "name": "RO-Crate Metadata Specification 1.2-DRAFT (PDF)",
+      "name": "RO-Crate Metadata Specification 1.2 (PDF)",
       "sameAs": {
-        "@id": "https://zenodo.org/record/ZENODO/files/ro-crate-1.2-DRAFT.pdf"
+        "@id": "https://zenodo.org/record/13751027/files/ro-crate-1.2.pdf"
       },
-      "version": "TAG"
+      "version": "1.2.0"
     },
     {
       "@id": "https://orcid.org/0000-0001-5383-6993",
@@ -1552,6 +1577,67 @@
       "@type": "Person",
       "name": "Laura Rodríguez-Navas"
     },
+    { 
+      "@id": "https://orcid.org/0000-0003-4216-302X",
+      "@type": "Person",
+      "name": "Martin Weise"
+    },
+    { "@id": "https://orcid.org/0000-0002-1880-0597",
+      "@type": "Person",
+      "name": "Vartika Bisht"
+    },
+    { "@id": "https://orcid.org/0000-0001-6712-6335",
+      "@type": "Person",
+      "name": "Toshiyuki Nishiyama Hiraki"
+    },
+    { "@id": "https://orcid.org/0000-0002-5934-8998",
+      "@type": "Person",
+      "name": "Bram Ulrichts"
+    },
+    { "@id": "https://orcid.org/0000-0001-9261-8390",
+      "@type": "Person",
+      "name": "Michael Falk"
+    },
+    { "@id": "https://orcid.org/0000-0002-0035-6475",
+      "@type": "Person",
+      "name": "Eli Chadwick"
+    },
+    { "@id": "https://orcid.org/0000-0001-9447-460X",
+      "@type": "Person",
+      "name": "Daniel Bauer"
+    },
+    { "@id": "https://orcid.org/0000-0001-7760-1240",
+      "@type": "Person",
+      "name": "James Love"
+    },
+    { "@id": "https://orcid.org/0000-0001-9925-1560",
+      "@type": "Person",
+      "name": "Eleni Adamidi"
+    },
+    { "@id": "https://orcid.org/0000-0003-4028-811X",
+      "@type": "Person",
+      "name": "Josh Moore"
+    },
+    { "@id": "https://orcid.org/0000-0003-2196-5015",
+      "@type": "Person",
+      "name": "Lars Schöbitz"
+    },
+    { "@id": "https://orcid.org/0009-0002-6541-4637",
+      "@type": "Person",
+      "name": "Andreas Meier"
+    },
+    { "@id": "https://orcid.org/0009-0002-8209-1999",
+      "@type": "Person",
+      "name": "Juan Fuentes"
+    },
+    { "@id": "https://orcid.org/0000-0001-7218-0176",
+      "@type": "Person",
+      "name": "Edan Bainglass"
+    },
+    { "@id": "https://orcid.org/0000-0003-3482-0325",
+      "@type": "Person",
+      "name": "Balazs E. Pataki"
+    },
     {
       "@id": "http://spdx.org/licenses/CC0-1.0",
       "@type": "PropertyValue",
@@ -1592,7 +1678,7 @@
       "version": "1.1.2"      
     },    
     {
-      "@id": "https://w3id.org/ro/crate/1.2-DRAFT/context",
+      "@id": "https://w3id.org/ro/crate/1.2/context",
       "@type": "File",
       "conformsTo": {
         "@id": "http://www.w3.org/ns/json-ld#Context"
@@ -1618,16 +1704,16 @@
       "name": "RO-Crate JSON-LD Context",
       "sameAs": [
         {
-          "@id": "https://zenodo.org/record/ZENODO/files/ro-crate-context-TAG.jsonld"
+          "@id": "https://zenodo.org/record/13751027/files/ro-crate-context-1.2.0.jsonld"
         },
         {
-          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-context-TAG.jsonld"
+          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.2.0/ro-crate-context-1.2.0.jsonld"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/context.jsonld"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/context.jsonld"
         }
       ],
-      "version": "TAG"
+      "version": "1.2.0"
     },
     {
       "@id": "https://w3id.org/ro/doi/10.5281/zenodo.5146227",
@@ -1665,69 +1751,69 @@
       "url": "https://www.researchobject.org/"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/about.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/about.html",
       "@type": "WebPage",
       "name": "About this document"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/changelog.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/changelog.html",
       "@type": "WebPage",
       "name": "Changelog"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/implementation-notes.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/implementation-notes.html",
       "@type": "WebPage",
       "name": "Implementation notes"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/",
       "@type": "WebPage",
       "name": "Appendix",
       "hasPart": [
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/changelog.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/changelog.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/implementation-notes.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/implementation-notes.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/jsonld.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/jsonld.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/relative-uris.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/relative-uris.html"
         }        
       ]
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/jsonld.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/jsonld.html",
       "@type": "WebPage",
       "name": "RO-Crate JSON-LD"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/relative-uris.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/relative-uris.html",
       "@type": "WebPage",
       "name": "Handling relative URI references"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/contextual-entities.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/contextual-entities.html",
       "@type": "WebPage",
       "name": "Contextual Entities"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/crate-focus.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/crate-focus.html",
       "@type": "WebPage",
       "name": "The focus of an RO-Crate"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/data-entities.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/data-entities.html",
       "@type": "WebPage",
       "name": "Data Entities"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/examples/rainfall-1.2.0/",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/examples/rainfall-1.2.0/",
       "@type": "Dataset",
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.2"
       },
       "name": "Example dataset for RO-Crate specification",
       "license": {
@@ -1735,15 +1821,15 @@
       },
       "subjectOf": [
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/examples/rainfall-1.2.0/ro-crate-metadata.json"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/examples/rainfall-1.2.0/ro-crate-metadata.json"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/examples/rainfall-1.2.0/ro-crate-preview.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/examples/rainfall-1.2.0/ro-crate-preview.html"
         }
       ]
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/",
       "@type": [
         "WebSite",
         "File"
@@ -1756,106 +1842,106 @@
       ],
       "encoding": [
         {
-          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html"
+          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.2.0/ro-crate-1.2.0.html"
         },
         {
-          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf"
+          "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.2.0/ro-crate-1.2.0.pdf"
         }
       ],      
-      "identifier": {"@id": "https://doi.org/DOI"},
-      "name": "RO-Crate Metadata Specification 1.2-DRAFT",
+      "identifier": {"@id": "https://doi.org/10.5281/zenodo.13751027"},
+      "name": "RO-Crate Metadata Specification 1.2",
       "sameAs": {
-        "@id": "https://zenodo.org/record/ZENODO/files/ro-crate-TAG.html"
+        "@id": "https://zenodo.org/record/13751027/files/ro-crate-1.2.0.html"
       },
-      "version": "TAG",
+      "version": "1.2.0",
       "hasPart": [
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/introduction.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/introduction.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/terminology.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/terminology.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/structure.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/structure.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/metadata.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/metadata.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/root-data-entity.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/root-data-entity.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/data-entities.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/data-entities.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/crate-focus.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/crate-focus.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/contextual-entities.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/contextual-entities.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/provenance.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/provenance.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/profiles.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/workflows.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/workflows.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/changelog.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/changelog.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/implementation-notes.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/implementation-notes.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/jsonld.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/jsonld.html"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/appendix/relative-uris.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.2/appendix/relative-uris.html"
         }
       ]
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/introduction.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/introduction.html",
       "@type": "WebPage",
       "name": "Introduction"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/metadata.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/metadata.html",
       "@type": "WebPage",
       "name": "Metadata of the RO-Crate"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/profiles.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/profiles.html",
       "@type": "WebPage",
       "name": "Profiles"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/provenance.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/provenance.html",
       "@type": "WebPage",
       "name": "Provenance of entities"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/root-data-entity.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/root-data-entity.html",
       "@type": "WebPage",
       "name": "Root Data Entity"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/structure.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/structure.html",
       "@type": "WebPage",
       "name": "RO-Crate Structure"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/terminology.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/terminology.html",
       "@type": "WebPage",
       "name": "Terminology"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/workflows.html",
+      "@id": "https://www.researchobject.org/ro-crate/1.2/workflows.html",
       "@type": "WebPage",
       "name": "Workflows and scripts"
     },
@@ -2069,7 +2155,25 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-3234-6762"
-        }
+        },
+        { "@id": "https://orcid.org/0000-0003-4216-302X"},
+        { "@id": "https://orcid.org/0000-0002-1880-0597"},
+        { "@id": "https://orcid.org/0000-0001-6712-6335"},
+        { "@id": "https://orcid.org/0000-0002-5934-8998"},
+        { "@id": "https://orcid.org/0000-0001-9261-8390"},
+        { "@id": "https://orcid.org/0000-0002-0035-6475"},
+        { "@id": "https://orcid.org/0000-0001-9447-460X"},
+        { "@id": "https://orcid.org/0000-0001-7760-1240"},
+        { "@id": "https://orcid.org/0000-0001-9925-1560"},
+        { "@id": "https://orcid.org/0000-0003-4028-811X"},
+        { "@id": "https://orcid.org/0000-0003-2196-5015"},
+        { "@id": "https://orcid.org/0009-0002-6541-4637"},
+        { "@id": "https://orcid.org/0009-0002-8209-1999"},
+        { "@id": "https://orcid.org/0000-0001-7218-0176"},
+        { "@id": "https://orcid.org/0000-0003-3482-0325"}
+
+
+
       ],
       "name": "RO-Crate Community",
       "parentOrganization": {
@@ -2082,7 +2186,7 @@
       "@id": "#example-rainfall",
       "@type": "ResourceDescriptor",
       "hasArtifact": {
-        "@id": "https://www.researchobject.org/ro-crate/1.2-DRAFT/examples/rainfall-1.2.0/"
+        "@id": "https://www.researchobject.org/ro-crate/1.2/examples/rainfall-1.2.0/"
       },
       "hasRole": {
         "@id": "http://www.w3.org/ns/dx/prof/role/example"
@@ -2092,7 +2196,7 @@
       "@id": "#specification",
       "@type": "ResourceDescriptor",
       "hasArtifact": {
-        "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html"
+        "@id": "https://github.com/ResearchObject/ro-crate/releases/download/1.2.0/ro-crate-1.2.0.html"
       },
       "hasRole": {
         "@id": "http://www.w3.org/ns/dx/prof/role/specification"
