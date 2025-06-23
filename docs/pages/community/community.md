@@ -33,9 +33,9 @@ title: Community
 
 The _RO-Crate_ team is:
 
-* Peter Sefton <https://orcid.org/0000-0002-3545-944X> (co-chair)
-* Stian Soiland-Reyes <https://orcid.org/0000-0001-9842-9718> (co-chair)
-* Eoghan Ó Carragáin <https://orcid.org/0000-0001-8131-2150> (emeritus chair)
+* Peter Sefton <https://orcid.org/0000-0002-3545-944X> _(editor)_
+* Stian Soiland-Reyes <https://orcid.org/0000-0001-9842-9718> _(editor)_
+* Eoghan Ó Carragáin <https://orcid.org/0000-0001-8131-2150> _(emeritus chair)_
 * Oscar Corcho <https://orcid.org/0000-0002-9260-0753>
 * Daniel Garijo <https://orcid.org/0000-0003-0454-7145>
 * Raul Palma <https://orcid.org/0000-0003-4289-4922>
@@ -52,7 +52,7 @@ The _RO-Crate_ team is:
 * Salvador Capella-Gutierrez <https://orcid.org/0000-0002-0309-604X>
 * Alasdair J. G. Gray <https://orcid.org/0000-0002-5711-4872>
 * Stuart Owen <https://orcid.org/0000-0003-2130-0865>
-* Alan R Williams <https://orcid.org/0000-0003-3156-2105>
+* Alan R Williams <https://orcid.org/0000-0003-3156-2105> _(in memoria)_
 * Giacomo Tartari <https://orcid.org/0000-0003-1130-2154>
 * Finn Bacall <https://orcid.org/0000-0002-0048-3300>
 * Thomas Thelen <https://orcid.org/0000-0002-1756-2128>
@@ -127,19 +127,27 @@ The RO-Crate Community is open for anyone to [join us](https://github.com/Resear
 
 ## Steering Committee
 
-We are in the process of adapting the [Minimal Viable Governance](https://github.com/github/MVG) and are establishing a Steering Committee:
+The [RO-Crate Steering Committee](https://github.com/ResearchObject/governance/blob/main/org-docs/STEERING-COMMITTEE.md) follow the [Minimal Viable Governance](https://github.com/ResearchObject/governance) model, supporting the community's mission to write, maintain and release versions of the RO-Crate specification and associated website, as well as advocating RO-Crate use.
 
-* Carole Goble  
-* Peter Sefton
-* Stian Soiland-Reyes  
+* Abigail Miller,	The Jackson Laboratory (**chair**)
+* Eli Chadwick,	The University of Manchester (**co-chair**)
+* Peter Sefton,	University of Queensland
+* Stian Soiland-Reyes,	The University of Manchester
+* Carole Goble,	The University of Manchester
+* Rudolf Wittner,	BBMRI-ERIC and Masaryk University
+* Mike Lynch,	The University of Sydney
+* Raul Palma,	Poznan Supercomputing and Networking Center
+* Daniel Garijo,	Universidad Politécnica de Madrid
+* Marc Portier,	the Flanders Marine Institute
+* Josh Moore,	OME and German BioImaging e.V.
 
 You may contact the steering committe at `contact()researchobject.org` for any confidential matter.
 
 ## Meetings
 
-The RO-Crate team try to meet at least monthly in a telcon, see the [rolling agenda](https://s.apache.org/ro-crate-minutes) for schedule, call-in details and minutes.
+The RO-Crate team meet twice monthly in a telcon, see the [rolling agenda](https://s.apache.org/ro-crate-minutes) for schedule, call-in details and minutes.
 
-There are also regular [regional drop-in calls](https://s.apache.org/ro-crate-regional) aimed at those newer to the RO-Crate community. These sessions are suitable for beginner questions, as well as discussing ideas for new tools/integrations.
+There are also regular [regional drop-in calls](https://s.apache.org/ro-crate-regional) aimed at those newer to the RO-Crate community. These sessions are suitable for beginner questions, as well as discussing detailed ideas such as new tools/integrations.
 
 Members of the RO-Crate team can often be found presenting at open science conferences and events: see the list of [recent and upcoming events](outreach#upcoming-and-recent-events) for details.
 
