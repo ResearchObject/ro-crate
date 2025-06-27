@@ -5,6 +5,7 @@ sidebar: resources
 
 The RO-Crate spec uses schema.org as the "base" vocabulary for describing entities.
 However, in some cases, your crates can benefit from additional vocabularies which might offer extra precision when describing specific domains.
+Following the spec, such vocabularies [need to be registered as `DefinedTermSet`](https://www.researchobject.org/ro-crate/specification/1.2/profiles.html#extension-vocabularies).
 
 ## Vocabulary Sources
 
