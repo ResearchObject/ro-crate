@@ -9,3 +9,5 @@ subitems:
     url: /profiles
   - title: Examples
     url: /examples
+  - title: Vocabularies
+    url: /vocabularies
