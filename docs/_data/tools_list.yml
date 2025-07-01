@@ -1,8 +1,18 @@
 - name: Crate-O
   description: Browser-based editor for Research Object Crates, inspired by Describo, with vocabulary support for Schema.org Style schemas (SOSSs)
-  status: alpha
+  status: beta
   level:
   url: https://github.com/Language-Research-Technology/crate-o
+  subitems:
+    - name: Web-based Crate-O
+      url: https://language-research-technology.github.io/crate-o/
+
+- name: RO-Crate Playground
+  description: Write, run, and experiment with ro-crate directly in the browser, either at JSON-LD or form-based editing, with multiple visualisations. Builds on Crate-O
+  url: https://github.com/Language-Research-Technology/ro-crate-playground
+  subitems:
+    -name: Web-based editor
+     url: https://ro-crate.ldaca.edu.au/
 
 - name: Describo
   description: An intuitive and extensible tool for working with RO-Crates. Transform, Discover, Explore, Describe.
@@ -251,3 +261,14 @@
       url: https://github.com/intbio-ncl/ro-crate-rs
     - name: Python wrapper
       url: https://pypi.org/project/rocraters/
+
+- name: NovaCrate
+  description: Web-based interactive editor for creating, editing and visualizing RO-Crates
+  status: alpha
+  url: https://github.com/kit-data-manager/NovaCrate?tab=readme-ov-file#-novacrate
+  subitems:
+    - name: Web-based editor
+      url: https://kit-data-manager.github.io/NovaCrate/editor
+    - name: GitHub
+      url: https://github.com/kit-data-manager/NovaCrate
+    
