@@ -177,15 +177,27 @@
 
 - name: CheckMyCrate
   description: Validation according to Workflow RO-Crate profile
-  status: alpha
+  status: deprecated
   level:
   url: https://github.com/KockataEPich/CheckMyCrate/tree/Version
 
-- name: roc-validator
-  description: RO-Crate validator with support for profiles and SHACL
+- name: rocrate-validator (CRS4 roc-validator)
+  description: RO-Crate validator with support for profiles and SHACL. Command line tool and Python library.
   status: beta
   level:
   url: https://pypi.org/project/roc-validator/
+  subitems:
+   - name: Documentation
+     url: https://rocrate-validator.readthedocs.io/
+   - name: Source code
+     url: https://github.com/crs4/rocrate-validator
+   - name: Cratey-Validator (REST API front end)
+     url: https://github.com/eScienceLab/Cratey-Validator
+
+- name: provenance-storage (provstor)
+  description: RO-Crate storage and graph database, loaded from disk/URL into Apache Fuseki and MinIO, to then be queried using SPARQL. Targetting Workflow Run RO-Crates and other crates.
+  level: alpha
+  url: https://github.com/crs4/provenance-storage
 
 - name: ro-crate-validator-py
   description: Modular RO-Crate validator
