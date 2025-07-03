@@ -3,9 +3,15 @@ title: Vocabularies
 sidebar: resources
 ---
 
-The RO-Crate spec uses schema.org as the "base" vocabulary for describing entities.
-However, in some cases, your crates can benefit from additional vocabularies which might offer extra precision when describing specific domains.
-Following the spec, such vocabularies [need to be registered as `DefinedTermSet`](https://www.researchobject.org/ro-crate/specification/1.2/profiles.html#extension-vocabularies).
+The RO-Crate specification uses <http://schema.org/> as the [base vocabulary](https://www.researchobject.org/ro-crate/specification/1.2/metadata.html#base-metadata-standard-schemaorg) for describing entities, with a handful of additions from other vocabularies.  These are brought into a particular [RO-Crate metadata document](https://www.researchobject.org/ro-crate/specification/1.2/structure.html#ro-crate-metadata-document-ro-crate-metadatajson) using the JSON-LD key `@context`.
+
+The main principle when [extending RO-Crate](https://www.researchobject.org/ro-crate/specification/1.2/appendix/jsonld#extending-ro-crate) is to identify potential matching types and properties in schema.org and re-use these, allowing for a liberal interpretation. The [schema.org type hierarchy](https://schema.org/docs/full.html) may be helpful for exploring the existing types.  
+
+This is particularly the case when defining a new [profile](https://www.researchobject.org/ro-crate/specification/1.2/profiles.html) for a set of RO-Crates. For instance, the [Workflow Run Crate profiles](https://www.researchobject.org/workflow-run-crate/) uses multipe [`Action`](https://schema.org/Action) subclasses to describe workflow execution. Another advantage of this is that the `@context` do not need to be modified as most schema.org terms are part of the RO-Crate context.
+
+**Note**: The RO-Crate context is based on a released version of schema.org, for instance <https://w3id.org/ro/crate/1.2/context> is based on [schema.org v22.0](https://schema.org/docs/releases.html#v22.0) meaning terms added to schema.org after this date needs to be defined explicitly in `@context`.
+
+In some cases, your crates can benefit from additional vocabularies which might offer extra precision when describing specific domains. [Extending RO-Crate](https://www.researchobject.org/ro-crate/specification/1.2/appendix/jsonld#extending-ro-crate) can be done with [ad-hoc terms](https://www.researchobject.org/ro-crate/specification/1.2/appendix/jsonld#adding-new-or-ad-hoc-vocabulary-terms) or by using an existing RDF vocabulary. Such vocabularies should be noted in the RO-Crate profile [as a `DefinedTermSet` entity](https://www.researchobject.org/ro-crate/specification/1.2/profiles.html#extension-vocabularies). This page suggests how such vocabularies can be identified.
 
 ## Vocabulary Sources
 
