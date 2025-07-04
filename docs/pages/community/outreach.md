@@ -45,6 +45,13 @@ _Data Science_ **5**(2)
 
 ### 2025
 
+Eli Chadwick, Warren Del-Pinto, Alexander Hambley, Stian Soiland-Reyes (2025):  
+[**Demystifying RO-Crate**: An introduction to RO-Crate for TREvolution and DARE Early Adopters](https://youtu.be/7XSQKJOpZ20).  
+_DARE TREvolution_ webinar  
+<https://doi.org/10.5281/zenodo.15641886>
+[[video](https://youtu.be/7XSQKJOpZ20)]
+
+
 Jonas Grieb, Claus Weiland, Alexander Wolodkin, Julian Lopez Gordillo, Sharif Islam (2025):  
 [**Implementing FAIR Semantic Mappings Leveraging on RO-Crate**](https://doi.org/10.52825/ocp.v5i.1179)  
 _International FAIR Digital Objects Implementation Summit 2024_ ([FDO2024](https://fairdo.org/fdof-summit-2024/)), Berlin, Germany, 2024-03-20/--21.  
@@ -109,6 +116,11 @@ _BioHackrXiv_
 <https://doi.org/10.37044/osf.io/3x274>
 
 ### 2024
+
+Peter Sefton, Amanda Harris, Nick Thieberger (2024):  
+**A new archival data structure**: PARADISEC's move to RO-Crate.  
+_Language Documentation and Archiving Conference_, Berlin & Online, 4-6 Sept, 2024  
+<https://www.youtube.com/watch?v=9sO-WUxhOJY>
 
 Dmitry Schigel, Kate Ingenloff, Sharif Islam, Tomas Martinovic, Claus Weiland (2024):   
 **SYM06 Biodiversity Data Standards and FAIR in Prototyping Biodiversity Digital Twins**.  
