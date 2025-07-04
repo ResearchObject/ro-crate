@@ -11,8 +11,8 @@
   description: Write, run, and experiment with ro-crate directly in the browser, either at JSON-LD or form-based editing, with multiple visualisations. Builds on Crate-O
   url: https://github.com/Language-Research-Technology/ro-crate-playground
   subitems:
-    -name: Web-based editor
-     url: https://ro-crate.ldaca.edu.au/
+    - name: Web-based editor
+      url: https://ro-crate.ldaca.edu.au/
 
 - name: Describo
   description: An intuitive and extensible tool for working with RO-Crates. Transform, Discover, Explore, Describe.
