@@ -1,8 +1,18 @@
 - name: Crate-O
   description: Browser-based editor for Research Object Crates, inspired by Describo, with vocabulary support for Schema.org Style schemas (SOSSs)
-  status: alpha
+  status: beta
   level:
   url: https://github.com/Language-Research-Technology/crate-o
+  subitems:
+    - name: Web-based Crate-O
+      url: https://language-research-technology.github.io/crate-o/
+
+- name: RO-Crate Playground
+  description: Write, run, and experiment with ro-crate directly in the browser, either at JSON-LD or form-based editing, with multiple visualisations. Builds on Crate-O
+  url: https://github.com/Language-Research-Technology/ro-crate-playground
+  subitems:
+    - name: Web-based editor
+      url: https://ro-crate.ldaca.edu.au/
 
 - name: Describo
   description: An intuitive and extensible tool for working with RO-Crates. Transform, Discover, Explore, Describe.
@@ -167,15 +177,27 @@
 
 - name: CheckMyCrate
   description: Validation according to Workflow RO-Crate profile
-  status: alpha
+  status: deprecated
   level:
   url: https://github.com/KockataEPich/CheckMyCrate/tree/Version
 
-- name: roc-validator
-  description: RO-Crate validator with support for profiles and SHACL
+- name: rocrate-validator (CRS4 roc-validator)
+  description: RO-Crate validator with support for profiles and SHACL. Command line tool and Python library.
   status: beta
   level:
   url: https://pypi.org/project/roc-validator/
+  subitems:
+   - name: Documentation
+     url: https://rocrate-validator.readthedocs.io/
+   - name: Source code
+     url: https://github.com/crs4/rocrate-validator
+   - name: Cratey-Validator (REST API front end)
+     url: https://github.com/eScienceLab/Cratey-Validator
+
+- name: provenance-storage (provstor)
+  description: RO-Crate storage and graph database, loaded from disk/URL into Apache Fuseki and MinIO, to then be queried using SPARQL. Targetting Workflow Run RO-Crates and other crates.
+  level: alpha
+  url: https://github.com/crs4/provenance-storage
 
 - name: ro-crate-validator-py
   description: Modular RO-Crate validator
@@ -251,3 +273,14 @@
       url: https://github.com/intbio-ncl/ro-crate-rs
     - name: Python wrapper
       url: https://pypi.org/project/rocraters/
+
+- name: NovaCrate
+  description: Web-based interactive editor for creating, editing and visualizing RO-Crates
+  status: alpha
+  url: https://github.com/kit-data-manager/NovaCrate?tab=readme-ov-file#-novacrate
+  subitems:
+    - name: Web-based editor
+      url: https://kit-data-manager.github.io/NovaCrate/editor
+    - name: GitHub
+      url: https://github.com/kit-data-manager/NovaCrate
+    
