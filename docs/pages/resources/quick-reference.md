@@ -4,19 +4,21 @@ sidebar: resources
 ---
 
 
-# RO-Crate Specification Quick Reference
+# RO-Crate 1.2 Specification Quick Reference
 
 ## How to use this document
 
 This document collates all the explicit requirements of the specification, while omitting all of the guidance, examples and notes. It is primarily intended for developers of tools which ingest/export/validate RO-Crates, though it may also be useful as a general resource. It should NOT be treated as a replacement for the spec itself!
 
-Requirements are grouped according to the part(s) of RO-Crate structure or the type(s) of entity they apply to. This means they are not necessarily in order in which they appear in the specification. Each table has a "primary source" listed at the top which links to the specification section containing the bulk of the requirements and guidance about that subject. Requirements which come from other sections have their source listed in the table itself.
+Requirements are grouped according to the part(s) of RO-Crate structure or the type(s) of entity they apply to. This means they are not necessarily in order in which they appear in the specification. Each table has a "primary source" listed above it which links to the specification section containing the bulk of the requirements and guidance about that subject. Requirements which come from other sections have their source listed in the table itself.
 
 Some requirements are described with severity "implicit" - in these cases the phrasing of the specification suggests that there is a good practice that should or could be followed, but does not use the formal MUST/SHOULD/MAY/etc terms. In these cases the strictness is a matter of interpretation and application - e.g. implementers may wish to follow them but validator developers might not.
 
 If you have a question about a requirement, it may already be answered on the full specification page for that requirement, so check there first.
 
-{% include callout.html type="warning" content="This document is a best-effort creation. Due to the size of the full specification, this list may contain mistakes or omissions. Once again, this document is not a replacement for the full specification. Use with caution." %}
+{% include callout.html type="warning" content="This is a new resource. It has been developed with careful attention, but the requirements listed here may still contain mistakes or omissions. Use with caution and [contact us](community#contact-us) if you notice something incorrect or missing. (2025-07-18)" %}
+
+{% include callout.html type="note" content="Requirements from the [appendix](specification/1.2/appendix) are not currently included in this list. (2025-07-18)"%}
 
 ## RO-Crate Structure
 

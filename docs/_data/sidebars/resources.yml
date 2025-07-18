@@ -9,9 +9,9 @@ subitems:
     url: /profiles
   - title: Examples
     url: /examples
-  - title: Specification quick reference (1.2)
-    url: /quick-reference
-  - title: What's changed in 1.2
-    url: /whats-changed-in-1-2
   - title: Vocabularies
     url: /vocabularies
+  - title: What's changed in RO-Crate 1.2
+    url: /whats-changed-in-1-2
+  - title: Specification quick reference (1.2)
+    url: /quick-reference
