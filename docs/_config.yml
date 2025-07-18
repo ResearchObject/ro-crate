@@ -27,6 +27,8 @@ exclude:
   - Gemfile*
   - LICENSE
 
+date_format: "%-d %B %Y"
+
 defaults:
   - scope:
       path: ""
@@ -71,6 +73,14 @@ defaults:
       search_exclude: false
 
   - scope:
+      path: "_posts"
+    values:
+      layout: "post"
+      sidebar: community
+      active_topnav: blog
+      suppress_topnav: community
+
+  - scope:
       path: "pages/about"
     values:
       layout: "default"
@@ -94,6 +104,8 @@ collections:
   compatibility:
     permalink: /:path
     output: true
+  posts:
+    permalink: /blog/:year/:month/:title
 
 theme_variables:
   topnav:
@@ -109,5 +121,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-github-metadata
+  - jekyll-feed
   - jemoji
   - webrick
