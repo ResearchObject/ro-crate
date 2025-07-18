@@ -25,8 +25,8 @@ The JSON-LD must (upgraded from should) use the RO-Crate JSON-LD Context <https:
 
 The requirement in 1.1 for a RO-Crate to always be a directory has proven to be limiting in some cases. For example, in some applications it is beneficial to serve RO-Crate metadata over an API separately from the data it describes. However, separating the metadata in this way requires some changes to how you handle cross-references and finding the Root Data Entity. Therefore, 1.2 introduces a distinction between "Attached" and "Detached" RO-Crate Packages:
 
-* [Attached RO-Crate Package](../structure#attached-ro-crate-package) has a defined root directory containing a payload of files and directories as well as the RO-Crate metadata (i.e. it is _attached to_ a file system). All RO-Crates conforming to version 1.1 are of this type.
-* [Detached RO-Crate Package](../structure#detached-ro-crate-package) has no defined root directory, and the RO-Crate metadata is accessed independently of the entities it describes (i.e. it is _detached from_ a file system). This type is new in 1.2 and comes with a few new requirements not detailed here.
+* [Attached RO-Crate Package](specification/1.2/structure#attached-ro-crate-package) has a defined root directory containing a payload of files and directories as well as the RO-Crate metadata (i.e. it is _attached to_ a file system). All RO-Crates conforming to version 1.1 are of this type.
+* [Detached RO-Crate Package](specification/1.2/structure#detached-ro-crate-package) has no defined root directory, and the RO-Crate metadata is accessed independently of the entities it describes (i.e. it is _detached from_ a file system). This type is new in 1.2 and comes with a few new requirements not detailed here.
 
 It is recommended that RO-Crate tool developers read the full specification for these sections to fully understand the requirements for these different types of crate. 
 
@@ -38,7 +38,7 @@ Previous versions of the specification recommended that the _RO-Crate Website_ s
 
 If the _RO-Crate Website_ is present, it must be a file named `ro-crate-preview.html` in the root directory. If there are additional website resources (e.g. JavaScript files), they must be in `ro-crate-preview_files/` in the root directory. These requirements are implied in version 1.1, so we expect most RO-Crates already follow them.
 
-The _RO-Crate Website_ and supporting files `ro-crate-preview.html` and `ro-crate-preview_files/` should not be included in the `hasPart` of any `Dataset` (except in the special case where `ro-crate-preview.html` is also the profile description within a [Profile Crate](../profiles#profile-crate)). Again, this was already discouraged in version 1.1.
+The _RO-Crate Website_ and supporting files `ro-crate-preview.html` and `ro-crate-preview_files/` should not be included in the `hasPart` of any `Dataset` (except in the special case where `ro-crate-preview.html` is also the profile description within a [Profile Crate](specification/1.2/profiles#profile-crate)). Again, this was already discouraged in version 1.1.
 
 ### To update crates from 1.1
 
@@ -79,12 +79,12 @@ Earlier versions of RO-Crate mandated an `@id` of `./` as a convention for ident
 Updates to some properties:
 * `datePublished` now must have a _single_ value
 * `license` may now reference a data entity
-* additional guidance on how to declare `identifier` and `cite-as` (see [Root Data Entity identifier](../root-data-entity#root-data-entity-identifier))
+* additional guidance on how to declare `identifier` and `cite-as` (see [Root Data Entity identifier](specification/1.2/root-data-entity#root-data-entity-identifier))
 
 ### To update crates from 1.1
 
 * ensure `datePublished` has a single value
-* check that `identifier` and `cite-as` follow the recommended approaches (see [Root Data Entity identifier](../root-data-entity#root-data-entity-identifier))
+* check that `identifier` and `cite-as` follow the recommended approaches (see [Root Data Entity identifier](specification/1.2/root-data-entity#root-data-entity-identifier))
 * if profiles are declared in `conformsTo` on the Metadata Descriptor, migrate these to `conformsTo` on the Root Data Entity
 * ensure a contextual entity is present for each profile listed in `conformsTo` on the Root Data Entity
 
@@ -108,7 +108,7 @@ A `File` or `Dataset` entity (or indeed any other entity) may have an `@id` whic
 
 ### Referencing other RO-Crates
 
-Detailed guidance was added on [how an RO-Crate can reference other RO-Crates](../data-entities#referencing-other-ro-crates). Referenced RO-Crates may be nested, web-based, Attached or Detached, and so on - the specification aims to account for all common scenarios.
+Detailed guidance was added on [how an RO-Crate can reference other RO-Crates](specification/1.2/data-entities#referencing-other-ro-crates). Referenced RO-Crates may be nested, web-based, Attached or Detached, and so on - the specification aims to account for all common scenarios.
 
 ### All data entities
 
@@ -145,19 +145,19 @@ Changes to properties:
 * (optional) ensure `name` and `description` are present
 * (optional) if the data entity is web-based, ensure its `@id` does not reference intermediate resources such as splash-pages, search services or web-based viewer applications
 * (optional) review new "should" rules for `File` and `Dataset` entities
-* (optional) if the crate references another RO-Crate, check that it follows the [new guidance](../data-entities#referencing-other-ro-crates) on this
+* (optional) if the crate references another RO-Crate, check that it follows the [new guidance](specification/1.2/data-entities#referencing-other-ro-crates) on this
 
 ## Contextual Entities
 
-Updated rules for describing [places](../contextual-entities#places). 
+Updated rules for describing [places](specification/1.2/contextual-entities#places). 
 
-Other chapters added new rules for describing [encoding formats](../data-entities#adding-detailed-descriptions-of-file-encodings), [persistent identifiers](../root-data-entity#root-data-entity-identifier), [referenced RO-Crate metadata documents](../data-entities.md#referencing-another-metadata-document), , and [RO-Crate profiles](../profiles.md#declaring-conformance-of-an-ro-crate-profile).
+Other chapters added new rules for describing [encoding formats](specification/1.2/data-entities#adding-detailed-descriptions-of-file-encodings), [persistent identifiers](specification/1.2/root-data-entity#root-data-entity-identifier), [referenced RO-Crate metadata documents](specification/1.2/data-entities#referencing-another-metadata-document), , and [RO-Crate profiles](specification/1.2/profiles#declaring-conformance-of-an-ro-crate-profile).
 
 ### To update crates from 1.1
 
 * (optional) ensure descriptions of places, encoding formats, persistent identifiers, referenced RO-Crates, and RO-Crate profiles follow updated rules linked above
 
-## New chapter: [The focus of an RO-Crate](crate-focus)
+## New chapter: [The focus of an RO-Crate](specification/1.2/crate-focus)
 
 This chapter includes guidance (no hard requirements) on how to indicate the main entity or entities within an RO-Crate. This is useful in the case of crates which contain many entities but have a few entities which are the most important or provide context for the rest.
 
@@ -167,7 +167,7 @@ This chapter formalizes existing community conventions around declaration of mai
 
 No changes.
 
-## New chapter: [Profiles](profiles)
+## New chapter: [Profiles](specification/1.2/profiles)
 
 Profiles define a set of conventions, types and properties that one can minimally require and expect to be present in RO-Crates used within a particular domain, application or framework.
 
