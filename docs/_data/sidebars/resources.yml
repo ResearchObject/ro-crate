@@ -11,3 +11,7 @@ subitems:
     url: /examples
   - title: Vocabularies
     url: /vocabularies
+  - title: What's changed in RO-Crate 1.2
+    url: /whats-changed-in-1-2
+  - title: Specification quick reference (1.2)
+    url: /quick-reference
