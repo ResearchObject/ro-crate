@@ -45,6 +45,23 @@ _Data Science_ **5**(2)
 
 ### 2025
 
+Phil Reed, Abigail Miller (2025):  
+[**Improving FAIRability of your research outcomes with RO-Crates and Bioschemas**](https://philreeddata.github.io/acmrep25/).  
+[*2025 ACM Conference on Reproducibility and Replicability*](https://acm-rep.github.io/2025/) (ACM REP'25), University of British Columbia, Vancouver, Canada, 2025-07-29/--31.
+
+Eli Chadwick, Stian Soiland-Reyes, Phil Reed (2025):  
+[**RO-Crate: Capturing FAIR research outputs in bioinformatics and beyond**](https://doi.org/10.5281/zenodo.15849770).  
+(poster, flash talk)  
+_Bioinformatics Open Science Conference_ (BOSC 2025)  
+_Intelligent Systems for Molecular Biology_ and _European Conference on Computational Biology_ (ISMB/ECCB 2025), Liverpool, Manchester, 2025-07-20/--24.  
+<https://doi.org/10.5281/zenodo.15849770>
+
+Eli Chadwick, Warren Del-Pinto, Alexander Hambley, Stian Soiland-Reyes (2025):  
+[**Demystifying RO-Crate**: An introduction to RO-Crate for TREvolution and DARE Early Adopters](https://youtu.be/7XSQKJOpZ20).  
+_DARE TREvolution_ webinar  
+<https://doi.org/10.5281/zenodo.15641886>
+[[video](https://youtu.be/7XSQKJOpZ20)]
+
 Jonas Grieb, Claus Weiland, Alexander Wolodkin, Julian Lopez Gordillo, Sharif Islam (2025):  
 [**Implementing FAIR Semantic Mappings Leveraging on RO-Crate**](https://doi.org/10.52825/ocp.v5i.1179)  
 _International FAIR Digital Objects Implementation Summit 2024_ ([FDO2024](https://fairdo.org/fdof-summit-2024/)), Berlin, Germany, 2024-03-20/--21.  
@@ -109,6 +126,11 @@ _BioHackrXiv_
 <https://doi.org/10.37044/osf.io/3x274>
 
 ### 2024
+
+Peter Sefton, Amanda Harris, Nick Thieberger (2024):  
+**A new archival data structure**: PARADISEC's move to RO-Crate.  
+_Language Documentation and Archiving Conference_, Berlin & Online, 4-6 Sept, 2024  
+<https://www.youtube.com/watch?v=9sO-WUxhOJY>
 
 Dmitry Schigel, Kate Ingenloff, Sharif Islam, Tomas Martinovic, Claus Weiland (2024):   
 **SYM06 Biodiversity Data Standards and FAIR in Prototyping Biodiversity Digital Twins**.  
@@ -1140,7 +1162,9 @@ See also [publications about Research Objects](https://www.researchobject.org/pu
 
 ## Upcoming and recent events
 
-_To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/master/docs/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
+_To suggest an event, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/main/docs/pages/community/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
+
+[Improving FAIRability of your research outcomes with RO-Crates and Bioschemas](https://philreeddata.github.io/acmrep25/), tutorial at [**2025 ACM Conference on Reproducibility and Replicability**](https://acm-rep.github.io/2025/) (ACM REP'25), University of British Columbia, Vancouver, Canada, 2025-07-29--31.
 
 [**Joint Hackathon of HD UK & ELIXIR-UK**](https://elixiruknode.org/event/2025-hdr-uk-elixir-uk-hackathon/), Birmingham, UK, 2025-02-12/--14.
 
