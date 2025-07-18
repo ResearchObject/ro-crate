@@ -1,5 +1,5 @@
 ---
-title: Quick reference
+title: RO-Crate 1.2 Specification Quick Reference
 sidebar: resources
 ---
 
