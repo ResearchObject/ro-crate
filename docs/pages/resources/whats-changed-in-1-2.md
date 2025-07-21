@@ -184,7 +184,7 @@ Community members who have already developed profiles should ensure that their p
 
 ## Workflows and Scripts
 
-The only change in this chapter is an update to the suggested versions of the Bioschemas profiles [ComputationalWorkflow] and [FormalParameter].
+The only change in this chapter is an update to the suggested versions of the Bioschemas profiles [ComputationalWorkflow][ComputationalWorkflow profile 1.0] and [FormalParameter][FormalParameter profile 1.0].
 
 ## Appendix
 
@@ -210,3 +210,5 @@ Extended and strengthened guidance on extending the RO-Crate context:
 * Extended section on [Local definitions of ad hoc terms](specification/1.2/appendix/jsonld#add-local-definitions-of-ad-hoc-terms), including some extra properties that should be included (`@id`, `name`, `description`) and how to describe the relationship to other terms.
 
 Added a section on [grouping extensions as an RO-Crate profile](specification/1.2/appendix/jsonld#grouping-extensions-as-an-ro-crate-profile).
+
+{% include references.liquid %}
