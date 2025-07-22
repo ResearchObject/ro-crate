@@ -210,6 +210,12 @@ Gabriele Padovani, Valentine Anantharaj, Sandro Fiore (2025):
 _arXiv_:2507.01075 [cs.LG]  
 <https://doi.org/10.48550/arXiv.2507.01075>
 
+Chris Card, Rachel Heaven, Andrew Kingdon, Patrick Bell, Alex Baldwin, Jeremy Carter, Jonathan Coney, Jonathan Cooper, Itahisa Gonzalez Alvarez, Michael Hollaway, 
+Matthew McCormack, David Poulter, Ag Stephens, Philip Trembath (2025):  
+**Publishing Environmental Data APIs for use in AI workflows**:
+recommendations and demonstrators of a standard approach within the NERC Environmental Data Service.  
+_NERC Open Research Archive_ OR/25/045  
+<https://nora.nerc.ac.uk/id/eprint/539708>
 
 
 ### 2024
