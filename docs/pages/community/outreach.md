@@ -43,11 +43,50 @@ _Data Science_ **5**(2)
 
 ## Recent publications, presentations, citations
 
+
 ### 2025
+
+Sean Wilkinson, Meznah Aloqalaa, Khalid Belhajjame, Michael R. Crusoe, Bruno de Paula Kinoshita, Luiz Gadelha, Daniel Garijo, Ove Johan Ragnar Gustafsson, Nick Juty, Sehrish Kanwal, Farah Zaib Khan, Johannes Köster, Karsten Peters-von Gehlen, Line Pouchard, Randy K. Rannow, Stian Soiland-Reyes, Nicola Soranzo, Shoaib Sufi, Ziheng Sun, Baiba Vilne, Merridee A. Wouters, Denis Yuen, Carole Goble (2025):  
+**Applying the FAIR Principles to Computational Workflows**.  
+_Scientific Data_ **12**:328
+<https://doi.org/10.1038/s41597-025-04451-9>
+
+Sean R. Wilkinson, Johan Gustafsson, Finn Bacall, Khalid Belhajjame, Salvador Capella, Jose Maria Fernandez Gonzalez, Jacob Fosso Tande, Luiz Gadelha, Daniel Garijo, Patricia Grubel, Bjorn Grüning, Farah Zaib Khan, Sehrish Kanwal, Simone Leo, Stuart Owen, Luca Pireddu, Line Pouchard, Laura Rodríguez-Navas, Beatriz Serrano-Solano, Stian Soiland-Reyes, Baiba Vilne, Alan Williams, Merridee Ann Wouters, Frederik Coppens, Carole Goble (2025):  
+**An Ecosystem of Services for FAIR Computational Workflows**.  
+Book chapter, draft  
+_arXiv_ 2505.15988 [cs.DC]
+<https://doi.org/10.48550/arXiv.2505.15988>
+
+Ove Johan Ragnar Gustafsson, Sean R. Wilkinson, Finn Bacall, Stian Soiland-Reyes, Simone Leo, Luca Pireddu, Stuart Owen, Nick Juty, José Mª Fernández, Tom Brown, Hervé Ménager, Björn Grüning, Salvador Capella-Gutierrez, Frederik Coppens, Carole Goble (2025):  
+**WorkflowHub**: a registry for computational workflows.  
+_Scientific Data_ **12**:837  
+<https://doi.org/10.1038/s41597-025-04786-3>
 
 Phil Reed, Abigail Miller (2025):  
 [**Improving FAIRability of your research outcomes with RO-Crates and Bioschemas**](https://philreeddata.github.io/acmrep25/).  
 [*2025 ACM Conference on Reproducibility and Replicability*](https://acm-rep.github.io/2025/) (ACM REP'25), University of British Columbia, Vancouver, Canada, 2025-07-29/--31.
+
+Raül Sirvent, Rocío Carratalá-Saez, Amal Gueroudji, Tanzima Islam, Line Pouchard,  Michela Taufer (2025):  
+**Reproducibility for HPC and Distributed Environments**:Committees, Nondeterminism, Performance, and Workflows.  
+_Proceedings of 2025 ACM Conference on Reproducibility and Replicability (ACM REP’25)._ (in print)  
+
+Mouna El Garb, Emmanuel Coquery, Fabien Duchateau, and Nicolas Lumineau (2025):  
+**Improving reproducibility in bioinformatics workflows with BioFlow-Model.**  
+_2025 ACM Conference on Reproducibility and Replicability_ (under revision)  
+[[preprint](https://perso.liris.cnrs.fr/fabien.duchateau/docs/papers/rep-2025.pdf)]
+
+
+Stian Soiland-Reyes, Stuart Wheater, Thomas Giles, Jonathan Couldridge, Phil Quinlan, Carole Goble (2025):  
+**Five Safes RO-Crate**: FAIR Digital Objects for Trusted Research Environments.  
+_International FAIR Digital Objects Implementation Summit 2024_, Berlin, Germany, 2024-03-20/–21.  
+_Open Conference Proceedings_ **5*  
+<https://doi.org/10.52825/ocp.v5i.1419>
+
+Bruno de Paula Kinoshita, Edgar Garriga Nogales, Manuel Giménez de Castro Marciani,  Miguel Castrillo Melguizo (2024):  
+**FAIR Digital Objects in Autosubmit Workflows**.  
+_International FAIR Digital Objects Implementation Summit 2024_, Berlin, Germany, 2024-03-20/–21.  
+_Open Conference Proceedings_ **5*  
+<https://doi.org/10.52825/ocp.v5i.1416>
 
 Eli Chadwick, Stian Soiland-Reyes, Phil Reed (2025):  
 [**RO-Crate: Capturing FAIR research outputs in bioinformatics and beyond**](https://doi.org/10.5281/zenodo.15849770).  
@@ -125,6 +164,54 @@ Alexander Rogers, Famke Bäuerle, Martin Beracochea, Alireza Heidari, Matt Burri
 _BioHackrXiv_  
 <https://doi.org/10.37044/osf.io/3x274>
 
+Markus Konkol, Astra Labuce, Sami Domisch, Merret Buurman, Vanessa Bremerich (2025):  
+**Encouraging reusability of computational research through Data-to-Knowledge Packages** - A hydrological use case.  
+_Open Research Europe_  
+<https://doi.org/10.12688/openreseurope.20221.2>
+
+Manuel Feser, Sebastian Beyvers, Daniel Arend, Constantin Breß, Maria Hansen, Christian Henke, Stephan Lesch, Carmen Scheuner, Heinrich Lukas Weil (2025):  
+**Simplifying and Standardizing the Creation of Data Use Agreements for Life Sciences and Beyond** - BH Germany2024.  
+_BioHackrXiv_  
+<https://doi.org/10.37044/osf.io/83apv_v1>
+
+Vladimir Korolev, Anupam Joshi (2025):  
+**Crystalia**: Flexible and Efficient Method for Large Dataset Lineage Tracking.  
+_2024 IEEE International Conference on Big Data (BigData)_  
+<https://doi.org/10.1109/BigData62323.2024.10826067>
+
+Daniel J.B. Clarke, John Erol Evangelista, Zhuorui Xie, Giacomo B. Marino, Anna I. Byrd, Mano R. Maurya, Sumana Srinivasan, Keyang Yu, Varduhi Petrosyan, Matthew E. Roth, Miroslav Milinkov, Charles Hadley King, Jeet Kiran Vora, Jonathon Keeney, Christopher Nemarich, William Khan, Alexander Lachmann, Nasheath Ahmed, Alexandra Agris, Juncheng Pan, Srinivasan Ramachandran, Eoin Fahy, Emmanuel Esquivel, Aleksandar Mihajlovic, Bosko Jevtic, Vuk Milinovic, Sean Kim, Patrick McNeely, Tianyi Wang, Eric Wenger, Miguel A. Brown, Alexander Sickler, Yuankun Zhu, Sherry L. Jenkins, Philip D. Blood, Deanne M. Taylor, Adam C. Resnick, Raja Mazumder, Aleksandar Milosavljevic, Shankar Subramaniam, Avi Ma’ayan (2024):  
+[**Playbook Workflow Builder**: Interactive Construction of Bioinformatics Workflows from a Network of Microservices](https://doi.org/10.1371/journal.pcbi.1012901).  
+_PLOS Computational Biology_ **21**(4):e1012901  
+<https://doi.org/10.1371/journal.pcbi.1012901>
+
+Eric Hauser, Kilian Warmuth, Marcel Kempf, Stefan Lachnit, Georg Carle (2025):  
+[**MARTE: Malleable and Automated Reproduction for Testbed-driven Experiments**](https://www.net.in.tum.de/fileadmin/bibtex/publications/papers/hauser_rep2025.pdf).  
+_2025 ACM Conference on Reproducibility and Replicability_ (in print)  
+
+Christopher Kelly, Wei Xu, Line C Pouchard, Hubertus Van Dam, Tanzima Z Islam, Shinjae Yoo, Kerstin Kleese Van Dam (2025):  
+**Performance analysis and data reduction for exascale scientific workflows**.  
+_The International Journal of High Performance Computing Applications_ **39**(4)  
+<https://doi.org/10.1177/10943420251316253>
+
+Paula Iborra, José M. Fernández, Laia Codo, Eugenio Gonzalo, Alexander Hambley, Stian Soiland-Reyes, Jonathan Couldridge, Carole Goble, Philip Quinlan, Salvador Capella-Gutierrez (2025):  
+**ENTRUSTing WfExS 1.0 with WES and TES**.  (Poster)  
+_ELIXIR All Hands Meeting_ 2025  
+<https://doi.org/10.7490/f1000research.1120178.1>
+
+
+Irene Celino, Mario Scrocca, Agnese Chiatti (2025):  
+**Mutual Understanding between People and Systems via Neurosymbolic AI and Knowledge Graphs**.  
+_Handbook on Neurosymbolic AI and Knowledge Graphs_  
+_Frontiers in Artificial Intelligence and Applications_ **400**  
+<https://doi.org/10.3233/FAIA250241>  [[arXiv:2504.11200](https://doi.org/10.48550/arXiv.2504.11200)]
+
+Gabriele Padovani, Valentine Anantharaj, Sandro Fiore (2025):  
+**Provenance Tracking in Large-Scale Machine Learning Systems**.  
+_arXiv_:2507.01075 [cs.LG]  
+<https://doi.org/10.48550/arXiv.2507.01075>
+
+
+
 ### 2024
 
 Peter Sefton, Amanda Harris, Nick Thieberger (2024):  
@@ -136,16 +223,6 @@ Dmitry Schigel, Kate Ingenloff, Sharif Islam, Tomas Martinovic, Claus Weiland (2
 **SYM06 Biodiversity Data Standards and FAIR in Prototyping Biodiversity Digital Twins**.  
 _Biodiversity Information Standards_ ([SPNHC-TDWG](https://baskaufs.github.io/website/conferences/2024/sessions/)) 2024, 2024-09-02/--06, Okinawa, Japan.  
 <https://www.youtube.com/watch?v=2IJKRQF8H-4>
-
-Ove Johan Ragnar Gustafsson, Sean R. Wilkinson, Finn Bacall, Stian Soiland-Reyes, Simone Leo, Luca Pireddu, Stuart Owen, Nick Juty, José Mª Fernández, Tom Brown, Hervé Ménager, Björn Grüning, Salvador Capella-Gutierrez, Frederik Coppens, Carole Goble (2024):  
-[**WorkflowHub: a registry for computational workflows**](https://doi.org/10.48550/arXiv.2410.06941).  
-_arXiv_:2410.06941 [cs.DL]  
-<https://doi.org/10.48550/arXiv.2410.06941>
-
-Sean Wilkinson, Meznah Aloqalaa, Khalid Belhajjame, Michael R. Crusoe, Bruno de Paula Kinoshita, Luiz Gadelha, Daniel Garijo, Ove Johan Ragnar Gustafsson, Nick Juty, Sehrish Kanwal, Farah Zaib Khan, Johannes Köster, Karsten Peters-von Gehlen, Line Pouchard, Randy K. Rannow, Stian Soiland-Reyes, Nicola Soranzo, Shoaib Sufi, Ziheng Sun, Baiba Vilne, Merridee A. Wouters, Denis Yuen, Carole Goble (2024):  
-[**Applying the FAIR Principles to Computational Workflows**](https://doi.org/10.48550/arXiv.2410.03490).  
-_arXiv_ 2410.03490 [cs.DL]  
-<https://doi.org/10.48550/arXiv.2410.03490>
 
 Rob Carrillo, Stian Soiland-Reyes, Esteban Gonzalez, Marie Josse, Marc Portier, Gael Lymer (2024):  
 [**Webinar: Unlocking the Power of RO-Crate for FAIR Research Data**](https://fairease.eu/events/fair-ease-webinar-RO-crate).  
@@ -256,10 +333,6 @@ George Marchment, Bryan Brancotte, Marie Schmit, Frédéric Lemoine, Sarah Cohen
 _NAR Genomics and Bioinformatics_ **6**(3):lqae092  
 <https://doi.org/10.1093/nargab/lqae092>
 
-Daniel J.B. Clarke, John Erol Evangelista, Zhuorui Xie, Giacomo B. Marino, Mano R. Maurya, Sumana Srinivasan, Keyang Yu, Varduhi Petrosyan, Matthew E. Roth, Miroslav Milinkov, Charles Hadley King, Jeet Kiran Vora, Jonathon Keeney, Christopher Nemarich, William Khan, Alexander Lachmann, Nasheath Ahmed, Sherry L. Jenkins, Alexandra Agris, Juncheng Pan, Srinivasan Ramachandran, Eoin Fahy, Emmanuel Esquivel, Aleksandar Mihajlovic, Bosko Jevtic, Vuk Milinovic, Sean Kim, Patrick McNeely, Tianyi Wang, Eric Wenger, Miguel A. Brown, Alexander Sickler, Yuankun Zhu, Philip D. Blood, Deanne M. Taylor, Adam C. Resnick, Raja Mazumder, Aleksandar Milosavljevic, Shankar Subramaniam, Avi Ma’ayan (2024):  
-[**Playbook Workflow Builder**: Interactive Construction of Bioinformatics Workflows from a Network of Microservices](https://doi.org/10.1101/2024.06.08.598037).  
-_bioRxiv_  
-<https://doi.org/10.1101/2024.06.08.598037>
 
 Timothy Clark, Jillian Mohan, Leah Schaffer, Kirsten Obernier, Sadnan Al Manir, Christopher P Churas, Amir Dailamy, Yesh Doctor, Antoine Forget, Jan Niklas Hansen, Mengzhou Hu, Joanna Lenkiewicz, Maxwell Adam Levinson, Charlotte Marquez, Sami Nourreddine, Justin Niestroy, Dexter Pratt, Gege Qian, Swathi Thaker, Jean-Christophe Bélisle-Pipon, Cynthia Brandt, Jake Chen, Ying Ding, Samah Fodeh, Nevan Krogan, Emma Lundberg, Prashant Mali, Pamela Payne-Foster, Sarah Ratcliffe, Vardit Ravitsky, Andrej Sali, Wade Schulz, Trey Ideker (2024):  
 [**Cell Maps for Artificial Intelligence**: AI-Ready Maps of Human Cell Architecture from Disease-Relevant Cell Lines](https://doi.org/10.1101/2024.05.21.589311).  
@@ -342,10 +415,6 @@ Stian Soiland-Reyes, Peter Sefton, Simone Leo, Leyla Jael Castro, Claus Weiland,
 (submitted)  
 <https://research.manchester.ac.uk/en/publications/ro-crate-community-update-2024>  
 
-Stian Soiland-Reyes, Stuart Wheater, Tom Giles, Carole Goble, Phil Quinlan (2024):  
-[**Five Safes RO-Crate: FAIR Digital Objects for Trusted Research Environments**](https://research.manchester.ac.uk/files/291224791/FDO2024-Goble-Lightningtalk-5scrate.pdf).  
-(submitted)  
-<https://research.manchester.ac.uk/en/publications/five-safes-ro-crate-fair-digital-objects-for-trusted-research-env>  
 
 Herbert Van de Sompel, Stian Soiland-Reyes (2024):  
 [**FAIR Signposting: Exposing the Topology of Digital Objects on the Web**](https://research.manchester.ac.uk/en/publications/fair-signposting-exposing-the-topology-of-digital-objects-on-the-).  
