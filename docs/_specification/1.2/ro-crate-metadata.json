@@ -309,10 +309,28 @@
           "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
         },
         {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subClassOf"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subPropertyOf"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment"
+        },
+        {
           "@id": "http://schema.org/Class"
         },
         {
           "@id": "http://schema.org/Property"
+        },
+        {
+          "@id": "http://schema.org/domainIncludes"
+        },
+        {
+          "@id": "http://schema.org/rangeIncludes"
         },
         {
           "@id": "http://www.opengis.net/ont/geosparql#Geometry"
@@ -517,6 +535,7 @@
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       },
+      "termCode": "rdfs:Class",
       "name": "Class (rdfs)",
       "description": "Class definition",
       "url": "https://www.w3.org/TR/rdf-schema/#ch_class"
@@ -527,10 +546,105 @@
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       },
+      "termCode": "rdfs:Property",
       "name": "Property (rdfs)",
-      "description": "Property definition, typically with domainIncludes and rangeIncludes",
+      "description": "Property definition, in schema.org style schema typically with domainIncludes and rangeIncludes",
       "url": "https://www.w3.org/TR/rdf-schema/#ch_property"
     },
+    {
+      "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subPropertyOf",
+      "@type": ["DefinedTerm","rdfs:Property"],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      },
+      "termCode": "rdfs:subPropertyOf",
+      "name": "subPropertyOf (rdfs)",
+      "domainIncludes": { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"},
+      "rangeIncludes": { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"},
+      "description": "A subproperty is a specialisation of another property",
+      "url": "https://www.w3.org/TR/rdf-schema/#ch_subpropertyof"
+    },
+    {
+      "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subClassOf",
+      "@type": ["DefinedTerm","rdfs:Property"],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      },
+      "domainIncludes": { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"},
+      "rangeIncludes": { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"},
+      "termCode": "rdfs:subClassOf",
+      "name": "subClassOf (rdfs)",
+      "description": "A subclass is a specialisation of another class",
+      "url": "https://www.w3.org/TR/rdf-schema/#ch_subclassof"
+    },
+    {
+      "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+      "@type": ["DefinedTerm","rdfs:Property"],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      },
+      "domainIncludes": [ 
+        { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"},
+        { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"}        
+      ],
+      "rangeIncludes": { "@id": "http://schema.org/Text"},
+      "termCode": "rdfs:label",
+      "name": "label (rdfs)",
+      "description": "A human-readable name of the property/class defined with RDFS, equivalent to 'name' in schema.org",
+      "url": "https://www.w3.org/TR/rdf-schema/#ch_label"
+    },     
+    {
+      "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+      "@type": ["DefinedTerm","rdfs:Property"],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      },
+      "domainIncludes": [ 
+        { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"},
+        { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"}        
+      ],
+      "rangeIncludes": { "@id": "http://schema.org/Text"},      
+      "termCode": "rdfs:comment",
+      "name": "comment (rdfs)",
+      "description": "A human-readable description of the property/class defined with RDFS, equivalent to 'description' in schema.org",
+      "url": "https://www.w3.org/TR/rdf-schema/#ch_comment"
+    },
+    {
+      "@id": "http://schema.org/domainIncludes",
+      "@type": ["DefinedTerm","rdfs:Property"],
+      "inDefinedTermSet": {
+        "@id": "https://schema.org/docs/releases.html#v22.0"
+      },
+      "name": "domainIncludes",
+      "termCode": "domainIncludes",
+      "domainIncludes": [
+        {"@id": "http://schema.org/Class"},
+        {"@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"}
+      ],
+      "rangeIncludes": [
+        {"@id": "http://schema.org/Class"},
+        {"@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"}
+      ],
+      "description": "The domain of a property includes the given classes, meaning the property may be used on instances of these classes. Equivalent to rdfs:domain but allowing multiple disjoint classes."      
+    },
+    {
+      "@id": "http://schema.org/rangeIncludes",
+      "@type": ["DefinedTerm","rdfs:Property"],
+      "inDefinedTermSet": {
+        "@id": "https://schema.org/docs/releases.html#v22.0"
+      },
+      "domainIncludes": [
+        {"@id": "http://schema.org/Class"},
+        {"@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"}
+      ],
+      "rangeIncludes": [
+        {"@id": "http://schema.org/Class"},
+        {"@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"}
+      ],      
+      "name": "rangeIncludes",
+      "termCode": "rangeIncludes",
+      "description": "The range of a property includes the given types, meaning instances of these types may be the target of this property. Equivalent to rdfs:range but allowing multiple disjoint types. For datatype properties, point to subclasses of http://schema.org/DataType e.g. for a string, http://schema.org/Text"
+    },    
     {
       "@id": "http://schema.org/Class",
       "@type": ["DefinedTerm","Class"],
