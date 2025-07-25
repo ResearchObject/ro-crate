@@ -3,6 +3,8 @@ title: Vocabularies
 sidebar: resources
 ---
 
+# Vocabularies
+
 The RO-Crate specification uses <http://schema.org/> as the [base vocabulary](https://www.researchobject.org/ro-crate/specification/1.2/metadata.html#base-metadata-standard-schemaorg) for describing entities, with a handful of additions from other vocabularies.  These are brought into a particular [RO-Crate metadata document](https://www.researchobject.org/ro-crate/specification/1.2/structure.html#ro-crate-metadata-document-ro-crate-metadatajson) using the JSON-LD key `@context`.
 
 The main principle when [extending RO-Crate](https://www.researchobject.org/ro-crate/specification/1.2/appendix/jsonld#extending-ro-crate) is to identify potential matching types and properties in schema.org and re-use these, allowing for a liberal interpretation. The [schema.org type hierarchy](https://schema.org/docs/full.html) may be helpful for exploring the existing types.  
