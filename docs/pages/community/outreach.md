@@ -2,7 +2,7 @@
 title: Outreach and Publications
 ---
 <!--
-   Copyright 2019-2024 The University of Manchester and RO Crate contributors 
+   Copyright 2019-2025 The University of Manchester and RO Crate contributors 
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -75,6 +75,9 @@ Mouna El Garb, Emmanuel Coquery, Fabien Duchateau, and Nicolas Lumineau (2025):
 _2025 ACM Conference on Reproducibility and Replicability_ (under revision)  
 [[preprint](https://perso.liris.cnrs.fr/fabien.duchateau/docs/papers/rep-2025.pdf)]
 
+Eric Hauser, Kilian Warmuth, Marcel Kempf, Stefan Lachnit, Georg Carle (2025):  
+[**MARTE: Malleable and Automated Reproduction for Testbed-driven Experiments**](https://www.net.in.tum.de/fileadmin/bibtex/publications/papers/hauser_rep2025.pdf).  
+_2025 ACM Conference on Reproducibility and Replicability_ (in print)  
 
 Stian Soiland-Reyes, Stuart Wheater, Thomas Giles, Jonathan Couldridge, Phil Quinlan, Carole Goble (2025):  
 **Five Safes RO-Crate**: FAIR Digital Objects for Trusted Research Environments.  
@@ -82,7 +85,7 @@ _International FAIR Digital Objects Implementation Summit 2024_, Berlin, Germany
 _Open Conference Proceedings_ **5*  
 <https://doi.org/10.52825/ocp.v5i.1419>
 
-Bruno de Paula Kinoshita, Edgar Garriga Nogales, Manuel Giménez de Castro Marciani,  Miguel Castrillo Melguizo (2024):  
+Bruno de Paula Kinoshita, Edgar Garriga Nogales, Manuel Giménez de Castro Marciani,  Miguel Castrillo Melguizo (2025):  
 **FAIR Digital Objects in Autosubmit Workflows**.  
 _International FAIR Digital Objects Implementation Summit 2024_, Berlin, Germany, 2024-03-20/–21.  
 _Open Conference Proceedings_ **5*  
@@ -179,14 +182,11 @@ Vladimir Korolev, Anupam Joshi (2025):
 _2024 IEEE International Conference on Big Data (BigData)_  
 <https://doi.org/10.1109/BigData62323.2024.10826067>
 
-Daniel J.B. Clarke, John Erol Evangelista, Zhuorui Xie, Giacomo B. Marino, Anna I. Byrd, Mano R. Maurya, Sumana Srinivasan, Keyang Yu, Varduhi Petrosyan, Matthew E. Roth, Miroslav Milinkov, Charles Hadley King, Jeet Kiran Vora, Jonathon Keeney, Christopher Nemarich, William Khan, Alexander Lachmann, Nasheath Ahmed, Alexandra Agris, Juncheng Pan, Srinivasan Ramachandran, Eoin Fahy, Emmanuel Esquivel, Aleksandar Mihajlovic, Bosko Jevtic, Vuk Milinovic, Sean Kim, Patrick McNeely, Tianyi Wang, Eric Wenger, Miguel A. Brown, Alexander Sickler, Yuankun Zhu, Sherry L. Jenkins, Philip D. Blood, Deanne M. Taylor, Adam C. Resnick, Raja Mazumder, Aleksandar Milosavljevic, Shankar Subramaniam, Avi Ma’ayan (2024):  
+Daniel J.B. Clarke, John Erol Evangelista, Zhuorui Xie, Giacomo B. Marino, Anna I. Byrd, Mano R. Maurya, Sumana Srinivasan, Keyang Yu, Varduhi Petrosyan, Matthew E. Roth, Miroslav Milinkov, Charles Hadley King, Jeet Kiran Vora, Jonathon Keeney, Christopher Nemarich, William Khan, Alexander Lachmann, Nasheath Ahmed, Alexandra Agris, Juncheng Pan, Srinivasan Ramachandran, Eoin Fahy, Emmanuel Esquivel, Aleksandar Mihajlovic, Bosko Jevtic, Vuk Milinovic, Sean Kim, Patrick McNeely, Tianyi Wang, Eric Wenger, Miguel A. Brown, Alexander Sickler, Yuankun Zhu, Sherry L. Jenkins, Philip D. Blood, Deanne M. Taylor, Adam C. Resnick, Raja Mazumder, Aleksandar Milosavljevic, Shankar Subramaniam, Avi Ma’ayan (2025):  
 [**Playbook Workflow Builder**: Interactive Construction of Bioinformatics Workflows from a Network of Microservices](https://doi.org/10.1371/journal.pcbi.1012901).  
 _PLOS Computational Biology_ **21**(4):e1012901  
 <https://doi.org/10.1371/journal.pcbi.1012901>
 
-Eric Hauser, Kilian Warmuth, Marcel Kempf, Stefan Lachnit, Georg Carle (2025):  
-[**MARTE: Malleable and Automated Reproduction for Testbed-driven Experiments**](https://www.net.in.tum.de/fileadmin/bibtex/publications/papers/hauser_rep2025.pdf).  
-_2025 ACM Conference on Reproducibility and Replicability_ (in print)  
 
 Christopher Kelly, Wei Xu, Line C Pouchard, Hubertus Van Dam, Tanzima Z Islam, Shinjae Yoo, Kerstin Kleese Van Dam (2025):  
 **Performance analysis and data reduction for exascale scientific workflows**.  
