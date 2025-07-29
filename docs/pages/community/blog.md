@@ -1,6 +1,7 @@
 ---
 title: Blog
 permalink: /blog
+sidebar: blog
 ---
 
 # Blog
