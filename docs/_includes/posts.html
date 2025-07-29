@@ -1,7 +1,7 @@
 <a href="{{ site.baseurl }}/feed.xml"><i class="fa fa-rss me-2"></i>Subscribe to the RSS feed</a>
 
 <ul class="list-unstyled">
-  {% for post in site.posts %}
+  {% for post in site.blog %}{% if post.layout == 'post' %}
     <li class="pb-3">
       <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a><br/></h2>
       <span>        
@@ -10,5 +10,5 @@
            {{ post.author | join: ", " }}
     </span>
     </li>
-  {% endfor %}
+  {% endif %}{% endfor %}
 </ul>
