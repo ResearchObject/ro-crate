@@ -1,5 +1,4 @@
 title: Blog
 title_url: blog
 subitems:
-  - title: Blog
-    url: /blog
+  # leave empty - this list is populated automatically when the site is generated

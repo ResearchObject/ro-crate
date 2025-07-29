@@ -2,7 +2,8 @@
 
 <ul class="list-unstyled">
   {% for post in site.blog %}{% if post.layout == 'post' %}
-    <li class="pb-3">
+    <!-- note: posts with a date in the future are hidden by hide-future-posts.js -->
+    <li date="{{ post.date | date: '%Y-%m-%d' }}" class="pb-3">
       <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a><br/></h2>
       <span>        
         <time datetime="{{ post.date | date_to_xmlschema }}">
