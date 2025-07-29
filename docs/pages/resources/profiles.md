@@ -1,7 +1,6 @@
 ---
 title: Profiles
 sidebar: resources
-suppress_topnav: resources
 ---
 
 <!--
@@ -413,3 +412,4 @@ Version 1.2 of the RO-Crate specification
 the profile. See the
 [Workflow Profile Crate](https://about.workflowhub.eu/Workflow-RO-Crate/ro-crate-preview.html) as
 example.
+

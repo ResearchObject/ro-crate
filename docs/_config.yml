@@ -77,8 +77,6 @@ defaults:
     values:
       layout: "post"
       sidebar: community
-      active_topnav: blog
-      suppress_topnav: community
 
   - scope:
       path: "pages/about"
@@ -104,8 +102,6 @@ collections:
   compatibility:
     permalink: /:path
     output: true
-  posts:
-    permalink: /blog/:year/:month/:title
 
 theme_variables:
   topnav:

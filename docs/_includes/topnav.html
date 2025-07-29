@@ -15,15 +15,10 @@
                   {%- for item in topnav.subitems %}
                   <li class="nav-item {% if item.subitems %}dropdown {% endif %}">
                       {%- assign page_sidebar = page.sidebar | downcase | replace: "-", "_" | replace: " ", "_" %}
-                      {%- assign page_active_topnav = page.active_topnav | downcase | replace: "-", "_" | replace: " ", "_" %}
-                      {%- assign page_suppress_topnav = page.suppress_topnav | downcase | replace: "-", "_" | replace: " ", "_" %}
                       {%- assign nav_title = item.title | downcase | replace: "-", "_" | replace: " ", "_" %}
-                      
                       {%- if item.external_url %}
                       <a class="nav-link ps-2" href="{{item.external_url}}" target="_blank" rel="noopener">{{item.title}}</a>
-                      {%- elsif page.url == item.url or page_active_topnav == nav_title %}
-                      <a class="nav-link ps-2 active" aria-current="page" href="{{item.url | relative_url }}">{{item.title}}</a>
-                      {%- elsif page_sidebar == nav_title and not ( page_suppress_topnav == nav_title ) %}
+                      {%- elsif page.url == item.url or page_sidebar == nav_title %}
                       <a class="nav-link ps-2 active" aria-current="page" href="{{item.url | relative_url }}">{{item.title}}</a>
                       {%- elsif item.subitems %}
                       <a class="nav-link ps-2 dropdown-toggle" href="#" id="Dropdown{{item.title | jsonify }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{item.title}}</a>
