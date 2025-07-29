@@ -79,6 +79,12 @@ defaults:
       sidebar: community
 
   - scope:
+      path: "_blog"
+    values:
+      layout: "post"
+      sidebar: blog
+
+  - scope:
       path: "pages/about"
     values:
       layout: "default"
@@ -101,6 +107,9 @@ collections:
     output: true
   compatibility:
     permalink: /:path
+    output: true
+  blog:
+    permalink: /blog/:path
     output: true
 
 theme_variables:
