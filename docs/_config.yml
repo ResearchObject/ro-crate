@@ -73,12 +73,6 @@ defaults:
       search_exclude: false
 
   - scope:
-      path: "_posts"
-    values:
-      layout: "post"
-      sidebar: community
-
-  - scope:
       path: "_blog"
     values:
       layout: "post"
