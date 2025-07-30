@@ -27,6 +27,8 @@ exclude:
   - Gemfile*
   - LICENSE
 
+date_format: "%-d %B %Y"
+
 defaults:
   - scope:
       path: ""
@@ -71,6 +73,12 @@ defaults:
       search_exclude: false
 
   - scope:
+      path: "_blog"
+    values:
+      layout: "post"
+      sidebar: blog
+
+  - scope:
       path: "pages/about"
     values:
       layout: "default"
@@ -94,6 +102,9 @@ collections:
   compatibility:
     permalink: /:path
     output: true
+  blog:
+    permalink: /blog/:path
+    output: true
 
 theme_variables:
   topnav:
@@ -103,11 +114,16 @@ theme_variables:
     twitter: false
   theme_color: 39989F
 
+feed: # RSS/Atom feed settings
+  collections:
+    - blog
+
 plugins:
   - elixir-toolkit-theme-plugins
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-github-metadata
+  - jekyll-feed
   - jemoji
   - webrick
