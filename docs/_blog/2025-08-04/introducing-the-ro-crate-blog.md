@@ -1,7 +1,7 @@
 ---
 title:  "Introducing the RO-Crate blog"
 author: ["Eli Chadwick"]
-date: 2025-07-29
+date: 2025-08-04
 ---
 
 This is the first post in a new section on the RO-Crate website: a [blog]({% link pages/community/blog.md %}). Here we will post news and announcements relevant to the RO-Crate community, as well as occasional developer blogs and articles written by members of the community. 
