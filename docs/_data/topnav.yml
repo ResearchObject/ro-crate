@@ -7,6 +7,8 @@ subitems:
     url: /use_cases
   - title: "Community"
     url: /community
+  - title: "Blog"
+    url: /blog
   - title: "Resources & Profiles"
     url: /tutorials
   - title: "Specification"
