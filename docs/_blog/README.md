@@ -6,10 +6,12 @@ First read the [template](.template.md) to understand how posts should be struct
 
 Each post is contained within a folder whose name should be set to the intended publication date. 
 
+```
 _blog/
 ├─ yyyy-mm-dd/
 │  ├─ post-name.md
 │  ├─ my_image.png
+```
 
 All images or other supplementary files related to the post should be included in the same folder.
 

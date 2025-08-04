@@ -18,4 +18,4 @@ You could write about:
 * a tool you've created for handling RO-Crates
 * an idea you've been exploring and want to share.
 
-See the [template](https://github.com/ResearchObject/ro-crate/blob/main/docs/_posts/.template.md) for guidance on how to create your post.
+See the [template](https://github.com/ResearchObject/ro-crate/blob/main/docs/_blog/.template.md) for guidance on how to create your post.
