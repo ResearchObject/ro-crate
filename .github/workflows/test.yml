@@ -31,7 +31,7 @@ jobs:
 
       - name: Build the site
         working-directory: ./docs
-        run: bundle exec jekyll build --strict_front_matter
+        run: bundle exec jekyll build --future --strict_front_matter
 
       - name: Validate all links, enforce alt text
         working-directory: ./docs
