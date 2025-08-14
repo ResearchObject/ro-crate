@@ -59,7 +59,7 @@ The platform executes the workflows and automatically generates
 FAIR-compliant datasets from workflow execution,
 thus eliminating the manual overhead associated with FAIR data publication.
 Execution metadata, parameters, authorship, etc. are all automatically captured
-and made available as a single public Workflow Run RO-Crate
+and made available as a single public [Workflow Run RO-Crate](https://w3id.org/ro/wfrun/workflow/0.5)
 with the aim of enabling seamless data movement between repositories and data spaces.
 
 This platform currently powers BioDT’s [Crop Wild Relatives Digital Twin](https://biodt.eu/use-cases/crop-wild-relatives),
