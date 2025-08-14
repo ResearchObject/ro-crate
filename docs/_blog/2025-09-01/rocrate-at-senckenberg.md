@@ -44,7 +44,7 @@ Each RO-Crate wraps an individual biodiversity observation (a so-called capture 
 in a single RO-Crate package containing the raw media files
 enriched with contextual information and provenance data.
 To make these datasets discoverable, we combine the approach
-of serving detached RO-Crates with FAIR signposting on our platform,
+of serving detached RO-Crates with [FAIR Signposting](https://signposting.org/FAIR/) on our platform,
 making it easy for machine agents to discover relevant metadata for automated processing.
 
 ## workflow.earth: Computational Reproducibility in Earth Observation
