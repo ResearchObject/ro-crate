@@ -54,7 +54,7 @@ deployed within the [Destination Earth](http://destination-earth.eu/) Data Lake 
 tackles a different challenge:
 making computational workflows and their outputs FAIR
 from execution through to publication.
-Within the platform, researchers can submit workflows as executable Workflow RO-Crates.
+Within the platform, researchers can submit workflows as executable [Workflow RO-Crates](https://w3id.org/workflowhub/workflow-ro-crate/).
 The platform executes the workflows and automatically generates
 FAIR-compliant datasets from workflow execution,
 thus eliminating the manual overhead associated with FAIR data publication.
