@@ -18,7 +18,7 @@ Our approach combines the development of lighthouse projects
 with contributions to national and international initiatives like
 Germany's [National Research Data Infrastructure (NFDI)](http://nfdi.de/),
 [Biodiversity Meets Data (BMD)](https://bmd-project.eu/),
-and the [Biodiversity Digital Twin (BioDT)](https://biodt.eu/).
+and the [Biodiversity Digital Twin (BioDT) project](https://biodt.eu/).
 Through these collaborations,
 we establish RO-Crate as a practical solution
 for making research data more FAIR.
