@@ -93,8 +93,8 @@ and enable researchers and other infrastructures to adopt the FAIR principles.
 
 ## Resources
 
-Our work has produced several open-source contributions to the RO-Crate ecosystem.
-Additionally, a lot of our developed software is available open source
+Our work has produced several open-source contributions to the RO-Crate ecosystem, including streaming support in [ro-crate-py](https://github.com/ResearchObject/ro-crate-py) for web services and validation enhancements in [rocrate-validator](https://github.com/crs4/rocrate-validator/).
+Additionally, a lot of our developed software using RO-Crates is available open source
 at our [Github organization](https://github.com/Senckenberg-DCBiodivIT).
 
 For questions about our work, feel free to contact [daniel.bauer@senckenberg.de](mailto:daniel.bauer@senckenberg.de) or [our team at Senckenberg](https://www.senckenberg.de/en/science/research-infrastructure/sdmc/geobiodiversity-informatics/digital-collection-infrastructures/).
