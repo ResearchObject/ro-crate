@@ -16,7 +16,7 @@ that empower researchers in making their data more FAIR.
 RO-Crates have become a central cornerstone in this mission,
 and are often used as the technical foundation for our projects.
 
-Our approach combines the development of lighthouse projects
+Our approach combines the development of flagship projects
 with contributions to national and international initiatives like
 Germany's [National Research Data Infrastructure (NFDI)](http://nfdi.de/),
 [Biodiversity Meets Data (BMD)](https://bmd-project.eu/),
