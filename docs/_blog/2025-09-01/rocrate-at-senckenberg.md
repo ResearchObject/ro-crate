@@ -2,6 +2,8 @@
 title:  "Advancing Geobiodiversity Research with RO-Crate at Senckenberg"
 author: ["Daniel Bauer"]
 date: 2025-09-01
+related_pages:
+    use_cases: [wildlive, digital-twins, workflowhub]
 ---
 
 In the [Digital Collection Infrastructures](https://www.senckenberg.de/en/science/research-infrastructure/sdmc/geobiodiversity-informatics/digital-collection-infrastructures/) group
