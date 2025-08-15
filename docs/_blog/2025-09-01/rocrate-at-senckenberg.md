@@ -20,7 +20,7 @@ Our approach combines the development of lighthouse projects
 with contributions to national and international initiatives like
 Germany's [National Research Data Infrastructure (NFDI)](http://nfdi.de/),
 [Biodiversity Meets Data (BMD)](https://bmd-project.eu/),
-and the [Biodiversity Digital Twin (BioDT)](https://biodt.eu/).
+and the [Biodiversity Digital Twin (BioDT) project](https://biodt.eu/).
 Through these collaborations,
 we establish RO-Crate as a practical solution
 for making research data more FAIR.
@@ -46,7 +46,7 @@ Each RO-Crate wraps an individual biodiversity observation (a so-called capture 
 in a single RO-Crate package containing the raw media files
 enriched with contextual information and provenance data.
 To make these datasets discoverable, we combine the approach
-of serving detached RO-Crates with FAIR signposting on our platform,
+of serving detached RO-Crates with [FAIR Signposting](https://signposting.org/FAIR/) on our platform,
 making it easy for machine agents to discover relevant metadata for automated processing.
 
 ## workflow.earth: Computational Reproducibility in Earth Observation
@@ -56,12 +56,12 @@ deployed within the [Destination Earth](http://destination-earth.eu/) Data Lake 
 tackles a different challenge:
 making computational workflows and their outputs FAIR
 from execution through to publication.
-Within the platform, researchers can submit workflows as executable Workflow RO-Crates.
+Within the platform, researchers can submit workflows as executable [Workflow RO-Crates](https://w3id.org/workflowhub/workflow-ro-crate/).
 The platform executes the workflows and automatically generates
 FAIR-compliant datasets from workflow execution,
 thus eliminating the manual overhead associated with FAIR data publication.
 Execution metadata, parameters, authorship, etc. are all automatically captured
-and made available as a single public Workflow Run RO-Crate
+and made available as a single public [Workflow Run RO-Crate](https://w3id.org/ro/wfrun/workflow/0.5)
 with the aim of enabling seamless data movement between repositories and data spaces.
 
 This platform currently powers BioDT’s [Crop Wild Relatives Digital Twin](https://biodt.eu/use-cases/crop-wild-relatives),
