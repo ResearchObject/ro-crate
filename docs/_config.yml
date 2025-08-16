@@ -77,6 +77,7 @@ defaults:
     values:
       layout: "post"
       sidebar: blog
+      type: blog_posts
 
   - scope:
       path: "pages/about"
