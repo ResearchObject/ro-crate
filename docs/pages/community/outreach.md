@@ -46,6 +46,35 @@ _Data Science_ **5**(2)
 
 ### 2025
 
+ELIXIR (2025):  
+[**ELIXIR Annual Report 2024**(https://doi.org/10.7490/f1000research.1120222.1).  
+_F1000Research_ **14**(ELIXIR):613  
+<https://doi.org/10.7490/f1000research.1120222.1>
+
+Tereza Manousaki, Cyril Pommier, Robert Waterhouse, Katharina F. Heil1, Physilia Chua, Uwe Scholz, Aristotelis Papageorgiou, Flora D’Anna, Daniel Arend, Alessandro Cestaro, Auke Damstra, Kristina Gruden, Bérénice Batut (2025):  
+[**Biodiversity food security and pathogens mini symposium**](https://doi.org/10.7490/f1000research.1120214.1).  
+ELIXIR All Hands Meeting ([AHM2025](https://elixir-europe.org/events/elixir-all-hands-2025)), Thessaloniki, Greece,  2025-06-02/--05.  
+_F1000Research_ **14**(ELIXIR):590  
+<https://doi.org/10.7490/f1000research.1120214.1>
+
+Eli Chadwick, Stian Soiland-Reyes, José María Fernández, Björn Grüning, Carole Goble (2025):  
+[**RO-Crate** – Capturing FAIR research outputs throughout the ELIXIR landscape](https://doi.org/10.7490/f1000research.1120199.1).  
+ELIXIR All Hands Meeting ([AHM2025](https://elixir-europe.org/events/elixir-all-hands-2025)), Thessaloniki, Greece,  2025-06-02/--05.  
+_F1000Research_ **14**(ELIXIR):543 (poster)  
+<https://doi.org/10.7490/f1000research.1120199.1>
+
+Paula Iborra, José M. Fernández, Laia Codó, Eugenio Gonzalo, Stian Soiland-Reyes, Alexander Hambley, Jonathan Couldridge, Carole Goble, Philip Quinlan, Salvador Capella-Gutierrez (2025):  
+[**ENTRUSTing WfExS 1.0 with WES and TES**](https://doi.org/10.7490/f1000research.1120178.1).  
+ELIXIR All Hands Meeting ([AHM2025](https://elixir-europe.org/events/elixir-all-hands-2025)), Thessaloniki, Greece,  2025-06-02/--05.  
+_F1000Research_ **14**(ELIXIR):518 (poster)  
+<https://doi.org/10.7490/f1000research.1120178.1>
+
+Stuart Owen, Munazah Andrabi, Finn Bacall, Phil Reed, Xiaoming Hu, Ulrike Wittig1, Maja Rey, Martin Golebiewski, Flora D'Anna, Kevin De Pelseneer, Jacky Snoep, Wolfgang Müller, Carole Goble (2025):  
+[**FAIRDOM-SEEK** – Platform for FAIR data and research outcome management](https://doi.org/10.7490/f1000research.1120207.1).  
+ELIXIR All Hands Meeting ([AHM2025](https://elixir-europe.org/events/elixir-all-hands-2025)), Thessaloniki, Greece,  2025-06-02/--05.  
+_F1000Research_ **14**(ELIXIR):558 (poster)  
+<https://doi.org/10.7490/f1000research.1120207.1>
+
 Sean Wilkinson, Meznah Aloqalaa, Khalid Belhajjame, Michael R. Crusoe, Bruno de Paula Kinoshita, Luiz Gadelha, Daniel Garijo, Ove Johan Ragnar Gustafsson, Nick Juty, Sehrish Kanwal, Farah Zaib Khan, Johannes Köster, Karsten Peters-von Gehlen, Line Pouchard, Randy K. Rannow, Stian Soiland-Reyes, Nicola Soranzo, Shoaib Sufi, Ziheng Sun, Baiba Vilne, Merridee A. Wouters, Denis Yuen, Carole Goble (2025):  
 **Applying the FAIR Principles to Computational Workflows**.  
 _Scientific Data_ **12**:328
@@ -79,18 +108,6 @@ Eric Hauser, Kilian Warmuth, Marcel Kempf, Stefan Lachnit, Georg Carle (2025):
 [**MARTE: Malleable and Automated Reproduction for Testbed-driven Experiments**](https://www.net.in.tum.de/fileadmin/bibtex/publications/papers/hauser_rep2025.pdf).  
 _2025 ACM Conference on Reproducibility and Replicability_ (in print)  
 
-Stian Soiland-Reyes, Stuart Wheater, Thomas Giles, Jonathan Couldridge, Phil Quinlan, Carole Goble (2025):  
-**Five Safes RO-Crate**: FAIR Digital Objects for Trusted Research Environments.  
-_International FAIR Digital Objects Implementation Summit 2024_, Berlin, Germany, 2024-03-20/–21.  
-_Open Conference Proceedings_ **5*  
-<https://doi.org/10.52825/ocp.v5i.1419>
-
-Bruno de Paula Kinoshita, Edgar Garriga Nogales, Manuel Giménez de Castro Marciani,  Miguel Castrillo Melguizo (2025):  
-**FAIR Digital Objects in Autosubmit Workflows**.  
-_International FAIR Digital Objects Implementation Summit 2024_, Berlin, Germany, 2024-03-20/–21.  
-_Open Conference Proceedings_ **5*  
-<https://doi.org/10.52825/ocp.v5i.1416>
-
 Eli Chadwick, Stian Soiland-Reyes, Phil Reed (2025):  
 [**RO-Crate: Capturing FAIR research outputs in bioinformatics and beyond**](https://doi.org/10.5281/zenodo.15849770).  
 (poster, flash talk)  
@@ -103,6 +120,18 @@ Eli Chadwick, Warren Del-Pinto, Alexander Hambley, Stian Soiland-Reyes (2025):
 _DARE TREvolution_ webinar  
 <https://doi.org/10.5281/zenodo.15641886>
 [[video](https://youtu.be/7XSQKJOpZ20)]
+
+Stian Soiland-Reyes, Stuart Wheater, Thomas Giles, Jonathan Couldridge, Phil Quinlan, Carole Goble (2025):  
+**Five Safes RO-Crate**: FAIR Digital Objects for Trusted Research Environments.  
+_International FAIR Digital Objects Implementation Summit 2024_ ([FDO2024](https://fairdo.org/fdof-summit-2024/)), Berlin, Germany, 2024-03-20/--21.  
+_Open Conference Proceedings_ **5**  
+<https://doi.org/10.52825/ocp.v5i.1419>
+
+Bruno de Paula Kinoshita, Edgar Garriga Nogales, Manuel Giménez de Castro Marciani,  Miguel Castrillo Melguizo (2025):  
+**FAIR Digital Objects in Autosubmit Workflows**.  
+_International FAIR Digital Objects Implementation Summit 2024_ ([FDO2024](https://fairdo.org/fdof-summit-2024/)), Berlin, Germany, 2024-03-20/--21.  
+_Open Conference Proceedings_ **5**  
+<https://doi.org/10.52825/ocp.v5i.1416>
 
 Jonas Grieb, Claus Weiland, Alexander Wolodkin, Julian Lopez Gordillo, Sharif Islam (2025):  
 [**Implementing FAIR Semantic Mappings Leveraging on RO-Crate**](https://doi.org/10.52825/ocp.v5i.1179)  
@@ -219,6 +248,12 @@ _NERC Open Research Archive_ OR/25/045
 
 
 ### 2024
+
+Eugenio Gonzalo, Laia Codó, Jose María Fernandez, Stian Soiland-Reyes, Salvador Capella-Gutierrez, Emily Jefferson, Carole Goble, Tim Beck, Phil Quinlan, Tom Giles (2024):  
+[**Five safes workflow RO-Crate and WfExS**. Closing the gap of federated analysis and Trusted Research Enviroments (TREs) in the health data context](https://doi.org/10.7490/f1000research.1119724.1).  
+ELIXIR All Hands Meeting ([AHM2024](https://elixir-europe.org/events/elixir-all-hands-2024)), Uppsala, Sweden, 2024-06-10/--12.    
+_F1000Research_ **13**(ELIXIR):550 (poster) 
+<https://doi.org/10.7490/f1000research.1119724.1>
 
 Peter Sefton, Amanda Harris, Nick Thieberger (2024):  
 **A new archival data structure**: PARADISEC's move to RO-Crate.  
