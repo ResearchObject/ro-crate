@@ -47,7 +47,7 @@ _Data Science_ **5**(2)
 ### 2025
 
 ELIXIR (2025):  
-[**ELIXIR Annual Report 2024**(https://doi.org/10.7490/f1000research.1120222.1).  
+[**ELIXIR Annual Report 2024**](https://doi.org/10.7490/f1000research.1120222.1).  
 _F1000Research_ **14**(ELIXIR):613  
 <https://doi.org/10.7490/f1000research.1120222.1>
 
@@ -76,18 +76,18 @@ _F1000Research_ **14**(ELIXIR):558 (poster)
 <https://doi.org/10.7490/f1000research.1120207.1>
 
 Sean Wilkinson, Meznah Aloqalaa, Khalid Belhajjame, Michael R. Crusoe, Bruno de Paula Kinoshita, Luiz Gadelha, Daniel Garijo, Ove Johan Ragnar Gustafsson, Nick Juty, Sehrish Kanwal, Farah Zaib Khan, Johannes Köster, Karsten Peters-von Gehlen, Line Pouchard, Randy K. Rannow, Stian Soiland-Reyes, Nicola Soranzo, Shoaib Sufi, Ziheng Sun, Baiba Vilne, Merridee A. Wouters, Denis Yuen, Carole Goble (2025):  
-**Applying the FAIR Principles to Computational Workflows**.  
+[**Applying the FAIR Principles to Computational Workflows**](https://doi.org/10.1038/s41597-025-04451-9).  
 _Scientific Data_ **12**:328
 <https://doi.org/10.1038/s41597-025-04451-9>
 
 Sean R. Wilkinson, Johan Gustafsson, Finn Bacall, Khalid Belhajjame, Salvador Capella, Jose Maria Fernandez Gonzalez, Jacob Fosso Tande, Luiz Gadelha, Daniel Garijo, Patricia Grubel, Bjorn Grüning, Farah Zaib Khan, Sehrish Kanwal, Simone Leo, Stuart Owen, Luca Pireddu, Line Pouchard, Laura Rodríguez-Navas, Beatriz Serrano-Solano, Stian Soiland-Reyes, Baiba Vilne, Alan Williams, Merridee Ann Wouters, Frederik Coppens, Carole Goble (2025):  
-**An Ecosystem of Services for FAIR Computational Workflows**.  
+[**An Ecosystem of Services for FAIR Computational Workflows**](https://doi.org/10.48550/arXiv.2505.15988).  
 Book chapter, draft  
 _arXiv_ 2505.15988 [cs.DC]
 <https://doi.org/10.48550/arXiv.2505.15988>
 
 Ove Johan Ragnar Gustafsson, Sean R. Wilkinson, Finn Bacall, Stian Soiland-Reyes, Simone Leo, Luca Pireddu, Stuart Owen, Nick Juty, José Mª Fernández, Tom Brown, Hervé Ménager, Björn Grüning, Salvador Capella-Gutierrez, Frederik Coppens, Carole Goble (2025):  
-**WorkflowHub**: a registry for computational workflows.  
+[**WorkflowHub**: a registry for computational workflows](https://doi.org/10.1038/s41597-025-04786-3).  
 _Scientific Data_ **12**:837  
 <https://doi.org/10.1038/s41597-025-04786-3>
 
@@ -122,13 +122,13 @@ _DARE TREvolution_ webinar
 [[video](https://youtu.be/7XSQKJOpZ20)]
 
 Stian Soiland-Reyes, Stuart Wheater, Thomas Giles, Jonathan Couldridge, Phil Quinlan, Carole Goble (2025):  
-**Five Safes RO-Crate**: FAIR Digital Objects for Trusted Research Environments.  
+[**Five Safes RO-Crate**: FAIR Digital Objects for Trusted Research Environments](https://doi.org/10.52825/ocp.v5i.1419).  
 _International FAIR Digital Objects Implementation Summit 2024_ ([FDO2024](https://fairdo.org/fdof-summit-2024/)), Berlin, Germany, 2024-03-20/--21.  
 _Open Conference Proceedings_ **5**  
 <https://doi.org/10.52825/ocp.v5i.1419>
 
 Bruno de Paula Kinoshita, Edgar Garriga Nogales, Manuel Giménez de Castro Marciani,  Miguel Castrillo Melguizo (2025):  
-**FAIR Digital Objects in Autosubmit Workflows**.  
+[**FAIR Digital Objects in Autosubmit Workflows**](https://doi.org/10.52825/ocp.v5i.1416).  
 _International FAIR Digital Objects Implementation Summit 2024_ ([FDO2024](https://fairdo.org/fdof-summit-2024/)), Berlin, Germany, 2024-03-20/--21.  
 _Open Conference Proceedings_ **5**  
 <https://doi.org/10.52825/ocp.v5i.1416>
@@ -197,17 +197,17 @@ _BioHackrXiv_
 <https://doi.org/10.37044/osf.io/3x274>
 
 Markus Konkol, Astra Labuce, Sami Domisch, Merret Buurman, Vanessa Bremerich (2025):  
-**Encouraging reusability of computational research through Data-to-Knowledge Packages** - A hydrological use case.  
+[**Encouraging reusability of computational research through Data-to-Knowledge Packages** - A hydrological use case](https://doi.org/10.12688/openreseurope.20221.2).  
 _Open Research Europe_  
 <https://doi.org/10.12688/openreseurope.20221.2>
 
 Manuel Feser, Sebastian Beyvers, Daniel Arend, Constantin Breß, Maria Hansen, Christian Henke, Stephan Lesch, Carmen Scheuner, Heinrich Lukas Weil (2025):  
-**Simplifying and Standardizing the Creation of Data Use Agreements for Life Sciences and Beyond** - BH Germany2024.  
+[**Simplifying and Standardizing the Creation of Data Use Agreements for Life Sciences and Beyond**](https://doi.org/10.37044/osf.io/83apv_v1) - BH Germany2024.  
 _BioHackrXiv_  
 <https://doi.org/10.37044/osf.io/83apv_v1>
 
 Vladimir Korolev, Anupam Joshi (2025):  
-**Crystalia**: Flexible and Efficient Method for Large Dataset Lineage Tracking.  
+[**Crystalia**: Flexible and Efficient Method for Large Dataset Lineage Tracking](https://doi.org/10.1109/BigData62323.2024.10826067).  
 _2024 IEEE International Conference on Big Data (BigData)_  
 <https://doi.org/10.1109/BigData62323.2024.10826067>
 
@@ -222,11 +222,6 @@ Christopher Kelly, Wei Xu, Line C Pouchard, Hubertus Van Dam, Tanzima Z Islam, S
 _The International Journal of High Performance Computing Applications_ **39**(4)  
 <https://doi.org/10.1177/10943420251316253>
 
-Paula Iborra, José M. Fernández, Laia Codo, Eugenio Gonzalo, Alexander Hambley, Stian Soiland-Reyes, Jonathan Couldridge, Carole Goble, Philip Quinlan, Salvador Capella-Gutierrez (2025):  
-**ENTRUSTing WfExS 1.0 with WES and TES**.  (Poster)  
-_ELIXIR All Hands Meeting_ 2025  
-<https://doi.org/10.7490/f1000research.1120178.1>
-
 
 Irene Celino, Mario Scrocca, Agnese Chiatti (2025):  
 **Mutual Understanding between People and Systems via Neurosymbolic AI and Knowledge Graphs**.  
@@ -235,14 +230,14 @@ _Frontiers in Artificial Intelligence and Applications_ **400**
 <https://doi.org/10.3233/FAIA250241>  [[arXiv:2504.11200](https://doi.org/10.48550/arXiv.2504.11200)]
 
 Gabriele Padovani, Valentine Anantharaj, Sandro Fiore (2025):  
-**Provenance Tracking in Large-Scale Machine Learning Systems**.  
+[**Provenance Tracking in Large-Scale Machine Learning Systems**](https://doi.org/10.48550/arXiv.2507.01075).  
 _arXiv_:2507.01075 [cs.LG]  
 <https://doi.org/10.48550/arXiv.2507.01075>
 
 Chris Card, Rachel Heaven, Andrew Kingdon, Patrick Bell, Alex Baldwin, Jeremy Carter, Jonathan Coney, Jonathan Cooper, Itahisa Gonzalez Alvarez, Michael Hollaway, 
 Matthew McCormack, David Poulter, Ag Stephens, Philip Trembath (2025):  
-**Publishing Environmental Data APIs for use in AI workflows**:
-recommendations and demonstrators of a standard approach within the NERC Environmental Data Service.  
+[**Publishing Environmental Data APIs for use in AI workflows**:
+recommendations and demonstrators of a standard approach within the NERC Environmental Data Service](https://nora.nerc.ac.uk/id/eprint/539708).  
 _NERC Open Research Archive_ OR/25/045  
 <https://nora.nerc.ac.uk/id/eprint/539708>
 
