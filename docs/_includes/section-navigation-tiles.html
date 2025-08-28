@@ -87,7 +87,7 @@
                   <div class="px-3 pb-3 d-flex justify-content-between align-items-center">                    
                     <h3 class="card-title ml-3">{{current_page.title}}</h3>
                     {%- if current_page.image %}
-                    <img alt="logo of {{current_page.title}}" src="assets/img/{{current_page.image }}" class="d-inline tile-img-sm">
+                    <img alt="logo of {{current_page.title}}" src="{{site.baseurl}}/assets/img/{{current_page.image }}" class="d-inline tile-img-sm">
                     {%- endif %}
                     {%- if current_page.icon %}
                     <i class="fa fa-2x {{ current_page.icon }}"></i>
@@ -154,7 +154,7 @@
                     {%- elsif filter_affiliation %}
                     <a role="button" href="{{filter_affiliation.url}}" data-bs-toggle="tooltip" data-bs-original-title="{{affiliation}}" class="btn btn-sm bg-white hover-primary">
                         {%- if filter_affiliation.image_url %}
-                        <img alt="logo of {{filter_affiliation.name}}" src="{{filter_affiliation.image_url | relative_url }}" class="d-inline affiliation-img-sm">
+                        <img alt="logo of {{filter_affiliation.name}}" src="{{site.baseurl}}/{{filter_affiliation.image_url | relative_url }}" class="d-inline affiliation-img-sm">
                         {%- else %}
                         {{filter_affiliation.name}}
                         {%- endif %}
