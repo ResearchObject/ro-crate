@@ -2,25 +2,25 @@
 
 <!-- find use cases that match this entry -->
 {% if page.type == "blog_posts" %}
-    <!-- for blog posts the related use cases are set directly -->
-    {% assign matched_cases = page.related_pages.use_cases %}
+<!-- for blog posts the related use cases are set directly -->
+{% assign matched_cases = page.related_pages.use_cases %}
 {% else %}
-    <!-- for domains/tasks/roles (DTR), the cross-links are set on the use case pages, -->
-    <!-- so search all use case pages for those which connect to the desired DTR -->
-    {% assign all_use_cases = site.pages | where:"type", "use_cases" %}
-    {% assign matched_cases = "" | split: "," %} <!-- hack to initialise an empty array -->
-    {% for case in all_use_cases %}
-        {% if page.type == "domains" %}
-            {% assign metadata = case.domains %}
-        {% elsif page.type == "tasks" %}
-            {% assign metadata = case.tasks %}
-        {% elsif page.type == "roles" %}
-            {% assign metadata = case.roles %}
-        {% endif %}
-        {% if metadata contains page.page_id %}
-            {% assign matched_cases = matched_cases | push: case.page_id %}
-        {% endif %}
-    {% endfor %}
+<!-- for domains/tasks/roles (DTR), the cross-links are set on the use case pages, -->
+<!-- so search all use case pages for those which connect to the desired DTR -->
+{% assign all_use_cases = site.pages | where:"type", "use_cases" %}
+{% assign matched_cases = "" | split: "," %} <!-- hack to initialise an empty array -->
+{% for case in all_use_cases %}
+    {% if page.type == "domains" %}
+        {% assign metadata = case.domains %}
+    {% elsif page.type == "tasks" %}
+        {% assign metadata = case.tasks %}
+    {% elsif page.type == "roles" %}
+        {% assign metadata = case.roles %}
+    {% endif %}
+    {% if metadata contains page.page_id %}
+        {% assign matched_cases = matched_cases | push: case.page_id %}
+    {% endif %}
+{% endfor %}
 {% endif %}
 
 {% if matched_cases.size == 0 %}
