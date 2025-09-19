@@ -1,4 +1,8 @@
 <figure class="image">
-  <img src="{{ include.src }}" alt="{{ include.alt }}" style="max-width:90%">
+  <img src="{{ include.src }}" alt="{{ include.alt }}" style="max-width:90%" 
+  {% if include.border %}
+  class="border border-dark"
+  {% endif %}
+  >
   <figcaption>{{ include.caption }}</figcaption>
 </figure>
