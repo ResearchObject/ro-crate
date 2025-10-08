@@ -5,8 +5,8 @@ description: By adopting the RO-Crate standard, M@TE packages numerical Earth sy
 url: https://mate.science
 image: MATE.png
 domains: [earth_science]
-tasks: [conduct_research, curation, data_handling, software_development, education]
-roles: [researcher, software_developer, educator, data_steward]
+tasks: [conduct_research, curation, data_handling, software_development, training]
+roles: [researcher, software_developer, trainer, data_steward]
 ---
 
 # M@TE (Model Atlas of the Earth)
