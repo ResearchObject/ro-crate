@@ -3,6 +3,8 @@ title: Climate Science & Earth sciences
 description: The study of the Earth, including geology, atmosphere, climate, hydrology, and more.
 icon: fa-cloud-sun
 page_id: earth_science
+redirect_from: 
+  - climate_science
 related_pages: 
   tasks: [curation, data_handling, manage_data]
   roles: [data_analyst, researcher]
