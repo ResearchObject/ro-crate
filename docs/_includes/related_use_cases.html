@@ -22,10 +22,9 @@
     {% endif %}
 {% endfor %}
 {% endif %}
-
-{% if matched_cases.size == 0 %}
-<p>No use cases found.</p>
-{% else %}
+{% if matched_cases and matched_cases.size != 0 %}
 {% assign matched_cases_joined = matched_cases | join: ", " %}
 {% include section-navigation-tiles.html type="use_cases" custom=matched_cases_joined %}
+{% else %}
+<p>No use cases found.</p>
 {% endif %}
