@@ -5,8 +5,8 @@ description: Galaxy is a platform for FAIR data analysis which supports the buil
 url: https://galaxyproject.org
 image: galaxy.png
 domains: [biology, biomedical_science, chemistry, climate_science, ecology, informatics, medicine, omics, social_science] # should match item(s) in pages/domains
-tasks: [conduct_research, manage_data] # should match item(s) in pages/tasks
-roles: [data_analyst, information_architect, researcher] # should match item(s) in pages/roles
+tasks: [conduct_research, manage_data, training] # should match item(s) in pages/tasks
+roles: [data_analyst, information_architect, researcher, trainer] # should match item(s) in pages/roles
 ---
 
 # Galaxy
