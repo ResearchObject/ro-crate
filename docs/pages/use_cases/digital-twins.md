@@ -2,7 +2,7 @@
 page_id: digital-twins
 title: Digital Twins
 description: RO-Crate is used to describe digital twins in a number of projects studying earth systems and biodiversity. These include DT-GEO, BioDT, EDITO-Infra, and Destination Earth.
-domains: [climate_science, ecology] # should match item(s) in pages/domains
+domains: [earth_science, ecology] # should match item(s) in pages/domains
 tasks: [conduct_research, software_development] # should match item(s) in pages/tasks
 roles: [data_analyst, software_developer] # should match item(s) in pages/roles
 ---

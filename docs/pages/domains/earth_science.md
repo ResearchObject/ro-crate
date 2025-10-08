@@ -1,8 +1,8 @@
 ---
 title: Climate Science & Earth sciences
-description: The study of climate and weather.
+description: The study of the Earth, including geology, atmosphere, climate, hydrology, and more.
 icon: fa-cloud-sun
-page_id: climate_science
+page_id: earth_science
 related_pages: 
   tasks: [curation, data_handling, manage_data]
   roles: [data_analyst, researcher]
