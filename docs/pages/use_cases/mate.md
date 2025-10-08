@@ -15,6 +15,7 @@ roles: [researcher, software_developer, educator, data_steward]
 
 The **Model Atlas of the Earth (M@TE)** is a digital platform that provides access to a wide range of computational models and their outputs, focused on Earth’s evolution from the Geosphere to the Hydrosphere.
 M@TE encapsulates the entire model development process — from setup to output and analysis — enabling discovery, data preservation, reproducibility and reuse, offering flexibility for users with varying levels of expertise.
+
 Purpose-built to meet the specific needs of the geoscience community, M@TE is a lasting, sustainable, and scalable resource that supports and leverages research infrastructure. It offers flexible tools for managing, sharing, and preserving numerical models, with built-in DOI creation to ensure persistent, citable access to results. Similar in spirit to Zenodo, but bigger and better for geoscientific modeling.
 
 M@TE is designed to meet geoscientists where they are: from educators and students using visualizations in the classroom to researchers developing and benchmarking new numerical models. It lowers the learning curve of numerical models and bridges the gap between traditional geology and numerical geosciences.
