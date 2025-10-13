@@ -46,7 +46,7 @@ Each crate includes:
 Polanco, S., Sandiford, D., Alfonso, C. P., Ilano, L., Qin, X., Giordani, J., Rodríguez Corcho, A. F., & Mather, B. (2024):  
 **Model Atlas of the Earth (M@TE): enhancing the usability of integrated numerical models**.  
 _AGU Fall Meeting Abstracts 2024_, DI31B-2935  
-TODO doi:10.1029/2024AGUFMDI31B2935P
+<https://ui.adsabs.harvard.edu/abs/2024AGUFMDI31B2935P/abstract>
 
 Polanco, S., Sandiford, D., Qin, X., Rodríguez Corcho, A. F., Ilano, L., Alfonso, C. P., Giordani, J., Mather, B., Rees, N., & Farrington, R. (2024):  
 **Model Atlas of the Earth (M@TE): advancing the interoperability of digital twins**.  
