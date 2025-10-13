@@ -28,7 +28,6 @@ roles: [researcher, repository_manager, data_steward] # should match item(s) in 
 # Open Microscopy Environment
 
 [![Open Microscopy Environment logo](../../assets/img/ome.svg)](https://www.openmicroscopy.org/)
-![alt text]()
 
 
 
