@@ -7,8 +7,8 @@ related_pages:
 ---
 
 Three new use cases have been added to the RO-Crate website:
-* M@TE (Model Atlas of the Earth)
-* nf-prov Nextflow plugin
-* Open Microscopy Environment
+* [M@TE (Model Atlas of the Earth)]({{baseurl}}{% link pages/use_cases/mate.md %}) (written by Sara Polanco)
+* [Open Microscopy Environment]({{baseurl}}{% link pages/use_cases/ome.md %}) (written by Tiago Lubiana)
+* [nf-prov Nextflow plugin]({{baseurl}}{% link pages/use_cases/nf-prov.md %}) (written by Simone Leo)
 
-These use cases represent work done over the past few years to incorporate RO-Crate into earth science, bio-imaging, and workflow execution.
+These use cases incorporate RO-Crate into earth science, bioimaging, and workflow execution.
