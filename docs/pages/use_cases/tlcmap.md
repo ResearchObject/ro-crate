@@ -4,7 +4,7 @@ title: Time Layered Cultural Map (TLCMap)
 description: TLCMap is a set of tools that work together for mapping Australian history and culture which includes downloads of geographical data packaged in RO-Crate
 url: https://example.org/
 image: tlcmap.png
-domains: [humanities, ecology, climate_science, language_text] # should match item(s) in pages/domains
+domains: [humanities, ecology, earth_science, language_text] # should match item(s) in pages/domains
 tasks: [conduct_research] # should match item(s) in pages/tasks
 roles: [researcher, software_developer] # should match item(s) in pages/roles
 ---
