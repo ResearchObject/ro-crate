@@ -95,7 +95,7 @@
       </a>
       {%- if folder.submenu_type | size > 0 %}
       <ul class="list-unstyled">
-        {% assign linked_pages = site.pages | sort: 'title' %}
+        {% assign linked_pages = site.pages | sort_natural: 'title' %}
         {%- for linked_page in linked_pages %}
         {%- if linked_page.type == folder.submenu_type %}
         {%- if page.url == linked_page.url %}

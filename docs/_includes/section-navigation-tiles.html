@@ -50,15 +50,15 @@
     {%- if include.custom %}
     {%- assign related_pages = include.custom | split: ", " %}
     {%- unless include.sort == false %}
-    {%- assign related_pages = related_pages | sort %}
+    {%- assign related_pages = related_pages | sort_natural %}
     {%- endunless %}
     {%- elsif include.type %}
     {%- assign related_pages = site.pages | where:"type", include.type %}
     {%- else %}
     {%- assign related_pages = site.pages %}
     {%- endif %}
-    {%- unless include.sort == false %}
-    {%- assign related_pages = related_pages | sort: 'title'%}
+    {%- unless include.sort == false or include.custom %}
+    {%- assign related_pages = related_pages | sort_natural: 'title'%}
     {%- endunless %}
     {%- for related_page in related_pages %}
     {%- if include.custom %}
