@@ -3,7 +3,8 @@ page_id: dataverse
 redirect_from:
     - /in-use/dataverse
 title: Dataverse
-description: 
+description: Dataverse is an open source repository for research data, with over 121 installations across research institutions.  It has optional support for RO-Crate export, preview and metadata editing.
+image: dataverse.png
 url: https://guides.dataverse.org/en/6.4/installation/advanced.html#inventory-of-external-exporters
 domains: []
 tasks: [data_handling, manage_data]
@@ -12,7 +13,7 @@ roles: [data_steward, repository_manager]
 
 # Dataverse repository
  
-[Harvard Dataverse](https://dataverse.harvard.edu/) is an open source repository for research data, with over 121 installations across research institutions.  It has optional support for RO-Crate export, preview and metadata editing.
+[Harvard Dataverse](https://dataverse.harvard.edu/) is an open source repository for research data, with over 121 installations across research institutions.  It has support for RO-Crate export, preview and metadata editing.
 
 ## Export of RO-Crate
 
