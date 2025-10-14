@@ -1,7 +1,7 @@
 ---
 title:  "New RO-Crate use cases: M@TE, nf-prov, OME"
 author: ["Eli Chadwick"]
-date: 2025-10-14
+date: 2025-10-17
 related_pages:
     use_cases: [MATE, nf-prov, ome] # should match items in pages/use_cases
 ---
