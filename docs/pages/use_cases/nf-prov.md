@@ -1,6 +1,6 @@
 ---
 page_id: nf-prov
-title: nf-prov
+title: nf-prov Nextflow plugin
 description: nf-prov is a Nextflow plugin to generate provenance information for pipeline runs. It includes support for the Workflow Run RO-Crate format.
 url: https://github.com/nextflow-io/nf-prov
 domains: []
@@ -11,7 +11,7 @@ roles: [researcher, software_developer]
 
 # The nf-prov Nextflow plugin
 
-[nf-prov](https://github.com/nextflow-io/nf-prov) is a [Nextflow](https://www.nextflow.io/) plugin to generate provenance information for pipeline runs. It supports serialization in the [BioCompute Object](https://biocomputeobject.org/) and [Workflow Run RO-Crate](https://www.researchobject.org/workflow-run-crate/) (WRROC) formats. WRROC support is available since version 1.4.0 of the plugin.
+[Nextflow](https://www.nextflow.io/) is a computational workflow manager that enables the development of complex pipelines by composing many simple processes. [nf-prov](https://github.com/nextflow-io/nf-prov) is a Nextflow plugin to generate provenance information for pipeline runs. It supports serialization in the [BioCompute Object](https://biocomputeobject.org/) and [Workflow Run RO-Crate](https://www.researchobject.org/workflow-run-crate/) (WRROC) formats. WRROC support is available since version 1.4.0 of the plugin.
 
 To enable RO-Crate generation, add the following to the Nextflow configuration:
 
