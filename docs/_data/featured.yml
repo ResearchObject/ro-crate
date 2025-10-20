@@ -1,6 +1,6 @@
-- page_id: life-monitor
-- page_id: tlcmap
+- page_id: MATE
+- page_id: ome
 - page_id: ldaca
-- page_id: autosubmit
+- page_id: nf-prov
 - page_id: workflowhub
-- page_id: rohub
+- page_id: aroma
