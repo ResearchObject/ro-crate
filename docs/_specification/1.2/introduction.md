@@ -4,6 +4,8 @@ redirect_from:
   - /1.2-DRAFT/introduction
   - /specification/1.2-DRAFT/introduction
   - /specification/1.2-RC1/introduction
+excerpt: |
+  This document specifies a method, known as _RO-Crate_ (Research Object Crate), of aggregating and describing data for distribution, re-use, publishing, preservation and archiving. RO-Crates aggregate data into a Dataset, and may describe any resource including files, URI-addressable resources, or use other addressing schemes to locate digital or physical data. Describing resources includes technical metadata such as file sizes and types as well as contextual information including how and where datasets and files were created, how they were collated and collected, who was involved in the process, what equipment and software was used, who funded the work, how to cite it, and crucially, how it may be reused, and by whom.
 nav_order: 1
 parent: RO-Crate 1.2
 ---
