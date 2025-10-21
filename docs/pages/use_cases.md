@@ -1,5 +1,6 @@
 ---
 title: Use Cases
+description: These applications are known to use or expose RO-Crates to describe data, datasets or workflows.
 layout: default
 sidebar: main
 redirect_from:
