@@ -16,7 +16,6 @@ excerpt: |
     - References to files and directories in the _RO-Crate Metadata Document_ are all Web-based Data Entities.
     - If stored in a file, known as a _Detached RO-Crate Metadata File_, the filename SHOULD be `${prefix}-ro-crate-metadata.json` rather than `ro-crate-metadata.json` where the variable `${prefix}` is a human readable version of the dataset's ID or name, to signal that on disk, the presence of the file does not indicate an _Attached RO-Crate Data Package_.
     - Typically, software processing a _Detached RO-Crate Package_ would be passed a path to a file, an absolute URI, or a JSON string or object, without a directory context.
-
 nav_order: 3
 parent: RO-Crate 1.2
 ---

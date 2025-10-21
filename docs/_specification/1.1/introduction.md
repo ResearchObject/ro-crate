@@ -3,6 +3,8 @@ title: Introduction
 redirect_from:
   - /1.1-DRAFT/introduction
   - /1.1/introduction
+excerpt: |
+  This document specifies a method, known as _RO-Crate_ (Research Object Crate), of aggregating and describing research data with associated metadata. RO-Crates can aggregate and describe any resource including files, URI-addressable resources, or use other addressing schemes to locate digital or physical data. RO-Crates can describe data both in aggregate and at the individual resource level, with metadata to aid in discovery, and for the re-use and long term management of data. Metadata provides the ability to describe the context of data and entities involved in its production, use and reuse. For example: who created it, using which equipment, software and workflows, under which license it can be re-used, where it was collected, and/or what it is *about*.
 nav_order: 1
 parent: RO-Crate 1.1
 ---
