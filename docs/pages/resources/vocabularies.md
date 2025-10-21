@@ -1,5 +1,6 @@
 ---
 title: Vocabularies
+description: Useful vocabularies for extending RO-Crates, and tips on how to use them
 sidebar: resources
 ---
 

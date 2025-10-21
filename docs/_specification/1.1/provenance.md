@@ -3,6 +3,8 @@ title: Provenance of entities
 redirect_from:
   - /1.1-DRAFT/provenance
   - /1.1/provenance
+excerpt: |
+  To specify which **equipment** was used to create or update a [Data Entity](data-entities), the _RO-Crate JSON-LD_ SHOULD have a _Contextual Entity_ for each item of equipment which SHOULD be of `@type` [IndividualProduct]. The entity SHOULD have a serial number and manufacturer that identify the equipment as completely as possible. In the following case the equipment is a bespoke machine. The equipment SHOULD be described on a web page, and the address of the description SHOULD be used as its `@id`.
 nav_order: 8
 parent: RO-Crate 1.1
 ---

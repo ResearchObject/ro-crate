@@ -1,5 +1,6 @@
 ---
 title: Specification
+description: The RO-Crate technical specification
 sidebar: spec
 ---
 <!--
@@ -51,4 +52,3 @@ To suggest changes, improvements or issues, use the GitHub repository <https://g
 Contributors are expected to comply with our [Code of Conduct](https://github.com/ResearchObject/ro-crate/blob/master/CODE_OF_CONDUCT.md) to ensure an open and inclusive environment.
 
 Feel free to [join](https://github.com/ResearchObject/ro-crate/issues/1) our [community](community) and help shape the next version of RO-Crate!
-

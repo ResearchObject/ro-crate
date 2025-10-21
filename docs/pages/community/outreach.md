@@ -1,5 +1,6 @@
 ---
 title: Outreach and Publications
+description: Recent publications, presentations, and citations of RO-Crate
 ---
 <!--
    Copyright 2019-2025 The University of Manchester and RO Crate contributors 

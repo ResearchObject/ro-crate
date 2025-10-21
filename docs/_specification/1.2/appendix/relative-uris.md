@@ -4,6 +4,13 @@ redirect_from:
   - /1.2-DRAFT/appendix/relative-uris
   - /specification/1.2-DRAFT/appendix/relative-uris
   - /specification/1.2-RC1/appendix/relative-uris
+excerpt: |
+  In an _Attached RO-Crate Package_, the _RO-Crate Metadata File_ use _relative URI references_ 
+  to identify files and directories
+  contained within the _RO-Crate Root_ and its children.  As described in section
+  [Describing entities in JSON-LD](jsonld#describing-entities-in-json-ld), 
+  relative URI references are also frequently used for 
+  identifying _Contextual entities_.
 parent: Appendix
 grand_parent: RO-Crate 1.2
 nav_order: 23

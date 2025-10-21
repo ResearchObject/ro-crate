@@ -1,5 +1,6 @@
 ---
 title: Examples
+description: Example RO-Crates from the specification and real-world applications
 ---
 <!--
    Copyright 2019-2020 The University of Manchester and RO Crate contributors 

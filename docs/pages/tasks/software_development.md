@@ -1,6 +1,6 @@
 ---
 title: Software Development
-sescription: Develop code
+description: Develop code
 icon: fa-code
 page_id: software_development
 ---

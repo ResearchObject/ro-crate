@@ -3,6 +3,17 @@ title: RO-Crate Structure
 redirect_from:
   - /1.1-DRAFT/structure
   - /1.1/structure
+excerpt: |
+  The structure an _RO-Crate_ MUST follow is:
+
+  ```
+  <RO-Crate root directory>/
+  |   ro-crate-metadata.json    # RO-Crate Metadata File MUST be present 
+  |   ro-crate-preview.html     # RO-Crate Website homepage MAY be present
+  |   ro-crate-preview_files/   # MAY be present
+  |    | [other RO-Crate Website files]
+  |   [payload files and directories]  # 0 or more
+  ```
 nav_order: 3
 parent: RO-Crate 1.1
 ---
