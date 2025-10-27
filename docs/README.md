@@ -8,33 +8,13 @@ It is more important that pages render well at <https://researchobject.github.io
 
 ## Running Jekyll locally
 
-To test out your changes locally it may be worth running [Jekyll](https://jekyllrb.com/) locally to generate the pages. However installing Jekyll, Ruby and their dependencies locally can be a bit of a challenge depending on your operating system, local permissions and paths.
-
-### Option 1: Run Ruby and Jekyll on your machine
+To test out your changes locally it may be worth running [Jekyll](https://jekyllrb.com/) locally to generate the pages. 
 
 Follow the instructions at [Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll), with these extra notes:
 
 * Ruby 3.0.0 or newer is needed
 * The "publishing source" is not the root folder of the repository, but the `docs/` directory, so you should be running your `bundle` commands in the `docs/` directory (the same location as the `Gemfile` which `bundle` reads from)
 * The site preview will become available at `http://localhost:4000/ro-crate`
-
-### Option 2: Run the site in a container using Docker or Podman
-
-If you have [Docker] you can avoid the Ruby/Bundler/Jekyll install dance and run from a container:
-
-    make jekyll-docker-serve
-
-Then visit http://0.0.0.0:4000/ro-crate to browse a local rendering. 
-
-Alternatively, to render HTML files into `site/` folder, run:
-
-    make jekyll-docker-oneshot
-
-Equivalent commands for using [Podman](https://podman.io/):
-
-    make jekyll-podman-serve  
-    # or
-    make jekyll-podman-oneshot
 
 ## Using the ELIXIR Toolkit Theme
 
