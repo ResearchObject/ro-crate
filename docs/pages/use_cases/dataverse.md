@@ -3,7 +3,7 @@ page_id: dataverse
 redirect_from:
     - /in-use/dataverse
 title: Dataverse
-description: Dataverse is an open source repository for research data, with over 121 installations across research institutions.  It has optional support for RO-Crate export, preview and metadata editing.
+description: Dataverse is open source research data repository software with over 130 installations across research institutions. It has optional support for RO-Crate export, preview and metadata editing.
 image: dataverse.png
 url: https://guides.dataverse.org/en/6.4/installation/advanced.html#inventory-of-external-exporters
 domains: []
@@ -11,13 +11,13 @@ tasks: [data_handling, manage_data]
 roles: [data_steward, repository_manager]
 ---
 
-# Dataverse repository
+# Dataverse
  
-[Harvard Dataverse](https://dataverse.harvard.edu/) is an open source repository for research data, with over 121 installations across research institutions.  It has support for RO-Crate export, preview and metadata editing.
+[Dataverse](https://dataverse.org) is open source research data repository software with over 130 [installations](https://dataverse.org/installations) across research institutions. It has support for RO-Crate export, preview and metadata editing.
 
 ## Export of RO-Crate
 
-Dataverse has optional support for **export** as RO-Crate, this must currently be enabled as an [external exporter](https://guides.dataverse.org/en/6.4/installation/advanced.html#external-metadata-exporters). 
+Dataverse has optional support for **exporting** dataset metadata as RO-Crate. This must currently be enabled as an [external exporter](https://guides.dataverse.org/en/latest/installation/advanced.html#external-metadata-exporters).
 
 There are two export methods developed, both return a [detached RO-Crate](specification/1.2/structure#detached-ro-crate-package) as JSON-LD output:
 
