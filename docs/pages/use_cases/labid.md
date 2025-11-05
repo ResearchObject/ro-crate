@@ -21,6 +21,8 @@ Workflows and Worklow Runs can be imported and exported from various sources inc
 
 LabID takes advantage of the Workflow RO-Crate and Workflow Run RO-Crate profiles to import workflows from WorkflowHub, and export workflows and workflow runs to other platforms.
 
+![LabID workflow integration](../../assets/img/labid-screenshot.png)
+
 ## Resources
 * Open-source repositories for the LabID project are hosted on [GitLab](https://gitlab.com/lab-integrated-data).  
 * The documentation is available at https://grp-gbcs.embl-community.io/labid-user-docs/.
