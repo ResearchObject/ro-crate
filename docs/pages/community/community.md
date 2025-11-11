@@ -123,6 +123,8 @@ The _RO-Crate_ team is:
 * Meznah Aloqalaa <https://orcid.org/0000-0002-1382-3896>
 * Pierre-Marie Allard <https://orcid.org/0000-0003-3389-2191>
 * Venkat S Malladi <https://orcid.org/0000-0002-0144-0564>
+* Esteban González <https://orcid.org/0000-0003-4112-6825>
+* Phil Reed <https://orcid.org/0000-0002-4479-715X>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)!
 
