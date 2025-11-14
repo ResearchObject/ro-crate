@@ -288,3 +288,12 @@
   description: Polyglot library for creation of RO-Crate Profile Crates (Available in Python, Typescript and FSharp)
   status: beta
   url: https://github.com/nfdi4plants/ROCratePCC
+  subitems:
+    - name: GitHub Source code (FSharp)
+      url: https://github.com/nfdi4plants/ROCratePCC
+    - name: PyPi package
+      url: https://pypi.org/project/rocratepcc/
+    - name: NPM package
+      url: https://www.npmjs.com/package/@nfdi4plants/rocratepcc
+    - name: NuGet package
+      url: https://www.nuget.org/packages/ROCratePCC/
