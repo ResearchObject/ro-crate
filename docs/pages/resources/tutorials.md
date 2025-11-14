@@ -1,5 +1,6 @@
 ---
 title: Tutorials
+description: Technical tutorials and videos for learning how to use RO-Crate
 sidebar: resources
 ---
 <!--
@@ -36,4 +37,3 @@ sidebar: resources
   * [Workflow Run RO-Crate introduction](https://training.galaxyproject.org/topics/fair/tutorials/ro-crate-workflow-run-ro-crate/tutorial.html): guides you through constructing an RO-Crate which captures an execution of a computational workflow.
 
 {% include callout.html type="tip" content="The [Crate-O](https://language-research-technology.github.io/crate-o/) and [RO-Crate playground](https://ro-crate.ldaca.edu.au/) provide graphical ways to create and explore RO-Crate." %}
-

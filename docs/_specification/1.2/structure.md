@@ -4,6 +4,18 @@ redirect_from:
   - /1.2-DRAFT/structure
   - /specification/1.2-DRAFT/structure
   - /specification/1.2-RC1/structure
+excerpt: |
+  An [_RO-Crate Metadata Document_](#ro-crate-metadata-document-ro-crate-metadatajson) is used to package data in one of two ways:
+  
+  1.  An _Attached  RO-Crate Package_ that defines an on-disk collection of data:
+  - It is defined within a file-system-like service as a directory (known as the _RO-Crate Root_) with the _RO-Crate Metadata Document_ saved in a file-like entity with a file name of `ro-crate-metadata.json`.
+  - References to files and directories in the _RO-Crate Metadata Document_ are present in the RO-Crate or available online as [Web-based Data Entities](data-entities.html#web-based-data-entities).
+  - Typically, software processing an _Attached RO-Crate Package_ would be passed a path to a directory or a zip file.
+  2.  A _Detached RO-Crate Package_:
+    - Is defined by a stand-alone _RO-Crate Metadata Document_ which may be stored in a file or distributed via an API.
+    - References to files and directories in the _RO-Crate Metadata Document_ are all Web-based Data Entities.
+    - If stored in a file, known as a _Detached RO-Crate Metadata File_, the filename SHOULD be `${prefix}-ro-crate-metadata.json` rather than `ro-crate-metadata.json` where the variable `${prefix}` is a human readable version of the dataset's ID or name, to signal that on disk, the presence of the file does not indicate an _Attached RO-Crate Data Package_.
+    - Typically, software processing a _Detached RO-Crate Package_ would be passed a path to a file, an absolute URI, or a JSON string or object, without a directory context.
 nav_order: 3
 parent: RO-Crate 1.2
 ---

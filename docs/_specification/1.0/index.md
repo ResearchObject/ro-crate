@@ -1,5 +1,7 @@
 ---
 title: RO-Crate 1.0
+excerpt: |
+  This document specifies a method, known as _RO-Crate_ (Research Object Crate), of organizing file-based data with associated metadata, using [linked data] principles, in both human and machine readable formats, with the ability to include additional domain-specific metadata.
 redirect_from: 
   - /1.0/
 nav_exclude: true

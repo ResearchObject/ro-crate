@@ -1,5 +1,6 @@
 ---
 title: Tools and resources list
+description: RO-Crate tools and resources developed by the community
 datatable: true
 sidebar: resources
 ---

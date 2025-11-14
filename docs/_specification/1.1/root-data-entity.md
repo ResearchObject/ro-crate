@@ -3,6 +3,10 @@ title: Root Data Entity
 redirect_from:
   - /1.1-DRAFT/root-data-entity
   - /1.1/root-data-entity
+excerpt: |
+  The **Root Data Entity** is a [Dataset] that represents the RO-Crate as a whole;
+   a _Research Object_ that includes the _Data Entities_ and the related
+   _Contextual Entities_.
 nav_order: 5
 parent: RO-Crate 1.1
 ---

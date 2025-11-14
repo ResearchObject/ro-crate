@@ -3,6 +3,14 @@ title: Data Entities
 redirect_from:
   - /1.1-DRAFT/data-entities
   - /1.1/data-entities
+excerpt: |
+  The primary purpose for RO-Crate is to gather and describe a set of _Data entities_ in the form of:
+
+  * Files
+  * Directories
+  * Web resources
+
+  The data entities can be further described by referencing [contextual entities](contextual-entities) such as persons, organizations and publications.
 nav_order: 6
 parent: RO-Crate 1.1
 ---

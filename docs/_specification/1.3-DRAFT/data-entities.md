@@ -2,6 +2,11 @@
 title: Data Entities
 redirect_from:
   - /1.3-DRAFT/data-entities
+excerpt: |
+  The primary purpose for RO-Crate is to gather and describe a set of _Data Entities_ in the form of: 
+  
+  * Actual files which are datastreams available on the local file system or over the web -- when represented in the RO-Crate Metadata Document, these have the type `File`.
+  * Folders (or directories) of files -- represented using the type `Dataset`.
 nav_order: 6
 parent: RO-Crate 1.3-DRAFT
 ---

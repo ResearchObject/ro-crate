@@ -1,5 +1,11 @@
 ---
 title: Handling relative URI references
+excerpt: |
+  The _RO-Crate Metadata File_ use _relative URI references_ to identify files and directories
+  contained within the _RO-Crate Root_ and its children.  As described in section
+  [Describing entities in JSON-LD](jsonld#describing-entities-in-json-ld) above, 
+  relative URI references are also frequently used for 
+  identifying _Contextual entities_.
 parent: Appendix
 grand_parent: RO-Crate 1.1
 redirect_from:

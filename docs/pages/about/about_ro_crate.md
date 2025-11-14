@@ -1,5 +1,6 @@
 ---
 title: About RO-Crate
+description: What RO-Crate is, how RO-Crate makes research FAIR, and how to get started
 sidebar: about
 ---
 

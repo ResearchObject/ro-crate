@@ -1,5 +1,6 @@
 ---
 title: Community
+description: The RO-Crate team, community meetings, and how to get in touch
 ---
 <!--
    Copyright 2019-2024 The University of Manchester and RO-Crate contributors 
