@@ -1217,7 +1217,7 @@
       ],
       "name": "RO-Crate Metadata Specification 1.2 (PDF)",
       "sameAs": {
-        "@id": "https://zenodo.org/record/13751027/files/ro-crate-1.2.pdf"
+        "@id": "https://zenodo.org/record/13751027/files/ro-crate-1.2.0.pdf"
       },
       "version": "1.2.0"
     },
