@@ -528,7 +528,7 @@
       ],
       "name": "RO-Crate Metadata Specification 1.1 (PDF)",
       "sameAs": {
-        "@id": "https://zenodo.org/record/5841615/files/ro-crate-1.1.pdf"
+        "@id": "https://zenodo.org/record/5841615/files/ro-crate-1.1.2.pdf"
       },
       "isBasedOn": [
         { "@id": "https://www.researchobject.org/ro-crate/1.1/index.html"},
