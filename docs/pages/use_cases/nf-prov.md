@@ -46,8 +46,14 @@ nextflow run rnaseq-nf -profile docker --outdir results
 
 The `results` directory will contain the pipeline output and an `ro-crate-metadata.json` file with the RO-Crate metadata.
 
+## Other RO-Crate support in Nextflow
+
+The [nf-core RO-Crate tool](https://nf-co.re/docs/nf-core-tools/pipelines/rocrate) can generate a [Workflow Testing RO-Crate](https://crs4.github.io/life_monitor/workflow_testing_ro_crate) for a Nextflow pipeline.  The tool utilises the [repo2rocrate library](https://github.com/crs4/repo2rocrate).
+
 
 ## Resources
 
 * [nf-prov GitHub repository](https://github.com/nextflow-io/nf-prov)
+* [nf-core RO-Crate tool](https://nf-co.re/docs/nf-core-tools/pipelines/rocrate)
 * [Workflow Run RO-Crate](https://www.researchobject.org/workflow-run-crate/)
+* [Workflow Testing RO-Crate](https://crs4.github.io/life_monitor/workflow_testing_ro_crate)
