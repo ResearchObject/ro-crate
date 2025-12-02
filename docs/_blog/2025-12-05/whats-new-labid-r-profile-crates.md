@@ -1,7 +1,7 @@
 ---
 title:  "What's new: FAIR data management use case, R package, Profile Crate tool"
 author: ["Eli Chadwick"]
-date: 2025-11-20
+date: 2025-12-05
 related_pages:
     use_cases: [labid, dataplant, nf-prov] # should match items in pages/use_cases
 ---
