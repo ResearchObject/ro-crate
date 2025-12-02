@@ -307,3 +307,13 @@
   description: Nextflow tool to generate a Workflow RO-Crate for a Nextflow pipeline
   url: https://nf-co.re/docs/nf-core-tools/pipelines/rocrate
   status: production
+
+- name: "{rocrateR}"
+  description: R library for creating, manipulating and reading RO-Crates
+  url: https://github.com/ResearchObject/ro-crate-r/
+  status: beta
+  subitems:
+    - name: CRAN package
+      url: https://cran.r-project.org/web/packages/rocrateR/index.html
+    - name: GitHub source code
+      url: https://github.com/ResearchObject/ro-crate-r/
