@@ -297,3 +297,23 @@
       url: https://www.npmjs.com/package/@nfdi4plants/rocratepcc
     - name: NuGet package
       url: https://www.nuget.org/packages/ROCratePCC/
+
+- name: nf-prov
+  description: Nextflow plugin to render Workflow Run RO-Crates for pipeline runs
+  url: https://github.com/nextflow-io/nf-prov
+  status: production
+
+- name: nf-core RO-Crate tool
+  description: Nextflow tool to generate a Workflow RO-Crate for a Nextflow pipeline
+  url: https://nf-co.re/docs/nf-core-tools/pipelines/rocrate
+  status: production
+
+- name: rocrateR
+  description: R library for creating, manipulating and reading RO-Crates
+  url: https://github.com/ResearchObject/ro-crate-r/
+  status: beta
+  subitems:
+    - name: CRAN package
+      url: https://cran.r-project.org/web/packages/rocrateR/index.html
+    - name: GitHub source code
+      url: https://github.com/ResearchObject/ro-crate-r/
