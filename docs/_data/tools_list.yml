@@ -317,3 +317,13 @@
       url: https://cran.r-project.org/web/packages/rocrateR/index.html
     - name: GitHub source code
       url: https://github.com/ResearchObject/ro-crate-r/
+
+- name: rocrate-indexer
+  description: Indexing RO-Crates into a Tantivy search index
+  url: https://github.com/arunaengine/rocrate-indexer
+  status:
+
+- name: RO-Crate Explorer
+  description: A modern, interactive web application for exploring and visualizing RO-Crates, built with Vue 3.
+  url: https://github.com/arunaengine/RO-Crate-Explorer
+  status:
