@@ -27,9 +27,9 @@ They reflect the real-world needs and obstacles faced by researchers and develop
 
 The group produced many outputs which will be of immediate benefit to the community:
 
-- Extensions to [ro-crate-py](https://github.com/ResearchObject/ro-crate-py/pull/244) library: load most relevent subcrates of very large RO-Crates
+- Extensions to [ro-crate-py](https://github.com/ResearchObject/ro-crate-py/pull/244) library: load most relevant subcrates of very large RO-Crates
 - Extensions to [ro-crate-rs](https://github.com/intbio-ncl/ro-crate-rs) library: interactive command line interface mode to traverse attached and detatched RO-Crates
 - Built an [RO-Crate indexing tool](https://github.com/arunaengine/rocrate-indexer) for easier exploration
-- Built the [RO-Crate Explorer](https://github.com/arunaengine/RO-Crate-Explorer), a demonstrator applicaiton to parse, visualise and traverse RO-Crates
+- Built the [RO-Crate Explorer](https://github.com/arunaengine/RO-Crate-Explorer), a demonstrator application to parse, visualise and traverse RO-Crates
 
 For full details, please visit the [BioHackathon Germany 2025 RO-Crate documentation](https://das-abroxas.github.io/2025_Biohackathon_Documentation/)
