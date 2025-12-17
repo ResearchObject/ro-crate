@@ -15,20 +15,20 @@ One of the hackathon projects was titled [Enhancing FAIR (Meta-)Data Practices i
 It was led by Sebastian Beyvers and Jannis Schlegel (University of Giessen).
 
 During their participation in the Biohackathon Germany 2025, their working group engaged in extensive discussions focused on the practical and technical challenges of integrating RO-Crates in federated storage systems for life science data. 
-The following sections present the central questions and ideas that emerged from these collaborative sessions. 
+The following list summarises the central questions and ideas that emerged from these collaborative sessions. 
 They reflect the real-world needs and obstacles faced by researchers and developers striving to advance FAIR data practices in distributed environments, and highlight areas where current standards and tooling may require further development.
 
-- Handling RO-Crates with Extremely Large Datasets and Integrated Metadata
-- Integrating Content Consistency Checks in File Metadata
-- Propagating Metadata Updates from Top-Level Crates to Referenced Subcrates
-- Handling Property Conflicts in Nested RO-Crates
+- Handling RO-Crates with extremely large datasets and integrated metadata (up to hundreds of megabytes of metadata, containing millions of entities)
+- Integrating content consistency checks in file metadata
+- Propagating metadata updates from top-level crates to referenced subcrates
+- Handling property conflicts in nested RO-Crates
 
 ### Results
 
 The group produced many outputs which will be of immediate benefit to the community:
 
 - Extensions to [ro-crate-py](https://github.com/ResearchObject/ro-crate-py/pull/244) library: load most relevent subcrates of very large RO-Crates
-- Extensions to ro-crate-rs library: interactive command line interface mode to traverse attached and detatched RO-Crates
+- Extensions to [ro-crate-rs](https://github.com/intbio-ncl/ro-crate-rs) library: interactive command line interface mode to traverse attached and detatched RO-Crates
 - Built an [RO-Crate indexing tool](https://github.com/arunaengine/rocrate-indexer) for easier exploration
 - Built the [RO-Crate Explorer](https://github.com/arunaengine/RO-Crate-Explorer), a demonstrator applicaiton to parse, visualise and traverse RO-Crates
 
