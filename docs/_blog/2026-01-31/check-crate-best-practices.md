@@ -30,7 +30,7 @@ Graphical RO-Crate editor tools like [Crate-O](https://language-research-technol
 
 The next step is to ensure that the RO-Crate is usable by humans. My preferred way of doing this is to explore an HTML preview of the crate.
 
-Some crates already come with an `ro-crate-preview.html` file - opening this file in the browser provides an explorable rendering of the crate metadata. For those that don't include it, the file can be easily generated using the `ro-crate-html` package.
+Some crates already come with an `ro-crate-preview.html` file - opening this file in the browser provides an explorable rendering of the crate metadata. For those that don't include it, the file can be easily generated using the [`ro-crate-html`](https://www.npmjs.com/package/ro-crate-html) package.
 
 ```bash
 npm install -g ro-crate-html
