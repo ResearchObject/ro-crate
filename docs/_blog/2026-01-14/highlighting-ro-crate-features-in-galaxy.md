@@ -1,7 +1,7 @@
 ---
 title:  "Highlighting RO-Crate Features in Galaxy"
 author: ["Eli Chadwick"]
-date: 2025-10-01
+date: 2026-01-14
 related_pages:
     use_cases: [galaxy, workflowhub, eln] # should match items in pages/use_cases
 ---
