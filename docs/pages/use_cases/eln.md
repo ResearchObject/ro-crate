@@ -1,7 +1,7 @@
 ---
 page_id: eln
 title: Electronic Lab Notebook
-description: 
+description: The ELN file format has been defined as an archive format to capture Electronic Laboratory Notebooks (ELN). The format is based on RO-Crate and is supported by a number of ELN softwares.
 url: https://guides.dataverse.org/en/6.4/installation/advanced.html#inventory-of-external-exporters
 domains: [chemistry, biomedical_science]
 tasks: [data_handling, manage_data]
