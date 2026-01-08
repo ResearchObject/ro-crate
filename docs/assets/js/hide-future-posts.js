@@ -3,5 +3,8 @@ $('li[date]').each(function () {
     // parse the date
     var itemDate = new Date($(this).attr('date') + "T00:00:00Z");
     // compare dates and hide future posts
-    if (itemDate > Date.now()) $(this).hide();
+    var show_future = document.currentScript.getAttribute("data-show-future");
+    if (show_future != "true") {
+        if (itemDate > Date.now()) $(this).hide();
+    };
 });

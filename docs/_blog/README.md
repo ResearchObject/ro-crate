@@ -43,7 +43,7 @@ The Jekyll docs on [collections](https://jekyllrb.com/docs/collections/) and [pe
 
 Posts with a `date` in the future are hidden in the UI using JavaScript - this allows posts to be merged into the repo a few days before their "official" publication. By default pages with a future date are not built by Jekyll, so going to their permalink early will give a 404. The website is built daily, at which point new posts will be rendered and added to the RSS feed.
 
-For local testing you can use the `--future` tag with `jekyll build` or `jekyll serve` and then navigate to the permalink manually to check the page (or disable JavaScript to show the page in the menu as well).
+For local testing you can use the `--future` option with `jekyll build` or `jekyll serve`, or set `future: true` in `_config.yml` - future posts will then show up on the Blog page and menu.
 
 ## Why not use Jekyll's [built-in blogging features](https://jekyllrb.com/docs/posts/)?
 
