@@ -21,6 +21,10 @@ This section has significant changes and introduces a new type of RO-Crate, expa
 
 The JSON-LD must (upgraded from should) use the RO-Crate JSON-LD Context <https://w3id.org/ro/crate/1.2/context> (updated version) by reference. Most (if not all) RO-Crates conforming to 1.1 already include the context by reference, so we do not expect this to be a disruptive change.
 
+If using the `input` and `output` properties (as in [Workflows and Scripts - Describing inputs and outputs](https://www.researchobject.org/ro-crate/specification/1.2/workflows.html#describing-inputs-and-outputs)), be aware that their mapping in the JSON-LD context has changed:
+* `input` has changed from `https://bioschemas.org/ComputationalWorkflow#input` to `https://bioschemas.org/properties/input` .
+* `output` has changed from `https://bioschemas.org/ComputationalWorkflow#output` to `https://bioschemas.org/properties/output`.
+
 ### Attached and Detached RO-Crate Packages
 
 The requirement in 1.1 for a RO-Crate to always be a directory has proven to be limiting in some cases. For example, in some applications it is beneficial to serve RO-Crate metadata over an API separately from the data it describes. However, separating the metadata in this way requires some changes to how you handle cross-references and finding the Root Data Entity. Therefore, 1.2 introduces a distinction between "Attached" and "Detached" RO-Crate Packages:
@@ -43,7 +47,7 @@ The _RO-Crate Website_ and supporting files `ro-crate-preview.html` and `ro-crat
 ### To update crates from 1.1
 
 * Note that all RO-Crates conforming to version 1.1 follow the Attached RO-Crate style by default in 1.2; no change to the metadata is needed to achieve this.
-* Ensure the RO-Crate JSON-LD Context https://w3id.org/ro/crate/1.2/context is used by reference in `@context`
+* Ensure the RO-Crate JSON-LD Context <https://w3id.org/ro/crate/1.2/context> is used by reference in `@context`
 * If the RO-Crate website is present, ensure it is a file named `ro-crate-preview.html` in the root directory. If there are additional resources, ensure they are in `ro-crate-preview_files/` in the root directory.
 * If `ro-crate-preview.html` and `ro-crate-preview_files/` are included in the `hasPart` of any `Dataset`, remove them.
   * Exception: `ro-crate-preview.html` may be included in `hasPart` if it is also the profile description within a Profile Crate (see Profile Crate section)
