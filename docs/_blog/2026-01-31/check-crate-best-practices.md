@@ -1,5 +1,5 @@
 ---
-title:  "How to check an RO-Crate follows best practices"
+title:  "How I check an RO-Crate follows best practices"
 author: ["Eli Chadwick"]
 date: 2026-01-31
 related_pages:
