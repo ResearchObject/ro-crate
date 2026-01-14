@@ -61,7 +61,9 @@
   <script src="{{ 'assets/js/main.js' | relative_url }}"></script>
   <script src="{{ 'assets/js/search.js' | relative_url }}"></script>
   <script src="{{ 'assets/js/clipboard.min.js' | relative_url }}"></script>
-  <script src="{{ 'assets/js/hide-future-posts.js' | relative_url }}" data-show-future={{site.future}} defer></script>
+  {% unless site.future == true %}
+  <script src="{{ 'assets/js/hide-future-posts.js' | relative_url }}" defer></script>
+  {% endunless %}
   {%- if page.datatable == true %}
   <!-- Include the standard DataTables bits -->
   <link rel="stylesheet" type="text/css" href="{{ 'assets/css/dataTables.bootstrap5.min.css' | relative_url }}">
