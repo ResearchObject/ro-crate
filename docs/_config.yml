@@ -115,10 +115,6 @@ theme_variables:
     twitter: false
   theme_color: 39989F
 
-feed: # RSS/Atom feed settings
-  collections:
-    - blog
-
 plugins:
   - elixir-toolkit-theme-plugins
   - jekyll-redirect-from
