@@ -107,6 +107,11 @@ collections:
     permalink: /blog/:path
     output: true
 
+feed:
+  logo: assets/img/ro-crate.svg
+  icon: assets/img/favicon.ico
+  posts_limit: 100
+
 theme_variables:
   topnav:
     theme: light

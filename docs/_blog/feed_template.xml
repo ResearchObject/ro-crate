@@ -1,8 +1,15 @@
 ---
 layout: none
 permalink: feed/blog.xml
+title: "Research Object Crate (RO-Crate) | Blog"
 ---
 <?xml version="1.0" encoding="utf-8"?>
+<!--This is an Atom feed adapted from https://github.com/jekyll/jekyll-feed/blob/master/lib/jekyll-feed/feed.xml .
+Changes from that source:
+* simplified how the title is set
+* removed if/else statements that could adapt the feed according to tags and categories (we don't need this)
+* added a check that hides posts dated in the future (the jekyll-feed gem doesn't do this for non-default collections)
+-->
 {% if page.xsl %}
   <?xml-stylesheet type="text/xml" href="{{ '/feed.xslt.xml' | absolute_url }}"?>
 {% endif %}
@@ -13,8 +20,8 @@ permalink: feed/blog.xml
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <id>{{ page.url | absolute_url | xml_escape }}</id>
 
-  {% if title %}
-    <title type="html">{{ "Research Object Crate (RO-Crate) | Blog" | xml_escape }}</title>
+  {% if page.title %}
+    <title type="html">{{ page.title | xml_escape }}</title>
   {% endif %}
 
   {% if site.description %}
@@ -48,16 +55,18 @@ permalink: feed/blog.xml
       {% endif %}
     </author>
   {% endif %}
- 
+
   {% assign posts = site.blog | where_exp: "post", "post.layout == 'post'" %}
   {% assign posts = posts | sort: "date" | reverse %}
   {% assign posts_limit = site.feed.posts_limit | default: 10 %}
   {% assign current_date = "now" | date: '%s' | integer %}
   {% for post in posts limit: posts_limit %}
-    {% assign post_date = post.date | date: '%s' | integer %}
-    {% if post_date > current_date %}
-      {% continue %}
-    {% endif %}
+    {% unless site.future %}
+      {% assign post_date = post.date | date: '%s' | integer %}
+      {% if post_date > current_date %}
+        {% continue %}
+      {% endif %}
+    {% endunless %}
 
     <entry{% if post.lang %}{{" "}}xml:lang="{{ post.lang }}"{% endif %}>
       {% assign post_title = post.title | smartify | strip_html | normalize_whitespace | xml_escape %}
