@@ -107,7 +107,7 @@ collections:
     permalink: /blog/:path
     output: true
 
-feed:
+feed: # RSS/Atom feed settings, used in _blog/feed_template.xml
   logo: assets/img/ro-crate.svg
   icon: assets/img/favicon.ico
   posts_limit: 100
