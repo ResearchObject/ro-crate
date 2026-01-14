@@ -1,7 +1,7 @@
 ---
 title:  "How I check an RO-Crate follows best practices"
 author: ["Eli Chadwick"]
-date: 2026-01-31
+date: 2026-01-28
 related_pages:
     use_cases: [] # should match items in pages/use_cases
 ---
