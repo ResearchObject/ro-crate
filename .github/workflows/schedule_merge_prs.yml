@@ -1,0 +1,35 @@
+# This workflow is used for scheduling blog posts to be merged on their publication date.
+# To activate the scheduler, include `/schedule <date>` at the end of the PR description, e.g.:
+# /schedule 2022-06-08
+# More info: https://github.com/gr2m/merge-schedule-action
+name: Schedule merge for pull request
+
+on:
+  # pull request updates trigger the action to check for the presence of
+  # `/schedule <date>` in the PR description and mark the PR pending if appropriate
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+  # daily cron job merges pending PRs on the appropriate date
+  schedule:
+    - cron: '36 2 * * *'
+
+jobs:
+  merge_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: gr2m/merge-schedule-action@v2
+        with:
+          # Merge method to use. Possible values are merge, squash or
+          # rebase. Default is merge.
+          merge_method: rebase
+          # Require all pull request statuses to be successful before
+          # merging. Default is `false`.
+          require_statuses_success: 'true'
+          # Label to apply to the pull request if the merge fails. Default is
+          # `automerge-fail`.
+          automerge_fail_label: 'automerge-fail'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
