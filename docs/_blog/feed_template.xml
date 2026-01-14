@@ -4,7 +4,7 @@ permalink: feed/blog.xml
 title: "Research Object Crate (RO-Crate) | Blog"
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<!--This is an Atom feed adapted from https://github.com/jekyll/jekyll-feed/blob/master/lib/jekyll-feed/feed.xml .
+<!--This is an Atom feed adapted from https://github.com/jekyll/jekyll-feed/blob/master/lib/jekyll-feed/feed.xml under the MIT license.
 Changes from that source:
 * simplified how the title is set
 * removed if/else statements that could adapt the feed according to tags and categories (we don't need this)
