@@ -5,7 +5,7 @@ date: 2025-12-17
 ---
 
 The [4th BioHackathon Germany](https://www.denbi.de/de-nbi-events/1840-4th-biohackathon-germany) took place from 1-5 December 2025 in Walsrode, Germany, organised by de.NBI and ELIXIR Germany. 
-Life scientists, data managers, software developers and project leaders attended the hybrid event to work together on open source code, standards and infrastructure to advance research data pratices and tools.
+Life scientists, data managers, software developers and project leaders attended the hybrid event to work together on open source code, standards and infrastructure to advance research data practices and tools.
 
 {% include image.html src="umbrellas.jpg" caption="BioHackathon Germany was hosted at the ANDERS Hotel Walsrode." alt="Colourful umbrellas mounted the ceiling as art." %}
 
