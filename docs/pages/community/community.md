@@ -127,6 +127,7 @@ The _RO-Crate_ team is:
 * Esteban González <https://orcid.org/0000-0003-4112-6825>
 * Phil Reed <https://orcid.org/0000-0002-4479-715X>
 * Tilo Mathes <https://orcid.org/0000-0002-9694-748X>
+* Saurabh Dome
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)!
 
