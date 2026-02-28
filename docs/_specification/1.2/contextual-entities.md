@@ -496,7 +496,7 @@ This example shows how to define a place, using a [geonames] ID:
     "@id": "_:Geometry-1"
   },
   "identifier": "http://sws.geonames.org/8152662/",
-  "uri": "https://www.geonames.org/8152662/catalina-park.html",
+  "url": "https://www.geonames.org/8152662/catalina-park.html",
   "name": "Catalina Park"
 },
 {
