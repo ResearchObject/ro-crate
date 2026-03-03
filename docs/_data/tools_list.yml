@@ -327,3 +327,12 @@
   description: A modern, interactive web application for exploring and visualizing RO-Crates, built with Vue 3.
   url: https://github.com/arunaengine/RO-Crate-Explorer
   status:
+
+- name: PyCOMPSs CLI
+  description: Quick and friendly visualisation of RO-Crates from the Command Line Interface with the 'inspect' option. Compatible with Workflow and Workflow Run RO-Crate profiles.
+  status: production
+  level:
+  url: https://pypi.org/project/pycompss-cli/
+  subitems:
+    - name: Documentation
+      url: https://compss-doc.readthedocs.io/en/stable/Sections/04_Ecosystem/09_CLI/02_Usage.html#inspect-workflow-provenance
