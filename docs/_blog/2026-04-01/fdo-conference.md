@@ -6,84 +6,53 @@ related_pages:
     use_cases: [page_id1, page_id2] # should match items in pages/use_cases
 ---
 
-The [3rd FAIR Digital Objects (FDO) Conference] was held from 25-27 March 2026, with a pre-conference training day on 24 March. Representatives of many projects spanning academia, industry, and government gathered together to discuss how to advance FAIR and open science through the adoption of the FAIR Digital Objects.
+The [3rd FAIR Digital Objects (FDO) Conference](https://fairdo.org/fdo-conference-2026/) was held from 25-27 March 2026, with a pre-conference training day on 24 March. Representatives of many projects spanning academia, industry, and government gathered together to discuss how to advance FAIR and open science through the adoption of the FAIR Digital Objects.
 
 ## How RO-Crate relates to FDOs
 
 Intro paragraph
 
-## Pre-conference Training Day
+## Training
 
-Stian Soiland-Reyes and Thivisha ? delivered a training session covering FAIR Signposting and RO-Crate. There were also training sessions on two other FDO flavours: Handle FDOs and Nanopublications.
+Stian Soiland-Reyes and Thivisha Uthayakumar delivered a training session covering FAIR Signposting and RO-Crate at the pre-conference training day. There were also training sessions on two other FDO flavours: Handle FDOs and Nanopublications.
 
-## Day 1: Trust Day
-
-Trust day notes...
-
-## Day 2
-
-On Day 2 the programme zoomed in on specific implementations of FDOs for particular use cases.
+## RO-Crate Applications
 
 [? from CLARIN] highlighted their vision for RO-Crates for their "virtual collections" - collections of datasets which are linked together using web-based data entities within RO-Crate.
 
-[The morning panel] produced a call for community building, and making FDOs an invisible part of the research infrastructure. Adaptability is essential, as is interoperability - working together toward a shared goal.
-
 [Lukas Weil from DataPLANT] provided an overview of the ARC (Annotated Research Context) Framework, [just link to this]
 
-[Theodor Strauch from IPK Gatersleben] shared their use of the ARC framework in FAIRagro - applying ARC to measurements of seeds, plants, samples in agriculture studies.
+[Theodor Strauch from IPK Gatersleben] shared how the ARC framework is being applied in the FAIRagro project to capture measurements of seeds, plants, and samples in agriculture studies.
 
-[KIK-IPRA guy] presented the H-SEARCH project -a cultural heritage project with multiple strands, one of which focuses on digitising and archiving datasets using BagIt and RO-Crate.
+[KIK-IPRA guy] presented the H-SEARCH project, a cultural heritage project with multiple strands, one of which focuses on digitising and archiving datasets using BagIt and RO-Crate.
 
-[Esteban from Madrid/FAIR2Adapt] shared how his project combines the best features of both RO-Crate and Nanopublications - Ro-Crate for linked datasets and publications, and Nanopublications to describe claims made within or by the data and publications.
+[Esteban from Madrid/FAIR2Adapt] shared how his project combines the best features of both RO-Crate and Nanopublications - RO-Crate for linked datasets and publications, and Nanopublications to describe claims made within or by the data and publications.
 
-## Writing the post
+[Joy Owango from Africa PID Alliance] presented an Africa-led PID infrastructure which can connect resources across different locations and institutions, with a focus on the [CARE principles].
 
-You could write about:
-* how you're using RO-Crate in your project or domain
-* an event you attended where RO-Crate was mentioned
-* a tool you've created for handling RO-Crates
-* an idea you've been exploring and want to share.
+Posters:
 
-When writing the post, make sure to expand any acronyms you use, and link out to other pages where it's useful.
+* Betz et al.: [Conceptualising an Integrated Data Model Using RO-Crates for Sports Facility Building Information: Linking Distributed Data, Persistent Identifiers, and Building Information for Sports Facilities](https://fairdo.org/wp-content/uploads/2026/03/23-3125-betz.pdf)
+* Ravinder et al.: [Three Use Cases on Adoption of Webby FDOs](https://fairdo.org/wp-content/uploads/2026/03/29-3131-ravinder2.pdf)
+* Zheng et al.: [Building a FDO Profile registry with RO-Crate](https://fairdo.org/wp-content/uploads/2026/03/52-3155-soiland.pdf) - upload poster - <profiles.ro-crate.org>
+* Uthayakumar and Soiland-Reyes: [The FAIR Signposting Crawler](https://fairdo.org/wp-content/uploads/2026/03/51-3154-uthayakumar.pdf)
+* Schweikert et al.: [Advancing FAIR Digital Objects in RADAR: RO-Crate Integration, Machine-Actionable Access, and AI-Supported Metadata Annotation and FAIRness Assessment](https://fairdo.org/wp-content/uploads/2026/03/25-3127-schweikert.pdf)
 
-If you're writing about a particular domain, give some background to help community members outside 
-the domain understand your work.
 
-## Including images
+## Panel Discussions
 
-If you want to include an image in your blog post, add the image to the same folder as the post's Markdown file:
+The panel on "FDO Motivation" produced a call for community building, and making FDOs an invisible part of the research infrastructure. Adaptability is essential, as is interoperability - working together toward a shared goal.
 
-```
-_blog/
-├─ yyyy-mm-dd/
-│  ├─ post-name.md
-│  ├─ my_image.png
-```
+Carole Goble from the University of Manchester, who is also a member of the [RO-Crate Steering Committee], spoke on the "Interoperability" panel, sharing success stories including the computational workflows ecosystem (WorkflowHub, etc). The panel highlighted the need for flexibility and fallbacks when handling FDOs, as well as the human factors of interoperability - including data stewards, software engineers, and user communities.
 
- You can then include the image in the Markdown text with the following code:
+There were two further panels on security and data spaces, one of which was chaired by Stian Soiland-Reyes.
 
-```
-{% include image.html src="my_image.png" caption="A test image" alt="Description of image" %}
-```
+## FDO Comparisons and Interoperability
 
-Set `src` to the image path, then set `caption` and `alt` to appropriate descriptions of the image. The `caption` will be displayed on the page, while the `alt` will be used for the image alternative description (used by screen readers).
+There were also presentations comparing the different FDO flavours.
 
-## Including internal links
+The [full poster list](https://fairdo.org/fdo-conference-2026-posters/) also included several posters on interoperability, consistency, and security of FAIR Digital Objects, such as:
 
-If you want to link to another page on the RO-Crate website, format the link as follows:
-
-```
-[link text]({{baseurl}}{% link path/to/markdown/file.md %})
-```
-
-Here the path should be relative to the `docs/` folder. Do not edit the `{{ baseurl }}` part.
-
-This is necessary because the blog posts have automatically-generated permalinks that don't match the location of the Markdown files in the folder structure, so using a relative path to another page doesn't work as you might expect. This format lets Jekyll handle setting the correct URL for the linked page.
-
-Pages outside the RO-Crate website can be linked in the usual fashion: `[link text](url)`.
-
-## Submit the post
-
-When your blog post is ready, open a pull request to the [ro-crate repository](https://github.com/ResearchObject/ro-crate). One of the website maintainers will review it and merge.
-
-Once merged, your post will appear at the path `https://www.researchobject.org/ro-crate/blog/yyyy-mm-dd/title-of-your-post`.
+* El-Gabali: [Towards a Common Metadata Framework for FDOs in NFDI: From Kernel Profiles to Semantic Cross-Walks](https://fairdo.org/wp-content/uploads/2026/03/42-3147-elgebali.pdf)
+* Fitschen and Kuhn: [Trusty PID: A Pattern for Immutable FDOs](https://fairdo.org/wp-content/uploads/2026/03/44-3149-fitschen2.pdf)
+* Dietrich: [Implementing the STAP Principles for FAIR Digital Objects in Europe’s Green Deal Data Space: Plans for SAGE: the Data Space for a Sustainable Green Europe](https://fairdo.org/wp-content/uploads/2026/03/35-3137-dietrich.pdf)
