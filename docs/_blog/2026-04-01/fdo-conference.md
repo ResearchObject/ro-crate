@@ -7,17 +7,23 @@ related_pages:
     use_cases: [aroma, dataplant, ldaca, life-monitor, workflowhub] # should match items in pages/use_cases
 ---
 
-The [3rd FAIR Digital Objects (FDO) Conference](https://fairdo.org/fdo-conference-2026/) was held from 25-27 March 2026, with a pre-conference training day on 24 March. Representatives of projects spanning academia, industry, and government gathered together to discuss how to advance FAIR and open science through the adoption of the FAIR Digital Objects.
+The [3rd FAIR Digital Objects (FDO) Conference](https://fairdo.org/fdo-conference-2026/) was held from 25-27 March 2026, with a pre-conference training day on 24 March. Representatives of projects spanning academia, industry, and government gathered together to discuss how to advance FAIR and open science through the adoption of FAIR Digital Objects.
 
 This post references abstracts from the conference (some of which take the form of draft papers), all of which are publicly available in the [full conference program](https://fairdo.org/fdo-conference-2026-full-program/). Slide decks and posters are also linked if they have been made public.
 
-## How RO-Crate relates to FDOs
+## How RO-Crate relates to FAIR Digital Objects
 
-Intro paragraph - to be written
+RO-Crate aims to provide FAIR provenance metadata for research objects - but it's not the only standard with this goal. The FAIR Digital Object (FDO) concept and community arose as a way to find common ground between different FAIR metadata approaches, and there is now a shared FDO Specification defining the minimum metadata required for all approaches.
+
+Currently, there are three main approaches to FAIR Digital Objects, informally known as "flavours":
+
+* RO-Crate combined with [FAIR Signposting](https://signposting.org/FAIR/); this approach is also known as "webby FDO." Signposting is used to aid automated retrieval of the RO-Crate metadata given the persistent identifier for the dataset.
+* "Handle FDOs" where metadata is attached directly to persistent identifiers, building on the [Handle System](https://www.dona.net/handle-system).
+* [Nanopublications](https://nanopub.net) - small knowledge graphs each containing an assertion, the provenance of that assertion, and the provenance of the graph.
 
 ## Training
 
-Stian Soiland-Reyes and Thivisha Uthayakumar (both University of Manchester) delivered a training session covering FAIR Signposting and RO-Crate at the pre-conference training day. There were also training sessions on two other FDO flavours: Handle FDOs and Nanopublications.
+Stian Soiland-Reyes and Thivisha Uthayakumar (both University of Manchester) delivered a training session covering FAIR Signposting and RO-Crate at the pre-conference training day. There were also training sessions on Handle FDOs and Nanopublications, enabling learners to compare the different approaches.
 
 ## RO-Crate Applications
 
