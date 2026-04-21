@@ -57,7 +57,7 @@ Several posters also covered RO-Crate applications:
 
 The panel on "FDO Motivation" included a call from from Joy Owango (Africa PID Alliance) for community building and making FDOs an invisible part of the research infrastructure. The panel highlighted that adaptability and interoperability are both essential in working together toward a shared goal.
 
-Carole Goble (University of Manchester) spoke on the "Interoperability" panel, sharing success stories such as the computational workflows ecosystem (including [WorkflowHub]({{baseurl}}{% link pages/use_cases/workflowhub.md %}), [Workflow Run RO-Crate](https://www.researchobject.org/workflow-run-crate/), [LifeMonitor]({{baseurl}}{% link pages/use_cases/life-monitor.md %}), and their adopters). The panel discussed the need for flexibility, loose coupling, and fallbacks when handling FDOs, as well as touching on the human factors of interoperability - including data stewards, software engineers, and user communities.
+Carole Goble (University of Manchester) spoke on the "Interoperability" panel, sharing success stories such as the computational workflows ecosystem (including [WorkflowHub]({{baseurl}}{% link pages/use_cases/workflowhub.md %}), [Workflow Run RO-Crate](https://www.researchobject.org/workflow-run-crate/), and [LifeMonitor]({{baseurl}}{% link pages/use_cases/life-monitor.md %})). The panel discussed the need for flexibility, loose coupling, and fallbacks when handling FDOs, as well as touching on the human factors of interoperability - including data stewards, software engineers, and user communities.
 
 Stian Soiland-Reyes (University of Manchester) chaired a panel on "FDO Security & Data Spaces" which touched on the challenges of trust in FDO provision, especially across international boundaries.
 
@@ -65,7 +65,7 @@ Stian Soiland-Reyes (University of Manchester) chaired a panel on "FDO Security 
 
 There were also presentations comparing the different FDO flavours.
 
-Christian Backe (German Research Centre for Artificial Intelligence) and Jana Böhm (GWDG) both presented comparisons of the different FDO approaches, firstly through [conversion of an existing data corpus into each FDO flavour](https://fairdo.org/wp-content/uploads/2026/03/49-3138-backe.pdf), then through a [comparison of each flavour with the minimum FDO elements](https://fairdo.org/wp-content/uploads/2026/03/21-3123-castro.pdf) from the [FDO specifications](https://fairdo.org/specifications/).
+Christian Backe (German Research Centre for Artificial Intelligence) and Jana Böhm (GWDG) both presented comparisons of the different FDO approaches, the former through [conversion of an existing data corpus into each FDO flavour](https://fairdo.org/wp-content/uploads/2026/03/49-3138-backe.pdf), and the latter through a [comparison of each flavour with the minimum FDO elements](https://fairdo.org/wp-content/uploads/2026/03/21-3123-castro.pdf) from the [FDO specifications](https://fairdo.org/specifications/).
 
 The [full poster list](https://fairdo.org/fdo-conference-2026-posters/) also included several posters on interoperability, consistency, and security of FAIR Digital Objects, such as:
 
