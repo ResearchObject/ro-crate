@@ -2,7 +2,7 @@
 title:  "RO-Crate at the FAIR Digital Objects Conference 2026"
 description: "A summary of RO-Crate applications and related topics presented by the community."
 author: ["Eli Chadwick"]
-date: 2026-04-01
+date: 2026-04-27
 related_pages:
     use_cases: [aroma, dataplant, ldaca, life-monitor, workflowhub] # should match items in pages/use_cases
 ---
