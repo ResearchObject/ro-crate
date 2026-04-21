@@ -69,6 +69,6 @@ Christian Backe (German Research Centre for Artificial Intelligence) and Jana BÃ
 
 The [full poster list](https://fairdo.org/fdo-conference-2026-posters/) also included several posters on interoperability, consistency, and security of FAIR Digital Objects, such as:
 
-* El-Gabali: [Towards a Common Metadata Framework for FDOs in NFDI: From Kernel Profiles to Semantic Cross-Walks](https://fairdo.org/wp-content/uploads/2026/03/42-3147-elgebali.pdf)
+* El-Gebali: [Towards a Common Metadata Framework for FDOs in NFDI: From Kernel Profiles to Semantic Cross-Walks](https://fairdo.org/wp-content/uploads/2026/03/42-3147-elgebali.pdf)
 * Fitschen and Kuhn: [Trusty PID: A Pattern for Immutable FDOs](https://fairdo.org/wp-content/uploads/2026/03/44-3149-fitschen2.pdf)
 * Dietrich: [Implementing the STAP Principles for FAIR Digital Objects in Europeâ€™s Green Deal Data Space: Plans for SAGE: the Data Space for a Sustainable Green Europe](https://fairdo.org/wp-content/uploads/2026/03/35-3137-dietrich.pdf)
