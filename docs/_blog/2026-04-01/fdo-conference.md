@@ -12,7 +12,7 @@ This post references abstracts from the conference (some of which take the form 
 
 ## How RO-Crate relates to FDOs
 
-Intro paragraph
+Intro paragraph - to be written
 
 ## Training
 
