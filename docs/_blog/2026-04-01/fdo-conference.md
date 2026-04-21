@@ -3,7 +3,7 @@ title:  "RO-Crate Applications Showcased at the FAIR Digital Objects Conference 
 author: ["Eli Chadwick"]
 date: 2026-04-01
 related_pages:
-    use_cases: [aroma, dataplant, ldaca] # should match items in pages/use_cases
+    use_cases: [aroma, dataplant, ldaca, life-monitor, workflowhub] # should match items in pages/use_cases
 ---
 
 The [3rd FAIR Digital Objects (FDO) Conference](https://fairdo.org/fdo-conference-2026/) was held from 25-27 March 2026, with a pre-conference training day on 24 March. Representatives of projects spanning academia, industry, and government gathered together to discuss how to advance FAIR and open science through the adoption of the FAIR Digital Objects.
@@ -16,7 +16,7 @@ Intro paragraph
 
 ## Training
 
-Stian Soiland-Reyes and Thivisha Uthayakumar from the University of Manchester delivered a training session covering FAIR Signposting and RO-Crate at the pre-conference training day. There were also training sessions on two other FDO flavours: Handle FDOs and Nanopublications.
+Stian Soiland-Reyes and Thivisha Uthayakumar (both University of Manchester) delivered a training session covering FAIR Signposting and RO-Crate at the pre-conference training day. There were also training sessions on two other FDO flavours: Handle FDOs and Nanopublications.
 
 ## RO-Crate Applications
 
@@ -44,15 +44,13 @@ Several posters also covered RO-Crate applications:
 * Uthayakumar and Soiland-Reyes: [The FAIR Signposting Crawler](https://fairdo.org/wp-content/uploads/2026/03/51-3154-uthayakumar.pdf) - upload poster
 * Schweikert et al.: [Advancing FAIR Digital Objects in RADAR: RO-Crate Integration, Machine-Actionable Access, and AI-Supported Metadata Annotation and FAIRness Assessment](https://fairdo.org/wp-content/uploads/2026/03/25-3127-schweikert.pdf)
 
-
-
 ## Panel Discussions
 
-The panel on "FDO Motivation" produced a call for community building, and making FDOs an invisible part of the research infrastructure. Adaptability is essential, as is interoperability - working together toward a shared goal.
+The panel on "FDO Motivation" included a call from from Joy Owango (Africa PID Alliance) for community building and making FDOs an invisible part of the research infrastructure. The panel highlighted that adaptability and interoperability are both essential in working together toward a shared goal.
 
-Carole Goble from the University of Manchester, who is also a member of the [RO-Crate Steering Committee], spoke on the "Interoperability" panel, sharing success stories including the computational workflows ecosystem (WorkflowHub, etc). The panel highlighted the need for flexibility and fallbacks when handling FDOs, as well as the human factors of interoperability - including data stewards, software engineers, and user communities.
+Carole Goble (University of Manchester) spoke on the "Interoperability" panel, sharing success stories such as the computational workflows ecosystem (including [WorkflowHub]({{baseurl}}{% link pages/use_cases/workflowhub.md %}), [Workflow Run RO-Crate](https://www.researchobject.org/workflow-run-crate/), [LifeMonitor]({{baseurl}}{% link pages/use_cases/life-monitor.md %}), and their adopters). The panel discussed the need for flexibility, loose coupling, and fallbacks when handling FDOs, as well as touching on the human factors of interoperability - including data stewards, software engineers, and user communities.
 
-There were two further panels on security and data spaces, one of which was chaired by Stian Soiland-Reyes.
+Stian Soiland-Reyes (University of Manchester) chaired a panel on "FDO Security & Data Spaces" which touched on the challenges of trust in FDO provision, especially across international boundaries.
 
 ## FDO Comparisons and Interoperability
 
