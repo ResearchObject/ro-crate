@@ -3,7 +3,7 @@ page_id: dataplant
 redirect_from:
     - /in-use/dataplant
 title: DataPLANT
-description: DataPLANT`s mission is to provide a sustainable and well annotated data management platform for plant sciences.
+description: DataPLANT's mission is to provide a sustainable and well annotated data management platform for plant sciences.
 url: https://arc-rdm.org/
 domains: [biology, omics]
 tasks: [manage_data]
