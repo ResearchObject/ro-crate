@@ -34,7 +34,7 @@ Lukas Weil (DataPLANT) provided an [overview of the ARC (Annotated Research Cont
 
 Theodor Strauch (IPK Gatersleben) shared how the [ARC framework is being applied in the INTEGRA project](https://fairdo.org/wp-content/uploads/2026/03/12-3111-strauch.pdf) to capture measurements of seeds, plants, and samples in agriculture studies.
 
-Esteban Gonzalez (Technical University of Madrid) shared how the [FAIR2Adapt project integrates RO-Crate and Nanopublications together](https://fairdo.org/wp-content/uploads/2026/03/28-3130-fremout.pdf) - RO-Crate for linked datasets and publications, and Nanopublications to describe claims made within or by those data and publications. [[slides](https://doi.org/10.5281/zenodo.19723489)]
+Esteban Gonzalez (Technical University of Madrid) shared how the [FAIR2Adapt project integrates RO-Crate and Nanopublications together](https://fairdo.org/wp-content/uploads/2026/03/32-3134-gonzales.pdf) - RO-Crate for linked datasets and publications, and Nanopublications to describe claims made within or by those data and publications. [[slides](https://doi.org/10.5281/zenodo.19723489)]
 
 Joy Owango (Africa PID Alliance) presented [DOCiD, an Africa-led PID ecosystem](https://fairdo.org/wp-content/uploads/2026/03/22-3124-owango.pdf) which can connect resources across different locations and institutions, with a focus on the [CARE principles for Indigenous Data Governance](https://doi.org/10.5334/dsj-2020-043) .
 
