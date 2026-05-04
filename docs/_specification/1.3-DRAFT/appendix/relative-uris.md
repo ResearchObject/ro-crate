@@ -114,7 +114,28 @@ Example output (abbreviated):
 }
 ```
 
-Identifiers like `ro-crate-metadata.json`, `./`, `index.html` and `example/` have been translated to absolute URIs. However, even in detached RO-Crates, the [RO-Crate Metadata Descriptor](../root-data-entity#ro-crate-metadata-descriptor) is required to have an `@id` of `ro-crate-metadata.json`, so this needs to be manually changed to the required value.
+Identifiers like `ro-crate-metadata.json`, `./`, `index.html` and `example/` have been translated to absolute URIs. However, even in detached RO-Crates, the [RO-Crate Metadata Descriptor](../root-data-entity#ro-crate-metadata-descriptor) is required to have an `@id` of `ro-crate-metadata.json`, so this needs to be manually changed to the required value. The full URI can be provided by adding a `contentUrl` that points to it:
+
+
+```json
+{
+  "@context": [
+    {"@base": "arcp://uuid,d6be5c9b-132a-4a93-9837-3e02e06c08e6/"},
+    "https://w3id.org/ro/crate/1.1/context"
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"},
+      "about": {"@id": "https://about.workflowhub.eu/Workflow-RO-Crate/1.0/"},
+      "contentUrl": "https://about.workflowhub.eu/Workflow-RO-Crate/1.0/ro-crate-metadata.json",
+      "creator": {"@id": "https://orcid.org/0000-0001-9842-9718"}
+    },
+    ...
+  ]
+}
+```
 
 The above JSON-LD processing will also expand any `#`-based local identifiers of contextual entities:
 
