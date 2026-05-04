@@ -114,7 +114,7 @@ Example output (abbreviated):
 }
 ```
 
-Notice how identifiers like `ro-crate-metadata.json`, `./`, `index.html` and `example/` have been translated to absolute URIs.
+Identifiers like `ro-crate-metadata.json`, `./`, `index.html` and `example/` have been translated to absolute URIs. However, even in detached RO-Crates, the [RO-Crate Metadata Descriptor](../root-data-entity#ro-crate-metadata-descriptor) is required to have an `@id` of `ro-crate-metadata.json`, so this needs to be manually changed to the required value.
 
 The above JSON-LD processing will also expand any `#`-based local identifiers of contextual entities:
 
@@ -130,7 +130,7 @@ The above JSON-LD processing will also expand any `#`-based local identifiers of
     }
 ```
 
-In this approach, the Detached RO-Crate Package can be resolved to the corresponding Attached RO-Crate Package by following the `@id` of the Root Data Set or the Root Metadata File entity.
+In this approach, the Detached RO-Crate Package can be resolved to the corresponding Attached RO-Crate Package by following the `@id` of the Root Data Set.
 
 If the new Detached RO-Crate Package is not meant as a snapshot of the corresponding Attached RO-Crate Package, then such contextual entities should be assigned new `@id`, e.g. by generating random UUIDs like `urn:uuid:e47e41d9-f924-4c07-bc90-97e7ed34fe35`. Such tranformations are typically not catered for by traditional JSON-LD tooling and require additional implementation.
 
