@@ -336,3 +336,8 @@
   subitems:
     - name: Documentation
       url: https://compss-doc.readthedocs.io/en/stable/Sections/04_Ecosystem/09_CLI/02_Usage.html#inspect-workflow-provenance
+
+- name: rocrate-action-recorder
+  description: Python package to record calls of Python CLI commands into a RO-Crate by annotating argument parsers such as argparse, click and cyclopts.
+  url: https://pypi.org/project/rocrate-action-recorder/
+  status: beta
