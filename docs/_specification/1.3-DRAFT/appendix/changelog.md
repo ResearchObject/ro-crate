@@ -29,11 +29,14 @@ excerpt: List of changes in releases of this specifications
 # APPENDIX: Changelog {#changelog}
 
 * RO-Crate 1.3.0
-  * Updated the Bioschemas namespace to `https://bioschemas.org/terms/` for all types and properties (previously `https://bioschemas.org/` for types and `https://bioschemas.org/properties` for properties). This change affects the following terms in the [JSON-LD context](../ro-crate-metadata.json):
-    * `ComputationalWorkflow`: `https://bioschemas.org/ComputationalWorkflow` -> `https://bioschemas.org/terms/ComputationalWorkflow`
-    * `FormalParameter` : `https://bioschemas.org/FormalParameter` -> `https://bioschemas.org/terms/FormalParameter`
-    * `input`: `https://bioschemas.org/properties/input` -> `https://bioschemas.org/terms/input`
-    * `output` `https://bioschemas.org/properties/output` -> `https://bioschemas.org/terms/output`
+  * Updated the Bioschemas namespace to `https://bioschemas.org/terms/` for all types and properties (previously `https://bioschemas.org/` for types and `https://bioschemas.org/properties` for properties). This change affects 4 terms in the [JSON-LD context](../ro-crate-metadata.json): `ComputationalWorkflow`, `FormalParameter`, `input`, and `output`.
+    
+| Term | Previous URI | New URI |
+| --- | --- | --- |
+| ComputationalWorkflow |`https://bioschemas.org/ComputationalWorkflow` | `https://bioschemas.org/terms/ComputationalWorkflow` |
+| FormalParameter | `https://bioschemas.org/FormalParameter` | `https://bioschemas.org/terms/FormalParameter` |
+| input |`https://bioschemas.org/properties/input` | `https://bioschemas.org/terms/input` |
+| output |`https://bioschemas.org/properties/output` | `https://bioschemas.org/terms/output` |
     
 
 * RO-Crate 1.2.0
