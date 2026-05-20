@@ -21,7 +21,7 @@ the corresponding simplified @context for RO-Crate
 adding our additional properties.
 
 Run as:
-./schema-context.py 0.3-DRAFT > ../docs/0.3-DRAFT/context.jsonld
+./schema-context.py 1.3-DRAFT > ../docs/_specification/1.3-DRAFT/context.jsonld
 """ 
 
 import sys
@@ -31,7 +31,7 @@ import urllib.request
 
 
 # Our own version
-ROCRATE_VERSION="1.2-DRAFT"
+ROCRATE_VERSION="1.3-DRAFT"
 
 # Update version from http://schema.org/docs/releases.html
 SCHEMA_VERSION="22.0"
@@ -48,9 +48,9 @@ SCHEMA_SWHID="swh:1:dir:60ff33aeead8b6c6b5a82f273a4a905fac5f8cf3"
 
 # Update from https://bioschemas.org/profiles/Workflow/
 BIOSCHEMA_WORKFLOW_PROFILE = "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE"
-BIOSCHEMA_WORKFLOW_NS = "https://bioschemas.org/ComputationalWorkflow"
-BIOSCHEMA_PROPERTIES_NS = "https://bioschemas.org/properties/"
-BIOSCHEMA_FORMAL_PARAMETER_NS = "https://bioschemas.org/FormalParameter"
+BIOSCHEMA_WORKFLOW_NS = "https://bioschemas.org/terms/ComputationalWorkflow"
+BIOSCHEMA_PROPERTIES_NS = "https://bioschemas.org/terms/"
+BIOSCHEMA_FORMAL_PARAMETER_NS = "https://bioschemas.org/terms/FormalParameter"
 BIOSCHEMA_FORMAL_PARAMETER_PROFILE = "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
 
 # Update from https://github.com/codemeta/codemeta/#codemeta-schema
