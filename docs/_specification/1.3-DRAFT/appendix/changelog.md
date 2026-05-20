@@ -29,7 +29,7 @@ excerpt: List of changes in releases of this specifications
 # APPENDIX: Changelog {#changelog}
 
 * RO-Crate 1.3.0
-  * Updated the Bioschemas namespace to `https://bioschemas.org/terms/` for all types and properties (previously `https://bioschemas.org/` for types and `https://bioschemas.org/properties` for properties). This change affects 4 terms in the [JSON-LD context](../ro-crate-metadata.json): `ComputationalWorkflow`, `FormalParameter`, `input`, and `output`.
+  * Updated the Bioschemas namespace to `https://bioschemas.org/terms/` for all types and properties (previously `https://bioschemas.org/` for types and `https://bioschemas.org/properties` for properties). This change affects 4 terms in the [JSON-LD context](../ro-crate-metadata.json): `ComputationalWorkflow`, `FormalParameter`, `input`, and `output`. [#529](https://github.com/ResearchObject/ro-crate/issues/529)
     
 | Term | Previous URI | New URI |
 | --- | --- | --- |
