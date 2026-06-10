@@ -1375,3 +1375,5 @@ The below RO-Crate logos can be used by for application, websites, posters, slid
     [<a href="assets/img/ro-crate-wide.svg">svg</a>]
     [<a href="assets/img/ro-crate-wide.png">png</a>]
 </p>
+
+For those who regularly do RO-Crate outreach at in-person events, [sticker templates](https://github.com/ResearchObject/ro-crate/tree/main/docs/assets/img/sticker-templates) are also available.
