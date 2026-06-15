@@ -228,21 +228,51 @@
         {
           "@id": "https://orcid.org/0000-0003-3234-6762"
         },
-        { "@id": "https://orcid.org/0000-0003-4216-302X"},
-        { "@id": "https://orcid.org/0000-0002-1880-0597"},
-        { "@id": "https://orcid.org/0000-0001-6712-6335"},
-        { "@id": "https://orcid.org/0000-0002-5934-8998"},
-        { "@id": "https://orcid.org/0000-0001-9261-8390"},
-        { "@id": "https://orcid.org/0000-0002-0035-6475"},
-        { "@id": "https://orcid.org/0000-0001-9447-460X"},
-        { "@id": "https://orcid.org/0000-0001-7760-1240"},
-        { "@id": "https://orcid.org/0000-0001-9925-1560"},
-        { "@id": "https://orcid.org/0000-0003-4028-811X"},
-        { "@id": "https://orcid.org/0000-0003-2196-5015"},
-        { "@id": "https://orcid.org/0009-0002-6541-4637"},
-        { "@id": "https://orcid.org/0009-0002-8209-1999"},
-        { "@id": "https://orcid.org/0000-0001-7218-0176"},
-        { "@id": "https://orcid.org/0000-0003-3482-0325"}        
+        {
+          "@id": "https://orcid.org/0000-0003-4216-302X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-1880-0597"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6712-6335"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5934-8998"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9261-8390"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0035-6475"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9447-460X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-7760-1240"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9925-1560"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4028-811X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-2196-5015"
+        },
+        {
+          "@id": "https://orcid.org/0009-0002-6541-4637"
+        },
+        {
+          "@id": "https://orcid.org/0009-0002-8209-1999"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-7218-0176"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3482-0325"
+        }
       ],
       "cite-as": "https://doi.org/DOI",
       "citation": {
@@ -341,24 +371,24 @@
         {
           "@id": "https://codemeta.github.io/terms/"
         },
-        { 
-          "@id": "https://bioschemas.org/FormalParameter"
+        {
+          "@id": "https://bioschemas.org/terms/FormalParameter"
         },
-        { 
-          "@id": "https://bioschemas.org/ComputationalWorkflow"
+        {
+          "@id": "https://bioschemas.org/terms/ComputationalWorkflow"
         },
-        { 
+        {
           "@id": "http://schema.org/defaultValue"
-        },  
-        { 
+        },
+        {
           "@id": "http://schema.org/valueRequired"
         },
-        { 
-          "@id": "https://bioschemas.org/properties/input"
+        {
+          "@id": "https://bioschemas.org/terms/input"
         },
-        { 
-          "@id": "https://bioschemas.org/properties/output"
-        },  
+        {
+          "@id": "https://bioschemas.org/terms/output"
+        },
         {
           "@id": "http://purl.org/dc/terms/conformsTo"
         },
@@ -366,7 +396,9 @@
           "@id": "https://w3id.org/ro/terms#localPath"
         }
       ],
-      "identifier": {"@id": "https://doi.org/DOI"},      
+      "identifier": {
+        "@id": "https://doi.org/DOI"
+      },
       "isBasedOn": {
         "@id": "https://w3id.org/ro/crate/1.1"
       },
@@ -441,7 +473,10 @@
     },
     {
       "@id": "http://pcdm.org/models#Collection",
-      "@type": ["DefinedTerm", "Class"],
+      "@type": [
+        "DefinedTerm",
+        "Class"
+      ],
       "inDefinedTermSet": {
         "@id": "http://pcdm.org/models#"
       },
@@ -450,7 +485,10 @@
     },
     {
       "@id": "http://pcdm.org/models#File",
-      "@type": ["DefinedTerm", "Class"],
+      "@type": [
+        "DefinedTerm",
+        "Class"
+      ],
       "inDefinedTermSet": {
         "@id": "http://pcdm.org/models#"
       },
@@ -459,7 +497,10 @@
     },
     {
       "@id": "http://pcdm.org/models#Object",
-      "@type": ["DefinedTerm", "Class"],
+      "@type": [
+        "DefinedTerm",
+        "Class"
+      ],
       "inDefinedTermSet": {
         "@id": "http://pcdm.org/models#"
       },
@@ -468,7 +509,10 @@
     },
     {
       "@id": "http://pcdm.org/models#hasFile",
-      "@type": ["DefinedTerm", "Property"],
+      "@type": [
+        "DefinedTerm",
+        "Property"
+      ],
       "inDefinedTermSet": {
         "@id": "http://pcdm.org/models#"
       },
@@ -477,14 +521,17 @@
     },
     {
       "@id": "http://pcdm.org/models#hasMember",
-      "@type": ["DefinedTerm", "Property"],
+      "@type": [
+        "DefinedTerm",
+        "Property"
+      ],
       "inDefinedTermSet": {
         "@id": "http://pcdm.org/models#"
       },
       "name": "has member",
       "termCode": "hasMember"
     },
-    {      
+    {
       "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
       "@type": "DefinedTerm",
       "name": "preferred namespace prefix",
@@ -500,7 +547,10 @@
     },
     {
       "@id": "https://schema.org/docs/releases.html#v22.0",
-      "@type": ["DefinedTermSet", "Standard"],
+      "@type": [
+        "DefinedTermSet",
+        "Standard"
+      ],
       "name": "Schema.org vocabulary (http prefix)",
       "vann:preferredNamespaceUri": "http://schema.org/",
       "version": "22.0",
@@ -508,7 +558,10 @@
     },
     {
       "@id": "http://www.iana.org/assignments/relation/cite-as",
-      "@type": ["DefinedTerm","Property"],
+      "@type": [
+        "DefinedTerm",
+        "Property"
+      ],
       "inDefinedTermSet": {
         "@id": "https://www.iana.org/assignments/link-relations/"
       },
@@ -520,7 +573,9 @@
       "@id": "https://www.w3.org/TR/rdf-schema/",
       "@type": "Standard",
       "name": "RDF Schema (rdfs)",
-      "hasPart": {"@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"}
+      "hasPart": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      }
     },
     {
       "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -531,7 +586,10 @@
     },
     {
       "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class",
-      "@type": ["DefinedTerm","rdfs:Class"],
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Class"
+      ],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       },
@@ -542,7 +600,10 @@
     },
     {
       "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "@type": ["DefinedTerm","rdfs:Class"],
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Class"
+      ],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       },
@@ -553,25 +614,39 @@
     },
     {
       "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subPropertyOf",
-      "@type": ["DefinedTerm","rdfs:Property"],
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Property"
+      ],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       },
       "termCode": "rdfs:subPropertyOf",
       "name": "subPropertyOf (rdfs)",
-      "domainIncludes": { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"},
-      "rangeIncludes": { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"},
+      "domainIncludes": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+      },
+      "rangeIncludes": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+      },
       "description": "A subproperty is a specialisation of another property",
       "url": "https://www.w3.org/TR/rdf-schema/#ch_subpropertyof"
     },
     {
       "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subClassOf",
-      "@type": ["DefinedTerm","rdfs:Property"],
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Property"
+      ],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       },
-      "domainIncludes": { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"},
-      "rangeIncludes": { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"},
+      "domainIncludes": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+      },
+      "rangeIncludes": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+      },
       "termCode": "rdfs:subClassOf",
       "name": "subClassOf (rdfs)",
       "description": "A subclass is a specialisation of another class",
@@ -579,31 +654,49 @@
     },
     {
       "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
-      "@type": ["DefinedTerm","rdfs:Property"],
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Property"
+      ],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       },
-      "domainIncludes": [ 
-        { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"},
-        { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"}        
+      "domainIncludes": [
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+        }
       ],
-      "rangeIncludes": { "@id": "http://schema.org/Text"},
+      "rangeIncludes": {
+        "@id": "http://schema.org/Text"
+      },
       "termCode": "rdfs:label",
       "name": "label (rdfs)",
       "description": "A human-readable name of the property/class defined with RDFS, equivalent to 'name' in schema.org",
       "url": "https://www.w3.org/TR/rdf-schema/#ch_label"
-    },     
+    },
     {
       "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
-      "@type": ["DefinedTerm","rdfs:Property"],
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Property"
+      ],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       },
-      "domainIncludes": [ 
-        { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"},
-        { "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"}        
+      "domainIncludes": [
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+        }
       ],
-      "rangeIncludes": { "@id": "http://schema.org/Text"},      
+      "rangeIncludes": {
+        "@id": "http://schema.org/Text"
+      },
       "termCode": "rdfs:comment",
       "name": "comment (rdfs)",
       "description": "A human-readable description of the property/class defined with RDFS, equivalent to 'description' in schema.org",
@@ -611,43 +704,68 @@
     },
     {
       "@id": "http://schema.org/domainIncludes",
-      "@type": ["DefinedTerm","rdfs:Property"],
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Property"
+      ],
       "inDefinedTermSet": {
         "@id": "https://schema.org/docs/releases.html#v22.0"
       },
       "name": "domainIncludes",
       "termCode": "domainIncludes",
       "domainIncludes": [
-        {"@id": "http://schema.org/Class"},
-        {"@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"}
+        {
+          "@id": "http://schema.org/Class"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+        }
       ],
       "rangeIncludes": [
-        {"@id": "http://schema.org/Class"},
-        {"@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"}
+        {
+          "@id": "http://schema.org/Class"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+        }
       ],
-      "description": "The domain of a property includes the given classes, meaning the property may be used on instances of these classes. Equivalent to rdfs:domain but allowing multiple disjoint classes."      
+      "description": "The domain of a property includes the given classes, meaning the property may be used on instances of these classes. Equivalent to rdfs:domain but allowing multiple disjoint classes."
     },
     {
       "@id": "http://schema.org/rangeIncludes",
-      "@type": ["DefinedTerm","rdfs:Property"],
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Property"
+      ],
       "inDefinedTermSet": {
         "@id": "https://schema.org/docs/releases.html#v22.0"
       },
       "domainIncludes": [
-        {"@id": "http://schema.org/Class"},
-        {"@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"}
+        {
+          "@id": "http://schema.org/Class"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+        }
       ],
       "rangeIncludes": [
-        {"@id": "http://schema.org/Class"},
-        {"@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"}
-      ],      
+        {
+          "@id": "http://schema.org/Class"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+        }
+      ],
       "name": "rangeIncludes",
       "termCode": "rangeIncludes",
       "description": "The range of a property includes the given types, meaning instances of these types may be the target of this property. Equivalent to rdfs:range but allowing multiple disjoint types. For datatype properties, point to subclasses of http://schema.org/DataType e.g. for a string, http://schema.org/Text"
-    },    
+    },
     {
       "@id": "http://schema.org/Class",
-      "@type": ["DefinedTerm","Class"],
+      "@type": [
+        "DefinedTerm",
+        "Class"
+      ],
       "inDefinedTermSet": {
         "@id": "https://schema.org/docs/releases.html#v22.0"
       },
@@ -656,15 +774,17 @@
     },
     {
       "@id": "http://schema.org/Property",
-      "@type": ["DefinedTerm","Class"],
+      "@type": [
+        "DefinedTerm",
+        "Class"
+      ],
       "inDefinedTermSet": {
         "@id": "https://schema.org/docs/releases.html#v22.0"
       },
       "name": "Property (schema.org)",
-      "description": "Property reference, as indicated by @id url or inDefinedTermSet"      
+      "description": "Property reference, as indicated by @id url or inDefinedTermSet"
     },
-
-    { 
+    {
       "@id": "http://schema.org/MediaObject",
       "@type": "DefinedTerm",
       "inDefinedTermSet": {
@@ -684,7 +804,10 @@
     },
     {
       "@id": "http://www.w3.org/ns/dx/prof#Profile",
-      "@type": ["DefinedTerm","Class"],
+      "@type": [
+        "DefinedTerm",
+        "Class"
+      ],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/ns/dx/prof"
       },
@@ -694,7 +817,10 @@
     },
     {
       "@id": "http://www.w3.org/ns/dx/prof#ResourceDescriptor",
-      "@type": ["DefinedTerm","Class"],
+      "@type": [
+        "DefinedTerm",
+        "Class"
+      ],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/ns/dx/prof"
       },
@@ -704,7 +830,10 @@
     },
     {
       "@id": "http://www.w3.org/ns/dx/prof#ResourceRole",
-      "@type": ["DefinedTerm","Class"],
+      "@type": [
+        "DefinedTerm",
+        "Class"
+      ],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/ns/dx/prof"
       },
@@ -714,7 +843,10 @@
     },
     {
       "@id": "http://www.w3.org/ns/dx/prof#hasArtifact",
-      "@type": ["DefinedTerm","Property"],
+      "@type": [
+        "DefinedTerm",
+        "Property"
+      ],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/ns/dx/prof"
       },
@@ -724,7 +856,10 @@
     },
     {
       "@id": "http://www.w3.org/ns/dx/prof#hasResource",
-      "@type": ["DefinedTerm","Property"],
+      "@type": [
+        "DefinedTerm",
+        "Property"
+      ],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/ns/dx/prof"
       },
@@ -734,7 +869,10 @@
     },
     {
       "@id": "http://www.w3.org/ns/dx/prof#hasRole",
-      "@type": ["DefinedTerm","Property"],
+      "@type": [
+        "DefinedTerm",
+        "Property"
+      ],
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/ns/dx/prof"
       },
@@ -776,56 +914,80 @@
     },
     {
       "@id": "http://www.w3.org/ns/dx/prof/role/constraints",
-      "@type": ["DefinedTerm","ResourceRole"],
+      "@type": [
+        "DefinedTerm",
+        "ResourceRole"
+      ],
       "description": "Descriptions of obligations, limitations or extensions that the profile defines",
       "name": "Constraints",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:constraints"
     },
     {
       "@id": "http://www.w3.org/ns/dx/prof/role/example",
-      "@type": ["DefinedTerm","ResourceRole"],
+      "@type": [
+        "DefinedTerm",
+        "ResourceRole"
+      ],
       "description": "Sample instance data conforming to the profile",
       "name": "Example",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:example"
     },
     {
       "@id": "http://www.w3.org/ns/dx/prof/role/guidance",
-      "@type": ["DefinedTerm","ResourceRole"],
+      "@type": [
+        "DefinedTerm",
+        "ResourceRole"
+      ],
       "description": "Documents, in human-readable form, how to use the profile",
       "name": "Guidance",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:guidance"
     },
     {
       "@id": "http://www.w3.org/ns/dx/prof/role/mapping",
-      "@type": ["DefinedTerm","ResourceRole"],
+      "@type": [
+        "DefinedTerm",
+        "ResourceRole"
+      ],
       "description": "Describes conversions between two specifications",
       "name": "Mapping",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:mapping"
     },
     {
       "@id": "http://www.w3.org/ns/dx/prof/role/schema",
-      "@type": ["DefinedTerm","ResourceRole"],
+      "@type": [
+        "DefinedTerm",
+        "ResourceRole"
+      ],
       "description": "Machine-readable structural descriptions of data defined by the profile",
       "name": "Schema",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:schema"
     },
     {
       "@id": "http://www.w3.org/ns/dx/prof/role/specification",
-      "@type": ["DefinedTerm","ResourceRole"],
+      "@type": [
+        "DefinedTerm",
+        "ResourceRole"
+      ],
       "description": "Defining the profile in human-readable form",
       "name": "Specification",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:specification"
     },
     {
       "@id": "http://www.w3.org/ns/dx/prof/role/validation",
-      "@type": ["DefinedTerm","ResourceRole"],
+      "@type": [
+        "DefinedTerm",
+        "ResourceRole"
+      ],
       "description": "Supplies instructions about how to verify conformance of data to the profile",
       "name": "Validation",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:validation"
     },
     {
       "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary",
-      "@type": ["DefinedTerm","ResourceRole"],
+      "@type": [
+        "DefinedTerm",
+        "ResourceRole"
+      ],
       "description": "Defines terms used in the profile specification",
       "name": "Vocabulary",
       "sameAs": "https://www.w3.org/TR/2019/NOTE-dx-prof-20191218/#Role:vocabulary"
@@ -847,7 +1009,9 @@
       "description": "The WKT (Well-Known Text) serialization (ISO13249) of a Geometry.",
       "name": "Geometry",
       "termCode": "asWKT",
-      "citation": { "@id": "https://portal.ogc.org/files/?artifact_id=25355" },
+      "citation": {
+        "@id": "https://portal.ogc.org/files/?artifact_id=25355"
+      },
       "sameAs": "https://opengeospatial.github.io/ogc-geosparql/geosparql11/#asWKT",
       "inDefinedTermSet": {
         "@id": "http://www.opengis.net/ont/geosparql#"
@@ -876,7 +1040,10 @@
     },
     {
       "@id": "https://codemeta.github.io/terms/",
-      "@type": ["DefinedTermSet", "Profile"],
+      "@type": [
+        "DefinedTermSet",
+        "Profile"
+      ],
       "name": "Codemeta Terms",
       "isPartOf": {
         "@id": "https://w3id.org/codemeta/3.0"
@@ -884,125 +1051,216 @@
       "url": "https://codemeta.github.io/terms/",
       "version": "3.0",
       "hasDefinedTerm": [
-        { "@id": "https://codemeta.github.io/terms/softwareSuggestions" },
-        { "@id": "https://codemeta.github.io/terms/continuousIntegration" },
-        { "@id": "https://codemeta.github.io/terms/buildInstructions" },
-        { "@id": "https://codemeta.github.io/terms/developmentStatus" },
-        { "@id": "https://codemeta.github.io/terms/embargoEndDate" },
-        { "@id": "https://codemeta.github.io/terms/readme" },
-        { "@id": "https://codemeta.github.io/terms/issueTracker" },
-        { "@id": "https://codemeta.github.io/terms/referencePublication" },
-        { "@id": "https://codemeta.github.io/terms/hasSourceCode" },
-        { "@id": "https://codemeta.github.io/terms/isSourceCodeOf" }
+        {
+          "@id": "https://codemeta.github.io/terms/softwareSuggestions"
+        },
+        {
+          "@id": "https://codemeta.github.io/terms/continuousIntegration"
+        },
+        {
+          "@id": "https://codemeta.github.io/terms/buildInstructions"
+        },
+        {
+          "@id": "https://codemeta.github.io/terms/developmentStatus"
+        },
+        {
+          "@id": "https://codemeta.github.io/terms/embargoEndDate"
+        },
+        {
+          "@id": "https://codemeta.github.io/terms/readme"
+        },
+        {
+          "@id": "https://codemeta.github.io/terms/issueTracker"
+        },
+        {
+          "@id": "https://codemeta.github.io/terms/referencePublication"
+        },
+        {
+          "@id": "https://codemeta.github.io/terms/hasSourceCode"
+        },
+        {
+          "@id": "https://codemeta.github.io/terms/isSourceCodeOf"
+        }
       ]
     },
     {
       "@id": "https://codemeta.github.io/terms/softwareSuggestions",
-      "@type": ["DefinedTerm", "rdf:Property"],
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
       "name": "softwareSuggestions",
       "termCode": "softwareSuggestions",
       "description": "Optional dependencies , e.g. for optional features, code development, etc. ",
-      "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-      "rangeIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
+      "domainIncludes": {
+        "@id": "http://schema.org/SoftwareSourceCode"
+      },
+      "rangeIncludes": {
+        "@id": "http://schema.org/SoftwareSourceCode"
+      },
       "sameAs": "https://w3id.org/codemeta/terms/softwareSuggestions"
     },
     {
       "@id": "https://codemeta.github.io/terms/continuousIntegration",
-      "@type": ["DefinedTerm", "rdf:Property"],
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
       "name": "continuousIntegration",
       "termCode": "continuousIntegration",
       "description": "Link to continuous integration service ",
-      "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-      "rangeIncludes": {"@id": "http://schema.org/URL"},
+      "domainIncludes": {
+        "@id": "http://schema.org/SoftwareSourceCode"
+      },
+      "rangeIncludes": {
+        "@id": "http://schema.org/URL"
+      },
       "sameAs": "https://w3id.org/codemeta/terms/continuousIntegration"
-
     },
     {
-    "@id": "https://codemeta.github.io/terms/buildInstructions",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "name": "buildInstructions",
-    "termCode": "buildInstructions",
-    "description": "Link to installation instructions/documentation",
-    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-    "rangeIncludes": {"@id": "http://schema.org/URL"},
-    "sameAs": "https://w3id.org/codemeta/terms/buildInstructions"
-},
-    {
-    "@id": "https://codemeta.github.io/terms/developmentStatus",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "name": "developmentStatus",
-    "termCode": "developmentStatus",
-    "description": "Description of development status, e.g. Active, inactive, suspended. See repostatus.org",
-    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-    "rangeIncludes": {"@id": "http://schema.org/Text"},
-    "sameAs": "https://w3id.org/codemeta/terms/developmentStatus"
+      "@id": "https://codemeta.github.io/terms/buildInstructions",
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
+      "name": "buildInstructions",
+      "termCode": "buildInstructions",
+      "description": "Link to installation instructions/documentation",
+      "domainIncludes": {
+        "@id": "http://schema.org/SoftwareSourceCode"
+      },
+      "rangeIncludes": {
+        "@id": "http://schema.org/URL"
+      },
+      "sameAs": "https://w3id.org/codemeta/terms/buildInstructions"
     },
     {
-    "@id": "https://codemeta.github.io/terms/embargoEndDate",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "name": "embargoEndDate",
-    "termCode": "embargoEndDate",
-    "description": "Software may be embargoed from public access until a specified date (e.g. pending publication, 1 year from publication)",
-    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-    "rangeIncludes": {"@id": "http://schema.org/Date"},
-    "sameAs": "https://w3id.org/codemeta/terms/embargoEndDate"
+      "@id": "https://codemeta.github.io/terms/developmentStatus",
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
+      "name": "developmentStatus",
+      "termCode": "developmentStatus",
+      "description": "Description of development status, e.g. Active, inactive, suspended. See repostatus.org",
+      "domainIncludes": {
+        "@id": "http://schema.org/SoftwareSourceCode"
+      },
+      "rangeIncludes": {
+        "@id": "http://schema.org/Text"
+      },
+      "sameAs": "https://w3id.org/codemeta/terms/developmentStatus"
     },
     {
-    "@id": "https://codemeta.github.io/terms/readme",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "name": "readme",
-    "termCode": "readme",
-    "description": "Link to software Readme file",
-    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-    "rangeIncludes": {"@id": "http://schema.org/URL"},
-    "sameAs": "https://w3id.org/codemeta/terms/readme"
+      "@id": "https://codemeta.github.io/terms/embargoEndDate",
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
+      "name": "embargoEndDate",
+      "termCode": "embargoEndDate",
+      "description": "Software may be embargoed from public access until a specified date (e.g. pending publication, 1 year from publication)",
+      "domainIncludes": {
+        "@id": "http://schema.org/SoftwareSourceCode"
+      },
+      "rangeIncludes": {
+        "@id": "http://schema.org/Date"
+      },
+      "sameAs": "https://w3id.org/codemeta/terms/embargoEndDate"
     },
     {
-    "@id": "https://codemeta.github.io/terms/issueTracker",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "name": "issueTracker",
-    "termCode": "issueTracker",
-    "description": "Link to software bug reporting or issue tracking system",
-    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-    "rangeIncludes": {"@id": "http://schema.org/URL"},
-    "sameAs": "https://w3id.org/codemeta/terms/issueTracker"
+      "@id": "https://codemeta.github.io/terms/readme",
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
+      "name": "readme",
+      "termCode": "readme",
+      "description": "Link to software Readme file",
+      "domainIncludes": {
+        "@id": "http://schema.org/SoftwareSourceCode"
+      },
+      "rangeIncludes": {
+        "@id": "http://schema.org/URL"
+      },
+      "sameAs": "https://w3id.org/codemeta/terms/readme"
     },
     {
-    "@id": "https://codemeta.github.io/terms/referencePublication",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "name": "referencePublication",
-    "termCode": "referencePublication",
-    "description": "An academic publication related to the software",
-    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-    "rangeIncludes": {"@id": "http://schema.org/ScholarlyArticle"},
-    "sameAs": "https://w3id.org/codemeta/terms/referencePublication"
+      "@id": "https://codemeta.github.io/terms/issueTracker",
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
+      "name": "issueTracker",
+      "termCode": "issueTracker",
+      "description": "Link to software bug reporting or issue tracking system",
+      "domainIncludes": {
+        "@id": "http://schema.org/SoftwareSourceCode"
+      },
+      "rangeIncludes": {
+        "@id": "http://schema.org/URL"
+      },
+      "sameAs": "https://w3id.org/codemeta/terms/issueTracker"
     },
     {
-    "@id": "https://codemeta.github.io/terms/hasSourceCode",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "name": "hasSourceCode",
-    "termCode": "hasSourceCode",
-    "description": "Link that states where the software code is for a given software. For example a software registry may indicate that one of its software entries hasSourceCode in a GitHub repository. ",
-    "domainIncludes": {"@id": "http://schema.org/SoftwareApplication"},
-    "rangeIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-    "sameAs": "https://w3id.org/codemeta/terms/hasSourceCode"
+      "@id": "https://codemeta.github.io/terms/referencePublication",
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
+      "name": "referencePublication",
+      "termCode": "referencePublication",
+      "description": "An academic publication related to the software",
+      "domainIncludes": {
+        "@id": "http://schema.org/SoftwareSourceCode"
+      },
+      "rangeIncludes": {
+        "@id": "http://schema.org/ScholarlyArticle"
+      },
+      "sameAs": "https://w3id.org/codemeta/terms/referencePublication"
     },
     {
-    "@id": "https://codemeta.github.io/terms/isSourceCodeOf",
-    "@type": ["DefinedTerm", "rdf:Property"],
-    "name": "isSourceCodeOf",
-    "termCode": "isSourceCodeOf",
-    "description": "Link that states where software application is built from a given source code. This is the reverse property of 'hasSourceCode'. ",
-    "domainIncludes": {"@id": "http://schema.org/SoftwareSourceCode"},
-    "rangeIncludes": {"@id": "http://schema.org/SoftwareApplication"},
-    "sameAs": "https://w3id.org/codemeta/terms/isSourceCodeOf"
+      "@id": "https://codemeta.github.io/terms/hasSourceCode",
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
+      "name": "hasSourceCode",
+      "termCode": "hasSourceCode",
+      "description": "Link that states where the software code is for a given software. For example a software registry may indicate that one of its software entries hasSourceCode in a GitHub repository. ",
+      "domainIncludes": {
+        "@id": "http://schema.org/SoftwareApplication"
+      },
+      "rangeIncludes": {
+        "@id": "http://schema.org/SoftwareSourceCode"
+      },
+      "sameAs": "https://w3id.org/codemeta/terms/hasSourceCode"
+    },
+    {
+      "@id": "https://codemeta.github.io/terms/isSourceCodeOf",
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
+      "name": "isSourceCodeOf",
+      "termCode": "isSourceCodeOf",
+      "description": "Link that states where software application is built from a given source code. This is the reverse property of 'hasSourceCode'. ",
+      "domainIncludes": {
+        "@id": "http://schema.org/SoftwareSourceCode"
+      },
+      "rangeIncludes": {
+        "@id": "http://schema.org/SoftwareApplication"
+      },
+      "sameAs": "https://w3id.org/codemeta/terms/isSourceCodeOf"
     },
     {
       "@id": "https://w3id.org/codemeta/3.0",
       "@type": "Profile",
       "name": "CodeMeta Terms profile",
       "version": "3.0",
-      "license": { "@id": "https://creativecommons.org/licenses/by/4.0/" }      
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
     },
     {
       "@id": "http://www.w3.org/ns/json-ld#flattened",
@@ -1020,7 +1278,9 @@
       "name": "JSON-LD 1.0",
       "description": "A JSON-based Serialization for Linked Data",
       "version": "1.0",
-      "sameAs": {"@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/880"}
+      "sameAs": {
+        "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/880"
+      }
     },
     {
       "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE",
@@ -1028,7 +1288,9 @@
       "description": "Bioschemas specification for describing a Computational Workflow",
       "name": "ComputationalWorkflow profile",
       "version": "1.0-RELEASE",
-      "about": { "@id": "https://bioschemas.org/ComputationalWorkflow" }
+      "about": {
+        "@id": "https://bioschemas.org/terms/ComputationalWorkflow"
+      }
     },
     {
       "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE",
@@ -1036,68 +1298,108 @@
       "description": "Bioschemas specification for describing a formal parameter in the Life Sciences",
       "name": "FormalParameter Profile",
       "version": "1.0-RELEASE",
-      "about": { "@id": "https://bioschemas.org/FormalParameter" }
+      "about": {
+        "@id": "https://bioschemas.org/terms/FormalParameter"
+      }
     },
-    { 
-      "@id": "https://bioschemas.org/FormalParameter", 
-      "@type": ["DefinedTerm", "rdfs:Class"],
+    {
+      "@id": "https://bioschemas.org/terms/FormalParameter",
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Class"
+      ],
       "name": "FormalParameter"
     },
-    { 
-      "@id": "https://bioschemas.org/ComputationalWorkflow", 
-      "@type": ["DefinedTerm", "rdfs:Class"],
+    {
+      "@id": "https://bioschemas.org/terms/ComputationalWorkflow",
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Class"
+      ],
       "name": "ComputationalWorkflow"
     },
-    { 
+    {
       "@id": "http://schema.org/defaultValue",
-      "@type": ["DefinedTerm", "rdf:Property"],
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
       "name": "defaultValue",
       "domainIncludes": [
-        {"@id": "https://bioschemas.org/ComputationalWorkflow"}
+        {
+          "@id": "https://bioschemas.org/terms/ComputationalWorkflow"
+        }
       ],
       "rangeIncludes": [
-        {"@id": "http://schema.org/Text"},
-        {"@id": "http://schema.org/Thing"}
-      ]
-    },  
-    { 
-      "@id": "http://schema.org/valueRequired",
-      "@type": ["DefinedTerm", "rdf:Property"],
-      "name": "valueRequired",
-      "domainIncludes": [
-        {"@id": "https://bioschemas.org/ComputationalWorkflow"}
-      ],
-      "rangeIncludes": [
-        {"@id": "http://schema.org/Text"},
-        {"@id": "http://schema.org/Thing"}
+        {
+          "@id": "http://schema.org/Text"
+        },
+        {
+          "@id": "http://schema.org/Thing"
+        }
       ]
     },
-    { 
-      "@id": "https://bioschemas.org/properties/input",
-      "@type": ["DefinedTerm", "rdf:Property"],
+    {
+      "@id": "http://schema.org/valueRequired",
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
+      "name": "valueRequired",
+      "domainIncludes": [
+        {
+          "@id": "https://bioschemas.org/terms/ComputationalWorkflow"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "http://schema.org/Text"
+        },
+        {
+          "@id": "http://schema.org/Thing"
+        }
+      ]
+    },
+    {
+      "@id": "https://bioschemas.org/terms/input",
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
       "termCode": "input",
       "name": "input",
       "description": "Definition of an input parameter required to use the computational workflow",
       "domainIncludes": [
-        {"@id": "https://bioschemas.org/ComputationalWorkflow"}
+        {
+          "@id": "https://bioschemas.org/terms/ComputationalWorkflow"
+        }
       ],
       "rangeIncludes": [
-        {"@id": "https://bioschemas.org/FormalParameter"}
+        {
+          "@id": "https://bioschemas.org/terms/FormalParameter"
+        }
       ]
     },
-    { 
-      "@id": "https://bioschemas.org/properties/output",
-      "@type": ["DefinedTerm", "rdf:Property"],
+    {
+      "@id": "https://bioschemas.org/terms/output",
+      "@type": [
+        "DefinedTerm",
+        "rdf:Property"
+      ],
       "termCode": "output",
       "name": "output",
       "description": "Definition of an output produced by the workflow",
       "domainIncludes": [
-        {"@id": "https://bioschemas.org/ComputationalWorkflow"}
+        {
+          "@id": "https://bioschemas.org/terms/ComputationalWorkflow"
+        }
       ],
       "rangeIncludes": [
-        {"@id": "https://bioschemas.org/FormalParameter"}
+        {
+          "@id": "https://bioschemas.org/terms/FormalParameter"
+        }
       ]
-    },  
+    },
     {
       "@id": "http://purl.org/dc/terms/conformsTo",
       "@type": "DefinedTerm",
@@ -1114,20 +1416,24 @@
     {
       "@id": "https://creativecommons.org/publicdomain/zero/1.0/",
       "@type": "CreativeWork",
-      "identifier": { "@id": "http://spdx.org/licenses/CC0-1.0"},
+      "identifier": {
+        "@id": "http://spdx.org/licenses/CC0-1.0"
+      },
       "name": "Creative Commons Zero v1.0 Universal",
       "version": "1.0"
     },
     {
       "@id": "https://creativecommons.org/licenses/by/4.0/",
       "@type": "CreativeWork",
-      "identifier": { "@id": "http://spdx.org/licenses/CC-BY-4.0"},
+      "identifier": {
+        "@id": "http://spdx.org/licenses/CC-BY-4.0"
+      },
       "name": "Creative Commons Attribution 4.0 International",
       "version": "4.0"
     },
     {
       "@id": "https://doi.org/DOI",
-      "@type": "PropertyValue", 
+      "@type": "PropertyValue",
       "propertyID": "https://registry.identifiers.org/registry/doi",
       "value": "doi:DOI",
       "url": "https://doi.org/DOI"
@@ -1692,64 +1998,78 @@
       "@type": "Person",
       "name": "Laura Rodríguez-Navas"
     },
-    { 
+    {
       "@id": "https://orcid.org/0000-0003-4216-302X",
       "@type": "Person",
       "name": "Martin Weise"
     },
-    { "@id": "https://orcid.org/0000-0002-1880-0597",
+    {
+      "@id": "https://orcid.org/0000-0002-1880-0597",
       "@type": "Person",
       "name": "Vartika Bisht"
     },
-    { "@id": "https://orcid.org/0000-0001-6712-6335",
+    {
+      "@id": "https://orcid.org/0000-0001-6712-6335",
       "@type": "Person",
       "name": "Toshiyuki Nishiyama Hiraki"
     },
-    { "@id": "https://orcid.org/0000-0002-5934-8998",
+    {
+      "@id": "https://orcid.org/0000-0002-5934-8998",
       "@type": "Person",
       "name": "Bram Ulrichts"
     },
-    { "@id": "https://orcid.org/0000-0001-9261-8390",
+    {
+      "@id": "https://orcid.org/0000-0001-9261-8390",
       "@type": "Person",
       "name": "Michael Falk"
     },
-    { "@id": "https://orcid.org/0000-0002-0035-6475",
+    {
+      "@id": "https://orcid.org/0000-0002-0035-6475",
       "@type": "Person",
       "name": "Eli Chadwick"
     },
-    { "@id": "https://orcid.org/0000-0001-9447-460X",
+    {
+      "@id": "https://orcid.org/0000-0001-9447-460X",
       "@type": "Person",
       "name": "Daniel Bauer"
     },
-    { "@id": "https://orcid.org/0000-0001-7760-1240",
+    {
+      "@id": "https://orcid.org/0000-0001-7760-1240",
       "@type": "Person",
       "name": "James Love"
     },
-    { "@id": "https://orcid.org/0000-0001-9925-1560",
+    {
+      "@id": "https://orcid.org/0000-0001-9925-1560",
       "@type": "Person",
       "name": "Eleni Adamidi"
     },
-    { "@id": "https://orcid.org/0000-0003-4028-811X",
+    {
+      "@id": "https://orcid.org/0000-0003-4028-811X",
       "@type": "Person",
       "name": "Josh Moore"
     },
-    { "@id": "https://orcid.org/0000-0003-2196-5015",
+    {
+      "@id": "https://orcid.org/0000-0003-2196-5015",
       "@type": "Person",
       "name": "Lars Schöbitz"
     },
-    { "@id": "https://orcid.org/0009-0002-6541-4637",
+    {
+      "@id": "https://orcid.org/0009-0002-6541-4637",
       "@type": "Person",
       "name": "Andreas Meier"
     },
-    { "@id": "https://orcid.org/0009-0002-8209-1999",
+    {
+      "@id": "https://orcid.org/0009-0002-8209-1999",
       "@type": "Person",
       "name": "Juan Fuentes"
     },
-    { "@id": "https://orcid.org/0000-0001-7218-0176",
+    {
+      "@id": "https://orcid.org/0000-0001-7218-0176",
       "@type": "Person",
       "name": "Edan Bainglass"
     },
-    { "@id": "https://orcid.org/0000-0003-3482-0325",
+    {
+      "@id": "https://orcid.org/0000-0003-3482-0325",
       "@type": "Person",
       "name": "Balazs E. Pataki"
     },
@@ -1763,11 +2083,11 @@
     {
       "@id": "http://spdx.org/licenses/CC-BY-4.0",
       "@type": "PropertyValue",
-      "propertyID": "http://spdx.org/rdf/terms#licenseId",      
+      "propertyID": "http://spdx.org/rdf/terms#licenseId",
       "name": "spdx",
       "value": "CC-BY-4.0"
     },
-    { 
+    {
       "@id": "http://spdx.org/licenses/Apache-2.0",
       "@type": "PropertyValue",
       "propertyID": "http://spdx.org/rdf/terms#licenseId",
@@ -1788,10 +2108,10 @@
     },
     {
       "@id": "https://w3id.org/ro/crate/1.1",
-      "@type": "Dataset",      
+      "@type": "Dataset",
       "name": "RO-Crate specification 1.1",
-      "version": "1.1.2"      
-    },    
+      "version": "1.1.2"
+    },
     {
       "@id": "https://w3id.org/ro/crate/1.3-DRAFT/context",
       "@type": "File",
@@ -1840,7 +2160,9 @@
       "@type": "CreativeWork",
       "name": "Apache License 2.0",
       "version": "2.0",
-      "identifier": { "@id": "http://spdx.org/licenses/Apache-2.0"}
+      "identifier": {
+        "@id": "http://spdx.org/licenses/Apache-2.0"
+      }
     },
     {
       "@id": "https://www.iana.org/assignments/link-relations/",
@@ -1896,7 +2218,7 @@
         },
         {
           "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/appendix/relative-uris.html"
-        }        
+        }
       ]
     },
     {
@@ -1962,8 +2284,10 @@
         {
           "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf"
         }
-      ],      
-      "identifier": {"@id": "https://doi.org/DOI"},
+      ],
+      "identifier": {
+        "@id": "https://doi.org/DOI"
+      },
       "name": "RO-Crate Metadata Specification 1.3-DRAFT",
       "sameAs": {
         "@id": "https://zenodo.org/record/ZENODO/files/ro-crate-TAG.html"
@@ -2271,24 +2595,51 @@
         {
           "@id": "https://orcid.org/0000-0003-3234-6762"
         },
-        { "@id": "https://orcid.org/0000-0003-4216-302X"},
-        { "@id": "https://orcid.org/0000-0002-1880-0597"},
-        { "@id": "https://orcid.org/0000-0001-6712-6335"},
-        { "@id": "https://orcid.org/0000-0002-5934-8998"},
-        { "@id": "https://orcid.org/0000-0001-9261-8390"},
-        { "@id": "https://orcid.org/0000-0002-0035-6475"},
-        { "@id": "https://orcid.org/0000-0001-9447-460X"},
-        { "@id": "https://orcid.org/0000-0001-7760-1240"},
-        { "@id": "https://orcid.org/0000-0001-9925-1560"},
-        { "@id": "https://orcid.org/0000-0003-4028-811X"},
-        { "@id": "https://orcid.org/0000-0003-2196-5015"},
-        { "@id": "https://orcid.org/0009-0002-6541-4637"},
-        { "@id": "https://orcid.org/0009-0002-8209-1999"},
-        { "@id": "https://orcid.org/0000-0001-7218-0176"},
-        { "@id": "https://orcid.org/0000-0003-3482-0325"}
-
-
-
+        {
+          "@id": "https://orcid.org/0000-0003-4216-302X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-1880-0597"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6712-6335"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5934-8998"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9261-8390"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0035-6475"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9447-460X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-7760-1240"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9925-1560"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4028-811X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-2196-5015"
+        },
+        {
+          "@id": "https://orcid.org/0009-0002-6541-4637"
+        },
+        {
+          "@id": "https://orcid.org/0009-0002-8209-1999"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-7218-0176"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3482-0325"
+        }
       ],
       "name": "RO-Crate Community",
       "parentOrganization": {
@@ -2387,6 +2738,5 @@
         "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
       }
     }
-
   ]
 }

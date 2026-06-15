@@ -28,6 +28,17 @@ excerpt: List of changes in releases of this specifications
 
 # APPENDIX: Changelog {#changelog}
 
+* RO-Crate 1.3.0
+  * Updated the Bioschemas namespace to `https://bioschemas.org/terms/` for all types and properties (previously `https://bioschemas.org/` for types and `https://bioschemas.org/properties` for properties). This change affects 4 terms in the [JSON-LD context](../ro-crate-metadata.json): `ComputationalWorkflow`, `FormalParameter`, `input`, and `output`. [#529](https://github.com/ResearchObject/ro-crate/issues/529)
+    
+| Term | Previous URI | New URI |
+| --- | --- | --- |
+| ComputationalWorkflow |`https://bioschemas.org/ComputationalWorkflow` | `https://bioschemas.org/terms/ComputationalWorkflow` |
+| FormalParameter | `https://bioschemas.org/FormalParameter` | `https://bioschemas.org/terms/FormalParameter` |
+| input |`https://bioschemas.org/properties/input` | `https://bioschemas.org/terms/input` |
+| output |`https://bioschemas.org/properties/output` | `https://bioschemas.org/terms/output` |
+    
+
 * [RO-Crate 1.2.0](https://github.com/ResearchObject/ro-crate/releases/tag/1.2.0) <https://w3id.org/ro/crate/1.2>
   * Clarified that the [RO-Crate Metadata Descriptor MUST have `@id` of `ro-crate-metadata.json`](../root-data-entity#ro-crate-metadata-descriptor) by removing conflicting statements elsewhere in the specification [#365](https://github.com/ResearchObject/ro-crate/pull/365)
   * Updated the Bioschemas namespace for properties from `https://bioschemas.org/ComputationalWorkflow#` to `https://bioschemas.org/properties/`. This change affects only the `input` and `output` properties in the [JSON-LD context](../ro-crate-metadata.json).

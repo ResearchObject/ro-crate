@@ -135,12 +135,12 @@ From the [IANA link relations] registry:
 
 These terms are being proposed by [Bioschemas profile ComputationalWorkflow 1.0-RELEASE][ComputationalWorkflow profile 1.0] and [FormalParameter 1.0-RELEASE][FormalParameter profile 1.0] to be integrated into Schema.org: 
 
-* `ComputationalWorkflow` mapped to <https://bioschemas.org/ComputationalWorkflow>
-* `FormalParameter` mapped to <https://bioschemas.org/FormalParameter>
-* `input` mapped to <https://bioschemas.org/properties/input>
-* `output` mapped to <https://bioschemas.org/properties/output>
+* `ComputationalWorkflow` mapped to <https://bioschemas.org/terms/ComputationalWorkflow>
+* `FormalParameter` mapped to <https://bioschemas.org/terms/FormalParameter>
+* `input` mapped to <https://bioschemas.org/terms/input>
+* `output` mapped to <https://bioschemas.org/terms/output>
 
-{% include callout.html type="note" content="In this specification the proposed Bioschemas terms use the temporary <https://bioschemas.org/> namespace; future releases of RO-Crate may reflect mapping to the <http://schema.org/> namespace." %}
+{% include callout.html type="note" content="In version 1.3 of this specification the proposed Bioschemas terms use the <https://bioschemas.org/terms/> namespace; previous versions 1.1 and 1.2 used the temporary <https://bioschemas.org/> namespace. Future releases of RO-Crate may reflect mapping to the <http://schema.org/> namespace." %}
 
 To support geometry in [Places](contextual-entities#places), these terms from the [GeoSPARQL ontology]:
 
