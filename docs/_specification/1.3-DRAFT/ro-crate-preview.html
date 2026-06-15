@@ -6,7 +6,9 @@
 
 <script type="application/ld+json"> 
   {
-  "@context": "https://w3id.org/ro/crate/1.3-DRAFT/context",
+  "@context": [
+    "https://w3id.org/ro/crate/1.3-DRAFT/context"
+  ],
   "@graph": [
     {
       "@id": "ro-crate-metadata.json",
@@ -346,10 +348,28 @@
           "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
         },
         {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subClassOf"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subPropertyOf"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment"
+        },
+        {
           "@id": "http://schema.org/Class"
         },
         {
           "@id": "http://schema.org/Property"
+        },
+        {
+          "@id": "http://schema.org/domainIncludes"
+        },
+        {
+          "@id": "http://schema.org/rangeIncludes"
         },
         {
           "@id": "http://www.opengis.net/ont/geosparql#Geometry"
@@ -1376,6 +1396,7 @@
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       },
+      "termCode": "rdfs:Class",
       "name": "Class (rdfs)",
       "description": "Class definition",
       "url": "https://www.w3.org/TR/rdf-schema/#ch_class"
@@ -1389,9 +1410,100 @@
       "inDefinedTermSet": {
         "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       },
+      "termCode": "rdfs:Property",
       "name": "Property (rdfs)",
-      "description": "Property definition, typically with domainIncludes and rangeIncludes",
+      "description": "Property definition, in schema.org style schema typically with domainIncludes and rangeIncludes",
       "url": "https://www.w3.org/TR/rdf-schema/#ch_property"
+    },
+    {
+      "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subClassOf",
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Property"
+      ],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      },
+      "domainIncludes": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+      },
+      "rangeIncludes": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+      },
+      "termCode": "rdfs:subClassOf",
+      "name": "subClassOf (rdfs)",
+      "description": "A subclass is a specialisation of another class",
+      "url": "https://www.w3.org/TR/rdf-schema/#ch_subclassof"
+    },
+    {
+      "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subPropertyOf",
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Property"
+      ],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      },
+      "termCode": "rdfs:subPropertyOf",
+      "name": "subPropertyOf (rdfs)",
+      "domainIncludes": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+      },
+      "rangeIncludes": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+      },
+      "description": "A subproperty is a specialisation of another property",
+      "url": "https://www.w3.org/TR/rdf-schema/#ch_subpropertyof"
+    },
+    {
+      "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Property"
+      ],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      },
+      "domainIncludes": [
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+        }
+      ],
+      "rangeIncludes": {
+        "@id": "http://schema.org/Text"
+      },
+      "termCode": "rdfs:label",
+      "name": "label (rdfs)",
+      "description": "A human-readable name of the property/class defined with RDFS, equivalent to 'name' in schema.org",
+      "url": "https://www.w3.org/TR/rdf-schema/#ch_label"
+    },
+    {
+      "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Property"
+      ],
+      "inDefinedTermSet": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      },
+      "domainIncludes": [
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+        }
+      ],
+      "rangeIncludes": {
+        "@id": "http://schema.org/Text"
+      },
+      "termCode": "rdfs:comment",
+      "name": "comment (rdfs)",
+      "description": "A human-readable description of the property/class defined with RDFS, equivalent to 'description' in schema.org",
+      "url": "https://www.w3.org/TR/rdf-schema/#ch_comment"
     },
     {
       "@id": "http://schema.org/Class",
@@ -1416,6 +1528,64 @@
       },
       "name": "Property (schema.org)",
       "description": "Property reference, as indicated by @id url or inDefinedTermSet"
+    },
+    {
+      "@id": "http://schema.org/domainIncludes",
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Property"
+      ],
+      "inDefinedTermSet": {
+        "@id": "https://schema.org/docs/releases.html#v22.0"
+      },
+      "name": "domainIncludes",
+      "termCode": "domainIncludes",
+      "domainIncludes": [
+        {
+          "@id": "http://schema.org/Class"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "http://schema.org/Class"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+        }
+      ],
+      "description": "The domain of a property includes the given classes, meaning the property may be used on instances of these classes. Equivalent to rdfs:domain but allowing multiple disjoint classes."
+    },
+    {
+      "@id": "http://schema.org/rangeIncludes",
+      "@type": [
+        "DefinedTerm",
+        "rdfs:Property"
+      ],
+      "inDefinedTermSet": {
+        "@id": "https://schema.org/docs/releases.html#v22.0"
+      },
+      "domainIncludes": [
+        {
+          "@id": "http://schema.org/Class"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "http://schema.org/Class"
+        },
+        {
+          "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+        }
+      ],
+      "name": "rangeIncludes",
+      "termCode": "rangeIncludes",
+      "description": "The range of a property includes the given types, meaning instances of these types may be the target of this property. Equivalent to rdfs:range but allowing multiple disjoint types. For datatype properties, point to subclasses of http://schema.org/DataType e.g. for a string, http://schema.org/Text"
     },
     {
       "@id": "http://www.opengis.net/ont/geosparql#Geometry",
@@ -2598,8 +2768,8 @@ table.table {
   </nav>
 <div class="container">
 <div class="jumbotron">
-<h4 class="citation"></h3>
-<h3 class="item_name">RO-Crate specification 1.2</h4>
+<h4 class="citation"></h4>
+<h3 class="item_name">RO-Crate specification 1.2</h3>
 
 
 <a href="./ro-crate-metadata.json">⬇️🏷️ Download all the metadata for <span class='name'>RO-Crate specification 1.2</span> in JSON-LD format</a>
@@ -2614,12 +2784,12 @@ table.table {
 
 <div id="summary">
 <div class='all-meta'>
-           <div>
-            <h3><a href="https://w3id.org/ro/crate/1.3-DRAFT">Go to: </a> RO-Crate specification 1.2</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/crate/1.3-DRAFT">Go to: </a> RO-Crate specification 1.2</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/crate/1.3-DRAFT">
             
             <table class="table metadata table-striped" >
@@ -2881,9 +3051,21 @@ While providing the formal specification for RO-Crate, this document also aims t
                         
                         <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23Property">Property (rdfs)</a></li>
                         
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23subClassOf">subClassOf (rdfs)</a></li>
+                        
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23subPropertyOf">subPropertyOf (rdfs)</a></li>
+                        
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23label">label (rdfs)</a></li>
+                        
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23comment">comment (rdfs)</a></li>
+                        
                         <li><a href="#http%3A//schema.org/Class">Class (schema.org)</a></li>
                         
                         <li><a href="#http%3A//schema.org/Property">Property (schema.org)</a></li>
+                        
+                        <li><a href="#http%3A//schema.org/domainIncludes">domainIncludes</a></li>
+                        
+                        <li><a href="#http%3A//schema.org/rangeIncludes">rangeIncludes</a></li>
                         
                         <li><a href="#http%3A//www.opengis.net/ont/geosparql%23Geometry">Geometry</a></li>
                         
@@ -2968,15 +3150,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/ro/crate/">Go to: </a> Research Object Crate (RO-Crate) website</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/crate/">Go to: </a> Research Object Crate (RO-Crate) website</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/crate/">
             
             <table class="table metadata table-striped" >
@@ -3004,15 +3185,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-8131-2150">Go to: </a> Eoghan Ó Carragáin</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-8131-2150">Go to: </a> Eoghan Ó Carragáin</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-8131-2150">
             
             <table class="table metadata table-striped" >
@@ -3038,15 +3218,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-3545-944X">Go to: </a> Peter Sefton</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-3545-944X">Go to: </a> Peter Sefton</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-3545-944X">
             
             <table class="table metadata table-striped" >
@@ -3072,15 +3251,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-9842-9718">Go to: </a> Stian Soiland-Reyes</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-9842-9718">Go to: </a> Stian Soiland-Reyes</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-9842-9718">
             
             <table class="table metadata table-striped" >
@@ -3106,15 +3284,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-9260-0753">Go to: </a> Oscar Corcho</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-9260-0753">Go to: </a> Oscar Corcho</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-9260-0753">
             
             <table class="table metadata table-striped" >
@@ -3136,15 +3313,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-0454-7145">Go to: </a> Daniel Garijo</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-0454-7145">Go to: </a> Daniel Garijo</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-0454-7145">
             
             <table class="table metadata table-striped" >
@@ -3170,15 +3346,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-4289-4922">Go to: </a> Raul Palma</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-4289-4922">Go to: </a> Raul Palma</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-4289-4922">
             
             <table class="table metadata table-striped" >
@@ -3200,15 +3375,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-6565-5145">Go to: </a> Frederik Coppens</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-6565-5145">Go to: </a> Frederik Coppens</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-6565-5145">
             
             <table class="table metadata table-striped" >
@@ -3234,15 +3408,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-1219-2137">Go to: </a> Carole Goble</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-1219-2137">Go to: </a> Carole Goble</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-1219-2137">
             
             <table class="table metadata table-striped" >
@@ -3268,15 +3441,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-4806-5140">Go to: </a> José María Fernández</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-4806-5140">Go to: </a> José María Fernández</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-4806-5140">
             
             <table class="table metadata table-striped" >
@@ -3302,15 +3474,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-7370-4805">Go to: </a> Kyle Chard</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-7370-4805">Go to: </a> Kyle Chard</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-7370-4805">
             
             <table class="table metadata table-striped" >
@@ -3332,15 +3503,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-5491-6431">Go to: </a> Jose Manuel Gomez-Perez</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-5491-6431">Go to: </a> Jose Manuel Gomez-Perez</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-5491-6431">
             
             <table class="table metadata table-striped" >
@@ -3362,15 +3532,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-2961-9670">Go to: </a> Michael R Crusoe</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-2961-9670">Go to: </a> Michael R Crusoe</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-2961-9670">
             
             <table class="table metadata table-striped" >
@@ -3392,15 +3561,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-6190-122X">Go to: </a> Ignacio Eguinoa</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-6190-122X">Go to: </a> Ignacio Eguinoa</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-6190-122X">
             
             <table class="table metadata table-striped" >
@@ -3422,15 +3590,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-2036-8350">Go to: </a> Nick Juty</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-2036-8350">Go to: </a> Nick Juty</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-2036-8350">
             
             <table class="table metadata table-striped" >
@@ -3452,15 +3619,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-8420-5254">Go to: </a> Kristi Holmes</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-8420-5254">Go to: </a> Kristi Holmes</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-8420-5254">
             
             <table class="table metadata table-striped" >
@@ -3482,15 +3648,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-3588-6257">Go to: </a> Jason A. Clark</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-3588-6257">Go to: </a> Jason A. Clark</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-3588-6257">
             
             <table class="table metadata table-striped" >
@@ -3512,15 +3677,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-0309-604X">Go to: </a> Salvador Capella-Gutierrez</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-0309-604X">Go to: </a> Salvador Capella-Gutierrez</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-0309-604X">
             
             <table class="table metadata table-striped" >
@@ -3542,15 +3706,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-5711-4872">Go to: </a> Alasdair J. G. Gray</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-5711-4872">Go to: </a> Alasdair J. G. Gray</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-5711-4872">
             
             <table class="table metadata table-striped" >
@@ -3572,15 +3735,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-2130-0865">Go to: </a> Stuart Owen</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-2130-0865">Go to: </a> Stuart Owen</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-2130-0865">
             
             <table class="table metadata table-striped" >
@@ -3602,15 +3764,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-3156-2105">Go to: </a> Alan R Williams</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-3156-2105">Go to: </a> Alan R Williams</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-3156-2105">
             
             <table class="table metadata table-striped" >
@@ -3632,15 +3793,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-1130-2154">Go to: </a> Giacomo Tartari</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-1130-2154">Go to: </a> Giacomo Tartari</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-1130-2154">
             
             <table class="table metadata table-striped" >
@@ -3662,15 +3822,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-0048-3300">Go to: </a> Finn Bacall</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-0048-3300">Go to: </a> Finn Bacall</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-0048-3300">
             
             <table class="table metadata table-striped" >
@@ -3692,15 +3851,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-1756-2128">Go to: </a> Thomas Thelen</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-1756-2128">Go to: </a> Thomas Thelen</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-1756-2128">
             
             <table class="table metadata table-striped" >
@@ -3722,15 +3880,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-7552-1009">Go to: </a> Hervé Ménager</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-7552-1009">Go to: </a> Hervé Ménager</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-7552-1009">
             
             <table class="table metadata table-striped" >
@@ -3752,15 +3909,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-4929-1219">Go to: </a> Laura Rodríguez-Navas</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-4929-1219">Go to: </a> Laura Rodríguez-Navas</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-4929-1219">
             
             <table class="table metadata table-striped" >
@@ -3782,15 +3938,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-1541-5631">Go to: </a> Paul Walk</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-1541-5631">Go to: </a> Paul Walk</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-1541-5631">
             
             <table class="table metadata table-striped" >
@@ -3812,15 +3967,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-0337-8610">Go to: </a> brandon whitehead</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-0337-8610">Go to: </a> brandon whitehead</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-0337-8610">
             
             <table class="table metadata table-striped" >
@@ -3842,15 +3996,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-6960-357X">Go to: </a> Mark Wilkinson</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-6960-357X">Go to: </a> Mark Wilkinson</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-6960-357X">
             
             <table class="table metadata table-striped" >
@@ -3872,15 +4025,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-0183-6910">Go to: </a> Paul Groth</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-0183-6910">Go to: </a> Paul Groth</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-0183-6910">
             
             <table class="table metadata table-striped" >
@@ -3906,15 +4058,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-0223-1059">Go to: </a> Erich Bremer</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-0223-1059">Go to: </a> Erich Bremer</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-0223-1059">
             
             <table class="table metadata table-striped" >
@@ -3936,15 +4087,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-3986-0510">Go to: </a> Leyla Jael Castro</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-3986-0510">Go to: </a> Leyla Jael Castro</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-3986-0510">
             
             <table class="table metadata table-striped" >
@@ -3973,15 +4123,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-6022-9825">Go to: </a> Karl Sebby</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-6022-9825">Go to: </a> Karl Sebby</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-6022-9825">
             
             <table class="table metadata table-striped" >
@@ -4003,15 +4152,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-3468-0652">Go to: </a> Alexander Kanitz</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-3468-0652">Go to: </a> Alexander Kanitz</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-3468-0652">
             
             <table class="table metadata table-striped" >
@@ -4033,15 +4181,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-1991-0533">Go to: </a> Ana Trisovic</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-1991-0533">Go to: </a> Ana Trisovic</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-1991-0533">
             
             <table class="table metadata table-striped" >
@@ -4067,15 +4214,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-3910-0474">Go to: </a> Gavin Kennedy</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-3910-0474">Go to: </a> Gavin Kennedy</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-3910-0474">
             
             <table class="table metadata table-striped" >
@@ -4097,15 +4243,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-3486-8193">Go to: </a> Mark Graves</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-3486-8193">Go to: </a> Mark Graves</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-3486-8193">
             
             <table class="table metadata table-striped" >
@@ -4127,15 +4272,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-8172-8981">Go to: </a> Jasper Koehorst</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-8172-8981">Go to: </a> Jasper Koehorst</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-8172-8981">
             
             <table class="table metadata table-striped" >
@@ -4157,15 +4301,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-8271-5429">Go to: </a> Simone Leo</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-8271-5429">Go to: </a> Simone Leo</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-8271-5429">
             
             <table class="table metadata table-striped" >
@@ -4191,15 +4334,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-9648-6484">Go to: </a> Marc Portier</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-9648-6484">Go to: </a> Marc Portier</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-9648-6484">
             
             <table class="table metadata table-striped" >
@@ -4225,15 +4367,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-5432-2748">Go to: </a> Paul Brack</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-5432-2748">Go to: </a> Paul Brack</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-5432-2748">
             
             <table class="table metadata table-striped" >
@@ -4255,15 +4396,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-1743-8300">Go to: </a> Milan Ojsteršek</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-1743-8300">Go to: </a> Milan Ojsteršek</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-1743-8300">
             
             <table class="table metadata table-striped" >
@@ -4285,15 +4425,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-0522-5674">Go to: </a> Bert Droesbeke</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-0522-5674">Go to: </a> Bert Droesbeke</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-0522-5674">
             
             <table class="table metadata table-striped" >
@@ -4315,15 +4454,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-2142-1731">Go to: </a> Chenxu Niu</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-2142-1731">Go to: </a> Chenxu Niu</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-2142-1731">
             
             <table class="table metadata table-striped" >
@@ -4345,15 +4483,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-9986-7223">Go to: </a> Kosuke Tanabe</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-9986-7223">Go to: </a> Kosuke Tanabe</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-9986-7223">
             
             <table class="table metadata table-striped" >
@@ -4375,15 +4512,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-4929-7875">Go to: </a> Tomasz Miksa</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-4929-7875">Go to: </a> Tomasz Miksa</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-4929-7875">
             
             <table class="table metadata table-striped" >
@@ -4405,15 +4541,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-5383-6993">Go to: </a> Marco La Rosa</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-5383-6993">Go to: </a> Marco La Rosa</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-5383-6993">
             
             <table class="table metadata table-striped" >
@@ -4439,15 +4574,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-6387-5988">Go to: </a> Cedric Decruw</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-6387-5988">Go to: </a> Cedric Decruw</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-6387-5988">
             
             <table class="table metadata table-striped" >
@@ -4469,15 +4603,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-3883-4169">Go to: </a> Andreas Czerniak</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-3883-4169">Go to: </a> Andreas Czerniak</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-3883-4169">
             
             <table class="table metadata table-striped" >
@@ -4499,15 +4632,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-5761-7533">Go to: </a> Jeremy Jay</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-5761-7533">Go to: </a> Jeremy Jay</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-5761-7533">
             
             <table class="table metadata table-striped" >
@@ -4529,15 +4661,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-0792-8157">Go to: </a> Sergio Serra</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-0792-8157">Go to: </a> Sergio Serra</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-0792-8157">
             
             <table class="table metadata table-striped" >
@@ -4559,15 +4690,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-8772-7904">Go to: </a> Ronald Siebes</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-8772-7904">Go to: </a> Ronald Siebes</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-8772-7904">
             
             <table class="table metadata table-striped" >
@@ -4589,15 +4719,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-4196-3658">Go to: </a> Shaun de Witt</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-4196-3658">Go to: </a> Shaun de Witt</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-4196-3658">
             
             <table class="table metadata table-striped" >
@@ -4619,15 +4748,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-2318-4477">Go to: </a> Shady El Damaty</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-2318-4477">Go to: </a> Shady El Damaty</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-2318-4477">
             
             <table class="table metadata table-striped" >
@@ -4649,15 +4777,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-1248-3594">Go to: </a> Douglas Lowe</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-1248-3594">Go to: </a> Douglas Lowe</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-1248-3594">
             
             <table class="table metadata table-striped" >
@@ -4679,15 +4806,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-1498-6205">Go to: </a> Xuanqi Li</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-1498-6205">Go to: </a> Xuanqi Li</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-1498-6205">
             
             <table class="table metadata table-striped" >
@@ -4709,15 +4835,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-9888-7954">Go to: </a> Sveinung Gundersen</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-9888-7954">Go to: </a> Sveinung Gundersen</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-9888-7954">
             
             <table class="table metadata table-striped" >
@@ -4739,15 +4864,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-9156-9478">Go to: </a> Muhammad Radifar</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-9156-9478">Go to: </a> Muhammad Radifar</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-9156-9478">
             
             <table class="table metadata table-striped" >
@@ -4769,15 +4893,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-0003-2024">Go to: </a> Rudolf Wittner</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-0003-2024">Go to: </a> Rudolf Wittner</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-0003-2024">
             
             <table class="table metadata table-striped" >
@@ -4799,15 +4922,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-4565-9760">Go to: </a> Oliver Woolland</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-4565-9760">Go to: </a> Oliver Woolland</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-4565-9760">
             
             <table class="table metadata table-striped" >
@@ -4829,15 +4951,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-8940-4946">Go to: </a> Paul De Geest</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-8940-4946">Go to: </a> Paul De Geest</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-8940-4946">
             
             <table class="table metadata table-striped" >
@@ -4859,15 +4980,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-2257-9127">Go to: </a> Douglas Fils</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-2257-9127">Go to: </a> Douglas Fils</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-2257-9127">
             
             <table class="table metadata table-striped" >
@@ -4889,15 +5009,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-5526-7138">Go to: </a> Florian Wetzels</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-5526-7138">Go to: </a> Florian Wetzels</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-5526-7138">
             
             <table class="table metadata table-striped" >
@@ -4919,15 +5038,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-0606-2512">Go to: </a> Raül Sirvent</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-0606-2512">Go to: </a> Raül Sirvent</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-0606-2512">
             
             <table class="table metadata table-striped" >
@@ -4949,15 +5067,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-9228-2882">Go to: </a> Abigail Miller</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-9228-2882">Go to: </a> Abigail Miller</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-9228-2882">
             
             <table class="table metadata table-striped" >
@@ -4979,15 +5096,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-0617-9219">Go to: </a> Jake Emerson</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-0617-9219">Go to: </a> Jake Emerson</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-0617-9219">
             
             <table class="table metadata table-striped" >
@@ -5009,15 +5125,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-0679-4361">Go to: </a> Davide Fucci</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-0679-4361">Go to: </a> Davide Fucci</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-0679-4361">
             
             <table class="table metadata table-striped" >
@@ -5039,15 +5154,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-8250-4074">Go to: </a> Bruno P. Kinoshita</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-8250-4074">Go to: </a> Bruno P. Kinoshita</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-8250-4074">
             
             <table class="table metadata table-striped" >
@@ -5069,15 +5183,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-1361-7301">Go to: </a> Maciek Bąk</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-1361-7301">Go to: </a> Maciek Bąk</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-1361-7301">
             
             <table class="table metadata table-striped" >
@@ -5099,15 +5212,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-3234-6762">Go to: </a> Jens Hollunder</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-3234-6762">Go to: </a> Jens Hollunder</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-3234-6762">
             
             <table class="table metadata table-striped" >
@@ -5129,15 +5241,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-4216-302X">Go to: </a> Martin Weise</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-4216-302X">Go to: </a> Martin Weise</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-4216-302X">
             
             <table class="table metadata table-striped" >
@@ -5159,15 +5270,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-1880-0597">Go to: </a> Vartika Bisht</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-1880-0597">Go to: </a> Vartika Bisht</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-1880-0597">
             
             <table class="table metadata table-striped" >
@@ -5189,15 +5299,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-6712-6335">Go to: </a> Toshiyuki Nishiyama Hiraki</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-6712-6335">Go to: </a> Toshiyuki Nishiyama Hiraki</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-6712-6335">
             
             <table class="table metadata table-striped" >
@@ -5219,15 +5328,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-5934-8998">Go to: </a> Bram Ulrichts</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-5934-8998">Go to: </a> Bram Ulrichts</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-5934-8998">
             
             <table class="table metadata table-striped" >
@@ -5249,15 +5357,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-9261-8390">Go to: </a> Michael Falk</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-9261-8390">Go to: </a> Michael Falk</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-9261-8390">
             
             <table class="table metadata table-striped" >
@@ -5279,15 +5386,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0002-0035-6475">Go to: </a> Eli Chadwick</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0002-0035-6475">Go to: </a> Eli Chadwick</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0002-0035-6475">
             
             <table class="table metadata table-striped" >
@@ -5309,15 +5415,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-9447-460X">Go to: </a> Daniel Bauer</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-9447-460X">Go to: </a> Daniel Bauer</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-9447-460X">
             
             <table class="table metadata table-striped" >
@@ -5339,15 +5444,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-7760-1240">Go to: </a> James Love</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-7760-1240">Go to: </a> James Love</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-7760-1240">
             
             <table class="table metadata table-striped" >
@@ -5369,15 +5473,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-9925-1560">Go to: </a> Eleni Adamidi</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-9925-1560">Go to: </a> Eleni Adamidi</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-9925-1560">
             
             <table class="table metadata table-striped" >
@@ -5399,15 +5502,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-4028-811X">Go to: </a> Josh Moore</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-4028-811X">Go to: </a> Josh Moore</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-4028-811X">
             
             <table class="table metadata table-striped" >
@@ -5429,15 +5531,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-2196-5015">Go to: </a> Lars Schöbitz</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-2196-5015">Go to: </a> Lars Schöbitz</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-2196-5015">
             
             <table class="table metadata table-striped" >
@@ -5459,15 +5560,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0009-0002-6541-4637">Go to: </a> Andreas Meier</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0009-0002-6541-4637">Go to: </a> Andreas Meier</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0009-0002-6541-4637">
             
             <table class="table metadata table-striped" >
@@ -5489,15 +5589,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0009-0002-8209-1999">Go to: </a> Juan Fuentes</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0009-0002-8209-1999">Go to: </a> Juan Fuentes</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0009-0002-8209-1999">
             
             <table class="table metadata table-striped" >
@@ -5519,15 +5618,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0001-7218-0176">Go to: </a> Edan Bainglass</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0001-7218-0176">Go to: </a> Edan Bainglass</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0001-7218-0176">
             
             <table class="table metadata table-striped" >
@@ -5549,15 +5647,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://orcid.org/0000-0003-3482-0325">Go to: </a> Balazs E. Pataki</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://orcid.org/0000-0003-3482-0325">Go to: </a> Balazs E. Pataki</h3>
+                
+                
+                
+                
         <div id="https://orcid.org/0000-0003-3482-0325">
             
             <table class="table metadata table-striped" >
@@ -5579,15 +5676,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://doi.org/10.3233/DS-210053">Go to: </a> Packaging research artefacts with RO-Crate</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://doi.org/10.3233/DS-210053">Go to: </a> Packaging research artefacts with RO-Crate</h3>
+                
+                
+                
+                
         <div id="https://doi.org/10.3233/DS-210053">
             
             <table class="table metadata table-striped" >
@@ -5650,15 +5746,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://www.researchobject.org/ro-crate/1.3-DRAFT/">Go to: </a> RO-Crate Metadata Specification 1.3-DRAFT</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://www.researchobject.org/ro-crate/1.3-DRAFT/">Go to: </a> RO-Crate Metadata Specification 1.3-DRAFT</h3>
+                
+                
+                
+                
         <div id="https://www.researchobject.org/ro-crate/1.3-DRAFT/">
             
             <table class="table metadata table-striped" >
@@ -5746,15 +5841,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/ro/crate/1.3-DRAFT/context">Go to: </a> RO-Crate JSON-LD Context</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/crate/1.3-DRAFT/context">Go to: </a> RO-Crate JSON-LD Context</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/crate/1.3-DRAFT/context">
             
             <table class="table metadata table-striped" >
@@ -5805,15 +5899,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.2.0/">Go to: </a> Example dataset for RO-Crate specification</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.2.0/">Go to: </a> Example dataset for RO-Crate specification</h3>
+                
+                
+                
+                
         <div id="https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.2.0/">
             
             <table class="table metadata table-striped" >
@@ -5848,15 +5941,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html">Go to: </a> RO-Crate Metadata Specification 1.3-DRAFT (single-page HTML)</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html">Go to: </a> RO-Crate Metadata Specification 1.3-DRAFT (single-page HTML)</h3>
+                
+                
+                
+                
         <div id="https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html">
             
             <table class="table metadata table-striped" >
@@ -5933,15 +6025,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf">Go to: </a> RO-Crate Metadata Specification 1.3-DRAFT (PDF)</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf">Go to: </a> RO-Crate Metadata Specification 1.3-DRAFT (PDF)</h3>
+                
+                
+                
+                
         <div id="https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.pdf">
             
             <table class="table metadata table-striped" >
@@ -6015,15 +6106,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://www.w3.org/ns/dx/prof#ResourceDescriptor">Go to: </a> Resource descriptor</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://www.w3.org/ns/dx/prof#ResourceDescriptor">Go to: </a> Resource descriptor</h3>
+                
+                
+                
+                
         <div id="http://www.w3.org/ns/dx/prof#ResourceDescriptor">
             
             <table class="table metadata table-striped" >
@@ -6055,15 +6145,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://www.w3.org/ns/dx/prof#ResourceRole">Go to: </a> Resource role</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://www.w3.org/ns/dx/prof#ResourceRole">Go to: </a> Resource role</h3>
+                
+                
+                
+                
         <div id="http://www.w3.org/ns/dx/prof#ResourceRole">
             
             <table class="table metadata table-striped" >
@@ -6095,15 +6184,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://www.w3.org/ns/dx/prof#Profile">Go to: </a> Profile</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://www.w3.org/ns/dx/prof#Profile">Go to: </a> Profile</h3>
+                
+                
+                
+                
         <div id="http://www.w3.org/ns/dx/prof#Profile">
             
             <table class="table metadata table-striped" >
@@ -6135,15 +6223,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://www.w3.org/ns/dx/prof#hasArtifact">Go to: </a> has artifact</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://www.w3.org/ns/dx/prof#hasArtifact">Go to: </a> has artifact</h3>
+                
+                
+                
+                
         <div id="http://www.w3.org/ns/dx/prof#hasArtifact">
             
             <table class="table metadata table-striped" >
@@ -6175,15 +6262,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://www.w3.org/ns/dx/prof#hasResource">Go to: </a> has resource</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://www.w3.org/ns/dx/prof#hasResource">Go to: </a> has resource</h3>
+                
+                
+                
+                
         <div id="http://www.w3.org/ns/dx/prof#hasResource">
             
             <table class="table metadata table-striped" >
@@ -6215,15 +6301,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://www.w3.org/ns/dx/prof#hasRole">Go to: </a> has role</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://www.w3.org/ns/dx/prof#hasRole">Go to: </a> has role</h3>
+                
+                
+                
+                
         <div id="http://www.w3.org/ns/dx/prof#hasRole">
             
             <table class="table metadata table-striped" >
@@ -6255,15 +6340,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://www.iana.org/assignments/relation/cite-as">Go to: </a> Cite as</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://www.iana.org/assignments/relation/cite-as">Go to: </a> Cite as</h3>
+                
+                
+                
+                
         <div id="http://www.iana.org/assignments/relation/cite-as">
             
             <table class="table metadata table-striped" >
@@ -6295,15 +6379,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://pcdm.org/models#Object">Go to: </a> Repository object</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://pcdm.org/models#Object">Go to: </a> Repository object</h3>
+                
+                
+                
+                
         <div id="http://pcdm.org/models#Object">
             
             <table class="table metadata table-striped" >
@@ -6332,15 +6415,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://pcdm.org/models#Collection">Go to: </a> Repository collection</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://pcdm.org/models#Collection">Go to: </a> Repository collection</h3>
+                
+                
+                
+                
         <div id="http://pcdm.org/models#Collection">
             
             <table class="table metadata table-striped" >
@@ -6369,15 +6451,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://pcdm.org/models#File">Go to: </a> Repository file</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://pcdm.org/models#File">Go to: </a> Repository file</h3>
+                
+                
+                
+                
         <div id="http://pcdm.org/models#File">
             
             <table class="table metadata table-striped" >
@@ -6406,15 +6487,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://pcdm.org/models#hasMember">Go to: </a> has member</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://pcdm.org/models#hasMember">Go to: </a> has member</h3>
+                
+                
+                
+                
         <div id="http://pcdm.org/models#hasMember">
             
             <table class="table metadata table-striped" >
@@ -6443,15 +6523,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://pcdm.org/models#hasFile">Go to: </a> has file</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://pcdm.org/models#hasFile">Go to: </a> has file</h3>
+                
+                
+                
+                
         <div id="http://pcdm.org/models#hasFile">
             
             <table class="table metadata table-striped" >
@@ -6480,15 +6559,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Class">Go to: </a> Class (rdfs)</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Class">Go to: </a> Class (rdfs)</h3>
+                
+                
+                
+                
         <div id="http://www.w3.org/1999/02/22-rdf-syntax-ns#Class">
             
             <table class="table metadata table-striped" >
@@ -6512,23 +6590,47 @@ While providing the formal specification for RO-Crate, this document also aims t
             <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
             <td style='text-align:left'><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a></td>
             </tr><tr>
+            <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
+            <td style='text-align:left'><span>rdfs:Class</span></td>
+            </tr><tr>
             <th style="text-align:left;" class="prop">url<span>&nbsp;</span><a href="http://schema.org/url">[?]</a></th>
             <td style='text-align:left'><a href="https://www.w3.org/TR/rdf-schema/#ch_class">https://www.w3.org/TR/rdf-schema/#ch_class</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/ro/crate/1.3-DRAFT">RO-Crate specification 1.2</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23subClassOf">subClassOf (rdfs)</a></li>
+                        
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23label">label (rdfs)</a></li>
+                        
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23comment">comment (rdfs)</a></li>
+                        
+                        <li><a href="#http%3A//schema.org/domainIncludes">domainIncludes</a></li>
+                        
+                        <li><a href="#http%3A//schema.org/rangeIncludes">rangeIncludes</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23subClassOf">subClassOf (rdfs)</a></li>
+                        
+                        <li><a href="#http%3A//schema.org/domainIncludes">domainIncludes</a></li>
+                        
+                        <li><a href="#http%3A//schema.org/rangeIncludes">rangeIncludes</a></li>
+                        </ul></td>
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">Go to: </a> Property (rdfs)</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">Go to: </a> Property (rdfs)</h3>
+                
+                
+                
+                
         <div id="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">
             
             <table class="table metadata table-striped" >
@@ -6547,28 +6649,242 @@ While providing the formal specification for RO-Crate, this document also aims t
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
-            <td style='text-align:left'><span>Property definition, typically with domainIncludes and rangeIncludes</span></td>
+            <td style='text-align:left'><span>Property definition, in schema.org style schema typically with domainIncludes and rangeIncludes</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
             <td style='text-align:left'><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
+            <td style='text-align:left'><span>rdfs:Property</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">url<span>&nbsp;</span><a href="http://schema.org/url">[?]</a></th>
             <td style='text-align:left'><a href="https://www.w3.org/TR/rdf-schema/#ch_property">https://www.w3.org/TR/rdf-schema/#ch_property</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/ro/crate/1.3-DRAFT">RO-Crate specification 1.2</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23subPropertyOf">subPropertyOf (rdfs)</a></li>
+                        
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23label">label (rdfs)</a></li>
+                        
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23comment">comment (rdfs)</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23subPropertyOf">subPropertyOf (rdfs)</a></td>
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/Class">Go to: </a> Class (schema.org)</h3>
+            <div>
+                <h3><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#subClassOf">Go to: </a> subClassOf (rdfs)</h3>
+                
+                
+                
+                
+        <div id="http://www.w3.org/1999/02/22-rdf-syntax-ns#subClassOf">
             
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#subClassOf">http://www.w3.org/1999/02/22-rdf-syntax-ns#subClassOf</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>subClassOf (rdfs)</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>rdfs:Property</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>A subclass is a specialisation of another class</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23Class">Class (rdfs)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23Class">Class (rdfs)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
+            <td style='text-align:left'><span>rdfs:subClassOf</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">url<span>&nbsp;</span><a href="http://schema.org/url">[?]</a></th>
+            <td style='text-align:left'><a href="https://www.w3.org/TR/rdf-schema/#ch_subclassof">https://www.w3.org/TR/rdf-schema/#ch_subclassof</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/crate/1.3-DRAFT">RO-Crate specification 1.2</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#subPropertyOf">Go to: </a> subPropertyOf (rdfs)</h3>
+                
+                
+                
+                
+        <div id="http://www.w3.org/1999/02/22-rdf-syntax-ns#subPropertyOf">
             
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#subPropertyOf">http://www.w3.org/1999/02/22-rdf-syntax-ns#subPropertyOf</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>subPropertyOf (rdfs)</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>rdfs:Property</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>A subproperty is a specialisation of another property</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
+            <td style='text-align:left'><span>rdfs:subPropertyOf</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23Property">Property (rdfs)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23Property">Property (rdfs)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">url<span>&nbsp;</span><a href="http://schema.org/url">[?]</a></th>
+            <td style='text-align:left'><a href="https://www.w3.org/TR/rdf-schema/#ch_subpropertyof">https://www.w3.org/TR/rdf-schema/#ch_subpropertyof</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/crate/1.3-DRAFT">RO-Crate specification 1.2</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#label">Go to: </a> label (rdfs)</h3>
+                
+                
+                
+                
+        <div id="http://www.w3.org/1999/02/22-rdf-syntax-ns#label">
             
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#label">http://www.w3.org/1999/02/22-rdf-syntax-ns#label</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>label (rdfs)</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>rdfs:Property</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>A human-readable name of the property/class defined with RDFS, equivalent to 'name' in schema.org</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23Property">Property (rdfs)</a></li>
+                        
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23Class">Class (rdfs)</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="http://schema.org/Text">http://schema.org/Text</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
+            <td style='text-align:left'><span>rdfs:label</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">url<span>&nbsp;</span><a href="http://schema.org/url">[?]</a></th>
+            <td style='text-align:left'><a href="https://www.w3.org/TR/rdf-schema/#ch_label">https://www.w3.org/TR/rdf-schema/#ch_label</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/crate/1.3-DRAFT">RO-Crate specification 1.2</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#comment">Go to: </a> comment (rdfs)</h3>
+                
+                
+                
+                
+        <div id="http://www.w3.org/1999/02/22-rdf-syntax-ns#comment">
             
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#comment">http://www.w3.org/1999/02/22-rdf-syntax-ns#comment</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>comment (rdfs)</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>rdfs:Property</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>A human-readable description of the property/class defined with RDFS, equivalent to 'description' in schema.org</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
+            <td style='text-align:left'><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23Property">Property (rdfs)</a></li>
+                        
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23Class">Class (rdfs)</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><a href="http://schema.org/Text">http://schema.org/Text</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
+            <td style='text-align:left'><span>rdfs:comment</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">url<span>&nbsp;</span><a href="http://schema.org/url">[?]</a></th>
+            <td style='text-align:left'><a href="https://www.w3.org/TR/rdf-schema/#ch_comment">https://www.w3.org/TR/rdf-schema/#ch_comment</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/crate/1.3-DRAFT">RO-Crate specification 1.2</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3><a href="http://schema.org/Class">Go to: </a> Class (schema.org)</h3>
+                
+                
+                
+                
         <div id="http://schema.org/Class">
             
             <table class="table metadata table-striped" >
@@ -6594,18 +6910,31 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//w3id.org/ro/crate/1.3-DRAFT">RO-Crate specification 1.2</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#http%3A//schema.org/domainIncludes">domainIncludes</a></li>
+                        
+                        <li><a href="#http%3A//schema.org/rangeIncludes">rangeIncludes</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#http%3A//schema.org/domainIncludes">domainIncludes</a></li>
+                        
+                        <li><a href="#http%3A//schema.org/rangeIncludes">rangeIncludes</a></li>
+                        </ul></td>
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/Property">Go to: </a> Property (schema.org)</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/Property">Go to: </a> Property (schema.org)</h3>
+                
+                
+                
+                
         <div id="http://schema.org/Property">
             
             <table class="table metadata table-striped" >
@@ -6634,15 +6963,120 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://www.opengis.net/ont/geosparql#Geometry">Go to: </a> Geometry</h3>
+            <div>
+                <h3><a href="http://schema.org/domainIncludes">Go to: </a> domainIncludes</h3>
+                
+                
+                
+                
+        <div id="http://schema.org/domainIncludes">
             
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="http://schema.org/domainIncludes">http://schema.org/domainIncludes</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>domainIncludes</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>rdfs:Property</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>The domain of a property includes the given classes, meaning the property may be used on instances of these classes. Equivalent to rdfs:domain but allowing multiple disjoint classes.</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//schema.org/docs/releases.html%23v22.0">Schema.org vocabulary (http prefix)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
+            <td style='text-align:left'><span>domainIncludes</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#http%3A//schema.org/Class">Class (schema.org)</a></li>
+                        
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23Class">Class (rdfs)</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#http%3A//schema.org/Class">Class (schema.org)</a></li>
+                        
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23Class">Class (rdfs)</a></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/crate/1.3-DRAFT">RO-Crate specification 1.2</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3><a href="http://schema.org/rangeIncludes">Go to: </a> rangeIncludes</h3>
+                
+                
+                
+                
+        <div id="http://schema.org/rangeIncludes">
             
-            
-            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="http://schema.org/rangeIncludes">http://schema.org/rangeIncludes</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>rangeIncludes</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><ul>
+                        <li><span>DefinedTerm</span></li>
+                        
+                        <li><span>rdfs:Property</span></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>The range of a property includes the given types, meaning instances of these types may be the target of this property. Equivalent to rdfs:range but allowing multiple disjoint types. For datatype properties, point to subclasses of http://schema.org/DataType e.g. for a string, http://schema.org/Text</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//schema.org/docs/releases.html%23v22.0">Schema.org vocabulary (http prefix)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">domainIncludes<span>&nbsp;</span><a href="http://schema.org/domainIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#http%3A//schema.org/Class">Class (schema.org)</a></li>
+                        
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23Class">Class (rdfs)</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">rangeIncludes<span>&nbsp;</span><a href="http://schema.org/rangeIncludes">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#http%3A//schema.org/Class">Class (schema.org)</a></li>
+                        
+                        <li><a href="#http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23Class">Class (rdfs)</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">termCode<span>&nbsp;</span><a href="http://schema.org/termCode">[?]</a></th>
+            <td style='text-align:left'><span>rangeIncludes</span></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/ro/crate/1.3-DRAFT">RO-Crate specification 1.2</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3><a href="http://www.opengis.net/ont/geosparql#Geometry">Go to: </a> Geometry</h3>
+                
+                
+                
+                
         <div id="http://www.opengis.net/ont/geosparql#Geometry">
             
             <table class="table metadata table-striped" >
@@ -6673,15 +7107,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://www.opengis.net/ont/geosparql#asWKT">Go to: </a> Geometry</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://www.opengis.net/ont/geosparql#asWKT">Go to: </a> Geometry</h3>
+                
+                
+                
+                
         <div id="http://www.opengis.net/ont/geosparql#asWKT">
             
             <table class="table metadata table-striped" >
@@ -6715,15 +7148,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://codemeta.github.io/terms/">Go to: </a> Codemeta Terms</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://codemeta.github.io/terms/">Go to: </a> Codemeta Terms</h3>
+                
+                
+                
+                
         <div id="https://codemeta.github.io/terms/">
             
             <table class="table metadata table-striped" >
@@ -6781,15 +7213,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://bioschemas.org/FormalParameter">Go to: </a> FormalParameter</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://bioschemas.org/FormalParameter">Go to: </a> FormalParameter</h3>
+                
+                
+                
+                
         <div id="https://bioschemas.org/FormalParameter">
             
             <table class="table metadata table-striped" >
@@ -6822,15 +7253,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://bioschemas.org/ComputationalWorkflow">Go to: </a> ComputationalWorkflow</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://bioschemas.org/ComputationalWorkflow">Go to: </a> ComputationalWorkflow</h3>
+                
+                
+                
+                
         <div id="https://bioschemas.org/ComputationalWorkflow">
             
             <table class="table metadata table-striped" >
@@ -6867,15 +7297,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/defaultValue">Go to: </a> defaultValue</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/defaultValue">Go to: </a> defaultValue</h3>
+                
+                
+                
+                
         <div id="http://schema.org/defaultValue">
             
             <table class="table metadata table-striped" >
@@ -6908,15 +7337,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://schema.org/valueRequired">Go to: </a> valueRequired</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://schema.org/valueRequired">Go to: </a> valueRequired</h3>
+                
+                
+                
+                
         <div id="http://schema.org/valueRequired">
             
             <table class="table metadata table-striped" >
@@ -6949,15 +7377,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://bioschemas.org/properties/input">Go to: </a> input</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://bioschemas.org/properties/input">Go to: </a> input</h3>
+                
+                
+                
+                
         <div id="https://bioschemas.org/properties/input">
             
             <table class="table metadata table-striped" >
@@ -6992,15 +7419,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://bioschemas.org/properties/output">Go to: </a> output</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://bioschemas.org/properties/output">Go to: </a> output</h3>
+                
+                
+                
+                
         <div id="https://bioschemas.org/properties/output">
             
             <table class="table metadata table-striped" >
@@ -7035,15 +7461,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://purl.org/dc/terms/conformsTo">Go to: </a> conformsTo</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://purl.org/dc/terms/conformsTo">Go to: </a> conformsTo</h3>
+                
+                
+                
+                
         <div id="http://purl.org/dc/terms/conformsTo">
             
             <table class="table metadata table-striped" >
@@ -7065,15 +7490,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/ro/terms#localPath">Go to: </a> localPath</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/terms#localPath">Go to: </a> localPath</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/terms#localPath">
             
             <table class="table metadata table-striped" >
@@ -7098,15 +7522,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://doi.org/DOI">Go to: </a> https://doi.org/DOI</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://doi.org/DOI">Go to: </a> https://doi.org/DOI</h3>
+                
+                
+                
+                
         <div id="https://doi.org/DOI">
             
             <table class="table metadata table-striped" >
@@ -7135,15 +7558,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://w3id.org/ro/crate/1.1">Go to: </a> RO-Crate specification 1.1</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://w3id.org/ro/crate/1.1">Go to: </a> RO-Crate specification 1.1</h3>
+                
+                
+                
+                
         <div id="https://w3id.org/ro/crate/1.1">
             
             <table class="table metadata table-striped" >
@@ -7165,15 +7587,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://www.w3.org/TR/2014/REC-json-ld-20140116/">Go to: </a> JSON-LD 1.0</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://www.w3.org/TR/2014/REC-json-ld-20140116/">Go to: </a> JSON-LD 1.0</h3>
+                
+                
+                
+                
         <div id="http://www.w3.org/TR/2014/REC-json-ld-20140116/">
             
             <table class="table metadata table-striped" >
@@ -7205,15 +7626,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://www.w3.org/ns/json-ld#flattened">Go to: </a> Flattened JSON-LD</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://www.w3.org/ns/json-ld#flattened">Go to: </a> Flattened JSON-LD</h3>
+                
+                
+                
+                
         <div id="http://www.w3.org/ns/json-ld#flattened">
             
             <table class="table metadata table-striped" >
@@ -7241,15 +7661,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://schema.org/docs/releases.html#v22.0">Go to: </a> Schema.org vocabulary (http prefix)</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://schema.org/docs/releases.html#v22.0">Go to: </a> Schema.org vocabulary (http prefix)</h3>
+                
+                
+                
+                
         <div id="https://schema.org/docs/releases.html#v22.0">
             
             <table class="table metadata table-striped" >
@@ -7267,7 +7686,7 @@ While providing the formal specification for RO-Crate, this document also aims t
                         <li><span>Standard</span></li>
                         </ul></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">vann:preferredNamespaceUri</th>
+            <th style="text-align:left;" class="prop">vann:preferredNamespaceUri<span>&nbsp;</span><a href="http://purl.org/vocab/vann/preferredNamespaceUri">[?]</a></th>
             <td style='text-align:left'><a href="http://schema.org/">http://schema.org/</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">version<span>&nbsp;</span><a href="http://schema.org/version">[?]</a></th>
@@ -7281,6 +7700,10 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr><tr>
             <th style="text-align:left;" class="prop">inDefinedTermSet<span>&nbsp;</span><a href="http://schema.org/inDefinedTermSet">[?]</a></th>
             <td style='text-align:left'><ul>
+                        <li><a href="#http%3A//schema.org/domainIncludes">domainIncludes</a></li>
+                        
+                        <li><a href="#http%3A//schema.org/rangeIncludes">rangeIncludes</a></li>
+                        
                         <li><a href="#http%3A//schema.org/Class">Class (schema.org)</a></li>
                         
                         <li><a href="#http%3A//schema.org/Property">Property (schema.org)</a></li>
@@ -7294,15 +7717,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://www.apache.org/licenses/LICENSE-2.0">Go to: </a> Apache License 2.0</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://www.apache.org/licenses/LICENSE-2.0">Go to: </a> Apache License 2.0</h3>
+                
+                
+                
+                
         <div id="https://www.apache.org/licenses/LICENSE-2.0">
             
             <table class="table metadata table-striped" >
@@ -7327,15 +7749,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://www.researchobject.org/ro-crate/community">Go to: </a> RO-Crate Community</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://www.researchobject.org/ro-crate/community">Go to: </a> RO-Crate Community</h3>
+                
+                
+                
+                
         <div id="https://www.researchobject.org/ro-crate/community">
             
             <table class="table metadata table-striped" >
@@ -7555,15 +7976,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://www.researchobject.org/">Go to: </a> ResearchObject.org</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://www.researchobject.org/">Go to: </a> ResearchObject.org</h3>
+                
+                
+                
+                
         <div id="https://www.researchobject.org/">
             
             <table class="table metadata table-striped" >
@@ -7592,15 +8012,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #vocabulary-schema</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #vocabulary-schema</h3>
+                
+                
+                
+                
         <div id="#vocabulary-schema">
             
             <table class="table metadata table-striped" >
@@ -7622,15 +8041,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #vocabulary-pcdm</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #vocabulary-pcdm</h3>
+                
+                
+                
+                
         <div id="#vocabulary-pcdm">
             
             <table class="table metadata table-striped" >
@@ -7652,15 +8070,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #vocabulary-prof</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #vocabulary-prof</h3>
+                
+                
+                
+                
         <div id="#vocabulary-prof">
             
             <table class="table metadata table-striped" >
@@ -7682,15 +8099,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #vocabulary-prof-roles</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #vocabulary-prof-roles</h3>
+                
+                
+                
+                
         <div id="#vocabulary-prof-roles">
             
             <table class="table metadata table-striped" >
@@ -7712,15 +8128,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #vocabulary-rdfs</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #vocabulary-rdfs</h3>
+                
+                
+                
+                
         <div id="#vocabulary-rdfs">
             
             <table class="table metadata table-striped" >
@@ -7742,15 +8157,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #vocabulary-geosparql</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #vocabulary-geosparql</h3>
+                
+                
+                
+                
         <div id="#vocabulary-geosparql">
             
             <table class="table metadata table-striped" >
@@ -7772,15 +8186,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #vocabulary-codemeta</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #vocabulary-codemeta</h3>
+                
+                
+                
+                
         <div id="#vocabulary-codemeta">
             
             <table class="table metadata table-striped" >
@@ -7802,15 +8215,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #specification</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #specification</h3>
+                
+                
+                
+                
         <div id="#specification">
             
             <table class="table metadata table-striped" >
@@ -7832,15 +8244,14 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3> #example-rainfall</h3>
-            
-            
-            
-            
+            <div>
+                <h3> #example-rainfall</h3>
+                
+                
+                
+                
         <div id="#example-rainfall">
             
             <table class="table metadata table-striped" >
@@ -7862,8 +8273,7 @@ While providing the formal specification for RO-Crate, this document also aims t
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/></div>
 </div>
 
