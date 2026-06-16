@@ -6,7 +6,9 @@
 
 <script type="application/ld+json"> 
   {
-  "@context": "https://w3id.org/ro/crate/1.3-DRAFT/context",
+  "@context": [
+    "https://w3id.org/ro/crate/1.3-DRAFT/context"
+  ],
   "@graph": [
     {
       "@id": "ro-crate-metadata.json",
@@ -30,60 +32,8 @@
       "publisher": {
         "@id": "https://ror.org/04dkp1p98"
       },
-      "hasPart": [
-        {
-          "@id": "data.csv"
-        }
-      ],
-      "@reverse": {
-        "about": [
-          {
-            "@id": "ro-crate-metadata.json"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "data.csv",
-      "@type": "File",
-      "name": "Rainfall data for Katoomba, NSW Australia February 2022",
-      "encodingFormat": "text/csv",
-      "license": {
-        "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/"
-      },
-      "@reverse": {
-        "hasPart": [
-          {
-            "@id": "./"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "https://ror.org/04dkp1p98",
-      "@type": "Organization",
-      "name": "Bureau of Meteorology",
-      "description": "Australian Government Bureau of Meteorology",
-      "url": "http://www.bom.gov.au/",
-      "@reverse": {
-        "publisher": [
-          {
-            "@id": "./"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
-      "@type": "CreativeWork",
-      "name": "CC BY-NC-SA 3.0 AU",
-      "description": "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia",
-      "@reverse": {
-        "license": [
-          {
-            "@id": "data.csv"
-          }
-        ]
+      "hasPart": {
+        "@id": "data.csv"
       }
     },
     {
@@ -92,14 +42,29 @@
       "description": "This is a human-readable summary of the Legal Code (read the full text).\n\nNo Copyright\n\n    The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.\n\n    You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. See Other Information below.\n\nThis license is acceptable for Free Cultural Works.\nOther Information\n\n    In no way are the patent or trademark rights of any person affected by CC0, nor are the rights that other persons may have in the work or in how the work is used, such as publicity or privacy rights.\n    Unless expressly stated otherwise, the person who associated a work with this deed makes no warranties about the work, and disclaims liability for all uses of the work, to the fullest extent permitted by applicable law.\n    When using or citing the work, you should not imply endorsement by the author or the affirmer.\n",
       "identifier": "CC0-1.0",
       "name": "Creative Commons Zero v1.0 Universal",
-      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "@reverse": {
-        "license": [
-          {
-            "@id": "./"
-          }
-        ]
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "@id": "https://ror.org/04dkp1p98",
+      "@type": "Organization",
+      "name": "Bureau of Meteorology",
+      "description": "Australian Government Bureau of Meteorology",
+      "url": "http://www.bom.gov.au/"
+    },
+    {
+      "@id": "data.csv",
+      "@type": "File",
+      "name": "Rainfall data for Katoomba, NSW Australia February 2022",
+      "encodingFormat": "text/csv",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/"
       }
+    },
+    {
+      "@id": "https://creativecommons.org/licenses/by-nc-sa/3.0/au/",
+      "@type": "CreativeWork",
+      "name": "CC BY-NC-SA 3.0 AU",
+      "description": "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia"
     }
   ]
 }
@@ -107,11 +72,11 @@
 
     
 <!-- script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script -->
-<script src="ro-crate-preview_files/ro-crate-dynamic.js"></script>
+<script src="https://unpkg.com/ro-crate-html@0.1/dist/ro-crate-dynamic.min.js"></script>
 
-<link rel="stylesheet" href="ro-crate-preview_files/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-<link rel="stylesheet" href="ro-crate-preview_files/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <meta charset='utf-8'/>
 <style>
@@ -134,8 +99,8 @@ table.table {
   </nav>
 <div class="container">
 <div class="jumbotron">
-<h4 class="citation"></h3>
-<h3 class="item_name">Example dataset for RO-Crate specification</h4>
+<h4 class="citation"></h4>
+<h3 class="item_name">Example dataset for RO-Crate specification</h3>
 
 
 <a href="./ro-crate-metadata.json">⬇️🏷️ Download all the metadata for <span class='name'>Example dataset for RO-Crate specification</span> in JSON-LD format</a>
@@ -150,12 +115,12 @@ table.table {
 
 <div id="summary">
 <div class='all-meta'>
-           <div>
-            <h3> Example dataset for RO-Crate specification</h3>
-            
-            
-            
-            
+            <div>
+                <h3> Example dataset for RO-Crate specification</h3>
+                
+                
+                
+                
         <div id="./">
             
             <table class="table metadata table-striped" >
@@ -189,15 +154,14 @@ table.table {
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="http://spdx.org/licenses/CC0-1.0">Go to: </a> Creative Commons Zero v1.0 Universal</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="http://spdx.org/licenses/CC0-1.0">Go to: </a> Creative Commons Zero v1.0 Universal</h3>
+                
+                
+                
+                
         <div id="http://spdx.org/licenses/CC0-1.0">
             
             <table class="table metadata table-striped" >
@@ -239,15 +203,14 @@ Other Information
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="https://ror.org/04dkp1p98">Go to: </a> Bureau of Meteorology</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="https://ror.org/04dkp1p98">Go to: </a> Bureau of Meteorology</h3>
+                
+                
+                
+                
         <div id="https://ror.org/04dkp1p98">
             
             <table class="table metadata table-striped" >
@@ -272,15 +235,14 @@ Other Information
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/>
-           <div>
-            <h3><a href="data.csv">⬇️ Download: </a> Rainfall data for Katoomba, NSW Australia February 2022</h3>
-            
-            
-            
-            
+            <div>
+                <h3><a href="data.csv">⬇️ Download: </a> Rainfall data for Katoomba, NSW Australia February 2022</h3>
+                
+                
+                
+                
         <div id="data.csv">
             
             <table class="table metadata table-striped" >
@@ -305,8 +267,7 @@ Other Information
             </tr></tbody>
             </table>
         </div>
-
-        </div>
+            </div>
         <hr/><br/><br/></div>
 </div>
 
