@@ -452,7 +452,7 @@
           "@id": "http://www.w3.org/ns/json-ld#flattened"
         },
         {
-          "@id": "https://schema.org/docs/releases.html#v22.0"
+          "@id": "https://schema.org/docs/releases.html#v30.0"
         }
       ],
       "license": {
@@ -585,14 +585,14 @@
       "url": "https://vocab.org/vann/#preferredNamespaceUri"
     },
     {
-      "@id": "https://schema.org/docs/releases.html#v22.0",
+      "@id": "https://schema.org/docs/releases.html#v30.0",
       "@type": [
         "DefinedTermSet",
         "Standard"
       ],
       "name": "Schema.org vocabulary (http prefix)",
       "vann:preferredNamespaceUri": "http://schema.org/",
-      "version": "22.0",
+      "version": "30.0",
       "url": "https://schema.org/docs/developers.html"
     },
     {
@@ -748,7 +748,7 @@
         "rdfs:Property"
       ],
       "inDefinedTermSet": {
-        "@id": "https://schema.org/docs/releases.html#v22.0"
+        "@id": "https://schema.org/docs/releases.html#v30.0"
       },
       "name": "domainIncludes",
       "termCode": "domainIncludes",
@@ -777,7 +777,7 @@
         "rdfs:Property"
       ],
       "inDefinedTermSet": {
-        "@id": "https://schema.org/docs/releases.html#v22.0"
+        "@id": "https://schema.org/docs/releases.html#v30.0"
       },
       "domainIncludes": [
         {
@@ -806,7 +806,7 @@
         "Class"
       ],
       "inDefinedTermSet": {
-        "@id": "https://schema.org/docs/releases.html#v22.0"
+        "@id": "https://schema.org/docs/releases.html#v30.0"
       },
       "name": "Class (schema.org)",
       "description": "Class reference, as indicated by @id url or inDefinedTermSet"
@@ -818,7 +818,7 @@
         "Class"
       ],
       "inDefinedTermSet": {
-        "@id": "https://schema.org/docs/releases.html#v22.0"
+        "@id": "https://schema.org/docs/releases.html#v30.0"
       },
       "name": "Property (schema.org)",
       "description": "Property reference, as indicated by @id url or inDefinedTermSet"
@@ -827,7 +827,7 @@
       "@id": "http://schema.org/MediaObject",
       "@type": "DefinedTerm",
       "inDefinedTermSet": {
-        "@id": "http://schema.org/version/15.0/"
+        "@id": "https://schema.org/docs/releases.html#v30.0"
       },
       "name": "MediaObject",
       "termCode": "File",
@@ -2225,7 +2225,7 @@
       "encodingFormat": "application/ld+json",
       "isBasedOn": [
         {
-          "@id": "https://schema.org/docs/releases.html#v22.0"
+          "@id": "https://schema.org/docs/releases.html#v30.0"
         },
         {
           "@id": "https://pcdm.org/2016/04/18/models"
@@ -2845,7 +2845,7 @@
       "@id": "#vocabulary-schema",
       "@type": "ResourceDescriptor",
       "hasArtifact": {
-        "@id": "https://schema.org/docs/releases.html#v22.0"
+        "@id": "https://schema.org/docs/releases.html#v30.0"
       },
       "hasRole": {
         "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
