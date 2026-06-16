@@ -272,6 +272,45 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-3482-0325"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8733-1117"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-5614-962X"
+        },
+        {
+          "@id": "https://orcid.org/0009-0000-5170-1737"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-1382-3896"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3389-2191"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0144-0564"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4112-6825"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4479-715X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-9694-748X"
+        },
+        {
+          "@id": "#author-dome"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-7348-4566"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4154-2610"
+        },
+        {
+          "@id": "https://orcid.org/0009-0009-5499-2096"
         }
       ],
       "cite-as": "https://doi.org/DOI",
@@ -2074,6 +2113,71 @@
       "name": "Balazs E. Pataki"
     },
     {
+      "@id": "https://orcid.org/0000-0001-8733-1117",
+      "@type": "Person",
+      "name": "Joe Heffer"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-5614-962X",
+      "@type": "Person",
+      "name": "Pascal Su"
+    },
+    {
+      "@id": "https://orcid.org/0009-0000-5170-1737",
+      "@type": "Person",
+      "name": "Andrea Davanzo"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1382-3896",
+      "@type": "Person",
+      "name": "Meznah Aloqalaa"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3389-2191",
+      "@type": "Person",
+      "name": "Pierre-Marie Allard"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0144-0564",
+      "@type": "Person",
+      "name": "Venkat S Malladi"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4112-6825",
+      "@type": "Person",
+      "name": "Esteban González"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-4479-715X",
+      "@type": "Person",
+      "name": "Phil Reed"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9694-748X",
+      "@type": "Person",
+      "name": "Tilo Mathes"
+    },
+    {
+      "@id": "#author-dome",
+      "@type": "Person",
+      "name": "Saurabh Dome"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-7348-4566",
+      "@type": "Person",
+      "name": "Niklas-Maximilian Epping"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-4154-2610",
+      "@type": "Person",
+      "name": "Margareta Hellström"
+    },
+    {
+      "@id": "https://orcid.org/0009-0009-5499-2096",
+      "@type": "Person",
+      "name": "Paul Slavin"
+    },
+    {
       "@id": "http://spdx.org/licenses/CC0-1.0",
       "@type": "PropertyValue",
       "propertyID": "http://spdx.org/rdf/terms#licenseId",
@@ -2639,6 +2743,45 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-3482-0325"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8733-1117"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-5614-962X"
+        },
+        {
+          "@id": "https://orcid.org/0009-0000-5170-1737"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-1382-3896"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3389-2191"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0144-0564"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4112-6825"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4479-715X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-9694-748X"
+        },
+        {
+          "@id": "#author-dome"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-7348-4566"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4154-2610"
+        },
+        {
+          "@id": "https://orcid.org/0009-0009-5499-2096"
         }
       ],
       "name": "RO-Crate Community",
