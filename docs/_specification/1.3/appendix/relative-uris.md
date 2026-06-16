@@ -10,7 +10,7 @@ excerpt: |
   relative URI references are also frequently used for 
   identifying _Contextual entities_.
 parent: Appendix
-grand_parent: RO-Crate 1.3-DRAFT
+grand_parent: RO-Crate 1.3
 nav_order: 23
 ---
 <!--
@@ -214,12 +214,12 @@ Example, this JSON-LD is in [compacted form][compacted] which may be beneficial 
 ```json
 { 
   "@context": [
-      "https://w3id.org/ro/crate/1.3-DRAFT/context"
+      "https://w3id.org/ro/crate/1.3/context"
   ],
   "@id": "ro-crate-metadata.json",
   "@type": "CreativeWork",
   "description": "RO-Crate Metadata Descriptor (this file)",
-  "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"},
+  "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3"},
   "about": {
     "@id": "./",
     "@type": "Dataset",
@@ -242,7 +242,7 @@ Performing [JSON-LD flattening] with:
 
 ```json
 { "@context": 
-     "https://w3id.org/ro/crate/1.3-DRAFT/context"
+     "https://w3id.org/ro/crate/1.3/context"
 }
 ```
 
@@ -250,13 +250,13 @@ Results in a valid _RO-Crate JSON-LD_ (actual order in `@graph` may differ):
 
 ```json
 {
-  "@context": "https://w3id.org/ro/crate/1.3-DRAFT/context",
+  "@context": "https://w3id.org/ro/crate/1.3/context",
   "@graph": [
     {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.3-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.3"
       },
       "about": {
         "@id": "./"
@@ -307,7 +307,7 @@ For example, expanding this JSON-LD:
 ```json
 {
   "@context": [
-    "https://w3id.org/ro/crate/1.3-DRAFT/context",
+    "https://w3id.org/ro/crate/1.3/context",
     {"@base": null}
   ],
   "@graph": [
@@ -315,7 +315,7 @@ For example, expanding this JSON-LD:
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.3-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.3"
       },
       "about": {
         "@id": "./"
@@ -356,7 +356,7 @@ Results in a [expanded form][JSON-LD expanded form] without `@context`, using ab
     ],
     "http://purl.org/dc/terms/conformsTo": [
       {
-        "@id": "https://w3id.org/ro/crate/1.3-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.3"
       }
     ],
     "http://schema.org/description": [
@@ -474,7 +474,7 @@ WHERE {
 }
 ```
 
-{% include callout.html type="note" content="The query above will find _all_ Root Data Entities in the RDF graph. This is useful when querying RDF triple stores which contain many RO-Crates, but it also means that multiple results could be returned when the query is used on single RO-Crates which contain other [nested or referenced RO-Crates](https://www.researchobject.org/ro-crate/specification/1.3-DRAFT/data-entities.html#referencing-other-ro-crates)." %}
+{% include callout.html type="note" content="The query above will find _all_ Root Data Entities in the RDF graph. This is useful when querying RDF triple stores which contain many RO-Crates, but it also means that multiple results could be returned when the query is used on single RO-Crates which contain other [nested or referenced RO-Crates](https://www.researchobject.org/ro-crate/specification/1.3/data-entities.html#referencing-other-ro-crates)." %}
 
 
 ## Parsing as RDF with a different RO-Crate Root
@@ -495,7 +495,7 @@ If a web-based URI for the _RO-Crate root_ is known, then this can be supplied a
 ```json
 {
   "@context": [
-    "https://w3id.org/ro/crate/1.3-DRAFT/context",
+    "https://w3id.org/ro/crate/1.3/context",
     {"@base": "http://example.com/crate255/"}
   ],
   "@graph": [
@@ -503,7 +503,7 @@ If a web-based URI for the _RO-Crate root_ is known, then this can be supplied a
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.3-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.3"
       },
       "about": {
         "@id": "./"
@@ -540,7 +540,7 @@ Parsing this will generate triples like below using `http://example.com/crate255
 ```turtle
 <http://example.com/crate255/ro-crate-metadata.json> 
   <http://purl.org/dc/terms/conformsTo> 
-  <https://w3id.org/ro/crate/1.3-DRAFT> .
+  <https://w3id.org/ro/crate/1.3> .
 
 <http://example.com/crate255/ro-crate-metadata.json> 
   <http://schema.org/about> 
@@ -580,7 +580,7 @@ For instance, given a randomly generated UUID `b7749d0b-0e47-5fc4-999d-f154abe68
 ```json
 {
   "@context": [
-    "https://w3id.org/ro/crate/1.3-DRAFT/context",
+    "https://w3id.org/ro/crate/1.3/context",
     {"@base": "arcp://uuid,b7749d0b-0e47-5fc4-999d-f154abe68065/"}
   ],
   "@graph": [
@@ -588,7 +588,7 @@ For instance, given a randomly generated UUID `b7749d0b-0e47-5fc4-999d-f154abe68
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.3-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.3"
       },
       "about": {
         "@id": "./"
@@ -645,13 +645,13 @@ Assuming a repository at `example.com` has JSON-LD with absolute URIs:
 
 ```json
 {
-  "@context": "https://w3id.org/ro/crate/1.3-DRAFT",
+  "@context": "https://w3id.org/ro/crate/1.3",
   "@graph": [
     {
       "@id": "http://example.com/crate415/ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.3-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.3"
       },
       "about": {
         "@id": "http://example.com/crate415/"
@@ -680,7 +680,7 @@ Then performing [JSON-LD flattening] with this `@context`:
 ```json
 { "@context": [
     {"@base": "http://example.com/crate415/"},
-     "https://w3id.org/ro/crate/1.3-DRAFT"
+     "https://w3id.org/ro/crate/1.3"
   ]
 }
 ```
@@ -693,7 +693,7 @@ Will output _RO-Crate JSON-LD_ with relative URIs:
     {
       "@base": "http://example.com/crate415/"
     },
-    "https://w3id.org/ro/crate/1.3-DRAFT"
+    "https://w3id.org/ro/crate/1.3"
   ],
   "@graph": [
     {
@@ -714,7 +714,7 @@ Will output _RO-Crate JSON-LD_ with relative URIs:
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.3-DRAFT"
+        "@id": "https://w3id.org/ro/crate/1.3"
       },
       "about": {
         "@id": "./"

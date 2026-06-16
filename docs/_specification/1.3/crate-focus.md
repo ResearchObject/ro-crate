@@ -6,7 +6,7 @@ excerpt: |
   In addition to simple data packaging, RO-Crates may have a "main" entry point or topic (referenced with a singleton `mainEntity` property), or function as a bundle of one or more Contextual Entities referenced via the `mentions` property.
 nav_order: 7
 jekyll-mentions: false
-parent: RO-Crate 1.3-DRAFT
+parent: RO-Crate 1.3
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -100,7 +100,7 @@ For example, RO-Crates can be used as containers for Schema.org-style vocabulari
 
 ```json
 { "@context": [
-    "https://w3id.org/ro/crate/1.3-DRAFT/context",
+    "https://w3id.org/ro/crate/1.3/context",
     {"txc": "https://purl.archive.org/language-data-commons/terms#"}
   ],
   "@graph": [
@@ -108,7 +108,7 @@ For example, RO-Crates can be used as containers for Schema.org-style vocabulari
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "description": "RO-Crate Metadata File Descriptor (this file)",
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3"},
       "about": {"@id": "./"}
     },
     {

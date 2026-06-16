@@ -5,7 +5,7 @@ redirect_from:
 excerpt: |
   This document specifies a method, known as _RO-Crate_ (Research Object Crate), of aggregating and describing data for distribution, re-use, publishing, preservation and archiving. RO-Crates aggregate data into a Dataset, and may describe any resource including files, URI-addressable resources, or use other addressing schemes to locate digital or physical data. Describing resources includes technical metadata such as file sizes and types as well as contextual information including how and where datasets and files were created, how they were collated and collected, who was involved in the process, what equipment and software was used, who funded the work, how to cite it, and crucially, how it may be reused, and by whom.
 nav_order: 1
-parent: RO-Crate 1.3-DRAFT
+parent: RO-Crate 1.3
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -55,12 +55,12 @@ In this running example, the content of the _RO Crate Metadata Document_ is:
 
 ```json
 {
-  "@context": "https://w3id.org/ro/crate/1.3-DRAFT/context",
+  "@context": "https://w3id.org/ro/crate/1.3/context",
   "@graph": [
     {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3"},
       "about": {"@id": "./"}
     },
     {
@@ -114,12 +114,12 @@ The first JSON-LD _entity_ in our example above has the `@id` `ro-crate-metadata
 {
     "@id": "ro-crate-metadata.json",
     "@type": "CreativeWork",
-    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"},
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3"},
     "about": {"@id": "./"}
 }
 ```
 
-This required entity, known as the _RO-Crate Metadata Descriptor_, helps this file self-identify as an _RO-Crate Metadata Document_, which is conforming to (`conformsTo`) the RO-Crate specification version 1.3-DRAFT. 
+This required entity, known as the _RO-Crate Metadata Descriptor_, helps this file self-identify as an _RO-Crate Metadata Document_, which is conforming to (`conformsTo`) the RO-Crate specification version 1.3. 
 
 The descriptor also indicates via the `about` property which entity in the `@graph` array is the _RO-Crate Root_ dataset -- the starting point of this RO-Crate. 
 

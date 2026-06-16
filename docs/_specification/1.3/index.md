@@ -1,5 +1,5 @@
 ---
-title: RO-Crate 1.3-DRAFT
+title: RO-Crate 1.3
 redirect_from:
   - /1.3-DRAFT/index
   - /1.3-DRAFT/about

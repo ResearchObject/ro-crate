@@ -3,7 +3,7 @@ title: Changelog
 redirect_from:
   - /1.3-DRAFT/appendix/changelog
 parent: Appendix
-grand_parent: RO-Crate 1.3-DRAFT
+grand_parent: RO-Crate 1.3
 nav_order: 30
 excerpt: List of changes in releases of this specifications
 ---

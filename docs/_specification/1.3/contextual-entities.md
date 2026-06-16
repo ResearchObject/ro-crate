@@ -10,7 +10,7 @@ excerpt: |
   change or become unavailable over time.
 nav_order: 7
 jekyll-mentions: false
-parent: RO-Crate 1.3-DRAFT
+parent: RO-Crate 1.3
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

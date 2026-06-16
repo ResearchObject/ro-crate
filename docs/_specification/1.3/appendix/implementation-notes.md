@@ -4,7 +4,7 @@ description: Guidance on programming with JSON-LD, combining RO-Crate with other
 redirect_from:
   - /1.3-DRAFT/appendix/implementation-notes
 parent: Appendix
-grand_parent: RO-Crate 1.3-DRAFT
+grand_parent: RO-Crate 1.3
 nav_order: 21
 ---
 <!--

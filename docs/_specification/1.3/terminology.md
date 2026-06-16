@@ -3,7 +3,7 @@ title: Terminology
 redirect_from:
   - /1.3-DRAFT/terminology
 nav_order: 2
-parent: RO-Crate 1.3-DRAFT
+parent: RO-Crate 1.3
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -77,6 +77,6 @@ Throughout this specification, RDF terms (_properties_, _types_) are referred to
 
 Following [Schema.org] practice, `property` names start with lowercase letters and `Type` names start with uppercase letters.
 
-In the _RO-Crate Metadata Document_ the RDF terms use their RO-Crate JSON-LD names as defined in the _RO-Crate JSON-LD Context_, which is available at <https://w3id.org/ro/crate/1.3-DRAFT/context>
+In the _RO-Crate Metadata Document_ the RDF terms use their RO-Crate JSON-LD names as defined in the _RO-Crate JSON-LD Context_, which is available at <https://w3id.org/ro/crate/1.3/context>
 
 {% include references.liquid %}

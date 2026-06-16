@@ -8,7 +8,7 @@ excerpt: |
   * Actual files which are datastreams available on the local file system or over the web -- when represented in the RO-Crate Metadata Document, these have the type `File`.
   * Folders (or directories) of files -- represented using the type `Dataset`.
 nav_order: 6
-parent: RO-Crate 1.3-DRAFT
+parent: RO-Crate 1.3
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -101,12 +101,12 @@ An example _RO-Crate JSON-LD_ for the above would be as follows.
 This example contains both a [File Data Entity](#file-data-entity) and a [Directory Data Entity](#directory-data-entity). 
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.3-DRAFT/context",
+{ "@context": "https://w3id.org/ro/crate/1.3/context",
   "@graph": [
     {
       "@type": "CreativeWork",
       "@id": "ro-crate-metadata.json",
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3"},
       "about": {"@id": "./"}
     },  
     {
@@ -243,12 +243,12 @@ Using Web-based Data Entities can be important particularly where a file can't b
 Example of an RO-Crate including a _File Data Entity_ external to the _RO-Crate Root_ (file entity <https://zenodo.org/record/3541888/files/ro-crate-1.0.0.pdf>):
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.3-DRAFT/context",
+{ "@context": "https://w3id.org/ro/crate/1.3/context",
   "@graph": [
     {
         "@type": "CreativeWork",
         "@id": "ro-crate-metadata.json",
-        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"},
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3"},
         "about": {"@id": "./"}
   },  
   {

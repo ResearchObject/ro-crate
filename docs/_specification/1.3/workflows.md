@@ -7,7 +7,7 @@ excerpt: |
   analyze or generate files contained in an RO-Crate can be embedded
   in an RO-Crate and described in detail.
 nav_order: 11
-parent: RO-Crate 1.3-DRAFT
+parent: RO-Crate 1.3
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -244,12 +244,12 @@ A contextual entity conforming to the [FormalParameter profile][FormalParameter 
 The below is an example of an RO-Crate complying with the Bioschemas [ComputationalWorkflow profile 1.0]:
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.3-DRAFT/context", 
+{ "@context": "https://w3id.org/ro/crate/1.3/context", 
   "@graph": [
     {
       "@type": "CreativeWork",
       "@id": "ro-crate-metadata.json",
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3"},
       "about": {"@id": "./"}
     },
     {
