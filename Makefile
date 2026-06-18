@@ -85,7 +85,8 @@ docs/_specification/${RELEASE}/examples/rainfall-${TAG}/: dependencies docs/_spe
 	mkdir -p docs/_specification/${RELEASE}/examples/
 	cp -r docs/_specification/${DRAFT}/examples/rainfall-${DRAFT}/ docs/_specification/${RELEASE}/examples/rainfall-${DRAFT}
 	mv docs/_specification/${RELEASE}/examples/rainfall-${DRAFT}/ docs/_specification/${RELEASE}/examples/rainfall-${TAG}
-	sed -i s/${DRAFT}/${RELEASE}/g docs/_specification/${RELEASE}/examples/rainfall-${TAG}/*.*
+	sed -i s/${DRAFT}/${RELEASE}/g docs/_specification/${RELEASE}/examples/rainfall-${TAG}/ro-crate-metadata.json
+	sed -i s/${DRAFT}/${RELEASE}/g docs/_specification/${RELEASE}/examples/rainfall-${TAG}/ro-crate-preview.html
 
 
 release/:
