@@ -1,6 +1,42 @@
 title: Specification
 title_url: specification
 versions:
+  - title: RO-Crate 1.3 (release candidate)
+    url: /specification/1.3/index.html
+    subitems:
+      - title: Introduction
+        url: /specification/1.3/introduction.html
+      - title: Terminology
+        url: /specification/1.3/terminology.html
+      - title: RO-Crate Structure
+        url: /specification/1.3/structure.html
+      - title: Metadata of the RO-Crate
+        url: /specification/1.3/metadata.html
+      - title: Root Data Entity
+        url: /specification/1.3/root-data-entity.html
+      - title: Data Entities
+        url: /specification/1.3/data-entities.html
+      - title: Contextual Entities
+        url: /specification/1.3/contextual-entities.html
+      - title: The focus of an RO-Crate
+        url: /specification/1.3/crate-focus.html
+      - title: Provenance of entities
+        url: /specification/1.3/provenance.html
+      - title: Profiles
+        url: /specification/1.3/profiles.html
+      - title: Workflows and scripts
+        url: /specification/1.3/workflows.html
+      - title: Appendix
+        url: /specification/1.3/appendix/index.html
+        subitems:
+          - title: Changelog
+            url: /specification/1.3/appendix/changelog.html
+          - title: Handling relative URI references
+            url: /specification/1.3/appendix/relative-uris.html
+          - title: Implementation notes
+            url: /specification/1.3/appendix/implementation-notes.html
+          - title: RO-Crate JSON-LD
+            url: /specification/1.3/appendix/jsonld.html
   - title: RO-Crate 1.2 (newest release)
     url: /specification/1.2/index.html
     subitems:
