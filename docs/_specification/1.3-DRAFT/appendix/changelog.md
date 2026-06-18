@@ -29,15 +29,20 @@ excerpt: List of changes in releases of this specifications
 # APPENDIX: Changelog {#changelog}
 
 * RO-Crate 1.3.0
-  * Updated the Bioschemas namespace to `https://bioschemas.org/terms/` for all types and properties (previously `https://bioschemas.org/` for types and `https://bioschemas.org/properties` for properties). This change affects 4 terms in the [JSON-LD context](../ro-crate-metadata.json): `ComputationalWorkflow`, `FormalParameter`, `input`, and `output`. [#529](https://github.com/ResearchObject/ro-crate/issues/529)
+  * **Notable change:** Updated the Bioschemas namespace to `https://bioschemas.org/terms/` for all types and properties (previously `https://bioschemas.org/` for types and `https://bioschemas.org/properties` for properties). This change affects 4 terms in the [JSON-LD context](../ro-crate-metadata.json): `ComputationalWorkflow`, `FormalParameter`, `input`, and `output`. This is primarily relevant to those describing workflows with RO-Crate, either using the [Workflows and Scripts](../workflows) chapter or the [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/) profile and its derivatives.  [#529](https://github.com/ResearchObject/ro-crate/issues/529)
     
-| Term | Previous URI | New URI |
-| --- | --- | --- |
-| ComputationalWorkflow |`https://bioschemas.org/ComputationalWorkflow` | `https://bioschemas.org/terms/ComputationalWorkflow` |
-| FormalParameter | `https://bioschemas.org/FormalParameter` | `https://bioschemas.org/terms/FormalParameter` |
-| input |`https://bioschemas.org/properties/input` | `https://bioschemas.org/terms/input` |
-| output |`https://bioschemas.org/properties/output` | `https://bioschemas.org/terms/output` |
-    
+    | Term | Previous URI | New URI |
+    | --- | --- | --- |
+    | ComputationalWorkflow |`https://bioschemas.org/ComputationalWorkflow` | `https://bioschemas.org/terms/ComputationalWorkflow` |
+    | FormalParameter | `https://bioschemas.org/FormalParameter` | `https://bioschemas.org/terms/FormalParameter` |
+    | input |`https://bioschemas.org/properties/input` | `https://bioschemas.org/terms/input` |
+    | output |`https://bioschemas.org/properties/output` | `https://bioschemas.org/terms/output` |
+  * Update schema.org to [v30.0](https://schema.org/docs/releases.html#v30.0). This update adds many new terms and removes none. None of the new terms are used in the 1.3 specification. Some of them may however be of interest to profile creators, including [AuthenticateAction](http://schema.org/AuthenticateAction), [Certification](http://schema.org/Certification), [Credential](https://schema.org/Credential), [Error](http://schema.org/Error), [InstantaneousEvent](http://schema.org/InstantaneousEvent), [LoginAction](http://schema.org/LoginAction), [OperatingSystem](http://schema.org/OperatingSystem), [RuntimePlatform](https://schema.org/RuntimePlatform), [pronouns](http://schema.org/pronouns),  [various types of source for digital objects](https://schema.org/IPTCDigitalSourceEnumeration) to be used with [digitalSourceType](http://schema.org/digitalSourceType), and other properties associated with the classes above. 
+  * All other changes listed below are minor and are also applied to the web version of [RO-Crate 1.2](../../1.2/index).
+  * Fix error in appendix section [Converting from Attached to Detached RO-Crate Package](relative-uris#converting-from-attached-to-detached-ro-crate-package); the metadata descriptor must be ro-crate-metadata.json and should not be converted to an absolute path. ro-crate#538 [#524](https://github.com/ResearchObject/ro-crate/issues/524)
+  * Add relevant missing `rdfs:` properties to core RO-Crate Profile Crate [#471](https://github.com/ResearchObject/ro-crate/pull/471)
+  * Fix typos & incorrect links [#169](https://github.com/ResearchObject/ro-crate/issues/169), [#527](https://github.com/ResearchObject/ro-crate/issues/527)
+  * Improve page metadata for better previews/SEO (no content changed) [#499](https://github.com/ResearchObject/ro-crate/issues/499)
 
 * [RO-Crate 1.2.0](https://github.com/ResearchObject/ro-crate/releases/tag/1.2.0) <https://w3id.org/ro/crate/1.2>
   * Clarified that the [RO-Crate Metadata Descriptor MUST have `@id` of `ro-crate-metadata.json`](../root-data-entity#ro-crate-metadata-descriptor) by removing conflicting statements elsewhere in the specification [#365](https://github.com/ResearchObject/ro-crate/pull/365)

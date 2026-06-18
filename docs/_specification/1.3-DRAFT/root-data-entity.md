@@ -74,7 +74,7 @@ is a versioned permalink URI of the RO-Crate specification
 that the _RO-Crate JSON-LD_ conforms to. The URI SHOULD 
 start with `https://w3id.org/ro/crate/`. 
 
-{% include callout.html type="note" content="In RO-Crates conforming to version 1.1 and earlier, `conformsTo` MAY be an array and can include [RO-Crate profiles](profiles) in addition to the base specification. In version 1.2, it is now recommended that profile declarations are included on the _Root Data Entity_ instead (see [Direct Properties of the Root Data Entity](#direct-properties-of-the-root-data-entity))." %}
+{% include callout.html type="note" content="In RO-Crates conforming to version 1.1 and earlier, `conformsTo` MAY be an array and can include [RO-Crate profiles](profiles) in addition to the base specification. In version 1.2 and later, it is now recommended that profile declarations are included on the _Root Data Entity_ instead (see [Direct Properties of the Root Data Entity](#direct-properties-of-the-root-data-entity))." %}
 
 ### Finding the Root Data Entity
 

@@ -34,7 +34,7 @@ import urllib.request
 ROCRATE_VERSION="1.3-DRAFT"
 
 # Update version from http://schema.org/docs/releases.html
-SCHEMA_VERSION="22.0"
+SCHEMA_VERSION="30.0"
 # NOTE: http://schema.org/version/22.0/ type links 
 # frequently breaks, see 
 # https://github.com/schemaorg/schemaorg/issues/2805
@@ -64,7 +64,9 @@ CODEMETA="https://w3id.org/codemeta/3.0"
 def main():
     #url="http://schema.org/version/%s/schemaorgcontext.jsonld" % SCHEMA_VERSION
     # Workaround for https://github.com/schemaorg/schemaorg/issues/2805
-    url="https://raw.githubusercontent.com/schemaorg/schemaorg/v%s-release/data/releases/%s/schemaorgcontext.jsonld" % (SCHEMA_VERSION, SCHEMA_VERSION)
+    # for v22.0-v29.0: url="https://raw.githubusercontent.com/schemaorg/schemaorg/v%s-release/data/releases/%s/schemaorgcontext.jsonld" % (SCHEMA_VERSION, SCHEMA_VERSION)
+    # v30.0's tag is "v30.0" not "v30.0-release" - yet to see if this is a permanent change
+    url="https://raw.githubusercontent.com/schemaorg/schemaorg/v%s/data/releases/%s/schemaorgcontext.jsonld" % (SCHEMA_VERSION, SCHEMA_VERSION)
     with urllib.request.urlopen(url) as f:
       schema = json.load(f)
     if len(sys.argv) > 2:

@@ -272,6 +272,45 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-3482-0325"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8733-1117"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-5614-962X"
+        },
+        {
+          "@id": "https://orcid.org/0009-0000-5170-1737"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-1382-3896"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3389-2191"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0144-0564"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4112-6825"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4479-715X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-9694-748X"
+        },
+        {
+          "@id": "#author-dome"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-7348-4566"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4154-2610"
+        },
+        {
+          "@id": "https://orcid.org/0009-0009-5499-2096"
         }
       ],
       "cite-as": "https://doi.org/DOI",
@@ -288,7 +327,7 @@
           "@id": "https://w3id.org/ro/crate/1.3-DRAFT/context"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.2.0/"
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.3.0/"
         },
         {
           "@id": "https://github.com/ResearchObject/ro-crate/releases/download/TAG/ro-crate-TAG.html"
@@ -400,7 +439,7 @@
         "@id": "https://doi.org/DOI"
       },
       "isBasedOn": {
-        "@id": "https://w3id.org/ro/crate/1.1"
+        "@id": "https://w3id.org/ro/crate/1.2"
       },
       "isPartOf": {
         "@id": "https://w3id.org/ro/crate/"
@@ -413,7 +452,7 @@
           "@id": "http://www.w3.org/ns/json-ld#flattened"
         },
         {
-          "@id": "https://schema.org/docs/releases.html#v22.0"
+          "@id": "https://schema.org/docs/releases.html#v30.0"
         }
       ],
       "license": {
@@ -422,7 +461,7 @@
       "maintainer": {
         "@id": "https://www.researchobject.org/ro-crate/community"
       },
-      "name": "RO-Crate specification 1.2",
+      "name": "RO-Crate specification 1.3",
       "publisher": {
         "@id": "https://www.researchobject.org/"
       },
@@ -546,14 +585,14 @@
       "url": "https://vocab.org/vann/#preferredNamespaceUri"
     },
     {
-      "@id": "https://schema.org/docs/releases.html#v22.0",
+      "@id": "https://schema.org/docs/releases.html#v30.0",
       "@type": [
         "DefinedTermSet",
         "Standard"
       ],
       "name": "Schema.org vocabulary (http prefix)",
       "vann:preferredNamespaceUri": "http://schema.org/",
-      "version": "22.0",
+      "version": "30.0",
       "url": "https://schema.org/docs/developers.html"
     },
     {
@@ -709,7 +748,7 @@
         "rdfs:Property"
       ],
       "inDefinedTermSet": {
-        "@id": "https://schema.org/docs/releases.html#v22.0"
+        "@id": "https://schema.org/docs/releases.html#v30.0"
       },
       "name": "domainIncludes",
       "termCode": "domainIncludes",
@@ -738,7 +777,7 @@
         "rdfs:Property"
       ],
       "inDefinedTermSet": {
-        "@id": "https://schema.org/docs/releases.html#v22.0"
+        "@id": "https://schema.org/docs/releases.html#v30.0"
       },
       "domainIncludes": [
         {
@@ -767,7 +806,7 @@
         "Class"
       ],
       "inDefinedTermSet": {
-        "@id": "https://schema.org/docs/releases.html#v22.0"
+        "@id": "https://schema.org/docs/releases.html#v30.0"
       },
       "name": "Class (schema.org)",
       "description": "Class reference, as indicated by @id url or inDefinedTermSet"
@@ -779,7 +818,7 @@
         "Class"
       ],
       "inDefinedTermSet": {
-        "@id": "https://schema.org/docs/releases.html#v22.0"
+        "@id": "https://schema.org/docs/releases.html#v30.0"
       },
       "name": "Property (schema.org)",
       "description": "Property reference, as indicated by @id url or inDefinedTermSet"
@@ -788,7 +827,7 @@
       "@id": "http://schema.org/MediaObject",
       "@type": "DefinedTerm",
       "inDefinedTermSet": {
-        "@id": "http://schema.org/version/15.0/"
+        "@id": "https://schema.org/docs/releases.html#v30.0"
       },
       "name": "MediaObject",
       "termCode": "File",
@@ -2074,6 +2113,71 @@
       "name": "Balazs E. Pataki"
     },
     {
+      "@id": "https://orcid.org/0000-0001-8733-1117",
+      "@type": "Person",
+      "name": "Joe Heffer"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-5614-962X",
+      "@type": "Person",
+      "name": "Pascal Su"
+    },
+    {
+      "@id": "https://orcid.org/0009-0000-5170-1737",
+      "@type": "Person",
+      "name": "Andrea Davanzo"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1382-3896",
+      "@type": "Person",
+      "name": "Meznah Aloqalaa"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3389-2191",
+      "@type": "Person",
+      "name": "Pierre-Marie Allard"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0144-0564",
+      "@type": "Person",
+      "name": "Venkat S Malladi"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4112-6825",
+      "@type": "Person",
+      "name": "Esteban González"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-4479-715X",
+      "@type": "Person",
+      "name": "Phil Reed"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9694-748X",
+      "@type": "Person",
+      "name": "Tilo Mathes"
+    },
+    {
+      "@id": "#author-dome",
+      "@type": "Person",
+      "name": "Saurabh Dome"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-7348-4566",
+      "@type": "Person",
+      "name": "Niklas-Maximilian Epping"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-4154-2610",
+      "@type": "Person",
+      "name": "Margareta Hellström"
+    },
+    {
+      "@id": "https://orcid.org/0009-0009-5499-2096",
+      "@type": "Person",
+      "name": "Paul Slavin"
+    },
+    {
       "@id": "http://spdx.org/licenses/CC0-1.0",
       "@type": "PropertyValue",
       "propertyID": "http://spdx.org/rdf/terms#licenseId",
@@ -2107,10 +2211,10 @@
       "url": "https://www.researchobject.org/ro-crate/"
     },
     {
-      "@id": "https://w3id.org/ro/crate/1.1",
+      "@id": "https://w3id.org/ro/crate/1.2",
       "@type": "Dataset",
-      "name": "RO-Crate specification 1.1",
-      "version": "1.1.2"
+      "name": "RO-Crate specification 1.2",
+      "version": "1.2.0"
     },
     {
       "@id": "https://w3id.org/ro/crate/1.3-DRAFT/context",
@@ -2121,7 +2225,7 @@
       "encodingFormat": "application/ld+json",
       "isBasedOn": [
         {
-          "@id": "https://schema.org/docs/releases.html#v22.0"
+          "@id": "https://schema.org/docs/releases.html#v30.0"
         },
         {
           "@id": "https://pcdm.org/2016/04/18/models"
@@ -2247,7 +2351,7 @@
       "name": "Data Entities"
     },
     {
-      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.2.0/",
+      "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.3.0/",
       "@type": "Dataset",
       "conformsTo": {
         "@id": "https://w3id.org/ro/crate/1.3-DRAFT"
@@ -2258,10 +2362,10 @@
       },
       "subjectOf": [
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.2.0/ro-crate-metadata.json"
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.3.0/ro-crate-metadata.json"
         },
         {
-          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.2.0/ro-crate-preview.html"
+          "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.3.0/ro-crate-preview.html"
         }
       ]
     },
@@ -2639,6 +2743,45 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-3482-0325"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8733-1117"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-5614-962X"
+        },
+        {
+          "@id": "https://orcid.org/0009-0000-5170-1737"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-1382-3896"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3389-2191"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0144-0564"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4112-6825"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4479-715X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-9694-748X"
+        },
+        {
+          "@id": "#author-dome"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-7348-4566"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4154-2610"
+        },
+        {
+          "@id": "https://orcid.org/0009-0009-5499-2096"
         }
       ],
       "name": "RO-Crate Community",
@@ -2652,7 +2795,7 @@
       "@id": "#example-rainfall",
       "@type": "ResourceDescriptor",
       "hasArtifact": {
-        "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.2.0/"
+        "@id": "https://www.researchobject.org/ro-crate/1.3-DRAFT/examples/rainfall-1.3.0/"
       },
       "hasRole": {
         "@id": "http://www.w3.org/ns/dx/prof/role/example"
@@ -2702,7 +2845,7 @@
       "@id": "#vocabulary-schema",
       "@type": "ResourceDescriptor",
       "hasArtifact": {
-        "@id": "https://schema.org/docs/releases.html#v22.0"
+        "@id": "https://schema.org/docs/releases.html#v30.0"
       },
       "hasRole": {
         "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
