@@ -68,7 +68,7 @@ defaults:
 
   # include only the current spec in the search
   - scope:
-      path: "_specification/1.2"
+      path: "_specification/1.3"
     values:
       search_exclude: false
 
