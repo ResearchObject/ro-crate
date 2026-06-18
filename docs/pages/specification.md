@@ -22,7 +22,7 @@ sidebar: spec
 
 # RO-Crate Specification
 
-The RO-Crate 1.2 specification has been **released**.
+The RO-Crate 1.3 specification has been **released**.
 
 {% comment %} 
 The links below use the `{{ baseurl }}{% link _specification/<version>/index.md %}` format to avoid problems with using the relative path "specification/<version>" within this page when serving the site locally.
@@ -30,7 +30,8 @@ It's something to do with this page being rendered to specification/index.html a
 Other pages are fine and can use the simpler `specification/<version>` path.
 {% endcomment %}
 
-* **[RO-Crate 1.2]({{ baseurl }}{% link _specification/1.2/index.md %})** (current long term release)  
+* **[RO-Crate 1.3]({{ baseurl }}{% link _specification/1.3/index.md %})** (current long term release)  
+* [RO-Crate 1.2]({{ baseurl }}{% link _specification/1.2/index.md %})
 * [RO-Crate 1.1]({{ baseurl }}{% link _specification/1.1/index.md %})
 * [RO-Crate 1.0]({{ baseurl }}{% link _specification/1.0/index.md %}) 
 * [RO-Crate 0.2]({{ baseurl }}{% link _specification/0.2/index.md %})
