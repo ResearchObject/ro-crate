@@ -1,7 +1,7 @@
 title: Specification
 title_url: specification
 versions:
-  - title: RO-Crate 1.3 (release candidate)
+  - title: RO-Crate 1.3 (newest release)
     url: /specification/1.3/index.html
     subitems:
       - title: Introduction
@@ -37,7 +37,7 @@ versions:
             url: /specification/1.3/appendix/implementation-notes.html
           - title: RO-Crate JSON-LD
             url: /specification/1.3/appendix/jsonld.html
-  - title: RO-Crate 1.2 (newest release)
+  - title: RO-Crate 1.2
     url: /specification/1.2/index.html
     subitems:
       - title: Introduction
