@@ -81,10 +81,17 @@ docs/_specification/${RELEASE}/ro-crate-preview.html: dependencies docs/_specifi
 docs/_specification/${RELEASE}/context.jsonld: dependencies docs/_specification/${RELEASE}/ scripts/schema-context.py
 	scripts/schema-context.py ${RELEASE} ${TAG} > docs/_specification/${RELEASE}/context.jsonld
 
+docs/_specification/${RELEASE}/examples/rainfall-${TAG}/: dependencies docs/_specification/${RELEASE}/
+	mkdir -p docs/_specification/${RELEASE}/examples/
+	cp -r docs/_specification/${DRAFT}/examples/rainfall-${DRAFT}/ docs/_specification/${RELEASE}/examples/rainfall-${DRAFT}
+	mv docs/_specification/${RELEASE}/examples/rainfall-${DRAFT}/ docs/_specification/${RELEASE}/examples/rainfall-${TAG}
+	sed -i s/${DRAFT}/${RELEASE}/g docs/_specification/${RELEASE}/examples/rainfall-${TAG}/*.*
+
+
 release/:
 	mkdir -p release
 
-release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}/_metadata.liquid docs/_specification/${RELEASE}/.references.md docs/_specification/${RELEASE}/*.md docs/_specification/${RELEASE}/appendix/*.md docs/_includes/references.liquid
+release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}/_metadata.liquid docs/_specification/${RELEASE}/.references.md docs/_specification/${RELEASE}/*.md docs/_specification/${RELEASE}/appendix/*.md docs/_includes/references.liquid docs/_specification/${RELEASE}/examples/rainfall-${TAG}/
 	cp docs/_specification/${RELEASE}/_metadata.liquid docs/_specification/${RELEASE}/.metadata.md
 	pandoc --wrap=none --from=markdown+gfm_auto_identifiers --to=markdown+gfm_auto_identifiers \
 	   docs/_specification/${RELEASE}/.metadata.md \
