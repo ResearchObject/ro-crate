@@ -207,7 +207,7 @@ You may notice the subtle difference between a _data entity_ that is conceptuall
 
 An RO-Crate can be distributed on disk, in packaged format such as a zip file or disk image, or placed on a static website. In any of these cases, an RO-Crate should have an accompanying HTML version (`ro-crate-preview.html`) designed to be human-readable. The exact contents of the preview may vary but should correspond to the _RO-Crate Metadata Document_ content and link to the contained data entities. The preview may be generated automatically from the _RO-Crate Metadata Document_ (see [RO-Crate tools](../../tools)), or even by hand (equivalent to a README).
 
-Below is a screenshot from the [preview of the running example](examples/rainfall-1.3.0/ro-crate-preview.html), which was generated using the [ro-crate-html](https://www.npmjs.com/package/ro-crate-html) package:
+Below is a screenshot from the [preview of the running example](examples/rainfall-1.3-DRAFT/ro-crate-preview.html), which was generated using the [ro-crate-html](https://www.npmjs.com/package/ro-crate-html) package:
 
 <figure>
   <img src="../../assets/img/ro-crate-preview-example.png" alt="Screenshot of RO-Crate HTML preview. The metadata attributes are listed in a table with links to each connected entity, such as the Bureau of Meteorology." />
