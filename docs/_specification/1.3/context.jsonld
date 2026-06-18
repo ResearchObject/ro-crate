@@ -3,7 +3,7 @@
      "name": [
           "RO-Crate JSON-LD Context"
      ],
-     "version": "1.3",
+     "version": "1.3.0",
      "url": {
           "@id": "https://w3id.org/ro/crate/1.3"
      },
