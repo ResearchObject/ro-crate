@@ -1,15 +1,15 @@
 ## See RELEASE_PROCEDURE.md
 
 # Where to copy from
-DRAFT=1.2-DRAFT
+DRAFT=1.3-DRAFT
 # Official release
-RELEASE=1.2
+RELEASE=1.3
 # Semantic versioning
-TAG=1.2.0
-NEXT=1.3-DRAFT
+TAG=1.3.0
+NEXT=1.4-DRAFT
 # Prepare (but do not Publish!) the next version of https://zenodo.org/record/3541888
 # then copy its DOI here so it can be included in generated HTML/PDF
-DOI=10.5281/zenodo.13751027
+DOI=10.5281/zenodo.20720080
 
 all: dependencies release
 
@@ -17,9 +17,10 @@ all: dependencies release
 dependencies: node_modules/.bin/rochtml
 	scripts/schema-context.py --version
 	node_modules/.bin/rochtml --help
-	pip --exists-action=s install 'panflute==2.1.3'
+	pip --exists-action=s install 'panflute==2.3.1'
 	pandoc --version
 	xelatex --version
+	rsvg-convert --version
 
 
 clean:
@@ -53,17 +54,23 @@ docs/_specification/${RELEASE}/.references.md: docs/_specification/${RELEASE}/ d
 		>> docs/_specification/${RELEASE}/.references.md
 
 
+# Spec markdown files
+# second sed updates the redirect_from links as these should be the original draft links
 docs/_specification/${RELEASE}/*.md: docs/_specification/${RELEASE}/ docs/_specification/${DRAFT}/*.md docs/_specification/${DRAFT}/_metadata.liquid docs/_specification/${RELEASE}/.references.md
 	for f in docs/_specification/${DRAFT}/*.md ; do \
 		sed s/${DRAFT}/${RELEASE}/g < $$f > docs/_specification/${RELEASE}/`basename $$f`;\
+		sed -i 's|  - /${RELEASE}/|  - /${DRAFT}/|g' docs/_specification/${RELEASE}/`basename $$f`;\
     done	
 
 docs/_specification/${RELEASE}/appendix/:
 	mkdir -p docs/_specification/${RELEASE}/appendix/
 
+# Spec appendix Markdown files
+# second sed updates the redirect_from links as these should be the original draft links
 docs/_specification/${RELEASE}/appendix/*.md: docs/_specification/${RELEASE}/appendix/ docs/_specification/${DRAFT}/appendix/*.md
 	for f in docs/_specification/${DRAFT}/appendix/*.md ; do \
 		sed s/${DRAFT}/${RELEASE}/g < $$f > docs/_specification/${RELEASE}/appendix/`basename $$f` ;\
+		sed -i 's|  - /${RELEASE}/|  - /${DRAFT}/|g' docs/_specification/${RELEASE}/appendix/`basename $$f`;\
 	done
 
 docs/_specification/${RELEASE}/ro-crate-metadata.json: docs/_specification/${DRAFT}/ro-crate-metadata.json
@@ -81,10 +88,17 @@ docs/_specification/${RELEASE}/ro-crate-preview.html: dependencies docs/_specifi
 docs/_specification/${RELEASE}/context.jsonld: dependencies docs/_specification/${RELEASE}/ scripts/schema-context.py
 	scripts/schema-context.py ${RELEASE} ${TAG} > docs/_specification/${RELEASE}/context.jsonld
 
+docs/_specification/${RELEASE}/examples/rainfall-${TAG}/: dependencies docs/_specification/${RELEASE}/
+	mkdir -p docs/_specification/${RELEASE}/examples/
+	cp -r docs/_specification/${DRAFT}/examples/rainfall-${TAG}/ docs/_specification/${RELEASE}/examples/rainfall-${TAG}
+	sed -i s/${DRAFT}/${RELEASE}/g docs/_specification/${RELEASE}/examples/rainfall-${TAG}/ro-crate-metadata.json
+	sed -i s/${DRAFT}/${RELEASE}/g docs/_specification/${RELEASE}/examples/rainfall-${TAG}/ro-crate-preview.html
+
+
 release/:
 	mkdir -p release
 
-release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}/_metadata.liquid docs/_specification/${RELEASE}/.references.md docs/_specification/${RELEASE}/*.md docs/_specification/${RELEASE}/appendix/*.md docs/_includes/references.liquid
+release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}/_metadata.liquid docs/_specification/${RELEASE}/.references.md docs/_specification/${RELEASE}/*.md docs/_specification/${RELEASE}/appendix/*.md docs/_includes/references.liquid docs/_specification/${RELEASE}/examples/rainfall-${TAG}/
 	cp docs/_specification/${RELEASE}/_metadata.liquid docs/_specification/${RELEASE}/.metadata.md
 	pandoc --wrap=none --from=markdown+gfm_auto_identifiers --to=markdown+gfm_auto_identifiers \
 	   docs/_specification/${RELEASE}/.metadata.md \
@@ -117,12 +131,14 @@ release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}
 release/ro-crate-${TAG}.html: dependencies release/ release/ro-crate-${TAG}.md
 	egrep -v '^{:(\.no_)?toc}' release/ro-crate-${TAG}.md | \
 	pandoc --standalone --number-sections --toc --section-divs \
+	  --embed-resources --resource-path=.:docs/_specification/${RELEASE} \
 	  --metadata pagetitle="RO-Crate Metadata Specification ${RELEASE}" \
 	  --from=markdown+gfm_auto_identifiers -o release/ro-crate-${TAG}.html
 
 release/ro-crate-${TAG}.pdf: dependencies release/ release/ro-crate-${TAG}.md
 	egrep -v '^{:(\.no_)?toc}' release/ro-crate-${TAG}.md | \
 	pandoc --pdf-engine xelatex --variable=hyperrefoptions:colorlinks=true,allcolors=blue \
+	  --lua-filter scripts/img-html-to-pandoc.lua --resource-path=.:docs/_specification/${RELEASE} \
 	  --variable papersize=a4 \
 	  --number-sections --toc  --metadata pagetitle="RO-Crate Metadata Specification ${RELEASE}" \
 	  --from=markdown+gfm_auto_identifiers -o release/ro-crate-${TAG}.pdf
