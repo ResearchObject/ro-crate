@@ -17,9 +17,10 @@ all: dependencies release
 dependencies: node_modules/.bin/rochtml
 	scripts/schema-context.py --version
 	node_modules/.bin/rochtml --help
-	pip --exists-action=s install 'panflute==2.1.3'
+	pip --exists-action=s install 'panflute==2.3.1'
 	pandoc --version
 	xelatex --version
+	rsvg-convert --version
 
 
 clean:
@@ -130,12 +131,14 @@ release/ro-crate-${TAG}.md: dependencies release/ docs/_specification/${RELEASE}
 release/ro-crate-${TAG}.html: dependencies release/ release/ro-crate-${TAG}.md
 	egrep -v '^{:(\.no_)?toc}' release/ro-crate-${TAG}.md | \
 	pandoc --standalone --number-sections --toc --section-divs \
+	  --embed-resources --resource-path=.:docs/_specification/${RELEASE} \
 	  --metadata pagetitle="RO-Crate Metadata Specification ${RELEASE}" \
 	  --from=markdown+gfm_auto_identifiers -o release/ro-crate-${TAG}.html
 
 release/ro-crate-${TAG}.pdf: dependencies release/ release/ro-crate-${TAG}.md
 	egrep -v '^{:(\.no_)?toc}' release/ro-crate-${TAG}.md | \
 	pandoc --pdf-engine xelatex --variable=hyperrefoptions:colorlinks=true,allcolors=blue \
+	  --lua-filter scripts/img-html-to-pandoc.lua --resource-path=.:docs/_specification/${RELEASE} \
 	  --variable papersize=a4 \
 	  --number-sections --toc  --metadata pagetitle="RO-Crate Metadata Specification ${RELEASE}" \
 	  --from=markdown+gfm_auto_identifiers -o release/ro-crate-${TAG}.pdf
