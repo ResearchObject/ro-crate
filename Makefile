@@ -53,17 +53,23 @@ docs/_specification/${RELEASE}/.references.md: docs/_specification/${RELEASE}/ d
 		>> docs/_specification/${RELEASE}/.references.md
 
 
+# Spec markdown files
+# second sed updates the redirect_from links as these should be the original draft links
 docs/_specification/${RELEASE}/*.md: docs/_specification/${RELEASE}/ docs/_specification/${DRAFT}/*.md docs/_specification/${DRAFT}/_metadata.liquid docs/_specification/${RELEASE}/.references.md
 	for f in docs/_specification/${DRAFT}/*.md ; do \
 		sed s/${DRAFT}/${RELEASE}/g < $$f > docs/_specification/${RELEASE}/`basename $$f`;\
+		sed -i 's|  - /${RELEASE}/|  - /${DRAFT}/|g' docs/_specification/${RELEASE}/`basename $$f`;\
     done	
 
 docs/_specification/${RELEASE}/appendix/:
 	mkdir -p docs/_specification/${RELEASE}/appendix/
 
+# Spec appendix Markdown files
+# second sed updates the redirect_from links as these should be the original draft links
 docs/_specification/${RELEASE}/appendix/*.md: docs/_specification/${RELEASE}/appendix/ docs/_specification/${DRAFT}/appendix/*.md
 	for f in docs/_specification/${DRAFT}/appendix/*.md ; do \
 		sed s/${DRAFT}/${RELEASE}/g < $$f > docs/_specification/${RELEASE}/appendix/`basename $$f` ;\
+		sed -i 's|  - /${RELEASE}/|  - /${DRAFT}/|g' docs/_specification/${RELEASE}/appendix/`basename $$f`;\
 	done
 
 docs/_specification/${RELEASE}/ro-crate-metadata.json: docs/_specification/${DRAFT}/ro-crate-metadata.json
@@ -83,8 +89,7 @@ docs/_specification/${RELEASE}/context.jsonld: dependencies docs/_specification/
 
 docs/_specification/${RELEASE}/examples/rainfall-${TAG}/: dependencies docs/_specification/${RELEASE}/
 	mkdir -p docs/_specification/${RELEASE}/examples/
-	cp -r docs/_specification/${DRAFT}/examples/rainfall-${DRAFT}/ docs/_specification/${RELEASE}/examples/rainfall-${DRAFT}
-	mv docs/_specification/${RELEASE}/examples/rainfall-${DRAFT}/ docs/_specification/${RELEASE}/examples/rainfall-${TAG}
+	cp -r docs/_specification/${DRAFT}/examples/rainfall-${TAG}/ docs/_specification/${RELEASE}/examples/rainfall-${TAG}
 	sed -i s/${DRAFT}/${RELEASE}/g docs/_specification/${RELEASE}/examples/rainfall-${TAG}/ro-crate-metadata.json
 	sed -i s/${DRAFT}/${RELEASE}/g docs/_specification/${RELEASE}/examples/rainfall-${TAG}/ro-crate-preview.html
 
