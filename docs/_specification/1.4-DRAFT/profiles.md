@@ -547,7 +547,7 @@ context in the Profile Crate:
     "name": "RO-Crate JSON-LD Context",
     "encodingFormat": "application/ld+json",
     "conformsTo": {"@id": "http://www.w3.org/ns/json-ld#Context"},
-    "version": "1.3.0"
+    "version": "1.4.0"
 },
 {
     "@id": "http://www.w3.org/ns/json-ld#Context",
