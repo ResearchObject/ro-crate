@@ -7,7 +7,7 @@ sidebar: resources
 
 ### JSON-LD context
 
-If using the terms `ComputationalWorkflow`, `FormalParameter`, `input`, or `output` (as in [Workflows and Scripts](../../_specification/1.3/workflows)), be aware that their mapping in the JSON-LD context has changed.
+If using the terms `ComputationalWorkflow`, `FormalParameter`, `input`, or `output` (as in [Workflows and Scripts](specification/1.3/workflows)), be aware that their mapping in the JSON-LD context has changed.
 
 | Term | RO-Crate 1.3 context | RO-Crate 1.2 context | RO-Crate 1.1 context |
 | --- | --- | --- | --- |
