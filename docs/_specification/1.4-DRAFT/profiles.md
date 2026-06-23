@@ -1,12 +1,12 @@
 ---
 title: Profiles
 redirect_from:
-  - /1.3-DRAFT/profiles
+  - /1.4-DRAFT/profiles
 excerpt: |
   Profiles of RO-Crates and their entities can be used to specialize and recommend
   further which metadata types and properties are expected.
 nav_order: 10
-parent: RO-Crate 1.3-DRAFT
+parent: RO-Crate 1.4-DRAFT
 ---
 <!--
    Copyright 2021-2024 The University of Manchester UK 
@@ -106,7 +106,7 @@ Within the Profile Crate, its [Root Data Entity](root-data-entity) MUST declare 
 {
     "@id": "ro-crate-metadata.json",
     "@type": "CreativeWork",
-    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"},
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.4-DRAFT"},
     "about": {"@id": "https://w3id.org/ro/wfrun/process/0.4"}
 },  
 {
@@ -120,7 +120,7 @@ Within the Profile Crate, its [Root Data Entity](root-data-entity) MUST declare 
     "name": "Process Run crate profile",
     "version": "0.4.0",
     "isProfileOf": [
-        {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"}
+        {"@id": "https://w3id.org/ro/crate/1.4-DRAFT"}
     ],
     "hasPart": [ 
         { "@id": "index.html" }
@@ -210,7 +210,7 @@ In order for programmatic use of the Profile Crate to consume particular subreso
 {
     "@id": "ro-crate-metadata.json",
     "@type": "CreativeWork",
-    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"},
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.4-DRAFT"},
     "about": {"@id": "http://example.com/my-crate-profile/0.1/"},
 },
 {
@@ -542,7 +542,7 @@ context in the Profile Crate:
 
 ```json
 {
-    "@id": "https://w3id.org/ro/crate/1.3-DRAFT/context",
+    "@id": "https://w3id.org/ro/crate/1.4-DRAFT/context",
     "@type": "CreativeWork",
     "name": "RO-Crate JSON-LD Context",
     "encodingFormat": "application/ld+json",
@@ -600,7 +600,7 @@ A Profile Crate can _suggest_ interoperable profiles under `hasPart`, and recomm
     "description": "Profile for recording a workflow run. It is recommended to also conform to profiles Process Run Crate and Workflow RO-Crate",
     "version": "0.4.0",
     "isProfileOf": [
-        {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"},
+        {"@id": "https://w3id.org/ro/crate/1.4-DRAFT"},
     ],
     "hasPart": [ 
         { "@id": "https://w3id.org/ro/wfrun/process/0.4" },

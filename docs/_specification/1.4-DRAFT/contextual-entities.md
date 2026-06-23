@@ -1,7 +1,7 @@
 ---
 title: Contextual Entities
 redirect_from:
-  - /1.3-DRAFT/contextual-entities
+  - /1.4-DRAFT/contextual-entities
 excerpt: |
   The RO-Crate contain additional information about Contextual Entities for the
   use of both humans and machines. This also helps to maximize the extent to
@@ -10,7 +10,7 @@ excerpt: |
   change or become unavailable over time.
 nav_order: 7
 jekyll-mentions: false
-parent: RO-Crate 1.3-DRAFT
+parent: RO-Crate 1.4-DRAFT
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

@@ -1,7 +1,7 @@
 ---
 title: RO-Crate Structure
 redirect_from:
-  - /1.3-DRAFT/structure
+  - /1.4-DRAFT/structure
 excerpt: |
   An [_RO-Crate Metadata Document_](#ro-crate-metadata-document-ro-crate-metadatajson) is used to package data in one of two ways:
   
@@ -15,7 +15,7 @@ excerpt: |
     - If stored in a file, known as a _Detached RO-Crate Metadata File_, the filename SHOULD be `${prefix}-ro-crate-metadata.json` rather than `ro-crate-metadata.json` where the variable `${prefix}` is a human readable version of the dataset's ID or name, to signal that on disk, the presence of the file does not indicate an _Attached RO-Crate Data Package_.
     - Typically, software processing a _Detached RO-Crate Package_ would be passed a path to a file, an absolute URI, or a JSON string or object, without a directory context.
 nav_order: 3
-parent: RO-Crate 1.3-DRAFT
+parent: RO-Crate 1.4-DRAFT
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -71,7 +71,7 @@ In all crates the metadata is completed with [contextual entities](contextual-en
 
 
 * The _RO-Crate Metadata Document_ MUST be a document which is valid [JSON-LD 1.0] in [flattened]  and [compacted] form.
-* The _RO-Crate JSON-LD_ MUST use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.3-DRAFT/context> by reference.
+* The _RO-Crate JSON-LD_ MUST use the _RO-Crate JSON-LD Context_ <https://w3id.org/ro/crate/1.4-DRAFT/context> by reference.
 
 
 The graph MUST describe:
@@ -86,7 +86,7 @@ Any referenced _contextual entities_ SHOULD also be described in the _RO-Crate M
 The appendix [RO-Crate JSON-LD](appendix/jsonld) details the general structure of the JSON-LD that is expected in the _RO-Crate Metadata Document_. In short, the rest of this specification describes the different types of entities that can be added as `{}` objects to the _RO-Crate JSON-LD_ `@graph` array below:
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.3-DRAFT/context",
+{ "@context": "https://w3id.org/ro/crate/1.4-DRAFT/context",
   "@graph": [
 
   ]

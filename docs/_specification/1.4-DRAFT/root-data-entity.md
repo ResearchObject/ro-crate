@@ -1,13 +1,13 @@
 ---
 title: Root Data Entity
 redirect_from:
-  - /1.3-DRAFT/root-data-entity
+  - /1.4-DRAFT/root-data-entity
 excerpt: |
   The **Root Data Entity** is a [Dataset] that represents the RO-Crate as a whole;
    a _Research Object_ that includes the _Data Entities_ and the related
    _Contextual Entities_.
 nav_order: 5
-parent: RO-Crate 1.3-DRAFT 
+parent: RO-Crate 1.4-DRAFT 
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -49,13 +49,13 @@ crates for RO-Crate 1.0 or older) and `@type` [CreativeWork]. This descriptor MU
 
 ```json
 
-{ "@context": "https://w3id.org/ro/crate/1.3-DRAFT/context", 
+{ "@context": "https://w3id.org/ro/crate/1.4-DRAFT/context", 
   "@graph": [
     {
         "@type": "CreativeWork",
         "@id": "ro-crate-metadata.json",
         "about": {"@id": "./"},
-        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"}
+        "conformsTo": {"@id": "https://w3id.org/ro/crate/1.4-DRAFT"}
     },
     
     {
@@ -169,14 +169,14 @@ Any entity which is a subclass of [CreativeWork], including [Dataset]s like the 
 The following _RO-Crate Metadata Document_ represents a minimal description of an _RO-Crate_ that also follows the identifier recommendations above for use in an _Attached RO-Crate Package_. 
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.3-DRAFT/context", 
+{ "@context": "https://w3id.org/ro/crate/1.4-DRAFT/context", 
   "@graph": [
 
  {
     "@id": "ro-crate-metadata.json",
     "@type": "CreativeWork",
     "about": {"@id": "./"},
-    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"}
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.4-DRAFT"}
  },  
  {
     "@id": "./",
@@ -214,7 +214,7 @@ Alternatively the following is also valid, this time using the DOI as the `@id` 
     "@id": "ro-crate-metadata.json",
     "@type": "CreativeWork",
     "about": {"@id": "https://doi.org/10.4225/59/59672c09f4a4b"},
-    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"}
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.4-DRAFT"}
  },  
 {
     "@id": "https://doi.org/10.4225/59/59672c09f4a4b",
