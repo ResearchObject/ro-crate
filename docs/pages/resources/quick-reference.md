@@ -1,10 +1,12 @@
 ---
-title: RO-Crate 1.2 Specification Quick Reference
+title: RO-Crate 1.2/1.3 Specification Quick Reference
 sidebar: resources
 ---
 
 
 # RO-Crate 1.2 Specification Quick Reference
+
+{% include callout.html type="note" content="This resource was developed for RO-Crate 1.2 but remains valid for 1.3 with no additional requirements."%}
 
 ## How to use this document
 
@@ -513,7 +515,7 @@ Entities with a (D) are data entities; entities with a (C) are contextual entiti
 | Script | `@id` | MUST | Must be a URI linking to the executable script | | |
 | Script | `name` | MUST | Must be present | | |
 | Script | `name` | MUST | Must be human-readable | | |
-| Workflow | `@type` | MUST | Must include all of `File`, `SoftwareSourceCode`, and `ComputationalWorkflow` | | |
+| Workflow | `@type` | MUST | Must include all of `File`, `SoftwareSourceCode`, and `ComputationalWorkflow` | In 1.3 the `ComputationalWorkflow` URI in the context was [updated](./whats-changed-in-1-3) | |
 | Workflow | `@id` | MUST | Must be a URI linking to the workflow entry-point | | |
 | Workflow | `name` | MUST | Must be present | | |
 | Workflow | `name` | MUST | Must be human-readable | | |
