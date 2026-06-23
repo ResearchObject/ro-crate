@@ -34,14 +34,14 @@ The version of Schema.org on which the RO-Crate context is based has been update
 None of the new terms are used in the 1.3 specification. Some of them may however be of interest to [profile]({{baseurl}}{% link pages/resources/profiles.md %}) creators, including:
 * [AuthenticateAction](http://schema.org/AuthenticateAction)
 * [Certification](http://schema.org/Certification)
-* [Credential](https://schema.org/Credential)
+* [Credential](http://schema.org/Credential)
 * [Error](http://schema.org/Error)
 * [InstantaneousEvent](http://schema.org/InstantaneousEvent)
 * [LoginAction](http://schema.org/LoginAction)
 * [OperatingSystem](http://schema.org/OperatingSystem)
-* [RuntimePlatform](https://schema.org/RuntimePlatform) 
+* [RuntimePlatform](http://schema.org/RuntimePlatform) 
 * [pronouns](http://schema.org/pronouns)
-* [various types of source for digital objects](https://schema.org/IPTCDigitalSourceEnumeration) to be used with [digitalSourceType](http://schema.org/digitalSourceType)
+* [various types of source for digital objects](http://schema.org/IPTCDigitalSourceEnumeration) to be used with [digitalSourceType](http://schema.org/digitalSourceType)
 * other properties associated with the classes above. 
 
 ## Upgrading from 1.2 to 1.3
