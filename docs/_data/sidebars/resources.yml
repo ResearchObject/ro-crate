@@ -13,5 +13,7 @@ subitems:
     url: /vocabularies
   - title: What's changed in RO-Crate 1.2
     url: /whats-changed-in-1-2
-  - title: Specification quick reference (1.2)
+  - title: What's changed in RO-Crate 1.3
+    url: /whats-changed-in-1-3
+  - title: Specification quick reference (1.2/1.3)
     url: /quick-reference

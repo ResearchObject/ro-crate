@@ -9,4 +9,6 @@ layout: default
 
 {{ content }}
 
-{% include related_use_cases.html %}
+{% if page.related_pages and page.related_pages.use_cases and page.related_pages.use_cases.size>0  %}
+    {% include related_use_cases.html %}
+{% endif %}

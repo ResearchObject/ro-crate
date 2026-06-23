@@ -25,6 +25,8 @@ If using the `input` and `output` properties (as in [Workflows and Scripts - Des
 * `input` has changed from `https://bioschemas.org/ComputationalWorkflow#input` to `https://bioschemas.org/properties/input` .
 * `output` has changed from `https://bioschemas.org/ComputationalWorkflow#output` to `https://bioschemas.org/properties/output`.
 
+{% include callout.html type="note" content="The URIs for these properties have been updated again in RO-Crate 1.3 - see [What's changed in RO-Crate 1.3](./whats-changed-in-1-3) for further information."%}
+
 ### Attached and Detached RO-Crate Packages
 
 The requirement in 1.1 for a RO-Crate to always be a directory has proven to be limiting in some cases. For example, in some applications it is beneficial to serve RO-Crate metadata over an API separately from the data it describes. However, separating the metadata in this way requires some changes to how you handle cross-references and finding the Root Data Entity. Therefore, 1.2 introduces a distinction between "Attached" and "Detached" RO-Crate Packages:
