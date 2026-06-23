@@ -6,6 +6,9 @@ date: 2026-06-23
 
 [RO-Crate 1.3]({{baseurl}}{% link _specification/1.3/index.md %}) has just been released!
 
+Permalink: <https://w3id.org/ro/crate/1.3>  
+Cite as: <https://doi.org/10.5281/zenodo.20720080>  
+
 This release is extremely similar to 1.2 and upgrading will be trivial for most use cases. The changes primarily affect those describing computational workflows with RO-Crate, either using the [Workflows and Scripts]({{baseurl}}{% link _specification/1.3/workflows.md %}) chapter or the [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/) profile and its derivatives.
 
 The [RO-Crate 1.2 Specification Quick Reference]({{baseurl}}{% link pages/resources/quick-reference.md %}) remains entirely valid for 1.3.
