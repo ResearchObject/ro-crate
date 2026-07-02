@@ -1,11 +1,11 @@
 ---
 title: Introduction
 redirect_from:
-  - /1.3-DRAFT/introduction
+  - /1.4-DRAFT/introduction
 excerpt: |
   This document specifies a method, known as _RO-Crate_ (Research Object Crate), of aggregating and describing data for distribution, re-use, publishing, preservation and archiving. RO-Crates aggregate data into a Dataset, and may describe any resource including files, URI-addressable resources, or use other addressing schemes to locate digital or physical data. Describing resources includes technical metadata such as file sizes and types as well as contextual information including how and where datasets and files were created, how they were collated and collected, who was involved in the process, what equipment and software was used, who funded the work, how to cite it, and crucially, how it may be reused, and by whom.
 nav_order: 1
-parent: RO-Crate 1.3-DRAFT
+parent: RO-Crate 1.4-DRAFT
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney
@@ -55,12 +55,12 @@ In this running example, the content of the _RO Crate Metadata Document_ is:
 
 ```json
 {
-  "@context": "https://w3id.org/ro/crate/1.3-DRAFT/context",
+  "@context": "https://w3id.org/ro/crate/1.4-DRAFT/context",
   "@graph": [
     {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.4-DRAFT"},
       "about": {"@id": "./"}
     },
     {
@@ -114,12 +114,12 @@ The first JSON-LD _entity_ in our example above has the `@id` `ro-crate-metadata
 {
     "@id": "ro-crate-metadata.json",
     "@type": "CreativeWork",
-    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"},
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.4-DRAFT"},
     "about": {"@id": "./"}
 }
 ```
 
-This required entity, known as the _RO-Crate Metadata Descriptor_, helps this file self-identify as an _RO-Crate Metadata Document_, which is conforming to (`conformsTo`) the RO-Crate specification version 1.3-DRAFT. 
+This required entity, known as the _RO-Crate Metadata Descriptor_, helps this file self-identify as an _RO-Crate Metadata Document_, which is conforming to (`conformsTo`) the RO-Crate specification version 1.4-DRAFT. 
 
 The descriptor also indicates via the `about` property which entity in the `@graph` array is the _RO-Crate Root_ dataset -- the starting point of this RO-Crate. 
 
@@ -207,7 +207,7 @@ You may notice the subtle difference between a _data entity_ that is conceptuall
 
 An RO-Crate can be distributed on disk, in packaged format such as a zip file or disk image, or placed on a static website. In any of these cases, an RO-Crate should have an accompanying HTML version (`ro-crate-preview.html`) designed to be human-readable. The exact contents of the preview may vary but should correspond to the _RO-Crate Metadata Document_ content and link to the contained data entities. The preview may be generated automatically from the _RO-Crate Metadata Document_ (see [RO-Crate tools](../../tools)), or even by hand (equivalent to a README).
 
-Below is a screenshot from the [preview of the running example](examples/rainfall-1.3.0/ro-crate-preview.html), which was generated using the [ro-crate-html](https://www.npmjs.com/package/ro-crate-html) package:
+Below is a screenshot from the [preview of the running example](examples/rainfall-1.4.0/ro-crate-preview.html), which was generated using the [ro-crate-html](https://www.npmjs.com/package/ro-crate-html) package:
 
 <figure>
   <img src="../../assets/img/ro-crate-preview-example.png" alt="Screenshot of RO-Crate HTML preview. The metadata attributes are listed in a table with links to each connected entity, such as the Bureau of Meteorology." />

@@ -1,7 +1,7 @@
 ---
 title: Metadata of the RO-Crate
 redirect_from:
-  - /1.3-DRAFT/metadata
+  - /1.4-DRAFT/metadata
 excerpt: |
   RO-Crate aims to capture and describe the Research Object using
   structured metadata. The RO-Crate Metadata Document contains the
@@ -9,7 +9,7 @@ excerpt: |
   metadata can also be represented for human consumption in the RO-Crate Website,
   linking to data and Web resources.
 nav_order: 4
-parent: RO-Crate 1.3-DRAFT 
+parent: RO-Crate 1.4-DRAFT 
 ---
 <!--
    Copyright 2019-2020 University of Technology Sydney

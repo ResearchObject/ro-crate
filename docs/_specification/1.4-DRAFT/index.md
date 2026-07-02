@@ -1,8 +1,8 @@
 ---
-title: RO-Crate 1.3-DRAFT
+title: RO-Crate 1.4-DRAFT
 redirect_from:
-  - /1.3-DRAFT/index
-  - /1.3-DRAFT/about
+  - /1.4-DRAFT/index
+  - /1.4-DRAFT/about
 has_children: true
 nav_order: 1
 excerpt: |

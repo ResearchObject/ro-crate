@@ -1,14 +1,14 @@
 ---
 title: RO-Crate JSON-LD
 redirect_from:
-  - /1.3-DRAFT/appendix/jsonld
+  - /1.4-DRAFT/appendix/jsonld
 excerpt: |
   It is not necessary to use [JSON-LD tooling] to generate or parse the _RO-Crate Metadata Document_, although JSON-LD tools may make it easier to conform to this specification, e.g. handling relative URIs. It is however RECOMMENDED to use [JSON tooling][JSON] to handle [JSON][RFC 7159] syntax and escaping rules.
 
   This appendix shows a brief JSON-LD introduction for complying with the _RO-Crate Metadata Document_ requirements.
 
 parent: Appendix
-grand_parent: RO-Crate 1.3-DRAFT
+grand_parent: RO-Crate 1.4-DRAFT
 nav_order: 22
 ---
 <!--
@@ -45,13 +45,13 @@ This appendix shows a brief JSON-LD introduction for complying with the _RO-Crat
 The example below shows the overall structure of a flattened, compacted _RO-Crate Metadata Document_ where `@context` refers to the _RO-Crate JSON-LD Context_, while `@graph` is a flat array of the entities that constitute this RO-Crate. 
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.3-DRAFT/context",
+{ "@context": "https://w3id.org/ro/crate/1.4-DRAFT/context",
   "@graph": [
 
     {
       "@type": "CreativeWork",
       "@id": "ro-crate-metadata.json",
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.4-DRAFT"},
       "about": {"@id": "./"},
       "description": "RO-Crate Metadata Descriptor (this file)"
     },
@@ -125,24 +125,24 @@ The main purpose of the `@context` is to relate JSON property keys and `@type` r
 
 In other uses of JSON-LD the context may perform more automatic or detailed mapping, but the `RO-Crate JSON-LD context` is deliberately flat, listing every property and type.
 
-To find the full description of a particular property or type, follow its URI from the context. For instance, we can find within the context <https://w3id.org/ro/crate/1.3-DRAFT/context> that `author` above is mapped to <http://schema.org/author>:
+To find the full description of a particular property or type, follow its URI from the context. For instance, we can find within the context <https://w3id.org/ro/crate/1.4-DRAFT/context> that `author` above is mapped to <http://schema.org/author>:
 
 ```json
    "author": "http://schema.org/author",
 ```
 
-The _RO-Crate JSON-LD Context_ may either be set by reference to <https://w3id.org/ro/crate/1.3-DRAFT/context> or by value (merging the two documents).
+The _RO-Crate JSON-LD Context_ may either be set by reference to <https://w3id.org/ro/crate/1.4-DRAFT/context> or by value (merging the two documents).
 
 Consider the below (simplified) example of _by reference_ using a versioned permalink:
 
 ```json
-{ "@context": "https://w3id.org/ro/crate/1.3-DRAFT/context",
+{ "@context": "https://w3id.org/ro/crate/1.4-DRAFT/context",
   "@graph": [
     {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "description": "RO-Crate Metadata Descriptor (this file)",
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.4-DRAFT"},
       "about": {"@id": "./"}
     }
   ]
@@ -163,7 +163,7 @@ The above is equivalent to the following JSON-LD using an embedded context, by a
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "description": "RO-Crate Metadata Descriptor (this file)",
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3-DRAFT"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.4-DRAFT"},
       "about": {"@id": "./"}
     }
   ]
@@ -239,7 +239,7 @@ For example. The `@id` URI <http://purl.org/ontology/bibo/interviewee> from the 
 ```json
 {
   "@context": [ 
-    "https://w3id.org/ro/crate/1.3-DRAFT/context",
+    "https://w3id.org/ro/crate/1.4-DRAFT/context",
     {"interviewee": "http://purl.org/ontology/bibo/interviewee"},
   ],
   "@graph": [
@@ -288,7 +288,7 @@ In both cases, to use an ad-hoc term in an RO-Crate, the URI MUST be included in
 ```json
 {
   "@context": [ 
-    "https://w3id.org/ro/crate/1.3-DRAFT/context",
+    "https://w3id.org/ro/crate/1.4-DRAFT/context",
     {"education": "https://example.com/some-project/terms#education",
      "interests": "https://w3id.org/ro/terms/some-project#interests"},
   ],

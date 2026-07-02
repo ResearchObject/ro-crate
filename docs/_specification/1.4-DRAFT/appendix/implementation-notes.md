@@ -2,9 +2,9 @@
 title: Implementation notes
 description: Guidance on programming with JSON-LD, combining RO-Crate with other packaging schemes, and repository-specific identifiers
 redirect_from:
-  - /1.3-DRAFT/appendix/implementation-notes
+  - /1.4-DRAFT/appendix/implementation-notes
 parent: Appendix
-grand_parent: RO-Crate 1.3-DRAFT
+grand_parent: RO-Crate 1.4-DRAFT
 nav_order: 21
 ---
 <!--
