@@ -169,6 +169,10 @@ body {
     }
 }
 
+.navbar-brand span {
+    display: none;
+}
+
 /* -----Homepage----- */
 .landingpage {
 
@@ -263,15 +267,15 @@ section#search-section {
 }
 
 /*-----Sidebar-----*/
-@include media-breakpoint-up(lg) {
-    #sidebar {
-        top: 3rem;
-        z-index: 2;
-        height: calc(100vh - 7rem);
-        overflow-y: auto;
-        position: sticky;
-    }
-}
+//@include media-breakpoint-up(lg) {
+//    #sidebar {
+//        top: 3rem;
+//        z-index: 2;
+//        height: calc(100vh - 7rem);
+//        overflow-y: auto;
+//        position: sticky;
+//    }
+//}
 
 /*------Tile Image-------*/
 .tile-img-sm {

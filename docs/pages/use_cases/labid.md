@@ -3,7 +3,7 @@ page_id: labid
 title: Lab Integrated Data (LabID)
 description: LabID is an all-in-one research data management platform for life sciences institutes. It uses RO-Crate as a format to import/export workflows and workflow runs.
 url: https://labid-demo.embl.de/home
-image: labid.png
+page_img: labid.png
 domains: [biology, biomedical_science, omics]
 tasks: [conduct_research, data_handling, manage_data, software_development]
 roles: [data_analyst, data_steward, researcher, software_developer]

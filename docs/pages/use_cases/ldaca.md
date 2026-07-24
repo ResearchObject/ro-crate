@@ -5,7 +5,7 @@ redirect_from:
 title: Language Data Commons of Australia
 description: LDaCA uses RO-Crate as an interchange and archive format for language data, and is providing data discovery portals and API access to data using RO-Crate-centric APIs.
 url: https://www.ldaca.edu.au/
-image: ldaca.png
+page_img: ldaca.png
 domains: [language_text]
 tasks: [compliance, data_handling, manage_data, software_development]
 roles: [compliance_officer, data_analyst,  information_architect, managerial,  software_developer]

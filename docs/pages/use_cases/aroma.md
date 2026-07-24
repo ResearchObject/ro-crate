@@ -3,7 +3,7 @@ page_id: aroma
 title: ARP AROMA
 description: AROMA (ARP RO-Crate Manager) is part of Hungarian initiative HUN-REN ARP, extending Harvard Dataverse to allow dynamic metadata editing of data deposit metadata.
 url: https://researchdata.hu/en/service-map
-image: arp-aroma.png
+page_img: arp-aroma.png
 domains: []
 tasks: [data_handling, software_development, curation]
 roles: [data_steward, repository_manager,software_developer, information_architect]

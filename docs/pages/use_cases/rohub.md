@@ -5,7 +5,7 @@ redirect_from:
 title: ROHub
 description: ROHub is a solution for the storage, lifecycle management and preservation of scientific work and operational processes via research objects. It makes these resources available to others, allows to publish and release them through a DOI, and allows to discover and reuse pre-existing scientific knowledge.
 url: https://www.rohub.org/
-image: ro_hub.svg
+page_img: ro_hub.svg
 domains: [earth_science, ecology]
 tasks: [conduct_research, manage_data]
 roles: [information_architect, managerial, researcher, repository_manager]

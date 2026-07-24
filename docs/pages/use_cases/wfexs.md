@@ -5,7 +5,7 @@ redirect_from:
 title: Workflow Execution Service (WfExS)
 description: WfExS-backend is a high-level workflow execution command line program that consumes and creates RO-Crates, focusing on the interconnection of content-sensitive research infrastructures for handling sensitive human data analysis scenarios
 url: https://github.com/inab/WfExS-backend
-image: wfexs.svg
+page_img: wfexs.svg
 domains: [biology, biomedical_science, medicine]
 tasks: [compliance, conduct_research, data_handling]
 roles: [compliance_officer, data_analyst, managerial, researcher]

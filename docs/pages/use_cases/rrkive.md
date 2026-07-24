@@ -5,7 +5,7 @@ redirect_from:
 title: RRkive
 description: RRKive is a website aimed to outline a principled approach to research data management with guidance on data storage and metadata 
 url: https://rrkive.org/
-image: rrkive.png
+page_img: rrkive.png
 domains: []
 tasks: [data_handling]
 roles: [data_steward, information_architect, repository_manager]

@@ -3,7 +3,7 @@ page_id: COMPSs
 title: COMPSs
 description: The COMPSs programming model is able to record Workflow Provenance in RO-Crate format, for governance and reproducibility of computational experiments
 url: https://compss.bsc.es/
-image: COMPSs.png
+page_img: COMPSs.png
 domains: [informatics] # should match item(s) in pages/domains
 tasks: [conduct_research, curation, data_handling, software_development] # should match item(s) in pages/tasks
 roles: [information_architect, researcher, software_developer] # should match item(s) in pages/roles

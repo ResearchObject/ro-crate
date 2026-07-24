@@ -5,7 +5,7 @@ redirect_from:
 title: Data Stewardship Wizard
 description: The Data Stewardship Wizard (DSW) is an interactive platform for making data management plans
 url: https://ds-wizard.org/
-image: dsw-logo.svg
+page_img: dsw-logo.svg
 domains: []
 tasks: [conduct_research, manage_data]
 roles: [data_steward, researcher]

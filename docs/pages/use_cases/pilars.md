@@ -5,7 +5,7 @@ redirect_from:
 title: "PILARS"
 description: PILARS is a set of Protocols for Implementing Long-term Archival Repository Services
 url: https://w3id.org/ldac/pilars/
-image: 
+page_img: 
 domains: []
 tasks: [data_handling]
 roles: [data_steward, information_architect, repository_manager]

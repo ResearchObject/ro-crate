@@ -3,7 +3,7 @@ page_id: MATE
 title: M@TE (Model Atlas of the Earth)
 description: By adopting the RO-Crate standard, M@TE packages numerical Earth system models with comprehensive metadata describing code, inputs, outputs, provenance, and authorship. This makes models machine-actionable, reproducible, and citable, supporting open science and bridging the gap between traditional geology and numerical geosciences.
 url: https://mate.science
-image: MATE.png
+page_img: MATE.png
 domains: [earth_science]
 tasks: [conduct_research, curation, data_handling, software_development, training]
 roles: [researcher, software_developer, trainer, data_steward]

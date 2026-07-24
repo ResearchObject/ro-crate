@@ -8,7 +8,7 @@ description:
   from an individual researcher working with a folder of data, to large
   data-intensive computational research environments.
 
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@2.4.0
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@6.1.0
 
 url: https://www.researchobject.org # if building on a fork, change this to your own GH pages url
 baseurl: /ro-crate
@@ -35,12 +35,12 @@ defaults:
       type: "pages"
     values:
       permalink: /:basename
-      layout: "default"
+      layout: "page"
       sidebar: main
   - scope:
       path: "pages/domains/*.md"
     values:
-      layout: "default"
+      layout: "page"
       type: domains
   - scope:
       path: "pages/tasks/*.md"
@@ -50,19 +50,19 @@ defaults:
   - scope:
       path: "pages/roles/*.md"
     values:
-      layout: "default"
+      layout: "page"
       type: roles
 
   - scope:
       path: "pages/use_cases/*.md"
     values:
-      layout: "default"
+      layout: "page"
       type: use_cases
 
   - scope:
       path: "_specification"
     values:
-      layout: "default"
+      layout: "page"
       sidebar: spec
       search_exclude: true
 
@@ -82,19 +82,19 @@ defaults:
   - scope:
       path: "pages/about"
     values:
-      layout: "default"
+      layout: "page"
       sidebar: about
 
   - scope:
       path: "pages/community"
     values:
-      layout: "default"
+      layout: "page"
       sidebar: community
 
   - scope:
       path: "pages/resources"
     values:
-      layout: "default"
+      layout: "page"
       sidebar: resources
 
 collections:

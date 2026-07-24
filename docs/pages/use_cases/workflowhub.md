@@ -5,7 +5,7 @@ redirect_from:
 title: WorkflowHub
 description: WorkflowHub imports and exports Workflow RO-Crates, using it as an exchange format. They are a specialization of RO-Crate for packaging an executable workflow with all necessary documentation. It is aligned with, and intends to strictly extend, the more general Bioschemas ComputationalWorkflow profile.
 url: https://workflowhub.eu/
-image: workflow_hub.svg
+page_img: workflow_hub.svg
 domains: [biomedical_science, omics]
 tasks: [conduct_research, data_handling, manage_data]
 roles: [information_architect, managerial, repository_manager, researcher]

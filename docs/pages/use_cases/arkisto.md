@@ -3,7 +3,7 @@ page_id: arkisto
 title: Arkisto
 description: Arkisto was a project website that aimed to outline a principled approach to research data management.
 url: https://arkisto-platform.github.io/
-image: arkisto.png
+page_img: arkisto.png
 domains: []
 tasks: [data_handling]
 roles: [data_steward, information_architect, repository_manager]
