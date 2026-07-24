@@ -1,7 +1,7 @@
 ---
 title: Roles
 description: This page organises the RO-Crate use cases based on the different roles a professional can have in research data management.
-layout: default
+layout: page
 sidebar: main
 ---
 

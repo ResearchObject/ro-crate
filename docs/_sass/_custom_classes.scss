@@ -50,43 +50,7 @@ body {
 }
 
 /*-----Sidebar-----*/
-#side-nav {
-    .btn.sidebar-title {
-        background-color: $blue-x;
-        // font-weight: bold;
-        font-size: 1.3rem;
-        &.active {
-            border-left: 4px solid $primary;
-        }
-    }
-    > ul {
-        margin-top: $spacer;
-        li {
-            margin-top: 5px;
-            a {
-                margin-bottom: 0 !important;
-                border-left: 4px solid $sidebar-bg;
-                &:hover {
-                    border-left-color: $primary !important;
-                    background-color: $primary;
-                }
-            }
-            &.active {
-                &.parent > a {
-                    background-color: $light;
-                    border-left-color: $light;
-                }
-                &:not(.parent) > a {
-                    border-left-color: $primary;
-                }
-            }
-        }
-    }
-}
 
-.sidebar-collapse {
-    background-color: $light;
-}
 
 /*-----Selection color-----*/
 ::-moz-selection {
