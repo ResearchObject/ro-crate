@@ -1,0 +1,240 @@
+{%- if include.affiliations == true or include.search == true %}
+{%- assign allcountries = site.data.countries %}
+{%- for current_page in site.pages | sorted %}
+{%- if current_page.affiliations and current_page.search_exclude != true and current_page.type == include.type %}
+{%- assign pageaffiliations = current_page.affiliations | join: ", " %}
+{%- if allaffiliations %}
+{%- assign allaffiliations = allaffiliations | append: ", " | append: pageaffiliations %}
+{%- else %}
+{%- assign allaffiliations = allaffiliations | append: pageaffiliations %}
+{%- endif %}
+{%- endif %}
+{%- endfor %}
+{%- assign allaffiliations = allaffiliations | split: ", " | uniq | sort %}
+<div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }} my-4">
+    {%- if include.affiliations == true %}
+    <div class="col">
+        <div class="input-group">
+            <label class="input-group-text" for="affiliations-input">Filter by affiliation</label>
+            <select class="form-select" id="affiliations-input" aria-label="Example select with button addon">
+                <option selected="" value="reset">Choose...</option>
+                {%- for affiliation in allaffiliations %}
+                {%- if affiliation.size == 2 %}
+                {%- assign country = affiliation | upcase %}
+                <option value="{{country | slugify}}">{{allcountries[country]}}</option>
+                {%- else %}
+                <option value="{{affiliation | slugify}}">{{affiliation}}</option>
+                {%- endif %}
+                {%- endfor %}
+            </select>
+            <button class="btn btn-primary" title="Button to clear affiliations selection" type="button" id="clearfilter">
+                <i class="fa-solid fa-backspace"></i>
+            </button>
+        </div>
+    </div>
+    {%- endif %}
+    {%- if include.search == true %}
+    <div class="col">
+        <div class="input-group">
+            <span class="input-group-text" id="search-label-tiles"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input type="text" id="title-search" class="form-control" onkeyup="StartSearch();" placeholder="Find your page..." aria-label="{{page.type | replace: '_', ' ' }}" aria-describedby="search-label-tiles">
+            <button class="btn btn-primary" title="Button to clear search" type="button" id="clearsearch">
+                <i class="fa-solid fa-backspace"></i>
+            </button>
+        </div>
+    </div>
+    {%- endif %}
+</div>
+{%- endif %}
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }} g-4 mb-5 navigation-tiles">
+    {%- if include.custom %}
+    {%- assign related_pages = include.custom | split: ", " %}
+    {%- unless include.sort == false %}
+    {%- assign related_pages = related_pages | sort_natural %}
+    {%- endunless %}
+    {%- elsif include.type %}
+    {%- assign related_pages = site.pages | where:"type", include.type %}
+    {%- else %}
+    {%- assign related_pages = site.pages %}
+    {%- endif %}
+    {%- unless include.sort == false %}
+    {%- assign related_pages = related_pages | sort_natural: 'title'%}
+    {%- endunless %}
+    {%- for related_page in related_pages %}
+    {%- if include.custom %}
+    {%- assign current_page = site.pages | where:"page_id", related_page | first %}
+    {%- else %}
+    {%- assign current_page = related_page %}
+    {%- endif %}
+    {%- assign affiliations_classes = "" %}
+    {%- assign except = include.except | split: ", " %}
+    {%- if current_page.title and current_page.search_exclude != true %}
+    {%- unless except contains current_page.name %}
+    {%- if current_page.affiliations %}
+    {%- capture affiliations_classes -%}
+    {%- assign affiliations_output = "" %}
+    {%- for affiliation in current_page.affiliations %}
+    {%- assign group_affiliations = affiliation | slugify | prepend: " " %}
+    {%- assign affiliations_output = affiliations_output | append: group_affiliations | strip %}
+    {%- endfor %}{{affiliations_output}}
+    {%- endcapture -%}
+    {%- endif %}
+    <div class="col" data-affiliations="{{affiliations_classes}}">
+        <div class="card h-100">
+            {%- if current_page.page_img %}
+            <div class="d-flex">
+            {%- endif %}
+            <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center">
+                    {%- if current_page.type_img %}
+                    <img src="{{current_page.type_img | relative_url}}" class="type-icon me-2" alt="{{current_page.type}} icon">
+                    {%- endif %}
+                    {%- if current_page.type %}
+                    <span class=""><small>{{current_page.type | replace: "_", " " }}</small></span>
+                    {%- endif %}
+                </div>
+                <a class="stretched-link section-title d-flex justify-content-between" aria-label="Go to the {{current_page.title}} page" href="{{ current_page.url | relative_url }}">
+                    <b>{{current_page.title}}</b>
+                    {%- if current_page.icon %}
+                    <i class="fa fa-2x {{ current_page.icon }} page-img-sm pt-3 pe-3"></i> 
+                    {%- endif %} 
+                </a>
+                {%- if current_page.description %}
+                <p class="card-text h-100">{{ current_page.description}}</p>
+                {%- endif %}
+                {%- if current_page.affiliations %}
+                {%- assign pageaffil = current_page.affiliations | sort %}
+                {%- assign alllogos = site.data.affiliations %}
+                {%- assign allcountries = site.data.countries %}
+                <div class="d-flex align-items-center flex-wrap gap-2">
+                    <span><b><small>Affiliations:</small></b></span>
+                    {%- for affiliation in pageaffil %}
+                    {%- assign filter_affiliation = alllogos | where: "name", affiliation | first %}
+                    {%- assign country = affiliation | upcase %}
+                    {%- if affiliation.size == 2 %}
+                    {%- assign country_link = site.pages | where:"country_code",country | first %}
+                    {%- if country_link %}
+                    <a role="button" href="{{country_link.url | relative_url}}" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary">
+                    {%- else %}
+                    <a role="button" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary disabled border-white" aria-disabled="true">
+                        {%- endif %}
+                        <div class="d-block affiliation-img-sm">
+                            <span class="flag-icon flag-icon-{{affiliation | downcase}} shadow-sm"></span>
+                        </div>
+                    </a>
+                    {%- elsif filter_affiliation %}
+                    <a role="button" href="{{filter_affiliation.url}}" data-bs-toggle="tooltip" data-bs-original-title="{{affiliation}}" class="btn btn-sm bg-white hover-primary">
+                        {%- if filter_affiliation.image_url %}
+                        <img alt="logo of {{filter_affiliation.name}}" src="{{filter_affiliation.image_url | relative_url }}" class="d-inline affiliation-img-sm">
+                        {%- else %}
+                        {{filter_affiliation.name}}
+                        {%- endif %}
+                    </a>
+                    {%- endif %}
+                    {%- endfor %}
+                </div>
+                {%- endif %}
+            </div>
+            {%- if current_page.page_img %}
+            {%- capture file_url -%}
+            {{ "/images/" | append: current_page.page_img | relative_url }}
+            {%- endcapture -%}
+                <img alt="logo of {{current_page.title}}" src="{{ file_url }}" class="page-img-sm pt-3 pe-3" />   
+            </div>
+            {%- endif %}
+        </div>
+    </div>
+    {% endunless %}
+    {%- endif %}
+    {%- endfor %}
+</div>
+
+
+{%- if include.affiliations == true or include.search == true %}
+<script type="text/javascript">
+    /** 
+     * Filter cards by affiliation
+     */
+
+    $(document).ready(function () {
+        var affiliations = document.getElementById('affiliations-input');
+        if (affiliations) {
+            affiliations.addEventListener("change", function () {
+                var search = document.getElementById('title-search')
+                if (search) {
+                    search.value = '';
+                }
+                const cols = document.querySelectorAll(".navigation-tiles .col");
+                for (col of cols) {
+                    const colCategories = (col.getAttribute("data-affiliations") ?? "").split(" ");
+                    if (colCategories.indexOf(this.value) != -1 || this.value === "reset") {
+                        col.classList.remove("d-none");
+                    } else {
+                        col.classList.add("d-none");
+                    }
+                }
+            });
+        }
+        var clearaffiliations = document.getElementById("clearfilter");
+        if (clearaffiliations) {
+            clearaffiliations.addEventListener("click", function () {
+                var affiliations = document.getElementById('affiliations-input');
+                if (affiliations) {
+                    document.getElementById("affiliations-input").selectedIndex = null;
+                    const cols = document.querySelectorAll(".navigation-tiles .col");
+                    for (col of cols) {
+                        const colCategories = (col.getAttribute("data-affiliations") ?? "").split(" ");
+                        col.classList.remove("d-none");
+                    }
+                }
+            });
+
+        }
+    });
+
+    /** 
+     * Search cards
+     */
+
+    var StartSearch = () => {
+        const input = document.getElementById("title-search");
+        if (input) {
+            const cols = document.querySelectorAll(".navigation-tiles .col");
+            const filter = input.value.toLowerCase();
+
+            var affiliations = document.getElementById('affiliations-input');
+            if (affiliations) {
+                document.getElementById("affiliations-input").selectedIndex = null;
+            }
+
+            for (let i = 0; i < cols.length; i++) {
+                let body = cols[i].querySelector(".card-body") || cols[i].querySelector(".section-title");
+                if (!body) continue; // skip cols that don’t have searchable content
+
+                if (body.innerText.toLowerCase().indexOf(filter) > -1) {
+                    cols[i].classList.remove("d-none");
+                } else {
+                    cols[i].classList.add("d-none");
+                }
+            }
+        }
+    };
+
+    $(document).ready(function () {
+        var clearsearch = document.getElementById("clearsearch");
+        if (clearsearch) {
+            clearsearch.addEventListener("click", function () {
+                var search = document.getElementById('title-search')
+                if (search) {
+                    search.value = ''
+                    const cols = document.querySelectorAll(".navigation-tiles .col");
+                    for (col of cols) {
+                        col.classList.remove("d-none");
+                    }
+                }
+            });
+        }
+    });
+
+</script>
+{%- endif %}
