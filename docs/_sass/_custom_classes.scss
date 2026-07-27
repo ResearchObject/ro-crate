@@ -50,7 +50,20 @@ body {
 }
 
 /*-----Sidebar-----*/
-
+#sidebar {
+    > nav .sidebar-title {
+        background-color: $blue-x;
+        font-weight: normal;
+        font-size: 1.3rem;
+        &.active {
+            border-left: 4px solid $primary;
+        }
+    }
+    a {
+        text-decoration-line: none;
+        border-left: 4px solid $sidebar-bg;
+    }
+}
 
 /*-----Selection color-----*/
 ::-moz-selection {
