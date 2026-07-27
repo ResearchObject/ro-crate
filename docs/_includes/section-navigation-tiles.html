@@ -57,7 +57,7 @@
     {%- else %}
     {%- assign related_pages = site.pages %}
     {%- endif %}
-    {%- unless include.sort == false %}
+    {%- unless include.sort == false or include.custom %}
     {%- assign related_pages = related_pages | sort_natural: 'title'%}
     {%- endunless %}
     {%- for related_page in related_pages %}
@@ -67,6 +67,7 @@
     {%- assign current_page = related_page %}
     {%- endif %}
     {%- assign affiliations_classes = "" %}
+    {%- assign related_pages_classes = "" %}
     {%- assign except = include.except | split: ", " %}
     {%- if current_page.title and current_page.search_exclude != true %}
     {%- unless except contains current_page.name %}
@@ -79,7 +80,7 @@
     {%- endfor %}{{affiliations_output}}
     {%- endcapture -%}
     {%- endif %}
-    <div class="col" data-affiliations="{{affiliations_classes}}">
+    <div class="col" data-affiliations="{{affiliations_classes}}" related-pages="{{related_pages_classes}}">
         <div class="card h-100">
             {%- if current_page.page_img %}
             <div class="d-flex">
@@ -101,6 +102,35 @@
                 </a>
                 {%- if current_page.description %}
                 <p class="card-text h-100">{{ current_page.description}}</p>
+                {%- endif %}
+                {%- if current_page.related_pages %}
+                {%- assign nonempty = false %}
+                {%- for section in current_page.related_pages %}
+                {%- unless section[1].size == 0 %}
+                {%- assign nonempty = true %}
+                {%- endunless %}
+                {%- endfor %}
+                {%- if nonempty %}
+                <div class="dropdown">
+                    <button class="btn  btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Related pages
+                    </button>
+                    <ul class="dropdown-menu px-2 py-0 border-0 shadow">
+                        {%- for section in current_page.related_pages %}
+                        {%- unless section[1].size == 0 %}
+                        <li><h6 class="dropdown-header">{{ section[0] | replace: "_", " " | capitalize }}</h6></li>
+                        {%- for page_id in section[1] %}
+                        {%- assign section_pages = site.pages | where:"type", section[0] %}
+                        {%- assign metadata = section_pages | where:"page_id", page_id %}
+                        {%- for page_hit in metadata %}
+                        <li><a class="dropdown-item rounded" href="{{ page_hit.url | relative_url }}">{{page_hit.title }}</a></li>
+                        {%- endfor %}
+                        {%- endfor %}
+                        {%- endunless %}
+                        {%- endfor %}
+                    </ul>
+                </div>
+                {%- endif %}
                 {%- endif %}
                 {%- if current_page.affiliations %}
                 {%- assign pageaffil = current_page.affiliations | sort %}

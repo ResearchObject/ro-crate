@@ -83,6 +83,11 @@ body {
             background-color: $light !important;
         }
     }
+
+    .dropdown .btn {
+        z-index: 2;
+        position: relative;
+    }
 }
 
 .card {
