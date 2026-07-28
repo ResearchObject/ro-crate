@@ -19,9 +19,11 @@
         {%- assign subitems_count = 0 %}
         {%- assign subitems_from_anywhere = sidebar.subitems %}
         {%- if page.sidebar == 'blog' -%}
+        {%- comment %} Blog sidebar subitems is dynamically generated {%- endcomment %}
         {% assign subitems_from_anywhere = site.blog | reverse %}
         {%- endif -%}
         {%- for folder in subitems_from_anywhere %}
+        {%- comment  %} TODO exclude date parameter for non-blog  {%- endcomment %}
         <li class="d-flex align-items-center{%- if folder.hr %} mt-3{% endif %}" date="{{ folder.date | date: '%Y-%m-%d' }}"">
         {%- if folder.subitems %}
         {%- assign subfolder_active = false %}
@@ -41,17 +43,22 @@
         {%- if folder.external_url %}
             <a class="text-start w-100" href="{{folder.external_url}}" target="_blank" rel="noopener">{{folder.title}}</a>
         {%- else %}
-        {%- comment  %} need to hide for the blog XML (layout not post); need to add date parameter  {%- endcomment %}
+        {%- comment  %} TODO hide for the blog XML (layout not post) {%- endcomment %}
             <a class="text-start w-100{%- if page.url == folder.url %} active{% endif %}" {%- if folder.url %}href="{{folder.url | relative_url }}"{% else %}data-bs-toggle="collapse" data-bs-target="#sidebar-list-lvl-1-{{subitems_count}}" aria-expanded="{{subfolder_active}}" aria-controls="sidebar-list-lvl-1-{{subitems_count}}"{% endif %}>{{ folder.title }}</a>
         {%- endif %}
-        {%- if folder.subitems %}
+        {%- if page.sidebar == 'main' %}
+        {%- assign subitems_from_anywhere = site.pages | sort_natural: 'title'  %}
+        {%- else %}
+        {%- assign subitems_from_anywhere = folder.subitems %}
+        {%- endif %}
+        {%- if folder.subitems or page.sidebar == 'main' %}
          <button type="button" class="btn btn-sm btn-link rounded-circle{%- unless subfolder_active or page.url == folder.url or page.type == 'Data_life_cycle' and folder.title == 'Data life cycle' %} collapsed{% endunless %}" data-bs-toggle="collapse" data-bs-target="#sidebar-list-lvl-1-{{subitems_count}}" aria-expanded="{{subfolder_active}}" aria-controls="sidebar-list-lvl-1-{{subitems_count}}">
             <i class="fa-solid fa-chevron-right"></i><span class="visually-hidden">Expand sidebar</span>
           </button>
         <li class="py-0">
             <ul id="sidebar-list-lvl-1-{{subitems_count}}" class="list-unstyled collapse{%- if subfolder_active or page.url == folder.url or page.type == 'Data_life_cycle' and folder.title == 'Data life cycle' %} show{% endif %}" data-bs-parent="#sidebar-list-lvl-0">
                 {%- assign subsubitems_count = 0 %}
-                {%- for subfolder in folder.subitems %}
+                {%- for subfolder in subitems_from_anywhere %}
                 {%- if subfolder.RDM -%}
                 <li class="sidebar_rdm_sub mb-1{%- if page.type == 'Data_life_cycle' %} active{% endif %}">
                     <svg version="1.1" id="data-life-cycle" xmlns="http://www.w3.org/2000/svg"
@@ -210,10 +217,11 @@
                     </svg>
                 </li>
                 {%- else %}
+                {%- if page.sidebar != 'main' or subfolder.type == folder.submenu_type %}
                 <li class="d-flex align-items-center{%- if subfolder.hr %} mt-3{% endif %}">
-                {%- if subfolder.subitems %}
+                {%- if subfolder.subitems or page.sidebar == 'main' %}
                 {%- assign subsubfolder_active = false %}
-                {%- for subsubfolder in subfolder.subitems %}
+                {%- for subsubfolder in subitems_from_anywhere %}
                 {%- if page.url == subsubfolder.url %}
                 {%- assign subsubfolder_active = true %}
                 {%- endif %}
@@ -242,6 +250,7 @@
                         {%- endfor %}
                     </ul>
                 </li>
+                {%- endif %}
                 {%- endif %}
                 {%- unless subfolder.subitems %}
                 </li>

@@ -45,7 +45,7 @@ defaults:
   - scope:
       path: "pages/tasks/*.md"
     values:
-      layout: "default"
+      layout: "page"
       type: tasks
   - scope:
       path: "pages/roles/*.md"
