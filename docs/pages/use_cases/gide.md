@@ -1,6 +1,6 @@
 ---
 page_id: gide
-title: foundingGIDE
+title: Global Image Data Ecosystem
 description: GIDE (Global Image Data Ecosystem) is a colaborative project working towards the interoperability of bioimage data repositories across the globe. The project was initially funded by an European Comission Horizon Grant as "foundingGIDE", including multiple partners from Europe, Australia and Japan. The GIDE project uses RO-Crates as a metadata exchange format to harmonize outputs from three major bioimaging repositories (SSBD, BioImage Archive and IDR).
 url: https://founding-gide.eurobioimaging.eu/
 image: gide.svg
