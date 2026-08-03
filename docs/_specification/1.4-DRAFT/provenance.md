@@ -1,5 +1,5 @@
 ---
-title: Provenance of entities
+title: Detailing provenance of entities
 redirect_from:
   - /1.4-DRAFT/provenance
 excerpt: |
@@ -25,14 +25,7 @@ parent: RO-Crate 1.4-DRAFT
    limitations under the License.
 -->
 
-# Detailing provenance of entities {#provenance}
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
+<div id="provenance"></div>
 
 ## Equipment used to create files
 

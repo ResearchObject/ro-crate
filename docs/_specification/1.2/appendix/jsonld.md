@@ -1,5 +1,5 @@
 ---
-title: RO-Crate JSON-LD
+title: "APPENDIX: RO-Crate JSON-LD"
 redirect_from:
   - /1.2-DRAFT/appendix/jsonld
   - /specification/1.2-DRAFT/appendix/jsonld
@@ -29,15 +29,6 @@ nav_order: 22
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-
-# APPENDIX: RO-Crate JSON-LD {#jsonld}
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 It is not necessary to use [JSON-LD tooling] to generate or parse the _RO-Crate Metadata Document_, although JSON-LD tools may make it easier to conform to this specification, e.g. handling relative URIs. It is however RECOMMENDED to use [JSON tooling][JSON] to handle [JSON][RFC 7159] syntax and escaping rules.
 

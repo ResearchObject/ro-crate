@@ -1,5 +1,5 @@
 ---
-title: Changelog
+title: "APPENDIX: Changelog"
 redirect_from:
   - /1.2-DRAFT/appendix/changelog
   - /specification/1.2-DRAFT/appendix/changelog
@@ -27,8 +27,7 @@ excerpt: List of changes in releases of this specifications
    limitations under the License.
 -->
 
-
-# APPENDIX: Changelog {#changelog}
+<div id="changelog"></div>
 
 * [RO-Crate 1.2.0](https://github.com/ResearchObject/ro-crate/releases/tag/1.2.0) <https://w3id.org/ro/crate/1.2>
   * Clarified that the [RO-Crate Metadata Descriptor MUST have `@id` of `ro-crate-metadata.json`](../root-data-entity#ro-crate-metadata-descriptor) by removing conflicting statements elsewhere in the specification [#365](https://github.com/ResearchObject/ro-crate/pull/365)

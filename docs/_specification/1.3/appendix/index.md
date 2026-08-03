@@ -1,5 +1,5 @@
 ---
-title: Appendix
+title: Appendixes
 redirect_from:
   - /1.3-DRAFT/appendix
 nav_order: 20
@@ -24,7 +24,7 @@ has_children: true
    limitations under the License.
 -->
 
-# Appendixes {#appendix}
+<div id="appendix"></div>
 
 ## Contents
 * [Changelog](changelog)

@@ -1,5 +1,5 @@
 ---
-title: Handling relative URI references
+title: "APPENDIX: Handling relative URI references"
 redirect_from:
   - /1.2-DRAFT/appendix/relative-uris
   - /specification/1.2-DRAFT/appendix/relative-uris
@@ -33,14 +33,7 @@ nav_order: 23
    limitations under the License.
 -->
 
-# APPENDIX: Handling relative URI references {#relative-uris}
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
+<div id="relative-uris"></div>
 
 In an _Attached RO-Crate Package_, the _RO-Crate Metadata File_ use _relative URI references_ 
 to identify files and directories

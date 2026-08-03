@@ -1,5 +1,5 @@
 ---
-title: Appendix
+title: Appendixes
 redirect_from:
   - /1.2-DRAFT/appendix/index
   - /specification/1.2-DRAFT/appendix/index
@@ -26,7 +26,7 @@ has_children: true
    limitations under the License.
 -->
 
-# Appendixes {#appendix}
+<div id="appendix"></div>
 
 ## Contents
 * [Changelog](changelog)

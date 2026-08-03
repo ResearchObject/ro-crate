@@ -35,14 +35,7 @@ parent: RO-Crate 1.3
    limitations under the License.
 -->
 
-# RO-Crate Structure {#structure}
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
+<div id="structure"></div>
 
 ## Types of RO-Crate
 

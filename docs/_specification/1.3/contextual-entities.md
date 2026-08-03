@@ -1,5 +1,5 @@
 ---
-title: Contextual Entities
+title: Representing Contextual Entities
 redirect_from:
   - /1.3-DRAFT/contextual-entities
 excerpt: |
@@ -30,14 +30,7 @@ parent: RO-Crate 1.3
    limitations under the License.
 -->
 
-# Representing Contextual Entities {#contextual-entities}
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
+<div id="contextual-entities"></div>
 
 The RO-Crate SHOULD contain additional information about _Contextual Entities_ for the use of both humans (in `ro-crate-preview.html`) and machines (in `ro-crate-metadata.json`). This also helps to maximize the extent to which an _RO-Crate_ is self-contained and self-describing, in that it reduces the need for the consumer of an RO-Crate to refer to external information which may change or become unavailable over time.
 

@@ -1,5 +1,5 @@
 ---
-title: Profiles
+title: RO-Crate Profiles
 redirect_from:
   - /1.4-DRAFT/profiles
 excerpt: |
@@ -25,7 +25,7 @@ parent: RO-Crate 1.4-DRAFT
    limitations under the License.
 -->
 
-# RO-Crate profiles {#profiles}
+<div id="profiles"></div>
     
 While RO-Crates can be considered general-purpose containers of arbitrary data and open-ended metadata, in practical use within a particular domain, application or framework, it will be beneficial to further constrain RO-Crate to a specific **profile**: a set of conventions, types and properties that one can minimally require and expect to be present in that subset of RO-Crates.
 
