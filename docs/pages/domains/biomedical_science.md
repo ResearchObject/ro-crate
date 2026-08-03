@@ -7,6 +7,7 @@ edam_url: http://edamontology.org/topic_3344
 related_pages: 
   tasks: [compliance, curation, conduct_research]
   roles: [data_analyst, researcher]
+toc: false
 ---
 {% include item_details.html %}
 

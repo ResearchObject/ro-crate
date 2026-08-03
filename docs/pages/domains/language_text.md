@@ -7,6 +7,7 @@ edam_url: http://edamontology.org/topic_3068
 related_pages: 
   tasks: [curation, data_handling, manage_data, software_development]
   roles: [data_analyst, researcher, software_developer]
+toc: false
 ---
 {% include item_details.html %}
 

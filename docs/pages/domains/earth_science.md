@@ -8,6 +8,7 @@ redirect_from:
 related_pages: 
   tasks: [curation, data_handling, manage_data]
   roles: [data_analyst, researcher]
+toc: false
 ---
 {% include item_details.html %}
 

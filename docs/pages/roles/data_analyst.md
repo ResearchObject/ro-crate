@@ -5,6 +5,7 @@ icon: fa-chart-column
 page_id: data_analyst
 related_pages: 
   domains: [biomedical_science]
+toc: false
 ---
 {% include item_details.html %}
 

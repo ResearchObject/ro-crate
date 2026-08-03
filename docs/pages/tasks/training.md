@@ -3,6 +3,7 @@ title: Training
 description: Develop and/or deliver training material
 icon: fa-list-check
 page_id: training
+toc: false
 ---
 {% include item_details.html %}
 

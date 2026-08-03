@@ -3,6 +3,7 @@ title: Software Development
 description: Develop code
 icon: fa-code
 page_id: software_development
+toc: false
 ---
 {% include item_details.html %}
 

@@ -6,6 +6,7 @@ page_id: social_science
 related_pages: 
   tasks: [compliance, conduct_research, curation]
   roles: [compliance_officer, data_analyst, researcher]
+toc: false
 ---
 {% include item_details.html %}
 
