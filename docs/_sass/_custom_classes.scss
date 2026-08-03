@@ -49,6 +49,14 @@ body {
     font-display: swap;
 }
 
+/* Undo the ETT break-word style for hyperlinks when inside a table */
+#main table a:not(.btn):not(.dropdown-item) {
+        overflow-wrap: normal;
+        word-wrap: normal;
+        -ms-word-break: normal;
+        word-break: normal;
+}
+
 /*-----Sidebar-----*/
 #sidebar {
     > nav .sidebar-title {
