@@ -11,8 +11,6 @@ tasks: [data_handling]
 roles: [data_steward, information_architect, repository_manager]
 ---
 
-# PILARS
-
 The Protocols for Implementing Long-term Archival Repository Services (PILARS, <http://w3id.org/ldac/pilars>) are inspired by the continuing success of the technical approach taken over two decades by [PARADISEC](paradisec). PARADISEC houses cultural heritage material from more than 1360 languages with standard metadata, with data stored in commodity services (initially files on disk, now objects in a cloud storage service), and metadata adjacent to the data. PILARS was developed through work with the Language Data Commons of Australia to generalise the PARADISEC approach to other disciplines.
 
 PILARS is aimed at IT practitioners, archivists, librarians, researchers and infrastructure managers involved in long-term data management. The protocols are intended to be complementary to the existing practices and principles of those disciplines.

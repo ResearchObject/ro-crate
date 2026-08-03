@@ -3,8 +3,6 @@ title: What's changed in RO-Crate 1.2
 sidebar: resources
 ---
 
-# What's changed in RO-Crate 1.2
-
 This document provides a thorough description of the changes introduced in version 1.2 of the RO-Crate specification. Changes are broken down by chapter, and some guidance is included on how to upgrade crates from version 1.1 to 1.2. 
 
 Not every change is described in detail, but all changes with an impact on the specification rules are mentioned (typo fixes and such are ignored). For developers and implementers that require further detail, you can see the exact changes to requirements by searching for "New" in the [specification quick reference](quick-reference). 

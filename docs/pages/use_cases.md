@@ -1,5 +1,5 @@
 ---
-title: Use Cases
+title: RO-Crate in use
 description: These applications are known to use or expose RO-Crates to describe data, datasets or workflows.
 layout: page
 sidebar: main
@@ -8,7 +8,6 @@ redirect_from:
     - /in-use
     - /in-use/index.html
 ---
-# RO-Crate in use
 
 These applications are known to use or expose RO-Crates to describe Data, Datasets or Workflows.
 

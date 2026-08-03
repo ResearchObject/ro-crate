@@ -27,7 +27,6 @@ roles: [data_steward, researcher]
    limitations under the License.
 -->
 
-# Data Stewardship Wizard
 
 The [Data Stewardship Wizard](https://ds-wizard.org/) (DSW) is an interactive platform for making data management plans. By using the [ro-crate-template](https://github.com/ds-wizard/ro-crate-template) it is possible to export RO-Crate from DSW.
 

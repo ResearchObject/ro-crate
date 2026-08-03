@@ -25,10 +25,6 @@ roles: [information_architect, researcher, software_developer] # should match it
    limitations under the License.
 -->
 
-# COMPSs
-
-[![COMPSs logo](assets/img/COMPSs.png)](https://compss.bsc.es/)
-
 COMP Superscalar ([COMPSs](https://compss.bsc.es/)) is a task-based programming model which aims to ease the development of applications for distributed infrastructures, such as large High-Performance Clusters (HPC), Clouds and Container managed clusters. PyCOMPSs is the Python binding of COMPSs.
 
 COMPSs provides a programming interface for the development of applications in Python/Java/C/C++/R, a runtime system that exploits the inherent parallelism of applications at execution time, and a rich ecosystem for the operation, monitoring, performance evaluation and integration with Jupyter/Jupyterlab.

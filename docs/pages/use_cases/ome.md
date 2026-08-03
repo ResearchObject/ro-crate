@@ -25,13 +25,6 @@ roles: [researcher, repository_manager, data_steward] # should match item(s) in 
    limitations under the License.
 -->
 
-# Open Microscopy Environment
-
-<a href="https://www.openmicroscopy.org/">
-<img src="assets/img/ome.svg" alt="Open Microscopy Environment logo" width="30%">
-</a>
-
-
 
 The [Open Microscopy Environment](https://www.openmicroscopy.org/) (OME) is a consortium producing open-source software and format standards for microscopy data since 2005. 
 

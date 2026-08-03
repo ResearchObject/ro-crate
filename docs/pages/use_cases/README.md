@@ -9,6 +9,8 @@ First upload logo in SVG or PNG format to [assets.img](../assets/img), naming it
 
 Then in this folder, create a new Markdown file using the [template](.template.md), e.g. `example.md`.
 
+Save a copy of the logo to [/docs/images](../../images) as required by the ETT template so we can use the `page_img` feature. This means the logo will appear in the sidebar of the page and on the list of all use cases.
+
 ## Template
 The template [here](.template.md) provides a structure for your use case to get started. Your use case should contain the following page data values:
 
@@ -16,7 +18,7 @@ The template [here](.template.md) provides a structure for your use case to get 
 - **title**: Example Use Case Title
 - **description**: This is a short description of the project, how it uses RO-Crate, and what it does.
 - **url**: https://example.org/
-- **image**: example.svg
+- **page_img**: example.svg
 
 Replace _Example_ and _example.org_ in the template with the name/link for your project.
 

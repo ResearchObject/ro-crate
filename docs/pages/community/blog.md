@@ -6,6 +6,4 @@ sidebar: blog
 toc: false
 ---
 
-# Blog
-
 {% include posts.html %}

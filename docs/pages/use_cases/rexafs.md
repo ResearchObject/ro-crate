@@ -25,8 +25,6 @@ roles: [researcher, data_steward, data_analyst, software_developer, repository_m
    limitations under the License.
 -->
 
-# Reproducible XAFS Analyses
-
 The [Reproducible XAFS Analyses Zenodo community](https://zenodo.org/communities/rexas/records) groups Galaxy RO-Crates containing workflows and data for the reproduction of published papers which contain X-ray absorption fine structure (XAFS) analyses.
 
 As of November 2024, the team has reproduced published results from nine papers in the area of Catalysis. The original analyses were reproduced using X-ray absorption spectroscopy (XAS) Galaxy tools developed by the [Scientific Computing Department](https://www.scd.stfc.ac.uk/Pages/home.aspx) at [STFC](https://www.ukri.org/councils/stfc/) as part of the [PSDI](https://www.psdi.ac.uk) project, with the [UK Catalysis Hub](https://www.ukcatalysishub.org) providing the use cases and gathering the data used.

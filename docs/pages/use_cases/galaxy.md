@@ -9,10 +9,6 @@ tasks: [conduct_research, manage_data, training] # should match item(s) in pages
 roles: [data_analyst, information_architect, researcher, trainer] # should match item(s) in pages/roles
 ---
 
-# Galaxy
-
-[![Galaxy logo](../../assets/img/galaxy.png)](https://galaxyproject.org)
-
 [Galaxy](https://galaxyproject.org) is a platform for FAIR data analysis which supports the building and execution of workflows. It has a broad user community spanning many domains, as well as a large collection of training resources contained within the [Galaxy Training Network](https://training.galaxyproject.org).
 
 Galaxy can import and export RO-Crates for both regular datasets (following the base RO-Crate specification) and workflow executions (following the [Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/profiles/workflow_run_crate/) profile). The [European Galaxy instance](<https://usegalaxy.eu>) uses RO-Crate as its export format by default.

@@ -23,8 +23,6 @@ roles: [data_analyst, software_developer] # should match item(s) in pages/roles
    limitations under the License.
 -->
 
-# Digital Twins
-
 RO-Crate is used to describe digital twins in a number of projects studying earth systems and biodiversity. These include [DT-GEO](https://dtgeo.eu/project/), [BioDT](https://biodt.eu), [EDITO-infra](https://edito-infra.eu), and [Destination Earth](https://destination-earth.eu).
 
 ## DT-GEO

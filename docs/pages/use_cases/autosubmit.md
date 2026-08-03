@@ -11,8 +11,6 @@ tasks: [conduct_research, data_handling]
 roles: [data_analyst, information_architect, managerial, researcher]
 ---
 
-# Autosubmit
-
 [Autosubmit](https://autosubmit.readthedocs.io/en/master/) is an
 experiment and workflow manager that is able to produce Workflow
 Run RO-Crate files. Before Autosubmit adopted RO-Crate, the

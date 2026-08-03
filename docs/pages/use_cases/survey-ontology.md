@@ -10,7 +10,7 @@ domains: [informatics, social_science]
 tasks: [conduct_research, manage_data]
 roles: [data_analyst, researcher]
 ---
-# Survey Ontology
+
 The [Survey Ontology](https://w3id.org/survey-ontology) is an open vocabulary that allows representing, annotating and sharing a representation of the survey structure and the gathered responses ([Scrocca et al., 2021](https://doi.org/10.4126/FRL01-006429412)).
 
 The Survey Ontology leverages and extends the _Research Object Suite of Ontologies_ ([Belhajjame et al., 2015](https://doi.org/10.1016/j.websem.2015.01.003)) to address the research object principles of identity, aggregation and provenance. 
@@ -30,7 +30,8 @@ Considering a _survey procedure_, all the questions can be annotated with the re
 [Coney](https://coney.cefriel.com/), the conversational survey tool, allows to automatically export data of surveys designed and administered through it using the Survey Ontology.
 
 
-### Use case: Survey Study about Motivation for Participants in Citizen Science Projects
+## Use case
+### Survey Study about Motivation for Participants in Citizen Science Projects
 
 This section describes the research objects defined and published to share a survey study of motivation for citizen scientists performed within the [ACTION project](https://actionproject.eu/). The research objects leverage the RO-Crate specification and the Survey Ontology to describe the relevant resources and their relations.
 

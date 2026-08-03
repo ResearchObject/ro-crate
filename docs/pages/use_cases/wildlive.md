@@ -10,8 +10,6 @@ tasks: [conduct_research, manage_data]
 roles: [data_analyst, repository_manager, researcher]
 ---
 
-# Senckenberg Wildlive data portal
-
 Senckenberg's [Wildlive data portal](https://wildlive.senckenberg.de/) is a repository and analysis platform for biodiversity monitoring. 
 
 Using [FAIR Signposting](https://signposting.org/FAIR/), the images from cameras monitoring wildlife are also navigatable as FAIR Digital Objects using RO-Crate to expose the  metadata. 

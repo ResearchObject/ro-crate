@@ -27,9 +27,6 @@ roles: [compliance_officer, data_analyst,  information_architect, managerial,  s
    limitations under the License.
 -->
 
-# Language Data Commons of Australia Program
-
-
 [LDaCA](https://www.ldaca.edu.au/) uses RO-Crate as an interchange and archive format for language data, and is providing data discovery portals and API access to data using RO-Crate-centric APIs.
 The LDaCA Program architecture consists of a set of modular services; data preservation/archiving, APIs for delivery, access control and a discovery portal for data and analysis tools as well as automated container-based notebook environments to run analytics via the Australian Text Analytics Platform (which is a component of the broader program). 
 

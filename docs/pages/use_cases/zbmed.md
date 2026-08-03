@@ -9,8 +9,6 @@ tasks: [conduct_research, manage_data]
 roles: [data_steward, researcher]
 ---
 
-# ZBMed
-
 The [Semantic Technologies](https://zbmed-semtec.github.io/) (SemTec) team in [ZB MED](https://www.zbmed.de/en/) uses GitHub pages to share research projects and corresponding research artefacts/outcomes.
 
 Using [FAIR Signposting](https://signposting.org/FAIR/), Bioschemas and RO-Crate this is an example of a lightweight deployment of FAIR Digital Objects (FDOs). 

@@ -2,15 +2,6 @@
 title: RO-Crate Technical Overview
 ---
 
-# RO-Crate Technical Overview
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC 
-{:toc}
-
 ## What is an RO-Crate?
 
 An RO-Crate is a [Research Object](background#research-object-background) (or _RO_) formed of a collection of data (a _crate_) and a special `ro-crate-metadata.json` file which describes the collection.

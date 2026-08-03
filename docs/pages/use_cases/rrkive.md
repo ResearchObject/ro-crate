@@ -11,13 +11,8 @@ tasks: [data_handling]
 roles: [data_steward, information_architect, repository_manager]
 ---
 
-# RRKive
-
+## About
 
 The RRKive site, managed by the Language Data Commons of Australia collects resources related to implementing Archival Repository ([RRKive](https://rkive.org/)) solutions based on a set of Protocols know as the PILARS: Principles for Implementing Long-term Archival Repository Services. https://w3id.org/ldac/pilars. RRkive is built on RO-Crate as a way to describe data objects for long term archiving.
 
 RRKive is a replacement for [Arkisto](arkisto).
-
-
-
-![RRKive logo is the word RRKive with a parrot sitting on it](assets/img/rrkive.png)

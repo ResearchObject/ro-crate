@@ -25,8 +25,6 @@ roles: [researcher, software_developer] # should match item(s) in pages/roles
    limitations under the License.
 -->
 
-# Time Layered Cultural Map (TLCMap)
-
 > The Time-layered Cultural Map of Australia (TLCMap) is an online research platform
 funded by the Australian Research Council Linkage Infrastructure, Equipment and 
 Facilities (LIEF) grant scheme in 2019 and currently under development. When completed, 
@@ -147,8 +145,3 @@ curl "https://ghap.tlcmap.org/places?containsname=katoomba&searchausgaz=on&searc
 ## Publications
 
 1. <span id="tlcmap-paper"></span>Arthur P, Champion E, Craig H, Gu N, Harvey M, Haskins V, et al. Time-layered cultural map of Australia. In: Digital Humanities in the Nordic Countries Conference [Internet]. 2020 [cited 2024 Jul 4]. Available from: <https://opus.lib.uts.edu.au/bitstream/10453/141441/2/Time%20Layered%20Cultural%20Map%20of%20Australia.pdf>
-
-
-
-
-![TLC Map](assets/img/tlcmap.png)

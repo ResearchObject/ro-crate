@@ -2,7 +2,7 @@
 page_id: bioconnect
 redirect_from:
     - /in-use/bioconnect
-title: BioConnect
+title: BioConnect (The Jackson Laboratory)
 description: JAX BioConnect is an index of research data that supports data sharing, high-quality curation, and consistent data description.
 page_img: bioconnect.png
 domains: [biomedical_science, omics]
@@ -25,9 +25,6 @@ roles: [data_analyst, data_steward, researcher, repository_manager]
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-
-# BioConnect (The Jackson Laboratory)
-[![BioConnect logo](../../assets/img/bioconnect.png)](https://docs.bioconnect.jax.org/)
 
 JAX BioConnect provides a digital index for internal researchers, connecting assay results to well-curated metadata. Study metadata are collected and stored in accordance with the [ISA](https://isa-specs.readthedocs.io/en/latest/isamodel.html) format. BioConnect provides a rich UI for data curation and search, and data files are packaged in RO-Crate format for download.
 

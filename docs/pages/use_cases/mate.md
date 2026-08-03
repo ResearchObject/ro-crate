@@ -9,9 +9,6 @@ tasks: [conduct_research, curation, data_handling, software_development, trainin
 roles: [researcher, software_developer, trainer, data_steward]
 ---
 
-# M@TE (Model Atlas of the Earth)
-
-<img src="assets/img/MATE.png" alt="M@TE logo" width="20%">
 
 The **Model Atlas of the Earth (M@TE)** is a digital platform that provides access to a wide range of computational models and their outputs, focused on Earth’s evolution from the Geosphere to the Hydrosphere.
 M@TE encapsulates the entire model development process — from setup to output and analysis — enabling discovery, data preservation, reproducibility and reuse, offering flexibility for users with varying levels of expertise.

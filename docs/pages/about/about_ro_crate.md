@@ -4,15 +4,6 @@ description: What RO-Crate is, how RO-Crate makes research FAIR, and how to get 
 sidebar: about
 ---
 
-# About RO-Crate
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC 
-{:toc}
-
 ## About RO-Crate
 
 RO-Crate aims to help people make their research [FAIR](https://www.go-fair.org/fair-principles/)

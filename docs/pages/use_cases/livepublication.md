@@ -2,7 +2,7 @@
 page_id: livepublication
 redirect_from:
     - /in-use/livepublication
-title: LivePublication
+title: "LivePublication: Executable Paper"
 description: LivePublication is a proof of concept of an executable paper, which interactive visualization and statistical calculations can be regenerated on the fly taking into consideration data sources updated after the paper’s publication date.
 url: https://livepublication.github.io/LP_Pub_LID/
 domains: [language_text]
@@ -10,8 +10,6 @@ tasks: [conduct_research, software_development]
 roles: [data_analyst, managerial, researcher, software_developer]
 ---
 
-
-# LivePublication: Executable Paper
 
 [LivePublication](https://livepublication.github.io/LP_Pub_LID/) is a proof of concept of an _executable paper_, which interactive visualization and statistical calculations can be regenerated on the fly taking into consideration data sources updated after the paper's publication date. 
 
