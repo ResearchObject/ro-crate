@@ -36,6 +36,7 @@ redirect_from:
 <!-- start of page content -->
 ```
 
+- `title`: This attribute is used for both the HTML `<head><title>` and the `<body><h1>`. 
 - `excerpt`: This attribute can be used to specify the metadata description of the page
 - `redirect_from`: this can be used to list links from which you want to redirect to the page you are editing.
 
@@ -87,8 +88,10 @@ To avoid a page being rendered to the site at all (i.e. it has no URL outside of
 
 #### Table of Contents
 
+Typically, a table of contents is rendered in the right-sidebar (for level 2 headings), unless you specify `toc: false` in the front matter. 
+To show a full table of contents within the main page of the page, include the following:
+
 ```
-# H1 Title
 {: .no_toc }
 
 ## Table of contents
