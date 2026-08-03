@@ -1,5 +1,5 @@
 ---
-title: Implementation notes
+title: "APPENDIX: Implementation notes"
 parent: Appendix
 grand_parent: RO-Crate 1.1
 redirect_from:
@@ -24,15 +24,6 @@ excerpt:
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-
-# APPENDIX: Implementation notes
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 ## Programming with JSON-LD
 

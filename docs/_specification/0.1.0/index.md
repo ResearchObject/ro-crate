@@ -21,7 +21,6 @@ nav_exclude: true
    limitations under the License.
 -->
 
-# ROLite 0.1.0
 {: .no_toc }
 
 This first draft of ~~ROLite~~ [RO-Crate](../../) is more of an example playground to initiate discussion.

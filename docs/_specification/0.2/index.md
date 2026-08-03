@@ -1,5 +1,5 @@
 ---
-title: RO-Crate 0.2
+title: RO-Crate Metadata Specification 0.2
 redirect_from: 
   - /0.2/
 nav_exclude: true
@@ -22,7 +22,6 @@ nav_exclude: true
    limitations under the License.
 -->
 
-# RO-Crate Metadata Specification 0.2
 {: .no_toc }
 
 * Permalink: <https://w3id.org/ro/crate/0.2>

@@ -1,5 +1,5 @@
 ---
-title: Provenance of entities
+title: Detailing provenance of entities
 redirect_from:
   - /1.1-DRAFT/provenance
   - /1.1/provenance
@@ -27,15 +27,6 @@ parent: RO-Crate 1.1
 -->
 
 <div id="provenance"></div>
-
-# Detailing provenance of entities
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 ## Equipment used to create files
 

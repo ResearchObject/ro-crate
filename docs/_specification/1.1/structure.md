@@ -37,15 +37,6 @@ parent: RO-Crate 1.1
 
 <div id="structure"></div>
 
-# RO-Crate Structure
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
 The structure an _RO-Crate_ MUST follow is:
 
 ```

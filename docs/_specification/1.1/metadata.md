@@ -1,5 +1,5 @@
 ---
-title: Metadata of the RO-Crate
+title: RO-Crate Metadata
 redirect_from:
   - /1.1-DRAFT/metadata
   - /1.1/metadata
@@ -31,16 +31,6 @@ parent: RO-Crate 1.1
 -->
 
 <div id="metadata"></div>
-
-# RO-Crate Metadata
-
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 RO-Crate aims to capture and describe the [Research Object][ResearchObject] using structured _metadata_.
 

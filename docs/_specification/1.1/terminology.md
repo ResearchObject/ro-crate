@@ -24,8 +24,6 @@ parent: RO-Crate 1.1
    limitations under the License.
 -->
 
-# Terminology
-
 _RO-Crate_: A directory structure that contains a dataset, which is described in an _RO-Crate Metadata File_.
 
 _RO-Crate Root_: The top-level directory of the _RO-Crate_, indicated by the presence of the _RO-Crate Metadata File_ `ro-crate-metadata.json` (or `ro-crate-metadata.jsonld` for crates that comply with versions before v1.1 of this specification)
