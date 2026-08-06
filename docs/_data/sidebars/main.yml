@@ -13,7 +13,7 @@ subitems:
     - title: BioConnect 
       url: /bioconnect
     - title: COMPSs
-      url: /compss
+      url: /COMPSs
     - title: Data Stewardship Wizard
       url: /datastewardship
     - title: DataPLANT
@@ -37,43 +37,43 @@ subitems:
     - title: KEDO Data Lake
       url: /datalake
     - title: Lab Integrated Data (LabID)
-      url: /lab-integrated-data
+      url: /labid
     - title: Language Data Commons of Australia
-      url: /language-data-commons-of-australia
+      url: /ldaca
     - title: LifeMonitor
-      url: /lifemonitor
+      url: /life-monitor
     - title: "LivePublication: Executable Paper"
-      url: /livepublication-executable-paper
+      url: /livepublication
     - title: "M@TE (Model Atlas of the Earth)"
-      url: /mate-model-atlas-of-the-earth
+      url: /mate
     - title: Machine-actionable data management plans
       url: /madmp
     - title: nf-prov Nextflow plugin
-      url: /nf-prov-nextflow-plugin
+      url: /nf-prov
     - title: Open Microscopy Environment
-      url: /open-microscopy-environment
+      url: /ome
     - title: PARADISEC
       url: /paradisec
     - title: PILARS
       url: /pilars
     - title: Reproducible XAFS Analyses
-      url: /reproducible-xafs-analyses
+      url: /rexafs
     - title: Research Object Composer
-      url: /research-object-composer
+      url: /ro-compose
     - title: ROHub
       url: /rohub
     - title: RRkive
       url: /rrkive
     - title: Sciebo RDS
-      url: /sciebo-rds
+      url: /sciebo
     - title: Survey Ontolgy
       url: /survey-ontology
     - title: Time Layered Cultural Map (TLCMap)
-      url: /time-layered-cultural-map
+      url: /tlcmap
     - title: UTS Cultural Datasets
-      url: /uts-cultural-datasets 
+      url: /uts-cultural
     - title: UTS Research Data Repository
-      url: /uts-research-data-repository  
+      url: /uts-research-data
     - title: Wildlive portal
       url: /wildlive
     - title: Workflow Execution Service (WfExS)
