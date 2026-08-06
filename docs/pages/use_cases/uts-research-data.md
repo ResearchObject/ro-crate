@@ -10,6 +10,6 @@ tasks: [conduct_research, data_handling]
 roles: [repository_manager]
 ---
 
-
+## About
 
 The [UTS Research Data Repository](https://arkisto-platform.github.io/case-studies/uts-repo/) is a searchable portal for discovering and accessing public datasets by UTS researchers. Datasets are described with RO-Crates and published either through the University’s institutional research data management system or direct import from research storage devices for very large datasets.
