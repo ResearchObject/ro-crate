@@ -85,7 +85,31 @@ subitems:
 
   - title: Your Domain
     url: /domains
-    submenu_type: domains
+    subitems:
+    - title: Biology
+      url: /biology
+    - title: Biomedical Science
+      url: /biomedical_science
+    - title: Chemistry
+      url: /chemistry 
+    - title: "Climate Science & Earth sciences"
+      url: /earth_science
+    - title: Ecology and Biodiversity
+      url: /ecology
+    - title: History
+      url: /humanities
+    - title: Informatics
+      url: /informatics
+    - title: Language and Text Analytics
+      url: /language_text
+    - title: Medicine and Health
+      url: /medicine
+    - title: Omics and Bioinformatics
+      url: /omics
+    - title: Social science
+      url: /social_science
+
+
 
   - title: Your Task
     url: /tasks
