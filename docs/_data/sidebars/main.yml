@@ -3,7 +3,85 @@ title_url: use_cases
 subitems:
   - title: Use Cases
     url: /use_cases
-    submenu_type: use_cases
+    subitems:
+    - title: Arkisto
+      url: /arkisto
+    - title: AROMA ARP RO-Crate Manager
+      url: /aroma
+    - title: Autosubmit
+      url: /autosubmit
+    - title: BioConnect 
+      url: /bioconnect
+    - title: COMPSs
+      url: /compss
+    - title: Data Stewardship Wizard
+      url: /datastewardship
+    - title: DataPLANT
+      url: /dataplant
+    - title: DataVerse
+      url: /dataverse
+    - title: DeSci Nodes
+      url: /desci
+    - title: Digital Twins
+      url: /digital-twins
+    - title: EGI's Application Database
+      url: /appdb
+    - title: Electronic Lab Notebook
+      url: /eln
+    - title: FAIRSCAPE
+      url: /fairscape
+    - title: Five Safes Crate
+      url: /5s-crate
+    - title: Galaxy
+      url: /galaxy
+    - title: KEDO Data Lake
+      url: /datalake
+    - title: Lab Integrated Data (LabID)
+      url: /lab-integrated-data
+    - title: Language Data Commons of Australia
+      url: /language-data-commons-of-australia
+    - title: LifeMonitor
+      url: /lifemonitor
+    - title: "LivePublication: Executable Paper"
+      url: /livepublication-executable-paper
+    - title: "M@TE (Model Atlas of the Earth)"
+      url: /mate-model-atlas-of-the-earth
+    - title: Machine-actionable data management plans
+      url: /madmp
+    - title: nf-prov Nextflow plugin
+      url: /nf-prov-nextflow-plugin
+    - title: Open Microscopy Environment
+      url: /open-microscopy-environment
+    - title: PARADISEC
+      url: /paradisec
+    - title: PILARS
+      url: /pilars
+    - title: Reproducible XAFS Analyses
+      url: /reproducible-xafs-analyses
+    - title: Research Object Composer
+      url: /research-object-composer
+    - title: ROHub
+      url: /rohub
+    - title: RRkive
+      url: /rrkive
+    - title: Sciebo RDS
+      url: /sciebo-rds
+    - title: Survey Ontolgy
+      url: /survey-ontology
+    - title: Time Layered Cultural Map (TLCMap)
+      url: /time-layered-cultural-map
+    - title: UTS Cultural Datasets
+      url: /uts-cultural-datasets 
+    - title: UTS Research Data Repository
+      url: /uts-research-data-repository  
+    - title: Wildlive portal
+      url: /wildlive
+    - title: Workflow Execution Service (WfExS)
+      url: /wfexs
+    - title: WorkflowHub
+      url: /workflowhub
+    - title: ZBMed SemTec web pages
+      url: /zbmed
 
   - title: Your Domain
     url: /domains
