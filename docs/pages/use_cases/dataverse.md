@@ -11,7 +11,6 @@ tasks: [data_handling, manage_data]
 roles: [data_steward, repository_manager]
 ---
 
-# Dataverse
  
 [Dataverse](https://dataverse.org) is open source research data repository software with over 130 [installations](https://dataverse.org/installations) across research institutions. It has support for RO-Crate export, preview and metadata editing.
 

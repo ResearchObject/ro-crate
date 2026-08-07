@@ -3,16 +3,151 @@ title_url: use_cases
 subitems:
   - title: Use Cases
     url: /use_cases
-    submenu_type: use_cases
+    subitems:
+    - title: Arkisto
+      url: /arkisto
+    - title: AROMA ARP RO-Crate Manager
+      url: /aroma
+    - title: Autosubmit
+      url: /autosubmit
+    - title: BioConnect 
+      url: /bioconnect
+    - title: COMPSs
+      url: /COMPSs
+    - title: Data Stewardship Wizard
+      url: /datastewardship
+    - title: DataPLANT
+      url: /dataplant
+    - title: DataVerse
+      url: /dataverse
+    - title: DeSci Nodes
+      url: /desci
+    - title: Digital Twins
+      url: /digital-twins
+    - title: EGI's Application Database
+      url: /appdb
+    - title: Electronic Lab Notebook
+      url: /eln
+    - title: FAIRSCAPE
+      url: /fairscape
+    - title: Five Safes Crate
+      url: /5s-crate
+    - title: Galaxy
+      url: /galaxy
+    - title: KEDO Data Lake
+      url: /datalake
+    - title: Lab Integrated Data (LabID)
+      url: /labid
+    - title: Language Data Commons of Australia
+      url: /ldaca
+    - title: LifeMonitor
+      url: /life-monitor
+    - title: "LivePublication: Executable Paper"
+      url: /livepublication
+    - title: "M@TE (Model Atlas of the Earth)"
+      url: /mate
+    - title: Machine-actionable data management plans
+      url: /madmp
+    - title: nf-prov Nextflow plugin
+      url: /nf-prov
+    - title: Open Microscopy Environment
+      url: /ome
+    - title: PARADISEC
+      url: /paradisec
+    - title: PILARS
+      url: /pilars
+    - title: Reproducible XAFS Analyses
+      url: /rexafs
+    - title: Research Object Composer
+      url: /ro-compose
+    - title: ROHub
+      url: /rohub
+    - title: RRkive
+      url: /rrkive
+    - title: Sciebo RDS
+      url: /sciebo
+    - title: Survey Ontolgy
+      url: /survey-ontology
+    - title: Time Layered Cultural Map (TLCMap)
+      url: /tlcmap
+    - title: UTS Cultural Datasets
+      url: /uts-cultural
+    - title: UTS Research Data Repository
+      url: /uts-research-data
+    - title: Wildlive portal
+      url: /wildlive
+    - title: Workflow Execution Service (WfExS)
+      url: /wfexs
+    - title: WorkflowHub
+      url: /workflowhub
+    - title: ZBMed SemTec web pages
+      url: /zbmed
 
   - title: Your Domain
     url: /domains
-    submenu_type: domains
+    subitems:
+    - title: Biology
+      url: /biology
+    - title: Biomedical Science
+      url: /biomedical_science
+    - title: Chemistry
+      url: /chemistry 
+    - title: "Climate Science & Earth sciences"
+      url: /earth_science
+    - title: Ecology and Biodiversity
+      url: /ecology
+    - title: History
+      url: /humanities
+    - title: Informatics
+      url: /informatics
+    - title: Language and Text Analytics
+      url: /language_text
+    - title: Medicine and Health
+      url: /medicine
+    - title: Omics and Bioinformatics
+      url: /omics
+    - title: Social science
+      url: /social_science
+
+
 
   - title: Your Task
     url: /tasks
-    submenu_type: tasks
+    subitems:
+    - title: Compliance
+      url: /compliance
+    - title: Conduct Research
+      url: /conduct_research
+    - title: Data Curation
+      url: /curation
+    - title: Data Handling
+      url: /data_handling
+    - title: Managing Research Data
+      url: /manage_data
+    - title: Software Development
+      url: /software_development
+    - title: Training
+      url: /training
+
 
   - title: Your Role
     url: /roles
-    submenu_type: roles
+    subitems:
+    - title: Compliance Officer
+      url: /compliance_officer
+    - title: Data Analyst
+      url: /data_analyst
+    - title: Data Steward
+      url: /data_steward
+    - title: Information Architect
+      url: /information_architect
+    - title: Managerial
+      url: /managerial
+    - title: Repository Manager
+      url: /repository_manager
+    - title: Researcher
+      url: /researcher
+    - title: Software Developer
+      url: /software_developer
+    - title: Trainer
+      url: /trainer
