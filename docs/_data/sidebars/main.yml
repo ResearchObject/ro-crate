@@ -132,4 +132,22 @@ subitems:
 
   - title: Your Role
     url: /roles
-    submenu_type: roles
+    subitems:
+    - title: Compliance Officer
+      url: /compliance_officer
+    - title: Data Analyst
+      url: /data_analyst
+    - title: Data Steward
+      url: /data_steward
+    - title: Information Architect
+      url: /information_architect
+    - title: Managerial
+      url: /managerial
+    - title: Repository Manager
+      url: /repository_manager
+    - title: Researcher
+      url: /researcher
+    - title: Software Developer
+      url: /software_developer
+    - title: Trainer
+      url: /trainer
