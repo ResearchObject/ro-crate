@@ -87,10 +87,10 @@ body {
 
 /*-----Section navigation tiles-----*/
 .navigation-tiles {
-    .align-items-center {
-        // Hide the type of tile label
-        display: none !important;
-    }
+    //.align-items-center {
+    //    // Hide the type of tile label
+    //    display: none !important;
+    //}
 
     .btn.py-4.hover-primary {
         border-left: 0px solid $primary;

@@ -113,7 +113,22 @@ subitems:
 
   - title: Your Task
     url: /tasks
-    submenu_type: tasks
+    subitems:
+    - title: Compliance
+      url: /compliance
+    - title: Conduct Research
+      url: /conduct_research
+    - title: Data Curation
+      url: /curation
+    - title: Data Handling
+      url: /data_handling
+    - title: Managing Research Data
+      url: /manage_data
+    - title: Software Development
+      url: /software_development
+    - title: Training
+      url: /training
+
 
   - title: Your Role
     url: /roles
