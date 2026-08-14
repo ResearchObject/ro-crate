@@ -4,7 +4,7 @@ A file like [pages/about/background.md](pages/about/background.md) appears rende
 
 Note that files outside `docs` are not accessible within `github.io` and must be linked to by absolute URLs, e.g. <https://github.com/ResearchObject/ro-crate/blob/master/CODE_OF_CONDUCT.md>
 
-It is more important that pages render well at <https://researchobject.github.io/ro-crate/> than in this  preview within the GitHub repository, as some MarkDown features only apply to the GitHub Pages (e.g. the `{:toc}` macro and).
+It is more important that pages render well at <https://researchobject.github.io/ro-crate/> than in this  preview within the GitHub repository, as some MarkDown features only apply to the GitHub Pages (e.g. [callouts](#callouts)).
 
 ## Running Jekyll locally
 
@@ -84,48 +84,50 @@ Also ensure the page is removed from any sidebar listings.
 
 #### Excluding pages from rendering at all
 
-To avoid a page being rendered to the site at all (i.e. it has no URL outside of the GitHub repository), add it to the `exclude` list in [`_config.yml`](_config.yml)
+To avoid a page being rendered to the site at all (i.e. it has no URL outside of the GitHub repository), add it to the `exclude` list in [`_config.yml`](_config.yml).
+
+Filenames beginning with a dot (e.g. `.template.md`) are excluded from rendering by default.
 
 #### Table of Contents
 
 Typically, a table of contents is rendered in the right-sidebar (for level 2 headings), unless you specify `toc: false` in the front matter. 
-To show a full table of contents within the main page of the page, include the following:
 
-```
-{: .no_toc }
+### Callouts
 
-## Table of contents
-{: .no_toc .text-delta }
+With the ETT theme it is possible to insert colourful [callouts](https://elixir-belgium.github.io/elixir-toolkit-theme/markdown_cheat_sheet#callouts) to bring attention to caveats and best practices. 
 
-1. TOC
-{:toc}
-```
-
-### Sections and child pages
-
-Note that the [concatination](../Makefile) step to make single page HTML/PDF assumes `<div id="filename">` blobs in top of each section's markdown, as the `Makefile` replaces links to say `"appendix/jsonld.md"` with `#jsonld`. See commit [bfd9b2f530](https://github.com/ResearchObject/ro-crate/commit/bfd9b2f53075f464b069b017c9648460879dda94)
-
-### Admonition cards
-
-With theme it is possible to insert colourful admonition cards to bring attention to caveats and best practices. 
-These are written as a Markdown code-block with the language set as `tip`, `note` or `warning`, and can
+These are written using the `callout.html` template with the `type` set as `tip`, `note`, `warning` or `important`. They can
 include a restricted set of Markdown.
 
-```
-{: .tip }
-> JSON-LD supports [many other features](https://json-ld.org/) that SHOULD NOT be used excessively.
-```
+{% include callout.html type="note" title="Optional Title" content="JSON-LD supports [many other features](https://json-ld.org/) that SHOULD NOT be used excessively." %}
 
-Try to keep the admonition card short, like a single paragraph.
+Try to keep the callout short, like a single paragraph.
 
 For the [Makefile](Makefile) rendering to PDF, a rudimentary [Pandoc filter](scripts/admonition.py)
 attempts to translate these blocks back to paragraph rendering, although they don't show up as a box. 
 See the [release procedure](RELEASE_PROCEDURE.md).
 
+Note that a future version of ETT will simplify the callout system to a style like the code block below. If/when that style is adopted in the spec pages, the Makefile must also be updated accordingly.
+
+```
+{: .note }
+> This is a note.
+```
+
+
 
 ### Theme config
 
 The [`_config.yml`](_config.yml) file specifies some site-wide properties like copyright text or which folders that need to be excluded from the navigation and/or search.
+
+## Special requirements for specification pages
+
+The specification Markdown files (under `_specification/`) are special, as they are used not only to generate the web pages, but also to generate the PDF and single-page HTML versions of the specification for releases. This means they require some special customizations:
+
+* there must be a level 1 heading with the chapter title at the start of the file, e.g. `# Chapter Title`. This must match the `title` in the Jekyll front matter for consistent display in different formats: in the web version, `title` is displayed, and the Markdown heading is hidden with custom CSS; in PDF and single-page HTML, the `title` is ignored, and the Markdown heading is displayed.
+* There must be an HTML element with `id="filename"` at the top of each chapter's markdown, as the `Makefile` replaces links to say `"appendix/jsonld.md"` with `#jsonld`. (See commit [bfd9b2f530](https://github.com/ResearchObject/ro-crate/commit/bfd9b2f53075f464b069b017c9648460879dda94).) In 1.2 and later, this is handled using [Markdown Heading IDs](https://www.markdownguide.org/extended-syntax/#heading-ids) on the chapter titles (e.g. `#Chapter Title {#filename}`); in 1.1 and earlier this is handled with `<div id="filename">` at the start of each Markdown file.
+
+The [Makefile](../Makefile) handles some other modifications automatically (e.g. changing callouts to plain text).
 
 ## References
 
