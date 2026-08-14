@@ -33,7 +33,7 @@ nav_order: 23
    limitations under the License.
 -->
 
-<div id="relative-uris"></div>
+# APPENDIX: Handling relative URI references {#relative-uris}
 
 In an _Attached RO-Crate Package_, the _RO-Crate Metadata File_ use _relative URI references_ 
 to identify files and directories

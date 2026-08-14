@@ -1,5 +1,5 @@
 ---
-title: Appendix
+title: Appendixes
 redirect_from:
   - /1.1-DRAFT/appendix
   - /1.1/appendix
