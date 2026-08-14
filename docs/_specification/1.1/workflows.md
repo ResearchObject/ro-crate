@@ -30,6 +30,8 @@ parent: RO-Crate 1.1
 
 <div id="workflows"></div>
 
+# Workflows and Scripts
+
 Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an RO-Crate MAY be embedded in an RO-Crate. See also the Provenance section on [Software Used to Create Files](provenance#software-used-to-create-files).
 
 _Workflows_ and _scripts_ SHOULD be described using [data entities](data-entities) of type [SoftwareSourceCode].

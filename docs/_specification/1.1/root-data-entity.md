@@ -28,6 +28,8 @@ parent: RO-Crate 1.1
    limitations under the License.
 -->
 
+# Root Data Entity
+
 The **Root Data Entity** is a [Dataset] that represent the RO-Crate as a whole;
 a _Research Object_ that includes the _Data Entities_ and the related
 _Contextual Entities_.

@@ -25,10 +25,4 @@ has_children: true
    limitations under the License.
 -->
 
-<div id="appendix"></div>
-
-## Contents
-* [Changelog](changelog)
-* [Handling relative URI references](relative-uris)
-* [Implementation Notes](implementation-notes)
-* [RO-Crate JSON-LD](jsonld)
+# Appendixes

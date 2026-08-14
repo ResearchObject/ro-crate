@@ -37,6 +37,8 @@ parent: RO-Crate 1.1
 
 <div id="structure"></div>
 
+# RO-Crate Structure
+
 The structure an _RO-Crate_ MUST follow is:
 
 ```
