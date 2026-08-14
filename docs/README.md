@@ -125,7 +125,9 @@ The [`_config.yml`](_config.yml) file specifies some site-wide properties like c
 The specification Markdown files (under `_specification/`) are special, as they are used not only to generate the web pages, but also to generate the PDF and single-page HTML versions of the specification for releases. This means they require some special customizations:
 
 * there must be a level 1 heading with the chapter title at the start of the file, e.g. `# Chapter Title`. This must match the `title` in the Jekyll front matter for consistent display in different formats: in the web version, `title` is displayed, and the Markdown heading is hidden with custom CSS; in PDF and single-page HTML, the `title` is ignored, and the Markdown heading is displayed.
+  * special case: the `title` of the top-level `index.md` page for each specification version must instead match the Markdown heading in the `_metadata.liquid` file. Do not include a Markdown heading directly in `index.md`.
 * There must be an HTML element with `id="filename"` at the top of each chapter's markdown, as the `Makefile` replaces links to say `"appendix/jsonld.md"` with `#jsonld`. (See commit [bfd9b2f530](https://github.com/ResearchObject/ro-crate/commit/bfd9b2f53075f464b069b017c9648460879dda94).) In 1.2 and later, this is handled using [Markdown Heading IDs](https://www.markdownguide.org/extended-syntax/#heading-ids) on the chapter titles (e.g. `#Chapter Title {#filename}`); in 1.1 and earlier this is handled with `<div id="filename">` at the start of each Markdown file.
+
 
 The [Makefile](../Makefile) handles some other modifications automatically (e.g. changing callouts to plain text).
 
