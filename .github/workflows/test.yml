@@ -57,4 +57,4 @@ jobs:
       - name: Run custom theme checks
         working-directory: ./docs
         run: |
-          ! ruby run_checks.rb
+          ! bundle exec ruby run_checks.rb
