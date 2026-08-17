@@ -32,6 +32,8 @@ redirect_from:
 
 <div id="relative-uris"></div>
 
+# APPENDIX: Handling relative URI references
+
 The _RO-Crate Metadata File_ use _relative URI references_ to identify files and directories
 contained within the _RO-Crate Root_ and its children.  As described in section
 [Describing entities in JSON-LD](jsonld#describing-entities-in-json-ld) above, 

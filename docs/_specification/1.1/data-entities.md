@@ -32,6 +32,8 @@ parent: RO-Crate 1.1
    limitations under the License.
 -->
 
+# Data Entities
+
 The primary purpose for RO-Crate is to gather and describe a set of _Data entities_ in the form of:
 
 * Files

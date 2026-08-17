@@ -23,7 +23,8 @@ parent: RO-Crate 1.3
    limitations under the License.
 -->
 
-<div id="terminology"></div>
+# Terminology {#terminology}
+
 
 _RO-Crate_: A dataset, which is described in a JSON-LD _RO-Crate Metadata Document_. 
 

@@ -1,5 +1,5 @@
 ---
-title: RO-Crate 1.1
+title: RO-Crate Metadata Specification 1.1
 has_children: true
 nav_order: 1
 redirect_from:

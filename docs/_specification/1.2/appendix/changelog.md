@@ -27,7 +27,8 @@ excerpt: List of changes in releases of this specifications
    limitations under the License.
 -->
 
-<div id="changelog"></div>
+
+# APPENDIX: Changelog {#changelog}
 
 * [RO-Crate 1.2.0](https://github.com/ResearchObject/ro-crate/releases/tag/1.2.0) <https://w3id.org/ro/crate/1.2>
   * Clarified that the [RO-Crate Metadata Descriptor MUST have `@id` of `ro-crate-metadata.json`](../root-data-entity#ro-crate-metadata-descriptor) by removing conflicting statements elsewhere in the specification [#365](https://github.com/ResearchObject/ro-crate/pull/365)

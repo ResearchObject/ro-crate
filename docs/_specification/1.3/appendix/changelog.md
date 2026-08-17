@@ -25,7 +25,8 @@ excerpt: List of changes in releases of this specifications
    limitations under the License.
 -->
 
-<div id="changelog"></div>
+
+# APPENDIX: Changelog {#changelog}
 
 * RO-Crate 1.3.0
   * **Notable change:** Updated the Bioschemas namespace to `https://bioschemas.org/terms/` for all types and properties (previously `https://bioschemas.org/` for types and `https://bioschemas.org/properties` for properties). This change affects 4 terms in the [JSON-LD context](../ro-crate-metadata.json): `ComputationalWorkflow`, `FormalParameter`, `input`, and `output`. This is primarily relevant to those describing workflows with RO-Crate, either using the [Workflows and Scripts](../workflows) chapter or the [Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/) profile and its derivatives.  [#529](https://github.com/ResearchObject/ro-crate/issues/529)

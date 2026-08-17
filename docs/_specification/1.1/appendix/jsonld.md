@@ -30,6 +30,8 @@ grand_parent: RO-Crate 1.1
 
 <div id="jsonld"></div>
 
+# APPENDIX: RO-Crate JSON-LD
+
 It is not necessary to use [JSON-LD tooling] to generate or parse the _RO-Crate Metadata File_, although JSON-LD tools may make it easier to conform to this specification, e.g. handling relative URIs. It is however RECOMMENDED to use [JSON tooling][JSON] to handle [JSON][RFC 7159] syntax and escaping rules.
 
 This appendix shows a brief JSON-LD introduction for complying with the _RO-Crate Metadata File_ requirements.

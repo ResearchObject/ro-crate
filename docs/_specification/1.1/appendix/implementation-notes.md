@@ -25,6 +25,8 @@ excerpt:
    limitations under the License.
 -->
 
+# APPENDIX: Implementation notes
+
 ## Programming with JSON-LD
 
 When implementing tools to work with RO-Crate it is not necessary to use JSON-LD software libraries, however, programmers should keep in mind the following:

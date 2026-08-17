@@ -25,7 +25,7 @@ nav_order: 21
    limitations under the License.
 -->
 
-<div id="implementation-notes"></div>
+# APPENDIX: Implementation notes {#implementation-notes}
 
 ## Programming with JSON-LD
 

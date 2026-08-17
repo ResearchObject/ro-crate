@@ -27,7 +27,8 @@ parent: RO-Crate 1.4-DRAFT
    limitations under the License.
 -->
 
-<div id="root-data-entity"></div>
+# Root Data Entity  {#root-data-entity}
+
 
 The **Root Data Entity** is a [Dataset] that represents the RO-Crate as a whole;
 a _Research Object_ that includes the _Data Entities_ and the related

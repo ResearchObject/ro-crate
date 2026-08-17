@@ -29,6 +29,8 @@ parent: RO-Crate 1.2
   limitations under the License.
 -->
 
+# Workflows and Scripts {#workflows}
+
 Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an RO-Crate MAY be embedded in an RO-Crate. See also the Provenance section on [Software Used to Create Files](provenance#software-used-to-create-files).
 
 _Workflows_ and _scripts_ SHOULD be described using [data entities](data-entities) of type [SoftwareSourceCode].

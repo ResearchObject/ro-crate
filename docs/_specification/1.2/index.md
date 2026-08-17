@@ -1,5 +1,5 @@
 ---
-title: RO-Crate 1.2
+title: RO-Crate Metadata Specification 1.2
 redirect_from:
   - /1.2-DRAFT/index
   - /1.2-DRAFT/about

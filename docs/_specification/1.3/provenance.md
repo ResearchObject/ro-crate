@@ -25,7 +25,7 @@ parent: RO-Crate 1.3
    limitations under the License.
 -->
 
-<div id="provenance"></div>
+# Detailing provenance of entities {#provenance}
 
 ## Equipment used to create files
 

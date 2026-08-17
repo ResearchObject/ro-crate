@@ -28,6 +28,8 @@ parent: RO-Crate 1.1
 
 <div id="provenance"></div>
 
+# Detailing provenance of entities
+
 ## Equipment used to create files
 
 To specify which **equipment** was used to create or update a [Data Entity](data-entities), the _RO-Crate JSON-LD_ SHOULD have a _Context Entity_ for each item of equipment which SHOULD be of `@type` [IndividualProduct]. The entity SHOULD have a serial number, manufacturer that identifies it as completely as possible. In this case the equipment is a bespoke machine. The equipment SHOULD be described on a web page, and the address of the description SHOULD be used as its `@id`.

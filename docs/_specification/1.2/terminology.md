@@ -25,6 +25,9 @@ parent: RO-Crate 1.2
    limitations under the License.
 -->
 
+# Terminology {#terminology}
+
+
 _RO-Crate_: A dataset, which is described in a JSON-LD _RO-Crate Metadata Document_. 
 
 _RO-Crate Metadata Document_: A JSON-LD document that describes the _RO-Crate_ with structured data in form of _RO-Crate JSON-LD_. This may be stored in a file-system as an _RO-Crate Metadata File_, served via web site or via an API. 

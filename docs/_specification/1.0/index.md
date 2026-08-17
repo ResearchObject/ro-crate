@@ -24,6 +24,7 @@ nav_exclude: true
    limitations under the License.
 -->
 
+# RO-Crate Metadata Specification 1.0
 {:.no_toc}
 
 

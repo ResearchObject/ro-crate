@@ -35,7 +35,7 @@ parent: RO-Crate 1.3
    limitations under the License.
 -->
 
-<div id="structure"></div>
+# RO-Crate Structure {#structure}
 
 ## Types of RO-Crate
 

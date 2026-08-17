@@ -27,7 +27,8 @@ parent: RO-Crate 1.4-DRAFT
   limitations under the License.
 -->
 
-<div id="workflows"></div>
+# Workflows and Scripts {#workflows}
+
 
 Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an RO-Crate MAY be embedded in an RO-Crate. See also the Provenance section on [Software Used to Create Files](provenance#software-used-to-create-files).
 

@@ -4,7 +4,7 @@ on:
   push:
     branches: ["main"]
   pull_request:
-    branches: ["main"]
+    branches: ["main", "ett-6.1.0"]
 
 jobs:
   build-site:
@@ -52,3 +52,8 @@ jobs:
         working-directory: ./docs
         run: |
           ! fgrep -R 'site.pages' _site
+
+      - name: Run custom theme checks
+        working-directory: ./docs
+        run: |
+          bundle exec ruby tests/test_html_pages.rb
