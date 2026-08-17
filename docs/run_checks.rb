@@ -4,6 +4,6 @@ require 'html-proofer'
 require_relative 'tests/custom_html_tests.rb'
 
 # avoid h1 in Markdown - exclude spec pages which do have these (see README.md)
-HTMLProofer.check_directory("_site/", { checks: ["CheckH1NotInMarkdown"], ignore_files: [%r|_site/specification/.*|, "_site/index.html"]}).run
+HTMLProofer.check_directory("_site/", { checks: ["CheckH1NotInMarkdown"], ignore_files: [%r|_site/specification/.*|]}).run
 # enforce h1 in front matter
-HTMLProofer.check_directory("_site/", { checks: ["CheckH1InIntro"], ignore_files: ["_site/index.html"]}).run 
+HTMLProofer.check_directory("_site/", { checks: ["CheckH1InIntro"]}).run 

@@ -4,7 +4,7 @@ title: RO-Crate Technical Overview
 
 ## What is an RO-Crate?
 
-An RO-Crate is a [Research Object](background#research-object-background) (or _RO_) formed of a collection of data (a _crate_) and a special `ro-crate-metadata.json` file which describes the collection.
+An RO-Crate is a [Research Object](background) (or _RO_) formed of a collection of data (a _crate_) and a special `ro-crate-metadata.json` file which describes the collection.
 
 The collection may contain any kind of research data - papers, data files, software, references to other research, and so on. It may be a folder full of files, an abstract grouping of connected references, or a combination of both.
 
@@ -70,5 +70,3 @@ See [Walkthrough of an RO-Crate](specification/1.2/introduction#walkthrough-an-i
 The [RO-Crate specification](specification) is developed openly on GitHub by research community members across the globe. RO-Crate [tools](tools) and [profiles](profiles) are also community-developed and open-source. 
 
 Anyone can join the RO-Crate community and contribute to these outputs. See the [Community](community) pages for more information.
-
-
