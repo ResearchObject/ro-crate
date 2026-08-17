@@ -55,3 +55,8 @@ jobs:
         working-directory: ./docs
         run: |
           ! fgrep -R 'site.pages' _site
+
+      - name: Run custom theme checks
+        working-directory: ./docs
+        run: |
+          ! ruby run_checks.rb
