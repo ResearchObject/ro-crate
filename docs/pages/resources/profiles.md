@@ -40,27 +40,40 @@ Defining and conforming to such a profile enables reliable programmatic consumpt
 content, as well as consistent creation, e.g. a form in a user interface form firmly suggest the
 required types and properties, and likewise a rendering of an RO-Crate can easier make rich UI
 components if it can reliably assume for instance that the
-[`Person`](specification/1.1/contextual-entities#people) always has a `affiliation` to a
-[`Organization`](specification/1.1/contextual-entities#organizations-as-values) which has a `url` - a
+[`Person`](specification/1.3/contextual-entities#people) always has a `affiliation` to a
+[`Organization`](specification/1.3/contextual-entities#organizations-as-values) which has a `url` - a
 restriction that may not be appropriate for all types of RO-Crates.
 
 The RO-Crate profile can also lock down serialization expectation, for instance using a particular
 [version of RO-Crate](specification),
-[JSON-LD context](specification/1.1/appendix/jsonld?highlight=@context#ro-crate-json-ld-context) or
+[JSON-LD context](specification/1.3/appendix/jsonld?highlight=@context#ro-crate-json-ld-context) or
 particular
-[packaging](specification/1.1/appendix/implementation-notes#combining-with-other-packaging-schemes) like .zip
+[packaging](specification/1.3/appendix/implementation-notes#combining-with-other-packaging-schemes) like .zip
 or BagIt.
 
-For more examples, see the section
+For earlier examples, see the section
 [Profiles of RO-Crate in use](https://www.researchobject.org/2021-packaging-research-artefacts-with-ro-crate/manuscript.html#inuse)
-in the recent RO-Crate paper.
+in the RO-Crate paper.
+
+
+## RO-Crate Profiles registry
+
+We recommend profiles to be listed in the [RO-Crate Profiles registry](https://profiles.ro-crate.org/). 
+
+[![RO-Crate Profile Portal](assets/img/ro-crate-profile-portal.png)](https://profiles.ro-crate.org/)
+
+Users of RO-Crate should consider reuse of the existing profiles before deciding to develop their own. 
+
+Metadata in the RO-Crate Profiles portal is extracted from the corresponding [Profile Crate](specification/1.3/profiles) definition of the profile, see [submitting a profile to the portal](https://github.com/eScienceLab/RO-Crate-Profile-Portal?tab=readme-ov-file#submitting-a-profile-to-the-portal).
+
+
 
 ## Workflow RO-Crate profile
 
-[Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/) is a profile of RO-Crate 1.1,
-which requires at least one [data entity](specification/1.1/data-entities) that is a
-[ComputationalWorkflow](specification/1.1/workflows). This workflow must also be indicated with `mainEntity`
-from the [Root Data set](specification/1.1/root-data-entity). The Workflow RO-Crate profile further
+[Workflow RO-Crate](https://w3id.org/workflowhub/workflow-ro-crate/) is a profile of RO-Crate,
+which requires at least one [data entity](specification/1.3/data-entities) that is a
+[ComputationalWorkflow](specification/1.3/workflows). This workflow must also be indicated with `mainEntity`
+from the [Root Data set](specification/1.3/root-data-entity). The Workflow RO-Crate profile further
 recommends how to accompany the native workflow definition with a
 [abstract CWL description](https://www.commonwl.org/v1.2/Workflow#Operation), diagram, and
 meaning of named subfolders `test` and `examples`.
@@ -82,8 +95,8 @@ workflow to be executed.
 In summary the _Workflow RO-Crate profile_ covers as of 2021-03-09:
 
 -   [`Dataset`](http://schema.org/Dataset)
-    ([RO-Crate Root](specification/1.1/root-data-entity#direct-properties-of-the-root-data-entity))
-    -   [`hasPart`](specification/1.1/data-entities#referencing-files-and-folders-from-the-root-data-entity):
+    ([RO-Crate Root](specification/1.3/root-data-entity#direct-properties-of-the-root-data-entity))
+    -   [`hasPart`](specification/1.3/data-entities#referencing-files-and-folders-from-the-root-data-entity):
         -   `File,SoftwareSourceCode,ComputationalWorkflow` (required)
         -   `File,SoftwareSourceCode,HowTo`
         -   `"README.md"`: `CreativeWork` _?_
@@ -92,24 +105,24 @@ In summary the _Workflow RO-Crate profile_ covers as of 2021-03-09:
     -   [`mainEntity`](http://schema.org/mainEntity):
         -   `File,SoftwareSourceCode,ComputationalWorkflow` (required)
         -   `File,SoftwareSourceCode,HowTo`
-    -   [`license`](specification/1.1/contextual-entities#licensing-access-control-and-copyright):
+    -   [`license`](specification/1.3/contextual-entities#licensing-access-control-and-copyright):
         `(Text|CreativeWork)` ?
         -   `"AFL-3.0"`
         -   `"Apache-2.0"`
         -   `"BSD-3-Clause"`
         -   ...
-    -   [`name`](specification/1.1/root-data-entity#direct-properties-of-the-root-data-entity): Text
-    -   [`description`](specification/1.1/root-data-entity#direct-properties-of-the-root-data-entity):
+    -   [`name`](specification/1.3/root-data-entity#direct-properties-of-the-root-data-entity): Text
+    -   [`description`](specification/1.3/root-data-entity#direct-properties-of-the-root-data-entity):
         Text
-    -   [`author`](specification/1.1/contextual-entities#people): _`(Person|Organization)`??_
-    -   [`keywords`](specification/1.1/contextual-entities#subjects--keywords): Text
--   [`File`](specification/1.1/data-entities#file-data-entity),[`SoftwareSourceCode`](http://schema.org/SoftwareSourceCode),[`ComputationalWorkflow`](specification/1.1/workflows)
+    -   [`author`](specification/1.3/contextual-entities#people): _`(Person|Organization)`??_
+    -   [`keywords`](specification/1.3/contextual-entities#subjects--keywords): Text
+-   [`File`](specification/1.3/data-entities#file-data-entity),[`SoftwareSourceCode`](http://schema.org/SoftwareSourceCode),[`ComputationalWorkflow`](specification/1.3/workflows)
     -   [`programmingLanguage`](http://schema.org/programmingLanguage): `ComputerLanguage`
         (required)
     -   [`subjectOf`](http://schema.org/subjectOf): `File,SoftwareSourceCode,HowTo`
     -   [`image`](http://schema.org/image): `File,ImageObject`
--   [`File`](specification/1.1/data-entities#file-data-entity),[`SoftwareSourceCode`](http://schema.org/SoftwareSourceCode),[`HowTo`](http://schema.org/HowTo)
--   [`File`](specification/1.1/data-entities#file-data-entity),[`ImageObject`](http://schema.org/ImageObject)
+-   [`File`](specification/1.3/data-entities#file-data-entity),[`SoftwareSourceCode`](http://schema.org/SoftwareSourceCode),[`HowTo`](http://schema.org/HowTo)
+-   [`File`](specification/1.3/data-entities#file-data-entity),[`ImageObject`](http://schema.org/ImageObject)
 -   [`ComputerLanguage`](http://schema.org/ComputerLanguage) _recommends instances:_
     -   `"@id": "#cwl"`
     -   `"@id": "#galaxy"`
@@ -128,7 +141,7 @@ created in preparation for
 Workflow RO-Crate used by [Life Monitor](life-monitor) to support the submission of test
 suites for computational workflows.
 
-This profile is an [RO-Crate extension](specification/1.1/appendix/jsonld#extending-ro-crate) that employs
+This profile is an [RO-Crate extension](specification/1.3/appendix/jsonld#extending-ro-crate) that employs
 additional terms from the
 [ro-terms test namespace](https://github.com/ResearchObject/ro-terms/tree/master/test):
 
@@ -208,7 +221,7 @@ an RO-Crate.
 
 The
 [RO Crate profile](https://github.com/describo/profiles/tree/master/domain-profiles/ResearchObject-Crate)
-covers the recommendations in [RO-Crate 1.1 specifications](specification/1.1/), adding UI details such as value
+covers the recommendations in [RO-Crate 1.3 specifications](specification/1.3/), adding UI details such as value
 type, labels and description for each field.
 
 In addition, a [Domain-specific profile](https://github.com/describo/profiles#profile-documentation)
@@ -219,16 +232,16 @@ inline ad-hoc term definitions.
 In summary the _default profile_ covers:
 
 -   [`Dataset`](http://schema.org/Dataset) (e.g.
-    [RO-Crate Root](specification/1.1/root-data-entity#direct-properties-of-the-root-data-entity))
-    -   [`name`](specification/1.1/root-data-entity#direct-properties-of-the-root-data-entity): `Text`
+    [RO-Crate Root](specification/1.3/root-data-entity#direct-properties-of-the-root-data-entity))
+    -   [`name`](specification/1.3/root-data-entity#direct-properties-of-the-root-data-entity): `Text`
         (required)
-    -   [`description`](specification/1.1/root-data-entity#direct-properties-of-the-root-data-entity): `Text`
-    -   [`license`](specification/1.1/contextual-entities#licensing-access-control-and-copyright):
+    -   [`description`](specification/1.3/root-data-entity#direct-properties-of-the-root-data-entity): `Text`
+    -   [`license`](specification/1.3/contextual-entities#licensing-access-control-and-copyright):
         [`CreativeWork`](http://schema.org/CreativeWork)
-    -   [`datePublished`](specification/1.1/root-data-entity#direct-properties-of-the-root-data-entity):
+    -   [`datePublished`](specification/1.3/root-data-entity#direct-properties-of-the-root-data-entity):
         `Date`
-    -   [`publisher`](specification/1.1/contextual-entities#publisher): `Publisher` (required; ad-hoc type?
-    -   [`hasPart`](specification/1.1/data-entities#referencing-files-and-folders-from-the-root-data-entity):
+    -   [`publisher`](specification/1.3/contextual-entities#publisher): `Publisher` (required; ad-hoc type?
+    -   [`hasPart`](specification/1.3/data-entities#referencing-files-and-folders-from-the-root-data-entity):
         `(File|Dataset|Workflow|RepositoryCollection|RepositoryObject)`
 
 ## RELIANCE RO-crate profile
@@ -248,6 +261,10 @@ References:
     2021-06-18.
     [[video recording](https://youtu.be/qvtWJWsMLRg?list=PLbISfqJh3Tstmx6CgrBmYI7lyyVXiY5VE&t=1090)]
 -   [RELIANCE deliverable D5.1 RO Model Adapted to EOSC](https://doi.org/10.5281/zenodo.4913285)
+
+<!-- 
+
+OUTDATED
 
 ## Paradisec profile
 
@@ -270,14 +287,14 @@ In summary the _PARADISEC profile_ covers as of
     -   [`dateCreated`](http://schema.org/dateCreated): `Date`
     -   [`dateModified`](http://schema.org/dateModified): `Date`
     -   `depositFormReceived`: `Date` (ad-hoc term)
-    -   [`license`](specification/1.1/contextual-entities#licensing-access-control-and-copyright): `License`
+    -   [`license`](specification/1.3/contextual-entities#licensing-access-control-and-copyright): `License`
         (ad-hoc type)
     -   `media`: `Text` (ad-hoc term)
     -   `orthographicNotes`: `Text` (ad-hoc term)
     -   `private`: `Text` (ad-hoc term)
     -   `contentLanguages`: `Language` (PARADISEC term)
     -   `subjectLanguages`: `Language` _(ad-hoc term??)_
-    -   [`contentLocation`](specification/1.1/contextual-entities#places): [`Place`](http://schema.org/Place)
+    -   [`contentLocation`](specification/1.3/contextual-entities#places): [`Place`](http://schema.org/Place)
 -   `Item` _(unknown type)_
     -   `additionalType`: `Value`
     -   `name`: `Text` (required)
@@ -294,17 +311,17 @@ In summary the _PARADISEC profile_ covers as of
     -   `citeAs`: `Text` (ad-hoc term)
     -   `ingestNotes`: `Text` (ad-hoc term)
     -   `languageAsGiven`: `Text` (ad-hoc term)
-    -   [`license`](specification/1.1/contextual-entities#licensing-access-control-and-copyright): `License`
-    -   [`hasPart`](http://schema.org/hasPart): [`File`](specification/1.1/data-entities#file-data-entity)
+    -   [`license`](specification/1.3/contextual-entities#licensing-access-control-and-copyright): `License`
+    -   [`hasPart`](http://schema.org/hasPart): [`File`](specification/1.3/data-entities#file-data-entity)
     -   `contentLanguages`: `Language` _(ad-hoc term??)_
     -   `subjectLanguages`: `Language` _(ad-hoc term??)_
     -   `private`: `Text` (ad-hoc term)
     -   `originatedOn`: `Date` (ad-hoc term)
     -   `originatedOnNarrative`: `Text`
     -   `receivedOn`: `Text`
-    -   [`publisher`](specification/1.1/contextual-entities#publisher):
+    -   [`publisher`](specification/1.3/contextual-entities#publisher):
         [`Organization`](http://schema.org/Organization)
-    -   [`contentLocation`](specification/1.1/contextual-entities#places): [`Place`](http://schema.org/Place)
+    -   [`contentLocation`](specification/1.3/contextual-entities#places): [`Place`](http://schema.org/Place)
 -   `GeoBox` (ad-hoc type)
     -   `name`: `Text`
     -   `box`: `Text`
@@ -313,11 +330,13 @@ In summary the _PARADISEC profile_ covers as of
     -   `description`: `Text`
 
 This is a good example of how a specific profile can guide a user interface and
-[extend RO-Crate](specification/1.1/appendix/jsonld#extending-ro-crate) with additional terms.
+[extend RO-Crate](specification/1.3/appendix/jsonld#extending-ro-crate) with additional terms.
 
 _Note that some RO-Crates in the [Modern PARADISEC demonstrator](https://mod.paradisec.org.au/) have
 evolved from this profile to conform with RO-Crate 1.1's
-[repository content types](specification/1.1/provenance#digital-library-and-repository-content)_
+[repository content types](specification/1.3/provenance#digital-library-and-repository-content)_
+
+-->
 
 ## ARC RO-Crate profile
 
@@ -359,7 +378,7 @@ This profile has been expressed
 adds keys like `number_of_rows`, `stdev`, `average_length`.
 
 _Note that this profile has not currently been updated to
-[use JSON-LD terms](specification/1.1/appendix/jsonld#adding-new-or-ad-hoc-vocabulary-terms)_.
+[use JSON-LD terms](specification/1.3/appendix/jsonld#adding-new-or-ad-hoc-vocabulary-terms)_.
 
 ## Making an RO-Crate profile
 
@@ -372,15 +391,15 @@ explicit what is a strict requirement of the profile, what are best practice rec
 what are open-ended extensions.
 
 New profiles can use any <https://schema.org/> terms, but are likely to need define or import
-[additional terms](specification/1.1/appendix/jsonld#adding-new-or-ad-hoc-vocabulary-terms)
+[additional terms](specification/1.3/appendix/jsonld#adding-new-or-ad-hoc-vocabulary-terms)
 that needs to be mapped in the `@context`.
 
 A more formal definition of the profile can take multiple forms, depending on the serialization
 requirements for the RO-Crate, and how open-ended or restricted the profile is intended to be:
 
 -   [JSON Schema](https://json-schema.org/) requiring a restricted JSON form of
-    [RO-Crate JSON-LD](specification/1.1/appendix/jsonld). May include restricted JSON forms for expressing
-    selected [data](specification/1.1/data-entities) and [contextual entities](specification/1.1/contextual-entities)
+    [RO-Crate JSON-LD](specification/1.3/appendix/jsonld). May include restricted JSON forms for expressing
+    selected [data](specification/1.3/data-entities) and [contextual entities](specification/1.3/contextual-entities)
     in a certain way.
 -   RDF Shapes expressed in [ShEx](https://shex.io/) or [SHACL](https://www.w3.org/TR/shacl/) to
     check graph patterns like _`author` must be of `@type: Person` and have `affiliation` to a
@@ -389,7 +408,7 @@ requirements for the RO-Crate, and how open-ended or restricted the profile is i
     is of declared media type.
 
 Implementors making validators may also want to first check that the
-[RO-Crate metadata file](specification/1.1/structure#ro-crate-metadata-file-ro-crate-metadatajson) is:
+[RO-Crate metadata file](specification/1.3/structure#ro-crate-metadata-document-ro-crate-metadatajson) is:
 
 -   Valid [JSON](https://www.json.org/)
 -   Has expected/supported JSON-LD `@context`
