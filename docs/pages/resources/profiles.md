@@ -64,7 +64,7 @@ We recommend profiles to be listed in the [RO-Crate Profiles registry](https://p
 
 Users of RO-Crate should consider reuse of the existing profiles before deciding to develop their own. 
 
-Metadata in the Ro-Crate Profiles portal is extracted from the corresponding [Profile Crate](specification/1.3/profiles) definition of the profile, see [submitting a profile to the portal](https://github.com/eScienceLab/RO-Crate-Profile-Portal?tab=readme-ov-file#submitting-a-profile-to-the-portal).
+Metadata in the RO-Crate Profiles portal is extracted from the corresponding [Profile Crate](specification/1.3/profiles) definition of the profile, see [submitting a profile to the portal](https://github.com/eScienceLab/RO-Crate-Profile-Portal?tab=readme-ov-file#submitting-a-profile-to-the-portal).
 
 
 
@@ -221,7 +221,7 @@ an RO-Crate.
 
 The
 [RO Crate profile](https://github.com/describo/profiles/tree/master/domain-profiles/ResearchObject-Crate)
-covers the recommendations in [RO-Crate 1.1 specifications](specification/1.3/), adding UI details such as value
+covers the recommendations in [RO-Crate 1.3 specifications](specification/1.3/), adding UI details such as value
 type, labels and description for each field.
 
 In addition, a [Domain-specific profile](https://github.com/describo/profiles#profile-documentation)
@@ -408,7 +408,7 @@ requirements for the RO-Crate, and how open-ended or restricted the profile is i
     is of declared media type.
 
 Implementors making validators may also want to first check that the
-[RO-Crate metadata file](specification/1.3/structure#ro-crate-metadata-file-ro-crate-metadatajson) is:
+[RO-Crate metadata file](specification/1.3/structure#ro-crate-metadata-document-ro-crate-metadatajson) is:
 
 -   Valid [JSON](https://www.json.org/)
 -   Has expected/supported JSON-LD `@context`
