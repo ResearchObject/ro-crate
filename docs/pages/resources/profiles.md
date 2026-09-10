@@ -60,9 +60,11 @@ in the RO-Crate paper.
 
 We recommend profiles to be listed in the [RO-Crate Profiles registry](https://profiles.ro-crate.org/). 
 
-Users of RO-Crate should consider reuse of the existing profiles before deciding to develop their own.
+[![RO-Crate Profile Portal](assets/img/ro-crate-profile-portal.png)](https://profiles.ro-crate.org/)
 
-Metadata in the Ro-Crate Profiles portal is extracted from the corresponding [Profile Crate](specification/1.3/profiles) definition of the profile.
+Users of RO-Crate should consider reuse of the existing profiles before deciding to develop their own. 
+
+Metadata in the Ro-Crate Profiles portal is extracted from the corresponding [Profile Crate](specification/1.3/profiles) definition of the profile, see [submitting a profile to the portal](https://github.com/eScienceLab/RO-Crate-Profile-Portal?tab=readme-ov-file#submitting-a-profile-to-the-portal).
 
 
 
