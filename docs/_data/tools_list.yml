@@ -386,7 +386,7 @@
   url: https://github.com/unimelbmdap/cdl2-rocrates
   status: alpha
 
-- name: data-containers
+- name: HuBMAP data-containers
   description: Code for building and manipulating data containers like RO-Crate, Croissant, BagIt for HuBMAP
   url: https://github.com/hubmapconsortium/data-containers  
   status: prototype
