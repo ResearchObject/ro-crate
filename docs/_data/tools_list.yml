@@ -37,8 +37,8 @@
   level:
   url: https://www.npmjs.com/package/ro-crate-excel
   subitems:
-    -name: ro-crate-excel (source code)
-     url: https://github.com/Language-Research-Technology/ro-crate-excel
+    - name: ro-crate-excel (source code)
+      url: https://github.com/Language-Research-Technology/ro-crate-excel
 
 - name: ro-crate-html
   description: rochtml command line tool for HTML rendering of RO-Crate to ro-crate-preview.html
@@ -46,8 +46,8 @@
   level:
   url: https://www.npmjs.com/package/ro-crate-html
   subitems:
-    -name: ro-crate-html-js (source code)
-     url: https://github.com/Language-Research-Technology/ro-crate-html-js
+    - name: ro-crate-html-js (source code)
+      url: https://github.com/Language-Research-Technology/ro-crate-html-js
 
 - name: ro-crate-preview
   description: GitHub Action for ro-crate-html, e.g. publishing crates on GitHub Pages
@@ -391,8 +391,8 @@
   url: https://github.com/hubmapconsortium/data-containers  
   status: prototype
   subitems:
-    -name: Human BioMolecular Atlas Program
-     url: https://hubmapconsortium.org/
+    - name: Human BioMolecular Atlas Program
+      url: https://hubmapconsortium.org/
 
 - name: flwrCrate
   description: Capture a Flower federated learning run and emit an RO-Crate describing it
@@ -458,8 +458,8 @@
   url: https://ro-crate-api.crate-works.org/
   status: alpha
   subitems:
-    -name: arocapi (source code)
-     url: https://github.com/Language-Research-Technology/arocapi
+    - name: arocapi (source code)
+      url: https://github.com/Language-Research-Technology/arocapi
 
 - name: Oni UI
   url: https://github.com/crate-works/oni
