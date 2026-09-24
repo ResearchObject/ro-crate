@@ -338,30 +338,36 @@ evolved from this profile to conform with RO-Crate 1.1's
 
 -->
 
-## ARC RO-Crate profile
+## ARC RO-Crate profile collection
 
-The [ARC RO-Crate profile](https://github.com/nfdi4plants/arc-ro-crate-profile) describes [Annotated Research Contexts](https://arc-rdm.org/) (ARC), developed by [DataPLANT](https://nfdi4plants.org/).
-An ARC consists of [ISA](https://isa-specs.readthedocs.io/en/latest/isamodel.html) metadata describing the experimental setup and computational workflows given in CWL.
-The current profile is a combination of the [ISA RO-Crate profile](https://github.com/nfdi4plants/isa-ro-crate-profile) and the [ARC CWL RO-Crate profile](https://github.com/nfdi4plants/arc-cwl-ro-crate-profile), see details below.
-It requires the crate to follow the ISA Investigation profile on the top level.
-The investigation object contains studies and assays from the ISA model, as well as computational workflows.
-The core entity of both sub-profiles is the type `LabProcess` defined by [Bioschemas](https://bioschemas.org/), which is used to describe processes leading to data files in a parametrized way.
+*This section is adapted from [ARC RO-Crate Profile Collection](https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/) under the MIT license.*
 
-How such an RO-Crate can be generated from an ARC is described in the [arc-to-rocrate](https://github.com/nfdi4plants/arc-to-rocrate) repository, which also contains scripts to perform the conversion.
+The Annotated Research Context (ARC) RO-Crate Profile Collection is a set of profiles that focus on providing meaning and context to research data, aligning with the [ARC](https://arc-rdm.org/) framework developed by [DataPLANT](https://nfdi4plants.org/).
 
-## ISA RO-Crate Profile
+An ARC consists of [ISA](https://isa-specs.readthedocs.io/en/latest/isamodel.html) metadata describing an experimental setup, computational workflows, and executions of those workflows.
 
-The [ISA RO-Crate profile](https://github.com/nfdi4plants/arc-to-rocrate/blob/main/profiles/investigation.md) describes experimental data in plant sciences that is annotated by metadata following the [ISA model](https://isa-specs.readthedocs.io/en/latest/isamodel.html).
+The collection contains five profiles: three "base" profiles, plus two further profiles that extend and combine them.
+
+### Base profiles
+
+The three "base" profiles focus on distinct aspects of research context, and can be useful beyond the ARC context:
+
+* [Administrative Crate](https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/administrative_crate/) for administrative information - creators, contributors, and rights holders
+* [Datamap Crate](https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/datamap_crate/) for structural and semantic details of data files and fragments of data files.
+* [Process Core Crate](https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/process_core_crate/) for capturing processes that generate and transform research entities.
+
+### ISA RO-Crate Profile
+
+The [ISA RO-Crate profile](https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/isa_ro_crate/) describes experimental data in plant sciences that is annotated by metadata following the [ISA model](https://isa-specs.readthedocs.io/en/latest/isamodel.html).
 Such datasets consist of three types of data entities: `Investigation`, `Study` and `Assay`.
 The profile adds requirements of the crate such that the data folders match the Investigation, Study and Assay objects of the [ISA model](https://isa-specs.readthedocs.io/en/latest/isamodel.html).
 The description of experimental processes that produce the data uses the [Bioschemas](https://bioschemas.org/) type `LabProcess` as its core entity.
 It describes how data and samples are derived from each other in a graph model based on formalized parameters as key-value pairs.
-Profiles for all included types can be found in the [full version](https://github.com/nfdi4plants/isa-ro-crate-profile).
+The profile builds on Administrative Crate and Process Core Crate above.
 
-## ARC CWL RO-Crate Profile
+### ARC Workflow Run RO-Crate Profile
 
-The [ARC CWL RO-Crate profile](https://github.com/nfdi4plants/arc-cwl-ro-crate-profile) extends the existing [Workflow Run Crate profile](https://w3id.org/ro/wfrun/workflow/) in an ARC-specific context.
-It uses the same process graph types (`LabProtocol`,`LabProcess`) as the [ISA profile](#isa-ro-crate-profile) to further annotate parameters of workflows (equivalent to protocols in ISA) and runs (equivalent to processes in ISA).  
+The [ARC Workflow Run RO-Crate Profile](https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/wr_ro_crate/) combines the existing [Workflow Run Crate profile](https://w3id.org/ro/wfrun/workflow/) and the ISA RO-Crate profile in an ARC-specific context.
 
 ## Electronic Lab Notebook (ELN)
 
