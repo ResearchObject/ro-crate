@@ -45,6 +45,16 @@ The structure of RO-Crate was a natural fit for the project, and the details on 
 Furthermore, RO-Crate's extensibility and expressiveness made RO-Crate a technical choice with future-proofing in mind. As the GIDE project continues to evolve, the  RO-Crate profile can be extended to accommodate new metadata fields and vocabularies, as well indicating the locations of the data payloads themselves. In particular, the GIDE participants continue to study the intersection of RO-Crate and the [OME-Zarr](https://ngff.openmicroscopy.org/) format, which is emerging as a standard for storing bioimaging data in the cloud, for providing federated architectures with FAIR data and metadata.
 
 
+## RO-Crate as a common metadata exchange format
+
+{% include image.html src="assets/img/gide-metadata-export-pipeline.png" caption="foundingGIDE RO-Crate pipeline" alt="BioImage Archive, Image Data Resource and SSBD export RO-Crate to foundingGIDE, which generates JSON for indexing by ElasticSearch, visualised by Astro frontend" border=false %}
+
+foundingGIDE enables researchers to search across heterogeneous image data repositories (BioImage Archive, Image Data Resource and SSBD), by harvesting RO-Crate export of these repositories' metadata, indexing them and listing these in the [GIDE:BioImaging search portal](https://www.gide-project.org/portal). Faceted search is facilitated from the metadata.
+
+Because all the indexed RO-Crates are following the [GIDE RO-Crate profile](https://www.gide-project.org/ro-crate/search/1.0/profile) (which can be validated with [BIA RO-Crate validator](https://pypi.org/project/bia-ro-crate-validator/)), the user interface is able to give domain-specific filtering and display of the metadata, without exposing their technical implementation.
+
+{% include image.html src="assets/img/gide-search.png" caption="GIDE:BioImaging search portal" alt="Search in GIDE database, making use of faceted browsing to filter on Publisher, Organism, Imaging method, Year Published" border=false %}
+
 ## How detached RO-Crates are used in GIDE
 
 Version 1.2 of the RO-Crate specification introduced the _detached RO-Crate_: a `ro-crate-metadata.json` file that stands alone, with no associated data payload. This construct is purpose-built for the bioimaging case, where metadata is exchanged but the data-heavy images stay at their publishing resource.
@@ -53,9 +63,11 @@ Each repository exports its catalogue as a set of detached RO-Crates, one per st
 
 {% include image.html src="assets/img/gide-pipeline.png" caption="The technical pipeline of foundingGIDE. A) The flow from harmonized data through RO-Crate to the GIDE-Portal and RDF dumps. B-C) Internal dashboards used for validating data quality. D) A SPARQL interface for querying the RO-Crates as RDF" alt="A diagram showing the technical pipeline of foundingGIDE" border=false %}
 
+You can read more about the [Biological Imaging in the GIDE Stack](https://founding-gide.eurobioimaging.eu/biological-imaging-gide-stack/).
+
 ## The GIDE RO-Crate Profile
 
-An RO-Crate _profile_ is a layer of domain-specific rules on top of the base specification, defining which fields must be present, what they mean, and which vocabularies to draw on. The GIDE profile uses this mechanism to specify a minimal shared metadata set for bioimaging studies, built directly on the twelve metadata components found to be common across BIA, IDR and SSBD.
+An RO-Crate _profile_ is a layer of domain-specific rules on top of the base specification, defining which fields must be present, what they mean, and which vocabularies to draw on. The [GIDE RO-Crate profile](https://www.gide-project.org/ro-crate/search/1.0/profile) uses this mechanism to specify a minimal shared metadata set for bioimaging studies, built directly on the twelve metadata components found to be common across BIA, IDR and SSBD.
 
 The profile adopts a two-tier structure. A small **core** of mandatory fields drives cross-resource search: every conformant crate must carry a resolvable identifier, a name and description, a publication date, a license, at least one author, a publisher, at least one organism (via `about`), and at least one imaging method (via `measurementMethod`). Organisms _should_ use [NCBI Taxonomy](https://www.ncbi.nlm.nih.gov/taxonomy) identifiers and imaging methods _should_ use terms from the [Biological Imaging Methods Ontology](https://obofoundry.org/ontology/fbbi) (FBbi), so that queries are simplified. Where terms are not available in these vocabularies, the profile allows for entries from other ontologies, but these are not guaranteed to be searchable across resources.
 
