@@ -33,11 +33,17 @@ The [Global Image Data Ecosystem](https://founding-gide.eurobioimaging.eu/) (GID
 
 RO-Crate is a core part of the [GIDE technical stack](https://founding-gide.eurobioimaging.eu/gide-stack/), used as the metadata exchange format that harmonizes outputs from BIA, IDR and SSBD.
 
+The GIDE project was originally funded by the European Commission Horizon 2020 program from 1 January 2024 to 30 June 2026 under the grant "Founding a Global Image Data Ecosystem"  ([grant 101130216](https://cordis.europa.eu/project/id/101130216)). The participants of the project have, however, comitted to the continuity of the endeavour and updates on the project can be found on the "About" session of the [GIDE Portal website](https://www.gide-project.org/portal/about).
+
+
 ## Why RO-Crate
 
 The foundingGIDE project looked for a solution that would allow independently-operated resources to expose comparable metadata through compatible interfaces, while leaving their internal models untouched.
 
-The structure of RO-Crate was a natural fit for the project, and the details on the reasons are present in the [D7.1 deliverable](https://doi.org/10.5281/zenodo.20808012) of the foundingGIDE EU Horizon porject. Particularly, RO-Crate is an actively maintained community standard with tooling in multiple languages, a better than creating an arbitrary format. As it is based on JSON-LD, RO-Crate allowed for use cases that both relied on semantic web technologies (such as generating RDF and running SPARQL queries) as well as more traditional JSON-based workflows, as used for building the [GIDE search portal](https://www.gide-project.org/portal). This choice means the crates produced by GIDE remain meaningful to tools and consumers well beyond the project itself.
+The structure of RO-Crate was a natural fit for the project, and the details on the reasons are present in the [D7.1 deliverable](https://doi.org/10.5281/zenodo.20808012) of the foundingGIDE EU Horizon porject. Particularly, RO-Crate is an actively maintained community standard with tooling in multiple languages, a better option than creating an arbitrary format. As it is based on JSON-LD, RO-Crate allowed for use cases that both relied on semantic web technologies (such as generating RDF and running SPARQL queries) as well as more traditional JSON-based workflows, as used for building the [GIDE search portal](https://www.gide-project.org/portal). This choice means the crates produced by GIDE remain meaningful to tools and consumers well beyond the project itself.
+
+Furthermore, RO-Crate's extensibility and expressiveness made RO-Crate a technical choice with future-proofing in mind. As the GIDE project continues to evolve, the  RO-Crate profile can be extended to accommodate new metadata fields and vocabularies, as well indicating the locations of the data payloads themselves. In particular, the GIDE participants continue to study the intersection of RO-Crate and the [OME-Zarr](https://ngff.openmicroscopy.org/) format, which is emerging as a standard for storing bioimaging data in the cloud, for providing federated architectures with FAIR data and metadata.
+
 
 ## How detached RO-Crates are used in GIDE
 
