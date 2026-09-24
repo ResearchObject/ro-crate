@@ -36,12 +36,18 @@
   status: beta
   level:
   url: https://www.npmjs.com/package/ro-crate-excel
+  subitems:
+    - name: ro-crate-excel (source code)
+      url: https://github.com/Language-Research-Technology/ro-crate-excel
 
 - name: ro-crate-html
-  description: HTML rendering of RO-Crate
+  description: rochtml command line tool for HTML rendering of RO-Crate to ro-crate-preview.html
   status: beta
   level:
   url: https://www.npmjs.com/package/ro-crate-html
+  subitems:
+    - name: ro-crate-html-js (source code)
+      url: https://github.com/Language-Research-Technology/ro-crate-html-js
 
 - name: ro-crate-preview
   description: GitHub Action for ro-crate-html, e.g. publishing crates on GitHub Pages
@@ -62,10 +68,13 @@
   url: https://github.com/vliz-be-opsci/rocrate-preview-widget
 
 - name: ro-crate-js
-  description: JavaScript/NodeJS library for RO-Crate rendering as HTML.
+  description: JavaScript library to create and manipulate RO-Crate
   status: beta
   level:
   url: https://www.npmjs.com/package/ro-crate
+  subitems:
+    - name: ro-crate-js (source code)
+      url: https://github.com/Language-Research-Technology/ro-crate-js
 
 - name: ro-crate-ruby
   description: Ruby library to consume/produce RO-Crates
@@ -266,7 +275,7 @@
 
 - name: ro-crate-rs
   description: A Rust library for defining RO-Crates. It can also be used in Python via the rocraters package.
-  status: alpha
+  status: beta
   url: https://github.com/intbio-ncl/ro-crate-rs
   subitems:
     - name: Rust library
@@ -341,3 +350,161 @@
   description: Python package to record calls of Python CLI commands into a RO-Crate by annotating argument parsers such as argparse, click and cyclopts.
   url: https://pypi.org/project/rocrate-action-recorder/
   status: beta
+
+- name: chaos2crate
+  description: A browser app that turns a local folder of resources into an RO-Crate — reading the folder and writing back RO-Crate Metadata file and Excel spreadsheet
+  url: https://language-research-technology.github.io/chaos2crate/
+  subitems:
+    - name: chaos2crate web app
+      url: https://language-research-technology.github.io/chaos2crate/
+    - name: Collection2Crate (next version)
+      url: https://github.com/Language-Research-Technology/collection2crate/
+    - name: Collection2Crate web app
+      url: https://language-research-technology.github.io/collection2crate/
+  status: alpha
+
+- name: ro-crate-cpp
+  url: https://github.com/eScienceLab/ro-crate-cpp
+  description: A header only library for creating RO-Crates in C++ 
+  status: prototype
+  
+- name: ro-crate-masp
+  url: https://github.com/Language-Research-Technology/ro-crate-masp
+  description: RO-Crate Machine Actionable Schemas and Profiles
+  status: prototype  
+  subitems:
+    - name: MASP tool documentation
+      url: https://language-research-technology.github.io/ro-crate-masp/
+    - name: MASP Profile
+      url: https://language-research-technology.github.io/ro-crate-masp/profiles/ro-crate-masp/profile-crate/
+    - name: MASP profile doc
+      url: https://language-research-technology.github.io/ro-crate-masp/profiles/ro-crate-masp/profile-crate/profile-documentation.html
+
+
+- name: c2dl2-rocrates
+  description: Python toolkit for analysing and visualising research data collections stored in RO-Crates, with a focus on HASS and GLAM applications.
+  url: https://github.com/unimelbmdap/cdl2-rocrates
+  status: alpha
+
+- name: HuBMAP data-containers
+  description: Code for building and manipulating data containers like RO-Crate, Croissant, BagIt for HuBMAP
+  url: https://github.com/hubmapconsortium/data-containers  
+  status: prototype
+  subitems:
+    - name: Human BioMolecular Atlas Program
+      url: https://hubmapconsortium.org/
+
+- name: flwrCrate
+  description: Capture a Flower federated learning run and emit an RO-Crate describing it
+  url: https://github.com/eScienceLab/flwrCrate
+  status: alpha
+  subitems: 
+    - name: PyPi package flwrCrate
+      url: https://pypi.org/project/flwrcrate/
+    - name: Federated Learning RO-Crate profile
+      url: https://esciencelab.org.uk/federated-learning-ro-crate-profile/federated-learning-profile.html
+
+- name: ro-crate-static-site
+  description: Tool to create a static website from and RO-Crate file, either a single ro-crate-html-preview or an multipage site.
+  status: alpha
+  subitems:
+    - name: ro-crate-static-site Web app
+      url: https://crate-works.github.io/ro-crate-static-site/
+    - name: ro-crate-html-lite (previous version)
+      url: https://github.com/Language-Research-Technology/ro-crate-html-lite
+
+- name: PyFlowBatt
+  description: Tools for analysing data from the flow battery lab at Empa, RO-Crate output
+  url: https://github.com/EmpaEconversion/PyFlowBatt
+  status: alpha
+
+- name: ARCtrl
+  description: Software library (Python/.NET/JS) to work with Annotated Research Contexts (ARCs) and export as RO-Crate
+  url: https://nfdi4plants.github.io/nfdi4plants.knowledgebase/arctrl/
+  status: stable
+  subitems: 
+    - name: ARCtrl (source code)
+      url: https://github.com/nfdi4plants/ARCtrl
+
+- name: RO-Crate Zip Explorer
+  url: https://github.com/davelopez/ro-crate-zip-explorer    
+  description: TypeScript library for browsing and extracting RO-Crate metadata files directly within ZIP archives
+  status: alpha
+
+- name: RO-Crate Tabulator
+  url: https://github.com/Sydney-Informatics-Hub/rocrate-tabular
+  status: alpha
+  description: Python library to turn an RO-Crate into tabular formats.
+
+- name: RO-Crate Profile Portal
+  url: https://profiles.ro-crate.org/
+  description: Portal listing of RO-Crate Profiles, Profile Crates visualised using SAMPO-UI
+  status: alpha
+  subitems:
+    - name: RO-Crate-Profile-Portal (source code)
+      url: https://github.com/eScienceLab/RO-Crate-Profile-Portal/
+
+- name: corpus-tools-ro-crate
+  description: Generating the OCFL object for RO-Crate (for ONI portal)
+  url: https://github.com/Language-Research-Technology/corpus-tools-ro-crate
+  status: beta
+
+- name: ldaca-analytical-tools
+  url: https://github.com/Language-Research-Technology/ldaca-analytical-tools
+  description: LDaCA Analytical Tools Google Sheets to RO-Crate Sync
+  status: alpha
+
+- name: An RO-Crate API
+  url: https://ro-crate-api.crate-works.org/
+  status: alpha
+  subitems:
+    - name: arocapi (source code)
+      url: https://github.com/Language-Research-Technology/arocapi
+
+- name: Oni UI
+  url: https://github.com/crate-works/oni
+  description: Discovery portal for browsing research data described as RO-Crate.
+  status: stable
+
+- name: Collection Downloader
+  url: https://downloader.crate-works.org/
+  description: Web application for browsing RO-Crate collections hierarchically, selecting files with quality tier filtering, and requesting zip downloads via email
+  subitems:
+    - name: downloader (source code)
+      url: https://github.com/crate-works/downloader
+
+- name: Cockatiel
+  description: Browser-based audio annotation tool, loads RO-Crate
+  url: https://cockatiel.crate-works.org/
+  subitems:
+    - name: cockatiel (source code)
+      url: https://github.com/crate-works/cockatiel
+
+- name: RaspboCrate
+  description: Raspberry Pi-based system for managing RO-Crate catalogues in remote locations
+  url: https://raspbocrate.crate-works.org/
+  subitems:
+    - name: raspbocrate (source code)
+      url: https://github.com/crate-works/raspbocrate
+
+- name: Bowerbird
+  description: Browse RO-Crate archives offline
+  url: https://bowerbird.crate-works.org/
+  subitems:
+    - name: bowerbird (source code)
+      url: https://github.com/crate-works/bowerbird
+
+- name: CrateWorks
+  description: CrateWorks is a home for several projects that use the RO-Crate as an interchange format for research data and archival systems
+  url: https://crate-works.org/
+
+- name: rocrate-action-recorder
+  url: https://pypi.org/project/rocrate-action-recorder/
+  description: Record calls of Python CLI commands into a
+  subitems:
+    - name: rocrate-action-recorder (source code)
+      url: https://github.com/i-VRESSE/rocrate-action-recorder
+
+- name: BioImage Archive (BIA) RO-Crate Validator
+  url: https://pypi.org/project/bia-ro-crate-validator/      
+  description: Data models for describing, parsing, and validating the RO-Crate profile for BioImage Archive (BIA). submissions, with supporting structures such as file lists.
