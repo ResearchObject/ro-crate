@@ -453,3 +453,58 @@
   url: https://github.com/Language-Research-Technology/ldaca-analytical-tools
   description: LDaCA Analytical Tools Google Sheets to RO-Crate Sync
   status: alpha
+
+- name: An RO-Crate API
+  url: https://ro-crate-api.crate-works.org/
+  status: alpha
+  subitems:
+    -name: arocapi (source code)
+     url: https://github.com/Language-Research-Technology/arocapi
+
+- name: Oni UI
+  url: https://github.com/crate-works/oni
+  description: Discovery portal for browsing research data described as RO-Crate.
+  status: stable
+
+- name: Collection Downloader
+  url: https://downloader.crate-works.org/
+  description: Web application for browsing RO-Crate collections hierarchically, selecting files with quality tier filtering, and requesting zip downloads via email
+  subitems:
+    - name: downloader (source code)
+      url: https://github.com/crate-works/downloader
+
+- name: Cockatiel
+  description: Browser-based audio annotation tool, loads RO-Crate
+  url: https://cockatiel.crate-works.org/
+  subitems:
+    - name: cockatiel (source code)
+      url: https://github.com/crate-works/cockatiel
+
+- name: RaspboCrate
+  description: Raspberry Pi-based system for managing RO-Crate catalogues in remote locations
+  url: https://raspbocrate.crate-works.org/
+  subitems:
+    - name: raspbocrate (source code)
+      url: https://github.com/crate-works/raspbocrate
+
+- name: Bowerbird
+  description: Browse RO-Crate archives offline
+  url: https://bowerbird.crate-works.org/
+  subitems:
+    - name: bowerbird (source code)
+      url: https://github.com/crate-works/bowerbird
+
+- name: CrateWorks
+  description: CrateWorks is a home for several projects that use the RO-Crate as an interchange format for research data and archival systems
+  url: https://crate-works.org/
+
+- name: rocrate-action-recorder
+  url: https://pypi.org/project/rocrate-action-recorder/
+  description: Record calls of Python CLI commands into a
+  subitems:
+    - name: rocrate-action-recorder (source code)
+      url: https://github.com/i-VRESSE/rocrate-action-recorder
+
+- name: BioImage Archive (BIA) RO-Crate Validator
+  url: https://pypi.org/project/bia-ro-crate-validator/      
+  description: Data models for describing, parsing, and validating the RO-Crate profile for BioImage Archive (BIA). submissions, with supporting structures such as file lists.
