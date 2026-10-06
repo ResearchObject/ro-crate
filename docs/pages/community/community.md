@@ -133,6 +133,9 @@ The _RO-Crate_ team is:
 * Paul Slavin <https://orcid.org/0009-0009-5499-2096>
 * Deb McCaffrey <https://orcid.org/0000-0002-3624-6358>
 * Loïc Jeanson <https://orcid.org/0000-0001-7452-0648>
+* Daniel Lakens <https://orcid.org/0000-0002-0247-239X>
+* Kathrin Füllenbach <https://orcid.org/0000-0003-3325-7876>
+* Leonardo Bertolucci Coelho <https://orcid.org/0000-0002-7106-7603>
 
 The RO-Crate Community is open for anyone to [join us](https://github.com/ResearchObject/ro-crate/issues/1)!
 
