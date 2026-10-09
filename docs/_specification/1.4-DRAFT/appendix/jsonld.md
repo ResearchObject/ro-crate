@@ -395,3 +395,72 @@ In the example above, the type `CPMProvenanceFile` is resolved to <https://w3id.
 The contextual entity `http://www.w3.org/TR/2013/REC-prov-n-20130430/` for `encodingFormat` is defined within the profile rather than in this specific crate, however in this example that `@id` resolves to the textual specification at W3C rather than back to the Profile Crate. 
 
 {% include references.liquid %}
+
+## Compact URIS (CURIEs) in RO-Crate
+
+CURIEs are URIs of the form `prefix:suffix`, where `prefix` is a pre-defined URI.
+JSON-LD supports CURIEs as a way of re-using a common prefix which is then simply concatenated with the suffix.
+For example, the RO-Crate context defines:
+```json
+{
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "HTML": "rdf:HTML"
+}
+```
+
+This is a shortcut for:
+```json
+{
+  "HTML": "http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"
+}
+```
+
+In RO-Crate you might want to use CURIEs in the following places to avoid repeating a common prefix:
+* In the `@context` to define custom terms:
+  ```json
+  {
+    "@context": {
+      "myNamespace": "http://www.my.namespace.org/",
+      "MyType": "myNamespace:MyType",
+      "MyOtherType": "myNamespace:MyOtherType",
+    }
+  }
+  ```
+* In the `@type` of entities:
+  ```json
+  {
+    "@context": {
+      "myNamespace": "http://www.my.namespace.org/",
+    },
+    "@graph": [
+      {
+        "@type": "myNamespace:MyType"
+      }
+    ]
+  }
+  ```
+* As *keys* of entities:
+  ```json
+  {
+    "@context": {
+      "myNamespace": "http://www.my.namespace.org/",
+    },
+    "@graph": [
+      {
+        "myNamespace:myAttribute": "foo"
+      }
+    ]
+  }
+  ```
+* When using multiple [web-based entities](../data-entities#web-based-data-entities) with related `@id`s:
+  ```json
+  {
+    "@context": {
+      "myNamespace": "http://www.my.namespace.org/",
+    },
+    "@graph": [
+      { "@id": "myNamespace:foo.pdf" },
+      { "@id": "myNamespace:bar.pdf" }
+    ]
+  }
+  ```
