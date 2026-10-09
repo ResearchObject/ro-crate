@@ -452,7 +452,7 @@ In RO-Crate you might want to use CURIEs in the following places to avoid repeat
     ]
   }
   ```
-* When using multiple [web-based entities](../data-entities.md#web-based-data-entities) with related `@id`s:
+* When using multiple [web-based entities](../data-entities#web-based-data-entities) with related `@id`s:
   ```json
   {
     "@context": {
