@@ -44,6 +44,9 @@ _Data Science_ **5**(2)
 
 ## Recent publications, presentations, citations
 
+### 2026
+
+Goble, C. (2026, October 12). [**The Research Object Odyssey: a journey of technology, community and politics**](https://doi.org/10.5281/zenodo.23324805). Zenodo. 22nd IEEE [International eScience Conference 2026, Naples, Italy](https://www.escience-conference.org/2026/), 2026-09-28 - 2026-10-02.
 
 ### 2025
 
