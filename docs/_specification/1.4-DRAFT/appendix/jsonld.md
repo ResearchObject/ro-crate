@@ -434,6 +434,7 @@ In RO-Crate you might want to use CURIEs in the following places to avoid repeat
     },
     "@graph": [
       {
+        "@id": "#my-id",
         "@type": "myNamespace:MyType"
       }
     ]
@@ -447,6 +448,7 @@ In RO-Crate you might want to use CURIEs in the following places to avoid repeat
     },
     "@graph": [
       {
+        "@id": "#my-id",
         "myNamespace:myAttribute": "foo"
       }
     ]
@@ -455,12 +457,13 @@ In RO-Crate you might want to use CURIEs in the following places to avoid repeat
 * When using multiple [web-based entities](../data-entities#web-based-data-entities) with related `@id`s:
   ```json
   {
-    "@context": {
-      "myNamespace": "http://www.my.namespace.org/"
-    },
+    "@context": [
+      "https://w3id.org/ro/crate/1.3/context",
+      { "myNamespace": "http://www.my.namespace.org/" }
+    ],
     "@graph": [
-      { "@id": "myNamespace:foo.pdf" },
-      { "@id": "myNamespace:bar.pdf" }
+      { "@id": "myNamespace:foo.pdf", "name": "foo.pdf" },
+      { "@id": "myNamespace:bar.pdf", "name": "bar.pdf"  }
     ]
   }
   ```
