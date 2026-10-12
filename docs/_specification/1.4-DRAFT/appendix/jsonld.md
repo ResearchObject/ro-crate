@@ -422,7 +422,7 @@ In RO-Crate you might want to use CURIEs in the following places to avoid repeat
     "@context": {
       "myNamespace": "http://www.my.namespace.org/",
       "MyType": "myNamespace:MyType",
-      "MyOtherType": "myNamespace:MyOtherType",
+      "MyOtherType": "myNamespace:MyOtherType"
     }
   }
   ```
@@ -443,7 +443,7 @@ In RO-Crate you might want to use CURIEs in the following places to avoid repeat
   ```json
   {
     "@context": {
-      "myNamespace": "http://www.my.namespace.org/",
+      "myNamespace": "http://www.my.namespace.org/"
     },
     "@graph": [
       {
@@ -456,7 +456,7 @@ In RO-Crate you might want to use CURIEs in the following places to avoid repeat
   ```json
   {
     "@context": {
-      "myNamespace": "http://www.my.namespace.org/",
+      "myNamespace": "http://www.my.namespace.org/"
     },
     "@graph": [
       { "@id": "myNamespace:foo.pdf" },
