@@ -394,8 +394,6 @@ In the example above, the type `CPMProvenanceFile` is resolved to <https://w3id.
 
 The contextual entity `http://www.w3.org/TR/2013/REC-prov-n-20130430/` for `encodingFormat` is defined within the profile rather than in this specific crate, however in this example that `@id` resolves to the textual specification at W3C rather than back to the Profile Crate. 
 
-{% include references.liquid %}
-
 ## Compact URIS (CURIEs) in RO-Crate
 
 CURIEs are URIs of the form `prefix:suffix`, where `prefix` is a pre-defined URI.
@@ -467,3 +465,5 @@ In RO-Crate you might want to use CURIEs in the following places to avoid repeat
     ]
   }
   ```
+
+{% include references.liquid %}
