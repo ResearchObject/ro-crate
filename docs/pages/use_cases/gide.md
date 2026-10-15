@@ -51,7 +51,7 @@ Furthermore, RO-Crate's extensibility and expressiveness made RO-Crate a technic
 
 foundingGIDE enables researchers to search across heterogeneous image data repositories (BioImage Archive, Image Data Resource and SSBD), by harvesting RO-Crate export of these repositories' metadata, indexing them and listing these in the [GIDE:BioImaging search portal](https://www.gide-project.org/portal). Faceted search is facilitated from the metadata.
 
-Because all the indexed RO-Crates are following the [GIDE RO-Crate profile](https://www.gide-project.org/ro-crate/search/1.0/profile) (which can be validated with [BIA RO-Crate validator](https://pypi.org/project/bia-ro-crate-validator/)), the user interface is able to give domain-specific filtering and display of the metadata, without exposing their technical implementation.
+Because all the indexed RO-Crates are following the [GIDE RO-Crate profile](https://www.gide-project.org/ro-crate/search/1.0/profile), the user interface is able to give domain-specific filtering and display of the metadata, without exposing their technical implementation.
 
 {% include image.html src="assets/img/gide-search.png" caption="GIDE:BioImaging search portal" alt="Search in GIDE database, making use of faceted browsing to filter on Publisher, Organism, Imaging method, Year Published" border=false %}
 
