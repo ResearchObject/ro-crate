@@ -489,7 +489,7 @@ Referencing enumerations or vocabulary terms like `http://schema.org/CompletedAc
   "name": "Sign-off of execution according to Agreement policy: approved",
   "endTime": "2023-04-19T17:15:12+01:00",
   "object": [
-      {"@id": "./"}, 
+      {"@id": "./"},
   ],
   "instrument": {"@id": "https://tre72.example.com/agreement-policy/81"},
   "agent": {"@id": "https://orcid.org/0000-0002-1825-0097"},
