@@ -365,13 +365,13 @@
 
 - name: ro-crate-cpp
   url: https://github.com/eScienceLab/ro-crate-cpp
-  description: A header only library for creating RO-Crates in C++ 
+  description: A header only library for creating RO-Crates in C++
   status: prototype
-  
+
 - name: ro-crate-masp
   url: https://github.com/Language-Research-Technology/ro-crate-masp
   description: RO-Crate Machine Actionable Schemas and Profiles
-  status: prototype  
+  status: prototype
   subitems:
     - name: MASP tool documentation
       url: https://language-research-technology.github.io/ro-crate-masp/
@@ -380,7 +380,6 @@
     - name: MASP profile doc
       url: https://language-research-technology.github.io/ro-crate-masp/profiles/ro-crate-masp/profile-crate/profile-documentation.html
 
-
 - name: c2dl2-rocrates
   description: Python toolkit for analysing and visualising research data collections stored in RO-Crates, with a focus on HASS and GLAM applications.
   url: https://github.com/unimelbmdap/cdl2-rocrates
@@ -388,7 +387,7 @@
 
 - name: HuBMAP data-containers
   description: Code for building and manipulating data containers like RO-Crate, Croissant, BagIt for HuBMAP
-  url: https://github.com/hubmapconsortium/data-containers  
+  url: https://github.com/hubmapconsortium/data-containers
   status: prototype
   subitems:
     - name: Human BioMolecular Atlas Program
@@ -398,7 +397,7 @@
   description: Capture a Flower federated learning run and emit an RO-Crate describing it
   url: https://github.com/eScienceLab/flwrCrate
   status: alpha
-  subitems: 
+  subitems:
     - name: PyPi package flwrCrate
       url: https://pypi.org/project/flwrcrate/
     - name: Federated Learning RO-Crate profile
@@ -422,12 +421,12 @@
   description: Software library (Python/.NET/JS) to work with Annotated Research Contexts (ARCs) and export as RO-Crate
   url: https://nfdi4plants.github.io/nfdi4plants.knowledgebase/arctrl/
   status: stable
-  subitems: 
+  subitems:
     - name: ARCtrl (source code)
       url: https://github.com/nfdi4plants/ARCtrl
 
 - name: RO-Crate Zip Explorer
-  url: https://github.com/davelopez/ro-crate-zip-explorer    
+  url: https://github.com/davelopez/ro-crate-zip-explorer
   description: TypeScript library for browsing and extracting RO-Crate metadata files directly within ZIP archives
   status: alpha
 
@@ -506,5 +505,10 @@
       url: https://github.com/i-VRESSE/rocrate-action-recorder
 
 - name: BioImage Archive (BIA) RO-Crate Validator
-  url: https://pypi.org/project/bia-ro-crate-validator/      
+  url: https://pypi.org/project/bia-ro-crate-validator/
   description: Data models for describing, parsing, and validating the RO-Crate profile for BioImage Archive (BIA). submissions, with supporting structures such as file lists.
+
+- name: sfprov - Workflow Provenance Parser
+  description: Extract, store, and query provenance from Nextflow pipelines into Neo4j.
+  url: https://pypi.org/project/sfprov/
+  status: production
