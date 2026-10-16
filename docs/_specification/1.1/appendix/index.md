@@ -24,3 +24,11 @@ has_children: true
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
+
+<div id="appendix"></div>
+
+## Contents
+* [Changelog](changelog)
+* [Handling relative URI references](relative-uris)
+* [Implementation Notes](implementation-notes)
+* [RO-Crate JSON-LD](jsonld)
