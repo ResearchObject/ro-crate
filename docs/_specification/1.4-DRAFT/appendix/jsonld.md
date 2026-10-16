@@ -417,7 +417,7 @@ In RO-Crate you might want to use CURIEs in the following places to avoid repeat
 * In the `@context` to define custom terms:
   ```json
   {
-    "@context": [ "https://w3id.org/ro/crate/1.3/context",
+    "@context": [ "https://w3id.org/ro/crate/1.4-DRAFT/context",
       {
         "myNamespace": "http://mynamespace.example.org/",
         "MyType": "myNamespace:MyType",
@@ -429,7 +429,7 @@ In RO-Crate you might want to use CURIEs in the following places to avoid repeat
 * In the `@type` of entities:
   ```json
   {
-    "@context": [ "https://w3id.org/ro/crate/1.3/context",
+    "@context": [ "https://w3id.org/ro/crate/1.4-DRAFT/context",
       {
         "myNamespace": "http://mynamespace.example.org/"
       }
@@ -445,7 +445,7 @@ In RO-Crate you might want to use CURIEs in the following places to avoid repeat
 * As *keys* of entities:
   ```json
   {
-    "@context": [ "https://w3id.org/ro/crate/1.3/context",
+    "@context": [ "https://w3id.org/ro/crate/1.4-DRAFT/context",
       {
         "myNamespace": "http://mynamespace.example.org/"
       }
@@ -469,7 +469,7 @@ The prefix `schema` should only be used for adding terms that are not covered by
 
 ```json
   {
-    "@context": [ "https://w3id.org/ro/crate/1.3/context",
+    "@context": [ "https://w3id.org/ro/crate/1.4-DRAFT/context",
     {
       "newTerm": "schema:newTerm"
       }
