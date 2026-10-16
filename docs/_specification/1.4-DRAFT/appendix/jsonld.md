@@ -479,7 +479,7 @@ The prefix `schema` should only be used for adding terms that are not covered by
 
 Although it is valid JSON-LD to use CURIEs as part of `@id` values, this pattern is NOT RECOMMENDED in RO-Crate, as JSON consumers may be using the literal `@id` value for connecting entities from their reference to their corresponding entity in the `graph`.
 
-Referencing enumerations or vocabulary terms like `http://schema.org/CompletedActionStatus` and `https://w3id.org/shp#SignOff` should be identified using that full URL (note `http`) instead of `schema:CompletedActionStatus` or `shp:SignOff` (unless the appplied RO-Crate profile has consistently used and recommended the CURIE form):
+Referencing enumerations or vocabulary terms like `http://schema.org/CompletedActionStatus` and `https://w3id.org/shp#SignOff` should be identified using that full URL (note `http`) instead of `schema:CompletedActionStatus` or `shp:SignOff` (unless the applied RO-Crate profile has consistently used and recommended the CURIE form):
 
 ```json
 {
