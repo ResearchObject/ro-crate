@@ -394,4 +394,108 @@ In the example above, the type `CPMProvenanceFile` is resolved to <https://w3id.
 
 The contextual entity `http://www.w3.org/TR/2013/REC-prov-n-20130430/` for `encodingFormat` is defined within the profile rather than in this specific crate, however in this example that `@id` resolves to the textual specification at W3C rather than back to the Profile Crate. 
 
+## Compact URIS (CURIEs) in RO-Crate
+
+CURIEs are URIs of the form `prefix:suffix`, where `prefix` is a pre-defined URI.
+JSON-LD supports CURIEs as a way of re-using a common prefix which is then simply concatenated with the suffix.
+For example, the RO-Crate context defines:
+```json
+{
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "HTML": "rdf:HTML"
+}
+```
+
+This is a shortcut for:
+```json
+{
+  "HTML": "http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"
+}
+```
+
+In RO-Crate you might want to use CURIEs in the following places to avoid repeating a common prefix:
+* In the `@context` to define custom terms:
+  ```json
+  {
+    "@context": [ "https://w3id.org/ro/crate/1.3/context",
+      {
+        "myNamespace": "http://mynamespace.example.org/",
+        "MyType": "myNamespace:MyType",
+        "MyOtherType": "myNamespace:MyOtherType"
+      }
+    ]
+  }
+  ```
+* In the `@type` of entities:
+  ```json
+  {
+    "@context": [ "https://w3id.org/ro/crate/1.3/context",
+      {
+        "myNamespace": "http://mynamespace.example.org/"
+      }
+    ],
+    "@graph": [
+      {
+        "@id": "#my-id",
+        "@type": "myNamespace:MyType"
+      }
+    ]
+  }
+  ```
+* As *keys* of entities:
+  ```json
+  {
+    "@context": [ "https://w3id.org/ro/crate/1.3/context",
+      {
+        "myNamespace": "http://mynamespace.example.org/"
+      }
+    ],
+    "@graph": [
+      {
+        "@id": "#my-id",
+        "myNamespace:myAttribute": "foo"
+      }
+    ]
+  }
+  ```
+
+**Tip**: Use the [JSON-LD Playground](https://json-ld.org/playground/) and map to *Table* to see if your CURIEs are expanded correctly.
+
+
+
+You should **not** use CURIEs for terms already in the RO-Crate context, e.g. use `hasPart`, not `schema:hasPart`. 
+
+The prefix `schema` should only be used for adding terms that are not covered by that RO-Crate version:
+
+```json
+  {
+    "@context": [ "https://w3id.org/ro/crate/1.3/context",
+    {
+      "newTerm": "schema:newTerm"
+      }
+    ]
+  }
+```
+
+Although it is valid JSON-LD to use CURIEs as part of `@id` values, this pattern is NOT RECOMMENDED in RO-Crate, as JSON consumers may be using the literal `@id` value for connecting entities from their reference to their corresponding entity in the `graph`.
+
+Referencing enumerations or vocabulary terms like `http://schema.org/CompletedActionStatus` and `https://w3id.org/shp#SignOff` should be identified using that full URL (note `http`) instead of `schema:CompletedActionStatus` or `shp:SignOff` (unless the applied RO-Crate profile has consistently used and recommended the CURIE form):
+
+```json
+{
+  "@id": "#signoff-3b741265-cfef-49ea-8138-a2fa149bf2f0",
+  "type": "AssessAction",
+  "additionalType": {"@id": "https://w3id.org/shp#SignOff"},
+  "name": "Sign-off of execution according to Agreement policy: approved",
+  "endTime": "2023-04-19T17:15:12+01:00",
+  "object": [
+      {"@id": "./"},
+  ],
+  "instrument": {"@id": "https://tre72.example.com/agreement-policy/81"},
+  "agent": {"@id": "https://orcid.org/0000-0002-1825-0097"},
+  "actionStatus": "http://schema.org/CompletedActionStatus"
+},
+```
+
+
 {% include references.liquid %}
