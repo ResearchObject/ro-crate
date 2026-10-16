@@ -91,7 +91,7 @@ within the BagIt payload (`data/`) directory.
 The [Bag declaration](https://www.rfc-editor.org/rfc/rfc8493.html#section-2.1.1) `bagit.txt` MUST be present, the main role of this file is to mark the folder as a bag according to [RFC8493](https://www.rfc-editor.org/rfc/rfc8493.html). The file SHOULD have this fixed content in UTF-8:
 
 ```
-BagIt-version: 1.0
+BagIt-Version: 1.0
 Tag-File-Character-Encoding: UTF-8
 ```
 
