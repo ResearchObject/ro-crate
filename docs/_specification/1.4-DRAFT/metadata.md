@@ -29,7 +29,8 @@ parent: RO-Crate 1.4-DRAFT
    limitations under the License.
 -->
 
-<div id="metadata"></div>
+# RO-Crate Metadata {#metadata}
+
 
 RO-Crate aims to capture and describe the [Research Object][ResearchObject] using structured _metadata_. Specifically, an RO-Crate is described using _JSON-LD_ by an _RO-Crate Metadata Document_. As explained in section [RO-Crate Structure](structure) this may be stored in an _RO-Crate Metadata File_.
 

@@ -32,6 +32,8 @@ parent: RO-Crate 1.1
 
 <div id="metadata"></div>
 
+# RO-Crate Metadata
+
 RO-Crate aims to capture and describe the [Research Object][ResearchObject] using structured _metadata_.
 
 The _RO-Crate Metadata File Descriptor_ contains the metadata that describes the RO-Crate and its content, in particular:

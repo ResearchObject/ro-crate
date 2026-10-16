@@ -30,6 +30,8 @@ nav_order: 22
    limitations under the License.
 -->
 
+# APPENDIX: RO-Crate JSON-LD {#jsonld}
+
 It is not necessary to use [JSON-LD tooling] to generate or parse the _RO-Crate Metadata Document_, although JSON-LD tools may make it easier to conform to this specification, e.g. handling relative URIs. It is however RECOMMENDED to use [JSON tooling][JSON] to handle [JSON][RFC 7159] syntax and escaping rules.
 
 This appendix shows a brief JSON-LD introduction for complying with the _RO-Crate Metadata Document_ requirements.

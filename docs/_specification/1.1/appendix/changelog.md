@@ -25,6 +25,9 @@ excerpt: List of changes in releases of this specifications
    limitations under the License.
 -->
 
+
+# APPENDIX: Changelog
+
 * [RO-Crate 1.1.3](https://github.com/ResearchObject/ro-crate/releases/tag/1.1.3) 
   * JSON-LD context https://w3id.org/ro/crate/1.1/context fix typo in mapping from `RepositoryObject` to <http://pcdm.org/2016/04/18/models#Object> [#243](https://github.com/ResearchObject/ro-crate/issues/243)
 * [RO-Crate 1.1.2](https://github.com/ResearchObject/ro-crate/releases/tag/1.1.2) 

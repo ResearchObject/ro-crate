@@ -28,7 +28,7 @@ parent: RO-Crate 1.3
    limitations under the License.
 -->
 
-<div id="data-entities"></div>
+# Data Entities {#data-entities}
 
 The primary purpose for RO-Crate is to gather and describe a set of _Data Entities_ in the form of:
 

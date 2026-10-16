@@ -9,8 +9,11 @@ layout: none
 
 <body>
   {% include topnav.html search=true %}
-  <div class="landingpage" id="content">
-    <section class="container mb-5">
+  <aside class="visually-hidden" id="side-nav">
+    No sidebar on this page. <a href="#main">Continue to content.</a>
+  </aside>
+  <main class="landingpage" id="main">
+    <section class="container mb-5" id="intro">
       <div class="text-center">
         <h1>Research Object Crate (RO-Crate)</h1>
         <p class="lead">RO-Crate is a community effort to establish a lightweight approach to packaging
@@ -20,6 +23,7 @@ layout: none
         <a href="tutorials" class="btn btn-primary homepage-link">Getting started with RO-Crate</a>
       </div>
     </section>
+    <div id="content">
     <section class="featured-content">
       <div class="featured-content-header mb-3">
         <h2>Explore RO-Crate in Use</h2>
@@ -78,7 +82,8 @@ layout: none
         </div>
       </div>
     </section>
-  </div>
+    </div>
+  </main>
   {%- if site.theme_variables.back_to_top or site.theme_variables.back_to_top == nil %}
   <button id="back-to-top" class="btn btn-primary" type="button" aria-hidden="true" onclick="topFunction()">
     <i class="fa-solid fa-arrow-up"></i>
