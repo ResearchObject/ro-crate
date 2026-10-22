@@ -49,12 +49,29 @@ body {
     font-display: swap;
 }
 
+/*------Table--------/*
+
 /* Undo the ETT break-word style for hyperlinks when inside a table */
 #main table a:not(.btn):not(.dropdown-item) {
         overflow-wrap: normal;
         word-wrap: normal;
         -ms-word-break: normal;
         word-break: normal;
+}
+
+/*-------ToolTable------/*
+
+/* Override DataTables styling of colgroup elements,
+which it automatically inserts into the tool table, to match the original dimensions. 
+If adding columns, add a selector (nth-child) class for it here. */
+table.tooltable colgroup col:nth-child(1) {
+    width: 25% !important;
+}
+table.tooltable colgroup col:nth-child(2) {
+    width: 65% !important;
+}
+table.tooltable colgroup col:nth-child(3) {
+    width: 10% !important;
 }
 
 /*-----Sidebar-----*/
