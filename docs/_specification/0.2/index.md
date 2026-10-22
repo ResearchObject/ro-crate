@@ -22,6 +22,8 @@ nav_exclude: true
    limitations under the License.
 -->
 
+# RO-Crate Metadata Specification 0.2
+
 * Permalink: <https://w3id.org/ro/crate/0.2>
 * Cite as: <https://doi.org/10.5281/zenodo.3406498> (this version)
   <https://doi.org/10.5281/zenodo.3406497> (any version)

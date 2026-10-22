@@ -289,3 +289,11 @@ section#search-section {
 footer .container {
     display: none;
 }
+
+// hide h1s in the content section
+// reason: spec pages need an h1 defined in the Markdown for rendering to PDF
+//         but the web pages display the `title` from the front matter already
+//         so this hides the extra h1s when viewing the web version
+#content h1 {
+    display: none;
+}

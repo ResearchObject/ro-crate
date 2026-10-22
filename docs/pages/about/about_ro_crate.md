@@ -18,7 +18,7 @@ These are all **metadata questions** that RO-Crate is designed to answer.
 
 ## What is an RO-Crate?
 
-An RO-Crate is an integrated view through which you can see an entire [Research Object](background#research-object-background);
+An RO-Crate is an integrated view through which you can see an entire [Research Object](background);
 the methods, the data, the output and the outcomes of a project or a piece of work. 
 Linking all this together enables the sharing of research outputs with their context,
 as a coherent whole.
