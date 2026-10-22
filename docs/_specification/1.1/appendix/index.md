@@ -27,7 +27,7 @@ has_children: true
 
 <div id="appendix"></div>
 
-## Contents
+## Appendixes
 * [Changelog](changelog)
 * [Handling relative URI references](relative-uris)
 * [Implementation Notes](implementation-notes)
