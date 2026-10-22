@@ -28,8 +28,6 @@ This first draft of ~~ROLite~~ [RO-Crate](../../) is more of an example playgrou
 
 This example is based on [DataCrate](https://github.com/UTS-eResearch/datacrate) and [BioSchemas](http://bioschemas.org/specifications/), bringing in Research Object vocabularies where appropriate.
 
-{: .text-delta }
-
 ## Explaining by example: a simple dataset
 
 [simple-dataset-0.1.0](https://github.com/ResearchObject/ro-lite/tree/master/examples/simple-dataset-0.1.0) shows an example of a fairly minimal dataset, which can live in GitHub, be distributed as a ZIP archive, posted to Zenodo etc.
