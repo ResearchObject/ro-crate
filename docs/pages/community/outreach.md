@@ -1286,7 +1286,7 @@ _To suggest an event, either [edit and raise pull request](https://github.com/Re
 
 [**Open Repositories 2024**](https://or2024.openrepositories.org/) (OR2024), Gothenburg, Sweden, 2024-06-03/--06.
 
-[**2nd International Conference on FAIR Digital Objects**](https://fairdo.org/fdo2024-conference/) (FDO 2024), 2024-03-21/--24, Berlin, Germany.
+[**2nd International Conference on FAIR Digital Objects**](https://fairdo.org/fdof-summit-2024/) (FDO 2024), 2024-03-21/--24, Berlin, Germany.
 
 [**Semantic Web Applications and Tools for Health Care and Life Sciences**](https://www.swat4ls.org/workshops/leiden2024/) (SWAT4HCLS), 2024-02-26/--29, Leiden, The Netherlands. **Tutorial** on RO-Crate, Bioschemas and Signposting.
 
