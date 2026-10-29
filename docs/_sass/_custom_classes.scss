@@ -87,6 +87,7 @@ table.tooltable colgroup col:nth-child(3) {
     a {
         text-decoration-line: none;
         border-left: 4px solid $sidebar-bg;
+        color: $primary !important;
     }
     button { 
         text-decoration-line: none;
@@ -261,6 +262,11 @@ table.tooltable colgroup col:nth-child(3) {
         text-decoration: none;
     }
     
+}
+
+/*-----Table of contents-----*/
+#toc-contents ul a {
+    color: $primary !important;
 }
 
 /*-----Search box-----*/
