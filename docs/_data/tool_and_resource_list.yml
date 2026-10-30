@@ -8,6 +8,8 @@
   subitems:
     - name: Web-based Crate-O
       url: https://language-research-technology.github.io/crate-o/
+    - name: "Presentation: Crate-O - a drop-in linked data metadata editor for RO-Crate"
+      url: https://doi.org/10.5281/zenodo.12542586
 
 - name: RO-Crate Playground
   id: ro-crate-playground
@@ -116,6 +118,9 @@
   level:
   url: https://github.com/kit-data-manager/ro-crate-java
   related_pages: [software_developer, software_development]
+  subitems:
+    - name: "Presentation: A Java Library for RO-Crate"
+      url: https://doi.org/10.5281/zenodo.7025336
 
 - name: ROCrates.Net
   id: rocrates-net
@@ -139,6 +144,9 @@
   status: prototype
   level:
   url: https://github.com/oeg-upm/ya2ro
+  subitems:
+    - name: "Paper: Ya2ro: A tool for creating Research Objects from minimum metadata"
+      url: https://doi.org/10.4126/FRL01-006444984
 
 - name: arc-to-roc
   id: arc-to-roc
@@ -161,6 +169,9 @@
   status: prototype
   level:
   url: https://github.com/oeg-upm/FAIR-Research-Object
+  subitems:
+    - name: "Paper: FAIROs: Towards FAIR Assessment in Research Objects"
+      url: https://doi.org/10.1007/978-3-031-16802-4_6
 
 - name: repo2crate
   id: repo2crate
@@ -187,6 +198,9 @@
   registry:
     biotools: tonkaz
     europmc: "37150537"
+  subitems:
+    - name: "Paper: A workflow reproducibility scale for automatic validation of biological interpretation results"
+      url: https://doi.org/10.1093/gigascience/giad031
 
 - name: signposting
   id: signposting
@@ -547,6 +561,8 @@
   subitems:
     - name: ARCtrl (source code)
       url: https://github.com/nfdi4plants/ARCtrl
+    - name: "Paper: Fusion of computational and experimental provenance in RO-Crate"
+      url: https://doi.org/10.1515/jib-2025-0050
 
 - name: RO-Crate Zip Explorer
   id: ro-crate-zip-explorer
@@ -668,6 +684,8 @@
       url: https://github.com/Senckenberg-DCBiodivIT/FAIR-workflow-platform-frontend
     - name: FAIR workflow platform Argo connector
       url: https://github.com/Senckenberg-DCBiodivIT/FAIR-workflow-platform-argo-connector
+    - name: "Paper: Dataspace Integration for Agrobiodiversity Digital Twins with RO-Crate"
+      url: https://doi.org/10.3897/biss.8.134479
 
 - name: omero-cli-transfer
   id: omero-cli-transfer
@@ -705,6 +723,8 @@
   subitems:
     - name: Agentic Automation Canvas web app
       url: https://aac.slolab.ai/
+    - name: "Preprint: The Agentic Automation Canvas: a structured framework for agentic AI project design"
+      url: https://doi.org/10.48550/arXiv.2602.15090
 
 - name: ELNPack
   id: elnpack
@@ -773,6 +793,8 @@
   subitems:
     - name: dsROCrate (CRAN)
       url: https://cran.r-project.org/package=dsROCrate
+    - name: "Paper: The Five Safes RO-Crate"
+      url: https://doi.org/10.52825/ocp.v5i.1419
 
 - name: 5s-crate-py
   id: 5s-crate-py
@@ -780,6 +802,9 @@
   status: alpha
   url: https://github.com/eScienceLab/5s-crate-py
   related_pages: [software_developer, software_development, compliance, medicine, biomedical_science]
+  subitems:
+    - name: "Paper: The Five Safes RO-Crate"
+      url: https://doi.org/10.52825/ocp.v5i.1419
 
 - name: FiveSafes.Net
   id: fivesafes-net
@@ -787,6 +812,9 @@
   status: alpha
   url: https://github.com/Health-Informatics-UoN/FiveSafes.Net
   related_pages: [software_developer, software_development, compliance, medicine, biomedical_science]
+  subitems:
+    - name: "Paper: The Five Safes RO-Crate"
+      url: https://doi.org/10.52825/ocp.v5i.1419
 
 - name: ro-crate-schema-tools
   id: ro-crate-schema-tools
@@ -821,6 +849,8 @@
   subitems:
     - name: eLabFTW (source code)
       url: https://github.com/elabftw/elabftw
+    - name: "Paper: eLabFTW: An open source laboratory notebook for research labs"
+      url: https://doi.org/10.21105/joss.00146
 
 - name: Kadi4Mat
   id: kadi4mat
@@ -831,6 +861,8 @@
   subitems:
     - name: Kadi4Mat (source code)
       url: https://gitlab.com/iam-cms/kadi
+    - name: "Paper: Kadi4Mat: A Research Data Infrastructure for Materials Science"
+      url: https://doi.org/10.5334/dsj-2021-008
 
 - name: PASTA ELN
   id: pasta-eln
@@ -838,6 +870,9 @@
   status: production
   url: https://github.com/PASTA-ELN/pasta-eln
   related_pages: [researcher, conduct_research, data_handling, chemistry]
+  subitems:
+    - name: "Paper: PASTA-ELN: Simplifying Research Data Management for Experimental Materials Science"
+      url: https://doi.org/10.1002/adem.202503181
 
 - name: SampleDB
   id: sampledb
@@ -845,6 +880,9 @@
   status: production
   url: https://github.com/sciapp/sampledb
   related_pages: [researcher, data_steward, conduct_research, data_handling, manage_data, chemistry, biology]
+  subitems:
+    - name: "Paper: SampleDB: A sample and measurement metadata database"
+      url: https://doi.org/10.21105/joss.02107
 
 - name: RSpace
   id: rspace
@@ -857,6 +895,8 @@
   subitems:
     - name: RSpace (source code)
       url: https://github.com/rspace-os/rspace-web
+    - name: "Paper: Implementation of PIDs and Plans for FDOs in the RSpace Digital Research Platform"
+      url: https://doi.org/10.52825/ocp.v5i.1098
 
 - name: NOMAD
   id: nomad
@@ -867,6 +907,8 @@
   subitems:
     - name: NOMAD (source code)
       url: https://github.com/FAIRmat-NFDI/nomad
+    - name: "Paper: NOMAD: A distributed web-based platform for managing materials science research data"
+      url: https://doi.org/10.21105/joss.05388
 
 - name: LinkAhead
   id: linkahead
@@ -877,6 +919,8 @@
   subitems:
     - name: LinkAhead crawler RO-Crate converters
       url: https://docs.indiscale.com/caosdb-crawler/_apidoc/caoscrawler.converters.rocrate.html
+    - name: "Paper: Agile Research Data Management with FDOs using LinkAhead"
+      url: https://doi.org/10.3897/rio.8.e96075
 
 - name: OpenSemanticLab
   id: opensemanticlab
@@ -890,6 +934,9 @@
   status: production
   url: https://github.com/paulscherrerinstitute/scilog
   related_pages: [researcher, data_steward, conduct_research, data_handling, chemistry, biology]
+  subitems:
+    - name: "Paper: Scilog: A Flexible Logbook System for Experiment Data Management"
+      url: https://doi.org/10.18429/JACoW-ICALEPCS2023-THPDP073
 
 - name: datalab
   id: datalab
@@ -897,6 +944,9 @@
   status: beta
   url: https://github.com/datalab-org/datalab
   related_pages: [researcher, conduct_research, data_handling, chemistry]
+  subitems:
+    - name: "Paper: datalab: federated data management infrastructure for materials chemistry and beyond"
+      url: https://doi.org/10.21105/joss.10652
 
 - name: Reformulation Assurance
   id: reformulation-assurance
@@ -916,6 +966,8 @@
   subitems:
     - name: runcrate (PyPI)
       url: https://pypi.org/project/runcrate/
+    - name: "Paper: Recording provenance of workflow runs with RO-Crate"
+      url: https://doi.org/10.1371/journal.pone.0309210
 
 - name: cwl2ro-crate
   id: cwl2ro-crate
@@ -948,6 +1000,8 @@
   subitems:
     - name: Galaxy (source code)
       url: https://github.com/galaxyproject/galaxy
+    - name: "Paper: Galaxy for accessible, reproducible, and collaborative data analyses: 2026 update"
+      url: https://doi.org/10.1093/nar/gkag469
 
 - name: COMPSs
   id: compss
@@ -961,6 +1015,10 @@
   subitems:
     - name: COMPSs (source code)
       url: https://github.com/bsc-wdc/compss
+    - name: "Paper: ServiceSs: An Interoperable Programming Framework for the Cloud"
+      url: https://doi.org/10.1007/s10723-013-9272-5
+    - name: "Paper: Recording provenance of workflow runs with RO-Crate"
+      url: https://doi.org/10.1371/journal.pone.0309210
 
 - name: StreamFlow
   id: streamflow
@@ -973,6 +1031,10 @@
   subitems:
     - name: StreamFlow (source code)
       url: https://github.com/alpha-unito/streamflow
+    - name: "Paper: StreamFlow: Cross-Breeding Cloud With HPC"
+      url: https://doi.org/10.1109/TETC.2020.3019202
+    - name: "Paper: Recording provenance of workflow runs with RO-Crate"
+      url: https://doi.org/10.1371/journal.pone.0309210
 
 - name: WfExS-backend
   id: wfexs-backend
@@ -988,6 +1050,8 @@
       url: https://wfexs-backend.readthedocs.io/
     - name: "Report: BioHackEU23: FAIR Workflow Execution with WfExS and Workflow Run Crate"
       url: https://doi.org/10.37044/osf.io/7f94w
+    - name: "Paper: Recording provenance of workflow runs with RO-Crate"
+      url: https://doi.org/10.1371/journal.pone.0309210
 
 - name: Sapporo
   id: sapporo
@@ -998,6 +1062,9 @@
   registry:
     biotools: sapporo-service
     europmc: "39255315"
+  subitems:
+    - name: "Paper: Recording provenance of workflow runs with RO-Crate"
+      url: https://doi.org/10.1371/journal.pone.0309210
 
 - name: Autosubmit
   id: autosubmit
@@ -1010,6 +1077,10 @@
   subitems:
     - name: Autosubmit (source code)
       url: https://github.com/BSC-ES/autosubmit
+    - name: "Paper: Seamless management of ensemble climate prediction experiments on HPC platforms"
+      url: https://doi.org/10.1109/HPCSim.2016.7568429
+    - name: "Paper: FAIR Digital Objects in Autosubmit Workflows"
+      url: https://doi.org/10.52825/ocp.v5i.1416
 
 - name: ReCRATE
   id: recrate
