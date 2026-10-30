@@ -37,7 +37,7 @@
     <div class="col">
         <div class="input-group">
             <span class="input-group-text" id="search-label-tiles"><i class="fa-solid fa-magnifying-glass"></i></span>
-            <input type="text" id="title-search" class="form-control" onkeyup="StartSearch();" placeholder="Find your page..." aria-label="{{page.type | replace: '_', ' ' }}" aria-describedby="search-label-tiles">
+            <input type="text" id="title-search" class="form-control" onkeyup="StartSearch();" placeholder="Find your page..." aria-label="Search {{include.type | replace: '_', ' ' }}">
             <button class="btn btn-primary" title="Button to clear search" type="button" id="clearsearch">
                 <i class="fa-solid fa-backspace"></i>
             </button>
