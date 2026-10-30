@@ -34,6 +34,8 @@ subitems:
       url: /5s-crate
     - title: Galaxy
       url: /galaxy
+    - title: Global Image Data Ecosystem
+      url: /gide
     - title: KEDO Data Lake
       url: /datalake
     - title: Lab Integrated Data (LabID)
