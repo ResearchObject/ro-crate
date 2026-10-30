@@ -8,7 +8,7 @@ description:
   from an individual researcher working with a folder of data, to large
   data-intensive computational research environments.
 
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@6.1.0
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@7.0.0
 
 url: https://www.researchobject.org # if building on a fork, change this to your own GH pages url
 baseurl: /ro-crate
