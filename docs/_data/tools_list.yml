@@ -3,6 +3,7 @@
   status: beta
   level:
   url: https://github.com/Language-Research-Technology/crate-o
+  roles: [researcher, data_steward]
   tasks: [manage_data, curation]
   domains: [language_text]
   subitems:
@@ -21,6 +22,8 @@
   status: production
   level:
   url: https://describo.github.io
+  roles: [researcher, data_steward]
+  tasks: [manage_data, curation]
   domains: [language_text, humanities, social_science]
   subitems:
     - name: Component - embed the Describo RO-Crate engine in your application
@@ -329,6 +332,8 @@
   description: Web-based interactive editor for creating, editing and visualizing RO-Crates
   status: production
   url: https://novacrate.datamanager.kit.edu/
+  roles: [researcher, data_steward]
+  tasks: [manage_data, curation]
   subitems:
     - name: Web-based editor
       url: https://novacrate.datamanager.kit.edu/
