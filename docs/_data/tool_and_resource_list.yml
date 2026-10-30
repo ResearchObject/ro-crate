@@ -106,6 +106,8 @@
   level:
   url: https://github.com/researchobject/ro-crate-py
   related_pages: [software_developer, software_development]
+  registry:
+    tess: ro-crate-py
 
 - name: ro-crate-java
   id: ro-crate-java
@@ -182,6 +184,9 @@
   level:
   url: https://github.com/sapporo-wes/tonkaz
   related_pages: [omics]
+  registry:
+    biotools: tonkaz
+    europmc: "37150537"
 
 - name: signposting
   id: signposting
@@ -190,6 +195,8 @@
   level:
   url: https://pypi.org/project/signposting/
   related_pages: [software_developer, software_development, biomedical_science, ecology]
+  registry:
+    tess: signposting
 
 - name: RO-Crates-and-Excel
   id: ro-crates-and-excel
@@ -242,6 +249,8 @@
   level:
   url: https://pypi.org/project/roc-validator/
   related_pages: [software_developer, software_development, curation]
+  registry:
+    biotools: rocrate-validator
   subitems:
     - name: Documentation
       url: https://rocrate-validator.readthedocs.io/
@@ -350,6 +359,8 @@
       url: https://github.com/intbio-ncl/ro-crate-rs
     - name: Python wrapper
       url: https://pypi.org/project/rocraters/
+    - name: "Preprint: ro-crate-rs: Development of a Lightweight RO-Crate Rust Library"
+      url: https://doi.org/10.64898/2026.01.22.701040
 
 - name: NovaCrate
   id: novacrate
@@ -531,6 +542,8 @@
   url: https://nfdi4plants.github.io/nfdi4plants.knowledgebase/arctrl/
   status: stable
   related_pages: [software_developer, software_development, biology, omics]
+  registry:
+    europmc: "42400369"
   subitems:
     - name: ARCtrl (source code)
       url: https://github.com/nfdi4plants/ARCtrl
@@ -839,6 +852,8 @@
   status: production
   url: https://www.researchspace.com/
   related_pages: [researcher, data_steward, conduct_research, data_handling, manage_data, biomedical_science, biology, chemistry]
+  registry:
+    biotools: rspace
   subitems:
     - name: RSpace (source code)
       url: https://github.com/rspace-os/rspace-web
@@ -896,6 +911,8 @@
   status: beta
   url: https://github.com/ResearchObject/runcrate
   related_pages: [software_developer, researcher, data_analyst, conduct_research, software_development]
+  registry:
+    europmc: "39255315"
   subitems:
     - name: runcrate (PyPI)
       url: https://pypi.org/project/runcrate/
@@ -925,6 +942,9 @@
   status: production
   url: https://galaxyproject.org/
   related_pages: [researcher, data_analyst, trainer, conduct_research, training, omics, biology, biomedical_science, chemistry, earth_science, ecology, medicine]
+  registry:
+    tess: Galaxy
+    europmc: "42261686"
   subitems:
     - name: Galaxy (source code)
       url: https://github.com/galaxyproject/galaxy
@@ -935,6 +955,9 @@
   status: production
   url: https://www.bsc.es/research-and-development/software-and-apps/software-list/comp-superscalar
   related_pages: [researcher, software_developer, conduct_research, software_development, informatics]
+  registry:
+    biotools: compss
+    europmc: "39255315"
   subitems:
     - name: COMPSs (source code)
       url: https://github.com/bsc-wdc/compss
@@ -945,6 +968,8 @@
   status: beta
   url: https://streamflow.di.unito.it/
   related_pages: [researcher, software_developer, conduct_research, informatics]
+  registry:
+    europmc: "39255315"
   subitems:
     - name: StreamFlow (source code)
       url: https://github.com/alpha-unito/streamflow
@@ -955,9 +980,14 @@
   status: beta
   url: https://github.com/inab/WfExS-backend
   related_pages: [researcher, data_analyst, compliance_officer, conduct_research, compliance, biomedical_science, medicine, omics]
+  registry:
+    biotools: wfexs-backend
+    europmc: "39255315"
   subitems:
     - name: WfExS-backend documentation
       url: https://wfexs-backend.readthedocs.io/
+    - name: "Report: BioHackEU23: FAIR Workflow Execution with WfExS and Workflow Run Crate"
+      url: https://doi.org/10.37044/osf.io/7f94w
 
 - name: Sapporo
   id: sapporo
@@ -965,6 +995,9 @@
   status: production
   url: https://github.com/sapporo-wes/sapporo-service
   related_pages: [researcher, software_developer, conduct_research, omics]
+  registry:
+    biotools: sapporo-service
+    europmc: "39255315"
 
 - name: Autosubmit
   id: autosubmit
@@ -972,6 +1005,8 @@
   status: production
   url: https://autosubmit.readthedocs.io/
   related_pages: [researcher, conduct_research, manage_data, earth_science]
+  registry:
+    europmc: "39255315"
   subitems:
     - name: Autosubmit (source code)
       url: https://github.com/BSC-ES/autosubmit
