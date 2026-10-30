@@ -60,6 +60,7 @@
   level:
   url: https://github.com/marketplace/actions/ro-crate-preview
   roles: [software_developer]
+  tasks: [software_development]
   domains: [earth_science, ecology]
 
 - name: rocrate-to-pages
@@ -68,6 +69,7 @@
   level:
   url: https://github.com/vliz-be-opsci/rocrate-to-pages
   roles: [software_developer]
+  tasks: [software_development]
 
 - name: rocrate-preview-widget
   description: React web application to dynamically preview an RO-Crate
@@ -81,6 +83,7 @@
   level:
   url: https://www.npmjs.com/package/ro-crate
   roles: [software_developer]
+  tasks: [software_development]
   subitems:
     - name: ro-crate-js (source code)
       url: https://github.com/Language-Research-Technology/ro-crate-js
@@ -91,6 +94,7 @@
   level:
   url: https://github.com/fbacall/ro-crate-ruby
   roles: [software_developer]
+  tasks: [software_development]
 
 - name: ro-crate-py
   description: Python library to consume/produce RO-Crates
@@ -106,6 +110,7 @@
   level:
   url: https://github.com/kit-data-manager/ro-crate-java
   roles: [software_developer]
+  tasks: [software_development]
 
 - name: ROCrates.Net
   description: Programmatically create and manipulate RO-Crates in C# and .NET
@@ -113,6 +118,7 @@
   level:
   url: https://uon-drs.github.io/ROCrates.Net/
   roles: [software_developer]
+  tasks: [software_development]
 
 - name: galaxy2cwl
   description: Wraps Galaxy workflow as Workflow RO-Crate
@@ -128,8 +134,8 @@
   url: https://github.com/oeg-upm/ya2ro
 
 - name: arc-to-roc
-  description: Generate RO-Crate from an Annotated Research Context (ARC), see DataPlant
-  status:
+  description: Generate RO-Crate from an Annotated Research Context (ARC), see DataPlant. Outdated, use ARCtrl instead
+  status: deprecated
   level:
   url: https://github.com/nfdi4plants/arc-to-roc
   domains: [biology, omics]
@@ -172,6 +178,7 @@
   level:
   url: https://pypi.org/project/signposting/
   roles: [software_developer]
+  tasks: [software_development]
   domains: [biomedical_science, ecology]
 
 - name: RO-Crates-and-Excel
@@ -218,6 +225,7 @@
   level:
   url: https://pypi.org/project/roc-validator/
   roles: [software_developer]
+  tasks: [software_development, curation]
   subitems:
     - name: Documentation
       url: https://rocrate-validator.readthedocs.io/
@@ -303,12 +311,14 @@
   status: beta
   url: https://github.com/WEHI-SODA-Hub/RdfCrate
   roles: [software_developer]
+  tasks: [software_development]
 
 - name: ro-crate-rs
   description: A Rust library for defining RO-Crates. It can also be used in Python via the rocraters package.
   status: beta
   url: https://github.com/intbio-ncl/ro-crate-rs
   roles: [software_developer]
+  tasks: [software_development]
   subitems:
     - name: Rust library
       url: https://github.com/intbio-ncl/ro-crate-rs
@@ -330,6 +340,7 @@
   status: beta
   url: https://github.com/nfdi4plants/ROCratePCC
   roles: [software_developer]
+  tasks: [software_development]
   domains: [biology]
   subitems:
     - name: GitHub Source code (FSharp)
@@ -358,6 +369,7 @@
   url: https://github.com/ResearchObject/ro-crate-r/
   status: beta
   roles: [software_developer]
+  tasks: [software_development]
   subitems:
     - name: CRAN package
       url: https://cran.r-project.org/web/packages/rocrateR/index.html
@@ -389,6 +401,7 @@
   url: https://pypi.org/project/rocrate-action-recorder/
   status: beta
   roles: [software_developer]
+  tasks: [software_development]
   subitems:
     - name: rocrate-action-recorder (source code)
       url: https://github.com/i-VRESSE/rocrate-action-recorder
@@ -418,6 +431,7 @@
   description: A header only library for creating RO-Crates in C++
   status: prototype
   roles: [software_developer]
+  tasks: [software_development]
 
 - name: ro-crate-masp
   url: https://github.com/Language-Research-Technology/ro-crate-masp
@@ -477,6 +491,7 @@
   url: https://nfdi4plants.github.io/nfdi4plants.knowledgebase/arctrl/
   status: stable
   roles: [software_developer]
+  tasks: [software_development]
   domains: [biology, omics]
   subitems:
     - name: ARCtrl (source code)
@@ -487,6 +502,7 @@
   description: TypeScript library for browsing and extracting RO-Crate metadata files directly within ZIP archives
   status: alpha
   roles: [software_developer]
+  tasks: [software_development]
 
 - name: RO-Crate Tabulator
   url: https://github.com/Sydney-Informatics-Hub/rocrate-tabular
@@ -943,3 +959,10 @@
   subitems:
     - name: Autosubmit (source code)
       url: https://github.com/BSC-ES/autosubmit
+
+- name: ReCRATE
+  description: Turns a paper or a published workflow RO-Crate (e.g. from WorkflowHub) into an agent whose methods are checked against the published results, and records every run as a Workflow Run RO-Crate
+  status: prototype
+  url: https://github.com/biaperotto/recrate
+  roles: [researcher, data_analyst]
+  tasks: [conduct_research]
