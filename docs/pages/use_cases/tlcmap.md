@@ -3,7 +3,7 @@ page_id: tlcmap
 title: Time Layered Cultural Map (TLCMap)
 description: TLCMap is a set of tools that work together for mapping Australian history and culture which includes downloads of geographical data packaged in RO-Crate
 url: https://example.org/
-image: tlcmap.png
+page_img: tlcmap.png
 domains: [humanities, ecology, earth_science, language_text] # should match item(s) in pages/domains
 tasks: [conduct_research] # should match item(s) in pages/tasks
 roles: [researcher, software_developer] # should match item(s) in pages/roles
@@ -24,8 +24,6 @@ roles: [researcher, software_developer] # should match item(s) in pages/roles
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-
-# Time Layered Cultural Map (TLCMap)
 
 > The Time-layered Cultural Map of Australia (TLCMap) is an online research platform
 funded by the Australian Research Council Linkage Infrastructure, Equipment and 
@@ -147,8 +145,3 @@ curl "https://ghap.tlcmap.org/places?containsname=katoomba&searchausgaz=on&searc
 ## Publications
 
 1. <span id="tlcmap-paper"></span>Arthur P, Champion E, Craig H, Gu N, Harvey M, Haskins V, et al. Time-layered cultural map of Australia. In: Digital Humanities in the Nordic Countries Conference [Internet]. 2020 [cited 2024 Jul 4]. Available from: <https://opus.lib.uts.edu.au/bitstream/10453/141441/2/Time%20Layered%20Cultural%20Map%20of%20Australia.pdf>
-
-
-
-
-![TLC Map](assets/img/tlcmap.png)

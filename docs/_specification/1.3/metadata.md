@@ -1,5 +1,5 @@
 ---
-title: Metadata of the RO-Crate
+title: RO-Crate Metadata
 redirect_from:
   - /1.3-DRAFT/metadata
 excerpt: |
@@ -30,13 +30,6 @@ parent: RO-Crate 1.3
 -->
 
 # RO-Crate Metadata {#metadata}
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 RO-Crate aims to capture and describe the [Research Object][ResearchObject] using structured _metadata_. Specifically, an RO-Crate is described using _JSON-LD_ by an _RO-Crate Metadata Document_. As explained in section [RO-Crate Structure](structure) this may be stored in an _RO-Crate Metadata File_.
 

@@ -1,5 +1,5 @@
 ---
-title: Changelog
+title: "APPENDIX: Changelog"
 redirect_from:
   - /1.1-DRAFT/appendix/changelog
   - /1.1/appendix/changelog

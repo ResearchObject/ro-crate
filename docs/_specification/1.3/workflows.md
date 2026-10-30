@@ -28,13 +28,6 @@ parent: RO-Crate 1.3
 -->
 
 # Workflows and Scripts {#workflows}
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 Scientific workflows and scripts that were used (or can be used) to analyze or generate files contained in an RO-Crate MAY be embedded in an RO-Crate. See also the Provenance section on [Software Used to Create Files](provenance#software-used-to-create-files).
 

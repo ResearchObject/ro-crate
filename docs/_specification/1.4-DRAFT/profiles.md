@@ -1,5 +1,5 @@
 ---
-title: Profiles
+title: RO-Crate Profiles
 redirect_from:
   - /1.4-DRAFT/profiles
 excerpt: |

@@ -8,7 +8,7 @@ description:
   from an individual researcher working with a folder of data, to large
   data-intensive computational research environments.
 
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@2.4.0
+remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@7.0.0
 
 url: https://www.researchobject.org # if building on a fork, change this to your own GH pages url
 baseurl: /ro-crate
@@ -30,39 +30,46 @@ exclude:
 date_format: "%-d %B %Y"
 
 defaults:
+  # The theme's edit and history buttons link to {repository}/blob/{branch}/{page.path};
+  # the site source is in docs/ on main (not the gh-pages branch GitHub reports)
+  - scope:
+      path: ""
+    values:
+      github:
+        branch: main/docs
   - scope:
       path: ""
       type: "pages"
     values:
       permalink: /:basename
-      layout: "default"
+      layout: "page"
       sidebar: main
   - scope:
       path: "pages/domains/*.md"
     values:
-      layout: "default"
+      layout: "page"
       type: domains
   - scope:
       path: "pages/tasks/*.md"
     values:
-      layout: "default"
+      layout: "page"
       type: tasks
   - scope:
       path: "pages/roles/*.md"
     values:
-      layout: "default"
+      layout: "page"
       type: roles
 
   - scope:
       path: "pages/use_cases/*.md"
     values:
-      layout: "default"
+      layout: "page"
       type: use_cases
 
   - scope:
       path: "_specification"
     values:
-      layout: "default"
+      layout: "page"
       sidebar: spec
       search_exclude: true
 
@@ -82,19 +89,19 @@ defaults:
   - scope:
       path: "pages/about"
     values:
-      layout: "default"
+      layout: "page"
       sidebar: about
 
   - scope:
       path: "pages/community"
     values:
-      layout: "default"
+      layout: "page"
       sidebar: community
 
   - scope:
       path: "pages/resources"
     values:
-      layout: "default"
+      layout: "page"
       sidebar: resources
 
 collections:

@@ -7,9 +7,8 @@ edam_url: http://edamontology.org/topic_3070
 related_pages:
   tasks: [compliance, manage_data, conduct_research]
   roles: [compliance_officer, data_analyst, researcher] 
+toc: false
 ---
 {% include item_details.html %}
 
 {% include related_use_cases.html %}
-
-{% include related_pages.html %}

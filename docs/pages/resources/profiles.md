@@ -1,5 +1,5 @@
 ---
-title: Profiles
+title: RO-Crate Profiles
 sidebar: resources
 ---
 
@@ -19,17 +19,6 @@ sidebar: resources
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-
-# RO-Crate Profiles
-
-{: .no_toc }
-
-## Table of contents
-
-{: .no_toc .text-delta }
-
-1. TOC 
-{:toc}
 
 While RO-Crates can be considered general-purpose containers of arbitrary data and open-ended
 metadata, in practical use within a particular domain, application or framework, it will be

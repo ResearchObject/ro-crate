@@ -3,7 +3,7 @@ page_id: rexafs
 title: Reproducible XAFS Analyses
 description: Reproducible XAFS Analyses publishes reproducible X-ray absorption fine structure (XAFS) analyses using Galaxy RO-Crates, targeting the area of Catalysis.
 url: https://zenodo.org/communities/rexas/records
-image: ReXAFS.png
+page_img: ReXAFS.png
 domains: [chemistry] # should match item(s) in pages/domains
 tasks: [conduct_research, curation, manage_data, training] # should match item(s) in pages/tasks
 roles: [researcher, data_steward, data_analyst, software_developer, repository_manager, trainer] # should match item(s) in pages/roles
@@ -24,8 +24,6 @@ roles: [researcher, data_steward, data_analyst, software_developer, repository_m
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-
-# Reproducible XAFS Analyses
 
 The [Reproducible XAFS Analyses Zenodo community](https://zenodo.org/communities/rexas/records) groups Galaxy RO-Crates containing workflows and data for the reproduction of published papers which contain X-ray absorption fine structure (XAFS) analyses.
 
@@ -52,5 +50,3 @@ Abraham Nieva de la Hidalga, Leandro Liborio, Patrick Austin, Subindev Devadasan
 **Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study**  
 _ChemCatChem_:e202401676  
 <https://doi.org/10.1002/cctc.202401676>
-
-![ReXAFS logo](../../assets/img/ReXAFS.png)

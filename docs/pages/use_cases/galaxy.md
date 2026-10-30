@@ -3,15 +3,11 @@ page_id: galaxy
 title: Galaxy
 description: Galaxy is a platform for FAIR data analysis which supports the building and execution of workflows. It can import and export RO-Crates for both regular datasets and workflow executions.
 url: https://galaxyproject.org
-image: galaxy.png
+page_img: galaxy.png
 domains: [biology, biomedical_science, chemistry, earth_science, ecology, informatics, medicine, omics, social_science] # should match item(s) in pages/domains
 tasks: [conduct_research, manage_data, training] # should match item(s) in pages/tasks
 roles: [data_analyst, information_architect, researcher, trainer] # should match item(s) in pages/roles
 ---
-
-# Galaxy
-
-[![Galaxy logo](../../assets/img/galaxy.png)](https://galaxyproject.org)
 
 [Galaxy](https://galaxyproject.org) is a platform for FAIR data analysis which supports the building and execution of workflows. It has a broad user community spanning many domains, as well as a large collection of training resources contained within the [Galaxy Training Network](https://training.galaxyproject.org).
 

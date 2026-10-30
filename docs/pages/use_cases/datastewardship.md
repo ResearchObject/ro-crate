@@ -5,7 +5,7 @@ redirect_from:
 title: Data Stewardship Wizard
 description: The Data Stewardship Wizard (DSW) is an interactive platform for making data management plans
 url: https://ds-wizard.org/
-image: dsw-logo.svg
+page_img: dsw-logo.svg
 domains: []
 tasks: [conduct_research, manage_data]
 roles: [data_steward, researcher]
@@ -27,7 +27,6 @@ roles: [data_steward, researcher]
    limitations under the License.
 -->
 
-# Data Stewardship Wizard
 
 The [Data Stewardship Wizard](https://ds-wizard.org/) (DSW) is an interactive platform for making data management plans. By using the [ro-crate-template](https://github.com/ds-wizard/ro-crate-template) it is possible to export RO-Crate from DSW.
 

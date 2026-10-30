@@ -14,9 +14,10 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-# Check that the domains, tasks, roles and use cases referenced by
-# use case pages, docs/_data/tools_list.yml and related_pages front matter
-# match the page_id of an existing page. Jekyll silently drops links to
+# Check that the domains, tasks, roles and use cases referenced by use case
+# pages, related_pages front matter and the related_pages of tools in
+# docs/_data/tool_and_resource_list.yml match the page_id of an existing
+# page, and that each tool has a unique id. Jekyll silently drops links to
 # unknown ids, so a typo hides a use case or tool from a page.
 #
 # Run as:
@@ -30,7 +31,9 @@ require "date"
 DOCS = ARGV[0] || File.join(__dir__, "..", "docs")
 TYPES = %w[domains tasks roles use_cases].freeze
 TAGS = %w[domains tasks roles].freeze
-TOOL_KEYS = %w[name description url status level subitems] + TAGS
+# fields of the Elixir Toolkit Theme tool_and_resource_list.yml, plus status, level and subitems
+TOOL_KEYS = %w[id name description url status level subitems related_pages
+               registry instances instance_of how_to_access].freeze
 
 def front_matter(path)
   match = File.read(path, encoding: "UTF-8").match(/\A---\s*\n(.*?)\n---\s*$/m)
@@ -67,11 +70,31 @@ Dir.glob(File.join(DOCS, "pages", "use_cases", "*.md")).sort.each do |page|
   TAGS.each { |tag| check.call(relative(page), relative(page), tag, meta[tag]) }
 end
 
-tools_file = File.join(DOCS, "_data", "tools_list.yml")
+tools_file = File.join(DOCS, "_data", "tool_and_resource_list.yml")
+tool_ids = Hash.new(0)
 YAML.safe_load(File.read(tools_file, encoding: "UTF-8")).each do |tool|
   where = "#{relative(tools_file)} '#{tool['name']}'"
-  TAGS.each { |tag| check.call(relative(tools_file), where, tag, tool[tag]) }
+  tool_ids[tool["id"]] += 1 if tool["id"]
+  problems << [relative(tools_file), "#{where}: missing id"] unless tool["id"]
   (tool.keys - TOOL_KEYS).each { |key| problems << [relative(tools_file), "#{where}: unexpected key '#{key}'"] }
+  related = tool["related_pages"]
+  next if related.nil?
+  unless related.is_a?(Array)
+    problems << [relative(tools_file), "#{where}: related_pages should be a list, not #{related.inspect}"]
+    next
+  end
+  # tool related_pages mix domains, tasks, roles and use cases
+  related.compact.each do |id|
+    type = TYPES.find { |t| ids[t].include?(id) }
+    if type
+      used[type] << id
+    else
+      problems << [relative(tools_file), "#{where}: unknown related_pages id '#{id}'"]
+    end
+  end
+end
+tool_ids.select { |_, count| count > 1 }.each_key do |id|
+  problems << [relative(tools_file), "duplicate tool id '#{id}'"]
 end
 
 pages = Dir.glob(File.join(DOCS, "{pages,_blog}", "**", "*.md")).sort

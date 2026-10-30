@@ -1,7 +1,7 @@
 ---
 title: Domains
 description: This page organises the RO-Crate use cases based on different research domains.
-layout: default
+layout: page
 sidebar: main
 ---
 

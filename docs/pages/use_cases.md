@@ -1,14 +1,13 @@
 ---
-title: Use Cases
+title: RO-Crate in use
 description: These applications are known to use or expose RO-Crates to describe data, datasets or workflows.
-layout: default
+layout: page
 sidebar: main
 redirect_from:
     - /implementations
     - /in-use
     - /in-use/index.html
 ---
-# RO-Crate in use
 
 These applications are known to use or expose RO-Crates to describe Data, Datasets or Workflows.
 

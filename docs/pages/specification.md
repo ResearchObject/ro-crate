@@ -1,5 +1,5 @@
 ---
-title: Specification
+title: RO-Crate Specification
 description: The RO-Crate technical specification
 sidebar: spec
 ---
@@ -19,8 +19,6 @@ sidebar: spec
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-
-# RO-Crate Specification
 
 The RO-Crate 1.3 specification has been **released**.
 

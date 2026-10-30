@@ -31,13 +31,6 @@ parent: RO-Crate 1.2
 -->
 
 # Data Entities {#data-entities}
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 The primary purpose for RO-Crate is to gather and describe a set of _Data Entities_ in the form of:
 

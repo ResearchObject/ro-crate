@@ -2,6 +2,7 @@
 title: Tutorials
 description: Technical tutorials and videos for learning how to use RO-Crate
 sidebar: resources
+toc: false
 ---
 <!--
    Copyright 2023 The University of Manchester and RO Crate contributors 
@@ -19,9 +20,6 @@ sidebar: resources
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-
-# RO-Crate Tutorials
-{: .no_toc }
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/tAR-JNN3EbA" title="YouTube: What is an RO-Crate?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

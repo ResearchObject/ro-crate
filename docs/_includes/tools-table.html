@@ -1,11 +1,7 @@
-{%- assign tools = site.data.tools_list | sort_natural: "name" %}
+{%- assign tools = site.data.tool_and_resource_list | sort_natural: "name" %}
+<!-- related_pages of each tool are page_ids of domain, task, role and use case pages; shown as badges below the description, styled like the theme's own resource table -->
 <div class="table-responsive mt-3">
   <table class="tooltable table display">
-    <colgroup>
-      <col width="25%">
-      <col width="65%">
-      <col width="10%">
-    </colgroup>
     <thead>
       <tr class="text-nowrap">
         <th>Tool</th>
@@ -34,6 +30,33 @@
             </li>
             {%- endfor %}
           </ul>
+          {%- endif %}
+          {%- if tool.related_pages or tool.registry %}
+          <div class="d-flex flex-wrap gap-1 mt-1">
+            {%- for page_id in tool.related_pages %}
+            {%- assign related_page = site.pages | where: "page_id", page_id | first %}
+            {%- if related_page %}
+            <a href="{{ related_page.url | relative_url }}" data-bs-toggle="tooltip" title="{{ related_page.type | replace: '_', ' ' }}"><span class="badge default-badge">{{ related_page.title | truncate: 25 }}</span></a>
+            {%- endif %}
+            {%- endfor %}
+            {%- comment %} registry links as in the theme's resource-table-all.html {% endcomment %}
+            {%- assign registry = tool.registry %}
+            {%- if registry.biotools and registry.biotools != "NA" %}
+            <a data-bs-toggle="tooltip" data-bs-original-title="Bio.tools" href="https://bio.tools/{{ registry.biotools }}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-info me-2"></i>Tool info</span></a>
+            {%- endif %}
+            {%- if registry.fairsharing and registry.fairsharing != "NA" %}
+            <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing" href="https://fairsharing.org/FAIRsharing.{{ registry.fairsharing }}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-database me-2"></i>Standards/Databases</span></a>
+            {%- endif %}
+            {%- if registry.fairsharing-coll and registry.fairsharing-coll != "NA" %}
+            <a data-bs-toggle="tooltip" data-bs-original-title="FAIRsharing collection" href="https://fairsharing.org/{{ registry.fairsharing-coll }}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-database me-2"></i>Standards/Databases</span></a>
+            {%- endif %}
+            {%- if registry.tess and registry.tess != "NA" %}
+            <a data-bs-toggle="tooltip" data-bs-original-title="TeSS" href='https://tess.elixir-europe.org/search?q="{{ registry.tess }}"'><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-graduation-cap me-2"></i>Training</span></a>
+            {%- endif %}
+            {%- if registry.europmc and registry.europmc != "NA" %}
+            <a data-bs-toggle="tooltip" data-bs-original-title="EuropePMC" href="https://europepmc.org/article/MED/{{ registry.europmc }}"><span class="badge bg-dark text-white hover-primary"><i class="fa-solid fa-book me-2"></i>Publication</span></a>
+            {%- endif %}
+          </div>
           {%- endif %}
         </td>
         <td>{{tool.status}}</td>

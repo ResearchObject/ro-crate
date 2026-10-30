@@ -1,5 +1,5 @@
 ---
-title: Examples
+title: Example RO-Crates
 description: Example RO-Crates from the specification and real-world applications
 ---
 <!--
@@ -18,15 +18,6 @@ description: Example RO-Crates from the specification and real-world application
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-
-# Example RO-Crates
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 The [RO-Crate structure](specification/1.1/structure) is that a _RO-Crate root_ directory has a _RO-Crate Metadata File_ named `ro-crate-metadata.json` that describe the other files, directories and URLs; as well as relating them to things in the world (e.g. people, instruments).
 
