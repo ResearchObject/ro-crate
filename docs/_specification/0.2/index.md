@@ -23,7 +23,6 @@ nav_exclude: true
 -->
 
 # RO-Crate Metadata Specification 0.2
-{: .no_toc }
 
 * Permalink: <https://w3id.org/ro/crate/0.2>
 * Cite as: <https://doi.org/10.5281/zenodo.3406498> (this version)

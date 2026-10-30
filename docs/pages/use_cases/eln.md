@@ -8,7 +8,7 @@ tasks: [data_handling, manage_data]
 roles: [data_steward, repository_manager, researcher]
 ---
 
-The [ELN file format](https://github.com/TheELNConsortium/TheELNFileFormat) has been defined as an archive format to capture Electronic Laboratory Notebooks (ELN).  
+The [ELN file format](https://the.elnconsortium.org/specification/) has been defined as an archive format to capture Electronic Laboratory Notebooks (ELN).  
 
 An ELN archive is a ZIP file with the `.eln` extension (media type [`application/vnd.eln+zip`](https://www.iana.org/assignments/media-types/application/vnd.eln+zip)), containing a single root folder, which is an RO-Crate. 
 
