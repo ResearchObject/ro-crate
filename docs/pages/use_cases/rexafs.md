@@ -50,5 +50,3 @@ Abraham Nieva de la Hidalga, Leandro Liborio, Patrick Austin, Subindev Devadasan
 **Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study**  
 _ChemCatChem_:e202401676  
 <https://doi.org/10.1002/cctc.202401676>
-
-![ReXAFS logo](../../assets/img/ReXAFS.png)
