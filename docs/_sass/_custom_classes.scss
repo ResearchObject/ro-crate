@@ -87,10 +87,12 @@ table.tooltable colgroup col:nth-child(3) {
     a {
         text-decoration-line: none;
         border-left: 4px solid $sidebar-bg;
+        //NOTE: overriding ETT theme colours
         color: $primary !important;
     }
     button { 
         text-decoration-line: none;
+        //NOTE: overriding ETT theme colours
         color: $primary !important;
     }
 }
@@ -320,4 +322,22 @@ footer .container {
 //         so this hides the extra h1s when viewing the web version
 #content h1 {
     display: none;
+}
+
+//NOTE: overriding ETT theme colours
+.highlight .nb {
+    color: #007AA3 !important;
+}
+//NOTE: overriding ETT theme colours
+.highlight .c,
+.highlight .ch,
+.highlight .cd,
+.highlight .cpf {
+    color: #707070 !important;
+}
+//NOTE: overriding ETT theme colours
+.highlight .m,
+.highlight .mb,
+.highlight .mx {
+    color: #008080 !important;
 }
