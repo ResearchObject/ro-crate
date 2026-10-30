@@ -64,7 +64,7 @@ We recommend profiles to be listed in the [RO-Crate Profiles registry](https://p
 
 Users of RO-Crate should consider reuse of the existing profiles before deciding to develop their own. 
 
-Metadata in the RO-Crate Profiles portal is extracted from the corresponding [Profile Crate](specification/1.3/profiles) definition of the profile, see [submitting a profile to the portal](https://github.com/eScienceLab/RO-Crate-Profile-Portal?tab=readme-ov-file#submitting-a-profile-to-the-portal).
+Metadata in the RO-Crate Profiles portal is extracted from the corresponding [Profile Crate](specification/1.3/profiles) definition of the profile, see [submitting a profile to the portal](https://github.com/eScienceLab/RO-Crate-Profile-Portal?tab=readme-ov-file#submitting-a-profile-to-the-portal). Profile Crates can be made programmatically with the [RO-Crate Profile Crate Creator](https://github.com/nfdi4plants/ROCratePCC) library for Python, TypeScript and .NET.
 
 
 

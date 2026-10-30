@@ -5,7 +5,7 @@ description: AROMA (ARP RO-Crate Manager) is part of Hungarian initiative HUN-RE
 url: https://researchdata.hu/en/service-map
 image: arp-aroma.png
 domains: []
-tasks: [data_handling, software_development, data_curation]
+tasks: [data_handling, software_development, curation]
 roles: [data_steward, repository_manager,software_developer, information_architect]
 ---
 
