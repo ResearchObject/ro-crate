@@ -18,7 +18,7 @@
       url: https://ro-crate.ldaca.edu.au/
 
 - name: Describo
-  description: An intuitive and extensible tool for working with RO-Crates. Transform, Discover, Explore, Describe.
+  description: An intuitive and extensible tool for working with RO-Crates. Transform, Discover, Explore, Describe. No longer maintained; see Crate-O or NovaCrate
   status: inactive
   level:
   url: https://describo.github.io
