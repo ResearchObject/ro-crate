@@ -85,8 +85,8 @@ layout: none
     </div>
   </main>
   {%- if site.theme_variables.back_to_top or site.theme_variables.back_to_top == nil %}
-  <button id="back-to-top" class="btn btn-primary" type="button" aria-hidden="true" onclick="topFunction()">
-    <i class="fa-solid fa-arrow-up"></i><span class="visually-hidden">Go to top</span>
+  <button id="back-to-top" class="btn btn-primary btn-sm rounded-pill visible" type="button" aria-hidden="true" onclick="topFunction()">
+    <i class="fa-solid fa-arrow-up"></i><span class="visually-hidden">Back to top button</span>
   </button>
   {%- endif %}
   {% include footer.html %}
