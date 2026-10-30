@@ -1,10 +1,12 @@
-{%- assign tools = site.data.tools_list | sort_natural: "name" %}
+{%- assign tools = site.data.tool_and_resource_list | sort_natural: "name" %}
+<!-- related_pages of each tool are page_ids of domain, task, role and use case pages; shown as badges like the theme's own resource table -->
 <div class="table-responsive mt-3">
   <table class="tooltable table display">
     <thead>
       <tr class="text-nowrap">
         <th>Tool</th>
         <th>Description</th>
+        <th>Related pages</th>
         <th>Status</th>
       </tr>
     </thead>
@@ -30,6 +32,14 @@
             {%- endfor %}
           </ul>
           {%- endif %}
+        </td>
+        <td>
+          {%- for page_id in tool.related_pages %}
+          {%- assign related_page = site.pages | where: "page_id", page_id | first %}
+          {%- if related_page %}
+          <a href="{{ related_page.url | relative_url }}" data-bs-toggle="tooltip" title="{{ related_page.type | replace: '_', ' ' }}"><span class="badge default-badge">{{ related_page.title | truncate: 25 }}</span></a>
+          {%- endif %}
+          {%- endfor %}
         </td>
         <td>{{tool.status}}</td>
       </tr>

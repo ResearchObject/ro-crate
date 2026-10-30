@@ -1,0 +1,984 @@
+- name: Crate-O
+  id: crate-o
+  description: Browser-based editor for Research Object Crates, inspired by Describo, with vocabulary support for Schema.org Style schemas (SOSSs)
+  status: beta
+  level:
+  url: https://github.com/Language-Research-Technology/crate-o
+  related_pages: [researcher, data_steward, manage_data, curation, language_text]
+  subitems:
+    - name: Web-based Crate-O
+      url: https://language-research-technology.github.io/crate-o/
+
+- name: RO-Crate Playground
+  id: ro-crate-playground
+  description: Write, run, and experiment with ro-crate directly in the browser, either at JSON-LD or form-based editing, with multiple visualisations. Builds on Crate-O
+  url: https://github.com/Language-Research-Technology/ro-crate-playground
+  subitems:
+    - name: Web-based editor
+      url: https://ro-crate.ldaca.edu.au/
+
+- name: Describo
+  id: describo
+  description: An intuitive and extensible tool for working with RO-Crates. Transform, Discover, Explore, Describe. No longer maintained; see Crate-O or NovaCrate
+  status: inactive
+  level:
+  url: https://describo.github.io
+  subitems:
+    - name: Component - embed the Describo RO-Crate engine in your application
+      url: https://describo.github.io/docs/component/introduction.html
+    - name: Profiles - adapt describo to your needs
+      url: https://describo.github.io/docs/profiles/introduction.html
+
+- name: dmbon-assistant
+  id: dmbon-assistant
+  description: Data management assistant that publishes RO-Crate
+  status: alpha
+  level:
+  url: https://github.com/vliz-be-opsci/dmbon-assistant/#readme
+
+- name: ro-crate-excel
+  id: ro-crate-excel
+  description: Command-line tool to help create RO-Crates from spreadsheets
+  status: beta
+  level:
+  url: https://www.npmjs.com/package/ro-crate-excel
+  related_pages: [manage_data, curation, language_text]
+  subitems:
+    - name: ro-crate-excel (source code)
+      url: https://github.com/Language-Research-Technology/ro-crate-excel
+
+- name: ro-crate-html
+  id: ro-crate-html
+  description: rochtml command line tool for HTML rendering of RO-Crate to ro-crate-preview.html
+  status: beta
+  level:
+  url: https://www.npmjs.com/package/ro-crate-html
+  subitems:
+    - name: ro-crate-html-js (source code)
+      url: https://github.com/Language-Research-Technology/ro-crate-html-js
+
+- name: ro-crate-preview
+  id: ro-crate-preview
+  description: GitHub Action for ro-crate-html, e.g. publishing crates on GitHub Pages
+  status: alpha
+  level:
+  url: https://github.com/marketplace/actions/ro-crate-preview
+  related_pages: [software_developer, software_development, earth_science, ecology]
+
+- name: rocrate-to-pages
+  id: rocrate-to-pages
+  description: GitHub action to generate a GitHub Pages web site from a RO-Crate git repository
+  status: alpha
+  level:
+  url: https://github.com/vliz-be-opsci/rocrate-to-pages
+  related_pages: [software_developer, software_development]
+
+- name: rocrate-preview-widget
+  id: rocrate-preview-widget
+  description: React web application to dynamically preview an RO-Crate
+  status: prototype
+  level:
+  url: https://github.com/vliz-be-opsci/rocrate-preview-widget
+
+- name: ro-crate-js
+  id: ro-crate-js
+  description: JavaScript library to create and manipulate RO-Crate
+  status: beta
+  level:
+  url: https://www.npmjs.com/package/ro-crate
+  related_pages: [software_developer, software_development]
+  subitems:
+    - name: ro-crate-js (source code)
+      url: https://github.com/Language-Research-Technology/ro-crate-js
+
+- name: ro-crate-ruby
+  id: ro-crate-ruby
+  description: Ruby library to consume/produce RO-Crates
+  status: beta
+  level:
+  url: https://github.com/fbacall/ro-crate-ruby
+  related_pages: [software_developer, software_development]
+
+- name: ro-crate-py
+  id: ro-crate-py
+  description: Python library to consume/produce RO-Crates
+  status: beta
+  level:
+  url: https://github.com/researchobject/ro-crate-py
+  related_pages: [software_developer, software_development]
+
+- name: ro-crate-java
+  id: ro-crate-java
+  description: Java API for creating and modifying RO-Crate using builder pattern
+  status:
+  level:
+  url: https://github.com/kit-data-manager/ro-crate-java
+  related_pages: [software_developer, software_development]
+
+- name: ROCrates.Net
+  id: rocrates-net
+  description: Programmatically create and manipulate RO-Crates in C# and .NET
+  status: alpha
+  level:
+  url: https://uon-drs.github.io/ROCrates.Net/
+  related_pages: [software_developer, software_development]
+
+- name: galaxy2cwl
+  id: galaxy2cwl
+  description: Wraps Galaxy workflow as Workflow RO-Crate
+  status: alpha
+  level:
+  url: https://github.com/workflowhub-eu/galaxy2cwl
+  related_pages: [omics, biomedical_science]
+
+- name: ya2ro
+  id: ya2ro
+  description: Generate RO-Crate and HTML page from YAML template with look-up of DOI/ORCID/GitHub metadata
+  status: prototype
+  level:
+  url: https://github.com/oeg-upm/ya2ro
+
+- name: arc-to-roc
+  id: arc-to-roc
+  description: Generate RO-Crate from an Annotated Research Context (ARC), see DataPlant. Outdated, use ARCtrl instead
+  status: deprecated
+  level:
+  url: https://github.com/nfdi4plants/arc-to-roc
+  related_pages: [biology, omics]
+
+- name: ROCrate_enrichment_service
+  id: rocrate-enrichment-service
+  description: API-based metadata enrichment service for RO-Crates
+  status: prototype
+  level:
+  url: https://github.com/oeg-upm/ROCrate_enrichment_service
+
+- name: FAIR-Research-Object
+  id: fair-research-object
+  description: Evaluate FAIRness of Research Objects through an API
+  status: prototype
+  level:
+  url: https://github.com/oeg-upm/FAIR-Research-Object
+
+- name: repo2crate
+  id: repo2crate
+  description: Generate a Workflow Testing RO-Crate from a "best-practices" workflow repository
+  status:
+  level:
+  url: https://github.com/crs4/repo2crate
+  related_pages: [omics]
+
+- name: ro-crate-benchmarks
+  id: ro-crate-benchmarks
+  description: Benchmarks for performance testing RO-Crate libraries
+  status:
+  level:
+  url: https://github.com/kit-data-manager/ro-crate-benchmarks
+
+- name: tonkaz
+  id: tonkaz
+  description: Tool to verify workflow reproducibility, compares RO-Crates of workflow execution results.
+  status:
+  level:
+  url: https://github.com/sapporo-wes/tonkaz
+  related_pages: [omics]
+
+- name: signposting
+  id: signposting
+  description: Python library & CLI tool for resolving PIDs as FAIR Signposting, e.g. DOIs from WorkflowHub to RO-Crate
+  status: beta
+  level:
+  url: https://pypi.org/project/signposting/
+  related_pages: [software_developer, software_development, biomedical_science, ecology]
+
+- name: RO-Crates-and-Excel
+  id: ro-crates-and-excel
+  description: Generate RO-Crate from Excel file, following the RO-Crates-and-Excel profile.
+  status:
+  level:
+  url: https://github.com/e11938258/RO-Crates-and-Excel
+
+- name: rocrate-lang-py
+  id: rocrate-lang-py
+  description: RO Crate Python library to help you load language data from ro-crates
+  status: prototype
+  level:
+  url: https://github.com/Language-Research-Technology/rocrate-lang-py
+  related_pages: [language_text]
+
+- name: ROCrate-interface
+  id: rocrate-interface
+  description: Initial development in creating an interface between workflow languages and a LivePublication RO-crate specification
+  status: prototype
+  level:
+  url: https://github.com/GusEllerm/ROcrate-interface
+
+- name: aiida-rocrate
+  id: aiida-rocrate
+  description: AiiDA plugin that allows exporting (parts) of the provenance graph as Research Object Crates.
+  status: planning
+  level:
+  url: https://github.com/sphuber/aiida-rocrate
+  related_pages: [chemistry]
+
+- name: RO-Crate-Registry
+  id: ro-crate-registry
+  description: Web-based registry of RO-Crates (assumes ZIP on http/https)
+  status: prototype
+  level:
+  url: https://github.com/XiaotianWang0918/RO-Crate-Registry
+
+- name: CheckMyCrate
+  id: checkmycrate
+  description: Validation according to Workflow RO-Crate profile
+  status: deprecated
+  level:
+  url: https://github.com/KockataEPich/CheckMyCrate/tree/Version
+
+- name: rocrate-validator (CRS4 roc-validator)
+  id: rocrate-validator-crs4-roc-validator
+  description: RO-Crate validator with support for profiles and SHACL. Command line tool and Python library.
+  status: beta
+  level:
+  url: https://pypi.org/project/roc-validator/
+  related_pages: [software_developer, software_development, curation]
+  subitems:
+    - name: Documentation
+      url: https://rocrate-validator.readthedocs.io/
+    - name: Source code
+      url: https://github.com/crs4/rocrate-validator
+    - name: Cratey-Validator (REST API front end)
+      url: https://github.com/eScienceLab/Cratey-Validator
+
+- name: provenance-storage (provstor)
+  id: provenance-storage-provstor
+  description: RO-Crate storage and graph database, loaded from disk/URL into Apache Fuseki and MinIO, to then be queried using SPARQL. Targetting Workflow Run RO-Crates and other crates.
+  level: alpha
+  url: https://github.com/crs4/provenance-storage
+
+- name: ro-crate-validator-py
+  id: ro-crate-validator-py
+  description: Modular RO-Crate validator
+  status: deprecated
+  level:
+  url: https://github.com/ResearchObject/ro-crate-validator-py/
+
+- name: ELN validator
+  id: eln-validator
+  description: Validates ELN RO-Crates for electronic lab notebooks, checking archive structure, required metadata and the RO-Crate profile
+  status: beta
+  level:
+  url: https://github.com/TheELNConsortium/TheELNFileFormat/tree/master/tools
+  related_pages: [biomedical_science, chemistry]
+  subitems:
+    - name: ELN file checker web app
+      url: https://check-eln.streamlit.app/
+
+- name: Sciebo Research Data Services
+  id: sciebo-research-data-services
+  description: Move research data from OwnCloud to Zenodo or OSF, parsing/creating RO-Crate Metadata file
+  status:
+  level:
+  url: https://www.research-data-services.org/
+
+- name: tuw-rocrate-automation/
+  id: tuw-rocrate-automation
+  description: Convert RO-Crate (Research Object Crate) to reposit into InvenioRDM
+  status: alpha
+  level:
+  url: https://github.com/MoritzRenkin/tuw-rocrate-automation/
+
+- name: ro-crates-deposit
+  id: ro-crates-deposit
+  description: Command line tool to deposit a RO-Crate directory to an InvenioRDM. No longer maintained; see ro-crate-inveniordm
+  status: inactive
+  level:
+  url: https://github.com/beerphilipp/ro-crates-deposit
+
+- name: ro-crate-inveniordm
+  id: ro-crate-inveniordm
+  description: Command line tool to deposit a RO-Crate directory to an InvenioRDM and populate the InvenioRDM metadata using the RO-Crate metadata. Forked from ro-crates-deposit.
+  status: alpha
+  level:
+  url: https://github.com/ResearchObject/ro-crate-inveniordm
+  related_pages: [manage_data, curation, informatics]
+
+- name: ro-crate-zenodo
+  id: ro-crate-zenodo
+  description: Command line tool to upload RO-Crates to Zenodo and populate the Zenodo metadata using the RO-Crate metadata.
+  status: alpha
+  level:
+  url: https://github.com/ResearchObject/ro-crate-zenodo
+
+- name: rocrate-to-sembench
+  id: rocrate-to-sembench
+  description: GitHub action to prepare a rocrate for pysembench
+  status: alpha
+  level:
+  url: https://github.com/vliz-be-opsci/rocrate-to-sembench
+
+- name: profile-repository-to-pages
+  id: profile-repository-to-pages
+  description: RO-Crate profile registry that extracts metadata from Profile Crates
+  status: prototype
+  level:
+  url: https://github.com/vliz-be-opsci/profile-repository-to-pages
+
+- name: Common Data Model Builder (cdmb)
+  id: common-data-model-builder-cdmb
+  description: From a data model expressed in Python, generate a reproducible folder structure of the research project as a Research Object (RO).
+  status:
+  level:
+  url: https://github.com/cienciadedatosysalud/cdmb
+  related_pages: [medicine]
+
+- name: RdfCrate
+  id: rdfcrate
+  description: RO-Crate builder that uses RDF concepts.
+  status: beta
+  url: https://github.com/WEHI-SODA-Hub/RdfCrate
+  related_pages: [software_developer, software_development]
+
+- name: ro-crate-rs
+  id: ro-crate-rs
+  description: A Rust library for defining RO-Crates. It can also be used in Python via the rocraters package.
+  status: beta
+  url: https://github.com/intbio-ncl/ro-crate-rs
+  related_pages: [software_developer, software_development]
+  subitems:
+    - name: Rust library
+      url: https://github.com/intbio-ncl/ro-crate-rs
+    - name: Python wrapper
+      url: https://pypi.org/project/rocraters/
+
+- name: NovaCrate
+  id: novacrate
+  description: Web-based interactive editor for creating, editing and visualizing RO-Crates
+  status: production
+  url: https://novacrate.datamanager.kit.edu/
+  related_pages: [researcher, data_steward, manage_data, curation]
+  subitems:
+    - name: Web-based editor
+      url: https://novacrate.datamanager.kit.edu/
+    - name: GitHub
+      url: https://github.com/kit-data-manager/NovaCrate
+
+- name: RO-Crate Profile Crate Creator
+  id: ro-crate-profile-crate-creator
+  description: Polyglot library for creation of RO-Crate Profile Crates (Available in Python, Typescript and FSharp)
+  status: beta
+  url: https://github.com/nfdi4plants/ROCratePCC
+  related_pages: [software_developer, software_development, biology]
+  subitems:
+    - name: GitHub Source code (FSharp)
+      url: https://github.com/nfdi4plants/ROCratePCC
+    - name: PyPi package
+      url: https://pypi.org/project/rocratepcc/
+    - name: NPM package
+      url: https://www.npmjs.com/package/@nfdi4plants/rocratepcc
+    - name: NuGet package
+      url: https://www.nuget.org/packages/ROCratePCC/
+
+- name: nf-prov
+  id: nf-prov
+  description: Nextflow plugin to render Workflow Run RO-Crates for pipeline runs
+  url: https://github.com/nextflow-io/nf-prov
+  status: production
+  related_pages: [omics, biomedical_science]
+
+- name: nf-core RO-Crate tool
+  id: nf-core-ro-crate-tool
+  description: Nextflow tool to generate a Workflow RO-Crate for a Nextflow pipeline
+  url: https://nf-co.re/docs/nf-core-tools/pipelines/rocrate
+  status: production
+  related_pages: [omics]
+
+- name: rocrateR
+  id: rocrater
+  description: R library for creating, manipulating and reading RO-Crates
+  url: https://github.com/ResearchObject/ro-crate-r/
+  status: beta
+  related_pages: [software_developer, software_development]
+  subitems:
+    - name: CRAN package
+      url: https://cran.r-project.org/web/packages/rocrateR/index.html
+    - name: GitHub source code
+      url: https://github.com/ResearchObject/ro-crate-r/
+
+- name: rocrate-indexer
+  id: rocrate-indexer
+  description: Indexing RO-Crates into a Tantivy search index
+  url: https://github.com/arunaengine/rocrate-indexer
+  status:
+
+- name: RO-Crate Explorer
+  id: ro-crate-explorer
+  description: A modern, interactive web application for exploring and visualizing RO-Crates, built with Vue 3.
+  url: https://github.com/arunaengine/RO-Crate-Explorer
+  status:
+
+- name: PyCOMPSs CLI
+  id: pycompss-cli
+  description: Quick and friendly visualisation of RO-Crates from the Command Line Interface with the 'inspect' option. Compatible with Workflow and Workflow Run RO-Crate profiles.
+  status: production
+  level:
+  url: https://pypi.org/project/pycompss-cli/
+  related_pages: [informatics]
+  subitems:
+    - name: Documentation
+      url: https://compss-doc.readthedocs.io/en/stable/Sections/04_Ecosystem/09_CLI/02_Usage.html#inspect-workflow-provenance
+
+- name: rocrate-action-recorder
+  id: rocrate-action-recorder
+  description: Python package to record calls of Python CLI commands into a RO-Crate by annotating argument parsers such as argparse, click and cyclopts.
+  url: https://pypi.org/project/rocrate-action-recorder/
+  status: beta
+  related_pages: [software_developer, software_development]
+  subitems:
+    - name: rocrate-action-recorder (source code)
+      url: https://github.com/i-VRESSE/rocrate-action-recorder
+
+- name: RO-Crate Skills
+  id: ro-crate-skills
+  description: Agent skills for Claude, GitHub Copilot, Codex and other AI agents that read the Agent Skills format, for creating, reading, validating, retrieving and publishing RO-Crates following RO-Crate 1.3
+  status: alpha
+  url: https://github.com/stain/ro-crate-skills
+  related_pages: [software_developer, researcher, data_steward, software_development, conduct_research, data_handling, manage_data, curation]
+
+- name: chaos2crate
+  id: chaos2crate
+  description: A browser app that turns a local folder of resources into an RO-Crate — reading the folder and writing back RO-Crate Metadata file and Excel spreadsheet
+  url: https://language-research-technology.github.io/chaos2crate/
+  related_pages: [language_text]
+  subitems:
+    - name: chaos2crate web app
+      url: https://language-research-technology.github.io/chaos2crate/
+    - name: Collection2Crate (next version)
+      url: https://github.com/Language-Research-Technology/collection2crate/
+    - name: Collection2Crate web app
+      url: https://language-research-technology.github.io/collection2crate/
+  status: alpha
+
+- name: ro-crate-cpp
+  id: ro-crate-cpp
+  url: https://github.com/eScienceLab/ro-crate-cpp
+  description: A header only library for creating RO-Crates in C++
+  status: prototype
+  related_pages: [software_developer, software_development]
+
+- name: ro-crate-masp
+  id: ro-crate-masp
+  url: https://github.com/Language-Research-Technology/ro-crate-masp
+  description: RO-Crate Machine Actionable Schemas and Profiles
+  status: prototype
+  related_pages: [language_text]
+  subitems:
+    - name: MASP tool documentation
+      url: https://language-research-technology.github.io/ro-crate-masp/
+    - name: MASP Profile
+      url: https://language-research-technology.github.io/ro-crate-masp/profiles/ro-crate-masp/profile-crate/
+    - name: MASP profile doc
+      url: https://language-research-technology.github.io/ro-crate-masp/profiles/ro-crate-masp/profile-crate/profile-documentation.html
+
+- name: c2dl2-rocrates
+  id: c2dl2-rocrates
+  description: Python toolkit for analysing and visualising research data collections stored in RO-Crates, with a focus on HASS and GLAM applications.
+  url: https://github.com/unimelbmdap/cdl2-rocrates
+  status: alpha
+  related_pages: [humanities, social_science]
+
+- name: HuBMAP data-containers
+  id: hubmap-data-containers
+  description: Code for building and manipulating data containers like RO-Crate, Croissant, BagIt for HuBMAP
+  url: https://github.com/hubmapconsortium/data-containers
+  status: prototype
+  related_pages: [biomedical_science, medicine]
+  subitems:
+    - name: Human BioMolecular Atlas Program
+      url: https://hubmapconsortium.org/
+
+- name: flwrCrate
+  id: flwrcrate
+  description: Capture a Flower federated learning run and emit an RO-Crate describing it
+  url: https://github.com/eScienceLab/flwrCrate
+  status: alpha
+  subitems:
+    - name: PyPi package flwrCrate
+      url: https://pypi.org/project/flwrcrate/
+    - name: Federated Learning RO-Crate profile
+      url: https://esciencelab.org.uk/federated-learning-ro-crate-profile/federated-learning-profile.html
+
+- name: ro-crate-static-site
+  id: ro-crate-static-site
+  description: Tool to create a static website from and RO-Crate file, either a single ro-crate-html-preview or an multipage site.
+  status: alpha
+  subitems:
+    - name: ro-crate-static-site Web app
+      url: https://crate-works.github.io/ro-crate-static-site/
+    - name: ro-crate-html-lite (previous version)
+      url: https://github.com/Language-Research-Technology/ro-crate-html-lite
+
+- name: PyFlowBatt
+  id: pyflowbatt
+  description: Tools for analysing data from the flow battery lab at Empa, RO-Crate output
+  url: https://github.com/EmpaEconversion/PyFlowBatt
+  status: alpha
+  related_pages: [chemistry]
+
+- name: ARCtrl
+  id: arctrl
+  description: Software library (Python/.NET/JS) to work with Annotated Research Contexts (ARCs) and export as RO-Crate
+  url: https://nfdi4plants.github.io/nfdi4plants.knowledgebase/arctrl/
+  status: stable
+  related_pages: [software_developer, software_development, biology, omics]
+  subitems:
+    - name: ARCtrl (source code)
+      url: https://github.com/nfdi4plants/ARCtrl
+
+- name: RO-Crate Zip Explorer
+  id: ro-crate-zip-explorer
+  url: https://github.com/davelopez/ro-crate-zip-explorer
+  description: TypeScript library for browsing and extracting RO-Crate metadata files directly within ZIP archives
+  status: alpha
+  related_pages: [software_developer, software_development]
+
+- name: RO-Crate Tabulator
+  id: ro-crate-tabulator
+  url: https://github.com/Sydney-Informatics-Hub/rocrate-tabular
+  status: alpha
+  description: Python library to turn an RO-Crate into tabular formats.
+  related_pages: [manage_data, curation, language_text, humanities]
+
+- name: RO-Crate Profile Portal
+  id: ro-crate-profile-portal
+  url: https://profiles.ro-crate.org/
+  description: Portal listing of RO-Crate Profiles, Profile Crates visualised using SAMPO-UI
+  status: alpha
+  subitems:
+    - name: RO-Crate-Profile-Portal (source code)
+      url: https://github.com/eScienceLab/RO-Crate-Profile-Portal/
+
+- name: corpus-tools-ro-crate
+  id: corpus-tools-ro-crate
+  description: Generating the OCFL object for RO-Crate (for ONI portal)
+  url: https://github.com/Language-Research-Technology/corpus-tools-ro-crate
+  status: beta
+  related_pages: [language_text]
+
+- name: ldaca-analytical-tools
+  id: ldaca-analytical-tools
+  url: https://github.com/Language-Research-Technology/ldaca-analytical-tools
+  description: LDaCA Analytical Tools Google Sheets to RO-Crate Sync
+  status: alpha
+  related_pages: [language_text]
+
+- name: An RO-Crate API
+  id: an-ro-crate-api
+  url: https://ro-crate-api.crate-works.org/
+  status: alpha
+  subitems:
+    - name: arocapi (source code)
+      url: https://github.com/Language-Research-Technology/arocapi
+
+- name: Oni UI
+  id: oni-ui
+  url: https://github.com/crate-works/oni
+  description: Discovery portal for browsing research data described as RO-Crate.
+  status: stable
+  related_pages: [language_text, humanities, social_science]
+
+- name: Collection Downloader
+  id: collection-downloader
+  url: https://downloader.crate-works.org/
+  description: Web application for browsing RO-Crate collections hierarchically, selecting files with quality tier filtering, and requesting zip downloads via email
+  related_pages: [language_text]
+  subitems:
+    - name: downloader (source code)
+      url: https://github.com/crate-works/downloader
+
+- name: Cockatiel
+  id: cockatiel
+  description: Browser-based audio annotation tool, loads RO-Crate
+  url: https://cockatiel.crate-works.org/
+  related_pages: [language_text]
+  subitems:
+    - name: cockatiel (source code)
+      url: https://github.com/crate-works/cockatiel
+
+- name: RaspboCrate
+  id: raspbocrate
+  description: Raspberry Pi-based system for managing RO-Crate catalogues in remote locations
+  url: https://raspbocrate.crate-works.org/
+  related_pages: [language_text]
+  subitems:
+    - name: raspbocrate (source code)
+      url: https://github.com/crate-works/raspbocrate
+
+- name: Bowerbird
+  id: bowerbird
+  description: Browse RO-Crate archives offline
+  url: https://bowerbird.crate-works.org/
+  related_pages: [language_text]
+  subitems:
+    - name: bowerbird (source code)
+      url: https://github.com/crate-works/bowerbird
+
+- name: CrateWorks
+  id: crateworks
+  description: CrateWorks is a home for several projects that use the RO-Crate as an interchange format for research data and archival systems
+  url: https://crate-works.org/
+  related_pages: [language_text]
+
+- name: BioImage Archive (BIA) RO-Crate Validator
+  id: bioimage-archive-bia-ro-crate-validator
+  url: https://pypi.org/project/bia-ro-crate-validator/
+  description: Data models for describing, parsing, and validating the RO-Crate profile for BioImage Archive (BIA). submissions, with supporting structures such as file lists.
+  related_pages: [biology, biomedical_science, medicine]
+
+- name: sfprov - Workflow Provenance Parser
+  id: sfprov-workflow-provenance-parser
+  description: Extract, store, and query provenance from Nextflow pipelines into Neo4j.
+  url: https://pypi.org/project/sfprov/
+  status: production
+  related_pages: [omics]
+
+- name: FAIR workflow platform
+  id: fair-workflow-platform
+  description: Workflow platform that runs Workflow RO-Crates on Argo and publishes workflows and their results as RO-Crates advertised with FAIR Signposting, deployed as workflow.earth
+  status: beta
+  url: https://github.com/Senckenberg-DCBiodivIT/fair-workflow-platform
+  related_pages: [researcher, repository_manager, software_developer, conduct_research, manage_data, earth_science, ecology]
+  subitems:
+    - name: workflow.earth
+      url: https://workflow.earth/
+    - name: FAIR workflow platform frontend
+      url: https://github.com/Senckenberg-DCBiodivIT/FAIR-workflow-platform-frontend
+    - name: FAIR workflow platform Argo connector
+      url: https://github.com/Senckenberg-DCBiodivIT/FAIR-workflow-platform-argo-connector
+
+- name: omero-cli-transfer
+  id: omero-cli-transfer
+  description: OMERO CLI plugin to transfer images and their metadata between OMERO servers, with optional export as an RO-Crate zip
+  status: stable
+  url: https://github.com/ome/omero-cli-transfer
+  related_pages: [data_steward, repository_manager, researcher, data_handling, manage_data, biology, biomedical_science]
+  subitems:
+    - name: omero-cli-transfer (PyPI)
+      url: https://pypi.org/project/omero-cli-transfer/
+
+- name: ome2024-ngff-challenge
+  id: ome2024-ngff-challenge
+  description: Converter that resaves OME-Zarr images as OME-Zarr v0.5 with a top-level RO-Crate describing organism, imaging modality and licence
+  status: beta
+  url: https://github.com/ome/ome2024-ngff-challenge
+  related_pages: [data_steward, researcher, data_handling, curation, biology, biomedical_science]
+  subitems:
+    - name: ome2024-ngff-challenge (PyPI)
+      url: https://pypi.org/project/ome2024-ngff-challenge/
+
+- name: omeROcrate
+  id: omerocrate
+  description: Python tool and library that uploads an RO-Crate dataset into an OMERO image server, mapping the crate metadata to OMERO
+  status: alpha
+  url: https://github.com/WEHI-SODA-Hub/omerocrate
+  related_pages: [data_steward, software_developer, data_handling, manage_data, biology, biomedical_science]
+
+- name: Agentic Automation Canvas
+  id: agentic-automation-canvas
+  description: Web form for planning agentic AI automation projects (goals, governance, data access and outcomes), exported as an RO-Crate following its own profile
+  status: beta
+  url: https://github.com/slolab/agentic-automation-canvas
+  related_pages: [managerial, compliance_officer, researcher, software_developer, manage_data, compliance, software_development, informatics]
+  subitems:
+    - name: Agentic Automation Canvas web app
+      url: https://aac.slolab.ai/
+
+- name: ELNPack
+  id: elnpack
+  description: Lightweight desktop app for writing an electronic lab notebook entry with Markdown notes, attachments and metadata, exported as an .eln RO-Crate archive compatible with eLabFTW
+  status: alpha
+  url: https://github.com/Athemis/ELNPack
+  related_pages: [researcher, data_steward, conduct_research, data_handling, chemistry, biomedical_science]
+  subitems:
+    - name: ELNPack user guide
+      url: https://athemis.github.io/ELNPack/
+
+- name: ELN Metadata Diff Viewer
+  id: eln-metadata-diff-viewer
+  description: Client-side web tool that shows differences in the RO-Crate metadata of .eln files changed in a GitHub pull request or GitLab merge request
+  status: prototype
+  url: https://codeberg.org/achimw/eln-metadata-diff
+  related_pages: [data_steward, researcher, curation, manage_data, chemistry, biomedical_science]
+  subitems:
+    - name: ELN Metadata Diff Viewer web app
+      url: https://achimw.codeberg.page/eln-metadata-diff/
+
+- name: exporter-ro-crate (Dataverse)
+  id: exporter-ro-crate-dataverse
+  description: Customizable Dataverse metadata exporter that exports dataset metadata as RO-Crate JSON-LD, with mappings kept in a CSV file
+  status: beta
+  url: https://github.com/gdcc/exporter-ro-crate
+  related_pages: [repository_manager, data_steward, manage_data, data_handling]
+
+- name: RO-Crate interoperability profile libraries
+  id: ro-crate-interoperability-profile-libraries
+  description: Python (Pydantic) and Java libraries for creating and reading RO-Crates with embedded RDFS schemas for custom types, following the openBIS RO-Crate interoperability profile
+  status: alpha
+  url: https://github.com/researchobjectschema/ro-crate-interoperability-profile
+  related_pages: [software_developer, information_architect, software_development, data_handling, chemistry, biology]
+
+- name: FDO2map
+  id: fdo2map
+  description: Resolves an RO-Crate persistent identifier (e.g. from ROHub) and opens its dataset in the map dashboard declared by the crate, from a web page or a Python CLI
+  status: alpha
+  url: https://github.com/FAIR2Adapt/FDO2map
+  related_pages: [researcher, data_analyst, data_handling, conduct_research, earth_science]
+  subitems:
+    - name: FDO2map web app
+      url: https://fair2adapt.github.io/FDO2map/
+
+- name: fdo-consume
+  id: fdo-consume
+  description: Python library that resolves a PID, reads the object's RO-Crate and interprets it through a profile map such as the Climate Change Adaptation profile
+  status: alpha
+  url: https://github.com/FAIR2Adapt/fdo-consume
+  related_pages: [software_developer, software_development, data_handling, earth_science]
+
+- name: fdo-resolver
+  id: fdo-resolver
+  description: Matches data RO-Crates to the inputs declared in a Workflow RO-Crate and writes Workflow Run Crates for the resulting runs
+  status: alpha
+  url: https://github.com/FAIR2Adapt/fdo-resolver
+  related_pages: [software_developer, researcher, software_development, conduct_research, earth_science]
+
+- name: dsROCrate
+  id: dsrocrate
+  description: R package that wraps DataSHIELD federated analyses into Five Safes RO-Crates to track data access, project membership, analysis execution and output checking, with audit reports
+  status: beta
+  url: https://github.com/FederatedMethods/dsROCrate
+  related_pages: [compliance_officer, data_steward, data_analyst, researcher, compliance, data_handling, manage_data, medicine, biomedical_science, social_science]
+  subitems:
+    - name: dsROCrate (CRAN)
+      url: https://cran.r-project.org/package=dsROCrate
+
+- name: 5s-crate-py
+  id: 5s-crate-py
+  description: Python library to create and consume Five Safes RO-Crates for Trusted Research Environments, built on ro-crate-py
+  status: alpha
+  url: https://github.com/eScienceLab/5s-crate-py
+  related_pages: [software_developer, software_development, compliance, medicine, biomedical_science]
+
+- name: FiveSafes.Net
+  id: fivesafes-net
+  description: C# and .NET library for building Five Safes RO-Crates packaged as BagIt archives, built on ROCrates.Net
+  status: alpha
+  url: https://github.com/Health-Informatics-UoN/FiveSafes.Net
+  related_pages: [software_developer, software_development, compliance, medicine, biomedical_science]
+
+- name: ro-crate-schema-tools
+  id: ro-crate-schema-tools
+  description: Node.js tools for creating Schema.org Style Schemas (SoSS) and Crate-O editor modes from RO-Crates, documenting profiles and validating crates against a SoSS profile crate
+  status: alpha
+  url: https://github.com/Language-Research-Technology/ro-crate-schema-tools
+  related_pages: [information_architect, software_developer, curation, software_development, language_text, humanities]
+
+- name: CDIF converters
+  id: cdif-converters
+  description: Command-line converters and web service between CDIF JSON-LD and other metadata formats, including RO-Crate 1.2 in both directions, DCAT, DDI and Croissant, with an RO-Crate structural and SHACL validator
+  status: alpha
+  url: https://github.com/Cross-Domain-Interoperability-Framework/converters
+  related_pages: [information_architect, data_steward, data_handling, curation, informatics, earth_science, social_science]
+
+- name: kadi-apy
+  id: kadi-apy
+  description: Python library and CLI for the Kadi4Mat API, including export of records and collections as RO-Crates and import of .eln RO-Crate files
+  status: stable
+  url: https://gitlab.com/iam-cms/kadi-apy
+  related_pages: [researcher, data_steward, software_developer, data_handling, manage_data, chemistry]
+  subitems:
+    - name: kadi-apy (PyPI)
+      url: https://pypi.org/project/kadi-apy/
+
+- name: eLabFTW
+  id: elabftw
+  description: Electronic lab notebook with import and export of .eln RO-Crate archives
+  status: production
+  url: https://www.elabftw.net/
+  related_pages: [researcher, data_steward, conduct_research, data_handling, manage_data, chemistry, biomedical_science, biology]
+  subitems:
+    - name: eLabFTW (source code)
+      url: https://github.com/elabftw/elabftw
+
+- name: Kadi4Mat
+  id: kadi4mat
+  description: Virtual research environment and electronic lab notebook for materials science, with export of records and collections as RO-Crates and import and export of .eln RO-Crate archives
+  status: production
+  url: https://kadi.iam.kit.edu/
+  related_pages: [researcher, data_steward, repository_manager, conduct_research, data_handling, manage_data, chemistry]
+  subitems:
+    - name: Kadi4Mat (source code)
+      url: https://gitlab.com/iam-cms/kadi
+
+- name: PASTA ELN
+  id: pasta-eln
+  description: Electronic lab notebook for experimental scientists, storing data locally with import and export of .eln RO-Crate archives
+  status: production
+  url: https://github.com/PASTA-ELN/pasta-eln
+  related_pages: [researcher, conduct_research, data_handling, chemistry]
+
+- name: SampleDB
+  id: sampledb
+  description: Web-based sample and measurement metadata database and electronic lab notebook, with import and export of .eln RO-Crate archives
+  status: production
+  url: https://github.com/sciapp/sampledb
+  related_pages: [researcher, data_steward, conduct_research, data_handling, manage_data, chemistry, biology]
+
+- name: RSpace
+  id: rspace
+  description: Electronic lab notebook and inventory system with export and re-import of .eln RO-Crate archives
+  status: production
+  url: https://www.researchspace.com/
+  related_pages: [researcher, data_steward, conduct_research, data_handling, manage_data, biomedical_science, biology, chemistry]
+  subitems:
+    - name: RSpace (source code)
+      url: https://github.com/rspace-os/rspace-web
+
+- name: NOMAD
+  id: nomad
+  description: Materials science data repository and research data management platform that can import .eln RO-Crate archives
+  status: production
+  url: https://nomad-lab.eu/
+  related_pages: [researcher, data_steward, repository_manager, manage_data, data_handling, chemistry]
+  subitems:
+    - name: NOMAD (source code)
+      url: https://github.com/FAIRmat-NFDI/nomad
+
+- name: LinkAhead
+  id: linkahead
+  description: Research data management system whose crawler can import RO-Crates and .eln archives
+  status: production
+  url: https://getlinkahead.com/
+  related_pages: [data_steward, repository_manager, manage_data, data_handling]
+  subitems:
+    - name: LinkAhead crawler RO-Crate converters
+      url: https://docs.indiscale.com/caosdb-crawler/_apidoc/caoscrawler.converters.rocrate.html
+
+- name: OpenSemanticLab
+  id: opensemanticlab
+  description: Semantic electronic lab notebook and knowledge management platform based on Semantic MediaWiki, with import and export of .eln RO-Crate archives
+  url: https://github.com/OpenSemanticLab
+  related_pages: [researcher, data_steward, information_architect, conduct_research, data_handling, manage_data, chemistry]
+
+- name: SciLog
+  id: scilog
+  description: Electronic logbook for experiments at large-scale research facilities, with import and export of .eln RO-Crate archives
+  status: production
+  url: https://github.com/paulscherrerinstitute/scilog
+  related_pages: [researcher, data_steward, conduct_research, data_handling, chemistry, biology]
+
+- name: datalab
+  id: datalab
+  description: Electronic lab notebook and sample database for materials chemistry, with export of .eln RO-Crate archives
+  status: beta
+  url: https://github.com/datalab-org/datalab
+  related_pages: [researcher, conduct_research, data_handling, chemistry]
+
+- name: Reformulation Assurance
+  id: reformulation-assurance
+  description: Formulation workbench that exports its records as .eln RO-Crate archives
+  status: alpha
+  url: https://github.com/TM289012/reformulation-assurance
+  related_pages: [researcher, conduct_research, data_handling, chemistry]
+
+- name: runcrate
+  id: runcrate
+  description: Python library and command line tool to report on, run and convert Workflow Run RO-Crates, including converting CWLProv to Provenance Run Crate
+  status: beta
+  url: https://github.com/ResearchObject/runcrate
+  related_pages: [software_developer, researcher, data_analyst, conduct_research, software_development]
+  subitems:
+    - name: runcrate (PyPI)
+      url: https://pypi.org/project/runcrate/
+
+- name: cwl2ro-crate
+  id: cwl2ro-crate
+  description: Command line tool packaging CWL workflows as Workflow RO-Crate, or a CWLProv run directory as Provenance Run Crate
+  url: https://transpiler-mate.github.io/cwl2ro-crate/
+  related_pages: [software_developer, researcher, conduct_research, software_development]
+  subitems:
+    - name: cwl2ro-crate (source code)
+      url: https://github.com/transpiler-mate/cwl2ro-crate
+
+- name: snakemake-report-plugin-rocrate
+  id: snakemake-report-plugin-rocrate
+  description: Snakemake report plugin that creates a Provenance Run Crate after a workflow run
+  status: alpha
+  url: https://github.com/snakemake/snakemake-report-plugin-rocrate
+  related_pages: [researcher, data_analyst, software_developer, conduct_research, omics]
+  subitems:
+    - name: snakemake-report-plugin-rocrate (PyPI)
+      url: https://pypi.org/project/snakemake-report-plugin-rocrate/
+
+- name: Galaxy
+  id: galaxy
+  description: Workflow system and web platform that exports Workflow RO-Crates and Workflow Run Crates of histories and invocations (from Galaxy 23.1.1)
+  status: production
+  url: https://galaxyproject.org/
+  related_pages: [researcher, data_analyst, trainer, conduct_research, training, omics, biology, biomedical_science, chemistry, earth_science, ecology, medicine]
+  subitems:
+    - name: Galaxy (source code)
+      url: https://github.com/galaxyproject/galaxy
+
+- name: COMPSs
+  id: compss
+  description: Task-based programming model and runtime for distributed computing that records workflow provenance as Workflow Run Crates (from COMPSs 3.4)
+  status: production
+  url: https://www.bsc.es/research-and-development/software-and-apps/software-list/comp-superscalar
+  related_pages: [researcher, software_developer, conduct_research, software_development, informatics]
+  subitems:
+    - name: COMPSs (source code)
+      url: https://github.com/bsc-wdc/compss
+
+- name: StreamFlow
+  id: streamflow
+  description: Workflow management system for hybrid HPC and cloud environments that exports Workflow Run Crates of CWL workflow runs
+  status: beta
+  url: https://streamflow.di.unito.it/
+  related_pages: [researcher, software_developer, conduct_research, informatics]
+  subitems:
+    - name: StreamFlow (source code)
+      url: https://github.com/alpha-unito/streamflow
+
+- name: WfExS-backend
+  id: wfexs-backend
+  description: Workflow Execution Service backend that runs Nextflow, CWL and Galaxy workflows reproducibly, including in Trusted Research Environments, and describes executions as Workflow Run Crates
+  status: beta
+  url: https://github.com/inab/WfExS-backend
+  related_pages: [researcher, data_analyst, compliance_officer, conduct_research, compliance, biomedical_science, medicine, omics]
+  subitems:
+    - name: WfExS-backend documentation
+      url: https://wfexs-backend.readthedocs.io/
+
+- name: Sapporo
+  id: sapporo
+  description: GA4GH WES workflow execution service that returns Workflow Run Crates for its runs
+  status: production
+  url: https://github.com/sapporo-wes/sapporo-service
+  related_pages: [researcher, software_developer, conduct_research, omics]
+
+- name: Autosubmit
+  id: autosubmit
+  description: Workflow manager for climate and weather experiments on HPC platforms that can archive experiments as Workflow Run Crates
+  status: production
+  url: https://autosubmit.readthedocs.io/
+  related_pages: [researcher, conduct_research, manage_data, earth_science]
+  subitems:
+    - name: Autosubmit (source code)
+      url: https://github.com/BSC-ES/autosubmit
+
+- name: ReCRATE
+  id: recrate
+  description: Turns a paper or a published workflow RO-Crate (e.g. from WorkflowHub) into an agent whose methods are checked against the published results, and records every run as a Workflow Run RO-Crate
+  status: prototype
+  url: https://github.com/biaperotto/recrate
+  related_pages: [researcher, data_analyst, conduct_research]
