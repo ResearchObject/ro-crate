@@ -2,20 +2,21 @@ name: ro-crate
 channels:
   - conda-forge
   - bioconda
-  - defaults
 dependencies:
   - make=4.3
   - coreutils=8
   - tar=1
-  - curl=7
+  - curl=8
   - sed=4.8
-  - python=3.8
-  - requests=2.24
-  - rb-jekyll=4.0 # for binary deps, use "bundle exec jekyll serve" for jekyll 5
+  - python=3.12
+  - requests=2
+  - ruby=3.3 # jekyll and plugins from docs/Gemfile: cd docs; bundle install; bundle exec jekyll serve
+  - c-compiler # for native gem extensions built by conda ruby (nokogiri, racc, ...)
+  - cxx-compiler
   - pandoc=2.19
-  - nodejs=14.8 # for makehtml
-  - librsvg=2.50.3
-  # - panflute=2.3.1 # this version isn't on conda-forge as of 2026-06-22
+  - nodejs=22 # for makehtml
+  - librsvg=2
+  - panflute=2.3.1 # for scripts/pandoc-admonition.py, checked by "make dependencies"
   #  - gxx_linux-64=12.2
   # - weasyprint=v51
   # - xelatex 3.14159265-2.6-0.999991
