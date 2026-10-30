@@ -1,0 +1,15 @@
+<!-- tools in _data/tools_list.yml list the roles, tasks and domains they are for, e.g. roles: [software_developer] tasks: [software_development] domains: [omics] -->
+{%- if page.type == "tasks" %}
+{%- assign related_tools = site.data.tools_list | where_exp: "tool", "tool.tasks contains page.page_id" %}
+{%- elsif page.type == "domains" %}
+{%- assign related_tools = site.data.tools_list | where_exp: "tool", "tool.domains contains page.page_id" %}
+{%- else %}
+{%- assign related_tools = site.data.tools_list | where_exp: "tool", "tool.roles contains page.page_id" %}
+{%- endif %}
+{%- if related_tools.size > 0 %}
+<h2>Related tools</h2>
+
+{% include tools-table.html tools=related_tools %}
+
+<p>See the <a href="{{ '/tools' | relative_url }}">tools and resources list</a> for all RO-Crate tools.</p>
+{%- endif %}
