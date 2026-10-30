@@ -13,6 +13,7 @@ body {
     font-family: PTSans, sans-serif;
 }
 
+
 @font-face {
     font-family: PTSans;
     src: url('../fonts/PTSans-Regular.ttf') format('truetype'),
@@ -87,13 +88,9 @@ table.tooltable colgroup col:nth-child(3) {
     a {
         text-decoration-line: none;
         border-left: 4px solid $sidebar-bg;
-        //NOTE: overriding ETT theme colours
-        color: $primary !important;
     }
     button { 
         text-decoration-line: none;
-        //NOTE: overriding ETT theme colours
-        color: $primary !important;
     }
 }
 
@@ -267,11 +264,6 @@ table.tooltable colgroup col:nth-child(3) {
     
 }
 
-/*-----Table of contents-----*/
-#toc-contents ul a {
-    color: $primary !important;
-}
-
 /*-----Search box-----*/
 section#search-section {
     form {
@@ -324,7 +316,8 @@ footer .container {
     display: none;
 }
 
-//NOTE: overriding ETT theme colours
+/*----Coding theme------*/
+//NOTE: overriding ETT theme colours. Cannot change colours elsewhere
 .highlight .nb {
     color: #007AA3 !important;
 }
