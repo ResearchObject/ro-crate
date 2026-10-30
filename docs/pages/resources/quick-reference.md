@@ -142,8 +142,8 @@ Most of the "new" requirements here are not truly new, but were implied in 1.1 a
 
 [RO-Crate Metadata Descriptor – full specification](specification/1.2/root-data-entity#ro-crate-metadata-descriptor)
 
-| Property/Target | Severity | Description | Notes | Changed in 1.2 |
-| ------| ------ | ------- | ------- | --- |
+| Property/Target | Severity | Description | Notes | Changed in 1.2 | 
+| ------| ------ | ------- | ------ | --- | 
 | `@id` | MUST | Must be `ro-crate-metadata.json` | | |
 | `@type` | MUST | Must be [CreativeWork] | | |
 | [about] | MUST | Must be present | | |
@@ -161,7 +161,7 @@ Most of the "new" requirements here are not truly new, but were implied in 1.1 a
 | Property/Target | Severity | Description | Notes | Changed in 1.2 |
 | ------| ------ | ------- | ------- | --- |
 | `@id` | SHOULD | Should be the string `./` or an absolute URI | | Updated - no longer needs to end with `/` and absolute URIs are now acceptable |
-| `@type` | MUST | Must be [Dataset] or an array that contains `Dataset` | | | |
+| `@type` | MUST | Must be [Dataset] or an array that contains `Dataset` | | |
 | [name] | MUST | Must be present | | |
 | [name] | SHOULD | Should identify the dataset to humans well enough to disambiguate it from other RO-Crates | | |
 | [description] | MUST | Must be present | | |
@@ -175,7 +175,7 @@ Most of the "new" requirements here are not truly new, but were implied in 1.1 a
 | [license] | MAY | May be a textual description of how the RO-Crate may be used | | |
 | [identifier] | SHOULD | If the RO-Crate has a persistent identifier, should be present | | |
 | [identifier] | SHOULD | If present, should use the approach set out in the [Science On Schema.org guides] to reference a contextual entity for the identifier | see [contextual entities for identifiers](#contextual-entities) | New |
-| [identifier] | SHOULD | Should be a DOI (including referencing an entity whose `@id` is a DOI), if possible | [source](specification/1.2/metadata#recommended-identifiers) | | |
+| [identifier] | SHOULD | Should be a DOI (including referencing an entity whose `@id` is a DOI), if possible | [source](specification/1.2/metadata#recommended-identifiers) | |
 | [identifier] | SHOULD | Resolving the `identifier` programmatically should return the _RO-Crate Metadata Document_ or an archive (e.g. ZIP) that contains the _RO-Crate Metadata File_, using [content negotiation](specification/1.2/data-entities#retrieving-an-ro-crate) and/or [Signposting] | | New |
 | [identifier] | MAY | Be a string | | Updated - downgraded from SHOULD |
 | `cite-as` | MUST | If present, must ultimately have the RO-Crate as a downloadable item | | New |
@@ -524,9 +524,9 @@ Entities with a (D) are data entities; entities with a (C) are contextual entiti
 | Script or Workflow | `image` | implicit | Should reference an `ImageObject` data entity representing a diagram/sketch which explains the script/workflow | Implicit in phrasing | |
 | Script or Workflow | `input` | implicit | May reference `FormalParameter` contextual entities representing inputs | text uses "can" rather than "may" | |
 | Script or Workflow | `output` | implicit | May reference `FormalParameter` contextual entities representing outputs | text uses "can" rather than "may" | |
-| Script or Workflow related `ImageObject` | `encodingFormat` | SHOULD | Should be present | |
-| Script or Workflow related `ImageObject` | `encodingFormat` | SHOULD | Should include an IANA [media type] as a string | see [contextual entities for file formats](#contextual-entities) | | |
-| Script or Workflow related `ImageObject` | `encodingFormat` | SHOULD | Should include the [Pronom] identifier for the format, which may be a reference to a [file format](specification/1.2/data-entities#adding-detailed-descriptions-of-file-encodings) contextual entity | see [contextual entities for file formats](#contextual-entities) | | |
+| Script or Workflow related `ImageObject` | `encodingFormat` | SHOULD | Should be present | | |
+| Script or Workflow related `ImageObject` | `encodingFormat` | SHOULD | Should include an IANA [media type] as a string | see [contextual entities for file formats](#contextual-entities) | |
+| Script or Workflow related `ImageObject` | `encodingFormat` | SHOULD | Should include the [Pronom] identifier for the format, which may be a reference to a [file format](specification/1.2/data-entities#adding-detailed-descriptions-of-file-encodings) contextual entity | see [contextual entities for file formats](#contextual-entities) | |
 | Script or Workflow related `ImageObject` | `about` | SHOULD | Should reference the script/workflow that the image explains | Implicit in phrasing | |
 | Script or Workflow related `ImageObject` | `about` | SHOULD | If there is no programmatic `SoftwareSourceCode` that can be executed, `about` should reference the datasets that the workflow created | | |
 | `FormalParameter` | entity | MAY | May conform to the Bioschemas [FormalParameter][FormalParameter profile 1.0] profile | To conform, properties listed under "Marginality: Minimum" MUST be present, and properties listed under "Marginality: Recommended" SHOULD be present. Implicit | Updated suggested target version from 0.1-DRAFT to 1.0 |
