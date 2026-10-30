@@ -6,7 +6,8 @@ class CheckH1NotInMarkdown < HTMLProofer::Check
   def run
     @html.css("#content h1").each do |node|
       @heading = create_element(node) 
-      return add_failure("Found level 1 heading in Markdown content. Use `title` in front matter instead.", element: @heading)
+      # line: and content: rather than element:, which html-proofer 4 does not accept
+      return add_failure("Found level 1 heading in Markdown content. Use `title` in front matter instead.", line: @heading.line, content: @heading.content)
     end
   end
 end
