@@ -13,6 +13,7 @@ body {
     font-family: PTSans, sans-serif;
 }
 
+
 @font-face {
     font-family: PTSans;
     src: url('../fonts/PTSans-Regular.ttf') format('truetype'),
@@ -165,6 +166,19 @@ table.tooltable colgroup col:nth-child(3) {
     }
 }
 
+// Primarily used in use cases
+// Can't rely on indication focus by colour change alone
+// Need to indicate via visible border
+.dropdown-toggle {
+    &:hover {
+        border-color: var(--bs-btn-active-border-color);
+    }
+
+    &:focus {
+        border-color: var(--bs-btn-active-border-color);
+    }
+}
+
 
 
 /*-----Top navigation-----*/
@@ -313,4 +327,21 @@ footer .container {
 //         so this hides the extra h1s when viewing the web version
 #content h1 {
     display: none;
+}
+
+/*----Coding theme------*/
+//NOTE: overriding ETT theme colours. Cannot change colours elsewhere
+.highlight .nb {
+    color: #007AA3 !important;
+}
+.highlight .c,
+.highlight .ch,
+.highlight .cd,
+.highlight .cpf {
+    color: #707070 !important;
+}
+.highlight .m,
+.highlight .mb,
+.highlight .mx {
+    color: #008080 !important;
 }
