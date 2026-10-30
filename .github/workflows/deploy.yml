@@ -30,10 +30,10 @@ jobs:
   build:
     # run cron jobs only on main repo (not forks), but run other events regardless of fork
     if: (github.event_name == 'schedule' && github.repository == 'ResearchObject/ro-crate') || (github.event_name != 'schedule')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Setup Ruby
         # https://github.com/ruby/setup-ruby/releases/tag/v1.207.0
         uses: ruby/setup-ruby@v1
@@ -41,7 +41,7 @@ jobs:
           ruby-version: "3.3" # Not needed with a .ruby-version file
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Install dependencies
         working-directory: ./docs
         run: |
@@ -57,7 +57,7 @@ jobs:
           JEKYLL_ENV: production
           PAGES_REPO_NWO: ${{ github.repository }}
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./docs/_site
 
@@ -66,9 +66,9 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
