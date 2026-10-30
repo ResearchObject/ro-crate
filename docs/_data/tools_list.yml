@@ -19,12 +19,9 @@
 
 - name: Describo
   description: An intuitive and extensible tool for working with RO-Crates. Transform, Discover, Explore, Describe.
-  status: production
+  status: inactive
   level:
   url: https://describo.github.io
-  roles: [researcher, data_steward]
-  tasks: [manage_data, curation]
-  domains: [language_text, humanities, social_science]
   subitems:
     - name: Component - embed the Describo RO-Crate engine in your application
       url: https://describo.github.io/docs/component/introduction.html
