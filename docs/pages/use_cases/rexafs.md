@@ -5,7 +5,7 @@ description: Reproducible XAFS Analyses publishes reproducible X-ray absorption 
 url: https://zenodo.org/communities/rexas/records
 image: ReXAFS.png
 domains: [chemistry] # should match item(s) in pages/domains
-tasks: [research, curation, data_management, training] # should match item(s) in pages/tasks
+tasks: [conduct_research, curation, manage_data, training] # should match item(s) in pages/tasks
 roles: [researcher, data_steward, data_analyst, software_developer, repository_manager, trainer] # should match item(s) in pages/roles
 ---
 <!--
