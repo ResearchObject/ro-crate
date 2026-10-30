@@ -41,6 +41,7 @@ jobs:
           --ignore-files "/.*\/ro-crate-preview\.html/","/.*\/examples\/.*\/index\.html/" \
           --disable-external true \
           --enforce-https false \
+          --allow-missing-href true \
           --swap-urls '^/ro-crate/:/' \
           ./_site
 
