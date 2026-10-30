@@ -1,8 +1,26 @@
-<figure class="image">
-  <img src="{{ include.src }}" alt="{{ include.alt }}" style="max-width:90%" 
-  {% if include.border %}
-  class="border border-dark"
-  {% endif %}
-  >
-  <figcaption>{{ include.caption }}</figcaption>
+{%- comment -%}
+Figure with caption. Accepts the parameters of the Elixir Toolkit Theme image.html
+(file= relative to /images/, url=, click=, inline=, class=, max-width=, alt=, caption=),
+and the site's own src= (a path or URL as is, e.g. next to a blog post) and border=.
+{%- endcomment -%}
+{%- if include.file %}
+{%- assign file_url = "/images/" | append: include.file | relative_url %}
+{%- else %}
+{%- assign file_url = include.src %}
+{%- endif %}
+<figure class="image {% if include.inline == true %}my-0{% else %}my-4{%- endif %}{% if include.class %} {{ include.class }}{%- endif %}"{% if include.max-width %} style="max-width:{{ include.max-width }}"{% endif %}>
+    {%- if include.url %}
+    <a target="_blank" rel="noopener" href="{{ include.url }}">
+    {%- elsif include.click == true %}
+    <a target="_blank" rel="noopener noreferrer" href="{{ file_url }}">
+    {%- endif %}
+    <img src="{{ file_url }}" alt="{{ include.alt }}" class="figure-img img-fluid rounded{% if include.border %} border border-dark{% endif %}"{% unless include.file %} style="max-width:90%"{% endunless %}/>
+    {%- if include.url or include.click == true %}
+    </a>
+    {%- endif %}
+    {%- if include.caption %}
+    <figcaption class="figure-caption">
+    {{ include.caption | markdownify }}
+    </figcaption>
+    {%- endif %}
 </figure>
