@@ -968,3 +968,16 @@
   url: https://github.com/biaperotto/recrate
   roles: [researcher, data_analyst]
   tasks: [conduct_research]
+
+- name: LLMCrater
+  description: Generates RO-Crate metadata for a project directory using a local large language model with retrieval over the RO-Crate specification, extracting design, development, deployment and provenance metadata in stages and validating the resulting crate
+  status: alpha
+  url: https://github.com/DT-UVA/LLMCrater-V2
+  roles: [researcher, data_steward, software_developer]
+  tasks: [manage_data, curation]
+  domains: [informatics]
+  subitems:
+    - name: LLMCrater (first version, for Jupyter notebooks)
+      url: https://github.com/DT-UVA/LLMCrater
+    - name: "Preprint: LLMCrater: Lifecycle-Aware FAIR Metadata Generation using Large Language Models"
+      url: https://doi.org/10.48550/arXiv.2608.23158
