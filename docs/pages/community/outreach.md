@@ -48,7 +48,122 @@ _Data Science_ **5**(2)
 
 Goble, C. (2026, October 12). [**The Research Object Odyssey: a journey of technology, community and politics**](https://doi.org/10.5281/zenodo.23324805). Zenodo. 22nd IEEE [International eScience Conference 2026, Naples, Italy](https://www.escience-conference.org/2026/), 2026-09-28 - 2026-10-02.
 
+Eli Chadwick, Sanskrit Suthar, Phil Reed, Stian Soiland-Reyes, Peter Sefton, Carole Goble (2026):  
+[**RO-Crate**: Packaging research outputs with FAIR metadata for reproducibility across domains](https://doi.org/10.5281/zenodo.22814318).  
+Poster at 22nd IEEE [International eScience Conference 2026](https://www.escience-conference.org/2026/) (IEEE eScience 2026), Naples, Italy, 2026-09-28/--10-02.  
+<https://doi.org/10.5281/zenodo.22814318>
+
+Sanskrit Suthar, Stuart Owen, Finn Bacall, Phil Reed, Nick Juty, Munazah Andrabi, Stian Soiland-Reyes, Johan Gustafsson, Carole Goble (2026):  
+[**WorkflowHub**: A FAIR registry for computational workflows across scientific domains](https://doi.org/10.5281/zenodo.22814905).  
+Poster at 22nd IEEE [International eScience Conference 2026](https://www.escience-conference.org/2026/) (IEEE eScience 2026), Naples, Italy, 2026-09-28/--10-02.  
+<https://doi.org/10.5281/zenodo.22814905>
+
+Workflow Run RO-Crate working group (2026):  
+[**Process Run Crate specification 0.6**](https://w3id.org/ro/wfrun/process/0.6).  
+_researchobject.org_ (standard)  
+<https://doi.org/10.5281/zenodo.22643969>
+
+Workflow Run RO-Crate working group (2026):  
+[**Workflow Run Crate specification 0.6**](https://w3id.org/ro/wfrun/workflow/0.6).  
+_researchobject.org_ (standard)  
+<https://doi.org/10.5281/zenodo.22644389>
+
+Workflow Run RO-Crate working group (2026):  
+[**Provenance Run Crate specification 0.6**](https://w3id.org/ro/wfrun/provenance/0.6).  
+_researchobject.org_ (standard)  
+<https://doi.org/10.5281/zenodo.22644704>
+
+<small>Peter Sefton, Eoghan Ó Carragáin, Stian Soiland-Reyes, Oscar Corcho, Daniel Garijo, Raul Palma, Frederik Coppens, Carole Goble, José M. Fernández, Kyle Chard, Jose Manuel Gomez-Perez, Michael R. Crusoe, Ignacio Eguinoa, Nick Juty, Kristi Holmes, Jason A. Clark, Salvador Capella-Gutierrez, Alasdair J. G. Gray, Stuart Owen, Alan R. Williams, Giacomo Tartari, Finn Bacall, Thomas Thelen, Hervé Ménager, Laura Rodríguez-Navas, Paul Walk, brandon whitehead, Mark Wilkinson, Paul Groth, Erich Bremer, Leyla Jael Castro, Karl Sebby, Alexander Kanitz, Ana Trisovic, Gavin Kennedy, Mark Graves, Jasper Koehorst, Simone Leo, Marc Portier, Paul Brack, Milan Ojsteršek, Bert Droesbeke, Chenxu Niu, Kosuke Tanabe, Tomasz Miksa, Marco La Rosa, Cedric Decruw, Andreas Czerniak, Jeremy Jay, Sergio Serra, Ronald Siebes, Shaun de Witt, Shady El Damaty, Douglas Lowe, Xuanqi Li, Sveinung Gundersen, Muhammad Radifar, Rudolf Wittner, Oliver Woolland, Paul De Geest, Douglas Fils, Florian Wetzels, Raül Sirvent, Abigail Miller, Jake Emerson, Davide Fucci, Bruno P. Kinoshita, Maciek Bąk, Jens Hollunder, Martin Weise, Vartika Bisht, Toshiyuki Nishiyama Hiraki, Bram Ulrichts, Michael Falk, Eli Chadwick, Daniel Bauer, James Love, Eleni Adamidi, Josh Moore, Lars Schöbitz, Andreas Meier, Juan Fuentes, Edan Bainglass, Balázs E. Pataki, Joe Heffer, Pascal Su, Andrea Davanzo, Meznah Aloqalaa, Pierre-Marie Allard, Venkat Malladi, Esteban Gonzalez, Phil Reed, Tilo Mathes, Saurabh Dome, Niklas-Maximilian Epping, Margareta Hellström, Paul Slavin</small> (2026):  
+[**RO-Crate Metadata Specification 1.3**](https://w3id.org/ro/crate/1.3).  
+_researchobject.org_ (standard)  
+<https://doi.org/10.5281/zenodo.20720080>
+
+Eli Chadwick (2026):  
+[**RO-Crate**: Packaging research outputs with metadata for reproducibility across domains](https://doi.org/10.5281/zenodo.20543635).  
+Talks at the Bridge to Artificial Intelligence (Bridge2AI) Standards Working Group, 2026-01-22;
+Research Software Engineering Seminar Series, University of Cambridge, Cambridge, UK, 2026-01-29;
+ELIXIR UK Research Data Management (RDM) Club, 2026-05-05;
+metadata workshop, Rosalind Franklin Institute, Harwell, UK, 2026-05-07.  
+<https://doi.org/10.5281/zenodo.20543635>
+
+Munazah Andrabi, Phil Reed, Stian Soiland-Reyes, Carole Goble (2026):  
+[**eScience Lab ISCB-UK 2026 presentations**](https://doi.org/10.5281/zenodo.19696618):
+posters on RDMkit, RO-Crate, mTeSS-X, RSQKit, Bioschemas and WorkflowHub, and a talk on FAIRDOM-SEEK.  
+[International Society for Computational Biology UK Conference 2026](https://www.iscb.org/uk2026/home) (ISCB-UK 2026), University of Cambridge, Cambridge, UK, 2026-04-21/--22.  
+<https://doi.org/10.5281/zenodo.19696618>
+
+Eli Chadwick, Carole Goble (2026):  
+[**Federated Analytics and RO-Crate**: Accelerating trustworthy data use in HDR UK](https://doi.org/10.5281/zenodo.18982467).  
+Talk at the Health Data Research UK (HDR UK) Core Funders Committee, 2026-02-04.  
+<https://doi.org/10.5281/zenodo.18982467>
+
+Meznah Aloqalaa, Stian Soiland-Reyes, Carole Goble (2026):  
+[**A Structured Examination of Reproducibility**: A Case Study for HTS Using the PRIMAD Model and BioCompute Object](https://doi.org/10.5334/dsj-2026-024).  
+_Data Science Journal_ **25**:24  
+<https://doi.org/10.5334/dsj-2026-024>
+
+Katharina Heil, Tyler Alioto, Astrid Böhne, Tom Brown, Eli Chadwick, Physilia Chua, Christian de Guttry, Diego De Panis, Carole Goble, Ivo Gut, Marta Gut, Nick Juty, Seanna McTaggart, Laura Najera-Cortazar, Joana Paupério, Tomasz Rewicz, Felix Shaw, Stian Soiland-Reyes, Robert Waterhouse, Peter Woollard, Rutger Vos (2026):  
+[**Integrating the biodiversity genomics continuum**: harmonising data from barcodes to reference genomes](https://doi.org/10.3897/rio.12.e187033).  
+_Research Ideas and Outcomes_ **12**:e187033  
+<https://doi.org/10.3897/rio.12.e187033>
+
+Sharif Islam, Hanna Koivula, Carrie Andrew, Julian Lopez Gordillo, Claus Weiland, Dmitry Schigel, Dag Endresen, Christos Arvanitidis, Eli Chadwick, Stian Soiland-Reyes (2026):  
+[**FAIR digital twins for biodiversity**: enabling data, model, and workflow integration](https://doi.org/10.1038/s44185-025-00116-3).  
+_npj Biodiversity_  
+<https://doi.org/10.1038/s44185-025-00116-3>
+
+Gavin Farrell, Eleni Adamidi, Rafael Andrade Buono, Mihail Anton, Omar Abdelghani Attafi, Salvador Capella Gutierrez, Emidio Capriotti, Leyla Jael Castro, Davide Cirillo, Lisa Crossman, Christophe Dessimoz, Alexandros Dimopoulos, Raúl Fernández-Díaz, Styliani-Christina Fragkouli, Carole Goble, Wei Gu, John M. Hancock, Alireza Khanteymoori, Tom Lenaerts, Fabio G. Liberante, Peter Maccallum, Alexander Miguel Monzon, Magnus Palmblad, Lucy Poveda, Ovidiu Radulescu, Denis C. Shields, Shoaib Sufi, Thanasis Vergoulis, Fotis Psomopoulos, Silvio C. E. Tosatto (2026):  
+[**Open and Sustainable AI**: challenges, opportunities and the road ahead in the life sciences](https://doi.org/10.48550/arXiv.2505.16619).  
+_Nature Methods_  
+<https://doi.org/10.1038/s41592-026-03037-6> [preprint [arXiv:2505.16619](https://doi.org/10.48550/arXiv.2505.16619)]
+
+Frédéric Suter, Tainã Coleman, İlkay Altintaş, Rosa M. Badia, Bartosz Balis, Kyle Chard, Iacopo Colonnelli, Ewa Deelman, Paolo Di Tommaso, Thomas Fahringer, Carole Goble, Shantenu Jha, Daniel S. Katz, Johannes Köster, Ulf Leser, Kshitij Mehta, Hilary Oliver, J.-Luc Peterson, Giovanni Pizzi, Loïc Pottier, Raül Sirvent, Eric Suchyta, Douglas Thain, Sean R. Wilkinson, Justin M. Wozniak, Rafael Ferreira da Silva (2026):  
+[**A Terminology for Scientific Workflow Systems**](https://arxiv.org/pdf/2506.07838).  
+_Future Generation Computer Systems_ **174**:107974  
+<https://doi.org/10.1016/j.future.2025.107974> [[preprint arXiv:2506.07838](https://arxiv.org/abs/2506.07838)]
+
+Sean R. Wilkinson, Johan Gustafsson, Finn Bacall, Khalid Belhajjame, Salvador Capella, Jose Maria Fernandez Gonzalez, Jacob Fosso Tande, Luiz Gadelha, Daniel Garijo, Patricia Grubel, Bjorn Grüning, Farah Zaib Khan, Sehrish Kanwal, Simone Leo, Stuart Owen, Luca Pireddu, Line Pouchard, Laura Rodríguez-Navas, Beatriz Serrano-Solano, Stian Soiland-Reyes, Baiba Vilne, Alan Williams, Merridee Ann Wouters, Frederik Coppens, Carole Goble (2026):  
+[**An Ecosystem of Services for FAIR Computational Workflows**](https://doi.org/10.14279/depositonce-25818).  
+Book chapter in [_Workflow systems for large-scale scientific data analysis_](https://doi.org/10.14279/depositonce-24000) (Ulf Leser, Marcus Hilbrich, Sean R. Wilkinson, Rafael Ferreira da Silva, eds.), Universitätsverlag der TU Berlin.  
+ISBN 978-3-98781-068-8  
+<https://doi.org/10.14279/depositonce-25818> [[preprint arXiv:2505.15988](https://doi.org/10.48550/arXiv.2505.15988)]
+
 ### 2025
+
+Stian Soiland-Reyes, Munazah Andrabi, Finn Bacall, Eli Chadwick, Warren Del-Pinto, Alexander Hambley, Douglas Lowe, Stuart Owen, Phil Reed, Oliver Woolland, Annie Zheng, Carole Goble, Abigail Miller, Peter Sefton (2025):  
+[**RO-Crate**: Capturing FAIR Research outputs for reproducibility across domains](https://doi.org/10.5281/zenodo.17801347).  
+Talk at the [Computational Science Centre for Research Communities (CoSeC) Annual Conference 2025](https://www.cosec.ac.uk/calendar/annual-conference/2025-conference/), Manchester, UK, 2025-12-03.  
+<https://doi.org/10.5281/zenodo.17801347>
+
+Munazah Andrabi, Stuart Owen, Finn Bacall, Phil Reed, Xiaoming Hu, Ulrike Wittig, Maja Rey, Martin Golebiewski, Flora D'Anna, Kevin De Pelseneer, Jacob Snoep, Wolfgang Müller, Carole Goble (2025):  
+[**FAIRDOM-SEEK**: Platform for FAIR data and research asset management](https://doi.org/10.5281/zenodo.17250826).  
+Talk at the Bioinformatics Open Science Conference (BOSC 2025), [Intelligent Systems for Molecular Biology and European Conference on Computational Biology](https://www.iscb.org/ismbeccb2025/home) (ISMB/ECCB 2025), Liverpool, UK, 2025-07-21.  
+<https://doi.org/10.5281/zenodo.17250826>
+
+Finn Bacall, Stian Soiland-Reyes, Stuart Owen, Nick Juty, Johan Gustafsson, Frederik Coppens, Carole Goble (2025):  
+[**The WorkflowHub**: A FAIR Registry for computational workflows](https://doi.org/10.5281/zenodo.15861456).  
+Poster at [Intelligent Systems for Molecular Biology and European Conference on Computational Biology](https://www.iscb.org/ismbeccb2025/home) (ISMB/ECCB 2025), Liverpool, UK, 2025-07-20/--24.  
+<https://doi.org/10.5281/zenodo.15861456>
+
+Rutger A. Vos, Kessy Abarenkov, Jireh Agda, Josh Agda, Ruud Altenburg, Sarah J. Bourlat, Tom Brown, Eli Chadwick, Pierre-Etienne Cholley, Fabian Deister, Dick Groenenberg, Sharif Islam, Nick Juty, Vishnukumar Balavenkataraman Kadhirvelu, Maria Kamouyiaros, Douglas Lowe, Hana Merchant, Joana Pauperio, Benjamin Wills Price, Sujeevan Ratnasingham, Stian Soiland-Reyes, Giorgia Staffoni, Catherine Wei, Oliver White, Dimitris Koureas (2025):  
+[**Enhancing Digital Infrastructures and Data Handling Practices for Single Specimen Barcoding**: the 2024 Biodiversity Genomics Europe (BGE) Barcoding Hackathon](https://doi.org/10.37044/osf.io/xb4ut_v1).  
+_BioHackrXiv_  
+<https://doi.org/10.37044/osf.io/xb4ut_v1>
+
+Phil Reed (2025):  
+[**ELIXIR and the Physical Sciences**: shared tools and services](https://doi.org/10.5281/zenodo.14962111).  
+Poster and talk at [Research Data in the Physical Sciences: A Forum for Librarians and Research Support Professionals](https://www.psdi.ac.uk/event/research-data-forum-2025/), Physical Sciences Data Infrastructure (PSDI) Research Data Forum 2025, Edinburgh, UK, 2025-03-05/--06.  
+<https://doi.org/10.5281/zenodo.14962111> [[slides](https://doi.org/10.5281/zenodo.14987487)]
+
+Michelle Amugi, Rob Baxter, Christian Cole, Carole Goble, Emily Jefferson, Fergus McDonald, Andrew Morris, Philip Quinlan, David Seymour, Jim Smith, Balint Stewart, Simon G. Thompson (2025):  
+[**A Federated Architecture for a National Data Library**](https://doi.org/10.5281/zenodo.14672004).  
+Report for Wellcome and Data and Analytics Research Environments UK (DARE UK).  
+<https://doi.org/10.5281/zenodo.14672004>
+
+Stian Soiland-Reyes (2025):  
+[**FAIR Research Objects and Computational Workflows** – A Linked Data Approach](https://doi.org/10.5281/zenodo.14719595).  
+PhD thesis, _University of Amsterdam_, Amsterdam, Netherlands.  
+<https://doi.org/10.5281/zenodo.14719595>
 
 ELIXIR (2025):  
 [**ELIXIR Annual Report 2024**](https://doi.org/10.7490/f1000research.1120222.1).  
@@ -83,12 +198,6 @@ Sean Wilkinson, Meznah Aloqalaa, Khalid Belhajjame, Michael R. Crusoe, Bruno de 
 [**Applying the FAIR Principles to Computational Workflows**](https://doi.org/10.1038/s41597-025-04451-9).  
 _Scientific Data_ **12**:328
 <https://doi.org/10.1038/s41597-025-04451-9>
-
-Sean R. Wilkinson, Johan Gustafsson, Finn Bacall, Khalid Belhajjame, Salvador Capella, Jose Maria Fernandez Gonzalez, Jacob Fosso Tande, Luiz Gadelha, Daniel Garijo, Patricia Grubel, Bjorn Grüning, Farah Zaib Khan, Sehrish Kanwal, Simone Leo, Stuart Owen, Luca Pireddu, Line Pouchard, Laura Rodríguez-Navas, Beatriz Serrano-Solano, Stian Soiland-Reyes, Baiba Vilne, Alan Williams, Merridee Ann Wouters, Frederik Coppens, Carole Goble (2025):  
-[**An Ecosystem of Services for FAIR Computational Workflows**](https://doi.org/10.48550/arXiv.2505.15988).  
-Book chapter, draft  
-_arXiv_ 2505.15988 [cs.DC]
-<https://doi.org/10.48550/arXiv.2505.15988>
 
 Ove Johan Ragnar Gustafsson, Sean R. Wilkinson, Finn Bacall, Stian Soiland-Reyes, Simone Leo, Luca Pireddu, Stuart Owen, Nick Juty, José Mª Fernández, Tom Brown, Hervé Ménager, Björn Grüning, Salvador Capella-Gutierrez, Frederik Coppens, Carole Goble (2025):  
 [**WorkflowHub**: a registry for computational workflows](https://doi.org/10.1038/s41597-025-04786-3).  
