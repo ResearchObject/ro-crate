@@ -1,11 +1,9 @@
 ---
 title: Tasks
 description: This page organises the RO-Crate use cases based on regular research data management tasks or challenges.
-layout: default
+layout: page
 sidebar: main
 ---
-
-# Tasks
 
 This page organises the use cases based on regular research data management tasks or challenges. Click on a task to see the related use cases.
 

@@ -1,5 +1,5 @@
 ---
-title: Outreach and Publications
+title: RO-Crate Outreach and Publications
 description: Recent publications, presentations, and citations of RO-Crate
 ---
 <!--
@@ -18,16 +18,6 @@ description: Recent publications, presentations, and citations of RO-Crate
    See the License for the specific language governing permissions and
    limitations under the License.   
 -->
-
-# RO-Crate Outreach and Publications 
-{: .no_toc }
-
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 _Feel free to add to this page, either [edit and raise pull request](https://github.com/ResearchObject/ro-crate/blob/main/docs/pages/community/outreach.md) or [raise issue](https://github.com/ResearchObject/ro-crate/issues/new?assignees=&labels=bug&template=bug_report.md&title=) using your GitHub account._
 

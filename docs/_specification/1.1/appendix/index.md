@@ -1,5 +1,5 @@
 ---
-title: Appendix
+title: Appendixes
 redirect_from:
   - /1.1-DRAFT/appendix
   - /1.1/appendix
@@ -25,4 +25,10 @@ has_children: true
    limitations under the License.
 -->
 
-# Appendixes
+<div id="appendix"></div>
+
+## Appendixes
+* [Changelog](changelog)
+* [Handling relative URI references](relative-uris)
+* [Implementation Notes](implementation-notes)
+* [RO-Crate JSON-LD](jsonld)

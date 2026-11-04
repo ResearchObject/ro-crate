@@ -1,5 +1,5 @@
 ---
-title: Implementation notes
+title: "APPENDIX: Implementation notes"
 parent: Appendix
 grand_parent: RO-Crate 1.1
 redirect_from:
@@ -26,13 +26,6 @@ excerpt:
 -->
 
 # APPENDIX: Implementation notes
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 ## Programming with JSON-LD
 

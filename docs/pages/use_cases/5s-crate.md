@@ -10,8 +10,6 @@ tasks: [compliance, data_handling, manage_data]
 roles: [compliance_officer, data_steward, information_architect]
 ---
 
-# Five Safes Crate
-
 The [Five Safes RO-Crate](https://w3id.org/5s-crate) profile extend the [Workflow Run RO-Crate](https://www.researchobject.org/workflow-run-crate/) profile for use in _Trusted Research Environments_ (TRE). 
 
 The intention is to follow the [Five Safes Framework](https://econpapers.repec.org/RePEc:uwe:wpaper:20161601) to process sensitive health data in federated workflow execution across TREs in the UK.

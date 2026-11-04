@@ -3,9 +3,6 @@ title: RO-Crate 1.2/1.3 Specification Quick Reference
 sidebar: resources
 ---
 
-
-# RO-Crate 1.2/1.3 Specification Quick Reference
-
 {% include callout.html type="note" content="This resource was developed for RO-Crate 1.2 but remains valid for 1.3 with no additional requirements."%}
 
 ## How to use this document

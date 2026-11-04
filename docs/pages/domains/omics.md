@@ -7,9 +7,9 @@ edam_url: http://edamontology.org/topic_3391
 related_pages: 
   tasks: [data_handling, manage_data, conduct_research]
   roles: [data_analyst, researcher]
+toc: false
 ---
 {% include item_details.html %}
 
 {% include related_use_cases.html %}
 
-{% include related_pages.html %}

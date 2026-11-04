@@ -5,13 +5,11 @@ redirect_from:
 title: "PILARS"
 description: PILARS is a set of Protocols for Implementing Long-term Archival Repository Services
 url: https://w3id.org/ldac/pilars/
-image: 
+page_img: 
 domains: []
 tasks: [data_handling]
 roles: [data_steward, information_architect, repository_manager]
 ---
-
-# PILARS
 
 The Protocols for Implementing Long-term Archival Repository Services (PILARS, <http://w3id.org/ldac/pilars>) are inspired by the continuing success of the technical approach taken over two decades by [PARADISEC](paradisec). PARADISEC houses cultural heritage material from more than 1360 languages with standard metadata, with data stored in commodity services (initially files on disk, now objects in a cloud storage service), and metadata adjacent to the data. PILARS was developed through work with the Language Data Commons of Australia to generalise the PARADISEC approach to other disciplines.
 

@@ -10,7 +10,7 @@ tasks: [data_handling]
 roles: [information_architect, repository_manager]
 ---
 
-# PARADISEC: Pacific and Regional Archive for Digital Sources in Endangered Cultures
+Pacific and Regional Archive for Digital Sources in Endangered Cultures
 
 
 

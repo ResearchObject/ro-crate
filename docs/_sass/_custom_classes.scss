@@ -49,43 +49,48 @@ body {
     font-display: swap;
 }
 
+/*------Table--------/*
+
+/* Undo the ETT break-word style for hyperlinks when inside a table */
+#main table a:not(.btn):not(.dropdown-item) {
+        overflow-wrap: normal;
+        word-wrap: normal;
+        -ms-word-break: normal;
+        word-break: normal;
+}
+
+/*-------ToolTable------/*
+
+/* Override DataTables styling of colgroup elements,
+which it automatically inserts into the tool table, to match the original dimensions. 
+If adding columns, add a selector (nth-child) class for it here. */
+table.tooltable colgroup col:nth-child(1) {
+    width: 25% !important;
+}
+table.tooltable colgroup col:nth-child(2) {
+    width: 65% !important;
+}
+table.tooltable colgroup col:nth-child(3) {
+    width: 10% !important;
+}
+
 /*-----Sidebar-----*/
-#side-nav {
-    .btn.sidebar-title {
+#sidebar {
+    > nav .sidebar-title {
         background-color: $blue-x;
-        // font-weight: bold;
+        font-weight: normal;
         font-size: 1.3rem;
         &.active {
             border-left: 4px solid $primary;
         }
     }
-    > ul {
-        margin-top: $spacer;
-        li {
-            margin-top: 5px;
-            a {
-                margin-bottom: 0 !important;
-                border-left: 4px solid $sidebar-bg;
-                &:hover {
-                    border-left-color: $primary !important;
-                    background-color: $primary;
-                }
-            }
-            &.active {
-                &.parent > a {
-                    background-color: $light;
-                    border-left-color: $light;
-                }
-                &:not(.parent) > a {
-                    border-left-color: $primary;
-                }
-            }
-        }
+    a {
+        text-decoration-line: none;
+        border-left: 4px solid $sidebar-bg;
     }
-}
-
-.sidebar-collapse {
-    background-color: $light;
+    button { 
+        text-decoration-line: none;
+    }
 }
 
 /*-----Selection color-----*/
@@ -99,6 +104,11 @@ body {
 
 /*-----Section navigation tiles-----*/
 .navigation-tiles {
+    //.align-items-center {
+    //    // Hide the type of tile label
+    //    display: none !important;
+    //}
+
     .btn.py-4.hover-primary {
         border-left: 0px solid $primary;
         transition: $card-slide-transition;
@@ -113,6 +123,11 @@ body {
         &.bg-light:hover {
             background-color: $light !important;
         }
+    }
+
+    .dropdown .btn {
+        z-index: 2;
+        position: relative;
     }
 }
 
@@ -167,6 +182,10 @@ body {
     header .navbar .navbar-brand img {
         height: 37px;
     }
+}
+
+.navbar-brand span {
+    display: none;
 }
 
 /* -----Homepage----- */
@@ -263,15 +282,15 @@ section#search-section {
 }
 
 /*-----Sidebar-----*/
-@include media-breakpoint-up(lg) {
-    #sidebar {
-        top: 3rem;
-        z-index: 2;
-        height: calc(100vh - 7rem);
-        overflow-y: auto;
-        position: sticky;
-    }
-}
+//@include media-breakpoint-up(lg) {
+//    #sidebar {
+//        top: 3rem;
+//        z-index: 2;
+//        height: calc(100vh - 7rem);
+//        overflow-y: auto;
+//        position: sticky;
+//    }
+//}
 
 /*------Tile Image-------*/
 .tile-img-sm {
@@ -286,4 +305,46 @@ section#search-section {
 // hide the link container, as we have no links to display
 footer .container {
     display: none;
+}
+
+// hide h1s in the content section
+// reason: spec pages need an h1 defined in the Markdown for rendering to PDF
+//         but the web pages display the `title` from the front matter already
+//         so this hides the extra h1s when viewing the web version
+#content h1 {
+    display: none;
+}
+
+/*-----Related page badges by page type-----*/
+// The theme's tool tables (and tools-table.html) link each related page with
+// title="<page type>", which Bootstrap's tooltip moves to data-bs-original-title.
+// Icons are the Font Awesome ones of the "Explore RO-Crate by" tiles on the home page.
+$related-page-types: (
+    "domains": ("\f0c3", "success"),    // fa-flask
+    "tasks": ("\f303", "primary"),      // fa-pencil
+    "roles": ("\f007", "warning"),      // fa-user
+    "use cases": ("\f518", "info"),     // fa-book-open
+);
+
+@each $type, $style in $related-page-types {
+    $icon: nth($style, 1);
+    $colour: nth($style, 2);
+    a[title="#{$type}"] .default-badge,
+    a[data-bs-original-title="#{$type}"] .default-badge {
+        background-color: var(--bs-#{$colour}-bg-subtle);
+        color: var(--bs-#{$colour}-text-emphasis);
+        border: 1px solid var(--bs-#{$colour}-border-subtle);
+
+        &::before {
+            content: $icon;
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 0.35em;
+        }
+
+        &:hover {
+            color: #fff;
+            background-color: var(--bs-primary);
+        }
+    }
 }

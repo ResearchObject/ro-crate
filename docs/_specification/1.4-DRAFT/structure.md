@@ -36,13 +36,7 @@ parent: RO-Crate 1.4-DRAFT
 -->
 
 # RO-Crate Structure {#structure}
-{: .no_toc }
 
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 ## Types of RO-Crate
 

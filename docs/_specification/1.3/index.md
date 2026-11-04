@@ -1,5 +1,5 @@
 ---
-title: RO-Crate 1.3
+title: RO-Crate Metadata Specification 1.3
 redirect_from:
   - /1.3-DRAFT/index
   - /1.3-DRAFT/about
@@ -38,7 +38,7 @@ excerpt: |
 
 {%- assign sidebar = site.data.sidebars[page.sidebar] %}
 <ul>
-{% for version in sidebar.versions %}
+{% for version in sidebar.subitems %}
 {%- if page.url == version.url %}
   {% for item in version.subitems %}
   <li><a href="{{item.url | relative_url}}">{{item.title}}</a>

@@ -1,5 +1,5 @@
 ---
-title: Implementation notes
+title: "APPENDIX: Implementation notes"
 description: Guidance on programming with JSON-LD, combining RO-Crate with other packaging schemes, and repository-specific identifiers
 redirect_from:
   - /1.3-DRAFT/appendix/implementation-notes
@@ -26,13 +26,6 @@ nav_order: 21
 -->
 
 # APPENDIX: Implementation notes {#implementation-notes}
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 ## Programming with JSON-LD
 

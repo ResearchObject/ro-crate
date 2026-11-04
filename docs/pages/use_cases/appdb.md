@@ -2,15 +2,13 @@
 page_id: appdb
 redirect_from:
     - /in-use/appdb
-title: EGI AppDB
+title: EGI's Application Database
 description: EGI’s Application Database (AppDB) has support for RO-Crate download, either as a JSON-LD metadata file or a ZIP archive.
 url: https://appdb.egi.eu/
 domains: []
 tasks: [software_development]
 roles: [repository_manager, software_developer]
 ---
-
-# EGI's Application Database
 
 EGI's Application Database ([AppDB](https://appdb.egi.eu/)) has [support for RO-Crate](https://wiki.appdb.egi.eu/docs/integration/ro-crate/) download, either as a JSON-LD metadata file or a ZIP archive.
 

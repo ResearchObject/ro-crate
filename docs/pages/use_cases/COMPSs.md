@@ -3,7 +3,7 @@ page_id: COMPSs
 title: COMPSs
 description: The COMPSs programming model is able to record Workflow Provenance in RO-Crate format, for governance and reproducibility of computational experiments
 url: https://compss.bsc.es/
-image: COMPSs.png
+page_img: COMPSs.png
 domains: [informatics] # should match item(s) in pages/domains
 tasks: [conduct_research, curation, data_handling, software_development] # should match item(s) in pages/tasks
 roles: [information_architect, researcher, software_developer] # should match item(s) in pages/roles
@@ -24,10 +24,6 @@ roles: [information_architect, researcher, software_developer] # should match it
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-
-# COMPSs
-
-[![COMPSs logo](assets/img/COMPSs.png)](https://compss.bsc.es/)
 
 COMP Superscalar ([COMPSs](https://compss.bsc.es/)) is a task-based programming model which aims to ease the development of applications for distributed infrastructures, such as large High-Performance Clusters (HPC), Clouds and Container managed clusters. PyCOMPSs is the Python binding of COMPSs.
 

@@ -10,7 +10,6 @@ tasks: [data_handling]
 roles: [data_steward, information_architect]
 ---
 
-# Sciebo RDS
 
 Sciebo RDS (Research Data Services) is a self-hosted interface between data repositories and file storage solutions, assisting the research data deposition process with annotations made using [Describo Online](https://arkisto-platform.github.io/tools/description/describo-online/) and stored as an RO-Crate, which is then mapped to the chosen repository's metadata scheme. Supported repositories include OSF, InvenioRDM, Harvard Dataverse. This is developed as a [CS3MESH4EOSC](https://cs3mesh4eosc.eu/) with cultural heritage studies archive PARADISEC as use case.
 

@@ -3,7 +3,7 @@ page_id: gide
 title: Global Image Data Ecosystem
 description: GIDE (Global Image Data Ecosystem) is a collaborative project working towards the interoperability of bioimage data repositories across the globe. The project was initially funded by a European Commission Horizon Grant as "foundingGIDE", including multiple partners from Europe, Australia and Japan. The GIDE project uses RO-Crates as a metadata exchange format to harmonize outputs from three major bioimaging repositories (SSBD, BioImage Archive and IDR).
 url: https://founding-gide.eurobioimaging.eu/
-image: gide.svg
+page_img: gide.svg
 domains: [biology, biomedical_science, medicine] # should match item(s) in pages/domains
 tasks: [data_handling, manage_data] # should match item(s) in pages/tasks
 roles: [researcher, repository_manager, data_steward] # should match item(s) in pages/roles
@@ -22,12 +22,6 @@ roles: [researcher, repository_manager, data_steward] # should match item(s) in 
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-
-# Global Image Data Ecosystem
-
-<a href="https://founding-gide.eurobioimaging.eu/">
-<img src="assets/img/gide.svg" alt="foundingGIDE project logo" width="30%">
-</a>
 
 The [Global Image Data Ecosystem](https://founding-gide.eurobioimaging.eu/) (GIDE) is a collaborative project working towards the interoperability of bioimage data repositories across the globe. Initially funded by a European Commission Horizon Grant as "foundingGIDE", the project brings together partners from different parts of the world. Bioimaging has long lacked the kind of shared metadata agreements that nucleotide sequence and protein structure data have relied on for decades, and three of the field's major resources — the [BioImage Archive](https://www.ebi.ac.uk/bioimage-archive/) (BIA), the [Image Data Resource](https://idr.openmicroscopy.org/) (IDR) and [SSBD](https://ssbd.riken.jp/) — have each developed their own internal metadata models. GIDE works towards cross-resource discovery across these repositories without requiring any of them to abandon their existing systems.
 

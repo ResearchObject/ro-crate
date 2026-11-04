@@ -10,9 +10,6 @@ tasks: [curation]
 roles: [information_architect]
 ---
 
-# KEDO Data Lake
-
-
 Knowledge Enhanced Digital Objects ([KEDO](https://github.com/luoyu357/KEDODataLake)) is an experimental approach of building a data lake using a combination of knowledge graphs, RO-Crate and PID records. 
 
 A KEDO PID is a Handle that identifies a KEDO Object, described using a KEDO RO-Crate. This crate again has _internal RO-Crate_s as parts, which records a combination of _Features_ and _Insights_. The distinction is that features are mainly fixed at digital object creation and considered directly describing the object's nature, while insights can be discovered later from further processing and linkage.

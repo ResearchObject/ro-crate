@@ -1,5 +1,5 @@
 ---
-title: Appendix
+title: Appendixes
 redirect_from:
   - /1.3-DRAFT/appendix
 nav_order: 20

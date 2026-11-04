@@ -7,9 +7,9 @@ edam_url: http://edamontology.org/topic_3303
 related_pages: 
   tasks: [conduct_research]
   roles: [researcher]
+toc: false
 ---
 {% include item_details.html %}
 
 {% include related_use_cases.html %}
 
-{% include related_pages.html %}

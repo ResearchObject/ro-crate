@@ -3,7 +3,7 @@ page_id: ome
 title: Open Microscopy Environment
 description: OME is a consortium producing open-source software and format standards for microscopy data. It uses RO-Crate as part of its system for transfering data between OMERO servers, as well as for producing self-documenting data in OME-Zarr, a next-generation file-format (NGFF) standard.
 url: https://www.openmicroscopy.org/
-image: ome.svg
+page_img: ome.svg
 domains: [biology,biomedical_science,medicine] # should match item(s) in pages/domains
 tasks: [data_handling, manage_data] # should match item(s) in pages/tasks
 roles: [researcher, repository_manager, data_steward] # should match item(s) in pages/roles
@@ -24,13 +24,6 @@ roles: [researcher, repository_manager, data_steward] # should match item(s) in 
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-
-# Open Microscopy Environment
-
-<a href="https://www.openmicroscopy.org/">
-<img src="assets/img/ome.svg" alt="Open Microscopy Environment logo" width="30%">
-</a>
-
 
 
 The [Open Microscopy Environment](https://www.openmicroscopy.org/) (OME) is a consortium producing open-source software and format standards for microscopy data since 2005. 

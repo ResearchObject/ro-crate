@@ -28,13 +28,7 @@ parent: RO-Crate 1.4-DRAFT
 -->
 
 # Root Data Entity  {#root-data-entity}
-{: .no_toc }
 
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 The **Root Data Entity** is a [Dataset] that represents the RO-Crate as a whole;
 a _Research Object_ that includes the _Data Entities_ and the related

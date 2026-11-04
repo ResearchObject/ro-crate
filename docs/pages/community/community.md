@@ -1,5 +1,5 @@
 ---
-title: Community
+title: RO-Crate Community
 description: The RO-Crate team, community meetings, and how to get in touch
 ---
 <!--
@@ -18,17 +18,6 @@ description: The RO-Crate team, community meetings, and how to get in touch
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-
-# RO-Crate Community
-
-{: .no_toc }
-
-## Table of contents
-
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 ## Team
 

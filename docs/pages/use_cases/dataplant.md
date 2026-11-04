@@ -10,7 +10,6 @@ tasks: [manage_data]
 roles: [information_architect]
 ---
 
-# DataPLANT
 
 [DataPLANT](https://nfdi4plants.org/) is implementing [Annotated Research Context (ARC)](https://arc-rdm.org/), an RO-Crate profile that combines the Investigation Study Assay model ([ISA](https://isa-specs.readthedocs.io/en/latest/isamodel.html)) and the Common Workflow Language ([CWL](https://www.commonwl.org/)) to capture a range from single experimental setups to complex experimental designs. 
 

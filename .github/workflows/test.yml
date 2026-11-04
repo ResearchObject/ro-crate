@@ -43,6 +43,7 @@ jobs:
           --ignore-files "/.*\/ro-crate-preview\.html/","/.*\/examples\/.*\/index\.html/" \
           --disable-external true \
           --enforce-https false \
+          --allow-missing-href true \
           --swap-urls '^/ro-crate/:/' \
           ./_site
 
@@ -55,3 +56,8 @@ jobs:
         working-directory: ./docs
         run: |
           ! fgrep -R 'site.pages' _site
+
+      - name: Run custom theme checks
+        working-directory: ./docs
+        run: |
+          bundle exec ruby tests/test_html_pages.rb

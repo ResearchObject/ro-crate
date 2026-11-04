@@ -1,4 +1,4 @@
-{%- unless include.affiliations == nil and include.search == nil %}
+{%- if include.affiliations == true or include.search == true %}
 {%- assign allcountries = site.data.countries %}
 {%- for current_page in site.pages | sorted %}
 {%- if current_page.affiliations and current_page.search_exclude != true and current_page.type == include.type %}
@@ -11,8 +11,8 @@
 {%- endif %}
 {%- endfor %}
 {%- assign allaffiliations = allaffiliations | split: ", " | uniq | sort %}
-<div class="row g-4 row-cols-1 row-cols-md-2 mb-4">
-    {%- unless include.affiliations == nil %}
+<div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }} my-4">
+    {%- if include.affiliations == true %}
     <div class="col">
         <div class="input-group">
             <label class="input-group-text" for="affiliations-input">Filter by affiliation</label>
@@ -32,21 +32,21 @@
             </button>
         </div>
     </div>
-    {%- endunless %}
-    {%- unless include.search == nil %}
+    {%- endif %}
+    {%- if include.search == true %}
     <div class="col">
         <div class="input-group">
-            <label class="input-group-text" id="search-label">Search</label>
-            <input type="text" id="title-search" class="form-control" onkeyup="StartSearch();" placeholder="Type here..." aria-label="Search {{ include.type | replace: '_', ' ' }}">
-            <button class="btn btn-primary" title="Clear search" type="button" id="clearsearch" aria-label="Clear search">
+            <span class="input-group-text" id="search-label-tiles"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input type="text" id="title-search" class="form-control" onkeyup="StartSearch();" placeholder="Find your page..." aria-label="{{page.type | replace: '_', ' ' }}" aria-describedby="search-label-tiles">
+            <button class="btn btn-primary" title="Button to clear search" type="button" id="clearsearch">
                 <i class="fa-solid fa-backspace"></i>
             </button>
         </div>
     </div>
-    {%- endunless %}
+    {%- endif %}
 </div>
-{%- endunless %}
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }}  g-4 mb-5 navigation-tiles">
+{%- endif %}
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-{{ include.col | default: 2 }} g-4 mb-5 navigation-tiles">
     {%- if include.custom %}
     {%- assign related_pages = include.custom | split: ", " %}
     {%- unless include.sort == false %}
@@ -82,25 +82,27 @@
     {%- endif %}
     <div class="col" data-affiliations="{{affiliations_classes}}" related-pages="{{related_pages_classes}}">
         <div class="card h-100">
-            <div class="card-header d-inline">
-               <a class="stretched-link" aria-label="{{current_page.title}}" href="{{ current_page.url | relative_url }}">
-                  <div class="px-3 pb-3 d-flex justify-content-between align-items-center">                    
-                    <h3 class="card-title ml-3">{{current_page.title}}</h3>
-                    {%- if current_page.image %}
-                    <img alt="logo of {{current_page.title}}" src="{{site.baseurl}}/assets/img/{{current_page.image }}" class="d-inline tile-img-sm">
+            {%- if current_page.page_img %}
+            <div class="d-flex">
+            {%- endif %}
+            <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center">
+                    {%- if current_page.type_img %}
+                    <img src="{{current_page.type_img | relative_url}}" class="type-icon me-2" alt="{{current_page.type}} icon">
                     {%- endif %}
+                    {%- if current_page.type %}
+                    <span class=""><small>{{current_page.type | replace: "_", " " }}</small></span>
+                    {%- endif %}
+                </div>
+                <a class="stretched-link section-title d-flex justify-content-between" aria-label="Go to the {{current_page.title}} page" href="{{ current_page.url | relative_url }}">
+                    <b>{{current_page.title}}</b>
                     {%- if current_page.icon %}
-                    <i class="fa fa-2x {{ current_page.icon }}"></i>
-                    {%- endif %}
-                  </div>   
+                    <i class="fa fa-2x {{ current_page.icon }} page-img-sm pt-3 pe-3"></i> 
+                    {%- endif %} 
                 </a>
-            </div>
-            <div class="card-body">
                 {%- if current_page.description %}
-                <p class="card-text px-3">{{ current_page.description}}</p>
+                <p class="card-text h-100">{{ current_page.description}}</p>
                 {%- endif %}
-            </div>
-            <div class="px-3 pb-3 d-flex justify-content-between">
                 {%- if current_page.related_pages %}
                 {%- assign nonempty = false %}
                 {%- for section in current_page.related_pages %}
@@ -130,14 +132,13 @@
                 </div>
                 {%- endif %}
                 {%- endif %}
-            </div>
-            {%- if current_page.affiliations %}
-            {%- assign alllogos = site.data.affiliations %}
-            {%- assign allcountries = site.data.countries %}
-            <div class="card-footer d-flex align-middle">
-                <div class="me-3">
-                    <span class="me-2"><b><small>Affiliations:</small></b></span>
-                    {%- for affiliation in current_page.affiliations %}
+                {%- if current_page.affiliations %}
+                {%- assign pageaffil = current_page.affiliations | sort %}
+                {%- assign alllogos = site.data.affiliations %}
+                {%- assign allcountries = site.data.countries %}
+                <div class="d-flex align-items-center flex-wrap gap-2">
+                    <span><b><small>Affiliations:</small></b></span>
+                    {%- for affiliation in pageaffil %}
                     {%- assign filter_affiliation = alllogos | where: "name", affiliation | first %}
                     {%- assign country = affiliation | upcase %}
                     {%- if affiliation.size == 2 %}
@@ -154,7 +155,7 @@
                     {%- elsif filter_affiliation %}
                     <a role="button" href="{{filter_affiliation.url}}" data-bs-toggle="tooltip" data-bs-original-title="{{affiliation}}" class="btn btn-sm bg-white hover-primary">
                         {%- if filter_affiliation.image_url %}
-                        <img alt="logo of {{filter_affiliation.name}}" src="{{site.baseurl}}/{{filter_affiliation.image_url | relative_url }}" class="d-inline affiliation-img-sm">
+                        <img alt="logo of {{filter_affiliation.name}}" src="{{filter_affiliation.image_url | relative_url }}" class="d-inline affiliation-img-sm">
                         {%- else %}
                         {{filter_affiliation.name}}
                         {%- endif %}
@@ -162,6 +163,13 @@
                     {%- endif %}
                     {%- endfor %}
                 </div>
+                {%- endif %}
+            </div>
+            {%- if current_page.page_img %}
+            {%- capture file_url -%}
+            {{ "/images/" | append: current_page.page_img | relative_url }}
+            {%- endcapture -%}
+                <img alt="logo of {{current_page.title}}" src="{{ file_url }}" class="page-img-sm pt-3 pe-3" />   
             </div>
             {%- endif %}
         </div>
@@ -172,6 +180,7 @@
 </div>
 
 
+{%- if include.affiliations == true or include.search == true %}
 <script type="text/javascript">
     /** 
      * Filter cards by affiliation
@@ -187,7 +196,7 @@
                 }
                 const cols = document.querySelectorAll(".navigation-tiles .col");
                 for (col of cols) {
-                    const colCategories = col.getAttribute("data-affiliations").split(" ");
+                    const colCategories = (col.getAttribute("data-affiliations") ?? "").split(" ");
                     if (colCategories.indexOf(this.value) != -1 || this.value === "reset") {
                         col.classList.remove("d-none");
                     } else {
@@ -204,7 +213,7 @@
                     document.getElementById("affiliations-input").selectedIndex = null;
                     const cols = document.querySelectorAll(".navigation-tiles .col");
                     for (col of cols) {
-                        const colCategories = col.getAttribute("data-affiliations").split(" ");
+                        const colCategories = (col.getAttribute("data-affiliations") ?? "").split(" ");
                         col.classList.remove("d-none");
                     }
                 }
@@ -221,22 +230,26 @@
         const input = document.getElementById("title-search");
         if (input) {
             const cols = document.querySelectorAll(".navigation-tiles .col");
-            let filter = input.value.toLowerCase();
+            const filter = input.value.toLowerCase();
+
             var affiliations = document.getElementById('affiliations-input');
             if (affiliations) {
                 document.getElementById("affiliations-input").selectedIndex = null;
             }
+
             for (let i = 0; i < cols.length; i++) {
-                let body = cols[i].querySelector(".card-body");
-                let title = cols[i].querySelector(".card-header");
-                if (title.innerText.toLowerCase().indexOf(filter) > -1 || body.innerText.toLowerCase().indexOf(filter) > -1) {
+                let body = cols[i].querySelector(".card-body") || cols[i].querySelector(".section-title");
+                if (!body) continue; // skip cols that don’t have searchable content
+
+                if (body.innerText.toLowerCase().indexOf(filter) > -1) {
                     cols[i].classList.remove("d-none");
                 } else {
                     cols[i].classList.add("d-none");
                 }
             }
         }
-    }
+    };
+
     $(document).ready(function () {
         var clearsearch = document.getElementById("clearsearch");
         if (clearsearch) {
@@ -254,3 +267,4 @@
     });
 
 </script>
+{%- endif %}
