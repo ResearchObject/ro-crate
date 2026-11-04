@@ -169,6 +169,8 @@ table.tooltable colgroup col:nth-child(3) {
 // Primarily used in use cases
 // Can't rely on indication focus by colour change alone
 // Need to indicate via visible border
+// NOTE: this should be replaced by new Sass variables in ETT 7.0.0
+// See https://github.com/ELIXIR-Belgium/elixir-toolkit-theme/pull/452
 .dropdown-toggle {
     &:hover {
         border-color: var(--bs-btn-active-border-color);
