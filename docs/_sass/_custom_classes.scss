@@ -86,9 +86,9 @@ table.tooltable colgroup col:nth-child(3) {
     }
     // Bring back left-side border on active sidebar items
     // The li elements apply background shading in updated theme
-    > nav  ul > li:has(> a.active) {
-        border-bottom-left-radius: 8px;
-        border-top-left-radius: 8px;
+    ul > li:has(> a.active) {
+        border-bottom-left-radius: $border-radius;
+        border-top-left-radius: $border-radius;
         border-left-color: $primary;
         border-left-style: solid;
         border-left-width: 4px;
