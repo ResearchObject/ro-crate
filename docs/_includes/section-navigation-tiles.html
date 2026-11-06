@@ -227,9 +227,12 @@
      * Search cards
      */
 
+     let timer;
+
     var StartSearch = () => {
         const input = document.getElementById("title-search");
         if (input) {
+            clearTimeout(timer);  // Reset outstanding timers
             let resultCount = 0;
             const cols = document.querySelectorAll(".navigation-tiles .col");
             const filter = input.value.toLowerCase();
@@ -251,13 +254,17 @@
                 }
             }
 
-            //Update title search results label to announce updated contents to screen readers
-            let resultLabel = document.getElementById("title-search-results");
-            if (resultCount > 0) {
-                resultLabel.textContent = `Found ${resultCount} results`;
-            } else {
-                resultLabel.textContent = "No results found";
-            }
+            // Set new timer for updating title search results label
+            // Only trigger if not cleared before delay
+            timer = setTimeout(() => {
+                //Update title search results label to announce updated contents to screen readers
+                let resultLabel = document.getElementById("title-search-results");
+                if (resultCount > 0) {
+                    resultLabel.textContent = `Found ${resultCount} results`;
+                } else {
+                    resultLabel.textContent = "No results found";
+                }
+            }, 500);
         }
     };
 
