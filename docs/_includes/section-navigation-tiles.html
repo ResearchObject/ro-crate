@@ -37,7 +37,7 @@
     <div class="col">
         <div class="input-group">
             <span class="input-group-text" id="search-label-tiles"><i class="fa-solid fa-magnifying-glass"></i></span>
-            <input type="text" id="title-search" class="form-control" onkeyup="StartSearch();" placeholder="Search {{include.type | replace: '_', ' ' }}...">
+            <input type="text" id="title-search" class="form-control" onkeyup="StartSearch();" aria-label="Search {{include.type | replace: '_', ' ' }}" placeholder="Search...">
             <button class="btn btn-primary" title="Clear {{include.type | replace: '_', ' ' }} search" type="button" id="clearsearch">
                 <i class="fa-solid fa-backspace"></i>
             </button>
