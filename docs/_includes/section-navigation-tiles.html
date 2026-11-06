@@ -42,6 +42,7 @@
                 <i class="fa-solid fa-backspace"></i>
             </button>
         </div>
+        <label id="title-search-results" aria-live="polite" class="visually-hidden">Showing all {{include.type | replace: '_', ' ' }}</label>
     </div>
     {%- endif %}
 </div>
@@ -229,6 +230,7 @@
     var StartSearch = () => {
         const input = document.getElementById("title-search");
         if (input) {
+            let resultCount = 0;
             const cols = document.querySelectorAll(".navigation-tiles .col");
             const filter = input.value.toLowerCase();
 
@@ -243,9 +245,18 @@
 
                 if (body.innerText.toLowerCase().indexOf(filter) > -1) {
                     cols[i].classList.remove("d-none");
+                    resultCount += 1;
                 } else {
                     cols[i].classList.add("d-none");
                 }
+            }
+
+            //Update title search results label to announce updated contents to screen readers
+            let resultLabel = document.getElementById("title-search-results");
+            if (resultCount > 0) {
+                resultLabel.textContent = `Found ${resultCount} results`;
+            } else {
+                resultLabel.textContent = "No results found";
             }
         }
     };
@@ -262,6 +273,8 @@
                         col.classList.remove("d-none");
                     }
                 }
+                //Reset title search results label announce updated contents to screen readers
+                document.getElementById("title-search-results").textContent = "Showing all {{include.type | replace: '_', ' ' }}";
             });
         }
     });
