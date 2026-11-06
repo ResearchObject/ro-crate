@@ -27,7 +27,7 @@
                 {%- endif %}
                 {%- endfor %}
             </select>
-            <button class="btn btn-primary" title="Button to clear affiliations selection" type="button" id="clearfilter">
+            <button class="btn btn-primary" title="Clear affiliations selection" type="button" id="clearfilter">
                 <i class="fa-solid fa-backspace"></i>
             </button>
         </div>
@@ -36,12 +36,13 @@
     {%- if include.search == true %}
     <div class="col">
         <div class="input-group">
-            <span class="input-group-text" id="search-label-tiles"><i class="fa-solid fa-magnifying-glass"></i></span>
-            <input type="text" id="title-search" class="form-control" onkeyup="StartSearch();" placeholder="Find your page..." aria-label="{{page.type | replace: '_', ' ' }}" aria-describedby="search-label-tiles">
-            <button class="btn btn-primary" title="Button to clear search" type="button" id="clearsearch">
+            <span class="input-group-text" id="search-label-tiles"><i class="fa-solid fa-magnifying-glass pe-2"></i><label for="title-search">Filter {{include.type | replace: '_', ' ' }}</label></span>
+            <input type="text" id="title-search" class="form-control" onkeyup="StartSearch();">
+            <button class="btn btn-primary" title="Clear {{include.type | replace: '_', ' ' }} search" type="button" id="clearsearch">
                 <i class="fa-solid fa-backspace"></i>
             </button>
         </div>
+        <label id="title-search-results" aria-live="polite" class="visually-hidden">Showing all {{include.type | replace: '_', ' ' }}</label>
     </div>
     {%- endif %}
 </div>
@@ -226,9 +227,13 @@
      * Search cards
      */
 
+     let timer;
+
     var StartSearch = () => {
         const input = document.getElementById("title-search");
         if (input) {
+            clearTimeout(timer);  // Reset outstanding timers
+            let resultCount = 0;
             const cols = document.querySelectorAll(".navigation-tiles .col");
             const filter = input.value.toLowerCase();
 
@@ -243,10 +248,23 @@
 
                 if (body.innerText.toLowerCase().indexOf(filter) > -1) {
                     cols[i].classList.remove("d-none");
+                    resultCount += 1;
                 } else {
                     cols[i].classList.add("d-none");
                 }
             }
+
+            // Set new timer for updating title search results label
+            // Only trigger if not cleared before delay
+            timer = setTimeout(() => {
+                //Update title search results label to announce updated contents to screen readers
+                let resultLabel = document.getElementById("title-search-results");
+                if (resultCount > 0) {
+                    resultLabel.textContent = `Found ${resultCount} results`;
+                } else {
+                    resultLabel.textContent = "No results found";
+                }
+            }, 500);
         }
     };
 
@@ -262,6 +280,8 @@
                         col.classList.remove("d-none");
                     }
                 }
+                //Reset title search results label announce updated contents to screen readers
+                document.getElementById("title-search-results").textContent = "Showing all {{include.type | replace: '_', ' ' }}";
             });
         }
     });

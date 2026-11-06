@@ -75,40 +75,40 @@ is a practical implementation of the [FAIR Digital Object Framework](https://fai
 
 ## Where do I start?
 
-#### Learn by example
+### Learn by example
 
 To learn more about RO-Crate there are some [tutorials and resources here](tutorials).
 
 You can also visit the [Use Cases](use_cases) page to browse projects using RO-Crate,
 or find relevant information for your [domain](domains), [project role](roles), or [task](tasks).
 
-#### Quick technical overview
+### Quick technical overview
 
 For a technical introduction to RO-Crates see [RO-Crate Technical Overview](technical_overview).
 
 Read the [Background](background) page to learn about the history of RO-Crate and its predecessors.
 
-#### Speak to the RO-Crate Team
+### Speak to the RO-Crate Team
 
 Come to one of our drop-in sessions suitable for all levels,
 or email the team at [ro-crate@researchobject.org](mailto:ro-crate@researchobject.org).
 
 See the [Community](community) pages for more information.
 
-#### FAQ
+### FAQ
 
 Check the [FAQ](faq) for answers to common questions.
 
 ## Cite RO-Crate
 
-#### Cite RO-Crate as project/approach
+### Cite RO-Crate as project/approach
 
 Stian Soiland-Reyes, Peter Sefton, Mercè Crosas, Leyla Jael Castro, Frederik Coppens, José M. Fernández, Daniel Garijo, Björn Grüning, Marco La Rosa, Simone Leo, Eoghan Ó Carragáin, Marc Portier, Ana Trisovic, RO-Crate Community, Paul Groth, Carole Goble (2022):  
 **Packaging research artefacts with RO-Crate**.  
 _Data Science_ **5**(2)  
 <https://doi.org/10.3233/DS-210053>  
 
-#### Cite RO-Crate Specification (any version)
+### Cite RO-Crate Specification (any version)
 
 Peter Sefton, Eoghan Ó Carragáin, Stian Soiland-Reyes, Oscar Corcho, Daniel Garijo, Raul Palma, Frederik Coppens, Carole Goble, José María Fernández, Kyle Chard, Jose Manuel Gomez-Perez, Michael R Crusoe, Ignacio Eguinoa, Nick Juty, Kristi Holmes, Jason A. Clark, Salvador Capella-Gutierrez, Alasdair J. G. Gray, Stuart Owen, Alan R Williams, Giacomo Tartari, Finn Bacall, Thomas Thelen, Hervé Ménager, Laura Rodríguez Navas, Paul Walk, brandon whitehead, Mark Wilkinson, Paul Groth, Erich Bremer, LJ Garcia Castro, Karl Sebby, Alexander Kanitz, Ana Trisovic, Gavin Kennedy, Mark Graves, Jasper Koehorst, Simone Leo, Marc Portier (2020):  
 **RO-Crate Metadata Specification**  
@@ -117,6 +117,6 @@ _researchobject.org / Zenodo_
 
 For citing a particular [version of RO-Crate specification](specification) see its embedded _Cite this version_ DOI.
 
-#### Other citations
+### Other citations
 
 See also [recent publications, presentations and citations](outreach).
