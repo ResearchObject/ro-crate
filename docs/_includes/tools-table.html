@@ -1,4 +1,11 @@
-{%- assign tools = site.data.tools_list | sort_natural: "name" %}
+{%- assign tools = include.tools | default: site.data.tools_list | sort_natural: "name" %}
+<!-- include with tags=true to show each tool's domains, tasks and roles as labels linking to their pages -->
+{%- if include.tags %}
+{%- assign tag_types = "domains,tasks,roles" | split: "," %}
+{%- assign domain_pages = site.pages | where: "type", "domains" %}
+{%- assign task_pages = site.pages | where: "type", "tasks" %}
+{%- assign role_pages = site.pages | where: "type", "roles" %}
+{%- endif %}
 <div class="table-responsive mt-3">
   <table class="tooltable table display">
     <colgroup>
@@ -34,6 +41,26 @@
             </li>
             {%- endfor %}
           </ul>
+          {%- endif %}
+          {%- if include.tags %}
+          {%- if tool.domains or tool.tasks or tool.roles %}
+          <div class="d-flex flex-wrap gap-1 mt-1">
+            {%- for type in tag_types %}
+            {%- case type %}
+            {%- when "domains" %}{% assign type_pages = domain_pages %}{% assign emoji = "🌍" %}{% assign colour = "success" %}{% assign label = "Domain" %}
+            {%- when "tasks" %}{% assign type_pages = task_pages %}{% assign emoji = "🛠️" %}{% assign colour = "primary" %}{% assign label = "Task" %}
+            {%- when "roles" %}{% assign type_pages = role_pages %}{% assign emoji = "👤" %}{% assign colour = "warning" %}{% assign label = "Role" %}
+            {%- endcase %}
+            {%- for page_id in tool[type] %}
+            {%- assign tag_page = type_pages | where: "page_id", page_id | first %}
+            {%- if tag_page %}
+            <a href="{{ tag_page.url | relative_url }}" title="{{ label }}: {{ tag_page.title }}"
+               class="badge rounded-pill fw-normal text-decoration-none bg-{{ colour }}-subtle text-{{ colour }}-emphasis border border-{{ colour }}-subtle">{{ emoji }} {{ tag_page.title }}</a>
+            {%- endif %}
+            {%- endfor %}
+            {%- endfor %}
+          </div>
+          {%- endif %}
           {%- endif %}
         </td>
         <td>{{tool.status}}</td>
