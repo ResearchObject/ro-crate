@@ -10,6 +10,15 @@
     - name: Web-based Crate-O
       url: https://language-research-technology.github.io/crate-o/
 
+- name: wpsld
+  description: Work-in-progress desktop editor for RO-Crate metadata using schema.org and RO-Crate MASP profiles
+  status: prototype
+  level:
+  url: https://github.com/stain/wpsld
+  roles: [researcher, data_steward]
+  tasks: [manage_data, curation]
+  domains: [informatics]
+
 - name: RO-Crate Playground
   description: Write, run, and experiment with ro-crate directly in the browser, either at JSON-LD or form-based editing, with multiple visualisations. Builds on Crate-O
   url: https://github.com/Language-Research-Technology/ro-crate-playground
