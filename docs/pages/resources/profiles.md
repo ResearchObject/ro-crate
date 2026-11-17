@@ -340,34 +340,38 @@ evolved from this profile to conform with RO-Crate 1.1's
 
 ## ARC RO-Crate profile collection
 
-*This section is adapted from [ARC RO-Crate Profile Collection](https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/) under the MIT license.*
+*This section is adapted from [ARC RO-Crate Profile Collection](https://w3id.org/arc/ro-crate) under the MIT license.*
 
-The Annotated Research Context (ARC) RO-Crate Profile Collection is a set of profiles that focus on providing meaning and context to research data, aligning with the [ARC](https://arc-rdm.org/) framework developed by [DataPLANT](https://nfdi4plants.org/).
+The Annotated Research Context (ARC) RO-Crate Profile Collection is a set of profiles that focus on providing meaning and context to research data, aligning with the [ARC RDM](https://w3id.org/arc) framework developed by [DataPLANT](https://nfdi4plants.org/).
 
-An ARC consists of [ISA](https://isa-specs.readthedocs.io/en/latest/isamodel.html) metadata describing an experimental setup, computational workflows, and executions of those workflows.
+An ARC captures the metadata of the full research cycle, including involved people, experimental setup, computational workflows, and executions of those workflows.
 
-The collection contains five profiles: three "base" profiles, plus two further profiles that extend and combine them.
+The collection contains six profiles: three "core" profiles, plus three further profiles that extend and combine them.
 
-### Base profiles
+### Core profiles
 
-The three "base" profiles focus on distinct aspects of research context, and can be useful beyond the ARC context:
+The three core profiles focus on distinct aspects of research context, and can be useful beyond the ARC context:
 
-* [Administrative Crate](https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/administrative_crate/) for administrative information - creators, contributors, and rights holders
-* [Datamap Crate](https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/datamap_crate/) for structural and semantic details of data files and fragments of data files.
-* [Process Core Crate](https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/process_core_crate/) for capturing processes that generate and transform research entities.
+* [Administrative Core]( https://w3id.org/arc/ro-crate/administrative-core) for administrative information - creators, contributors, and rights holders
+* [Semantic Core](https://w3id.org/arc/ro-crate/semantic-core) for assigning imposed meaning to research entities.
+* [Provenance Core](https://w3id.org/arc/ro-crate/provenance-core) for capturing processes that generate and transform research entities.
 
 ### ISA RO-Crate Profile
 
-The [ISA RO-Crate profile](https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/isa_ro_crate/) describes experimental data in plant sciences that is annotated by metadata following the [ISA model](https://isa-specs.readthedocs.io/en/latest/isamodel.html).
+The [ISA RO-Crate profile](https://w3id.org/arc/ro-crate/isa) describes experimental data in plant sciences that is annotated by metadata following the [ISA model](https://isa-specs.readthedocs.io/en/latest/isamodel.html).
 Such datasets consist of three types of data entities: `Investigation`, `Study` and `Assay`.
 The profile adds requirements of the crate such that the data folders match the Investigation, Study and Assay objects of the [ISA model](https://isa-specs.readthedocs.io/en/latest/isamodel.html).
 The description of experimental processes that produce the data uses the [Bioschemas](https://bioschemas.org/) type `LabProcess` as its core entity.
 It describes how data and samples are derived from each other in a graph model based on formalized parameters as key-value pairs.
-The profile builds on Administrative Crate and Process Core Crate above.
+The profile builds on Administrative Crate and Provenance Core Crate above.
+
+### Datamap RO-Crate Profile
+
+The [Datamap RO-Crate Profile](https://w3id.org/arc/ro-crate/datamap) implements the [Datamap](https://doi.org/10.1515/jib-2025-0052), a metadata container for annotating the structure, content and meaning of files and file-fragments based on W3C [Fragment Selectors](https://www.w3.org/TR/selectors-states/#FragmentSelector_def).
 
 ### ARC Workflow Run RO-Crate Profile
 
-The [ARC Workflow Run RO-Crate Profile](https://nfdi4plants.github.io/arc-ro-crate-profile/profiles/wr_ro_crate/) combines the existing [Workflow Run Crate profile](https://w3id.org/ro/wfrun/workflow/) and the ISA RO-Crate profile in an ARC-specific context.
+The [ARC Workflow Run RO-Crate Profile](https://w3id.org/arc/ro-crate/wr) combines the existing [Workflow Run Crate profile](https://w3id.org/ro/wfrun/workflow/) and the Provenance Core RO-Crate profile, [harmonizing both perspectives on retrospective provenance](https://doi.org/10.1515/jib-2025-0050).
 
 ## Electronic Lab Notebook (ELN)
 
