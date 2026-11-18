@@ -109,6 +109,21 @@ table.tooltable colgroup col:nth-child(3) {
     //    display: none !important;
     //}
 
+    .card {
+        position: relative;
+    }
+
+    .section-title {
+        padding-right: 2.5rem;
+
+        .page-img-sm {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0 !important;
+        }
+    }
+
     .btn.py-4.hover-primary {
         border-left: 0px solid $primary;
         transition: $card-slide-transition;
