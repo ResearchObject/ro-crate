@@ -109,10 +109,20 @@ table.tooltable colgroup col:nth-child(3) {
     //    display: none !important;
     //}
 
+    // Page icons
     .card .section-title .page-img-sm {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
+        @media only screen
+        and (min-width : 171px) {
+            // Position icon relative to card body container
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+        @media only screen
+        and (max-width : 171px) {
+            // Position according to regular flow
+            position: static;
+        }
     }
 
     .btn.py-4.hover-primary {
