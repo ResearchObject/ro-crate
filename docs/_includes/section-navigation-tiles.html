@@ -94,7 +94,7 @@
                     <span class=""><small>{{current_page.type | replace: "_", " " }}</small></span>
                     {%- endif %}
                 </div>
-                <a class="stretched-link section-title d-flex justify-content-between" aria-label="Go to the {{current_page.title}} page" href="{{ current_page.url | relative_url }}">
+                <a class="stretched-link section-title d-flex flex-column-reverse justify-content-between" aria-label="Go to the {{current_page.title}} page" href="{{ current_page.url | relative_url }}">
                     <b>{{current_page.title}}</b>
                     {%- if current_page.icon %}
                     <i class="fa fa-2x {{ current_page.icon }} page-img-sm"></i> 
