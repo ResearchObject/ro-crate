@@ -5,11 +5,11 @@ If you are using RO-Crate in your project, we welcome you to add your use case h
 See example: <https://www.researchobject.org/ro-crate/rohub>
 
 ## How to add a new use case
-First upload logo in SVG or PNG format to [assets.img](../assets/img), naming it same as the new page, e.g. `example.svg` to match `example.md` - you may also add a `example-screenshot.png` to illustrate how RO-Crate is used.
+First upload logo in SVG or PNG format to [/docs/images](../../images), naming it same as the new page, e.g. `example.svg` to match `example.md` - you may also add a `example-screenshot.png` there to illustrate how RO-Crate is used.
 
 Then in this folder, create a new Markdown file using the [template](.template.md), e.g. `example.md`.
 
-Save a copy of the logo to [/docs/images](../../images) as required by the ETT template so we can use the `page_img` feature. This means the logo will appear in the sidebar of the page and on the list of all use cases.
+Having the logo in [/docs/images](../../images) is required by the ETT template so we can use the `page_img` feature. This means the logo will appear in the sidebar of the page and on the list of all use cases. Show the screenshot in your page with `{% include image.html file="example-screenshot.png" alt="..." caption="..." %}`.
 
 Add the use case to the sidebar in [/docs/_data/sidebars/main.yml](../../_data/sidebars/main.yml) in the correct place alphabetically. 
 
