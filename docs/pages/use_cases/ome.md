@@ -120,7 +120,7 @@ Here is one example of RO-Crate compliant JSON file generated:
 
 Of note, while the `ro-crate-metadata.json` file is not part of the OME-Zarr v.0.5 specification, the [NGFF validator tool](https://ome.github.io/ome-ngff-validator/?source=https://dmss3gw.riken.jp/ssbd/zarr/v0.5/2b9f8ab8-5e53-434e-bb08-89e54c232ad8.zarr) detects and validates RO-Crate metadata, demonstrating the compatibility of Zarr objects with RO-Crate. 
 
-[![The OME NGFF Validator showing an OME-Zarr file with a valid RO-Crate](../../assets/img/ome-validator-screenshot.png)](https://ome.github.io/ome-ngff-validator/?source=https://radosgw.public.os.wwu.de/n4bi-fzj/ome2024-ngff-challenge/1micron_reconstructions_VOI2.zarr)
+{% include image.html file="ome-validator-screenshot.png" alt="The OME NGFF Validator showing an OME-Zarr file with a valid RO-Crate" url="https://ome.github.io/ome-ngff-validator/?source=https://radosgw.public.os.wwu.de/n4bi-fzj/ome2024-ngff-challenge/1micron_reconstructions_VOI2.zarr" %}
 
 ## Resources
 
