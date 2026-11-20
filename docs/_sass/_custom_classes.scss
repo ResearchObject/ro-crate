@@ -314,3 +314,37 @@ footer .container {
 #content h1 {
     display: none;
 }
+
+/*-----Related page badges by page type-----*/
+// The theme's tool tables (and tools-table.html) link each related page with
+// title="<page type>", which Bootstrap's tooltip moves to data-bs-original-title.
+// Icons are the Font Awesome ones of the "Explore RO-Crate by" tiles on the home page.
+$related-page-types: (
+    "domains": ("\f0c3", "success"),    // fa-flask
+    "tasks": ("\f303", "primary"),      // fa-pencil
+    "roles": ("\f007", "warning"),      // fa-user
+    "use cases": ("\f518", "info"),     // fa-book-open
+);
+
+@each $type, $style in $related-page-types {
+    $icon: nth($style, 1);
+    $colour: nth($style, 2);
+    a[title="#{$type}"] .default-badge,
+    a[data-bs-original-title="#{$type}"] .default-badge {
+        background-color: var(--bs-#{$colour}-bg-subtle);
+        color: var(--bs-#{$colour}-text-emphasis);
+        border: 1px solid var(--bs-#{$colour}-border-subtle);
+
+        &::before {
+            content: $icon;
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 0.35em;
+        }
+
+        &:hover {
+            color: #fff;
+            background-color: var(--bs-primary);
+        }
+    }
+}

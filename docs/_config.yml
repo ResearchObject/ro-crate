@@ -30,6 +30,13 @@ exclude:
 date_format: "%-d %B %Y"
 
 defaults:
+  # The theme's edit and history buttons link to {repository}/blob/{branch}/{page.path};
+  # the site source is in docs/ on main (not the gh-pages branch GitHub reports)
+  - scope:
+      path: ""
+    values:
+      github:
+        branch: main/docs
   - scope:
       path: ""
       type: "pages"
