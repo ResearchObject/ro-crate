@@ -10,7 +10,7 @@ roles: [repository_manager, researcher] # should match item(s) in pages/roles
 ---
 
 <!--
-   Copyright 2019-2022 RO-Crate contributors
+   Copyright 2026 RO-Crate contributors
    <https://github.com/ResearchObject/ro-crate/graphs/contributors>
 
    Licensed under the Apache License, Version 2.0 (the "License");
