@@ -84,6 +84,15 @@ table.tooltable colgroup col:nth-child(3) {
             border-left: 4px solid $primary;
         }
     }
+    // Bring back left-side border on active sidebar items
+    // The li elements apply background shading in updated theme
+    ul > li:has(> a.active) {
+        border-bottom-left-radius: $border-radius;
+        border-top-left-radius: $border-radius;
+        border-left-color: $primary;
+        border-left-style: solid;
+        border-left-width: 4px;
+    }
     a {
         text-decoration-line: none;
         border-left: 4px solid $sidebar-bg;
