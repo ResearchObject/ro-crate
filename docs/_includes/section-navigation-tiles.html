@@ -1,3 +1,24 @@
+{%- comment -%}
+  Override of the ELIXIR Toolkit Theme 6.1.0 _includes/section-navigation-tiles.html.
+  Differences from the theme:
+  - page icon on each card (front matter `icon:`), positioned top-right
+  - "Related pages" dropdown on each card
+  - accessible search: visible label, screen-reader live region for result counts,
+    descriptive clear-button titles
+  - sort_natural, and `custom=` keeps the order given (featured use cases on the home page)
+
+  ETT 7.0.0 restructures this template (cards moved to navigation-tile-card.html,
+  `affiliations` renamed `supported_by`). Upstream will not take PRs against 6.1.x, so
+  when moving to ETT 7:
+  - do not port this file over the 7.0.0 one; start from the theme's 7.0.0 template
+  - re-check each difference above against 7.0.0 and drop the ones it now covers
+    (7.0.0 already has sort_natural; it still lacks the icon, the related pages
+    dropdown and the search live region)
+  - for what is still missing, propose it upstream against 7.0.0
+    (https://github.com/ELIXIR-Belgium/elixir-toolkit-theme) and keep only a small override
+    until it is released
+{%- endcomment -%}
+
 {%- if include.affiliations == true or include.search == true %}
 {%- assign allcountries = site.data.countries %}
 {%- for current_page in site.pages | sorted %}
