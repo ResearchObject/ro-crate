@@ -6,4 +6,4 @@ Do not add new website content here.
 
 For specification files, see `_specification` folder.
 
-For tool files, see [`_pages/resources/tools.md`](../pages/resources/tools.md) and [`_data/tools_list.yml`](../_data/tools_list.yml).
+For tool files, see [`_pages/resources/tools.md`](../pages/resources/tools.md) and [`_data/tool_and_resource_list.yml`](../_data/tool_and_resource_list.yml).

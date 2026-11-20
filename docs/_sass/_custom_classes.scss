@@ -85,6 +85,15 @@ table.tooltable colgroup col:nth-child(3) {
             border-left: 4px solid $primary;
         }
     }
+    // Bring back left-side border on active sidebar items
+    // The li elements apply background shading in updated theme
+    ul > li:has(> a.active) {
+        border-bottom-left-radius: $border-radius;
+        border-top-left-radius: $border-radius;
+        border-left-color: $primary;
+        border-left-style: solid;
+        border-left-width: 4px;
+    }
     a {
         text-decoration-line: none;
         border-left: 4px solid $sidebar-bg;
@@ -109,6 +118,22 @@ table.tooltable colgroup col:nth-child(3) {
     //    // Hide the type of tile label
     //    display: none !important;
     //}
+
+    // Page icons
+    .card .section-title .page-img-sm {
+        @media only screen
+        and (min-width : 171px) {
+            // Position icon relative to card body container
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+        @media only screen
+        and (max-width : 171px) {
+            // Position according to regular flow
+            position: static;
+        }
+    }
 
     .btn.py-4.hover-primary {
         border-left: 0px solid $primary;
@@ -346,4 +371,37 @@ footer .container {
 .highlight .mb,
 .highlight .mx {
     color: #008080 !important;
+  
+/*-----Related page badges by page type-----*/
+// The theme's tool tables (and tools-table.html) link each related page with
+// title="<page type>", which Bootstrap's tooltip moves to data-bs-original-title.
+// Icons are the Font Awesome ones of the "Explore RO-Crate by" tiles on the home page.
+$related-page-types: (
+    "domains": ("\f0c3", "success"),    // fa-flask
+    "tasks": ("\f303", "primary"),      // fa-pencil
+    "roles": ("\f007", "warning"),      // fa-user
+    "use cases": ("\f518", "info"),     // fa-book-open
+);
+
+@each $type, $style in $related-page-types {
+    $icon: nth($style, 1);
+    $colour: nth($style, 2);
+    a[title="#{$type}"] .default-badge,
+    a[data-bs-original-title="#{$type}"] .default-badge {
+        background-color: var(--bs-#{$colour}-bg-subtle);
+        color: var(--bs-#{$colour}-text-emphasis);
+        border: 1px solid var(--bs-#{$colour}-border-subtle);
+
+        &::before {
+            content: $icon;
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 0.35em;
+        }
+
+        &:hover {
+            color: #fff;
+            background-color: var(--bs-primary);
+        }
+    }
 }
