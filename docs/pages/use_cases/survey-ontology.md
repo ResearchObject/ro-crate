@@ -35,7 +35,7 @@ Considering a _survey procedure_, all the questions can be annotated with the re
 
 This section describes the research objects defined and published to share a survey study of motivation for citizen scientists performed within the [ACTION project](https://actionproject.eu/). The research objects leverage the RO-Crate specification and the Survey Ontology to describe the relevant resources and their relations.
 
-{% include image.html src="assets/img/survey-ontology-example.png" alt="RO-Crate preview of Survey Ontology." caption="RO-Crate preview of Survey Ontology. Link to dataset: https://doi.org/10.5281/zenodo.5753092" %}
+{% include image.html file="survey-ontology-example.png" alt="RO-Crate preview of Survey Ontology." caption="RO-Crate preview of Survey Ontology. Link to dataset: https://doi.org/10.5281/zenodo.5753092" %}
 
 Survey data exported from Coney and modelled using the Survey Ontology, are packaged in comprehensive RO-Crate research objects including:
 
