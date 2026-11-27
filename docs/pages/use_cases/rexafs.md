@@ -5,7 +5,7 @@ description: Reproducible XAFS Analyses publishes reproducible X-ray absorption 
 url: https://zenodo.org/communities/rexas/records
 page_img: ReXAFS.png
 domains: [chemistry] # should match item(s) in pages/domains
-tasks: [research, curation, data_management, training] # should match item(s) in pages/tasks
+tasks: [conduct_research, curation, manage_data, training] # should match item(s) in pages/tasks
 roles: [researcher, data_steward, data_analyst, software_developer, repository_manager, trainer] # should match item(s) in pages/roles
 ---
 <!--
@@ -50,5 +50,3 @@ Abraham Nieva de la Hidalga, Leandro Liborio, Patrick Austin, Subindev Devadasan
 **Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study**  
 _ChemCatChem_:e202401676  
 <https://doi.org/10.1002/cctc.202401676>
-
-![ReXAFS logo](../../assets/img/ReXAFS.png)
