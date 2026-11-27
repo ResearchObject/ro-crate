@@ -1,4 +1,4 @@
-{%- assign tools = site.data.tool_and_resource_list | sort_natural: "name" %}
+{%- assign tools = include.tools | default: site.data.tool_and_resource_list | sort_natural: "name" %}
 <!-- include with tags=true to show each tool's domains, tasks and roles as labels linking to their pages -->
 {%- if include.tags %}
 {%- assign tag_types = "domains,tasks,roles" | split: "," %}
