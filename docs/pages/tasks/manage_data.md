@@ -8,3 +8,7 @@ toc: false
 {% include item_details.html %}
 
 {% include related_use_cases.html %}
+
+{% include related_tools.html %}
+
+{% include related_pages.html %}

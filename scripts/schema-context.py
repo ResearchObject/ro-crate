@@ -213,7 +213,7 @@ ADDITIONAL = OrderedDict([
           ("pcdm", "http://pcdm.org/models#"),
           ("bibo", "http://purl.org/ontology/bibo/"),
           ("cc", "http://creativecommons.org/ns#"),
-          ("dct", "http://purl.org/dc/terms/"),
+          ("dcterms", "http://purl.org/dc/terms/"),
           ("foaf", "http://xmlns.com/foaf/0.1/"),
           ("prof", "http://www.w3.org/ns/dx/prof/"),
           ("profrole", "http://www.w3.org/ns/dx/prof/role/"),

@@ -13,3 +13,6 @@ toc: false
 
 {% include related_use_cases.html %}
 
+{% include related_tools.html %}
+
+{% include related_pages.html %}

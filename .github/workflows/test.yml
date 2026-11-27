@@ -8,9 +8,9 @@ on:
 
 jobs:
   build-site:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 1
 
@@ -18,9 +18,7 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "19"
+
       - name: Install dependencies
         working-directory: ./docs
         run: |
@@ -28,6 +26,9 @@ jobs:
           gem install bundler
           bundle config path vendor/bundle
           bundle install
+
+      - name: Check domain, task, role and use case ids
+        run: scripts/check-page-ids.rb
 
       - name: Build the site
         working-directory: ./docs
