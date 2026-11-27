@@ -83,7 +83,7 @@
             {%- elsif filter_affiliation %}
             <a role="button" href="{{filter_affiliation.url}}" data-bs-toggle="tooltip" data-bs-original-title="{{affiliation}}" class="btn btn-sm bg-white hover-primary">
                 {%- if filter_affiliation.image_url %}
-                <img alt="logo of {{filter_affiliation.name}}" src="{{filter_affiliation.image_url | relative_url }}" class="d-inline supported-by-img-sm">
+                <img alt="{{filter_affiliation.name}}" src="{{filter_affiliation.image_url | relative_url }}" class="d-inline supported-by-img-sm">
                 {%- else %}
                 {{filter_affiliation.name}}
                 {%- endif %}
@@ -99,7 +99,7 @@
     {%- capture file_url -%}
     {{ "/images/" | append: tile_page.page_img | relative_url }}
     {%- endcapture -%}
-        <img src="{{ file_url }}" class="page-img-sm" />
+        <img src="{{ file_url }}" alt="" class="page-img-sm" />
         {%- endif %}
         <span class="navigation-tile-arrow" aria-hidden="true">
             <i class="icon-arrow-right"></i>
