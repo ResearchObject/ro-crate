@@ -15,7 +15,7 @@
 #   limitations under the License.
 
 # Check that the domains, tasks, roles and use cases referenced by
-# use case pages, docs/_data/tools_list.yml and related_pages front matter
+# use case pages, docs/_data/tool_and_resource_list.yml and related_pages front matter
 # match the page_id of an existing page. Jekyll silently drops links to
 # unknown ids, so a typo hides a use case or tool from a page.
 #
@@ -67,7 +67,7 @@ Dir.glob(File.join(DOCS, "pages", "use_cases", "*.md")).sort.each do |page|
   TAGS.each { |tag| check.call(relative(page), relative(page), tag, meta[tag]) }
 end
 
-tools_file = File.join(DOCS, "_data", "tools_list.yml")
+tools_file = File.join(DOCS, "_data", "tool_and_resource_list.yml")
 YAML.safe_load(File.read(tools_file, encoding: "UTF-8")).each do |tool|
   where = "#{relative(tools_file)} '#{tool['name']}'"
   TAGS.each { |tag| check.call(relative(tools_file), where, tag, tool[tag]) }
