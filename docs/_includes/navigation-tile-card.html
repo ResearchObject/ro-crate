@@ -1,0 +1,108 @@
+{%- comment -%}
+  Override of the ELIXIR Toolkit Theme 7.0.0 _includes/navigation-tile-card.html.
+  Differences from the theme:
+  - page icon on each card (front matter `icon:`), positioned top-right
+  - "Related pages" dropdown on each card
+{%- endcomment -%}
+{%- assign tile_page = include.tile_page -%}
+{%- assign tile_variant = include.variant | default: "related" -%}
+{%- assign is_section_tile = false -%}
+{%- if tile_variant == "section" -%}{%- assign is_section_tile = true -%}{%- endif -%}
+{%- assign tile_supported_by = tile_page.supported_by -%}
+{%- if tile_supported_by == nil -%}{%- assign tile_supported_by = tile_page.affiliations -%}{%- endif -%}
+<div class="card h-100 navigation-tile-card-with-side flex-row">
+    <div class="card-body d-flex flex-column">
+        <div class="d-flex align-items-center">
+            {%- if tile_page.type_img %}
+            <img src="{{tile_page.type_img | relative_url}}" class="type-icon me-2" alt="{{tile_page.type}} icon">
+            {%- endif %}
+            {%- if tile_page.type %}
+            <span class=""><small>{{tile_page.type | replace: "_", " " }}</small></span>
+            {%- endif %}
+        </div>
+        <div class="navigation-tile-heading">
+            <a class="stretched-link section-title" href="{{ tile_page.url | relative_url }}">
+                <b>{{tile_page.title}}</b>
+                {%- if tile_page.icon %}
+                <i class="fa fa-2x {{ tile_page.icon }} page-img-sm"></i> 
+                {%- endif %} 
+            </a>
+        </div>
+        {%- if tile_page.description %}
+        <p class="card-text{% if is_section_tile == true %} h-100{% endif %}">{{ tile_page.description}}</p>
+        {%- endif %}
+        {%- if tile_page.related_pages %}
+        {%- assign has_related_pages = false %}
+        {%- for section in tile_page.related_pages %}
+        {%- unless section[1].size == 0 %}
+        {%- assign has_related_pages = true %}
+        {%- endunless %}
+        {%- endfor %}
+        {%- if has_related_pages %}
+        <div class="dropdown">
+            <button class="btn  btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Related pages
+            </button>
+            <ul class="dropdown-menu px-2 py-0 border-0 shadow">
+                {%- for section in tile_page.related_pages %}
+                {%- unless section[1].size == 0 %}
+                <li><h6 class="dropdown-header">{{ section[0] | replace: "_", " " | capitalize }}</h6></li>
+                {%- for page_id in section[1] %}
+                {%- assign section_pages = site.pages | where:"type", section[0] %}
+                {%- assign metadata = section_pages | where:"page_id", page_id %}
+                {%- for page_hit in metadata %}
+                <li><a class="dropdown-item rounded" href="{{ page_hit.url | relative_url }}">{{page_hit.title }}</a></li>
+                {%- endfor %}
+                {%- endfor %}
+                {%- endunless %}
+                {%- endfor %}
+            </ul>
+        </div>
+        {%- endif %}
+        {%- endif %}
+        {%- if is_section_tile == true and tile_supported_by %}
+        {%- assign pageaffil = tile_supported_by | sort %}
+        {%- assign alllogos = site.data.affiliations | default: site.data.supported_by %}
+        {%- assign allcountries = site.data.countries %}
+        <div class="d-flex align-items-center flex-wrap gap-2">
+            <span><b><small>Supported by:</small></b></span>
+            {%- for affiliation in pageaffil %}
+            {%- assign filter_affiliation = alllogos | where: "name", affiliation | first %}
+            {%- assign country = affiliation | upcase %}
+            {%- if affiliation.size == 2 %}
+            {%- assign country_link = site.pages | where:"country_code",country | first %}
+            {%- if country_link %}
+            <a role="button" href="{{country_link.url | relative_url}}" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary">
+            {%- else %}
+            <a role="button" data-bs-toggle="tooltip" title="{{allcountries[country]}}" class="btn btn-sm bg-white hover-primary disabled border-white" aria-disabled="true">
+                {%- endif %}
+                <div class="d-block supported-by-img-sm">
+                    <span class="fi fi-{{affiliation | downcase}} shadow-sm"></span>
+                </div>
+            </a>
+            {%- elsif filter_affiliation %}
+            <a role="button" href="{{filter_affiliation.url}}" data-bs-toggle="tooltip" data-bs-original-title="{{affiliation}}" class="btn btn-sm bg-white hover-primary">
+                {%- if filter_affiliation.image_url %}
+                <img alt="logo of {{filter_affiliation.name}}" src="{{filter_affiliation.image_url | relative_url }}" class="d-inline supported-by-img-sm">
+                {%- else %}
+                {{filter_affiliation.name}}
+                {%- endif %}
+            </a>
+            {%- endif %}
+            {%- endfor %}
+
+        </div>
+        {%- endif %}
+    </div>
+    <div class="navigation-tile-side d-flex gap-2 flex-column align-items-end justify-content-{% if is_section_tile == true and tile_page.page_img %}between{% else %}end{% endif %} flex-shrink-0 ms-auto p-3">
+        {%- if is_section_tile == true and tile_page.page_img %}
+    {%- capture file_url -%}
+    {{ "/images/" | append: tile_page.page_img | relative_url }}
+    {%- endcapture -%}
+        <img src="{{ file_url }}" class="page-img-sm" />
+        {%- endif %}
+        <span class="navigation-tile-arrow" aria-hidden="true">
+            <i class="icon-arrow-right"></i>
+        </span>
+    </div>
+</div>
